@@ -1,16 +1,14 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+## The Why ??  
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+If you find yourself intrigued by the current advances in the field of machine learning or you are simply     
 
 What else do you need?
 
-### my history
+### About me
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](http://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+I am  a final year PhD. student at Leiden University. I live in Amsterdam. The topic of my thesis is "Evolutionary algorithms designing responsive metamaterials".
