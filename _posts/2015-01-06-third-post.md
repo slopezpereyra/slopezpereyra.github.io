@@ -1,6 +1,6 @@
 ---
 layout: post
-title: First post!
+title: CMA-ES - From Preliminaries to Source Code
 image: /img/hello_world.jpeg
 tags: [random, exciting-stuff]
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: First post!
+title: Vanilla Neural Network with One Hidden Layer!
 image: /img/hello_world.jpeg
 tags: [random, exciting-stuff]
 ---
