@@ -1,0 +1,1 @@
+- clicks on main image, left-title, blog-image lead to 404 error
