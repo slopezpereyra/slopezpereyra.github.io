@@ -18,7 +18,9 @@ val a = 2
 val b = 3
 println(a + b)
 ```
+
     5
+
 ```
 Out[1]:
 a: Int = 2
