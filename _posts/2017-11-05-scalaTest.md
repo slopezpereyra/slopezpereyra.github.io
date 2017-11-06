@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Scala 01 - Basics
+title: Scala 01 - Basics and Syntax
 tags: [Scala begineer]
 ---
 
@@ -73,3 +73,15 @@ Vars in the other hand allow reassignment.
   Out [4]:
   greeting: String = "Bye, world!"
 ```
+
+## A function definition
+```scala
+  In [5]:
+  def max(x: Int, y: Int): Int = {
+    if(x > y) x
+    else y
+  }
+```
+Function definition starts with `def`. The function name max follows next, following which is a comma-seperated list of parameters in parenthesis. A type annotation must follow every function parameter. This is due to Scala's local type inference. The ': Int' after the parameter list type-annotates the function return value.
+
+The equal sign in the function definition above points to that in a functional world view, **a function defines an expression** that returns a value. 
