@@ -61,6 +61,8 @@ Vars in the other hand allow reassignment.
   Out [3]:	
   greeting: String = "Hello, world!"
 ```
+<br>
+
 ```scala
   In [4]:
   var greeting = "Bye, world!"
