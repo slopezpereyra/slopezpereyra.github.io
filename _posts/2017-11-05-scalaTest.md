@@ -25,6 +25,7 @@ Scala is an object-oriented ***functional programming*** language where the two 
   a: Int = 2
   b: Int = 3
 ```
+
 ## Variables in Scala
 Scala has two kinds of variables: *vals* and *vars*. A val is similar to a final variable in Java. Once initialized,  a val can never be reassigned. A var, by contrast, is similar to a non-final variable in Java. A var can be reassgined throughout its lifetime. Here is a val definition: 
 
