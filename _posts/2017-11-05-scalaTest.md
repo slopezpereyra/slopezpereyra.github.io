@@ -18,13 +18,12 @@ Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolor
   val b = 3
   println(a + b)
 ```
-
-    5
+5
 
 ```
-Out[1]:
-a: Int = 2
-b: Int = 3
+  Out[1]:
+  a: Int = 2
+  b: Int = 3
 ```
 
 
