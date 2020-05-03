@@ -17,13 +17,13 @@ baseurl: ""
 title: Nitin Singh
 
 # Short description of your site
-description: Caught in a wonder ! 
+description:  
 
 # --- Navigation bar options --- #
 
 # List of links in the navigation bar
 navbar-links:
-  Blog: "https://yourboygorja.github.io/"
+  Blog: "https://imnitinsingh.github.io/"
   About Me: "aboutme"
   
 
@@ -55,7 +55,7 @@ author:
   name: Nitin Singh
   email: "nitinsingh.iitkgp@gmail.com"
   facebook: yourname  # eg. daattali
-  github: yourboygorja    # eg. daattali
+  github: immnitinsingh    # eg. daattali
   twitter: imNitin_   # eg. daattali
   reddit: yourname    # eg. daattali
   google-plus: +yourname   # eg. +DeanAttali or 109424658772469020925
