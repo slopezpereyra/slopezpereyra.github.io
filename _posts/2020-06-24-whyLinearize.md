@@ -12,7 +12,7 @@ So given that we are very good at solving linear programs and mixed-integer prog
 
 If the non-linear problem is not convex, it is probably not possible to find an equivalent linear program. However, we might be able to obtain an equivalent mixed-integer problem. On this site, there are plenty of questions about linearization in which the answers introduce binary variables to model the non-linearity.
 
-In the above, I have assumed that you are interested in finding an equivalent representation of your non-linear program. Linearization then allows you to get the same global optimum, but faster. If you approximate non-linear functions by (piece-wise) linear ones, global optimality is no longer guaranteed.
+If someone is interested in finding an equivalent representation of the non-linear program, linearization then allows to get the same global optimum, but faster. If you approximate non-linear functions by (piece-wise) linear ones, global optimality is no longer guaranteed.
 
  
 
