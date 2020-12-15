@@ -337,13 +337,13 @@ footer .theme-by {
 
 .post-preview a {
   text-decoration: none;
-  color: #94003D;
+  color: #0085a1;
 }
 
 .post-preview a:focus,
 .post-preview a:hover {
   text-decoration: none;
-  color: #0085a1;
+  color: #94003D;
 }
 
 .post-preview .post-title {
