@@ -14,4 +14,4 @@ A qwertyuio
 
 
 
-![914163](C:\\Users\\Nitin.N.Singh\\Downloads\\914163.jpg)
+![path](C:\Users\Nitin.N.Singh\Desktop\BLOG\yourboygorja11.github.io\img\path.jpg)
