@@ -10,7 +10,7 @@ I am a professional with experience in Operations Research and Machine Learning.
 
 ### This blog is about..  
 <div style="text-align: justify">
-This is my personal blog where I share some interesting stuff.      
+This is my personal blog where I share some stuff related to topics of my interest.      
 </div>
 
 
