@@ -30,3 +30,18 @@ However, it was quite unlike this when I started using Jupyter notebooks initial
 
 ![scratchpad](../Images/scratchpad.gif)
 
+
+
+**4. Hide Code Cells**
+
+![scratchpad](../Images/hideCode.gif)
+
+**5. Change Code Font Size**
+
+![scratchpad](../Images/codeFontSize.gif)
+
+
+
+**6. Code Folding**
+
+![scratchpad](../Images/codeFold.gif)
