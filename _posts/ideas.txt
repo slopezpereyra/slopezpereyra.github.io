@@ -10,8 +10,10 @@
 8. Sammon's Mapping. 
 9. Blogs from Phd.
 	9.1 Think clearly about what you can find from your work, now
+	9.2 Particle Swarm Optimization 
 or previous that can be converted into a blog. 
 10. Scenario Discovery
 11. Interactive EDA.
 12. SCIP Solver
 13. Bokeh and its benefits.
+14. From windfarm layout optimization. 
