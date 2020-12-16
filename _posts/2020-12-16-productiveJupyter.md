@@ -10,15 +10,19 @@ However, it was quite unlike this when I started using Jupyter notebooks initial
 
 
 
+**1. Initialization Cells**
 
-
-
+![test14](../Images/init_cells.gif)
 
 ​    
 
-
+**2. Table of Contents**
 
 ![test14](../Images/test11.gif)
 
 
+
+**3. Scratchpad**
+
+![scratchpad](../Images/scratchpad.gif)
 
