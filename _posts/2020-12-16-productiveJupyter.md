@@ -12,5 +12,5 @@ A qwertyuio
 
 
 
-![testing](C:\Users\Nitin.N.Singh\Desktop\BLOG\yourboygorja11.github.io\_posts\Images\testing.jpg)
+![testing](C:\Users\Nitin.N.Singh\Desktop\BLOG\yourboygorja11.github.io\_posts\Images\testing.JPG)
 
