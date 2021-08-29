@@ -9,7 +9,8 @@ layout: null
 body {
   font-family: 'Lora', 'Times New Roman', serif;
   font-size: 16.5px;
-  color: #061D54;
+  /* --- name --- */
+  color: #000000;
   position: relative;
   background: #FFF;
   {% if site.page-col %}
@@ -337,7 +338,8 @@ footer .theme-by {
 
 .post-preview a {
   text-decoration: none;
-  color: #4E000B;
+  /* --- Blog Post Preview --- */
+  color: #000000;
 }
 
 .post-preview a:focus,
