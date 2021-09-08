@@ -6,7 +6,11 @@ tags: [Python, Pyomo, SCIP, ipopt]
 
 [Pyomo](https://pyomo.readthedocs.io/en/stable/) has been my #1 choice for optimization projects for quite some time. A while ago, I was attempting to solve a certain NLP problem and wanted to try out open source solvers apart from [ipopt](https://coin-or.github.io/Ipopt/), which is in 90% of the cases is a default choice - often serving as a benchmark. My primary curiosity was to improve the ipopt solutions. Simultaneously, I wanted to add another solver to my existing suite. 
 
-I stumbled onto a solver called [SCIP](https://www.scipopt.org/index.php#about) through google search and was surprised to notice that Pyomo already came with a provided python interface for SCIP. SCIP is freely available for research purposes. The installation procedure of SCIP was slightly non-trivial but in the end it was accomplished via provide information on the website and a bit of google search. Once locked and loaded, it was not difficult to run this from Pyomo. 
+I stumbled onto a solver called [SCIP](https://www.scipopt.org/index.php#about) through google search and was surprised to notice that Pyomo already came with a provided python interface for SCIP 
+
+[^]: this is a footnote
+
+. SCIP is freely available for research purposes. The installation procedure of SCIP was slightly non-trivial but in the end it was accomplished via provide information on the website and a bit of google search. Once locked and loaded, it was not difficult to run this from Pyomo. 
 
 ```python
 from pyomo.opt import SolverFactory
