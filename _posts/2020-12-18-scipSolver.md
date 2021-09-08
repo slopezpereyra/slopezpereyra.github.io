@@ -8,7 +8,7 @@ tags: [Python, Pyomo, SCIP, ipopt]
 
 I stumbled onto a solver called [SCIP](https://www.scipopt.org/index.php#about) through google search and was surprised to notice that Pyomo already came with a provided python interface for SCIP 
 
-[^]: this is a footnote
+[^this i a footnote]: 1
 
 . SCIP is freely available for research purposes. The installation procedure of SCIP was slightly non-trivial but in the end it was accomplished via provide information on the website and a bit of google search. Once locked and loaded, it was not difficult to run this from Pyomo. 
 
