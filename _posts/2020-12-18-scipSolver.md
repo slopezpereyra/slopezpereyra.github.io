@@ -13,6 +13,10 @@ from pyomo.opt import SolverFactory
 solver     =  'scip'               
 solver_io  =  'nl'                  
 opt        =   SolverFactory(solver, solver_io = solver_io)
+opt.options['max_iter'] = 50
+
+# define a model object
+opt.solve(model)
 ```
 
 My first impressions were that for my particular problem, the performance in terms of solution quality were similar for both ipopt and SCIP for majority of scenarios, although SCIP would occasionally render comparably better solutions. SCIP also greatly eliminated the number of infeasible scenarios compared to ipopt.    
