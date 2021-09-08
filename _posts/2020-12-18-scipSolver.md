@@ -16,6 +16,8 @@ opt        =   SolverFactory(solver, solver_io = solver_io)
 opt.options['max_iter'] = 50
 
 # define a model object
+model     =  ConcreteModel()
+
 opt.solve(model)
 ```
 
