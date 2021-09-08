@@ -17,12 +17,12 @@ opt        =   SolverFactory(solver, solver_io = solver_io)
 
 My first impressions were that for my particular problem, the performance in terms of solution quality were similar for both ipopt and SCIP for majority of scenarios, although SCIP would occasionally render comparably better solutions. SCIP also greatly eliminated the number of infeasible scenarios compared to ipopt.    
 
-The solver information rendered out in SCIP is quite granular, and that helps quite a bit. Their website states: 
+The solver information rendered out in SCIP is quite granular (ipopt there is still better), and that helps quite a bit. Their website states: 
 
 > It allows for total control of the solution process and the access of detailed information down to the guts of the solver.
 
-Compared to ipopt, one things I noticed was that SCIP was roughly 2.0x slower. This can be a deal breaker if you have millions of scenarios to run and if the solution differences are nominal. The [slowness of SCIP](https://or.stackexchange.com/a/6796/113) and its cause is however recognized already.   
+Compared to ipopt, one thing I noticed was that SCIP was roughly 2.0x slower. This can be a deal breaker if you have millions of scenarios to run and on top of it if the solution differences are nominal. The [slowness of SCIP](https://or.stackexchange.com/a/6796/113) and its cause is however recognized already.   
 
-I realize that this information here might be very problem specific but I hope this motivates you to give SCIP a shot.
+The information provided here might be very problem specific but I hope this motivates you to give SCIP a shot for your problem.
 
  
