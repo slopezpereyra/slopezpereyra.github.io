@@ -8,8 +8,8 @@ Jupyter notebooks are great. Among the other benefits of using them, I often fin
 </div>
 
 <div style="text-align: justify">
-However, it was quite unlike this and to to some extent productivity hampering, when I started using Jupyter notebooks initially. I would find myself endlessly scrolling and searching for specific figure, model, code cell etc., until, I found certain jupyter notebook extensions that did exactly what I was looking for to enhance my productivity and keep the notebook organized. In this post, I am going to share information about these extensions and some other tips that help me work efficiently in a lengthy jupyter notebook.  The information about how to install jupyter notebook extensions can be found  [here](https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/install.html). 
-</div>
+However, it was quite unlike this and to to some extent productivity hampering, when I started using Jupyter notebooks initially. I would find myself endlessly scrolling and searching for specific figure, model, code cell etc., until, I found certain jupyter notebook extensions that did exactly what I was looking for to enhance my productivity and keep the notebook organized. In this post, I am going to share information about these extensions and some other tips that help me work efficiently in a lengthy jupyter notebook.  The information about how to install jupyter notebook extensions can be found</div>  [here](https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/install.html). 
+
 
 
 **1. Initialization Cells**
