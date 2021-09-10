@@ -15,7 +15,7 @@ This document also serves as a place to record all of my learnings
 or previous that can be converted into a blog. 
 10. Scenario Discovery
 11. Interactive EDA. Compile all the tools into a single place
-12. SCIP Solver
+12. SCIP Solver xxxx
 12. Octeract, Local-Solver etc.
 12. Comparison of different solvers. 
 13. Bokeh and its benefits.
