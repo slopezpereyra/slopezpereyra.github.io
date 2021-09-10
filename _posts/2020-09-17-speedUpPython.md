@@ -7,6 +7,7 @@ tags: [Python, Performance]
 A while ago, I had to speed up some Python code. I learnt a few things about speeding up Python codes that I am sharing (in no particular order, but the couple major ones are underlined). Perhaps you find them useful:
 </div>
 
+
 - Profile First, where is time consumed most using time, `cProfile` or `line_profiler`
 - Replace `Pandas` operations with `Numpy` operations wherever possible.
 - While defining placeholder `Numpy`arrays, specify the `dtype`.
