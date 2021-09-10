@@ -44,7 +44,7 @@ Helps in testing quick ideas on the fly.
 
 Hides you code cells for someone who is not interested in them, leaving behind markdown text and figures. Can be used to render a simple document. 
 
-<img src="C:\Users\Nitin.N.Singh\Desktop\BLOG\yourboygorja11.github.io\Images\hideCode.gif" alt="hideCode" style="zoom:150%;" />
+<img src="C:\Users\Nitin.N.Singh\Desktop\BLOG\yourboygorja11.github.io\Images\hideCode.gif" alt="hideCode" style="zoom: 150%;" />
 
 
 
@@ -65,3 +65,13 @@ I found this extension to be particularly useful when I found long code sections
 Aims to fold the foldable code sections. Helps in hiding the technical details and saves scrolling time too. 
 
 ![scratchpad](../Images/codeFold.gif)
+
+
+
+**Other Tips**
+
+- Categorize your content into proper section, subsections. 
+- Color sections, subsections in different colors that you want for quick identification.
+- Name your variables creatively. That avoids name clashes. 
+- Use markdown printing to annotate important output.
+- Create a **Rough Code** section towards the end of your notebook for experimentation. 
