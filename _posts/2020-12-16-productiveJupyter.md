@@ -32,9 +32,9 @@ However, it was quite unlike this when I started using Jupyter notebooks initial
 
 
 
-**4. Hide Code Cells**
+**4. Hide Code Cells**![hideCode](C:\Users\Nitin.N.Singh\Desktop\BLOG\yourboygorja11.github.io\Images\hideCode.gif)
 
-![scratchpad](../Images/hideCode.gif)
+
 
 **5. Change Code Font Size**
 
