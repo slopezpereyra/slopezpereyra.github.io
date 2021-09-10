@@ -24,6 +24,7 @@ or previous that can be converted into a blog.
 16. from dicrere opt course
 17. Bonsai Platform
 18. MMM Prl paper that I have published. 
+18. What are Mechanical Metamaterials
 19. Extension of the MMM PRL paper
 20. Annotated research papers into a github repo
 21. Review Paper on DRL approach in Process Control
