@@ -1,10 +1,11 @@
 This document also serves as a place to record all of my learnings
 1. hampel filter
-2. colored jupyter mardown cells. and enhanced productiviity. 
+2. colored jupyter mardown cells. and enhanced productiviity. xxxx
+2. Python Speed xxxx
 3. Data-driven optimization. 
 4. Regression models tips
 	4.1 Mainly from Rakesh. 
-5. Pyomo Speed. 
+5. Pyomo Speed. xxxx
 6. Windows Task Scheduler. 
 7. Tips for writing better Python Codes and productive with Jupyter. 
    https://pythonforbiologists.com/3-steps-to-readable-code 
@@ -16,11 +17,11 @@ or previous that can be converted into a blog.
 10. Scenario Discovery
 11. Interactive EDA. Compile all the tools into a single place
 12. SCIP Solver xxxx
-12. Octeract, Local-Solver etc.
+12. Octeract, Local-Solver etc. 
 12. Comparison of different solvers. 
-13. Bokeh and its benefits.
+13. Bokeh and its benefits. 
 14. From windfarm layout optimization. 
-15. RL in Optimization. Constraint handling
+15. RL in Optimization. Constraint handling 
 16. from dicrere opt course
 17. Bonsai Platform
 18. MMM Prl paper that I have published. 
@@ -34,6 +35,8 @@ or previous that can be converted into a blog.
 25. Blog on note taking i.e. Notion, Obsidian etc. 
 26. Blog related with PhD. Choosing right problem, Art of writing etc. 
 27. productivty like adblocker, image hider, google cal notifier
+28. Scientific Writing
+29. Paper Reviews
 
 
 -----------------TAKE A COUPLE OF WEEKS OFF AND JUST SIMPLY WRITE YOUR BLOG-----------------
