@@ -1,9 +1,9 @@
-<<<<<<< HEAD
 ---
 layout: post
 title: On Scientific Writing
 tags: [Writing, Scientific Writing]
 ---
+
 > Speaking creates entropy. Writing reduces it. 
 
 Good writing skill is a great one to have. I personally improved at this during my time as a Ph.D. researcher, learning how to write papers, articles, thesis in a scientific style. Those skills have quite often proven useful outside of academia as well. Below, I am compiling some of the general points about how to write better:
