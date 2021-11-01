@@ -19,7 +19,7 @@ Good writing skill is a great one to have. I personally improved at this during 
 
 
 
-Additionally, I am pointing a few good resources on the internet from where you can read or know more about how to be a better writer: 
+Additionally, a few good resources on the internet are pointed out below from where you can read and know more about how to be a better writer: 
 
 - [Whitesides' Group: Writing a Paper](https://intra.ece.ucr.edu/~rlake/Whitesides_writing_res_paper.pdf)
 - [Writing a research article: advice to beginners](https://www.bu.edu/sph/files/2012/01/Perneger_Writing-a-research-article-Advice-to-beginners.pdf)
