@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Reconocimiento facial en Argentina | Facial recognition in Argentina
-tags: [Operations-Research]
+tags: [Politics-Argentina-FacialRecognition]
 ---
 
 En el 2019, el gobierno de la Ciudad de Buenos Aires incorporó
