@@ -1,26 +1,35 @@
-—
+—--
 layout: post
 title: Reconocimiento facial en Argentina | Facial recognition in Argentina
-tags: [Politics-Argentina-FacialRecognition]
-—
+tags: [Politics, Argentina, FacialRecognition]
+—--
 
-En 2019, el gobierno de la Ciudad de Buenos Aires incorporó
-a su red de vigilancia cámaras con *facial recognition*. A través de un
-convenio con el Renaper, se supone que el sistema tendría acceso a los datos
-biométricos de aquellos individuos  registrados en la CONARC o con alguna orden
-judicial en su contra. En total, unos 40.000 individuos. El propósito oficial:
-la protección de ciudadanos y familias de los delincuentes que siguen libres.
+##### Preámbulo
 
-Sólo un año después, tras una serie de pericias, desencadenadas por una acción
-de amparo iniciada por ODIA, se descubrió que las fuerzas policiales habían
-utilizado los datos de casi diez millones de ciudadanos. Se constató además lo que
-esta cifra hace evidente: que se habían vulnerado los datos biométricos de un
-inmenso número de ciudadanos no registrados en la CONARC ni con órdenes
-judiciales en su contra. Entre los individuos vulnerados, aparte de innumerables
-"civiles ordinarios", se encontraban figuras de trascendencia pública. Ejemplos
-de interés son la actual vicepresidente Cristina Fernández, el presidente
-Alberto Fernández, y Estela de Carlotto. Jueces, fiscales y dirigentes sociales
-se encuentran en el listado de individuos vulnerados.
+Esta entrada es un bosquejo rápido de las cuestiones *de hecho* implicadas en el
+uso de reconocimiento facial por parte del Estado argentino y su ulterior
+desactivación por la Corte Suprema. Las problemáticas *de principio* implicadas ---que no son
+menores--- no son discutidas. El único propósito de este escrito fue dejar un
+registro fáctico.
+
+##### Reconocimiento facial en Argentina
+
+En 2019, el gobierno de la Ciudad de Buenos Aires incorporó a su red de
+vigilancia cámaras con reconocimiento facial. A través de un convenio con el
+Renaper, se supone que el sistema tendría acceso a los datos biométricos de
+todos los individuos registrados en la CONARC. En total, unas $40.000$ personas.
+El propósito declarado: proteger a las familias de los criminales que siguen
+libres.
+
+Sólo un año después, una acción de amparo iniciada por ODIA desencadenó una
+serie de pericias. Se descubrió que las fuerzas policiales habían utilizado los
+datos de casi diez millones de ciudadanos. Se constató además lo que esta cifra
+hace evidente: que se habían vulnerado los datos biométricos de un inmenso
+número de personas que no estaban en la CONARC. Entre los individuos vulnerados,
+aparte de civiles ordinarios, se encontraban diversas figuras de trascendencia
+pública. Ejemplos de interés son Cristina Fernández, Alberto Fernández y Estela
+de Carlotto. Jueces, fiscales y dirigentes sociales se encuentran en el listado
+de individuos vulnerados.
 
 El contexto en el que se produjo esta vulneración no es claro. La ausencia de
 mecanismos de control, supervisión y transparencia, el vacío legal ocasionado
@@ -38,32 +47,31 @@ instalará centenares de estas cámaras en la ciudad afectada.
 
 Aunque la forma y la intensidad de la vigilancia son una función de la
 ideología, variando de un gobierno a otro, su existencia no lo es. El uso de
-*facial recognition* está en el interés de cualquier gobierno —es
+sistemas con reconocimiento facial está en el interés de cualquier gobierno —es
 acorde a la naturaleza del Estado. Por eso vemos un gobierno moderadamente
 progresista repetir el error de su antecesor de derecha. Y aunque es
 particularmente aterrador imaginar esta tecnología en manos de, digamos, una
-dictadura militar, su existencia en manos del más amable de los gobiernos ya
-constituye una ofensa a *principios* elementales, por un lado, y una
-fuente de *consecuencias* perniciosas, por otro. Para ponerlo de otro
+dictadura militar, su existencia en manos del mejor de los gobiernos ya
+constituye un daño a principios elementales, y es una
+fuente de consecuencias perniciosas. Dicho de otro
 modo, la oposición al uso de tales tecnologías es tanto *a matter of
 fact* como *a matter of principle*. Por lo pronto, deseo enfocarme en lo 
 primero.
 
-El primer problema, de naturaleza tecnológica, es
-curiosamente simple. El reconocimiento facial es realizado a través de redes
-neuronales. Asumamos que la tasa de error de la red utilizada es óptimo; por
-ejemplo, que los falsos positivos constituyen el $0.01 \%$ de las observaciones.
-Semejante tasa, que supera toda expectativa, al menos en el estado actual de
-desarrollo tecnológico, sólo puede celebrarse allí donde los falsos positivos
-son relativamente inconscecuentes, o la cantidad de observaciones relativamente
-pequeña. La identificación de prófugos o personas de interés a través de tales
-tecnologías no satisface ninguna de estas dos condiciones. Más de 1.3 millones
-de personas utilizan —por tomar un ejemplo fácil— el subterráneo porteño
-diaraiamente. La tasa que hemos supuesto nos garantiza, en este caso, una
-esperanza de $\approx 130$ falsos positivos diarios; es decir, alrededor de 130
-personas detenidas erróneamente de manera diaria. Queda por determinar si el
-costo compensa los benificios, incluso donde se asuma un uso adecuado del
-sistema por parte del Estado. Mi respuesta tentativa es que no.
+El primer problema, de naturaleza tecnológica, es curiosamente simple. El
+reconocimiento facial es realizado a través de redes neuronales. Asumamos que la
+tasa de error de la red utilizada es óptima; por ejemplo, que los falsos
+positivos constituyen el $0.01 \%$ de las observaciones. Esto, que supera toda
+expectativa, sería celebrable sólo allí donde los falsos positivos son
+relativamente inconscecuentes, o la cantidad de observaciones relativamente
+pequeña. La identificación de prófugos no satisface ninguna de estas dos
+condiciones. Más de $1.3$ millones de personas utilizan —por tomar un ejemplo
+fácil— el subterráneo porteño diaraiamente. La tasa que hemos supuesto nos
+garantiza, en este caso, una esperanza de $\approx 130$ falsos positivos
+diarios; es decir, alrededor de $130$ personas detenidas erróneamente de manera
+diaria. Queda por determinar si el costo compensa los benificios, incluso donde
+se asuma un uso adecuado del sistema por parte del Estado. Mi respuesta
+tentativa es que no.
 
 Corresponde señalar que el gobierno argentino declaró, en principio, una tasa
 de error del 4$\%$ (!). No dio información respecto a la proporción de falsos
@@ -111,15 +119,15 @@ francesa IDEMIA (antes llamada Morpho Safran), criticada por Amnistía
 Internacional por exportar información a China. 
 
 En cualquier caso, el problema no reside en la integridad o corrupción de una u
-otra compañía. El centro de la cuestión está en que la vigilancia es
+otra compañía. El centro de la cuestión está en que la vigilancia sea
 implementada por software privativo; es decir, por software cuyo código fuente no
 puede leerse, modificarse ni distribuirse libremente. Esto significa que cuando
-el Estado nacional contrata la prestación del software, el Estado mismo no
-conoce, ni puede conocer, lo que el software hace. Esto es irrelevante a los
+el Estado contrata la prestación del software, el Estado mismo no
+conoce, ni puede conocer, todo lo que el software hace. Esto es irrelevante a los
 intereses del Estado, en la medida en que la prestación provea la vigilancia
 deseada, pero conforma un nuevo nivel de vulneración de los derechos civiles. En
 la medida en que no existe transparencia respecto a qué operaciones son
-realizadas \textit{sub rosa} por el software, la ciudadanía está a merced no
+realizadas por el software *sub rosa*, la ciudadanía está a merced no
 sólo del uso que haga el Estado de la parte del sistema que sí puede manipular,
 sino del uso que hagan las compañías de aquella que sólo ellas pueden conocer.
 
@@ -132,9 +140,5 @@ cuestiones de principio son más espinosas, y se refieren a problemas como la
 naturaleza del Estado, hasta qué punto ciertas regulaciones podrían convertir en
 digno de existir al sistema, o si corresponde implementarlo en circunstancias
 especiales —por ejemplo, en cruces aduaneros o aeropuertos internacionales—.
-No es mi interés discutirlas ahora. La descripción dada de los problema
-concernientes a la implementación de sistemas de reconocimiento facial en la vía
-pública debería bastar para convencer a un ciudadano cualquiera de la magnitud
-del problema.
-
+No es mi interés discutirlas ahora.
 
