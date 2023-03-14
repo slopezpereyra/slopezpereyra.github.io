@@ -1,8 +1,4 @@
-—--
-layout: post
-title: In praise of extroversion
-tags: []
-—--
+#### In praise of extroversion
 
 Silence is not the path. I'm doubtful of oriental resignation. The exercise of
 introspection is healthy, but it is an exercise and not a mode of life. I am not

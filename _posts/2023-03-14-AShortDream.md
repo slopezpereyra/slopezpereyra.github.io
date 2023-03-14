@@ -1,3 +1,5 @@
+##### Un sueño breve
+
  Soñé a una amante muerta y a un guepardo que custodiaba el rígido cadáver. Su
  rostro era la sombra de la muerte, no la muerte. De ella vemos solo el vestigio
  débil y ominoso. Era en un claro lleno de hierbas luminosas que el sol

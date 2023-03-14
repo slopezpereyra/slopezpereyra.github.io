@@ -1,3 +1,5 @@
+#### Dos formas de una parábola
+
 En cierta historia de las *Jātaka Tales*, Sakyamuni se sacrifica sólo porque un
 demonio pueda escuchar sus enseñanzas y alcanzar la iluminación. En el mito
 cristiano, el caos asciende hacia Cristo procurando oscurecerlo: «*if thou be
