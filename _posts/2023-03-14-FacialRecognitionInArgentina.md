@@ -9,7 +9,8 @@ a su red de vigilancia cámaras con *facial recognition*. A través de un
 convenio con el Renaper, se supone que el sistema tendría acceso a los datos
 biométricos de aquellos individuos  registrados en la CONARC o con alguna orden
 judicial en su contra. En total, unos 40.000 individuos. El propósito oficial:
-la protección de ciudadanos y familias de los delincuentes que siguen libres.{: .text-justify}
+la protección de ciudadanos y familias de los delincuentes que siguen libres.
+
 Sólo un año después, tras una serie de pericias, desencadenadas por una acción
 de amparo iniciada por ODIA, se descubrió que las fuerzas policiales habían
 utilizado los datos de casi 10 millones de ciudadanos. Se constató además lo que
@@ -19,20 +20,22 @@ judiciales en su contra. Entre los individuos vulnerados, aparte de innumerables
 "civiles ordinarios", se encontraban figuras de trascendencia pública. Ejemplos
 de interés son la actual vicepresidente Cristina Fernández, el presidente
 Alberto Fernández, y Estela de Carlotto. Jueces, fiscales y dirigentes sociales
-se encuentran en el listado de individuos vulnerados.{: .text-justify}
+se encuentran en el listado de individuos vulnerados.
+
 El contexto en el que se produjo esta vulneración no es claro. La ausencia de
 mecanismos de control, supervisión y transparencia, el vacío legal ocasionado
 por la falta de regulaciones en la nueva tecnología, hicieron imposible
 determinar el nivel de responsabilidad atribuible a los distintos actores ---las
 diferentes esferas del poder ejecutivo por un lado, las fuerzas policiales por
 otro---. La Corte Suprema acabó por determinar la inconstitucionalidad del
-sistema de vigilancia y su sucesiva desarticulación. {: .text-justify}
+sistema de vigilancia y su sucesiva desarticulación.
 La violación, que era digna de un escándalo, aunque cubierta por varios medios
 internacionales, fue ignorada en el periodismo nacional. La población, por lo
 general, permanece en pleno desconocimiento del problema. Acaso por esta razón
 el fallo de la corte fue de corto vuelo: ante la crisis en Rosario, el gobierno
 nacional avisa ---una vez más, en nombre del cuidado de sus ciudadanos--- que
-instalará centenares de estas cámaras en la ciudad afectada. {: .text-justify}
+instalará centenares de estas cámaras en la ciudad afectada.
+
 Aunque la forma y la intensidad de la vigilancia son una función de la
 ideología, variando de un gobierno a otro, su existencia no lo es. El uso de
 *facial recognition* está en el interés de cualquier gobierno ---es
@@ -44,7 +47,8 @@ constituye una ofensa a *principios* elementales, por un lado, y una
 fuente de *consecuencias* perniciosas, por otro. Para ponerlo de otro
 modo, la oposición al uso de tales tecnologías es tanto *a matter of
 fact* como *a matter of principle*. Por lo pronto, deseo enfocarme en lo 
-primero.{: .text-justify}
+primero.
+
 El primer problema, de naturaleza tecnológica, es
 curiosamente simple. El reconocimiento facial es realizado a través de redes
 neuronales. Asumamos que la tasa de error de la red utilizada es óptimo; por
