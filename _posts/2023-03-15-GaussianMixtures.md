@@ -51,6 +51,7 @@ to belong to.
 <center><img
 src="https://drive.google.com/uc?id=1kios8laiVBPpx6Uz7rI7Bu6k6SS9wj3Y"
 alt="drawing" width="600"/>
+</center>
 
 ----
 
@@ -83,11 +84,13 @@ In data science terms, this means finding a parameter vector $\hat{\theta}$
 that maximizes the likelihood function $\mathcal{L}_n(\theta;X)$. Assuming our
 variables are random and independent,
 
-$$\text{max}_\theta \space \mathcal{L}_n(\theta;X) = \text{max}_\theta \space
-\prod_{k=1}^n \mathcal{L}_n(x_k; \theta)$$ 
+$$
+\max_\theta \space \mathcal{L}_n(\theta;X) = \max_\theta \space
+\prod_{k=1}^n \mathcal{L}_n(x_k; \theta)
+$$ 
 
 Now, let $\log \mathcal{L}_n(\theta) = \ell (\theta; X)$ be the
-log-likelihood. The log is a monotonic function and therefore the maximum
+log-likelihood. The logarithm is a monotonic function and therefore the maximum
 value of $\ell (\theta; X)$ is equal to the maximum value of
 $\mathcal{L}_n(\theta)$. In other words,
 
@@ -96,20 +99,17 @@ $$\text{max}_\theta \space \ln \Big( \prod_{k=1}^n \mathcal{L}_n(x_k;\theta)
 =\text{max}_\theta \space \ell (x_1;\theta) +\ell (x_2;\theta) \space + ... +
 \ell (x_n;\theta)$$
 
-Finding $\text{max}_\theta \space = \theta$ is far easier on this sum than on
+Finding $\text{max}_\theta$ is far easier on this sum than on
 the non-logarithmic factorial. We do it by taking the partial derivative of
 the sum with respect to $\theta$ and finding the point in which it is $0$. 
 
 Because $\text{max}_\theta$ does not change when we rescale the function, we
-can dividte the previous sum sum by $n$ so to formulate our result as the
+can dividte the previous sum by $n$ so as to formulate our result as the
 expected probability of $X$ given $\theta$,
 
 $$\frac{1}{n}\sum_{k=1}^n \ell (x_k;\theta) = \mathbb{E} \Big[\ell
 (x_k;\theta)\Big]$$
 
-Now let  $\hat{\theta}$ be the most likely model of $X$. Then
-$\mathcal{L}(\hat{\theta}, X)$ is a measure of how well the model fits the
-data.
 
 -------------
 
