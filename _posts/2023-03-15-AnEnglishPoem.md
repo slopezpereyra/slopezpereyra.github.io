@@ -10,7 +10,7 @@ title: An English poem
 Here in the night below the moon <br> 
 I’ve cried that love is vain, and every word <br>
 we whisper to our lover’s ears is wind forever gone.<br> 
-But no love goes to waste, I now suspect; <br> 
+But no love goes to waste, I now suspect— <br> 
 my eyes glow with the light of every orb<br> 
 that on this ancient sky has ever slept<br> 
 as I pronounce with weakened words the truth.<br> 
