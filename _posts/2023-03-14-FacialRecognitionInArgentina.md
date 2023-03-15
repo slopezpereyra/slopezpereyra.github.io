@@ -1,8 +1,8 @@
-—--
-layout: post
-title: Reconocimiento facial en Argentina 
-tags: [Politics, Argentina, FacialRecognition]
-—--
+
+---
+title: Reconocimiento facial en Argentina
+---
+
 
 ##### Preámbulo
 

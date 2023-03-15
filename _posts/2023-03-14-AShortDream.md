@@ -1,3 +1,7 @@
+--- 
+title: Un sueño breve 
+---
+
 ##### Un sueño breve
 
  Soñé a una amante muerta y a un guepardo que custodiaba el rígido cadáver. Su

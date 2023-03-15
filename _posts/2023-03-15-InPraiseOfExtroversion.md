@@ -1,3 +1,7 @@
+---
+title: In praise of extroversion
+---
+
 #### In praise of extroversion
 
 Silence is not the path. I'm doubtful of oriental resignation. The exercise of

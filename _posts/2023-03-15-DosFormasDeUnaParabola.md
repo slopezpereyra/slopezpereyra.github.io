@@ -1,3 +1,7 @@
+---
+title: Dos formas de una parábola
+---
+
 #### Dos formas de una parábola
 
 En cierta historia de las *Jātaka Tales*, Sakyamuni se sacrifica sólo porque un
