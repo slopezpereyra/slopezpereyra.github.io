@@ -3,11 +3,12 @@ layout: null
 ---
 
 @import url("pygment_highlights.css");
+@import url("https://cdn.jsdelivr.net/gh/vsalvino/computer-modern@main/fonts/typewriter.css");
 
 /* --- General --- */
 
 body {
-  font-family: 'Computer Modern Typewriter', monospace;
+  font-family: "Computer Modern Typewriter", monospace;
   font-size: 16.5px;
   /* --- name --- */
   color: #000000;
@@ -30,7 +31,7 @@ p a {
   color: #008AFF;
 }
 h1,h2,h3,h4,h5,h6 {
-  font-family: 'Computer Modern Typewriter', monospace;
+  font-family: "Computer Modern Typewriter", monospace;
   font-weight: 800;
 }
 a {
@@ -65,7 +66,7 @@ hr.small {
 }
 
 .main-explain-area {
-  font-family: 'Computer Modern Typewriter', monospace;
+  font-family: "Computer Modern Typewriter", monospace;
   padding: 15px inherit;
 }
 
@@ -111,7 +112,7 @@ img {
 .navbar-custom {
   background: #F1F1E6;
   border-bottom: 1px solid #EAEAEA;
-  font-family: 'Computer Modern Typewriter', monospace;
+  font-family: "Computer Modern Typewriter", monospace;
   {% if site.navbar-col %}
   background: {{ site.navbar-col }};
   {% endif %}
@@ -298,7 +299,7 @@ footer .list-inline {
   padding: 0;
 }
 footer .copyright {
-  font-family: 'Computer Modern Typewriter', monospace;
+  font-family: "Computer Modern Typewriter", monospace;
   text-align: center;
   margin-bottom: 0;
 }
