@@ -7,7 +7,7 @@ layout: null
 /* --- General --- */
 
 body {
-  font-family: 'Lora', 'Times New Roman', serif;
+  font-family: 'Computer Modern Typewriter', monospace;
   font-size: 16.5px;
   /* --- name --- */
   color: #000000;
@@ -30,7 +30,7 @@ p a {
   color: #008AFF;
 }
 h1,h2,h3,h4,h5,h6 {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Computer Modern Typewriter', monospace;
   font-weight: 800;
 }
 a {
@@ -65,7 +65,7 @@ hr.small {
 }
 
 .main-explain-area {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Computer Modern Typewriter', monospace;
   padding: 15px inherit;
 }
 
@@ -111,7 +111,7 @@ img {
 .navbar-custom {
   background: #F1F1E6;
   border-bottom: 1px solid #EAEAEA;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Computer Modern Typewriter', monospace;
   {% if site.navbar-col %}
   background: {{ site.navbar-col }};
   {% endif %}
@@ -298,7 +298,7 @@ footer .list-inline {
   padding: 0;
 }
 footer .copyright {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Computer Modern Typewriter', monospace;
   text-align: center;
   margin-bottom: 0;
 }
@@ -365,7 +365,7 @@ footer .theme-by {
   margin: 0 0 10px;
 }
 .post-preview .post-entry {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+font-family: "Computer Modern Typewriter", monospace;
 }
 .post-entry-container {
   display: inline-block;
@@ -402,8 +402,7 @@ footer .theme-by {
 /* --- Tags --- */
 
 .blog-tags {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #999;
+  font-family: "Computer Modern Typewriter", monospace;  color: #999;
   font-size: 15px;
   margin-bottom: 30px;
 }
@@ -594,7 +593,7 @@ footer .theme-by {
 /* --- Pager --- */
 
 .pager li a {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Computer Modern Typewriter", monospace;  
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 800;
