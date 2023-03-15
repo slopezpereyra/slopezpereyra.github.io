@@ -1,8 +1,3 @@
---- 
-layout: post
-title: Tres poemas
-tags: [Poetry]
----
 
 
 ##### A mí mismo
@@ -81,13 +76,5 @@ He soñado la génesis del hombre,<br>
 y he vuelto de mi sueño libre apenas,<br>
 porque en todas las noches de esta vida<br>
 muy poco nace, pero mucho sueña…!<br>
-
-
-
-
-
-
-
-
 
 
