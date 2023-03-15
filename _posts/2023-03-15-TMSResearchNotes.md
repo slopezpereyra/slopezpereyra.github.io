@@ -17,7 +17,8 @@ $$
     x_{21} & x_{22}& \cdots & x_{2k} \\
     & & ... & \\
     x_{n1} & x_{n2}& \cdots & x_{nk} 
-    \end{bmatrix} ~~
+    \end{bmatrix} \\ 
+
     \textbf{T}:= \begin{bmatrix}t_{11} & t_{12}& ... & t_{1k} \\
     t_{21} & t_{22}& \cdots & t_{2k} \\
     & & ... & \\
@@ -114,7 +115,8 @@ S^{k+1}_1 S^{k+1}_2 \geq (k+1)^2
 $$
 
 $$
-\begin{align} S^{k+1}_1 S^{k+1}_2 &\geq (k+1)^2 \\
+\begin{align} 
+S^{k+1}_1 S^{k+1}_2 &\geq (k+1)^2 \\
 (S_1^k+\frac{1}{t_{t+1}})(S_2^k+t_{k+1}) &\geq k^2+2k+1 \\
 S^k_1S^k_2+ t_{k+1}S_1^k + \frac{1}{t_{k+1}}S^k_2+1 &\geq k^2+2k+1 \\
 S^k_1S^k_2+ t_{k+1}S_1^k + \frac{1}{t_{k+1}}S^k_2 &\geq k^2+2k
@@ -123,13 +125,12 @@ $$
 
 We know $S^k_1S^k_2 \geq k^2$ and then it suffices to show $t_{k+1}S_1^k + \frac{S^k_2}{t_{k+1}}\geq 2k$. To prove this, simply observe that
 
-$$
-\begin{align}\frac{1}{t_{k+1}}\sum_{j=1}^mt_j+t_{k+1}\sum_{j=1}^m\frac{1}{t_{j}} &\geq 2k \\
+\begin{align}
+\frac{1}{t_{k+1}}\sum_{j=1}^mt_j+t_{k+1}\sum_{j=1}^m\frac{1}{t_{j}} &\geq 2k \\
 \iff\frac{1}{t_{k+1}}(t_1+t_2+...+t_k)+t_{k+1}(\frac{1}{t_1}+\frac{1}{t_2}+...+\frac{1}{t_k}) &\geq 2k \\
 \iff \Big(\frac{t_1}{t_{k+1}}+\frac{t_2}{t_{k+1}}+...+\frac{t_k}{t_{k+1}}\Big)+\Big(\frac{t_{k+1}}{t_1}+\frac{t_{k+1}}{t_2}+...+\frac{t_{k+1}}{t_k}\Big) &\geq 2k \\
 \iff \overbrace{a+\frac{1}{a}+b+\frac{1}{b}+... + n+\frac{1}{n}}^{\text{$2k$ terms} } &\geq 2k
 \end{align}
-$$
 
 We have $\min f=2$  for $f(x)=x+\frac{1}{x}$ for $x \in \mathbb{R}^+$. Then $\min(a+\frac{1}{a}+...+n+\frac{1}{n})=2k$ for $a,..., n \in \mathbb{R}^+$, which concludes the demonstration.
 
