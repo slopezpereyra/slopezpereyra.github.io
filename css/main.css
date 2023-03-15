@@ -4,12 +4,12 @@ layout: null
 
 @import url("pygment_highlights.css");
 @import url("https://cdn.jsdelivr.net/gh/vsalvino/computer-modern@main/fonts/serif.css");
+
 /* --- General --- */
 
 body {
   font-family: "Computer Modern Serif", monospace;
   font-size: 16.5px;
-  text-align: justify;
   /* --- name --- */
   color: #000000;
   position: relative;
