@@ -1,4 +1,3 @@
-
 ---
 title: Reconocimiento facial en Argentina
 ---
