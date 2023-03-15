@@ -3,13 +3,13 @@ layout: null
 ---
 
 @import url("pygment_highlights.css");
-@import url("https://cdn.jsdelivr.net/gh/vsalvino/computer-modern@main/fonts/typewriter.css");
-
+@import url("https://cdn.jsdelivr.net/gh/vsalvino/computer-modern@main/fonts/serif.css");
 /* --- General --- */
 
 body {
-  font-family: "Computer Modern Typewriter", monospace;
+  font-family: "Computer Modern Serif", monospace;
   font-size: 16.5px;
+  text-align: justify;
   /* --- name --- */
   color: #000000;
   position: relative;
@@ -31,7 +31,7 @@ p a {
   color: #008AFF;
 }
 h1,h2,h3,h4,h5,h6 {
-  font-family: "Computer Modern Typewriter", monospace;
+  font-family: "Computer Modern Serif", monospace;
   font-weight: 800;
 }
 a {
@@ -66,7 +66,7 @@ hr.small {
 }
 
 .main-explain-area {
-  font-family: "Computer Modern Typewriter", monospace;
+  font-family: "Computer Modern Serif", monospace;
   padding: 15px inherit;
 }
 
@@ -112,7 +112,7 @@ img {
 .navbar-custom {
   background: #F1F1E6;
   border-bottom: 1px solid #EAEAEA;
-  font-family: "Computer Modern Typewriter", monospace;
+  font-family: "Computer Modern Serif", monospace;
   {% if site.navbar-col %}
   background: {{ site.navbar-col }};
   {% endif %}
@@ -299,7 +299,7 @@ footer .list-inline {
   padding: 0;
 }
 footer .copyright {
-  font-family: "Computer Modern Typewriter", monospace;
+  font-family: "Computer Modern Serif", monospace;
   text-align: center;
   margin-bottom: 0;
 }
@@ -366,7 +366,7 @@ footer .theme-by {
   margin: 0 0 10px;
 }
 .post-preview .post-entry {
-font-family: "Computer Modern Typewriter", monospace;
+font-family: "Computer Modern Serif", monospace;
 }
 .post-entry-container {
   display: inline-block;
@@ -403,7 +403,7 @@ font-family: "Computer Modern Typewriter", monospace;
 /* --- Tags --- */
 
 .blog-tags {
-  font-family: "Computer Modern Typewriter", monospace;  color: #999;
+  font-family: "Computer Modern Serif", monospace;  color: #999;
   font-size: 15px;
   margin-bottom: 30px;
 }
@@ -594,7 +594,7 @@ font-family: "Computer Modern Typewriter", monospace;
 /* --- Pager --- */
 
 .pager li a {
-  font-family: "Computer Modern Typewriter", monospace;  
+  font-family: "Computer Modern Serif", monospace;  
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 800;
