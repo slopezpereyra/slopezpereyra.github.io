@@ -50,7 +50,7 @@ As stated earlier, action potentials evoked by trasncranial magnetic stimulation
 If we let $\rho_w, \delta_w$ be the weighted versions of $\rho, \delta$, then we have 
 
 \begin{align}
-    \rho_w(x) &:= \frac{xm\sum_{j=1}^m w_j}{\sum_{j=1}^m t_j w_j} \\
+    \rho_w(x) &:= \frac{xm\sum_{j=1}^m w_j}{\sum_{j=1}^m t_j w_j} \newline
     \delta_w(x) &:= \frac{\frac{x}{m}\sum_{j=1}^m\frac{w_j}{t_j}}{\sum_{j=1}^m w_j}
 \end{align}
 
