@@ -12,11 +12,11 @@ Let $k$ be the number of experimental subjects in some subject group, to each of
 Let $\textbf{P}^{n \times k}, \textbf{T}^{m\times k}$ be matrices representing the paired and test potentials evoked across each of the $k$ subjects; explicitely,
 
 \begin{align}
-    \textbf{P} := \begin{bmatrix}x_{11} & x_{12}& \cdots & x_{1k} \\\
-    x_{21} & x_{22}& \cdots & x_{2k} \\\
-    & & ... & \\\
+    \textbf{P} := \begin{bmatrix}x_{11} & x_{12}& \cdots & x_{1k} \\\\
+    x_{21} & x_{22}& \cdots & x_{2k} \newline
+    & & ... & \\\\
     x_{n1} & x_{n2}& \cdots & x_{nk} 
-    \end{bmatrix} \\\
+    \end{bmatrix} \newline
     \textbf{T}:= \begin{bmatrix}t_{11} & t_{12}& ... & t_{1k} \\\
     t_{21} & t_{22}& \cdots & t_{2k} \\\
     & & ... & \\\
