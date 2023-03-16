@@ -66,7 +66,8 @@ where $\textbf{w}$ is some appropriate weight vector. Since the purpose of $\tex
 We will be very explicit here, since the purpose of this is note-taking. Recall that
 
 \begin{align} 
-    \delta(x) &= \frac{x}{m}\sum^m\frac{1}{t_j} \\ \rho(x) &= \frac{xm}{\sum^m t_j} 
+    &\delta(x) &= \frac{x}{m}\sum^m\frac{1}{t_j} \newline 
+    &\rho(x) &= \frac{xm}{\sum^m t_j} 
 \end{align}
 
 Let $S_1^m = \sum^m\frac{1}{t_j}, S_2^m= \sum^m t_j$. We operate under the assumption that $t_i \in \mathbb{R}^+$. It is the case that
@@ -81,6 +82,8 @@ This holds for $m=1$, since $\frac{1}{t_1}+t_1 \geq 1 \iff 1+t_1^2 \geq t_1$. So
 \begin{equation}
 S^{k+1}_1 S^{k+1}_2 \geq (k+1)^2
 \end{equation}
+
+To show this, observe that
 
 \begin{align} 
 &S^{k+1}\_1 S^{k+1}\_2 &\geq (k+1)^2 \newline
