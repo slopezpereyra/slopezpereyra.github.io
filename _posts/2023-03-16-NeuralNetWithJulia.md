@@ -13,8 +13,8 @@ mutable struct 𝓛
     W::Matrix
     biases::Vector
     f::Function
-    function 𝓛(neurons::Vector, W::Matrix, biases::Vector)
-        new(neurons, W, biases)
+    function 𝓛(neurons::Vector, W::Matrix, biases::Vector, f::function)
+        new(neurons, W, biases, f)
     end
 end
 
@@ -122,14 +122,14 @@ $$
 $$
 
 defines the updated network in epoch $e + 1$. The parameters of $\mathcal{N}(e
-+1)$ are shifted towards the direction of steepest decent ---rovided that $(+),
++1)$ are shifted towards the direction of steepest decent —provided that $(+),
 (\cdot)$ are well-defined as network-network and scalar-network operators (which
 is precisely what we've done above). 
 
 This formalization of non-abbelian groups for the network and layer objects, by
 virtue of which we conceptualized training, is not at all necessary. One can
 indeed update a network's parameters without the need to formalize, for example,
-network-network operator ---and in fact this is what is generally done. However,
+a network-network operator —and in fact this is what is generally done. However,
 I find this formal approach to have sharper outlines.
 
 ### Forward and backward propagation 

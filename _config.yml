@@ -24,7 +24,7 @@ description: 'A series of notes'
 # List of links in the navigation bar
 navbar-links:
   Blog: "https://slopezpereyra.github.io/"
-  About Me: "Above all, I am a student."
+  About Me: "aboutme"
   
 
 # Image to show in the navigation bar - image must be a square (width = height)
@@ -193,4 +193,4 @@ gems:
   - jekyll-latex
 
 # Beautiful Jekyll / Dean Attali
-# 2fc73a3a967e97599c9763d05e564189
+# 2fc73a3a967e97599aboutmec9763d05e564189
