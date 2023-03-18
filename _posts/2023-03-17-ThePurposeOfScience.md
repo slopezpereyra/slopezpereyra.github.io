@@ -4,19 +4,18 @@ subtitle: A few ethical observations
 ---
 
 
-Technological development is occurring at a rate that greatly surpasses
-our capacity to collectively conceive, consider, and decide upon its ethical
+Technological development is occurring at a rate that greatly surpasses our
+capacity to collectively conceive, consider, and decide upon its ethical
 implications. Ethical decisions fall in the hands of the individuals that own
 the means of such development. These individuals are not necessarily qualified
 for those decisions, but even if they were, every technological advancement
 affecting the general population, decisions on this matter should still be
 democratic. For each success achieved via —let us say— deep neural networks,
 there is a loss: the inference of the molecular structure of every protein known
-to man came with the use of facial recognition by the State —with the funding
-of hope-bearing research comes the wasteful allocation of talented minds and
-money to sterile and futile endeavors —and even with the most fascinating
-technologies, such as the inference of perceived sensory information through EEG
-scans, for each favorable usage one easily fancies a hundred perilous ones.
+to man came with the use of facial recognition by the State —with the funding of
+hope-bearing research comes the wasteful allocation of talented minds and money
+to sterile and futile endeavors —and even with the most fascinating
+technologies, for each positive use one easily fancies a hundred perilous ones.
 
 Insofar as this is true, no scientist concerning himself with the development
 of artificial intelligence can be a blind market actor. I do not see it as a
