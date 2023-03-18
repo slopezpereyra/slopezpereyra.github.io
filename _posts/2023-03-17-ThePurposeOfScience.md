@@ -3,19 +3,6 @@ title: The purpose of (computer) science
 subtitle: A few ethical observations
 ---
 
-The pragmatist view is that the *meaning* of any idea consists entirely on its
-practical effects. The common conception according to which we know what the physical
-concept of *force* implies, but we ignore what it actually *is*, is —the
-pragmatist says— a contradiction: *what it is* is identical to *what it
-implies*. An ethical parallel is the utilitarian notion according to which the
-ethical value of an action resides only and solely in its consequences
-—provided some moral mapping exists to determine what consequences are good and
-bad.
-
-Both conceptions appeal greatly to me, but their application to scientific
-enterprise causes me great discomfort in view of the way technological
-advancement is occurring. It may be wise to ask: what is science striving to
-produce? What effects is it seeking to evoke?
 
 Technological development is occurring at a rate that greatly surpasses
 our capacity to collectively conceive, consider, and decide upon its ethical
@@ -45,25 +32,28 @@ way.
 
 The extent to which computer science, and particularly artificial intelligence,
 can be used for this purpose —the improvement of human life— needs not be put
-out in detail. I have found scientific work, being a small and humble
-component of the great machinery of science, which sets out to understand and
-to ameliorate human suffering, and to cast the spell of ignorance away, is more
-than I could ask for. But this needs not be the case for everybody.
-Nothing of what was said here is a lecture on *what to do*; rather, it is a
-discourse on *what to care about*. Humane and honest ponderation upon the
-latter point should suffice to disclose a path for anyone.
+out in detail. I have found scientific work, being a small and humble component
+of the great machinery of science, which sets out to understand and to
+ameliorate human suffering, and to cast the spell of ignorance away, is more
+than I could ask for. But this needs not be the case for everybody. Nothing of
+what was said here is a lecture on *what to do*; rather, it is a discourse on
+*what to care about*. Humane and honest ponderation upon the latter point
+should suffice to disclose a path for anyone.
 
-The cynic's reply to all of this, I disregard. As long as
-there are objectively good and bad things —a tenet I here axiomatically accept,
-not being this the place to make its case— as long as there are things truly
-deserving of the epithets *good* and *bad*, I say, it will immediately follow a
-necessary concern for proliferating the ones worthy of the first, and
-diminishing those that bear the latter. The widespread idea that such an elementary
-concern should disappear in what comes to our role in society, in the name of a
+The cynic's reply to all of this, I disregard. As long as there are objectively
+good and bad things —a tenet I here axiomatically accept, not being this the
+place to make its case— as long as there are things truly deserving of the
+epithets *good* and *bad*, I say, it will immediately follow a necessary
+concern for proliferating the ones worthy of the first, and diminishing those
+that bear the latter. The widespread idea that such an elementary concern
+should disappear in what comes to our role in society, in the name of a
 so-called natural tendency to maximize individual profit at all costs, is not
-even worth the attention of anyone sane enough to conceive the perils (and utter
-wastefulness) of blind technological advancement as it occurs today.
+even worth the attention of anyone sane enough to conceive the perils (and
+utter wastefulness) of blind technological advancement as it occurs today.
 
-The meaning of any idea is the whole of its effects. I venture: the meaning of
-any discipline too. Whatever meaning computer science is to have lays in our hands.
+The meaning of any idea —the pragmatist claims— is the whole of its effects. I
+venture: the meaning of any discipline too. Whatever meaning computer science
+is to have lays in our hands.
+
+
 
