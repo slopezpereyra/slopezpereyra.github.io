@@ -5,7 +5,8 @@ subtitle: Scientific and personal notes
 ---
 
 <div class="posts-list">
-  {% for post in paginator.studies %}
+  {% for post in paginator.posts %}
+  {% if "science" in post.tags %}
   <article class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
 	  <h2 class="post-title">{{ post.title }}</h2>
