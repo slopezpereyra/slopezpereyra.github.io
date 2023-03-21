@@ -40,11 +40,11 @@ title-img: /img/logo.png
 paginate: 5 
 pagination: 
     - paginate:
-        path:       /science_blog/page:num/
-        per_page:   5
+        path: /science_blog/page:num/
+        per_page: 5
     - paginate:
-        path:       /personal_blog/page:num/
-        per_page:   5
+        path: /personal_blog/page:num/
+        per_page: 5
 
 # --- Background colour/image options --- #
 
