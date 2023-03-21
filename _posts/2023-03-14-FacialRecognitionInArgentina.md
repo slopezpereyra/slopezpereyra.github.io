@@ -1,5 +1,6 @@
 ---
 title: Reconocimiento facial en Argentina
+tags: [Politica, Argentina]
 ---
 
 

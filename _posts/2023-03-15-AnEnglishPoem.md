@@ -1,5 +1,6 @@
 ---
 title: An English poem
+tags: [Poetry]
 ---
 
 ##### An English Poem 
