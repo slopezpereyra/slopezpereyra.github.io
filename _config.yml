@@ -122,6 +122,13 @@ defaults:
       layout: "page"
       show-avatar: true
 
+# Collections 
+collections:
+  science:
+    permalink: /science/:path/
+  personal:
+    permalink: /personal/:path/
+
 # Use tags pages (not recommended if you are deploying via GitHub pages, only set to true if deploying locally with ruby)
 link-tags: false
 
