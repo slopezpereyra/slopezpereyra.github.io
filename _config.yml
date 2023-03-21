@@ -23,7 +23,8 @@ description: 'A series of notes'
 
 # List of links in the navigation bar
 navbar-links:
-  Blog: "http://slopezpereyra.github.io"
+  Science: "http://slopezpereyra.github.io/science"
+  Personal: "http://slopezpereyra.github.io/personal"
   About Me: "aboutme"
   
 
