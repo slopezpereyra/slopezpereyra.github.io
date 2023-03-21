@@ -23,10 +23,8 @@ description: 'A series of notes'
 
 # List of links in the navigation bar
 navbar-links:
-  Science: "science"
-  Personal: "personal"
+  Blog: "http://slopezpereyra.github.io"
   About Me: "aboutme"
-  Test: "second_index"
   
 
 # Image to show in the navigation bar - image must be a square (width = height)
@@ -36,15 +34,6 @@ navbar-links:
 # If you want to have an image logo in the top-left corner instead of the title text,
 # then specify the following parameter
 title-img: /img/logo.png
-
-paginate: 5 
-pagination: 
-    - paginate:
-        path: /science_blog/page:num/
-        per_page: 5
-    - paginate:
-        path: /personal_blog/page:num/
-        per_page: 5
 
 # --- Background colour/image options --- #
 
