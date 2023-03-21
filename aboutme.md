@@ -1,4 +1,4 @@
----
+c--
 layout: page
 title: About me
 ---
@@ -29,7 +29,7 @@ and (try to) produce literature —particularly poetry.
 
 With so varying interests, I found it very difficult as a young student to
 choose a career path. I did not know whether I wanted to be a poet, a
-philosopher, a mathematician, or a scientist. The process by virtue of which I
+philosopher, a mathematician, or a scientist. The process by virtue of which
 science got the upper hand is hardly transparent even to myself —however badly
 that may sound. But I love scientific work —and I still love all those things I
 once considered devoting my life to. So in short, this blog is an attempt at
