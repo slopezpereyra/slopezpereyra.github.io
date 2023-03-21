@@ -37,6 +37,15 @@ navbar-links:
 # then specify the following parameter
 title-img: /img/logo.png
 
+paginate: 5 
+pagination: 
+    - paginate:
+        path:       /science_blog/page:num/
+        per_page:   5
+    - paginate:
+        path:       /personal_blog/page:num/
+        per_page:   5
+
 # --- Background colour/image options --- #
 
 # By default, the navigation bar and footer have a light gray background, and the main page
