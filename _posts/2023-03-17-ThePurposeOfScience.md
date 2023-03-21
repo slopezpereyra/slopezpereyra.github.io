@@ -51,8 +51,5 @@ even worth the attention of anyone sane enough to conceive the perils (and
 utter wastefulness) of blind technological advancement as it occurs today.
 
 The meaning of any idea —the pragmatist claims— is the whole of its effects. I
-venture: the meaning of any discipline too. Whatever meaning computer science
-is to have lays in our hands.
-
-
+venture: the meaning of any discipline too. 
 
