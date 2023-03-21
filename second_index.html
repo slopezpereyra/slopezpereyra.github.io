@@ -1,12 +1,12 @@
 ---
 layout: page
-title:  Santiago Lopez Pereyra
-subtitle: Notes
+title:  Testing
+subtitle: Testing
+use-site-title: true
 ---
 
 <div class="posts-list">
   {% for post in paginator.posts %}
-  {% if post.tags.size > 0 %}
   <article class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
 	  <h2 class="post-title">{{ post.title }}</h2>
@@ -53,7 +53,6 @@ subtitle: Notes
     {% endif %}
 
    </article>
-  {% endif %}
   {% endfor %}
 </div>
 
