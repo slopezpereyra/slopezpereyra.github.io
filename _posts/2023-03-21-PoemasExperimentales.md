@@ -1,6 +1,6 @@
 ---
 title: Dos bocetos
-categories: [ Poetry ]
+categories: [ Literature ]
 ---
 
 ### I

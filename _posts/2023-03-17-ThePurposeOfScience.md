@@ -1,7 +1,7 @@
 ---
 title: The purpose of (computer) science 
 subtitle: A few ethical observations
-categories: [ Science, Other ]
+categories: [ Science ]
 ---
 
 

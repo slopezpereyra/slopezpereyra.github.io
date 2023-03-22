@@ -1,6 +1,6 @@
 ---
 title: Poemas adolescentes
-categories: [ Poetry ]
+categories: [ Literature ]
 ---
 
 >«Nuestra alma, pozo de agua viva.»
