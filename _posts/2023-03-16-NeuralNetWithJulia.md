@@ -1,6 +1,7 @@
 ---
 title: A neural network with Julia 
 subtitle: Notes on a group-theory based approach
+categories: [ Science ]
 ---
 
 ### General structures 
