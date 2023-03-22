@@ -1,6 +1,6 @@
 ---
 title: An English poem
-tags: [ Literature ]
+categories: [ Literature ]
 ---
 
 ##### An English Poem 
