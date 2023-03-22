@@ -1,5 +1,6 @@
 ---
 title: Gaussian Mixtures - Quick notes
+categories: [ Science ]
 ---
 
 
