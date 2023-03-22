@@ -1,11 +1,8 @@
 ---
-title: Poemas experimentales
+title: Dos bocetos
 ---
 
-Los poemas que recojo en esta entrada son o bien ejercicios al estilo de César
-Vallejo, o bien bosquejos que no fueron terminados nunca, o ambos.
-
----
+### I
 
 > «y vi que estuve vivo con la muerte, <br>
 y vi que con la vida estaba muerto.» <br>
@@ -38,22 +35,23 @@ mas, ciego con la muerte, yo te vi...!<br>
 
 ------- 
 
-Mi Cristo retrocede a las sacras escrituras<br>
-que dictaron tus labios de mujer:<br>
-los clavos de su cruz han sido firmes,<br>
-y fueron hoy más trágicos que ayer...! <br>
+### II
 
+Algo de mí fue escrito en las sacras escrituras<br>
+que dictaron tus labios de mujer.<br>
+Los clavos de tu cruz han sido firmes,<br>
+y fueron hoy más trágicos que ayer...! <br>
 La atmósfera de nuestro paraíso <br>
 tiene sabor a cementerio y hiel,<br>
 como si nuestra vida fuera la hogaza pobre <br>
 de un pan de camposanto que habremos de saber...! <br>
-
-En éxodos sombríos --la arena fue perversa,<br>
-mordiéndonos las almas y los pies-- <br>
+En éxodos sombríos —la arena fue perversa,<br>
+mordiéndonos las almas y los pies— <br>
 abandonamos libres la insidia faraónica,<br>
-y en ti y en mí vibraba la sangra de Yahvéh! <br>
-
-Pero un aire de muertos ensucia el paraíso,<br>
-un aire de quien sabe que no voloverá a nacer,<br>
-y me pregunto: ¿es cierto, amor, que fuimos libres?<br>
+y en ti y en mí vibraba la sangre de Yahvéh! <br>
+Ya entonces presentimos los signos penumbrales,<br>
+estigmas de quien sabe que no voloverá a nacer,<br>
+y me pregunto: ¿es cierto que entonces fuimos libres?<br>
 Cadenas hay que oprimen más hondo que los pies...!<br>
+
+

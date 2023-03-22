@@ -24,7 +24,7 @@ a luz.
 
 ------
 
-##### I
+#### I
 
 La casa es un arenal, <br>
 la puerta un pájaro torvo.<br>
@@ -35,7 +35,7 @@ Desierto, siempre te queda<br>
 aquel manantial del odio.<br>
 
 Allí tenderé mi cuerpo<br>
-cuando haya saciado todo.<br>
+cuando hayas saciado todo.<br>
 
 Parece la habitación<br>
 el esqueleto de agosto:<br>
@@ -115,7 +115,7 @@ relumbrará mi voz.<br>
 
 Relumbrará:<br>
 y al despertar,<br>
-dirás se ha ido.<br>
+dirás *se ha ido*.<br>
 
 (Habrá un aliento a mar.)<br>
 
