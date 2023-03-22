@@ -1,5 +1,6 @@
 ---
 title: Tres poemas
+categories: [ Literature ]
 ---
 
 ##### A mí mismo

@@ -1,5 +1,6 @@
 --- 
 title: Un sueño breve 
+categories: [ Other ]
 ---
 
 ##### Un sueño breve

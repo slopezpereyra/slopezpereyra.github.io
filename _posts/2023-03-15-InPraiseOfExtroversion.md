@@ -1,5 +1,6 @@
 ---
 title: In praise of extroversion
+title: [ Literature ]
 ---
 
 #### In praise of extroversion

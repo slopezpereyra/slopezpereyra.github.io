@@ -1,5 +1,6 @@
 ---
 title: Research notes - TMS
+categories: [ Science ]
 ---
 
 For simplicity, we will deal with the hypothetical situation in which a single ISI was used for paired stimulations. All of our results generalize to different ISI.
