@@ -1,6 +1,6 @@
 ---
 title: Reconocimiento facial en Argentina
-categories [ Other ]
+categories: [ Other ]
 ---
 
 

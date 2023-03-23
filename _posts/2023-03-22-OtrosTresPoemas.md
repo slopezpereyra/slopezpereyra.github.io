@@ -51,25 +51,24 @@ Es ella. Tú la obraste entre las flores*».<br>
 
 ---
 
-### Aurora 
+### Un soneto
 
-Eras como la aurora, penumbra y mediodía.
-La aurora nos ilustra que siempre es necesaria
-la muerte, con su noche profunda y milenaria,
-para el que está soñando con ver la luz del día.
+Eras como la aurora, penumbra y mediodía.<br>
+La aurora nos ilustra que siempre es necesaria<br>
+la muerte, con su noche profunda y milenaria,<br>
+para el que está soñando con ver la luz del día.<br>
 
-Yo siempre he sido tuyo, tú siempre has sido mía;
-desde antes que la mano incólume y precaria
-de un dios crepuscular le diera a mi embrionaria
-esencia alguna forma, tu sangre en mí ya ardía.
+Yo siempre he sido tuyo, tú siempre has sido mía;<br>
+desde antes que la mano incólume y precaria<br>
+de un dios crepuscular le diera a mi embrionaria<br>
+esencia alguna forma, tu sangre en mí ya ardía.<br>
 
-Mil muertes es el alma, mil muertes ominosas
-para alumbrar apenas la faz de nuestras vidas,
-para olvidar a un hombre, para olvidar un día.
+Mil muertes es el alma, mil muertes ominosas<br>
+para alumbrar apenas la faz de nuestras vidas,<br>
+para olvidar a un hombre, para olvidar un día.<br>
 
-Pero la aurora alumbra las más oscuras cosas
-en este nuevo mundo de estrellas ya vencidas,
-y hasta a una mosca nutre la flor en su agonía…!
-
+Pero la aurora alumbra las más oscuras cosas<br>
+en este nuevo mundo de estrellas ya vencidas,<br>
+y hasta a una mosca nutre la flor en su agonía…!<br>
 
 
