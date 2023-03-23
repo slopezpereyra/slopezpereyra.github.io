@@ -11,7 +11,7 @@ y  las floridas estrellas<br>
 su hojarasca milenaria.<br>
 
 —*¿Y qué es un sueño?*—, dijiste.<br>
-—¿Y qué es soñar?*—, preguntabas.<br>
+—*¿Y qué es soñar?*—, preguntabas.<br>
 Mientras, la copa del árbol<br>
 y el cielo se entrelazaban.<br>
 
