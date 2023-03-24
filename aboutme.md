@@ -11,7 +11,7 @@ It would certainly be misleading to begin this with the universal form: I am an
 $x$ currently employed at $y$, etc. For the very purpose of this blog is to
 serve as a unifying point for the most various of my interests, from literature
 to mathematics. Since some —though certainly not most— of the entries will
-relate to my field, I am however forced to comply to the canonical standards.
+relate to my field, I am however forced to comply with the canonical standards.
 
 I am a data scientist —whatever that means—, currently working at a neuroscience
 laboratory in UPenn. I entered the field after a few years of studying computer
