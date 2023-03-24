@@ -1,9 +1,8 @@
-c--
+---
 layout: page
 title: About me
 ---
 ## About me
-<div style="text-align: justify">
 
 Hello! 
 

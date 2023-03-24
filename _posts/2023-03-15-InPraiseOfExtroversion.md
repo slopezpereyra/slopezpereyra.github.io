@@ -1,5 +1,6 @@
 ---
 title: In praise of extroversion
+subtitle: A random diary entry
 categories: [ Literature ]
 ---
 
@@ -12,26 +13,26 @@ with silence or with voice. And silence knows not of forgiveness nor of love;
 and lacks the warmth of all that is existing, even of all that which is terrible
 and grieves the soul. 
 
-Who looks outside, dreams; who looks inside, awakes. Such
-was the claim of Dr. Jung, whose works were the intellectual capital of the last
-two years of my life. When the darkest facets of human condition revealed before
-me, like a deafening roar, I fell prey to a kind of spiritual isolation, and
-tried to find in my soul an answer to ---a reflection of--- the new visage of
-existence, and took his work as guidance with the hope that it would aid me in
-making sense of what was then a tortured existence. I shall not provide
-scientific or intellectual insight into the work of Dr. Jung. I shall only speak
-of its usefulness as an antidote to suffering, and this only insomuch as it
-advises the profoundest introspection. This may be very well interpreted, then,
-not as much a critique of his ideas, but a general opinion against reverie and
-absorption. 
+*Who looks outside, dreams; who looks inside, awakes*. Such was the —rather
+pretentious— claim of Dr. Jung, whose works were the intellectual capital of
+the last two years of my life. When the darkest facets of human condition
+revealed before me, like a deafening roar, I fell prey to a kind of spiritual
+isolation, and tried to find in my soul an answer to —a reflection of— the new,
+menacing visage of existence —and took his work as guidance with the hope that
+it would aid me in making sense of what was then a confused existence. I shall
+not provide scientific or intellectual insight into the work of Dr. Jung. I
+shall only speak of its usefulness as an antidote to suffering, and this only
+insomuch as it advises the profoundest introspection. This may be very well
+interpreted, then, not as much a critique of his ideas, but a general opinion
+against reverie and absorption. 
 
 Unrestricted introspection, I come to think, can truly become a
 morbid form of satisfaction, an exquisite and obscure fetish. There is no soul
 on earth that would not surely find dread and terror and excitement if solely
 occupied with the honest examination of itself. One of Jung's conceptions was
 that one should become aware of the unconscious, inferior aspects of oneself,
-and integrate them into consciousness, and this seems --psychoanalytic
-assumptions aside-- very sound advice. But the discovery of one's shadow, as he
+and integrate them into consciousness, and this seems —psychoanalytic
+assumptions aside— very sound advice. But the discovery of one's shadow, as he
 puts it, can hardly demand that much introspection, for any honest examination
 readily reveals within us countless selfish, violent, and despicable impulses,
 so much that the very observation that one "has a shadow" is very close to
