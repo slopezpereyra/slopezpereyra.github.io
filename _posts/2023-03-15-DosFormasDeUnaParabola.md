@@ -1,6 +1,6 @@
 ---
 title: Dos formas de una parábola
-categories: [ Literature ]
+categories: [ Personal ]
 ---
 
 #### Dos formas de una parábola

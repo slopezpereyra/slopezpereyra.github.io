@@ -1,6 +1,6 @@
 ---
 title: On a particular place in the world
-categories: [ Literature ]
+categories: [ Personal ]
 ---
 
 

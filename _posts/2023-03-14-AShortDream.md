@@ -1,6 +1,6 @@
 --- 
 title: Un sueño breve 
-categories: [ Literature ]
+categories: [ Personal ]
 ---
 
 ##### Un sueño breve

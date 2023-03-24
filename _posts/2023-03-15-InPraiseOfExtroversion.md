@@ -1,7 +1,7 @@
 ---
 title: In praise of extroversion
 subtitle: A random diary entry
-categories: [ Literature ]
+categories: [ Personal ]
 ---
 
 #### In praise of extroversion
