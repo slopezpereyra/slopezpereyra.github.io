@@ -127,10 +127,11 @@ the activation of the sodium channel, and $h$ the inactivation of the sodium
 channel. Then 
 
 $$
-\begin{align*}
-    g_k &= g^{\max}_{K} n^4 \newline 
-    g_{\text{Na}} &= g^{\max}_{\text{Na}} m^3 h
-.\end{align*}
+g_k = g^{\max}_{K} n^4
+$$
+
+$$
+g_{\text{Na}} = g^{\max}_{\text{Na}} m^3 h
 $$
 
 where $g^{\max}_{\text{ion}}$ is the maximum conductance. Here, $n, m, h$
