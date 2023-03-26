@@ -128,12 +128,12 @@ channel. Then
 
 $$
 \begin{align*}
-    g_K &= \bar{g}_{K}n^4 \newline
-    g_{\text{Na}} &= \bar{g}_{\text{Na}}m^3h
+    g_K &= g^{\max}_{K}n^4 \newline
+    g_{\text{Na}} &= g^{\max}_{\text{Na}}m^3h
 \end{align*}
 $$
 
-where $\overline{g}_{\text{ion}}$ is the maximum conductance. Here, $n, m, h$
+where $g^{\max}_{\text{ion}}$ is the maximum conductance. Here, $n, m, h$
 are modulation factors around maximum conductances, and are understood to belong
 to the real interval $[0, 1]$.
 
