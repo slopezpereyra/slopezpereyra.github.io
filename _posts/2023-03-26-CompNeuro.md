@@ -5,9 +5,9 @@ categories: [ Science ]
 
 ## Neuron simulation
 
-##### Excitatory and inhibitory postsynaptic potentials 
+### Excitatory and inhibitory postsynaptic potentials 
 
-The following model was found the suit the experimental data appropriately.
+The following model was found to suit the experimental data appropriately.
 
 $$
 \begin{align}
@@ -15,7 +15,7 @@ $$
 \end{align}
 $$
 
-Here, $w$ modulates the efficiency of the synapse and $t^{\text{peak}}$ the
+Here, $w$ modulates the efficiency of the synapses and $t^{\text{peak}}$ the
 time of the peak in the signal. Inhibitory postsynaptic potentials simply
 contain a negative efficiency parameter $w$. 
 
