@@ -128,9 +128,9 @@ channel. Then
 
 $$
 \begin{align*}
-    g_K &= \overline{g}_{K}n^4 \\ 
-    g_{Na} &= \overline{g}_{Na}m^3h
-.\end{align*}
+    g_K &= \bar{g}_{K}n^4 \newline
+    g_{\text{Na}} &= \bar{g}_{\text{Na}}m^3h
+\end{align*}
 $$
 
 where $\overline{g}_{\text{ion}}$ is the maximum conductance. Here, $n, m, h$
@@ -201,12 +201,12 @@ capacitance $C$.
 
 $$
 \begin{align*}
-        &V : \text{Voltage, membrane potential} \\ 
-        &I_{\text{ion}} : \text{Ion flow across membrane} \\ 
-        &g_{\text{ion}} : \text{Conductance of ion} \\ 
-        &E_{\text{ion}} : \text{Equilibrium potential of ion} \\ 
-        &C : \text{Capacitance of the neuron, understood as a capacitor} \\ 
-        &q : \text{Charge of the neuron, understood as a capacitor} \\ 
+        &V : \text{Voltage, membrane potential} \newline
+        &I_{\text{ion}} : \text{Ion flow across membrane} \newline
+        &g_{\text{ion}} : \text{Conductance of ion} \newline
+        &E_{\text{ion}} : \text{Equilibrium potential of ion} \newline
+        &C : \text{Capacitance of the neuron, understood as a capacitor} \newline
+        &q : \text{Charge of the neuron, understood as a capacitor} \newline
 \end{align*}
 $$
 
