@@ -128,9 +128,9 @@ channel. Then
 
 $$
 \begin{align*}
-    g_K &= g^{\max}_{K}n^4 \newline
-    g_{\text{Na}} &= g^{\max}_{\text{Na}}m^3h
-\end{align*}
+    g_k &= g^{\max}_{K} n^4 \newline 
+    g_{\text{Na}} &= g^{\max}_{\text{Na}} m^3 h
+.\end{align*}
 $$
 
 where $g^{\max}_{\text{ion}}$ is the maximum conductance. Here, $n, m, h$
