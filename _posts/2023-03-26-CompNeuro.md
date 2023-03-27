@@ -66,7 +66,7 @@ postsynaptic neurons have been excited; this is, after the membrane potential
 was increased by other ion channels. The reason is that NMDA channels in resting
 state are blocked by magnesium ions ($\text{MG}^{2\text{+}}$), which are to be
 removed before sodium ($\text{Na}^{\text{+}}$) and calcium
-($\text{Ca}^{2\text{+}}$) can enter the neuron throgh them. This will be
+($\text{Ca}^{2\text{+}}$) can enter the neuron through them. This will be
 important in future considerations.
 
 ## The Hodgkin-Huxley model 
@@ -85,25 +85,25 @@ action potentials are initiated and propagated at the single-neuron level.
 
 At least two types of voltage-dependent ion channels are required to evoke an
 action potential in a neuron. Sodium channels open up in response to an
-increase of the membrane potential --for example, due to the opening of
-neurotransmitter-gated ion channels and subsequent depolarization--. The influx
+increase of the membrane potential —for example, due to the opening of
+neurotransmitter-gated ion channels and subsequent depolarization—. The influx
 of $\text{Na}^{\text{+}}$, due to the lower concentration of this ion in the
 interior of the cell, brings the membrane closer to the sodium resting
 potential of $\approx +65 \text{mV}$.  This is the mechanism behind the rising
-phase of the action potential. This rise in membran potential provokes to
-seperate but simultaneous phenomena, both occuring about $1 \text{ms}$
+phase of the action potential. This rise in membrane potential provokes two
+separate but simultaneous phenomena, both occurring about $1 \text{ms}$
 after the opening of the sodium channels: 
 
 - $i.$ A protein blocks the sodium
-channels, stoping the influx of this ion; 
-- $ii.$ voltage-dependent potassium channels open, and a subsequent eflux of
+channels, stopping the influx of this ion; 
+- $ii.$ voltage-dependent potassium channels open, and a subsequent efflux of
   $K^{+}$ drives the membrane potential towards its related potassium resting
   potential, $\approx -80 \text{mV}$.
 
 The resulting hyperpolarization causes both voltage-dependent channels to close,
-which restors the neuron to its resting state.
+which restores the neuron to its resting state.
 
----
+—-
 
 **Note**. I omitted the important role of ion pumps, leakage.
 
@@ -148,9 +148,9 @@ $$
 where $x$ can be substituted by $n, m$ or $h$. I will not explain in detail
 right now the functional relation of $\tau_x$ and $x_0$ with $V$.
 
-Now, we move towrads a description of the general dynamics of the membrane
-potential with respect to all previous factors. A preliminary --and rather
-conceptual step-- is to conceive the neuron as a capacitor --in simplified
+Now, we move towards a description of the general dynamics of the membrane
+potential with respect to all previous factors. A preliminary —and rather
+conceptual step— is to conceive the neuron as a capacitor —in simplified
 terms, as something that can store an electric charge. We wish to describe the
 change $\frac{dq}{dt}$ across time, where $q$ is the charge held. But the cause
 of charge variation is the current flow through the ion channels, which produces
@@ -181,7 +181,7 @@ is the *Voltage equation*, and it is a beautiful description of the natural
 change in voltage across time in terms of all the factors we have discussed
 before.
 
--------------------
+---------
 #### Notation summary 
 
 $$
@@ -197,5 +197,5 @@ $$
 
 One does well in remembering that for a capacitor we have $C = \frac{q}{V}$.
 
----------------
+-------------
 
