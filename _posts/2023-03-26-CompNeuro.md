@@ -215,9 +215,8 @@ one arrives at the discretized form
 
 $$ 
 \begin{align*}
-    x(t + \Delta t) &= x(t) + \Delta t \Big( -\frac{1}{\tau_x} (x(t) - x_0) \Big) \\ 
-                    &= x(t)(1 - \frac{\Delta t}{\tau_x}) - \frac{\Delta
-                    t}{\tau_x}x_0
+    x(t + \Delta t) &= x(t) + \Delta t \Big( -\frac{1}{\tau_x} (x(t) - x_0) \Big) \newline
+                    &= x(t)(1 - \frac{\Delta t}{\tau_x}) + \frac{\Delta t}{\tau_x}x_0
 \end{align*}
 $$
 
