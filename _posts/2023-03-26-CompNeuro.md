@@ -199,3 +199,67 @@ One does well in remembering that for a capacitor we have $C = \frac{q}{V}$.
 
 -------------
 
+### Simulating action potentials with Hodgkin-Huxley's model 
+
+In Julia, we can perform a relatively straightforward implementation of the
+model we described above. We use Euler's method for numeric integration. 
+
+```julia 
+function hh()
+    
+    # Maximual conductances for K, Na, R.
+    gmax = [36, 120, 0.3]
+
+    # Battery voltages or activations of the ion channels, 
+    E = [-12, 115, 10.613]
+
+    I_ext = 0; V = -10; x = [0, 0, 1]; t_rec = 0;
+    dt = 0.01
+    x_plot = []; y_plot = [];
+
+    for t in range(-30, 250, step=dt)
+        if t == 10 
+            I_ext = 10
+        end 
+        if t == 200
+            I_ext = 0 
+        end 
+
+        # Alpha functions 
+        α₁ = (10 - V)/(100 * (exp((10 - V)/10) - 1))
+        α₂ = (25 - V) / (10 * (exp((25-V)/10) - 1)) 
+        α₃ = 0.07 * exp(-V/20)
+        α = [α₁, α₂, α₃]
+
+        # Beta functions
+        β₁ = 0.125 * exp(-V/80)
+        β₂ = 4 * exp(-V/18)
+        β₃ = 1 / (exp((30 - V)/10) + 1)
+        β = [β₁, β₂, β₃]
+
+        # τₓ and x₀
+        τₓ = 1 ./ (α + β)
+        x₀ = α .* τₓ
+
+        # Leaky integration with Euler method 
+        x = (1 .- dt ./ τₓ) .* x + dt ./ τₓ .* x₀
+
+        # Compute conductances 
+        g = [gmax[1] * x[1]^4, gmax[2] * x[2]^3*x[3], gmax[3]]
+
+        # Ohm's law 
+        I = g .* (V .- E)
+
+        # Update voltage (membrane potential) 
+        V += dt * (I_ext - sum(I))
+
+        if t >= 0 
+            push!(x_plot, t)
+            push!(y_plot, V)
+        end 
+    end
+    plot(x_plot, y_plot)
+end
+
+```
+
