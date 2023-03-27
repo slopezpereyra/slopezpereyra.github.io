@@ -46,6 +46,8 @@ t^{\text{peak}} = 1$, we obtain:
   <img src="https://i.ibb.co/HTkJ0PG/Screenshot-from-2023-03-26-00-58-04.png"/>
 </p>
 
+---
+
 ### NMDA Synapses
 
 NMDA synapses are excitatory synapses. Their rise time is $\approx 10$ times
@@ -69,6 +71,8 @@ removed before sodium ($\text{Na}^{\text{+}}$) and calcium
 ($\text{Ca}^{2\text{+}}$) can enter the neuron through them. This will be
 important in future considerations.
 
+---
+
 ## The Hodgkin-Huxley model 
 
 ### Outline of the model
@@ -80,6 +84,8 @@ the membrane, the conductance of the ion channels, the membrane potential, and
 the relationships among the three. It is through the establishment of these
 mathematical relations that the model provides a satisfying abstraction of how
 action potentials are initiated and propagated at the single-neuron level.
+
+---
 
 ### A quicky review of the minimal mechanisms 
 
@@ -106,6 +112,8 @@ which restores the neuron to its resting state.
 ---
 
 **Note**. I omitted the important role of ion pumps, leakage.
+
+---
 
 ### Hodgkin-Huxley equations 
 
