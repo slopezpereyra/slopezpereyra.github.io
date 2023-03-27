@@ -84,26 +84,28 @@ action potentials are initiated and propagated at the single-neuron level.
 ### A quicky review of the minimal mechanisms 
 
 At least two types of voltage-dependent ion channels are required to evoke an
-action potential in a neuron. 
+action potential in a neuron. Sodium channels open up in response to an
+increase of the membrane potential --for example, due to the opening of
+neurotransmitter-gated ion channels and subsequent depolarization--. The influx
+of $\text{Na}^{\text{+}}$, due to the lower concentration of this ion in the
+interior of the cell, brings the membrane closer to the sodium resting
+potential of $\approx +65 \text{mV}$.  This is the mechanism behind the rising
+phase of the action potential. This rise in membran potential provokes to
+seperate but simultaneous phenomena, both occuring about $1 \text{ms}$
+after the opening of the sodium channels: 
 
-Sodium channels open up in response to an increase of the membrane potential
---for example, due to the opening of neurotransmitter-gated ion channels and
-subsequent depolarization--. The influx of $\text{Na}^{\text{+}}$, due to the
-lower concentration of this ion in the interior of the cell, brings the membrane
-closer to the sodium resting potential of $\approx +65 \text{mV}$.  This is the
-mechanism behind the rising phase of the action potential. 
+- $i.$ A protein blocks the sodium
+channels, stoping the influx of this ion; 
+- $ii.$ voltage-dependent potassium channels open, and a subsequent eflux of
+  $K^{+}$ drives the membrane potential towards its related potassium resting
+  potential, $\approx -80 \text{mV}$.
 
-The falling phase occurs because the sodium-mediated increase in membrane
-potential produces two simultaneous phenomena, both occuring about $1 \text{ms}$
-after the opening of the sodium channels: $i.$ A protein blocks the sodium
-channels, stoping the influx of this ion; $ii.$ voltage-dependent potassium
-channels open, and a subsequent eflux of $K^{+}$ drives the membrane potential
-towards its related potassium resting potential, $\approx -80 \text{mV}$.
+The resulting hyperpolarization causes both voltage-dependent channels to close,
+which restors the neuron to its resting state.
 
-Finally, the resulting hyperpolarization causes both voltage-dependent channels
-to close and the neuron returns to its resting state.
+---
 
-*Omitted*: The role of ion pumps.
+**Note**. I omitted the important role of ion pumps, leakage.
 
 ### Hodgkin-Huxley equations 
 
@@ -117,14 +119,10 @@ $$
 .\end{align*}
 $$
 
-This equation is fairly easy to understand. It relates the net ion flow with the
-conductance of said ion and the distance between the membrane potential and the
-resting potential of that ion. 
-
-The conductance of the ions is described by two equations, since we are dealing
-with two ion channels. Let $n$ be the activation of the potassium channel, $m$
-the activation of the sodium channel, and $h$ the inactivation of the sodium
-channel. Then 
+This equation is fairly easy to comprehend. Now, with $n$ the activation of the
+potassium channel, $m$ the activation of the sodium channel, and $h$ the
+inactivation of the sodium channel, the conductance of the channels is
+described by
 
 $$
 g_k = g^{\max}_{K} n^4
@@ -134,13 +132,12 @@ $$
 g_{\text{Na}} = g^{\max}_{\text{Na}} m^3 h
 $$
 
-where $g^{\max}_{\text{ion}}$ is the maximum conductance. Here, $n, m, h$
-are modulation factors around maximum conductances, and are understood to belong
-to the real interval $[0, 1]$.
+where $g^{\max}_{\text{ion}}$ is the maximum conductance. Here, $n, m, h$ are
+modulation factors around maximum conductances. Which I suppose implies they are
+in the real interval $[0, 1]$?
 
-The justification for these two equations is simply that they fit the
-experimental data reasonably well. The dynamics of these conductances are given
-by the differential equation 
+In any case, the dynamics of these conductances are given by the differential
+equation 
 
 $$
 \begin{align*}
@@ -151,17 +148,14 @@ $$
 where $x$ can be substituted by $n, m$ or $h$. I will not explain in detail
 right now the functional relation of $\tau_x$ and $x_0$ with $V$.
 
-Now that we know the dynamics of the conductance for each ion, and we have an
-expression for the net flow of a given ion, we can arrive at a description of
-the general dynamics of the membrane potential with respect to all previous
-factors. 
-
-A preliminary --and rather conceptual step-- is to conceive the neuron as a
-capacitor --in simplified terms, as something that can store an electric charge.
-We wish to describe the change $\frac{dq}{dt}$ across time, where $q$ is the
-charge held. But the cause of charge variation is the current flow through the
-ion channels, which produces depolarization and hyperpolarization. Then
-$\frac{dq}{dt} = I$, the net (total) ion flow. 
+Now, we move towrads a description of the general dynamics of the membrane
+potential with respect to all previous factors. A preliminary --and rather
+conceptual step-- is to conceive the neuron as a capacitor --in simplified
+terms, as something that can store an electric charge. We wish to describe the
+change $\frac{dq}{dt}$ across time, where $q$ is the charge held. But the cause
+of charge variation is the current flow through the ion channels, which produces
+depolarization and hyperpolarization. Then $\frac{dq}{dt} = I$, the net (total)
+ion flow. 
 
 For any capacitor, we know $q = CV$. It follows $\frac{dq}{dt} = C
 \frac{dV}{dt} = I_c$ is the *capacitive current*. But, according to Kirchoff's
@@ -173,7 +167,7 @@ $$
 .\end{align*}
 $$
 
-From the equation above it immediately follows 
+From this follows
 
 $$
 \begin{align*}
@@ -182,20 +176,10 @@ $$
 $$
 
 where $I(t)$ describes external currents not accounted for the sodium, potassium
-or leakage channels (for example, such as neurotransmitter-gated channels). Of
-course one could also write
-
-$$
-\begin{align*}
-    \frac{dV}{dt} = -\frac{\sum_{\text{ion}} I_{\text{ion}} - I(t)}{C}
-.\end{align*}
-$$
-
-Thus, we have arrived at a general formula for the change in membrane potential
-across time. It is known as the **Voltage equation**. It relates that change
-with the different ionic net flows, which on its turn depend on the conductance
-of the different ions and the current voltage $V$, as well as with the
-capacitance $C$.
+or leakage channels (for example, such as neurotransmitter-gated channels). This
+is the *Voltage equation*, and it is a beautiful description of the natural
+change in voltage across time in terms of all the factors we have discussed
+before.
 
 -------------------
 #### Notation summary 
