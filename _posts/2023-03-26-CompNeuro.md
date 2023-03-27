@@ -201,8 +201,25 @@ One does well in remembering that for a capacitor we have $C = \frac{q}{V}$.
 
 ### Simulating action potentials with Hodgkin-Huxley's model 
 
-In Julia, we can perform a relatively straightforward implementation of the
-model we described above. We use Euler's method for numeric integration. 
+We can implement the model we described above in Julia. For numeric integration
+of the partial differential equations that describe the dynamics of the
+conductances, we use Euler's method. One must simply observe that with
+
+$$
+\begin{align*}
+    \frac{dx}{dt} = -\frac{1}{\tau_x(V)}(x - x_0(V))
+.\end{align*}
+$$
+
+one arrives at the discretized form
+
+$$ 
+\begin{align*}
+    x(t + \Delta t) &= x(t) + \Delta t \Big( -\frac{1}{\tau_x} (x(t) - x_0) \Big) \\ 
+                    &= x(t)(1 - \frac{\Delta t}{\tau_x}) - \frac{\Delta
+                    t}{\tau_x}x_0
+\end{align*}
+$$
 
 ```julia 
 function hh()
@@ -210,20 +227,20 @@ function hh()
     # Maximual conductances for K, Na, R.
     gmax = [36, 120, 0.3]
 
-    # Battery voltages or activations of the ion channels, 
+    # Battery voltages, equilibrium potentials
     E = [-12, 115, 10.613]
-
-    I_ext = 0; V = -10; x = [0, 0, 1]; t_rec = 0;
+    
+    # I_ext is the external current; 
+    # x holds the n, m, h variables (conductances of 
+    # the different ion channels). 
+    I_ext = 0; V = -10; x = [0, 0, 1];
     dt = 0.01
     x_plot = []; y_plot = [];
 
     for t in range(-30, 250, step=dt)
-        if t == 10 
-            I_ext = 10
-        end 
-        if t == 200
-            I_ext = 0 
-        end 
+        # Turn external current on or off according to time.
+        if t == 10  I_ext = 10 end
+        if t == 200 I_ext = 0 end
 
         # Alpha functions 
         α₁ = (10 - V)/(100 * (exp((10 - V)/10) - 1))
@@ -241,7 +258,8 @@ function hh()
         τₓ = 1 ./ (α + β)
         x₀ = α .* τₓ
 
-        # Leaky integration with Euler method 
+        # Leaky integration with Euler method.
+        # See formula above.
         x = (1 .- dt ./ τₓ) .* x + dt ./ τₓ .* x₀
 
         # Compute conductances 
@@ -258,8 +276,13 @@ function hh()
             push!(y_plot, V)
         end 
     end
-    plot(x_plot, y_plot)
+    plot(x_plot, y_plot, label="Membrane potential")
+    xlabel!("t")
+    ylabel!("V")
 end
-
 ```
+
+<p align="center">
+  <img src="https://i.ibb.co/0X1PxCB/Screenshot-from-2023-03-27-11-29-42.png"/>
+</p>
 
