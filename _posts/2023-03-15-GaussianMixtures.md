@@ -86,8 +86,7 @@ that maximizes the likelihood function $\mathcal{L}_n(\theta;X)$. Assuming our
 variables are random and independent,
 
 $$
-\max_\theta \space \mathcal{L}_n(\theta;X) = \max_\theta \space
-\prod_{k=1}^n \mathcal{L}_n(x_k; \theta)
+\max_\theta \space \mathcal{L}_n(\theta;X) = \max_\theta \space \prod_{k=1}^n \mathcal{L}_n(x_k; \theta)
 $$ 
 
 Now, let $\log \mathcal{L}_n(\theta) = \ell (\theta; X)$ be the
@@ -108,8 +107,9 @@ Because $\text{max}_\theta$ does not change when we rescale the function, we
 can dividte the previous sum by $n$ so as to formulate our result as the
 expected probability of $X$ given $\theta$,
 
-$$\frac{1}{n}\sum_{k=1}^n \ell (x_k;\theta) = \mathbb{E} \Big[\ell
-(x_k;\theta)\Big]$$
+$$
+\frac{1}{n}\sum_{k=1}^n \ell (x_k;\theta) = \mathbb{E} \Big[\ell (x_k;\theta)\Big]
+$$
 
 
 -------------
