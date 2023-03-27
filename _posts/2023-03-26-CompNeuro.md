@@ -103,7 +103,7 @@ channels, stopping the influx of this ion;
 The resulting hyperpolarization causes both voltage-dependent channels to close,
 which restores the neuron to its resting state.
 
-—-
+---
 
 **Note**. I omitted the important role of ion pumps, leakage.
 
