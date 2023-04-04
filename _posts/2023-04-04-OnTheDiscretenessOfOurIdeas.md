@@ -1,6 +1,6 @@
 ---
 title: On the discreteness of our ideas 
-categories : [ Science ]
+categories : [ Personal ]
 ---
 
 Assume, for the moment, that every idea is a distinct object defined by its
