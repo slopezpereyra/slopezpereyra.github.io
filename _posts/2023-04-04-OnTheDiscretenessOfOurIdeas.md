@@ -11,7 +11,7 @@ categories : [ Personal ]
 
 Assume, for the moment, that every idea is a distinct object, defined by its
 content and its particular relation to other ideas. Any set of ideas, under this
-perspective, conforms a discrete an ordered set, the complexity of which a is a
+perspective, conforms a discrete an ordered set, the complexity of which is a
 reflection of the richness in their connections. (It makes no difference to
 discuss whether the relation between ideas is inherent to their content, and
 thus independent of our perception of them, or rather determined by our
@@ -38,7 +38,7 @@ the elementary to the conclusive thoughts.
 This general conception has its pragmatic complement in the Zettelkasten
 note-taking system. Such system consists of writing short, individual ideas in
 separate entries and encoding them with only two properties: an arbitrary form
-of identification, and a list of all ideas to which that idea associates. The
+of identification, and a list of all ideas to which they associate. The
 result is —once more— a discrete set of connected elements. A partially ordered
 set, sensible to many a variety of graph representations.
 
@@ -73,20 +73,20 @@ naturally.
 However, this confusion is a consequence of our loose use of the term
 "connects". So far, we have implicitly conceived any set of ideas to be
 *directed*: a train of thought following from minimal ideas *towards*
-intermediate and final ideas. So it becomes clear that to say "the idea $\pi$
-connects to the idea $\tau$", or $\pi \preceq tau$, is to speak of a very
+intermediate and final ideas. So it becomes clear that to say "idea $\pi$
+connects to idea $\tau$", or $\pi \preceq \tau$, is to speak of a very
 determined kind of connection, which one may term "begets", "suggests",
 "implies", etc. 
 
 In some cases, such as our example above, $\pi \preceq \tau$ and $\tau \preceq
 \pi$ will only express a difference in the order in which the particular thread
-was was formed in our minds. In other cases, such as inferences or deductions,
-$\pi \preceq \tau$ and $\tau \preceq \pi$ are semantically incompatible unless
-$\pi = \tau$. An example of this are the ideas "All man are mortal and Socrates
-is a man", on one hand, and "Socrates is mortal". (I should emphasize that our
-conception is not particularly concerned with syllogisms, especially insofar as
-it is not concerned with individual propositions, since any particular idea is
-allowed to be an arbitrarily complex set of propositions.)
+was formed in our minds. In other cases, such as inferences or deductions, $\pi
+\preceq \tau$ and $\tau \preceq \pi$ are semantically incompatible unless $\pi
+= \tau$. An example of this are the ideas "All man are mortal and Socrates is a
+man", on one hand, and "Socrates is mortal", on the other. (I should emphasize
+that our conception is not particularly concerned with syllogisms, especially
+insofar as it is not concerned with individual propositions, since any
+particular idea is allowed to be an arbitrarily complex set of propositions.)
 
 We can, of course, dispose of the assumption of anti-symmetry (which would imply
 the ascription of a different meaning to the term "connects" ($\preceq$)). In
