@@ -3,6 +3,12 @@ title: On the discreteness of our ideas
 categories : [ Personal ]
 ---
 
+> And even in our wildest and most wandering reveries, nay in our very dreams,
+> we shall find, if we reflect, that the imagination ran not altogether at
+> adventures, but that there was still a connexion upheld among the different
+> ideas, which succeeded each other. <br><br>
+> — Hume, *An enquiry concerning human understanding*
+
 Assume, for the moment, that every idea is a distinct object defined by its
 content and its particular relation to other ideas. Under this conception, the
 set of your ideas is a discrete and ordered set, and the complexity of such set
