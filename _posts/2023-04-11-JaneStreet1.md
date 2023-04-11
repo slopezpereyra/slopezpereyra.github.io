@@ -1,6 +1,5 @@
 --- 
-title: A tricky probability problem from Jane Street 
-categories: [ Science, Personal ]
+title: A tricky probability problem from Jane Street categories: [ Science, Personal ]
 ---
 
 ### The problem
@@ -165,6 +164,68 @@ than reasoning. One computes the derivative of this function and finds its
 maximum, which is at $x = \frac{\sqrt{13} - 3}{2}$. Since such $x$ is the best
 policy, then one uses the fact that $1 - P(Win) = 1 - (1-x)e^x = P(Loosing)$ to
 find the probability of losing given this optimization. I skip this calculations
-because they are unessential to the problem.
+because they are unessential to the problem. 
+
+To be sure, I created a Julia simulation of the game. It has a robot play the
+game a great number of times over the linear range $[0, 1]$ (with infinitesimal
+discrete steps). Each blue point is the average score of the robot on a given
+value of $x$ across a great number of simulations. With enough simulations per
+$x$, we observe the analytic result of $x = \frac{\sqrt{13} - 3}{2}$ coincides
+exactly with (or is infinitely close to) the experimental maximum score.
+
+<p align="center">
+  <img src="https://i.ibb.co/p2J5ydx/Screenshot-from-2023-04-10-22-50-43.png" alt="Alt text">
+</p>
+
+For the curious, I attach the code of the simulation.
+
+```julia 
+function sim_round(λ, iters=10_000)
+    """Simulates a round of the game under a specific criteria λ 
+    (the equivalent of x in our math notation)"""
+
+    results = []
+    for i in range(1, iters)
+        x = 0 
+        while true 
+            x = x + rand() # Uniform standard
+            if x >= λ && x < 1
+                push!(results, x += rand())
+                break
+            end
+            if x > 1 
+                push!(results, 0)
+                break 
+            end
+        end
+    end
+    return results
+end
+
+function sim_across_criteria(iters_per_sim)
+    """Simulates a given number of rounds across the domain [0, 1] for λ."""
+
+    costs = [] 
+    x = LinRange(0, 1, 1000)
+    for i in x 
+        simulations = sim_round(i, iters_per_sim)
+        mean_score = sum(simulations)/length(simulations)
+        push!(costs, mean_score)
+    end 
+    return (x, costs)
+end
+
+# Run and plot the simulation
+
+x, y = sim_across_criteria(10_000)
+
+plot(x, y, label="Mean score")
+vline!([0.3028], linestyle=:dash, label="Analytic optimum")
+scatter!([0.3028], [maximum(y)], markersize=2, color=:red, label="Experimental maximum")
+plot!(legendfontsize=6)
+
+
+```
+
 
 
