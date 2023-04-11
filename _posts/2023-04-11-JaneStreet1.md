@@ -53,7 +53,7 @@ according to the law of total probability,
 $$
 \begin{align*}
     P(Y_n \leq x - Z) &= \int_{\mathbb{R}} P(Y_n \leq x - Z \mid Z = t)P(Z = t)
-    dt \\ 
+    dt \newline 
                       &= \int_0^x (x - t) P(Z = t) dt
 .\end{align*}
 $$
@@ -68,7 +68,7 @@ interest, is $\frac{d}{dx}x = 1$ (something you probably already knew). Then
 
 $$
 \begin{align*}
-    f(x, 2) &= \int_0^x (x-t)(1)dt \\ 
+    f(x, 2) &= \int_0^x (x-t)(1)dt \newline 
             &= \frac{x^2}{2}
 .\end{align*}
 $$
@@ -80,9 +80,9 @@ logic)
 
 $$
 \begin{align*}
-    f(x, 3) &= \int_0^x (x-t)t dt = \frac{x^3}{6} \\ 
-    f(x, 4) &= \int_0^x (x-t) \frac{t^2}{2} dt = \frac{x^4}{24} \\
-            &\ldots  \\
+    f(x, 3) &= \int_0^x (x-t)t dt = \frac{x^3}{6} \newline 
+    f(x, 4) &= \int_0^x (x-t) \frac{t^2}{2} dt = \frac{x^4}{24} \newline
+            &\ldots  \newline
     f(x, n) &= \int_0^x (x-t)\frac{d}{dx}f(x, n-1)(x := t) dt = \frac{x^n}{n!}
 .\end{align*}
 $$
@@ -123,7 +123,7 @@ where
 
 $$
 \begin{align*}
-    \mathbb{E}(S) &= \int_x^1 \frac{t + \frac{1}{2}}{1-x} dt \\ 
+    \mathbb{E}(S) &= \int_x^1 \frac{t + \frac{1}{2}}{1-x} dt \newline 
          &= \frac{x+2}{2}
 .\end{align*}
 $$
@@ -132,7 +132,7 @@ or equivalently
 
 $$
 \begin{align*}
-    \mathbb{E}(S) &= \int_x^2 \frac{t}{2-x}dt \\ 
+    \mathbb{E}(S) &= \int_x^2 \frac{t}{2-x}dt \newline 
          &= \frac{x+2}{2}
 .\end{align*}
 $$
@@ -143,7 +143,7 @@ point within the jumping zone is $x + \frac{1-x}{2}$, and then
 
 $$
 \begin{align*}
-    E(x) &= x + \frac{1-x}{2} + 0.5 \\ 
+    E(x) &= x + \frac{1-x}{2} + 0.5 \newline 
          &= \frac{x+2}{2}
 .\end{align*}
 $$
