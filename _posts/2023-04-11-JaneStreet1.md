@@ -1,6 +1,6 @@
 --- 
 title: A tricky probability problem from Jane Street 
-categores: [ Science, Personal ]
+categories: [ Science, Personal ]
 ---
 
 ### The problem
