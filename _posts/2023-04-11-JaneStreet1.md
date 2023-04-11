@@ -1,5 +1,6 @@
 --- 
-title: A tricky probability problem from Jane Street categories: [ Science, Personal ]
+title: A probability problem from Jane Street 
+categories: [ Science, Personal ]
 ---
 
 ### The problem
@@ -170,11 +171,11 @@ To be sure, I created a Julia simulation of the game. It has a robot play the
 game a great number of times over the linear range $[0, 1]$ (with infinitesimal
 discrete steps). Each blue point is the average score of the robot on a given
 value of $x$ across a great number of simulations. With enough simulations per
-$x$, we observe the analytic result of $x = \frac{\sqrt{13} - 3}{2}$ coincides
-exactly with (or is infinitely close to) the experimental maximum score.
+$x$, we observe the experimental mean score almost exactly coincides with our
+analytic result of $x = \frac{\sqrt{13} - 3}{2} = 0.3028$.
 
 <p align="center">
-  <img src="https://i.ibb.co/p2J5ydx/Screenshot-from-2023-04-10-22-50-43.png" alt="Alt text">
+  <img src="https://i.ibb.co/xggy5Hr/Screenshot-from-2023-04-11-02-37-18.png" alt="Alt text">
 </p>
 
 For the curious, I attach the code of the simulation.
@@ -206,7 +207,7 @@ function sim_across_criteria(iters_per_sim)
     """Simulates a given number of rounds across the domain [0, 1] for λ."""
 
     costs = [] 
-    x = LinRange(0, 1, 1000)
+    x = LinRange(0, 1, 10000)
     for i in x 
         simulations = sim_round(i, iters_per_sim)
         mean_score = sum(simulations)/length(simulations)
@@ -218,13 +219,13 @@ end
 # Run and plot the simulation
 
 x, y = sim_across_criteria(10_000)
+max_exp = maximum(y) # Maximum mean score
+x_max = x[findfirst(x -> x == max_exp, y)] # x value of maximum mean score
 
 plot(x, y, label="Mean score")
 vline!([0.3028], linestyle=:dash, label="Analytic optimum")
-scatter!([0.3028], [maximum(y)], markersize=2, color=:red, label="Experimental maximum")
+scatter!([x_max], [max_exp], markersize=2, color=:red, label="Experimental maximum")
 plot!(legendfontsize=6)
-
-
 ```
 
 
