@@ -87,10 +87,6 @@ $$
 .\end{align*}
 $$
 
-(The notation $(x := t)$ makes it explicit that $\frac{d}{dx}f(x, n-1)(t)$ is
-*not* the product of the derivative of $f$ and $t$, but the derivative of $f$
-*evaluated at* $t$.)
-
 <p align="center">
   <img src="https://i.ibb.co/YDZXxY6/Screenshot-from-2023-04-10-21-27-28.png">
 </p>
@@ -99,8 +95,9 @@ $$
 
 We have arrived at a general expression for the probability that the sum of $n$
 uniform random variables do not surpass a certain $x$ assuming $x \in [0, 1]$.
-In fact, what we have done is found a derivation for the Irwin-Hall distribution
-in the domain of interest by means of the law of total probability.
+In fact, what we have done is found a derivation for the [Irwin-Hall
+distribution](https://en.wikipedia.org/wiki/Irwin%E2%80%93Hall_distribution) in
+the domain of interest by means of the law of total probability.
 
 If $Win$ denotes the event of eventually falling within the jumping zone, then
 it is straightforward to reason that
@@ -143,7 +140,7 @@ point within the jumping zone is $x + \frac{1-x}{2}$, and then
 
 $$
 \begin{align*}
-    E(x) &= x + \frac{1-x}{2} + 0.5 \newline 
+    \mathbb{R}(x) &= x + \frac{1-x}{2} + 0.5 \newline 
          &= \frac{x+2}{2}
 .\end{align*}
 $$
