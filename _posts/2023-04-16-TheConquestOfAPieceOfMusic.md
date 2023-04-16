@@ -5,7 +5,7 @@ categories: [ Personal ]
 
 > Music is enough for a lifetime, but a lifetime is not enough for music.
 > <br>
-> --- Rachmaninov
+> — Rachmaninov
 
 I dreamt of a high mountain. And at the top there was music. I woke up in peace
 and went in search of my
@@ -15,7 +15,7 @@ came to see that I had conquered it.
 
 The conquest of a piece of music is the purest form of attainment. 
 Inciting no desire it makes you rich. And the melody is
-thereafter always sounding ---even in the coldest silence. 
+thereafter always sounding —even in the coldest silence. 
 
 My favorite passage from the piece:
 
@@ -28,7 +28,7 @@ melody. With that alone I feel the richer of men. As Dylan Thomas said:
 
 
 <div style="text-align: center;">
-  <p style="text-align: justify; display: inline-block;">
+  <p style="text-align: justify; display: inline-block; font-style:italic;">
 I who was rich was made the richer <br>
 by sipping at the vine of days.
   </p>
