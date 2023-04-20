@@ -4,16 +4,16 @@ categories: [ Science ]
 ---
 
 
-This is a simple maximum-likelihood estimation algorithm for the normal
-distribution. I chose $\mathcal{N}$ because it is the most commonly known
-distribution. Of course, the maximum-likelihood estimators of its parameters are
-the sample mean and the sample variance (this can be proven analytically).
-However, I am interested in implement a numerical approach. 
+This is a simple maximum-likelihood (ML) estimation algorithm for the normal
+distribution. I chose $\mathcal{N}(\mu, \sigma)$ because it is the most commonly
+known distribution. Of course, the ML estimators of $\mu$ and
+$\sigma$ are the sample mean and the sample variance (this can be proven
+analytically). However, I am interested in implementing a numerical approach. 
 
-The purpose of showing a numerical method for MLE is simple. I would have loved
-to see one when I was first studying mathematical statistics. Hopefully, some
-lost cyber-wanderer will find the example detailed here illuminating with
-regards to how MLE *algorithms* work. 
+The purpose of showing a numerical method for ML estimation is simple: I would
+have loved to see one when I was first studying mathematical statistics.
+Hopefully, some lost cyber-wanderer will find this example helpful in
+understanding how ML *algorithms* work. 
 
 Since the idea is to provide an algorithmic appreciation of the method, I will
 only briefly sketch the theory of MLE, which I assume the reader knows.
@@ -24,12 +24,11 @@ Maximum-likelihood estimation consists in taking a vector $\textbf{x}$ of data
 as a fixed constant and the parameters of a distribution as variables. These
 parameters are denoted with the letter $\theta$. Observe that $\theta$
 represents an $n$-tuple of parameters —not a unique one. In the case of the
-normal distribution, $\theta \mapsto (\mu, \sigma)$.
+normal distribution, we have $\theta \mapsto (\mu, \sigma)$.
 
-The idea is to observe the joint-probability of $\textbf{x}$ for different
-values in the domain of $\theta$. Whatever $\hat{\theta}$ maximizes this
-joint-probability is by definition the maximum-likelihood estimator of the true
-parameters $\theta$.
+The idea is to observe the joint probability of $\textbf{x}$ as a function of
+$\theta$. Whatever $\hat{\theta}$ maximizes the function is by definition the ML
+estimator of the true parameters $\theta$.
 
 If $f_X$ is the PDF of the identically distributed random variables in
 $\textbf{x}$, then the joint-probability (also called likelihood) of
@@ -46,7 +45,7 @@ function above is also the maximizer of $\ln \mathcal{L}$. In other words,
 
 $$
 \begin{align*}
-    \underset{\theta}{\operatorname{\argmax}} \mathcal{L} = \underset{\theta}{\operatorname{\argmax}} \ln \mathcal{L}
+    \underset{\theta}{\operatorname{\text{arg max }}}  \mathcal{L} = \underset{\theta}{\operatorname{\text{arg max }}} \ln \mathcal{L}
 \end{align*}
 $$
 
@@ -111,7 +110,8 @@ $$
 .\end{align*}
 $$
 
-At the same time, 
+where $\Sigma$ denotes the $\mu$-dependent summation. At the same time (we skip
+the steps),
 
 $$
 \begin{align*}
@@ -120,9 +120,13 @@ $$
 .\end{align*}
 $$
 
-This gives us everything we need to build our algorithm.
 
 ### A Julia implementation 
+
+The previous section gave us everything we needed. We have an expression for the
+gradient of $\ell$ in terms of the distribution parameters, and we now only must
+implement a gradient ascent algorithm using it. A Julia implementation might go
+as follows:
 
 ```julia 
 using LinearAlgebra # To use the norm() function.
