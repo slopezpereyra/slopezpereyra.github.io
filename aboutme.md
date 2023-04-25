@@ -2,6 +2,12 @@
 layout: page
 title: About me
 ---
+
+<p align="center">
+  <img src="https://i.ibb.co/hgSQhJ3/image-5ycn-Q91-D-1682375230573-raw.jpg" alt="Alt text">
+</p>
+
+
 ## About me
 
 Hello! 
