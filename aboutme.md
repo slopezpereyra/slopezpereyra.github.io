@@ -8,8 +8,6 @@ title: About me
 </p>
 
 
-## About me
-
 Hello! 
 
 It would certainly be misleading to begin this with the universal form: I am an
