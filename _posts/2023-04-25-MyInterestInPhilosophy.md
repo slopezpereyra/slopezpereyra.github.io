@@ -1,5 +1,5 @@
 ---
-title: My interest on philosophy
+title: My interest on Philosophy
 categories: [ Personal ]
 --- 
 
