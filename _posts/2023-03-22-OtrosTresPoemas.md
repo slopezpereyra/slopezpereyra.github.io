@@ -1,5 +1,5 @@
 ---
-title: Otros tres poemas 
+title: Dos poemas 
 categories: [ Literature ]
 ---
 
@@ -29,25 +29,6 @@ Y yo te dije mi sueño.<br>
 Y tú no dijiste nada.<br>
 Y solo quebró el silencio<br>
 el crepitar de una rama.<br>
-
----
-
-### Otro sueño
-
-Soñé que en un incólume desierto,<br>
-con danzas y señales ominosas,<br>
-obraba vida y agua entre lo muerto<br>
-y hacía de las arenas suaves rosas.<br>
-Mas no todas las cosas eran buenas…<br>
-Sentí una sombra urdirse con la vida<br>
-y hablar la oscura voz de las arenas<br>
-donde la sombra lóbrega era urdida.<br>
-Me confesaba una verdad oscura<br>
-que enarenó las aguas de mi mente:<br>
-«*adonde siembras agua, Dios procura<br>
-sembrar también la vida torpemente.<br>
-Y donde hay vida habrá depredadores.<br>
-Es ella. Tú la obraste entre las flores*».<br>
 
 ---
 
