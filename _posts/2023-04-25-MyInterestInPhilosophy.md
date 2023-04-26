@@ -1,5 +1,5 @@
 ---
-title: My interest on Philosophy
+title: My interest in philosophy
 categories: [ Personal ]
 --- 
 
@@ -72,8 +72,8 @@ then it bears significant implications with regards to the limits and the nature
 of our knowledge. (One is inevitably reminded of Nietzsche's extraordinary piece
 *On truth and lies in a nonmoral sense*.) 
 
-I should quickly add that this fact does not contradict empiricism \textit{by
-necessity}. In other words, it is not *in principle* impossible to
+I should quickly add that this fact does not contradict empiricism *by
+necessity*. In other words, it is not *in principle* impossible to
 develop a theory of empiricism that incorporates this fact. It is just that this
 development is non-trivial.
 
@@ -118,8 +118,8 @@ come to think, were Schopenhauer and Kant. But this only either on the very
 edges or on the very core of their philosophy: whatever fills the space between
 them is more or less forgettable to me. In what comes to some other big names,
 like Heidegger and Hegel, I am afraid I can only hold the claim —perhaps
-pretentious— that they were utter charlatans. The \textit{Phenomenology of the
-Spirit}, which I read when I was seventeen, impressed me at the moment, but as
+pretentious— that they were utter charlatans. The *Phenomenology of the
+Spirit*, which I read when I was seventeen, impressed me at the moment, but as
 the years went by I come to think it was nothing but a waste of time.
 *Being and Time*, on the other hand, is an unbearably stupid work that
 consists only in the insistence to make the most empty statements seem like
@@ -163,14 +163,13 @@ whether it is valid to speak of "mental" experiences —suffices to say I adhere
 to the most radical materialism on the matter.)
 
 To my mind, philosophy plays a crucial role in the study of these phenomena.
-That role consists in aiding scientists in the making of the \textit{right
-questions}. It is a historical fact that philosophy has endured a better
+That role consists in aiding scientists in the making of the *right
+questions*. It is a historical fact that philosophy has endured a better
 education on the analysis of *questions* —although it has fallen behind
 in the production of answers. Now, in general terms I do not accept the
 postulate that the only role of philosophy is to perform this kind of analysis
 —philosophy should strive to produce answers as well. But in the particular
 case of the philosophy of mind, about whose object we have better means of
 attaining answers than philosophical inquiry, I believe this is its noble place.
-
 
 
