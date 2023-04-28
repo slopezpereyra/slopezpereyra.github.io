@@ -29,7 +29,7 @@ question becomes: how can a method bestow a propositional formula with truth? A
 method is —speaking broadly— nothing but a set of rules, and what makes a
 set of rules superior or inferior to others must rely either in its assumptions
 or its effects. So, when speaking of knowledge, to ascribe the importance of the
-epithet *scientific*, to a particular method simply begs the question.
+epithet *scientific* to a particular method simply begs the question.
 
 We can restrict the context in which we are posing the question so as to gain a
 bit of clarity. Assume two different —but both valid— derivations of natural
@@ -47,16 +47,16 @@ premise, which is of epistemological nature. If this were not true, then what
 would be the difference between deriving a true proposition in a scientific
 manner and, say, deriving it via the assumption of some arbitrary contradiction
 or some suitable but arbitrary set of axioms? There are infinite paths to any
-truth and almost all of them are untrue.
+truth and almost all of them are invalid.
 
 In short, science is not a system of logic, and its essence lies not in some
 special set of inferential or methodological rules. It is a commitment to the
 idea that empirically falsifiable propositional atoms are the only valid maximal
 premises for any derivation. In short, it is a radical commitment to empiricism.
-But empiricism is not an unproblematic, and it is important to develop an
+But empiricism is not unproblematic, and it is important to develop an
 epistemological framework that supports it. Should philosophy —and science— fail
-to do so, the advancement of science as the superior method for the production
-of knowledge is unjustified.
+to do so, the advancement of science as the surest path to
+knowledge is unjustified.
 
 From this follows that one of the central problems of philosophy is the
 justification of knowledge; particularly, of how sense data is transformed into
