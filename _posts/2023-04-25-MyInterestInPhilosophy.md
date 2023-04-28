@@ -1,7 +1,7 @@
-—
+---
 title: My interest in philosophy
 categories: [ Personal ]
-— 
+---
 
 This is not a philosophical writing *per se*, but a collection of
 observations with regards to my interest in philosophy. I wish to obtain
