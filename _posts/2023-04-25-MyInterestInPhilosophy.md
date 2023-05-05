@@ -1,6 +1,6 @@
 ---
 title: My interest in philosophy
-categories: [ Personal ]
+categories: [ Philosophy ]
 ---
 
 This is not a philosophical writing *per se*, but a collection of
@@ -60,7 +60,7 @@ knowledge is unjustified.
 
 From this follows that one of the central problems of philosophy is the
 justification of knowledge; particularly, of how sense data is transformed into
-knowledge. The most important matter on this regard are $a.$ some justification
+knowledge. The most important matters on this regard are $a.$ some justification
 for the claim that atomic propositions are empirically verifiable —which implies
 the postulate of an objective reality— and $b.$ the justification of inference
 —which is tremendously difficult. I am of the opinion that a true commitment to
