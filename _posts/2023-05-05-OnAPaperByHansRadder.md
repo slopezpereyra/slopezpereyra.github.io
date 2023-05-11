@@ -60,28 +60,26 @@ he had, can he be *sure* that that is the correct road? What is his
 belief: that the road takes to Mandawa, or that it is more likely that the road
 takes to Mandawa? His behavior fits them both, but they are inequivalent.
 
-Going back to our case, then, there is nothing in behaving *as if*
-causation were real that contradicts the epistemological apprehension about
-ascertaining its reality. Furthermore, for every observable correct prediction
-of science, the evidence in favor of it increases —and with it, so does that
-in favor of the consistency of its assumptions. In short, while it is true that
-science behaves *as if* causation is real —which every single one of us
-do—, this fits entirely with the inferential basis of empiricism, so long as
-the existence of causation is the best explanation to observed phenomena —even
-when the *necessity* of the cause-effect relation is unprovable and
-unobservable. In short, empiricism, far from outright denying causation, holds
-it as the most plausible *hypothesis*. And in this non of us are any
-different from science, insofar as it is impossible to live as if causation were
-not real and at the same time impossible to prove that it is.
+Going back to our case, then, there is nothing in behaving *as if* causation
+were real that contradicts the epistemological apprehension about ascertaining
+its reality. Furthermore, for every observable correct prediction of science,
+the evidence in favor of it increases —and with it, so does that in favor of the
+consistency of the assumptions on its whole. In short, while it is true that
+science behaves *as if* causation is real —which every single one of us do—,
+this fits entirely with the inferential basis of empiricism, so long as the
+existence of causation is the best explanation to observed phenomena —even when
+the *necessity* of the cause-effect relation is unprovable and unobservable.To
+rephrase once more, empiricism is compatible with the claim that causation is
+the most plausible *hypothesis*. And in this, none of us are any different from
+science, insofar as it is impossible to live as if causation were not real.
 
 In short, I do not believe the point sustained by Radder is particularly strong.
 I find myself to be more worried about different matters when it comes to
 science and causation. For example, how exactly does a given evidence provide
 support for a hypothesis? What exactly does it mean to say that causation is
-*the most likely* explanation, even when we can not prove reasonably
-prove it nor empirically observe necessity? These, and
-more like these, are the problems of philosophy with regards to science. But I
-cannot dwell upon them here, for this entry pertained to Radder's paper and,
-besides, I have no satisfactory answers to give.
+*the most likely* hypothesis? These, and more like these, are to my eyes the
+problems of philosophy with regards to science. But I cannot dwell upon them
+here, for this entry pertained to Radder's paper and, besides, I have no
+satisfactory answers to give.
 
 
