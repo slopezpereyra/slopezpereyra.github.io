@@ -9,7 +9,7 @@ angry for some reason— and so he left in a hurry. We were left alone outside a
 typical brick house. The day was gray and cold. Nextly, we were inside. $F$ and I
 had different bedrooms. While he wasn’t in his bedroom (taking a shower?) I went
 to see what he had there. I found, upon an old brown trunk, a massive black
-volume entitled The complete poems of Dylan Thomas. It was very black —indeed,
+volume entitled *The complete poems of Dylan Thomas*. It was very black —indeed,
 its blackness was its most outstanding feature, and its pages, worn by time,
 displayed the distinct hue of what is truly ancient. I opened the book and saw
 it was a bilingual edition, with Spanish translations accompanying each poem in
