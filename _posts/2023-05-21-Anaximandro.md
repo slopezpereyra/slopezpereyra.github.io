@@ -71,6 +71,11 @@ El fragmento en cuestión proviene de Plutarco:
 
 > «Anaximandro … dice que lo infinito es la causa de la generación y destrucción de todo, a partir de lo cual —dice— se segregan los cielos y en general todos los mundos, que son infinitos. Declara que su destrucción y, mucho antes, su nacimiento se producen por el movimiento cíclico de su eternidad infinita… Dice también que, en la generación de este cosmos, lo que de lo eterno es capaz de generar lo caliente y lo frío fue segregado, y que, a raíz de ello, una esfera de llamas surgió en torno al aire que circunda a la tierra, tal como una corteza [rodea] al árbol; al romperse la [esfera] y quedar encerradas [sus llamas] en algunos círculos, se originaron el sol, la luna y los astros.»
 
+<p align="center">
+  <img src="Images/anax.jpg">
+</p>
+
+
 En este fragmento, Anaximandro enseña que el principio de todas las cosas es «lo infinito», traducido también como lo Ilimitado o lo Indeterminado. En el seno de este principio están contenidos los opuestos y los mundos, que se desprenden de él. Lo Ilimitado produce el mundo de continuo. No actúa como creador en un único momento del pasado, sino que es el agente continuo e inagotable de la engendración y extinción de las cosas, el fondo del movimiento cósmico.
 
 De lo Ilimitado se segregó una «semilla» (γóνιμον, «lo que … es capaz de generar») de la luz y la noche[^3]. La palabra γóνιμον es una sutileza importante. De lo Ilimitado no se separan los opuestos de la luz y la oscuridad, sino aquello que es capaz de engendrarlos. La luz y la noche constituyen la oposición originaria, engendrada a través de la semilla segregada de lo Ilimitado. Desde una perspectiva psicológica, puede tratarse de una proyección de la separación inmemorial de la consciencia del seno primordial de lo inconsciente, análogamente a las palabras de Dios: «*hágase la luz*». Se entiende que la luz y la noche cubrieron la Tierra como la corteza a un árbol, en una doble capa. La noche era la interior, la luz la exterior. Pero la cáscara de luz se rasga, aunque no se nos dice por qué, y el fuego que antes era una totalidad se dispersa en pequeñas formas circulares. Son las estrellas y los astros que vemos.
