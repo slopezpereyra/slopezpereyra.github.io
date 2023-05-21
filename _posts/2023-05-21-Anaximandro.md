@@ -72,7 +72,7 @@ El fragmento en cuestión proviene de Plutarco:
 > «Anaximandro … dice que lo infinito es la causa de la generación y destrucción de todo, a partir de lo cual —dice— se segregan los cielos y en general todos los mundos, que son infinitos. Declara que su destrucción y, mucho antes, su nacimiento se producen por el movimiento cíclico de su eternidad infinita… Dice también que, en la generación de este cosmos, lo que de lo eterno es capaz de generar lo caliente y lo frío fue segregado, y que, a raíz de ello, una esfera de llamas surgió en torno al aire que circunda a la tierra, tal como una corteza [rodea] al árbol; al romperse la [esfera] y quedar encerradas [sus llamas] en algunos círculos, se originaron el sol, la luna y los astros.»
 
 <p align="center">
-  <img src="https://i.ibb.co/kSGcrvM/anax.webp">
+  <img src="https://i.ibb.co/kSGcrvM/anax.webp" alt="Anaximander" width="40%">
 </p>
 
 
