@@ -1,4 +1,3 @@
-
 ---
 title: Anaximander ~ Cosmogony and archetypes
 categories: [ Philosophy, Personal ]
