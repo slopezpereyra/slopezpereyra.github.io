@@ -1,200 +1,450 @@
+
 ---
-title: Anaximandro y sus símbolos
-categories: [ Personal, Philosophy ]
+title: Anaximander ~ Cosmogony and archetypes
+categories: [ Philosophy, Personal ]
 ---
-# Comentario preliminar 
 
-El propósito de esta entrada es dejar registro de un período en mi
-vida intelectual. Corresponde a una serie de notas que tomé, hace dos o tres
-años, cuando ocupé una vacaciones con la relectura de los
-presocráticos y, a la vez, la lectura del volumen $IX$ de las obras de C.G.
-Jung. Su contenido, desde un punto de vista metodológico y
-científico, me resulta extraño e incluso inútil. Sin embargo, la
-intuición que impulsó su redacción permanece viva en mí, y acaso merece un
-comentario. 
-
-Es un hecho que existe una vida inconsciente. Cuando uno libra este concepto de
-la confusión psicoanalítica, encuentra que todavía existe un amplio campo de
-consideración. La neurociencia afectiva, a cuyo estudio me había entregado poco
-antes de redactar estas notas, ha generado un atendible cuerpo de evidencia en
-favor de la existencia de algo así como un inconsciente colectivo. El término
-fue acuñado por Jung, es cierto, pero frecuentemente se olvida que es una
-hipótesis biológica, no psicoanaltica. (En el psicoanálisis, Jung había
-encontrado el método, pero no el objeto de estudio.) Contrario a lo que suele
-confundirse, el inconsciente colectivo no es un conjunto de símbolos eternos que
-flotan en el alma humana. La hipótesis propone, más bien, una contracara
-cognitivamente compleja del instinto. Se trata de tendencias a la representación
-simbólica cuya expresión es universal, y es plausible que se trate de la enjuta
-que resulta de la emergencia de una capacidad simbólica en un animal ---esto es,
-en un ser instintivo. En este sentido, lo instintivo y lo arquetípico son
-eniantoméricos.
-
-Esta hipótesis sólo puede demostrarse con evidencia neurocientífica. Hoy por
-hoy, estimo que el trabajo comparativo, como el que aquí presento, sea tal vez
-un bello ejercicio cultural o literario, pero no un modo de producir evidencia.
-
-# Introducción 
-
-El pensamiento presocrático, pese a los esfuerzos de los últimos dos siglos, permanece en una casi total oscuridad. La sombra de la exégesis aristotélica, que ve en él sólo un esfuerzo racional por describir la Φύσις, se cierne sobre prácticamente toda la tradición filológica. Parte de él, indudablemente, se trata de un esfuerzo genuino por discernir las propiedades naturales del mundo. Pero el hecho de que incluso sus más naturales postulados deriven, como regla general, de un sustrato mítico que es la piedra angular de sus doctrinas, señala que esa parte acaso sea  también la más superficial. Todo ἀρχή es, en última instancia, arbitrario e irracional, y la elección de uno u otro no puede explicarse como una intelección estrictamente científica. Son imágenes cosmogónicas de carácter especulativo, cuya similitud con expresiones mitológicas las hacen dignas del epíteto de míticas. En τὸ ἄπειρον de Anaximandro y el νοῦς de Anaxágoras, por ejemplo, esto es particularmente claro.
-
-El sustrato mítico de la filosofía presocrática es un problema, porque la posiciona en directa oposición a lo que, desde Aristóteles, se ha querido ver en ella; a saber, una filosofía natural, libre de cuestiones metafísicas. Los exégetas lidiaron con este problema de tres maneras.
-
-a) La primera consistió en proferir un colosal esfuerzo, a veces admirable, por demostrar que las expresiones míticas eran estrictamente empíricas o racionales —o simplemente asumir que ese era el caso—. Así, por ejemplo, el χάος de Hesíodo es un proceso lógico de regresión de lo más complejo a lo más simple (Gigon, 1971), Anaximandro pone la tierra en el centro del mundo obedeciendo a una intuición geométrica (Jaeger, 1933), y Aristóteles enseña que Tales escoge el agua como ἀρχή por su transmutabilidad. Pero es ilícito proyectar un espíritu naturalista sobre postulados que, tomados por sí mismos, son más cercanos al mito que a la observación empírica. El caso de los presocráticos no es distinto del de la alquimia, descrita a veces sólo como un estudio pre-científico de la materia, cuando se trata además de un claro universo simbólico (Jung, 1944; Roob, 2014). 
-
-b) Otras veces, se reconoció la urdimbre mitológica que teje las doctrinas presocráticas, pero no se vio en ella más que un fenómeno estrictamente griego, una diversión aristocrática propia de la dionisíaca embriaguez del alma griega. Así lo vieron, por ejemplo, Nietzsche y Colli (1948). Esta hipótesis, sin embargo, adolece de dos problemas. Primero, pasa por alto la inmensa similitud entre las expresiones simbólicas de los presocráticos y las de muchos mitos. No es el momento de señalar estas similitudes, pero vamos a tratar con un gran número de ellas más adelante. Ellas enseñan que, en su aspecto simbólico, el fenómeno presocrático tiene más bien poco de singular, y que lo que se ha confundido con diversiones del espíritu griego acaso sean imágenes arquetípicas. En segundo lugar, las expresiones que quieren interpretarse como una extravagancia eminentemente griega están en completa oposición con la cosmovisión típica de los griegos. Esto se hará claro al tratar la última hipótesis con que la tradición trató de resolver este problema.
-
-c) Me refiero a aquella según la cual una influencia oriental —ya babilónica, ya pérsica o egipcia— es el origen de esas expresiones. Esta hipótesis es la que merece más nuestra atención, porque es la más plausible. Es un hecho que la Grecia presocrática estaba en continuo contacto con otros pueblos, e incluso que varios filósofos presocráticos fueron agentes coloniales o viajeros en tierras orientales. Pero es preciso notar que, para el griego, era la naturaleza la total expresión de lo divino. Los dioses no eran agentes de fenómenos milagrosos, sino la fuerza que hacía girar la rueda del orden natural del mundo. El sentimiento religioso se encontraba en el seno de la realidad objetiva y no en lo portentoso. Por esta razón Otto (1929) ha dicho que la cosmovisión griega tiene como carácter básico una «idealidad natural o una naturalidad ideal», e hizo Gigon (1971) la clara observación de que las figuras de la *Teogonía *no son traídas a colación porque sean dioses, sino porque no pueden faltar las zonas por ellas representadas en el cuadro de conjunto del todo. 
-
-El oriental[^1], por el contrario, concebía la realidad objetiva no como el fondo de la divinidad, sino como el velo ilusorio que nos separa de ella. Lo divino yacía en un plano inmaterial que sólo coincidía con la realidad sensible a través de correspondencias ocultas. El alma inmaterial, de casi nula relevancia para el griego, ocupaba un papel preponderante. Así, mientras el griego se veía a sí mismo como parte de una realidad objetiva en que lo divino es manifiesto, el oriental concebía la realidad como el sueño que oculta la divina esencia y del que debía liberarse. Donde el griego percibía lo orgánico y manifiesto, el oriental intuía un misterio y un símbolo. El primero miraba el sol y sentía que contemplaba la cálida luz de Apolo, que vive en la lejanía. El otro veía una luz que sólo existe por haber sido creada por sus propios ojos.
-
-Es vano describir el espíritu religioso de dos pueblos en tan poco espacio. Sin embargo, la síntesis anterior debería bastar para mostrar que la cosmovisión griega proveía un marco delimitado de experiencia, una perspectiva completa del mundo, radicalmente opuestos a los orientales. ¿Cómo, entonces, sería tan susceptible de su influencia? Porque, en efecto, si un individuo es, por así decirlo, «tocado» por una noción cualquiera, debe existir en él algo susceptible de ser tocado por ella, algo a lo que ella pueda apelar; y lo mismo puede decirse de un pueblo. Si el fenómeno se redujera sólo a las peculiaridades culturales del pueblo griego, lo esperable habría sido que éste fuera impenetrable para las imágenes religiosas orientales, de modo análogo a como puede decirse que somos sordos a una lengua extraña. El asunto es incluso más problemático cuando consideramos que, tal como se dijo antes, en el momento en que el pensamiento presocrático florecía, la cultura griega, lejos de encontrarse debilitada o en crisis, se hallaba en un intenso período de expansión colonial y poderío (Lane Fox, 2007). Era, en efecto, ebria de orgullo propio, y no le era de ningún modo necesario incorporar mitos extranjeros del todo incompatibles con los propios. Si los pueblos orientales participaron en esto lo hicieron como factor incidente, pero no suficiente ni, en última instancia, necesario.
-
-Una hipótesis que pueda completar estas lagunas y evitar estas falencias debe, en primer lugar, no proyectar sobre expresiones simbólicas un carácter racional o empírico; además, ha de explicar su carácter anti-idiosincrático y, por último, tomar en cuenta su similitud con otros mitos. Este artículo sostiene que hay una correspondencia entre tales expresiones y determinados arquetipos psicológicos, cuya manifestación en otros universos simbólicos ha sido documentada, pero cuyo influjo en los presocráticos fue pasado por alto por una tradición hermenéutica no familiarizada con la ciencia psicológica. No se pretende negar que el descubrimiento de la Φύσις era una empresa genuina, sino señalar que esta fue propicia a la expresión de procesos psíquicos paralelos, cuya proyección era facilitada, por un lado, por la misteriosa naturaleza de los procesos cosmogónicos y astronómicos que se pretendían explicar; por otro, por la falta de un método científico que protegiera, por así decirlo, al objeto de estudio de ser contaminado por tales proyecciones. La naturaleza arquetípica de ciertos postulados presocráticos, debe decirse, fue mencionada por otros (véase, por ejemplo, Campbell, 1949 y Jung, 1969), pero nunca examinada ni establecida del todo.
-
-En relación al significado de arquetipo psicológico, el lector puede consultar la definición original en la obra de C.G. Jung, especialmente el noveno volumen de sus *Complete Works*. Pero, si bien en términos generales nuestra terminología psicológica se vale de la jerga de la psicología analítica, no debería pensarse que suscribimos a una concepción psicoanalítica del inconsciente. Más bien, por *arquetipos *entendemos patrones de representación de naturaleza afectiva, determinados filogenéticamente y evolutivamente arcaicos. Que compartimos un sustrato afectivo común con, al menos, todos los mamíferos es un hecho neurocientífico establecido (Panksepp, 2000; Panskepp y Gordon, 2003; Panskepp, 2005; Panskepp, 2011). Más aún, la neurociencia ha ofrecido evidencia en favor de la existencia de arquetipos psicológicos específicos, como el arquetipo del *self*, y su posible localización en los circuitos cerebrales (Alcara et al., 2017). Desde luego, tal evidencia no es conclusiva y debe tomarse con precaución. Pero podemos poner a un lado este problema utilizando una perspectiva pragmatista. En el contexto de esta investigación, la etiología específica de los arquetipos es irrelevante, en tanto la idea refiere las mismas consecuencias prácticas cualquiera sea el origen que se le atribuya. En lo que toca a sus efectos, da igual que sean imágenes culturalmente transmitidas, generación tras generación, a lo largo de los siglos, o modulaciones de ciertos patrones de representación filogenéticamente heredados. Sea su origen endógeno o exógeno, o cualquier proporción de ambos, el concepto implica los mismos efectos. En otras palabras, su valor es ortogonal a la hipótesis etiológica que se prefiera, y reside en su existencia más que en la razón de su existencia.
-
-El estudio de los presocráticos desde esta perspectiva nos enfrenta necesariamente con el problema de las imágenes cosmogónicas de diversos mitos y su especificidad psicológica. Un abordaje interdisciplinario del problema es, como puede verse, necesario. Si bien la investigación se funda en la psicología, tanto la naturaleza de nuestro objeto como el método comparativo a utilizar vuelven inevitables las implicancias de la mitología, la religión comparada y la filología.
-
-El problema es relevante en un doble sentido. En primer lugar, la perspectiva de este artículo abre un campo lleno de potencial interpretativo en un terreno que ha avanzado poco o nada en el curso de este siglo, y en cuya antigua sementera el mundo occidental tiene raíces: el pensamiento griego arcaico. Confío en que el modesto aporte de la psicología de los arquetipos contribuirá a la comprensión, aunque sea parcial, de sus postulados menos aprehensibles.
-
-En segundo lugar, los arquetipos no son una idea metafísica, una intuición mística ni una abstracción. Son, por el contrario, un hecho psicológico. El avance de la neurociencia en la suplementación de datos acerca de la naturaleza de lo arquetípico debe, necesariamente, ser acompañado por el análisis concreto de sus manifestaciones culturales y comportamentales. Así como es vano el estudio neuropsicológico de las emociones sin una paralela inquisición en su valor conductual concreto, debe existir una retroalimentación entre el estudio de los patrones neurales que median las imágenes arquetípicas y el análisis de sus expresiones específicas en la vida humana. Su relevancia en la vida individual y social es consecuencia de que se trata de estructuras psicológicas arcaicas de carácter afectivo, cuyo rol en la construcción de significado parece evidenciado por su obstinada aparición en mitos y cosmogonías. Son, con toda probabilidad, el producto de «value-encoding neural systems» (Panksepp y Burgdorf, 2003; véase además Panksepp, 2005, Panksepp, 2011 y Alcara et. al., 2017) asociados a la articulación de sentido (*meaning*).
-
-Si pudiéramos concluir que las expresiones míticas del pensamiento presocrático corresponden a determinados arquetipos, independientemente de si provienen o no de oriente, podríamos explicar que el espíritu griego haya podido producirlas por sí solo o, en todo caso, ser susceptible a su influjo. De no existir esa correspondencia, como se ha hecho notar, no habría habido en el griego susceptibilidad alguna a la que tales elementos, en caso de ser extranjeros, pudieran apelar, dada su irremediable incompatibilidad de estos con la cosmovisión griega. Es claro que la pregunta que queda abierta es si tal correspondencia de hecho existe. Demostrar esto sobre el conjunto del pensamiento presocrático es una tarea colosal. Lo que me propongo es demostrarlo sobre un caso concreto: Anaximandro. Particularmente, me centraré en el fragmento D-K 12 A 10, en tanto su carácter cosmogónico vuelve más fácil su análisis comparado y, a la vez, más clara su naturaleza arquetípica. 
-
-
-
-# Anaximandro
-
-Pretendo mostrar que la cosmogonía de Anaximandro, en concreto como es descrita en el fragmento D-K 12 A 10, es una proyección del arquetipo del *self*, y describe la experiencia inmemorial de la emergencia de la consciencia del seno de lo inconsciente[^2]. 
-
-El fragmento en cuestión proviene de Plutarco:
-
-> «Anaximandro … dice que lo infinito es la causa de la generación y destrucción de todo, a partir de lo cual —dice— se segregan los cielos y en general todos los mundos, que son infinitos. Declara que su destrucción y, mucho antes, su nacimiento se producen por el movimiento cíclico de su eternidad infinita… Dice también que, en la generación de este cosmos, lo que de lo eterno es capaz de generar lo caliente y lo frío fue segregado, y que, a raíz de ello, una esfera de llamas surgió en torno al aire que circunda a la tierra, tal como una corteza [rodea] al árbol; al romperse la [esfera] y quedar encerradas [sus llamas] en algunos círculos, se originaron el sol, la luna y los astros.»
-
-<p align="center">
-  <img src="https://i.ibb.co/kSGcrvM/anax.webp" alt="Anaximander" width="40%">
-</p>
-
-
-En este fragmento, Anaximandro enseña que el principio de todas las cosas es «lo infinito», traducido también como lo Ilimitado o lo Indeterminado. En el seno de este principio están contenidos los opuestos y los mundos, que se desprenden de él. Lo Ilimitado produce el mundo de continuo. No actúa como creador en un único momento del pasado, sino que es el agente continuo e inagotable de la engendración y extinción de las cosas, el fondo del movimiento cósmico.
-
-De lo Ilimitado se segregó una «semilla» (γóνιμον, «lo que … es capaz de generar») de la luz y la noche[^3]. La palabra γóνιμον es una sutileza importante. De lo Ilimitado no se separan los opuestos de la luz y la oscuridad, sino aquello que es capaz de engendrarlos. La luz y la noche constituyen la oposición originaria, engendrada a través de la semilla segregada de lo Ilimitado. Desde una perspectiva psicológica, puede tratarse de una proyección de la separación inmemorial de la consciencia del seno primordial de lo inconsciente, análogamente a las palabras de Dios: «*hágase la luz*». Se entiende que la luz y la noche cubrieron la Tierra como la corteza a un árbol, en una doble capa. La noche era la interior, la luz la exterior. Pero la cáscara de luz se rasga, aunque no se nos dice por qué, y el fuego que antes era una totalidad se dispersa en pequeñas formas circulares. Son las estrellas y los astros que vemos.
-
-El mundo en el que se desprende la semilla, el estado cósmico en que se produce la segregación originaria, es el espacio vacío, el χάος mítico que aparece primero en la *Teogonía *de Hesíodo. La palabra χάος no significa, como quiso Ovidio, un desorden aleatorio. Expresa más bien una «hendidura» o «cavidad». Se usaba, por ejemplo, para expresar el abrir mucho la boca o la abertura de una cueva. Su formulación como estado primigenio es un motivo arquetípico de sobrada documentación. *Génesis *1:2 nos habla del abismo que solo era poblado por tinieblas: «*And the earth was without form, and void; and darkness was upon the face of the deep*». También el Hambre originaria védica, en la medida en que el hambre es, en cierto modo, un vacío interior, o el símbolo universal de la cueva como lugar de transformación —es decir, de generación a partir de la destrucción—, guardan relación con la idea de χάος. Vale añadir, aunque sea brevemente, el Mercurio de la alquimia, del que dice Paracelso que es «*the concealer of the rest [of things] —their corporeal vessel (...)—*» (Paracelsus & Ed, 2018). Pero lo que por ahora nos importa del χάος es que, en Anaximandro, es la semilla de la luz y de la sombra lo que altera su estado originario. Ella es quien induce contenido y forma en el vacío, cubriendo el mundo con el doble manto de su fruto. 
-
-Debe decirse que, en un sentido psicológico, el surgimiento de la consciencia es un fenómeno a la vez individual y colectivo. Se produjo, por un lado, en el plano evolutivo de la especie; por otro, acontece a cada individuo en el curso de su propio desarrollo psicobiológico. Es claro, de acuerdo a lo que podemos observar de la vida psíquica animal, que ella tiene a lo inconsciente como forma primordial, y que la consciencia emerge de ese seno de manera continua, es decir, distinguiéndose en una cuestión de grado y no de naturaleza (Damasio, **Ref**). El ser consciente de pensar es posterior al acto de pensar. Pero el surgimiento de la consciencia es matricida, en tanto, al desprenderse del seno de la psique, la luz del entendimiento debe relegar un mundo entero a la más ciega oscuridad. Así, en Anaximandro, del germen de lo indeterminado surge la doble faz de la luz y la noche, lo consciente y lo inconsciente. Este surgimiento expresa una adquisición de forma y contenido, en tanto destruye el χάος originario y, literalmente, produce un mundo —es decir, es un acto creador—; pero genera también la tensión inherente a la separación de una unidad en opuestos irreconciliables. Esta tensión es lo expresado en el rasgarse de la cáscara de la luz, que el filósofo no explica nunca[^4] y es, a todas luces, expresión de una intuición irracional. La unidad originaria de la luz se destruye inmediatamente luego de ser formada. 
-
-Esta diseminación de la luz bien puede estar, a su vez, relacionada con otro hecho psicológico. El arquetipo del *self*, expresado en el «divino» seno de lo Ilimitado, no es sólo un arquetipo sino también, en tanto señala una totalidad, unión y fuente de todos los demás. En efecto, parte del proceso de integración de los contenidos inconscientes podría pensarse, en términos simbólicos, como la unión de luces dispersas en una gran capa de luz. Que en Anaximandro la expresión del *self* esté asimilada a la unidad originaria, anterior al surgimiento disruptivo de la consciencia, señala una semejanza de esa unidad con la expresada por el arquetipo. Son dos formas de totalidad del todo contrarias, la una el inconsciente primordial donde todo, por así decirlo, es indiviso; la otra el resultado de la integración de dos opuestos separados. En este sentido se implican necesariamente: una es la consecuencia lógica de la otra, y este es un hecho psicológico del todo significativo. No es improbable que éste sea el más crucial de los rasgos enantiodrómicos del *self*. El arquetipo se manifiesta en la imagen del retorno a un estado primigenio y, al mismo tiempo, como una síntesis positiva. Esto explica el hecho curioso de que el *self*, aunque parece señalar sólo un estado ulterior del desarrollo psicológico, sea tan presente en mitos que describen el origen de las cosas, el estado más anterior y primigenio. 
-
-La imagen de las luminosidades dispersadas tras la capa de la noche encuentra, además, un paralelo en las *scintillae* de la alquimia medieval. Son sutiles destellos presentes en la “sustancia de transformación”, asociadas al *anima mundi* y el Espíritu Santo. Estas dos nociones son diferentes modulaciones de una misma intuición; a saber, la de la fuerza oculta y numinosa que conduce el mundo. No es un misterio entonces que la idea de las *scintillae* fuera asociada a ellas, en tanto conduce, y en cierto sentido espiritualiza, el proceso de transformación alquímica. Kunrath llama a estas luminosidades *mundi futuri seminarium*. Son “semillas de luz diseminadas en el caos”[^5]. Ya ha sido estudiada la relación entre el arquetipo del *self* y estas expresiones de la alquimia. Que en Anaximandro encontremos imágenes del todo análogas sólo fortalece nuestra hipótesis.
-
-El *self* abunda en otras modulaciones míticas. En tanto señala la totalidad de la psique es, por lo general, la intuición expresada en todo monismo o monoteísmo. Diógenes de Apolonia, por ejemplo, postuló o lo Indeterminado o el aire como principio, según distintas fuentes. La discusión filológica aquí no nos importa, porque si habló de aire no lo hizo como principio material —esto sólo puede ser una mala lectura aristotélica— sino como hálito engendrador, como aliento que es savia de todas las cosas. Es entonces, incluso tomando esa traducción, idéntico al principio de Anaximandro, al menos desde una perspectiva psicológica. Simplicio nos da en su *Física *(151, 20-153, 5) la siguiente cita de Diógenes: 
-
-> «Me parece (...) que todas las cosas que existen son alteraciones de lo mismo, y que son lo mismo. (...) Pero todas estas cosas se generan a partir de lo mismo, como alteraciones diversas en diversos momentos, y vuelven hacia lo mismo».
-
- Poco después agrega que
-
-> «lo que tiene inteligencia es lo que los hombres llaman aire, y que todos son gobernados por él y domina todas las cosas; pues me parece precisamente que esto es dios, y llega a todo y dispone de todas las cosas y está presente en todo. Y no existe ninguna cosa que no participe de esto».
-
-Pero no tenemos que quedarnos en el mundo griego, donde el filólogo se contenta con rastrear una más o menos clara cadena de influencias. En el *Bṛhádāraṇyaka Upaniṣad*[^6], la Muerte primigenia, que es el Hambre, obra una mente. La recién nacida mente concibe el siguiente pensamiento: «que yo tenga un *ātman*». El *ātman* es una clara expresión del arquetipo del *self*, en tanto significa el sí-mismo psicológico en su totalidad absoluta, planos «trascendente» e «intrascendente» integrados. Es el aliento o hálito que vivifica todas las cosas. Como tal puede asociarse, al igual que las *scintillae *y el aire de Diógenes, a la noción de *anima mundi*. El primer deseo formulado por esta mente primigenia es, entonces, una identidad total y unificada. Posteriormente se nos dice del surgimiento del primer hombre, el *Puruṣa*: «En el principio sólo era el *ātman*. Y no habiendo otro salvo él mismo, pensó y se dijo: “Soy yo”. De ahí que su nombre sea “yo”».
-
-Este «yo» es la palabra *aham*, que se refiere no al sí mismo (*ātman*, *self*) sino a al ego, al sujeto de la consciencia. Así, con este pensamiento, a partir del *ātman* primigenio es formado el *Puruṣa*. Encontramos aquí otra vez que la formación de la consciencia, expresada en la creación del primer hombre, implica una pérdida de la unidad de la psique, que inmediatamente se rasga en *ātman*=*self* y *aham*=*ego*. Esta intuición es la misma que proyecta Anaximandro cuando nos dice que, del seno de lo Indeterminado, el γóνιμον produce la luz y la noche. Y este mismo carácter disruptivo y desintegrador es lo que parece expresarse en el rasgarse de la capa de la luz en pequeñas luminosidades, consecuencia de la irreconciliable tensión de los opuestos. 
-
-Del *Puruṣa *se nos dice además que tiene «mil ojos». Ignacio de Loyola nos comenta una visión que lo asombraba con frecuencia: un brillo que a veces tomaba forma de serpiente, y parecía lleno de luminosos ojos. Monoimo el árabe enseñaba que el hombre primitivo fue poseedor de «muchos rostros y muchos ojos». Caesarius de Heisterbach dice del *Anthropos*, el primer hombre, que es como una esfera y tiene ojos en todos lados (*ex omni parte oculata*). Ángela de Foligno, en una ocasión, vio en la hostia «dos ojos esplendidísimos tan grandes que parecía que de la hostia solamente quedaban los bordes». Y dice además: «(…) una vez no ante la hostia, sino en la celda, se me aparecieron ojos con tan gran belleza y tan deleitables que ciertamente no creo que pierda nunca la alegría».
-
-La asociación del surgimiento de la consciencia con múltiples fenómenos de luz no es, como vemos, inusual. Su vinculación con el *self* es clara en tanto las mismas asociaciones ocurren en la experiencia del contacto con la divinidad (sea en la hostia cristiana o en el *ātman *védico). Cabe mencionar que aquí de nuevo se hace patente el doble carácter de fenómeno originario y verdad última del arquetipo. Por lo demás, las pequeñas luminosidades, expresadas en imágenes polioftálmicas o astronómicas, probablemente refieren los fragmentarios fenómenos de consciencia, mientras que la luz mayor (el ojo divino o el sol como ojo de Dios, la *scintilla una *de Kunrath, etc.) es una modulación del arquetipo. Que estas luminosidades posean generalmente una figura esférica corresponde al sentido unificador e integrador del *self*, y también lo hallamos en Anaximandro, pues de la cáscara de luz se separan pequeñas luces «en algunos círculos». Hipólito también nos dice que según Anaximandro «los astros se generan como un círculo de fuego, separándose del fuego del mundo, circundado cada uno por aire» (D-K 12 A 11). Recordemos que es más probable que Anaximandro hablase de un círculo de luz y no de fuego. Aquí encontramos otra vez el doble motivo de la luz mayor, en el fuego del mundo, y los fenómenos de luz dispersos, los círculos astrales. 
-
-A esta altura debe ser claro que Anaximandro no es en nada de esto original. Su doctrina concuerda de manera perfecta con un motivo mitológico sobradamente documentado. Incluso en la idea de que el principio gobierna todas las cosas, «», que aparece también en Diógenes, el paralelo con el motivo de los ojos es evidente, en tanto la capacidad de verlo todo constituye una forma de gobernación. Así, Dios tiene ojos que «están sobre el camino del hombre» y «está siempre vigilando todo lo que hacemos» (*Job* 34:21), y es Chronos «el que todo lo ve» para Sófocles y «el demonio que todo lo mira» en cierta inscripción funeraria griega. Argos Panoptes, el gigante de mil ojos, es un guardián y un custodio. 
-
-El arquetipo, naturalmente, no está supeditado al misticismo antiguo. Emerson, por ejemplo, intuyó una esfera misteriosa de la que todo proviene, y que es y no es siempre lo mismo. Dice de esa intuición:
-
-> «Genius studies the causal thought, and, far back in the womb of things, sees the rays parting from one orb, that diverge ere they fall by infinite diameters. Genius watches the monad through all his masks as he performs the metempsychosis of nature. Genius detects through the flies, through the caterpillar, through the egg, the constant individual (...)».
-
-La esfera originaria, el pensamiento que es causa de todas las cosas, es el principio; es la mónada pitagórica en relación a la cual toda muerte es una mera transmigración; es el individuo oculto tras el transitorio mundo fenoménico. El ser y no ser siempre lo mismo es una forma de síntesis de los opuestos, elemento común del arquetipo, en tanto el *self* no es un principio de perfección, sino de completitud. La totalidad de la psique es precisamente eso: una totalidad. En ella están la luz y la sombra, los mundos ctónico y celestial. Que Anaximandro considere que los opuestos están contenidos en lo Ilimitado es, por lo tanto, consistente con la fenomenología general del arquetipo tal como se manifiesta en otros mitos. El símbolo de Cristo, por nombrar un ejemplo familiar, tiene una naturaleza marcadamente enantiodrómica. La llegada del Anticristo no es sólo un sueño profético, sino el producto de un principio psicológico que llevó a la mística cristiana a la certeza de un venidero reinado de las sombras. Esto es particularmente manifiesto en el pensamiento gnóstico, dentro del que cabe destacar un mito narrado en el *Pistis Sophia*. Cuando Jesús era un niño, un espíritu, autodeclarado hermano suyo, desciende ante María. Se ve tal como Jesús, y ella lo confunde con él, pero proviene de las regiones inferiores del caos. Al recordar a Jesús este suceso, María le dice: «*he embraced thee and kissed thee, and thou also didst kiss him, and you became one*».
-
-Así también Ángela de Foligno dice que, al escuchar al Espíritu Santo, quiso ver si podía olvidarse de la voz que le hablaba, y comenta: «Y empecé a mirar las viñas, para olvidarme de aquellas palabras (...), y donde quisiera que yo mirase me decía a mí misma: “Esta es mi criatura”. Y sentía una dulzura divina inefable».
-
-El éxtasis místico es tal que siente que la creación le pertenece como originariamente pertenece a Dios. Pero inmediatamente agrega: «Y entonces me tornaban a la memoria todos mis pecados y mis vicios y, por otra parte, no veía nada en mí sino pecados y defectos».
-
-Para Ángela de Foligno, la simultaneidad de la experiencia extática y el asalto de los vicios y pecados habrá sido del todo consternante. Hemos hablado de la intuición gnóstica de la inseparabilidad de Cristo y el Anticristo, pero aquí nos hallamos frente a la espontánea experiencia de esa intuición en una cristiana católica, que probablemente jamás imaginó que la voz del Espíritu Santo pudiera ser acompañada por tan hondas oscuridades. Pero si hemos comprendido algo del arquetipo del *self*, esa simultaneidad no puede sorprendernos. La experiencia era difícilmente interpretable en el marco de la dogmática católica, pero desde una perspectiva psicológica es impecablemente consistente. Por lo general, y en concordancia con lo anterior, el arquetipo se manifiesta como afectado por «*equal yet opposite forces*»[^7]. 
-
-La exposición de tantos ejemplos no es un acto de vana erudición. Con suerte, se habrá hecho notar la semejanza de las expresiones expuestas con las de Anaximandro. Y no sólo en lo Ilimitado como continente de todos los opuestos, sino también como engendrador y destructor del cosmos y las cosas. A este respecto vale mencionar otro fragmento de Anaximandro. Me refiero al D-K 12 A 9, de tono claramente místico: 
-
-> «a partir de donde hay generación para las cosas, hacia allí también se produce la destrucción, según la necesidad; en efecto, pagan la culpa unas a otras y la reparación de la injusticia, de acuerdo con el ordenamiento del tiempo». 
-
-Lo Ilimitado es no sólo principio sino fin de cada cosa, como lo es el Señor en *Apocalipsis *1:8: «*Yo soy el Alfa y la Omega, principio y fin*». Pero esto no es novedad, pues es referido en multitud de otros fragmentos. Lo singular surge con las palabras «culpa» y «justicia». Gigon dice que es pensamiento indio, no griego, el considerar la individuación como una culpa. El filólogo otorga demasiada atención al dónde y al cuándo, e ignora que toda expresión humana corresponde a un hecho universal. En este sentido, los árboles le tapan el bosque. No es, en mi opinión, extraño que el pasaje refiera de hecho una culpa implicada en la existencia, en tanto, como se ha dicho antes, el verdadero acto creador, la formación de la consciencia, es matricida. En el contexto simbólico descrito, en que la cosmogonía de Anaximandro es una proyección del surgimiento de la consciencia, es del todo consistente otorgar a este fragmento ese carácter «indio» que deja al filólogo perplejo. El surgimiento de la consciencia es la creación del mundo. Ignoramos qué es la luna más allá de la representación que hacemos de ella, porque ella *es *esa representación, y nada puede existir objetivamente sin un sujeto al que presentarse como objeto. La muerte no es el no-ser, en tanto la vida corpórea sigue un largo curso de transformación y desintegración después de la muerte; es la no-consciencia, de la cual, desde luego, no podemos formar representación alguna. Es, en términos simbólicos, el retorno a lo Indeterminado, a partir del cual se produjo la generación y hacia el cual la destrucción se mueve. Pero en esa inimaginable noche debe existir justicia, porque la muerte de la consciencia paga la culpa de su propio nacimiento. Lo que señalo aquí,  debe decirse, no es en absoluto nuevo. 
-
-Gigon, además, ha señalado un posible paralelo mitológico del fragmento D-K 12 A 9 en el mito de Cronos y la cadena de «culpas» y «reparaciones» parricidas producida desde el dios hacia su descendencia. La hipótesis es atractiva, pero no parece consistente con el significado psicológico general que hallamos en la doctrina de Anaximandro. Podemos decir con seguridad que, si el fragmento proviene de un mito griego, debe ser de uno cuyo universo simbólico esté emparentado con el de la doctrina a la que pertenece. El mito griego que más claramente satisface esta condición, a mis ojos, es el de Prometeo, que por entregar a los hombres el don de la luz es castigado. La dádiva de la luz, el surgimiento de la consciencia, conlleva una culpa, una traición a lo divino que debe ser reparada. La filología no señaló este paralelo nunca. Por lo contrario, optó por extrañarse del carácter «indio» de esa ley cósmica o por tacharla de mística y concluir con eso el asunto. Esto se debe a que él es claro sólo en virtud del significado psicológico de ambas expresiones; significado que, a su vez, sale a la luz sólo a través del análisis comparado de la doctrina de Anaximandro con otros mitos y expresiones arquetípicas. Este no es el lugar para entrar en detalle acerca del mito de Prometeo, pero, aunque sólo esta breve asociación será posible por ahora, esta probable conjetura es, a mis ojos, digna de atención.
-
-*Further*… (!?)
-
-
-
-# Conclsión 
-
-El método seguido hasta aquí corre el riesgo de confundirse con mera dispersión. He recogido un considerable número de similitudes entre la cosmogonía de Anaximandro y otras expresiones arquetípicas cuya vinculación al arquetipo del *self* ha sido, o bien discutida antes de mí, o bien considerablemente más clara que en el presocrático. Prioricé su cantidad antes que el grado de detalle con que las he descrito; mi esperanza es que las semejanzas hablen por sí solas. Si sabemos que una clase de fenómeno se define por cierto conjunto de características, demostrar esas características en un caso debe equivaler a demostrar su pertenencia a la clase. Con suerte, la exposición anterior fue suficiente para mostrar que la cosmogonía de Anaximandro tiene todas las características propias de una proyección arquetípica. 
-
-La extensión de tal demostración sobre el resto de la filosofía presocrática es un trabajo que permanece abierto. Si puede admitirse que las bases fundamentales de esa filosofía, al menos en el caso general, es más cercana al pensamiento mítico que a nuestras intelecciones científicas, ya habremos hecho la mitad del trabajo. La otra mitad consistirá en distinguir su naturaleza arquetípica. Los fundamentos científicos que nos permiten suponer esta naturaleza son sólidos, pero tal distinción sólo puede lograrse a través de un estudio comparado. En última instancia, lo que se hará ver es cuán hondo en la condición humana se hunden las raíces de la experiencia afectiva del mundo.
-
-
-# Bibliografía
-
-
-
-1. A., Echandía, G. D. R., & Gual, G. C. (2016). *Física (Biblioteca Clásica Gredos n<sup>o</sup> 23)* (Poc ed.). Gredos.
-2. Aa.), V. A., Cordero, N. L., Olivieri, F. J., Croce, L. E., Lan, E. C., Ortiz, D. A. P., & Gual, G. C. (2018). *Los filósofos presocráticos II*. Gredos.
-3. Alcaro, A., Carta, S., & Panksepp, J. (2017). The Affective Core of the Self: A Neuro-Archetypical Perspective on the Foundations of Human (and Animal) Subjectivity. *Frontiers in Psychology*, *8*. [https://doi.org/10.3389/fpsyg.2017.01424](https://doi.org/10.3389/fpsyg.2017.01424)
-4. Autores, V., Lan, E. C., Juliá, V. E., Ortiz, D. A. P., & Gual, G. C. (2016). *Los filósofos presocráticos I*. Gredos.
-5. Autores, V., Poratti, A., Lan, E. C., de Prunes, S. M. C. I., Cordero, L. N., Ortiz, D. A. P., & Gual, G. C. (1997). *Filósofos presocráticos III (Los filósofos presocráticos n<sup>o</sup> 3)*. Gredos.
-6. Campbell, J. (1949). *El héroe de las mil caras* (1.<sup>a</sup> ed.). Atalanta.
-7. Colli, G. (1948). *La naturaleza ama esconderse*. Siruela.
-8. Damasio, A., & Carvalho, G. B. (2013). The nature of feelings: evolutionary and neurobiological origins. *Nature Reviews Neuroscience*, *14*(2), 143–152. [https://doi.org/10.1038/nrn3403](https://doi.org/10.1038/nrn3403)
-9. Eliade, M. (2020). *Historia de las creencias y las ideas religiosas I*. Ediciones Culturales Paidós S. A. De C. V.
-10. Emerson, R. W. (2021). *Self-Reliance and Other Essays*. Independently published.
-11. Foligno, A. (2014). *Libro de la experiencia* (2014.<sup>a</sup> ed.). Siruela.
-12. Fox, R. L., Lozoya, T. D., & Rabasseda, J. (2007). *El mundo clásico: La epopeya de Grecia y Roma (Serie Mayor)*. Editorial Crítica.
-13. Gigon, O. (1971). *Los orígenes de la filosofía*. Gredos.
-14. H. (2022). *Teogonía*. Gredos - RBA.
-15. Jaeger, W. (1933). *Paideia: Los ideales de la cultura griega* (2.<sup>a</sup> ed.). Fondo de Cultura Económica, mx books, FONIL.
-16. James, K. (2020). *Holy Bible: King James Version (Kjv)*. Zeiset.
-17. Jung, C. G. (1995). *El hombre y sus símbolos/Man and His Symbols*. Paidos Iberica Ediciones S a.
-18. Jung, C. G. (2014). *Arquetipos e inconsciente colectivo*. Paidós México.
-19. Jung, C. G. (1944). *Psicología y Alquimia (Spanish Edition)*. Van Haren Publishing.
-20. Jung, C. G., Adler, G., & Hull, R. F. C. (1977a). *Collected Works of C.G. Jung, Volume 9 (Part 1): Archetypes and the Collective Unconscious* (2nd ed.). Princeton University Press.
-21. Jung, C. G., Adler, G., & Hull, R. F. C. (1977b). *Collected Works of C.G. Jung, Volume 9 (Part 2): Aion* (2nd ed.). Princeton University Press.
-22. Navarro, A. J. M. (2019). *Upaniṣad*. Atalanta.
-23. Nietzsche, F. (2009). *Nietzsche I*. Gredos.
-24. Otto, W. F. (1929). *Dioses De Grecia, Los (A.P.): 29* (2. ed.). Siruela.
-25. Panksepp, J. (2005). Affective consciousness: Core emotional feelings in animals and humans. *Consciousness and Cognition*, *14*(1), 30–80. [https://doi.org/10.1016/j.concog.2004.10.004](https://doi.org/10.1016/j.concog.2004.10.004)
-26. Panksepp, J. (2011). The basic emotional circuits of mammalian brains: Do animals have affective lives? *Neuroscience & Biobehavioral Reviews*, *35*(9), 1791–1804. [https://doi.org/10.1016/j.neubiorev.2011.08.003](https://doi.org/10.1016/j.neubiorev.2011.08.003)
-27. Panksepp, J., & Burgdorf, J. (2003). “Laughing” rats and the evolutionary antecedents of human joy? *Physiology & Behavior*, *79*(3), 533–547. [https://doi.org/10.1016/s0031-9384(03)00159-8](https://doi.org/10.1016/s0031-9384(03)00159-8)
-28. Panksepp, J., & Gordon, N. (2003). The instinctual basis of human affect. *Consciousness & Emotion*, *4*(2), 197–205. [https://doi.org/10.1075/ce.4.2.04pan](https://doi.org/10.1075/ce.4.2.04pan)
-29. Paracelsus, & Ed, W. A. E. (2018). *The Hermetic and Alchemical Writings of Aureolus Philippus Theophrastus Bombast, of Hohenheim, Called Paracelsus the Great*. Franklin Classics Trade Press.
-30. Roob, A. (2014). *Alquimia & Mística*. TASCHEN.
-31. Weor, A. S. (2011). *The Gnostic Bible: The Pistis Sophia Unveiled* (2nd ed.). Glorian Publishing.
-
-<!-- Footnotes themselves at the bottom. -->
-## Notas
-
-[^1]:
-     Me refiero aquí a los pueblos del oriente con que los griegos tuvieron contacto en el período arcaico.
-
-[^2]:
-     Una vez más, no hago uso del término *inconsciente *en su sentido psicoanalítico. Aunque tal sentido no es incompatible con el contenido de este trabajo, prefiero la noción más terrenal y flexible de lo simplemente no-consciente. 
-    Que la consciencia emerge de una organización neural originalmente inconsciente es un hecho generalmente aceptado, aunque la naturaleza de esa emergencia es discutida. Véase, por ejemplo, Damasio y Carvalho *The nature of feelings: evolutionary and biological origins* (2013). 
-
-[^3]:
-     El fragmento habla de *llamas*, es decir de la pareja de opuestos *calor-frío*. Sigo el criterio de Gigon, que considera que esto es una sustitución realizada por el autor tardío, a quien esta pareja de contrarios debió de resultar más familiar. Anaximandro debió hablar de *luz *y *noche*.
-
-[^4]:
-     Los autores tardíos que refieren esta parte de su doctrina, y que probablemente la conocieron de primera mano, no refieren explicación alguna acerca de este rasgamiento. Lo más probable, entonces, es que Anaximandro tampoco la haya explicado nunca, y no que haya una explicación perdida con la obra original.
-
-[^5]:
-     Carl Jung, *Arquetipos e inconsciente colectivo*, pág.135, Paidós.
-
-[^6]:
-     Las similitudes entre el pensamiento presocrático y el de las *Upaniṣad *fueron advertidas antes. Véase, por ejemplo, Giorgio Colli, *La naturaleza ama esconderse*. Por lo general causó desconcierto en el campo filológico, en tanto son fenómenos contemporáneos y un contacto es del todo impensable.
-
-[^7]:
-     Palabras de la paciente que es objeto del libro *A study in the process of individuation*, Jung 1968.
-
+## Preliminary comment
+
+The purpose of this entry is to serve as record of a particular period
+in my intellectual life. It contains what originally were the scattered
+notes of a rereading of the presocratic philosophers. At the time, I was
+simultaneously studying the ninth volume of the *Complete works* of C.G.
+Jung. The coincidence of these separate studies conferred the notes with
+a rather peculiar tone—so much, in fact, that their content appears to
+me strange and almost pointless.
+
+The notes are around three years old as of today, so I take little
+responsibility for any claim they may contain. I am hardly who I was
+yesterday—let alone that many years ago. They end quite abruptly, for
+it seems I began to confuse myself, and although I perhaps expected to
+resume them sometime, that never occurred. Truncated as they are,
+strange in content, and virtually lacking any form of methodology, I
+gather them here for the world to see. And this because the core
+intuition that propelled me to write them, and to organize them into a
+single text, is kindled still within me.
+
+I speak of the suspicion that human experience, even across its wide
+range of cultural and spatio-temporal differences, tends to structurally
+identical patterns of representation. To put it differently, I mean the
+idea that there exists a symbolical counterpart of instinct, that there
+are innate tendencies of symbolic representation—perhaps the byproduct
+of the emergence of symbolic faculties in instinctive animals. This is
+what I loosely mean by *archetypical* images. Instinct and archetype are
+here understood to be enantiomeric.
+
+Archetypes, if they exist, are not eternal symbols floating in the soul
+of man. They are, if anything, a biological tendency. Every human
+faculty varies within a limited range—nothing distinctly human could
+otherwise exist. I am currently putting in writing a survey of the
+existing evidence in favour of this '' collective unconscious''. I shall
+refer any discussion on this matter to that upcoming work and disregard
+it for the time being. Suffices to say, the whole of these notes may
+boil down to an attempt at discerning, between certain mythological
+expressions and presocratic cosmogony, an isomorphism.
+
+## Introduction
+
+Presocratic thought, in spite of tremendous efforts, remains in almost
+total obscurity. The Aristotelian exegesis, which sees in it nothing but
+a rational attempt at describing the Φύσις, casts its shadow over
+practically all philology. Granted, part of the presocratic tradition
+was a genuine effort for discerning the natural properties of the world.
+But the fact that, in every philosopher, the most natural postulates
+were derived, as a general rule, from some mythical ground which was the
+corner stone of his doctrine, suggests that this part was also the most
+superficial. Every ἀρχή is ultimately arbitrary and irrational, and none
+of them can be explained as a strictly scientific *intellectio*. They
+are cosmogonic images of speculative nature, whose resemblance with
+mythological expressions make them worthy of the epithet of *mythical*.
+In Anaximander's τὸ ἄπειρον and Anaxagoras' νοῦς, for example, this is
+particularly clear. Philologists have tried to explain this mythical
+aspects in three different ways.
+
+$a.$ The first consisted in trying, sometimes with admirable
+intelligence, to show that these mythical expressions were in truth
+strictly rational—or simply assuming this was the case. Thus, for
+example, Hesiod's χάος is the logical regression from complex to simpler
+elements (Gigon, 1971), Anaximander puts the earth at the center of the
+universe compelled by a geometric intuition (Jaeger, 1933), and
+Aristotle teaches that Thales chose water as the ἀρχή by virtue of its
+transmutability. But it is illicit to project a naturalist spirit to
+postulates that, taken by themselves, are closer to myth than to
+empirical observation. Presocratic philosophy, in this sense, is similar
+to alchemy, which is sometimes described merely as a pre-scientific
+study of matter, when undoubtedly it is also a complex symbolic universe
+(Jung, 1944; Roob, 2014).
+
+$b.$ In other cases, the mythical grounding of presocratic philosophy
+was recognized, but nothing was seen in it but an aristocratic
+diversion, a manifestation of the drunken and Dionysian spirit of the
+Greeks. That was the stance of Nietzsche and Colli, for example. This
+hypothesis, however, has two problems. First, it misses the tremendous
+resemblance between the symbolic expressions that appear in presocratic
+philosophers and those of many other myths. It is not the time to point
+this resemblances out, but we shall deal with some of them in a moment.
+They show that, in what comes to its irrational aspect, presocratic
+thought is not all that original, and that what is attributed to a
+properly Greek amusement might turn out to be universal representations.
+Secondly, the symbolic expressions that are thus explained have, in
+truth, very little in common with with the typical worldview of ancient
+Greeks. This will become clearer when describing point $c.$
+
+$c.$ The third explanation consists in the appeal to some eastern
+influence—be it Persian, Babylonian, or Egyptian. This hypothesis
+deserves our attention the most, because it is the most plausible. It is
+a fact that presocratic Greece was in continuous contact with other
+peoples, so much so that many presocratic philosophers were colonial
+agents or travelers themselves. But it is imperative to observe that,
+for the Greek, nature was the total expression of the divine. The gods
+were not agents of miracles, but the force that kept the wheel of
+natural order turning. Religious feeling was engrained in objective
+reality and not in the portentous. This is why Otto (1929) claimed that
+the Greek worldview had, as a basic character, a ''natural ideality or
+ideal naturality'', and Gigon (1971) made the clever observation that
+the characters of the *Theogony* were not brought about because they
+were gods, but because one cannot obviate the regions represented by
+them in a wholesome picture of reality.
+
+The eastern sentiment, quite contrarily, was that objective reality was
+not the background of divine agency, but the illusory veil that
+separates us from it. The divine delve on an immaterial realm that only
+coincided with sensible reality by means of occult correspondences. The
+immaterial soul, a matter of little importance to the Greek, had a
+preponderant role. Thus, while the Greek conceived himself to be a
+member of an objective reality where the divine was manifest, the
+eastern man conceived reality to be the dream that distorts the divine
+essence and from which he was to free himself. Where the Greek saw the
+organic and the manifest, the eastern man guessed but a symbol and a
+mystery. The first looked at the sun and saw the warm glow of Apollo,
+who lived beyond the sea. The latter saw in it a light that existed only
+because it had been created by his own sense of sight.
+
+Granted, it is vain to describe the religious spirit of two peoples in
+such a brief note. However, the synthesis above should suffice to show
+that the Greek conception of reality was radically opposed to that of
+eastern peoples, and that it provided to them a complete perspective of
+the world, a sufficient framework of experience. Whence, then, would the
+Greek spirit be so susceptible to eastern influence? For, indeed, if an
+individual is, so to speak, touched by an idea, there must be something
+in him susceptible to that touch, and the same can be said of a people.
+If the phenomena that concerns us were reduced only to the peculiarities
+of Greek culture, we should expect the latter to be quite impenetrable
+to eastern religious sentiments—in a manner analogous to the way in
+which we are deaf to a foreign language. The matter is even more
+problematic when we consider, as we said before, that at the moment in
+which presocratic philosophy was flourishing, Greece, far from being
+weakened or in crisis, found itself in an intense period of colonial
+expansion and power (Lane Fox, 2007). It was besotted with pride and
+without any need of incorporating foreign myths that were, on top of
+everything, radically incompatible with those of its own. If eastern
+peoples played a part, they did so incidentally, but not sufficiently
+nor, ultimately, necessarily.
+
+A hypothesis that may fill this voids and avoid this flaws must not
+project over symbolic expressions a rational or empirical character, on
+top of explaining its anti-idiosyncratic nature and resemblance with
+other myths. My conjecture is that the different cosmogonies exposed by
+presocratic philosophers are archetypal images, whose expression in
+other traditions has been pointed out, but whose influence in
+presocratic philosophy was overlooked by a hermeneutic tradition not
+accustomed to such psychological concepts. I do not deny that the
+discovery of the Φύσις was a genuine enterprise—I only claim it was
+propitious to the projection of parallel psychological developments by
+virtue of the mysterious and complicated nature of the cosmogonic and
+astronomic phenomena in question, on one hand, and by the lack of a
+scientific method that protected, so to speak, the inquiry from
+psychological contamination.
+
+In relation to the meaning of *archetype*, or archetypal image, I must
+once more refer the reader to the entry *On archetypes*. For the
+psychoanalytic conception, which I do not follow entirely, I refer him
+also to both tomes of the ninth volume in Jung's *Complete works*. As a
+quick summary, I should only say that by *archetype* I understand
+phylogenetically determined, evolutionary archaic, and affective
+patterns of representation. That we share a common affective substrate
+with, at least, all mammals, is an established scientific fact
+(Panksepp, 2000; Panksepp and Gordon, 2003; Panksepp, 2005; Panksepp,
+2011). Furthermore, neuroscience has gathered some evidence in favor of
+the existence of some of the specific archetypes theorized by Jung
+(Alcara et. al., 2017). Of course, such evidence is inconclusive and
+should be carefully interpreted.
+
+Archetypes are not a metaphysical idea, a mystical intuition, nor an
+abstraction. They are—so I believe—a psychological fact. The
+advancement of neuroscience in the production of evidence must
+necessarily be accompanied by the study of their concrete cultural and
+behavioral manifestations. They are relevant for individual and social
+life because the structures mediating primitive, affective behavior are,
+as far as we can tell, also those modulating the construction of
+meaning—as it is evidenced by the obstinate appearance of archetypal
+images in myths and cosmogonies. They are, in all probability, the
+product of ''value-encoding neural systems'' (Panksepp y Burgdof, 2003)
+associated to the articulation of meaning.
+
+I will focus on Anaximander for two reasons. Firstly, a study of this
+sort over the whole corpus of presocratic thought is a colosal endeavor,
+far beyond my capacity and time. (I should comment to my reader: I write
+only a very limited number of hours per week, and devote almost all of
+my time to my scientific work.) Secondly, Anaximander wrote one of the
+most famous fragments of ancient philosophy; namely, the fragment D-K 12
+A 10, whose cosmogonic character makes its comparative analysis somewhat
+easier.
+
+## Anaximander
+
+The fragment of interest comes from Plutarch:
+
+> «Anaximandro ... dice que lo infinito es la causa de la generación y
+destrucción de todo, a partir de lo cual —dice— se segregan los
+cielos y en general todos los mundos, que son infinitos. Declara que su
+destrucción y, mucho antes, su nacimiento se producen por el movimiento
+cíclico de su eternidad infinita... Dice también que, en la generación
+de este cosmos, lo que de lo eterno es capaz de generar lo caliente y lo
+frío fue segregado, y que, a raíz de ello, una esfera de llamas surgió
+en torno al aire que circunda a la tierra, tal como una corteza
+\[rodea\] al árbol; al romperse la \[esfera\] y quedar encerradas \[sus
+llamas\] en algunos círculos, se originaron el sol, la luna y los
+astros.»
+
+Anaximander teaches that the origin of all things is ''the infinite'',
+also translated as the Unlimited or the Undetermined. In this principle,
+all pairs of opposites are contained, and so are all worlds, which are
+released from it. The Unlimited produces the world in a continuous
+fashion—it is not the creator at a sole and distant point in time, but
+the perennial and continual agent of the generation and extinction of
+things—it is *el fondo del movimiento cósmico*.
+
+From the Unlimited, a ''seed'' (γóνιμον, ''that which is $\ldots$
+capable of generation'') of light and night was segregated. The word
+γóνιμον is an important subtlety. From the Unlimited did not sprout
+light and darkness, but that which engenders them. Light and night thus
+constitute the original opposition, begotten by the seed that segregated
+from the Unlimited. From a psychological perspective, one is tempted to
+say this is a projection of the immemorial separation of consciousness
+from primordial unconscious existence, similarly to the words of God:
+''*let there be light*''. It is said that light and night covered the
+Earth like the cortex would a tree and in a double layer. Light was the
+interior layer—night was the exterior one. But the husk of light was
+teared appart—we are not told how nor why—and the fire that once was
+total was dispersed in small spherical shapes. Those are the stars and
+*astrums* we observe.
+
+The world to which the seed is thrown, the cosmic state in which this
+primordial segregation occurs, is the empty space, the mythical χάος
+that is first proposed in Hesiod's *Theogony*. The word χάος does not
+express, as Ovidio thought, an aleatory mess. It means something along
+the line of *cavity* or *cleft*. It was used, for example, to denote the
+wide opening of a mouth or the aperture of a cave. Its formulation as
+primordial state is a widespread and well documented archetypal motif.
+*Gensis 1:2* speaks of the abyss that was shadow only: ''*And the earth
+was without form, and void; and darkness was upon the face of the
+deep*''. The primordial Hunger in the *Vedas*, insofar as hunger is a
+state of inner emptiness, or the universal symbol of the cave as a
+transformation place—this is, of generation by means of prior
+destruction—are also related to Hesiodic χάος. It is worth mentioning,
+although briefly, the role of Mercury in alchemy, which Paracelsus said
+to be ''*the concealer of the rest \[of things\]—their corporeal
+vessel* ($\ldots$)—'' (Paracelsus & Ed, 2018). But what concerns us
+now is that, in Anaximander, it is the seed of light and shadow what
+alters that primordial state. That seed only is what induces content and
+shape in the original void, covering the world with the double layer of
+its fruit.
+
+It must be said that, from a psychological perspective, the emergence of
+consciousness is both an individual and a collective phenomena—it is a
+phylogenetic and an ontogenenetic development. It is clear that
+unconscious life precedes consciousness, and that the latter emerges
+from the first in a continuous fashion—this is, by changes of *degree*
+and not of nature. But awareness of thought came much later than thought
+itself, and the emergence of consciousness is matricidal, insofar as the
+flourishing of understanding comes with the relegation of an entire form
+of life to a realm of absolute obscurity. Thus, in Anaximander, from the
+Undetermined sprouts the initial contradiction of day and night,
+conscious and unconscious life. This emergence, though expressing form-
+and content-aquisition by means of resolving the original χάος and,
+quite literally, producing a world—this is, though being a creative
+act—also creates a tension inherent to the separation of a unity into
+irreconcilable opposites. This tension seems to be what the tearing of
+the light sheet expresses, which the philosopher never explains and is,
+to my eyes, the result of an irrational intuition. Thus, the primordial
+unity of light is also destroyed—and this immediately after being
+conformed.
+
+This dissemination of the original light into smaller spheres can be, on
+its turn, associated to a different psychological fact. The *self*
+archetype, expressed in the divine source of the Unlimited, is not only
+an archetype but, insofar as it expresses a totality, union and source
+of all the rest. Indeed, what psychoanalysis has termed *individuation*
+can be thought of symbolically as the union of dispersed lights into a
+single great luminary. These are two opposite forms of totality: the
+primordial unconscious where everything is, so to speak, undivided—the
+final integration of opposite poles. The first is the primordial origin,
+the latter the ultimate end. In this sense, they imply each other as
+logical necessities. This might be one of the most peculiar aspects of
+the *self* archetype, if it truly exists—that is, that it expresses a
+return to a pristine state of harmony and, at the same time, a positive
+and forward-looking synthesis.
+
+The image of the dispersed luminosities finds another parallel in the
+*scintillae* of medieval alchemy. These are subtle flashes of light
+present in the ''substance of transformation'', associated to the *anima
+mundi* and the Holy Spirit. These two notions are different modulations
+of a unique intuition; namely, that of the hidden and numinous force
+that drives the world. It is no mystery then that the concept of
+*scintillae* was associated to them, insofar as it conduces—and in
+some sense spiritualizes—the process of alchemical transformation.
+Kunrath calls these luminosities ''*mundi futuri seminarium*''. They are
+'' semillas de luz diseminadas en el caos''.
+
+The *self* archetype is abundant in modulations of various nature.
+Insofar as it points to the totality of the psyche, it is, in general,
+the intuition expressed by every form of monism or monotheism. Diogenes
+of Apollonia, for example, postulated either the Undetermined or the
+*air* as principle, according to different sources. The philologic
+discussion interests us not, for if he spoke of air he did so not as a
+material principle—this can only be an Aristotelian mistake—but as
+engendering breath, as that air of life that was insufflated into every
+thing existent. It is, then, quite identical to Anaximander's principle,
+at least from a psychological perspective. Simplicius of Cicilia quotes
+Diogenes in a passage of his *Physics* (151, 20-153, 5):
+
+> «Me parece (\...) que todas las cosas que existen son alteraciones de
+lo mismo, y que son lo mismo. (\...) Pero todas estas cosas se generan a
+partir de lo mismo, como alteraciones diversas en diversos momentos, y
+vuelven hacia lo mismo».
+
+But we can even abandon the Greek world, where the philologists contents
+himself with tracing a more or less clear chain of influences. In the
+*Bṛhádāraṇyaka Upaniṣad*, the primordial Death, which is Hunger, creates
+a mind. The new-born mind conceives the following thought: ''*que yo
+tenga un* ātman''. The *ātman* is a clear modulation of the self
+archetype, insofar as it points to the psychological self in its
+absolute totality, the ''transcendent''and ''non-transcendent'' planes
+integrated. It is the breath that vivifies all things. As such it
+relates to the *scintillae* of medieval alchemy and Diogenes' air. The
+first wish formulated by this primordial mind is, then, a total and
+unified identity. We are then told of the emergence of the first man,
+the *Puruṣa*: ''En el principio sólo era el ātman. Y no habiendo otro
+salvo él mismo, pensó y se dijo: "Soy yo". De ahí que su nombre sea
+'yo'''.
+
+This ''yo'', this ''I'', refers not to the self but to the ego, the
+subject of consciousness. Thus, with this thought, from the primordial
+*ātman* the *Puruṣa* is formed. We find once again that the formation of
+consciousness, expressed in the creation of the first man, implies a
+lost of unity in the psyche, which is teared into *ātman*=self y
+*aham*=ego. This intuition is the one projected by Anaximander when he
+speaks of the production of light and night from the γóνιμον. This
+disruptive and disintegrating character is what is expressed in the
+tearing of the light cortex into smaller and disseminated spheres.
+
+Of the *Puruṣa* we are also told that it has ''a thousand eyes''.
+Ignacio de Loyola speaks of a vision that frequently became to him: a
+glow that sometimes took the shape of a snake, and seemed filled of
+shining eyes. Monoimo the Arab teaches that the primitive man possessed
+'' many faces and many eyes''. Caesarius of Heisterbach says of the
+*Anthropos*, the first man, that it was like a sphere and had eyes
+everywhere (*ex omni parte oculata*). Angela of Foligno, in one
+occasion, saw in the host ''dos ojos esplendidísimos tan grandes que
+parecía que de la hostia solamente quedaban los bordes''. She also
+recalls: '' ($\ldots$) una vez no ante la hostia, sino en la celda, se
+me aparecieron ojos con tan gran belleza y tan deleitables que
+ciertamente no creo que pierda nunca la alegría''.
+
+The association between the emergence of consciousness and phenomena
+involving multiple lights is not, as we see, unusual. Its vinculation
+with the *self* seems clear insofar as it occurs in experiences of
+connection with the divine (be it in the Christian host or the Vedic
+*ātman*). It is worth mentioning here that, once more, we observe the
+double character of the archetype—its tone of primordial phenomenon
+and of ultimate truth. As a last comment, these small luminosities,
+expressed in polyoftalmic or astronomical visions, probably refer the
+fragmentary phenomena of consciousness, while the greater light (the
+divine eye or the sun as the eye of God, the *scintilla una* Kunrath
+spoke of, etc.) is a modulation of the *self*. That these luminosities
+have in general a spherical shape corresponds to the unifying and
+integrating sense of the archetype, and we find this in Anaximander too,
+since from the huks of light, small fires are dispersed ''in some
+circles''. Hippolytus of Athens also tells that, according to
+Anaximander, ''the *astrums* we see are generated as a circle of fire,
+separating from the fire of the world, each surrounded by air''.
+
+What I mean to record here, then, after so many examples, is that
+Anaximander's doctrine is not at all original. It fits perfectly with a
+mythological motif of extensive documentation. Even in the idea that the
+principle governs all things, which appears in Diogenes also, the
+parallel with the eye motif is evident, insofar as the capacity to see
+it all is the hyperbolic form of government. So, God has eyes that
+''están sobre el camino del hombre'' and ''is always watching everything
+we do'' (*Job, 34:21*), and Chronos is ''the one that sees it all''to
+Sophocles and ''the devil that everything sees''in certain Greek
+funerary inscription. Argos Panoptes, the thousand-eyed giant, is a
+guardian and protector.
+
+The archetype, naturally, is not confined to ancient mysticism. Emerson,
+for example, spoke of a mysterious sphere that is and is not always the
+same.
+
+> Genius studies the causal thought, and, far back in the womb of
+things, sees the rays parting from one orb, that diverge ere they fall
+by infinite diameters. Genius watches the monad through all his masks as
+he performs the metempsychosis of nature. Genius detects through the
+flies, through the caterpillar, through the egg, the constant individual
+(\...).
+
+The primordial sphere, the thought that is the cause of all that is
+existent, is the *principia*—it is the Pythagoric monad in relation to
+which every death is but a transmigration—it is the hidden Individual
+in the phenomenic world. To be and not to be always the same is a
+synthesis of opposites, a common trait of the archetype, insofar as the
+*self* is not a principle of perfection, but of completeness. The
+totality of the psyche is precisely that: a totality. Therein lay all
+shadow and all light, the chthonic and celestial worlds. That
+Anaximander considers the opposites as contained in the Undetermined is,
+therefore, consistent with the general phenomenology of the archetype.
+The symbol of Christ, to name a familiar one, has a distinct
+enantiodromic nature. The coming of the Antichrist is not a mere
+prophetic dream, but the product of a psychological law that took
+Christian mysticism to the idea of a coming reign of the shadows. This
+is particularly manifest in Gnostic thought, among which we may point
+out a particular passage from the *Pistis Sophia*. When Jesus was a
+child, a spirit that proclaimed himself to be his brother, descended
+onto Mary. It looked just like Jesus, and she confounded the spirit with
+him—but he was from the inferior regions of Chaos. When reminding
+Jesus of this episode, Mary tells him of the spirit: ''*he embraced thee
+and kissed thee, and thou also didst kiss him, and you became one*''.
+
+Similarly, Angela of Foligno says that, when she heard the Holy Spirit,
+she wanted to see if she could forget this voice that spoke onto her,
+and tells: ''I started looking at the vines, so as to forget those words
+($\ldots$), and wherever I would turn I would tell myself: 'This is my
+creature'. And I felt an ineffable divine joy''.
+
+The mystical experience was so strong that she felt the whole of
+creation belonged to her as it originally belonged to God. But
+immediately after she says: ''And then to my memory came all my sins and
+my vices, and I saw in me nothing but sins and flaws''.
+
+To Angela of Foligno, the simultaneity of the sweet mystical experience
+and the assault of her vices and sins onto her memory was shocking. We
+have mentioned the Gnostic intuition of the inseparability of Christ and
+Antichrist, but here we find ourselves with a spontaneous experience of
+this intuition in a catholic christian, who probably never thought the
+voice of the Holy Spirit could come accompanied by such horrendous
+darkness. But if we understood anything about the *self* archetype, such
+simultaneity cannot surprise us. The experience was hardly interpretable
+from the framework of catholic dogma, but from a psychological
+perspective it is impeccably consistent. In general, and in accordance
+to what we have thus far exposed, the archetype manifests as affected by
+''equal yet opposite forces''.
+
+The exposition of so many examples is not an act of vain erudition. With
+some luck, I have produced a decent record of the similarities between
+Anaximander's doctrine and countless other myths. I have nothing else to
+say, insofar as the whole matter is still obscure to me, and the more I
+advance with these notes the more I mistrust my own conclusions. I
+should prefer to close my notes on Anaximander here and resume them in
+another period of my life, when some of these ideas have matured in my
+mind. I an contempt to have put in writing that which was coming in my
+mind as I restudied presocratic philosophy.
