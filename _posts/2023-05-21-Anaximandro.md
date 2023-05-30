@@ -1,5 +1,5 @@
 ---
-title: Anaximander ~ Cosmogony and archetypes
+title: Anaximander - Cosmogony and archetypes
 categories: [ Philosophy, Personal ]
 ---
 
@@ -26,7 +26,7 @@ single text, is kindled still within me.
 I speak of the suspicion that human experience, even across its wide
 range of cultural and spatio-temporal differences, tends to structurally
 identical patterns of representation. To put it differently, I mean the
-idea that there exists a symbolical counterpart of instinct, that there
+idea that there exists a symbolic counterpart of instinct, that there
 are innate tendencies of symbolic representation—perhaps the byproduct
 of the emergence of symbolic faculties in instinctive animals. This is
 what I loosely mean by *archetypical* images. Instinct and archetype are
@@ -36,9 +36,9 @@ Archetypes, if they exist, are not eternal symbols floating in the soul
 of man. They are, if anything, a biological tendency. Every human
 faculty varies within a limited range—nothing distinctly human could
 otherwise exist. I am currently putting in writing a survey of the
-existing evidence in favour of this '' collective unconscious''. I shall
+existing evidence in favour of this "collective unconscious". I shall
 refer any discussion on this matter to that upcoming work and disregard
-it for the time being. Suffices to say, the whole of these notes may
+it for the time being. Suffice it to say, the whole of these notes may
 boil down to an attempt at discerning, between certain mythological
 expressions and presocratic cosmogony, an isomorphism.
 
@@ -99,8 +99,8 @@ for the Greek, nature was the total expression of the divine. The gods
 were not agents of miracles, but the force that kept the wheel of
 natural order turning. Religious feeling was engrained in objective
 reality and not in the portentous. This is why Otto (1929) claimed that
-the Greek worldview had, as a basic character, a ''natural ideality or
-ideal naturality'', and Gigon (1971) made the clever observation that
+the Greek worldview had, as a basic character, a "natural ideality or
+ideal naturality", and Gigon (1971) made the clever observation that
 the characters of the *Theogony* were not brought about because they
 were gods, but because one cannot obviate the regions represented by
 them in a wholesome picture of reality.
@@ -178,7 +178,7 @@ life because the structures mediating primitive, affective behavior are,
 as far as we can tell, also those modulating the construction of
 meaning—as it is evidenced by the obstinate appearance of archetypal
 images in myths and cosmogonies. They are, in all probability, the
-product of ''value-encoding neural systems'' (Panksepp y Burgdof, 2003)
+product of "value-encoding neural systems"(Panksepp y Burgdof, 2003)
 associated to the articulation of meaning.
 
 I will focus on Anaximander for two reasons. Firstly, a study of this
@@ -206,7 +206,7 @@ en torno al aire que circunda a la tierra, tal como una corteza
 llamas\] en algunos círculos, se originaron el sol, la luna y los
 astros.»
 
-Anaximander teaches that the origin of all things is ''the infinite'',
+Anaximander teaches that the origin of all things is "the infinite'',
 also translated as the Unlimited or the Undetermined. In this principle,
 all pairs of opposites are contained, and so are all worlds, which are
 released from it. The Unlimited produces the world in a continuous
@@ -214,15 +214,15 @@ fashion—it is not the creator at a sole and distant point in time, but
 the perennial and continual agent of the generation and extinction of
 things—it is *el fondo del movimiento cósmico*.
 
-From the Unlimited, a ''seed'' (γóνιμον, ''that which is $\ldots$
-capable of generation'') of light and night was segregated. The word
+From the Unlimited, a "seed"(γóνιμον, ''that which is $\ldots$
+capable of generation") of light and night was segregated. The word
 γóνιμον is an important subtlety. From the Unlimited did not sprout
 light and darkness, but that which engenders them. Light and night thus
 constitute the original opposition, begotten by the seed that segregated
 from the Unlimited. From a psychological perspective, one is tempted to
 say this is a projection of the immemorial separation of consciousness
 from primordial unconscious existence, similarly to the words of God:
-''*let there be light*''. It is said that light and night covered the
+"*let there be light*''. It is said that light and night covered the
 Earth like the cortex would a tree and in a double layer. Light was the
 interior layer—night was the exterior one. But the husk of light was
 teared appart—we are not told how nor why—and the fire that once was
@@ -236,15 +236,15 @@ express, as Ovidio thought, an aleatory mess. It means something along
 the line of *cavity* or *cleft*. It was used, for example, to denote the
 wide opening of a mouth or the aperture of a cave. Its formulation as
 primordial state is a widespread and well documented archetypal motif.
-*Gensis 1:2* speaks of the abyss that was shadow only: ''*And the earth
+*Gensis 1:2* speaks of the abyss that was shadow only: "*And the earth
 was without form, and void; and darkness was upon the face of the
-deep*''. The primordial Hunger in the *Vedas*, insofar as hunger is a
+deep*". The primordial Hunger in the *Vedas*, insofar as hunger is a
 state of inner emptiness, or the universal symbol of the cave as a
 transformation place—this is, of generation by means of prior
 destruction—are also related to Hesiodic χάος. It is worth mentioning,
 although briefly, the role of Mercury in alchemy, which Paracelsus said
-to be ''*the concealer of the rest \[of things\]—their corporeal
-vessel* ($\ldots$)—'' (Paracelsus & Ed, 2018). But what concerns us
+to be "*the concealer of the rest \[of things\]—their corporeal
+vessel* ($\ldots$)—"(Paracelsus & Ed, 2018). But what concerns us
 now is that, in Anaximander, it is the seed of light and shadow what
 alters that primordial state. That seed only is what induces content and
 shape in the original void, covering the world with the double layer of
@@ -287,14 +287,14 @@ and forward-looking synthesis.
 
 The image of the dispersed luminosities finds another parallel in the
 *scintillae* of medieval alchemy. These are subtle flashes of light
-present in the ''substance of transformation'', associated to the *anima
+present in the "substance of transformation'', associated to the *anima
 mundi* and the Holy Spirit. These two notions are different modulations
 of a unique intuition; namely, that of the hidden and numinous force
 that drives the world. It is no mystery then that the concept of
 *scintillae* was associated to them, insofar as it conduces—and in
 some sense spiritualizes—the process of alchemical transformation.
-Kunrath calls these luminosities ''*mundi futuri seminarium*''. They are
-'' semillas de luz diseminadas en el caos''.
+Kunrath calls these luminosities "*mundi futuri seminarium*''. They are
+"semillas de luz diseminadas en el caos".
 
 The *self* archetype is abundant in modulations of various nature.
 Insofar as it points to the totality of the psyche, it is, in general,
@@ -316,19 +316,19 @@ vuelven hacia lo mismo».
 But we can even abandon the Greek world, where the philologists contents
 himself with tracing a more or less clear chain of influences. In the
 *Bṛhádāraṇyaka Upaniṣad*, the primordial Death, which is Hunger, creates
-a mind. The new-born mind conceives the following thought: ''*que yo
-tenga un* ātman''. The *ātman* is a clear modulation of the self
+a mind. The new-born mind conceives the following thought: "*que yo
+tenga un* ātman". The *ātman* is a clear modulation of the self
 archetype, insofar as it points to the psychological self in its
-absolute totality, the ''transcendent''and ''non-transcendent'' planes
+absolute totality, the "transcendent''and ''non-transcendent"planes
 integrated. It is the breath that vivifies all things. As such it
 relates to the *scintillae* of medieval alchemy and Diogenes' air. The
 first wish formulated by this primordial mind is, then, a total and
 unified identity. We are then told of the emergence of the first man,
-the *Puruṣa*: ''En el principio sólo era el ātman. Y no habiendo otro
+the *Puruṣa*: "En el principio sólo era el ātman. Y no habiendo otro
 salvo él mismo, pensó y se dijo: "Soy yo". De ahí que su nombre sea
-'yo'''.
+'yo"'.
 
-This ''yo'', this ''I'', refers not to the self but to the ego, the
+This "yo'', this ''I'', refers not to the self but to the ego, the
 subject of consciousness. Thus, with this thought, from the primordial
 *ātman* the *Puruṣa* is formed. We find once again that the formation of
 consciousness, expressed in the creation of the first man, implies a
@@ -338,18 +338,18 @@ speaks of the production of light and night from the γóνιμον. This
 disruptive and disintegrating character is what is expressed in the
 tearing of the light cortex into smaller and disseminated spheres.
 
-Of the *Puruṣa* we are also told that it has ''a thousand eyes''.
+Of the *Puruṣa* we are also told that it has "a thousand eyes''.
 Ignacio de Loyola speaks of a vision that frequently became to him: a
 glow that sometimes took the shape of a snake, and seemed filled of
 shining eyes. Monoimo the Arab teaches that the primitive man possessed
-'' many faces and many eyes''. Caesarius of Heisterbach says of the
+"many faces and many eyes". Caesarius of Heisterbach says of the
 *Anthropos*, the first man, that it was like a sphere and had eyes
 everywhere (*ex omni parte oculata*). Angela of Foligno, in one
-occasion, saw in the host ''dos ojos esplendidísimos tan grandes que
-parecía que de la hostia solamente quedaban los bordes''. She also
-recalls: '' ($\ldots$) una vez no ante la hostia, sino en la celda, se
+occasion, saw in the host "dos ojos esplendidísimos tan grandes que
+parecía que de la hostia solamente quedaban los bordes". She also
+recalls: "($\ldots$) una vez no ante la hostia, sino en la celda, se
 me aparecieron ojos con tan gran belleza y tan deleitables que
-ciertamente no creo que pierda nunca la alegría''.
+ciertamente no creo que pierda nunca la alegría".
 
 The association between the emergence of consciousness and phenomena
 involving multiple lights is not, as we see, unusual. Its vinculation
@@ -364,10 +364,10 @@ divine eye or the sun as the eye of God, the *scintilla una* Kunrath
 spoke of, etc.) is a modulation of the *self*. That these luminosities
 have in general a spherical shape corresponds to the unifying and
 integrating sense of the archetype, and we find this in Anaximander too,
-since from the huks of light, small fires are dispersed ''in some
-circles''. Hippolytus of Athens also tells that, according to
-Anaximander, ''the *astrums* we see are generated as a circle of fire,
-separating from the fire of the world, each surrounded by air''.
+since from the huks of light, small fires are dispersed "in some
+circles". Hippolytus of Athens also tells that, according to
+Anaximander, "the *astrums* we see are generated as a circle of fire,
+separating from the fire of the world, each surrounded by air".
 
 What I mean to record here, then, after so many examples, is that
 Anaximander's doctrine is not at all original. It fits perfectly with a
@@ -375,9 +375,9 @@ mythological motif of extensive documentation. Even in the idea that the
 principle governs all things, which appears in Diogenes also, the
 parallel with the eye motif is evident, insofar as the capacity to see
 it all is the hyperbolic form of government. So, God has eyes that
-''están sobre el camino del hombre'' and ''is always watching everything
-we do'' (*Job, 34:21*), and Chronos is ''the one that sees it all''to
-Sophocles and ''the devil that everything sees''in certain Greek
+"están sobre el camino del hombre"and ''is always watching everything
+we do"(*Job, 34:21*), and Chronos is "the one that sees it all''to
+Sophocles and "the devil that everything sees''in certain Greek
 funerary inscription. Argos Panoptes, the thousand-eyed giant, is a
 guardian and protector.
 
@@ -411,19 +411,19 @@ out a particular passage from the *Pistis Sophia*. When Jesus was a
 child, a spirit that proclaimed himself to be his brother, descended
 onto Mary. It looked just like Jesus, and she confounded the spirit with
 him—but he was from the inferior regions of Chaos. When reminding
-Jesus of this episode, Mary tells him of the spirit: ''*he embraced thee
-and kissed thee, and thou also didst kiss him, and you became one*''.
+Jesus of this episode, Mary tells him of the spirit: "*he embraced thee
+and kissed thee, and thou also didst kiss him, and you became one*".
 
 Similarly, Angela of Foligno says that, when she heard the Holy Spirit,
 she wanted to see if she could forget this voice that spoke onto her,
-and tells: ''I started looking at the vines, so as to forget those words
+and tells: "I started looking at the vines, so as to forget those words
 ($\ldots$), and wherever I would turn I would tell myself: 'This is my
-creature'. And I felt an ineffable divine joy''.
+creature'. And I felt an ineffable divine joy".
 
 The mystical experience was so strong that she felt the whole of
 creation belonged to her as it originally belonged to God. But
-immediately after she says: ''And then to my memory came all my sins and
-my vices, and I saw in me nothing but sins and flaws''.
+immediately after she says: "And then to my memory came all my sins and
+my vices, and I saw in me nothing but sins and flaws".
 
 To Angela of Foligno, the simultaneity of the sweet mystical experience
 and the assault of her vices and sins onto her memory was shocking. We
@@ -436,7 +436,7 @@ simultaneity cannot surprise us. The experience was hardly interpretable
 from the framework of catholic dogma, but from a psychological
 perspective it is impeccably consistent. In general, and in accordance
 to what we have thus far exposed, the archetype manifests as affected by
-''equal yet opposite forces''.
+"equal yet opposite forces''.
 
 The exposition of so many examples is not an act of vain erudition. With
 some luck, I have produced a decent record of the similarities between
@@ -445,5 +445,5 @@ say, insofar as the whole matter is still obscure to me, and the more I
 advance with these notes the more I mistrust my own conclusions. I
 should prefer to close my notes on Anaximander here and resume them in
 another period of my life, when some of these ideas have matured in my
-mind. I an contempt to have put in writing that which was coming in my
+mind. I am contempt to have put in writing that which was coming in my
 mind as I restudied presocratic philosophy.
