@@ -1,6 +1,6 @@
 ---
 title: Anaximander - Cosmogony and archetypes
-categories: [ Philosophy, Personal ]
+categories: [ Philosophy ]
 ---
 
 ## Preliminary comment
