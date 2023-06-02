@@ -1,18 +1,19 @@
-# Fdb version 3
-["pdflatex"] 1685679163 "note_to_self.tex" "note_to_self.pdf" "note_to_self" 1685679164
-  "/etc/texmf/web2c/texmf.cnf" 1672922595 475 c0e671620eb5563b2130f56340a5fde8 ""
+# Fdb version 4
+["pdflatex"] 1685750063 "note_to_self.tex" "note_to_self.pdf" "note_to_self" 1685750063 0
+  "/etc/texmf/web2c/texmf.cnf" 1683163658 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
-  "/usr/share/texlive/texmf-dist/tex/latex/base/article.cls" 1654720880 20144 7555b7429d80bef287ebb82117811acc ""
-  "/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo" 1654720880 8448 e0391042ca0932ede1098ae14ada60ba ""
-  "/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def" 1656792629 31050 293f2cc98a3575c4228b5157bf850b8f ""
-  "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1658757727 39561 34c98e380bf7c7201ee6a7909aff625a ""
-  "/usr/share/texmf/web2c/texmf.cnf" 1658757727 39561 34c98e380bf7c7201ee6a7909aff625a ""
-  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1673122213 4595794 2d34e5a126a0aa697a2f4f787f7af198 ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1673122256 2867243 8270195b27cb52be5edc403c6e9b2a7b ""
-  "note_to_self.aux" 1685679164 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "note_to_self.tex" 1685679163 1333 4b6aaccaa77bdabf92c0a2f153d61692 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/article.cls" 1667332637 20144 d5ecf0a5140c8d8d8b72cbe86e320eff ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo" 1667332637 8448 c33a4e1cb35cee9b33c2b21033b73e39 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def" 1673989714 30429 213676d4c7327a21d91ddaed900e7b81 ""
+  "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
+  "/usr/share/texmf/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
+  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1683164103 4623455 fa0568a71dd9a288d6c226ee477506c6 ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1685734779 7880721 5a192c6a05df19a31d9285e96ff2981d ""
+  "note_to_self.aux" 1685750063 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "note_to_self.tex" 1685750063 1327 9f2c2e32debad00c9b96cffb873688e6 ""
   (generated)
   "note_to_self.aux"
   "note_to_self.log"
   "note_to_self.pdf"
+  (rewritten before read)
