@@ -1,15 +1,24 @@
+<<<<<<< HEAD
 # Fdb version 4
 ["pdflatex"] 1685211549 "archs.tex" "archs.pdf" "archs" 1685211549 2
   "/etc/texmf/web2c/texmf.cnf" 1683163658 475 c0e671620eb5563b2130f56340a5fde8 ""
+=======
+# Fdb version 3
+["pdflatex"] 1685591234 "archs.tex" "archs.pdf" "archs" 1685591234
+  "/etc/texmf/web2c/texmf.cnf" 1672922595 475 c0e671620eb5563b2130f56340a5fde8 ""
+>>>>>>> e8a639bdecea322de6ea65357e477deb32a11c45
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/psyro.tfm" 1136768653 1544 23a042a74981a3e4b6ce2e350e390409 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm" 1136768653 4640 532ca3305aad10cc01d769f3f91f1029 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/zptmcm7m.tfm" 1136768653 2232 db256afffc8202da192b4641df14d602 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1440.tfm" 1136768653 3584 13049b61b922a28b158a38aeff75ee9b ""
+<<<<<<< HEAD
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm0600.tfm" 1136768653 3584 291a5713401683441e0a8c8f4417b17b ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm0700.tfm" 1136768653 3584 cf973739aac7ab6247f9150296af7954 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm0800.tfm" 1136768653 3584 49064b465390a8e316a3c8417a050403 ""
+=======
+>>>>>>> e8a639bdecea322de6ea65357e477deb32a11c45
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm0900.tfm" 1136768653 3584 d3d8ac8b25ca19c0a40b86a5db1e8ccc ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm" 1136768653 3584 adb004a0c8e7c46ee66cad73671f37b4 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1440.tfm" 1136768653 3584 3169d30142b88a27d4ab0e3468e963a2 ""
@@ -31,6 +40,7 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm" 1136768653 1116 25a7bf822c58caf309a702ef79f4afbb ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb" 1136849748 45458 a3faba884469519614ca56ba5f6b1de1 ""
   "/usr/share/texlive/texmf-dist/fonts/vf/adobe/times/zptmcm7m.vf" 1136768653 1132 27520247d3fe18d4266a226b461885c2 ""
   "/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty" 1600895880 17859 4409f8f50cd365c68e684407e5350b1b ""
@@ -57,6 +67,7 @@
   "/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd" 1137110629 411 12564a37a279e4e0b533cdf5e03eeb7c ""
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1636152094 2971 def0b6c1f0b107b3b936def894055589 ""
+<<<<<<< HEAD
   "/usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb" 1673996246 135942 859a90cad7494a1e79c94baf546d7de5 ""
   "/usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb" 1673996246 162624 9dcc92cd3b1dfe2ecc80e6da7f2eb6bd ""
   "/usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb" 1673996246 154599 ded6d7c21788a8930eadc7fef7518942 ""
@@ -69,6 +80,17 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1683164164 7881193 7cba7792b255db4a06930af6419b9aaa ""
   "archs.aux" 1685211549 430 2e6e7cf1dc97f7c6ef1bec42256cd152 "pdflatex"
   "archs.tex" 1685211548 16039 8c0715758394bd24cadb326e8234ef2f ""
+=======
+  "/usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb" 1673122193 135942 859a90cad7494a1e79c94baf546d7de5 ""
+  "/usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb" 1673122193 149037 995a6f1e12c1d647b99b1cf55db78699 ""
+  "/usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb" 1636152094 138258 6525c253f16cededa14c7fd0da7f67b2 ""
+  "/usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb" 1636152094 186554 e8f0fa8ca05e038f257a06405232745f ""
+  "/usr/share/texmf/web2c/texmf.cnf" 1658757727 39561 34c98e380bf7c7201ee6a7909aff625a ""
+  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1673122213 4595794 2d34e5a126a0aa697a2f4f787f7af198 ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1673122256 2867243 8270195b27cb52be5edc403c6e9b2a7b ""
+  "archs.aux" 1685591188 359 e230ea50d98a9628a740b45d5c673eba "pdflatex"
+  "archs.tex" 1685591233 13448 589b8740f5967c3da1518e650196e15c ""
+>>>>>>> e8a639bdecea322de6ea65357e477deb32a11c45
   (generated)
   "archs.aux"
   "archs.log"

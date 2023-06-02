@@ -1,0 +1,1032 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.1.7)  30 MAY 2023 16:35
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**anaximander.tex
+(./anaximander.tex
+LaTeX2e <2022-06-01> patch level 5
+L3 programming layer <2022-07-15> (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@section=\count186
+\c@subsection=\count187
+\c@subsubsection=\count188
+\c@paragraph=\count189
+\c@subparagraph=\count190
+\c@figure=\count191
+\c@table=\count192
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2022-07-01 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count193
+\l__pdf_internal_box=\box51
+) (./anaximander.aux)
+\openout1 = `anaximander.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+
+
+./anaximander.tex:49: LaTeX Error: Unicode character Φ (U+03A6)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.49 ...ut a rational attempt at describing the Φ
+                                                  ύσις, casts its shadow...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:49: LaTeX Error: Unicode character ύ (U+03CD)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.49 ... a rational attempt at describing the Φύ
+                                                  σις, casts its shadow over
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:49: LaTeX Error: Unicode character σ (U+03C3)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.49 ... rational attempt at describing the Φύσ
+                                                  ις, casts its shadow over
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:49: LaTeX Error: Unicode character ι (U+03B9)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.49 ...ational attempt at describing the Φύσι
+                                                  ς, casts its shadow over
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:49: LaTeX Error: Unicode character ς (U+03C2)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.49 ...ional attempt at describing the Φύσις
+                                                  , casts its shadow over
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:54: LaTeX Error: Unicode character ἀ (U+1F00)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.54 ...t was also the most superficial. Every ἀ
+                                                  ρχή is
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:54: LaTeX Error: Unicode character ρ (U+03C1)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.54 ...was also the most superficial. Every ἀρ
+                                                  χή is
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:54: LaTeX Error: Unicode character χ (U+03C7)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.54 ...s also the most superficial. Every ἀρχ
+                                                  ή is
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:54: LaTeX Error: Unicode character ή (U+03AE)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.54 ...also the most superficial. Every ἀρχή
+                                                   is
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:58: LaTeX Error: Unicode character τ (U+03C4)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.58 ... of \textit{mythical}. In Anaximander's τ
+                                                  ὸ ἄπειρον and
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:58: LaTeX Error: Unicode character ὸ (U+1F78)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.58 ... \textit{mythical}. In Anaximander's τὸ
+                                                   ἄπειρον and
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:58: LaTeX Error: Unicode character ἄ (U+1F04)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.58 ...xtit{mythical}. In Anaximander's τὸ ἄ
+                                                  πειρον and
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:58: LaTeX Error: Unicode character π (U+03C0)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.58 ...it{mythical}. In Anaximander's τὸ ἄπ
+                                                  ειρον and
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:58: LaTeX Error: Unicode character ε (U+03B5)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.58 ...{mythical}. In Anaximander's τὸ ἄπε
+                                                  ιρον and
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:58: LaTeX Error: Unicode character ι (U+03B9)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.58 ...ythical}. In Anaximander's τὸ ἄπει
+                                                  ρον and
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:58: LaTeX Error: Unicode character ρ (U+03C1)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.58 ...hical}. In Anaximander's τὸ ἄπειρ
+                                                  ον and
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:58: LaTeX Error: Unicode character ο (U+03BF)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.58 ...cal}. In Anaximander's τὸ ἄπειρο
+                                                  ν and
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:58: LaTeX Error: Unicode character ν (U+03BD)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.58 ...l}. In Anaximander's τὸ ἄπειρον
+                                                   and
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:59: LaTeX Error: Unicode character ν (U+03BD)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.59 Anaxagoras' ν
+                   οῦς, for example, this is particularly clear. Philolo...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:59: LaTeX Error: Unicode character ο (U+03BF)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.59 Anaxagoras' νο
+                     ῦς, for example, this is particularly clear. Philolo...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:59: LaTeX Error: Unicode character ῦ (U+1FE6)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.59 Anaxagoras' νοῦ
+                        ς, for example, this is particularly clear. Philolo...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:59: LaTeX Error: Unicode character ς (U+03C2)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.59 Anaxagoras' νοῦς
+                          , for example, this is particularly clear. Philolo...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 62.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 62.
+
+./anaximander.tex:64: LaTeX Error: Unicode character χ (U+03C7)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.64 ...s the case. Thus, for example, Hesiod's χ
+                                                  άος is the logical
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:64: LaTeX Error: Unicode character ά (U+03AC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.64 ...the case. Thus, for example, Hesiod's χά
+                                                  ος is the logical
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:64: LaTeX Error: Unicode character ο (U+03BF)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.64 ...e case. Thus, for example, Hesiod's χάο
+                                                  ς is the logical
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:64: LaTeX Error: Unicode character ς (U+03C2)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.64 ...case. Thus, for example, Hesiod's χάος
+                                                   is the logical
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:67: LaTeX Error: Unicode character ἀ (U+1F00)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.67 ...teaches that Thales chose water as the ἀ
+                                                  ρχή by virtue of
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:67: LaTeX Error: Unicode character ρ (U+03C1)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.67 ...aches that Thales chose water as the ἀρ
+                                                  χή by virtue of
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:67: LaTeX Error: Unicode character χ (U+03C7)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.67 ...hes that Thales chose water as the ἀρχ
+                                                  ή by virtue of
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:67: LaTeX Error: Unicode character ή (U+03AE)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.67 ...s that Thales chose water as the ἀρχή
+                                                   by virtue of
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+
+./anaximander.tex:143: LaTeX Error: Unicode character Φ (U+03A6)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.143 discovery of the Φ
+                         ύσις was a genuine enterprise---I only claim it...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:143: LaTeX Error: Unicode character ύ (U+03CD)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.143 discovery of the Φύ
+                           σις was a genuine enterprise---I only claim it...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:143: LaTeX Error: Unicode character σ (U+03C3)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.143 discovery of the Φύσ
+                             ις was a genuine enterprise---I only claim it...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:143: LaTeX Error: Unicode character ι (U+03B9)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.143 discovery of the Φύσι
+                               ς was a genuine enterprise---I only claim it...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:143: LaTeX Error: Unicode character ς (U+03C2)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.143 discovery of the Φύσις
+                                  was a genuine enterprise---I only claim it...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+[3]
+
+./anaximander.tex:185: LaTeX Error: Command \guillemetleft unavailable in encoding OT1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.185 >«
+         Anaximandro … dice que lo infinito es la causa de la generación ...
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./anaximander.tex:193: LaTeX Error: Command \guillemetright unavailable in encoding OT1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.193 ...riginaron el sol, la luna y los astros.»
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./anaximander.tex:203: LaTeX Error: Unicode character γ (U+03B3)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.203 ... the Unlimited, a \lq\lq seed\rq\rq{} (γ
+                                                  óνιμον, \lq\lq that ...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:203: LaTeX Error: Unicode character ν (U+03BD)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.203 ... Unlimited, a \lq\lq seed\rq\rq{} (γóν
+                                                  ιμον, \lq\lq that whic...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:203: LaTeX Error: Unicode character ι (U+03B9)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.203 ...nlimited, a \lq\lq seed\rq\rq{} (γóνι
+                                                  μον, \lq\lq that which ...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:203: LaTeX Error: Unicode character μ (U+03BC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.203 ...imited, a \lq\lq seed\rq\rq{} (γóνιμ
+                                                  ον, \lq\lq that which is...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:203: LaTeX Error: Unicode character ο (U+03BF)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.203 ...ited, a \lq\lq seed\rq\rq{} (γóνιμο
+                                                  ν, \lq\lq that which is $...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:203: LaTeX Error: Unicode character ν (U+03BD)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.203 ...ed, a \lq\lq seed\rq\rq{} (γóνιμον
+                                                  , \lq\lq that which is $\l...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:205: LaTeX Error: Unicode character γ (U+03B3)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.205 γ
+        óνιμον is an important subtlety. From the Unlimited did not sp...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:205: LaTeX Error: Unicode character ν (U+03BD)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.205 γóν
+            ιμον is an important subtlety. From the Unlimited did not sp...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:205: LaTeX Error: Unicode character ι (U+03B9)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.205 γóνι
+              μον is an important subtlety. From the Unlimited did not sp...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:205: LaTeX Error: Unicode character μ (U+03BC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.205 γóνιμ
+                ον is an important subtlety. From the Unlimited did not sp...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:205: LaTeX Error: Unicode character ο (U+03BF)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.205 γóνιμο
+                  ν is an important subtlety. From the Unlimited did not sp...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:205: LaTeX Error: Unicode character ν (U+03BD)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.205 γóνιμον
+                     is an important subtlety. From the Unlimited did not sp...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:218: LaTeX Error: Unicode character χ (U+03C7)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.218 ...curs, is the empty space, the mythical χ
+                                                  άος that is first proposed
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:218: LaTeX Error: Unicode character ά (U+03AC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.218 ...rs, is the empty space, the mythical χά
+                                                  ος that is first proposed
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:218: LaTeX Error: Unicode character ο (U+03BF)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.218 ..., is the empty space, the mythical χάο
+                                                  ς that is first proposed
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:218: LaTeX Error: Unicode character ς (U+03C2)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.218 ...is the empty space, the mythical χάος
+                                                   that is first proposed
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:219: LaTeX Error: Unicode character χ (U+03C7)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.219 in Hesiod's \textit{Theogony}. The word χ
+                                                άος does not express, as ...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:219: LaTeX Error: Unicode character ά (U+03AC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.219 in Hesiod's \textit{Theogony}. The word χά
+                                                  ος does not express, as ...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:219: LaTeX Error: Unicode character ο (U+03BF)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.219 ...siod's \textit{Theogony}. The word χάο
+                                                  ς does not express, as Ov...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:219: LaTeX Error: Unicode character ς (U+03C2)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.219 ...od's \textit{Theogony}. The word χάος
+                                                   does not express, as Ovidio
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:228: LaTeX Error: Unicode character χ (U+03C7)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.228 ...ruction---are also related to Hesiodic χ
+                                                  άος. It is worth
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:228: LaTeX Error: Unicode character ά (U+03AC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.228 ...ction---are also related to Hesiodic χά
+                                                  ος. It is worth
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:228: LaTeX Error: Unicode character ο (U+03BF)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.228 ...ion---are also related to Hesiodic χάο
+                                                  ς. It is worth
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:228: LaTeX Error: Unicode character ς (U+03C2)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.228 ...n---are also related to Hesiodic χάος
+                                                  . It is worth
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+./anaximander.tex:231: Misplaced alignment tab character &.
+l.231 ...ssel} ($\ldots$)---\rq\rq{} (Paracelsus &
+                                                   Ed, 2018). But what
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+[4]
+
+./anaximander.tex:247: LaTeX Error: Unicode character χ (U+03C7)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.247 means of resolving the original χ
+                                        άος and, quite literally, produci...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:247: LaTeX Error: Unicode character ά (U+03AC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.247 means of resolving the original χά
+                                          ος and, quite literally, produci...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:247: LaTeX Error: Unicode character ο (U+03BF)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.247 means of resolving the original χάο
+                                            ς and, quite literally, produci...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:247: LaTeX Error: Unicode character ς (U+03C2)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.247 means of resolving the original χάος
+                                               and, quite literally, produci...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+[5]
+
+./anaximander.tex:292: LaTeX Error: Command \guillemetleft unavailable in encoding OT1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.292 > «
+          Me parece (...) que todas las cosas que existen son alteraciones d...
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./anaximander.tex:295: LaTeX Error: Command \guillemetright unavailable in encoding OT1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.295 mismo»
+             .
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./anaximander.tex:317: LaTeX Error: Unicode character γ (U+03B3)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.317 ...production of light and night from the γ
+                                                  óνιμον. This disruptive
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:317: LaTeX Error: Unicode character ν (U+03BD)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.317 ...uction of light and night from the γóν
+                                                  ιμον. This disruptive
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:317: LaTeX Error: Unicode character ι (U+03B9)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.317 ...tion of light and night from the γóνι
+                                                  μον. This disruptive
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:317: LaTeX Error: Unicode character μ (U+03BC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.317 ...on of light and night from the γóνιμ
+                                                  ον. This disruptive
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:317: LaTeX Error: Unicode character ο (U+03BF)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.317 ... of light and night from the γóνιμο
+                                                  ν. This disruptive
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./anaximander.tex:317: LaTeX Error: Unicode character ν (U+03BD)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.317 ...f light and night from the γóνιμον
+                                                  . This disruptive
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+[6] [7] [8] (./anaximander.aux) ) 
+Here is how much of TeX's memory you used:
+ 458 strings out of 478023
+ 8433 string characters out of 5841209
+ 316705 words of memory out of 5000000
+ 18991 multiletter control sequences out of 15000+600000
+ 470210 words of font info for 31 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 34i,6n,38p,148b,107s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on anaximander.pdf (8 pages, 92047 bytes).
+PDF statistics:
+ 51 PDF objects out of 1000 (max. 8388607)
+ 32 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
