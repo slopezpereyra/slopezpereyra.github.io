@@ -9,15 +9,15 @@ title: About me
 
 
 
-The standard universal form —I am an $x$ currently employed at $y$, etc—would be
+The standard universal form—I am an $x$ currently employed at $y$, etc—would be
 misleading. The purpose of this site is to serve as a unifying point for the
-most various of my interests. However, some of the do relate to my field, so I
+most various of my interests. However, some of its posts do relate to my field, so I
 may comply with the canonical standards.
 
 I am a computer science student. My goal is to pursue a PhD at computational
-neuroscience. I work as data scientist—whatever that means— at a neuroscience
+neuroscience. I work as a data scientist—whatever that means—at a neuroscience
 laboratory in UPenn. I have conducted research on this lab—specifically on
-mathematical models of neuroplasticity for TMS data—, aside from more routinary
+mathematical models of neuroplasticity—, aside from more routinary
 data science tasks.
 
 A brief description of my intellectual development might go as follows.
