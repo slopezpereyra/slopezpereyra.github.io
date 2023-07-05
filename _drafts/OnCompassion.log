@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.6.2)  26 JUN 2023 08:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.6.2)  5 JUL 2023 17:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -45,7 +45,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
 LaTeX Font Info:    ... okay on input line 4.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./OnCompassion.aux) ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] (./OnCompassion.aux) ) 
 Here is how much of TeX's memory you used:
  428 strings out of 476091
  8237 string characters out of 5794082
@@ -55,10 +55,10 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  34i,5n,38p,133b,107s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on OnCompassion.pdf (2 pages, 41487 bytes).
+Output written on OnCompassion.pdf (3 pages, 45298 bytes).
 PDF statistics:
- 21 PDF objects out of 1000 (max. 8388607)
- 12 compressed objects within 1 object stream
+ 24 PDF objects out of 1000 (max. 8388607)
+ 14 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
