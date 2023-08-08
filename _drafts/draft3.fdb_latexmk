@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1684894359 "draft3.tex" "draft3.pdf" "draft3" 1684894359 2
+["pdflatex"] 1688702084 "draft3.tex" "draft3.pdf" "draft3" 1688702084 2
   "/etc/texmf/web2c/texmf.cnf" 1683163658 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1136768653 1512 f21f83efb36853c0b70002322c1ab3ad ""
@@ -20,9 +20,9 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/usr/share/texmf/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1683164103 4623455 fa0568a71dd9a288d6c226ee477506c6 ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1683164164 7881193 7cba7792b255db4a06930af6419b9aaa ""
-  "draft3.aux" 1684894359 32 044b7f8fc9779af7531264e0c5c84b6d "pdflatex"
-  "draft3.tex" 1684894357 4373 d285882a8a223adb5cb2c71be948ca9f ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1685734779 7880721 5a192c6a05df19a31d9285e96ff2981d ""
+  "draft3.aux" 1688702084 32 044b7f8fc9779af7531264e0c5c84b6d "pdflatex"
+  "draft3.tex" 1688702082 6996 106163c3790df735a9b84e3e5021ef37 ""
   (generated)
   "draft3.aux"
   "draft3.log"
