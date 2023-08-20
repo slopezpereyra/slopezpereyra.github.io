@@ -75,9 +75,7 @@ This choice is not arbitrary, insofar as this Gaussian curve has been found to
 fit the firing rate of true biological neurons in the brain. I used two
 different stimulus curves:
 
-$$ \begin{align*}
-
-g_{1}(t) &= \sin(\frac{t}{10})\\ g_{2}(t) &= \frac{4}{5}t -40 \end{align*} $$
+$$ \begin{align*} g_{1}(t) &= \sin(\frac{t}{10})\\ g_{2}(t) &= \frac{4}{5}t -40 \end{align*} $$
 
 The sinusoidal stimulus was not inspired by any true experiment but chosen due
 to its convenient and understandable shape. $g_{2}$ is an expression of the
