@@ -5,6 +5,16 @@ layout: null
 @import url("pygment_highlights.css");
 @import url("https://cdn.jsdelivr.net/gh/vsalvino/computer-modern@main/fonts/serif.css");
 
+@font-face {
+    font-family: "Century modern TT";
+    src: url("https://db.onlinewebfonts.com/t/ad37cee4deea1ac6d69e87bcab265782.eot");
+    src: url("https://db.onlinewebfonts.com/t/ad37cee4deea1ac6d69e87bcab265782.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/ad37cee4deea1ac6d69e87bcab265782.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/ad37cee4deea1ac6d69e87bcab265782.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/ad37cee4deea1ac6d69e87bcab265782.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/ad37cee4deea1ac6d69e87bcab265782.svg#Century modern TT Regular")format("svg");
+}
+
 /* --- General --- */
 
 body {
