@@ -8,8 +8,8 @@ layout: null
 /* --- General --- */
 
 body {
-  font-family: "Computer Modern Serif", monospace;
-  font-size: 16.5px;
+  font-family: "Century modern TT", monospace;
+  font-size: 20px;
   text-align: justify;
   /* --- name --- */
   color: #000000;
@@ -32,7 +32,7 @@ p a {
   color: #008AFF;
 }
 h1,h2,h3,h4,h5,h6 {
-  font-family: "Computer Modern Serif", monospace;
+  font-family: "Century modern TT", monospace;
   font-weight: 800;
 }
 a {
