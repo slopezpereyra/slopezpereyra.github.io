@@ -11,8 +11,8 @@ for each other. When we were friends, we were best friends. And so it was for
 years.
 
 At some point, during that turbulent phase of human condition which only
-deliberate ignorance depicts as the happiest of our lives, and which we use to
-recollect with troubled eyes during nocturnal conversations, you fell to drug
+deliberate ignorance depicts as the happiest of our lives, and which we used to
+recollect with troubled eyes in our nocturnal conversations, you fell to drug
 addiction and eating disorders. For some time, I wasn't aware of this, for as
 all began you started to push me away. You would visit me sporadically, in times
 of health; I would ascribe your time of absence to mere distraction and, without
@@ -33,7 +33,7 @@ conversation. I told you I still loved you, you said you loved me still. But our
 lives had taken so opposite roads that we knew our love was not to be—we knew
 the object of our love was but a remnant, and where we sought to find at least
 the shadow of past selves, we met but strangers and were faced with entirely
-misterious beings. And it was then—I must confess—that I let my love for you
+mysterious beings. And it was then—I must confess—that I let my love for you
 die.
 
 Some time after that, I fell in love with our mutual friend. The one you loved
@@ -76,7 +76,7 @@ universos de gusanos.
 
 Ahora recuerdo: una mujer y un hombre están a mi lado—grito la gran noticia:
 estás afuera—luego una elipsis. ¿Un año? ¿Dos? $S$ ya está conmigo. Tu rostro
-aparece frente a nosotros. Elipsis, otra vez. En su hay una alianza. Silencio.
+aparece frente a nosotros. Elipsis, otra vez. En su mano hay una alianza. Silencio.
 Luego tu muerte. Entre las dos elipsis te vi dos o tres veces. Entre la última y
 tu muerte, ninguna. No sé dónde estás enterrada. Finjo que el cementerio es algo
 así como una leyenda urbana—una superstición—algo que tiene que ver con los
