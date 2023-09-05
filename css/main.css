@@ -6,7 +6,7 @@ layout: null
 @import url("https://cdn.jsdelivr.net/gh/vsalvino/computer-modern@main/fonts/serif.css");
 
 @font-face {
-    font-family: "Century modern TT";
+    font-family: "Computer Modern Serif", serif;
     src: url("https://db.onlinewebfonts.com/t/ad37cee4deea1ac6d69e87bcab265782.eot");
     src: url("https://db.onlinewebfonts.com/t/ad37cee4deea1ac6d69e87bcab265782.eot?#iefix")format("embedded-opentype"),
     url("https://db.onlinewebfonts.com/t/ad37cee4deea1ac6d69e87bcab265782.woff2")format("woff2"),
@@ -18,7 +18,7 @@ layout: null
 /* --- General --- */
 
 body {
-  font-family: "Century modern TT";
+  font-family: "Computer Modern Serif", serif;
   font-size: 20px;
   text-align: justify;
   /* --- name --- */
@@ -42,7 +42,7 @@ p a {
   color: #008AFF;
 }
 h1,h2,h3,h4,h5,h6 {
-  font-family: "Century modern TT";
+  font-family: "Computer Modern Serif", serif;
   font-weight: 800;
 }
 a {
@@ -77,7 +77,7 @@ hr.small {
 }
 
 .main-explain-area {
-  font-family: "Century modern TT";
+  font-family: "Computer Modern Serif", serif;
   padding: 15px inherit;
 }
 
@@ -123,7 +123,7 @@ img {
 .navbar-custom {
   background: #F1F1E6;
   border-bottom: 1px solid #EAEAEA;
-  font-family: "Century modern TT";
+  font-family: "Computer Modern Serif", serif;
   {% if site.navbar-col %}
   background: {{ site.navbar-col }};
   {% endif %}
@@ -310,7 +310,7 @@ footer .list-inline {
   padding: 0;
 }
 footer .copyright {
-  font-family: "Century modern TT", monospace;
+  font-family: "Computer Modern Serif", serif, monospace;
   text-align: center;
   margin-bottom: 0;
 }
@@ -377,7 +377,7 @@ footer .theme-by {
   margin: 0 0 10px;
 }
 .post-preview .post-entry {
-font-family: "Century modern TT";
+font-family: "Computer Modern Serif", serif;
 }
 .post-entry-container {
   display: inline-block;
@@ -414,7 +414,7 @@ font-family: "Century modern TT";
 /* --- Tags --- */
 
 .blog-tags {
-  font-family: "Century modern TT";  color: #999;
+  font-family: "Computer Modern Serif", serif;  color: #999;
   font-size: 15px;
   margin-bottom: 30px;
 }
@@ -605,7 +605,7 @@ font-family: "Century modern TT";
 /* --- Pager --- */
 
 .pager li a {
-  font-family: "Century modern TT";  
+  font-family: "Computer Modern Serif", serif;  
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 800;
