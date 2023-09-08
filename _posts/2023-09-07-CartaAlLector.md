@@ -27,10 +27,12 @@ páginas. Quiero creer que éstos son, si bien más desencantados, menos tristes
 Los ingleses me enseñaron la discreción que el simbolismo español no había
 sabido darme. Por otra parte, ya no ignoro que la vida es, esencialmente,
 sufrimiento; quejarse de nuestra propia desdicha, que es una suerte universal,
-es sólo prueba de una vulgar vanidad. Me digo a mí mismo que no escogí la
-resignación, la duda o el desencanto; que, en ese sentido, no he escogido estos
-poemas. Todas esas cosas fueron el único camino. Espero que en el pausado ritmo
-de estos versos aún encuentres un atisbo de belleza, de amor o incluso de
-felicidad. Ese atisbo es nuestra última esperanza.
+es sólo prueba de una vulgar vanidad. 
+
+Me digo a mí mismo que no escogí la resignación, la duda o el desencanto; que,
+en ese sentido, no he escogido estos poemas. Todas esas cosas fueron el único
+camino. Espero que en el pausado ritmo de estos versos aún encuentres un atisbo
+de belleza, de amor o incluso de felicidad. Ese atisbo es nuestra última
+esperanza.
 
 
