@@ -35,7 +35,7 @@ el crepitar de una rama.<br>
 ### Un soneto
 
 Eras como la aurora, penumbra y mediodía.<br>
-La aurora nos ilustra que siempre es necesaria<br>
+La aurora nos enseña que siempre es necesaria<br>
 la muerte, con su noche profunda y milenaria,<br>
 para el que está soñando con ver la luz del día.<br>
 

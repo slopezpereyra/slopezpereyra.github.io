@@ -3,8 +3,6 @@ title: An English poem
 categories: [ Literature ]
 ---
 
-##### An English Poem 
-
 > To the memory of one I loved and lives no more.
 ---
 
