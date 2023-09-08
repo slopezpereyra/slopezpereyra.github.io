@@ -1,6 +1,6 @@
 ---
 title: On a fanatical book (by Titus Burckhardt)
-categories: [ Literature, Personal ]
+categories: [ Personal ]
 ---
 
 About four or five years ago, prying on my father's library, I came across a
