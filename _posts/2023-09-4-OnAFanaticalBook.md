@@ -1,5 +1,5 @@
 ---
-title: On a fanatical book (by Titus Burckhardt)
+title: Titus Burckhardt, the cultivated fanatic
 categories: [ Personal ]
 ---
 
