@@ -83,20 +83,19 @@ manifest in connection to a matter or substance. (So far, Burckhardt only
 follows Dionysious the Aeropagite.) After providing and commenting on such
 definition, and objecting some critiques of the notion, the author states:
 
-    From what was just said follows that a species is itself an immutable
-    "form"; it could not evolve and transform into another species, although it
-    may contain variations, which are diverse "projections" of a unique
-    essential form of which they will never be separated—like the branches are
-    never separated from the trunk.
+> From what was just said follows that a species is itself an immutable "form"; it
+> could not evolve and transform into another species, although it may contain
+> variations, which are diverse "projections" of a unique essential form of which
+> they will never be separated—like the branches are never separated from the
+> trunk.
 
 The whole thesis of Darwin, he says, is based on a confusion (*sic*) between the
 concepts of species and variation. For the sake of humor I add a sentence that
 appears shortly after:
 
-    One may certainly find some fishes that use their fines to crawl in the
-    sand, but in vain one would expect to find the least beginning of a joint,
-    which is the only thing that would make the forming of a leg or an arm
-    possible.
+> One may certainly find some fishes that use their fines to crawl in the sand,
+> but in vain one would expect to find the least beginning of a joint, which is
+> the only thing that would make the forming of a leg or an arm possible.
 
 Yes, indeed: This is a critique of Darwin based on the metaphysical concept of
 form, as understood by an Athenian convert that lived in the first century!
