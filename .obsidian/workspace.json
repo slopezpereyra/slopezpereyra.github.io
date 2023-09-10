@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2023-08-22-CartasAPaulina.md",
+                "file": "_posts/2023-09-4-OnAFanaticalBook.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_posts/2023-08-22-CartasAPaulina.md",
+                "file": "_posts/2023-09-4-OnAFanaticalBook.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_posts/2023-08-22-CartasAPaulina.md",
+                "file": "_posts/2023-09-4-OnAFanaticalBook.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_posts/2023-08-22-CartasAPaulina.md"
+                "file": "_posts/2023-09-4-OnAFanaticalBook.md"
               }
             }
           }
@@ -148,6 +148,7 @@
   },
   "active": "975a11453aeb43f4",
   "lastOpenFiles": [
+    "_posts/2023-03-14-AShortDream.md",
     "_posts/2023-08-22-CartasAPaulina.md"
   ]
 }
