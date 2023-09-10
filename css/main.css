@@ -20,7 +20,7 @@ layout: null
 
 body {
   font-family: "Artful Dodger W00 Regular"; 
-  font-size: 20px;
+  font-size: 12px;
   text-align: justify;
   /* --- name --- */
   color: #000000;
@@ -136,7 +136,7 @@ img {
 
 .navbar-custom .nav li a {
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 8px;
   letter-spacing: 1px;
 }
 
@@ -292,7 +292,7 @@ footer {
   background: #F1F1E6;
   border-top: 1px #EAEAEA solid;
   margin-top: 50px;
-  font-size: 14px;
+  font-size: 8px;
   {% if site.footer-col %}
   background: {{ site.footer-col }};
   {% endif %}
@@ -325,10 +325,10 @@ footer .theme-by {
     padding: 50px 0;
   }
   footer .footer-links {
-    font-size: 18px;
+    font-size: 10;
   }
   footer .copyright {
-    font-size: 16px;
+    font-size: 10;
   }
 }
 
@@ -362,7 +362,7 @@ footer .theme-by {
 }
 
 .post-preview .post-title {
-  font-size: 30px;
+  font-size: 20px;
   margin-top: 0;
 }
 .post-preview .post-subtitle {
@@ -373,7 +373,7 @@ footer .theme-by {
 .post-preview .post-meta,
 .post-heading .post-meta {
   color: #808080;
-  font-size: 18px;
+  font-size: 10;
   font-style: italic;
   margin: 0 0 10px;
 }
@@ -408,7 +408,7 @@ font-family: "Artful Dodger W00 Regular";
 
 @media only screen and (min-width: 768px) {
   .post-preview .post-title {
-    font-size: 36px;
+    font-size: 20px;
   }
 }
 
@@ -416,7 +416,7 @@ font-family: "Artful Dodger W00 Regular";
 
 .blog-tags {
   font-family: "Artful Dodger W00 Regular";   color: #999;
-  font-size: 15px;
+  font-size: 8;
   margin-bottom: 30px;
 }
 
@@ -594,7 +594,7 @@ font-family: "Artful Dodger W00 Regular";
 
 .caption {
   text-align: center;
-  font-size: 14px;
+  font-size: 10px;
   padding: 10px;
   font-style: italic;
   margin: 0;
@@ -608,7 +608,7 @@ font-family: "Artful Dodger W00 Regular";
 .pager li a {
   font-family: "Artful Dodger W00 Regular";   
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 10px;
   font-weight: 800;
   letter-spacing: 1px;
   padding: 10px 5px;
@@ -681,7 +681,7 @@ table tr td :last-child {
 /* --- Code blocks --- */
 
 pre {
-  font-size: 16px;
+  font-size: 8px;
   line-height: 1.5em;
 }
 pre code {
