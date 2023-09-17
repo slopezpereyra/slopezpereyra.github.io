@@ -19,13 +19,13 @@ layout: null
 
 @font-face {
     font-family: 'Bodoni Ferrara Display';
-    src: url('BodoniFerraraDisplay-Regular.eot');
-    src: local('Bodoni Ferrara Display Regular'), local('BodoniFerraraDisplay-Regular'),
-        url('BodoniFerraraDisplay-Regular.eot?#iefix') format('embedded-opentype'),
-        url('BodoniFerraraDisplay-Regular.woff2') format('woff2'),
-        url('BodoniFerraraDisplay-Regular.woff') format('woff'),
-        url('BodoniFerraraDisplay-Regular.ttf') format('truetype');
-    font-weight: normal;
+    src: url('BodoniFerraraDisplay-Light.eot');
+    src: local('Bodoni Ferrara Display Light'), local('BodoniFerraraDisplay-Light'),
+        url('BodoniFerraraDisplay-Light.eot?#iefix') format('embedded-opentype'),
+        url('BodoniFerraraDisplay-Light.woff2') format('woff2'),
+        url('BodoniFerraraDisplay-Light.woff') format('woff'),
+        url('BodoniFerraraDisplay-Light.ttf') format('truetype');
+    font-weight: 300;
     font-style: normal;
     font-display: swap;
 }
