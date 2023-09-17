@@ -17,15 +17,16 @@ layout: null
 /*}
  */
 
+
 @font-face {
     font-family: 'Bodoni Ferrara Display';
-    src: url('BodoniFerraraDisplay-Medium.eot');
-    src: local('Bodoni Ferrara Display Medium'), local('BodoniFerraraDisplay-Medium'),
-        url('BodoniFerraraDisplay-Medium.eot?#iefix') format('embedded-opentype'),
-        url('BodoniFerraraDisplay-Medium.woff2') format('woff2'),
-        url('BodoniFerraraDisplay-Medium.woff') format('woff'),
-        url('BodoniFerraraDisplay-Medium.ttf') format('truetype');
-    font-weight: 500;
+    src: url('BodoniFerraraDisplay-Semibold.eot');
+    src: local('Bodoni Ferrara Display Semibold'), local('BodoniFerraraDisplay-Semibold'),
+        url('BodoniFerraraDisplay-Semibold.eot?#iefix') format('embedded-opentype'),
+        url('BodoniFerraraDisplay-Semibold.woff2') format('woff2'),
+        url('BodoniFerraraDisplay-Semibold.woff') format('woff'),
+        url('BodoniFerraraDisplay-Semibold.ttf') format('truetype');
+    font-weight: 600;
     font-style: normal;
     font-display: swap;
 }
