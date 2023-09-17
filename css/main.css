@@ -6,15 +6,32 @@ layout: null
 @import url("https://cdn.jsdelivr.net/gh/vsalvino/computer-modern@main/fonts/serif.css");
 @import url(https://db.onlinewebfonts.com/c/13343fe3cdd1b7834dac829e74a1b304?family=Artful+Dodger+W00+Regular);
 
+/*@font-face {
+/*    font-family: "Artful Dodger W00 Regular"; 
+/*    src: url("https://db.onlinewebfonts.com/t/ad37cee4deea1ac6d69e87bcab265782.eot");
+/*    src: url("https://db.onlinewebfonts.com/t/ad37cee4deea1ac6d69e87bcab265782.eot?#iefix")format("embedded-opentype"),
+/*    url("https://db.onlinewebfonts.com/t/ad37cee4deea1ac6d69e87bcab265782.woff2")format("woff2"),
+/*    url("https://db.onlinewebfonts.com/t/ad37cee4deea1ac6d69e87bcab265782.woff")format("woff"),
+/*    url("https://db.onlinewebfonts.com/t/ad37cee4deea1ac6d69e87bcab265782.ttf")format("truetype"),
+/*    url("https://db.onlinewebfonts.com/t/ad37cee4deea1ac6d69e87bcab265782.svg#Century modern TT Regular")format("svg");
+/*}
+ */
+
 @font-face {
-    font-family: "Artful Dodger W00 Regular"; 
-    src: url("https://db.onlinewebfonts.com/t/ad37cee4deea1ac6d69e87bcab265782.eot");
-    src: url("https://db.onlinewebfonts.com/t/ad37cee4deea1ac6d69e87bcab265782.eot?#iefix")format("embedded-opentype"),
-    url("https://db.onlinewebfonts.com/t/ad37cee4deea1ac6d69e87bcab265782.woff2")format("woff2"),
-    url("https://db.onlinewebfonts.com/t/ad37cee4deea1ac6d69e87bcab265782.woff")format("woff"),
-    url("https://db.onlinewebfonts.com/t/ad37cee4deea1ac6d69e87bcab265782.ttf")format("truetype"),
-    url("https://db.onlinewebfonts.com/t/ad37cee4deea1ac6d69e87bcab265782.svg#Century modern TT Regular")format("svg");
+    font-family: 'Bodoni Ferrara Display';
+    src: url('BodoniFerraraDisplay-Regular.eot');
+    src: local('Bodoni Ferrara Display Regular'), local('BodoniFerraraDisplay-Regular'),
+        url('BodoniFerraraDisplay-Regular.eot?#iefix') format('embedded-opentype'),
+        url('BodoniFerraraDisplay-Regular.woff2') format('woff2'),
+        url('BodoniFerraraDisplay-Regular.woff') format('woff'),
+        url('BodoniFerraraDisplay-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
+
+
+
 
 /* --- General --- */
 
