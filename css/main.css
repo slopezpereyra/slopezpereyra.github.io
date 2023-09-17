@@ -7,7 +7,7 @@ layout: null
 @import url(https://db.onlinewebfonts.com/c/13343fe3cdd1b7834dac829e74a1b304?family=Artful+Dodger+W00+Regular);
 
 /*@font-face {
-/*    font-family: "Artful Dodger W00 Regular"; 
+/*    font-family: "Bodoni Ferrara Display"; 
 /*    src: url("https://db.onlinewebfonts.com/t/ad37cee4deea1ac6d69e87bcab265782.eot");
 /*    src: url("https://db.onlinewebfonts.com/t/ad37cee4deea1ac6d69e87bcab265782.eot?#iefix")format("embedded-opentype"),
 /*    url("https://db.onlinewebfonts.com/t/ad37cee4deea1ac6d69e87bcab265782.woff2")format("woff2"),
@@ -19,24 +19,22 @@ layout: null
 
 @font-face {
     font-family: 'Bodoni Ferrara Display';
-    src: url('BodoniFerraraDisplay-Light.eot');
-    src: local('Bodoni Ferrara Display Light'), local('BodoniFerraraDisplay-Light'),
-        url('BodoniFerraraDisplay-Light.eot?#iefix') format('embedded-opentype'),
-        url('BodoniFerraraDisplay-Light.woff2') format('woff2'),
-        url('BodoniFerraraDisplay-Light.woff') format('woff'),
-        url('BodoniFerraraDisplay-Light.ttf') format('truetype');
-    font-weight: 300;
+    src: url('BodoniFerraraDisplay-Regular.eot');
+    src: local('Bodoni Ferrara Display Regular'), local('BodoniFerraraDisplay-Regular'),
+        url('BodoniFerraraDisplay-Regular.eot?#iefix') format('embedded-opentype'),
+        url('BodoniFerraraDisplay-Regular.woff2') format('woff2'),
+        url('BodoniFerraraDisplay-Regular.woff') format('woff'),
+        url('BodoniFerraraDisplay-Regular.ttf') format('truetype');
+    font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
 
-
-
 /* --- General --- */
 
 body {
-  font-family: "Artful Dodger W00 Regular"; 
+  font-family: "Bodoni Ferrara Display"; 
   font-size: 16px;
   text-align: justify;
   /* --- name --- */
@@ -60,7 +58,7 @@ p a {
   color: #008AFF;
 }
 h1,h2,h3,h4,h5,h6 {
-  font-family: "Artful Dodger W00 Regular"; 
+  font-family: "Bodoni Ferrara Display"; 
   font-weight: 800;
 }
 a {
@@ -95,7 +93,7 @@ hr.small {
 }
 
 .main-explain-area {
-  font-family: "Artful Dodger W00 Regular"; 
+  font-family: "Bodoni Ferrara Display"; 
   padding: 15px inherit;
 }
 
@@ -141,7 +139,7 @@ img {
 .navbar-custom {
   background: #F1F1E6;
   border-bottom: 1px solid #EAEAEA;
-  font-family: "Artful Dodger W00 Regular"; 
+  font-family: "Bodoni Ferrara Display"; 
   {% if site.navbar-col %}
   background: {{ site.navbar-col }};
   {% endif %}
@@ -395,7 +393,7 @@ footer .theme-by {
   margin: 0 0 10px;
 }
 .post-preview .post-entry {
-font-family: "Artful Dodger W00 Regular"; 
+font-family: "Bodoni Ferrara Display"; 
 }
 .post-entry-container {
   display: inline-block;
@@ -432,7 +430,7 @@ font-family: "Artful Dodger W00 Regular";
 /* --- Tags --- */
 
 .blog-tags {
-  font-family: "Artful Dodger W00 Regular";   color: #999;
+  font-family: "Bodoni Ferrara Display";   color: #999;
   font-size: 8;
   margin-bottom: 30px;
 }
@@ -623,7 +621,7 @@ font-family: "Artful Dodger W00 Regular";
 /* --- Pager --- */
 
 .pager li a {
-  font-family: "Artful Dodger W00 Regular";   
+  font-family: "Bodoni Ferrara Display";   
   text-transform: uppercase;
   font-size: 10px;
   font-weight: 800;
