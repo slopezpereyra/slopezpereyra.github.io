@@ -1,13 +1,14 @@
 ---
 layout: null
 ---
-
+                
 @import url("pygment_highlights.css");
 @import url("https://cdn.jsdelivr.net/gh/vsalvino/computer-modern@main/fonts/serif.css");
 @import url(https://db.onlinewebfonts.com/c/13343fe3cdd1b7834dac829e74a1b304?family=Artful+Dodger+W00+Regular);
+@import url('https://fonts.cdnfonts.com/css/new-caledonia-lt-std');
 
 /*@font-face {
-/*    font-family: "Bodoni Ferrara Display"; 
+/*    font-family: "New Caledonia LT Std, sans-serif"; 
 /*    src: url("https://db.onlinewebfonts.com/t/ad37cee4deea1ac6d69e87bcab265782.eot");
 /*    src: url("https://db.onlinewebfonts.com/t/ad37cee4deea1ac6d69e87bcab265782.eot?#iefix")format("embedded-opentype"),
 /*    url("https://db.onlinewebfonts.com/t/ad37cee4deea1ac6d69e87bcab265782.woff2")format("woff2"),
@@ -19,9 +20,9 @@ layout: null
 
 
 @font-face {
-    font-family: 'Bodoni Ferrara Display';
+    font-family: 'New Caledonia LT Std, sans-serif';
     src: url('BodoniFerraraDisplay-Semibold.eot');
-    src: local('Bodoni Ferrara Display Semibold'), local('BodoniFerraraDisplay-Semibold'),
+    src: local('New Caledonia LT Std, sans-serif Semibold'), local('BodoniFerraraDisplay-Semibold'),
         url('BodoniFerraraDisplay-Semibold.eot?#iefix') format('embedded-opentype'),
         url('BodoniFerraraDisplay-Semibold.woff2') format('woff2'),
         url('BodoniFerraraDisplay-Semibold.woff') format('woff'),
@@ -35,7 +36,7 @@ layout: null
 /* --- General --- */
 
 body {
-  font-family: "Bodoni Ferrara Display"; 
+  font-family: "New Caledonia LT Std, sans-serif"; 
   font-size: 16px;
   text-align: justify;
   letter-spacing: 1.3px;
@@ -60,7 +61,7 @@ p a {
   color: #008AFF;
 }
 h1,h2,h3,h4,h5,h6 {
-  font-family: "Bodoni Ferrara Display"; 
+  font-family: "New Caledonia LT Std, sans-serif"; 
   font-weight: 800;
 }
 a {
@@ -95,7 +96,7 @@ hr.small {
 }
 
 .main-explain-area {
-  font-family: "Bodoni Ferrara Display"; 
+  font-family: "New Caledonia LT Std, sans-serif"; 
   padding: 15px inherit;
 }
 
@@ -141,7 +142,7 @@ img {
 .navbar-custom {
   background: #F1F1E6;
   border-bottom: 1px solid #EAEAEA;
-  font-family: "Bodoni Ferrara Display"; 
+  font-family: "New Caledonia LT Std, sans-serif"; 
   {% if site.navbar-col %}
   background: {{ site.navbar-col }};
   {% endif %}
@@ -395,7 +396,7 @@ footer .theme-by {
   margin: 0 0 10px;
 }
 .post-preview .post-entry {
-font-family: "Bodoni Ferrara Display"; 
+font-family: "New Caledonia LT Std, sans-serif"; 
 }
 .post-entry-container {
   display: inline-block;
@@ -432,7 +433,7 @@ font-family: "Bodoni Ferrara Display";
 /* --- Tags --- */
 
 .blog-tags {
-  font-family: "Bodoni Ferrara Display";   color: #999;
+  font-family: "New Caledonia LT Std, sans-serif";   color: #999;
   font-size: 8;
   margin-bottom: 30px;
 }
@@ -623,7 +624,7 @@ font-family: "Bodoni Ferrara Display";
 /* --- Pager --- */
 
 .pager li a {
-  font-family: "Bodoni Ferrara Display";   
+  font-family: "New Caledonia LT Std, sans-serif";   
   text-transform: uppercase;
   font-size: 10px;
   font-weight: 800;
