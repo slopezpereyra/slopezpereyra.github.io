@@ -24,10 +24,10 @@ layout: null
 
 body {
   font-family: 'Artful Dodger W00 Regular'; 
-  font-weight: 400;
+  font-weight: 300;
   font-size: 16px;
   text-align: justify;
-  letter-spacing: 1.3px;
+  letter-spacing: 1.2px;
   /* --- name --- */
   color: #000000;
   position: relative;
