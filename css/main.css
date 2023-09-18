@@ -19,24 +19,12 @@ layout: null
  */
 
 
-@font-face {
-    font-family: 'New Caledonia LT Std, sans-serif';
-    src: url('BodoniFerraraDisplay-Semibold.eot');
-    src: local('New Caledonia LT Std, sans-serif Semibold'), local('BodoniFerraraDisplay-Semibold'),
-        url('BodoniFerraraDisplay-Semibold.eot?#iefix') format('embedded-opentype'),
-        url('BodoniFerraraDisplay-Semibold.woff2') format('woff2'),
-        url('BodoniFerraraDisplay-Semibold.woff') format('woff'),
-        url('BodoniFerraraDisplay-Semibold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-}
-
 
 /* --- General --- */
 
 body {
-  font-family: "New Caledonia LT Std, sans-serif"; 
+  font-family: 'New Caledonia LT Std', sans-serif; 
+  font-weight: 550;
   font-size: 16px;
   text-align: justify;
   letter-spacing: 1.3px;
