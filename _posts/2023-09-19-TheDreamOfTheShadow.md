@@ -282,8 +282,8 @@ mirroring ghost!—must know that, when dealing with personal diary entries, and
 not literary creations, I write as writing comes to me, as if I were a window
 through which flow the airs of my own mind, as in the verses:
 
-*> Soy una abierta ventana que escucha
->por donde ver tenebrosa la vida.*
+> *Soy una abierta ventana que escucha*
+> *por donde ver tenebrosa la vida.*
 
 The color tone of the dream was cold, and very much resembled, as reference, the
 color temperature of the drama series *Ozark*. It was dreadful, profoundly
