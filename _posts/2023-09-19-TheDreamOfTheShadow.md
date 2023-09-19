@@ -371,6 +371,13 @@ intensity rarely reached in simple self-reflection. Tranquile self-examination
 is often only an intellectual affair—dream interpretation may impel our very
 soul.
 
+
+<p align="center">
+  <img src="../Images/theshadow.jpg" width="400" heiht="700">
+</p>
+
+| *Depiction of the shadow in my dream* |
+
 Whatever the case, I woke from this dream under so great distress, and with such
 melancholic anguish, as words could not express. The image had bewitched me. I
 gathered the strength to pursue the day, and moved to and fro the bridges that
