@@ -223,7 +223,7 @@ stormed through the front door before their startled eyes, without me knowing
 who I was, nor them guessing what I had in mind. But because they overheard my
 insults to *T.....*, and thus were witnesses of the obscure passion which
 sequestered me, they called *T.....* themselves after I left and told him to be
-mindful and go home. To this very day I thank them for this, and I take for a
+mindful and go home. To this very day I thank them for that, and I take for a
 blessing that I did not find *T.....*, who hid when made aware of my martial
 march. There is, however, a darkly humorous anecdote that arouse from the
 manhunt I undertook that night. I left my place in such a violent rush that I
@@ -234,7 +234,7 @@ the grass, one of whom had a guitar in hand. These were surely them, and
 *T.....* was the guitarist surely, for he played the instrument well, and that
 was a common setting for the gatherings he attended to, and so I rushed to them
 with the darkest of demeanors. My steps were loud, my breathing agitated, and
-yet my eyes—of this I am sure—were cold and still, and had the calmness and
+yet my eyes—of this I am sure—had the calmness and
 fixation that is so distinctive of a predator's watch over his prey. But when I
 was perhaps five or six steps away from that reunion, seeing that both girls and
 boys alike rushed to their feet with a scream, I noticed not only that I knew
@@ -282,8 +282,7 @@ mirroring ghost!—must know that, when dealing with personal diary entries, and
 not literary creations, I write as writing comes to me, as if I were a window
 through which flow the airs of my own mind, as in the verses:
 
-> *Soy una abierta ventana que escucha*
-> *por donde ver tenebrosa la vida.*
+> *Soy una abierta ventana que escucha<br>por donde ver tenebrosa la vida.*
 
 The color tone of the dream was cold, and very much resembled, as reference, the
 color temperature of the drama series *Ozark*. It was dreadful, profoundly
@@ -524,7 +523,7 @@ or a common essence; and from this point of view, my discovery was simple and
 barely initiatory. I often murmured in solitude the exquisite poem *To Tirzah*,
 by William Blake, pretending to ask the shadow, but surely speaking to myself:
 
-> *The death of Jesus set me free: Then what have I to do with thee?*
+> *The death of Jesus set me free:<br>Then what have I to do with thee?*
 
 At this point, I knew the shadow represented the set (or the complex, as
 psychoanalysts would call it) of inferior and undeveloped aspects of my
@@ -566,13 +565,13 @@ find I had been quite insensible to suffering, even brutal. Memories came which
 I detested. I remembered, for example, how all the kids in school, including
 myself, had made existence impossible for one of our fellow students—displays of
 cruelty were resurrected in my memory of which perhaps only a child is capable.
-I had felt for years such actions were beyond my me: They were not. In any case,
+I had felt for years such actions were beyond me: They were not. In any case,
 they were beyond what I *decided*; this is, it's not that I *could not* be evil,
 it is that I *sometimes* chose not to. A trivial realization, I think now, but
 at the time it struck my adolescent mind like a lightbolt. I was now aware of a
 new *capacity*, by the simple principle that whatever was or is the case is
 *possible*. The question became: If at a certain occasion I had decided to do
-wrong, what made me do so? I learned that this new regions of myself, whose
+wrong, what made me do so? I learned that these new regions of myself, whose
 integration was slowly developing, not only had a personality on their own—this
 is, one with a certain degree of independence with respect to what
 psychoanalysis would have called my *ego* personality—but that this personality
