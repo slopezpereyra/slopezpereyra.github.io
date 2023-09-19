@@ -33,7 +33,7 @@ especially when, so I attest, the beauty of the nation is not lessened by
 repetition, but remains fresh at every instance, like a fruit that never rots
 and hides a never tiring flavor!  
 
-At the beginning of my third trip to India,
+At the beginning of my first trip to India,
 nonetheless, I was drowning in deep sorrow. The days that preceded the trip
 where the scenario for a series of unfortunate, or with respect to some, even
 terrible events. The dark apotheosis of this series was, I advance, a state
