@@ -50,7 +50,7 @@ were.
 Around that time, two of my dearest friends were *T.....* and *A.....* .
 The three of us were friends, but *T.....* and I, having grown up together,
 shared a particularly special affection for each other. About six months prior
-to my third trip to India, an acquaintance made known to me that *A.....* had
+to my first trip to India, an acquaintance made known to me that *A.....* had
 sexually abused a girl whom I knew. The rumor, for this is all it was at this
 point, left me perplex, and I must say at the time I was unsure about what to
 do—I was still quite young, and perhaps it is worth noting that this happened
