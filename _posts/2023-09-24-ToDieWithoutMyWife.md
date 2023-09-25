@@ -20,9 +20,9 @@ pero no se angustia. Le digo que no me casaré con ella ni seré el padre de sus
 hijos, como habíamos planeado. Siento un golpe seco en el interior de mi pecho y
 caigo arrodillado con las manos en la tierra, apenas sosteniéndome. Me quejo
 ante ella: ¿Lo ves? Yo era joven y fuerte y ahora me he vuelto viejo y débil, ni
-siquiera puedo sostenerme. Sentía que la muerte estaba cerca. S me miraba y no
-sé decir la emoción que sus ojos expresaban. Me da a entender que de todos modos
-volvería a Pensilvania en agosto. La herida se abre en mi alma como una grieta
+siquiera puedo sostenerme. Siento que la muerte está cerca. S me mira y no
+sé decir la emoción que sus ojos expresan. Me da a entender que de todos modos
+volverá a Pensilvania en agosto. La herida se abre en mi alma como una grieta
 en la arenisca.
 
 La escena se interrumpe. S y yo estamos acostados en los aposentos de la torre.
