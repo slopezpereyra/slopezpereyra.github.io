@@ -319,10 +319,6 @@ is not that difficult either, at least not in normal conditions. And this *at
 least in normal conditions* leads us to another important point in what comes to
 the teachings I was given with regards to marriage.
 
-<p align="center">
-  <img src="../Images/seleyyo5.jpg">
-</p>
-
 In general, those circumstances that ruin married life, whether endogenous or
 exogenous, are simply those that ruin life itself. The exogenous ones are
 universal and simple: Poverty, the fetters of debt, a serious health condition,
