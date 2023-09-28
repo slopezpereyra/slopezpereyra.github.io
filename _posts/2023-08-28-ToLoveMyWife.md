@@ -80,7 +80,7 @@ once I escaped the grip of death, that I should never die again.
 
 
 <p align="center">
-  <img src="../Images/seleyyo3.jpg">
+  <img src="../Images/seleyyo3.jpg" width="60%">
 </p>
 
 
@@ -212,7 +212,7 @@ gently flow and blaze—it is an atmosphere, an ambiance that only at times
 devours it all. 
 
 <p align="center">
-  <img src="../Images/seleyyo4.jpg">
+  <img src="../Images/seleyyo4.jpg" width="60%">
 </p>
 
 On another note, our memories of love are truly a singular curiosity. I have
