@@ -3,7 +3,6 @@ title: To be married to my wife
 categories: [ Personal ]
 ---
 
-
 We almost never recognize the most defining of moments. How many sorrows in our
 lives can we trace to a definite genesis? And the genealogy of what fraction of
 our joys could we produce? *Ex nihilo nihil fit*; everything is begotten. But
@@ -379,19 +378,19 @@ further our advancement in life.
 This is, for now, as much as I care to share. Love is, no doubt, the supreme
 force in life; and though marriage, as an institution, implies love in now
 necessary way, I came to find it acts as a protective and fostering ring when
-love exists. I am aware that many of virtues I have named of my marriage are not
-peculiar to marriage, but rather of the fact that I married a loving and
+love exists. I am aware that many of the joys I have spoken about  are not
+peculiar to marriage, but rather to the fact that I married a loving and
 extraordinary individual. Perhaps the praises I have given of the institution
 are but a diversion; perhaps I have been only too lucky. I have a wife that I
 miss when left without her; a wife that I find attractive; a wife of remarkable
 intelligence and talent; kind and tranquile, generous and loving. Does marriage
 require extraordinary individuals, extraordinary relations, in order to function
 properly? Statistics suggest so, for an impassioned analysis of the facts leads
-to the conclusion that marriage can, and almost always is, a recipe for
+to the conclusion that marriage can be, and almost always is, a recipe for
 disaster; half of marriages end in divorce; of those that don't, how many are
-truly happy? But enough of this. I praise my wife with the due devotion; I know
-no love as giving, as unselfish and generous, as that she gives to me, and that
-I give to her. I wish everybody knew what it is like to experience the wonder of
-such love; most people live a loveless life.  
+truly happy? But enough of this. I praise my wife with due devotion; I know
+no love as giving, unselfish and generous as that we have for each other. I wish
+everybody knew what it is like to experience the wonder of such a love; most
+people live a loveless life.  
 
 
