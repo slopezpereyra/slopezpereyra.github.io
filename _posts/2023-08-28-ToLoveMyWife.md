@@ -98,7 +98,7 @@ bitter—I could not see mankind as nothing but a hopeless case—My dreams of a
 world of solidarity seemed ridiculous now. Once, around this time, I conversed
 with an anarchist young woman: She said in a free, equal and just society, there
 would be no murders, because there would be *no reasons* to kill. I still
-believe this is a silly statement, but the reply I gave at the time is
+believe this is a silly statement, but the reply I gave is
 representative of my feelings for mankind  at the time; for I condescendingly
 said: What if having no reason at all *is* the reason? From this very comment,
 an educated reader may guess that I was reading Dostoevsky, which is perhaps the
@@ -150,7 +150,7 @@ father told me many years ago. A crooked son accepts from a miserable man some
 weight in gold in exchange for his mother's life. To prove the deed is done, the
 son is to take his mother's heart to the miserable man. That night indeed he
 kills her; he rips her heart out with the very knife that stole her life. But
-the night is dark and starless, and a violent a rain has filled the ways with
+the night is dark and starless, and a violent rain has filled the ways with
 mud, and as he runs, his mother's heart in hand, he trips and fall. And then a
 voice is heard—and the voice comes from the heart—and it is the mother's voice
 that asks: *My son, are you hurt?* The moral of the story is not only clear, but
@@ -284,10 +284,10 @@ drawback: Most people are not worth interacting with. But let us not delve in
 this too much; for, even if you still desire the liberty to sleep with multiple
 people, nothing stops you from discussing it with your wife or husband and
 coming to some arrangement on the matter. I do not see why marriage should imply
-monogamy. This is at least superior to what seems to be the two natural
+monogamy. This is at least superior to what seem to be the two natural
 alternatives: To cheat or, even worse, to grow resentful due to lacking a
 liberty which you would probably not even enjoy in any case. Many men blame
-marriage for a sexless, or at least a boring, sex life; but I suspect that
+marriage for a sexless life, or at least a boring sex life; but I suspect that
 almost always it is their incapacity to pose a difficult conversation, their
 cowardice in living up to their desires, which is to blame.
 
