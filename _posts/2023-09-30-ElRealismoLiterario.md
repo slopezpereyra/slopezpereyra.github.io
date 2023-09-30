@@ -12,7 +12,7 @@ o es una forma del sueño. Recuerdo, por ejemplo, la descripción de Wordsworth 
 un campo de narcisos,
 
 
-> Continuous as the stars that shine     <br>        
+> Continuous as the stars that shine <br>        
 > and twinkle on the milky way,<br>
 > they stretched in never-ending line<br>
 > along the margin of a bay:<br>

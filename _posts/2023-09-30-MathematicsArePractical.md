@@ -1,5 +1,5 @@
 ---
-title: Mathematics are practical 
+title: Some concepts of mathematics
 categories: [ Philosophy ]
 ---
 
