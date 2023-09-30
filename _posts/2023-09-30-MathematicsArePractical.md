@@ -11,28 +11,28 @@ would be inaccurate. In truth, the pragmatist view allows us to see that
 abstract ideas are meaningful only by virtue of their practical consequences.
 Take the proposition:
 
-1. Harmonic infinite series are divergent
+1. *Harmonic infinite series are divergent*
 
 This statement may seem abstract. However, its practical meaning lies hidden in
 technical language. In fact, an equivalent statement is:
 
- 2. The sum of the inverse of all natural numbers does not approach a definite
-    quantity.
+ 2. *The sum of the inverse of all natural numbers does not approach a definite
+    quantity.*
 
 An even more sober equivalent —one that does not appeal to the strange idea of
 adding all elements of an infinite set— is the following:
 
-3. There is no definite quantity whose difference with the sum of a certain
+3. *There is no definite quantity whose difference with the sum of a certain
    amount of inverse natural numbers can be arbitrarily reduced by increasing
-   that amount.
+   that amount.*
 
 The third statement is equivalent to the first, and yet holds its meaning in
 greater disclosure. The reason why statement 3 is comprehensible is that it
 places the proposition’s weight upon a practical consequence. If I may rephrase
 it one last time, the statement is simply that
 
-4. The sum of a certain amount of inverse natural numbers increases indefinitely
-   when that amount increases indefinitely.
+4. *The sum of a certain amount of inverse natural numbers increases indefinitely
+   when that amount increases indefinitely.*
 
 In other words, the statement “harmonic series are divergent” is a practical
 statement about the expected effect —or outcome— of a particular action; namely,

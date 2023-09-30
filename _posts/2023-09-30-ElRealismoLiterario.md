@@ -41,6 +41,6 @@ nos es inaccesible aquello que se querría reproducir.
 Podría decirse que esta tesis es demasiado arrogante, que el realismo no es un
 error o es un bienvenido error si ha dado a Stendhal o a Dostoievski. Pero el
 punto es precisamente que ellos corresponden al género fantástico tanto como
-Beckford o Poe; que la mundana frase el sol se pone en el oriente es ya una
+Beckford o Poe; que la mundana frase *el sol se pone en el oriente* es ya una
 especie de magia y que todo lo que ha sido escrito se asemeja a la vida como lo
 hacen el sueño o la memoria.
