@@ -71,12 +71,13 @@ graph $G$. With $H'$ being properly defined, this solves the simpler problem of
 finding pseudo Hamiltonian cycles. Since the only difference between a pseudo
 Hamiltonian cycle and a Hamiltonian cycle is that, in the latter, all nodes have
 been traversed, we must simply impose this condition to the clause of $H'$ that
-returns true (this is, to $a = b$). Since each time to traverse a node we remove
+returns true (this is, to $a = b$). Since each time we traverse a node we remove
 it from $V$ (where $G = (V, E$)), a Hamiltonian cycle will be a pseudo
-Hamiltonian cycle where $V$ has been transformed into the empty set.
+Hamiltonian cycle with $G_{\text{last}} = \emptyset$, where $G_{\text{last}}$ is
+the graph argument of the recursive call that falls in the clause $a = b$.
 
-Then, let $X(G)$ be a predicate function s.t. $X(G) = 1$ if $V = \emptyset$, $0$
-otherwise. Then let
+A bit more formally, let $X(G)$ be a predicate function s.t. $X(G) = 1$ if $V =
+\emptyset$, $0$ otherwise. Then we define
 
 $$
 H(G, a, b) = \begin{cases}
