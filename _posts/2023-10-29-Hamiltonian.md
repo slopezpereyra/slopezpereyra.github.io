@@ -46,8 +46,8 @@ two trivial base cases. Namely,
 
 $$
 H'(G, a, b) = \begin{cases}
-1 & a=b \\ 
-0 & b \not\in V \\ 
+1 & a=b \newline 
+0 & b \not\in V \newline 
 \bigvee_{k \in N_{a}} H'(G_{a}, k, b) & otherwise
 \end{cases}
 $$
@@ -80,8 +80,8 @@ otherwise. Then let
 
 $$
 H(G, a, b) = \begin{cases}
-1 \land X(G)& a=b \\ 
-0 & b \not\in V \\ 
+1 \land X(G)& a=b \newline 
+0 & b \not\in V \newline 
 \bigvee_{k \in N_{a}} H'(G_{a}, k, b) & otherwise
 \end{cases}
 $$
