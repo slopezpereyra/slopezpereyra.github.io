@@ -105,7 +105,7 @@ considers that a `graph` is represented as a pair of values `V` and `adj_l`,
 where `V` is the number of vertices (`0, 1, ...., V - 1`) and `adj_l` is an
 array of pointers to `list`s:
 
-```C
+```c
 struct _graph {
     int V;
     list *adj_l; // pointer to a list (which is a pointer to _node).
@@ -116,7 +116,7 @@ typedef struct _graph * graph;
 
 Then we implement our backtracking idea as follows.
 
-```C
+```c
 // Recursive function that determines whether a (pseudo or
 // propper) Hamiltonian cycle exists.
 //
