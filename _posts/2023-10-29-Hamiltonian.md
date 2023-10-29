@@ -1,8 +1,7 @@
 ---
-title: Hamiltonian cycles: A backtracking algorithm
-categories: [ Science, Personal ]
+title: Hamilton cycles: A backtracking algorithm
+categories: [ Science ]
 ---
-
 
 A classic computational problem consists of determining whether a given graph
 contains a Hamiltonian cycle. It is well-known that this problem can be solved
