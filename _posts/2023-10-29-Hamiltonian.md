@@ -1,10 +1,10 @@
 ---
-title: Hamilton cycles: A backtracking algorithm
+title: Hamilton cycles ~ A backtracking algorithm
 categories: [ Science ]
 ---
 
-A classic computational problem consists of determining whether a given graph
-contains a Hamiltonian cycle. It is well-known that this problem can be solved
+A classic computational problem consists of determining whether a Hamiltonian
+cycle exists for a given graph. It is well-known that this problem can be solved
 using backtracking, and in fact the problem of designing a backtracking
 algorithm for this purpose is standard in computer science universities around
 the world. It is correct to infer from this that the problem is not particularly
@@ -156,7 +156,5 @@ bool hamCycle(graph g){
     destroyGraph(g);
     return(false);
 }
-
-
 ```
 
