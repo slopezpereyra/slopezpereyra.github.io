@@ -13,7 +13,6 @@ challenging. However, it provides an excellent opportunity to *show* what
 
 ### Formal preliminaries
 
---- 
 *Definitions.* 
 
 *(1)* Let $G = (V, E)$ a graph and $G_{n} := (V - \{ n \}, E), n \in
