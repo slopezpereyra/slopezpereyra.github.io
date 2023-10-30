@@ -6,20 +6,19 @@ categories: [ Science ]
 A classic computational problem consists of determining whether a Hamiltonian
 cycle exists for a given graph. It is well-known that this problem can be solved
 using backtracking, and in fact the problem of designing a backtracking
-algorithm for this purpose is standard in computer science universities around
-the world. It is correct to infer from this that the problem is not particularly
-challenging. However, it provides an excellent opportunity to *show* what
-*backtracking* is with a nice example case (graph theory is always *nice*).
+algorithm for this purpose is somewhat paradigmatic. It is correct to infer from
+this that the problem is not particularly challenging. However, it does provide
+an excellent opportunity to show what backtracking is and how it can be
+implemented in a nice problem (graph theory is always *nice*).
 
 ### Formal preliminaries
 
 *Definitions.* 
 
-*(1)* Let $G = (V, E)$ a graph and $G_{n} := (V - \{ n \}, E), n \in
-\mathbb{N}$. Importantly, $G_{n}$ does not remove the occurrences of $n$ in the
-tuples of $E$ but only removes $n$ from $V$. 
+*(1)* Let $G = (V, E)$ a graph and $G_{n} := (V - \\{ n \\}, E), n \in
+\mathbb{N}$. 
 
-*(2)* Assuming a defined graph $G$, $N_{i} := \{ v \in V : (i, v) \in E \}$ is
+*(2)* Assuming a graph $G$ has been defined, $N_{i} := \\{ v \in V : (i, v) \in E \\}$ is
 the set of *neighbors* of the $i$th vertex. The prominent case are the
 *zero-neighbors* $N_0$, insofar as they are the set of candidate decisions in
 the first step of the algorithm.
@@ -38,7 +37,7 @@ vertex a *pseudo Hamiltonian cycle*.
 ---
 
 *Proposition.*  $G$ has a pseudo Hamiltonian cycle  if and only if $\bigvee_{k
-\in N_{0}} H'(G, 0, k)$. 
+\in N_{0}} H'(G_{0}, 0, k)$. 
 
 *Backtracking.* We ensure backtracking occurs by defining $H$ recursively with
 two trivial base cases. Namely,
@@ -82,7 +81,7 @@ $$
 H(G, a, b) = \begin{cases}
 1 \land X(G)& a=b \newline 
 0 & b \not\in V \newline 
-\bigvee_{k \in N_{a}} H'(G_{a}, k, b) & otherwise
+\bigvee_{k \in N_{a}} H(G_{a}, k, b) & otherwise
 \end{cases}
 $$
 
