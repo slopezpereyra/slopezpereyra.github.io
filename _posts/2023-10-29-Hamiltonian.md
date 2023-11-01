@@ -173,11 +173,11 @@ Another paradigmatic problem susceptible to backtracking is placing $n$ queens
 in an $n^2$ chessboard in such a way that no queen attacks another. The
 formalization of this problem is simpler than that of the previous one. 
 
-We will represent our chessboard with a Boolean matrix $B \in {0, 1}^{n \times
+We will represent our chessboard with a Boolean matrix $B \in \\{0, 1\\}^{n \times
 n}$ be a boolean matrix. Let $\mathcal{P} : \\{0, 1\\}^{n \times n} \times
 \mathbb{N}^2 \to \\{0, 1\\}^{n \times n}$ be the *placing* function. This function
 is defined s.t. $\mathcal{P}(B, i, j)$ maps to a boolean matrix $B'$ identical
-to $B$, except that $B_{ij} = 1$. By 'setting' the $(i, j)$ coordinate to $1$,
+to $B$, except that $B'_{ij} = 1$. By 'setting' the $(i, j)$ coordinate to $1$,
 we represent that a queen has been placed at such coordinate.
 
 Assume as well that $\mathcal{C} : \\{0, 1\\}^{n \times n} \times \mathbb{N}^2 \to
@@ -198,20 +198,22 @@ $$
 
 For practical purposes, we define the local solution set $\Omega_B$ associated
 to a matrix $B$ as follows  $\Omega_B:= \\{(i, j) \in \mathbb{N}^2 :
-\mathcal{C}(B, i, j)\\}$. Now, let $f : \\{0, 1\\}^{n \times n} \to \\{0, 1\\}$ a
+\mathcal{C}(B, i, j) = 1\\}$. Now, let $f : \\{0, 1\\}^{n \times n} \to \\{0, 1\\}$ a
 function and $B$ a square boolean matrix over $\\{0, 1\\}$ of $n^2$ dimension and
 with all values set to zero. Then our backtracking algorithm will use the
 following recursion:
 
 $$
-f(B) = \begin{cases}1 & \mathcal{X}(B) = 1 \\   \bigvee_{(i, j) \in \Omega_B} f\big( \mathcal{P} (B, i, j) \big ) \Big) &\mathcal{S}(B) = 1 \\ 0 & \mathcal{S}(B) = 0   \end{cases}
+f(B) = \begin{cases}1 & \mathcal{X}(B) = 1 \newline   
+\bigvee_{(i, j) \in \Omega_B} f\big( \mathcal{P} (B, i, j) \big ) \Big) &\mathcal{S}(B) = 1 \newline 
+0 & \mathcal{S}(B) = 0   \end{cases}
 $$
 
-It is quite evident that whenever $f(B) = 1$, a certain decision tree has been
-traversed such that $n$ queens have been placed in the board satisfying our
-constraint. If a `print` clause is added into whatever program implements this
-at the case $\mathcal{X}(B) = 1$, the matrix with the $n$ queens will be shown.
-To be clear, $f$ is true if *some* satisfactory arrangement of $n$ queens was found; but the case $\mathcal{X}(B) = 1$ is reached *for each* of such arrangements, which may be many.
+To be clear, $f$ is true if *some* satisfactory arrangement of $n$ queens was
+found; but the case $\mathcal{X}(B) = 1$ is reached *for each* of such
+arrangements, which may be many. In the implementation, adding a `print`
+operation to the state corresopnding to $\mathcal{X}(B) = 1$ will result in the
+display of every possible solution.
 
 ##### C implementation
 
