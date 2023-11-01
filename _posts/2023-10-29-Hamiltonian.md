@@ -1,5 +1,5 @@
 ---
-title: Hamilton cycles ~ A backtracking algorithm
+title: A few backtracking examples
 categories: [ Science ]
 ---
 
@@ -36,8 +36,14 @@ vertex a *pseudo Hamiltonian cycle*.
 
 ---
 
-*Proposition.*  $G$ has a pseudo Hamiltonian cycle  if and only if $\bigvee_{k
-\in N_{0}} H'(G_{0}, 0, k)$. 
+*Proposition.*  Let $k_0 \in N_0$ an arbitrary zero-neighbor. Then $G$ has a
+pseudo Hamiltonian cycle  if and only if $\bigvee_{k \in N_{0}, k \neq k_0}
+H'(G_{0}, k_0, k)$. 
+
+This proposition is trivial. Informally, since $0 \to k_0$ is a path for any zero-neighbor
+$k_0$, any path $k_0 \to \ldots \to k$ from $k_0$ to another
+zero-neighbor describes the pseudo-Hamiltonian cycle $0 \to k_0 \to \ldots \to
+k$.
 
 *Backtracking.* We ensure backtracking occurs by defining $H$ recursively with
 two trivial base cases. Namely,
@@ -58,15 +64,17 @@ and make the whole disjunctive expression true. If the path does not exist, the
 $b \not\in V$ clause is reached. (Draw a graph and call $H'$ manually on it to
 see why this is true.) 
 
-A slightly modified version of the *Proposition* given above gives
+From the *Proposition* follows that, for any arbitrary zero-neighbor $k_0$,
 
 $$
-f'(G) = \bigvee_{k \in N_{0}k \neq k_{0}} H'(G_{k_{0}}, k_{0}, k)
+f'(G) = \bigvee_{k \in N_{0}, k \neq k_{0}} H'(G_{k_{0}}, k_{0}, k)
 $$
 
-as the function that determines whether there is a pseudo Hamiltonian cycle for
-graph $G$. With $H'$ being properly defined, this solves the simpler problem of
-finding pseudo Hamiltonian cycles. Since the only difference between a pseudo
+is the function that determines whether there is a pseudo Hamiltonian cycle for
+graph $G$. 
+
+With $H'$ properly defined, $f'$ solves the simpler problem of finding pseudo
+Hamiltonian cycles. Since the only difference between a pseudo
 Hamiltonian cycle and a Hamiltonian cycle is that, in the latter, all nodes have
 been traversed, we must simply impose this condition to the clause of $H'$ that
 returns true (this is, to $a = b$). Since each time we traverse a node we remove
