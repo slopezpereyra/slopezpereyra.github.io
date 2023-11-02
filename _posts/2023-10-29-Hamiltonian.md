@@ -227,6 +227,10 @@ functions simpler. For example, $\mathcal{S}$, or rather its C implementation
 `canBeSolved`, returns false when all entries in the matrix are either $1$ or
 $8$ (this is, either queens or squares controlled by queens).
 
+For flexibility, we allow the user to define a position `(x, y)` where the first
+queen is placed. The algorithm then finds an arrangement that satisfies our
+constraint *and* with a queen at `(x, y)`.
+
 ```c
 #include <stdio.h> 
 #include <stdlib.h> 
@@ -396,34 +400,31 @@ void destroyBoard(board b){
 /* Backtracking algorithm. Finds and prints all arrangements of eight queens in
  * an 8x8 board s.t. no queen attacks another.
  */
-void nQueen(board b){
+bool nQueen(board b, int x, int y){
+    placeQueen(b, x, y);
     if (queenCount(b) == 8){
         dumpBoard(b);
-        return;
+        return(true);
     }
     if (!canBeSolved(b)){
-        return;
+        return(false);
     }
 
+    bool solved = false;
     for (int i = 0; i < 8; i++){
         for (int j = 0; j < 8; j ++){
             if((b -> matrix)[i][j] == 0){
                 board subBoard = copyBoard(b);
-                placeQueen(subBoard, i, j);
-                nQueen(subBoard);
+                solved = nQueen(subBoard, i, j);
                 destroyBoard(subBoard);
+                if (solved) { return(true); }
             }
         }
-    }
-}
-
-int main(){
-    board b = initBoard();
-    nQueen(b);
+    }return(false);
 }
 ```
 
-These are some of the solutions found:
+These are the solutions for three different `(x, y)` arguments.
 
 ```c
 1  1  8  1  1  1  1  1
