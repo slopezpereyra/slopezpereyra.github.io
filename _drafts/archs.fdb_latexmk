@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1699384173 "archs.tex" "archs.pdf" "archs" 1699384174 2
+["pdflatex"] 1699398231 "archs.tex" "archs.pdf" "archs" 1699398231 2
   "/etc/texmf/web2c/texmf.cnf" 1683163658 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -58,8 +58,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1683164103 4623455 fa0568a71dd9a288d6c226ee477506c6 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1685734779 7880721 5a192c6a05df19a31d9285e96ff2981d ""
-  "archs.aux" 1699384174 515 021fef6c5e629a838977d840f247bb6b "pdflatex"
-  "archs.tex" 1699384172 24987 20ab10d0834699103f6d834cba6f87b4 ""
+  "archs.aux" 1699398231 515 85cca206e56e2a129c5210e603b9d662 "pdflatex"
+  "archs.tex" 1699398229 25360 4797f7e63c4f0c38e8440b60ff8b541c ""
   (generated)
   "archs.aux"
   "archs.log"

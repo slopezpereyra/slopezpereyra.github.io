@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.6.2)  7 NOV 2023 16:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.6.2)  7 NOV 2023 20:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -193,16 +193,15 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[3] [4] [5]
-Overfull \hbox (278.93463pt too wide) in paragraph at lines 355--361
+[3] [4] [5] [6]
+Overfull \hbox (278.93463pt too wide) in paragraph at lines 361--367
 []\T1/cmr/m/n/10 There is one pe-cu-liarly in-ter-est-ing pa-per, (The af-fec-tive Core of the Self)[https://www.frontiersin.org/articles/10.3389/fpsyg.2017.01424/full],
  []
 
-[6]
-./archs.tex:366: Undefined control sequence.
+./archs.tex:372: Undefined control sequence.
 \__hook_toplevel env/quote/begin ...singlespacing 
                                                   \small 
-l.366 \begin{quote}
+l.372 \begin{quote}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -210,7 +209,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[7] (./archs.aux) ) 
+[7] [8] (./archs.aux) ) 
 Here is how much of TeX's memory you used:
  2772 strings out of 476091
  40479 string characters out of 5794082
@@ -218,12 +217,12 @@ Here is how much of TeX's memory you used:
  23148 multiletter control sequences out of 15000+600000
  526171 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,6n,62p,515b,217s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,5n,62p,515b,217s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on archs.pdf (7 pages, 134041 bytes).
+Output written on archs.pdf (8 pages, 135478 bytes).
 PDF statistics:
- 60 PDF objects out of 1000 (max. 8388607)
- 38 compressed objects within 1 object stream
+ 63 PDF objects out of 1000 (max. 8388607)
+ 40 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
