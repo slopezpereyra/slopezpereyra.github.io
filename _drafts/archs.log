@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.6.2)  1 OCT 2023 19:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.6.2)  7 NOV 2023 16:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -147,11 +147,11 @@ LaTeX Font Info:    ... okay on input line 15.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-./archs.tex:108: Undefined control sequence.
+./archs.tex:109: Undefined control sequence.
 \__hook_toplevel env/quote/begin ...singlespacing 
                                                   \small 
-l.108     \begin{quote}
-                       
+l.109 \begin{quote}
+                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -159,23 +159,23 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 [2]
-LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 142.
+LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 143.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 142.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 143.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 142.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 143.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-./archs.tex:147: Undefined control sequence.
+./archs.tex:148: Undefined control sequence.
 \__hook_toplevel env/quote/begin ...singlespacing 
                                                   \small 
-l.147     \begin{quote}
-                       
+l.148 \begin{quote}
+                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -185,28 +185,45 @@ and I'll forget about whatever was undefined.
 ./archs.tex:174: Undefined control sequence.
 \__hook_toplevel env/quote/begin ...singlespacing 
                                                   \small 
-l.174     \begin{quote}
-                       
+l.174 \begin{quote}
+                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[3] [4] [5] (./archs.aux) ) 
+[3] [4] [5]
+Overfull \hbox (278.93463pt too wide) in paragraph at lines 355--361
+[]\T1/cmr/m/n/10 There is one pe-cu-liarly in-ter-est-ing pa-per, (The af-fec-tive Core of the Self)[https://www.frontiersin.org/articles/10.3389/fpsyg.2017.01424/full],
+ []
+
+[6]
+./archs.tex:366: Undefined control sequence.
+\__hook_toplevel env/quote/begin ...singlespacing 
+                                                  \small 
+l.366 \begin{quote}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[7] (./archs.aux) ) 
 Here is how much of TeX's memory you used:
- 2787 strings out of 476091
- 40632 string characters out of 5794082
+ 2772 strings out of 476091
+ 40479 string characters out of 5794082
  1859330 words of memory out of 5000000
- 23157 multiletter control sequences out of 15000+600000
- 530189 words of font info for 74 fonts, out of 8000000 for 9000
+ 23148 multiletter control sequences out of 15000+600000
+ 526171 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,8n,62p,515b,219s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on archs.pdf (5 pages, 160891 bytes).
+ 57i,6n,62p,515b,217s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on archs.pdf (7 pages, 134041 bytes).
 PDF statistics:
- 67 PDF objects out of 1000 (max. 8388607)
- 41 compressed objects within 1 object stream
+ 60 PDF objects out of 1000 (max. 8388607)
+ 38 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
