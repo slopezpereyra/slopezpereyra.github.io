@@ -386,31 +386,48 @@ Let us return to Campbell's quote:
 > 'Whence', we may ask, 'this abrupt seizure by an image to which there
 > is no counterpart in the chicken's world? ($\ldots$)'.
 
-This is indeed the mysterious fact unraveled by affective neuroscience. For all
+This is one of the mysteries unraveled by affective neuroscience. For all
 practical purposes, it is correct to say an *ancestral memory* exists in the
 chick; one embedded in deep and ancient subcortical systems that mediate
-affective experience. Campbell presented his example to show, in practical
-terms, the meaning of *archetype* in Jungian psychology. I think it is correct
-to say the existence of archetypes, as was Jung's intuition, counts today with a
-substantial amount of evidence. Somewhere in his complete works—I remember not
-where—Jung states that we are, so to speak, *thousands of years old*. This is
-sensibly true. To speak of the value-encoding circuitry which lays well beyond
-cognitive control, in the deepest regions of our brain, as a *personality*, as
-Jung did, is merely a verbal matter.
+affective experience. Campbell's example shows, in practical terms, what is
+to be understood by *archetype*. I think it is correct to say the existence
+of archetypes has passed from an educated conjecture to a soundly evidenced
+claim. Somewhere in his complete works—I remember not where—Jung states that we
+are, so to speak, *thousands of years old*. It turns out this is sensibly true.
 
-Jung did not only postulate the existence of psychological archetypes; he also
-accounted for some of them. In this, I believe, he failed to succeed. The
-*shadow* archetype, for instance, corresponded to the inferior, unconscious
-aspects of the human psyche. It is quite difficult to link the neuroscience of
-emotions to such broad concept. The only Jungian archetype susceptible of
-neurobiological study is, as accounted before, the *self*. Such archetype, if it
-exists, has so broad implications that a separate writing would be required in
-order to examine it. But even this must still be taken with tremendous care.
-Neuroscience has, as far as I understand, provided evidence in favor of the
-existence of psychological archetypes; but this evidence on its turn reveals
-that the phenomenology of archetypes is quite distinct to what analytic
-psychologists imagined. It seems archetypes are far more complex, as well as far
-more concrete and mundane, than originally thought.
+I initially formulated the object of this writing, although tentatively, as a
+"representative instinct" in mankind. The findings we have discussed miss in
+supporting such formulation in two opposite senses. Firstly, they uncover a
+field of affective experience that, ranging at least across all mammalian
+species, greatly surpasses mankind itself. In this sense, they go too far.
+Conversely, they disregard the highly complex and still impenetrable interplay
+of cortical activity with the deep regions of the brain that mediate affective
+experience. In this sense, they don't go far enough. If one wishes to speak of
+this inherited, value-encoding circuitry as a representative instinct, fair
+enough—this means one must accept that a certain representation mediates the
+chick's response to the hawk's figure. However, it seems to me this pushes too
+far the use of the term *representation*. This term implies a certain degree of
+awareness; but affective experience requires no awareness at all. This is, in
+fact, one of the most extraordinary findings of affective neuroscience, one that
+receives too little attention it seems to me: That *affect* can exist without
+*awareness*. Jung said, in *Archetypes of the collective unconscious*, that
+awareness of thought surely was posterior to thought itself. This conjecture is
+today an established scientific assertion. In conclusion, I think it is to soon
+to speak of archetypal *representations*. Whatever is to be meant by *archetype*
+is simultaneously more complex and more mundane than originally imagined by
+analytic psychology.
+
+In what comes to Jung, an extension of what was said before is the conclusion
+that he was as right as he was wrong. Although some interplay must exist between
+the archaic affects that mediate our experience of the world and our cognitive
+and representational faculties, I do not think Jung's archetypes (*shadow*,
+*anima/animus*, etc.) are consistent with what we have learned. The only
+exception to this is, perhaps, what he termed the *self* archetype. At the same
+time, he was right in asserting that human (it turns out mammalian) experience
+cannot be considered without regard to its evolutionary history, and furthermore
+in advancing the idea that certain "primordial images", archaic and imbued with
+affect, had not only to exist but to play a prominent role in shaping human
+experience.
 
 Pseudo-Dionysius the Areopagite, I repeat, suggested a celestial echo (*apekhémata*)
 exists in every sensible thing; and that by virtue of such imprint they
