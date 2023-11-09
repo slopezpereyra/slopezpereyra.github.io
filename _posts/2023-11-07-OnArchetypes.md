@@ -44,8 +44,8 @@ questions to be raised.
 
 # Archetypes
 
-The term archetype dates back at least to Dionysius the
-Pseudo-Areopagite, who suggested an echo (*apekhémata*) of the divine
+The term archetype dates back at least to Pseudo-Dionysius the
+Areopagite, who suggested an echo (*apekhémata*) of the divine
 essence exists on every sensible object, by virtue of which they may
 elevate to the immaterial *arkhitypía*. Here, the word expresses the
 perfect platonic ideal of which each sensible object is an imperfect
@@ -386,21 +386,33 @@ Let us return to Campbell's quote:
 > 'Whence', we may ask, 'this abrupt seizure by an image to which there
 > is no counterpart in the chicken's world? ($\ldots$)'.
 
-This is indeed the mysterious fact unraveled by affective neuroscience.
-For all practical purposes, it is correct to say an *ancestral memory*
-exists in the chick; one deeply embedded in ancient subcortical systems
-that mediate affective experience. Campbell presented his example to
-represent in practical terms the meaning of *archetype* in Jungian
-psychology. I think it is correct to say the existence of archetypes,
-*precisely* as understood by Jung, counts today with a substantial
-amount of evidence, and fits entirely with the advancements of
-neuroscience. Somewhere in his complete works—I remember not
-where—Jung states that we are, so to speak, *thousands of years old*.
-This is sensibly true. To speak of the value-encoding circuitry which
-lays well beyond cognitive control, in the deepest regions of our brain,
-as a *personality*, as Jung did, is merely a verbal matter.
+This is indeed the mysterious fact unraveled by affective neuroscience. For all
+practical purposes, it is correct to say an *ancestral memory* exists in the
+chick; one embedded in deep and ancient subcortical systems that mediate
+affective experience. Campbell presented his example to show, in practical
+terms, the meaning of *archetype* in Jungian psychology. I think it is correct
+to say the existence of archetypes, as was Jung's intuition, counts today with a
+substantial amount of evidence. Somewhere in his complete works—I remember not
+where—Jung states that we are, so to speak, *thousands of years old*. This is
+sensibly true. To speak of the value-encoding circuitry which lays well beyond
+cognitive control, in the deepest regions of our brain, as a *personality*, as
+Jung did, is merely a verbal matter.
 
-Pseudo-Areopagite, I repeat, suggested a celestial echo (*apekhémata*)
+Jung did not only postulate the existence of psychological archetypes; he also
+accounted for some of them. In this, I believe, he failed to succeed. The
+*shadow* archetype, for instance, corresponded to the inferior, unconscious
+aspects of the human psyche. It is quite difficult to link the neuroscience of
+emotions to such broad concept. The only Jungian archetype susceptible of
+neurobiological study is, as accounted before, the *self*. Such archetype, if it
+exists, has so broad implications that a separate writing would be required in
+order to examine it. But even this must still be taken with tremendous care.
+Neuroscience has, as far as I understand, provided evidence in favor of the
+existence of psychological archetypes; but this evidence on its turn reveals
+that the phenomenology of archetypes is quite distinct to what analytic
+psychologists imagined. It seems archetypes are far more complex, as well as far
+more concrete and mundane, than originally thought.
+
+Pseudo-Dionysius the Areopagite, I repeat, suggested a celestial echo (*apekhémata*)
 exists in every sensible thing; and that by virtue of such imprint they
 may reach the immaterial *arkhitypía*. The *ancient memories* revealed
 by neuroscience, quite curiously, have something of both of these Greek
@@ -409,4 +421,6 @@ an evolutionary imprint that, so to speak, echoes through time by means
 of millennial evolution. They are *arkhitypía* in that they exist deep
 beyond the cognitive regions of our brain, evoking typical patterns of
 behavior across a range of biological species, while being perhaps
-impossible to represent by means of pure cognition or imagination.
+impossible to represent by means of pure cognition or imagination. One can only
+imagine how broad and deep our affective dispositions, particularly those that
+exist well beyond the reach of conscious thought.
