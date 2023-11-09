@@ -59,8 +59,9 @@ a:focus {
   color: #0085a1;
 }
 blockquote {
-  color: #808080;
-  font-style: italic;
+  font-size: 12px;
+  color: #000000;
+/*  font-style: italic;*/
 }
 blockquote p:first-child {
   margin-top: 0;
