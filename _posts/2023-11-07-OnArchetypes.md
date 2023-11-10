@@ -401,7 +401,7 @@ circuitry involved in producing emotions and concomitant feelings. This is a
 great step, but it says little or nothing on *how* such circuitry produces it.
 The regions of the brain which seem to produce consciousness have been mapped;
 *how* they produce it remains unclear. With regards to its evolutionary
-perspective, one must not forget how little it is to say to claim that affect
+perspective, one must not forget how little it is to claim that affect
 and emotion are part of the biological endowment of the mammalian brain. In this
 sense, affective neuroscience has provided evidence, as well as a considerable
 amount of detail, with regards to a claim that on itself is not altogether
@@ -429,7 +429,7 @@ fact, one of the most extraordinary findings of affective neuroscience, one that
 receives too little attention it seems to me: That *affect* can exist without
 *awareness*. Jung wrote, in *Archetypes of the collective unconscious*, that
 awareness of thought surely was posterior to thought itself. This conjecture is
-today an established scientific assertion. In conclusion, I think it is to soon
+today an established scientific assertion. In conclusion, I think it is too soon
 to speak of archetypal *representations*. Whatever is to be meant by *archetype*
 is simultaneously more complex and more mundane than originally imagined by
 analytic psychology.
