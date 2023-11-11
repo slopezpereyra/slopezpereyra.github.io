@@ -12,35 +12,32 @@ inquiry of what may be termed a ''representative instinct'' in mankind.
 Such '' instinct''—I use the term loosely for now—is plausibly the
 byproduct of the emergence of symbolic faculties in instinctive beings.
 This may not be too precise, but it is also not blatantly wrong, and
-thus I accept it as a decent preliminary formulation. I am speaking of
+so I accept it as a decent preliminary formulation. I am speaking of
 what a peculiar branch of psychoanalysis termed *archetypes*.
 
-The object of this inquiry, I must say, was not originally conceived to
-be of biological nature, and I do wish to attend to the earlier
-formulations of the concept of *archetype*. Firstly, because in the
-genealogy of any scientific idea there are large branches of—in
-general quite illuminating—pre-scientific antecedents. Secondly,
-because the hypothesis that concerns us goes far beyond the scope of
-scientific inquiry, raising questions about human nature itself.
+The concept of *archetype* does not have a neurobiological origin, and I do wish
+to attend to its early formulations. Firstly, because in the genealogy of any
+scientific idea there are large branches of (in general quite illuminating)
+pre-scientific antecedents. Secondly, because the hypotheses that concern us go
+far beyond the scope of scientific inquiry, raising questions about human nature
+itself.
 
-As a last preliminary comment, I should wish to say the following:
-although the concept, as we postulate it, has a tighter link with
-scientific understanding than its original formulations, and although a
-considerable amount of empirical work has been set forth by affective
-neuroscience on its favor, the existence of archetypes is still merely a
-hypothesis. Only the scientific study of brain functioning can
-ultimately provide satisfactory evidence in favour or against it. It is
-probably the case that mind-problems are of the kind where propositions
-are to be measured only in that way—by the weight of existing
-evidence, and not by conclusive proof. A love for sharp edges and rigor
-compels me to limit the scope of my speculation to what I deem to be in
-line with this evidence and our current scientific understanding of the
-brain. It is utterly short-sighted to claim that reason can only delve
-into matters where certain knowledge exists (or could exist). The
-advancement of science itself must always begin with educated
-conjectures, and a philosophical attitude towards uncertain matters can
-*at least*, when executed correctly, reveal the right and the wrong
-questions to be raised.
+As a last preliminary comment, I should wish to say the following: although the
+concept, as we postulate it, has a tighter link with scientific understanding
+than its original formulations, and although a considerable amount of empirical
+work has been set forth by affective neuroscience on its favor, the existence of
+such a thing as a ''representative instinct'' is still merely a hypothesis. Only
+the scientific study of brain functioning can ultimately provide satisfactory
+evidence in favour or against it. It is probably the case that mind-problems are
+of the kind where propositions are to be measured only in that way—by the weight
+of existing evidence, and not by conclusive proof. A love for sharp edges and
+rigor compels me to limit the scope of my speculation to what I deem to be in
+line with this evidence and our current scientific understanding of the brain.
+It is utterly short-sighted to claim that reason can only delve into matters
+where certain knowledge exists (or could exist). The advancement of science
+itself must always begin with educated conjectures, and a philosophical attitude
+towards uncertain matters can *at least*, when executed correctly, reveal the
+right and the wrong questions to be raised.
 
 # Archetypes
 
@@ -72,13 +69,11 @@ contending formulations, to our surprise, are in the end not very
 numerous.
 
 It then becomes the question how to penetrate into the essence of the
-formulations at hand. For this purpose, aside from the consideration of
-empirical evidence, I intend to follow two elementary principles.
-Firstly, to assess the amount of presuppositions implied in each of
-them. Secondly, to think of their meaning as determined by the sensible
-effects the concept is represented to produce. In the latter lies
-whatever is to be meant by the concept; in the first, its intellectual
-economy.
+formulations at hand. Putting aside the consideration of empirical evidence, one
+must follow two principles. Firstly, to assess the amount of presuppositions
+implied in each of them. Secondly, to think of their meaning as determined by
+the sensible effects the concept is represented to produce. In the latter lies
+whatever is to be meant by the concept; in the first, its intellectual economy.
 
 # Jung
 
@@ -363,7 +358,7 @@ archetypes proposed by Jung. I will let the reader judge the conclusions of this
 paper on his own; they do not differ from what I have described thus far but in
 scope and technical precision.
 
-# Summary
+# Conclusion
 
 Let us return to Campbell's quote:
 
@@ -401,8 +396,8 @@ circuitry involved in producing emotions and concomitant feelings. This is a
 great step, but it says little or nothing on *how* such circuitry produces it.
 The regions of the brain which seem to produce consciousness have been mapped;
 *how* they produce it remains unclear. With regards to its evolutionary
-perspective, one must not forget how little it is to claim that affect
-and emotion are part of the biological endowment of the mammalian brain. In this
+perspective, one must not forget how little it is to claim that affect and
+emotion are part of the biological endowment of the mammalian brain. In this
 sense, affective neuroscience has provided evidence, as well as a considerable
 amount of detail, with regards to a claim that on itself is not altogether
 revolutionary. The only finding of affective neuroscience that truly deviates
@@ -413,48 +408,47 @@ illustrated by Campbell's example.
 
 Secondly, recall that I initially formulated the object of this writing,
 although tentatively, as a "representative instinct" in mankind. I think this is
-what Jung had in mind when he spoke of archetypes. The findings we have
-discussed miss in supporting such formulation in two opposite senses. Firstly,
-they uncover a field of affective experience that, ranging at least across all
-mammalian species, greatly surpasses mankind itself. In this sense, they go too
-far. Conversely, they disregard the highly complex and still impenetrable
-interplay of cortical activity with the deep regions of the brain that mediate
-affective experience. In this sense, they don't go far enough. If one wishes to
-speak of this inherited, value-encoding circuitry as a representative instinct,
-fair enough—this means one must accept that a certain representation mediates
-the chick's response to the hawk's figure. However, it seems to me this pushes
-too far the use of the term *representation*. This term implies a certain degree
-of awareness; but affective experience requires no awareness at all. This is, in
-fact, one of the most extraordinary findings of affective neuroscience, one that
-receives too little attention it seems to me: That *affect* can exist without
-*awareness*. Jung wrote, in *Archetypes of the collective unconscious*, that
-awareness of thought surely was posterior to thought itself. This conjecture is
-today an established scientific assertion. In conclusion, I think it is too soon
-to speak of archetypal *representations*. Whatever is to be meant by *archetype*
-is simultaneously more complex and more mundane than originally imagined by
-analytic psychology.
+what Jung had in mind when he spoke of archetypes. It seems he was correct to say
+that both the activity taking place as well as the stimuli which unleashes it
+are to be contained in the meaning of *archetype*. In this sense, the concept is
+two-fold: it refers to the typical *non-conditioned* (this is, unlearned and
+inherited) affective response to a particular stimuli as well as to such
+stimuli. Thus we discern between archetypal behavior and archetypal image. The
+neurobiology mediating such affective response is somewhat well understood and
+in fact seems to be essential to the realization of consciousness itself.
 
-An extension of what was said before is the conclusion that Jung was as right as
-he was wrong. A rich interplay must exist between the archaic affects that
-mediate, and in fact make possible, our experience of the world, and our
-cognitive and representational faculties. However, I do not think Jung's
-archetypes (*shadow*, *anima/animus*, etc.) are consistent with the nature of
-these primordial realizers of consciousness. The only exception to this is,
-perhaps, what he termed the *self* archetype. At the same time, he was right in
-asserting that human, and in fact mammalian experience cannot be considered
-without regard to its evolutionary history, and in advancing the idea that
-certain "primordial images", archaic and imbued with affect, had not only to
-exist, but to be essential to the configuration of psychic phenomena.
+Notwithstanding, to speak of a *representative instinct* seems incorrect. The
+findings we have discussed miss in supporting such formulation in two opposite
+senses. On one hand, they uncover a field of affective experience that, ranging
+at least across all mammalian species, greatly surpasses mankind itself. In this
+sense, they go too far. Conversely, they disregard the highly complex and still
+impenetrable interplay of cortical activity with the deep regions of the brain
+that mediate affective experience. In this sense, they don't go far enough. If
+one wishes to speak of this inherited, value-encoding circuitry as a
+representative instinct, fair enough—this means one must accept that a certain
+representation mediates the chick's response to the hawk's figure. However, it
+seems to me this pushes too far the use of the term *representation*. This term
+implies a certain degree of awareness; but affective experience requires no
+awareness at all. This is, in fact, one of the most extraordinary findings of
+affective neuroscience, one that receives too little attention it seems to me:
+That *affect* can exist without *awareness*. Jung wrote, in *Archetypes of the
+collective unconscious*, that awareness of thought surely was posterior to
+thought itself. This conjecture is today an established scientific assertion. In
+conclusion, it is too soon to speak of archetypal *representations*. What is
+meant by *archetype* is simultaneously more complex and more mundane than
+originally imagined by analytic psychology. In this sense, it still is
+incredibly difficult to speculate on the role which archetypes, as we understand
+them, may play in religious experience and mythical stories.
 
-Pseudo-Dionysius the Areopagite, I repeat, suggested a celestial echo (*apekhémata*)
-exists in every sensible thing; and that by virtue of such imprint they
-may reach the immaterial *arkhitypía*. The *ancient memories* revealed
-by neuroscience, quite curiously, have something of both of these Greek
-concepts. They are *apekhémata* insofar as they are an ancestral trace,
-an evolutionary imprint that, so to speak, echoes through time by means
-of millennial evolution. They are *arkhitypía* in that they exist deep
-beyond the cognitive regions of our brain, evoking typical patterns of
-behavior across a range of biological species, while being perhaps
-impossible to represent by means of pure cognition or imagination. One can only
-imagine how broad and deep our affective dispositions, particularly those that
-exist well beyond the reach of conscious thought.
+Pseudo-Dionysius the Areopagite, I repeat, suggested a celestial echo
+(*apekhémata*) exists in every sensible thing; and that by virtue of such
+imprint they may reach the immaterial *arkhitypía*. The *ancient memories*
+revealed by neuroscience, quite curiously, have something of both of these Greek
+concepts. They are *apekhémata* insofar as they are an ancestral trace, an
+evolutionary imprint that, so to speak, echoes through time by means of
+millennial evolution. They are *arkhitypía* in that they exist deep beyond the
+cognitive regions of our brain, evoking typical patterns of behavior across a
+range of biological species, while being perhaps impossible to represent by
+means of pure cognition or imagination. One can only imagine how broad and deep
+our affective dispositions, particularly those that exist well beyond the reach
+of conscious thought.
