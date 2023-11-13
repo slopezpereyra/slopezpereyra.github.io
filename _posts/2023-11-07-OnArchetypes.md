@@ -387,8 +387,7 @@ out this is sensibly true.
 Notwithstanding, two things ought to be pointed out. Firstly, affective
 neuroscience successfully mapped the circuitry involved in producing emotions
 and concomitant feelings. This is a great step, but it says little or nothing on
-*how* such circuitry produces it. The regions of the brain which seem to produce
-consciousness have been mapped; *how* they produce it remains unclear. With
+*how* such circuitry produces them. With
 regards to its evolutionary perspective, one must not forget how little it is to
 claim that affect and emotion are part of the biological endowment of the
 mammalian brain. In this sense, affective neuroscience has provided evidence, as
@@ -431,17 +430,17 @@ this is, that the chick's neurobiology was designed by natural selection so as
 to respond in a defined manner to certain perceptions, such as the perception of
 a hawk. It seems to me then that the use of the term *image* is only heuristic,
 but does not accurately reflect neither the underlying neurological processes
-nor the mental experience involved in evoking archetypal response.
+nor the mental experience involved in our sense of the term *archetype*.
 
-If one wishes to speak of this inherited, value-encoding circuitry as a
-representative instinct, fair enough—but this means one must accept that a
-certain representation mediates the chick's response to the hawk's figure. But
-one must recall that affective experience requires no awareness at all. This is,
+If one wishes to speak of this inherited, value-encoding circuitry as defining
+instinctual representations, fair enough—but this means one must accept that a
+certain representation mediates the chick's response to the hawk's figure. One
+should recall however that affective experience requires no awareness at all. This is,
 in fact, one of the most extraordinary findings of affective neuroscience, one
 that receives too little attention it seems to me: That *affect* can exist
 without *awareness*. Jung wrote, in *Archetypes of the collective unconscious*,
 that awareness of thought surely was posterior to thought itself. This
-conjecture is today an established scientific assertion. In conclusion, it is
+conjecture is today an established scientific assertion. It then seems
 too soon to speak of archetypal *images* in a literal sense. What is meant by
 *archetype* is simultaneously more complex and more mundane than originally
 imagined by analytic psychology. 
