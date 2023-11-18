@@ -328,7 +328,7 @@ example:
 > pigeon. Furthermore, if the wooden model of a hawk is drawn over their coop on
 > a wire, they react as though it were alive—unless it be drawn backward, when
 > there is no response.
->
+> 
 > Here we have an extremely precise image—never seen before, yet recognized with
 > reference not merely to its form but to its from in motion, and linked,
 > furthermore, to an immediate, unplanned, unlearned, and even unintended system
@@ -379,7 +379,7 @@ of the empiricist tradition, he states:
 > de estructura. Segundo, $B$ debe desempeñar cierto papel definido en la
 > causación de $A$. Tercero, $A$ y $B$ deben tener ciertos efectos comunes, por
 > ejemplo, causar las mismas palabras en una persona que los experimente.
-
+ 
 Whatever is to be meant by *archetype* satisfies some, but not all of these
 conditions. The image of a hawk, never seen before, evokes similar effects in
 all little chicks; however, the hawk itself plays no part in the causation of
@@ -397,7 +397,7 @@ and does not accurately reflect neither the underlying neurological processes
 nor the (pre)conscious experience involved in what must be meant by *archetype*.
 
 Some clarity is gained in asking how is the chick's response different from a
-mere reflex. The chick's response is certainly reflexive in the sense that it is
+mere reflex. Certainly, the response is reflexive in the sense that it is
 unlearned and, as Campbell points out, even unintentional. However, it has the
 special property of involving affect. Is this what archetypes are then—a reflex
 involving affect? This cannot be so, for then the sudden withdrawal of our hand
@@ -413,81 +413,127 @@ responds so as to alleviate the damage, but none of that implies a *brain state*
 in the sense in which the anxiety and fear of perceiving a predator do. When we
 burn and withdraw our hands there is affect, but not the induction of a lasting
 emotional state, with its concomitant experiential component. The transition
-from one emotional state to another is a *modal*, lasting, and global change; it
-is here where the chick's response differs from mere reflex. Is it then that by
-archetype we mean precisely those stimuli which induce, without conditioning,
-lasting emotional brain states? If so, although not amounting to a total
-novelty, the concept is certainly meaningful.
+from one emotional state to another is a *modal*, lasting, and global change. Is
+it then that by archetype we mean precisely those stimuli which induce, without
+conditioning, lasting emotional brain states? If so, although not amounting to a
+total novelty, the concept is certainly meaningful.
 
-However, this definition is not entirely unproblematic. When a little kid burns
-its hand, a strictly motor response is induced—the hand is rapidly withdrawn
-from the burning object. But, almost surely, cry immediately ensues and lasts
-for some amount of time. Here too we have the unconditioned induction of a
-lasting emotional state. But I think no-one will argue that a burning pan, or
-the situation here described, aren't parts of what the notion of *archetype*
+However, this definition isn't unproblematic either. When a little kid burns its
+hand, a strictly motor response is induced—the hand is rapidly withdrawn from
+the burning object. But, almost surely, cry immediately ensues and lasts for
+certain amount of time. Here too we have the unconditioned induction of a
+lasting emotional state. But I think no-one will argue that a burning pan, in
+the situation here described, can account for what the notion of *archetype*
 strives to specify. What makes then the case of the chick and the hawk different
 from this? The only answer to this question, as far as I can gather, is that the
-stimuli in question is a perceived *image*; i.e. the perceptual channel by which
-the stimuli induces the emotion is the visual system.
+stimuli in question is a perceived *image*; i.e. the perceptual system by virtue
+of which the emotional state is induced is the visual system.
 
 If such elucidation is correct, what Campbell's example gives as *archetype* is
 nothing but this: A stimuli in the form of a visual pattern which induces,
 without previous conditioning, an emotional brain state. The preponderance given
 to visual patterns in some sense justifies the notion of primordial *image*,
-although, as stated earlier, this shouldn't be understood to imply the ''image''
-of the hawk lives aprioristically ''in the soul of the chick''. This is narrower
-than what is meant by *equalia* in Panksepp. As far as I can see, among all
-competing definitions, this is the only one which makes logical sense.
+although, as stated earlier, this shouldn't be understood to imply that the
+''image'' of the hawk lives ''in the soul of the chick''. Incidentally, we
+should note that this is narrower than the concept of *equalia*. As far as I can
+gather, of all competing definitions, this is the only one which makes sense. We
+have in part succeeded, insofar as we have now in our hands a meaningful
+definition of *archetype*. But our victory proves to be Pyrrhic when we ask how
+is the emphasis on visual patterns justified at all?
 
-This is a partial success. We have determined what is meant by archetype; i.e. a
-visual pattern which induces a lasting emotional state without conditioning nor
-learning. The concept is meaningful, and in fact it is the only definition which
-draws the symbolic and religious implications which Jung and Campbell, for
-example, pointed out. Jung's *archetype-as-such* corresponds to the visual
-pattern as encoded in the brain; it is not an actual image, but rather some sort
-of neural encoding which, somehow, is sensitive to a visual pattern. An
-*archetypal image* is any visual pattern which functionally corresponds to the
-*archetype-as-such*; for example, a wooden or a real hawk in the chick's case.
-However, how is this concept useful? And is the emphasis on visual patterns in
-any sense justified? This doesn't seem to be the case. 
+We tend to think of the visual system as somehow more important than other
+sensory systems. This is already evident in Aristotle's *De anima*, and has
+never changed. In everyday life, we tend to localize our sense of selves in our
+heads due to the fact that our vision resides in it, when it is obvious that it
+makes as much sense to locate it in any place of our body. The visual system,
+however, is as special as any other. Take any impression $I$ capable of inducing
+an emotional state without conditioning; how is the property of being a visual
+impression of any peculiar relevance to the essence of the process in question?
+Such property seems merely accidental. If one takes the process abstractly, its
+peculiarity lies in the fact that an organism is inherently capable of
+responding emotionally to certain external perceptions. Whether such perceptions
+are the image of a hawk or the smell of a hawk seems inessential to me. But this
+is a matter of principle, and one could ask whether there are *as a matter of
+fact* non-visual perceptions capable of inducing lasting emotional states
+without conditioning. In other words, one could attempt to "rescue" the concept
+of archetype by claiming that the restriction to visual perceptions, though not
+a logical necessity, is a fact of nature. It is evident that a lasting emotional
+state can be equally induced by the image of a predator as well as by its smell,
+but I ignore whether the smell can induce such response without previous
+learning. However, it is clear that blind mammals, such as mole-rats, must have
+the innate ability to respond emotionally to certain non-visual
+**stimuli**—their survival is hard to imagine otherwise. This is particularly
+true if one thinks not of the fear system, to which the example of the chick
+turned our attention, but of the lust system. Reproduction is the fundamental
+mechanism of life—and we know it is not dependent on learning. This, in
+combination with the fact that there are blind mammals, should suffice to close
+this point. (Incidentally, there are interesting papers on the sexual
+characteristics of mole-rats, a species whose emotional system interested me
+precisely by virtue of their innate blindness. For example, a paper entitled [Is
+the Natal Mole-Rat a Spontaneous or Induced
+Ovulator?](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3181986/), from the
+(delicious) *Journal of Mammalogy*, shows not only that the Natal mole-rat is an
+induced ovulator, but that the levels of progesterone were much higher in
+females in physical contact with other males. We may *presume* that this implies
+the induction of a greater *feeling* of arousal, given the relations of
+progesterone with the lust system described by Panksepp. This would entail the
+unlearned induction of an emotional state by a non-visual stimuli. But we are
+being somewhat speculative, and in any case we do not need this particular case
+to hold for our general statement to be true.)
 
-Firstly, we tend to think of the visual system as somehow more important than
-other sensory systems. This is already evident in Aristotle's *De anima*, and
-has never changed. In all rigor, however, I do not see why this is so. Take any
-impression $I$ capable of inducing an emotional state without conditioning; how
-is the property of being a visual impression of any peculiar relevance to the
-essence of the process in question? Such property seems merely accidental. If
-one takes the process abstractly, its singularity lies in the fact that an
-organism is inherently capable of responding emotionally to certain external
-perceptions. Whether such perceptions are the image of a hawk or the smell of a
-hawk seems inessential to me. One could ask whether there are in fact non-visual
-perceptions capable of inducing lasting emotional states *without learning*. In
-other words, one could attempt to "rescue" the concept of archetype by claiming
-that the restriction to visual perceptions, though not a logical necessity, is
-imposed by nature. It is obvious that a lasting emotional state can be equally
-induced by the image of a predator as well as by its smell; but I ignore whether
-the smell can induce such response without previous learning. However, this
-problem can be solved by observing that there are mammals deprived of vision
-whose evolutionary endowment certainly encodes certain perceptions as
-emotionally charged.
+Returning to our point, the emphasis placed by Panksepp and Jung on *images* is
+unwarranted. If the term *archetype* is to have any sensible meaning at all, it
+must be broaden to account for any stimuli which induces, without conditioning,
+an emotional brain state. Whether such stimuli is visual or not seems irrelevant
+to me. Jung's emphasis on *images*, I believe, can only be accounted for by his
+desire to link the concept of archetype to spiritual phenomena and its symbolic
+expressions. Conversely, Jung knew that by *image* he could not mean only visual
+perceptions or representations. The issue is that without restricting the
+concept to visual perceptions, one seems forced to accept that the burning pan
+which induces a panicking brain state is an archetype—something Jung would have
+found too little mysterious... 
 
+# Conclusion
 
-The neuroscientific study of archetypes, as we have defined them, has not been
-to my knowledge undertaken. Such study would surely provide enormous insight
-into the affective endowment of the animal brain. So many questions arise from
-it that it is hard to contain our excitement. But I should not wish to delve on
-the matter any further. Some degree of clarity and discernment has been
-achieved; the goal of this entry is served.
+It is a fact that there are stimuli imbued with, so to speak, archaic affect.
+Certain perceptions may induce, without previous conditioning, lasting emotional
+states. The neurobiology mediating these states is partly described by affective
+neuroscience. However, such stimuli is *in fact*  not restrained to visual
+perceptions, and the subclass of such stimuli which are visual perceptions have
+no other discernible special property. This subclass, in this sense, merits no
+name of its own.
 
-I once more repeat the teachings of Pseudo-Dionysius the Areopagite, who
-suggested a celestial echo (*apekhémata*) exists in every sensible thing, by
-virtue of which they may reach the immaterial *arkhitypía*. The *ancient
-memories* (or *equalia*) revealed by neuroscience, quite curiously, have
-something of both of these Greek concepts. They are *apekhémata* insofar as they
-are an ancestral trace, an evolutionary imprint that, so to speak, echoes
-through time by means of millennial evolution. They are *arkhitypía* in that
-they consist in a primitive type encoded beyond the reach of our cognitive
-faculties, deep in the subcortical emotional systems of our brains. Somewhere in
-his complete works, though I cannot recall where, Jung wrote that we are, so to
-speak, *thousands of years old*. This is, so I believe, sensibly true.
+It is clear that the only meaning which the term *archetype* can have, according
+to its classical psychological sense, is twofold: $a.$ the innate biological
+system which responds emotionally to a visual perception (the
+*archetype-as-such*) and $b.$ any visual perception which induces a response in
+that system (the *archetypal image*). The restriction to visual perception is
+necessary if the term is to hold its classical meaning, for otherwise stimuli as
+trivial as a burning pan should be regarded as archetypes. However, as pointed
+out before, such restriction is on its turn rather pointless. 
 
+It seems then that the concept of *archetype* has two justifiable treatments,
+both equally detrimental to its legitimacy. Either the restriction on the *kind*
+of perceptions it references is removed, sacrificing its original intended
+meaning in the process, or the restriction is kept, rendering the concept
+pointless.
+
+My conclusion may seem to blunt, but I think it is correct. To be fair, I should
+point out that this doesn't mean that Jung's original intuition was wrong.
+Rather, he failed to schematize it properly. I once more repeat the teachings of
+Pseudo-Dionysius the Areopagite, who suggested a celestial echo (*apekhémata*)
+exists in every sensible thing, by virtue of which they may reach the immaterial
+*arkhitypía*. The *ancient memories* (or *equalia*) revealed by neuroscience,
+which are indeed real, have something of both of these Greek concepts. They are
+*apekhémata* insofar as they are an ancestral trace, an evolutionary imprint
+that, so to speak, echoes through time by means of millennial evolution. They
+are *arkhitypía* in that they consist in a primitive type encoded beyond the
+reach of our cognitive faculties, deep in the sub-cortical emotional systems of
+our brains. Somewhere in his complete works, though I cannot recall where, Jung
+wrote that we are, so to speak, *thousands of years old*. This is sensibly true.
+The patterns of functioning he spoke of may not be ass defined as he imagined,
+and are certainly more mundane than he would have like to think—but they are no
+less real because of this. The concept of *archetype* must be abandoned, at
+least in its classical sense. But if we adopt a non-classical version of it—one
+indifferent to whether the impressions in question are visual or not—then what
+we mean is perhaps the intriguing aspect of animal behavior.
