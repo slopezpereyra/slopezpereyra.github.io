@@ -7,7 +7,21 @@ categories: [ Science, Philosophy, Personal ]
 
 I wish to put in writing some observations on an intellectual matter I deem of special interest. One could reduce it to the study of brains. In this sense, the matter is circumscribed to what may be oxymoronically termed ''instinctual representations''. Such ''representations''—I use the term loosely for now—have been suggested to be a byproduct of the emergence of symbolic faculties in instinctive beings. This may not be too precise, but it is also not blatantly wrong, and so I accept it as a decent preliminary formulation. I am speaking of what a peculiar branch of psychoanalysis termed *archetypes*.
 
-The goal of this is to determine what *archetype* means in the classical psychoanalytic sense. It is unclear whether the term is meaningful at all. The proposition "Christ is an archetypal image" is a synthetic proposition, but it is not evident what kind of observations could make it true. To define an archetype as a "content of the collective unconscious" begs the question, insofar as we must determine what such collective unconscious is and, incidentally, whether it makes sense to claim it "contains" anything. In general, I will disregard any notion of archetype which implies any kind of metaphysical essentialism. If archetypes exist, they must be a biological phenomenon, as recognized by Jung itself. This approach justifies the emphasis we place on neurobiology. Indeed, mind-problems are of the kind where propositions are to be measured only in by the weight of existing evidence, and not by conclusive proof. A love for sharp edges and rigor compels me to limit the scope of my speculations to what I deem to be in line with neurobiological evidence and our current scientific understanding of the brain. 
+The goal of this writing is to determine what *archetype* means in the classical
+psychoanalytic sense. It is unclear whether the term is meaningful at all. The
+proposition "Christ is an archetypal image" is a synthetic proposition, but it
+is not evident what kind of observations could make it true. To define an
+archetype as a "content of the collective unconscious" begs the question,
+insofar as we must determine what such collective unconscious is and,
+incidentally, whether it makes sense to claim it "contains" anything. In
+general, I will disregard any notion of archetype which implies any kind of
+metaphysical essentialism. If archetypes exist, they must be a biological
+phenomenon, as recognized by Jung itself. This approach justifies the emphasis
+we place on neurobiology. Indeed, mind-problems are of the kind where
+propositions are to be measured only in by the weight of existing evidence, and
+not by conclusive proof. A love for sharp edges and rigor compels me to limit
+the scope of my speculations to what I deem to be in line with neurobiological
+evidence and our current scientific understanding of the brain. 
 
 I advance that the conclusion of this writing is that the Jungian concept of *archetype* is either meaningless or useless, depending on whether one imposes a certain semantic restriction to it. Such restriction concerns the type of perceptions which are understood to be archetypal. If the restriction is imposed, the concept is pointless, in the sense that it gives a special name to a subclass of perceptions whose defining property is not special at all. If the restriction is not imposed, then a whole realm of phenomena which is not what psychoanalysts meant by archetype should be accepted as archetypes, thus destroying the concept's original meaning. 
 
