@@ -95,13 +95,15 @@ To Jung, archetypes are a twofold concept. The *archetype-as-such* is postulated
 as an abstract but yet unrealized pattern, a contentless and strictly formal
 pattern. The *archetype* as a manifestation is a real image or pattern which
 somehow corresponds to the form determined by the *archetype-as-such*. This is
-simply lingo for a simple ethological facts: animals have the capacity to
-distinguish patterns, and there is a difference between the "mental"
-organization which configures the pattern and the appearance of such pattern in
-nature. Furthermore, Jung emphasized above all $a.$ the affective tone of these
-"primordial images" as well as $b.$ that they should be understood not by virtue
-of an essential content but by their teleology—*id est*, the specific behavioral
-disposition induced by them.
+simply lingo for a simple ethological fact: animals have the capacity to
+distinguish patterns, and there is a difference between the "mental" or brain
+organization which configures the distinction of the pattern and the appearance
+of such pattern in nature. 
+
+Jung emphasized above all $a.$ the affective tone of these "primordial images"
+as well as $b.$ that they should be understood not by virtue of an essential
+content but by their teleology—*id est*, the specific behavioral disposition
+induced by them.
 
 > But we only arrive at the meaning of a physical organ when we begin to ask
 > teleological questions. Hence the query arises: What is the biological purpose
