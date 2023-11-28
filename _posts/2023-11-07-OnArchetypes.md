@@ -16,7 +16,7 @@ insofar as we must determine what such collective unconscious is and,
 incidentally, whether it makes sense to claim it "contains" anything. In
 general, I will disregard any notion of archetype which implies any kind of
 metaphysical essentialism. If archetypes exist, they must be a biological
-phenomenon, as recognized by Jung itself. This approach justifies the emphasis
+phenomenon, as recognized by Jung. This approach justifies the emphasis
 we place on neurobiology. Indeed, mind-problems are of the kind where
 propositions are to be measured only in by the weight of existing evidence, and
 not by conclusive proof. A love for sharp edges and rigor compels me to limit
