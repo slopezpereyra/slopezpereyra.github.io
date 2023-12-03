@@ -167,6 +167,193 @@ bool hamCycle(graph g){
 }
 ```
 
+### Graph coloring problem
+
+The graph coloring problem consists of assigning one out of $m$ colors to each
+vertex in a graph s.t. no vertex has the same color than a neighboring vertex.
+Again, a neighbor of vertex $v$ is defined as any vertex $w$ such that $(v, w)
+\in E$. The reader may observe that I like the word neighbor more than the word 
+adjacency. 
+
+The general form of this problem consists in arranging a set of a discrete
+points so that each transition from one point to another implies a change of
+state. 
+
+Let $G = (V, E)$ a graph and $v_s \in V$ a starting vertex. The algorithm will
+simply traverse each vertex of the graph, starting at $v_s$, and attempt to
+color it with the first candidate color; this is, the first color s.t. no
+neighbor is of that color. If at any point the algorithm finds itself without
+any candidate colors for a given vertex, it backtracks.
+
+The mathematical form of the algorithm is the following. Let $v_1, \ldots, v_n$
+the vertices in a graph $G = (V, E)$, $c_1, \ldots, c_m$ be the colors to chose
+from. Let $\mathcal{S} : \mathbb{N} \to \\{0, 1\\}$ be a predicate s.t.
+$\mathcal{S}(G) = 1$ if $G$ has no two neighbors with the same color.
+
+
+$$
+f(i, j) = \begin{cases} 
+    0 & m = 0 \lor \neg \mathcal{S}(G)\\ 
+    1 & i = 0\\
+    f(i - 1, j) \lor f(i, j - 1) & \text{otherwise}
+\end{cases}
+$$
+
+Evidently, the predicate function $\mathcal{S}$ requires the assumption that
+$f(i, j)$ "applies" color $c_j$ to $v_i$. Thus, $f(n, m)$ applies color $c_m$ to
+vertex $v_n$ and moves on to apply color $c_m$ to vertex $v_{n-1}$ and so on. If
+the option of coloring vertex $v_n$ with color $c_m$ eventually leads to an
+unsolvable state, the algorithm will backtrack to $f(n, m - 1)$ and continue
+from there.
+
+The C implementation defines a graph $G$ as an abstract type with two fields.
+One is a `_set` field, which is a list of integers implemented with pointers
+that cannot contain the same element twice. The other is a `tupleSet` field,
+which is essentially the same except that instead of holding integers it holds
+integer pairs by means of an abstract type `_edge`. This follows the
+mathematical definition of $G = (V, E)$, a set of vertices and a set of
+two-tuples. 
+
+```c 
+// For reference, the specifications:
+
+
+// Node in a set of elements
+struct _node{
+    int elem;
+    int color;
+    struct _node * next;
+};
+
+// Node in a set of tuples
+struct _edge{
+    int a;
+    int b;
+    struct _edge * next;
+};
+
+typedef struct _node * node;
+typedef struct _node * set;
+typedef struct _edge * edge;
+typedef struct _edge * tupleSet;
+
+
+// Constructors
+set emptySet();
+tupleSet emptyTupleSet();
+
+// Operators
+set add(set s, int elem);
+node findLastNode(set V);
+tupleSet addEdge(tupleSet e, int a, int b);
+void dumpTupleSet(tupleSet e);
+void dumpSet(set e);
+```
+
+The implementation was:
+
+```c
+
+#include <stdio.h> 
+#include <stdlib.h> 
+#include "graph.h"
+#include <stdbool.h>
+
+node getVertex(struct graph g, int i){
+    node p = g.G;
+    for (int j = 0; j < i; j++){
+        p = p -> next;
+    }return(p);
+}
+
+bool isColored(struct graph g){
+    node p = g.G;
+
+    while (p != NULL){
+        if (p -> color == -1){
+            return(false);
+        }
+        p = p -> next;
+    }
+    return(true);
+}
+
+
+bool constraintBroken(struct graph g){
+    for (edge p = g.E; p != NULL; p = p->next) {
+        node a = getVertex(g, p -> a);
+        node b = getVertex(g, p -> b);
+        if (a -> color == -1 || b -> color == -1){
+            continue;
+        }
+        if (a -> color == b -> color){
+            return(true);
+        }
+    }
+    return(false);
+}
+
+bool colorGraph(struct graph g, int at, int m){
+
+    dumpSet(g.G);
+
+    if (constraintBroken(g)){
+        return(false);
+    }
+    if (isColored(g)){
+        return(true);
+    }
+
+
+    node atNode = getVertex(g, at);
+    bool result = false;
+
+    for (int i = 0; i < m; i++) {
+        atNode -> color = i;
+        result = result || colorGraph(g, at + 1, m);
+        if (result == true){ return(true); }
+    }
+    printf("Graph cannot be colored using only %d colors\n", m);
+    return(false);
+}
+
+// Example
+int main(){
+
+    set s = emptySet();
+    s = add(s, 0);
+    s = add(s, 1);
+    s = add(s, 2);
+    s = add(s, 3);
+    s = add(s, 4);
+
+    tupleSet e = emptyTupleSet();
+    e = addEdge(e, 0, 1);
+    e = addEdge(e, 0, 2);
+    e = addEdge(e, 1, 2);
+    e = addEdge(e, 2, 3);
+    e = addEdge(e, 3, 4);
+    dumpTupleSet(e);
+
+    printf("Starting coloring process...\n");
+    struct graph g; g.G = s; g.E = e;
+    colorGraph(g, 0, 3);
+
+}
+
+
+```
+
+The solution found was the following coloring:
+
+```c 
+Vertex 0 with color 0
+Vertex 1 with color 1
+Vertex 2 with color 2
+Vertex 3 with color 0
+Vertex 4 with color 1
+```
+
 ### $n$-queens
 
 Another paradigmatic problem susceptible to backtracking is placing $n$ queens
