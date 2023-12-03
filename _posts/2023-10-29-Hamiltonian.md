@@ -182,31 +182,28 @@ state.
 Let $G = (V, E)$ a graph and $v_s \in V$ a starting vertex. The algorithm will
 simply traverse each vertex of the graph, starting at $v_s$, and attempt to
 color it with the first candidate color; this is, the first color s.t. no
-neighbor is of that color. If at any point the algorithm finds itself without
-any candidate colors for a given vertex, it backtracks.
+neighbor is of that color. If at any point the algorithm finds itself in
+violation of the problem's constraint, it backtracks.
 
 The mathematical form of the algorithm is the following. Let $v_1, \ldots, v_n$
-the vertices in a graph $G = (V, E)$, $c_1, \ldots, c_m$ be the colors to chose
+the vertices in a graph $G = (V, E)$, $c_1, \ldots, c_m$ be the colors to choose
 from. Let $\mathcal{S} : \mathbb{N} \to \\{0, 1\\}$ be a predicate s.t.
-$\mathcal{S}(G) = 1$ if $G$ has no two neighbors with the same color.
+$\mathcal{S}(G) = 1$ if $G$ has no two neighbors with the same color. Lastly,
+let $\mathcal{C}(i, j, G)$ be a function that maps a graph $G$ to an identical
+graph $G'$, except that $v'_i$ is colored with color $c_j$.
 
 
 $$
-f(i, j) = \begin{cases} 
-    0 & m = 0 \lor \neg \mathcal{S}(G)\\ 
-    1 & i = 0\\
-    f(i - 1, j) \lor f(i, j - 1) & \text{otherwise}
+f(i, G) = \begin{cases} 
+    0 & \neg \mathcal{S}(G)\newline
+    1 & i = 0\newline 
+    \bigvee_{k = 1}^{m} f(i - 1, \mathcal{C}(i, k, G)) &\text{otherwise}
 \end{cases}
 $$
 
-Evidently, the predicate function $\mathcal{S}$ requires the assumption that
-$f(i, j)$ "applies" color $c_j$ to $v_i$. Thus, $f(n, m)$ applies color $c_m$ to
-vertex $v_n$ and moves on to apply color $c_m$ to vertex $v_{n-1}$ and so on. If
-the option of coloring vertex $v_n$ with color $c_m$ eventually leads to an
-unsolvable state, the algorithm will backtrack to $f(n, m - 1)$ and continue
-from there.
+Evidently, $f(n, G)$ determines the solution to the problem.
 
-The C implementation defines a graph $G$ as an abstract type with two fields.
+The C implementation defines a graph  as an abstract type with two fields.
 One is a `_set` field, which is a list of integers implemented with pointers
 that cannot contain the same element twice. The other is a `tupleSet` field,
 which is essentially the same except that instead of holding integers it holds
@@ -253,12 +250,12 @@ void dumpSet(set e);
 The implementation was:
 
 ```c
+struct graph{
+    set G;
+    tupleSet E;
+};
 
-#include <stdio.h> 
-#include <stdlib.h> 
-#include "graph.h"
-#include <stdbool.h>
-
+// Wrapper: returns the ith vertex of a graph.
 node getVertex(struct graph g, int i){
     node p = g.G;
     for (int j = 0; j < i; j++){
@@ -266,19 +263,8 @@ node getVertex(struct graph g, int i){
     }return(p);
 }
 
-bool isColored(struct graph g){
-    node p = g.G;
-
-    while (p != NULL){
-        if (p -> color == -1){
-            return(false);
-        }
-        p = p -> next;
-    }
-    return(true);
-}
-
-
+// Determine if the constraint of the problem is violated;
+// i.e. if any same-colored neighbors exist in the graph.
 bool constraintBroken(struct graph g){
     for (edge p = g.E; p != NULL; p = p->next) {
         node a = getVertex(g, p -> a);
@@ -293,31 +279,34 @@ bool constraintBroken(struct graph g){
     return(false);
 }
 
+// Colors the ith vertex of g with an integer color.
+struct graph colorVertex(struct graph g, int vertex, int color){
+    node v = getVertex(g, vertex);
+    v -> color = color;
+    return(g);
+}
+
+// Recursive solution using backtracking.
 bool colorGraph(struct graph g, int at, int m){
 
-    dumpSet(g.G);
-
-    if (constraintBroken(g)){
+    if (constraintBroken(g) || m < 0){
         return(false);
     }
-    if (isColored(g)){
+    if (at < 0 ){
+        dumpSet(g.G);
         return(true);
     }
 
-
-    node atNode = getVertex(g, at);
     bool result = false;
-
-    for (int i = 0; i < m; i++) {
-        atNode -> color = i;
-        result = result || colorGraph(g, at + 1, m);
-        if (result == true){ return(true); }
+    
+    for (int i = m; i >= 0; i--){
+       result = result || colorGraph( colorVertex(g, at, i), at - 1, m);
+       if (result) { return(true); }
     }
-    printf("Graph cannot be colored using only %d colors\n", m);
     return(false);
 }
 
-// Example
+// Example.
 int main(){
 
     set s = emptySet();
@@ -337,21 +326,22 @@ int main(){
 
     printf("Starting coloring process...\n");
     struct graph g; g.G = s; g.E = e;
-    colorGraph(g, 0, 3);
+    colorGraph(g, 4, 5);
 
 }
-
 
 ```
 
 The solution found was the following coloring:
 
 ```c 
-Vertex 0 with color 0
-Vertex 1 with color 1
-Vertex 2 with color 2
-Vertex 3 with color 0
-Vertex 4 with color 1
+(0, 1), (0, 2), (1, 2), (2, 3), (3, 4),
+Starting coloring process...
+Vertex 0 with color 3
+Vertex 1 with color 4
+Vertex 2 with color 5
+Vertex 3 with color 4
+Vertex 4 with color 5```
 ```
 
 ### $n$-queens
