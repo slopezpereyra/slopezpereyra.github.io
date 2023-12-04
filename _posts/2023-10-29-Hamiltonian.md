@@ -197,7 +197,7 @@ $$
 f(i, G) = \begin{cases} 
     0 & \neg \mathcal{S}(G)\newline
     1 & i = 0\newline 
-    \bigvee_{k = 1}^{m} f(i - 1, \mathcal{C}(i, k, G)) &\text{otherwise}
+    \bigvee_{j = 1}^{m} f(i - 1, \mathcal{C}(i, j, G)) &\text{otherwise}
 \end{cases}
 $$
 
