@@ -12,26 +12,17 @@ $$f(x, \alpha) = \begin{cases} x^2 & x +  | \alpha | ~ ~ \text{even}  \newline 0
 
 Let 
 
-$$
-\begin{align}
+$$\begin{align}
 S_1 &= \{ (x, \alpha) \in \mathbb{N} \times \Sigma^{+} : x + |\alpha | \text{ is
-even} \} \newline
-S_2 &= \{ (x, \alpha) \in \mathbb{N} \times \Sigma^{+} : x + |\alpha | \text{ is
-odd} \}
-\end{align}
-$$
+even} \} \newline S_2 &= \{ (x, \alpha) \in \mathbb{N} \times \Sigma^{+} : x + |\alpha | \text{ is
+odd} \}\end{align}$$
 
 Evidently, $S_1 \cap S_2 = \emptyset$ and $S_1 \cup S_2 = D_f$ . Since the
 predicate $P = \lambda x[x \text{ is even}]$ is $\Sigma$-p.r. we know
 $\chi_{S_1}^{\mathbb{N}\times \Sigma^{+}}$ and $\chi_{S_2}^{\mathbb{N}\times \Sigma^{+}}$ are both $\Sigma$-p.r. sets. We define $f_1 = \lambda[x^2]$ and $f_2 = \lambda x\alpha[0]$. It is straightforward to observe that 
 
-$$
-\begin{align}
-   f_1 &= \lambda xy[x^y] \circ \big[ p_1^{1, 1}, \lambda \alpha[~|\alpha|~] \circ
-   p_2^{1, 1} \big] \newline 
-   f_2 &= C_0^{1, 1}
-\end{align}
-$$
+$$\begin{align}
+   f_1 &= \lambda xy[x^y] \circ \big[ p_1^{1, 1}, \lambda \alpha[~|\alpha|~] \circ p_2^{1, 1} \big] \newline f_2 &= C_0^{1, 1} \end{align}$$
 
 This is sufficient to show $f_1, f_2$ are $\Sigma$-p.r., which combined with the
 fact that $S_1, S_2$ are $\Sigma$-p.r. ensures that $f_1|_{S_1}, f_2|_{S_2}$ are
