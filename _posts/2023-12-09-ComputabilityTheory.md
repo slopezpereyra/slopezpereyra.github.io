@@ -76,6 +76,26 @@ and $3$ are $\Sigma$-p.r., since the addition and the constant functions are
 elementary cases. And since $G$ is $\Sigma$-p.r., because $f$ is $\Sigma$-p.r.,
 then $F$ is $\Sigma$-p.r.
 
+-------
 
+$(4)$ Show that $F = \lambda xy[\text{gcd}(x, y)]$ is $\Sigma$-p.r.
 
+This problem is useful to strengthen our grasp of the conditions for a
+predicate minimization to be $\Sigma$-p.r. Indeed, one may observe that 
 
+$$F(x, y) = d \iff d = \min_t \Big( t \mid x \land t \mid y \land \big( (\forall k \in \omega)_{k\leq t} (k \not\mid x \lor k \not\mid y) \lor k \mid t \big)\Big)$$
+
+In other words, $F$ is the minimization of the predicate above. Let $P$ denote such predicate. It is easy to see that
+
+$$P =\lambda xytz \Big[t \mid x \land t \mid y \land (\forall k \in \omega)_{k\leq z} (k\not\mid x \lor k \not\mid y \lor k\mid t)\Big] \circ \Big[p_1^{3, 0}, p_2^{3, 0}, p_{3}^{3, 0}, p_3^{3, 0}\Big]$$
+
+which is evidently $\Sigma$-p.r. From this follows that $M(P) = F$ is
+$\Sigma$-r., but not that it is $\Sigma$-p.r. For this to be true, $M(P) = F$
+must be bounded by some $\Sigma$-p.r. function. But it is simple to observe that
+the $\gcd$ of two numbers is necessarily inferior or equal to the minimum of
+them. Then $M(P) \leq \min(x, y)$, or to use the explicit form of $M$:
+
+$$\min_t P(t, x, y) \leq \min(x, y)$$
+
+Then, because $M$ is bounded by a p.r. function, $M$ is $\Sigma$-p.r.
+$\blacksquare$
