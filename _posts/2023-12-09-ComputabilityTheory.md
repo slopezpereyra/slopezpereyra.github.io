@@ -55,7 +55,7 @@ $$ \begin{align} f_1&:= \lambda zt[Pred(z).t] = \lambda zt[z.t]\circ [Pred \circ
 
 are evidently $\Sigma$-p.r. Then
 
-$$\begin{align} f_3 &:= \lambda zt \alpha [ \alpha^{Pred(z).t} ]  = \lambda \alpha x [\alpha^{x}] \circ [f_1 \circ [p_1^{2, 1}, p_2^{2, 1}], p_3^{2, 1}] \\  f_4 &:=  \lambda \alpha \beta [\beta^{Pred(Pred(|\alpha|))}] = \lambda x\alpha[\alpha^x] \circ [f_2 \circ p_1^{0, 2}, p_2^{0,2}] \end{align}$$
+$$\begin{align} f_3 &:= \lambda zt \alpha [ \alpha^{Pred(z).t} ]  = \lambda \alpha x [\alpha^{x}] \circ [f_1 \circ [p_1^{2, 1}, p_2^{2, 1}], p_3^{2, 1}] \newline  f_4 &:=  \lambda \alpha \beta [\beta^{Pred(Pred(|\alpha|))}] = \lambda x\alpha[\alpha^x] \circ [f_2 \circ p_1^{0, 2}, p_2^{0,2}] \end{align}$$
 
 Of course, $f_3, f_4$ are $\Sigma$-p.r. Now it is trivial to observe that 
 
@@ -99,3 +99,78 @@ $$\min_t P(t, x, y) \leq \min(x, y)$$
 
 Then, because $M$ is bounded by a p.r. function, $M$ is $\Sigma$-p.r.
 $\blacksquare$
+
+--- 
+
+$(5)$ A similar, though a bit more sophisticated problem, is proving that
+$\lambda xi[(x)_i]$ is $\Sigma$-p.r. 
+
+> Recall that $(x)_i$ denotes the exponent of the $i$th prime in the prime
+>properties decomposition of $x$.
+
+Let the $\lambda$ above be $F$ and observe that $D_F = \mathbb{N}^2$. Now, let
+
+$$
+F'(x, i) = \begin{cases} 0 & i=0 \lor x = 0 \newline F(x, i) & \text{otherwise} \end{cases}
+$$
+
+It is clear that $F'$ is $\Sigma$-total with $D_{F'} = \omega^2$, and that $F =
+F|_\mathbb{N^2}$. Let 
+
+$$P:=\lambda txi[ pr(i)^{t} \mid x \land \neg pr(i)^{t+1} \mid x  ]$$
+
+It is evident that $P(t, x, i) = 1$ iff $F'(x, i) = t$. It is evident that $P$
+is $\Sigma$-p.r. because it is the following composition:
+
+$$
+\lambda xyz[x \mid z \land \neg y \mid z]\circ \Big[ \lambda xy[x^y] \circ
+[pr_3^{3, 0}, pr_1^{3, 0}], \lambda xy[x^y] \circ [pr \circ p_3^{3, 0}, Suc
+\circ p_1^{3, 0}], p_2^{3, 0} \Big]
+$$
+
+which is evidently $\Sigma$-p.r. Now, this implies $F = M(P)$ is $\Sigma$-r. To
+prove that it is $\Sigma$-p.r. one can simply observe that 
+
+$$\min_t P(t, x, i) \leq x$$
+
+for all $x \in \omega$. To prove that $\min_t P(t, x, i)$ is bounded by $x$ w 
+need to observe the following. By definition, the minimum $t$ satisfying $P$
+satisfies $pr(i)^{t} \mid x$, which implies $pr(i)^{t} \leq x$. Now we
+can prove that $t \leq pr(i)^t$.
+
+> Let $a \in \mathbb{N}$ and $n \in \omega$. We want to prove $a^n \geq n$ holds.
+>
+> Observe that $a^0 = 1$ and $1 \geq 0$. Similarly, $a^1 = a$ and $a \geq 1$ by
+> definition. Assume this holds for an arbitrary $k \in \omega$. Then observe
+> that for $k \neq 0$, $a^{k+1} = a^ka$. Since $a^k>k$, then $a^k a > ka$. Since
+> $a$ is natural, $ka\geq k+1$. Conversely, if $k = 0$, $a^{1} \geq 0 + 1$. This
+> proves that for whatever $a \in \mathbb{N}, n \in \omega$, $a^n \geq n$.
+
+From this follows $t \leq pr(i)^t \leq x$. Then we have proven that our bound is
+correct. And since the bounding function is $p_1^{1, 0}$ (i.e. the $x$
+argument), which is $\Sigma$-p.r., we have that 
+
+$$F'(x, i) = \min_tP(t, x, i) \leq x$$
+
+is $\Sigma$-p.r. Since $F = F'\mid_{\mathbb{N^2}}$ and $\mathbb{N^2}$ is
+$\Sigma$-p.r. we have $F$ is $\Sigma$-p.r.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
