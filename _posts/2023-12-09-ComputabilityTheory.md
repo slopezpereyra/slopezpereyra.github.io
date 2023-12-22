@@ -3,6 +3,41 @@ title: Elementary proofs in computability theory
 categories: [ Science, Personal ]
 ---
 
+--- 
+
+*Prime numbers and enumerable sets*. Let $\Sigma \neq \emptyset$ be an alphabet
+with a total order $\leq$. Let $S \subseteq \omega^{n} \times \Sigma^{*m}$ a
+$\Sigma$-mixed set of arbitrary dimensions. Notice that for any $n$-tuple $(x_1,
+\ldots, x_n)$, with $x_i \in \omega$, we can find a corresponding $\varphi \in
+\mathbb{N}$ s.t. 
+
+$$
+\varphi = 2^{x_1}3^{x_2} \ldots pr(n)^{x_n}
+$$
+
+In other words, $(x_1, \ldots, x_n)$ corresponds to the exponents of the $n$
+prime factors of a unique natural number. At the same time, the $m$-tuple $(\alpha_1, \ldots, \alpha_m)$ corresponds to a unique $\psi \in \mathbb{N}$ s.t. 
+
+$$
+\psi = 2^{y_1}3^{y_2}\ldots pr(m)^{y_m}
+$$
+
+where $\alpha_j = *^{\leq}(y_j)$. In other words, $(\alpha_1, \ldots, \alpha_m)$
+corresponds to a unique natural number whose $m$ prime factors have exponents
+given by the position of each word in the language.
+
+Both of this relations come from the uniqueness of prime factorizations.
+They provide a way to enumerate $\Sigma$-mixed sets. In
+particular, if $S$ is $\Sigma$-total we enumerate it mapping each $x \in \omega$
+to $\big((x)_1, \ldots, (x)_n, *^{\leq}((x)_{n+1}), *^{\leq}((x)_m)\big)$. If
+$S$ is not $\Sigma$-total, then one can still enumerate it assuming that it is
+$\Sigma$-computable. Indeed, one maps $x$ to the corresponding $(n+m)$-tuple
+described above if the tuple is in $S$, and leaves the procedure undefined (or
+without halt) otherwise. This can be expressed as follows:
+
+> Because $\Sigma$-total sets are enumerable (as pointed out above), any
+> $\Sigma$-mixed set that is $\Sigma$-computable is enumerable (via restriction
+> of the $\Sigma$-total enumeration).
 
 ---
 $\textit{(1)}$ Prove that $f : \mathbb{N} \times \Sigma^{+}$ is $\Sigma$-p.r
@@ -153,13 +188,62 @@ argument), which is $\Sigma$-p.r., we have that
 $$F'(x, i) = \min_tP(t, x, i) \leq x$$
 
 is $\Sigma$-p.r. Since $F = F'\mid_{\mathbb{N^2}}$ and $\mathbb{N^2}$ is
-$\Sigma$-p.r. we have $F$ is $\Sigma$-p.r.
+$\Sigma$-p.r. we have $F$ is $\Sigma$-p.r. $\blacksquare$
 
+--- 
 
+$(6)$ Let $C = \\{z^2 : z \in \omega\\}$ and $f \mapsto \omega$ given by $f(x) =
+\sqrt{x}$ for all $x \in C$. Show $f$ is $\Sigma$-p.r.
 
+Let $f' : \omega \to \omega$ be the integer root function, so that by definition 
 
+$$
+f'(x) = \min_t  \lambda x[t^2 \leq x \land (t+1)^2 > x]
+$$
 
+Observe that the predicate which defines $f'$ is $\Sigma$-p.r., since it is
+simply
 
+$$
+\lambda xy[y \leq x \land Suc \circ p_2^{2, 0} > x ]
+$$
+
+Furthermore, $f'(x) \leq x$ and hence, since $f'$ is the bounded minimization of a
+$\Sigma$-p.r. predicate, $f'$ is $\Sigma$-p.r. 
+
+Lastly, it is easy to observe that $f = f'_{C}$. Consider that
+
+$$
+\chi_C^{\omega} = \lambda x[ (\exists t \in \omega)_{t\leq x}~ t^2 = x ]
+$$
+
+The predicate $\lambda xy[x^2=y] = \lambda xy[x = y] \circ \Big[ \lambda xy[x^y]
+\circ [p_1^{2, 0}, C_2^{2, 0}], p_2^{2, 0}\Big]$ is evidently $\Sigma$-p.r. Then
+$\chi_C^{\omega}$ is $\Sigma$-p.r. and then $f = f'\mid_C$ is $\Sigma$-p.r.
+$\blacksquare$
+
+--- 
+
+$(7)$ Prove that $\lambda \alpha[\sqrt{\alpha}]$ is $\Sigma$-p.r.
+
+Evidently, $\lambda \alpha[\sqrt{\alpha}] = M^{\leq}(P)$ for 
+
+$$
+P= \lambda \alpha[(\exists \beta \in \Sigma^{*})_{|\beta|\leq |\alpha|} ~
+\beta^2 = \alpha]
+$$
+
+The domain of $M^{\leq}(P)$ is the set of chains that are squared of some other
+chains while the domain of $P$ is simply $\Sigma^{*}$---i.e. $P$ is
+$\Sigma$-total.
+
+Now, $P$ is evidently $\Sigma$-p.r. since it is the composition of
+the general quantifier with the bounding variable determined by $p_1^{0, 1}$ (we
+do not prove this). Furthermore,
+
+$$|\min_{\beta} P(\alpha)\mid \leq |\alpha|$$
+
+Then $\lambda \alpha [\sqrt{\alpha}]$ is $\Sigma$-p.r.
 
 
 
