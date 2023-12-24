@@ -245,6 +245,70 @@ $$|\min_{\beta} P(\alpha)\mid \leq |\alpha|$$
 
 Then $\lambda \alpha [\sqrt{\alpha}]$ is $\Sigma$-p.r.
 
+---
+
+$(8)$ Prove that $\omega^2 \times \Sigma^{*}$ is $\Sigma$-enumerable under von
+Neumann's paradigm.
+
+Our programm will do the following. Given an input $x \in \omega$, which we
+presume corresponds to $N1$ at the start of the program, it will compute $(x)_1,
+(x)_2$ and $*^{\leq}((x)_3)$. It will store each of these values in $N1, N2$ and
+$P1$, respectively. Since the set we are required to enumerate is
+$\Sigma$-total, no restriction is imposed. To prove that a program can perform
+these operations, it suffices to show that the functions $(x)_i$ and $*^{\leq}$
+are $\Sigma$-computable. This is what we set to do.
+
+*(1)* Recall that $pr(i)$ is $\Sigma$-p.r. and hence $\Sigma$-r. It follows that
+it is also $\Sigma$-computable and has an associated macro $[V1 \leftarrow
+PR(V2)]$. It is also not difficult to show that $\lambda xyz[x.y > z]$ is
+$\Sigma$-p.r. and has an associated macro $[IF ~ V2 \times V3 > V1 ~ GOTO A1]$.
+Now consider the following (macro) program.
+
+$$ 
+\begin{align*} 
+    &V2 \leftarrow Pr(V2)\\
+    A1 ~ : ~ &[if ~ not ~ V2 \mid V1 ~ GOTO ~ A2] \\
+    &V5 \leftarrow V5 + 1 \\ 
+    &[V1 \leftarrow Q(V1, V2)]\\ 
+    & GOTO ~ A1 \\
+    A2 : ~ &V1 \leftarrow V5
+\end{align*}
+$$
+
+where $Q(V1, V2)$ computes the quotient of $V1/V2$. This program computes the
+exponent of the $i$th prime in the prime decomposition of $x$, where $V1$ is the
+input $x$ and $V2$ the input $i$.
+
+> Note 1. Consider $P = \lambda xy\Big[(\exists q \in \omega)_{q \leq y} ~ \big[ (\exist r \in \omega \big)_{r \leq q} ~ x.q + r  = y \big] \Big]$. The minimum $q$ satisfying the property above is the quotient of $y/x$. This is $\Sigma$-r as will be proven in the sub-proof section of this problem. Then it is correct to assume there is a macro associated to this operation.
+
+> Note 2. An example of how the program works. Assume inputs $42, 2$. Then the
+> (1) lets $V2 \leftarrow Pr(2)$ so $V2 = 3$. Since $3 \mid 42$ it lets $V5 = 1$
+> and $V1 = 14$. Since $3 \not\mid 14$ it goes to $A2$ and the output of the
+> program is $1$. Indeed, $42 = 2\times 3 \times 7$.
+
+Let $[V1 \leftarrow PrExp(V2, V3)]$ denote the macro of the program above. 
+
+(2) We know $*^{\leq}$ is $\Sigma$-p.r. and hence $\Sigma$-.r. Since $\lambda
+xi[(x)_i]$ is $\Sigma$-r the composition $\lambda x[*^{\leq}(x)] \circ \lambda
+xi[(x)_i]$ is $\Sigma$-r and has an associated macro, which we will term
+$[M1 \leftarrow *^{\leq} (PrExp(V2, V3))]$. 
+
+(3) This is all we needed to produce a program that enumerates $\omega^{2}
+\times \Sigma^{*}$. The program is the following:
+
+$$
+\begin{align*}
+    &N3 \leftarrow N3 + 1 \\ 
+    &N4 \leftarrow N1\\
+    &[N1 \leftarrow PrExp(N4, N3)]\\ 
+    &N3 \leftarrow N3 + 1 \\ 
+    &[N2 \leftarrow PrExp(N4, N3)]\\ 
+    &N3 \leftarrow N3 + 1 \\ 
+    &[P1 \leftarrow *^{\leq}(PrExp(N4, N3))]\\
+\end{align*}
+$$
+
+
 
 
 
