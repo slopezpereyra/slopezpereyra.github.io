@@ -16,7 +16,9 @@ $$
 $$
 
 In other words, $(x_1, \ldots, x_n)$ corresponds to the exponents of the $n$
-prime factors of a unique natural number. At the same time, the $m$-tuple $(\alpha_1, \ldots, \alpha_m)$ corresponds to a unique $\psi \in \mathbb{N}$ s.t. 
+prime factors of a unique natural number. At the same time, the $m$-tuple
+$(\alpha_1, \ldots, \alpha_m)$ corresponds to a unique $\psi \in \mathbb{N}$
+s.t. 
 
 $$
 \psi = 2^{y_1}3^{y_2}\ldots pr(m)^{y_m}
@@ -26,7 +28,7 @@ where $\alpha_j = *^{\leq}(y_j)$. In other words, $(\alpha_1, \ldots, \alpha_m)$
 corresponds to a unique natural number whose $m$ prime factors have exponents
 given by the position of each word in the language.
 
-Both of this relations come from the uniqueness of prime factorizations.
+Both of these relations come from the uniqueness of prime factorizations.
 They provide a way to enumerate $\Sigma$-mixed sets. In
 particular, if $S$ is $\Sigma$-total we enumerate it mapping each $x \in \omega$
 to $\big((x)_1, \ldots, (x)_n, *^{\leq}((x)_{n+1}), *^{\leq}((x)_m)\big)$. If
