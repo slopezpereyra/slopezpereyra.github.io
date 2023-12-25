@@ -310,9 +310,18 @@ $$
 \end{align*}
 $$
 
+> Subproof. Let $Q = \lambda xqy[ (\exists r \in \omega)_{r \leq q} ~ x.q+r =
+> y]$. Evidently, $Q' = \lambda xqry[x.q+r = y]$ is $\Sigma$-p.r. Then $Q$ is
+> $\Sigma$-p.r. and hence $\Sigma$-r. Since $P$ is a nesting of $Q$ with
+> quantification over $q$, it is $\Sigma$-r and hence the macro exists.
 
+--- 
 
+(9) Prove that if $S \subseteq \Sigma^{*}$ is $\Sigma$-enumerable, then 
 
+$$
+T = \{\alpha \in \}
+$$
 
 
 
