@@ -3,7 +3,21 @@ title: Notes on computational neuroscience
 categories: [ Science ]
 ---
 
-## Neuron simulation
+## What is this?
+
+This is a collection of notes on computational neuroscience. It is intended for
+computer science students; this is, it assumes knowledge of mathematics and
+programming, but not of neuroscience nor biology. In consequence, I will
+sometimes explain the meaning of concepts that a neuroscience student would find
+elementary---such as membrane potential or ion channel---. However, I will
+provide little to no explanation on concepts such as Euler's method nor the code
+that I provide. 
+
+I do this because most computational neuroscience books assume a strong
+background in neuroscience, and more resources should exist for non-neuroscience
+majors to approach the topic.
+
+## Neuronal dynamics
 
 ### Non-NMDA Synapses
 
@@ -141,11 +155,8 @@ g_{\text{Na}} = g^{\max}_{\text{Na}} m^3 h
 $$
 
 where $g^{\max}_{\text{ion}}$ is the maximum conductance. Here, $n, m, h$ are
-modulation factors around maximum conductances. Which I suppose implies they are
-in the real interval $[0, 1]$?
-
-In any case, the dynamics of these conductances are given by the differential
-equation 
+modulation factors around maximum conductances. The dynamics of these
+conductances are given by the differential equation 
 
 $$
 \begin{align*}
