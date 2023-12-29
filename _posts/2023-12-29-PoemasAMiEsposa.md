@@ -1,19 +1,7 @@
 ---
-title: A mi esposa (To my wife)
+title: Poemas a mi esposa (Poemas to my wife)
 categories: [ Literature ]
 ---
-
-
-
-> Compilo en esta entrada algunos poemas que escribí a mi esposa. Algunos están
-> en inglés, otros en español. También comparto algunas fotos nuestras luego de
-> que una intelligencia artificial las convirtiera al estilo de Egon Schiele
-> (más o menos).
-
-
-> I hereby collect a few poems I have written to my wife. Some are in English,
-> some in Spanish. I also collect some photographs of us after an artificial
-> intelligence converted them to the style of Egon Schiele (more or less).
 
 <p align="center">
   <img src="../Images/SeleYYo6.jpg">
@@ -154,7 +142,7 @@ presiente la fractura inevitable<br>
 la cobra de tu amor ha eclosionado<br>
 
 quisiera ser un hombre más sencillo<br>
-un perro que envejece serenamente triste<br>
+o un perro que envejece serenamente triste<br>
 
 entonces nuestro amor no habría perdido<br>
 ni un solo sueño y no florecerían<br>
@@ -167,30 +155,3 @@ e incluso en tu ternura, que es perfecta,<br>
 presagio un universo de sospechas<br>
 y en bífidos eclipses anochezco…!<br>
 
-
----
-
-Un árbol era mi sueño<br>
-la noche que te soñaba,<br>
-y  las floridas estrellas<br>
-su hojarasca milenaria.<br>
-
-—¿Y qué es un sueño?—, dijiste.<br>
-—¿Y qué es soñar?—, preguntabas.<br>
-Mientras, la copa del árbol<br>
-y el cielo se entrelazaban.<br>
-
-Fuiste esa noche, soberbia<br>
-de soledad y de escarcha,<br>
-como la sombra que turba<br>
-el centro de una esmeralda.<br>
-
-Apenas recuerdo el auge<br>
-que quiso emprender el alba<br>
-cuando, al fin, abrí los ojos<br>
-(el árbol se marchitaba…).<br>
-
-Y yo te dije mi sueño.<br>
-Y tú no dijiste nada.<br>
-Y solo quebró el silencio<br>
-el crepitar de una rama.<br>
