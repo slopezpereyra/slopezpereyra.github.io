@@ -63,7 +63,7 @@ and this ungotten child we have prefigured in a dream<br>
 already bears the guilt of humankind<br>
 
 yes, in the birth of each new drop of life<br>
-awaits the seeds of all that is unfading<br>
+await the seeds of all that is unfading<br>
 
 you’ll see as I see now that you have been<br>
 a wife to me as you were the wife of Abraham<br>
