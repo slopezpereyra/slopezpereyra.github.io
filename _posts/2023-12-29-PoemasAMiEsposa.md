@@ -39,7 +39,7 @@ the silence of a dreaming child—these are my offerings to you<br>
 this I confess before the night amidst the speeches of the water:<br>
 that time the sands of time the cruelty of time I give to you<br>
 
-This I confess before the moon that evil star:<br>
+this I confess before the moon that evil star:<br>
 I longingly pursue all that which may evoke you<br>
 hidden under a cloak of almost ethereal gloom <br>
 as sweet as drizzly childish dawns <br>
