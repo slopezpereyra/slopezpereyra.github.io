@@ -3,8 +3,10 @@ title: Poemas a mi esposa (Poemas to my wife)
 categories: [ Literature ]
 ---
 
+--- 
+
 <p align="center">
-  <img src="../Images/SeleYYo6.jpg">
+  <img src="../Images/SeleYYo6.jpg" width=50%>
 </p>
 
 **Oblatio**
@@ -90,9 +92,8 @@ una esmeralda negra?<br>
 <br>
 
 ---
-
 <p align="center">
-  <img src="../Images/SeleYYo7.jpg">
+  <img src="../Images/SeleYYo7.jpg" width=50%>
 </p>
 
 **Volver al agua**
@@ -116,10 +117,6 @@ que yo soñaba:<br>
 volver al agua<br>
 
 ---
-
-<p align="center">
-  <img src="../Images/SeleYYo8.jpg">
-</p>
 
 **Malos ánimos**
 
@@ -155,3 +152,6 @@ e incluso en tu ternura, que es perfecta,<br>
 presagio un universo de sospechas<br>
 y en bífidos eclipses anochezco…!<br>
 
+<p align="center">
+  <img src="../Images/SeleYYo8.jpg" width=50%>
+</p>
