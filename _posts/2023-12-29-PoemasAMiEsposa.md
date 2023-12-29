@@ -1,5 +1,5 @@
 ---
-title: Poemas a mi esposa (Poemas to my wife)
+title: Poemas a mi esposa (Poems to my wife)
 categories: [ Literature ]
 ---
 
