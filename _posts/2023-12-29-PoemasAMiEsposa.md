@@ -6,7 +6,7 @@ categories: [ Literature ]
 --- 
 
 <p align="center">
-  <img src="../Images/SeleYYo6.jpg" width=50%>
+  <img src="../Images/SeleYYo6.jpg" width=50% style="border: 6px solid #231709;">
 </p>
 
 **Oblatio**
@@ -93,7 +93,7 @@ una esmeralda negra?<br>
 
 ---
 <p align="center">
-  <img src="../Images/SeleYYo7.jpg" width=50%>
+  <img src="../Images/SeleYYo7.jpg" width=50% style="border: 6px solid #231709;">
 </p>
 
 **Volver al agua**
@@ -153,5 +153,5 @@ presagio un universo de sospechas<br>
 y en bífidos eclipses anochezco…!<br>
 
 <p align="center">
-  <img src="../Images/SeleYYo8.jpg" width=50%>
+  <img src="../Images/SeleYYo8.jpg" width=50% style="border: 6px solid #231709;">
 </p>
