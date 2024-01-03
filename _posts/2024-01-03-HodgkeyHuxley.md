@@ -50,10 +50,10 @@ close, which restores the neuron to its resting state.
 We will first model potassium channels. The gating mechanism of
 these channels is modeled as having $k$ sub-units that open and close, so that
 when all gates are open the ionic current can flow. We let
-$g_{i} = \bar{g}_{i}P_i$ where $\bar{g}_{i}$ is the *maximal conductance*
+$g_{i} = \bar{g_i}P_i$ where $\bar{g_i}$ is the *maximal conductance*
 (the product between the conductance of a single channel of type $i$
 and the number of said channels) and $P_i$ is the fraction of channels of type
-$i$ that is open. Because $P_i$ is a relative frequency it is in fact the
+$i$ that are open. Because $P_i$ is a relative frequency it is in fact the
 probability that a particular channel of type $i$ is open.
 
 Let $n$ be the *activation variable*, denoting the probability that any given
@@ -80,7 +80,7 @@ $$ P(\text{A sub-unit closes}) =\beta_n(V)n $$
 > $$
 > 
 > where $\exp(-qB_{\alpha}V/k_BT)$ is the Boltzmann factor. $\beta_n$ should have
-> such for mas well though with different constants $A_{\beta}, B_{\beta}$. 
+> such form as well though with different constants $A_{\beta}, B_{\beta}$. 
 
 Now, we may ask how does the *activation variable* $n$ vary with time.
 Naturally, this probability should grow with the probability that sub-units open
@@ -93,11 +93,12 @@ linearly with the probability that sub-units open and falls linearly with the
 probability that sub-units close.
 
 > *Note.* It is important to understand the difference between $n$ and the
-> rates given by $\alpha_{n}(V) (1 - n)$ and $\beta_{n}(V)n$. The
+> rates given by $\alpha_{n}$ and $\beta_{n}$. The
 > *activation variable* $n$ is the probability that a sub-unit *is* open. The
-> others are the probability that a sub-unit *becomes* open or closed. In other
-> words, the first is the probability of encountering a specific state (open);
-> the others are the probability that a state transition occurs.
+> others are the probability that a sub-unit *becomes* open or closed,
+> respectively. In other words, the first is the probability of encountering a
+> specific state (open); the others are the probability that a state transition
+> occurs.
 
 If we divide the last equation by $\alpha_{n}(V) + \beta_{n}(V)$, we obtain
 
@@ -139,12 +140,6 @@ obvious that this value ranges in $[0, 1]$. This result can be interpreted as
 follows: At any given voltage level $V$, the probability that a gating sub-unit
 is in the open state approaches $n_{\infty}$ exponentially. This limiting value
 is the weight of the opening rate with respect to the transition rate.
-
-The functions $\alpha_{n}, \beta_{n}$ are obtained by fitting experimental data.
-There are thermodynamical reasons to assume $n_{\infty}$  is a sigmoidal
-function. The values used by Hodgkin and Huxley to fit these functions is given
-in Dayan and Abbot's book, page 187, and will be used in our Julia
-implementation of the model.
 
 ### Sodium
 
@@ -193,7 +188,7 @@ The Hodgkin-Huxley model is based on the channel kinetics we have so far
 described. The current $I$ is given by 
 
 $$
-i_{m}=\bar{g}_{L} (V- E_{L}) + \bar{g}_{K}n^{4} (V-E_{K) +}\bar{g}_{Na} m^{3}h(V-E_{Na})
+i_{m}=\bar{g_L} (V- E_{L}) + \bar{g_K}n^{4} (V-E_{K) +}\bar{g_{Na}} m^{3}h(V-E_{Na})
 $$
 
 The model is implemented using the equation above plus the fact that
