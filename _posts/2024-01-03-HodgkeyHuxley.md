@@ -1,5 +1,5 @@
 ---
-title: The Hudgkin-Huxley model
+title: The Hodgkin-Huxley model
 categories: [ Science ]
 ---
 
