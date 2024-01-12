@@ -1,23 +1,35 @@
 ---
-title: The Hodgkin-Huxley model
+title: Squid neurons firing (The Hodgkin-Huxley model)
 categories: [ Science ]
 ---
 
-Integrate-and-fire models, like the
-[Leaky](https://slopezpereyra.github.io/2024-01-01-Leaky/) and
-[Adaptive](https://slopezpereyra.github.io/2024-01-01-Adaptive/) models, treat
-the conductance of a given current as a constant $g$. In fact, conductances are
-not constant and vary with several factors, such as the membrane potential, the
-influence of neurotransmitters, and other biochemical factors. The seminal
-Hodgkin-Huxley model deals with voltage-dependent conductances. Curiously, the model
-was developed studying the squid giant axon. 
+This is an action potential - or rather an accurate simulation of one. The curve
+represents the membrane potential of a single neuron, to which an external
+current is applied from $t = 5$ to $t = 15$. At first glance, the membrane
+potential might look like a simple spiking curve. However, highly complex
+biophysical mechanisms are involved in generating this electric fluctuation.
 
-In the model, membrane channels are treated as gating mechanisms that open and
-close due to voltage-dependent conformational changes in their structure. The
-"gates" in these channels are comprised of several sub-units, all of which must
-be in an open state for the gate to be opened. Although the treatment of this
-gating structures is simple in the model, it reflects actual (but highly
-complex) cellular mechanisms.
+<p align="center">
+  <img src="../Images/VHH.gif">
+</p>
+
+I have reviewed elsewhere a few integrate-and-fire models, such as the
+[Leaky](https://slopezpereyra.github.io/2024-01-01-Leaky/) and
+[Adaptive](https://slopezpereyra.github.io/2024-01-01-Adaptive/) models. These
+treat the conductance of a given current as a constant $g$ and model action
+potentials as sudden spikes that appear whenever the membrane potential
+surpasses a certain threshold. In reality, conductances are not constant and vary
+with several factors, such as the membrane potential, the influence of
+neurotransmitters, and other biochemical factors. The seminal Hodgkin-Huxley
+model deals with voltage-dependent conductances. Curiously, the model was
+developed studying the squid giant axon. 
+
+In this model, which I used to generate the animation above, membrane channels
+are treated as gating mechanisms that open and close due to voltage-dependent
+conformational changes in their structure. The "gates" in these channels are
+comprised of several sub-units, all of which must be in an open state for the
+gate to be opened. Although the treatment of this gating structures is simple in
+the model, it reflects actual (but highly complex) cellular mechanisms.
 
 ---
 
@@ -281,6 +293,14 @@ is clearly depicted in the voltage $V$ of the membrane in the plot below.
 
 <p align="center">
   <img src="../Images/hh_one.png"/>
+</p>
+
+I animated the activation variables using Manim in order to illustrate their
+reciprocal fluctuations dynamically. The red curve is $n$, the blue curve is
+$m$, and the white curve is $h$.
+
+<p align="center">
+  <img src="../Images/ActivationVars.gif">
 </p>
 
 Recall that $m$ is the probability that a sodium gating sub-unit (of the first
