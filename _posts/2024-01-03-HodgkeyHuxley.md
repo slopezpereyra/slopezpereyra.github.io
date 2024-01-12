@@ -3,7 +3,7 @@ title: Squid neurons firing (The Hodgkin-Huxley model)
 categories: [ Science ]
 ---
 
-This is an action potential - or rather an accurate simulation of one. The curve
+This is a squid neuron firing - or rather an accurate simulation of one. The curve
 represents the membrane potential of a single neuron, to which an external
 current is applied from $t = 5$ to $t = 15$. At first glance, the membrane
 potential might look like a simple spiking curve. However, highly complex
