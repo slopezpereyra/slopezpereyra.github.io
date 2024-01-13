@@ -3,9 +3,9 @@ title: Otro sueño de Paulina
 categories: [ Personal ]
 ---
 
-Selene y yo estamos en un corredor oscuro, dentro de alguna especie de edificio
+S y yo estamos en un corredor oscuro, dentro de alguna especie de edificio
 antiguo, armados con cuchillos o espadas. El lugar está repleto de enemigos; hay
-una persona en particular que debemos asesinar. Un combate sangriento se desata;
+uno en particular a quien debemos asesinar. Un combate sangriento se desata;
 asesino a varias personas; salgo ileso. 
 
 Ahora me encuentro sentado en el piso, con la espalda y la cabeza en la pared,
@@ -33,7 +33,7 @@ desesperadamente, levanto la cabeza para ver su rostro. Ella me mira desde
 arriba. Ella... Era el rostro de Paulina, que hace tres años no puedo ver; que
 hace tres años nadie volvió a mirar. Es hermosa. Me sonríe cálida y
 amorosamente, con indecible alegría, mientras sus ojos se empapan de lágrimas.
-Siento que me ama. Con amorosas manos, toma mi rostro, lo acaaricia;
+Siento que me ama. Con amorosas manos, toma mi rostro, lo acaricia;
 llora más, sonríe más, y me mira más penetrante y tiernamente cada vez.
 
 No puedo describir el dolor que sentí desde el momento en que la vi hasta que el
