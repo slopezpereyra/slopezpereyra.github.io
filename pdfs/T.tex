@@ -1,0 +1,1588 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+\usepackage{amsmath, amssymb}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example}
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+
+\begin{document}
+
+\section{Enumerable sets}
+
+Let $\mathcal{F} : \mathcal{D}_{\mathcal{F}} \subseteq \omega^{k} \times \Sigma^{*l} \to \omega^n
+\times \Sigma^{*m}$. We define
+
+\begin{align*}
+    \mathcal{F}_{(i)} &: \mathcal{D}_{\mathcal{F}} \subseteq \omega^{k} \times
+    \Sigma^{*l}  \mapsto \omega & 1 \leq i \leq n\\
+    \mathcal{F}_{(i)} &: \mathcal{D}_{\mathcal{F}} \subseteq \omega^{k} \times
+    \Sigma^{*l} \mapsto  \Sigma^{*} & n + 1 \leq i \leq m
+\end{align*}
+
+We say a set $S \subseteq \omega^n \times \Sigma^{*m} $ is $\Sigma$-effectively
+enumerable  if it is empty or there is a function $\mathcal{F} : \omega \to
+\omega^n \times \Sigma^{*m}$ s.t. $Im_{\mathcal{F}} = S$ and $\mathcal{F}_{(i)}$
+is $\Sigma$-computable for all $1 \leq i \leq n + m$.
+
+\begin{theorem}
+    A non-empty set $S \subseteq \omega^n \times \Sigma^{*m}$ is
+    $\Sigma$-effectively enumerable if and only if there is an effective
+    procedure $\mathcal{P}$ s.t. 
+
+    \begin{itemize}
+        \item The input space is $\omega$
+        \item $\mathcal{P}$ halts for all $x \in \omega$ 
+        \item The output set is $S$---i.e. whenever $\mathcal{P}$ halts, it
+            outputs an element of $S$, and for every $(\overrightarrow{x},
+            \overrightarrow{\alpha}) \in S$ there is some input $x \in \omega$
+        s.t. $\mathcal{P}(x) \mapsto_{\text{halting}} (\overrightarrow{x},
+        \overrightarrow{\alpha})$.
+    \end{itemize}
+\end{theorem}
+
+\subsection{Prime numbers and enumerable sets}
+
+Let $\Sigma \neq \emptyset$ be an alphabet with a total order $\leq$. Let $S
+\subseteq \omega^{n} \times \Sigma^{*m}$ a $\Sigma$-mixed set of arbitrary
+dimensions. Notice that for any $n$-tuple $(x_1, \ldots, x_n)$, with $x_i \in
+\omega$, we can find a corresponding $\varphi \in \mathbb{N}$ s.t. 
+
+$$
+\varphi = 2^{x_1}3^{x_2} \ldots pr(n)^{x_n}
+$$
+
+In other words, $(x_1, \ldots, x_n)$ corresponds to the exponents of the $n$
+prime factors of a unique natural number. At the same time, the $m$-tuple
+$(\alpha_1, \ldots, \alpha_m)$ corresponds to a unique $\psi \in \mathbb{N}$
+s.t. 
+
+$$
+\psi = 2^{y_1}3^{y_2}\ldots pr(m)^{y_m}
+$$
+
+where $\alpha_j = *^{\leq}(y_j)$. In other words, $(\alpha_1, \ldots, \alpha_m)$
+corresponds to a unique natural number whose $m$ prime factors have exponents
+given by the position of each word in the language.
+
+Both of these relations come from the uniqueness of prime factorizations.
+They provide a way to enumerate $\Sigma$-mixed sets. In
+particular, if $S$ is $\Sigma$-total we enumerate it mapping each $x \in \omega$
+to $\big((x)_1, \ldots, (x)_n, *^{\leq}((x)_{n+1}), *^{\leq}((x)_m)\big)$. If
+$S$ is not $\Sigma$-total, then one can still enumerate it assuming that it is
+$\Sigma$-computable. Indeed, one maps $x$ to the corresponding $(n+m)$-tuple
+described above if the tuple is in $S$, and leaves the procedure undefined (or
+without halt) otherwise. This can be expressed as follows:
+
+Because $\Sigma$-total sets are enumerable (as pointed out above), any
+$\Sigma$-mixed set that is $\Sigma$-computable is enumerable (via restriction
+of the $\Sigma$-total enumeration).
+
+
+\section{Godel}
+
+\begin{definition}
+    A set $S_1\times  \ldots  \times  S_n \times L_1 \times  \ldots \times  L_m$ is
+    rectangular if $S_i \subseteq \omega, L_i \subseteq \Sigma^{*}$ for all $i$.
+\end{definition}
+
+\begin{lemma}
+    $S$ is rectangular if and only if $(\overrightarrow{x},
+    \overrightarrow{\alpha}) \in S \land (\overrightarrow{y},
+    \overrightarrow{\beta}) \in S$ implies $(\overrightarrow{x},
+    \overrightarrow{\beta}) \in S$.
+\end{lemma}
+
+\textit{Example}. The set $\{(0, \#\#), (1, \%\%\%)\}$ is not rectangular ($(1,
+\#\#), (0, \%\%\%)$ are not in $S$.) Observe how this set cannot be expressed as
+a product of subsets of $\omega$ and $\Sigma$. Thus, the concept of
+\textit{rectangular set} is equivalent to \textit{a set formed via Cartesian
+product}.
+
+~
+
+\textit{Notation.} If $f : \omega_1 \times \ldots \times \omega_n \times
+\alpha_1 \times \alpha_m \to \Lambda$ we write $f \sim (n, m, \Lambda)$, and
+read $f$ is of type $n, m$ to $\Lambda$.
+
+\textit{Notation.} If $f_1, \ldots, f_n$ $\Sigma$-mixed functions, then 
+
+\begin{align*}
+    \left[ f_1, \ldots, f_2 \right](\overrightarrow{x}, \overrightarrow{\alpha})
+    = \left( f_1(\overrightarrow{x}, \overrightarrow{\alpha}), \ldots,
+    f_n(\overrightarrow{x}, \overrightarrow{\alpha}) \right) 
+\end{align*}
+
+
+\textit{The pattern of primitive recursion}. Primitive recursion consists of
+defining any function $R \sim (n, m, *)$ with a base case given by $f$ and a
+recursive case given by $g$. $f$ will always \textit{lack the recursion
+parameter}, so if we are making recursion over numbers, it will have one less
+numeric argument than $R$; if we are making recursion over letters, it will have
+one less alphabetic argument than $R$. On the contrary, $g$ will always a
+recursion over $R$ in its arguments. Thus, if $R \mapsto \omega$, $g$ will have
+one numeric argument more than $R$ (the value of $R$ in the recursive step); if
+$R \mapsto \Sigma$, then $g$ will have one alphabetic argument more than $R$
+(same).
+
+\subsection{Numeric to numeric}
+
+Let $R \sim (n, m, \#)$. Then functions $f \sim (n - 1, m, \#), g \sim (n + 1,
+m, \#)$ recursively define $R$ if and only if 
+
+\begin{align*}
+\begin{cases}
+    R(0, \overrightarrow{x}, \overrightarrow{\alpha}) &= f(
+        \overrightarrow{x}, \overrightarrow{\alpha}) \\
+    R(t + 1, \overrightarrow{x}, \overrightarrow{\alpha}) &= g \left( R(t,
+        \overrightarrow{x}, \overrightarrow{\alpha}), t, \overrightarrow{x},
+    \overrightarrow{\alpha} \right)
+\end{cases}
+\end{align*}
+
+We use the notation $R(f, g)$ to say $R$ is defined by primitive recursion by
+$f$ and $g$.
+
+
+\begin{problem}
+    Find functions that recursively define $R = \lambda t \left[ 2^t \right] $
+\end{problem}
+
+Since $R ~ (1, 0, \#)$ we know $f \sim (0, 0, \#)$ is a constant function and $g
+\sim (2, 0, \#)$. Since $R(0) = 1$ we know $f = C_{1}^{0, 0}$. Observe that $R(t
++ 1) = R(t) \times 2$. Thus we may let $g = \lambda x [2 \cdot x] \circ
+p_{1}^{2, 0}$. 
+
+\textit{Example.} $R(2) = \lambda x[2x] \circ p_1^{2, 0} \left( R(1), 2 \right)
+= 2 \times R(1) = 2 \times \left( 2 \times R(0) \right) = 2 \times 2 \times 1 =
+4$.
+
+\begin{problem}
+    Define $R(t) = \lambda tx_1\left[ x_1^t \right] $ recursively.
+\end{problem}
+
+Since $R \sim (2, 0, \#)$ we know $f \sim (1, 0, \#)$ and $g \sim (3, 0, \#)$.
+Now, $R(0, x_1) = 1 \implies f = C_{1}^{1, 0}$. Since $R(t + 1, x_1) = R(t, x_1)
+\cdot x_1$  we observe that $g = \lambda xy[xy] \circ \left[ p_1^{3, 0},
+p_{3}^{3, 0} \right] $. Since each $p_{k}^{3, 0} \sim (3, 0, \#)$ we have that
+$g$ is of the desired type.
+
+\begin{problem}
+    Is it true that $R(\lambda xy[0], p_2^{4, 0}) = p_1^{3, 0}$?
+\end{problem}
+
+$R \sim (2, 0, \#)$; $f \sim (2, 0, \#)$. So $f$ cannot be a primitive
+constructor of $R$.
+
+\begin{problem}
+    Determine true or false: If $f : \omega^2 \to \omega$ and $g : \omega^4 \to
+    \omega$, then for each $(x, y) \in \omega^2$ we have
+
+    \begin{align*}
+        R(f, g)(2, x, y) = g \circ \left( g \circ \left[ f \circ \left[ p_2^{3,
+        0}, p_2^{3, 0} \right], p_1^{3, 0}, p_2^{3, 0}, p_3^{3, 0}  \right]
+    \right) (0, x, y).
+    \end{align*}
+\end{problem}
+
+Passing the arguments into the functions this results in 
+
+\begin{align*}
+    R(f, g)(2, x, y) &= g \circ \left( g \circ \left[ f(x, x) , 0, x, y
+    \right]\right)  \\ 
+                     &= g \circ \left( g \left( f(x, x), 0, x, y \right)
+                     \right)
+\end{align*}
+
+But the expression makes no sense, since $\zeta = g(f(x, x), 0, x, y) \in
+\omega$ is not a function and hence $g \circ \zeta$ is undefined.
+
+\subsection{Numeric to alphabet}
+
+
+Let $R \sim (n, m, \Sigma)$. Then functions $f \sim (n - 1, m, \Sigma),  g \sim (n,
+m + 1, \Sigma)$ recursively define $R$ if and only if 
+
+\begin{align*}
+    R(0, \overrightarrow{x}, \overrightarrow{\alpha}) &= f(\overrightarrow{x},
+    \overrightarrow{\alpha}) \\ 
+    R(t + 1, \overrightarrow{x}, \overrightarrow{\alpha}) &= g \left(t,
+    \overrightarrow{x}, \overrightarrow{\alpha}, R(t, \overrightarrow{x},
+\overrightarrow{\alpha})  \right) 
+\end{align*}
+
+\begin{problem}
+    Let $\Sigma = \{\%, @, ?\}$. Define $R = \lambda t x_1 [\% @ \% \% \% \%
+    ?^{t}]$ via primitive recursion.
+\end{problem}
+
+Let $f = C_{\% @ \% \% \% \%}^{1, 0}$ and $g = d_{?}  \circ \left[ p_{3}^{2, 1}
+\right] $. For example, $R(3, x_1) = 
+d_? \circ \left[ R(2, x_1)
+\right] = d_? \circ  \left[ d_? \circ R[1, x_1] \right] = d_? \circ \left[ d_?
+\circ \left[ d_? \circ \left[ C_{\% @ \% \% \% \%}^{1, 0}  \right]  \right]
+\right] = \% @ \% \% \% \% ? ? ? $.
+
+\begin{problem}
+    True or false: If $f, g$ are $\Sigma$-mixed s.t. $R(f, g) \sim (1 + n, m,
+    *)$, then $f \sim (n, m, *)$ and $g \sim (n, m+1, *)$.
+\end{problem}
+
+False. The $g$ function must have the same number of numeric arguments than $R$.
+
+\pagebreak 
+
+\subsection{Alphabet to numeric}
+
+If $\Sigma$ an alphabet, then a $\Sigma$-indexed family of functions is a
+function $\mathcal{G}$ s.t. $D_{\mathcal{G}} = \Sigma$ and for each $a \in
+D_{\mathcal{G}}$ there is a function $\mathcal{G}(a)$. We write $\mathcal{G}_a$
+instead of $\mathcal{G}(a)$.
+
+If $R \sim (n, m, \omega)$ then $R$ can be recursively defined by $f \sim (n, m
+- 1, \omega)$ an indexed
+family $\mathcal{G}$ s.t. $\mathcal{G}_a \sim (n + 1, m, \omega)$ as follows: 
+
+\begin{align*}
+    \begin{cases}
+        R(F, \mathcal{G})(\overrightarrow{x}, \overrightarrow{\alpha}, \epsilon)
+        = f(\overrightarrow{x}, \overrightarrow{\alpha}) \\ 
+        R(f, \mathcal{G})(\overrightarrow{x}, \overrightarrow{a}, \alpha a) =
+        \mathcal{G}_a \left( R(\overrightarrow{x}, \overrightarrow{\alpha},
+        \alpha), \overrightarrow{x}, \overrightarrow{\alpha}, \alpha \right) 
+    \end{cases}
+\end{align*}
+
+\begin{problem}
+    Let $\Sigma = \{\%, @, ?\}$. Find $f, \mathcal{G}$ s.t. $R = \lambda \alpha_1
+    \alpha \left[ |\alpha_1| + |\alpha|_{@} \right] $.
+\end{problem}
+
+$R \sim (0, 2, \#)$. Since $R(\alpha_1, \epsilon) = | \alpha_1|$ we let $f :=
+\lambda \alpha = |\alpha|$. Now, $g \sim (1, 2, \#)$ is given by $g :=
+\mathcal{G}$ where 
+
+\begin{align*}
+    &\mathcal{G} : \Sigma \to \{ Suc \circ p_1^{1, 2}, p_1^{1, 2}  \} \\ 
+    &~ ~ ~ ~ ~ ~  \% = p_{2}^{1, 2}\\
+    &~ ~ ~ ~ ~ ~  ? = p_{2}^{1, 2}\\
+    &~ ~ ~ ~ ~ ~  @ = Suc \circ p_{2}^{1, 2}
+\end{align*}
+
+For example, $R(??, @\%?@) = \mathcal{G}_{@} \left( R(@\%?), ??, @ \right) = 1 +
+R(??, @\%?) $. This boils down to $1 + R(??, @) = 1 + 1 + R(??, \epsilon) = 2 +
+|??| = 2$, the desired output.
+
+\pagebreak 
+
+\subsection{Alphabet to alphabet}
+
+If $R \sim (n, m, *)$ then $f \sim (n, m-1, *)$ and $\mathcal{G}$ a $\Sigma$-indexed
+family, with $\mathcal{G}_a \sim (n, m+1, *)$ for all $a\in \Sigma$, define $R$
+via primitive recursion if 
+
+\begin{align*}
+    \begin{cases}
+        R(\overrightarrow{x}_n, \overrightarrow{\alpha}_{m-1}, \epsilon) &=
+        f(\overrightarrow{x}, \overrightarrow{\alpha}) \\ 
+        R(\overrightarrow{x_n}, \overrightarrow{\alpha}_{m-1}, \alpha a)&= \mathcal{G}_a
+        \left( \overrightarrow{x}, \overrightarrow{\alpha},
+        \alpha, R(\overrightarrow{x}, \overrightarrow{\alpha}, \alpha) \right) 
+    \end{cases}
+\end{align*}
+
+\begin{problem}
+    Let $\Sigma = \{ @, ? \}$. Define $R = \lambda \alpha_1 \alpha [ \alpha_1
+    \alpha ]$ recursively.
+\end{problem}
+
+Observe that $R \sim (0, 2, *)$. $R(\alpha_1, \epsilon) = \alpha_1 \implies f :=
+\lambda \alpha[\alpha]$. Now, we let $\mathcal{G}_{a} = d_a \circ p_{3}^{0, 3}$
+for all $a \in \Sigma$, and the recursion is complete.
+
+\textit{Example.} The evaluation for arbitrary inputs looks as follows:
+
+\begin{align*}
+    R(?@?, @?) &= d_? \left( R(?@?, @) \right)  \\ 
+               &= d_? \left( d_@ \left( R(?@?, \epsilon) \right)  \right)  \\ 
+               &= d_? \left(  d_@ \left( ?@? \right)  \right)  \\ 
+               &= d_? \left( ?@?@ \right) \\ 
+               &= ?@?@?
+\end{align*}
+
+\subsection{The point of primitive recursion}
+
+\begin{theorem}
+    If $f, g$ are $\Sigma$-computable then $R(f, g)$ is too.
+\end{theorem}
+
+\subsection{The primitive recursive set}
+
+Let $\Sigma$ a language. We define $PR_0^{\Sigma} = \left\{ Suc, Pred, C_0^{0,
+0}, C_{\epsilon}^{0, 0} \right\} \cup \left\{ d_a \right\} \cup \left\{ p_j^{n,
+m} \right\}  $. Observe that every $\mathcal{F} \in PR_0^{\Sigma}$ is
+$\Sigma$-computable. Then we define 
+
+\begin{align*}
+    PR_{k + 1} &= PR_{k}^{\Sigma} \cup \left\{ f \circ \left[ f_1\ldots f_r
+    \right] : f \text{ and } f_i \in PR_{k}^{\Sigma} \cup  \right\} \cup \left\{
+R(f, g) : f, g \in PR_{k}^{\Sigma}\right\} 
+\end{align*}
+
+In other words, $PR_{k}^{\Sigma}$ is the set of all functions that are either
+compositions of functions in $PR_{k-1}^{\Sigma}$ or functions built via
+primitive recursion by functions in $PR_{k-1}^{\Sigma}$. The total primitive
+recursive set $PR^{\Sigma}$ is defined as $PR^{\Sigma} = \bigcup_{k \geq 0}
+PR_{k}^{\Sigma}$.
+
+\textit{Note.} Observe that when we include $R(f, g) : f, g \in
+PR_{k}^{\Sigma}$, we also include the case where $g = \mathcal{G}$ an indexed
+family of functions.
+
+\textit{Observation} Due to the previous theorem, we know $\mathcal{F} \in PR
+\Rightarrow \mathcal{F} $ is $\Sigma$-computable.
+
+~ 
+
+I provide a list of functions that are in $PR^{\Sigma}$ for any $\Sigma$.
+
+
+\begin{itemize}
+    \item Addition, multiplication and factorial 
+    \item String concatenation and string length  
+    \item All constant functions $C_k^{n, m}$ for any $k, n, m \in \omega$.
+    \item Two-variable exponentiation: $\lambda xy\left[ x^y \right] $. 
+    \item Two-variable string exponentiation: $\lambda x\alpha\left[ \alpha^x
+        \right] $.
+\end{itemize}
+
+With $x - y := \max(x - y, 0)$ the list may continue: 
+
+\begin{itemize}
+    \item The maximum of two numeric variables 
+    \item The predicates $x = y, x \leq y, \alpha = \beta$.
+    \item The predicate $x$ is even. 
+    \item The predicate $x = |\alpha|$. 
+    \item The predicate $\alpha^x = \beta$.
+\end{itemize}
+
+\subsection{Predicates}
+
+The $\lor, \land$ operators are defined only for predicates of the same type. In
+other words, $P \circ Q$, where $\circ \in \{\land, \lor\}$, is defined only if
+$P \sim (n, m, \#) \land Q \sim (n, m, \#)$. If $P, Q$ are $\Sigma$-p.r. then $P
+\circ Q$ and $\neg P$ also are. Furthermore, $P, Q$ must have the same domains.
+
+\subsection{Primitive recursive sets}
+
+A $\Sigma$-mixed $S \sim (n, m)$ set is primitive recursive if and only if its
+characteristic function $\chi_S^{\omega^n \times \Sigma^{m*}}$ is p.r. Recall
+that $\chi_S^{n, m} = \lambda
+\overrightarrow{x}\overrightarrow{\alpha}[(\overrightarrow{x},
+\overrightarrow{\alpha}) \in S]$.
+
+If $S_1, S_2$ are $\Sigma$-p.r. then their union, intersection and difference
+are. The proof follows from the fact that 
+
+\begin{align*}
+    \chi_{S_1 \cup S_2} &= \left( \chi_{S_1} \lor \chi_{S_2} \right) \\ 
+    \chi_{S_1 \cap S_2} &= \left( \chi_{S_1} \land \chi_{S_2} \right) \\ 
+    \chi_{S_1 - S_2} &= \lambda xy[x - y] \circ \left[ \chi_{S_1}, \chi_{S_2} \right] 
+\end{align*}
+
+The only property here that may not be immediately intuitive is the last one.
+But observe that $S_1 - S_2 = \{s \in S_1 : s \not\in S_2\}$. Now, let
+$\chi_{S_1}(\overrightarrow{x}, \overrightarrow{\alpha}) = a,
+\chi_{S_2}(\overrightarrow{x}, \overrightarrow{\alpha}) = b$. Evidently, if the
+$n+m$-tuple is in $S_1$ but not in $S_2$, $a - b = 1$. If the tuple is in both
+sets, $a - b = 0$. Etc.
+
+\begin{theorem}
+    A rectangular set $S_1 \times  \ldots \times  S_n \times  L_1 \times  \ldots
+    L_m$ is $\Sigma$-p.r. if and only if each $S_1, \ldots, S_n, L_1, \ldots,
+    L_m$ is $\Sigma$-p.r.
+\end{theorem}
+
+This theorem is important, insofar as it allows us to evaluate whether a
+Cartesian product is $\Sigma$-p.r. only by looking at its set factors. This
+theorem should follow from the properties of primitive recursive sets mentioned
+before.
+
+\begin{theorem}
+    If $f \sim (n, m, \Omega)$ is $\Sigma$-p.r (not necessarily $\Sigma$-total) and $S$ is a $\Sigma$-p.r. set,
+    then $f_{\mid S}$ is $\Sigma$-p.r. 
+\end{theorem}
+
+The previous theorem is useful in proving a function is $\Sigma$-p.r. For
+example, let $P = \lambda x\alpha\beta \gamma \left[  x = |\gamma| \land \alpha
+= \gamma^{Pred(|\beta|)}\right] $. We cannot use the fact that both predicate
+functions are $\Sigma$-p.r. to conclude that $P$ is $\Sigma$-p.r., because $P_1
+= \lambda x\alpha [x = |\alpha|]$ and $P_2 = \lambda x \alpha \beta \gamma
+[\alpha =
+\gamma^{Pred(|\beta|)}]$ do not have the same domains. Simply observe that
+$\beta$ cannot take the value $\epsilon$ in $P_2$, but it can take in $P_1$.
+
+
+However, observe that $\mathcal{D}_P = \omega \times \Sigma^{*} \times
+(\Sigma^{*} - \epsilon) \times \Sigma^{*} $. This set is $\Sigma$-p.r. because
+$\chi_{\mathcal{D}_P}^{1, 3} = \neg \lambda \left[ \alpha = \beta \right] \circ
+\left[ p_{3}^{1, 3}, C_{\epsilon}^{1, 3} \right]$ is $\Sigma$-p.r. Now, we can
+safely say that $P = P_{1\mid \mathcal{D}_P} \land P_2$, ensuring with the
+restriction that both predicates have the same domain. Since $\mathcal{D}_P$ is
+$\Sigma$-p.r. so is $P_{1\mid \mathcal{D}_P}$, form which readily follows that
+so is $P$. $\blacksquare$
+
+\begin{theorem}
+    A set $S$ is $\Sigma$-p.r. if and only if it is the domain of a
+    $\Sigma$-p.r. function.
+\end{theorem}
+
+\subsection{Case division}
+
+If $f_1, \ldots, f_n$ are s.t. $D_{f_j} \cap D_{f_k} = \emptyset$ for $j \neq k$
+and $f_j \mapsto \Omega$, then $\mathcal{F} = f_1 \cup \ldots \cup f_n$ is s.t. 
+
+\begin{align*}
+    \mathcal{F} : D_{f_1} \cup \ldots \cup D_{f_n} &\to \Omega \\
+    e &\to \begin{cases}
+        f_1(e) & e \in D_{f_1} \\ 
+               \vdots \\ 
+        f_n(e) & e \in D_{f_n}
+    \end{cases}
+\end{align*}
+
+Under the same constraints, if $f_i$ is $\Sigma$-p.r. for all $i$, then
+$\mathcal{F}$ is $\Sigma$-p.r. This reveals a proving method. Given a function
+$\mathcal{H}$, we can prove it is $\Sigma$-p.r. by proving it is the union of
+$\Sigma$-p.r. functions, under the constraint that the domains of these
+functions are disjoint.
+
+For example, this can be used to prove that $\lambda \alpha\left[ \left[ \alpha
+\right]_i  \right] $ is $\Sigma$-p.r. Assume a language $\Sigma$. Then
+
+\begin{align*}
+    [\alpha a]_i &= \begin{cases}
+        a & i = |\alpha| + 1 \\ 
+        [\alpha]_i & \text{otherwise}
+    \end{cases}\\
+\end{align*}
+
+for any $a \in \Sigma$. The base case is the trivial $[\epsilon]_i = \epsilon$.
+From this follows  that $R = [\alpha]_i \sim (1, 1)$ is difined via primitive recursion by
+$f = C_{\epsilon}^{1, 0}$ and $\mathcal{G}$ an indexed family where
+$\mathcal{G}_a$ is of the form above for every $a$. Evidently $f$ is
+$\Sigma$-p.r.; now we want to prove $\mathcal{G}_a$ is $\Sigma$-p.r. for any $a
+\in \Sigma$.
+
+
+Observe that the sets $S = \left\{ (i, \alpha, \zeta) : i = |\alpha| + 1 \right\} $
+and its complement $\overline{S}$ are disjoint and $\Sigma$-p.r. (We skip the
+proof of this statement.) It follows from the division by cases that
+
+\begin{align*}
+    \mathcal{G}_a = p_3^{1, 2}_{\mid S} \cup C_{a}^{1, 2}_{\mid \overline{S}}
+\end{align*}
+
+is $\Sigma$-p.r. Thus, $R = [\alpha]_i$ is $\Sigma$-p.r.
+
+
+\begin{problem}
+    Let $\Sigma = \{@, \$\}$. Let $h : \mathbb{N} \times  \Sigma^{+} \mapsto \omega$
+    be $x^2$ if $x + |\alpha|$ is even, $0$ otherwise. Prove that $f$ is
+    $\Sigma$-p.r.
+\end{problem}
+
+\textit{Complete.}
+
+
+\begin{problem}
+    Let $h$ have $\mathcal{D}_{h} = \{(x, y, \alpha) : x \leq y\}$ and be s.t.
+    $R \mapsto x^2$ if $|\alpha| \leq y$, zero otherwise. Show $h$ is $\Sigma$-p.r.
+\end{problem}
+
+Let $S := \left\{ (x, y, \alpha) \in \mathcal{D}_h : y \leq |\alpha| \right\}$.
+Evidently, $h = f_1 = C_{0}^{2, 3}$ when $|\alpha| > y$ (this is, when the argument is
+in $\overline{S}$). When the argument is in $S$, it is $f_2 = \lambda x[x^2] \circ
+[p_1^{2, 1}]$. It is trivial to observe both functions are $\Sigma$-p.r. Then $h
+= f_{1\mid \overline{S}} \cup f_{2\mid S}$, where of course $S \cup \overline{S}
+= \mathcal{D}_h$.
+
+\subsection{Summation, product and concatenation}
+
+Let $f \sim (n + 1, m, \#)$ with domain $\mathcal{D}_f = \omega \times  S_1 \times \ldots
+\times  S_n \times L_1 \times \ldots \times   L_m$, with $S_i \subseteq \omega, L_i \subseteq
+\Sigma^{*}$. Then we define $\sum_{t =
+x}^{t = y} f(t, \overrightarrow{x}, \overrightarrow{\alpha})$ in the usual way,
+with the constraint that the sum is $0$ if $y > x$. In the same way we deifne
+$\prod_{t = x}^{t = y} f(t, \overrightarrow{x}, \overrightarrow{\alpha})$ and
+the concatenation $\mathop{\subset}_{t=x}^{t=y}f(t, \overrightarrow{x},
+\overrightarrow{\alpha})$ for the case $I_f \subseteq \Sigma^{*}$.
+
+The domain of each of these is $\mathcal{D} = \omega \times  \omega \times S_1
+\times\ldots \times S_n \times L_1 \times  \ldots \times L_m$, where the first
+two $\omega$ elements are the $x, y$ domains of the sum.
+
+\begin{theorem}
+    If $f$ is $\Sigma$-p.r. then the functions are $\Sigma$-p.r.
+\end{theorem}
+
+To understand why, let $G = \lambda tx \overrightarrow{x}\overrightarrow{\alpha}
+\left[\sum_{i=x}^{i=t} f(i, \overrightarrow{x},
+\overrightarrow{\alpha})\right]$. Evidently, $G = \circ \left[ p_2^{n+2, m},
+p_1^{n + 2, m}, p_3^{n+2, m}, \ldots, p_{n+2+m}^{n+2, m} \right] $ and so we
+only need to prove $G$ is $\Sigma$-p.r. Observe that 
+
+\begin{align*}
+    G(0, x, \overrightarrow{x}, \overrightarrow{\alpha}) &= \begin{cases}
+        0 & x > 0 \\ 
+        f(0, \overrightarrow{x}, \overrightarrow{\alpha}) & x = 0
+    \end{cases} \\ 
+    G(t + 1, x, \overrightarrow{x}, \overrightarrow{\alpha}) &= \begin{cases}
+        0 & x > t  +1 \\ 
+        G(t, x, \overrightarrow{x}, \overrightarrow{\alpha}) + f(t+1,
+        \overrightarrow{x}, \overrightarrow{\alpha})
+    \end{cases}
+\end{align*}
+
+Thus, if we let each of these functions be called $h, g$ we have that $G = R(h,
+g)$. Suffices to show $h, g$ are $\Sigma$-p.r. These can be proven using
+division by cases and domain restriction.
+
+\begin{problem}
+    Prove that $G = \lambda x x_1 \left[ \sum_{t=1}^{t=x} Pred(x_1)^t \right] $ is
+    $\Sigma$-p.r.
+\end{problem}
+
+We know $f = \lambda xt \left[ Pred(x)^t \right] $ is $\Sigma$-p.r. (trivial to
+show). Let $\mathcal{G} = \lambda xy x_1 \left[ \sum_{t=x}^{t=y} f(x_1, t)
+\right] $. We know from the last theorem that $\mathcal{G}$ is $\Sigma$-p.r. It
+is evident that $G = \mathcal{G} \circ
+\left[ C_1^{2, 0}, p_{1}^{2, 0}, p_{2}^{2, 0} \right] $. Then $G$ is
+$\Sigma$-p.r. $\blacksquare$
+
+\textit{Show it to me.} Well, $G(x, x_1) = \left( \mathcal{G} \circ \left[
+C_{1}^{2, 0}, p_1^{2, 0}, p_2^{2, 0} \right]  \right)(x, x_1) = \mathcal{G}(0,
+x, x_1) = \sum_{t=0}^{t=x} f(x_1, t)$.
+
+\begin{problem}
+    Show that $G = \lambda xy\alpha \left[ \prod_{t = y+1}^{t = |\alpha|} (t + |\alpha|)
+    \right] $ is $\Sigma$-p.r.
+\end{problem}
+
+It is trivial to show $f = \lambda t\alpha \left[ t + |\alpha| \right] $ is
+$\Sigma$-p.r. Let 
+
+\begin{align*}
+    \mathcal{G} = \lambda xy \alpha \left[ \prod_{t=x}^{t = y} (t + |\alpha|) \right] 
+\end{align*}
+
+which is $\Sigma$-p.r. Observe that $G(x, y, \alpha) = \mathcal{G}(y + 1,
+|\alpha|,
+\alpha)$. Then 
+
+\begin{align*}
+    G = \mathcal{G} \circ \left[ Suc \circ p_2^{2, 1}, \lambda \alpha[|\alpha|]
+    \circ p_{3}^{2, 1}, p_3^{2, 1} \right]
+\end{align*}
+
+Then $G$ is $\Sigma$-p.r. $\blacksquare$
+
+Prove that 
+
+\begin{align*} \lambda xyz\alpha\beta \left[ \mathop{\subset}_{t=3}^{t=z+5}
+    \alpha^{Pred(z) \cdot t} \beta^{Pred\left( Pred\left( |\alpha| \right)
+\right) } \right] 
+\end{align*}
+
+is $\Sigma$-p.r.
+
+Let $G$ denote the function in question. First of all, observe that
+$\mathcal{D}_G = \omega^2  \times \mathbb{N} \times \Sigma^{*}^2$---which means
+$G$ is not $\Sigma$-total. Let us divide our proof by parts. 
+
+\textit{(1)} Let $\mathcal{F} = \lambda xy \alpha \beta \left[ \alpha^{Pred(x)
+\cdot y} \beta^{Pred(Pred(|\alpha|))} \right] $, where evidently $\mathcal{F}
+\sim (2, 2, *)$ with $x \in \mathbb{N}$. Observe that 
+
+\begin{align*}
+    \mathcal{F}_1 &:= \lambda
+    xy \alpha \left[ \alpha^{Pred(x)y} \right]\\ &= \lambda x\alpha \left[ \alpha^{x}
+    \right] \circ \left[ \lambda xy\left[ xy \right] \circ \left[Pred \circ
+    p_{1}^{2, 1}, p_{2}^{2, 1}\right], p_3^{2, 1} \right]   \\ 
+    \mathcal{F}_2 &:= \lambda \alpha \beta \left[ \alpha^{Pred(Pred(|\alpha|))}
+        \right] \\&= \lambda x\alpha[\alpha^x] \circ \left[ p_1^{0, 2}, Pred \circ
+    \left[ Pred \circ \left[ \lambda \alpha [|\alpha|] \circ p_2^{0, 2} \right]  \right]  \right] 
+\end{align*}
+
+and evidently 
+
+\begin{align*}
+    \mathcal{F} &= \lambda xy\alpha\beta [\mathcal{F}_1(x, y, \alpha)
+    \mathcal{F}_2(\beta, \alpha)]\\ &= \lambda \alpha\beta [\alpha\beta] \circ \left[
+\mathcal{F}_1 \circ \left[ p_1^{2, 2}, p_2^{2, 2}, p_3^{2, 2} \right],
+\mathcal{F}_2 \circ \left[ p_4^{2, 2}, p_3^{2, 2} \right]   \right]
+\end{align*}
+
+This proves $\mathcal{F}$ is $\Sigma$-p.r. 
+
+\textit{(2)} It is evident that $G = \lambda xyz \alpha \beta
+\left[\mathop{\subset}_{t=3}^{t=z+5} \mathcal{F}(z,
+t, \alpha, \beta )\right]$. If we let 
+
+\begin{align*}
+    \mathcal{G} := \lambda xyz \alpha\beta \left[ \mathop{\subset}_{t=x}^{t=y}
+    \mathcal{F} (z, t, \alpha, \beta)\right] 
+\end{align*}
+
+it is evident that $G = \mathcal{G} \circ \left[ C_{3}^{3, 2}, \lambda z [z + 5]
+    \circ p_3^{3, 2},
+p_3^{3, 2}, p_4^{3, 2}, p_5^{3, 2} \right] $. Then $G$ is $\Sigma$-p.r. $\blacksquare$
+
+\subsection{Predicate quantification}
+
+If $P : S_0 \times S_1 \times \ldots \times S_n \times L_1 \times \ldots \times
+L_m $ is a predicate and $S \subseteq S_0$, then 
+
+$(\forall t \in S)_{t \leq x}P(t, \overrightarrow{x}, \overrightarrow{\alpha})$ is $1$ when $P(t,
+\overrightarrow{x}, \overrightarrow{\alpha}) = 1$ for all $t \in \{u \in S: u
+\leq x\}$. The domain of the quantified proposition is $\omega \times S_1 \times
+\ldots \times S_n \times L_1 \times \ldots \times L_m $, where the first
+argument (accounted by $\omega$) is the upper bound $x$. We generalize, where $L
+\subseteq L_{m+1}, S \subseteq S_0$:
+
+
+\begin{align*}
+    (\forall t \in S)_{t \leq x}P(t, \overrightarrow{x},
+    \overrightarrow{\alpha})  
+    &: \omega \times S_1 \times \ldots \times S_n \times L_1 \times \ldots \times L_m \to \{0, 1\}\\ 
+    (\exists t \in S)_{t \leq x}P(t, \overrightarrow{x},
+    \overrightarrow{\alpha}) 
+    &: \omega \times S_1 \times \ldots \times S_n \times L_1 \times \ldots \times L_m \to \{0, 1\}\\ 
+    (\forall \alpha \in L)_{|\alpha| \leq x}P(\overrightarrow{x},
+    \overrightarrow{\alpha}, \alpha) 
+    &: \omega \times S_1 \times \ldots \times S_n \times L_1 \times \ldots \times L_m \to \{0, 1\}\\ 
+    (\exists \alpha \in L)_{|\alpha| \leq x}P(\overrightarrow{x},
+    \overrightarrow{\alpha}, \alpha) 
+    &: \omega \times S_1 \times \ldots \times S_n \times L_1 \times \ldots \times L_m \to \{0, 1\}
+\end{align*}
+
+It is important to observe that the set over which the quantification is done is
+a subset of the set from which comes the driving variable $t$ (in the numeric
+case) or $\alpha$ (in the alphabetic case).
+
+\begin{theorem}
+    \textit{(1)} If $P: S_0 \times S_1 \times \ldots \times S_n \times L_1 \times
+    \ldots \times L_m  \to \omega$ a predicate $\Sigma$-p.r., and $S \subseteq
+    S_0$ is $\Sigma$-p.r., then both quantifications over $P$ are $\Sigma$-p.r.
+
+
+    \textit{(2)} If $P: S_1 \times \ldots \times S_n \times L_1 \times
+    \ldots \times L_m  L_{m+1} \to \omega$ a predicate $\Sigma$-p.r., and $L \subseteq
+    L_{m+1}$ is $\Sigma$-p.r., then both quantifications over $P$ are $\Sigma$-p.r.
+\end{theorem}
+
+   
+The theorem above states that the quantification over a $\Sigma$-p.r. set of a
+$\Sigma$-p.r. predicate is itself $\Sigma$-p.r. Though unbounded quantification
+does not preserve these properties, in general a bound exists "naturally" for
+quantifications, which serves to prove that a bounded quantification is
+$\Sigma$-p.r.. Consider the following example.
+
+~
+
+\textit{Example.} The predicate $\lambda xy[x \mid y]$ is $\Sigma$-p.r, because
+$P = \lambdat x_1 x_2 [x_2 = tx_1]$ is $\Sigma$-p.r. Since $P$ is $\Sigma$-p.r.,
+any \textbf{bounded} quantification of it over a $\Sigma$-p.r. set is itself
+$\Sigma$-p.r. For example, 
+
+\begin{align*}
+    \lambda x x_1 x_2 \left[(\exists t \in \omega)_{t \leq x} x_2 = tx_1\right]
+\end{align*}
+
+is $\Sigma$-p.r. Now, observe that if $x_2 = tx_1$ then it is necessary that $t
+\leq x_2$. But 
+
+\begin{align*}
+    &\lambda x_1 x_2 \left[(\exists t \in \omega)_{t \leq x_2} ~  x_2 =
+tx_1\right] \\ = 
+    &\lambda x x_1 x_2 \left[(\exists t \in \omega)_{t \leq x} x_2 = tx_1\right]
+    \circ \left[ p_{2}^{2, 0}, p_1^{2, 0}, p_2^{2, 0} \right] 
+\end{align*}
+
+Then the \textbf{bounded} quantification, with $x_2$ as bound, is $\Sigma$-p.r.
+
+
+\begin{problem}
+    Let $\Sigma = \{@, !\}$. Show that $S = \{(2^x, @^x, !) : x \in \omega \land x \text{ impar}\}$ is $\Sigma$-p.r.
+\end{problem}
+
+For clarity, observe that a few elements of
+$S$ are 
+
+\begin{align*}
+    (2, @, !), (8, @@@, !), (32, @@@@@, !), \ldots
+\end{align*}
+
+
+Let $P_1 = \lambda xy\alpha \left[ x = 2^{y +1} \right], P_2 =
+\lambda xy\alpha[\alpha = @^{y + 1}] $. It is clear that $\mathcal{D}_{P_1} =
+\mathcal{D}_{P_2}$. It is trivial to prove that both are $\Sigma$-p.r. Then $P_1
+\land P_2$ is $\Sigma$-p.r. Then
+
+\begin{align*}
+    \chi_{S}^{1, 2} = \lambda xy \alpha \beta \left[ (\exists k \in \omega)_{k \leq
+        x} \left( P_1(y, k, \alpha) \land P_2(y, y, \alpha)\right) 
+ \land \beta = !  \right] 
+\end{align*}
+
+is $\Sigma$-p.r.
+
+
+\subsection{Minimization of numeric variable}
+
+Let $P$ an arbitrary predicate over a numeric variable. If there is some $t \in
+\omega$ s.t. $P(t, \overrightarrow{x}, \overrightarrow{\alpha})$ holds, we use
+$\min_{t} P(t, \overrightarrow{x}, \overrightarrow{\alpha})$ to denote the
+minimum $t$ that holds. This is \textbf{not defined} if there is no tuple
+$(\overrightarrow{x}, \overrightarrow{\alpha})$ over which the predicate holds.
+Furthermore, $\min_t P(t, \overrightarrow{x}, \overrightarrow{\alpha}) = \min_i
+P(i, \overrightarrow{x}, \overrightarrow{\alpha})$; this is, $\min_t$ does not
+depend on the variable $t$.
+
+~ 
+
+We define 
+
+\begin{align*}
+    M(P) = \lambda \overrightarrow{x}\overrightarrow{\alpha} \left[ \min_t P(t,
+    \overrightarrow{x}, \overrightarrow{\alpha}) \right] 
+\end{align*}
+
+We say $M(P)$ is obtained via minimization of the numeric variable from $P$.
+
+\textit{Example.} Let $Q : \omega \times \mathbb{N}$ be s.t. $Q(x, y)$ denotes
+the quotient of $\frac{x}{y}$. This quotient is by definition the maximum
+element of $\{t \in \omega : ty \leq x\}$. Let $P = \lambda txy \left[ ty \leq x
+\right] $. Observe that 
+
+\begin{align*}
+    \mathcal{D}_{M(P)} = \left\{ (x, y) \in \omega^2 : (\exists t \in \omega)
+    P(t, x, y) = 1 \right\} 
+\end{align*}
+
+If $(x, y) \in \omega \times \mathbb{N}$, one can show that $\min_t x < ty =
+Q(x, y) + 1$. Then $M(P) = Suc \circ Q$.
+
+\textbf{The U rule}. If $f$ is a $\Sigma$-mixed function with type $(n, m, \#)$
+and we want to find a predicat $P$ s.t. $f = M(P)$, it is sometimes useful to
+design $P$ so \hat{t} 
+
+\begin{align*}
+    f(\overrightarrow{x}, \overrightarrow{\alpha}) = \text{only } t \in \omega
+    \text{ s.t. } P(t, \overrightarrow{x}, \overrightarrow{\alpha})
+\end{align*}
+
+\begin{problem}
+    Use the \textbf{U rule} to find a predicate $P$ s.t. $M(P) = \lambda
+    x[\text{integer part of } \sqrt{x}]$ .
+\end{problem}
+
+Let $f(x)$ denote the integer part of $\sqrt{x}$. If $f(x) = y$ then $y^2 \leq x
+\land (y+1)^2 > x$. Then letting $P = \lambda xy\left[ x^2 \leq y \land (x +
+1)^2 > y \right] $ ensures that $M(P(x, y)) = f(x)$.
+
+\begin{problem}
+    Find $P$ s.t. $M(P) = \lambda xy\left[ x - y \right] $.
+\end{problem}
+
+Since $x - y$ is unique for each pair $x, y$, $P = \lambda xyz [z = x - y]$. Then
+$\min_z P(x, y, z) = \lambda xy[x - y]$. For example, $3 - 5 = 0$ and $\min_z
+P(3, 5, z) = 0$.
+
+\begin{theorem}
+    If $P$ a predicate that is effectively computable and $\mathcal{D}_P$ is
+    effectively computable, then $M(P)$ is effectively computable.
+\end{theorem}
+
+\section{Recursive function}
+
+Now we define $R_0^{\Sigma} = PR_0^{\Sigma}$ and 
+
+\begin{align*}
+    R_{k+1}^{\Sigma} = &R_k^{\Sigma} \\ \cup &\left\{ f \circ \left[ f_1, \ldots,
+    f_n \right] : f_i \in R_{k}^{\Sigma} \right\} \\ \cup &\{R(f, g) : f, g \in
+R_k^{\Sigma}\} \\ \cup & \left\{M(P) : \text{P is $\Sigma$-total} \land P \in
+R_k^{\Sigma}\right\}
+\end{align*}
+
+In other words, recursive functions are all primitive recursive functions plus
+all predicate minimization functions over $\Sigma$-total and recursive
+predicates.
+
+We define $R^{\Sigma} = \bigcup_{k\geq 0} R_{k}^{\Sigma}$.
+
+\begin{theorem}
+    If $f \in R^{\Sigma}$ then $f$ is $\Sigma$-effectively computable.
+\end{theorem}
+
+\begin{theorem}
+    Not every $\Sigma$-recursive function is $\Sigma$-p.r. In other words, 
+
+    \begin{align*}
+        PR^{\Sigma} \subseteq R^{\Sigma} \text{ but } PR^{\Sigma} \neq R^{\Sigma}
+    \end{align*}
+\end{theorem}
+
+It is obvious by definition that if $f$ is $\Sigma$-p.r. then it is recursive.
+But if a function is recursive, it could very well be a minimization predicate
+over a $\Sigma$-total function that is not $\Sigma$-p.r. itself! In other words, 
+
+\begin{align*}
+    R^{\Sigma} - PR^{\Sigma} = \left\{ M(P) : P \text{ is $\Sigma$-p.r.}  \land
+    P \in R^{\Sigma} \land M(P) \text{ is not $\Sigma$-p.r.} \right\} 
+\end{align*}
+
+In fact, the theorems in previous sections ensured that if $P$ is $\Sigma$-p.r.
+and so is $\mathcal{D}_P$, then $M(P)$ is $\Sigma$-effectively computable. Which
+doesn't entail that it is $\Sigma$-p.r.
+
+\begin{theorem}
+    If $P \sim (n+1, m, \#)$ is a $\Sigma$-p.r. predicate then \textit{(1)} $M(P)$ is
+    $\Sigma$-recursive. If there is a $\Sigma$-p.r.function $f \sim (n, m, \#)$
+    s.t. $M(P)(\overrightarrow{x}, \overrightarrow{\alpha}) = \min_t P(t,
+    \overrightarrow{x},  \overrightarrow{\alpha}) \leq f(\overrightarrow{x},
+    \overrightarrow{\alpha})$ for all $(\overrightarrow{x},
+    \overrightarrow{\alpha}) \in \mathcal{D}_{M(P)}$, then $M(P)$ is $\Sigma$-p.r.
+\end{theorem}
+
+The theorem above gives the conditions to say whether $M(P)$ is recursive and
+whether it is $\Sigma$-p.r. It is recursive simply if $P$ is $\Sigma$-p.r. And
+it is $\Sigma$-p.r. if $M(P)$ is bounded by some function $f$ for all values in
+the domain of $M(P)$. 
+
+\begin{theorem}
+    The quotient function, the remainder function, and the $i$th prime function are $\Sigma$-p.r.
+\end{theorem}
+
+\subsection{Minimization of alphabetic variable}
+
+We define $M^{\leq}(P) = \lambda \overrightarrow{x} \overrightarrow{\alpha}
+\left[ \min_{\alpha}^{\leq} P(\overrightarrow{x}, \overrightarrow{\alpha},
+\alpha) \right] $, where $\leq$ is some order over the language $\Sigma$ in
+question.
+
+\begin{theorem}
+    If $P$ is $\Sigma$-p.r. predicate over a string, then the same conditions
+    apply for $M(P)$ to be $\Sigma$-p.r. as in the theorem for predicates over
+    numbers.
+\end{theorem}
+
+\begin{problem}
+    Prove that $\lambda \alpha[\sqrt{\alpha} ]$ is $\Sigma$-p.r.
+\end{problem}
+
+Observe that $\lambda \alpha \left[ \sqrt{\alpha}  \right] = \min_{\alpha}
+\lambda \alpha \beta [\beta = \alpha \alpha]$. The predicate, which we call $P$,
+is trivially $\Sigma$-p.r. This means that $\lambda \alpha[\sqrt{ \alpha } ] \in
+R^{\Sigma}$. 
+
+Let $M(P)$ denote the minimization above. Then $M\left(P\left(\alpha,
+\beta\right)\right) \leq \beta$. In other words, $M(P)$ is bounded by $f =
+\lambda \alpha [\alpha]$. Then $\lambda \alpha [\sqrt{\alpha} ] \in
+PR^{\Sigma}$.
+
+
+\subsection{Enumerable sets}
+
+We say $S \subseteq \omega^n \times \Sigma^{*2}$ is $\Sigma$-recursively
+enumerable if it is empty or there is a function $\mathcal{F} : \omega \to
+\omega^n \times \Sigma^{*2}$ s.t.
+
+\begin{itemize}
+    \item $Im_{\mathcal{F}} = S$ 
+    \item $\mathcal{F}_{(i)}$ is $\Sigma$-recursive for every $1 \leq 1 \leq n + m$.
+\end{itemize}
+
+Here, $\Sigma$-recursive functions model $\Sigma$-computable functions.
+
+\subsection{Recursive sets}
+
+The Godelian model of a $\Sigma$-effectively computable set is simple. A set $S$
+is $\Sigma$-recursive when $\chi_{S}$ is $\Sigma$-recursive.
+
+\subsection{Alphabet independence}
+
+\begin{theorem} Let $\Sigma, \Gamma$ two alphabets. If $f$ is $\Sigma$-mixed and
+$\Gamma$-mixed, then $f$ is $\Sigma$-recursive iff it is $\Gamma$-recursive. The
+analogue applies to recursive sets and this extends to primitive recursion.
+\end{theorem}
+
+The theorem above states that recursiveness or primitive-recursiveness is
+independent of any given alphabet.
+
+
+\pagebreak 
+
+\section{Neumann}
+
+\subsection{The $\mathcal{S}^{\Sigma}$ language}
+
+We provide von Neumann's model of $\Sigma$-effectively computable function. We
+use $Num = \{0, 1, \ldots, 9\}$ a set of \textit{symbols} (not numbers) and
+define $S : Num^{*} \mapsto Num^{*}$ as 
+
+\begin{align*}
+    S(\epsilon) &= 1 \\
+    S(\alpha 0) &= \alpha 1 \\
+    S(\alpha 2) &= \alpha 3 \\
+                &\vdots \\ 
+    S(\alpha 9) &= S(\alpha) 0
+\end{align*}
+
+It is easy to observe that $S$ is a "counting" or "enumerating" function of the
+alphabet $Num$. We define 
+
+\begin{align*}
+    \text{---} : \omega &\mapsto  Num^{*}  \\ 
+    \overline{0} & \mapsto \epsilon \\ 
+    \overline{n + 1} &\mapsto S(\overline{n})
+\end{align*}
+
+In other words, $\overline{n}$ simply denotes the alphabetic symbol of $Num$
+that denotes the number $n$. The whole syntax of the $S^{\Sigma}$ language is
+given by $\Sigma \cup \Sigma_p$, where
+
+\begin{align*}
+    \Sigma_p = Num \cup \{ \leftarrow, +, \overline{-}, ~ . ~, \neq, {}^{\curvearrowright},
+    \epsilon, N, K, P, L, I, F, G, O, T, B, E, S \}
+\end{align*}
+
+It is important to note that these are \textit{symbols} or \textit{strings}, not
+values. The $\epsilon$ in $\Sigma_p$ is not the empty letter, but the symbol
+that denotes it. The $\overline{+}, -$ signs are not the operations plus and
+minus, but the same symbols that denote these operations. 
+
+\subsection{Variables, labels, and instructions}
+
+Any word of the form $N \overline{k}$ is a numeric variable; $P \overline{k}$ is
+an alphabetic variable; $L \overline{k}$ is a label.
+
+The basic instructions in $\mathcal{S}^{\Sigma}$ make use of these; for a list
+of the instructions, consult the original source. In general, an instruction of
+$\mathcal{S}^{\Sigma}$ is any word of the form $\alpha I$, where $\alpha \in \{L
+\overline{n}: n \in \mathbb{N}\}$ and $I$ is a basic instruction. We use
+$Ins^{\Sigma}$ to denote the set of all instructions in $\mathcal{S}^{\Sigma}$.
+When $I = L \overline{n} J$ and $J$ a basic instruction, we say $L \overline{n}$
+is the label of $J$.
+
+\subsection{Programs in $\mathcal{S}^{\Sigma}$}
+
+A program in $\mathcal{S}^{\Sigma}$ is any word $I_1 \ldots I_n$, with $n \geq
+1$, s.t. $I_k \in Ins^{\Sigma}$ for all $1 \leq k \leq n$ and the following
+property holds:
+
+\textbf{GOTO Law}: For every $1 \leq i \leq n$, if $GOTOL \overline{m}$ is
+the end of $Ii$, then there is some $j, 1 \leq j \leq n$, s.t. $I_j$ has label
+$L \overline{m}$.
+
+Informally, a program is any chain of instructions satisfying that GOTO
+instructions map to actual labels in the program.
+
+~ 
+
+We use $Pro^{\Sigma}$ to denote the set of all programs in
+$\mathcal{S}^{\Sigma}$.
+
+\begin{theorem}
+    Let $\Sigma$ a finite alphabet. Then 
+
+    \begin{itemize}
+        \item If $I_1 \ldots I_n = J_1 \ldots J_n$, with $I_k, J_k \in
+            Ins^{\Sigma}$, then $n = m$ and $I_k = J_k$ for all $k$.
+        \item If $\mathcal{P} \in Pro^{\Sigma}$ then there is a unique set of
+            instructions $I_1 \ldots I_n$ s.t. $\mathcal{P} = I_n \ldots I_n$.
+    \end{itemize}
+\end{theorem}
+
+The theorem above establishes that any program in $Pro^{\Sigma}$ is a
+\textit{unique} concatenation of instructions. We use $n(\mathcal{P})$ to denote
+the number of instructions that make up $\mathcal{P} \in Pro^{\Sigma}$. By
+convention, if $\mathcal{P} = I^{\mathcal{P}}_1 \ldots
+I^{\mathcal{P}}_{n(\mathcal{P})}$, then $I^{\mathcal{P}}_j =
+\epsilon$ if $j \not\in [1, n(\mathcal{P})]$. In other words, we understand that
+a program contains infinitely many empty symbols to the right and left (like in
+Turing machines).
+
+\textit{Observation.} $n(\alpha)$ and $I_j^{\alpha}$ are defined only when
+$\alpha \in Pro^{\Sigma}, i \in \omega$. This means the domain of $\lambda
+\alpha[n(\alpha)]$ is $Pro^{\Sigma} \subseteq \Sigma \cup \Sigma_p$ and that of
+$\lambda i\alpha[I_i^{\alpha}]$ is $\omega \times Pro^{\Sigma}$.
+
+\begin{problem}
+    Is is true that $Ins^{\Sigma} \cap Pro^{\Sigma} = \emptyset$? And is it true
+    that $\lambda i \mathcal{P} [I_i^{\mathcal{P}}]$ has domain $\left\{ (i,
+    \mathcal{P}) \in \mathbb{N} \times Pro^{\Sigma}: i \leq n(\mathcal{P})
+\right\} $?
+\end{problem}
+
+Both statements are false. A single instruction in $Ins^{\Sigma}$ can be a
+program (as long as it is not a GOTO statement to a non-existent label).
+Furthermore, $\lambda i \mathcal{P} [I_i^{\mathcal{P}}]$ is defined for $i = 0$
+(it maps to $\epsilon$) and for $i \geq n(\mathcal{P} )$ (it also maps to
+$\epsilon$).
+
+\begin{problem}
+    Prove: If $\mathcal{P}_1, \mathcal{P}_2 \in Pro^{\Sigma}$ then $\mathcal{P}_1
+    \mathcal{P}_1 = \mathcal{P}_2 \mathcal{P}_2 \Rightarrow \mathcal{P}_1 =
+    \mathcal{P}_2$.
+\end{problem}
+
+This follows from the theorem that guarantees that any program $\mathcal{P} \in
+Pro^{\Sigma}$ is a \textit{unique} concatenation of instructions. Let
+$\mathcal{P}_1 = I_1^{\mathcal{P}_1} \ldots I_{n(\mathcal{P}_1)}^{\mathcal{P}_1}$ and $\mathcal{P}_2 = I_1^{\mathcal{P}_2}
+\ldots I_{n(\mathcal{P}_2)}^{\mathcal{P}_2}$. Assume $\mathcal{P}_1\mathcal{P}_1 =
+\mathcal{P}_2 \mathcal{P}_2$. Then 
+
+\begin{align*}
+    I_1^{\mathcal{P}_1} \ldots I_{n(\mathcal{P}_1)}^{\mathcal{P}_1}
+    I_1^{\mathcal{P}_1} \ldots I_{n(\mathcal{P}_1)}^{\mathcal{P}_1} = 
+    I_2^{\mathcal{P}_2} \ldots I_{n(\mathcal{P}_2)}^{\mathcal{P}_2}
+    I_2^{\mathcal{P}_2} \ldots I_{n(\mathcal{P}_2)}^{\mathcal{P}_2}
+\end{align*}
+
+Then, from the last theorem follows that $I_k^{\mathcal{P}_1} =
+i_k^{\mathcal{P}_2}$. From this follows directly that $\mathcal{P}_1 =
+\mathcal{P}_2$. $\blacksquare$
+
+\subsection{States in programs of $\mathcal{S}^{\Sigma}$}.
+
+We define $Bas : Ins^{\Sigma} \mapsto (\Sigma \cup \Sigma_p)^{*}$, the program
+that returns the substring of an instruction corresponding to its basic
+instruction, as 
+
+\begin{align*}
+    Bas(I) = \begin{cases}
+        J & I = L \overline{k} J \\ 
+        I & \text{otherwise}
+    \end{cases}
+\end{align*}
+
+Recall that 
+
+\begin{align*}
+    {}^{\curvearrowright} \alpha = \begin{cases}
+        [\alpha]_2 \ldots \alpha_|\alpha| & |\alpha| \geq 2 \\ 
+        \epsilon & \text{otherwise}
+    \end{cases}
+\end{align*}
+
+We define $\omega^{\mathbb{N}} = \{ (s_1, s_2, \ldots) : \exists n \in
+\mathbb{N} : i > n \Rightarrow s_i = 0 \}$. This is, $\omega^{\mathbb{N}}$
+denotes the set of infinite tuples that from some index onwards contain only
+zeroes. Similarly, $\Sigma^{*\mathbb{N}}$ denotes the set of infinite alphabetic
+tuples that contain only $\epsilon$ from some index onwards.
+
+A \textbf{state} is a tuple $(\overrightarrow{s}, \overrightarrow{\sigma}) \in
+\omega^{\mathbb{N}} \times \Sigma^{*\mathbb{N}}$. If $i \geq i$ we say $s_i$ has
+the value of the ${N} \overline{i}$ variable in the state, and $\sigma_i$ the
+value of the $P \overline{i}$ variable in the state. Thus, a state is a pair of
+infinite tuples containing the values of the variables in a program.
+
+We use 
+
+\begin{align*}
+    [\![ x_1, \ldots x_n, ~ \alpha_1, \ldots, \alpha_m ]\!]
+\end{align*}
+
+to denote the state $\left( (x_1, \ldots, x_n, 0, 0, \ldots), (\alpha_1, \ldots,
+\alpha_m, \epsilon, \epsilon,\ldots) \right) $.
+
+\subsection{Instantaneous description of a program in $\mathcal{S}^{\Sigma}$}
+
+Since a program $\mathcal{P} \in Pro^{\Sigma}$ may contain GOTO instructions,
+it is not always the case that $I_{k+1}^{\mathcal{P}}$ is executed after
+$I_k^{\mathcal{P}}$. Thus, when running a program, we not only need to consider
+its state but the specific instruction to be executed. An instantaneous
+description is a mathematical object which describes all this information.
+
+Formally, an instantaneous description is triple $(i, \overrightarrow{s},
+\overrightarrow{\alpha}) \in \omega \times \omega^{\mathbb{N}} \times
+\Sigma^{*\mathbb{N}}$. These Cartesian product is the set of all possible
+instantaneous descriptions. The triple reads: The following instruction is
+$I_{i}^{\mathcal{P}}$ and the current state is $(\overrightarrow{s},
+\overrightarrow{\sigma})$. Observe that if $i \not\in [1, n(\mathcal{P})]$, then
+the description reads: We are in state $(\overrightarrow{s},
+\overrightarrow{\sigma})$ and we must execute $\epsilon$ (nothing).
+
+We define the successor function
+
+\begin{align*}
+    S_\mathcal{P} : \omega \times \omega^{\mathbb{N}} \times
+    \Sigma^{*\mathbb{N}} \mapsto  \omega \times \omega^{\mathbb{N}} \times \Sigma^{*\mathbb{N}}
+\end{align*}
+
+which maps an instantaneous description to the successor instantaneous
+description (the one after executing the instruction in the first). In other
+words, 
+
+\subsection{Computation from a given state}
+
+Let $\mathcal{P} \in Pro^{\Sigma}$ and a state  $(\overrightarrow{s},
+\overrightarrow{\sigma})$. The \textit{computation} of $\mathcal{P}$ from
+$(\overrightarrow{s}, \overrightarrow{\sigma})$ is defined as 
+
+\begin{align*}
+    \left(  (1, \overrightarrow{\sigma}, \overrightarrow{\sigma}),
+    S_{\mathcal{P}}\left( 1, \overrightarrow{s}, \overrightarrow{\sigma}
+\right), S_{\mathcal{P}} \left( S_{\mathcal{P}} \left( 1, \overrightarrow{s},
+\overrightarrow{\sigma} \right)  \right), \ldots   \right) 
+\end{align*}
+
+In other words, the \textit{computation} of $\mathcal{P}$ is the infinite tuple
+whose $i$th element is the instantaneous description of $\mathcal{P}$ after $i -
+1$ instructions have been executed.
+
+We say $S_{\mathcal{P}} \left( \ldots S_{\mathcal{P}} \left(
+S_{\mathcal{P}}\left( 1, \overrightarrow{s}, \overrightarrow{\sigma} \right)
+\right)  \right) $ is the instantaneous description obtained after $t$ steps if
+the number of times $S_{\mathcal{P}}$ was executed is $t$.
+
+\begin{problem}
+    Give true or false for the following statements.
+\end{problem}
+
+\textit{Statement 1: If $S_{\mathcal{P}}(i, \overrightarrow{s},
+\overrightarrow{\alpha}) = (i, \overrightarrow{s}, \overrightarrow{\alpha})$
+then $i \not\in [1, n(\mathcal{P})]$}. The statement is false. It could be the
+case that $i \not\in [1, n( \mathcal{P} )]$, in which case we would say the program
+halted. However, consider the program 
+
+\begin{align*}
+    L1 ~ GOTO ~ L1 
+\end{align*}
+
+Evidently, $S_{\mathcal{P}}(1, \overrightarrow{s}, \overrightarrow{\alpha}) =
+(1, \overrightarrow{s}, \overrightarrow{\alpha})$, and $1 \leq 1 \leq
+n(\mathcal{P})$ .
+
+\textit{Statement 2. Let $\mathcal{P} \in Pro^{\Sigma}$ and $d$ an instantaneous
+description whose first coordinate is $i$. If $I_i^{\mathcal{P}} = N_2
+\leftarrow N_2 + 1$, then $$S_{\mathcal{P}}(d) = \left( i+1, \left( N_1,
+Suc(N_2), N_3, \ldots \right), (P_1, P_2, P_3, \ldots)  \right) $$}
+
+The statement is true via direct application of the $S_{\mathcal{P}}$ function.
+
+\textit{Statement 3. Let $\mathcal{P} \in Pro^{\Sigma}$ and $(i,
+\overrightarrow{s}, \overrightarrow{\sigma})$ an instantaneous description. If
+$Bas(I_i^{\mathcal{P}}) = IF ~ P_3 ~ BEGINS ~ a ~ GOTO ~ L_6$ and $[P_3]_1 = a$,
+then $S_{\mathcal{P}}(i, \overrightarrow{s}, \overrightarrow{\sigma}) = (j,
+\overrightarrow{s}, \overrightarrow{\sigma})$, where $j$ is the least number $l$
+s.t. $I_{l}^{\mathcal{P}}$ has label $L_6$}.
+
+Because $[P_3]_1 = a$, the value of $S_{\mathcal{P}}(i, \overrightarrow{s},
+\overrightarrow{\sigma})$ must indeed contain the instruction that has label
+$L_6$. This instruction is the $j$th instruction for some $j$, etc. The
+statement is true.
+
+\subsection{Halting}
+
+When the first coordinate of  $S_{\mathcal{P}} \left( \ldots S_{\mathcal{P}}
+\left( S_{\mathcal{P}}\left( 1, \overrightarrow{s}, \overrightarrow{\sigma}
+\right)\right)  \right) $ with $t$ steps is $n(\mathcal{P}) + 1$, we say
+$\mathcal{P}$ \textit{halts after $t$ steps when starting from
+$(\overrightarrow{s}, \overrightarrow{\sigma})$}.
+
+If none of the first coordinates in the computation of $\mathcal{P}$, 
+
+\begin{align*}
+    \left(  (1, \overrightarrow{\sigma}, \overrightarrow{\sigma}),
+    S_{\mathcal{P}}\left( 1, \overrightarrow{s}, \overrightarrow{\sigma}
+\right), S_{\mathcal{P}} \left( S_{\mathcal{P}} \left( 1, \overrightarrow{s},
+\overrightarrow{\sigma} \right)  \right), \ldots   \right) 
+\end{align*}
+
+is $n(\mathcal{P})$, we say $\mathcal{P}$ does not halt starting from
+$(\overrightarrow{s}, \overrightarrow{\sigma})$.
+
+\subsection{$\Sigma$-computable functions}
+
+We give the model of a $\Sigma$-effectively computable function in the paradigm
+of von Neumann. Intuitively, $f$ is $\Sigma$-computable if there is some
+$\mathcal{P} \in Pro^{\Sigma}$ that computes it. 
+
+Given $\mathcal{P} \in Pro^{\Sigma}$, for every pair $n,m \geq 0$, we define
+$\Psi_{\mathcal{P}}^{n, m, \#}$ as follows: 
+
+\begin{align*}
+    \mathcal{D}_{\Psi_{\mathcal{P}}^{n, m, \#}} &= \left\{ (\overrightarrow{x},
+    \overrightarrow{\alpha}) \in \omega^n \times \Sigma^{*m} : \mathcal{P}
+\text{ halts from } [\![ x_1,\ldots, x_n, \alpha_1, \ldots,
+\alpha_m ]\!] \right\}  \\ 
+        \Psi_{\mathcal{P}}^{n, m, \#}(\overrightarrow{x}, \overrightarrow{\alpha}) &=
+    \text{Value of } N_1 \text{ in halting state from } [\![ x_1,\ldots, x_n,
+    \alpha_1, \ldots, \alpha_m ]\!]
+\end{align*}
+
+We analogously define $\Psi_{\mathcal{P}}^{n, m, *}$ for the alphabetic case,
+where the domain is the same and the value is that of $P_1$ in the halting
+state.
+
+~ 
+
+A $\Sigma$-mixed function, not necessarily total, is $\Sigma$-computable if
+there is a program $\mathcal{P}} \in Pro^{\Sigma}$ s.t. $f \sim (n, m, \varphi) =
+\Psi_{\mathcal{P}}^{n, m, \varphi}$, with $\varphi \in \{\#, *\}$. We say $f$ is
+computed by $\mathcal{P}$.
+
+\begin{theorem}
+    If $f$ is $\Sigma$-computable, then it is $\Sigma$-effectively computable.
+\end{theorem}
+
+The previous theorem should be obvious. Any program in $\mathcal{S}^{\Sigma}$
+can be translated into an effective procedure with relative simplicity.
+
+\begin{problem}
+    Let $\Sigma = \{@, !\}$. Give a program that computes $f : \{0, 1, 2\}
+    \mapsto \omega $ given by $f(0) = f(1) = 0, f(2) = 5$.
+\end{problem}
+
+Evidently $f \sim (1, 0, \#)$ and so we must find some $\mathcal{P} \in
+Pro^{\Sigma}$ s.t. $\Psi_{\mathcal{P}}^{1, 0, \#}(x) = f(x)$. The program must
+let $N_1$ hold the value $0$ if the starting state is either $[\![ 0 ]\!]$ or
+$[\![ 1 ]\!]$, and the value $5$ if the starting state is $[\![ 2 ]\!]$. In all
+other cases, it must not halt, to ensure that the domain of
+$\Psi_{\mathcal{P}}^{1, 0, \#}$ is the same as that of $f$. The desired program
+is 
+
+\begin{align*}
+    &N_2 \leftarrow N_1\\
+    &N_2 \leftarrow N_2 - 1\\
+    &IF ~ N_2 \neq 0 ~ GOTO ~L_1 \\ 
+    &GOTO ~ L_4 \\ 
+    L_1 ~ &N_2 \leftarrow N_2 - 1 \\ 
+    &IF ~  N_2 \neq 0 ~ GOTO ~ L_2\\
+    &GOTO L_3\\
+    L_2~& GOTO ~ L_2 \\ 
+    L_3 ~ & N_1 \leftarrow N_1 + 1\\
+    & N_1 \leftarrow N_1 + 1\\
+    & N_1 \leftarrow N_1 + 1 \\ 
+    & GOTO ~ L_5 \\
+    L_4 ~ & N_1 \leftarrow 0 \\ 
+    L_5~& SKIP
+\end{align*}
+
+If $\mathcal{P}$ denotes this program, it is evident that $\mathcal{P}$ only
+halts for starting states $[\![ x_1 ]\!]$ with $x_1 \in \{0, 1, 2\}$.
+Thus, the domain of $\Psi_{\mathcal{P}}^{1, 0, \#}$ is precisely
+$\mathcal{D}_f$. It is easy to verify that, more generally,
+$\Psi_{\mathcal{P}}^{1, 0, \#} = f$.
+
+\begin{problem}
+    Using the same alphabet as in the previous problem, find $\mathcal{P} \in
+    Pro^{\Sigma}$ that computes $\lambda xy[x + y]$.
+\end{problem}
+
+The desired program is 
+
+\begin{align*}
+    L_1 ~ &IF ~ N_2 = 0 ~ GOTO ~ L_3 \\ 
+          &N_1 \leftarrow N_1 + 1 \\ 
+          &N_2 \leftarrow N_2 - 1 \\ 
+          &GOTO ~ L_1\\
+    L_3 ~ & SKIP
+\end{align*}
+
+\begin{problem}
+    Same for $C_0^{1, 1}_{\mid \{0, 1\} \times  \Sigma^{*}}$
+\end{problem}
+
+Since the domain of the constant function is restricted t o $\{0, 1\} \times
+\Sigma^{*}$, we must ensure the program only halts for states $[\![ x_1, x_2,
+\alpha ]\!]$ s.t. $x_1,x_2 \in \{0, 1\}$. Thus, the program is 
+
+\begin{align*}
+    &N_1 \leftarrow N_1 - 1 \\
+    &N_2 \leftarrow N_2 - 1 \\
+    &IF N_2 \neq 0 ~ GOTO ~ L_1 \\ 
+    & IF N_1 \neq 0 ~ GOTO ~ L_1 \\ 
+    &GOTO ~ L_2 \\ 
+    L_1~& GOTO ~ L_1 \\ 
+    L_2~ &SKIP
+\end{align*}
+
+\begin{problem}
+    Same for $\lambda i\alpha[[\alpha]_i]$ (same alphabet).
+\end{problem}
+
+\begin{align*}
+    &IF ~ N_0 \neq 0 ~ GOTO ~ L_1 \\ 
+    &P_1 \leftarrow \epsilon \\ 
+    & GOTO ~ L_{100} \\
+    L_1 ~ & N_1 \leftarrow N_1 - 1 \\ 
+    L_2 ~ & N_1 \leftarrow N_1 - 1 \\ 
+          &P_1 \leftarrow {}^{\curvearrowright} P_1\\
+    &IF ~ N_1 \neq 0 ~ GOTO ~ L_2\\
+    &IF ~ P_1 ~ STARTSWITH ~ @ ~ GOTO ~ L_2 \\ 
+    &IF ~ P_1 ~ STARTSWITH ~ ! ~ GOTO L_3\\ 
+    & GOTO L_{100}\\
+    L_3~&P_1 \leftarrow ~ !\\
+    L_2 ~ &P_1 \leftarrow  @ \\ 
+    L_{100} ~ & SKIP
+\end{align*}
+
+\textit{Example.} Let $\alpha = @!!@@$. Assume we give $[\![ 4, \alpha ]\!]$.
+Since $4 \neq 0$ we go to $L_1$ immediately. Here $N_1$ is set to three. Then
+$N_1$ is set to two and $P_1$ is set to $!!@@$. Since $N_1 \neq 0$, $N_1$ is now
+set to $1$ and $P_1$ to $!@@$. Once more, $N_1$ is now set to $0$ and $P_1$ to
+$@@$. Since now $N_1 = 0$ , we know the starting character of $P_1$ is the one
+we looked for. We set $P_1$ to be its first character (if $P_1 = \epsilon$ it
+has no first character and nothings needs to be done, because this means the
+input $[\![ x_1, \alpha ]\!]$ had $x_1 > |\alpha|$). The other cases also work.
+
+\begin{problem}
+    Give a program that computes $s^{\leq}$ where $@ < !$.
+\end{problem}
+
+Recall that $s^{\leq} : \Sigma^{*} \mapsto \Sigma^{*}$ is defined as 
+
+\begin{align*}
+    s^{\leq} \left( (a_n)^m \right)  &= (a_1)^{m + 1} & m \geq 0\\ 
+    s^{\leq} \left( \alpha a_i (a_n)^{m} \right) &= \alpha a_{i+1} (a_1)^{m} & 1
+    \leq i < n, m \geq 0
+\end{align*}
+
+In our case, this functions enumerates the language in question as follows: 
+
+\begin{align*}
+    \epsilon, @, !, @ @, @ !, !@, !!, @@@, @@!, @!@, @!!, !@@, !@!, !!@, !!!, \ldots
+\end{align*}
+
+\subsection{Macros}
+
+A macro is the template of a program that computes a $\Sigma$-mixed function.
+There are two types: 
+
+\begin{itemize}
+    \item Those that assign that simulate setting the value of a variable to a
+        function of others; 
+    \item Those that use IF statements that direct a program to a label if a
+        predicate function of other variables is true.
+\end{itemize}
+
+A macro is not a program because it does not necessarily hold to \textbf{GOTO
+law}. The formal definition of a macro is hand-wavy and long; check the source.
+The variables of a macro that are only used within the macro are the
+\textit{auxiliary variables}. The variables the receive the input (from within
+some program) are the \textit{official variables}. 
+
+\begin{theorem}
+    Let $\Sigma$ a finite alphabet. Then if $f$ a $\Sigma$-computable function,
+    there is a macro $\left[ Z \overline{n+1} \leftarrow f \left( V_1, \ldots, V
+    \overline{n}, W_1, \ldots, W \overline{m}\right)  \right] $ with $Z \in
+    \left\{ V, W \right\} $ depending on the value of $f$.
+\end{theorem}
+
+\textbf{Example.} The function $\mathcal{F} = \lambda xy[x + y]$ is
+$\Sigma$-computable. Then there is a macro that computes it. Such macro is: 
+
+\begin{align*}
+    &V_4 \leftarrow V_2 \\ 
+    &V_5 \leftarrow  V_3 \\ 
+    &V_1 \leftarrow V_4 \\ 
+    A_1 ~ & IF ~ V_5 \neq 0 ~ GOTO ~ A_2 \\ 
+    & GOTO~ A_3 \\ 
+    A_2 ~ & V_5 \leftarrow V_5 - 1 \\ 
+          &V_1 \leftarrow V_1 + 1 \\ 
+          &GOTO ~ A_1 \\ 
+    A_3 ~ & SKIP
+\end{align*}
+
+We replace $V_1$ with that variable where the output is to be stored, $V_2, V_3$
+with the variables the are to be summed, and this performs the sum of two
+variables. Now, to program $\lambda xy[x \cdot y]$ we can use the following:
+
+\begin{align*}
+    L_1 ~ ~ ~ & IF ~ N_2 \neq 0 ~ GOTO ~ L_2 \\ 
+              & GOTO ~ L_3 \\ 
+    L_2 ~ ~ ~ & \left[ N_3 \leftarrow \mathcal{F}(N_3, N_1) \right]  \\ 
+              &N_2 \leftarrow  N_2 - 1 \\ 
+              &GOTO ~ L_1 \\ 
+    L_3 ~ ~ ~ &N_1 \leftarrow N_3
+\end{align*}
+
+\begin{problem}
+    Let $\Sigma = \{@, !\}$ and $f \sim (0, 1, \#)$ a $\Sigma$-computable
+    function. Let $L = \left\{ \alpha \in \mathcal{D}_f : f(\alpha) = 1 \right\}
+    $. Using the macro $\left[ V_1 \leftarrow f(W_1) \right] $, give a program
+    $\mathcal{P} \in Pro^{\Sigma}$ s.t. $\mathcal{D}_{\Psi_{\mathcal{P}}^{0, 1,
+    \#}} = L$.
+\end{problem}
+
+$\mathcal{D}_{\Psi_{\mathcal{P}}^{0, 1, \#}} = L$ if and only if $\mathcal{P}$
+halts only when starting from a state $[\![ \alpha \in L ]\!]$
+Such $\mathcal{P}$ may be 
+
+\begin{align*}
+    &[N_1 \leftarrow f(P_1)]\\
+    &IF ~ N_1 \neq 0 ~ GOTO  ~ L_1 \\ 
+    &GOTO ~ L_2 \\ 
+    L_1  ~ ~ ~ & GOTO ~ L_1 \\ 
+    L_2 ~ ~ ~ & SKIP
+\end{align*}
+
+Incidentally, it is easy to observe that $\Psi_{\mathcal{P}}^{0, 1, \#} = f_{\mid L}$.
+
+\begin{problem}
+    Let $\Sigma = \{@, !\}$ and $f \sim (1, 0, *)$ a $\Sigma$-computable
+    function. Using $\left[ W_1 \leftarrow f(V_1) \right] $, give a program
+    $\mathcal{P} \in Pro^{\Sigma}$ s.t. $\mathcal{D}_{\Psi_{\mathcal{P}}^{1, 0,
+    *}} = Im_{f}$.
+\end{problem}
+
+We require a program $\mathcal{P} \in Pro^{\Sigma}$ s.t. $\mathcal{P}$ halts
+only from a starting state of the form $[\![ \alpha \in Im_f ]\!]$. Such a program
+may be 
+
+\begin{align*}
+    L_1~ ~ ~&\left[P_2 \leftarrow f(N_1) \right]  \\ 
+    &\left[ IF ~ P_1 = P_2 ~ GOTO ~ L_2 \right]  \\ 
+    &N_1 \leftarrow N_1 + 1 \\ 
+    &GOTO ~ L_1 \\ 
+    L_2 ~ ~ ~ & Skip
+\end{align*}
+
+where $\left[ IF ~ W_1 = W_2 ~ GOTO ~ A_1 \right] $ is the macro
+
+\begin{align*}
+    &W_3 \leftarrow W_1  \\ 
+    &W_4 \leftarrow W_2 \\ 
+    A_1 ~ ~ ~ &IF ~ W_3 BEGINS ~ @ ~ GOTO ~ A_2 \\ 
+    &IF ~ W_3 BEGINS ~ ! ~ GOTO ~ A_3 \\ 
+    &
+    A_2 ~ ~ ~ &IF~ W_4 ~ BEGINS ~ @ ~ GOTO ~ A_4 \\ 
+              &GOTO ~ A_{1000}\\
+    A_3 ~ ~ ~ &IF~ W_4 ~ BEGINS ~ ! ~ GOTO ~ A_4 \\ 
+    A_4 ~ ~ ~ & W_3 \leftarrow {}^{\curvearrowright} W_3 \\ 
+              &W_4 \leftarrow {}^{\curvearrowright} W_4 \\ 
+              &GOTO A_5 \\ 
+    A_{1000}~ ~ ~ & SKIP
+\end{align*}
+
+that checks if two \textit{not-empty} strings are equal and jumps to the
+official label $A_5$ if the case is true.
+
+\subsection{Enumerable sets}
+
+A non-empty $\Sigma$-mixed set $S$ is $\Sigma$-enumerable if and only if there are
+programs $\mathcal{P}_1, \ldots, \mathcal{P}_{n + m}$ s.t. 
+
+\begin{align*}
+    \mathcal{D}_{\Psi_{\mathcal{P}_1}^{n, m, \#}} &= \ldots =
+    \mathcal{D}_{\Psi_{\mathcal{P}_n}^{n, m, \#}} = \omega\\
+    \mathcal{D}_{\Psi_{\mathcal{P}_{n+1}}^{n, m, \#}} &= \ldots =
+    \mathcal{D}_{\Psi_{\mathcal{P}_{n+m}}^{n, m, \#}} = \omega
+\end{align*}
+
+and 
+
+\begin{align*}
+    S = Im ~ \left[ \Psi_{\mathcal{P}_1}^{n, m, \#}, \ldots,
+    \Psi_{\mathcal{P}_n}^{n, m, \#}, \Psi_{\mathcal{P}_{n+1}}^{n, m, \#},
+\ldots, \Psi_{\mathcal{P}_{n+m}}^{n, m, \#} \right] 
+\end{align*}
+
+In other words, for each input $x \in \omega$, the $i$th program $\mathcal{P}_i$
+computes the value of the $i$th element in a tuple of $S$. Another way to put
+this is 
+
+
+\begin{theorem}
+    If $S$ a non-empty $\Sigma$-mixed set, then it is equivalent to say: 
+
+    \textit{(1)} $S$ is $\Sigma$-enumerable. 
+
+    \textit{(2)} There is a $\mathcal{P} \in Pro^{\Sigma}$ satisfying the
+    following two properties. $a.$ For all $x \in \omega$, $\mathcal{P}$ halts
+    from $[\![ x ]\!]$ into a state of the form $[\![ x_1, \ldots, x_n,
+    \alpha_1, \ldots, \alpham ]\!]$ when $(x_1, \ldots, x_n, \alpha_1, \ldots,
+    \alpha_n) \in S$. \textit{b.} For any tuple $(x_1, \ldots, x_n, \alpha_1, \ldots, \alpha_m) \in
+S$, there is a $x \in \omega$ s.t. $\mathcal{P}$ halts starting from $[\![ x
+]\!]$ in a state of the form $[\![ x_1, \ldots, x_n, \alpha_1, \ldots, \alpha_m ]\!]$ 
+
+\end{theorem}
+
+When a program satisfies these properties, we say it \textit{enumerates} $S$.
+
+\section{$\Sigma$-computable sets}
+
+A $\Sigma$-mixed set $S$ is said to be $\Sigma$-computable if
+$\chi_{S}^{\omega^n \times \Sigma^{*m}}$ is $\Sigma$-computable. This is, $S$ is
+$\Sigma$-computable if and only if there is a $\mathcal{P} \in Pro^{\Sigma}$
+s.t. $\mathcal{P}$ commputes $\chi_S^{\omega^n \times \Sigma^{*m}}$. 
+
+Observe that this means that $\mathcal{P}$ halts with $N_1 = 1$ when starting
+from $[\![ \overrightarrow{x}, \overrightarrow{\alpha} ]\!]$ if
+$(\overrightarrow{x}, \overrightarrow{\alpha}) \in S$, and halts with $N_1 = 0$
+otherwise. We say $\mathcal{P}$ \textit{decides} the belonging to $S$.
+
+Observe that if $\chi_S^{\omega^n \times \Sigma^{*m}}$ is $\Sigma$-computable,
+then there is a macro 
+
+\begin{align*}
+    \left[ IF ~ \chi_S^{\omega^n \times \Sigma^{*m}} \left( V_1 \ldots, V
+    \overline{n}, W_1, \ldots, W \overline{m} \right) ~ GOTO ~ A_1  \right] 
+\end{align*}
+
+We will write this macro as $\left[ IF ~ (V_1, \ldots V \overline{n}, W_1, \ldots,
+W \overline{m}) \in S ~ GOTO ~ A_1 \right] $. Of course, this macro is only
+valid when $S$ is a $\Sigma$-computable set.
+
+\begin{theorem}
+    In Godel's paradigm, $S$ is $\Sigma$-computable iff it is the domain of a
+    $\Sigma$-computable function. This statement \textit{does not hold} in von
+    Neumman's paradigm. There are sets that are domains of $\Sigma$-computable
+    functions that are not $\Sigma$-computable themselves.
+\end{theorem}
+
+\pagebreak 
+
+\section{Paradigm battles}
+
+\subsection{Neumann triumphs over Godel}
+
+\begin{theorem}
+    If $h$ is $\Sigma$-recursive then it is $\Sigma$-computable.
+\end{theorem}
+
+A corollary is that every $\Sigma$-recursive function has a corresponding macro.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
