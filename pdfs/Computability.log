@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.6.2)  6 FEB 2024 01:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.6.2)  6 FEB 2024 11:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -406,49 +406,50 @@ LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 2
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 12.0pt on input line 40.
+(Font)              scaled to size 12.0pt on input line 62.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 12.0pt on input line 40.
-LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input line 45.
+(Font)              scaled to size 12.0pt on input line 62.
+LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input line 67.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
 File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
 )
 LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 45.
+(Font)              scaled to size 12.0pt on input line 67.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 8.8pt on input line 50.
+(Font)              scaled to size 8.8pt on input line 72.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 6.6pt on input line 50.
+(Font)              scaled to size 6.6pt on input line 72.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 14.4pt on input line 55.
+(Font)              scaled to size 14.4pt on input line 77.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 14.4pt on input line 55.
+(Font)              scaled to size 14.4pt on input line 77.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.8pt on input line 106.
+(Font)              scaled to size 8.8pt on input line 128.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.6pt on input line 106.
+(Font)              scaled to size 6.6pt on input line 128.
+ [2]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 130.
+(Font)              scaled to size 10.95pt on input line 152.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 10.95pt on input line 132.
- [2] [3] [4]
-./Computability.tex:291: Missing { inserted.
+(Font)              scaled to size 10.95pt on input line 154.
+ [3] [4] [5]
+./Computability.tex:313: Missing { inserted.
 <to be read again> 
                    ^
-l.291     n^k + i_{k-1} n^{k-1} + \ldots + i_0 n_^
+l.313     n^k + i_{k-1} n^{k-1} + \ldots + i_0 n_^
                                                   0$ with $k \geq 0, 1 \leq ...
 A left brace was mandatory here, so I've put one in.
 You might want to delete and/or insert some corrections
 so that I will find a matching right brace soon.
 (If you're confused by all this, try typing `I}' now.)
 
-./Computability.tex:291: Missing } inserted.
+./Computability.tex:313: Missing } inserted.
 <inserted text> 
                 }
-l.291 ...^k + i_{k-1} n^{k-1} + \ldots + i_0 n_^0$
+l.313 ...^k + i_{k-1} n^{k-1} + \ldots + i_0 n_^0$
                                                    with $k \geq 0, 1 \leq i_...
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -456,63 +457,63 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-[5] [6]
+[6] [7]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 406.
+(Font)              scaled to size 8.0pt on input line 428.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.1pt on input line 406.
- [7] [8] [9]
-Overfull \hbox (33.34384pt too wide) in paragraph at lines 598--600
+(Font)              scaled to size 6.1pt on input line 428.
+ [8] [9] [10]
+Overfull \hbox (33.34384pt too wide) in paragraph at lines 620--622
 []\T1/ntxtlf/m/n/12 As ex-am-ples, here are some words ac-cepted by the lan-guage: $\OML/ntxmi/m/it/12 ^^O; aab; baa; ababaa; []$
  []
 
-[10] [11] [12]
-Overfull \hbox (16.72377pt too wide) in paragraph at lines 800--806
+[11] [12] [13]
+Overfull \hbox (16.72377pt too wide) in paragraph at lines 822--828
 [] \U/ntxmia/m/it/12 = \OML/ntxmi/m/it/12 d[] \LMS/ntxsy/m/n/12 ^^N [] \U/ntxmia/m/it/12 = \OML/ntxmi/m/it/12 d[] \LMS/ntxsy/m/n/12 ^^N [] \U/ntxmia/m/it/12 = \OT1/minntx/m/n/12 %@%%%%???$\T1/ntxtlf/m/n/12 . 
  []
 
-[13] [14] [15] [16] [17] [18]
-./Computability.tex:1065: Double subscript.
+[14] [15] [16] [17] [18] [19]
+./Computability.tex:1087: Double subscript.
 <argument>  \mathcal {G}_a = p_3^{1, 2}_
                                         {\mid S} \cup C_{a}^{1, 2}_{\mid \ov...
-l.1065 \end{align*}
+l.1087 \end{align*}
                    
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-./Computability.tex:1065: Double subscript.
+./Computability.tex:1087: Double subscript.
 <argument> ...3^{1, 2}_{\mid S} \cup C_{a}^{1, 2}_
                                                   {\mid \overline {S}} 
-l.1065 \end{align*}
+l.1087 \end{align*}
                    
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-./Computability.tex:1065: Double subscript.
+./Computability.tex:1087: Double subscript.
 <argument>  \mathcal {G}_a = p_3^{1, 2}_
                                         {\mid S} \cup C_{a}^{1, 2}_{\mid \ov...
-l.1065 \end{align*}
+l.1087 \end{align*}
                    
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-./Computability.tex:1065: Double subscript.
+./Computability.tex:1087: Double subscript.
 <argument> ...3^{1, 2}_{\mid S} \cup C_{a}^{1, 2}_
                                                   {\mid \overline {S}} 
-l.1065 \end{align*}
+l.1087 \end{align*}
                    
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-[19]
-Overfull \hbox (40.9093pt too wide) in paragraph at lines 1137--1143
+[20]
+Overfull \hbox (40.9093pt too wide) in paragraph at lines 1159--1165
 []\T1/ntxtlf/m/n/12 We know $\OML/ntxmi/m/it/12 f \U/ntxmia/m/it/12 = \OML/ntxmi/m/it/12 ^^Uxt []$ \T1/ntxtlf/m/n/12 is $\U/ntxmia/m/it/12 ^^F$\T1/ntxtlf/m/n/12 -p.r. (triv-ial to show). Let $\LMS/ntxsy/m/n/12 G \U/ntxmia/m/it/12 = \OML/ntxmi/m/it/12 ^^Uxyx[] []$\T1/ntxtlf/m/n/12 .
  []
 
-./Computability.tex:1181: Double superscript.
-l.1181 ...^2  \times \mathbb{N} \times \Sigma^{*}^
+./Computability.tex:1203: Double superscript.
+l.1203 ...^2  \times \mathbb{N} \times \Sigma^{*}^
                                                   2$---which means
 I treat `x^1^2' essentially like `x^1{}^2'.
 
-[20] [21]
-./Computability.tex:1275: Undefined control sequence.
-l.1275 $P = \lambdat
+[21] [22]
+./Computability.tex:1297: Undefined control sequence.
+l.1297 $P = \lambdat
                      x_1 x_2 [x_2 = tx_1]$ is $\Sigma$-p.r. Since $P$ is $\S...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -520,29 +521,29 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[22]
+[23]
 
-./Computability.tex:1359: Package amsmath Error: \hat allowed only in math mode.
+./Computability.tex:1381: Package amsmath Error: \hat allowed only in math mode.
 
 See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1359 design $P$ so \hat{t}
+l.1381 design $P$ so \hat{t}
                             
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/it' will be
-(Font)              scaled to size 12.0pt on input line 1367.
+(Font)              scaled to size 12.0pt on input line 1389.
 
-Overfull \hbox (7.89737pt too wide) in paragraph at lines 1367--1369
+Overfull \hbox (7.89737pt too wide) in paragraph at lines 1389--1391
 []\T1/ntxtlf/m/it/12 Use the \T1/ntxtlf/b/it/12 U rule \T1/ntxtlf/m/it/12 to find a pred-i-cate $\OML/ntxmi/m/it/12 P$ \T1/ntxtlf/m/it/12 s.t. $\OML/ntxmi/m/it/12 M\LMS/ntxsy/m/n/12 ¹\OML/ntxmi/m/it/12 P\LMS/ntxsy/m/n/12 º \U/ntxmia/m/it/12 = \OML/ntxmi/m/it/12 ^^Ux\LMS/ntxsy/m/n/12 »[][]¼$
  []
 
-[23] [24] [25] [26] [27] [28] [29]
-./Computability.tex:1814: Extra }, or forgotten $.
-l.1814 there is a program $\mathcal{P}}
+[24] [25] [26] [27] [28] [29] [30]
+./Computability.tex:1836: Extra }, or forgotten $.
+l.1836 there is a program $\mathcal{P}}
                                         \in Pro^{\Sigma}$ s.t. $f \sim (n, m...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -550,15 +551,15 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-[30]
-./Computability.tex:1877: Double subscript.
-l.1877     Same for $C_0^{1, 1}_
+[31]
+./Computability.tex:1899: Double subscript.
+l.1899     Same for $C_0^{1, 1}_
                                 {\mid \{0, 1\} \times  \Sigma^{*}}$
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-[31] [32] [33] [34] [35]
-./Computability.tex:2088: Undefined control sequence.
-l.2088     \alpha_1, \ldots, \alpham
+[32] [33] [34] [35] [36]
+./Computability.tex:2110: Undefined control sequence.
+l.2110     \alpha_1, \ldots, \alpham
                                      ]\!]$ when $(x_1, \ldots, x_n, \alpha_1...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -566,7 +567,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[36] [37] (./Computability.aux) ) 
+[37] [38] (./Computability.aux) ) 
 Here is how much of TeX's memory you used:
  5729 strings out of 476091
  78705 string characters out of 5794082
@@ -576,10 +577,10 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  71i,27n,76p,311b,267s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on Computability.pdf (37 pages, 309361 bytes).
+Output written on Computability.pdf (38 pages, 311058 bytes).
 PDF statistics:
- 192 PDF objects out of 1000 (max. 8388607)
- 126 compressed objects within 2 object streams
+ 195 PDF objects out of 1000 (max. 8388607)
+ 128 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

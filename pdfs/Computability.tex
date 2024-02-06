@@ -19,6 +19,28 @@
 
 \begin{document}
 
+\section{Introduction}
+
+These are my notes on computability theory. Let $\Sigma$ denote an arbitrary
+language. If $\omega = \mathbb{N} + \{ 0\}$, a $\Sigma$-mixed function is a
+function s.t. $\mathcal{D}_f \subseteq \omega^n \times \Sigma^{*m}$, with $n, m,
+\geq 0$, and $Im_f = \omega \lor Im_f = \Sigma$ holds. We say a $\Sigma$-mixed
+function is $\Sigma$-effectively computable if we can find some algorithmic
+procedure that, given an input in $\omega^n \times \Sigma^{*m}$, outputs the
+value of $f(\overrightarrow{x}, \overrightarrow{\alpha})$. 
+
+We say $S \subseteq \omega^n \times \Sigma^{*m}$ is a $\Sigma$-mixed set. If
+there is an algorithmic procedure that enumerates $S$, we say $S$ is
+$\Sigma$-effectively enumerable. If there is an algorithmic procedure that decides
+the belonging to $S$, we say $S$ is $\Sigma$-effectively computable.
+
+
+The principal subject of these notes is to formalize the concept of a
+$\Sigma$-effectively computable function. We will observe that this is tightly
+linked with the formalization of $\Sigma$-computable and $\Sigma$-enumerable
+sets. We will study three formalizations: namely, the computation paradigms of
+Turing, Godel, and von Neumann.
+
 \section{Enumerable sets}
 
 Let $\mathcal{F} : \mathcal{D}_{\mathcal{F}} \subseteq \omega^{k} \times \Sigma^{*l} \to \omega^n
