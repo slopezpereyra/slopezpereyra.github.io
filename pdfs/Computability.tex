@@ -89,7 +89,511 @@ Because $\Sigma$-total sets are enumerable (as pointed out above), any
 $\Sigma$-mixed set that is $\Sigma$-computable is enumerable (via restriction
 of the $\Sigma$-total enumeration).
 
+\section{Coding infinite tuples}
 
+We define $\omega^{\mathbb{N}} := \{ (s_1, s_2, \ldots) : s_i \in \omega \}$ and
+$\omega^{\left[ \mathbb{N} \right] } \subseteq \omega^{\mathbb{N}} := \{(s_1,
+s_2, \ldots) : s_i \in \omega \land \exists k \in \omega : i \geq k
+\Rightarrow s_i = 0\}$. 
+
+\subsection{The $i$th prime function}
+
+We define 
+
+\begin{align*}
+    pr : \mathbb{N} &\mapsto \omega  \\ 
+    n &\mapsto \text{ the $n$th prime number}
+\end{align*}
+
+\begin{theorem}
+    For all $x \in \mathbb{N}$ there is a unique infinituple $\overrightarrow{s}
+    \in \omega^{[\mathbb{N}]}$ s.t. 
+
+    \begin{align*}
+        x = \prod_{i=1}^{\infty} pr(i)^{s_i}
+    \end{align*}
+\end{theorem}
+
+The theorem follows trivially from the definition of $\omega^{[\mathbb{N}]}$ and
+the fundamental theorem of arithmetic. 
+
+\begin{problem}
+    Prove the previous theorem via complete induction.
+\end{problem}
+
+The base case is trivial. Assume the statement holds for all $n \leq k$. The
+fundamental theorem of arithmetic ensures that $k + 1 = p_1 \cdot \ldots \cdot
+p_m$ where $p_i$ is prime. Assume the factorization above is ordered (this is,
+$p_{j + 1} > p_j$ for all $j \in [1, m]$). Then $k + 1 = p_m \cdot q$ with $q =
+p_1 \cdot \ldots \cdot p_{m - 1}$. 
+
+\small
+\begin{quote}
+    \textit{Subproof.} We will prove $k + 1 = p_m \cdot q \Rightarrow q \leq k$.
+    Assume the premise holds and the consequence does not. Since $q > k$ we have
+    $q \cdot x > k + 1$ for all $x > 1$. Then $q \cdot x > k + 1$ for all $x$
+    that is prime. Then $q \cdot p_m \neq k + 1$ which is a contradiction. Then,
+    if $k + 1 = q \cdot p_m$, we have $q \leq k$. $\blacksquare$
+\end{quote}
+\normalsize
+
+Since $q \leq k$, via inductive hypothesis, $q$ takes the productorial form of
+the theorem above. Then $k + 1 = q \cdot pr(j)$ where $pr(j) = p_m$. Then the
+theorem holds for all $n \in \mathbb{N}$.
+
+\begin{theorem}
+    If $p, p_1, \ldots, p_m$ are prime ($m \geq 1$) and $p \mid p_1 \ldots p_m$,
+    then $p = p_i$ for some $i$.
+\end{theorem}
+
+We use $\left\langle  s_1, s_2, \ldots  \right\rangle$ to denote the number $x =
+\prod_{n=1}^{\infty} pr(n)^{s_n}$. We use $(x)_i$ to denote $s_i$ in said tuple
+and $(x)$ to denote the infinituple itself.
+
+\begin{theorem}
+    The functions 
+
+    \begin{align*}
+        \mathbb{N} &\mapsto \omega^{[\mathbb{N}]} &
+        \omega^{[\mathbb{N}]}&\mapsto \mathbb{N} \\  
+        x &\mapsto (x) = \left( (x)_1, (x)_2, \ldots \right) & (s_1, s_2,
+        \ldots)&\mapsto \left\langle  s_1, s_2,\ldots  \right\rangle
+    \end{align*}
+
+    are bijections each the inverse of the other.
+\end{theorem}
+
+The theorem should be intuitive. The function that maps a number $x$ to the
+infinituple of its prime exponents is the inverse of the function which takes an
+infinituple and maps it to the product of its prime factors with the
+corresponding exponents.
+
+\begin{theorem}
+    $$(x)_i = \max_{t} \left( pr(i)^{t} \mid x \right) $$
+\end{theorem}
+
+We define 
+
+\begin{align*}
+    Lt : \mathbb{N} &\mapsto \omega \\ 
+    x &\mapsto \begin{cases}
+        \max_{i} ~ (x)_i \neq 0 & x \neq 1 \\ 
+        0 & x = 1
+    \end{cases}
+\end{align*}
+
+The function returns the index of the maximum prime factor (that is not
+zero-exponentiated) in the factorization of $x$. Since, in this factorizations,
+all prime factors beyond $Lt(x)$ are zero, $Lt(x)$ can be understood as an
+upper-bound of the factorization. This is formalized in the following theorem.
+
+\begin{theorem}
+    \begin{align*}
+        x = \prod_{i=1}^{Lt(x)}  pr(i)^{(x)_i}
+    \end{align*}
+\end{theorem}
+
+\begin{problem}
+    Prove the previous theorem.
+\end{problem}
+
+We know $x = \prod_{i=1}^{\infty} pr(i)^{(x)_i}  $ where $(x) \in
+\omega^{[\mathbb{N}]}$. Then, by definition, there is some $k \in \omega$ s.t. $(x)_i = 0$
+if $i \geq k$. Then $x = \prod_{i=1}^{k - 1} pr(i)^{(x)_i} \times \prod_{i=k}^{\infty}
+pr(i)^{0} = \prod_{i=1}^{k-1} pr(i)^{(x)_i}     $
+
+We want to prove $k - 1 = Lt(x)$. However, this follows from definition, since
+we have defined $k - 1$ to be the maximum value after which all $(x)_{j > k -1}
+= 0$. Then $k - 1 = Lt(x)$. $\blacksquare$
+
+
+\subsection{Orders over $\Sigma$}
+
+Let $\Sigma$ an alphabet with $n$ symbols. We want to find a bijection between $\omega$ and
+$\Sigma^{*}$ assuming some order $\leq$ over $\Sigma$. Let $s^{\leq} :
+\Sigma^{*} \mapsto \Sigma^{*}$ be
+
+
+\begin{align*}
+    s^{\leq} \left( (a_n)^m \right)  &= (a_1)^{m + 1} & m \geq 0\\ 
+    s^{\leq} \left( \alpha a_i (a_n)^{m} \right) &= \alpha a_{i+1} (a_1)^{m} & 1
+    \leq i < n, m \geq 0
+\end{align*}
+
+This function enumerates the language ordered $\Sigma$. For example, consider
+$\Sigma = \{@, !\}$ with $@ < !$. Then 
+
+\begin{align*}
+    s^{\leq}( \epsilon ) &= s^{\leq}( !^{0} ) = @\\
+    s^{\leq}( @ ) &= s^{\leq}( \epsilon @ (!)^{0} ) = \epsilon ! \epsilon = ~!
+    \\ 
+    \vdots
+\end{align*}
+
+Repeated application of this logic outputs the following enumeration: 
+
+\begin{align*}
+    @, !, @@, @!, !@, !!, @@@, @@!, @!@, @!!, !@@, !@!, !!@, !!!, \ldots
+\end{align*}
+
+The reason why $s^{\leq}( \beta  )$ enumerates the language is that every $\beta
+$ is either of the form $(a_n)^{m}$ or $\alpha a_i (a_n)^{m}$. This is, it is
+either a word with only the last character to a certain exponent, or a word with
+some subchain before the last character to a certain exponent.
+
+Now we are ready to define a bijection between $\omega$ and $\Sigma^{*}$. Let 
+
+\begin{align*}
+    *^{\leq} : \omega &\mapsto \Sigma^{*} \\ 
+    x &\mapsto \begin{cases}
+        \epsilon & x = 0 \\ 
+        s^{\leq} \left( *^{\leq} \left( i \right)  \right) & x = i + 1
+    \end{cases}
+\end{align*}
+
+For example, using the same alphabet as before, this function maps 
+
+\begin{align*}
+    0 &\mapsto \epsilon \\ 
+    1 &\mapsto @ \\ 
+    2 &\mapsto ! \\ 
+    3 &\mapsto @@ \\ 
+    4 &\mapsto @! \\ 
+    5 &\mapsto !@ \\ 
+    6 &\mapsto  !! \\ 
+    7 &\mapsto  @@@ \\ 
+      &\vdots
+\end{align*}
+
+Now, observe that any $\alpha \in \Sigma^{*}$ is a concatenation of unique
+symbols, and that each of this unique symbols is the $i$th element of
+$\Sigma^{*}$ for some $i$. We write to express this $\alpha = a_{i_k}\ldots
+a_{i_0}$ where $i_{k}, i_{k-1}, \ldots, i_{k_0} \in \{ 1, \ldots, n\}$. Then we
+define the inverse of the previous function as follows: 
+
+\begin{align*}
+    \#^{\leq} : \Sigma^{*} &\mapsto \omega \\ 
+    \epsilon & \mapsto 0 \\ 
+    a_{i_k} \ldots a_{i_0} &\mapsto i_k n^{k} + \ldots + i_0 n^0
+\end{align*}
+
+For example, consider $\alpha = @!@ = a_{1} a_2 a_1$. Then $\#^{\leq}( \alpha )
+= 1 \times 2^2 + 2 \times 2^1 + 1 \times 2^0 = 4 + 4 + 1 = 9$. It is easy to
+verify that $*^{\leq}( 9 ) = @!@$.
+
+Thus, the functions given produce a perfect bijection between numbers and words.
+Each word can be univocally determined by its numeric position in the language;
+each number can be univocally determined by a word whose position in the
+language is that number. 
+
+\begin{theorem}
+    Let $n \geq 1$. Then any $x \in \mathbb{N}$ is uniquely written as $x = i_k
+    n^k + i_{k-1} n^{k-1} + \ldots + i_0 n_^0$ with $k \geq 0, 1 \leq i_j \leq
+    n$ for all $j$.
+\end{theorem}
+
+\subsection{Extending the order to words}
+
+We can extend $\leq$ from $\Sigma$ onto $\Sigma^{*}$ by letting $\alpha \leq
+\beta $ if and only if $\#^{\leq}(\alpha) \leq \#^{(\leq)}(\beta )$.
+
+\pagebreak
+
+
+
+
+
+
+\section{Turing}
+
+From now on, we will attempt formalizations of three so far informal concepts: 
+
+\begin{itemize}
+    \item $\Sigma$-effectively computable functions
+    \item $\Sigma$-effectively computable sets
+    \item $\Sigma$-effectively enumerable sets
+\end{itemize}
+
+The first formalization is given by Turing.
+
+\subsection{Turing machine}
+
+A Turing machine is a $7$-uple $M = \left( Q, \Sigma, \Gamma, \delta, q_0, B, F
+\right) $ where
+
+\begin{itemize}
+    \item $Q$ is a set of states 
+    \item $\Gamma \supset \Sigma$ is an alphabet
+    \item $\Sigma$ is the input alphabet
+    \item $B \in \Gamma - \Sigma$ is a blank symbol 
+    \item $\delta : Q \mapsto \mathcal{P} \left( Q \times \Gamma \times \left\{
+        L, R, K\right\}  \right) $ 
+    \item $q_0 \in Q$ is the initial state 
+    \item $F \subseteq Q$ is the set of final states
+\end{itemize}
+
+\begin{problem}
+    If $M$ a Turing machine then $\delta$ is a $\Sigma$-mixed function.
+\end{problem}
+
+A function is said to be a $\Sigma$-mixed function if $\mathcal{D}_f \subseteq
+\omega^n \times \Sigma^{*m}$ for some $n, m \geq 0$ and $\mathcal{I}_f \subseteq
+\omega$ or $\mathcal{I}_f \subseteq \Sigma^{*}$. The $\delta$ function satisfies
+neither of these properties; its domain is a set of states $Q \not\subseteq
+\Sigma^{*m}$ and its image is a set of sets.
+
+\begin{problem}
+    If $M$ a Turing machine, $\mathcal{D}_{\delta}$ is a $\Sigma$-mixed set.
+\end{problem}
+
+A set $S$ is said to be $\Sigma$-mixed iff $S \subseteq \omega^n \times
+\Sigma^{*m}$ for some $n, m \geq 0$. We have already mentioned that
+$\mathcal{D}_\delta = Q \not\subseteq \omega^n \times \Sigma^{*m}$ for any $n,
+m$. Then $\mathcal{D}_\delta$ is not $\Sigma$-mixed.
+
+\begin{problem}
+    If $M$ a Turing machine, then $\mathcal{I}_{\delta}$ is $\Sigma$-mixed.
+\end{problem}
+
+False again.
+
+\subsection{Deterministic Turing machine}
+
+A Turing machine is said to be deterministic iff $|\delta(p, \sigma)| \leq 1$
+for all $p \in Q, \sigma \in \Gamma$. 
+
+\subsection{Instantaneous descriptions}
+
+An instantaneous description is a word of the form $\alpha q \beta $ where
+$\alpha, \beta \in \Gamma^{*}, [\beta]_{|\beta |} \neq B$ and $q \in Q$. If the
+instantaneous description is $\alpha_1 \alpha_2 \ldots \alpha_n q \beta_1
+\beta_2 \ldots \beta_m B B B \ldots$, we read: \textit{The Turing
+machine is in state $q$ and it is reading $\beta_1$}. We use $\mathbb{D}$ to
+denote the set of instantaneous descriptions. We define 
+
+\begin{align*}
+    St : \mathbb{D} &\mapsto  Q \\ 
+    d &\mapsto \text{Only symbol of $Q$ that is in $d$}
+\end{align*}
+
+\begin{problem}
+    Let $d \in \mathbb{D}$ an instantaneous description. Then $Ti(d)$ is a
+    triple.
+\end{problem}
+
+False: $d$ is not a triple but a single element of $(\Gamma \cup Q)^{*}$.
+
+\begin{problem}
+    If $d \in \mathbb{D}$ then $St(d) = d \cap Q$
+\end{problem}
+
+False. The operation $d \cap Q$ makes no sense, insofar as $d$ is a symbol. It
+would be correct to say $St(d) = \{d_1, d_2, \ldots, d_m\} \cap Q$ where $d_i$ are
+the characters in the word $d$.
+
+\subsection{State transitions}
+
+\small
+\begin{quote}
+\textit{Preliminary def. }
+
+Given $\alpha \in (\Gamma \cup Q)^*$ we define 
+
+\begin{align*}
+    \left\lfloor \epsilon \right\rfloor  &= \epsilon \\ 
+    \left\lfloor \alpha \sigma  \right\rfloor  &= \alpha \sigma \text{   if } \sigma \neq B \\ 
+    \left\lfloor \alpha B \right\rfloor &= \left\lfloor  \alpha \right\rfloor
+\end{align*}
+
+Thus, $[[ \alpha ]]$ removes the trailing blank symbols of $\alpha$ (if any).
+\end{quote}
+\normalsize 
+
+Given $d_1, d_2 \in \mathbb{D}$ with $d_1 = \alpha p \beta $, we say $d_1 \vdash
+d_2$ if, given $\alpha \in \Gamma, \alpha, \beta \in  \Gamma^*, p, q \in Q$, one
+of the following three cases hold.
+
+~
+
+\textit{(Case 1)} $\alpha \neq \epsilon$, and
+
+\begin{align*}
+    \delta \left( p, \left[ \beta B \right]_1  \right) \ni (q, \sigma, L)
+\end{align*}
+
+and 
+$$d_2 = \left\lfloor \alpha {}^{\curvearrowleft} q [\alpha]_{|\alpha|} \sigma
+{}^{\curvearrowright} \beta  \right\rfloor$$
+
+\small 
+\begin{quote}
+    \textit{Interpretation.} The Turing machine at state $p$ will write $\sigma$
+    at its current position, transition to state $q$, and move to the left. 
+
+    \textit{Example.} Let $\Sigma = \{ @, \#\}$. Assuming $\delta (p) = \{ (q,
+    \#, L) \}$, then the following is an example of
+    \textit{Case 1}.
+    
+    \begin{align*}
+        &@ ~ \# ~ @ ~ p ~ @ ~ @ ~ @ ~ B ~ B ~ B \vdash  @ ~ \# ~q ~ @ ~ \# ~ @ ~ @ ~ B ~ B
+        ~ \ldots
+    \end{align*}
+\end{quote}
+\normalsize 
+
+~ 
+
+\textit{(Case 2)} 
+
+\begin{align*}
+    \delta \left( p, \left[ \beta B \right]_1  \right) \ni (q, \sigma, R)
+\end{align*}
+
+and 
+
+$$d_2 = \alpha \sigma q {}^{\curvearrowright} \beta $$
+
+\small 
+\begin{quote}
+    \textit{Interpretation.} The Turing machine at state $p$ will write $\sigma$
+    at its current position, transition to state $q$, and move to the left. 
+
+    \textit{Example.} Let $\Sigma = \{ @, \#\}$. Assuming $\delta (p) = \{ (q,
+    \#, R) \}$, then the following is an example of
+    \textit{Case 2}.
+    
+    \begin{align*}
+        &@ ~ \# ~ @ ~ p ~ @ ~ @ ~ @ ~ B ~ B ~ B \vdash  @ ~ \# ~@ ~ \# ~ q ~ @ ~
+        @~ B ~ B
+        ~ \ldots
+    \end{align*}
+\end{quote}
+\normalsize 
+
+
+\textit{(Case 3)} 
+
+\begin{align*}
+    \delta \left( p, \left[ \beta B \right]_1  \right) \ni (q, \sigma, K)
+\end{align*}
+
+and 
+
+$$d_2 = \left\lfloor \alpha q \sigma {}^{\curvearrowright} \beta  \right\rfloor $$
+
+\small 
+\begin{quote}
+    \textit{Interpretation.} The Turing machine at state $p$ will write $\sigma$
+    at its current position, transition to state $q$, and stay at the same
+    position.
+
+    \textit{Example.} Let $\Sigma = \{ @, \#\}$. Assuming $\delta (p) = \{ (q,
+    \#, K) \}$, then the following is an example of
+    \textit{Case 2}.
+    
+    \begin{align*}
+        &@ ~ \# ~ @ ~ p ~ @ ~ @ ~ @ ~ B ~ B ~ B \vdash  @ ~ \# ~@ ~ q ~ \# ~  @ ~
+        @~ B ~ B
+        ~ \ldots
+    \end{align*}
+\end{quote}
+\normalsize 
+
+We say $d \vdash^n d'$ if there are $d_1, \ldots, d_{n+1}$ s.t. $d = d_1, d' =
+d_{n+1}$, and $d_i \vdash d_{i + 1}$ for all $i = 1, \ldots, n$. Observe that $d
+\vdash^0 d'$ if $d = d'$. Finally, we denote $d \vdash^{*} d'$ iff $(\exists n
+\in \omega) ~ d \vdash^n d'$.
+
+\begin{problem}
+    Determine true or false for the following propositions.
+\end{problem}
+
+\textit{(1) $d \vdash d$ for all $d \in \mathbb{D}$}. The proposition is false.
+It is trivial to find a counterexample.
+
+\textit{(2) If $\alpha p \beta  \not\vdash  d$ for every $d \in \mathbb{D}$,
+then $\delta(p, [\beta B]_1) = \emptyset$}. Assume $\alpha p \beta \not\vdash d$
+for every $d \in \mathbb{D}$. Assume $\delta(p, [\beta B]_1) \neq \emptyset$.
+Then there must be some $\{(q, \sigma, D)\}$ with $D \in \left\{ L, R, K
+\right\} $ that corresponds to this evaluation of $\delta$. But then there would
+exist some $d$, given by the case division above and depending on the value of
+$D$, s.t. $\alpha p \beta \vdash d$. But this is a contradiction. The statement
+is true.
+
+\textit{(3) If $(p, \alpha, L) \in \delta(p, a)$ then $pa \not\vdash d$ for all
+$d \in \mathbb{D}$}. This is correct. Remember that for a transition to the left
+to be defined we require that a substring $\alpha \neq \epsilon$ precede the
+Machine's head. (See \textit{Case 1}, requirement $\alpha \neq \epsilon$.) But
+here $d_1 = pa$ has an initial segment $\epsilon$ preceding $p$. Then $pa \neq
+d$ for any $d$. The statement is true.
+
+\textit{(4)} \textit{  Given $d_1, d_2 \in \mathbb{D}$, if $d_1 \vdash d_2$ then
+$|d_1| \leq |d_2| + 1$. } It makes no sense to say $|d_1| \leq |d_2| + 1$
+insofar as an instantaneous description contains infinitely many symbols $B$ at
+the end. So the statement, as it is phrased, is false. However, consider the
+alternative postulate: $d_1 \vdash d_2 \Rightarrow |\left\lfloor d_1
+\right\rfloor| \leq | \left\lfloor d_2 \right\rfloor | + 1$. Two instantaneous
+description over the same machine always have the same number of symbols. So $ |
+\left\lfloor d_1 \right\rfloor| = | \left\lfloor d_2 \right\rfloor | $, which
+makes the statement trivially true.
+
+\begin{problem}
+    Prove that $M$ is deterministic iff for each $d \in \mathbb{D}$ there is
+    \textit{at most} one $d' \in \mathbb{D}$ s.t. $d \vdash d'$.
+\end{problem}
+
+( $\Rightarrow$ ) Assume $M$ is deterministic. Then for any $d \in \mathbb{D}$
+of the form $\alpha q \beta B B \ldots$, we have either $\delta(q) = \left\{
+(q', \sigma, D) \right\} $ or $\delta(q) = \emptyset$. If $\delta(q) =
+\emptyset$, then (by definition of $\vdash$) there is no instantaneous description $d'$ s.t. $d \vdash d'$.
+If $\delta(q) = \left\{ (q', \sigma, D) \right\} $, then two cases are possible.
+\textit{(1)} $d$ holds the assumptions sustaining the case definition of
+$\vdash$, in which case the transition is uniquely determined by $(q',
+\sigma, D)$. \textit{(2)} $d$ does not hold the assumptions sustaining the
+case definition of $\vdash$ (e.g. $D = L, \alpha = \epsilon$), in which case
+there is by definition no $d'$ s.t. $d \vdash d'$
+
+($\Leftarrow$) Assume that, for all $d \in \mathbb{D}$, there is at most one
+$d'$ s.t. $d \vdash d'$. If there is only one $d'$ satisfying $d = \alpha q
+\beta B B \ldots \vdash d'$, then by
+definition of $\vdash$ it corresponds to a unique $(q', \sigma, D)$ s.t.
+$\delta(q) = \{(q', \sigma, D)\}$. If there is no $d'$ s.t. $d \vdash d'$, then
+one of two cases may occur. \textit{(1)} $\left\lfloor d \right\rfloor =
+\epsilon q \beta $ and $\delta(q) = (q'$.
+
+\subsection{Halting and languages}
+
+Given $d \in \mathbb{D}$, we say $M$ halts starting from $d$ if there is some
+$d' \in \mathbb{D}$ s.t. 
+
+\begin{align*}
+    &d \vdash^* d' \\ 
+    &d' \not\vdash d'' \text{ for all } d'' \in \mathbb{D}
+\end{align*}
+
+We say a word $w \in \Sigma^{*}$ is accepted by a Turing machine $M$ \textit{by reach of final
+state} if
+
+\begin{align*}
+    \exists d \in \mathbb{D} : \left\lfloor q_0 B w \right\rfloor \vdash^* d \land ~ St(d) \in F
+\end{align*}
+
+The language accepted by a turing machine is 
+
+\begin{align*}
+    \mathcal{L}(M) = \left\{w \in \Sigma^{*}:  w \text{ is accepted by reach of final state } \right\} 
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+\pagebreak
 \section{Godel}
 
 \begin{definition}
@@ -556,7 +1060,7 @@ only need to prove $G$ is $\Sigma$-p.r. Observe that
 \end{align*}
 
 Thus, if we let each of these functions be called $h, g$ we have that $G = R(h,
-g)$. Suffices to show $h, g$ are $\Sigma$-p.r. These can be proven using
+g)$. Suffices to show $h, g$ are $\Sigma$-p.r. This can be proven using
 division by cases and domain restriction.
 
 \begin{problem}

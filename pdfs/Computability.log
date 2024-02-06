@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.6.2)  4 FEB 2024 18:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.6.2)  5 FEB 2024 19:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**T.tex
-(./T.tex
+**Computability.tex
+(./Computability.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-01-16> (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
@@ -270,7 +270,7 @@ LaTeX Info: Redefining \not on input line 2959.
 \c@theorem=\count283
 
 
-./T.tex:15: LaTeX Error: Command \problem already defined.
+./Computability.tex:15: LaTeX Error: Command \problem already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -284,7 +284,7 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./T.tex:16: LaTeX Error: Command \example already defined.
+./Computability.tex:16: LaTeX Error: Command \example already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -299,7 +299,7 @@ or  <return>  to continue without it.
 
 \c@definition=\count284
 
-./T.tex:18: LaTeX Error: Command \lemma already defined.
+./Computability.tex:18: LaTeX Error: Command \lemma already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -313,7 +313,7 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./T.tex:19: LaTeX Error: Command \theorem already defined.
+./Computability.tex:19: LaTeX Error: Command \theorem already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -336,8 +336,8 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count285
 \l__pdf_internal_box=\box53
-) (./T.aux)
-\openout1 = `T.aux'.
+) (./Computability.aux)
+\openout1 = `Computability.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 20.
 LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 20.
@@ -425,88 +425,119 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 14.4pt on input line 55.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
-Overfull \hbox (16.72377pt too wide) in paragraph at lines 230--236
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 8.8pt on input line 106.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 6.6pt on input line 106.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 10.95pt on input line 130.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
+(Font)              scaled to size 10.95pt on input line 132.
+ [2] [3] [4]
+./Computability.tex:291: Missing { inserted.
+<to be read again> 
+                   ^
+l.291     n^k + i_{k-1} n^{k-1} + \ldots + i_0 n_^
+                                                  0$ with $k \geq 0, 1 \leq ...
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+./Computability.tex:291: Missing } inserted.
+<inserted text> 
+                }
+l.291 ...^k + i_{k-1} n^{k-1} + \ldots + i_0 n_^0$
+                                                   with $k \geq 0, 1 \leq i_...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+[5] [6]
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 8.0pt on input line 406.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 6.1pt on input line 406.
+ [7] [8] [9] [10] [11]
+Overfull \hbox (16.72377pt too wide) in paragraph at lines 734--740
 [] \U/ntxmia/m/it/12 = \OML/ntxmi/m/it/12 d[] \LMS/ntxsy/m/n/12 ^^N [] \U/ntxmia/m/it/12 = \OML/ntxmi/m/it/12 d[] \LMS/ntxsy/m/n/12 ^^N [] \U/ntxmia/m/it/12 = \OT1/minntx/m/n/12 %@%%%%???$\T1/ntxtlf/m/n/12 . 
  []
 
-[4] [5]
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.8pt on input line 341.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.6pt on input line 341.
- [6] [7] [8]
-./T.tex:495: Double subscript.
+[12] [13] [14] [15] [16] [17]
+./Computability.tex:999: Double subscript.
 <argument>  \mathcal {G}_a = p_3^{1, 2}_
                                         {\mid S} \cup C_{a}^{1, 2}_{\mid \ov...
-l.495 \end{align*}
+l.999 \end{align*}
                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-./T.tex:495: Double subscript.
+./Computability.tex:999: Double subscript.
 <argument> ...3^{1, 2}_{\mid S} \cup C_{a}^{1, 2}_
                                                   {\mid \overline {S}} 
-l.495 \end{align*}
+l.999 \end{align*}
                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-./T.tex:495: Double subscript.
+./Computability.tex:999: Double subscript.
 <argument>  \mathcal {G}_a = p_3^{1, 2}_
                                         {\mid S} \cup C_{a}^{1, 2}_{\mid \ov...
-l.495 \end{align*}
+l.999 \end{align*}
                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-./T.tex:495: Double subscript.
+./Computability.tex:999: Double subscript.
 <argument> ...3^{1, 2}_{\mid S} \cup C_{a}^{1, 2}_
                                                   {\mid \overline {S}} 
-l.495 \end{align*}
+l.999 \end{align*}
                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-[9]
-Overfull \hbox (40.9093pt too wide) in paragraph at lines 567--573
+[18]
+Overfull \hbox (40.9093pt too wide) in paragraph at lines 1071--1077
 []\T1/ntxtlf/m/n/12 We know $\OML/ntxmi/m/it/12 f \U/ntxmia/m/it/12 = \OML/ntxmi/m/it/12 ^^Uxt []$ \T1/ntxtlf/m/n/12 is $\U/ntxmia/m/it/12 ^^F$\T1/ntxtlf/m/n/12 -p.r. (triv-ial to show). Let $\LMS/ntxsy/m/n/12 G \U/ntxmia/m/it/12 = \OML/ntxmi/m/it/12 ^^Uxyx[] []$\T1/ntxtlf/m/n/12 .
  []
 
-./T.tex:611: Double superscript.
-l.611 ...a^2  \times \mathbb{N} \times \Sigma^{*}^
+./Computability.tex:1115: Double superscript.
+l.1115 ...^2  \times \mathbb{N} \times \Sigma^{*}^
                                                   2$---which means
 I treat `x^1^2' essentially like `x^1{}^2'.
 
-[10] [11]
-./T.tex:705: Undefined control sequence.
-l.705 $P = \lambdat
-                    x_1 x_2 [x_2 = tx_1]$ is $\Sigma$-p.r. Since $P$ is $\Si...
+[19] [20]
+./Computability.tex:1209: Undefined control sequence.
+l.1209 $P = \lambdat
+                     x_1 x_2 [x_2 = tx_1]$ is $\Sigma$-p.r. Since $P$ is $\S...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[12]
+[21]
 
-./T.tex:789: Package amsmath Error: \hat allowed only in math mode.
+./Computability.tex:1293: Package amsmath Error: \hat allowed only in math mode.
 
 See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.789 design $P$ so \hat{t}
-                           
+l.1293 design $P$ so \hat{t}
+                            
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/it' will be
-(Font)              scaled to size 12.0pt on input line 797.
+(Font)              scaled to size 12.0pt on input line 1301.
 
-Overfull \hbox (7.89737pt too wide) in paragraph at lines 797--799
+Overfull \hbox (7.89737pt too wide) in paragraph at lines 1301--1303
 []\T1/ntxtlf/m/it/12 Use the \T1/ntxtlf/b/it/12 U rule \T1/ntxtlf/m/it/12 to find a pred-i-cate $\OML/ntxmi/m/it/12 P$ \T1/ntxtlf/m/it/12 s.t. $\OML/ntxmi/m/it/12 M\LMS/ntxsy/m/n/12 ¹\OML/ntxmi/m/it/12 P\LMS/ntxsy/m/n/12 º \U/ntxmia/m/it/12 = \OML/ntxmi/m/it/12 ^^Ux\LMS/ntxsy/m/n/12 »[][]¼$
  []
 
-[13] [14] [15] [16] [17] [18] [19]
-./T.tex:1244: Extra }, or forgotten $.
-l.1244 there is a program $\mathcal{P}}
+[22] [23] [24] [25] [26] [27] [28]
+./Computability.tex:1748: Extra }, or forgotten $.
+l.1748 there is a program $\mathcal{P}}
                                         \in Pro^{\Sigma}$ s.t. $f \sim (n, m...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -514,15 +545,15 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-[20]
-./T.tex:1307: Double subscript.
-l.1307     Same for $C_0^{1, 1}_
+[29]
+./Computability.tex:1811: Double subscript.
+l.1811     Same for $C_0^{1, 1}_
                                 {\mid \{0, 1\} \times  \Sigma^{*}}$
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-[21] [22] [23] [24] [25]
-./T.tex:1518: Undefined control sequence.
-l.1518     \alpha_1, \ldots, \alpham
+[30] [31] [32] [33] [34]
+./Computability.tex:2022: Undefined control sequence.
+l.2022     \alpha_1, \ldots, \alpham
                                      ]\!]$ when $(x_1, \ldots, x_n, \alpha_1...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -530,20 +561,20 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[26] [27] (./T.aux) ) 
+[35] [36] (./Computability.aux) ) 
 Here is how much of TeX's memory you used:
- 5680 strings out of 476091
- 77905 string characters out of 5794082
+ 5729 strings out of 476091
+ 78705 string characters out of 5794082
  1875330 words of memory out of 5000000
- 25957 multiletter control sequences out of 15000+600000
- 615399 words of font info for 210 fonts, out of 8000000 for 9000
+ 25991 multiletter control sequences out of 15000+600000
+ 644778 words of font info for 259 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,27n,76p,299b,267s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 71i,27n,76p,311b,267s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on T.pdf (27 pages, 280167 bytes).
+Output written on Computability.pdf (36 pages, 306316 bytes).
 PDF statistics:
- 158 PDF objects out of 1000 (max. 8388607)
- 102 compressed objects within 2 object streams
+ 186 PDF objects out of 1000 (max. 8388607)
+ 121 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
