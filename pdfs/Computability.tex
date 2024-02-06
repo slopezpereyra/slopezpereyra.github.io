@@ -326,7 +326,7 @@ A Turing machine is a $7$-uple $M = \left( Q, \Sigma, \Gamma, \delta, q_0, B, F
     \item $\Gamma \supset \Sigma$ is an alphabet
     \item $\Sigma$ is the input alphabet
     \item $B \in \Gamma - \Sigma$ is a blank symbol 
-    \item $\delta : Q \mapsto \mathcal{P} \left( Q \times \Gamma \times \left\{
+    \item $\delta : Q \times \Gamma \mapsto \mathcal{P} \left( Q \times \Gamma \times \left\{
         L, R, K\right\}  \right) $ 
     \item $q_0 \in Q$ is the initial state 
     \item $F \subseteq Q$ is the set of final states
@@ -339,7 +339,7 @@ A Turing machine is a $7$-uple $M = \left( Q, \Sigma, \Gamma, \delta, q_0, B, F
 A function is said to be a $\Sigma$-mixed function if $\mathcal{D}_f \subseteq
 \omega^n \times \Sigma^{*m}$ for some $n, m \geq 0$ and $\mathcal{I}_f \subseteq
 \omega$ or $\mathcal{I}_f \subseteq \Sigma^{*}$. The $\delta$ function satisfies
-neither of these properties; its domain is a set of states $Q \not\subseteq
+neither of these properties; its domain is a set of states $Q \times \Gamma \not\subseteq
 \Sigma^{*m}$ and its image is a set of sets.
 
 \begin{problem}
@@ -348,7 +348,7 @@ neither of these properties; its domain is a set of states $Q \not\subseteq
 
 A set $S$ is said to be $\Sigma$-mixed iff $S \subseteq \omega^n \times
 \Sigma^{*m}$ for some $n, m \geq 0$. We have already mentioned that
-$\mathcal{D}_\delta = Q \not\subseteq \omega^n \times \Sigma^{*m}$ for any $n,
+$\mathcal{D}_\delta = Q \times \Gamma \not\subseteq \omega^n \times \Sigma^{*m}$ for any $n,
 m$. Then $\mathcal{D}_\delta$ is not $\Sigma$-mixed.
 
 \begin{problem}
@@ -553,13 +553,18 @@ $\vdash$, in which case the transition is uniquely determined by $(q',
 case definition of $\vdash$ (e.g. $D = L, \alpha = \epsilon$), in which case
 there is by definition no $d'$ s.t. $d \vdash d'$
 
-($\Leftarrow$) Assume that, for all $d \in \mathbb{D}$, there is at most one
-$d'$ s.t. $d \vdash d'$. If there is only one $d'$ satisfying $d = \alpha q
-\beta B B \ldots \vdash d'$, then by
-definition of $\vdash$ it corresponds to a unique $(q', \sigma, D)$ s.t.
-$\delta(q) = \{(q', \sigma, D)\}$. If there is no $d'$ s.t. $d \vdash d'$, then
-one of two cases may occur. \textit{(1)} $\left\lfloor d \right\rfloor =
-\epsilon q \beta $ and $\delta(q) = (q'$.
+($\Leftarrow$) This does not hold!! Assume that, for all $d \in \mathbb{D}$,
+there is at most one $d'$ s.t. $d \vdash d'$. 
+ Consider the case where there is no $d'$ s.t. $d \vdash d'$. In the case where
+ $\alpha = \varepsilon$ and
+
+$$
+\delta(q) = \{ (q', \sigma, L), (q'', \sigma', L) \}
+$$
+
+the machine is non-deterministic without violating the assumption. In other
+words, that $d \vdash d'$ for at most one $d'$ does not imply that the machine
+is deterministic.
 
 \subsection{Halting and languages}
 
@@ -578,20 +583,81 @@ state} if
     \exists d \in \mathbb{D} : \left\lfloor q_0 B w \right\rfloor \vdash^* d \land ~ St(d) \in F
 \end{align*}
 
-The language accepted by a turing machine is 
+The language accepted by a Turing machine is 
 
 \begin{align*}
     \mathcal{L}(M) = \left\{w \in \Sigma^{*}:  w \text{ is accepted by reach of final state } \right\} 
 \end{align*}
 
+\begin{problem}
+    Let $\Sigma = \left\{ a, b \right\} $. Find a Turing machine $M$ that
+    accepts the language $ \left\{ w \in \Sigma^{*} : |\omega|_a = 2|\omega|_b
+    \right\} $
+\end{problem}
 
+As examples, here are some words accepted by the language: $\epsilon, aab, baa,
+ababaa, \ldots$ Our machine will operate in the following manner.
 
+\textit{(1)} It will parse the string looking for a $b$; if a $b$ is found, it
+replaces it with $y$, sets the head of the machine to the beginning, and
+proceeds to parse for two $a$s and replace them with $x$s. This gives 
 
+\begin{align*}
+    \delta(q_0, \sigma) &= \begin{cases}
+        \left\{ \left( q_1, y, L \right)  \right\} & \sigma = b\\
+        \left\{ \left( q_0, \sigma, R \right)  \right\} & \sigma = a\\
+        \left\{ \left( q_9, \sigma, L \right)  \right\} & \sigma = B
+    \end{cases} \\
+    \delta(q_1, \sigma) &= \begin{cases}
+        \left\{ \left( q_1, \sigma, L \right)  \right\} & \sigma \neq \epsilon
+        \\ 
+        \{ (q_2, \epsilon, R) \} & \sigma = \epsilon
+    \end{cases}
+\end{align*}
 
+where $q_1$ resets the machine's head to the initial position. Now 
 
+\begin{align*}
+    \delta(q_2, \sigma) &= \begin{cases}
+        \left\{ (q_3, x, R) \right\}  & \sigma = a \\ 
+        \left\{ (q_2, \sigma, R) \right\}  & \sigma \neq a \\ 
+    \end{cases}\\
+    \delta(q_3, \sigma) &= \begin{cases}
+        \left\{ (q_4, x, R) \right\}  & \sigma = a \\ 
+        \left\{ (q_3, \sigma, R) \right\}  & \sigma \neq a \\ 
+    \end{cases}
+\end{align*}
 
+The state $q_4$ occurs after two $a$s have been found to correspond to a single
+$b$. Thus, we must return to $q_0$ with the machine head reset to its initial
+position. 
 
+\begin{align*}
+    \delta(q_4, \sigma) = \begin{cases}
+        \left\{ \left( q_4, \sigma, L \right)  \right\} & \sigma \neq \epsilon
+        \\
+        \left\{ \left( q_0, \sigma, R \right)  \right\} & \sigma = \epsilon 
+    \end{cases}
+\end{align*}
 
+The only undefined state is $q_9$. This is the state reached after, in state
+$q_0$, the string is parsed but no $b$ is found. If there is some $a$ left in
+the string, then the word must not be accepted; but if no $a$ exists, the word
+must be accepted. Thus, $q_9$ can parse from right to left looking for $a$s; if
+$\epsilon$ is reached without $a$s on the way, it should map to a final state.
+If some $a$ is found, it should never halt.
+
+\begin{align*}
+    \delta(q_9, \sigma) = \begin{cases}
+        \left[ \left( q_9, \sigma, L \right)   \right] & \sigma \neq\in \{a,
+        \epsilon\} \\
+        \left[ \left( q_9, \sigma, K \right)   \right] & \sigma = a \\ 
+        \left[ \left( q_\mathcal{F}, \sigma, K \right)   \right] & \sigma = \epsilon \\ 
+    \end{cases}
+\end{align*}
+
+where $q_{\mathcal{F}} \in F$ is the only final state. Of course, $\Gamma = \{a,
+b, x, y, B\}, Q = \{ q_0, q_1, q_2, q_3, q_4, q_9, q_{\mathcal{F}}\}$.
 
 \pagebreak
 \section{Godel}

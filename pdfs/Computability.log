@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.6.2)  5 FEB 2024 19:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.6.2)  6 FEB 2024 01:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -461,53 +461,58 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 8.0pt on input line 406.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 6.1pt on input line 406.
- [7] [8] [9] [10] [11]
-Overfull \hbox (16.72377pt too wide) in paragraph at lines 734--740
+ [7] [8] [9]
+Overfull \hbox (33.34384pt too wide) in paragraph at lines 598--600
+[]\T1/ntxtlf/m/n/12 As ex-am-ples, here are some words ac-cepted by the lan-guage: $\OML/ntxmi/m/it/12 ^^O; aab; baa; ababaa; []$
+ []
+
+[10] [11] [12]
+Overfull \hbox (16.72377pt too wide) in paragraph at lines 800--806
 [] \U/ntxmia/m/it/12 = \OML/ntxmi/m/it/12 d[] \LMS/ntxsy/m/n/12 ^^N [] \U/ntxmia/m/it/12 = \OML/ntxmi/m/it/12 d[] \LMS/ntxsy/m/n/12 ^^N [] \U/ntxmia/m/it/12 = \OT1/minntx/m/n/12 %@%%%%???$\T1/ntxtlf/m/n/12 . 
  []
 
-[12] [13] [14] [15] [16] [17]
-./Computability.tex:999: Double subscript.
+[13] [14] [15] [16] [17] [18]
+./Computability.tex:1065: Double subscript.
 <argument>  \mathcal {G}_a = p_3^{1, 2}_
                                         {\mid S} \cup C_{a}^{1, 2}_{\mid \ov...
-l.999 \end{align*}
-                  
+l.1065 \end{align*}
+                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-./Computability.tex:999: Double subscript.
+./Computability.tex:1065: Double subscript.
 <argument> ...3^{1, 2}_{\mid S} \cup C_{a}^{1, 2}_
                                                   {\mid \overline {S}} 
-l.999 \end{align*}
-                  
+l.1065 \end{align*}
+                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-./Computability.tex:999: Double subscript.
+./Computability.tex:1065: Double subscript.
 <argument>  \mathcal {G}_a = p_3^{1, 2}_
                                         {\mid S} \cup C_{a}^{1, 2}_{\mid \ov...
-l.999 \end{align*}
-                  
+l.1065 \end{align*}
+                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-./Computability.tex:999: Double subscript.
+./Computability.tex:1065: Double subscript.
 <argument> ...3^{1, 2}_{\mid S} \cup C_{a}^{1, 2}_
                                                   {\mid \overline {S}} 
-l.999 \end{align*}
-                  
+l.1065 \end{align*}
+                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-[18]
-Overfull \hbox (40.9093pt too wide) in paragraph at lines 1071--1077
+[19]
+Overfull \hbox (40.9093pt too wide) in paragraph at lines 1137--1143
 []\T1/ntxtlf/m/n/12 We know $\OML/ntxmi/m/it/12 f \U/ntxmia/m/it/12 = \OML/ntxmi/m/it/12 ^^Uxt []$ \T1/ntxtlf/m/n/12 is $\U/ntxmia/m/it/12 ^^F$\T1/ntxtlf/m/n/12 -p.r. (triv-ial to show). Let $\LMS/ntxsy/m/n/12 G \U/ntxmia/m/it/12 = \OML/ntxmi/m/it/12 ^^Uxyx[] []$\T1/ntxtlf/m/n/12 .
  []
 
-./Computability.tex:1115: Double superscript.
-l.1115 ...^2  \times \mathbb{N} \times \Sigma^{*}^
+./Computability.tex:1181: Double superscript.
+l.1181 ...^2  \times \mathbb{N} \times \Sigma^{*}^
                                                   2$---which means
 I treat `x^1^2' essentially like `x^1{}^2'.
 
-[19] [20]
-./Computability.tex:1209: Undefined control sequence.
-l.1209 $P = \lambdat
+[20] [21]
+./Computability.tex:1275: Undefined control sequence.
+l.1275 $P = \lambdat
                      x_1 x_2 [x_2 = tx_1]$ is $\Sigma$-p.r. Since $P$ is $\S...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -515,29 +520,29 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[21]
+[22]
 
-./Computability.tex:1293: Package amsmath Error: \hat allowed only in math mode.
+./Computability.tex:1359: Package amsmath Error: \hat allowed only in math mode.
 
 See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1293 design $P$ so \hat{t}
+l.1359 design $P$ so \hat{t}
                             
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/it' will be
-(Font)              scaled to size 12.0pt on input line 1301.
+(Font)              scaled to size 12.0pt on input line 1367.
 
-Overfull \hbox (7.89737pt too wide) in paragraph at lines 1301--1303
+Overfull \hbox (7.89737pt too wide) in paragraph at lines 1367--1369
 []\T1/ntxtlf/m/it/12 Use the \T1/ntxtlf/b/it/12 U rule \T1/ntxtlf/m/it/12 to find a pred-i-cate $\OML/ntxmi/m/it/12 P$ \T1/ntxtlf/m/it/12 s.t. $\OML/ntxmi/m/it/12 M\LMS/ntxsy/m/n/12 ¹\OML/ntxmi/m/it/12 P\LMS/ntxsy/m/n/12 º \U/ntxmia/m/it/12 = \OML/ntxmi/m/it/12 ^^Ux\LMS/ntxsy/m/n/12 »[][]¼$
  []
 
-[22] [23] [24] [25] [26] [27] [28]
-./Computability.tex:1748: Extra }, or forgotten $.
-l.1748 there is a program $\mathcal{P}}
+[23] [24] [25] [26] [27] [28] [29]
+./Computability.tex:1814: Extra }, or forgotten $.
+l.1814 there is a program $\mathcal{P}}
                                         \in Pro^{\Sigma}$ s.t. $f \sim (n, m...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -545,15 +550,15 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-[29]
-./Computability.tex:1811: Double subscript.
-l.1811     Same for $C_0^{1, 1}_
+[30]
+./Computability.tex:1877: Double subscript.
+l.1877     Same for $C_0^{1, 1}_
                                 {\mid \{0, 1\} \times  \Sigma^{*}}$
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-[30] [31] [32] [33] [34]
-./Computability.tex:2022: Undefined control sequence.
-l.2022     \alpha_1, \ldots, \alpham
+[31] [32] [33] [34] [35]
+./Computability.tex:2088: Undefined control sequence.
+l.2088     \alpha_1, \ldots, \alpham
                                      ]\!]$ when $(x_1, \ldots, x_n, \alpha_1...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -561,7 +566,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[35] [36] (./Computability.aux) ) 
+[36] [37] (./Computability.aux) ) 
 Here is how much of TeX's memory you used:
  5729 strings out of 476091
  78705 string characters out of 5794082
@@ -571,10 +576,10 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  71i,27n,76p,311b,267s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on Computability.pdf (36 pages, 306316 bytes).
+Output written on Computability.pdf (37 pages, 309361 bytes).
 PDF statistics:
- 186 PDF objects out of 1000 (max. 8388607)
- 121 compressed objects within 2 object streams
+ 192 PDF objects out of 1000 (max. 8388607)
+ 126 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
