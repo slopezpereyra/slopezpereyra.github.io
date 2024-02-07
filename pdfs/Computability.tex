@@ -4,8 +4,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
 \usepackage{amssymb}
-\usepackage{newtxtext}
-\usepackage{newtxmath}
+\usepackage{newtxtext} \usepackage{newtxmath}
 \usepackage{amsmath, amssymb}
 \newtheorem{problem}{Problem}
 \newtheorem{example}{Example}
@@ -21,7 +20,8 @@
 
 \section{Introduction}
 
-These are my notes on computability theory. Let $\Sigma$ denote an arbitrary
+These are my notes on computability theory. 
+Let $\Sigma$ denote an arbitrary
 language. If $\omega = \mathbb{N} + \{ 0\}$, a $\Sigma$-mixed function is a
 function s.t. $\mathcal{D}_f \subseteq \omega^n \times \Sigma^{*m}$, with $n, m,
 \geq 0$, and $Im_f = \omega \lor Im_f = \Sigma$ holds. We say a $\Sigma$-mixed
@@ -41,75 +41,7 @@ linked with the formalization of $\Sigma$-computable and $\Sigma$-enumerable
 sets. We will study three formalizations: namely, the computation paradigms of
 Turing, Godel, and von Neumann.
 
-\section{Enumerable sets}
-
-Let $\mathcal{F} : \mathcal{D}_{\mathcal{F}} \subseteq \omega^{k} \times \Sigma^{*l} \to \omega^n
-\times \Sigma^{*m}$. We define
-
-\begin{align*}
-    \mathcal{F}_{(i)} &: \mathcal{D}_{\mathcal{F}} \subseteq \omega^{k} \times
-    \Sigma^{*l}  \mapsto \omega & 1 \leq i \leq n\\
-    \mathcal{F}_{(i)} &: \mathcal{D}_{\mathcal{F}} \subseteq \omega^{k} \times
-    \Sigma^{*l} \mapsto  \Sigma^{*} & n + 1 \leq i \leq m
-\end{align*}
-
-We say a set $S \subseteq \omega^n \times \Sigma^{*m} $ is $\Sigma$-effectively
-enumerable  if it is empty or there is a function $\mathcal{F} : \omega \to
-\omega^n \times \Sigma^{*m}$ s.t. $Im_{\mathcal{F}} = S$ and $\mathcal{F}_{(i)}$
-is $\Sigma$-computable for all $1 \leq i \leq n + m$.
-
-\begin{theorem}
-    A non-empty set $S \subseteq \omega^n \times \Sigma^{*m}$ is
-    $\Sigma$-effectively enumerable if and only if there is an effective
-    procedure $\mathcal{P}$ s.t. 
-
-    \begin{itemize}
-        \item The input space is $\omega$
-        \item $\mathcal{P}$ halts for all $x \in \omega$ 
-        \item The output set is $S$---i.e. whenever $\mathcal{P}$ halts, it
-            outputs an element of $S$, and for every $(\overrightarrow{x},
-            \overrightarrow{\alpha}) \in S$ there is some input $x \in \omega$
-        s.t. $\mathcal{P}(x) \mapsto_{\text{halting}} (\overrightarrow{x},
-        \overrightarrow{\alpha})$.
-    \end{itemize}
-\end{theorem}
-
-\subsection{Prime numbers and enumerable sets}
-
-Let $\Sigma \neq \emptyset$ be an alphabet with a total order $\leq$. Let $S
-\subseteq \omega^{n} \times \Sigma^{*m}$ a $\Sigma$-mixed set of arbitrary
-dimensions. Notice that for any $n$-tuple $(x_1, \ldots, x_n)$, with $x_i \in
-\omega$, we can find a corresponding $\varphi \in \mathbb{N}$ s.t. 
-
-$$
-\varphi = 2^{x_1}3^{x_2} \ldots pr(n)^{x_n}
-$$
-
-In other words, $(x_1, \ldots, x_n)$ corresponds to the exponents of the $n$
-prime factors of a unique natural number. At the same time, the $m$-tuple
-$(\alpha_1, \ldots, \alpha_m)$ corresponds to a unique $\psi \in \mathbb{N}$
-s.t. 
-
-$$
-\psi = 2^{y_1}3^{y_2}\ldots pr(m)^{y_m}
-$$
-
-where $\alpha_j = *^{\leq}(y_j)$. In other words, $(\alpha_1, \ldots, \alpha_m)$
-corresponds to a unique natural number whose $m$ prime factors have exponents
-given by the position of each word in the language.
-
-Both of these relations come from the uniqueness of prime factorizations.
-They provide a way to enumerate $\Sigma$-mixed sets. In
-particular, if $S$ is $\Sigma$-total we enumerate it mapping each $x \in \omega$
-to $\big((x)_1, \ldots, (x)_n, *^{\leq}((x)_{n+1}), *^{\leq}((x)_m)\big)$. If
-$S$ is not $\Sigma$-total, then one can still enumerate it assuming that it is
-$\Sigma$-computable. Indeed, one maps $x$ to the corresponding $(n+m)$-tuple
-described above if the tuple is in $S$, and leaves the procedure undefined (or
-without halt) otherwise. This can be expressed as follows:
-
-Because $\Sigma$-total sets are enumerable (as pointed out above), any
-$\Sigma$-mixed set that is $\Sigma$-computable is enumerable (via restriction
-of the $\Sigma$-total enumeration).
+\pagebreak
 
 \section{Coding infinite tuples}
 
@@ -139,6 +71,10 @@ We define
 The theorem follows trivially from the definition of $\omega^{[\mathbb{N}]}$ and
 the fundamental theorem of arithmetic. 
 
+
+\small
+\begin{quote}
+
 \begin{problem}
     Prove the previous theorem via complete induction.
 \end{problem}
@@ -149,7 +85,7 @@ p_m$ where $p_i$ is prime. Assume the factorization above is ordered (this is,
 $p_{j + 1} > p_j$ for all $j \in [1, m]$). Then $k + 1 = p_m \cdot q$ with $q =
 p_1 \cdot \ldots \cdot p_{m - 1}$. 
 
-\small
+\footnotesize
 \begin{quote}
     \textit{Subproof.} We will prove $k + 1 = p_m \cdot q \Rightarrow q \leq k$.
     Assume the premise holds and the consequence does not. Since $q > k$ we have
@@ -157,11 +93,15 @@ p_1 \cdot \ldots \cdot p_{m - 1}$.
     that is prime. Then $q \cdot p_m \neq k + 1$ which is a contradiction. Then,
     if $k + 1 = q \cdot p_m$, we have $q \leq k$. $\blacksquare$
 \end{quote}
-\normalsize
+\small
 
 Since $q \leq k$, via inductive hypothesis, $q$ takes the productorial form of
 the theorem above. Then $k + 1 = q \cdot pr(j)$ where $pr(j) = p_m$. Then the
 theorem holds for all $n \in \mathbb{N}$.
+
+\end{quote}
+\normalsize
+
 
 \begin{theorem}
     If $p, p_1, \ldots, p_m$ are prime ($m \geq 1$) and $p \mid p_1 \ldots p_m$,
@@ -215,6 +155,11 @@ upper-bound of the factorization. This is formalized in the following theorem.
     \end{align*}
 \end{theorem}
 
+
+\small
+\begin{quote}
+
+
 \begin{problem}
     Prove the previous theorem.
 \end{problem}
@@ -227,6 +172,10 @@ pr(i)^{0} = \prod_{i=1}^{k-1} pr(i)^{(x)_i}     $
 We want to prove $k - 1 = Lt(x)$. However, this follows from definition, since
 we have defined $k - 1$ to be the maximum value after which all $(x)_{j > k -1}
 = 0$. Then $k - 1 = Lt(x)$. $\blacksquare$
+
+
+\end{quote}
+\normalsize
 
 
 \subsection{Orders over $\Sigma$}
@@ -246,8 +195,8 @@ This function enumerates the language ordered $\Sigma$. For example, consider
 $\Sigma = \{@, !\}$ with $@ < !$. Then 
 
 \begin{align*}
-    s^{\leq}( \epsilon ) &= s^{\leq}( !^{0} ) = @\\
-    s^{\leq}( @ ) &= s^{\leq}( \epsilon @ (!)^{0} ) = \epsilon ! \epsilon = ~!
+    s^{\leq}( \varepsilon ) &= s^{\leq}( !^{0} ) = @\\
+    s^{\leq}( @ ) &= s^{\leq}( \varepsilon @ (!)^{0} ) = \varepsilon ! \varepsilon = ~!
     \\ 
     \vdots
 \end{align*}
@@ -268,7 +217,7 @@ Now we are ready to define a bijection between $\omega$ and $\Sigma^{*}$. Let
 \begin{align*}
     *^{\leq} : \omega &\mapsto \Sigma^{*} \\ 
     x &\mapsto \begin{cases}
-        \epsilon & x = 0 \\ 
+        \varepsilon & x = 0 \\ 
         s^{\leq} \left( *^{\leq} \left( i \right)  \right) & x = i + 1
     \end{cases}
 \end{align*}
@@ -276,7 +225,7 @@ Now we are ready to define a bijection between $\omega$ and $\Sigma^{*}$. Let
 For example, using the same alphabet as before, this function maps 
 
 \begin{align*}
-    0 &\mapsto \epsilon \\ 
+    0 &\mapsto \varepsilon \\ 
     1 &\mapsto @ \\ 
     2 &\mapsto ! \\ 
     3 &\mapsto @@ \\ 
@@ -295,7 +244,7 @@ define the inverse of the previous function as follows:
 
 \begin{align*}
     \#^{\leq} : \Sigma^{*} &\mapsto \omega \\ 
-    \epsilon & \mapsto 0 \\ 
+    \varepsilon & \mapsto 0 \\ 
     a_{i_k} \ldots a_{i_0} &\mapsto i_k n^{k} + \ldots + i_0 n^0
 \end{align*}
 
@@ -322,10 +271,202 @@ We can extend $\leq$ from $\Sigma$ onto $\Sigma^{*}$ by letting $\alpha \leq
 \pagebreak
 
 
+\section{Enumerable sets}
+
+Let $\mathcal{F} : \mathcal{D}_{\mathcal{F}} \subseteq \omega^{k} \times \Sigma^{*l} \to \omega^n
+\times \Sigma^{*m}$. We define $\mathcal{F}_{(i)} = p_i^{n, m} \circ
+\mathcal{F}$. Then
+
+\begin{align*}
+    \mathcal{F}_{(i)} &: \mathcal{D}_{\mathcal{F}} \subseteq \omega^{k} \times
+    \Sigma^{*l}  \mapsto \omega & 1 \leq i \leq n\\
+    \mathcal{F}_{(i)} &: \mathcal{D}_{\mathcal{F}} \subseteq \omega^{k} \times
+    \Sigma^{*l} \mapsto  \Sigma^{*} & n + 1 \leq i \leq m
+\end{align*}
+
+We say a set $S \subseteq \omega^n \times \Sigma^{*m} $ is $\Sigma$-effectively
+enumerable  if it is empty or there is a function $\mathcal{F} : \omega \to
+\omega^n \times \Sigma^{*m}$ s.t. $Im_{\mathcal{F}} = S$ and $\mathcal{F}_{(i)}$
+is $\Sigma$-computable for all $1 \leq i \leq n + m$.
+
+\begin{theorem}
+    A non-empty set $S \subseteq \omega^n \times \Sigma^{*m}$ is
+    $\Sigma$-effectively enumerable if and only if there is an effective
+    procedure $\mathcal{P}$ s.t. 
+
+    \begin{itemize}
+        \item The input space is $\omega$
+        \item $\mathcal{P}$ halts for all $x \in \omega$ 
+        \item The output set is $S$---i.e. whenever $\mathcal{P}$ halts, it
+            outputs an element of $S$, and for every $(\overrightarrow{x},
+            \overrightarrow{\alpha}) \in S$ there is some input $x \in \omega$
+        s.t. $\mathcal{P}(x) \mapsto_{\text{halting}} (\overrightarrow{x},
+        \overrightarrow{\alpha})$.
+    \end{itemize}
+\end{theorem}
+
+\small
+\begin{quote}
+
+\begin{problem}
+    Let $F : \left\{ (x, \alpha) \in  \omega \times \Sigma^{*} : |\alpha|^x
+        \equiv 0 \mod 2
+    \right\} \mapsto \omega^2 \times \Sigma^{*}$ be defined as follows: 
+
+    \begin{align*}
+        F(x, \alpha) = (x, x^2 + |\alpha|, \varepsilon)
+    \end{align*}
+
+    Provide $F_{(1)}, F_{(2)}, F_{(3)}$. What function is $[F_{(1)}, F_{(2)},
+    F_{(3)}]$?
+\end{problem}
+
+By definition, $F_{(i)} = p_i^{1, 1} \circ F$. Then 
+
+\begin{align*}
+    F_{(1)}(x, \alpha) &= x \\
+    F_{(2)}(x, \alpha) &= x + |\alpha| \\
+    F_{(3)}(x, \alpha) &= \varepsilon
+\end{align*}
+
+It is evident that the composition given results in $F$.
+
+\begin{problem}
+    Prove that $F = \left[ F_{(1)}, \ldots, F_{(n + m)} \right] $.
+\end{problem}
+
+Let $G := \left[ F_{(1)}, \ldots, F_{(n+m)} \right] $. 
+
+$\therefore $  $G(\vec{x}, \vec{\alpha}) = \left( p_1^{n, m} \circ F(\vec{x},
+\vec{\alpha}), \ldots, p_{n+m} \circ F(\vec{x}, \vec{\alpha})   \right)  =
+F(\vec{x}, \vec{\alpha}) $ $\blacksquare$
 
 
 
+\end{quote}
+\normalsize
 
+
+
+\subsection{Prime numbers and enumerable sets}
+
+Let $\Sigma \neq \emptyset$ be an alphabet with a total order $\leq$. Let $S
+\subseteq \omega^{n} \times \Sigma^{*m}$ a $\Sigma$-mixed set of arbitrary
+dimensions. Notice that for any $n$-tuple $(x_1, \ldots, x_n)$, with $x_i \in
+\omega$, we can find a corresponding $\varphi \in \mathbb{N}$ s.t. 
+
+$$
+\varphi = 2^{x_1}3^{x_2} \ldots pr(n)^{x_n}
+$$
+
+In other words, $(x_1, \ldots, x_n)$ corresponds to the exponents of the $n$
+prime factors of a unique natural number. At the same time, the $m$-tuple
+$(\alpha_1, \ldots, \alpha_m)$ corresponds to a unique $\psi \in \mathbb{N}$
+s.t. 
+
+$$
+\psi = 2^{y_1}3^{y_2}\ldots pr(m)^{y_m}
+$$
+
+where $\alpha_j = *^{\leq}(y_j)$. In other words, $(\alpha_1, \ldots, \alpha_m)$
+corresponds to a unique natural number whose $m$ prime factors have exponents
+given by the position of each word in the language.
+
+Both of these relations come from the uniqueness of prime factorizations.
+They provide a way to enumerate $\Sigma$-mixed sets. In
+particular, if $S$ is $\Sigma$-total we enumerate it mapping each $x \in \omega$
+to $\big((x)_1, \ldots, (x)_n, *^{\leq}((x)_{n+1}), *^{\leq}((x)_m)\big)$. If
+$S$ is not $\Sigma$-total, then one can still enumerate it assuming that it is
+$\Sigma$-computable. Indeed, one maps $x$ to the corresponding $(n+m)$-tuple
+described above if the tuple is in $S$, and leaves the procedure undefined (or
+without halt) otherwise. This can be expressed as follows:
+
+Because $\Sigma$-total sets are enumerable (as pointed out above), any
+$\Sigma$-mixed set that is $\Sigma$-computable is enumerable (via restriction
+of the $\Sigma$-total enumeration).
+
+\begin{theorem}
+    If $S \subseteq \omega^{n} \times \Sigma^{*m} $ is $\Sigma$-effectively
+    computable, then it is $\Sigma$-effectively enumerable.
+\end{theorem}
+
+\small
+\begin{quote}
+
+\begin{problem}
+    Prove that $S = \{(x, @^x) : x \equiv 0 \mod 2\}$ is $\{@\}$-effectively
+    enumerable.
+\end{problem}
+
+$S$ is not $\Sigma$-total. $\therefore $ We require that it be
+$\Sigma$-effectively computable. It is easy to see that
+it is: Simply make a procedure that checks if $x$ is even, and that counts the
+number of $@$s. Let $\mathbb{P}_\text{is in $S$}$ denote the procedure which decides the belonging of
+$(x, \alpha)$ to $S$. 
+
+It is also trivial to observe that $*^{\leq}$ is $\Sigma$-effectively
+computable under any order of $\Sigma$, since the function is pretty much
+algorithmic in nature. Let $\mathbb{P}_{\text{num to word}}$ denote the
+procedure which given an input $x \in  \omega$ computes $*^{\leq}(x)$. Then we
+define $\mathbb{P}$ the following procedure which takes an input $x \in
+\omega$:
+
+\footnotesize 
+\begin{quote}
+    \textit{(0)} Let $x_1$ be the number of times $2$ divides $x$ (this is, let
+    it be the exponent of the first prime factor in the decomposition of $x$).
+    Let $x_2$ be the number of times $3$ divides $x_1$ (the second prime in the
+    decomposition of $x$).
+
+    \textit{(1)} Use $\mathbb{P}_{\text{num to word}}$ to compute $*^{\leq}(x_2)$
+    and store it in $\alpha$. 
+
+    \textit{(3)} Use $\mathbb{P}_{\text{is in $S$}}$ to determine if $(x_0,
+    \alpha) \in  S$. If it is, output $(x_0, \alpha)$. If it is not, go to step
+    three.
+\end{quote}
+\small
+
+\textit{Example.} Consider $\mathbb{P}(6)$. In \textit{(0)} this maps $x_1 = 1,
+x_2 = 1$. Since the first word in $\Sigma$ is $@$, $6 \mapsto (1, @)$, which is
+not in $S$. $\mathbb{P}$ will not halt.
+
+Consider the tuple $(2, @@@@)$. We know there exists some $x \in \omega$ s.t.
+$\mathbb{P}(x) = (2, @@@@)$ (I use math notation loosely here). Since $@@@@$ is
+the fourth word in $\Sigma$, $x$ is s.t.
+ $x = \langle 2, 4, (x)_3, (x)_4, \ldots \ldots\rangle $. For example, $2^2 + 3^4 =
+85$ or $2^2 + 3^4 + 5^{17} = 762939453210$ will satisfy this.
+
+
+\begin{problem}
+    Prove the following statement: If $S \subseteq \omega$ and $f : S \mapsto
+    \omega$ is $\Sigma$-effectively computable, then 
+    
+    \begin{align*}
+        A = \left\{ x \in  S : x \text{ is even } \land x / 2 \in S \land f(x) = f(x
+        / 2) \right\} 
+    \end{align*}
+
+    is $\Sigma$-effectively enumerable.
+\end{problem}
+
+
+We require that $S$ be $\Sigma$-effectively computable. 
+
+$f : S \mapsto \omega$ is $\Sigma$-effectively computable. $\therefore $ $\mathbb{P}_f$ halts
+if the input $(\vec{x}, \vec{\alpha}) $ is in $\mathcal{D}_f$ and does not halt
+if it isn't. $\therefore $ $S$ is $\Sigma$-effectively computable. $\therefore $
+$A$ is $\Sigma$-effectively computable. $\therefore $ $A$ is
+$\Sigma$-effectively enumerable.
+
+
+
+\end{quote}
+\normalsize
+
+
+
+\pagebreak
 \section{Turing}
 
 From now on, we will attempt formalizations of three so far informal concepts: 
@@ -354,6 +495,10 @@ A Turing machine is a $7$-uple $M = \left( Q, \Sigma, \Gamma, \delta, q_0, B, F
     \item $F \subseteq Q$ is the set of final states
 \end{itemize}
 
+
+\small
+\begin{quote}
+
 \begin{problem}
     If $M$ a Turing machine then $\delta$ is a $\Sigma$-mixed function.
 \end{problem}
@@ -379,6 +524,10 @@ m$. Then $\mathcal{D}_\delta$ is not $\Sigma$-mixed.
 
 False again.
 
+\end{quote}
+\normalsize
+
+
 \subsection{Deterministic Turing machine}
 
 A Turing machine is said to be deterministic iff $|\delta(p, \sigma)| \leq 1$
@@ -398,6 +547,10 @@ denote the set of instantaneous descriptions. We define
     d &\mapsto \text{Only symbol of $Q$ that is in $d$}
 \end{align*}
 
+
+\small
+\begin{quote}
+
 \begin{problem}
     Let $d \in \mathbb{D}$ an instantaneous description. Then $Ti(d)$ is a
     triple.
@@ -413,6 +566,10 @@ False. The operation $d \cap Q$ makes no sense, insofar as $d$ is a symbol. It
 would be correct to say $St(d) = \{d_1, d_2, \ldots, d_m\} \cap Q$ where $d_i$ are
 the characters in the word $d$.
 
+
+\end{quote}
+\normalsize
+
 \subsection{State transitions}
 
 \small
@@ -422,7 +579,7 @@ the characters in the word $d$.
 Given $\alpha \in (\Gamma \cup Q)^*$ we define 
 
 \begin{align*}
-    \left\lfloor \epsilon \right\rfloor  &= \epsilon \\ 
+    \left\lfloor \varepsilon \right\rfloor  &= \varepsilon \\ 
     \left\lfloor \alpha \sigma  \right\rfloor  &= \alpha \sigma \text{   if } \sigma \neq B \\ 
     \left\lfloor \alpha B \right\rfloor &= \left\lfloor  \alpha \right\rfloor
 \end{align*}
@@ -437,7 +594,7 @@ of the following three cases hold.
 
 ~
 
-\textit{(Case 1)} $\alpha \neq \epsilon$, and
+\textit{(Case 1)} $\alpha \neq \varepsilon$, and
 
 \begin{align*}
     \delta \left( p, \left[ \beta B \right]_1  \right) \ni (q, \sigma, L)
@@ -526,6 +683,10 @@ d_{n+1}$, and $d_i \vdash d_{i + 1}$ for all $i = 1, \ldots, n$. Observe that $d
 \vdash^0 d'$ if $d = d'$. Finally, we denote $d \vdash^{*} d'$ iff $(\exists n
 \in \omega) ~ d \vdash^n d'$.
 
+
+\small
+\begin{quote}
+
 \begin{problem}
     Determine true or false for the following propositions.
 \end{problem}
@@ -544,9 +705,9 @@ is true.
 
 \textit{(3) If $(p, \alpha, L) \in \delta(p, a)$ then $pa \not\vdash d$ for all
 $d \in \mathbb{D}$}. This is correct. Remember that for a transition to the left
-to be defined we require that a substring $\alpha \neq \epsilon$ precede the
-Machine's head. (See \textit{Case 1}, requirement $\alpha \neq \epsilon$.) But
-here $d_1 = pa$ has an initial segment $\epsilon$ preceding $p$. Then $pa \neq
+to be defined we require that a substring $\alpha \neq \varepsilon$ precede the
+Machine's head. (See \textit{Case 1}, requirement $\alpha \neq \varepsilon$.) But
+here $d_1 = pa$ has an initial segment $\varepsilon$ preceding $p$. Then $pa \neq
 d$ for any $d$. The statement is true.
 
 \textit{(4)} \textit{  Given $d_1, d_2 \in \mathbb{D}$, if $d_1 \vdash d_2$ then
@@ -572,13 +733,13 @@ If $\delta(q) = \left\{ (q', \sigma, D) \right\} $, then two cases are possible.
 \textit{(1)} $d$ holds the assumptions sustaining the case definition of
 $\vdash$, in which case the transition is uniquely determined by $(q',
 \sigma, D)$. \textit{(2)} $d$ does not hold the assumptions sustaining the
-case definition of $\vdash$ (e.g. $D = L, \alpha = \epsilon$), in which case
+case definition of $\vdash$ (e.g. $D = L, \alpha = \varepsilon$), in which case
 there is by definition no $d'$ s.t. $d \vdash d'$
 
 ($\Leftarrow$) This does not hold!! Assume that, for all $d \in \mathbb{D}$,
 there is at most one $d'$ s.t. $d \vdash d'$. 
  Consider the case where there is no $d'$ s.t. $d \vdash d'$. In the case where
- $\alpha = \varepsilon$ and
+ $\alpha = \varvarepsilon$ and
 
 $$
 \delta(q) = \{ (q', \sigma, L), (q'', \sigma', L) \}
@@ -587,6 +748,10 @@ $$
 the machine is non-deterministic without violating the assumption. In other
 words, that $d \vdash d'$ for at most one $d'$ does not imply that the machine
 is deterministic.
+
+\end{quote}
+\normalsize
+
 
 \subsection{Halting and languages}
 
@@ -611,13 +776,17 @@ The language accepted by a Turing machine is
     \mathcal{L}(M) = \left\{w \in \Sigma^{*}:  w \text{ is accepted by reach of final state } \right\} 
 \end{align*}
 
+
+\small
+\begin{quote}
+
 \begin{problem}
     Let $\Sigma = \left\{ a, b \right\} $. Find a Turing machine $M$ that
     accepts the language $ \left\{ w \in \Sigma^{*} : |\omega|_a = 2|\omega|_b
     \right\} $
 \end{problem}
 
-As examples, here are some words accepted by the language: $\epsilon, aab, baa,
+As examples, here are some words accepted by the language: $\varepsilon, aab, baa,
 ababaa, \ldots$ Our machine will operate in the following manner.
 
 \textit{(1)} It will parse the string looking for a $b$; if a $b$ is found, it
@@ -631,9 +800,9 @@ proceeds to parse for two $a$s and replace them with $x$s. This gives
         \left\{ \left( q_9, \sigma, L \right)  \right\} & \sigma = B
     \end{cases} \\
     \delta(q_1, \sigma) &= \begin{cases}
-        \left\{ \left( q_1, \sigma, L \right)  \right\} & \sigma \neq \epsilon
+        \left\{ \left( q_1, \sigma, L \right)  \right\} & \sigma \neq \varepsilon
         \\ 
-        \{ (q_2, \epsilon, R) \} & \sigma = \epsilon
+        \{ (q_2, \varepsilon, R) \} & \sigma = \varepsilon
     \end{cases}
 \end{align*}
 
@@ -656,9 +825,9 @@ position.
 
 \begin{align*}
     \delta(q_4, \sigma) = \begin{cases}
-        \left\{ \left( q_4, \sigma, L \right)  \right\} & \sigma \neq \epsilon
+        \left\{ \left( q_4, \sigma, L \right)  \right\} & \sigma \neq \varepsilon
         \\
-        \left\{ \left( q_0, \sigma, R \right)  \right\} & \sigma = \epsilon 
+        \left\{ \left( q_0, \sigma, R \right)  \right\} & \sigma = \varepsilon 
     \end{cases}
 \end{align*}
 
@@ -666,20 +835,146 @@ The only undefined state is $q_9$. This is the state reached after, in state
 $q_0$, the string is parsed but no $b$ is found. If there is some $a$ left in
 the string, then the word must not be accepted; but if no $a$ exists, the word
 must be accepted. Thus, $q_9$ can parse from right to left looking for $a$s; if
-$\epsilon$ is reached without $a$s on the way, it should map to a final state.
+$\varepsilon$ is reached without $a$s on the way, it should map to a final state.
 If some $a$ is found, it should never halt.
 
 \begin{align*}
     \delta(q_9, \sigma) = \begin{cases}
         \left[ \left( q_9, \sigma, L \right)   \right] & \sigma \neq\in \{a,
-        \epsilon\} \\
+        \varepsilon\} \\
         \left[ \left( q_9, \sigma, K \right)   \right] & \sigma = a \\ 
-        \left[ \left( q_\mathcal{F}, \sigma, K \right)   \right] & \sigma = \epsilon \\ 
+        \left[ \left( q_\mathcal{F}, \sigma, K \right)   \right] & \sigma = \varepsilon \\ 
     \end{cases}
 \end{align*}
 
 where $q_{\mathcal{F}} \in F$ is the only final state. Of course, $\Gamma = \{a,
 b, x, y, B\}, Q = \{ q_0, q_1, q_2, q_3, q_4, q_9, q_{\mathcal{F}}\}$.
+
+\end{quote}
+\normalsize
+
+We say a word $w \in \Sigma^{*}$ is accepted by detention (or by a halt) if $M$
+halts when starting from $ \left\lfloor q_0 B \omegam \right\rfloor  $. We
+denote 
+
+\begin{align*}
+    \mathcal{H}(M) = \left\{ \omegam \in \Sigma^{*}: \omegam \text{ is accepted
+    by detention} \right\} 
+\end{align*}
+
+\begin{theorem}
+    Let $L \subseteq \Sigma^{*}$. Then the following statements are equivalent: 
+
+    \textit{(1)} There is a Turing machine $M$ s.t. $L = L(M)$. 
+
+    \textit{(2)} There is a Turing machine $M$ s.t. $L = \mathcal{H}(M)$.
+\end{theorem}
+
+\subsection{$\Sigma$-Turing computable functions}
+
+To represent numbers on the Turing tape, we use the $i$ letter. Thus, we extend
+the definition of a Turing machine ensuring that $i \in  \Gamma - \left( \{B\}
+\cup \Sigma \right) $ is a symbol.
+
+Let $f : \mathcal{D}_f \subseteq \omega^{n} \times \Sigma^{*m} \mapsto
+\Sigma^{*}$ a $\Sigma$-mixed function. We say $f$ is $\Sigma$-Turing computable
+if there is a deterministic Turing machine $M$ s.t. 
+
+\begin{itemize}
+    \item If $(\vec{x}, \vec{\alpha}) \in \mathcal{D}_f$, then there is a state
+        $p \in Q$ s.t. 
+        \begin{align*}
+            \left\lfloor q_0 ~ B ~ i^{x_1} ~ B ~ \ldots ~ i^{x_n} ~ B ~ \alpha_1
+            ~ B ~ \ldots ~ B ~ \alpha_m\right\rfloor \vdash^* \left\lfloor pB
+            f(\vec{x}, \vec{\alpha}) \right\rfloor
+        \end{align*} 
+
+    \item If $(\vec{x}, \vec{\alpha}) \in \omega^{n} \times \Sigma^{*m} -
+        \mathcal{D}_f$, then the machine does not halt starting from  
+        \begin{align*}
+            \left\lfloor q_0 ~ B ~ i^{x_1} ~ B ~ \ldots ~ i^{x_n} ~ B ~ \alpha_1
+            ~ B ~ \ldots ~ B ~ \alpha_m\right\rfloor 
+        \end{align*}
+\end{itemize}
+
+When $f \mapsto \omega$, we analogously say a Turing machine computes $f$ iff
+
+\begin{itemize}
+    \item If $(\vec{x}, \vec{\alpha}) \in \mathcal{D}_f$, then there is a state
+        $p \in Q$ s.t. 
+        \begin{align*}
+            \left\lfloor q_0 ~ B ~ i^{x_1} ~ B ~ \ldots ~ i^{x_n} ~ B ~ \alpha_1
+            ~ B ~ \ldots ~ B ~ \alpha_m\right\rfloor \vdash^* \left\lfloor pB
+            i^{f(\vec{x}, \vec{\alpha})} \right\rfloor
+        \end{align*} 
+
+    \item If $(\vec{x}, \vec{\alpha}) \in \omega^{n} \times \Sigma^{*m} -
+        \mathcal{D}_f$, then the machine does not halt starting from  
+        \begin{align*}
+            \left\lfloor q_0 ~ B ~ i^{x_1} ~ B ~ \ldots ~ i^{x_n} ~ B ~ \alpha_1
+            ~ B ~ \ldots ~ B ~ \alpha_m\right\rfloor 
+        \end{align*}
+\end{itemize}
+
+If $M$ and $f$ satisfy the properties above, we say $f$ is computed by $M$.
+
+\begin{theorem}
+    If $f : \mathcal{D}_f \subseteq \omega^{n} \times \Sigma^{*m} \mapsto I \in
+    \{\omega, \Sigma^{*}\}$ is computed by a Turing machine $M$, then $f$ is $\Sigma$-effectively
+    computable.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\begin{problem}
+    Determine if the following statements are true or false.
+\end{problem}
+
+\textit{(1) If $M$ a deterministic turing machine and $M$ computes $f$, then
+$\mathcal{L}(M) = \mathcal{D}_f$}. 
+
+Since $M$ computes $f$, $M$ halts for any
+$(\vec{x}, \vec{\alpha}) \in \mathcal{D}_f$ and does not halt for any $(\vec{x},
+\vec{\alpha}) \not\in \mathcal{D}_f$. Then, by definition, $\mathcal{H}(M) =
+\mathcal{D}_f$. This does not imply $\mathcal{L}(M) = \mathcal{D}_f$. However,
+it does imply that there necessarily exists a Turing machine $M'$ s.t.
+$\mathcal{L}(M') = \mathcal{D}_f$.
+
+\textit{(2)}  \textit{ If $f, g$ are two functions and $M$ is a Turing machine that
+computes $f$ and $g$, then $f = g$.} Assume the premise holds. Then
+$\mathcal{H}(M) = \mathcal{D}_f = \mathcal{D}_g := \mathcal{D}$. Furthermore, for any
+$(\vec{x}, \vec{\alpha}) \in \mathcal{D}$, the Turing machine halts with an
+instantaneous description representing $f (\vec{x}, \vec{\alpha}) $. But since
+it computes $g$, the instantaneous description also represents $g (\vec{x},
+\vec{\alpha}) $. This implies $f (\vec{x}, \vec{\alpha}) = g (\vec{x},
+\vec{\alpha}) $. Then $f = g$. The statement is true.
+
+\textit{(3) Let $M$ a Turing machine and assume $M$ computes $f$ with $f$ a
+$\Sigma$-total function. Then $M$ halts from $d$ for whichever $d \in
+\mathbb{D}$}. It is true that, since $f$ is $\Sigma$-total, for any $(\vec{x},
+\vec{\alpha}) \in \omega^{n} \times \Sigma^{*m} $, $f (\vec{x}, \vec{\alpha}) $
+is defined. This does imply that every $d$ of the form $\left\lfloor q_0 i^{x_1}\ldots i^{x_n} \alpha_1
+\ldots \alpha_m \right\rfloor$ is accepted (I skipped the possibly infinite $B$
+symbols in the description). However, there is no restriction in $\mathbb{D}$ as
+to the number of unit or alphabetic symbols which an arbitrary $d \in
+\mathbb{D}$ may contain. Thus,  
+
+\begin{align*}
+    \mathbb{D}' \subseteq \mathbb{D} = \left\{ d \in \mathbb{D} : \left\lfloor d
+    \right\rfloor = \left\lfloor q_0 i^{x_1} \ldots i^{x_k} \alpha_1 \ldots
+\alpha_l \right\rfloor : k \neq n \lor l \not\in m  \right\} 
+\end{align*}
+
+satisfies $D' \not\subseteq \mathcal{H}(M)$.
+
+
+\end{quote}
+\normalsize
+
+
+
 
 \pagebreak
 \section{Godel}
@@ -747,6 +1042,10 @@ We use the notation $R(f, g)$ to say $R$ is defined by primitive recursion by
 $f$ and $g$.
 
 
+
+\small
+\begin{quote}
+
 \begin{problem}
     Find functions that recursively define $R = \lambda t \left[ 2^t \right] $
 \end{problem}
@@ -800,6 +1099,9 @@ Passing the arguments into the functions this results in
 But the expression makes no sense, since $\zeta = g(f(x, x), 0, x, y) \in
 \omega$ is not a function and hence $g \circ \zeta$ is undefined.
 
+\end{quote}
+\normalsize
+
 \subsection{Numeric to alphabet}
 
 
@@ -813,6 +1115,10 @@ m + 1, \Sigma)$ recursively define $R$ if and only if
     \overrightarrow{x}, \overrightarrow{\alpha}, R(t, \overrightarrow{x},
 \overrightarrow{\alpha})  \right) 
 \end{align*}
+
+
+\small
+\begin{quote}
 
 \begin{problem}
     Let $\Sigma = \{\%, @, ?\}$. Define $R = \lambda t x_1 [\% @ \% \% \% \%
@@ -833,7 +1139,9 @@ d_? \circ \left[ R(2, x_1)
 
 False. The $g$ function must have the same number of numeric arguments than $R$.
 
-\pagebreak 
+\end{quote}
+\normalsize
+
 
 \subsection{Alphabet to numeric}
 
@@ -848,7 +1156,7 @@ family $\mathcal{G}$ s.t. $\mathcal{G}_a \sim (n + 1, m, \omega)$ as follows:
 
 \begin{align*}
     \begin{cases}
-        R(F, \mathcal{G})(\overrightarrow{x}, \overrightarrow{\alpha}, \epsilon)
+        R(F, \mathcal{G})(\overrightarrow{x}, \overrightarrow{\alpha}, \varepsilon)
         = f(\overrightarrow{x}, \overrightarrow{\alpha}) \\ 
         R(f, \mathcal{G})(\overrightarrow{x}, \overrightarrow{a}, \alpha a) =
         \mathcal{G}_a \left( R(\overrightarrow{x}, \overrightarrow{\alpha},
@@ -856,12 +1164,17 @@ family $\mathcal{G}$ s.t. $\mathcal{G}_a \sim (n + 1, m, \omega)$ as follows:
     \end{cases}
 \end{align*}
 
+
+\small
+\begin{quote}
+
+
 \begin{problem}
     Let $\Sigma = \{\%, @, ?\}$. Find $f, \mathcal{G}$ s.t. $R = \lambda \alpha_1
     \alpha \left[ |\alpha_1| + |\alpha|_{@} \right] $.
 \end{problem}
 
-$R \sim (0, 2, \#)$. Since $R(\alpha_1, \epsilon) = | \alpha_1|$ we let $f :=
+$R \sim (0, 2, \#)$. Since $R(\alpha_1, \varepsilon) = | \alpha_1|$ we let $f :=
 \lambda \alpha = |\alpha|$. Now, $g \sim (1, 2, \#)$ is given by $g :=
 \mathcal{G}$ where 
 
@@ -873,10 +1186,12 @@ $R \sim (0, 2, \#)$. Since $R(\alpha_1, \epsilon) = | \alpha_1|$ we let $f :=
 \end{align*}
 
 For example, $R(??, @\%?@) = \mathcal{G}_{@} \left( R(@\%?), ??, @ \right) = 1 +
-R(??, @\%?) $. This boils down to $1 + R(??, @) = 1 + 1 + R(??, \epsilon) = 2 +
+R(??, @\%?) $. This boils down to $1 + R(??, @) = 1 + 1 + R(??, \varepsilon) = 2 +
 |??| = 2$, the desired output.
 
-\pagebreak 
+\end{quote}
+\normalsize
+
 
 \subsection{Alphabet to alphabet}
 
@@ -886,7 +1201,7 @@ via primitive recursion if
 
 \begin{align*}
     \begin{cases}
-        R(\overrightarrow{x}_n, \overrightarrow{\alpha}_{m-1}, \epsilon) &=
+        R(\overrightarrow{x}_n, \overrightarrow{\alpha}_{m-1}, \varepsilon) &=
         f(\overrightarrow{x}, \overrightarrow{\alpha}) \\ 
         R(\overrightarrow{x_n}, \overrightarrow{\alpha}_{m-1}, \alpha a)&= \mathcal{G}_a
         \left( \overrightarrow{x}, \overrightarrow{\alpha},
@@ -899,7 +1214,7 @@ via primitive recursion if
     \alpha ]$ recursively.
 \end{problem}
 
-Observe that $R \sim (0, 2, *)$. $R(\alpha_1, \epsilon) = \alpha_1 \implies f :=
+Observe that $R \sim (0, 2, *)$. $R(\alpha_1, \varepsilon) = \alpha_1 \implies f :=
 \lambda \alpha[\alpha]$. Now, we let $\mathcal{G}_{a} = d_a \circ p_{3}^{0, 3}$
 for all $a \in \Sigma$, and the recursion is complete.
 
@@ -907,7 +1222,7 @@ for all $a \in \Sigma$, and the recursion is complete.
 
 \begin{align*}
     R(?@?, @?) &= d_? \left( R(?@?, @) \right)  \\ 
-               &= d_? \left( d_@ \left( R(?@?, \epsilon) \right)  \right)  \\ 
+               &= d_? \left( d_@ \left( R(?@?, \varepsilon) \right)  \right)  \\ 
                &= d_? \left(  d_@ \left( ?@? \right)  \right)  \\ 
                &= d_? \left( ?@?@ \right) \\ 
                &= ?@?@?
@@ -922,7 +1237,7 @@ for all $a \in \Sigma$, and the recursion is complete.
 \subsection{The primitive recursive set}
 
 Let $\Sigma$ a language. We define $PR_0^{\Sigma} = \left\{ Suc, Pred, C_0^{0,
-0}, C_{\epsilon}^{0, 0} \right\} \cup \left\{ d_a \right\} \cup \left\{ p_j^{n,
+0}, C_{\varepsilon}^{0, 0} \right\} \cup \left\{ d_a \right\} \cup \left\{ p_j^{n,
 m} \right\}  $. Observe that every $\mathcal{F} \in PR_0^{\Sigma}$ is
 $\Sigma$-computable. Then we define 
 
@@ -1023,13 +1338,13 @@ functions are $\Sigma$-p.r. to conclude that $P$ is $\Sigma$-p.r., because $P_1
 = \lambda x\alpha [x = |\alpha|]$ and $P_2 = \lambda x \alpha \beta \gamma
 [\alpha =
 \gamma^{Pred(|\beta|)}]$ do not have the same domains. Simply observe that
-$\beta$ cannot take the value $\epsilon$ in $P_2$, but it can take in $P_1$.
+$\beta$ cannot take the value $\varepsilon$ in $P_2$, but it can take in $P_1$.
 
 
 However, observe that $\mathcal{D}_P = \omega \times \Sigma^{*} \times
-(\Sigma^{*} - \epsilon) \times \Sigma^{*} $. This set is $\Sigma$-p.r. because
+(\Sigma^{*} - \varepsilon) \times \Sigma^{*} $. This set is $\Sigma$-p.r. because
 $\chi_{\mathcal{D}_P}^{1, 3} = \neg \lambda \left[ \alpha = \beta \right] \circ
-\left[ p_{3}^{1, 3}, C_{\epsilon}^{1, 3} \right]$ is $\Sigma$-p.r. Now, we can
+\left[ p_{3}^{1, 3}, C_{\varepsilon}^{1, 3} \right]$ is $\Sigma$-p.r. Now, we can
 safely say that $P = P_{1\mid \mathcal{D}_P} \land P_2$, ensuring with the
 restriction that both predicates have the same domain. Since $\mathcal{D}_P$ is
 $\Sigma$-p.r. so is $P_{1\mid \mathcal{D}_P}$, form which readily follows that
@@ -1070,9 +1385,9 @@ For example, this can be used to prove that $\lambda \alpha\left[ \left[ \alpha
     \end{cases}\\
 \end{align*}
 
-for any $a \in \Sigma$. The base case is the trivial $[\epsilon]_i = \epsilon$.
+for any $a \in \Sigma$. The base case is the trivial $[\varepsilon]_i = \varepsilon$.
 From this follows  that $R = [\alpha]_i \sim (1, 1)$ is difined via primitive recursion by
-$f = C_{\epsilon}^{1, 0}$ and $\mathcal{G}$ an indexed family where
+$f = C_{\varepsilon}^{1, 0}$ and $\mathcal{G}$ an indexed family where
 $\mathcal{G}_a$ is of the form above for every $a$. Evidently $f$ is
 $\Sigma$-p.r.; now we want to prove $\mathcal{G}_a$ is $\Sigma$-p.r. for any $a
 \in \Sigma$.
@@ -1088,6 +1403,9 @@ proof of this statement.) It follows from the division by cases that
 
 is $\Sigma$-p.r. Thus, $R = [\alpha]_i$ is $\Sigma$-p.r.
 
+
+\small
+\begin{quote}
 
 \begin{problem}
     Let $\Sigma = \{@, \$\}$. Let $h : \mathbb{N} \times  \Sigma^{+} \mapsto \omega$
@@ -1109,6 +1427,10 @@ in $\overline{S}$). When the argument is in $S$, it is $f_2 = \lambda x[x^2] \ci
 [p_1^{2, 1}]$. It is trivial to observe both functions are $\Sigma$-p.r. Then $h
 = f_{1\mid \overline{S}} \cup f_{2\mid S}$, where of course $S \cup \overline{S}
 = \mathcal{D}_h$.
+
+\end{quote}
+\normalsize
+
 
 \subsection{Summation, product and concatenation}
 
@@ -1151,6 +1473,11 @@ Thus, if we let each of these functions be called $h, g$ we have that $G = R(h,
 g)$. Suffices to show $h, g$ are $\Sigma$-p.r. This can be proven using
 division by cases and domain restriction.
 
+
+\small
+\begin{quote}
+
+
 \begin{problem}
     Prove that $G = \lambda x x_1 \left[ \sum_{t=1}^{t=x} Pred(x_1)^t \right] $ is
     $\Sigma$-p.r.
@@ -1190,6 +1517,7 @@ which is $\Sigma$-p.r. Observe that $G(x, y, \alpha) = \mathcal{G}(y + 1,
 
 Then $G$ is $\Sigma$-p.r. $\blacksquare$
 
+\begin{problem}
 Prove that 
 
 \begin{align*} \lambda xyz\alpha\beta \left[ \mathop{\subset}_{t=3}^{t=z+5}
@@ -1198,6 +1526,7 @@ Prove that
 \end{align*}
 
 is $\Sigma$-p.r.
+\end{problem}
 
 Let $G$ denote the function in question. First of all, observe that
 $\mathcal{D}_G = \omega^2  \times \mathbb{N} \times \Sigma^{*}^2$---which means
@@ -1240,6 +1569,9 @@ t, \alpha, \beta )\right]$. If we let
 it is evident that $G = \mathcal{G} \circ \left[ C_{3}^{3, 2}, \lambda z [z + 5]
     \circ p_3^{3, 2},
 p_3^{3, 2}, p_4^{3, 2}, p_5^{3, 2} \right] $. Then $G$ is $\Sigma$-p.r. $\blacksquare$
+
+\end{quote}
+\normalsize
 
 \subsection{Predicate quantification}
 
@@ -1315,6 +1647,11 @@ tx_1\right] \\ =
 Then the \textbf{bounded} quantification, with $x_2$ as bound, is $\Sigma$-p.r.
 
 
+
+\small
+\begin{quote}
+
+
 \begin{problem}
     Let $\Sigma = \{@, !\}$. Show that $S = \{(2^x, @^x, !) : x \in \omega \land x \text{ impar}\}$ is $\Sigma$-p.r.
 \end{problem}
@@ -1339,6 +1676,9 @@ Let $P_1 = \lambda xy\alpha \left[ x = 2^{y +1} \right], P_2 =
 \end{align*}
 
 is $\Sigma$-p.r.
+
+\end{quote}
+\normalsize
 
 
 \subsection{Minimization of numeric variable}
@@ -1385,6 +1725,11 @@ design $P$ so \hat{t}
     \text{ s.t. } P(t, \overrightarrow{x}, \overrightarrow{\alpha})
 \end{align*}
 
+
+\small
+\begin{quote}
+
+
 \begin{problem}
     Use the \textbf{U rule} to find a predicate $P$ s.t. $M(P) = \lambda
     x[\text{integer part of } \sqrt{x}]$ .
@@ -1401,6 +1746,10 @@ Let $f(x)$ denote the integer part of $\sqrt{x}$. If $f(x) = y$ then $y^2 \leq x
 Since $x - y$ is unique for each pair $x, y$, $P = \lambda xyz [z = x - y]$. Then
 $\min_z P(x, y, z) = \lambda xy[x - y]$. For example, $3 - 5 = 0$ and $\min_z
 P(3, 5, z) = 0$.
+
+\end{quote}
+\normalsize
+
 
 \begin{theorem}
     If $P$ a predicate that is effectively computable and $\mathcal{D}_P$ is
@@ -1480,6 +1829,11 @@ question.
     numbers.
 \end{theorem}
 
+
+\small
+\begin{quote}
+
+
 \begin{problem}
     Prove that $\lambda \alpha[\sqrt{\alpha} ]$ is $\Sigma$-p.r.
 \end{problem}
@@ -1493,6 +1847,9 @@ Let $M(P)$ denote the minimization above. Then $M\left(P\left(\alpha,
 \beta\right)\right) \leq \beta$. In other words, $M(P)$ is bounded by $f =
 \lambda \alpha [\alpha]$. Then $\lambda \alpha [\sqrt{\alpha} ] \in
 PR^{\Sigma}$.
+
+\end{quote}
+\normalsize
 
 
 \subsection{Enumerable sets}
@@ -1535,7 +1892,7 @@ use $Num = \{0, 1, \ldots, 9\}$ a set of \textit{symbols} (not numbers) and
 define $S : Num^{*} \mapsto Num^{*}$ as 
 
 \begin{align*}
-    S(\epsilon) &= 1 \\
+    S(\varepsilon) &= 1 \\
     S(\alpha 0) &= \alpha 1 \\
     S(\alpha 2) &= \alpha 3 \\
                 &\vdots \\ 
@@ -1547,7 +1904,7 @@ alphabet $Num$. We define
 
 \begin{align*}
     \text{---} : \omega &\mapsto  Num^{*}  \\ 
-    \overline{0} & \mapsto \epsilon \\ 
+    \overline{0} & \mapsto \varepsilon \\ 
     \overline{n + 1} &\mapsto S(\overline{n})
 \end{align*}
 
@@ -1557,11 +1914,11 @@ given by $\Sigma \cup \Sigma_p$, where
 
 \begin{align*}
     \Sigma_p = Num \cup \{ \leftarrow, +, \overline{-}, ~ . ~, \neq, {}^{\curvearrowright},
-    \epsilon, N, K, P, L, I, F, G, O, T, B, E, S \}
+    \varepsilon, N, K, P, L, I, F, G, O, T, B, E, S \}
 \end{align*}
 
 It is important to note that these are \textit{symbols} or \textit{strings}, not
-values. The $\epsilon$ in $\Sigma_p$ is not the empty letter, but the symbol
+values. The $\varepsilon$ in $\Sigma_p$ is not the empty letter, but the symbol
 that denotes it. The $\overline{+}, -$ signs are not the operations plus and
 minus, but the same symbols that denote these operations. 
 
@@ -1612,7 +1969,7 @@ The theorem above establishes that any program in $Pro^{\Sigma}$ is a
 the number of instructions that make up $\mathcal{P} \in Pro^{\Sigma}$. By
 convention, if $\mathcal{P} = I^{\mathcal{P}}_1 \ldots
 I^{\mathcal{P}}_{n(\mathcal{P})}$, then $I^{\mathcal{P}}_j =
-\epsilon$ if $j \not\in [1, n(\mathcal{P})]$. In other words, we understand that
+\varepsilon$ if $j \not\in [1, n(\mathcal{P})]$. In other words, we understand that
 a program contains infinitely many empty symbols to the right and left (like in
 Turing machines).
 
@@ -1620,6 +1977,11 @@ Turing machines).
 $\alpha \in Pro^{\Sigma}, i \in \omega$. This means the domain of $\lambda
 \alpha[n(\alpha)]$ is $Pro^{\Sigma} \subseteq \Sigma \cup \Sigma_p$ and that of
 $\lambda i\alpha[I_i^{\alpha}]$ is $\omega \times Pro^{\Sigma}$.
+
+
+\small
+\begin{quote}
+
 
 \begin{problem}
     Is is true that $Ins^{\Sigma} \cap Pro^{\Sigma} = \emptyset$? And is it true
@@ -1631,8 +1993,8 @@ $\lambda i\alpha[I_i^{\alpha}]$ is $\omega \times Pro^{\Sigma}$.
 Both statements are false. A single instruction in $Ins^{\Sigma}$ can be a
 program (as long as it is not a GOTO statement to a non-existent label).
 Furthermore, $\lambda i \mathcal{P} [I_i^{\mathcal{P}}]$ is defined for $i = 0$
-(it maps to $\epsilon$) and for $i \geq n(\mathcal{P} )$ (it also maps to
-$\epsilon$).
+(it maps to $\varepsilon$) and for $i \geq n(\mathcal{P} )$ (it also maps to
+$\varepsilon$).
 
 \begin{problem}
     Prove: If $\mathcal{P}_1, \mathcal{P}_2 \in Pro^{\Sigma}$ then $\mathcal{P}_1
@@ -1657,6 +2019,10 @@ Then, from the last theorem follows that $I_k^{\mathcal{P}_1} =
 i_k^{\mathcal{P}_2}$. From this follows directly that $\mathcal{P}_1 =
 \mathcal{P}_2$. $\blacksquare$
 
+\end{quote}
+\normalsize
+
+
 \subsection{States in programs of $\mathcal{S}^{\Sigma}$}.
 
 We define $Bas : Ins^{\Sigma} \mapsto (\Sigma \cup \Sigma_p)^{*}$, the program
@@ -1675,7 +2041,7 @@ Recall that
 \begin{align*}
     {}^{\curvearrowright} \alpha = \begin{cases}
         [\alpha]_2 \ldots \alpha_|\alpha| & |\alpha| \geq 2 \\ 
-        \epsilon & \text{otherwise}
+        \varepsilon & \text{otherwise}
     \end{cases}
 \end{align*}
 
@@ -1683,7 +2049,7 @@ We define $\omega^{\mathbb{N}} = \{ (s_1, s_2, \ldots) : \exists n \in
 \mathbb{N} : i > n \Rightarrow s_i = 0 \}$. This is, $\omega^{\mathbb{N}}$
 denotes the set of infinite tuples that from some index onwards contain only
 zeroes. Similarly, $\Sigma^{*\mathbb{N}}$ denotes the set of infinite alphabetic
-tuples that contain only $\epsilon$ from some index onwards.
+tuples that contain only $\varepsilon$ from some index onwards.
 
 A \textbf{state} is a tuple $(\overrightarrow{s}, \overrightarrow{\sigma}) \in
 \omega^{\mathbb{N}} \times \Sigma^{*\mathbb{N}}$. If $i \geq i$ we say $s_i$ has
@@ -1698,7 +2064,7 @@ We use
 \end{align*}
 
 to denote the state $\left( (x_1, \ldots, x_n, 0, 0, \ldots), (\alpha_1, \ldots,
-\alpha_m, \epsilon, \epsilon,\ldots) \right) $.
+\alpha_m, \varepsilon, \varepsilon,\ldots) \right) $.
 
 \subsection{Instantaneous description of a program in $\mathcal{S}^{\Sigma}$}
 
@@ -1715,7 +2081,7 @@ instantaneous descriptions. The triple reads: The following instruction is
 $I_{i}^{\mathcal{P}}$ and the current state is $(\overrightarrow{s},
 \overrightarrow{\sigma})$. Observe that if $i \not\in [1, n(\mathcal{P})]$, then
 the description reads: We are in state $(\overrightarrow{s},
-\overrightarrow{\sigma})$ and we must execute $\epsilon$ (nothing).
+\overrightarrow{\sigma})$ and we must execute $\varepsilon$ (nothing).
 
 We define the successor function
 
@@ -1749,6 +2115,11 @@ We say $S_{\mathcal{P}} \left( \ldots S_{\mathcal{P}} \left(
 S_{\mathcal{P}}\left( 1, \overrightarrow{s}, \overrightarrow{\sigma} \right)
 \right)  \right) $ is the instantaneous description obtained after $t$ steps if
 the number of times $S_{\mathcal{P}}$ was executed is $t$.
+
+
+\small
+\begin{quote}
+
 
 \begin{problem}
     Give true or false for the following statements.
@@ -1786,6 +2157,9 @@ Because $[P_3]_1 = a$, the value of $S_{\mathcal{P}}(i, \overrightarrow{s},
 \overrightarrow{\sigma})$ must indeed contain the instruction that has label
 $L_6$. This instruction is the $j$th instruction for some $j$, etc. The
 statement is true.
+
+\end{quote}
+\normalsize
 
 \subsection{Halting}
 
@@ -1843,6 +2217,10 @@ computed by $\mathcal{P}$.
 
 The previous theorem should be obvious. Any program in $\mathcal{S}^{\Sigma}$
 can be translated into an effective procedure with relative simplicity.
+
+
+\small
+\begin{quote}
 
 \begin{problem}
     Let $\Sigma = \{@, !\}$. Give a program that computes $f : \{0, 1, 2\}
@@ -1919,7 +2297,7 @@ Since the domain of the constant function is restricted t o $\{0, 1\} \times
 
 \begin{align*}
     &IF ~ N_0 \neq 0 ~ GOTO ~ L_1 \\ 
-    &P_1 \leftarrow \epsilon \\ 
+    &P_1 \leftarrow \varepsilon \\ 
     & GOTO ~ L_{100} \\
     L_1 ~ & N_1 \leftarrow N_1 - 1 \\ 
     L_2 ~ & N_1 \leftarrow N_1 - 1 \\ 
@@ -1938,7 +2316,7 @@ Since $4 \neq 0$ we go to $L_1$ immediately. Here $N_1$ is set to three. Then
 $N_1$ is set to two and $P_1$ is set to $!!@@$. Since $N_1 \neq 0$, $N_1$ is now
 set to $1$ and $P_1$ to $!@@$. Once more, $N_1$ is now set to $0$ and $P_1$ to
 $@@$. Since now $N_1 = 0$ , we know the starting character of $P_1$ is the one
-we looked for. We set $P_1$ to be its first character (if $P_1 = \epsilon$ it
+we looked for. We set $P_1$ to be its first character (if $P_1 = \varepsilon$ it
 has no first character and nothings needs to be done, because this means the
 input $[\![ x_1, \alpha ]\!]$ had $x_1 > |\alpha|$). The other cases also work.
 
@@ -1957,8 +2335,10 @@ Recall that $s^{\leq} : \Sigma^{*} \mapsto \Sigma^{*}$ is defined as
 In our case, this functions enumerates the language in question as follows: 
 
 \begin{align*}
-    \epsilon, @, !, @ @, @ !, !@, !!, @@@, @@!, @!@, @!!, !@@, !@!, !!@, !!!, \ldots
+    \varepsilon, @, !, @ @, @ !, !@, !!, @@@, @@!, @!@, @!!, !@@, !@!, !!@, !!!, \ldots
 \end{align*}
+\end{quote}
+\normalsize
 
 \subsection{Macros}
 
@@ -2012,6 +2392,11 @@ variables. Now, to program $\lambda xy[x \cdot y]$ we can use the following:
               &GOTO ~ L_1 \\ 
     L_3 ~ ~ ~ &N_1 \leftarrow N_3
 \end{align*}
+
+
+\small
+\begin{quote}
+
 
 \begin{problem}
     Let $\Sigma = \{@, !\}$ and $f \sim (0, 1, \#)$ a $\Sigma$-computable
@@ -2074,6 +2459,10 @@ where $\left[ IF ~ W_1 = W_2 ~ GOTO ~ A_1 \right] $ is the macro
 that checks if two \textit{not-empty} strings are equal and jumps to the
 official label $A_5$ if the case is true.
 
+\end{quote}
+\normalsize
+
+
 \subsection{Enumerable sets}
 
 A non-empty $\Sigma$-mixed set $S$ is $\Sigma$-enumerable if and only if there are
@@ -2082,16 +2471,16 @@ programs $\mathcal{P}_1, \ldots, \mathcal{P}_{n + m}$ s.t.
 \begin{align*}
     \mathcal{D}_{\Psi_{\mathcal{P}_1}^{n, m, \#}} &= \ldots =
     \mathcal{D}_{\Psi_{\mathcal{P}_n}^{n, m, \#}} = \omega\\
-    \mathcal{D}_{\Psi_{\mathcal{P}_{n+1}}^{n, m, \#}} &= \ldots =
-    \mathcal{D}_{\Psi_{\mathcal{P}_{n+m}}^{n, m, \#}} = \omega
+    \mathcal{D}_{\Psi_{\mathcal{P}_{n+1}}^{n, m, *}} &= \ldots =
+    \mathcal{D}_{\Psi_{\mathcal{P}_{n+m}}^{n, m, *}} = \omega
 \end{align*}
 
 and 
 
 \begin{align*}
     S = Im ~ \left[ \Psi_{\mathcal{P}_1}^{n, m, \#}, \ldots,
-    \Psi_{\mathcal{P}_n}^{n, m, \#}, \Psi_{\mathcal{P}_{n+1}}^{n, m, \#},
-\ldots, \Psi_{\mathcal{P}_{n+m}}^{n, m, \#} \right] 
+    \Psi_{\mathcal{P}_n}^{n, m, \#}, \Psi_{\mathcal{P}_{n+1}}^{n, m, *},
+\ldots, \Psi_{\mathcal{P}_{n+m}}^{n, m, *} \right] 
 \end{align*}
 
 In other words, for each input $x \in \omega$, the $i$th program $\mathcal{P}_i$
@@ -2159,11 +2548,117 @@ valid when $S$ is a $\Sigma$-computable set.
 
 A corollary is that every $\Sigma$-recursive function has a corresponding macro.
 
+\begin{theorem}
+    If $S_1, S_2 \subseteq \omega^{n} \times \Sigma^{*m} $ are
+    $\Sigma$-enumerable, then $S_1 \cup S_2$ is $\Sigma$-enumerable. 
+\end{theorem}
 
 
+\small
+\begin{quote}
+
+\textbf{Proof}. Via assumption there are $F : \omega \mapsto \omega^{n} \times
+\Sigma^{*m} $, $G : \omega \mapsto \omega^{n} \times \Sigma^{*m} $ s.t.
+$F_{(i)}, G_{(i)}$ are $\Sigma$-computable for every $i$ and $Im_F = S_1$, $Im_G =
+S_2$. $\therefore $ $F_{(i)}, G_{(i)}$ have associated macros. 
+
+$\lambda x \left[ x \text{ is even }  \right]$ is $\Sigma$-p.r. $\therefore $  it
+is $\Sigma$-computable. $\therefore $ $\lambda x \left[ x \text{ is even }
+\right]$ has an associated macro. $\therefore $ There is an IF macro which
+checks if a variable holds an even number.
+
+$\lambda x \left[ x/2  \right]$ is $\Sigma$-p.r. $\therefore $ it is
+$\Sigma$-p.r. $\therefore $ it has an associated macro.
+
+Using the macros above, one can write a program $\mathcal{P} \in Pro^{\Sigma}$
+that does the following: 
+
+\footnotesize
+\begin{quote}
+    If the input $N_1$ is even, set $N_1$ to its integer quotient by two and
+    then let $N_1 = F_1(N_1), \ldots, N_n = F_n(N_n)$. 
+
+    If the input $N_1$ is odd, set $N_1$ to its integer quotient by two minus
+    one and then let $N_1 = G_1(N_1), \ldots, N_n = G_n(N_n)$. 
+\end{quote}
+
+It is easy to see that this satisfies the theorem of the \textbf{Enumerable
+sets} section of the von Neumann paradigm.
+
+\end{quote}
+\normalsize
+
+\begin{theorem}
+    If $S \subseteq \omega^{n} \times \Sigma^{*m} $ is $\Sigma$-computable, then
+    $S$ is enumerable.
+\end{theorem}
 
 
+\small
+\begin{quote}
 
+\textbf{Proof.} Assume $S \subseteq \omega^{n} \times \Sigma^{*m} $ is
+$\Sigma$-computable. $\therefore $ $\Chi_{S}^{n, m}$ is $\Sigma$-recursive and
+has an associated macro.
+
+Recall that $pr : \mathbb{N} \mapsto \omega$ is
+$\Sigma$-p.r. $\therefore $ $pr$ is $\Sigma$-recursive and has an associated
+macro. The same is true of $\leq^{*}$, since its definition involves only string
+concatenations and string exponentiations (which are $\Sigma$-p.r.) on two
+mutually exclusive cases. 
+
+Let
+
+\begin{align*}
+    \mathcal{F} : [1, m]  \times \mathbb{N} &\mapsto \omega \cup \Sigma^{*}  \\ 
+    (x, i) &\mapsto \begin{cases}
+        (x)_i & 1 \leq i \leq n \\
+        *^{\leq} \left( (x)_i \right) & n + 1 \leq i \leq m
+    \end{cases}
+\end{align*}
+
+The program $\mathcal{P}_i$ with input $x, i$ defined as
+
+\begin{align*}
+   &[N_2 \leftarrow pr(N_2)] \\
+    L_1 ~ ~ ~ &[IF \neg (N_2 \mid N_1) ~ GOTO ~ L_2] \\
+              & N_3 \leftarrow N_3 + 1 \\ 
+              & [N_2 \leftarrow N_2 \times N_2] \\ 
+              & GOTO ~ L_1 \\ 
+    L_2 ~ ~ ~ & [IF 1~ \leq N_1 \leq m ~ GOTO ~ L_{3}]\\
+    & [N_1 \leftarrow *^{\leq}(N_3)] \\ 
+              &GOTO ~ L_{100} \\
+    L_3 ~ ~ ~ & N_1 \leftarrow N_3 \\ 
+    L_{100} ~ ~ ~ & SKIP
+\end{align*}
+
+when $n + 1 \leq i \leq m$ computes $\mathcal{F}$. $\therefore $ There is a
+macro for $\mathcal{F}$.
+
+Let $u = n + m + 1$ and $\mathcal{P}$ the following program:
+
+\begin{align*}
+    &N \overline{u} \leftarrow N_1\\
+    &[N_1 \leftarrow \mathcal{F}(N \overline{u}, 1)] \\
+    &[N_2 \leftarrow \mathcal{F}(N \overline{u}, 2)] \\ 
+    &\vdots \\
+    &[P_{\overline{m}} \leftarrow \mathcal{F}(N \overline{u}, n+m)] \\
+    &[IF ~ \chi_s^{n, m} \left( N_1, \ldots, N_{\overline{n}}, P_{\overline{m}},
+    \right) ~ GOTO ~ L_{100}] \\
+    L_{0} ~ ~ ~ & GOTO ~ L_0 \\ 
+    L_{100} ~ ~ ~ & SKIP
+\end{align*}
+
+\textit{a.} For any $x \in \omega$, $\mathcal{P}$ halts at a state with
+instantaneous description $[\![ x_1, \ldots, x_n, \alpha_1, \ldots, \alpha_m
+]\!]$ with $(x_1, \ldots, x_n, \alpha_1, \ldots, \alpha_n) \in S$; \textit{b}
+for any $(\vec{x}, \vec{\alpha}) \in S$ there is some $x \in \omega$ s.t.
+$\mathcal{P}$ halts at $[\![ (\vec{x}, \vec{\alpha})  ]\!]$ when starting from
+$x$. $\therefore $ \mathcal{P} enumerates $S$.
+
+
+\end{quote}
+\normalsize
 
 
 
