@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1707264845 "Computability.tex" "Computability.pdf" "Computability" 1707264845 2
+["pdflatex"] 1707273947 "Computability.tex" "Computability.pdf" "Computability" 1707273947 2
   "/etc/texmf/web2c/texmf.cnf" 1695394668 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1640468671 2914 8283dfc24eaf1964346f843d7605c2b0 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc" 1422827479 2083 60e36f8eac802fcaf19eabe2633b406e ""
@@ -34,6 +34,7 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntxsym.tfm" 1589834365 1572 ee1610f2b8e0679b918f57086595f5a6 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/stxscr.tfm" 1569879884 1836 3af1bb0996e7f6070b70151de6395c2c ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/txex-bar.tfm" 1487028062 872 42a11c392ad05634fee0c67e353926cf ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/txexas.tfm" 1569879884 816 6a1b25d3c5b1a590c84505d9b6f91824 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/txexs.tfm" 1621283831 1552 a4f9bb57de5b2864f3db1cb10ac7ad3a ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/txmiaSTbb.tfm" 1569879884 920 99acdf374993fd46fd345f9cac168080 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/txmiaX.tfm" 1634244313 1716 a6b113dfe808a82f532d14b1f370053f ""
@@ -43,6 +44,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb" 1572128992 32409 1452fa0ce4fabfb48acd5d077e296f6d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI5.pfb" 1572128992 35776 3cf3205badc1a3a38b65b34f4cef78d9 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb" 1572128992 34733 61fa3c01fac511e451670c1b454ff211 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexas.pfb" 1569879884 23767 60f658096ab41f859b518103790fc331 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb" 1621283831 33424 f912ebe54685d0a65d3c046e3d517e38 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb" 1635022465 56686 b959be5e2e4a0232f5aa4c1c4be4574a ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb" 1569879884 40320 53cb337366eff502cad8f44871c88e39 ""
@@ -53,6 +55,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb" 1136849748 18865 ebb26de41fddbc82c044d680eec38cec ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb" 1136849748 24244 ffc0312cbd155e940e16287bb7cbb16c ""
   "/usr/share/texlive/texmf-dist/fonts/vf/public/newtx/ntx-Regular-tlf-ot1.vf" 1583272976 956 44be8e0aea9c6d145fc21c9948a6b4b5 ""
+  "/usr/share/texlive/texmf-dist/fonts/vf/public/newtx/ntxexa.vf" 1487028062 576 6ffe6b42c20f7fbf4391e66fec9eda3f ""
   "/usr/share/texlive/texmf-dist/fonts/vf/public/newtx/ntxexx.vf" 1471383769 1648 0d93cbefa82585faadc39ecd0ea4f212 ""
   "/usr/share/texlive/texmf-dist/fonts/vf/public/newtx/ntxmi.vf" 1622581641 2612 4fd3785b7e98639f68f908a08c642071 ""
   "/usr/share/texlive/texmf-dist/fonts/vf/public/newtx/ntxmi5.vf" 1622753257 2576 88daa4b706569a56d57e84309e07991c ""
@@ -112,8 +115,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1695394817 4623455 fa0568a71dd9a288d6c226ee477506c6 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1695394844 7879794 eff26094dbe002b6e482c026ea4c81e2 ""
-  "Computability.aux" 1707264845 5380 e9aec566dea985af6fd9dfed86f6404b "pdflatex"
-  "Computability.tex" 1707264844 98045 13ba0fa99f2fc8dd436c971823b50da6 ""
+  "Computability.aux" 1707273947 5380 19b7951b6f502a47d8838c2cb95c6174 "pdflatex"
+  "Computability.tex" 1707273945 101742 06eab8c52a574226b040a3d9671d7b6a ""
   (generated)
   "Computability.aux"
   "Computability.log"

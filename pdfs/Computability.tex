@@ -16,6 +16,10 @@
 \newtheorem{lemma}{Lemma}
 \newtheorem{theorem}{Theorem}
 
+\newenvironment{rcases}
+  {\left.\begin{aligned}}
+  {\end{aligned}\right\rbrace}
+
 \begin{document}
 
 \section{Introduction}
@@ -2651,15 +2655,112 @@ Let $u = n + m + 1$ and $\mathcal{P}$ the following program:
 
 \textit{a.} For any $x \in \omega$, $\mathcal{P}$ halts at a state with
 instantaneous description $[\![ x_1, \ldots, x_n, \alpha_1, \ldots, \alpha_m
-]\!]$ with $(x_1, \ldots, x_n, \alpha_1, \ldots, \alpha_n) \in S$; \textit{b}
+]\!]$ with $(x_1, \ldots, x_n, \alpha_1, \ldots, \alpha_n) \in S$; \textit{b}.
 for any $(\vec{x}, \vec{\alpha}) \in S$ there is some $x \in \omega$ s.t.
 $\mathcal{P}$ halts at $[\![ (\vec{x}, \vec{\alpha})  ]\!]$ when starting from
-$x$. $\therefore $ \mathcal{P} enumerates $S$.
+$x$. $\therefore $ $\mathcal{P}$ enumerates $S$.
 
+\begin{problem}
+    Prove that, if $S \subseteq \Sigma^{*}$ is $\Sigma$-enumerable, then 
+
+    \begin{align*}
+        T = \left\{ \alpha \in \Sigma^{*}: \exists \beta \in S :  \alpha
+        \text{ is subchain of } \beta\right\} 
+    \end{align*}
+
+    is $\Sigma$-enumerable. 
+
+\end{problem}
+
+Let $\mathcal{F} : \omega \mapsto \Sigma^{*}$ denote the function which
+enumerates $S$, which is $\Sigma$-computable and has a macro. The key to the
+problem is to observe that, per each $\alpha \in S$, there are $|\alpha| - 1$
+subchains of $\alpha$ in $T$. Thus, for $\mathcal{F}(i)$ we want to enumerate
+ $|\mathcal{F}(i)| - 1$ subchains. 
+
+ I provide a program that accomplishes this and then illustrate its operation on
+ a finite alphabet. It is easy to verify that the program enumerates $T$ and
+ that this enumeration holds for infinite alphabets as well.
+
+Let $\mathcal{P}$
+with input $x \in \omega$ be 
+
+\begin{align*}
+    &[P_1 \leftarrow \mathcal{F}(N_3)] \\ 
+    &[N_{50} \leftarrow  |\mathcal{F}(N_3)|] \\
+    L_1 ~ ~ ~ &[IF ~ N_1 \geq N_{50} ~ GOTO ~ L_2] \\ 
+              & N_{10} \leftarrow N_{50} - N_1\\
+              & N_{10} \leftarrow N_{10} - 1\\
+    L_{11} ~ ~ ~ & [P_1 \leftarrow {}^{\curvearrowleft} P_1]\\ 
+              & N_{10} \leftarrow  N_{10} - 1 \\ 
+              & [IF ~ N_{10} = 0 ~ GOTO ~ L_{100} ]\\ 
+              &GOTO ~ L_{11}\\
+    L_2 ~ ~ ~ &N_3 \leftarrow N_3 + 1 \\ 
+    &[P_1 \leftarrow \mathcal{F}(N_3)] \\ 
+              &[N_{50} \leftarrow N_{50} + |P_1|] \\ 
+              &GOTO ~ L_1\\
+    L_{100} ~ ~ ~ &SKIP
+\end{align*}
+
+\footnotesize
+\textit{Example.}Let $S = \{ abab, bba, bbba, abb\}$. Then the program can be
+illustrated as follows:
+
+\begin{align*}
+    &x = 0 \mid  \overbrace{0 \leq 4}^{N_{50} \leq N_1} \mid N_{10} = 3 \mapsto a \\
+    &x = 1 \mid 1 \leq 4 \mid N_{10} = 2 \mapsto ab \\
+    &x = 2 \mid  2 \leq 4 \mid N_{10} = 1 \mapsto aba \\
+    &x = 3 \mid   3 \leq 4 \mid N_{10} = 0 \mapsto aba \\
+\end{align*}
+
+When $x = 4$, we have $N_{50} \geq N_1$ and so $P_1$ becomes $bba, N_{50}$
+becomes $4 + 3 = 7$ and
+
+\begin{align*}
+    &x = 4 \mid  \overbrace{4 \leq 7}^{N_{50} \leq N_1} \mid N_{10} = 2  \mapsto
+    b\\
+    &x = 5 \mid  5 \leq 7 \mid N_{10} = 1  \mapsto
+    bb\\
+    &x = 6 \mid  6 \leq 7 \mid N_{10} = 0  \mapsto
+    bb\\
+\end{align*}
+
+When $x = 7$, the $L_{2}$ case is met twice, and so $P_1 = bbba, N_{50} = 4 + 3
++ 4 = 11$ and
+
+\begin{align*}
+    &x = 7 \mid  \overbrace{7 \leq 11}^{N_{50} \leq N_1} \mid N_{10} = 3  \mapsto
+    b\\
+    &x = 8 \mid  {8 \leq 11} \mid N_{10} = 2  \mapsto
+    bb\\
+    &x = 9 \mid  {9 \leq 11} \mid N_{10} = 1  \mapsto
+    bbb\\
+    &x = 10 \mid  {10 \leq 11} \mid N_{10} = 0  \mapsto
+    bbb\\
+\end{align*}
+
+etc. Thus, the program enumerates $S$ and, per each $\alpha \in S$, it
+enumerates the substrings which make up $\alpha$. The program is s.t. 
+
+\begin{align*}
+    &\begin{rcases}
+        &0 \mapsto \textit{The smallest substring of $\mathcal{F}(0)$} \\
+        &1 \mapsto \textit{The next smallest substring of $\mathcal{F}(0)$} \\
+        &2 \mapsto \textit{The next smallest substring of $\mathcal{F}(0)$} \\
+        &3 \mapsto \textit{The next  smallest of $\mathcal{F}(0)$} \\
+    \end{rcases}
+    \text{$0\leq x \leq |\mathcal{F}(0)|$}\\
+    &\begin{rcases}
+        &4 \mapsto \textit{The smallest substring of $\mathcal{F}(1)$} \\
+        &5 \mapsto \textit{The next smallest $\mathcal{F}(1)$} \\
+        &6 \mapsto \textit{The next smallest substring of $\mathcal{F}(1)$} \\
+    \end{rcases}
+    \text{$|\mathcal{F}(0)| \leq x \leq |\mathcal{F}(0)\mathcal{F}(1)|$} \\ 
+    &\vdots 
+\end{align*}
 
 \end{quote}
 \normalsize
-
 
 
 
