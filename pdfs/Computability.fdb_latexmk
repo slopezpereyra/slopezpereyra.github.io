@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1707447103 "Computability.tex" "Computability.pdf" "Computability" 1707447104 2
+["pdflatex"] 1707486985 "Computability.tex" "Computability.pdf" "Computability" 1707486986 2
   "/etc/texmf/web2c/texmf.cnf" 1695394668 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1640468671 2914 8283dfc24eaf1964346f843d7605c2b0 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc" 1422827479 2083 60e36f8eac802fcaf19eabe2633b406e ""
@@ -116,9 +116,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1695394817 4623455 fa0568a71dd9a288d6c226ee477506c6 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1695394844 7879794 eff26094dbe002b6e482c026ea4c81e2 ""
-  "Computability.aux" 1707447104 5977 61e216d354c9453fa928a3e22f37de85 "pdflatex"
-  "Computability.tex" 1707447103 126013 89469e0a958ab5c16646caa9732a7f2a ""
-  "Computability.toc" 1707447104 3890 0b45645c77eb2ec2473fb17c939d0021 "pdflatex"
+  "Computability.aux" 1707486986 6183 8a90af2754d44f05ed6db670a9d32c1c "pdflatex"
+  "Computability.tex" 1707486983 133255 854115e06fe56a9548e3354d3fccbfac ""
+  "Computability.toc" 1707486986 4014 265361ace6ee0e33c9b8ab06d803257e "pdflatex"
   (generated)
   "Computability.aux"
   "Computability.log"

@@ -47,4 +47,6 @@
 \contentsline {subsection}{\numberline {7.1}Neumann triumphs over Godel}{46}{}%
 \contentsline {subsection}{\numberline {7.2}Godel triumphs over Neumann}{49}{}%
 \contentsline {subsection}{\numberline {7.3}Interacting programs}{51}{}%
-\contentsline {subsection}{\numberline {7.4}More relationships between the paradigms}{57}{}%
+\contentsline {subsection}{\numberline {7.4}Church's thesis}{57}{}%
+\contentsline {section}{\numberline {8}Extending $\Sigma $-recursion}{58}{}%
+\contentsline {subsection}{\numberline {8.1}The Halting problem}{59}{}%

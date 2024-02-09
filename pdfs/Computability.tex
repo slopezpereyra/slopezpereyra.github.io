@@ -3421,18 +3421,235 @@ proceed as follows:
     let $P_1 \leftarrow \alpha$. Else let $P_1 \leftarrow  SKIP$.
 \end{quote}
 
-\subsection{More relationships between the paradigms}
+\subsection{Church's thesis}
 
 \begin{theorem}
     If a $\Sigma$-mixed function $f$ is $\Sigma$-Turing computable then it is
     $\Sigma$-recursive.
 \end{theorem}
 
+\begin{theorem}
+    If a $\Sigma$-mixed function is $\Sigma$-computable then it is
+    Turing-computable.
+\end{theorem}
+
+In virtue of the aforementioned theorems, we have that
+
+\begin{theorem}
+    The folllowing statements are equivalent: 
+
+    \begin{itemize}
+        \item $f$ is $\Sigma$-computable 
+        \item $f$ is $\Sigma$-recursive  
+        \item $f$ is Turing-computable  
+    \end{itemize}
+\end{theorem}
+
+The theorem above extends to set decidability and enumerability. Church's thesis
+is the following: 
+
+\begin{quote}
+    \textbf{Church's thesis.} Every $\Sigma$-effectively computable function is
+    $\Sigma$-recursive.
+\end{quote}
+
+A formal proof of this thesis has not been given, but there's consensus around
+that fact that it is most likely true.
+
+\pagebreak
+\section{Extending $\Sigma$-recursion}
+
+We now extend the $\Sigma$-recursive paradigm with results which are easier to
+prove in the imperative paradigm. 
+
+\begin{theorem}[Case division]
+    Assume $f_i : \mathcal{D}_{f_i} \subseteq \omega^{n} \times \Sigma^{*m}
+    \mapsto \varphi$, with $\varphi = \omega$ or $\varphi = \Sigma^{*}$ and $i =
+    1, 2, \ldots, k$, are $\Sigma$-recursive functions. If
+    $\mathcal{D}_{f_i} \neq \mathcal{D}_{f_j}$ for any $i \neq j, i,j \in [1, k]$, then
+    $f_1 \cup \ldots \cup  f_k$ is $\Sigma$-recursive.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Proof.} Let $\mathcal{P}_1, \ldots, \mathcal{P}_k \in Pro^{\Sigma}$ the
+programs that compute $f_1, \ldots, f_k$. We define $H_i = \lambda t
+\vec{x}\vec{\alpha} \left[ Halt^{n, m} \left( t, \vec{x}, \vec{\alpha},
+\mathcal{P}_i \right)  \right]$. Assume $\varphi = \omega$. 
+
+Since $Halt^{n, m}$ is $\left( \Sigma \cup \Sigma_p \right) $-p.r. it is
+$\Sigma$-p.r. Then it is $\Sigma$-computable and has an associated $IF$ macro.
+Then the (pseudo)program 
+
+\begin{align*}
+    L_0 ~ ~ ~ : &N{\overline{n + 1}} \leftarrow N{\overline{n+1}} + 1 \\ 
+                &\left[ IF ~ Halt^{n, m} \left( N{\overline{n+1}}, N_1, \ldots,
+                        N_{\overline{n}}, P_1, \ldots, P_{\overline{m}},
+                \mathcal{P}_1 \right) ~ GOTO ~ L_2  \right] \\ 
+                \vdots \\ 
+                &\left[ IF ~ Halt^{n, m} \left( N{\overline{n+1}}, N_1, \ldots,
+                        N_{\overline{n}}, P_1, \ldots, P_{\overline{m}},
+                \mathcal{P}_k \right) ~ GOTO ~ L_2  \right] \\  
+    L_1 ~ ~ ~ & \left[ N_1 \leftarrow f_1(N_1, \ldots,
+                N\overline{n}, P_1, \ldots, P\overline{m}) \right] \\
+              &GOTO ~ L{\overline{n(\mathcal{P})}}\\
+    L_2 ~ ~ ~ & \left[ N_1 \leftarrow f_2(N_1, \ldots,
+                N\overline{n}, P_1, \ldots, P\overline{m}) \right] \\
+              &GOTO ~ L{\overline{n(\mathcal{P})}}\\
+                \vdots \\ 
+    L\overline{k} ~ ~ ~ &\left[ N_1 \leftarrow f_k(N_1, \ldots,
+                N\overline{n}, P_1, \ldots, P\overline{m}) \right] \\ 
+        L\overline{n(\mathcal{P})} ~ ~ ~ & SKIP
+\end{align*}
+
+Evidently the (pseudo) program computes $f_1 \cup \ldots \cup f_k$. If $\varphi
+= \Sigma^{*}$ the change that is to be done is trivial. $\blacksquare$
+
+\end{quote}
+\normalsize
+
+\begin{theorem}
+    Let $f : \mathcal{D}_f \subseteq \omega^{n} \times \Sigma^{*m} \mapsto
+    \varphi$, with $\varphi = \omega$ or $\varphi = \Sigma^{*}$, a
+    $\Sigma$-recursive function. If $S
+    \subseteq \mathcal{D}_f$ is $\Sigma$-recursively enumerable, then $f_{\mid
+    S}$ is $\Sigma$-recursive.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Proof.} We will not provide the explicit program but will describe what
+it should do. 
+
+$S$ is $\Sigma$-recursively enumerable. $\therefore $ it is $\Sigma$-enumerable.
+$\therefore $ There are $F_{(1)}, \ldots,  F_{(n + m)}$ s.t. $S = \mathcal{I}
+\left[ F_{(1)}, \ldots, F_{(n+m)} \right] $ with $F_{(i)}$ $\Sigma$-enumerable
+for each $i \in [1, n + m]$. $\therefore $ There is a macro for each $F_{(i)}$.
+
+A program that from a starting state $[\![ \vec{x}, \vec{\alpha} ]\!]$ 
+
+\begin{quote}
+    \textit{(1)} Generates an element of $S$ using the macros of $F_{(1)},
+    \ldots, F_{(n+m)}$ from input variable $N \overline{n+1}$  
+
+    \textit{(2)} If the coordinates of the generated element correspond to
+    $(\vec{x}, \vec{\alpha}) $, compute $f (\vec{x}, \vec{\alpha}) $ and return
+    this computation. Else continue. 
+
+    \textit{(3)} Let $N\overline{n+1} \leftarrow  N\overline{n+1} + 1$ and go
+    back to \textit{(1)}
+\end{quote}
+
+Evidently, this program computes $f_{| S}$. 
+
+\end{quote}
+\normalsize
+
+\begin{theorem}
+    Let $S_1, S_2$ be $\Sigma$-recursive. Prove that $S_1 \cap S_2, S_1 \cup
+    S_2, S_1 - S_2$ are $\Sigma$-recursive.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Proof}. Complete.
+
+\end{quote}
+\normalsize
+
+\begin{theorem}
+    Let $S \subseteq \omega^{n} \times \Sigma^{*m} $. If $S$ and $\omega^{n}
+    \times \Sigma^{*m} - S$ are $\Sigma$-recursively enumerable, then $S$ is
+    $\Sigma$-recursive. 
+
+    \textit{Corollary.} If $S$ is $\Sigma$-recursively enumerable, then it isn't
+    necessarily $\Sigma$-recursive.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+    \textbf{Proof.} $\chi_{S}^{\omega^{n} \times \Sigma^{*m}} = C_1^{n ,m}_{|S}
+    \cup C_0^{n, m}_{| \omega^{n} \times \Sigma^{*m} - S}$ is
+    $\Sigma$-recursive and by hypothesis $S, \omega^{n} \times \Sigma^{*m} -S$
+    are $\Sigma$-recursively enumerable. $\therefore $ $S$ is
+    $\Sigma$-recursive.
+
+    \begin{problem}
+    Provide a proof of the following theorem in the imperative paradigm.
+\end{problem}
+
+\end{quote}
+\normalsize
+
+\begin{theorem}
+    Let $S \subseteq \omega^{n} \times \Sigma^{*m} $. The following statements are equivalent. 
+
+    \textit{(1)} $S$ is $\Sigma$-recursively enumerable. 
+
+    \textit{(2)} $S$ is the domain of a $\Sigma$-recursive function
+    $f$.  
+
+    \textit{(3)} $S$ is the image of a function $F: \mathcal{D}_f \subseteq
+    \omega^{n} \times \Sigma^{*m} \mapsto S$ s.t. each $F_{(i)}$ is
+    $\Sigma$-recursive.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Proof.} We have proven before this holds for the imperative paradigm.
+Via paradigm equivalence then this holds for the recursive paradigm.
+
+\end{quote}
+\normalsize
+
+\subsection{The Halting problem}
+
+When $\Sigma_p \subseteq \Sigma$, we define 
+
+\begin{align*}
+    AutoHalt^{\Sigma} = \lambda \mathcal{P} \left[ \left( \exists t \in \omega
+    \right) Halt^{0, 1} (t, \mathcal{P}, \mathcal{P})   \right]
+\end{align*}
+
+Evidently, $AutoHalt^{\Sigma} \mapsto 1$ with input $\mathcal{P}$ if
+$\mathcal{P}$ halts when inputted to itself.
+
+\begin{theorem}
+    $AutoHalt^{\Sigma}$ is not $\Sigma$-effectively computable. This is, there
+    exists no $\Sigma$-effectively computable program that determines if a
+    program halts with itself as input.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+    \textbf{Proof.} Assume $AutoHalt$ is $\Sigma$-computable. Then we can make
+    $\mathcal{P}$
+
+    \begin{align*}
+        L_1 ~ ~ ~ & [IF ~ AutoHalt^{\Sigma}(P_1) ~ GOTO ~ L_1]
+    \end{align*}
+
+    Let the starting state be $[\![ \mathcal{P} ]\!]$ itself. Observe that
+    $\mathcal{P}$ halts if $\mathcal{P}$ does not halt, and if it does not halt
+    then it halts. $\bot$ This can be easily extended to effectively computable
+    programs beyond the imperative paradigm.
+\end{quote}
+\normalsize
 
 
 
 
 
 \end{document}
-
-
