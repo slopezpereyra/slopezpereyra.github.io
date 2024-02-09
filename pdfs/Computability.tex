@@ -22,26 +22,61 @@
 
 \begin{document}
 
+\begin{titlepage}
+   \begin{center}
+       \vspace*{1cm}
+
+       \textbf{Computability theory}
+
+       \small
+       \vspace{0.5cm}
+        FAMAF - UNC
+            
+       \vspace{1.5cm}
+       \footnotesize
+       \textbf{SLP}
+       \normalsize
+
+       \vfill
+            
+            
+     
+   \end{center}
+\end{titlepage}
+
+
+\tableofcontents
+\newpage
+
 \section{Introduction}
 
 These are my notes on computability theory. The only definitions that ought to
 be known first-hand are the following.
 
-Let $\Sigma$ denote an arbitrary language. We define $\omega := \mathbb{N} + \{
-0\}$. A
-$\Sigma$-mixed function is a function s.t. $\mathcal{D}_f \subseteq \omega^n
-\times \Sigma^{*m}$, with $n, m, \geq 0$, and $Im_f = \omega \lor Im_f = \Sigma$
-holds. We say a $\Sigma$-mixed function is $\Sigma$-effectively computable if we
-can find some algorithmic procedure that, given an input in $\omega^n \times
-\Sigma^{*m}$, outputs the value of $f(\overrightarrow{x},
-\overrightarrow{\alpha})$. We say $S \subseteq \omega^n \times \Sigma^{*m}$ is a $\Sigma$-mixed set. If there is an algorithmic procedure that enumerates $S$, we say $S$ is
-$\Sigma$-effectively enumerable. If there is an algorithmic procedure that
-decides the belonging to $S$, we say $S$ is $\Sigma$-effectively computable.
+Let $\Sigma$ denote an arbitrary language, $\omega := \mathbb{N} + \{
+0\}$, and $n, m \geq 0$ fixed elements in $\omega$. Then: 
 
+\begin{itemize}
+    \item A $\Sigma$-mixed function is a function s.t. $\mathcal{D}_f \subseteq
+        \omega^n \times \Sigma^{*m} \mapsto \varphi$ with either $\varphi =
+        \omega$ or $\varphi = \Sigma^{*}$.
+    \item A $\Sigma$-mixed function is $\Sigma$-effectively computable if we can
+        find some algorithmic procedure that, given an input in $\omega^n \times
+        \Sigma^{*m}$, outputs the value of $f(\overrightarrow{x},
+        \overrightarrow{\alpha})$. 
+    \item Any set $S \subseteq \omega^{n} \times \Sigma^{*m}$ is termed a
+        $\Sigma$-mixed set. 
+    \item If there is an algorithmic procedure that enumerates $S$, we say $S$
+        is $\Sigma$-effectively enumerable. 
 
-The principal subject of this study is to understand three formalizations of
-the concept of $\Sigma$-effectively computable function; namely, the computation
-paradigms of Turing, Godel, and von Neumann.
+    \item If there is an algorithmic procedure that decides the belonging to
+        $S$, we say $S$ is $\Sigma$-effectively computable.
+\end{itemize}
+
+Here, the notion of "algorithmic procedure" is non-rigorous. The principal
+subject of this study are three formalizations of this concept: Turing
+computability, recursive computability (Godel), and imperative
+computability (von Neumann).
 
 \pagebreak
 
@@ -179,6 +214,29 @@ we have defined $k - 1$ to be the maximum value after which all $(x)_{j > k -1}
 \end{quote}
 \normalsize
 
+Prime numbers closely relate to set enumerability. The reason is that the prime
+decomposition of a number associates to any unique $x \in \mathbb{N}$ an
+infinite number of inters $(x)_1, (x)_2, \ldots$. Thus, say we want to generate
+all possible pairs $(x, y, z) \in \omega^3$ given a unique input $x \in
+\mathbb{N}$. Then, letting $(x, y, z) = \left( (x)_1, (x)_2, (x)_3 \right) $, we
+have 
+
+\begin{align*}
+    x = 1 &\mapsto (0, 0, 0)\\ 
+    x = 2 &\mapsto (1, 0, 0)\\
+    x = 3 &\mapsto (0, 1, 0)\\
+    x = 4 &\mapsto (2, 0, 0)\\
+    x = 5 &\mapsto (0, 0, 1)\\
+    x = 6 &\mapsto (1, 1, 0)\\ 
+    x = 7 &\mapsto (0, 0, 0)\\
+    x = 8 &\mapsto (3, 0, 0)\\
+    x = 9 &\mapsto (0, 2, 0)\\ 
+      &\vdots
+\end{align*}
+
+It is easy to see that any $(x, y, z) \in \omega^3$ is reached. This generalizes
+to $\omega^n, n \in \omega$ and to $\omega^{n} \times \Sigma^{*m} $ via the
+$*^{\leq}$ function (which we shall study in the following section).
 
 \subsection{Orders over $\Sigma$}
 
@@ -1101,18 +1159,40 @@ read $f$ is of type $n, m$ to $\Lambda$.
 \end{align*}
 
 
-\textit{The pattern of primitive recursion}. Primitive recursion consists of
-defining any function $R \sim (n, m, *)$ with a base case given by $f$ and a
-recursive case given by $g$. $f$ will always \textit{lack the recursion
-parameter}, so if we are making recursion over numbers, it will have one less
-numeric argument than $R$; if we are making recursion over letters, it will have
-one less alphabetic argument than $R$. On the contrary, $g$ will always a
-recursion over $R$ in its arguments. Thus, if $R \mapsto \omega$, $g$ will have
-one numeric argument more than $R$ (the value of $R$ in the recursive step); if
-$R \mapsto \Sigma$, then $g$ will have one alphabetic argument more than $R$
-(same).
+\subsection{Primitive recursion} 
 
-\subsection{Numeric to numeric}
+Let $R$ a $\Sigma$-mixed function s.t. $R \sim (n, m, \varphi)$, where $\varphi
+= \omega$ or $\varphi = \Sigma^{*}$. Primitive recursion consists in recursively
+defining $R$ with two primitive functions $f$, which gives the base case, and
+$g$, which gives the recursive step. The recursion is done over $\omega$,
+associating $R(t, \vec{x}, \vec{\alpha})$ with $R(t - 1, \vec{x},
+\vec{\alpha})$, or over $\Sigma^{*}$, associating $R(\vec{x}, \vec{\alpha},
+\alpha a)$ with $R(\vec{x}, \vec{\alpha}, \alpha)$. Since the computation of $R$
+may depend on the element which the
+recursion dismisses ($t$ in the numeric case, $a$ in the alphabetic case), $g$
+incorporates this value into its arguments. Thus, we have that: 
+
+\begin{itemize}
+    \item If $\varphi = \omega$ 
+        \begin{itemize}
+            \item If the recursion is over $\omega$, $f \sim (n - 1, m, \omega),
+                g \sim (n + 2, m, \omega)$
+            \item If the recursion is over $\Sigma^{*}$, $f \sim (n, m - 1,
+                \omega), g \sim (n + 1, m + 1, \omega)$.
+        \end{itemize}
+    \item If $\varphi = \Sigma^{*}$ 
+        \begin{itemize}
+            \item If the recursion is over $\omega$, $f \sim (n - 1, m, \Sigma^{*}),
+                g \sim (n + 1, m + 1, \Sigma^{*})$
+            \item If the recursion is over $\Sigma^{*}$, $f \sim (n, m - 1,
+                \Sigma^{*}), g \sim (n, m + 2, \Sigma^{*})$.
+        \end{itemize}
+\end{itemize}
+
+We say $f, g$ construct $R$ via primitive recursion and we denote $R$ as $R(f,
+g)$.
+
+\subsection{Numeric to numeric primitive recursion}
 
 Let $R \sim (n, m, \#)$. Then functions $f \sim (n - 1, m, \#), g \sim (n + 1,
 m, \#)$ recursively define $R$ if and only if 
@@ -1191,7 +1271,7 @@ But the expression makes no sense, since $\zeta = g(f(x, x), 0, x, y) \in
 \end{quote}
 \normalsize
 
-\subsection{Numeric to alphabet}
+\subsection{Numeric to alphabet primitive recursion}
 
 
 Let $R \sim (n, m, \Sigma)$. Then functions $f \sim (n - 1, m, \Sigma),  g \sim (n,
@@ -1232,7 +1312,7 @@ False. The $g$ function must have the same number of numeric arguments than $R$.
 \normalsize
 
 
-\subsection{Alphabet to numeric}
+\subsection{Alphabet to numeric primitive recursion}
 
 If $\Sigma$ an alphabet, then a $\Sigma$-indexed family of functions is a
 function $\mathcal{G}$ s.t. $D_{\mathcal{G}} = \Sigma$ and for each $a \in
@@ -1282,7 +1362,7 @@ R(??, @\%?) $. This boils down to $1 + R(??, @) = 1 + 1 + R(??, \varepsilon) = 2
 \normalsize
 
 
-\subsection{Alphabet to alphabet}
+\subsection{Alphabet to alphabet primitive recursion}
 
 If $R \sim (n, m, *)$ then $f \sim (n, m-1, *)$ and $\mathcal{G}$ a $\Sigma$-indexed
 family, with $\mathcal{G}_a \sim (n, m+1, *)$ for all $a\in \Sigma$, define $R$
@@ -1845,7 +1925,7 @@ P(3, 5, z) = 0$.
     effectively computable, then $M(P)$ is effectively computable.
 \end{theorem}
 
-\section{Recursive function}
+\subsection{Recursive function}
 
 Now we define $R_0^{\Sigma} = PR_0^{\Sigma}$ and 
 
@@ -2593,9 +2673,7 @@ S$, there is a $x \in \omega$ s.t. $\mathcal{P}$ halts starting from $[\![ x
 
 When a program satisfies these properties, we say it \textit{enumerates} $S$.
 
-
-
-\section{$\Sigma$-computable sets}
+\subsection{$\Sigma$-computable sets}
 
 A $\Sigma$-mixed set $S$ is said to be $\Sigma$-computable if
 $\chi_{S}^{\omega^n \times \Sigma^{*m}}$ is $\Sigma$-computable. This is, $S$ is
@@ -3318,6 +3396,30 @@ $L$.
 
 \end{quote}
 \normalsize
+
+Since every $\mathcal{P} \in Pro^{\Sigma}$ is a word in $\Sigma \cup \Sigma_p$,
+we can enumerate sets of programs $\mathscr{P} \subseteq (\Sigma \cup
+\Sigma_p)^{*}$. The enumeration of a set of programs is no different to the
+enumeration of any set of words. For example, say we want to enumerate 
+
+\begin{align*}
+    \mathscr{P} = \left\{ \mathcal{P} \in Pro^{\Sigma} : \Psi_{\mathcal{P}}^{n,
+    m, \#}(10) = 10 \right\} 
+\end{align*}
+
+Observe that $SKIP \in (\Sigma \cup \Sigma_p)$ and the program $\mathcal{P} =
+SKIP \in \mathscr{P}$. Thus, an enumeration starting at $[\![ x ]\!]$ can
+proceed as follows:
+
+\begin{quote}
+    \textit{(1)} If $x = 0$ let $P_1 \leftarrow SKIP$ and finish. 
+
+    \textit{(2)} Take $\alpha = *^{\leq} \left( (x)_1 \right), \varphi = (x)_2 $.  
+
+    \textit{(3)} If $\alpha \in Pro^{\Sigma}$ and $\mathcal{P}$ halts at a state
+    $[\![ 10 ]\!]$ when starting from $[\![ 10 ]\!]$ and in $\varphi$ steps,
+    let $P_1 \leftarrow \alpha$. Else let $P_1 \leftarrow  SKIP$.
+\end{quote}
 
 \subsection{More relationships between the paradigms}
 

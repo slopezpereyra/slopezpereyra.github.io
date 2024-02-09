@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1707437351 "Computability.tex" "Computability.pdf" "Computability" 1707437352 2
+["pdflatex"] 1707447103 "Computability.tex" "Computability.pdf" "Computability" 1707447104 2
   "/etc/texmf/web2c/texmf.cnf" 1695394668 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1640468671 2914 8283dfc24eaf1964346f843d7605c2b0 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc" 1422827479 2083 60e36f8eac802fcaf19eabe2633b406e ""
@@ -44,6 +44,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb" 1572128992 32409 1452fa0ce4fabfb48acd5d077e296f6d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI5.pfb" 1572128992 35776 3cf3205badc1a3a38b65b34f4cef78d9 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb" 1572128992 34733 61fa3c01fac511e451670c1b454ff211 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/newtx/stxscr.pfb" 1569879884 77528 91dab0df394911709956637eb6c0fe2a ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexas.pfb" 1569879884 23767 60f658096ab41f859b518103790fc331 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb" 1621283831 33424 f912ebe54685d0a65d3c046e3d517e38 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb" 1635022465 56686 b959be5e2e4a0232f5aa4c1c4be4574a ""
@@ -115,10 +116,12 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1695394817 4623455 fa0568a71dd9a288d6c226ee477506c6 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1695394844 7879794 eff26094dbe002b6e482c026ea4c81e2 ""
-  "Computability.aux" 1707437352 5766 2bda2bba2c9f05604ff4d3f33ca1699e "pdflatex"
-  "Computability.tex" 1707437350 122525 370fd9d7de28cacef9f3f56592cfed65 ""
+  "Computability.aux" 1707447104 5977 61e216d354c9453fa928a3e22f37de85 "pdflatex"
+  "Computability.tex" 1707447103 126013 89469e0a958ab5c16646caa9732a7f2a ""
+  "Computability.toc" 1707447104 3890 0b45645c77eb2ec2473fb17c939d0021 "pdflatex"
   (generated)
   "Computability.aux"
   "Computability.log"
   "Computability.pdf"
+  "Computability.toc"
   (rewritten before read)
