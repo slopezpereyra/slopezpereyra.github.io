@@ -24,26 +24,24 @@
 
 \section{Introduction}
 
-These are my notes on computability theory. 
-Let $\Sigma$ denote an arbitrary
-language. If $\omega = \mathbb{N} + \{ 0\}$, a $\Sigma$-mixed function is a
-function s.t. $\mathcal{D}_f \subseteq \omega^n \times \Sigma^{*m}$, with $n, m,
-\geq 0$, and $Im_f = \omega \lor Im_f = \Sigma$ holds. We say a $\Sigma$-mixed
-function is $\Sigma$-effectively computable if we can find some algorithmic
-procedure that, given an input in $\omega^n \times \Sigma^{*m}$, outputs the
-value of $f(\overrightarrow{x}, \overrightarrow{\alpha})$. 
+These are my notes on computability theory. The only definitions that ought to
+be known first-hand are the following.
 
-We say $S \subseteq \omega^n \times \Sigma^{*m}$ is a $\Sigma$-mixed set. If
-there is an algorithmic procedure that enumerates $S$, we say $S$ is
-$\Sigma$-effectively enumerable. If there is an algorithmic procedure that decides
-the belonging to $S$, we say $S$ is $\Sigma$-effectively computable.
+Let $\Sigma$ denote an arbitrary language. We define $\omega := \mathbb{N} + \{
+0\}$. A
+$\Sigma$-mixed function is a function s.t. $\mathcal{D}_f \subseteq \omega^n
+\times \Sigma^{*m}$, with $n, m, \geq 0$, and $Im_f = \omega \lor Im_f = \Sigma$
+holds. We say a $\Sigma$-mixed function is $\Sigma$-effectively computable if we
+can find some algorithmic procedure that, given an input in $\omega^n \times
+\Sigma^{*m}$, outputs the value of $f(\overrightarrow{x},
+\overrightarrow{\alpha})$. We say $S \subseteq \omega^n \times \Sigma^{*m}$ is a $\Sigma$-mixed set. If there is an algorithmic procedure that enumerates $S$, we say $S$ is
+$\Sigma$-effectively enumerable. If there is an algorithmic procedure that
+decides the belonging to $S$, we say $S$ is $\Sigma$-effectively computable.
 
 
-The principal subject of these notes is to formalize the concept of a
-$\Sigma$-effectively computable function. We will observe that this is tightly
-linked with the formalization of $\Sigma$-computable and $\Sigma$-enumerable
-sets. We will study three formalizations: namely, the computation paradigms of
-Turing, Godel, and von Neumann.
+The principal subject of this study is to understand three formalizations of
+the concept of $\Sigma$-effectively computable function; namely, the computation
+paradigms of Turing, Godel, and von Neumann.
 
 \pagebreak
 
@@ -275,7 +273,7 @@ We can extend $\leq$ from $\Sigma$ onto $\Sigma^{*}$ by letting $\alpha \leq
 \pagebreak
 
 
-\section{Enumerable sets}
+\section{Enumerable and computable sets}
 
 Let $\mathcal{F} : \mathcal{D}_{\mathcal{F}} \subseteq \omega^{k} \times \Sigma^{*l} \to \omega^n
 \times \Sigma^{*m}$. We define $\mathcal{F}_{(i)} = p_i^{n, m} \circ
@@ -349,6 +347,75 @@ F(\vec{x}, \vec{\alpha}) $ $\blacksquare$
 
 \end{quote}
 \normalsize
+
+\begin{theorem}
+    Let $S \subseteq \omega^{n} \times \Sigma^{*m} $. The following statements are equivalent. 
+
+    \textit{(1)} $S$ is $\Sigma$-effectively enumerable. 
+
+    \textit{(2)} $S$ is the domain of a $\Sigma$-effectively computable function
+    $f$.  
+
+    \textit{(3)} $S$ is the image of a function $F: \mathcal{D}_f \subseteq
+    \omega^{n} \times \Sigma^{*m} \mapsto S$ s.t. each $F_{(i)}$ is
+    $\Sigma$-effectively computable.
+\end{theorem}
+
+That $(1) \Leftrightarrow (3)$ is trivial. $(1) \Leftrightarrow (2)$ can be proven as
+follows. 
+
+
+\small
+\begin{quote}
+
+\textbf{Proof.} $(\Rightarrow)$. Assume $S$ is $\Sigma$-effectively enumerable.
+Then there is a procedure $\mathbb{P}$ s.t. for any $x \in  \omega$ the
+procedure outputs a value of $S$, and all values of $S$ are mapped. Consider the
+procedure $\mathbb{P}'$ s.t. given an input $(\vec{x}, \vec{\alpha}) \in S$ it
+\textit{a.} computes $\mathbb{P}$ with input  $x = 0, 1, \ldots$ until
+$\mathbb{P}$ maps to $(\vec{x}, \vec{\alpha})$ and \textit{b.} then returns $x$.
+Evidently $\mathbb{P}'$ computes the inverse of the function computed by
+$\mathbb{P}$. Observe that $\mathbb{P}'$ will only halt if $(\vec{x},
+\vec{\alpha}) \in S$. Then $S$ is the domain of a $\Sigma$-effectively
+computable function.
+
+$(\Leftarrow)$ Assume $S$ is the domain of a $\Sigma$-computable function. Let 
+$(\vec{w}, \vec{\beta})$ an arbitrary element of $S$. Consider a procedure
+$\mathbb{P}$ which does the following with an input $x \in \omega$.
+
+\begin{quote}
+    \textit{(1)} Produce the enumeration of $\omega \times \omega^{n} \times
+    \Sigma^{*m} $ given by $x$. This will produce a variable $(t, \vec{x},
+    \vec{\alpha})$.
+
+    \textit{(2)} Run $t$ steps of $\mathbb{P}_f$ with input $(\vec{x},
+    \vec{\alpha}) $. If the program terminated, return $(\vec{x},
+    \vec{\alpha})$. If not, return $(\vec{w}, \vec{\beta})$.
+\end{quote}
+
+Evidently, $\mathbb{P}$ enumerates $S$. $\blacksquare$
+
+\end{quote}
+\normalsize
+
+\begin{theorem}
+    Let $f : \mathcal{D}_f \subseteq \omega^{n} \times \Sigma^{*m} \mapsto \varphi$ with
+    $\varphi$ either $\omega$ or $\Sigma^{*}$. Let $S \subseteq \mathcal{I}_f$.
+    Then if $f$ is $\Sigma$-effectively computable and $S$ is
+    $\Sigma$-effectively enumerable, $f^{-1}(S) = \left\{ (\vec{x},
+    \vec{\alpha}) : f(\vec{x}, \vec{\alpha}) \in S \right\} $ is
+    $\Sigma$-effectively enumerable .
+\end{theorem}
+
+The theorem states that the set of inputs which map to a region of a computable
+function's range is enumerable if that region is enumerable.
+
+\begin{theorem}
+    If $f : \mathcal{D}_f \subseteq \omega^{n} \times \Sigma^{*m} \mapsto
+    \varphi$ with $\varphi$ either $\omega$ or $\Sigma^{*}$, then if $S
+    \subseteq \mathcal{D}_f$ is $\Sigma$-effectively enumerable, $f_{| S}$ is
+    $\Sigma$-effectively computable.
+\end{theorem}
 
 
 
@@ -454,15 +521,33 @@ the fourth word in $\Sigma$, $x$ is s.t.
     is $\Sigma$-effectively enumerable.
 \end{problem}
 
+Assume $f$ is $\Sigma$-effectively computable.  $\therefore S$ is
+$\Sigma$-effectively enumerable. 
 
-We require that $S$ be $\Sigma$-effectively computable. 
+Let $\mathbb{P}_S$ be the procedure that enumerates $S$. Let $\mathbb{P}_f$
+denote the procedure which computes $f$, $w \in S$ fixed and arbitrary, and $\mathbb{P}$ with input $x \in
+\omega$ the following
+procedure: 
 
-$f : S \mapsto \omega$ is $\Sigma$-effectively computable. $\therefore $ $\mathbb{P}_f$ halts
-if the input $(\vec{x}, \vec{\alpha}) $ is in $\mathcal{D}_f$ and does not halt
-if it isn't. $\therefore $ $S$ is $\Sigma$-effectively computable. $\therefore $
-$A$ is $\Sigma$-effectively computable. $\therefore $ $A$ is
-$\Sigma$-effectively enumerable.
+\begin{quote}
 
+    \textit{(0)} If $x = 0$ return $w$ and finish. 
+
+    \textit{(1)} Use $\mathbb{P}_S$ twice, with inputs $(x)_1, (x)_2$
+    respectively, to produce elements $s_1, s_2 \in S$. 
+
+    \textit{(2)} Check if $s_1$ is even (this is trivially effectively
+    computable). If it isn't, return $w$ and finish. 
+
+    \textit{(3)} Check if $s_2 = s_1 / 2 $. If it isn't, return $w$ and finish.
+
+    \textit{(4)} Use $\mathbb{P}_f$ to compute $f(s_1), f(s_2)$ and compare
+    these values. If they are not equal, return $w$ and finish. 
+
+    \textit{(5)} Return $s_1$.
+\end{quote}
+
+Evidently, $\mathbb{P}$ enumerates $A$.
 
 
 \end{quote}
@@ -2080,7 +2165,7 @@ description is a mathematical object which describes all this information.
 
 Formally, an instantaneous description is triple $(i, \overrightarrow{s},
 \overrightarrow{\alpha}) \in \omega \times \omega^{\mathbb{N}} \times
-\Sigma^{*\mathbb{N}}$. These Cartesian product is the set of all possible
+\Sigma^{*\mathbb{N}}$. This Cartesian product is the set of all possible
 instantaneous descriptions. The triple reads: The following instruction is
 $I_{i}^{\mathcal{P}}$ and the current state is $(\overrightarrow{s},
 \overrightarrow{\sigma})$. Observe that if $i \not\in [1, n(\mathcal{P})]$, then
@@ -2095,8 +2180,7 @@ We define the successor function
 \end{align*}
 
 which maps an instantaneous description to the successor instantaneous
-description (the one after executing the instruction in the first). In other
-words, 
+description (the one after executing the instruction in the first). 
 
 \subsection{Computation from a given state}
 
@@ -2509,6 +2593,8 @@ S$, there is a $x \in \omega$ s.t. $\mathcal{P}$ halts starting from $[\![ x
 
 When a program satisfies these properties, we say it \textit{enumerates} $S$.
 
+
+
 \section{$\Sigma$-computable sets}
 
 A $\Sigma$-mixed set $S$ is said to be $\Sigma$-computable if
@@ -2534,8 +2620,8 @@ W \overline{m}) \in S ~ GOTO ~ A_1 \right] $. Of course, this macro is only
 valid when $S$ is a $\Sigma$-computable set.
 
 \begin{theorem}
-    In Godel's paradigm, $S$ is $\Sigma$-computable iff it is the domain of a
-    $\Sigma$-computable function. This statement \textit{does not hold} in von
+    In Godel's paradigm, $S$ is $\Sigma$-p.r. iff it is the domain of a
+    $\Sigma$-p.r. function. This statement \textit{does not hold} in von
     Neumman's paradigm. There are sets that are domains of $\Sigma$-computable
     functions that are not $\Sigma$-computable themselves.
 \end{theorem}
@@ -2762,11 +2848,483 @@ enumerates the substrings which make up $\alpha$. The program is s.t.
 \end{quote}
 \normalsize
 
+\subsection{Godel triumphs over Neumann}
+
+The following three functions contain all the information relevant to
+$\mathcal{S}^{\Sigma}$. Assuming $n, m \in \omega$ are fixed, 
+
+\begin{align*}
+    i^{n, m} & \omega \times \omega^n \times \Sigma^{*m} x Pro^{\Sigma} \mapsto
+    \omega \\
+    E_{\#}^{n, m} & \omega \times \omega^n \times \Sigma^{*m} x Pro^{\Sigma} \mapsto
+    \omega^{[\mathbb{N}]} \\
+    E_{*}^{n, m} & \omega \times \omega^n \times \Sigma^{*m} x Pro^{\Sigma} \mapsto
+    \Sigma^{*}^{[ \mathbb{N} ]} \\
+\end{align*}
+
+For brevity, let $f^{n, m}(t, \vec{x}, \vec{a}, \mathcal{P}) = f(t)$ for $f \in \left\{
+i^{n, m}, E_\#^{n, m}, E_*^{n, m}\right\} $---this is, let as assume fixed
+$\vec{x}, \vec{\alpha}, \mathcal{P}$. Then
+
+\begin{align*}
+    \left( i^{n, m}(0), E_{\#}^{n, m}(0), E_{*}^{n, m}(0) \right) &= \left( 1,
+    \left( x_1, \ldots, x_n, 0, \ldots \right), \left( \alpha_1, \ldots,
+\alpha_n, 0, \ldots \right)   \right)  \\ 
+        \left( i^{n, m}(t+1), E_{\#}^{n, m}(t+1), E_{*}^{n, m}(t+1) \right) &=
+        S_{\mathcal{P}}\left( i^{n, m}(t), E_{\#}^{n, m}(t), E_{*}^{n, m}(t)
+   \right)  \\ 
+\end{align*}
+
+It is clear that $\left( i^{n, m}(t, \vec{x}, \vec{\alpha}, \mathcal{P}),
+E_{\#}^{n, m}(t, \vec{x}, \vec{\alpha}, \mathcal{P}), E_{*}^{n,m}(t, \vec{x},
+\vec{\alpha}, \mathcal{P}) \right) $ is the instantaneous description of
+$\mathcal{P}$ after $t$ steps starting from $[\![ \vec{x}, \vec{\alpha} ]\!]$.
+
+The $E$ functions are not $( \Sigma \cup \Sigma_p )$-mixed, but if we define $E^{n, m}_{\varphi
+j}$, with $\varphi \in \{*, \#\}$, as the $j$th coordinate of $E^{n,
+m}_{\varphi}$, we find that $E_{\varphi j}^{n, m}$ is $( \Sigma \cup \Sigma_p )$-mixed.
+
+\begin{theorem}
+    The functions $i^{n, m}, E_{\varphi j}^{n, m}$ are $(\Sigma \cup \Sigma_p)$-mixed functions.
+\end{theorem}
+
+Given $n, m \in  \omega$, we define 
+
+\begin{align*}
+    Halt^{n, m} = \lambda t\vec{x}\vec{\alpha} \mathcal{P} \left[ i^{n, m}(t,
+    \vec{x}, \vec{\alpha}, \mathcal{P}) = n(\mathcal{P}) + 1  \right]
+\end{align*}
+
+Observe that $\mathcal{D}_{Halt} = \omega \times \omega^{n} \times \Sigma^{*m}
+\times Pro^{\Sigma}$.
+
+\begin{theorem}
+    $Pro^{\Sigma}$ is a $( \Sigma \cup \Sigma_p )$-p.r. set and $n(\mathcal{P}),
+    I_{j}^{\mathcal{P}}$ are $( \Sigma \cup \Sigma_p )$-p.r. functions.
+\end{theorem}
+
+\begin{theorem}
+    The $Halt$ function is $\Sigma$-p.r. 
+\end{theorem}
 
 
+\small
+\begin{quote}
+
+\textbf{Proof.} Observe that 
+
+\begin{align*}
+    Halt^{n, m} = \lambda xy \left[ x = y  \right] \circ \left[ i^{n, m},
+    \lambda \mathcal{P} \left[ n(\mathcal{P})  \right] \circ p_{n+m+2}^{1+n, m +
+1} \right] 
+\end{align*}
+
+\end{quote}
+\normalsize
+
+We define $T^{n, m} = M(Halt^{n, m})$. Observe that 
+
+$$\mathcal{D}_T^{n, m} =
+\left\{ (\vec{x}, \vec{\alpha}, \mathcal{P}) \in \omega^{n} \times \Sigma^{*m} : \mathcal{P}
+\text{ halts when starting from } [\![ (\vec{x}, \vec{\alpha})  ]\!]\right\} $$
+
+\begin{theorem}
+    $T^{n, m}$ is $( \Sigma \cup \Sigma_p )$-recursive but it is not $( \Sigma
+    \cup \Sigma_p )$-p.r. 
+\end{theorem}
+
+The previous theorem follows from the fact that $T^{n, m}$ is a minimization
+over a $\Sigma$-p.r. predicate.
+
+\begin{theorem}
+    If $f$ is a $\Sigma$-computable $\Sigma$-mixed function, then $f$ is
+    $\Sigma$-recursive.
+\end{theorem}
+
+The previous theorem states that any function computable in von Neumman's
+paradigm is computable in Godel's paradigm.
 
 
+\small
+\begin{quote}
 
+\textbf{Proof}. The proof consists in showing that $f$ is $( \Sigma \cup
+\Sigma_p )$-recursive. Then, due to the alphabet independence of recursion, it
+is $\Sigma$-recursive.
+
+\end{quote}
+\normalsize
+
+\subsection{Interacting programs}
+
+Using the results of the previous section, we can construct programs that depend
+on other programs. This is illustrated with an example. Say $\Sigma \left\{ @, +
+\right\} $ and $\mathcal{P}_0 \in Pro^{\Sigma}$ is s.t. $0 \in
+\mathcal{D}_{\Psi_{\mathcal{P_0}}^{1, 0, \#}}$ with $\Psi_{\mathcal{P}_0}^{1, 0,
+\#}(0) = 2$. We will show 
+
+\begin{align*}
+    S = \left\{ x \in \mathcal{D}_{\Psi_{\mathcal{P}_0}^{1, 0, \#}} :
+    \Psi_{\mathcal{P}_0}^{1, 0, \#}(x) \neq 0\right\} 
+\end{align*}
+
+is $\Sigma$-enumerable. 
+
+The program will do the following. For each input $x$, it will test whether
+$\mathcal{P}_0$ halts when starting from $[\![ (x)_1 ]\!]$ in $(x)_2$ steps. If
+it doesn't it will simply return zero (since $0 \in S$). If it does, it will
+compute $\mathcal{P}_0$ starting from $[\![ (x)_1 ]\!]$; if the output is not
+zero, it will return it. If it is zero, it will return $0$. 
+
+Of course, the program will make use of the $Halt^{1, 0}$ function, which is
+$\Sigma$-recursive and thus has an associated macro. It will also use $E_{#
+j}^{1, 0}$ to retrieve the output of $\mathcal{P}_0$ after $(x)_2$ steps. This
+function is also $\Sigma$-p.r. and thus it also has an associated macro. The
+program is 
+
+\begin{align*}
+    &IF ~ N_1 \neq 0 ~ GOTO ~ L_1 \\ 
+    &GOTO ~ L_2 \\ 
+    L_1 ~ ~ ~ & [N_3 \leftarrow (N_1)_1] \\
+              &[N_4 \leftarrow (N_1)_2] \\ 
+              &[IF ~ Halt^{1, 0}(N_4, N_3, \mathcal{P}_0) ~ GOTO ~ L_3] \\ 
+              &GOTO ~ L_2 \\ 
+    L_3 ~ ~ ~ & \left[ N_5 \leftarrow E_{1}^{1, 0} (N_4, N_3, \mathcal{P}_0)
+    \right]  \\  
+              &[IF ~ N_5 = 0 ~ GOTO ~ L_2] \\ 
+              &N_1 \leftarrow  N_5 \\ 
+              &GOTO ~ L_4 \\ 
+        L_2 ~ ~ ~ & N_1 \leftarrow  0 \\ 
+        L_4 ~ ~ ~ & SKIP
+\end{align*}
+
+Thus, a program may use another program to operate.
+
+\begin{theorem}
+    If $S$ a $\Sigma$-mixed set then these statements are equivalent: 
+
+    \textit{(1)} $S$ is $\Sigma$-enumerable 
+
+    \textit{(2)} $S = I_F$ for $F : \mathcal{D}_F \subseteq  \omega^{n} \times
+    \Sigma^{*m} \mapsto S$ s.t. $F_{(i)}$ is $\Sigma$-computable for each $i =
+    1,\ldots, n+m$. 
+
+    \textit{(3)} $S$ is the domain of a $\Sigma$-computable function.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Proof}. $(1) \Rightarrow (2)$ Assume $S$ is $\Sigma$-enumerable. Then
+there are programs $\mathcal{P}_1, \ldots, \mathcal{P}_{n+m}$ s.t. $S =
+\text{Image of } \left[
+\Psi_{\mathcal{P}_1}^{n, m, \#}, \ldots, \Psi_{\mathcal{P}_{n+m}}^{n,
+m,*}\right] $. Let $f = \left[ \Psi_{\mathcal{P}_1}^{n, m, \#}, \ldots,
+\Psi_{\mathcal{P}_{n+m}}^{n, m,*}\right] \right] $. $\blacksquare$
+
+$(2) \Rightarrow (3)$ Assume $S = I_F$  with $F$ a function satisfying the
+specifications of the theorem. Let $\mathcal{P}_i \in Pro^{\Sigma}$ denote the program that
+computes $F_{(i)}$. It is possible to construct a program that, from an initial
+state $[\![ (\vec{x}, \vec{\alpha})  ]\!]$, does the
+following: 
+
+\begin{quote}
+
+    \textit{(0)} Let $N_{n+1} \leftarrow 1$. 
+
+    \textit{(1)} Evaluate whether each $\mathcal{P}_i$ with initial state
+
+    $$[\![  (x_{n+1})_1,
+    \ldots, (x_{n+1})_n, (*^{\leq}(\alpha_{m+1}))_1, \ldots,
+    (*^{\leq}(\alpha_{m+1}))_m ]\!]
+    $$ 
+
+    halts in $t = (x_{n+1})_{n+1}$ steps. 
+
+    \textit{(2)} If the programs halt, proceed to step \textit{(3)}. Else let
+    $N_1 \leftarrow N_1 + 1$ and return to \textit{(1)}.
+
+    \textit{(3)} Let $N_{n+i}$ store the output of $\mathcal{P}_i$ for $1 \leq i
+    \leq n$, and $P_{m+i}$ store the output of $\mathcal{P}_i$ for $n+1 \leq i
+    \leq m$.
+
+    \textit{(4)} If $N_{n+i} = N_{i} \land P_{m+i} = P_i$ for all $1 \i \leq
+    n+m$ return 1. Else loop forever.
+
+\end{quote}
+
+The reader may implement this program in the $\mathcal{S}^{\Sigma}$ language
+using the $Halt$ function. The program attempts to (and must eventually succeed
+at) generating an element of $S$ using the $F_{(1)}, \ldots, F_{(n+m)}$
+functions. It then compares whether the values of the input state are equal to
+the generated element of $S$. If this is true, then it outputs $1$. Otherwise it
+loops forever. It is evident that the program computes $\left(\lambda \vec{x}\vec{\alpha}
+    \left[ 1 \right])_{\mid S}$. $\blacksquare$
+
+    $(3) \Rightarrow (1)$ Assume $S$ is the domain of a $\Sigma$-computable
+    function $f$. One can construct a program that does the following: Given a
+    fixed $w \in S$ and a starting state $[\![ x ]\!]$,
+
+    \begin{quote}
+        \textit{(0)} If $N_1 = 0$ set $N_1 \leftarrow  w$ and finish.
+
+        \textit{(1)} Check if $\mathcal{P}_f$ halts starting from 
+
+        $$[\![ (N_1)_1,
+        \ldots, (N_1)_{n}, *^{\leq} \left( (N_1)_{n+1} \right), \ldots, *^{\leq}
+        \left( (N_1)_{n+m} \right) ]\!]$$
+
+        in $(N_1)_{n+m+1}$ steps. If it does not, set $N_1 \leftarrow  N_1 + 1$
+        and go to \textit{(1)}; else continue. 
+
+        \textit{(2)} Set $N_1, \ldots, N_n, P_1, \ldots, P_m$ so that the final
+        state is 
+
+        $$[\![ (N_1)_1,
+        \ldots, (N_1)_{n}, *^{\leq} \left( (N_1)_{n+1} \right), \ldots, *^{\leq}
+        \left( (N_1)_{n+m} \right) ]\!]$$
+
+        and finish.
+    \end{quote}
+
+    This program is easy to implement in $\mathcal{S}^{\Sigma}$. It is evident
+    that it enumerates $\mathcal{D}_f = S$.
+
+\end{quote}
+\normalsize
+
+
+\small
+\begin{quote}
+
+\begin{problem}
+    Let $\Sigma = \left\{ @, + \right\} $ and $f : \mathcal{D}_f \subseteq
+    \Sigma^{*} \mapsto \omega$ a $\Sigma$-computable function s.t.
+    $f(\varepsilon ) = 1$. Let 
+
+    \begin{align*}
+        L = \left\{ \alpha \in D_f : f(\alpha) = 1 \right\} 
+    \end{align*}
+
+    Provide a program $\mathcal{Q} \in Pro^{\Sigma}$ that enumerates $L$.
+\end{problem}
+
+Let $\mathcal{P} \in Pro^{\Sigma}$ be the program that computes $f$. Our program
+$\mathcal{Q}$, given a starting state $[\![ x ]\!]$, may operate as follows: 
+
+\begin{quote}
+    \textit{(0)} Check if the input is zero; if it is return $\varepsilon $. (This
+    is important because we will generate strings with the $*^{\leq}$ function,
+    which never maps to $\varepsilon$---without this condition our program would
+    never enumerate $\varepsilon$!)
+    \textit{(1)} Compute $\beta := *^{\leq}\left( (x)_1 \right), (x)_2$.
+
+    \textit{(2)} If $\mathcal{P}$ halts in $(x)_2$ steps starting from $\beta$, compute
+    it and go to next step; else return $\varepsilon$ (since $\varepsilon \in  L$).  
+
+    \textit{(3)} If the output of $\mathcal{P}$ was $1$ return $\beta$; else return
+    $\varepsilon$.
+\end{quote}
+
+\begin{align*}
+    &[IF ~ N_1 = 0 ~  GOTO ~ L_2] \\
+    &\left[P_1 \leftarrow *^{\leq} \left( (N_1)_1 \right) \left] \\ 
+    &\left[N_1 \leftarrow (N_1)_2 \right] \\  
+    &[IF ~ Halt^{0, 1} \left( N_1, P_1, \mathcal{P} \right) ~ GOTO ~ L_1 ] \\ 
+    &GOTO ~ L_2 \\ 
+    L_1 ~ ~ ~ & \left[ N_2 \leftarrow E_{* 1}^{0, 1} \left( N_1, P_1,
+    \mathcal{P} \right)  \right]  \\ 
+              &[IF ~ N_2 = 1 ~ GOTO ~ L_{10}] \\ 
+    L_2 ~ ~ ~ &P_1 \leftarrow  \epsilon \\  
+    L_{10} ~ ~ ~ & SKIP
+\end{align*}
+
+
+\begin{problem}
+    Let $\Sigma = \left\{ @, + \right\} $ and $\mathcal{P}_0 \in Pro^{\Sigma}$.
+    Show that 
+
+    \begin{align*}
+        S = \left\{ ({x}, {\alpha}) : \Psi_{\mathcal{P}_0}^{1, 0, \#}(x)
+        = \Psi_{\mathcal{P}_0}^{0, 1, \#}(\alpha)\right\} 
+    \end{align*}
+
+    is $\Sigma$-enumerable.
+\end{problem}
+
+The program may operate as follows. Given an initial state $[\![ x ]\!]$,
+
+\begin{quote}
+    \textit{(1)} Find $(x)_1, (x)_2$. 
+
+    \textit{(2)} Evaluate whether $\mathcal{P}$ halts in $(x)_2$ steps from
+    $[\![ (x)_1 ]\!]$. If it does not, let $x = x + 1$ and return to
+    \textit{(1)}. If it does go to \textit{(3)}. 
+
+    \textit{(3)} Find $\alpha = *^{\leq} \left( (x)_3 \right), (x)_4 $.  
+
+    \textit{(4)} Evaluate whether $\mathcal{P}$ halts in $(x)_4$ steps from
+    $[\![ \alpha ]\!]$. If it doesn't let $x = x+ 1$ and to $\textit{(1)}$; it it does go to
+    \textit{(5)}. 
+
+    \textit{(5)} Check whether the computation of $\mathcal{P}$ from $[\![ (x)_1
+    ]\!]$ is the same as the computation of $\mathcal{P}$ from $[\![ \alpha
+    ]\!]$. If it is not, let $x = x + 1$ and go to \textit{(1)}, else go to
+    $(6)$. 
+
+    \textit{(6)} Set $N_1 \leftarrow (x)_1, P_1 \leftarrow  \alpha$.
+\end{quote}
+
+\begin{align*}
+    L_0~ ~ ~ &[N_{11} \leftarrow (N_1)_1]\\
+    &[N_{12} \leftarrow (N_1)_2]\\
+    &[IF ~ Halt^{1, 0} \left( N_{12}, N_{11}, \mathcal{P} \right) ~ GOTO ~ L_1 ]
+    \\ 
+    &N_1 \leftarrow N_1 +1 \\ 
+    &GOTO ~ L_0 \\ 
+    L_1 ~ ~ ~ &\left[ P_{11} \leftarrow *^{\leq} \left( (N_1)_3 \right)  \right]
+    \\  
+              &\left[ N_{14} \leftarrow (N_1)_4 \right]  \\ 
+              &\left[ IF ~ Halt^{0, 1} \left( N_{14}, P_{11}, \mathcal{P}
+              \right) ~ GOTO ~ L_2  \right]  \\ 
+              &N_1 \leftarrow  N_1 + 1 \\ 
+              &GOTO ~ L_0 \\ 
+    L_2 ~ ~ ~ &\left[ IF ~ E_{\# 1}^{1, 0} (N_{12}, N_{11}, \mathcal{P}) =
+    E_{\#, 1}^{0, 1} \left( N_{14}, P_{11}, \mathcal{P} \right) ~ GOTO ~ L_{3}
+\right]  \\ 
+              &N_1 \leftarrow  N_1 + 1 \\ 
+              &GOTO ~ L_0 \\ 
+    L_4 ~ ~ ~ & N_1 \leftarrow N_{11} \\ 
+              &P_1 \leftarrow P_{11}
+\end{align*}
+
+\pagebreak
+\begin{problem}
+    If $S \subseteq \omega$ and $f : S \mapsto \omega$ is $\Sigma$-computable, then 
+
+    \begin{align*}
+        W = \left\{ x \in S : x \text{ is even } \land x / 2 \in S \land f(x) =
+        f(x / 2)\right\} 
+    \end{align*}
+
+    is $\Sigma$-enumerable.
+\end{problem}
+
+There is some $\mathcal{P}_f \in Pro^{\Sigma}$ that computes $f$. $\therefore S$
+is $\Sigma$-enumerable via some $\mathcal{P}_S \in Pro^{\Sigma}$. Let $w \in W$
+an arbitrary element.
+
+\begin{align*}
+    &[IF ~ N_1 = 0 ~ GOTO ~ L_{666}]\\
+    &[N_2 \leftarrow (N_1)_1] \\
+    &[N_3 \leftarrow (N_1)_2] \\
+    &[N_4 \leftarrow \mathcal{P}_S(N_2)] \\ 
+    &[N_5 \leftarrow \mathcal{P}_S(N_3)] \\ 
+    &[IF ~ N_4 ~ \text{is odd } GOTO ~ L_{666}] \\ 
+    &[IF \neg(N_5 = N_4 / 2) ~ GOTO ~ L_{666} ] \\ 
+    &[IF ~ f(N_5) \neq f(N_4) ~ GOTO ~ L_^{666}] \\ 
+    &N_1 \leftarrow N_2 \\ 
+    &GOTO ~ L_1 \\ 
+    L_{666} ~ ~ ~ &[N_1 \leftarrow  w] \\ 
+    L_1 ~ ~ ~ &SKIP
+\end{align*}
+
+The program starting from $[\![ x ]\!]$ generates two elements of $s_1, s_2 \in S$ using
+$(x)_1, (x)_2$---unless $x = 0$, where it just outputs $w$. If $s_1$ is even,
+and $s_2 = s_1 / 2$, and $f\left( s_1 \right) = f( s_2 ) $, it outputs $s_1$.
+Else it outputs $w$. It is clear that the program enumerates $W$.
+
+\begin{problem}
+    Let $\Sigma = \left\{ @, + \right\} $ and $\mathcal{P}_0 \in Pro^{\Sigma}$.
+    Prove that 
+
+    \begin{align*}
+        W = \left\{ (x, \alpha, \beta) \in \omega \times \Sigma^{*}\times \Sigma^{*}
+        : \mathcal{P}_0 \text{ halts from } [\![ x, \alpha, \beta ]\!]\right\} 
+    \end{align*}
+
+    is $\Sigma$-enumerable.
+\end{problem}
+
+Observe that $W = \mathcal{D}_f$ where $f = \Psi_{\mathcal{P}_0}^{1, 2, \#}$. We
+have already proven that the domain of a $\Sigma$-computable function is
+$\Sigma$-enumerable. Then $W$ is $\Sigma$-enumerable.  
+
+If the program is still desired, let $(w, \alpha, \beta) \in \mathcal{D}_f$ an
+arbitrary element of the domain of $f$. Then
+
+\begin{align*}
+    &[IF ~ N_1 = 0 ~ GOTO ~ L_{666}]\\
+    &[N_2 \leftarrow (N_1)_1] \\
+    &[P_1 \leftarrow *^{\leq}\left( (N_1)_2 \right) ] \\
+    &[P_2 \leftarrow *^{\leq}\left( (N_1)_3 \right) ] \\
+    &[N_3 \leftarrow (N_1)_4] \\
+    &[IF ~ \neg \left(Halt^{1, 2}(N_3, N_2, P_1, P_2, \mathcal{P}_f)\right) ~
+    GOTO ~ L_{666}] \\ 
+    &N_1 \leftarrow N_2 \\ 
+    &GOTO ~ L_1 \\ 
+    L_{666} ~ ~ ~ &[N_1 \leftarrow  w] \\ 
+                  &[P_1 \leftarrow \alpha] \\ 
+    &[ P_2 \leftarrow \beta ] \\ 
+    L_1 ~ ~ ~ &SKIP
+\end{align*}
+
+enumerates $W$.
+
+\begin{problem}
+    Let $\Sigma = \left\{ @, + \right\} $ and $\mathcal{P}_0 \in  Pro^{\Sigma}$.
+    Let 
+
+    \begin{align*}
+        L = \left\{ \alpha \in \Sigma^{*} : (\exists x \in \mathbb{N})
+        ~ \Psi_{\mathcal{P}_0}^{1, 1, \#}(x^2, \alpha) = \Psi_{\mathcal{P}_0}^{0,
+    2, \#}(\alpha, \alpha) \right\} 
+    \end{align*}
+
+    Provide a program $\mathcal{P} \in Pro^{\Sigma}$ s.t.
+    $\mathcal{D}_{\Psi_{\mathcal{P}}^{1, 0, *}} = \omega$ and
+    $\mathcal{I}_{\Psi_{\mathcal{P}}^{1, 0, *}} = L$.
+\end{problem}
+
+Let $f = \Psi_{\mathcal{P}_0}^{1, 1, \#}, g = \Psi_{\mathcal{P}_0}^{0, 2, \#}$,
+which have associated macros by virtue of being $\Sigma$-computable. $L$ is the
+set of strings $\alpha \in \Sigma^{*}$ s.t. some $x \in \mathbb{N}$ satisfies
+$f(x^2, \alpha) = g(\alpha, \alpha)$. Given an arbitrary $\varphi \in L$ and a
+starting state $[\![ x ]\!]$we can construct $\mathcal{P}$ as follows:
+
+\begin{quote}
+    \textit{(0)} If $N_1 = 0$ return $\varphi$ and finish.
+
+    \textit{(1)} Let $N_1 \leftarrow (N_1)_1, P_1 \leftarrow *^{\leq}\left( (N_1)_2 \right) $. 
+
+    \textit{(2)} Let $N_3 \leftarrow (N_1)_3, N_4 \leftarrow (N_1)_4$.
+
+    \textit{(3)} Evaluate whether $\mathcal{P}_0$ halts with input $[\![ N_1^2,
+    P_1]\!]$ in $N_3$ steps. Evaluate whether $\mathcal{P}_0$ halts with input
+    $[\![ P_1, P_1 ]\!]$ in $N_4$ steps. If both are true continue, else
+    set $P_1 \leftarrow \varphi$ and finish.
+
+    \textit{(4)} Evaluate whether $f( N_1^2 , P_1 ) = g(P_1, P_1)$. If false,
+    set $P_1 \leftarrow \varphi$ and finish. Else continue. 
+
+    \textit{(5)} Finish.
+\end{quote}
+
+Since $\left( (x)_1, *^{\leq} \left( (x)_2 \right), (x)_3, (x)_4  \right) $ over
+$x = 1, 2, \ldots$ explores all possible tuples $(x, \alpha, t_1, t_2) \in
+\omega \times \Sigma^{*} \times \omega \times \omega$, the program enumerates
+$L$.
+
+\end{quote}
+\normalsize
+
+\subsection{More relationships between the paradigms}
+
+\begin{theorem}
+    If a $\Sigma$-mixed function $f$ is $\Sigma$-Turing computable then it is
+    $\Sigma$-recursive.
+\end{theorem}
 
 
 
@@ -2774,3 +3332,5 @@ enumerates the substrings which make up $\alpha$. The program is s.t.
 
 
 \end{document}
+
+
