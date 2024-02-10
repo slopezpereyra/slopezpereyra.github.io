@@ -145,6 +145,24 @@ theorem holds for all $n \in \mathbb{N}$.
     then $p = p_i$ for some $i$.
 \end{theorem}
 
+
+\small
+\begin{quote}
+
+\textbf{Proof.} Assume $p \mid p_1 \ldots p_m$. $\therefore $ $p \leq p_1 \ldots
+p_m$. The uniqueness of the prime factorization tells us that $p_1 \ldots p_n
+$ are factors of a unique integer $x$.
+
+Assume $p \not\mid p_j$ for any $j = 1, \ldots, m$. $\therefore $ $p$ is a prime
+factor of $p_1 \ldots p_m$ distinct from $p_j$ for all $p_j$. $\therefore $ $x = p_1
+\ldots p_m p \neq x$. $\therefore $  $\bot$
+
+$\therefore $ $p \mid p_i$ for some $i = 1, \ldots, m$. $\blacksquare$
+
+\end{quote}
+\normalsize
+
+
 We use $\left\langle  s_1, s_2, \ldots  \right\rangle$ to denote the number $x =
 \prod_{n=1}^{\infty} pr(n)^{s_n}$. We use $(x)_i$ to denote $s_i$ in said tuple
 and $(x)$ to denote the infinituple itself.
@@ -171,6 +189,29 @@ corresponding exponents.
     $$(x)_i = \max_{t} \left( pr(i)^{t} \mid x \right) $$
 \end{theorem}
 
+
+\small
+\begin{quote}
+
+    \textbf{Proof.} Let $x \in \mathbb{N}$ be s.t. $x = p_1^{s_1} \ldots
+    p_m^{s_m}$ with $p_j$
+prime and $m_j \neq 0$ for all $j = 1, \ldots, m$. Evidently $(x)_i = s_i$. 
+
+Let $x \in \mathbb{N}$ and
+
+\begin{align*}
+    \mathscr{P}_i  := \left\{ t \in \omega : pr(i)^t \mid x \right\} 
+\end{align*}
+
+Since $\mathscr{P}_i \subseteq \mathbb{N}$ is necessary finite it has a maximum $
+m_i$. The fundamental theorem of arithmetic directly gives $x = pr(1)^{m_1}
+pr(2)^{m_2} \ldots$ Then by definition $m_i = (x)_i$. $\blacksquare$
+
+
+\end{quote}
+\normalsize
+
+
 We define 
 
 \begin{align*}
@@ -184,7 +225,7 @@ We define
 The function returns the index of the maximum prime factor (that is not
 zero-exponentiated) in the factorization of $x$. Since, in this factorizations,
 all prime factors beyond $Lt(x)$ are zero, $Lt(x)$ can be understood as an
-upper-bound of the factorization. This is formalized in the following theorem.
+upper bound of the factorization. This is formalized in the following theorem.
 
 \begin{theorem}
     \begin{align*}
@@ -201,14 +242,12 @@ upper-bound of the factorization. This is formalized in the following theorem.
     Prove the previous theorem.
 \end{problem}
 
-We know $x = \prod_{i=1}^{\infty} pr(i)^{(x)_i}  $ where $(x) \in
-\omega^{[\mathbb{N}]}$. Then, by definition, there is some $k \in \omega$ s.t. $(x)_i = 0$
-if $i \geq k$. Then $x = \prod_{i=1}^{k - 1} pr(i)^{(x)_i} \times \prod_{i=k}^{\infty}
-pr(i)^{0} = \prod_{i=1}^{k-1} pr(i)^{(x)_i}     $
-
-We want to prove $k - 1 = Lt(x)$. However, this follows from definition, since
-we have defined $k - 1$ to be the maximum value after which all $(x)_{j > k -1}
-= 0$. Then $k - 1 = Lt(x)$. $\blacksquare$
+$x = \prod_{i=1}^{\infty} pr(i)^{(x)_i} \land (x) \in
+\omega^{[\mathbb{N}]}$ $\therefore$  $\exists k \in \omega :  i
+\geq k \Rightarrow (x)_i =
+0$ $\therefore $ $x = \prod_{i=1}^{k - 1} pr(i)^{(x)_i} \times \prod_{i=k}^{\infty}
+pr(i)^{0} = \prod_{i=1}^{k-1} pr(i)^{(x)_i} $. But $k - 1 := \max_{i} \left(
+(x)_i \neq 0 \right) := Lt(x)$. $\blacksquare$
 
 
 \end{quote}
@@ -216,7 +255,7 @@ we have defined $k - 1$ to be the maximum value after which all $(x)_{j > k -1}
 
 Prime numbers closely relate to set enumerability. The reason is that the prime
 decomposition of a number associates to any unique $x \in \mathbb{N}$ an
-infinite number of inters $(x)_1, (x)_2, \ldots$. Thus, say we want to generate
+infinite number of inters $(x)_1, (x)_2, \ldots$. Say we want to generate
 all possible pairs $(x, y, z) \in \omega^3$ given a unique input $x \in
 \mathbb{N}$. Then, letting $(x, y, z) = \left( (x)_1, (x)_2, (x)_3 \right) $, we
 have 
@@ -365,6 +404,7 @@ is $\Sigma$-computable for all $1 \leq i \leq n + m$.
     \end{itemize}
 \end{theorem}
 
+
 \small
 \begin{quote}
 
@@ -437,9 +477,9 @@ $\mathbb{P}$. Observe that $\mathbb{P}'$ will only halt if $(\vec{x},
 \vec{\alpha}) \in S$. Then $S$ is the domain of a $\Sigma$-effectively
 computable function.
 
-$(\Leftarrow)$ Assume $S$ is the domain of a $\Sigma$-computable function. Let 
-$(\vec{w}, \vec{\beta})$ an arbitrary element of $S$. Consider a procedure
-$\mathbb{P}$ which does the following with an input $x \in \omega$.
+$(\Leftarrow)$ Assume $S$ is the domain of a $\Sigma$-effectively computable
+function. Let $(\vec{w}, \vec{\beta})$ an arbitrary element of $S$. Consider a
+procedure $\mathbb{P}$ which does the following with an input $x \in \omega$.
 
 \begin{quote}
     \textit{(1)} Produce the enumeration of $\omega \times \omega^{n} \times
@@ -456,6 +496,10 @@ Evidently, $\mathbb{P}$ enumerates $S$. $\blacksquare$
 \end{quote}
 \normalsize
 
+Since any $\Sigma$-effectively computable set is $\Sigma$-effectively
+enumerable, point \textit{(1)} of the previous theorem can be substituted by $S$
+is $\Sigma$-effectively enumerable---with some loss of generality.
+
 \begin{theorem}
     Let $f : \mathcal{D}_f \subseteq \omega^{n} \times \Sigma^{*m} \mapsto \varphi$ with
     $\varphi$ either $\omega$ or $\Sigma^{*}$. Let $S \subseteq \mathcal{I}_f$.
@@ -464,6 +508,35 @@ Evidently, $\mathbb{P}$ enumerates $S$. $\blacksquare$
     \vec{\alpha}) : f(\vec{x}, \vec{\alpha}) \in S \right\} $ is
     $\Sigma$-effectively enumerable .
 \end{theorem}
+
+
+
+\small
+\begin{quote}
+
+\textbf{Proof.} Assume $f$ is $\Sigma$-effectively computable and $S \subseteq
+\mathcal{I}_f$ is $\Sigma$-effectively enumerable. Let $(\vec{w}, \vec{\beta}) $
+an arbitrary element of $f^{-1}(S)$. Consider the following
+effective procedure operating over an input $x \in \omega$: 
+
+\begin{quote}
+
+    \textit{(0)} If $x = 0$ return $(\vec{w}, \vec{\beta})$. Else proceed.
+
+    \textit{(1)} Enumerate an element of $s \in S$ using input $x$. 
+
+    \textit{(2)} Use $(\vec{x}, \vec{\alpha}) := ( (x)_1, \ldots, (x)_n, *^{\leq}( (x)_{n+1}), \ldots,
+    *^{\leq}( (x)_m ))$ to compute a value of $f(\vec{x}, \vec{\alpha})$. 
+
+    \textit{(3)} If $f(\vec{x}, \vec{\alpha}) = s$ return $(\vec{x},
+    \vec{\alpha}) $. Else return $(\vec{w}, \vec{\beta}) $.
+\end{quote}
+
+Evidently, the procedure enumerates $f^{-1}(S)$. $\blacksquare$
+
+\end{quote}
+\normalsize
+
 
 The theorem states that the set of inputs which map to a region of a computable
 function's range is enumerable if that region is enumerable.
@@ -504,7 +577,7 @@ given by the position of each word in the language.
 Both of these relations come from the uniqueness of prime factorizations.
 They provide a way to enumerate $\Sigma$-mixed sets. In
 particular, if $S$ is $\Sigma$-total we enumerate it mapping each $x \in \omega$
-to $\big((x)_1, \ldots, (x)_n, *^{\leq}((x)_{n+1}), *^{\leq}((x)_m)\big)$. If
+to $\big((x)_1, \ldots, (x)_n, *^{\leq}((x)_{n+1}), \ldots, *^{\leq}((x)_m)\big)$. If
 $S$ is not $\Sigma$-total, then one can still enumerate it assuming that it is
 $\Sigma$-computable. Indeed, one maps $x$ to the corresponding $(n+m)$-tuple
 described above if the tuple is in $S$, and leaves the procedure undefined (or
@@ -721,7 +794,6 @@ the characters in the word $d$.
 
 \small
 \begin{quote}
-\textit{Preliminary def. }
 
 Given $\alpha \in (\Gamma \cup Q)^*$ we define 
 
@@ -731,7 +803,7 @@ Given $\alpha \in (\Gamma \cup Q)^*$ we define
     \left\lfloor \alpha B \right\rfloor &= \left\lfloor  \alpha \right\rfloor
 \end{align*}
 
-Thus, $[[ \alpha ]]$ removes the trailing blank symbols of $\alpha$ (if any).
+Thus, $\left\lfloor \alpha \right\rfloor$ removes the trailing blank symbols of $\alpha$ (if any).
 \end{quote}
 \normalsize 
 
@@ -886,7 +958,7 @@ there is by definition no $d'$ s.t. $d \vdash d'$
 ($\Leftarrow$) This does not hold!! Assume that, for all $d \in \mathbb{D}$,
 there is at most one $d'$ s.t. $d \vdash d'$. 
  Consider the case where there is no $d'$ s.t. $d \vdash d'$. In the case where
- $\alpha = \varvarepsilon$ and
+ $\alpha = \varepsilon$ and
 
 $$
 \delta(q) = \{ (q', \sigma, L), (q'', \sigma', L) \}
@@ -917,12 +989,15 @@ state} if
     \exists d \in \mathbb{D} : \left\lfloor q_0 B w \right\rfloor \vdash^* d \land ~ St(d) \in F
 \end{align*}
 
+Observe that we do not require that $d \in St(d)$ satisfies $d \not\vdash d'$
+for all $d' \in \mathbb{D}$. In other words, a machine may accept a word by
+reach of final state and not halt.
+
 The language accepted by a Turing machine is 
 
 \begin{align*}
     \mathcal{L}(M) = \left\{w \in \Sigma^{*}:  w \text{ is accepted by reach of final state } \right\} 
 \end{align*}
-
 
 \small
 \begin{quote}
@@ -1005,7 +1080,7 @@ halts when starting from $ \left\lfloor q_0 B \omegam \right\rfloor  $. We
 denote 
 
 \begin{align*}
-    \mathcal{H}(M) = \left\{ \omegam \in \Sigma^{*}: \omegam \text{ is accepted
+    \mathcal{H}(M) = \left\{ w \in \Sigma^{*}: w \text{ is accepted
     by detention} \right\} 
 \end{align*}
 
@@ -1582,7 +1657,13 @@ is $\Sigma$-p.r. Thus, $R = [\alpha]_i$ is $\Sigma$-p.r.
     $\Sigma$-p.r.
 \end{problem}
 
-\textit{Complete.}
+Let $S = \left\{ (n, \alpha) \in \mathbb{N} \times \Sigma^{*} : n + |\alpha|
+\equiv 0 \mod 2 \right\} $ and $g := \lambda x\alpha \left[  x^2 \right]$. 
+
+$g$ is $\Sigma$-p.r. 
+
+$\therefore $ g_{S} \cup C_{0}^{1, 1}_{\overline{S}} = f$ is
+$\Sigma$-p.r. 
 
 
 \begin{problem}
