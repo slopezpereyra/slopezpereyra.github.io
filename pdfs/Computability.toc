@@ -50,3 +50,4 @@
 \contentsline {subsection}{\numberline {7.4}Church's thesis}{58}{}%
 \contentsline {section}{\numberline {8}Extending $\Sigma $-recursion}{59}{}%
 \contentsline {subsection}{\numberline {8.1}The Halting problem}{60}{}%
+\contentsline {section}{\numberline {9}True/false problems}{62}{}%

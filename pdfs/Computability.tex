@@ -11,8 +11,7 @@
 \newtheorem{lemma}{Lemma}
 \newtheorem{theorem}{Theorem}
 \newtheorem{problem}{Problem}
-\newtheorem{example}{Example}
-\newtheorem{definition}{Definition}
+\newtheorem{example}{Example} \newtheorem{definition}{Definition}
 \newtheorem{lemma}{Lemma}
 \newtheorem{theorem}{Theorem}
 
@@ -1501,8 +1500,7 @@ PR_{k}^{\Sigma}$.
 PR_{k}^{\Sigma}$, we also include the case where $g = \mathcal{G}$ an indexed
 family of functions.
 
-\textit{Observation} Due to the previous theorem, we know $\mathcal{F} \in PR
-\Rightarrow \mathcal{F} $ is $\Sigma$-computable.
+
 
 ~ 
 
@@ -1597,6 +1595,10 @@ so is $P$. $\blacksquare$
 \begin{theorem}
     A set $S$ is $\Sigma$-p.r. if and only if it is the domain of a
     $\Sigma$-p.r. function.
+\end{theorem}
+
+\begin{theorem}
+    Any $\Sigma$-mixed function $f$ with finite domain is $\Sigma$-p.r. 
 \end{theorem}
 
 \subsection{Case division}
@@ -2295,10 +2297,8 @@ Recall that
     \end{cases}
 \end{align*}
 
-We define $\omega^{\mathbb{N}} = \{ (s_1, s_2, \ldots) : \exists n \in
-\mathbb{N} : i > n \Rightarrow s_i = 0 \}$. This is, $\omega^{\mathbb{N}}$
-denotes the set of infinite tuples that from some index onwards contain only
-zeroes. Similarly, $\Sigma^{*\mathbb{N}}$ denotes the set of infinite alphabetic
+We define $\omega^{[ \mathbb{N} ]} = \{ (s_1, s_2, \ldots) : \exists n \in
+\mathbb{N} : i > n \Rightarrow s_i = 0 \}$. Similarly, $\Sigma^{*[ \mathbb{N} ]}$ denotes the set of infinite alphabetic
 tuples that contain only $\varepsilon$ from some index onwards.
 
 A \textbf{state} is a tuple $(\overrightarrow{s}, \overrightarrow{\sigma}) \in
@@ -3728,6 +3728,738 @@ $\mathcal{P}$ halts when inputted to itself.
     programs beyond the imperative paradigm.
 \end{quote}
 \normalsize
+
+\pagebreak
+\section{True/false problems}
+
+\begin{problem}
+    If $\leq$ is an order over $\Sigma$ and $|\Sigma| = n \geq 1$, then 
+
+    \begin{align*}
+        |\alpha| \leq x \iff \#^{\leq}(\alpha) \leq \sum_{i=0}^{i = x - 1} n n^i
+    \end{align*}
+
+    for whatever $x \in \mathbb{N}, \alpha \in \Sigma^{*}$.
+\end{problem}
+
+Before proving that the statement is true, consider this example.
+
+
+\small
+\begin{quote}
+
+Consider an example: $\Sigma = \left\{ w, z \right\} $ with $w \leq z$; then the
+language list is 
+
+\begin{align*}
+    \overbrace{w, z}^{2 \text{ with }|\alpha| \leq 1}, \overbrace{ww, wz, zw,
+        zz}^{2^2 \text{ with }|\alpha|
+        \leq 2}, \overbrace{ www, wwz, wzw, wzz, zww, zwz, zzw, zzz }^{ 2^3
+        \text{ with } |\alpha| \leq 3}, \ldots
+\end{align*}
+
+It is easy to see that this is generalizable, because there are always $n^k$
+words of length $k$ in an alphabet of $n$ symbols. 
+
+\begin{theorem}
+    There are $n^k$ words of length $k$ in an alphabet of $n$ symbols.
+\end{theorem}
+
+
+\small
+\begin{quote}
+    \textbf{Proof.} Any word of length $k$ is a combination of $k$ symbols from
+    a set of $n$ that can be drawn with repetition. There are $n^k$ words of
+    length $k$.
+\end{quote}
+\normalsize
+
+
+\end{quote}
+\normalsize
+
+$(\Rightarrow)$ Assume $|\alpha| \leq x$. There are $n^1 + \ldots + n^x$ words
+$\varphi \in \Sigma^{*}$ s.t. $|\varphi| \leq x$, to each of which correspond a
+position $\#^{\leq}(\varphi) \in \mathscr{W} := [1, \ldots, n^1 + \ldots +
+n^x]$. Since $\#^{\leq}(\alpha) \in \mathscr{W}$ and $\max \mathscr{W} = n^1 +
+\ldots + n^x$ we have $\#^{\leq}(\alpha) \leq \sum_{i=1}^{x} n^x$. $\blacksquare$
+
+$(\Leftarrow)$ Assume $\#^{\leq}(\alpha) \leq n^1 + \ldots + n^x$ for $x \in
+\mathbb{N}$. 
+
+Assume $|\alpha| > x$.  
+
+$\therefore $ $\#^{\leq}(\alpha) >
+\#^{\leq}(\beta)$ for any $\beta$ s.t. $|\beta| \leq x$. There are $n_1 + \ldots
++ n^x$ words $\beta$ s.t. $|\beta| \leq x$. Then $\#^{\leq}(\alpha) > n_1 +
+\ldots + n^x$, which is a contradiction. 
+
+$\therefore $ $|\alpha| \leq x$.
+
+\pagebreak 
+
+\begin{problem}
+
+    Let $\mathcal{P}_0 \in Pro^{\Sigma}$ and $P$ be the predicate
+
+    \begin{align*}
+ \lambda t\vec{x}\vec{\alpha}[Halt^{n,m}\left( t,\vec{x},\vec{\alpha}, \mathcal{P}_{0}\right) \wedge (t)_{1}=E_{\#1}^{n,m}(t,\vec{x},\vec{\alpha}, \mathcal{P}_{0}))]
+\end{align*}
+
+Then $\Psi _{\mathcal{P}_{0}}^{n,m,\#}=\lambda t\left[ (t)_{1}\right] \circ
+M(P)$.
+\end{problem}
+
+Two functions are the same if their domains are equal and their ranges are
+equal.
+
+\textit{(1)} 
+
+
+\begin{align*}
+    &\mathcal{D}_{\lambda t \left[  (t)_1 \right] \circ M(P)} =
+    \mathcal{D}_{M(P)} = \left\{ (\vec{x}, \vec{\alpha}) \in \omega^{n} \times
+    \Sigma^{*m} : (\exists t \in  \omega) P(t, \vec{x}, \vec{\alpha}) = 1
+\right\} \\ 
+    &\mathcal{D}_{\Psi_{\mathcal{P}_0}^{n, m, \#}} = \left\{ (\vec{x},
+\vec{\alpha}) \in \omega^{n} \times \Sigma^{*m} : \mathcal{P}_0 \text{ halts
+with starting state } [\![ \vec{x}, \vec{\alpha} ]\!] \right\} 
+\end{align*}
+
+Any $(\vec{x}, \vec{\alpha}) \in \mathcal{D}_{M(P)}$ satisfies that
+$\mathcal{P}_0$ halts starting from $(\vec{x}, \vec{\alpha})$; this is,
+$\mathcal{D}_{M(P)} \subseteq \mathcal{D}_{\Psi_{\mathcal{P}_0}^{n, m, \#}}$.
+Now consider an arbitrary element $(\vec{x}, \vec{\alpha}) \in
+\mathcal{D}_{\Psi_{\mathcal{P}_0}^{n, m, \#}}$.  We know $\mathcal{P}_0$ halts
+at $t$ steps, for some $t \in \omega$, when starting from $[\![ \vec{x},
+\vec{\alpha} ]\!]$. This means it halts at $t + k$ steps for any $k \in
+\mathbb{N}$. Then, given that input $(\vec{x}, \vec{\alpha}) $, there are
+infinitely many 
+$k \in \mathbb{N}$ s.t. the program halts at $t + k$ steps, and thus there is
+some $t' = t + k$ s.t. the output of the program is $(t')_1$. Then
+$\mathcal{D}_{\Psi_{\mathcal{P}_0}^{n, m, \#}} \subseteq \mathcal{D}_{M(P)}$. 
+
+$\therefore ~ \mathcal{D}_{M(P)} = \mathcal{D}_{\Psi_{\mathcal{P}_0}^{n, m, \#}}$
+
+\textit{(2)} The value of $M(P)$ is the least $t$ s.t. $\mathcal{P}_0$ halts in $t$
+steps and s.t. the output $\mathcal{P}_0$ at halt is $(t)_1$. It is trivial to
+see then that $\Psi_{\mathcal{P}_0}^{n, m, \#} = \lambda t \left[  (t)_1 \right]
+\circ M(P)$.
+
+$\therefore $ The statement is true.
+
+\pagebreak 
+
+\begin{problem}
+    If $f$ is $\Sigma$-computable then $\mathcal{D}_f$ is $\Sigma$-recursive.
+\end{problem}
+
+Assume $f$ is $\Sigma$-computable. We know that $\mathcal{D}_f$ is not
+necessarily $\Sigma$-computable itself. This directly implies $\mathcal{D}_f$ is
+not necessarily $\Sigma$-recursive.
+
+\begin{problem}
+    If $\mathcal{P} \in Pro^{\Sigma}$ s.t. $\mathcal{D}_{\Psi_{\mathcal{P}}^{1,
+    0, *}} = \omega$ then $\mathcal{D}_{\Psi_{\mathcal{P}}^{1, 1, *}} = \omega
+    \times \Sigma^{*}$
+\end{problem}
+
+The statement is false. Observe that the program $\mathcal{P}_{\#}$  s.t.
+$\Psi_{\mathcal{P}_{\#}}^{1, 0, *} = \#^{\leq}$ satisfies the antecedent (that
+the function has an associated program follows from the fact that it is
+$\Sigma$-p.r. and hence $\Sigma$-computable).
+
+
+Add to the first line of $\mathcal{P}_{\#}$ the instruction $L_1 ~ [ IF ~ P_1
+\neq \varepsilon ~ GOTO ~ L_1]$, which is a valid macro expansion because
+$\lambda \alpha \left[ \alpha \neq \epsilon  \right]$ is $\Sigma$-r and then
+$\Sigma$-computable. It is evident that this program still satisfies the
+antecedent, but does not satisfy the consequent, since 
+
+\begin{align*}
+    \mathcal{D}_{\Psi_{\mathcal{P}_\#}^{1, 1, *}} = \left\{ (x, \alpha) \in
+    \omega^{n} \times \Sigma^{*m}  : \alpha = \varepsilon  \right\} 
+\end{align*}
+
+The statement is false.
+
+\begin{problem}
+    Let $M$ a Turing machine that computes $p_1^{2, 0}$. Then $M$ computes
+    $p_1^{1, 0}$.
+\end{problem}
+
+The statement is not necessarily true. Consider the arbitrary instantaneous
+description 
+
+\begin{align*}
+    \left\lfloor q_0 B i^{x_1} B i^{x_2} \right\rfloor
+\end{align*}
+
+The Turing machine may be programmed so that not having a $i$ symbol after the
+second $B$ symbol leads to a non-halting state. This could be done without loss
+of generality under the assumption that the Turing machine leads to a state
+$\left\lfloor q_f i^{x_1} \right\rfloor$. If this were true, then the Machine
+would not compute $p_1^{1, 0}$.
+
+\begin{problem}
+    Let $f, g : \omega \mapsto \omega$ s.t. $g \in PR^{\Sigma}$ and $f \in
+    PR_3^{\Sigma} - PR_2^{\Sigma}$. Then $f \circ g \subset PR_5^{\Sigma} -
+    PR_3^{\Sigma}$.
+\end{problem}
+
+From the definition of $PR_k^{\Sigma}$ follows that
+
+\begin{align*}
+    PR_3^{\Sigma} - PR_2^{\Sigma} &= \left\{ R(f, g) : f, g \in PR_2^{\Sigma}
+    \right\} \cup \left\{ f \circ [f_1, \ldots, f_n] : f, f_i \in PR_2 \right\}
+\end{align*}
+
+Assume $g \in PR_k^{\Sigma}$ for $k > 5$ and $g \not\in PR_{m}^{\Sigma}$ for $m
+\leq 5$. Then $f \circ g$ 
+
+\pagebreak 
+
+\begin{problem}
+    Assume $\Sigma_p \subseteq \Sigma$. Show that for any $\mathcal{P} \in
+    Pro^{\Sigma}$ there is some $\mathcal{Q} \in Pro^{\Sigma}$ s.t. 
+
+    \begin{align*}
+        \Psi_{\mathcal{P}}^{1, 0, \#} \circ \Psi_{\mathcal{Q}}^{1, 0, \#} =
+        id_{| Im(\Psi_{\mathcal{P}}^{1, 0, \#})}
+    \end{align*}
+
+
+    For any macro used give the predicate or function associated to it.
+\end{problem}
+
+Let $\mathcal{P}$ an arbitrary program that computes a $\Sigma$-computable
+function $f$. Let $\mathcal{Q}$ be
+
+\begin{align*}
+    &N_{5} \leftarrow N_1 \\ 
+    L_1 ~ ~ ~ &[N_2 \leftarrow f(N_3)] \\ 
+    &[IF ~ N_2 = N_5 ~ GOTO ~ L_2 ] \\ 
+    &N_3 \leftarrow  N_3 + 1 \\ 
+    &GOTO ~ L_1 \\ 
+    L_2 ~ ~ ~ &N_1 \leftarrow N_3
+\end{align*}
+
+where $[IF ~ N_2 = N_5 ~ GOTO ~ L_2] $ denotes (for practicity) the macro $[IF ~
+P(V_1, V_2) ~ GOTO ~ A_1]$ with $P = \lambda xy \left[  x = y \right]$ (which is
+trivially $\Sigma$-computable) and $[V_1 \leftarrow f(V_2)]$ is the macro
+associated to the $\Sigma$-computable function $f$.
+
+~
+
+Let $f := \Psi_{\mathcal{P}}^{1, 0, \#}, g := \Psi_{\mathcal{Q}}^{1, 0, \#}$. We
+shall prove $f \circ g = id_{Im(f)}$.
+
+~
+
+\textit{(1)} Observe that $\mathcal{Q}$ halts if and only if starting from $[\![
+x ]\!]$ with $x \in Im(f)$. The reason is that $\mathcal{Q}$ computes
+$f(N_3)$ with $N_3 = 0, 1, \ldots$ until $f(N_3) = N_5$. This will only happen
+if $N_5$, which stores the input, is in $Im(f)$.
+
+\textit{(2)} Observe that $\mathcal{Q}$ starting from $[\![ x ]\!]$ returns a
+value $y$ s.t. $f(y) = x$. In other words, $g(x) = y \Rightarrow f(y) = x$, or
+rather $(f \circ g)(x) = x$. 
+
+~
+
+Points \textit{(1)} and \textit{(2)} entail that 
+
+\begin{align*}
+    (f \circ g) = Id_{Im(f)} ~ \blacksquare
+\end{align*}
+
+\pagebreak 
+
+\begin{problem}
+    Let $\Sigma = \left\{ @, + \right\} $ and $f : \omega^{n} \times \Sigma^{*m}
+    \mapsto \omega$ a $\Sigma$-p.r. function. Show that the set 
+
+    \begin{align*}
+        S = \left\{ (x, y, \alpha) : \exists z \in (\omega - \left\{ 1
+            \right\})
+        : z \mid \sum_{k=y}^{x + y} f(k^y, \alpha)^x \right\} 
+    \end{align*}
+
+    is $\Sigma$-p.r. 
+\end{problem}
+
+
+\footnotesize
+\begin{quote}
+
+The approach to the problem is to simplify $S$ and then show that it is the
+domain of a $\Sigma$-p.r. function. Then, by virtue of the theorem which states
+that a set is $\Sigma$-p.r. iff it is the domain of a $\Sigma$-p.r. function, we
+shall have that $S$ is $\Sigma$-p.r. 
+
+\end{quote}
+\normalsize
+
+
+\small
+\begin{quote}
+
+
+\textit{(1)} Let $g = \lambda xy \alpha \left[ \sum_{k=y}^{x + y}f(k^y, \alpha)^x  \right]$.
+Let $\mathscr{D}_x = \left\{ z \in \omega : z \neq 1 \land z \mid x \right\} $.
+Evidently, for any $x \neq 1$ , $\mathscr{D}_x \neq \emptyset$.  So,
+
+\begin{align*}
+    \langle \exists z \in \left( \omega - 1 \right)  :  z \neq 1 : z \mid x
+    \rangle \equiv x \neq 1
+\end{align*}
+
+It follows that $S = \left\{ (x, y, \alpha) : g(x, y, \alpha) \neq 1 \right\} $. 
+
+\textit{(2)} We will prove $g$ is $\Sigma$-p.r. Simply observe that by
+assumption $f$ is $\Sigma$-p.r. Then 
+
+\begin{align*}
+    H(x, y, z, \alpha) := f(x^y, \alpha)^z  = \lambda xz \left[ x^z  \right] \circ \left[ f \circ
+    \left[ \lambda xz \left[  x^z \right] \circ \left[ p_1^{3, 1}, p_2^{3, 1},
+\right], p_4^{3, 1}  \right], ~ p_3^{3, 1} \right] 
+\end{align*}
+
+is $\Sigma$-p.r. Then
+
+\begin{align*}
+    g = \lambda abxy\alpha \left[ \sum_{k=a}^{k = b} H(k, y, x, \alpha)  \right] \circ
+    \left[ p_2^{2, 1}, \lambda xy \left[ x + y  \right] \circ \left[ p_1^{2, 1},
+    p_2^{2, 1}\right], p_1^{2, 1}, p_2^{2, 1}, p_3^{2, 1}    \right] 
+\end{align*}
+
+The general summation of a $\Sigma$-p.r. function is $\Sigma$-p.r., and we have
+proven $g$ is a composition of this general summation and $\Sigma$-p.r.
+functions. Then $g$ is $\Sigma$-p.r. 
+
+\textit{(3)} Observe that $\mathcal{D}_{Suc \circ (Suc \circ g)}$ is
+$\Sigma$-p.r. because the function is $\Sigma$-p.r. Evidently, this set is
+closely related to $S$, insofar as
+
+    \begin{align*}
+        \mathcal{D}_{Suc \circ (Suc \circ g)} = \left\{ (x, y, \alpha) : g(x, y,
+        \alpha) \neq 1 \land g(x, y, \alpha) \neq 0 \right\} 
+    \end{align*}
+
+
+Now consider the set $S' = \left\{ (x, y, \alpha) : g(x, y, \alpha) = 0 \right\}
+$, potentially empty. The set is $\Sigma$-p.r. because
+
+\begin{align*}
+    \chi_{S'}^{2, 1} = \begin{cases}
+        1 & g(x, y, \alpha) = 0 \\ 
+        0 & otherwise
+    \end{cases}
+\end{align*}
+
+is $\lambda xy \left[ x = y  \right] \circ \left[ g \circ \left[ p_1^{2, 1},
+p_2^{2, 1}, p_3^{2, 1} \right], C_0^{2, 1}  \right] $
+
+Then, because the union of $\Sigma$-p.r. sets is $\Sigma$-p.r. we have 
+
+\begin{align*}
+    \mathcal{D}_{Suc \circ (Suc \circ g)} \cup S' = S
+\end{align*}
+
+is $\Sigma$-p.r. 
+
+\end{quote}
+\normalsize
+
+\pagebreak
+
+\begin{problem}
+    Let
+
+    \begin{align*}
+    L = \left\{ \mathcal{P} \in Pro^{\Sigma} : \left( \exists x \in \omega \right) ~
+    \Psi_{\mathcal{P}}^{1, 1, *} (x, \varepsilon ) = \varepsilon \right\} 
+    \end{align*}
+
+    Find a $\mathcal{Q} \in Pro^{\Sigma}$ s.t. $Im(\Psi_{\mathcal{Q}}^{1, 0, *})
+    = L$ and $\mathcal{D}_{\Psi_{\mathcal{Q}}^{1, 0, *}} = \omega$
+\end{problem}
+
+The problem essentially asks for a program $\mathcal{Q}$ that enumerates $L$.
+Let $\mathcal{P}$ be fixed, arbitrary element of $L$ (For example $SKIP$,
+ which
+ evidently belongs to $L$). Using the fact that $(\Sigma \cup \Sigma_p)^{*}$ is
+$\Sigma$-enumerable (it is $(\Sigma \cup \Sigma_p)$-total), we can write
+$\mathcal{Q}$ to reproduce the following algorithm with an input $x$: 
+
+\begin{quote}
+    \textit{(1)} If $x = 0$ return $\mathcal{P}$ and stop. Else continue.
+
+    \textit{(2)} Enumerate $(\Sigma \cup \Sigma_p)$ with input $(x)_1$ and store
+    the word in $\mathcal{P'}$.
+
+    \textit{(3)} If $\mathcal{P}'$, from a starting state $[\![ (x)_2,
+    \varepsilon  ]\!]$, halts in $(x)_3$ steps with final state $[\![ \epsilon
+    ]\!]$, output $\mathcal{P}'$ and finish. 
+
+    \textit{(4)} Output $\mathcal{P}$.
+\end{quote}
+
+Let $\Phi$ the $\Sigma$-computable program which enumerates $(\Sigma \cup
+\Sigma_p)^*$ and $\left[ V_1 \leftarrow \Phi(V_2) \right] $ its associated
+macro. Let $[W_1 \leftarrow \mathcal{P}]$ be the macro that assigns to $W_1$ the
+word $\mathcal{P} \in  L$. Then the program $\mathcal{Q}$ given by
+
+
+\begin{align*}
+    &IF ~ N_1 \neq 0 ~ GOTO L_1 \\ 
+    &GOTO ~ L_4 \\ 
+    L_1 ~ ~ ~ &[P_1 \leftarrow \Phi( (N_1)_1 )] \\ 
+              & [IF ~ Halt^{1, 1} \left( (N_1)_3, (N_1)_2, \varepsilon, P_1
+              \right) ~ GOTO ~ L_2] \\ 
+              &GOTO ~ L_4 \\ 
+    L_2 ~ ~ ~ & [IF ~ E_{* 1}^{1, 1} \left( (N_1)_3, (N_1)_2, \varepsilon,
+    P_1\right) \neq \varepsilon ~ GOTO ~ L_4] \\  
+              &GOTO ~ L_5\\
+        L_4 ~ ~ ~ & [ P_1 \leftarrow \mathcal{P} ] \\ 
+        L_5 ~ ~ ~ &SKIP
+\end{align*}
+
+enumerates $L$. 
+
+
+\small
+\begin{quote}
+
+\textit{Note.} Observe that $Halt$, $(x)_i, \lambda \alpha\beta \left[ \alpha
+\neq \beta   \right], E_{*i}^{1, 1}$ are all $\Sigma$-p.r.  Then their
+compositions are $\Sigma$-p.r. and then $\Sigma$-computable. By alphabet
+independence they are $(\Sigma \cup \Sigma_p)$-computable $\therefore $ The
+macros used in the program are all valid.
+
+\end{quote}
+\normalsize
+
+\pagebreak 
+
+\begin{problem}
+
+    Let $\Sigma = \left\{ @, ?, \sim  \right\} $. Prove that 
+
+    \begin{align*}
+        S = \left\{ (x, \alpha, \beta) \in \mathbb{N} \times \Sigma^{*} \times
+            \left\{ ?, \sim \right\}^{*} : x = t^2 \text{ for some $t \in \mathbb{N}$}
+    \lor \alpha = \beta   \right\} 
+    \end{align*}
+
+is $\Sigma$-p.r. 
+
+\end{problem}
+
+$S$ is $\Sigma$-p.r. iff $\chi_S^{1, 2}$ is $\Sigma$-p.r. Evidently 
+
+\begin{align*}
+    \chi_S^{1, 2} = \lambda x \alpha \beta \left[ \left( (\exists t \in
+            \omega)_{t \leq x} ~ x
+    = t^2  ~ \lor \alpha = \beta \right) \land |\beta|_{@} = 0 \right]
+\end{align*}
+
+We will show this function is $\Sigma$-p.r. by separating the predicates and
+showing that each is $\Sigma$-p.r. One must only be careful in ensuring that the
+predicates have the same domains.
+
+\textit{(1)} Let $P_1 = \lambda x\alpha\beta \left[ (\exists t \in \omega)_{t
+    \leq x} ~ x =
+t^2\right]$. (Of course $x = t^2 \Rightarrow t \leq x$, hence the natural
+bound.) Of course, this is 
+
+\begin{align*}
+    \lambda u x \alpha \beta \left[ (\exists t \in \omega)_{t \leq u} ~ t = x^2
+    \right] \circ \left[ p_1^{1, 2}, p_1^{1, 2}, p_2^{1, 2}, p_3^{1, 2} \right] 
+\end{align*}
+
+It is a theorem that $\lambda x \vec{x}\vec{\alpha} \left[ (\exists t \in
+\omega)_{t \leq x} Q(\vec{x}, \vec{\alpha})   \right]$, with $Q$ a predicate, is
+$\Sigma$-p.r. if $Q$ is $\Sigma$-p.r. In our case it is evident that $t = x^2$
+is $\Sigma$-p.r. and hence $P$ is $\Sigma$-p.r. 
+
+\textit{(2)} It is a theorem that $P_2 := \lambda x \alpha\beta \left[  \alpha = \beta
+\right]$ is $\Sigma$-p.r.  
+
+\textit{(3)} Let $f = C_{0}^{0, 0}$ and $\mathcal{G}$ be the following indexed
+family of functions: 
+
+\begin{align*}
+    \mathcal{G} : \Sigma &\mapsto \left\{ Suc \circ p_1^{1, 1}, p_1^{1, 1} \right\}  \\ 
+    @ &\mapsto Suc \circ p_1^{1, 1} \\ 
+    ? &\mapsto p_1^{1, 1} \\ 
+    \sim &\mapsto p_1^{1, 1}
+\end{align*}
+
+Then evidently $P_3 := \lambda x\alpha\beta \left[ |\beta|_{@}  \right] = R(f,
+\mathcal{G})$ is $\Sigma$-p.r. 
+
+~ 
+
+Since all these predicates are $\Sigma$-p.r. and have identical domains, then 
+
+\begin{align*}
+    \chi_S^{1, 2} = (P_1 \lor P_2) \land P_3
+\end{align*}
+
+is well-defined and $\Sigma$-p.r. $\blacksquare$
+
+\pagebreak 
+
+\begin{problem}
+    Assume $f : \mathcal{D}_f \subseteq \Sigma^{*} \mapsto \omega$ is
+    $\Sigma$-effectively computable and $g : \mathcal{D}_g \subseteq \Sigma
+    \mapsto \omega$ is $\Sigma$-effectively computable. Show 
+
+    \begin{align*}
+        L = \left\{ \alpha \in \mathcal{D}_f \cap \mathcal{D}_g : f(\alpha) =
+        g(\alpha) \right\} 
+    \end{align*}
+
+    is $\Sigma$-effectively enumerable. Assume $\varepsilon \in L$.
+\end{problem}
+
+Let $\mathbb{P}_f, \mathbb{P}_g$ be the effective procedures which compute $f,
+g$ respectively. Let $\mathbb{P}_L$ be the following effective procedure, with a
+unique input $x \in \omega$:
+
+\begin{quote}
+    \textit{(1)} If $x = 0$ go to step \textit{(7)}; otherwise go to step
+    \textit{(2)}
+
+    \textit{(2)} Let $\alpha = *^{\leq}\left( (x)_1 \right) $. 
+
+    \textit{(3)} If $|\alpha| > 1$ let $x = x + 1$ and go to step \textit{(2)}.
+    Otherwise, go to step \textit{(4)}. 
+
+    \textit{(4)} Do $(x)_2$ steps of procedure $\mathbb{P}_f$ with input
+    $\alpha$. If the program finished, return its output in $\varphi$ and go to
+    \textit{(5)}. If it didn't finish, let $x = x + 1$ and go to \textit{(2)}.
+
+    \textit{(5)} Do $(x)_3$ steps of procedure $\mathbb{P}_g$ with input
+    $\alpha$. If the program finished, store its output in $\psi$ and go to
+    \textit{(7)}; otherwise let
+    $x = x + 1$ and go to \textit{(2)}.
+
+    \textit{(6)} If $\varphi = \psi$ go to \textit{(8)}
+
+    \textit{(7)} Let $\alpha = \varepsilon$. 
+
+    \textit{(8)} Return $\alpha$.
+
+\end{quote}
+
+The procedure enumerates $L$.
+
+\pagebreak 
+
+\begin{problem}
+    Determine true or false for the following statements.
+\end{problem}
+
+\textit{(1)} $Num^{*} \neq \omega$. 
+
+
+\small
+\begin{quote}
+
+    Certainly true. In fact $Num^{*} \cap \omega = \emptyset$. The elements of
+    $Num$ are symbols denoting the natural numbers and zero, but \textit{are
+    not} these numbers.
+\end{quote}
+\normalsize
+
+
+\textit{(2)} $\left\{ (\omega, 2) \text{ is a function whose domain is $\omega$ } \right\} $
+
+
+\small
+\begin{quote}
+
+Tuples containing sets are not defined. Hence $(\omega, 2)$ is an undefined and
+meaningless expression. The statement is false. However, observe that the set
+$\left\{ (x, 2) : x \in \omega \right\} $ is the function $C_{2}^{1, 0}$.
+
+\end{quote}
+\normalsize
+
+
+
+\textit{(3)} If $(\vec{s}, \vec{\sigma})$ is a state of $\mathcal{S}^{\Sigma}$,
+then $Ti(\vec{s}) = n$-tuple for some $n$.
+
+
+
+\small
+\begin{quote}
+
+The statement is false. By definition, the state of a program 
+in $\mathcal{S}^{\Sigma}$ is a 2-tuple whose first element is a member of
+$\omega^{[\mathbb{N}]}$. This is the set of infinite tuples that contain only
+zeros from some index onwards. Then $\vec{s}$ is infinite.
+
+\end{quote}
+\normalsize
+
+
+
+\textit{(4)} Let $\Sigma = \{@, \sim \}$. Then $\lambda \alpha \left[  @\alpha
+\right]$ is the function 
+
+\begin{align*}
+    R \left( C_{@}^{0, 0}, \left\{ (@, d_{@} \circ p_2^{0, 2}), (\sim, d_{\sim }
+    \circ p_2^{0, 2}) \right\}  \right) 
+\end{align*}
+
+
+\small
+\begin{quote}
+
+Let $\mathcal{G}$ denote the indexed family of functions which the statement
+associates to $R$. 
+
+The first observation is that the domains are correct. Since $\lambda \alpha
+\left[ @\alpha  \right]$ does recursion over an alphabetic var, mapping to
+alphabetic values, and has type $(0, 1, *)$, then $f \sim (0, 0, *)$ and
+$\mathcal{G}_a \sim (0, 2, *)$ for all $a \in \Sigma$.
+
+Evidently $R(f, g)(\epsilon) = @$ which makes the base case function correct. Now, the
+indexed family of functions maps
+
+\begin{align*}
+    R(f, g)(\alpha w) = dw \circ R(\alpha)
+\end{align*}
+
+We can prove this is not correct. Let $\alpha \in \Sigma^{*}$ be s.t. $|\alpha| =
+n$. Then 
+
+\begin{align*}
+    R(\alpha w) &= R(\alpha)w \\ 
+                &= R({}^{\curvearrowleft} \alpha) w[\alpha]_n \\ 
+                &= R\left( {}^{\curvearrowleft} {}^{\curvearrowleft} \alpha
+                \right) w[\alpha]_n[\alpha]_{n-1} \\ 
+                &\vdots \\ 
+                &=  R(\varepsilon ) w [\alpha]_n [\alpha]_{n-1} \ldots [\alpha]_1
+                \\ 
+                &= @w [\alpha]_n [\alpha]_{n-1} \ldots [\alpha]_1
+\end{align*}
+
+Evidently $R(f, g)$ appends $@$ to the start of the reciprocal of $\alpha$,
+which is not what $\lambda \alpha \left[ @\alpha  \right]$ does.
+
+
+
+\end{quote}
+\normalsize
+
+
+\textit{(5)} For whatever $\alpha \in \Sigma^{*}$, we have $[\varepsilon
+\alpha]_1 \neq \varepsilon $. 
+
+
+
+
+
+\small
+\begin{quote}
+
+This is false. Assume $\alpha = \varepsilon $. Then $\varepsilon  \alpha =
+\varepsilon $ and $[\varepsilon \alpha]_1 = [\varepsilon \varepsilon ]_1 =
+[\varepsilon ]_1 = \varepsilon $.
+
+\end{quote}
+\normalsize
+
+
+\textit{(6)} Let $\Sigma$ a finite alphabet. Let $S = \left\{ (x, y) \in
+\omega\times \mathbb{N} : \sqrt{x} \in \mathbb{Q}  \right\}$. Then $S$ is a
+$\Sigma$-mixed set.
+
+\small
+\begin{quote}
+
+By definition, a $\Sigma$-mixed set is any set $W$ that satisfies $W \subseteq
+\omega^{n} \times \Sigma^{*m} $ for $n, m \geq 0$. Evidently, $S \subseteq
+\omega \times \mathbb{N}$ does not satisfy this.
+
+\end{quote}
+\normalsize
+
+
+\textit{(7)} $f$ is $\Sigma$-mixed iff $\exists n, m \geq 0$ s.t. $\mathcal{D}_f
+\subseteq \omega^{n} \times \Sigma^{*m} $ \land $\mathcal{I}_f \subseteq \omega
+\cup \Sigma^{*}$
+
+
+\small
+\begin{quote}
+
+The statement is false. The image of a $\Sigma$-mixed function must be
+\textit{either} $\omega$ or $\Sigma^{*}$, but it cannot be the union of these. 
+
+\end{quote}
+\normalsize
+
+
+
+
+\textit{(8)} Let $M = (Q, \Sigma, \Gamma, \delta_0, q_0, B, F)$ a deterministic
+Turing machine and assume $Q$ is an alphabet disjoint from $\Gamma$. Let $d, d'
+\in \mathbb{D}$. Then it is the case that 
+
+\begin{align*}
+    d \vdash^1 d' \Rightarrow d\neq d'
+\end{align*}
+
+
+\small
+\begin{quote}
+
+The statement is clearly false. We can provide a counter-example. Let $\Sigma$
+be an arbitrary language. Assume the machine has any non-zero number of states,
+some of which are final states. If $\delta(q_0, x) = \left\{ (q_0, x, K)
+\right\} $ for any $x \in \Sigma$. Let $d$ be the instantaneous description of
+the machine when it starts. Obviously, $d \vdash^n d$ for any $n \in
+\mathbb{N}$.
+
+\end{quote}
+\normalsize
+
+
+\textit{(9)} Let $M$ a Turing machine exactly like the one above. Let $d \in
+\mathbb{D}$ . Then if $d \vdash d$ we have that $M$ halts starting from $d$.
+
+
+\small
+\begin{quote}
+
+    The statement is false. We say a machine halts starting from $d$ 
+
+    \begin{quote}
+        \textit{(1)} $d \vdash^{*} d'$ 
+
+        \textit{(2)} $d' \not\vdash d''$
+    \end{quote}
+
+    for $d', d'' \in \mathbb{D}$. The scenario described does not meet this
+    definition, because $d \vdash d$ implies that it is not true that $d
+    \not\vdash d'$.
+\end{quote}
+\normalsize
+
+
+
+
+
+
+
+
+
 
 
 

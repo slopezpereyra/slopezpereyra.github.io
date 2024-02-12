@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  9 FEB 2024 23:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  11 FEB 2024 21:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -278,60 +278,60 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.14 \newtheorem
-                {example}{Example}
+                {example}{Example} \newtheorem{definition}{Definition}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./Computability.tex:15: LaTeX Error: Command \example already defined.
+./Computability.tex:14: LaTeX Error: Command \example already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.15 \newtheorem
-                {definition}{Definition}
+l.14 \newtheorem{example}{Example} \newtheorem
+                                              {definition}{Definition}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 \c@definition=\count284
 
-./Computability.tex:17: LaTeX Error: Command \lemma already defined.
+./Computability.tex:16: LaTeX Error: Command \lemma already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.17 \newtheorem
+l.16 \newtheorem
                 {theorem}{Theorem}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./Computability.tex:18: LaTeX Error: Command \theorem already defined.
+./Computability.tex:17: LaTeX Error: Command \theorem already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.18 
+l.17 
      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-LaTeX Font Info:    Trying to load font information for T1+ntxtlf on input line 23.
+LaTeX Font Info:    Trying to load font information for T1+ntxtlf on input line 22.
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/t1ntxtlf.fd
 File: t1ntxtlf.fd 2021/05/24 v1.1 font definition file for T1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 23.
+(Font)              scaled to size 12.0pt on input line 22.
  (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count285
@@ -339,59 +339,59 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 ) (./Computability.aux)
 \openout1 = `Computability.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 23.
-LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 23.
+LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 22.
+LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 22.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/omlntxmi.fd
 File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
 )
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 23.
-LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 23.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 22.
+LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 22.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxexa.fd
 File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 )
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 23.
-LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 23.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 22.
+LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 22.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/lmsntxsy.fd
 File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
 )
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 23.
-LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line 23.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 22.
+LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line 22.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/lmxntxexx.fd
 File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
 )
-LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    ... okay on input line 22.
 \c@mv@tabular=\count286
 \c@mv@boldtabular=\count287
-LaTeX Info: Command `\dddot' is already robust on input line 23.
-LaTeX Info: Command `\ddddot' is already robust on input line 23.
+LaTeX Info: Command `\dddot' is already robust on input line 22.
+LaTeX Info: Command `\ddddot' is already robust on input line 22.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 12.0pt on input line 29.
+(Font)              scaled to size 12.0pt on input line 28.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 31.
+(Font)              scaled to size 10.95pt on input line 30.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 10.0pt on input line 35.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 10.0pt on input line 36.
-LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 10.0pt on input line 37.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 17.28pt on input line 48.
+(Font)              scaled to size 17.28pt on input line 47.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 17.28pt on input line 48.
+(Font)              scaled to size 17.28pt on input line 47.
  (./Computability.toc
 LaTeX Font Info:    Trying to load font information for OT1+minntx on input line 3.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1minntx.fd
@@ -421,44 +421,44 @@ File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 \openout3 = `Computability.toc'.
 
  [2]
-LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input line 60.
+LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input line 59.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
 File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
 )
 LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 60.
+(Font)              scaled to size 12.0pt on input line 59.
  [3]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 14.4pt on input line 90.
+(Font)              scaled to size 14.4pt on input line 89.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 14.4pt on input line 90.
+(Font)              scaled to size 14.4pt on input line 89.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.8pt on input line 97.
+(Font)              scaled to size 8.8pt on input line 96.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.6pt on input line 97.
+(Font)              scaled to size 6.6pt on input line 96.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 12.0pt on input line 100.
+(Font)              scaled to size 12.0pt on input line 99.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 10.95pt on input line 116.
+(Font)              scaled to size 10.95pt on input line 115.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 10.95pt on input line 116.
+(Font)              scaled to size 10.95pt on input line 115.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 10.0pt on input line 127.
+(Font)              scaled to size 10.0pt on input line 126.
  [4] [5] [6] [7]
-./Computability.tex:361: Missing { inserted.
+./Computability.tex:360: Missing { inserted.
 <to be read again> 
                    ^
-l.361     n^k + i_{k-1} n^{k-1} + \ldots + i_0 n_^
+l.360     n^k + i_{k-1} n^{k-1} + \ldots + i_0 n_^
                                                   0$ with $k \geq 0, 1 \leq ...
 A left brace was mandatory here, so I've put one in.
 You might want to delete and/or insert some corrections
 so that I will find a matching right brace soon.
 (If you're confused by all this, try typing `I}' now.)
 
-./Computability.tex:361: Missing } inserted.
+./Computability.tex:360: Missing } inserted.
 <inserted text> 
                 }
-l.361 ...^k + i_{k-1} n^{k-1} + \ldots + i_0 n_^0$
+l.360 ...^k + i_{k-1} n^{k-1} + \ldots + i_0 n_^0$
                                                    with $k \geq 0, 1 \leq i_...
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -468,31 +468,31 @@ my insertion and my current dilemma will both disappear.
 
 [8]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 8.8pt on input line 402.
+(Font)              scaled to size 8.8pt on input line 401.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 6.6pt on input line 402.
+(Font)              scaled to size 6.6pt on input line 401.
  [9] [10]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 606.
+(Font)              scaled to size 8.0pt on input line 605.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.1pt on input line 606.
+(Font)              scaled to size 6.1pt on input line 605.
  [11]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 7.3pt on input line 623.
+(Font)              scaled to size 7.3pt on input line 622.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 5.5pt on input line 623.
+(Font)              scaled to size 5.5pt on input line 622.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 8.0pt on input line 650.
+(Font)              scaled to size 8.0pt on input line 649.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 6.1pt on input line 650.
+(Font)              scaled to size 6.1pt on input line 649.
  [12] [13] [14] [15] [16] [17]
-Overfull \hbox (39.41638pt too wide) in paragraph at lines 1011--1013
+Overfull \hbox (39.41638pt too wide) in paragraph at lines 1010--1012
 []\T1/ntxtlf/m/n/10.95 As ex-am-ples, here are some words ac-cepted by the lan-guage: $\OML/ntxmi/m/it/10.95 "; aab; baa; ababaa; []$
  []
 
 [18]
-./Computability.tex:1079: Undefined control sequence.
-l.1079 ...arting from $ \left\lfloor q_0 B \omegam
+./Computability.tex:1078: Undefined control sequence.
+l.1078 ...arting from $ \left\lfloor q_0 B \omegam
                                                    \right\rfloor  $. We
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -501,66 +501,66 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 [19] [20] [21] [22] [23]
-Overfull \hbox (39.98532pt too wide) in paragraph at lines 1372--1378
+Overfull \hbox (39.98532pt too wide) in paragraph at lines 1371--1377
 [] \U/ntxmia/m/it/10.95 = \OML/ntxmi/m/it/10.95 d[] \LMS/ntxsy/m/n/10.95 ^^N [] \U/ntxmia/m/it/10.95 = \OML/ntxmi/m/it/10.95 d[] \LMS/ntxsy/m/n/10.95 ^^N [] \U/ntxmia/m/it/10.95 = \OT1/minntx/m/n/10.95 %@%%%%???$\T1/ntxtlf/m/n/10.95 . 
  []
 
 [24] [25] [26] [27]
-./Computability.tex:1646: Double subscript.
+./Computability.tex:1648: Double subscript.
 <argument>  \mathcal {G}_a = p_3^{1, 2}_
                                         {\mid S} \cup C_{a}^{1, 2}_{\mid \ov...
-l.1646 \end{align*}
+l.1648 \end{align*}
                    
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-./Computability.tex:1646: Double subscript.
+./Computability.tex:1648: Double subscript.
 <argument> ...3^{1, 2}_{\mid S} \cup C_{a}^{1, 2}_
                                                   {\mid \overline {S}} 
-l.1646 \end{align*}
+l.1648 \end{align*}
                    
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-./Computability.tex:1646: Double subscript.
+./Computability.tex:1648: Double subscript.
 <argument>  \mathcal {G}_a = p_3^{1, 2}_
                                         {\mid S} \cup C_{a}^{1, 2}_{\mid \ov...
-l.1646 \end{align*}
+l.1648 \end{align*}
                    
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-./Computability.tex:1646: Double subscript.
+./Computability.tex:1648: Double subscript.
 <argument> ...3^{1, 2}_{\mid S} \cup C_{a}^{1, 2}_
                                                   {\mid \overline {S}} 
-l.1646 \end{align*}
+l.1648 \end{align*}
                    
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-./Computability.tex:1665: Missing $ inserted.
+./Computability.tex:1667: Missing $ inserted.
 <inserted text> 
                 $
-l.1665 $\therefore $ g_
+l.1667 $\therefore $ g_
                        {S} \cup C_{0}^{1, 1}_{\overline{S}} = f$ is
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./Computability.tex:1665: Double subscript.
-l.1665 $\therefore $ g_{S} \cup C_{0}^{1, 1}_
+./Computability.tex:1667: Double subscript.
+l.1667 $\therefore $ g_{S} \cup C_{0}^{1, 1}_
                                              {\overline{S}} = f$ is
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 [28]
-Overfull \hbox (8.33395pt too wide) in paragraph at lines 1743--1746
+Overfull \hbox (8.33395pt too wide) in paragraph at lines 1745--1748
 []\T1/ntxtlf/m/it/10.95 Show it to me. \T1/ntxtlf/m/n/10.95 Well, $\OML/ntxmi/m/it/10.95 G\LMS/ntxsy/m/n/10.95 ¹\OML/ntxmi/m/it/10.95 x; x[]\LMS/ntxsy/m/n/10.95 º \U/ntxmia/m/it/10.95 = [] \LMS/ntxsy/m/n/10.95 ¹\OML/ntxmi/m/it/10.95 x; x[]\LMS/ntxsy/m/n/10.95 º \U/ntxmia/m/it/10.95 = \LMS/ntxsy/m/n/10.95 G¹\OT1/minntx/m/n/10.95 0\OML/ntxmi/m/it/10.95 ; x; x[]\LMS/ntxsy/m/n/10.95 º \U/ntxmia/m/it/10.95 =
  []
 
 [29]
-./Computability.tex:1782: Double superscript.
-l.1782 ...^2  \times \mathbb{N} \times \Sigma^{*}^
+./Computability.tex:1784: Double superscript.
+l.1784 ...^2  \times \mathbb{N} \times \Sigma^{*}^
                                                   2$---which means
 I treat `x^1^2' essentially like `x^1{}^2'.
 
 [30]
-./Computability.tex:1879: Undefined control sequence.
-l.1879 $P = \lambdat
+./Computability.tex:1881: Undefined control sequence.
+l.1881 $P = \lambdat
                      x_1 x_2 [x_2 = tx_1]$ is $\Sigma$-p.r. Since $P$ is $\S...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -570,21 +570,21 @@ and I'll forget about whatever was undefined.
 
 [31]
 
-./Computability.tex:1971: Package amsmath Error: \hat allowed only in math mode.
+./Computability.tex:1973: Package amsmath Error: \hat allowed only in math mode.
 
 See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1971 design $P$ so \hat{t}
+l.1973 design $P$ so \hat{t}
                             
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/it' will be
-(Font)              scaled to size 10.95pt on input line 1984.
+(Font)              scaled to size 10.95pt on input line 1986.
 
-Overfull \hbox (32.34413pt too wide) in paragraph at lines 1984--1986
+Overfull \hbox (32.34413pt too wide) in paragraph at lines 1986--1988
 []\T1/ntxtlf/m/it/10.95 Use the \T1/ntxtlf/b/it/10.95 U rule \T1/ntxtlf/m/it/10.95 to find a pred-i-cate $\OML/ntxmi/m/it/10.95 P$ \T1/ntxtlf/m/it/10.95 s.t. $\OML/ntxmi/m/it/10.95 M\LMS/ntxsy/m/n/10.95 ¹\OML/ntxmi/m/it/10.95 P\LMS/ntxsy/m/n/10.95 º \U/ntxmia/m/it/10.95 = \OML/ntxmi/m/it/10.95 ^^Ux\LMS/ntxsy/m/n/10.95 »[][]¼$
  []
 
@@ -824,20 +824,69 @@ l.3661     \cup C_0^{n, m}_
                            {| \omega^{n} \times \Sigma^{*m} - S}$ is
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-[60] [61] (./Computability.aux) ) 
+[60] [61] [62] [63] [64]
+Overfull \hbox (58.59407pt too wide) in paragraph at lines 3947--3951
+[]\T1/ntxtlf/m/n/12 where $\LMS/ntxsy/m/n/12 »\OML/ntxmi/m/it/12 IF []N[] \U/ntxmia/m/it/12 = \OML/ntxmi/m/it/12 N[] []GOTO []L[]\LMS/ntxsy/m/n/12 ¼$ \T1/ntxtlf/m/n/12 de-notes (for prac-tic-ity) the macro $\LMS/ntxsy/m/n/12 »\OML/ntxmi/m/it/12 IF []P\LMS/ntxsy/m/n/12 ¹\OML/ntxmi/m/it/12 V[]; V[]\LMS/ntxsy/m/n/12 º []\OML/ntxmi/m/it/12 GOTO []A[]\LMS/ntxsy/m/n/12 ¼$
+ []
+
+[65]
+Overfull \hbox (32.54927pt too wide) detected at line 4026
+[]
+ []
+
+
+Overfull \hbox (30.68867pt too wide) detected at line 4034
+[]
+ []
+
+[66] [67]
+Overfull \hbox (7.36972pt too wide) in paragraph at lines 4108--4112
+[]\T1/ntxtlf/m/n/12 Let $\U/ntxmia/m/it/12 ^^H$ \T1/ntxtlf/m/n/12 the $\U/ntxmia/m/it/12 ^^F$\T1/ntxtlf/m/n/12 -computable pro-gram which enu-mer-ates $\LMS/ntxsy/m/n/12 ¹\U/ntxmia/m/it/12 ^^F \LMS/ntxsy/m/n/12 [ \U/ntxmia/m/it/12 ^^F[]\LMS/ntxsy/m/n/12 º[]$ \T1/ntxtlf/m/n/12 and $[]$
+ []
+
+[68] [69] [70] [71]
+./Computability.tex:4395: Missing $ inserted.
+<inserted text> 
+                $
+l.4395 ...eq \omega^{n} \times \Sigma^{*m} $ \land
+                                                   $\mathcal{I}_f \subseteq ...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+./Computability.tex:4395: LaTeX Error: \mathcal allowed only in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4395 ...{n} \times \Sigma^{*m} $ \land $\mathcal
+                                                  {I}_f \subseteq \omega
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./Computability.tex:4395: Missing $ inserted.
+<inserted text> 
+                $
+l.4395 ...\times \Sigma^{*m} $ \land $\mathcal{I}_
+                                                  f \subseteq \omega
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+[72] (./Computability.aux) ) 
 Here is how much of TeX's memory you used:
- 5882 strings out of 476091
- 81119 string characters out of 5794081
+ 5883 strings out of 476091
+ 81125 string characters out of 5794081
  1875330 words of memory out of 5000000
  26110 multiletter control sequences out of 15000+600000
- 727304 words of font info for 400 fonts, out of 8000000 for 9000
+ 727486 words of font info for 401 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,27n,76p,334b,352s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/stxscr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexas.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on Computability.pdf (62 pages, 393482 bytes).
+Output written on Computability.pdf (73 pages, 424899 bytes).
 PDF statistics:
- 286 PDF objects out of 1000 (max. 8388607)
- 189 compressed objects within 2 object streams
+ 323 PDF objects out of 1000 (max. 8388607)
+ 214 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
