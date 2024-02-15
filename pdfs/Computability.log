@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  11 FEB 2024 21:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  14 FEB 2024 09:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -501,66 +501,72 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 [19] [20] [21] [22] [23]
-Overfull \hbox (39.98532pt too wide) in paragraph at lines 1371--1377
+Overfull \hbox (39.98532pt too wide) in paragraph at lines 1377--1383
 [] \U/ntxmia/m/it/10.95 = \OML/ntxmi/m/it/10.95 d[] \LMS/ntxsy/m/n/10.95 ^^N [] \U/ntxmia/m/it/10.95 = \OML/ntxmi/m/it/10.95 d[] \LMS/ntxsy/m/n/10.95 ^^N [] \U/ntxmia/m/it/10.95 = \OT1/minntx/m/n/10.95 %@%%%%???$\T1/ntxtlf/m/n/10.95 . 
  []
 
-[24] [25] [26] [27]
-./Computability.tex:1648: Double subscript.
+[24] [25] [26]
+./Computability.tex:1613: Double subscript.
+l.1613 = \mathcal{D}_{f_1} \cap \mathcal{D}_f_
+                                              2$, which are both $\Sigma$-p....
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+[27]
+./Computability.tex:1666: Double subscript.
 <argument>  \mathcal {G}_a = p_3^{1, 2}_
                                         {\mid S} \cup C_{a}^{1, 2}_{\mid \ov...
-l.1648 \end{align*}
+l.1666 \end{align*}
                    
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-./Computability.tex:1648: Double subscript.
+./Computability.tex:1666: Double subscript.
 <argument> ...3^{1, 2}_{\mid S} \cup C_{a}^{1, 2}_
                                                   {\mid \overline {S}} 
-l.1648 \end{align*}
+l.1666 \end{align*}
                    
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-./Computability.tex:1648: Double subscript.
+./Computability.tex:1666: Double subscript.
 <argument>  \mathcal {G}_a = p_3^{1, 2}_
                                         {\mid S} \cup C_{a}^{1, 2}_{\mid \ov...
-l.1648 \end{align*}
+l.1666 \end{align*}
                    
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-./Computability.tex:1648: Double subscript.
+./Computability.tex:1666: Double subscript.
 <argument> ...3^{1, 2}_{\mid S} \cup C_{a}^{1, 2}_
                                                   {\mid \overline {S}} 
-l.1648 \end{align*}
+l.1666 \end{align*}
                    
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-./Computability.tex:1667: Missing $ inserted.
+./Computability.tex:1685: Missing $ inserted.
 <inserted text> 
                 $
-l.1667 $\therefore $ g_
+l.1685 $\therefore $ g_
                        {S} \cup C_{0}^{1, 1}_{\overline{S}} = f$ is
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./Computability.tex:1667: Double subscript.
-l.1667 $\therefore $ g_{S} \cup C_{0}^{1, 1}_
+./Computability.tex:1685: Double subscript.
+l.1685 $\therefore $ g_{S} \cup C_{0}^{1, 1}_
                                              {\overline{S}} = f$ is
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 [28]
-Overfull \hbox (8.33395pt too wide) in paragraph at lines 1745--1748
+Overfull \hbox (8.33395pt too wide) in paragraph at lines 1763--1766
 []\T1/ntxtlf/m/it/10.95 Show it to me. \T1/ntxtlf/m/n/10.95 Well, $\OML/ntxmi/m/it/10.95 G\LMS/ntxsy/m/n/10.95 ¹\OML/ntxmi/m/it/10.95 x; x[]\LMS/ntxsy/m/n/10.95 º \U/ntxmia/m/it/10.95 = [] \LMS/ntxsy/m/n/10.95 ¹\OML/ntxmi/m/it/10.95 x; x[]\LMS/ntxsy/m/n/10.95 º \U/ntxmia/m/it/10.95 = \LMS/ntxsy/m/n/10.95 G¹\OT1/minntx/m/n/10.95 0\OML/ntxmi/m/it/10.95 ; x; x[]\LMS/ntxsy/m/n/10.95 º \U/ntxmia/m/it/10.95 =
  []
 
 [29]
-./Computability.tex:1784: Double superscript.
-l.1784 ...^2  \times \mathbb{N} \times \Sigma^{*}^
+./Computability.tex:1802: Double superscript.
+l.1802 ...^2  \times \mathbb{N} \times \Sigma^{*}^
                                                   2$---which means
 I treat `x^1^2' essentially like `x^1{}^2'.
 
 [30]
-./Computability.tex:1881: Undefined control sequence.
-l.1881 $P = \lambdat
+./Computability.tex:1899: Undefined control sequence.
+l.1899 $P = \lambdat
                      x_1 x_2 [x_2 = tx_1]$ is $\Sigma$-p.r. Since $P$ is $\S...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -568,29 +574,45 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[31]
+[31] [32]
 
-./Computability.tex:1973: Package amsmath Error: \hat allowed only in math mode.
+./Computability.tex:1991: Package amsmath Error: \hat allowed only in math mode.
 
 See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1973 design $P$ so \hat{t}
+l.1991 design $P$ so \hat{t}
                             
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/it' will be
-(Font)              scaled to size 10.95pt on input line 1986.
+(Font)              scaled to size 10.95pt on input line 2004.
 
-Overfull \hbox (32.34413pt too wide) in paragraph at lines 1986--1988
+Overfull \hbox (32.34413pt too wide) in paragraph at lines 2004--2006
 []\T1/ntxtlf/m/it/10.95 Use the \T1/ntxtlf/b/it/10.95 U rule \T1/ntxtlf/m/it/10.95 to find a pred-i-cate $\OML/ntxmi/m/it/10.95 P$ \T1/ntxtlf/m/it/10.95 s.t. $\OML/ntxmi/m/it/10.95 M\LMS/ntxsy/m/n/10.95 ¹\OML/ntxmi/m/it/10.95 P\LMS/ntxsy/m/n/10.95 º \U/ntxmia/m/it/10.95 = \OML/ntxmi/m/it/10.95 ^^Ux\LMS/ntxsy/m/n/10.95 »[][]¼$
  []
 
-[32] [33] [34] [35] [36] [37] [38] [39]
-./Computability.tex:2459: Extra }, or forgotten $.
-l.2459 there is a program $\mathcal{P}}
+[33] [34] [35]
+LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
+(Font)              scaled to size 10.95pt on input line 2207.
+ [36]
+
+./Computability.tex:2251: Package amsmath Error: \hat allowed only in math mode.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2251     The reason is \hat{t}
+                                 $Ins^\Sigma$ contains chains of instruction...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[37] [38] [39]
+./Computability.tex:2510: Extra }, or forgotten $.
+l.2510 there is a program $\mathcal{P}}
                                         \in Pro^{\Sigma}$ s.t. $f \sim (n, m...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -598,15 +620,15 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-[40]
-./Computability.tex:2526: Double subscript.
-l.2526     Same for $C_0^{1, 1}_
+[40] [41]
+./Computability.tex:2577: Double subscript.
+l.2577     Same for $C_0^{1, 1}_
                                 {\mid \{0, 1\} \times  \Sigma^{*}}$
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-[41] [42] [43] [44]
-./Computability.tex:2748: Undefined control sequence.
-l.2748     \alpha_1, \ldots, \alpham
+[42] [43] [44] [45]
+./Computability.tex:2799: Undefined control sequence.
+l.2799     \alpha_1, \ldots, \alpham
                                      ]\!]$ when $(x_1, \ldots, x_n, \alpha_1...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -614,11 +636,11 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[45] [46]
-./Computability.tex:2850: Undefined control sequence.
+[46] [47]
+./Computability.tex:2901: Undefined control sequence.
 <recently read> \Chi 
                      
-l.2850 $\Sigma$-computable. $\therefore $ $\Chi
+l.2901 $\Sigma$-computable. $\therefore $ $\Chi
                                                _{S}^{n, m}$ is $\Sigma$-recu...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -626,48 +648,49 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[47] [48] [49]
-./Computability.tex:3022: Double superscript.
+[48] [49] [50] [51]
+./Computability.tex:3096: Double superscript.
 <argument> ...x Pro^{\Sigma } \mapsto \Sigma ^{*}^
                                                   {[ \mathbb {N} ]} \\ 
-l.3022 \end{align*}
+l.3096 \end{align*}
                    
 I treat `x^1^2' essentially like `x^1{}^2'.
 
-./Computability.tex:3022: Double superscript.
+./Computability.tex:3096: Double superscript.
 <argument> ...x Pro^{\Sigma } \mapsto \Sigma ^{*}^
                                                   {[ \mathbb {N} ]} \\ 
-l.3022 \end{align*}
+l.3096 \end{align*}
                    
 I treat `x^1^2' essentially like `x^1{}^2'.
 
 
-Overfull \hbox (8.8418pt too wide) detected at line 3035
+Overfull \hbox (8.8418pt too wide) detected at line 3109
 []
  []
 
-[50] [51]
-./Computability.tex:3139: You can't use `macro parameter character #' in math mode.
-l.3139 ...associated macro. It will also use $E_{#
+[52] [53]
+./Computability.tex:3283: You can't use `macro parameter character #' in math mode.
+l.3283 ...associated macro. It will also use $E_{#
                                                   
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./Computability.tex:3183: Extra \right.
-l.3183 ...athcal{P}_{n+m}}^{n, m,*}\right] \right]
+[54]
+./Computability.tex:3327: Extra \right.
+l.3327 ...athcal{P}_{n+m}}^{n, m,*}\right] \right]
                                                    $. $\blacksquare$
 I'm ignoring a \right that had no matching \left.
 
-[52]
+[55]
 
-LaTeX Warning: Command \i invalid in math mode on input line 3211.
+LaTeX Warning: Command \i invalid in math mode on input line 3355.
 
-./Computability.tex:3222: Missing \right. inserted.
+./Computability.tex:3366: Missing \right. inserted.
 <inserted text> 
                 \right .
-l.3222     \left[ 1 \right])_{\mid S}$
+l.3366     \left[ 1 \right])_{\mid S}$
                                       . $\blacksquare$
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -675,11 +698,11 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-[53]
-./Computability.tex:3300: Extra }, or forgotten \right.
+[56]
+./Computability.tex:3444: Extra }, or forgotten \right.
 <template> }
             $}\ifmeasuring@ \savefieldlength@ \fi \set@field \hfil \endtempl...
-l.3300 \end{align*}
+l.3444 \end{align*}
                    
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -687,10 +710,10 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-./Computability.tex:3300: Missing \right. inserted.
+./Computability.tex:3444: Missing \right. inserted.
 <inserted text> 
                 \right .
-l.3300 \end{align*}
+l.3444 \end{align*}
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -698,10 +721,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./Computability.tex:3300: Missing \right. inserted.
+./Computability.tex:3444: Missing \right. inserted.
 <inserted text> 
                 \right .
-l.3300 \end{align*}
+l.3444 \end{align*}
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -709,10 +732,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./Computability.tex:3300: Missing } inserted.
+./Computability.tex:3444: Missing } inserted.
 <inserted text> 
                 }
-l.3300 \end{align*}
+l.3444 \end{align*}
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -720,10 +743,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./Computability.tex:3300: Extra }, or forgotten \right.
+./Computability.tex:3444: Extra }, or forgotten \right.
 <template> }
             $}\ifmeasuring@ \savefieldlength@ \fi \set@field \hfil \endtempl...
-l.3300 \end{align*}
+l.3444 \end{align*}
                    
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -731,10 +754,10 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-./Computability.tex:3300: Missing \right. inserted.
+./Computability.tex:3444: Missing \right. inserted.
 <inserted text> 
                 \right .
-l.3300 \end{align*}
+l.3444 \end{align*}
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -742,10 +765,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./Computability.tex:3300: Missing \right. inserted.
+./Computability.tex:3444: Missing \right. inserted.
 <inserted text> 
                 \right .
-l.3300 \end{align*}
+l.3444 \end{align*}
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -753,10 +776,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./Computability.tex:3300: Missing } inserted.
+./Computability.tex:3444: Missing } inserted.
 <inserted text> 
                 }
-l.3300 \end{align*}
+l.3444 \end{align*}
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -764,129 +787,198 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-[54] [55]
-./Computability.tex:3390: Missing { inserted.
+[57] [58]
+./Computability.tex:3534: Missing { inserted.
 <to be read again> 
                    ^
-l.3390 \end{align*}
+l.3534 \end{align*}
                    
 A left brace was mandatory here, so I've put one in.
 You might want to delete and/or insert some corrections
 so that I will find a matching right brace soon.
 (If you're confused by all this, try typing `I}' now.)
 
-./Computability.tex:3390: Missing } inserted.
+./Computability.tex:3534: Missing } inserted.
 <inserted text> 
                 }
-l.3390 \end{align*}
+l.3534 \end{align*}
                    
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
 
-./Computability.tex:3390: Missing { inserted.
+./Computability.tex:3534: Missing { inserted.
 <to be read again> 
                    ^
-l.3390 \end{align*}
+l.3534 \end{align*}
                    
 A left brace was mandatory here, so I've put one in.
 You might want to delete and/or insert some corrections
 so that I will find a matching right brace soon.
 (If you're confused by all this, try typing `I}' now.)
 
-./Computability.tex:3390: Missing } inserted.
+./Computability.tex:3534: Missing } inserted.
 <inserted text> 
                 }
-l.3390 \end{align*}
+l.3534 \end{align*}
                    
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
 
-[56] [57] [58]
-Overfull \hbox (21.87357pt too wide) in paragraph at lines 3609--3613
+[59] [60] [61]
+Overfull \hbox (21.87357pt too wide) in paragraph at lines 3753--3757
 []$\OML/ntxmi/m/it/10.95 S$ \T1/ntxtlf/m/n/10.95 is $\U/ntxmia/m/it/10.95 ^^F$\T1/ntxtlf/m/n/10.95 -recursively enu-mer-able. $\U/ntxsym/m/n/10.95 ©$ \T1/ntxtlf/m/n/10.95 it is $\U/ntxmia/m/it/10.95 ^^F$\T1/ntxtlf/m/n/10.95 -enumerable. $\U/ntxsym/m/n/10.95 ©$ \T1/ntxtlf/m/n/10.95 There are $\OML/ntxmi/m/it/10.95 F[]; [] ; F[]$
  []
 
 
-Overfull \hbox (4.51874pt too wide) in paragraph at lines 3617--3619
+Overfull \hbox (4.51874pt too wide) in paragraph at lines 3761--3763
 []\T1/ntxtlf/m/it/10.95 (1) \T1/ntxtlf/m/n/10.95 Gen-er-ates an el-e-ment of $\OML/ntxmi/m/it/10.95 S$ \T1/ntxtlf/m/n/10.95 us-ing the macros of $\OML/ntxmi/m/it/10.95 F[]; [] ; F[]$
  []
 
-[59]
-./Computability.tex:3660: Double subscript.
-l.3660 ...ga^{n} \times \Sigma^{*m}} = C_1^{n ,m}_
+[62]
+./Computability.tex:3804: Double subscript.
+l.3804 ...ga^{n} \times \Sigma^{*m}} = C_1^{n ,m}_
                                                   {|S}
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-./Computability.tex:3661: Double subscript.
-l.3661     \cup C_0^{n, m}_
+./Computability.tex:3805: Double subscript.
+l.3805     \cup C_0^{n, m}_
                            {| \omega^{n} \times \Sigma^{*m} - S}$ is
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-[60] [61] [62] [63] [64]
-Overfull \hbox (58.59407pt too wide) in paragraph at lines 3947--3951
+[63] [64] [65] [66] [67] [68]
+Overfull \hbox (58.59407pt too wide) in paragraph at lines 4116--4120
 []\T1/ntxtlf/m/n/12 where $\LMS/ntxsy/m/n/12 »\OML/ntxmi/m/it/12 IF []N[] \U/ntxmia/m/it/12 = \OML/ntxmi/m/it/12 N[] []GOTO []L[]\LMS/ntxsy/m/n/12 ¼$ \T1/ntxtlf/m/n/12 de-notes (for prac-tic-ity) the macro $\LMS/ntxsy/m/n/12 »\OML/ntxmi/m/it/12 IF []P\LMS/ntxsy/m/n/12 ¹\OML/ntxmi/m/it/12 V[]; V[]\LMS/ntxsy/m/n/12 º []\OML/ntxmi/m/it/12 GOTO []A[]\LMS/ntxsy/m/n/12 ¼$
  []
 
-[65]
-Overfull \hbox (32.54927pt too wide) detected at line 4026
+[69]
+Overfull \hbox (32.54927pt too wide) detected at line 4195
 []
  []
 
 
-Overfull \hbox (30.68867pt too wide) detected at line 4034
+Overfull \hbox (30.68867pt too wide) detected at line 4203
 []
  []
 
-[66] [67]
-Overfull \hbox (7.36972pt too wide) in paragraph at lines 4108--4112
+[70] [71]
+Overfull \hbox (7.36972pt too wide) in paragraph at lines 4277--4281
 []\T1/ntxtlf/m/n/12 Let $\U/ntxmia/m/it/12 ^^H$ \T1/ntxtlf/m/n/12 the $\U/ntxmia/m/it/12 ^^F$\T1/ntxtlf/m/n/12 -computable pro-gram which enu-mer-ates $\LMS/ntxsy/m/n/12 ¹\U/ntxmia/m/it/12 ^^F \LMS/ntxsy/m/n/12 [ \U/ntxmia/m/it/12 ^^F[]\LMS/ntxsy/m/n/12 º[]$ \T1/ntxtlf/m/n/12 and $[]$
  []
 
-[68] [69] [70] [71]
-./Computability.tex:4395: Missing $ inserted.
+[72] [73] [74] [75]
+./Computability.tex:4564: Missing $ inserted.
 <inserted text> 
                 $
-l.4395 ...eq \omega^{n} \times \Sigma^{*m} $ \land
+l.4564 ...eq \omega^{n} \times \Sigma^{*m} $ \land
                                                    $\mathcal{I}_f \subseteq ...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./Computability.tex:4395: LaTeX Error: \mathcal allowed only in math mode.
+./Computability.tex:4564: LaTeX Error: \mathcal allowed only in math mode.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.4395 ...{n} \times \Sigma^{*m} $ \land $\mathcal
+l.4564 ...{n} \times \Sigma^{*m} $ \land $\mathcal
                                                   {I}_f \subseteq \omega
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-./Computability.tex:4395: Missing $ inserted.
+./Computability.tex:4564: Missing $ inserted.
 <inserted text> 
                 $
-l.4395 ...\times \Sigma^{*m} $ \land $\mathcal{I}_
+l.4564 ...\times \Sigma^{*m} $ \land $\mathcal{I}_
                                                   f \subseteq \omega
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-[72] (./Computability.aux) ) 
+[76] [77] [78] [79] [80] [81]
+./Computability.tex:4955: Misplaced alignment tab character &.
+l.4955 $\Psi_{\mathcal{P}}^{1, 0, \#} &
+                                       = \mathcal{E}$. Pero dado que
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+[82] [83] [84] [85] [86]
+./Computability.tex:5193: Double superscript.
+<argument> ... ) \in \omega ^2 \times \Sigma ^{*}^
+                                                  2 : x \geq 5 \land (\exist...
+l.5193     \end{align*}
+                       
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+./Computability.tex:5193: Double superscript.
+<argument> ... ) \in \omega ^2 \times \Sigma ^{*}^
+                                                  2 : x \geq 5 \land (\exist...
+l.5193     \end{align*}
+                       
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+./Computability.tex:5208: Undefined control sequence.
+<argument> ...\alpha \beta \left [ (\exists \gama 
+                                                  \in \Sigma ^{*}) @b = \gam...
+l.5208 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Computability.tex:5208: Undefined control sequence.
+<argument> ...\alpha \beta \left [ (\exists \gama 
+                                                  \in \Sigma ^{*}) @b = \gam...
+l.5208 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[87] [88] [89]
+./Computability.tex:5278: You can't use `macro parameter character #' in math mode.
+<argument> ...row f(N_1)]\\ &[N_1 \leftarrow E_{##
+                                                   1}^{1, 0}(N_2, N_1, \math...
+l.5278 \end{align*}
+                   
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./Computability.tex:5278: You can't use `macro parameter character #' in math mode.
+<argument> ...row f(N_1)]\\ &[N_1 \leftarrow E_{##
+                                                   1}^{1, 0}(N_2, N_1, \math...
+l.5278 \end{align*}
+                   
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+[90] (./Computability.aux) ) 
 Here is how much of TeX's memory you used:
- 5883 strings out of 476091
- 81125 string characters out of 5794081
+ 5889 strings out of 476091
+ 81181 string characters out of 5794081
  1875330 words of memory out of 5000000
- 26110 multiletter control sequences out of 15000+600000
- 727486 words of font info for 401 fonts, out of 8000000 for 9000
+ 26112 multiletter control sequences out of 15000+600000
+ 729095 words of font info for 406 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,27n,76p,334b,352s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/stxscr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexas.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on Computability.pdf (73 pages, 424899 bytes).
+Output written on Computability.pdf (91 pages, 464728 bytes).
 PDF statistics:
- 323 PDF objects out of 1000 (max. 8388607)
- 214 compressed objects within 3 object streams
+ 380 PDF objects out of 1000 (max. 8388607)
+ 253 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

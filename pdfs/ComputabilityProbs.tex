@@ -1,0 +1,688 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{newtxtext} \usepackage{newtxmath}
+\usepackage{amsmath, amssymb}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example} \newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+
+\begin{document}
+
+\section{Comentario preliminar}
+
+Usamos $\varphi$ para denotar un elemento arbitrario del alfabeto $\{\#, *\}$. Usamos la notación $f \sim (n, m, \varphi)$ para decir "$f$ es de
+tipo $(n, m, \varphi)$".
+
+\section{Guia 2 : Infinituplas}
+
+
+\begin{problem}
+    Demostrá por inducción: 
+    Para todo $x \in \mathbb{N}$ hay una infinitupla única $\overrightarrow{s}
+    \in \omega^{[\mathbb{N}]}$ tal que
+
+    \begin{align*}
+        x = \prod_{i=1}^{\infty} pr(i)^{s_i}
+    \end{align*}
+\end{problem}
+
+\small
+\begin{quote}
+
+
+
+
+El caso base es trivial. Supongamos que la afirmación se cumple para todo $n \leq k$. El
+teorema fundamental de la aritmética asegura que $k + 1 = p_1 \cdot \ldots \cdot
+p_m$, donde $p_i$ es primo. Supongamos que la factorización anterior está ordenada (es decir,
+$p_{j + 1} > p_j$ para todo $j \in [1, m]$). Entonces $k + 1 = p_m \cdot q$ con $q =
+p_1 \cdot \ldots \cdot p_{m - 1}$.
+
+\footnotesize
+\begin{quote}
+\textit{Subdemostración.} Demostraremos $k + 1 = p_m \cdot q \Rightarrow q \leq k$.
+Supongamos que la premisa se cumple y la consecuencia no. Dado que $q > k$, tenemos
+$q \cdot x > k + 1$ para todo $x > 1$. Entonces $q \cdot x > k + 1$ para todo $x$
+que sea primo. Entonces $q \cdot p_m \neq k + 1$, lo cual es una contradicción. Entonces,
+si $k + 1 = q \cdot p_m$, tenemos $q \leq k$. $\blacksquare$
+\end{quote}
+\small
+
+Dado que $q \leq k$, mediante la hipótesis inductiva, $q$ toma la forma productoria
+del teorema anterior. Entonces $k + 1 = q \cdot pr(j)$ donde $pr(j) = p_m$. Entonces el
+teorema se cumple para todo $n \in \mathbb{N}$.
+
+\end{quote}
+\normalsize
+
+\begin{problem}
+    Prove that $S = \{(x, @^x) : x \equiv 0 \mod 2\}$ is $\{@\}$-effectively
+    enumerable.
+\end{problem}
+
+
+\small
+\begin{quote}
+
+\textit{Prueba corta.} Se hace demostrando que $S$ es $\Sigma$-efectivamente
+computable. Esto es fácil: se da un procedimiento que verifica, dado un input
+$(x, \alpha)$, si $x$ es par y si $\alpha = @^x$. Demostrando que es
+$\Sigma$-efectivamente computable, demostramos que es $\Sigma$-enumerable.
+
+\textit{Prueba larga}. Damos explícitamente el programa que enumera a $S$.
+
+Lo hacemos notando que $*^{\leq}$ es $\Sigma$-efectivamente computable bajo
+cualquier orden $\leq$ de $\Sigma$, ya que la función es bastante algorítmica por
+naturaleza. (Si no se convence, escriba el procedimiento efectivo de esta
+función.) Sea $\mathbb{P}_{\text{número a palabra}}$ el procedimiento que, dado
+un valor $x \in \omega$, calcula $*^{\leq}(x)$. Entonces definimos $\mathbb{P}$
+como el procedimiento que tomando un valor $x \in \omega$ hace lo siguiente:
+
+\footnotesize
+\begin{quote}
+\textit{(0)} Computa $(x)_1, (x)_2$.
+
+\textit{(1)} Usa $\mathbb{P}_{\text{número a palabra}}$ para calcular $*^{\leq}(x_2)$
+y lo guarda en $\alpha$. 
+
+\textit{(2)} Comprueba si $(x)_1$ es par; si lo es continúa, si no lo es va a
+\textit{(5)}
+
+\textit{(3)} Comprueba si $\alpha = @^{(x)_1}$. Si lo es, continúa, si no lo es
+va a \textit{(5)} 
+
+\textit{(4)} Devuelve $(x_1, \alpha)$ y termina. 
+
+\textit{(5)} Devuelve $(0, \varepsilon)$ y termina.
+\end{quote}
+\small
+
+\textit{Ejemplo.} Considera $\mathbb{P}(6)$. En \textit{(0)}, esto asigna $x_1 = 1$,
+$x_2 = 1$.  La primera palabra en $\Sigma$ es $@$. El programa encuentra la
+tupla $(1, @$. Como $1$ es impar va a \textit{(5)} y devuelve $(0, \epsilon)$.
+
+Considera la tupla $(2, @@@@)$. Sabemos que existe algún $x \in \omega$ tal que
+$\mathbb{P}(x) = (2, @@@@)$ (aquí uso la notación matemática de manera flexible). Dado que $@@@@$ es la cuarta palabra en $\Sigma$, $x$ es tal que
+$x = \langle 2, 4, (x)_3, (x)_4, \ldots \ldots\rangle $. Por ejemplo, $2^2 + 3^4 =
+85$ o $2^2 + 3^4 + 5^{17} = 762939453210$ satisfarán esto.
+
+\end{quote}
+\normalsize
+
+\section{Guia 4}
+
+\begin{problem}
+Si $M$ es una máquina de Turing, entonces $\delta$ es una función $\Sigma$-mixta.
+\end{problem}
+
+\small
+\begin{quote}
+
+Se dice que una función es una función $\Sigma$-mixta si $\mathcal{D}_f \subseteq
+\omega^n \times \Sigma^{m}$ para algunos $n, m \geq 0$ y $\mathcal{I}_f \subseteq
+\omega$ o $\mathcal{I}_f \subseteq \Sigma^{}$. La función $\delta$ no satisface
+ninguna de estas propiedades; por ejemplo, su dominio es un conjunto de estados
+$Q \times \Gamma \not\subseteq \Sigma^{*m}$.
+\end{quote}
+\normalsize
+
+
+
+\section{Guías 5 y 6}
+
+\begin{problem}
+    Encuentre funciones que definan recursivamente a $R = \lambda t \left[  2^t
+    \right]$.
+\end{problem}
+
+
+\small
+\begin{quote}
+
+Seamos claros con los tipos. Pues $R \sim (1, 0, \#)$ y la recursión se hará
+claramente sobre una variable numérica, debemos encontrar $f \sim (0, 0, \#), g
+\sim (2, 0, \#)$ tales que $R(0) = f$ y $R(t + 1) = g\left( R(t), t \right) $.
+Evidentemente $R(0) = 1 \Rightarrow f = C_1^{0, 0}$. Puesto que $R(t + 1) = 2^{t
++ 1} = 2^t \times 2$ tenemos que $g = \lambda x \left[  2\cdot x \right] \circ
+\left[ p_1^{2, 0} \right] $. 
+
+\begin{quote}
+    \textit{Observación.} Aunque $g$ involucra, a fines prácticos, una sola variable
+    numérica, la definimos de modo tal que su dominio es $\omega^2$. Esto es
+    para respetar los tipos exigidos por la recursión primitiva.
+\end{quote}
+
+\end{quote}
+\normalsize
+
+\begin{problem}
+    Lo mismo para $R = \lambda t \left[ t!  \right]$.
+\end{problem}
+   
+
+\small
+\begin{quote}
+
+Los tipos de $f$ y $g$ serán igual que en el ejercicio anterior. Pero como esta
+recursión sí involucra al factor $t$, el segundo argumento de $g$ ya no será
+superfluo. Es fácil ver que $f = C_{1}^{0, 0}$. Dado que $R(t+1) = t!(t+1)$
+tenemos que 
+
+\begin{align*}
+    g = \lambda xy \left[ x\cdot y  \right] \circ \left[ p_1^{2, 0}, Suc \circ
+    p_2^{2, 0} \right] 
+\end{align*}
+
+\begin{quote}
+    (Recuerde que para recursión de función numérica sobre variable numérica,
+    requerimos $R(t+1, \vec{x}, \vec{\alpha}) = g(R(t), t, \vec{x},
+    \vec{\alpha})$).
+\end{quote}
+
+
+\end{quote}
+\normalsize
+
+\begin{problem}
+    Lo mismo para $R = \lambda t x_1 \alpha_1 \alpha_2 \left[ t \cdot x_1  \right]$.
+\end{problem}
+
+Seamos rigurosos con los dominios y observemos que la $f$ y la $g$ buscadas son
+tal que $f \sim (1, 2, \#), g \sim  (3, 2, \#)$. Es evidente entonces que  $f =
+C_0^{1, 2}$. Pues $R(t + 1, x, \alpha, \beta) = t \cdot x_1$ tenemos simplemente
+que 
+
+\begin{align*}
+    g = \lambda xyz\alpha\beta \left[ x \cdot y  \right] \circ \left[ p_2^{3,
+    2}, p_3^{3, 2} \right] 
+\end{align*}
+
+\begin{problem}
+    Sea $\Sigma = \left\{ @, !, ? \right\} $. Encuentre $f, g$ tales que $R(f,
+    g) = \lambda t x_1 \left[ !@!!!!?^t  \right]$.
+\end{problem}
+
+
+\small
+\begin{quote}
+
+Pues hacemos recursión sobre una variable numérica de $R(f, g) \sim (2, 0, *)$, requerimos
+que $f \sim  (1, 0, *), g \sim (2, 1, *)$. Observe que $R(f, g)(0, x_1) =
+!@!!!!\varepsilon $. Luego $f = C_{!@!!!!}^{1, 0}$. Observe que $R(t + 1, x) =
+!@!!!!?^t ?^{t+1} = R(t) ?^{t+1}$. Luego 
+
+\begin{align*}
+    g = \lambda \alpha\beta \left[ \alpha\beta \right]  \circ \left[ p_3^{2, 1},
+    \lambda \alphax \left[  \alpha^x  \right] \circ \left[ C_?^{2, 1}, p_1^{2, 1} \right] \right]
+\end{align*}
+
+Es fácil observar, reemplazando las variables, que
+
+\begin{align*}
+    &\lambda \alpha\beta \left[ \alpha\beta \right]  \circ \left[ p_3^{2, 1},
+    \lambda  x\alpha \left[  \alpha^x  \right] \circ \left[Suc \circ p_1^{2, 1},  C_?^{2, 1},  \right] \right] \left( t, x, R(t) \right) =R(t) ?^{t + 1}
+\end{align*}
+
+\end{quote}
+\normalsize
+
+
+\begin{problem}
+    Si $\Sigma = \left\{ @, !, ? \right\} $, encuentre $f, \mathcal{G}$ tales
+    que $R(f, \mathcal{G}) = \lambda \alpha_1 \alpha  \left[ |\alpha|_1 +
+    |\alpha|_{@}  \right]$
+\end{problem}
+
+
+\small
+\begin{quote}
+
+Otra vez seamos explícitos con los dominios. Pues $R(f, g) \sim (0, 2, \#)$
+tenemos $f \sim (0, 1, \#), g \sim (1, 2, \#)$.
+
+Es evidente que $R(f, \mathcal{G}), \alpha_1, \epsilon) = |\alpha|$. Luego $f =
+\lambda \alpha \left[ |\alpha|  \right]$. Veamos que 
+
+\begin{align*}
+    R(\alpha_1, \alpha a) = \begin{cases}
+        R(\alpha_1, \alpha) & a \neq @ \\ 
+        R(\alpha_1, \alpha) + 1 & a = @
+    \end{cases}
+\end{align*}
+
+Tomando la familia indexada de funciones 
+$\mathcal{G} = \left\{ (!, p_1^{1, 2} ), (?, p_1^{1, 2}), 
+    (@, Suc \circ p_1^{1, 2} )\right\}  $, obtenemos efectivamente que $R(f,
+    \mathcal{G})$. 
+
+\end{quote}
+\normalsize
+
+\begin{problem}
+    Encuentre $f, \mathcal{G}$ tales que $R(f, \mathcal{G}) = \lambda
+    \alpha_1\alpha \left[ \alpha_1 \alpha  \right]$
+\end{problem}
+
+
+\small
+\begin{quote}
+
+Evidentemente, $f = \lambda \alpha \left[ \alpha  \right]$. Pues $R(f,
+\mathcal{G})(\alpha_1, \alpha a) = \alpha_1 \alpha a$, observamos que
+$\mathcal{G} = \left\{ a \in \Sigma : (a, d_a \circ p_3^{0, 3}) \right\}  $.
+Entonces, es evidente que
+
+\begin{align*}
+    R(f, \mathcal{G})(\alpha_1, \alpha a) &= \mathcal{G}_a \left( \alpha_1,
+    \alpha, R(f, \mathcal{G})(\alpha_1, \alpha) \Right) \\ 
+                                          &= (d_a \circ p_3^{3, 0)}) \left(
+                                          \alpha_1, \alpha, R(f,
+                                      \mathcal{G})(\alpha_1, \alpha) \right)  \\ 
+                                          &=R(f, \mathcal{G})(\alpha_1, \alpha)a
+\end{align*}
+
+Por ejemplo, $R(f, \mathcal{G})(!?!, ?@) = R(f, \mathcal{G})(!?!, ?) @ = (R(f,
+\mathcal{G})(!?!, \varepsilon )?)@ = ((!?!)?)@ = !?!?@$.
+
+tal como deseábamos.
+
+\end{quote}
+\normalsize
+
+\begin{problem}
+    Demuestre que $\mathcal{F} = \lambda xy\alpha\beta \left[ \alpha^x = \beta  \right]$ es
+    $\Sigma$-p.r. 
+\end{problem}
+
+
+\small
+\begin{quote}
+
+    Cuidado con los dominios: $\mathcal{D}_\mathcal{F} = \omega^2 \times
+    \Sigma^{*}^2$, aunque la variable $y$ de la expresión lambda no sea
+    utilizada.
+Es fácil ver que 
+
+\begin{align*}
+    \mathcal{F} = \lambda \alpha\beta \left[  \alpha = \beta  \right] \circ
+    \left[ \lambda x\alpha \left[  \alpha^x \right] \circ \left[ p_1^{2, 2},
+    p_3^{2,2} \right] , p_4^{2, 2}\right] 
+\end{align*}
+
+\end{quote}
+\normalsize
+
+\begin{problem}
+    Demuestre que el conjunto $ S = \left[ (x, y, \alpha, \beta, \gamma) \in
+    \omega^2 \times \Sigma^{*}^3 : x \leq |\gamma| \right] $ es $\Sigma$-p.r. 
+\end{problem}
+
+Observe que 
+
+\begin{align*}
+    \chi_S^{\omega^2 \times \Sigma^{*}^3} = \lambda xy \left[ x \leq y  \right]
+    \circ \left[ p_1^{2, 3}, \lambda \alpha \left[ |\alpha|  \right] \circ
+    p_5^{2, 3} \right] 
+\end{align*}
+
+Puesto que $\lambda xy \left[ x \leq y  \right]$ es $\Sigma$-p.r. y $\lambda
+\alpha \left[ |\alpha|  \right]$ también, $\chi_S^{\omega^2 \times
+\Sigma^{*}^3}$ es $\Sigma$-p.r. 
+
+~
+
+$\therefore $ $S$ es $\Sigma$-p.r. 
+
+\begin{problem}
+    Sea $\Sigma = \left[ @, ? \right] $. Demuestre que 
+
+    \begin{align*}
+        f :  \left\{ (x, y, \alpha) : x \leq y \right\}    &\mapsto \omega \\ 
+        (x, y, \alpha) &\mapsto  \begin{cases}
+            x^2 & |\alpha| \leq y \\ 
+            0 & |\alpha| > y
+        \end{cases}
+    \end{align*}
+
+    es $\Sigma$-p.r. 
+\end{problem}
+
+
+\small
+\begin{quote}
+
+Sean 
+
+\begin{align*}
+    S_1 &= \left\{ (x, y, \alpha) \in \omega^2 \times \Sigma^{*} : x \leq y
+\land |\alpha| \leq y \right\} \\ 
+        S_2 &= \left\{ (x, y, \alpha) \in \omega^2 \times \Sigma^{*} : x \leq y
+\land |\alpha| > y \right\} 
+\end{align*}
+
+Evidentemente, $S_1 \cap S_2 = \emptyset$. Es claro que cada conjunto
+corresponde a uno de los casos de $f$, y que $S_1 \cup S_2 = \mathcal{D}_f$.
+
+Ahora bien, la función $f_1 := \lambda xy\alpha \left[ x^2  \right]$ es
+evidentemente $\Sigma$-p.r. Lo mismo aplica a la función $f_2 := C_0^{2, 1}$. Más aún,
+es fácil probar que $S_1, S_2$ son $\Sigma$-p.r. (esto lo dejamos). Luego,
+puesto que la restricción de una función $\Sigma$-p.r. a un dominio
+$\Sigma$-p.r. es a su vez una función $\Sigma$-p.r., tenemos que $f_1_{\mid S_1},
+f_2_{\mid S_2}$ son $\Sigma$-p.r.  Luego $f = f_1_{\mid S_1} \cup f_2_{\mid S_2}$ es $\Sigma$-p.r. 
+
+\end{quote}
+\normalsize
+
+\begin{problem}
+    Pruebe que la función $\lambda x x_1 \left[  \sum_{t=1}^{t=x} Pred(x_1)^{t}
+    \right]$ es $\Sigma$-p.r. 
+\end{problem}
+
+
+\small
+\begin{quote}
+
+\textit{(1)} Evidentemente, $\lambda xy \left[ Pred(x)^y  \right] = \lambda xy
+\left[ x^y  \right] \circ \left[ Pred \circ p_1^{2, 0}, p_2^{2, 0} \right] $ es
+$\Sigma$-p.r. 
+
+\textit{(2)} Considere la función $G := \lambda xy x_1 \left[ \sum_{t=x}^{t=y}
+Pred(x_1)^t  \right]$. Pues $Pred(x_1)^t$ es $\Sigma$-p.r. sabemos que $G$ es
+$\Sigma$-p.r. Evidentemente, la función del ejercicio es 
+
+\begin{align*}
+    G \circ \left[ C_1^{2, 0}, p_1^{2, 0}, p_2^{2, 0} \right] 
+\end{align*}
+
+Luego es $\Sigma$-p.r. 
+
+\end{quote}
+\normalsize
+
+\begin{problem}
+    Lo mismo para $\mathcal{F} := \lambda xyz \alpha \beta \left[
+    \mathop{\subset}_{t=3}^{t=z+5} \alpha^{Pred(z) \cdot t}
+\beta^{Pred(Pred(|\alpha|))}   \right]$
+\end{problem}
+
+Observe que $\mathcal{D}_{\mathcal{F}} = \left\{ (x, y, z, \alpha, \beta) \in
+\omega^3 \times \Sigma^{*}^2 : z \geq 1 \land |\alpha| \geq 2 \right\} $, pues
+la función $Pred$ no está definida para el valor cero.  
+
+\textit{(1)} Observe que 
+
+\begin{align*}
+    f_1 &:= \lambda xy\alpha\beta \left[ \alpha^{Pred(x) y} \right] = \lambda x\alpha \left[ \alpha^x
+    \right] \circ \left[ \lambda xy \left[ Pred(x).y \right] \circ [ p_1^{2, 2}, p_2
+    ], p_3^{2, 2} \right]  \\ 
+        f_2 &:= \lambda xy\alpha\beta \left[  \beta^{Pred(Pred(|\alpha|))}
+        \right] = \lambda x\alpha \left[  \alpha^x \right] \circ \left[ Pred
+        \circ \left[ Pred \circ \left[ \lambda \alpha \left[ |\alpha|  \right]
+    \circ p_3^{2, 2} \right]  \right], p_4^{2, 2}  \right] 
+\end{align*}
+
+Luego 
+
+\begin{align*}
+    f := \lambda xy\alpha\beta \left[ f_1(x, y, \alpha, \beta) f_2(x, y, \alpha,
+    \beta)  \right] = \lambda \alpha \beta \left[ \alpha\beta  \right] \circ
+    \left[ f_1, f_2 \right] 
+\end{align*}
+
+es $\Sigma$-p.r. Esta es la función que está dentro de la concatenación. 
+
+\textit{(2)} Sea $G := \lambda xyz\alpha\beta \left[
+\mathop{\subset}_{t=x}^{t=y} f(z, t, \alpha, \beta)  \right]$. Sabemos que, dado
+que $f$ es $\Sigma$-p.r., $G$ es $\Sigma$-p.r. Ahora bien, 
+
+\begin{align*}
+\mathcal{F} = G \circ \left[ C_3^{3, 2}, \lambda x \left[ x + 5  \right] \circ
+p_3^{3, 2}, p3^{3, 2}, p_4^{3, 2}, p_5^{3, 2} \right] 
+\end{align*}
+
+Luego $\mathcal{F}$ es $\Sigma$-p.r. 
+
+\begin{problem}
+    Use que $x \in \mathbb{N}$ es primo si y solo si $x > 1 \land \left(
+    (\forall t \in \omega)_{t \leq x} ~ t = x \lor \neg(t \mid x) \right) $ para
+    demostrar que $\lambda x \left[ x \text{ es primo }  \right]$ es $\Sigma$-p.r. 
+\end{problem}
+
+
+\small
+\begin{quote}
+
+Definamos $P_1 = \lambda  \left[  x > 1 \right], P_2 = \lambda x \left[ \left( \forall t
+\in \omega \right)_{t\leq x} t = x \lor \neg \left( t \mid x \right)
+\right]$. Observe que el predicado $P' = \lambda tx \left[  t = x \lor \neg (t \mid
+x) \right]$ es $\Sigma$-p.r. (se deja al lector). Pues $P'$ es $\Sigma$-p.r.
+tenemos que $P_2 = \lambda x \left[ (\forall t \in \omega)_{t \leq x} P'(t, x)
+\right]$ es $\Sigma$-p.r. Dado que $\mathcal{D}_{P_1} = \mathcal{D}_{P_2}$
+podemos tomar $P = P_1 \land P_2$ y $P$ es $\Sigma$-p.r. Es evidente que $P =
+\lambda x \left[  x \text{ es primo} \right] $.
+
+\end{quote}
+\normalsize
+\pagebreak
+
+\begin{problem}
+    Pruebe que $ L = \left\{ (x, \alpha, \beta) \in \omega \times \Sigma^{*}^2 : \left(
+    \exists t \in \omega \right) ~ \alpha^x = \beta^t  \right\} $ es $\Sigma$-p.r. 
+\end{problem}
+
+
+\small
+\begin{quote}
+
+El predicado siendo cuantificado es trivialmente $\Sigma$-p.r. y así lo es a su
+vez $\omega$ (pues $\chi_{\omega}^{\omega} = C_1^{1, 0$). Fijemos un elemento
+    arbitrario $(x, \alpha, \beta) \in L$. Pues
+    $\alpha^x = \beta^t$, tenemos dos casos a considerar:
+
+    \begin{quote}
+    \textit{(1)} Si $|\alpha| \leq |\beta|$ es necesario que $t \leq x$. En este
+    caso la cota de la cuantificación aparece naturalmente. Observe que esto
+    implica que $t \leq xk$ para cualquier $k \in \mathbb{N}$ (esto junto con
+    \textit{(2)} justifica nuestra conclusión).
+
+    \textit{(2)} Si $|\alpha| > |\beta|$ es necesario que $t > x$. Operemos bajo
+    este supuesto. Pues $\alpha^x = \beta^t$, tenemos que $|\alpha|x =
+    |\beta|t$. Si $|\beta| \mid |\alpha|$ tenemos $t = (|\alpha| / |\beta|) x$
+    (siempre que $|\beta| \neq 0$) y
+    esta cantidad es una cota. Si $|\beta| \not\mid |\alpha|$, entonces sabemos
+    que $(|\alpha| / |\beta|) x \leq t$ (siempre que $|\beta| \neq 0$). La
+    división entera es o bien positiva o nula. 
+
+    Si $|\alpha| / |\beta| = 0$
+    resulta que $0 \leq t$, pero la hipótesis $\alpha^x = \beta^t$
+    inmediatamente implica que $t = 0$ también. Y si $t = 0$ entonces no sucede
+    $t > x$, una contradicción. 
+    
+    Si $ |\alpha| / | \beta| > 0$ el
+    hecho de que $(|\alpha| / |\beta|)x \leq t$ contradice la hipótesis de que
+    $t > x$. 
+
+    Por último, el caso $|\beta| = 0$ junto con $|\alpha| >
+    |\beta|$ y $t > x$ implica $x = 0$. Pero tenemos que $|\alpha|^0 = 0t
+    \Rightarrow t = 0$, lo cual contradice $t > x$. 
+
+    De todo lo anterior se sigue que el único caso válido es aquel donde
+    $|\beta| \mid |\alpha|$.
+
+    $\therefore$ $t \leq \left( |\alpha| / |\beta| \right) x $ es una cota para
+    $t$.
+
+    \end{quote}
+
+    Ahora que dimos con una cota para $t$, observe que $f = \lambda x\alpha\beta
+    \left[ (|\alpha| / |\beta|) x  \right]$ es $\Sigma$-p.r. (se deja al
+    lector). Luego
+
+    \begin{align*}
+        \chi_{L}^{\omega \times \Sigma^{*}^{2}} = \lambda x x_0 \alpha\beta
+        \left[ \left( \exists t \in \omega \right)_{t \leq x} 
+        \alpha^{x_0}=\beta^t   \right] \circ \left[ f \
+    , p_1^{1, 2}, p_2^{1, 2}, p_3^{1, 2}  \right] 
+    \end{align*}
+
+    que es $\Sigma$-p.r. 
+
+
+\end{quote}
+\normalsize
+
+
+\pagebreak
+
+
+\begin{problem}
+    Sea $\Sigma = \left\{ @, ? \right\} $. Demuestre que 
+
+    \begin{align*}
+        L = \left\{ (x, \alpha, \beta) \in \mathbb{N} \times \Sigma^{*}\times
+        \Sigma^{+} : \left( \exists \gamma \in \Sigma^{*} \right)  @\beta@ = \gamma?\alpha ?\gamma^{R}\right\} 
+    \end{align*}
+
+    es $\Sigma$-p.r. 
+\end{problem}
+
+
+\small
+\begin{quote}
+
+\textit{(1)} Sea $P_0 = \lambda \alpha\beta\gamma\left[ @\beta@ =
+\gamma?\alpha?\gamma^R  \right]$. Para demostrar que es $\Sigma$-p.r. observe
+que $\lambda \alpha \left[  \alpha^R  \right] = R\left(C_{\varepsilon }^{0, 2},
+\left\{ a \in \Sigma : \left( a, \lambda \alpha\beta \left[  \alpha\beta
+\right] \circ \left[ p_3^{0, 4}, p_4^{0, 4} \right]  \right)  \right\}\right) $. Pues
+tomar la recíproca de una palabra es una función $\Sigma$-p.r. se sigue
+fácilmente que $P_0$ es $\Sigma$-p.r. 
+
+\textit{(2)} Sea $\left( x, \alpha, \beta \right) \in  L $ un elemento
+arbitrario. Considere $\gamma \in \Sigma^{*}$ t.q. $@\beta@ =
+\gamma?\alpha?\gamma^{R}$. Evidentemente, 
+
+\begin{align*}
+    |@\beta @| = \gamma?\alpha?\gamma^{R} &\Rightarrow |\beta| + 2 = 2 + 2|\gamma|
+    + |\alpha| \\ 
+                                          &\Rightarrow |\beta| - |\alpha| =
+                                          2|\gamma|
+\end{align*}
+
+Si $|\beta| - |\alpha|$ es par obtenemos que $(|\beta| - |\alpha|)/2$ es una
+cota. Si es impar entonces $(|\beta| - |\alpha| + 1) / 2$ es una cota. Como este
+último valor es superior a $|\gamma|$ en ambos casos, lo tomamos como la cota de
+$t$. Es trivial observar que $\lambda \alpha\beta \left[ (|\alpha| - |\beta| +
+1) / 2  \right]$ es $\Sigma$-p.r. 
+
+\textit{(3)} Tenemos entonces que 
+
+$$\chi_{L}^{\omega \times \Sigma^{*}^2} =
+\lambda x \alpha \beta \left[ (\exists \gamma \in \Sigma^{*})_{|\gamma| \leq
+\left( |\alpha| - |\beta| + 1 \right) / 2 } @\beta@ = \gamma?\alpha?\gamma^{R}
+\right] \land \lambda x\alpha\beta \left[ x \neq 0 \land \beta \neq \varepsilon   \right]$$
+
+El segundo predicado asegura que respetemos que los elementos de $L$ son de
+$\mathbb{N} \times {\Sigma^{*}} \times \Sigma^{+}$. Es muy fácil mostrar que el
+primer predicado en la cojunción es una composición de la cuantificación acotada
+por un $x$ general (se deja al lector). Esto, combinado con el hecho de que
+$\Sigma^{*}$ (el conjunto sobre el que se hace la cuantificación) y $P_0$ (el
+predicado sobre el que se hace la cuantificación) son $\Sigma$-p.r., es
+suficiente para probar que $L$ es $\Sigma$-p.r. 
+
+\end{quote}
+\normalsize
+
+
+
+
+
+\begin{problem}
+    Pruebe que 
+
+    \begin{align*}
+        L = \left\{ (x, \alpha, \beta) \in \omega \times \Sigma^{*}^2 : \left(
+        \exists t \in Im(pr) \right) ~ \alpha^{Pred(Pred(x)) \cdot
+    Pred(|\alpha|)} = \beta^t  \right\} 
+    \end{align*}
+
+    es $\Sigma$-p.r. 
+\end{problem}
+
+
+\small
+\begin{quote}
+
+    \textit{(1)} Sea $P_0 = \lambda x_0 x_1\alpha\beta \left[
+    \alpha^{Pred(Pred(x_0))\cdot Pred(|\alpha|)} = \beta^{x_1}  \right]$. Salteamos la
+    prueba de que $P_0$ es $\Sigma$-p.r. porque es mecánica.
+
+    \textit{(2)} Sabemos que $\chi_{L}^{\omega \times  \Sigma^{*}^2}$ es el
+    predicado $P = \lambda x_0 \alpha \beta \left[ (\exists t \in Im(pr)) ~
+        P_0(x_0,
+    t, \alpha, \beta)  \right]$. 
+
+    Sea $(x_0, \alpha, \beta) \in L$ un elemento arbitrario y $t \in Im(pr)$.
+
+    \begin{align*}
+        \alpha^{(x_0 - 2)(|\alpha| - 1)} = \beta^{t} \Rightarrow |\alpha|(x_0 -
+        2)(|\alpha| - 1) = |\beta| t
+    \end{align*}
+
+    Sea $u = (x_0 - 2)(|\alpha| - 1)$. Si $|\alpha| \leq |\beta|$ tenemos que $t
+    \leq
+    u$ necesariamente---de otro modo no se satisface $\alpha^u = \beta^t$--- y
+    la cota surge naturalmente.
+
+    Veamos el caso $|\alpha| > |\beta|$. Si $|\beta|$ divide a $|\alpha|u$ la cota surge
+    naturalmente. Si $|\beta|$ no divide a $|\alpha|$, $|\alpha| = |\beta|q +
+    r$ con $0 < r < |\beta|$. Luego $|\beta|q+r = |\beta|t$, lo cual es absurdo
+    dado que $r < |\beta|$. Luego el caso $|\beta|$ no divide a $|\alpha|$ es
+    inválido y ni siquiera lo consideramos.
+
+    Tomando el caso $|\alpha| > |\beta|$ y $|\beta|$ divide a $|\alpha|$, por
+    ser el que da la cota mayor, obtenemos
+
+    \begin{align*}
+        t \leq \left( |\alpha| ~ / ~ |\beta| \right) u
+    \end{align*}
+
+    \textit{(3)} Es fácil demostrar que $\lambda x_0 \alpha \beta \left[ (x_0 -
+    2)(|\alpha| - 1)  \right]$ es $\Sigma$-p.r.  En el espíritu de los
+    ejercicios anteriores, ahora sola queda expresar $\chi_L^{\omega \times
+    \Sigma^{*}^2}$, con esta cota, como una composición del predicado de
+    cuantificación general (es decir el que tiene como cota una $x$ arbitraria).
+    Se deja esto al lector.
+
+
+
+
+
+
+
+
+
+\end{quote}
+\normalsize
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

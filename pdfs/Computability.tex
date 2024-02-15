@@ -83,7 +83,7 @@ computability (von Neumann).
 
 We define $\omega^{\mathbb{N}} := \{ (s_1, s_2, \ldots) : s_i \in \omega \}$ and
 $\omega^{\left[ \mathbb{N} \right] } \subseteq \omega^{\mathbb{N}} := \{(s_1,
-s_2, \ldots) : s_i \in \omega \land \exists k \in \omega : i \geq k
+s_2, \ldots) : s_i \in \omega \land \exists k \in \mathbb{N} : i \geq k
 \Rightarrow s_i = 0\}$. 
 
 \subsection{The $i$th prime function}
@@ -594,49 +594,6 @@ of the $\Sigma$-total enumeration).
 \small
 \begin{quote}
 
-\begin{problem}
-    Prove that $S = \{(x, @^x) : x \equiv 0 \mod 2\}$ is $\{@\}$-effectively
-    enumerable.
-\end{problem}
-
-$S$ is not $\Sigma$-total. $\therefore $ We require that it be
-$\Sigma$-effectively computable. It is easy to see that
-it is: Simply make a procedure that checks if $x$ is even, and that counts the
-number of $@$s. Let $\mathbb{P}_\text{is in $S$}$ denote the procedure which decides the belonging of
-$(x, \alpha)$ to $S$. 
-
-It is also trivial to observe that $*^{\leq}$ is $\Sigma$-effectively
-computable under any order of $\Sigma$, since the function is pretty much
-algorithmic in nature. Let $\mathbb{P}_{\text{num to word}}$ denote the
-procedure which given an input $x \in  \omega$ computes $*^{\leq}(x)$. Then we
-define $\mathbb{P}$ the following procedure which takes an input $x \in
-\omega$:
-
-\footnotesize 
-\begin{quote}
-    \textit{(0)} Let $x_1$ be the number of times $2$ divides $x$ (this is, let
-    it be the exponent of the first prime factor in the decomposition of $x$).
-    Let $x_2$ be the number of times $3$ divides $x_1$ (the second prime in the
-    decomposition of $x$).
-
-    \textit{(1)} Use $\mathbb{P}_{\text{num to word}}$ to compute $*^{\leq}(x_2)$
-    and store it in $\alpha$. 
-
-    \textit{(3)} Use $\mathbb{P}_{\text{is in $S$}}$ to determine if $(x_0,
-    \alpha) \in  S$. If it is, output $(x_0, \alpha)$. If it is not, go to step
-    three.
-\end{quote}
-\small
-
-\textit{Example.} Consider $\mathbb{P}(6)$. In \textit{(0)} this maps $x_1 = 1,
-x_2 = 1$. Since the first word in $\Sigma$ is $@$, $6 \mapsto (1, @)$, which is
-not in $S$. $\mathbb{P}$ will not halt.
-
-Consider the tuple $(2, @@@@)$. We know there exists some $x \in \omega$ s.t.
-$\mathbb{P}(x) = (2, @@@@)$ (I use math notation loosely here). Since $@@@@$ is
-the fourth word in $\Sigma$, $x$ is s.t.
- $x = \langle 2, 4, (x)_3, (x)_4, \ldots \ldots\rangle $. For example, $2^2 + 3^4 =
-85$ or $2^2 + 3^4 + 5^{17} = 762939453210$ will satisfy this.
 
 
 \begin{problem}
@@ -708,8 +665,8 @@ A Turing machine is a $7$-uple $M = \left( Q, \Sigma, \Gamma, \delta, q_0, B, F
     \item $\Gamma \supset \Sigma$ is an alphabet
     \item $\Sigma$ is the input alphabet
     \item $B \in \Gamma - \Sigma$ is a blank symbol 
-    \item $\delta : Q \times \Gamma \mapsto \mathcal{P} \left( Q \times \Gamma \times \left\{
-        L, R, K\right\}  \right) $ 
+    \item $\delta : \mathcal{D}_\delta\subseteq Q \times \Gamma \mapsto Q \times \Gamma \times \left\{
+        L, R, K\right\}   $ 
     \item $q_0 \in Q$ is the initial state 
     \item $F \subseteq Q$ is the set of final states
 \end{itemize}
@@ -1110,6 +1067,9 @@ if there is a deterministic Turing machine $M$ s.t.
             f(\vec{x}, \vec{\alpha}) \right\rfloor
         \end{align*} 
 
+        and $\left\lfloor pBf(\vec{x}, \vec{\alpha}) \not\vdash d \right\rfloor$
+        for all $d \in \mathbb{D}$.
+
     \item If $(\vec{x}, \vec{\alpha}) \in \omega^{n} \times \Sigma^{*m} -
         \mathcal{D}_f$, then the machine does not halt starting from  
         \begin{align*}
@@ -1128,6 +1088,9 @@ When $f \mapsto \omega$, we analogously say a Turing machine computes $f$ iff
             ~ B ~ \ldots ~ B ~ \alpha_m\right\rfloor \vdash^* \left\lfloor pB
             i^{f(\vec{x}, \vec{\alpha})} \right\rfloor
         \end{align*} 
+        
+        and $\left\lfloor pBi^{f(\vec{x}, \vec{\alpha})} \not\vdash d \right\rfloor$
+        for all $d \in \mathbb{D}$.
 
     \item If $(\vec{x}, \vec{\alpha}) \in \omega^{n} \times \Sigma^{*m} -
         \mathcal{D}_f$, then the machine does not halt starting from  
@@ -1598,8 +1561,20 @@ so is $P$. $\blacksquare$
 \end{theorem}
 
 \begin{theorem}
-    Any $\Sigma$-mixed function $f$ with finite domain is $\Sigma$-p.r. 
+    If $S_1, S_2$ are $\Sigma$-p.r. sets, then $S_1 \cup S_2, S_1\cap S_2, S_1 -
+    S_2$ are $\Sigma$-p.r. sets.
 \end{theorem}
+
+From the two previous theorems follows that if $f_1, f_2$ are $\Sigma$-p.r. then
+$f_1 \cap f_2$  are $\Sigma$-p.r. The reason is that $\mathcal{D}_{f_1 \cap f_2}
+= \mathcal{D}_{f_1} \cap \mathcal{D}_f_2$, which are both $\Sigma$-p.r. by
+virtue of being domains of $\Sigma$-p.r. functions. Then their intersection is
+$\Sigma$-p.r. Then they are the domain of a $\Sigma$-p.r.---namely $f_1 \cap
+f_2$.
+
+The same \textit{does not} happen with $f_1 \cup f_2$ because this set may
+violate the definition of a function; namely, that to each $(\vec{x}, \vec{\alpha}) $ corresponds a
+unique element $((\vec{x}, \vec{\alpha}) , f(\vec{x}, \vec{\alpha}) )$.
 
 \subsection{Case division}
 
@@ -2179,10 +2154,31 @@ minus, but the same symbols that denote these operations.
 Any word of the form $N \overline{k}$ is a numeric variable; $P \overline{k}$ is
 an alphabetic variable; $L \overline{k}$ is a label.
 
-The basic instructions in $\mathcal{S}^{\Sigma}$ make use of these; for a list
-of the instructions, consult the original source. In general, an instruction of
-$\mathcal{S}^{\Sigma}$ is any word of the form $\alpha I$, where $\alpha \in \{L
-\overline{n}: n \in \mathbb{N}\}$ and $I$ is a basic instruction. We use
+A basic instruction in $\mathcal{S}^{\Sigma}$ is one of the following words: 
+
+
+\small
+\begin{quote}
+
+\begin{itemize}
+    \item $N\overline{k} \leftarrow N \overline{k} - 1$
+    \item $N\overline{k} \leftarrow N \overline{k} + 1$
+    \item $N\overline{k} \leftarrow N \overline{n}$
+    \item $N\overline{k} \leftarrow 0$
+    \item $P\overline{k} \leftarrow {}^{\curvearrowright}P \overline{k}$
+    \item $P\overline{k} \leftarrow P \overline{k}.a$
+    \item $P\overline{k} \leftarrow P \leftarrow \varepsilon $
+    \item $IF ~ N \overline{k} \neq 0 ~ GOTO ~ L \overline{n}$
+    \item $IF ~ P \overline{k} BEGINS ~ a ~ GOTO ~ L \overline{n}$ 
+    \item $GOTO ~ L \overline{n}$ 
+    \item SKIP
+\end{itemize}
+
+\end{quote}
+\normalsize
+
+An instruction is any word of the form $\alpha I$ where $\alpha \in \left\{ L
+\overline{n}: n \in \mathbb{N} \right\} $ and $I$ is a basic instruction. We use
 $Ins^{\Sigma}$ to denote the set of all instructions in $\mathcal{S}^{\Sigma}$.
 When $I = L \overline{n} J$ and $J$ a basic instruction, we say $L \overline{n}$
 is the label of $J$.
@@ -2200,10 +2196,22 @@ $L \overline{m}$.
 Informally, a program is any chain of instructions satisfying that GOTO
 instructions map to actual labels in the program.
 
-~ 
 
 We use $Pro^{\Sigma}$ to denote the set of all programs in
 $\mathcal{S}^{\Sigma}$.
+
+
+\small
+\begin{quote}
+
+    \textit{Observation.} Note that $Ins^{\Sigma} \not\subseteq Pro^{\Sigma}$.
+    The reason is \hat{t} $Ins^\Sigma$ contains chains of instructions that do
+    not satisfy the GOTO law. For example, the single line $ IF N1 \neq 0 ~
+    GOTO L1 \in Ins^{\Sigma}$ is not a program.
+
+\end{quote}
+\normalsize
+
 
 \begin{theorem}
     Let $\Sigma$ a finite alphabet. Then 
@@ -3009,6 +3017,29 @@ enumerates the substrings which make up $\alpha$. The program is s.t.
 
 \subsection{Godel triumphs over Neumann}
 
+The syntax of $\mathcal{S}^{\Sigma}$ is $(\Sigma \cup \Sigma_p)$-recursive.
+Recall that $S : Num^* \mapsto Num!*$ was the (symbolic) successor satisfying
+$S(\overline{n}) = \overline{n+1}$. In particular, $S(\varepsilon) = 1,
+S(\alpha 0) = \alpha1, S(\alpha 2) = \alpha 3, \ldots, S(\alpha 9) =
+S(\alpha)0$. It is obvious that the function is $Num$-p.r. The same can be shown
+of $\overline{ ~  } : \omega \mapsto Num^*$.
+
+\begin{theorem}
+    Let $\Sigma$ an arbitrary alphabet. Then $S$ and $\overline{~}$ are $(\Sigma
+    \cup \Sigma_p)$-p.r.
+\end{theorem}
+
+Recall that $Ins^{\Sigma}$ is the set of instructions in $\mathcal{S}^\Sigma$.
+It can be proven that this set is the union of a series of $(\Sigma \cup
+\Sigma_p)$-p.r. sets. 
+
+\begin{theorem}
+    Let $\Sigma$ an arbitrary alphabet. Then $Ins^{\Sigma}$ is $(\Sigma \cup
+    \Sigma_p)$-p.r.
+\end{theorem}
+
+
+
 The following three functions contain all the information relevant to
 $\mathcal{S}^{\Sigma}$. Assuming $n, m \in \omega$ are fixed, 
 
@@ -3113,6 +3144,76 @@ is $\Sigma$-recursive.
 
 \end{quote}
 \normalsize
+
+We define $\Phi_{\#}^{n, m} := \lambda \vec{x}\vec{\alpha}\mathcal{P} \left[
+\Psi_{\mathcal{P}}^{n, m, \#}(\vec{x}, \vec{\alpha}) \right]$. The domain of the
+function is consists thus in all $(\vec{x}, \vec{\alpha}, \mathcal{P})$ s.t.
+$(\vec{x}, \vec{\alpha}) \in \mathcal{D}_{\Psi_{\mathcal{P}}^{n, m, \#}}$. We
+can think of this as the \textit{execution function}, which takes some input and
+a program and returns the value of that program when executed on that input.
+
+We similarly define $\Phi_{\mathcal{P}}^{n, m, *}$.
+
+\begin{theorem}
+    The functions $\Phi_{\mathcal{P}}^{n, m, \#}, \Phi_{\mathcal{P}}^{n, m, *}$
+    are $(\Sigma \cup \Sigma_p)$-recursive.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+    \textbf{Proof.} Observe that $\mathcal{D}_{T^{n, m}} = \mathcal{D} =
+    \Phi_{\mathcal{P}}^{n, m, \#}$. For any $(\vec{x}, \vec{\alpha},
+    \mathcal{P}) \in \mathcal{D}_{T^{n, m}}$ we have 
+
+    \begin{align*}
+        \Phi_{\mathcal{P}}^{n, m, \#} = E_{\# !}^{n, m} \left( T^{n, m}(\vec{x},
+        \vec{\alpha}, \mathcal{P}), \vec{x}, \vec{\alpha}, \mathcal{P} \right) 
+    \end{align*}
+
+    which implies $\Phi_{\mathcal{P}}^{n, m, \#} = E_{\# 1}^{n, m} \circ \left[
+    T^{n, m}, p_1^{n, m+1}, \ldots, p_{n+m+1}^{n, m + 1}\right] $.
+
+    $\therefore $ $\Phi_{\mathcal{P}}^{n, m, \#}$ is $(\Sigma \cup \Sigma_p)$-p.r.
+
+\end{quote}
+\normalsize
+
+An important consequence of this theorem is that any $\Sigma$-computable
+function is $\Sigma$-recursive. From this follows an interesting theorem. 
+
+\begin{theorem}
+    If $f : \mathcal{D}_f \subseteq \omega^{n} \times \Sigma^{*m} \mapsto
+    \varphi$, with $\varphi = \omega$ or $\varphi = \Sigma^{*}$, then there is a
+    $\Sigma$-p.r. predicate $P : \mathbb{N} \times \omega^{n} \times \Sigma^{*m}
+    \mapsto \omega$ and a $\Sigma$-p.r. function $g : \mathbb{N} \mapsto
+    \varphi$ s.t. $f = g \circ M(p)$.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+Informally, the theorem establishes that any recursive function is some transformation $g$
+of the minimal natural number which satisfies some predicate $P$. The proof is
+straightforward.  Let $\mathcal{P}_0$ a program which computes $f$ and $\leq$ an
+order over $\Sigma$. Then 
+
+\begin{align*}
+    P := \lambda t \vec{x}\vec{\alpha} \left[  Halt^{n, m} \left( (t)_1,
+    \vec{x}, \vec{\alpha}, \mathcal{P}_0 \right) \land (t)_2 = \#^{\leq} \left(
+E_{* 1}^{n, m}\left( (t)_1, \vec{x}, \vec{\alpha}, \mathcal{P}_0 \right) \right)   \right]
+\end{align*} 
+
+Now let $g := \lambda t \left[ *^{\leq} \left( (t)_2 \right)   \right]$
+
+Both $P$ and $g$ are $\Sigma$-p.r. and evidently $f = g \circ M(P)$.
+
+\end{quote}
+\normalsize
+
+
 
 \subsection{Interacting programs}
 
@@ -3730,7 +3831,8 @@ $\mathcal{P}$ halts when inputted to itself.
 \normalsize
 
 \pagebreak
-\section{True/false problems}
+
+\section{Problems from final exams and the feared Tómbola}
 
 \begin{problem}
     If $\leq$ is an order over $\Sigma$ and $|\Sigma| = n \geq 1$, then 
@@ -3748,7 +3850,7 @@ Before proving that the statement is true, consider this example.
 \small
 \begin{quote}
 
-Consider an example: $\Sigma = \left\{ w, z \right\} $ with $w \leq z$; then the
+Let $\Sigma = \left\{ w, z \right\} $ with $w \leq z$; then the
 language list is 
 
 \begin{align*}
@@ -3760,11 +3862,6 @@ language list is
 
 It is easy to see that this is generalizable, because there are always $n^k$
 words of length $k$ in an alphabet of $n$ symbols. 
-
-\begin{theorem}
-    There are $n^k$ words of length $k$ in an alphabet of $n$ symbols.
-\end{theorem}
-
 
 \small
 \begin{quote}
@@ -3881,7 +3978,6 @@ antecedent, but does not satisfy the consequent, since
     \omega^{n} \times \Sigma^{*m}  : \alpha = \varepsilon  \right\} 
 \end{align*}
 
-The statement is false.
 
 \begin{problem}
     Let $M$ a Turing machine that computes $p_1^{2, 0}$. Then $M$ computes
@@ -3901,21 +3997,51 @@ of generality under the assumption that the Turing machine leads to a state
 $\left\lfloor q_f i^{x_1} \right\rfloor$. If this were true, then the Machine
 would not compute $p_1^{1, 0}$.
 
+\pagebreak
 \begin{problem}
     Let $f, g : \omega \mapsto \omega$ s.t. $g \in PR^{\Sigma}$ and $f \in
     PR_3^{\Sigma} - PR_2^{\Sigma}$. Then $f \circ g \subset PR_5^{\Sigma} -
     PR_3^{\Sigma}$.
 \end{problem}
 
+Recall that 
+
+\begin{align*}
+    PR_{k}^{\Sigma} = PR_{k-1}^{\Sigma} \cup \left\{ f \circ [f_1\ldots f_m] :
+    f, f_i \in PR_{k-1}^{\Sigma} \right\}  \cup \left\{ R(f, g) : f, g \in
+PR_{k-1}^{\Sigma} \right\} 
+\end{align*}
+
+For brevity, we will call the second and third sets in the union $A_{k-1},
+B_{k-1}$
+
 From the definition of $PR_k^{\Sigma}$ follows that
 
 \begin{align*}
-    PR_3^{\Sigma} - PR_2^{\Sigma} &= \left\{ R(f, g) : f, g \in PR_2^{\Sigma}
-    \right\} \cup \left\{ f \circ [f_1, \ldots, f_n] : f, f_i \in PR_2 \right\}
+    PR_3^{\Sigma} - PR_2^{\Sigma} &= PR_{2}^{\Sigma} \cup A_2 \cup B_2
+     - PR_2^{\Sigma}\\ 
+                                  &= A_2 \cup B_2
 \end{align*}
 
-Assume $g \in PR_k^{\Sigma}$ for $k > 5$ and $g \not\in PR_{m}^{\Sigma}$ for $m
-\leq 5$. Then $f \circ g$ 
+and 
+
+\begin{align*}
+    PR_5^{\Sigma} - PR_3^{\Sigma} &= PR_4 \cup A_4 \cup B_4 - PR_3^{\Sigma} \\ 
+                                  &= (PR_3^{\Sigma} \cup A_3 \cup B_3) \cup A_4
+                                  \cup B_4 - PR_3^{\Sigma} \\ 
+                                  &=A_3 \cup B_3 \cup A_4 \cup B_4
+\end{align*}
+
+From this follows that $g \in PR_3^{\Sigma}$, because $g \in A_2 \cup B_2$ is
+either a composition of functions from $PR_2^{\Sigma}$ or a function built via
+primitive recursion with functions of $PR_{2}^{\Sigma}$.
+
+Assume $f \in PR_k^{\Sigma}$ with $k > 5$. Then $f \circ g \in PR_6^{\Sigma}$.
+Then $f$ is neither a composition of functions in $PR_3^{\Sigma} \cup
+PR_{4}^{\Sigma}$ nor built via primitive recursion by functions in
+$PR_3^{\Sigma} \cup PR_4^{\Sigma}$. In other words, $f \not\in PR_5^{\Sigma} -
+PR_3^{\Sigma}$. This counter-example suffices to show that the statement is
+false.
 
 \pagebreak 
 
@@ -4451,6 +4577,695 @@ the machine when it starts. Obviously, $d \vdash^n d$ for any $n \in
     \not\vdash d'$.
 \end{quote}
 \normalsize
+
+
+\pagebreak 
+
+\textit{(1)} $Ins \subseteq Pro^{\Sigma}$
+
+
+\small
+\begin{quote}
+
+    The statement is false. Instructions in $Ins^{\Sigma}$ may not satisfy the
+    GOTO law.
+
+\end{quote}
+\normalsize
+
+
+\textit{(2)} Let $\Sigma = \Sigma_p$. Then 
+
+\begin{align*}
+    \Psi _{\text{P1}\leftarrow \text{ P1.SP1}\leftarrow \text{P1.KP1}\leftarrow \text{P1.IP1}\leftarrow \text{P1.P} }^{2,1,\ast }=\lambda \alpha \beta \lbrack \alpha \beta ]\circ \left[ p_{1}^{2,1},C_{\mathrm{SKIP}}^{2,1}\right]
+\end{align*}
+
+
+\small
+\begin{quote}
+
+The word $P_1 \leftarrow  P_1.SP_1 \leftarrow P_1.KP_1 \leftarrow \ldots$ is not
+a program since it is not a concatenation of instructions. 
+
+\end{quote}
+\normalsize
+
+\pagebreak 
+
+\section{Final 2019-07}
+
+\begin{problem}
+Let 
+
+\begin{align*} L = \left\{ \mathcal{P} \in Pro^{\Sigma_p} : (\exists x \in
+\mathbb{N}) ~ \Psi_{\mathcal{P}}^{1, 1, *}(x, EBE) = EBE \right\} \end{align*}
+\end{problem}
+
+Find a program $\mathcal{Q} \in Pro^{\Sigma_p}$ that enumerates $L$. For each
+macro used, give the associated $\Sigma_p$-computable function.
+
+
+\small
+\begin{quote}
+
+    Observe that $SKIP \in L$. Observe that $\Sigma_p^*$ is
+    $\Sigma_p$-enumerable (because it is $\Sigma_p$-total). Furthermore,
+    $Pro^{\Sigma_p}$ is $\Sigma$-p.r. and therefore
+    $\chi_{Pro^{\Sigma_p}}^{\Sigma_p}$ is $\Sigma$-recursive and hence
+    $\Sigma$-computable. Let $\mathcal{F}(x)$ be the $\Sigma$-computable function which enumerates
+    $\Sigma_p^*$. Then
+
+    \begin{align*}
+        &[IF ~ N_1 = 0 ~ GOTO ~ L_{666}] \\ 
+        &[N_2 \leftarrow (N_1)_1]\\
+        &[N_3 \leftarrow (N_1)_2]\\
+        &[N_4 \leftarrow (N_1)_3] \\ 
+        &[P_1 \leftarrow \mathcal{F}(N_2)] \\ 
+        &[IF ~ P_1 \in Pro^{\Sigma_p} ~ GOTO ~ L_1] \\ 
+        &GOTO L_{666} \\ 
+        L_1 ~ ~ ~ &[IF ~ Halt^{1, 1}\left( N_3, N_4, EBE, P_1 \right) ~ GOTO ~
+        L_2 ] \\ 
+                  &GOTO ~ L_{666} \\ 
+        &[IF ~ E_{*1}^{1, 1} \left( N_3, N_4, EBE, P_1 \right) = EBE ~ GOTO ~
+        L_3] \\ 
+        L_{666} ~ ~ ~ &P_1 \leftarrow SKIP \\ 
+        L_3 ~ ~ ~ & SKIP
+    \end{align*}
+
+    enumerates $L$.
+
+    Since $E_{*1}^{1, 1}$ is $\Sigma_p$-p.r. and $\lambda \alpha\beta \left[
+    \alpha = \beta  \right]$ is $\Sigma$-p.r. the macro $[IF ~ E_{*1}^{1, 1}
+    \ldots]$ etc. is trivially associated to a $\Sigma$-computable. The same can
+    be said of the macro that uses $Halt^{1, 1}$.
+
+\end{quote}
+\normalsize
+
+\begin{problem}
+    Let $\Sigma = \left\{ @, \sim  \right\} $. Let 
+
+    \begin{align*}
+        \mathcal{F} : \{x \in \omega : x \text{ is odd }\} \times \Sigma^{*} &\mapsto
+        \omega \\ 
+        (x, \alpha) &\mapsto \begin{cases}
+            x & x \geq 3 \\ 
+            |\alpha| & otherwise
+        \end{cases}
+    \end{align*}
+
+    Prove that $\mathcal{F}$ is $\Sigma$-p.r. 
+\end{problem}
+
+
+\small
+\begin{quote}
+
+We will present two different proofs of this fact. 
+
+\textit{(1)} Observe that $\mathcal{D}_{\mathcal{F}} = \left\{ x \in \omega :
+x \text{ is odd} \right\} \times \Sigma^{*}$. Since $\lambda xy \left[  x \mid y
+\right]$ is $\Sigma$-p.r. we have $\lambda x \left[ 2 | x  \right]$ is
+$\Sigma$-p.r. The negation of a$\Sigma$-p.r. predicate is $\Sigma$-p.r. and then
+$\lambda x \left[ 2 \not\mid x  \right]$ is $\Sigma$-p.r. It is then evident that
+$\chi_{\mathcal{D}_{\mathcal{F}}}^{\omega \times \Sigma^{*}} = \lambda x \left[
+2 \not\mid x\right]$ is $\Sigma$-p.r. 
+
+$\therefore ~ \mathcal{F}$  is $\Sigma$-p.r. 
+
+\textit{(2)} Let $\mathcal{F}_1(x, \alpha) = x$ and $\mathcal{F}_2(x, \alpha) =
+|\alpha|$. It is trivial to see both are $\Sigma$-p.r. Furthermore, the set
+$S_1 := \left\{ (x, \alpha) : x \text{ is odd} \land x \geq 3 \right\} $ is
+$\Sigma$-p.r. (trivial) So is the set $S_2:=\left\{ (x, \alpha) : x \text{ is odd }
+\land x < 3 \right\} $. Then $\mathcal{F}_{ 1\mid{S_1} }, \mathcal{F}_{2 \mid S_2}$ are
+both $\Sigma$-p.r. Since $S_1 \cap  S_2 = \emptyset$, we have $\mathcal{F} =
+\mathcal{F}_1 \cup \mathcal{F}_2$. 
+
+$\therefore \mathcal{F}$ is $\Sigma$-p.r. 
+
+\end{quote}
+\normalsize
+
+\begin{problem}
+    Determine true or false for the following statements.
+\end{problem}
+
+\textit{(1)} $\left\{ (\omega, w) \right\} $ is a function whose domain is
+$\omega$. 
+
+
+\small
+\begin{quote}
+
+The statement is false. In all rigour, $\left\{ (\omega, w) = (\{0, 1, 2,
+\ldots\}, w) \right\} $ which is not a function.
+
+\end{quote}
+\normalsize
+
+
+\textit{(2)} The function $x + 1$ is $\Sigma$-mixed for whatever alphabet
+$\Sigma$. 
+
+
+\small
+\begin{quote}
+
+The expression $x + 1$ is undefined. If $x$ were defined over $\mathbb{Z}$, for
+example, the function would not be $\Sigma$-mixed.
+
+\end{quote}
+\normalsize
+
+
+\textit{(3)} Let $\mathbb{P}$ an effective procedure which computes $f :
+\mathcal{D}_f \subseteq \omega \mapsto \omega$. Then the input set of
+$\mathbb{P}$ is $\mathcal{D}_f$
+
+
+\small
+\begin{quote}
+
+By definition we say $\mathbb{P}$ computes $f$ if $\mathbb{P}$ halts from input
+$(\vec{x}, \vec{\alpha}) \in \mathcal{D}_f$ with output $f(\vec{x},
+\vec{\alpha}) $ and does not halt for $(\vec{x}, \vec{\alpha}) \not\in
+\mathcal{D}_f$. However, the proper input set of the procedure is precisely
+$\omega^{n} \times \Sigma^{*m} $. So the statement is false.
+
+\end{quote}
+\normalsize
+
+
+\textit{(4)} Let $\Sigma = \left\{ @, * \right\} $. Then 
+
+\begin{align*}
+    R(p_1^{0, 1}, \left\{ (@, p_3^{0, 3}), (*, d_* \circ p_3^{0, 3}) \right\}
+    )(@*, @*) = @***
+\end{align*}
+
+
+\small
+\begin{quote}
+
+    Let $\mathcal{F} = R(f, g)$. Then by def.
+
+\begin{align*}
+    \mathcal{F}(@*, @*) &= R(@*, @)* \\ 
+    &=R(@*, \varepsilon )* \\ 
+    &= @**
+\end{align*}
+
+The statement is false.
+\end{quote}
+\normalsize
+
+
+
+
+\textit{(5)} If $P_1, P_2, P_3$ are $\Sigma$-p.r. predicates with equal domains,
+then $(P_1 \lor p_2 \land P_3)$ is $\Sigma$-p.r. 
+
+
+\small
+\begin{quote}
+
+The statement is true by theory. 
+
+\end{quote}
+\normalsize
+
+
+\textit{(6)} Let $\Sigma$ an alphabet and $\mathcal{P} \in Pro^{\Sigma}$. Then 
+
+\begin{align*}
+    \Phi_{*}^{n, m} \circ \left[ p_1^{n, m}, \ldots, p^{n,
+    m}_{n+m}, C_{\mathcal{P}}^{n, m} \right] 
+\end{align*}
+
+is a $\Sigma$-mixed function. 
+
+
+\small
+\begin{quote}
+
+$\Phi$ is undefined and hence the statement is false. 
+
+\end{quote}
+\normalsize
+
+
+
+\textit{(7)} If $M$ a Turing machine then $\delta : Q \times \Gamma \mapsto Q
+\times \Gamma \times \left\{ L, R, K \right\} $
+
+
+\small
+\begin{quote}
+
+The statement is false, insofar as the domain of $\delta$ is $\mathcal{D}_\delta
+\subseteq Q \times \Gamma$ but may not be $Q \times \Gamma$.
+
+\end{quote}
+\normalsize
+
+
+
+\textit{(8)} If $\mathcal{P} \in Pro^{\Sigma}$ is s.t. $GOTO$ is not a sub-word
+of $\mathcal{P}$, then $\Psi_{\mathcal{P}}^{1, 0, \#}$ is $\Sigma$-p.r. 
+
+\pagebreak
+\small
+\begin{quote}
+
+
+\textit{(1)} Sea $\mathcal{P}_0 \in Pro^{\Sigma}$ un programa fijo que
+no tiene enunciados que involucren la sub-palabra $GOTO$. Podemos deducir que
+$\mathcal{P}_0$ se detiene siempre en $n(\mathcal{P}_0) + k$ pasos, con $k \geq
+0$. En otras palabras, $\lambda tx \left[ Halt^{1, 0}(t, x, \mathcal{P}_0)
+\right] \geq n(\mathcal{P}_0)$. De esto se sigue por definición de $T^{1, 0}$ que $T^{1, 0}(x,
+\mathcal{P}_0) = n(\mathcal{P}_0)$ para cualquier $x \in  \omega$, o más
+formalmente
+
+\begin{align*}
+    \lambda x \left[ T^{1, 0}(x, \mathcal{P}_0)  \right] = 
+    \lambda \mathcal{P} \left[ n(\mathcal{P})  \right] \circ
+    C_{\mathcal{P}_0}^{1, 0}
+\end{align*}
+
+\begin{quote}
+    \textit{Duda}. Por teorema $\lambda \mathcal{P} \left[ n(\mathcal{P})
+    \right]$ es $(\Sigma \cup \Sigma_p)$-p.r. Luego, para nuestro
+    $\mathcal{P}_0$ fijo, sucede que $\lambda x \left[ T^{1, 0} (x,
+    \mathcal{P}_0)  \right]$ es $(\Sigma \cup \Sigma_p)$-p.r. Pero esto no
+    parece ser necesario para continuar la demostración. Es decir, todo lo que
+    viene ahora prescinde de este hecho. ¿O me equivoco?
+\end{quote}
+
+\textit{(2)} Recuerde que $\lambda x \left[  \Psi_{\mathcal{P}_0}^{1, 0, \#}(x) \right]$ es, por definición,
+el valor que resulta en la primer variable numérica de $\mathcal{P}_0$ cuando
+termina partiendo de $[\![ x ]\!]$. Puesto que sabemos que
+$\mathcal{P}_0$ termina en $n(\mathcal{P}_0)$ pasos, es evidente por la misma
+definición de $E_{\# j}^{1, 0}$ que
+
+\begin{align*}
+    \lambda x \left[ \Psi_{\mathcal{P}_0}^{1, 0, \#}(x)  \right] &= \lambda x
+    \left[ E_{\#  1}^{1, 0}(n(\mathcal{P}_0), x, \mathcal{P}_0)  \right] \\ 
+            &= \lambda tx\mathcal{P} \left[ E_{\# 1}^{1, 0}(t, x, \mathcal{P})
+            \right] \circ \left[ \lambda \mathcal{P} \left[ n(\mathcal{P})
+            \right] \circ C_{\mathcal{P}_0}^{1, 0}, p_1^{1, 0},
+        C_{\mathcal{P}_0}^{1, 0} \right] 
+\end{align*}
+
+La función constante, la proyección, y $\lambda \mathcal{P} \left[
+n(\mathcal{P})  \right]$ son $(\Sigma \cup  \Sigma_p)$-p.r. Luego la función
+dada arriba  es $(\Sigma \cup \Sigma_p)$-p.r. Por independencia del
+alfabeto, se sigue que es $\Sigma$-p.r.
+
+$\therefore $ $\lambda x \left[ \Psi_{\mathcal{P}_0}^{1, 0, \#}(x)  \right]$ es
+$\Sigma$-p.r. $\blacksquare$
+
+\pagebreak
+
+De esto se sigue trivialmente que $T^{1, 0}(x, \alpha,
+\mathcal{P}) \leq n(\mathcal{P})$. Puesto que (por un teorema del teórico) la
+función $\lambda \mathcal{P} \left[  n(\mathcal{P}) \right]$ es $(\Sigma \cup
+\Sigma_p)$-p.r., tenemos que $T^{1, 0}(x, \alpha, \mathcal{P})$ es menor o
+igual a una función $(\Sigma \cup \Sigma_p)$-p.r. Recordemos el teorema que
+establece que 
+
+\begin{quote}
+    Si $P : \mathcal{D}_f \subseteq \omega^{n} \times \Sigma^{*m}  $ un
+    predicado $\Sigma$-p.r. y $M(P) \leq f(\vec{x}, \vec{\alpha})$ con $f$ una
+    función $\Sigma$-p.r., entonces $M(P)$ es $\Sigma$-p.r. 
+\end{quote}
+
+El predicado $Halt^{n, m}$ es $(\Sigma \cup \Sigma_p)$-p.r. para cualesquiera
+$n, m \in \omega$. Luego $T^{1,
+0}(x, \mathcal{P})$ es $(\Sigma \cup \Sigma_p)$-p.r. 
+
+\textit{(2)} Denotemos $\mathcal{T} = \lambda x \left[ T^{1, 0}(x, \mathcal{P})
+\right]$ y $\mathcal{E} = \lambda x \left[ E^{1, 0}_{\#}(\mathcal{T}(x), x,
+\mathcal{P}) \right]$. Es decir, $\mathcal{E}$ mapea un elemento $x$ al valor de
+la primer variable numérica que resulta de ejecutar $\mathcal{P}$ desde el
+estado $[\![ x ]\!]$, donde
+$\mathcal{P}$ termina con la cantidad mínima de pasos. Es evidente entonces que
+$\Psi_{\mathcal{P}}^{1, 0, \#} &= \mathcal{E}$. Pero dado que
+
+\begin{align*}
+    \mathcal{T} = T^{1, 0} \circ \left[ p_1^{1, 0}, C_{\mathcal{P}}^{1, 0} \right] 
+\end{align*}
+
+es evidentemente $( \Sigma \cup \Sigma_p )$-p.r., y $E_{\#}^{1, 0}$ es $(\Sigma
+\cup \Sigma_p)$-p.r., entonces
+
+\begin{align*}
+\mathcal{E} = E_{\#}^{1, 0} \circ [\mathcal{T} \circ p_1^{1, 0}, p_1^{1, 0},
+    C_{\mathcal{P}}^{1, 0}]
+\end{align*}
+
+es $(\Sigma \cup \Sigma_p)$-p.r. Por independencia del alfabeto, $\mathcal{E}$
+is $\Sigma$-p.r.  Pero $\Psi_{\mathcal{P}}^{1, 0, \#} =
+\mathcal{E}$. $\blacksquare$
+
+\pagebreak
+
+
+
+\end{quote}
+\normalsize
+
+\pagebreak 
+
+\section{Finales}
+
+\subsection{Final 2020-02}
+
+\begin{problem}
+    Let $\Sigma = \left\{ \sim , @ \right\} $ and
+
+    \begin{align*}
+        L = \left\{ \mathcal{P} \in Pro^{\Sigma} : \exists \alpha \in \Sigma^{*}
+        : \Psi_{\mathcal{P}}^{1, 1, \#}(5, \alpha@) = |\mathcal{P}|\right\} 
+    \end{align*}
+
+    Provide a program $\mathcal{Q} \in Pro^{\Sigma \cup \Sigma_p}$ that
+    enumerates $L$.
+\end{problem}
+
+
+\small
+\begin{quote}
+
+Observe that $\varphi := N1 \leftarrow N1 \in L$, since $|N 1 \leftarrow N
+1 | = 5$ and hence $\Psi_{\varphi}^{1, 1, \#}(5, \alpha) = 5 = |\varphi|$ for
+all $\alpha \in \Sigma^{*}$.
+
+Let $\mathcal{F}_{\Sigma \cup \Sigma_p}$ be the function which enumerates $(\Sigma \cup \Sigma_p)^{*}$
+(which is enumerable by virtue of being $(\Sigma \cup \Sigma_p)$-total) and
+$\mathcal{F}_{\Sigma}$ that which enumerates $\Sigma^{*}$ (enumerable by the
+same reason).
+
+The desired program is then 
+
+\begin{align*}
+    &IF ~ N_1 \neq 0 ~ GOTO ~ L_1 \\ 
+    &GOTO ~ L_{666} \\ 
+    L_1~ ~ ~& [N_2 \leftarrow (N_1)_1] \\ 
+    &[N_3 \leftarrow 5] \\ 
+    &[N_4 \leftarrow (N_1)_2] \\ 
+    &[N_5 \leftarrow (N_1)_3] \\ 
+    &[P_1 \leftarrow \mathcal{F}_{\Sigma \cup \Sigma_p}(N_5)] \\ 
+    &[P_2 \leftarrow \mathcal{F}_{\Sigma}(N_4)] \\ 
+    &P_2 \leftarrow P_2.@ \\ 
+    &[IF ~ P_1 \in Pro^{\Sigma} ~ GOTO ~ L_2]\\ 
+    &GOTO ~ L_{666}\\
+    L_2 ~ ~ ~ &[IF ~ Halt^{1, 1}(N_2, N_3, P_2, P_1 ) ~ GOTO ~ L_3]\\ 
+              &GOTO ~ L_{666} \\ 
+    L_3 ~ ~ ~ &[N_6 \leftarrow  |P_1|]\\
+              &[IF ~ E^{1, 1}_{*1}(N_2, N_3, P_2, P_1 ) = N_6 ~ GOTO ~ L_4]\\ 
+              &GOTO ~ L_{666}\\ 
+    L_{666} ~ ~ ~ &[P_1 \leftarrow \varphi] \\ 
+    L_4 ~ ~ ~ &SKIP
+\end{align*}
+
+\end{quote}
+\normalsize
+
+\begin{problem}
+    Let $\Sigma = \left\{ @, * \right\} $ and $S = \left\{ (x, \alpha) \in
+    \omega \times \Sigma^{*} : [\alpha]_1 = * \right\} $. Prove that the
+    function 
+
+    \begin{align*}
+        F(x, \alpha) = \begin{cases}
+            \prod_{i=x}^{i = x^2}  x^i & x \leq |\alpha| \\ 
+            |\alpha|^2 & otherwise
+        \end{cases}
+    \end{align*}
+
+    is $\Sigma$-p.r. 
+\end{problem}
+
+
+\small
+\begin{quote}
+
+We shall use division by cases. First, observe that 
+
+\begin{align*}
+    \mathcal{D}_f = \left\{ (x, \alpha) \in \omega \times \Sigma^{*} : x \leq |\alpha| \right\} \cup \left\{
+    (x, \alpha) \in \omega \times \Sigma^{*} : x > |\alpha|\right\} 
+\end{align*}
+
+Call each term in the union of $\mathcal{D}_f$ $S_1, S_2$ (left to right). It is
+evident that $S_1 \cap S_2 = \emptyset$. 
+
+\textit{(1)} Let $F_1 := \lambda x \alpha \left[ \prod_{i=x}^{i=x^2} x^i
+\right]$. It is easy to observe that 
+
+\begin{align*}
+    F_1 = \lambda abx \alpha \left[  \prod_{i=a}^{i = b} x^i    \right] \circ
+    \left[ p_1^{1, 1}, \lambda x \left[ x^2 \right] \circ p_1^{1, 1}, p_1^{1,
+    1}, p_1^{1, 1}, p_2^{1, 1} \right] 
+\end{align*}
+
+The general productorial $\lambda abx\alpha \left[ \prod_{i=a}^{i=b} x^i
+\right]$ is $\Sigma$-p.r. if and only if $\lambda x i \left[ x^i  \right]$ is
+$\Sigma$-p.r. We know that exponentiation is $\Sigma$-p.r. Then the general
+productorial is $\Sigma$-p.r. Then $F_1$ is $\Sigma$-p.r. 
+
+\textit{(2)} It is trivial to observe that $F_2 = \lambda x\alpha \left[
+|\alpha|^2  \right]$ is $\Sigma$-p.r. Simply observe that
+
+\begin{align*}
+    \lambda x\alpha[|\alpha|^2] = \lambda xy \left[ x^y  \right] \circ \left[ \lambda \alpha \left[ |\alpha|
+    \right] \circ p_{2}^{1, 1}, p_1^{1, 1} \right] 
+\end{align*}
+\textit{(3)} Both $S_1, S_2$ are $\Sigma$-recursive. This is simple to prove.
+Simply observe that $\chi_{S_1}^{\omega \times \Sigma^{*}} = \lambda x\alpha
+\left[ x \leq |\alpha|  \right] = \lambda xy \left[ x < y  \right] \circ \left[
+p_1^{1, 1}, \lambda \alpha \left[ |\alpha|  \right]\circ p_2^{1, 1}\right] $
+which is evidently $\Sigma$-p.r. That $\chi_{S_2}^{\omega \times \Sigma^{*}}$ is
+$\Sigma$-p.r. is proven similarly.
+
+\textit{(4)} It is a theorem that a $\Sigma$-p.r. function restricted to a
+$\Sigma$-p.r. set is $\Sigma$-p.r. Then $F_{1 \mid S_1}, F_{2 \mid S_2}$ are
+$\Sigma$-p.r. It is obvious that $F = F_{1 \mid S_1} \cup F_{2 \mid S_2}$. 
+
+$\therefore $ By case division, $F$ is $\Sigma$-p.r. 
+
+
+\end{quote}
+\normalsize
+
+\subsection{Final 2022-07}
+
+\begin{problem}
+    Let $\Sigma = \left\{ @, ! \right\} $ and 
+
+    \begin{align*}
+        L = \left\{ \mathcal{P} \in Pro^{\Sigma} : @@ \in Im\left( \Psi_{\mathcal{P}}^{2, 1, *} \right)  \right\} 
+    \end{align*}
+
+    Find a program that belongs to $L$ and then give $\mathcal{Q}\in Pro^{\Sigma
+    \cup \Sigma_p}$ s.t. $\mathcal{D}_{\mathcal{Q}} = \omega$ and
+    $Im(\mathcal{Q}) = L$.
+\end{problem}
+
+
+\small
+\begin{quote}
+
+\textit{(1)} $SKIP \in L$ since $\Psi_{SKIP}^{2, 1, *}(x, y, @@) = @@$ for any
+$x, y \in \omega$.
+
+\textit{(2)} $Pro^{\Sigma \cup \Sigma_p}$ es $\Sigma$-p.r. in accordance to a
+lemma. Then it is $\Sigma$-computable and there is a macro $[IF ~
+\chi_{Pro^{\Sigma \cup \Sigma_p}}^{(\Sigma \cup \Sigma_p)^*}(V_1) ~ GOTO ~
+A_1]$, which we will call $\left[ IF ~ V_1 \in Pro^{\Sigma \cup \Sigma_p} ~ GOTO
+~ A_1\right] $ for simplicity.
+
+\textit{(3)} We know by theory that $\lambda xi \left[ (x)_i  \right], \lambda x
+\left[ *^{\leq}(x)  \right]$ are $\Sigma$-recursive. By alphabet independence
+they are then $( \Sigma \cup \Sigma_p )$-recursive. The same is true of
+$Halt^{2, 1}$ and $E_{j*}^{2, 1}$. 
+
+Since $E_{j*}^{2, 1}$ is $(\Sigma \cup \Sigma_p)$-p.r., $\lambda txy \alpha \mathcal{P} \beta \left[ E_{*1}^{2, 1}(t, x, y, \alpha, \mathcal{P}) =
+\beta\right]$ is $(\Sigma \cup \Sigma_p)$-p.r. (trivial to show). 
+
+\textit{(4)} Let $\mathcal{Q}$ be
+
+\end{quote}
+\normalsize
+
+
+
+\footnotesize 
+\begin{align*}
+    &IF~ N_1 \neq 0 ~ GOTO ~ L_1 \\ 
+    &GOTO ~ L_{666} \\ 
+    L_1 ~ ~ ~&[N_2 \leftarrow  (N_1)_1] \\ 
+    &[N_3 \leftarrow  (N_1)_2] \\ 
+    &[N_4 \leftarrow  (N_1)_3] \\ 
+    &[P_2 \leftarrow  *^{\leq}( (N_1)_4 )] \\ 
+    &[P_3 \leftarrow  *^{\leq}( (N_1)_5 )] \\ 
+    &[IF ~ P_3 \in Pro^{\Sigma \cup \Sigma_p} ~ GOTO ~ L_2] \\ 
+    &GOTO ~ L_{666} \\ 
+    L_2 ~ ~ ~ &[IF ~ Halt^{2, 1}(N_2, N_3, N_4, P_2, P_3) ~ GOTO ~ L_3]\\ 
+    &GOTO ~ L^{666}\\
+    L_3 ~ ~ ~&[IF ~ E_{* 1}^{2, 1}(N_2, N_3, N_4, P_2, P_3) = @@ ~ GOTO ~ L_4]
+    \\ 
+    L_{666} ~ ~ ~ &P_1 \leftarrow SKIP \\ 
+              &GOTO ~ L_{10} \\ 
+    L_4 ~ ~ ~ & P_1 \leftarrow P_3 \\ 
+    L_{100} ~ ~ ~ &SKIP
+\end{align*}
+
+\normalsize
+
+
+\small
+\begin{quote}
+
+    Observe that here $*^{\leq}$ is defined over $(\Sigma \cup \Sigma_p)^*$.
+    Starting from $[\![ x ]\!]$ the
+    program obtains the  $(x)_4$th and $(x)_5$th words from $(\Sigma \cup
+    \Sigma_p)^{*}$ and values $(x)_1, (x)_2, (x)_3$. If the $(x)_5$th word is a
+    program, it determines whether it halts in $(x)_1$ steps with input $(x)_2,
+    (x)_3$ and $*^{\leq}\left( (x)_4 \right) $. If it halts it checks whether
+    the output is $@@$. If it is it returns the program obtained. If any of the
+    checks fail, it returns $SKIP$.
+
+\end{quote}
+\normalsize
+
+\pagebreak 
+
+\begin{problem}
+    Let $\Sigma = \left\{ @, ! \right\} $. Show that
+
+    \begin{align*}
+        S = \left\{ (x, y, \alpha, \beta) \in \omega^2 \times \Sigma^{*}^2 : x
+        \geq 5 \land (\exists \gamma \in \Sigma^{*})~@b = \gamma^{y} \right\} 
+    \end{align*}
+
+    is $\Sigma$-p.r. 
+\end{problem}
+
+
+\small
+\begin{quote}
+
+Observe that 
+
+\begin{align*}
+    \chi_S^{\omega^{2} \times \Sigma^{*2} }(x, y, \alpha, \beta) = \lambda
+    xy\alpha\beta \left[ x \geq 5  \right] \land \lambda xy \alpha\beta \left[
+    (\exists \gama \in \Sigma^{*}) @b = \gamma^y\right]
+\end{align*}
+
+Consider $F = \lambda xy\alpha\beta \left[  (\exists \gamma \in \Sigma^{*}) ~ @b
+= \gamma^y \right]$. It is evident that any $\gamma \in \Sigma^{*}$ s.t. $@b =
+\gamma^y$ for some $y \in \omega$ is s.t. $|\gamma| = 1$.
+
+\end{quote}
+\normalsize
+
+\pagebreak 
+
+\begin{problem}
+    Sea $\mathcal{P}_0$ un programa fijo y $f : \omega \mapsto \omega$ una
+    función. Asuma que para toda $x \in \omega$ el programa $\mathcal{P}_0$
+    termina partiendo de $[\![ x ]\!]$. Más aún, asuma que termina en $t \leq
+    f(x)$ pasos. Demuestre que $\Psi_{\mathcal{P}_0}^{1, 0, \#}$ es $\Sigma$-p.r. 
+\end{problem}
+
+
+\small
+\begin{quote}
+
+
+No veo como encarar el problema sin asumir algún tipo de computablidad para $f$.
+Vamos a ver cómo se ve el problema \textit{(1)} asumiendo que $f$ es
+$\Sigma$-p.r. y \textit{(2)} asumiendo que es $\Sigma$-recursiva.
+
+Sea $g$ la función computada por $\mathcal{P}_0$. Considere el conjunto
+
+\begin{align*}
+    G = \left\{ x \in \omega : \left( x, g(x) \right)  \right\} 
+\end{align*}
+
+
+
+\pagebreak
+
+
+\textit{(1)} Asuma $f$ es $\Sigma$-p.r. Por las definiciones de
+$\Psi_{\mathcal{P}}^{1, 0, \#}, E_{\# 1}^{1, 0}$, tenemos que 
+
+\begin{align*}
+    \Psi_{\mathcal{P}_0}^{1, 0, \#} = E_{\# 1}^{1, 0} \circ \left[ f \circ
+    p_1^{1, 0}, p_1^{1, 0}, C_{\mathcal{P}_0}^{1, 0} \right] 
+\end{align*}
+
+Esto se sigue de que, al saber que $\mathcal{P}_0$ desde $[\![ x ]\!]$
+terminará en $t \leq f(x)$ pasos, el estado de $\mathcal{P}_0$ al terminar es el
+mismo que el estado de $\mathcal{P}_0$ tras $f(x)$ pasos. Ahora bien, $E_{\#
+j}^{1, 0}$, las proyecciones y la función constante, son $(\Sigma
+\cup \Sigma_p)$-p.r. Luego, por independencia del alfabeto, son $\Sigma$-p.r.
+Como $f$ es $\Sigma$-p.r. tenemos que $\Psi_{\mathcal{P}_0}^{1, 0, \#}$ es $\Sigma$-p.r. 
+
+\pagebreak
+
+\textit{(2)} Asuma que $f$ es $\Sigma$-recursiva. Se sigue que es o bien
+$\Sigma$-p.r. o bien $f = M(P)$ para algún predicado $P : \omega^2
+\mapsto \omega $ que es $\Sigma$-recursivo. Si fuera $\Sigma$-p.r. la demostración del punto \textit{(1)} resuelve el
+problema. Asumamos que $f = M(P_0)$ para algún predicado $P_0 : \omega^2 
+\mapsto \omega$, donde $P_0$ es $\Sigma$-recursivo. 
+
+Como $f$ es $\Sigma$-recursiva, es $\Sigma$-computable y tiene un macro $[V1
+\leftarrow  f(V2)]$ asociado. 
+
+
+
+\footnotesize
+\begin{align*}
+    &[N_2 \leftarrow f(N_1)]\\ 
+    &[N_1 \leftarrow E_{# 1}^{1, 0}(N_2, N_1, \mathcal{P}_0)]
+\end{align*}
+
+\small
+
+\end{quote}
+\normalsize
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

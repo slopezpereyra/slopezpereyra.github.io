@@ -22,32 +22,36 @@
 \contentsline {subsection}{\numberline {5.7}The primitive recursive set}{25}{}%
 \contentsline {subsection}{\numberline {5.8}Predicates}{26}{}%
 \contentsline {subsection}{\numberline {5.9}Primitive recursive sets}{26}{}%
-\contentsline {subsection}{\numberline {5.10}Case division}{27}{}%
+\contentsline {subsection}{\numberline {5.10}Case division}{28}{}%
 \contentsline {subsection}{\numberline {5.11}Summation, product and concatenation}{29}{}%
 \contentsline {subsection}{\numberline {5.12}Predicate quantification}{31}{}%
 \contentsline {subsection}{\numberline {5.13}Minimization of numeric variable}{32}{}%
 \contentsline {subsection}{\numberline {5.14}Recursive function}{33}{}%
 \contentsline {subsection}{\numberline {5.15}Minimization of alphabetic variable}{34}{}%
-\contentsline {subsection}{\numberline {5.16}Enumerable sets}{34}{}%
-\contentsline {subsection}{\numberline {5.17}Recursive sets}{34}{}%
+\contentsline {subsection}{\numberline {5.16}Enumerable sets}{35}{}%
+\contentsline {subsection}{\numberline {5.17}Recursive sets}{35}{}%
 \contentsline {subsection}{\numberline {5.18}Alphabet independence}{35}{}%
 \contentsline {section}{\numberline {6}Neumann}{36}{}%
 \contentsline {subsection}{\numberline {6.1}The $\mathcal {S}^{\Sigma }$ language}{36}{}%
 \contentsline {subsection}{\numberline {6.2}Variables, labels, and instructions}{36}{}%
 \contentsline {subsection}{\numberline {6.3}Programs in $\mathcal {S}^{\Sigma }$}{37}{}%
 \contentsline {subsection}{\numberline {6.4}States in programs of $\mathcal {S}^{\Sigma }$}{38}{}%
-\contentsline {subsection}{\numberline {6.5}Instantaneous description of a program in $\mathcal {S}^{\Sigma }$}{38}{}%
+\contentsline {subsection}{\numberline {6.5}Instantaneous description of a program in $\mathcal {S}^{\Sigma }$}{39}{}%
 \contentsline {subsection}{\numberline {6.6}Computation from a given state}{39}{}%
 \contentsline {subsection}{\numberline {6.7}Halting}{40}{}%
 \contentsline {subsection}{\numberline {6.8}$\Sigma $-computable functions}{40}{}%
 \contentsline {subsection}{\numberline {6.9}Macros}{43}{}%
-\contentsline {subsection}{\numberline {6.10}Enumerable sets}{45}{}%
-\contentsline {subsection}{\numberline {6.11}$\Sigma $-computable sets}{46}{}%
-\contentsline {section}{\numberline {7}Paradigm battles}{47}{}%
-\contentsline {subsection}{\numberline {7.1}Neumann triumphs over Godel}{47}{}%
-\contentsline {subsection}{\numberline {7.2}Godel triumphs over Neumann}{50}{}%
-\contentsline {subsection}{\numberline {7.3}Interacting programs}{52}{}%
-\contentsline {subsection}{\numberline {7.4}Church's thesis}{58}{}%
-\contentsline {section}{\numberline {8}Extending $\Sigma $-recursion}{59}{}%
-\contentsline {subsection}{\numberline {8.1}The Halting problem}{60}{}%
-\contentsline {section}{\numberline {9}True/false problems}{62}{}%
+\contentsline {subsection}{\numberline {6.10}Enumerable sets}{46}{}%
+\contentsline {subsection}{\numberline {6.11}$\Sigma $-computable sets}{47}{}%
+\contentsline {section}{\numberline {7}Paradigm battles}{48}{}%
+\contentsline {subsection}{\numberline {7.1}Neumann triumphs over Godel}{48}{}%
+\contentsline {subsection}{\numberline {7.2}Godel triumphs over Neumann}{51}{}%
+\contentsline {subsection}{\numberline {7.3}Interacting programs}{54}{}%
+\contentsline {subsection}{\numberline {7.4}Church's thesis}{61}{}%
+\contentsline {section}{\numberline {8}Extending $\Sigma $-recursion}{62}{}%
+\contentsline {subsection}{\numberline {8.1}The Halting problem}{63}{}%
+\contentsline {section}{\numberline {9}Problems from final exams and the feared Tómbola}{65}{}%
+\contentsline {section}{\numberline {10}Final 2019-07}{78}{}%
+\contentsline {section}{\numberline {11}Finales}{83}{}%
+\contentsline {subsection}{\numberline {11.1}Final 2020-02}{83}{}%
+\contentsline {subsection}{\numberline {11.2}Final 2022-07}{85}{}%
