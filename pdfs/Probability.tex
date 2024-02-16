@@ -44,7 +44,7 @@ axioms:
 \begin{itemize}
     \item $P(A) \geq 0$ 
     \item $P(\Omega) = 1$ 
-    \item If $A_1, A_2, \ldots \in \Omega, A_i \cap A_j = \emptyset$  for ally
+    \item If $A_1, A_2, \ldots \in \Omega, A_i \cap A_j = \emptyset$  for all
         $i \neq j$, then 
 
         \begin{align*}
@@ -60,7 +60,7 @@ A random variable is a function $X : \Omega \mapsto \mathbb{R}$.
 
 \section{Elementary laws}
 
-\subsection{Union, intersection, conditionality}
+\subsection{Union, intersection, conditionality, etc.}
 
 This is a collection of notes. Their justification should be intuitively
 accessible if one stops and think of their formulas in terms of the subspaces of
@@ -87,6 +87,14 @@ If $A, B$ are independent, $P(A \cap B) = P(A)P(B)$.
 
 If $A, B$ are mutually exclusive then $P(A \cap B) = \emptyset$ and $P(A \cup B)
 = P(A) + P(B)$.
+
+It is useful to remember the following property too. Since $P(A \cup B) = P(A) +
+P(B)$ we have that $P((A \cap B) \cup (A - B)) = P(A \cap B) + P(A - B)$, which
+implies 
+
+\begin{align*}
+    P(A - B) = P(A) - P(A \cap B)
+\end{align*}
 
 \subsection{The law of total probability and Bayes' rule}
 
@@ -514,58 +522,303 @@ have that $\mathbb{E}\left[ 3 \overline{X} \right] = 3 \mathbb{E}\left[
 
     \textit{(2)} Sea $Y$ la variable que cuenta el número de defectos
     encontrados en el artículo elegido al azar. Dé la PDF y la CDF de $Y$.
-    Calcule el valor esperado de $X = 2 - Y$.
+    Calcule el valor esperado de $X = 2 - Y^2$.
 \end{problem}
 
 
 \small
 \begin{quote}
 
-\textit{(1)} Sea $\mathcal{A} \subseteq \Omega$ el subconjunto del espacio
-muestral $\Omega = \left\{ O, A, B, AB \right\} $ asociado a todos los artículos
-que tienen el error tipo $A$. Definimos de manera equivalente $\mathcal{B}$.
-
-Evidentemente, el espacio $\mathcal{A}'$ que nos interesa  es $\mathcal{A'} =
-\mathcal{A} \cap
-\overline{\mathcal{B}}$. Pero estos eventos no son necesariamente
-independientes. Sin embargo, podemos observar que 
+\textit{(1.a)} Sea $\Omega = \left\{ O, A, B, A \cap B \right\} $ y $\mathcal{A}
+= \mathcal{P}(\Omega)$. El problema nos da $P(A), P(B), P(A \cap B)$. Nos
+interesa ahora $P(A - B)$. Evidentemente $A - B \in \mathcal{A}$ y por lo tanto
+está bien definida la probabilidad. Veamos que
 
 \begin{align*}
-    \mathcal{A} \cap \overline{\mathcal{B}} = \mathcal{A} - (\mathcal{A} \cap
-    \mathcal{B})
+    P(A - B) &= P(A) - P(A \cap B) \\ 
+             &= .05 - .01 \\ 
+             &= .04
 \end{align*}
 
-Sabemos que $P(\mathcal{A} \cap \mathcal{B}) = 0.01$. Luego 
+\textit{(1.b)} El conjunto deseado es ${A} \cup {B}$, pero
+sabemos que ${A}, {B}$ no son disjuntos. Entonces usamos el
+hecho de que $P({A} \cup {B}) = P({A}) + P({B})
+- P({A} \cap {B})$. Esto da fácilmente $.05 + .03 - .01 = .07$. 
+
+\textit{(1.c)} La probabilidad de que un elemento tenga algún error cualquiera
+es la probabilidad de que tenga solamente un error de tipo $A$, solamente un
+error de tipo $B$, o ambos. Esto es, $P(\overline{O}) = .04 + .03 + .01 = .08$.
+Luego $P(O) = .92$. (Otra forma de verlo es tomar directamente $P(A \cup B) =
+P(A) + P(B) - P(A \cap B) = .08$).
+
+\textit{(2)} Sabemos por el punto \textit{(1)} que $P(Y = 2) = .01, P(Y = 1) =
+.07, P(Y = 0) = .98$. Es decir, 
 
 \begin{align*}
-    P(\mathcal{A} \cap \overline{\mathcal{B}}) = P(\mathcal{A} - \mathcal{A}
-    \cap \overline{B})
+    p(y)_Y = \begin{cases}
+        .92 & y = 0 \\ 
+        .07 & y = 1 \\ 
+        .01 & y = 2
+    \end{cases}
 \end{align*}
 
+Esto implica que 
+
+\begin{align*}
+    F(y)_Y = \begin{cases}
+        0 &= .92 \\ 
+        1  &= .99 \\ 
+        2 &= 1
+    \end{cases}
+\end{align*}
+
+El valor esperado de $2 - Y^2$ es $2 - \mathbb{E}[Y^2]$. Es fácil observar que
+
+\begin{align*}
+    \mathbb{E}\left[ Y^2 \right]  = .07^2 + .01^2 \times 2 = .0053
+\end{align*}
+
+Luego el valor esperado de $2 - Y^2$ es $1.9947$.
 
 \end{quote}
 \normalsize
 
+\pagebreak
+
+\begin{problem}
+    Una unidad de radar es usada para medir la velocidad de los automóviles en
+    una vía durante la hora de mayor congestionamiento. La velocidad de los
+    automóviles está normalmente distribuida con distribución $\mathcal{N}(100,
+    8.5)$. \textit{(1)} Dé la probabilidad de que un auto elegido al azar viaje
+    a una velocidad de a lo sumo $85$. \textit{(2)} Dé la probabilidad de que
+    viaje a una velocidad entre $58$ y $110$. \textit{(3)} Dé la probabilidad de
+    que uno de diez automóviles elegidos al azar viaje a una velocidad mayor a
+    $88$.
+\end{problem}
+
+\textit{(1)} Estandarizamos la variable y utilizamos la distribución normal
+estándar. Si $X \sim \mathcal{N}(100, 8.5)$ denota la variable de interés
+(velocidad de un vehículo en el contexto del problema),
+
+\begin{align*}
+    P(X \leq 85) = \Phi \left( \frac{88 - 100}{8.5} \right) = \Phi(-1.411)
+\end{align*}
+
+La tabla de la distribución estándar da $\Phi(-1.764) = .079$. Es decir, la
+probabilidad de que un vehículo viaje a a lo sumo $85$ km/h es $7.9\%$.
+
+\textit{(2)} Según la misma lógica, 
+
+\begin{align*}
+    P(58 \leq X \leq 110) &= \Phi \left( \frac{110 - 100}{8.5} \right) - \Phi
+    \left( \frac{58 - 100}{8.5} \right) \\ &= \Phi(1.176) - \Phi(-4.941) \\
+                                           &=.879 - 0 \\ &=.879
+\end{align*}
+
+\textit{(3)} Digamos que el evento de obtener un vehículo que viaje a más de
+$88$ km/h es un éxito, y cualquier otro caso un fallo. Evidentemente la cantidad
+de vehículos que superan $88$ km/h en una muestra de diez sigue
+sigue una distribución binomial $Y \sim \mathcal{B}\left( P(X
+\geq 88), 10 \right) $. Se nos pide la probabilidad de que haya exactamente un
+éxito. Calculemos $p = P(X \geq 88)$. Evidentemente esto es $1 - P(X \leq 88) =
+1 - .079 = .921$. Se sigue que  
+
+\begin{align*}
+    P(Y = 1) &= \binom{10}{1}\cdot .921 \cdot (1 - .921)^{9} \\ 
+             &= 10 \cdot .921 \cdot 0 \\ 
+             &\approx 0
+\end{align*}
+
+\pagebreak 
+
+\begin{problem}
+    Sea $X_i \sim \mathcal{N}(\mu, \sigma)$. Asumamos una muestra de $X_1,
+    \ldots, X_{18}$  una muestra con media muestral $\overline{X} = 99.45$ y
+    desviación estándar $s_2 =
+    1.3$. Dé estimaciones de máxima verosimilitud para la media, la varianza y
+    el percentil $5\%$. Construya un intervalo de confianza del $99\%$ para la
+    media poblacional.
+\end{problem}
+
+Haremos solo el intervalo de confianza. La varianza poblacional es desconocida y
+la cantidad de datos es menor a $30$. Usaremos la distribución $t$ de Student.
+Recordemos que la media muestral sigue una distribución $\mathcal{N}(\mu,
+\frac{\sigma}{\sqrt{n} })$. Usaremos el estadístico
+
+\begin{align*}
+    t = \frac{\overline{X} - \mu}{1.3}\sqrt{18} 
+\end{align*}
+
+Sabemos que $t$ sigue una distribución $t$ de Student con $17$ grados de
+libertad. Queremos determinar el intervalo 
+
+\begin{align*}
+    \overline{X} \pm \frac{1.3}{\sqrt{18} } t_{.005}
+\end{align*}
+
+(Vea que $\alpha = .01 \Rightarrow \frac{\alpha}{2} = .005$). Usando la table de
+la distribución $t$ de Student, tenemos 
+
+\begin{align*}
+    \overline{X} \pm \frac{1.3}{\sqrt{18} } 2.567 = \mu \pm 0.30 \times 2.567
+\end{align*}
+
+Esto resulta en
+
+\begin{align*}
+    99.45 \pm .7701 = \left[ 98.6799, 100.2201 \right] 
+\end{align*}
+
+\pagebreak 
+
+\begin{problem}
+    En el diseño de mascarillas de bomberos se prueba un conjunto de $120$
+    mascarillas. $48$ fallaron la prueba. Dé un intervalo de conianza del $90\%$
+    para $p$. Determine el tamaño de muestra necesario para que un intervalo de
+    confianza del $90\%$ tenga una longitud de a lo sumo la mitad de la obtenida
+    en el item anterior, independientemente del valor de $\hat{p}$.
+
+    Si se quiere determinar si hay suficiente evidencia para decir que $p$ es
+    menor a $0.5$, plantee las hipótesis, establezca la región de rechazo con
+    nivel de significación del $5\%$, calcule el $p$-valor y tome una decisión
+    dado $\alpha = 0.01$.
+\end{problem}
+
+\textit{(1)} Tenemos $\hat{p} = \frac{48}{120} = 0.4$. Para muestras
+suficientemente grandes, el estimador sigue una distribución normal. Sabemos que
+la desviación estándar de este estimador es 
+
+\begin{align*}
+    \hat{s} = \sqrt{\frac{0.4 \cdot 0.6}{120}} = 0.044
+\end{align*}
+
+Entonces, usamos el estadístico
+
+\begin{align*}
+    Z = \frac{0.4 - p}{0.044}
+\end{align*}
+
+que sigue una distribución normal estándar y calculamos el intervalo 
+
+\begin{align*}
+    0.4 \pm 0.044 z_{.05} &= 0.4 \pm 0.044 \times 1.645 \\ 
+    &=0.4 \pm 0.072 \\ 
+    &= [.328, .472]
+\end{align*}
+
+\textit{(2)} La longitud del intervalo obtenido es $.144$. El tamaño de muestra
+rnecesario para que el intervalo tenga una longitud de $.\frac{144}{2} = .072$,
+independientemente del valor de $\overline{p}$,
+es dada por la ecuación 
+
+\begin{align*}
+    \bar{p} + \sqrt{\frac{\bar{p}(1-\bar{p})}{{n} }} 1.645 - \left(\bar{p}
+    - \sqrt{\frac{\bar{p}(1-\bar{p})}{{n} }} 1.645\right) &\leq .072 \\ 
+    2 \sqrt{\frac{\hat{p}(1 - \hat{p})}{n }} &\leq .072 \\ 
+    \hat{p}(1 - \hat{p}) &\leq
+                                                    .001 n \\ 
+                                                    \frac{\hat{p}(1 -
+\hat{p})}{.001} &\leq n
+\end{align*}
+
+Si hacemos $u = \hat{p}(1 - \hat{p})$ y observamos que $\frac{1}{.001}
+= \frac{1}{\frac{1}{1000}}=1000$, tenemos que $n \geq 1000u$ es el tamaño de
+muestra necesario para que el intervalo tenga la longitud deseada o menos. En el
+caso particular de nuestra $\hat{p} = 0.4$, deberíamos tener $240$
+observaciones. Observe que esto es el doble de las observaciones que tenemos $(n
+= 120)$. Esto tiene sentido, pues se nos pidió reducir la longitud del intervalo
+a la mitad.
 
 
+\textit{(3)} Hagamos la prueba de hipótesis. Sea $H_0 : p = 0.5$. La hipótesis
+alternativa será $H_1 : p < 0.5$.
 
+Asuma que la hipótesis nula es verdadera. ¿Cuál es la probabilidad de haber
+encontrado $\hat{p} = 0.4$ en este caso? Si la hipótesis nula fuera
+verdadera, la desviación estándar debería ser $\sqrt{\frac{0.5^2}{120}} = .045
+$. El valor observado $\hat{p}$ estaría entonces a
 
+\begin{align*}
+    z = \frac{0.4 - 0.5}{.045} = -2.222
+\end{align*}
 
+desviaciones estándar de la media. El $p$-valor será el área de la distribución
+normal estándar a la izquierda de $-2.222$---es decir, la probabilidad de
+observar un valor tan o más extremo que $-2.222$---. Tomamos el área a la
+izquierda porque la hipótesis alternativa es que $p$ es \textit{menor} a es
+$0.5$. Entonces, la tabla de la distribución normal nos dice que $p\text{-valor}
+= .0132$. Como esto es superior a $\alpha = 0.01$, no rechazamos la hipótesis
+nula.
 
+\pagebreak 
 
+\begin{problem}
+    Sea $X_1, \ldots, X_n$ una muestra con $n \geq 3$ y $X_i \sim
+    \text{Poisson}(\lambda)$. \textit{(1)} Encuentre el estimador de $\lambda$
+    usando el método de los momentos. \textit{(2)} Encuentre el estimador de
+    $\lambda$ usando máxima verosimilitud. \textit{(3)} Considere los
+    estimadores 
 
+    \begin{align*}
+        \overline{\lambda_1} = X_1, \overline{\lambda_2} = \frac{X_1 + X_n}{2},
+        \overline{\lambda_3} = \frac{X_1 + 2X_2 + X_3}{3}, \overline{\lambda_4}
+        = \overline{X}
+    \end{align*}
 
+    ¿Cuál es insesgado? ¿Cuál tiene menor varianza?
+\end{problem}
 
+Recuerde que si $X \sim \text{Poisson}(\lambda)$ entonces $f(x) = e^{-\lambda}
+\frac{\lambda^x}{x!}$ para $x \geq 0$.
 
+\textit{(1)} El primer momento muestral es $\overline{X}$. El primer momento (o
+la esperanza) de una Poisson es su parámetro $\lambda$. Igualando ambos
+obtenemos $\overline{X} = \lambda$ y vemos que la media muestral es un estimador
+por el método de los momentos de $\lambda$. 
 
+Usando máxima verosimilitud, observemos que 
 
+\begin{align*}
+    \mathcal{L}(\lambda \mid X_1, \ldots, X_n) &= \prod_{i=1}^{n} f(x_i \mid
+    \lambda)   \\ 
+\end{align*}
 
+We can find the maximizing value of $\lambda$ for this probability by finding
+the maximizing $\lambda$ for 
 
+\begin{align*}
+    \sum_{i=1}^{n} \ln \left( f(x_i \mid \lambda) \right) &= \sum_{i=1}^{n} \ln
+    \left( e^{-\lambda} \frac{\lambda^{x_i}}{(x_i)!} \right)  \\ 
+                                                          &= \sum_{i=1}^{n}
+                                                          \left[\ln(e^{-\lambda}) +
+                                                          \ln(\lambda^{x_i}) -
+                                                      \ln( x_i! )\right] \\ 
+                                                          &= \ln(e^{-\lambda}) +
+                                                          \sum_{i=1}^{n}
+                                                          \ln(\lambda^{x_i}) -
+                                                          \ln(x_i!)
+\end{align*}
 
+Pues $\ln(x_i!)$  no depende de $\lambda$, será superfluo en la maximzación (en
+la derivada será cero) y por lo tanto maximizamos encontrando
 
-
-
+\begin{align*}
+    \frac{\partial }{\partial \lambda} \left[\ln(e^{-\lambda}) + \sum_{i=1}^{n}
+    \ln(\lambda^{x_i})\right] &= 0 \\ 
+    \frac{\partial \ln(e^u)}{\partial u}\frac{\partial u}{\partial \lambda} +
+    \sum_{i=1}^{n} \frac{\partial \ln(\lambda^{x_i})}{\partial \lambda } &= 0
+                                                                         &\{u =
+                                                                         -\lambda\}
+                                                                         \\ 
+    -u + \sum_{i=1}^{n} \left( \frac{\partial \ln w}{\partial w}\frac{\partial
+w}{\partial \lambda} \right) &= 0 &\{w = \lambda^{x_i}\} \\ 
+-u + \sum_{i=1}^{n} \frac{1}{w} x_i\lambda^{x_i - 1} &= 0 \\ 
+\lambda + \sum_{i=1}^{n} \frac{\lambda^{x_i - 1}}{\lambda^{x_i}}x_i &= 0 \\ 
+\lambda + \sum_{i=1}^{n} \frac{x_i}{\lambda^{x_i}} &= 0
+\end{align*}
 
 
 
 \end{document}
+
+
