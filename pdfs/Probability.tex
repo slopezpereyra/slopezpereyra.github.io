@@ -776,49 +776,445 @@ la esperanza) de una Poisson es su parámetro $\lambda$. Igualando ambos
 obtenemos $\overline{X} = \lambda$ y vemos que la media muestral es un estimador
 por el método de los momentos de $\lambda$. 
 
-Usando máxima verosimilitud, observemos que 
+\textit{(2)} Usando máxima verosimilitud, observemos que 
 
 \begin{align*}
     \mathcal{L}(\lambda \mid X_1, \ldots, X_n) &= \prod_{i=1}^{n} f(x_i \mid
     \lambda)   \\ 
 \end{align*}
 
-We can find the maximizing value of $\lambda$ for this probability by finding
-the maximizing $\lambda$ for 
+Maximizar la expresión de arriba equivale a maximizar su logaritmo. En
+consecuencia, observamos que
 
 \begin{align*}
-    \sum_{i=1}^{n} \ln \left( f(x_i \mid \lambda) \right) &= \sum_{i=1}^{n} \ln
-    \left( e^{-\lambda} \frac{\lambda^{x_i}}{(x_i)!} \right)  \\ 
-                                                          &= \sum_{i=1}^{n}
-                                                          \left[\ln(e^{-\lambda}) +
-                                                          \ln(\lambda^{x_i}) -
-                                                      \ln( x_i! )\right] \\ 
-                                                          &= \ln(e^{-\lambda}) +
-                                                          \sum_{i=1}^{n}
-                                                          \ln(\lambda^{x_i}) -
-                                                          \ln(x_i!)
+    \ln \left[\prod_{i=1}^{n} e^{-\lambda} \frac{\lambda^{x_i}}{x_i!}\right] &=
+    \sum_{i=1}^{n} \ln \left( e^{-\lambda} \frac{\lambda^{x_i}}{x_i!} \right) 
+    \\
+    &=
+    \sum_{i=1}^{n} \left[\ln(e^{-\lambda}) +    \ln\left(    \lambda^{x_i}
+    \right)-\ln\left(x_i!\right)\right]\\ 
+    &= \sum_{i=1}^{n} \left[- \lambda + \ln(\lambda^{x_i}) - \ln\left( x_i !
+    \right) \right] \\ 
+    &=- \lambda n + \sum_{i=1}^{n} \ln(\lambda^{x_i}) - \ln(x_i!)
 \end{align*}
 
-Pues $\ln(x_i!)$  no depende de $\lambda$, será superfluo en la maximzación (en
-la derivada será cero) y por lo tanto maximizamos encontrando
+Sea $\Lambda$ la expresión arriba. Entonces
 
 \begin{align*}
-    \frac{\partial }{\partial \lambda} \left[\ln(e^{-\lambda}) + \sum_{i=1}^{n}
-    \ln(\lambda^{x_i})\right] &= 0 \\ 
-    \frac{\partial \ln(e^u)}{\partial u}\frac{\partial u}{\partial \lambda} +
-    \sum_{i=1}^{n} \frac{\partial \ln(\lambda^{x_i})}{\partial \lambda } &= 0
-                                                                         &\{u =
-                                                                         -\lambda\}
-                                                                         \\ 
-    -u + \sum_{i=1}^{n} \left( \frac{\partial \ln w}{\partial w}\frac{\partial
-w}{\partial \lambda} \right) &= 0 &\{w = \lambda^{x_i}\} \\ 
--u + \sum_{i=1}^{n} \frac{1}{w} x_i\lambda^{x_i - 1} &= 0 \\ 
-\lambda + \sum_{i=1}^{n} \frac{\lambda^{x_i - 1}}{\lambda^{x_i}}x_i &= 0 \\ 
-\lambda + \sum_{i=1}^{n} \frac{x_i}{\lambda^{x_i}} &= 0
+    \frac{\partial \Lambda}{\partial \lambda } &= -n + \sum_{i=1}^{n}
+    \frac{\partial \ln(u) }{\partial u } \frac{\partial u}{\partial \lambda} &
+    \{u = \lambda^{x_i}\} \\ 
+                                                                             &=
+                                                                             -n
+                                                                             +
+                                                                             \sum_{i=1}^{n}
+                                                                             \frac{1}{\lambda^{x_i}}x_i
+                                                                             \lambda^{x_i
+                                                                             -
+                                                                         1} \\ 
+    &= -n + \sum_{i=1}^{n} \frac{x_i}{\lambda} \\ 
+    &= -n + \frac{1}{\lambda}  \sum_{i=1}^{n} x_i
 \end{align*}
+
+Encontramos los puntos críticos respecto a $\lambda$ tomando 
+
+\begin{align*}
+    -n + \frac{1}{\lambda} \sum x_i = 0 \Rightarrow \sum x_i = \lambda n
+\end{align*}
+
+o equivalentemente 
+
+\begin{align*}
+    \lambda = \frac{1}{n}\sum x_i = \overline{X}
+\end{align*}
+
+Que este punto es un máximo se sigue de que la distribución de Poisson es
+cóncava y carece de mínimo. 
+
+\textit{(3)} Observe que $\mathbb{E}[X_1] = \lambda$,
+$\frac{1}{2}\mathbb{E}\left[ X_1 + X_2 \right] = \frac{1}{2}2\lambda = \lambda$,
+y $\frac{1}{3}\mathbb{E}\left[ X_1 + 2X_2+X_3 \right] = \frac{1}{3} \left(
+\lambda + 2 \lambda + \lambda \right) = \frac{4\lambda}{3} $. Se sigue que el
+primer y segundo estimador son insesgados y el tercero es sesgado. Ya hemos
+establecido que el primer momento muestral $\overline{X}$ es insesgado en el
+punto \textit{(1)}.
+
+Observe que 
+
+\begin{align*}
+    \mathbb{V}\left[ X_1 \right] = \lambda \\ 
+    \frac{1}{4}\mathbb{V}\left[ X_1 + X_2 \right] = \frac{1}{4}\lambda \\ 
+    \frac{1}{9}\left[ \lambda + \frac{1}{4}\lambda + \lambda \right] = \left[
+    \frac{1}{9} \frac{9\lambda}{4} \right] = \frac{\lambda}{4}
+\end{align*}
+
+El mejor estimador es el segundo, porque de los insesgados es el que tiene menor
+varianza.
+
+\subsection{Final 2021-07-26}
+
+\begin{problem}
+    In making a certain article, two types of defect exist: Type I and Type II.
+    Type I occurs $5\%$ of the times; type II occurs $10\%$ of the times. We can
+    assume the occurrence of one defect is independent of the occurrence of the
+    other. A random article is selected. \textit{(1)} What is the probability
+    that it is flawed? \textit{(2)} Assuming it is flawed, what is the
+    probability that it only contains a Type I defect?
+\end{problem}
+
+
+\small
+\begin{quote}
+
+\textit{(1)} The probability that it is flawed is simply $P(\text{Type I} \cup
+\text{Type II}) = P(\text{Type I}) +
+P(\text{Type II}) - P(\text{Type I} \cap  \text{Type 2})$. Since the defects are
+independent, this gives $.05 + .1 - .05 \cdot .1 = .145 $.
+
+\textit{(2)} For brevity, let $A$ denote the event of a Type I defect, $B$ the
+event of a Type II defect. Then we want to find 
+
+\begin{align*}
+    P( A \cap \neg B \mid A \cup B ) &= \frac{P\left( \left( A \cap \neg B
+    \right) \cap \left( A \cup B \right)   \right) }{P(A \cup B)} \\ 
+                                     &= \frac{P\left( (A \cap \neg B \cap A)
+                                     \cup (A \cap  \neg B \cap B)  \right)
+                                 }{.145} \\ 
+                                 &= \frac{P\left( \left( A \cap \neg B \right)
+                                 \cup \emptyset  \right) }{.145} \\ 
+                                 &= \frac{P\left( A \cap \neg B \right) }{.145}
+                                 \\ 
+                                 &= \frac{.05 \cdot (1 - .1)}{.145} \\ 
+                                 &=.310
+\end{align*}
+
+In other words, assuming that an item is flawed, the probability that its flaw
+is of Type I is $31\%$.
+
+\end{quote}
+\normalsize
+
+\pagebreak
+
+\begin{problem}
+    Let $X$ a random var with CDF 
+
+    \begin{align*}
+        F(x) = \begin{cases}
+            0 & x < -2 \\ 
+            \frac{( x+2 )^2}{8} & -2 \leq x < 0 \\ 
+            1 - \frac{(-x+2)^2}{8} & 0 \leq x < 2 \\ 
+            1 & x \geq 2
+        \end{cases}
+    \end{align*}
+
+    \textit{(1)} Is $X$ continuous or discrete? Justify. \textit{(2)} Find the
+    PDF or PMF of $X$. \textit{(3)} Find the $25$ percentile of $X$.
+    \textit{(4)} Find the expected value and standard deviation of $X$.
+\end{problem}
+
+
+\small
+\begin{quote}
+
+\textit{(1)} $X$ is said to be discrete if there is some finite or countably infinite set $A$
+s.t. $P(X \in A) = 1$. Evidently $P(X \in A) = 1$ if and only if $A =  \left[
+    c,
+2\right] $ with $c \in \mathbb{R}$ and $c \leq -2$. Any set of this form is
+infinite. Then $X$ is continuous. 
+
+\textit{(2)} The PDF will be the case-to-case derivative of the CDF: 
+
+\begin{align*}
+    f(x) = \begin{cases}
+        0 & x < - 2 \\
+        \frac{2(x+2)}{8} & -2 \leq x < 0 \\ 
+        1 + \frac{ 2(-x+2) }{8} & 0 \leq x < 2 \\ 
+        0 & x \geq 2
+    \end{cases}
+\end{align*}
+
+To make sure this is correct, you can cerify that $\int_{\mathbb{R}}f(x) ~ dx =
+1$ (I skip this). 
+
+\textit{(3)} We first need to determine which "part" of the function $f$
+contains the 25 percentile. Lets integrate the first "part": 
+
+\begin{align*}
+    \frac{1}{4}\int_{-2}^{0}(x+2) ~ dx = \frac{1}{2}
+\end{align*}
+
+Since $50\%$ of the probability lies within the region $(-2, 0]$, clearly the 25
+percentile is within this region. Now observe that
+
+\begin{align*}
+    \frac{1}{4} \int_{-2}^{t}(x+2) ~ dx &= \frac{1}{4}\left[ \left(\frac{t^2}{2}
+            - 2\right)
+    + \left( 2t + 4  \right) \right]  \\ 
+                                        &= \frac{t^2}{8}-\frac{1}{2} +
+                                        \frac{t}{2} + 1 \\ 
+\end{align*}
+
+We want to find the $t$ that contains $25\%$ of the distribution. Solving the
+equation 
+
+\begin{align*}
+    \frac{t^2}{8} - \frac{1}{2} + \frac{t}{2} + 1 &= .25  \\ 
+    \frac{t^2 + 4t}{8} &= -.25 \\ 
+    t^2 + 4t &= -2 \\ 
+    t^2 + 4t + 2 &= 0
+\end{align*}
+
+The roots are $-2 \pm \sqrt{2}$ . Obviously, $-2 - \sqrt{2} $ falls out of the
+range we are interested in. Then $-2 + \sqrt{2} $ is the $25$ percentile.
+
+\textit{(4)} We skip the calculations but give the formula. The expected value
+is 
+
+\begin{align*}
+    \mathbb{E}\left[ X \right]  = \frac{1}{4} \int_{-2}^{0} (x+2)x~dx +
+    \int_{0}^{2}x~dx + \frac{1}{4}\int_0^{2}(-x + 2)x ~dx = 2
+\end{align*}
+
+Then
+
+\begin{align*}
+    \mathbb{V}\left[ X \right] &= \mathbb{E}\left[ (X - 2)^2 \right]  \\ 
+                               &= \frac{1}{4} \int_{-2}^{0} (x+2)(x-2)^2~dx +
+    \int_{0}^{2}(x-2)^2~dx + \frac{1}{4}\int_0^{2}(-x + 2)(x-2)^2 ~dx \\&=
+    \frac{22}{3}
+\end{align*}
+
+\end{quote}
+\normalsize
+
+\pagebreak 
+
+\begin{problem}
+    Let $X \sim (40, 8), Y \sim (30, 6)$. \textit{(1)} Give the
+    probability that $Y \in [17.52, 33.84]$. \textit{(2)} Give the probability
+    that $Y \leq X$. \textit{(3)} Ten draws $Y_1, \ldots, Y_{10}$ are taken;
+    what is the probability that only three of the ten draws exceeds $33.84$?
+    And what the probability that $\overline{Y}$ is inferior to $33.84$?
+\end{problem}
+
+
+
+\small
+\begin{quote}
+
+\textit{(1)} Such probability is $\Phi( \frac{33.84 - 30}{6} ) - 
+\Phi( \frac{17.52 -30 }{6} ) = \Phi(.64) - \Phi(-2.08)$. Using the $z$-score
+table we observe that this gives $.738 - .018 = .72$. The probability is $72\%$.
+
+\textit{(2)} Observe that $Y \leq X \iff Y - X \leq 0$. Using the properties of
+normal distributions, we have that $Z = Y - X \sim \mathcal{N}(-10,  14)$. Then
+we require to compute only $\Phi( \frac{10}{14} ) = \Phi(0.714) = .761$.
+
+\textit{(3)} The experiment is binomial with $p = P(X > 33.84) = 1 - P(X \leq
+33.84) = 1 - .72 = .28$ and $n = 10$. Then the desired event has probability
+
+\begin{align*}
+    \binom{10}{3}(.28)^{3}(.72)^{7}= .264
+\end{align*}
+
+We know $\overline{Y} \sim \mathcal{N}(30, \frac{6}{\sqrt{10} })$. Then
+$P(\overline{Y} \leq 33.84)$ is given by 
+
+\begin{align*}
+    \Phi(\frac{3.84 \times \sqrt{10} }{6}) = \Phi(2.023) = .978
+\end{align*}
+
+\end{quote}
+\normalsize
+
+\pagebreak 
+
+\begin{problem}
+    An article says only one out of three people get a job after college. A
+    study found $85$ out of $200$ people got jobs. \textit{(1)} Build a $98\%$
+    confidence interval for the true proportion. \textit{(2)} Can you conclude
+    with a significance level $\alpha = .02$ that the proportion is
+    \textit{greater} than the one published in the article?
+\end{problem}
+
+
+\small
+\begin{quote}
+
+We have $\hat{p} = .425$. The standard deviation of this estimator is 
+
+\begin{align*}
+    s_{\hat{p}} = \sqrt{ \frac{(.425)(.575)}{200} }  = .035
+\end{align*}
+
+Since the estimator approximates a normal distribution with sufficiently large
+samples, we build the confidence interval $\hat{p} \pm
+s_{\hat{p}} \cdot z_{.01} = .425 \pm .035 \cdot 2.32$. This gives the
+interval $\left[ 0.3438, 0.5062 \right] $.
+
+\textit{(2)} Let $H_0 :p = 0.33, H_a : p > 0.33$. Let us assume $H_0$ holds. We
+ask: What is the probability of having a value as extreme or more than $\overline{p} = .425$ under
+this assumption? In other words, what is the area under the curve of the
+distribution of $p$, under hypothesis $H_0$, to the right of $.425$? Since
+
+\begin{align*}
+    \Phi( \frac{.425 - .33}{.035} ) = \Phi(2.71) = .996
+\end{align*}
+
+is the area to the left of $.425$, $1 - .996 = .004$ is the area to the right.
+Incidentally, this is the $p$-value. Since the $p$-value is less than $.02$ we
+reject the null hypothesis and accept the alternative hypothesis.
+
+\end{quote}
+\normalsize
+
+\pagebreak 
+
+\begin{problem}[]
+    $25$ measures of the amount of a substance were made with a mean $7975$ and
+    $s_n = 74$. Assume the random variable follows $\mathcal{N}(\mu, \sigma)$.
+    \textit{(1)} Give a MLE estimator of $\sqrt{\mu}, \sigma^2 $ and $P(X \leq
+    7990)$. Justify. \textit{(2)} Give a confidence interval of $95\%$ for
+    $\mu$. \textit{(3)} Is there evidence to conclude that $\mu > 7950$?
+    ($\alpha = .05$)
+    \textit{(4)} Assume $\sigma = 73$, is there evidence to conclude that $\mu >
+    7950$? ($\alpha = .05$)
+\end{problem}
+
+
+\small
+\begin{quote}
+
+\textit{(1)} It is a property of MLE estimation that it satisfies
+\textit{functional invariance}. This means that if $\hat{\theta}$ is the MLE of
+$\theta$, then $g(\hat{\theta})$ is the MLE of $g(\theta)$. We know
+$\overline{X}$ is the MLE of $\mu$. Then $\sqrt{\overline{X}} $ is the MLE of
+$\sqrt{\mu} $. The same principle gives that $s_n^2$ is the MLE estimator of
+$\sigma^2$. Once more, the same priniciples give that the MLE estimator of $P(X
+\leq 7990)$ is $\Phi\left( \frac{7990 - \overline{X}}{s_n} \right)$.
+
+\textit{(2)} We must use the $t$-Student distribution with $24$ degrees of
+freedom because $n = 25 \leq 30$ and
+$\sigma$ is unknown. We then have the interval $\overline{X} \pm s_n \cdot
+t_{.025}$. This gives $\left[ 7975 - 74 \cdot 2.064, 7975 + 74 \cdot 2.064
+\right] = \left[ 7822.264, 8117.736 \right]  $. 
+
+\textit{(3)} Let $H_0 : \mu = 7950, H_a : \mu > 7950$. Assuming $H_0$, the
+probability of observing a value as extreme or more (to the right) than $7975$
+is 
+
+\begin{align*}
+    1 - \Phi( \frac{7975 - 7950}{74} ) = 1 - \Phi(0.338) = 1 - .62930 = 0.3707
+\end{align*}
+
+This is the $p$-value. There isn't enough evidence to reject the null
+hypothesis.
+
+\textit{(4)} If we assume $\sigma = 73$, then
+
+    
+\begin{align*}
+    1 - \Phi( \frac{7975 - 7950}{73} ) = 1 - \Phi(0.342) 
+\end{align*}
+
+and we still do not reject.
+
+
+\end{quote}
+\normalsize
+
+\pagebreak 
+
+\begin{problem}
+    Let $X1, \ldots, X_n$ a random sample with uniform distribution
+    $\mathcal{U}\left[\theta; \theta + 1  \right] $, with $\theta > 0$.
+    \textit{(1)} Consider $\hat{\theta} = \max X_i$ an estimator of $\theta$
+    whose PDF is 
+
+    \begin{align*}
+        f_{\hat{\theta}}(x) = \begin{cases}
+            n(x - \theta)^{n-1} & x \in (\theta, \theta + 1) \\ 
+            0 & otherwise
+        \end{cases}
+    \end{align*}
+
+    Find the expected value of $\hat{\theta}$.  \textit{(2)} Find the method of
+    moments estimator of $\theta$. Is it unbiased? \textit{(3)} Let
+    $\hat{\theta}_2 = \hat{\theta} - \frac{n}{n+1}$. Es it an unbiased estimator
+    of $\theta$? 
+\end{problem}
+
+
+\small
+\begin{quote}
+
+\textit{(1)} By definition, 
+
+\begin{align*}
+    \mathbb{E}\left[ \hat{\theta} \right] = n\int_{\theta}^{\theta+1} x(x -
+    \theta)^{n-1} ~ dx
+\end{align*}
+
+Let $u = x - \theta$ s.t. $x = u + \theta$ and $du = dx$. 
+
+\begin{align*}
+    \mathbb{E}\left[ \hat{\theta} \right] &= n\int_{u(\theta)}^{u(\theta+1)} (u +
+    \theta)u^{n-1} ~ du \\ 
+                                          &= n\int_{0}^{1} u^{n} + \theta u^{n-1}
+                                          ~ du \\ 
+                                          &= \frac{n}{n+1} + \theta
+\end{align*}
+
+\textit{(2)} The first sample moment is $\overline{X}$. The first moment of the
+uniform distribution is $\frac{a + b}{2}$, or in our case $\frac{2\theta +
+1}{2}$. Then 
+
+\begin{align*}
+    \overline{X} = \theta + \frac{1}{2} \Rightarrow \theta = \overline{X} -
+    \frac{1}{2}
+\end{align*}
+
+is the method of moments estimator of $\theta$. Observe that 
+
+\begin{align*}
+    \mathbb{E}\left[ \overline{X} - \frac{1}{2} \right] &= \mathbb{E}\left[
+    \overline{X} \right] -\frac{1}{2} \\ 
+                                                        &= \frac{1}{n}\sum \mathbb{E}
+                                                        \left[ X_i \right]  -
+                                                        \frac{1}{2} \\ 
+                                                        &= \theta + \frac{1}{2}
+                                                        - \frac{1}{2} \\ 
+                                                        &= \theta
+\end{align*}
+
+The estimator is by definition unbiased. 
+
+\textit{(3)} Observe that 
+
+\begin{align*}
+    \mathbb{E} \left[ \hat{\theta} - \frac{n}{n+1} \right] &= \mathbb{E}\left[
+    \hat{\theta} \right]  - \frac{n}{n+1} \\ 
+                                                           &= \frac{n}{n+1} +
+                                                           \theta -
+                                                           \frac{n}{n+1} \\ 
+                                                           &= \theta
+\end{align*}
+
+It is unbiased.
+
+\end{quote}
+\normalsize
+
+
+
+
+
+
+
+
 
 
 
 \end{document}
-
 

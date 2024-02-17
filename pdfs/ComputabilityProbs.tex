@@ -22,6 +22,17 @@
 Usamos $\varphi$ para denotar un elemento arbitrario del alfabeto $\{\#, *\}$. Usamos la notación $f \sim (n, m, \varphi)$ para decir "$f$ es de
 tipo $(n, m, \varphi)$".
 
+Muchos de estos problemas están resueltos en inglés. Esto es una desgracia
+porque es poco democrático. La razón es que los ejercicios fueron hechos con Vim
++ VimTex, y los atajos de teclado de Vim y LaTex son muy imprácticos si el
+teclado está configurado en castellano. Si hubiera escrito estos problemas con
+la intención de compartirlos, habría resuelto esta incompatibilidad. Lo cierto
+es que los escribí sin intención de compartirlos. 
+
+No asuma que los ejercicios son correctos. Allí donde lo sean, no asuma que la
+solución dada es la más elegante. Fueron hechos por un estudiante, nada más.
+Estimo que otros estudiantes podrán sacar provecho de ellos.
+
 \section{Guia 2 : Infinituplas}
 
 
@@ -486,51 +497,22 @@ podemos tomar $P = P_1 \land P_2$ y $P$ es $\Sigma$-p.r. Es evidente que $P =
 El predicado siendo cuantificado es trivialmente $\Sigma$-p.r. y así lo es a su
 vez $\omega$ (pues $\chi_{\omega}^{\omega} = C_1^{1, 0$). Fijemos un elemento
     arbitrario $(x, \alpha, \beta) \in L$. Pues
-    $\alpha^x = \beta^t$, tenemos dos casos a considerar:
+    $\alpha^x = \beta^t$, se sigue que $|\alpha|x = |\beta| t$. Si $t >
+    |\alpha|x$ es imposible que la igualdad se cumpla, asumiendo que $|\beta|
+    \neq 0$. Si $\beta = \varepsilon $ entonces o bien $x = 0$ o $\alpha =
+    \varepsilon $, en cuyos casos la igualdad vale para cualquier $t \in
+    \omega$, incluyendo $t = 0$. Se sigue que en todo caso $t \leq |\alpha|x$.
 
-    \begin{quote}
-    \textit{(1)} Si $|\alpha| \leq |\beta|$ es necesario que $t \leq x$. En este
-    caso la cota de la cuantificación aparece naturalmente. Observe que esto
-    implica que $t \leq xk$ para cualquier $k \in \mathbb{N}$ (esto junto con
-    \textit{(2)} justifica nuestra conclusión).
 
-    \textit{(2)} Si $|\alpha| > |\beta|$ es necesario que $t > x$. Operemos bajo
-    este supuesto. Pues $\alpha^x = \beta^t$, tenemos que $|\alpha|x =
-    |\beta|t$. Si $|\beta| \mid |\alpha|$ tenemos $t = (|\alpha| / |\beta|) x$
-    (siempre que $|\beta| \neq 0$) y
-    esta cantidad es una cota. Si $|\beta| \not\mid |\alpha|$, entonces sabemos
-    que $(|\alpha| / |\beta|) x \leq t$ (siempre que $|\beta| \neq 0$). La
-    división entera es o bien positiva o nula. 
-
-    Si $|\alpha| / |\beta| = 0$
-    resulta que $0 \leq t$, pero la hipótesis $\alpha^x = \beta^t$
-    inmediatamente implica que $t = 0$ también. Y si $t = 0$ entonces no sucede
-    $t > x$, una contradicción. 
-    
-    Si $ |\alpha| / | \beta| > 0$ el
-    hecho de que $(|\alpha| / |\beta|)x \leq t$ contradice la hipótesis de que
-    $t > x$. 
-
-    Por último, el caso $|\beta| = 0$ junto con $|\alpha| >
-    |\beta|$ y $t > x$ implica $x = 0$. Pero tenemos que $|\alpha|^0 = 0t
-    \Rightarrow t = 0$, lo cual contradice $t > x$. 
-
-    De todo lo anterior se sigue que el único caso válido es aquel donde
-    $|\beta| \mid |\alpha|$.
-
-    $\therefore$ $t \leq \left( |\alpha| / |\beta| \right) x $ es una cota para
-    $t$.
-
-    \end{quote}
-
-    Ahora que dimos con una cota para $t$, observe que $f = \lambda x\alpha\beta
-    \left[ (|\alpha| / |\beta|) x  \right]$ es $\Sigma$-p.r. (se deja al
+    Ahora que dimos con una cota para $t$, observe que $f = \lambda x\alpha
+    \left[  |\alpha|x  \right]$ es $\Sigma$-p.r. (se deja al
     lector). Luego
 
     \begin{align*}
         \chi_{L}^{\omega \times \Sigma^{*}^{2}} = \lambda x x_0 \alpha\beta
         \left[ \left( \exists t \in \omega \right)_{t \leq x} 
-        \alpha^{x_0}=\beta^t   \right] \circ \left[ f \
+            \alpha^{x_0}=\beta^t   \right] \circ \left[ f \circ [ p_1^{1, 2},
+            p_2^{1, 2} ] \
     , p_1^{1, 2}, p_2^{1, 2}, p_3^{1, 2}  \right] 
     \end{align*}
 
@@ -572,7 +554,7 @@ arbitrario. Considere $\gamma \in \Sigma^{*}$ t.q. $@\beta@ =
 \gamma?\alpha?\gamma^{R}$. Evidentemente, 
 
 \begin{align*}
-    |@\beta @| = \gamma?\alpha?\gamma^{R} &\Rightarrow |\beta| + 2 = 2 + 2|\gamma|
+    |@\beta @| =| \gamma?\alpha?\gamma^{R}| &\Rightarrow |\beta| + 2 = 2 + 2|\gamma|
     + |\alpha| \\ 
                                           &\Rightarrow |\beta| - |\alpha| =
                                           2|\gamma|
@@ -581,23 +563,25 @@ arbitrario. Considere $\gamma \in \Sigma^{*}$ t.q. $@\beta@ =
 Si $|\beta| - |\alpha|$ es par obtenemos que $(|\beta| - |\alpha|)/2$ es una
 cota. Si es impar entonces $(|\beta| - |\alpha| + 1) / 2$ es una cota. Como este
 último valor es superior a $|\gamma|$ en ambos casos, lo tomamos como la cota de
-$t$. Es trivial observar que $\lambda \alpha\beta \left[ (|\alpha| - |\beta| +
-1) / 2  \right]$ es $\Sigma$-p.r. 
+$t$. Es trivial observar que $f := \lambda \alpha\beta \left[ (|\alpha| - |\beta| +
+1) / 2  \right]$ es $\Sigma$-p.r., pues la división entera es $\Sigma$-p.r. 
 
 \textit{(3)} Tenemos entonces que 
 
-$$\chi_{L}^{\omega \times \Sigma^{*}^2} =
-\lambda x \alpha \beta \left[ (\exists \gamma \in \Sigma^{*})_{|\gamma| \leq
-\left( |\alpha| - |\beta| + 1 \right) / 2 } @\beta@ = \gamma?\alpha?\gamma^{R}
-\right] \land \lambda x\alpha\beta \left[ x \neq 0 \land \beta \neq \varepsilon   \right]$$
+\begin{align*}
+    \chi_L^{\omega\times \Sigma^{*}^2} = \lambda xy\alpha\beta &\left[ \left(
+    \exists \gamma\in \Sigma^{*} \right)_{|\gamma| \leq x} ~ @\beta@ =
+\gamma?\alpha?\gamma^{R}   \right] \\ 
+            \circ & \left[ f \circ \left[ p_2^{1, 2}, p_3^{1, 2} \right],
+            p_1^{1, 2}, p_2^{1, 2}, p_3^{1, 2}  \right] \\ 
+                \land &~ \lambda x\alpha \left[ x \neq 0 \land \alpha \neq
+                \epsilon  \right] \circ \left[ p_1^{1, 2}, p_3^{1, 2} \right] 
+\end{align*}
 
-El segundo predicado asegura que respetemos que los elementos de $L$ son de
-$\mathbb{N} \times {\Sigma^{*}} \times \Sigma^{+}$. Es muy fácil mostrar que el
-primer predicado en la cojunción es una composición de la cuantificación acotada
-por un $x$ general (se deja al lector). Esto, combinado con el hecho de que
-$\Sigma^{*}$ (el conjunto sobre el que se hace la cuantificación) y $P_0$ (el
-predicado sobre el que se hace la cuantificación) son $\Sigma$-p.r., es
-suficiente para probar que $L$ es $\Sigma$-p.r. 
+Observe que ambos predicados tienen el mismo dominio y en consecuencia están
+bien definidos. El segundo predicado asegura que respetemos que los elementos de
+$L$ son de $\mathbb{N} \times {\Sigma^{*}} \times \Sigma^{+}$. Pues la función
+dada arriba es claramente $\Sigma$-p.r., hemos probado que $L$ es $\Sigma$-p.r. 
 
 \end{quote}
 \normalsize
@@ -628,8 +612,7 @@ suficiente para probar que $L$ es $\Sigma$-p.r.
 
     \textit{(2)} Sabemos que $\chi_{L}^{\omega \times  \Sigma^{*}^2}$ es el
     predicado $P = \lambda x_0 \alpha \beta \left[ (\exists t \in Im(pr)) ~
-        P_0(x_0,
-    t, \alpha, \beta)  \right]$. 
+    P_0(x_0, t, \alpha, \beta)  \right]$. 
 
     Sea $(x_0, \alpha, \beta) \in L$ un elemento arbitrario y $t \in Im(pr)$.
 
@@ -638,32 +621,32 @@ suficiente para probar que $L$ es $\Sigma$-p.r.
         2)(|\alpha| - 1) = |\beta| t
     \end{align*}
 
-    Sea $u = (x_0 - 2)(|\alpha| - 1)$. Si $|\alpha| \leq |\beta|$ tenemos que $t
-    \leq
-    u$ necesariamente---de otro modo no se satisface $\alpha^u = \beta^t$--- y
-    la cota surge naturalmente.
+    Un razonamiento similar al de un ejercicio anterior nos lleva a concluir que
+    $t \leq |\alpha|(x_0 - 2)(|\alpha| - 1)$. Es muy fácil ver que $f := \lambda
+    x\alpha\left[  (x-2)(|\alpha| - 1)  \right]$ es $\Sigma$-p.r. (de hecho, si
+    demostró que $P_0$ es $\Sigma$-p.r. ya demostró que $f$ es $\Sigma$-p.r.).
 
-    Veamos el caso $|\alpha| > |\beta|$. Si $|\beta|$ divide a $|\alpha|u$ la cota surge
-    naturalmente. Si $|\beta|$ no divide a $|\alpha|$, $|\alpha| = |\beta|q +
-    r$ con $0 < r < |\beta|$. Luego $|\beta|q+r = |\beta|t$, lo cual es absurdo
-    dado que $r < |\beta|$. Luego el caso $|\beta|$ no divide a $|\alpha|$ es
-    inválido y ni siquiera lo consideramos.
-
-    Tomando el caso $|\alpha| > |\beta|$ y $|\beta|$ divide a $|\alpha|$, por
-    ser el que da la cota mayor, obtenemos
+    \textit{(3)} Se sigue de todo lo anterior que 
 
     \begin{align*}
-        t \leq \left( |\alpha| ~ / ~ |\beta| \right) u
+    \chi_L^{\omega\times \Sigma^{*}^2} = \lambda xy\alpha\beta &\left[ \left(
+    \exists t \in Im(pr) \right)_{t\leq x} \alpha^{(2 - y)(|\alpha| - 1)} =
+\beta^t   \right] \\ 
+            \circ & \left[ f \circ \left[ p_1^{1, 2}, p_2^{1, 2} \right],
+            p_1^{1, 2}, p_2^{1, 2}, p_3^{1, 2}   \right] 
     \end{align*}
 
-    \textit{(3)} Es fácil demostrar que $\lambda x_0 \alpha \beta \left[ (x_0 -
-    2)(|\alpha| - 1)  \right]$ es $\Sigma$-p.r.  En el espíritu de los
-    ejercicios anteriores, ahora sola queda expresar $\chi_L^{\omega \times
-    \Sigma^{*}^2}$, con esta cota, como una composición del predicado de
-    cuantificación general (es decir el que tiene como cota una $x$ arbitraria).
-    Se deja esto al lector.
+\textit{(4)} Como última observación, vea que $Im(pr)$ es $\Sigma$-computable.
+En efecto, 
 
+\begin{align*}
+    \chi_{Im(pr)}^{\omega} = \lambda x \left[ \neg \left(\left( \exists t \in \omega
+    \right)_{t \leq x} ~ t \mid x \right)  \right]
+\end{align*}
 
+Pues $\omega$ es $\Sigma$-p.r. y $t \mid x$ es $\Sigma$-p.r. tenemos que
+$\chi_{Im(pr)^{\omega}}$ es $\Sigma$-p.r. Luego, $\chi_{L}^{\omega \times
+\Sigma^{*}^2}$ es $\Sigma$-p.r. 
 
 
 
@@ -675,9 +658,242 @@ suficiente para probar que $L$ es $\Sigma$-p.r.
 \normalsize
 
 
+\begin{problem}
+    Use the \textbf{U rule} to find a predicate $P$ s.t. $M(P) = \lambda
+    x[\text{integer part of } \sqrt{x}]$ .
+\end{problem}
+
+
+\small
+\begin{quote}
+
+Let $f(x)$ denote the integer part of $\sqrt{x}$. If $f(x) = y$ then $y^2 \leq x
+\land (y+1)^2 > x$. Then letting $P = \lambda xy\left[ y^2 \leq x \land (y +
+1)^2 > x \right] $ ensures that $M(P(x, y)) = f(x)$.
+
+
+\end{quote}
+\normalsize
+
+
+\begin{problem}
+    Is is true that $Ins^{\Sigma} \cap Pro^{\Sigma} = \emptyset$? And is it true
+    that $\lambda i \mathcal{P} [I_i^{\mathcal{P}}]$ has domain $\left\{ (i,
+    \mathcal{P}) \in \mathbb{N} \times Pro^{\Sigma}: i \leq n(\mathcal{P})
+\right\} $?
+\end{problem}
+
+
+\small
+\begin{quote}
+
+Both statements are false. A single instruction in $Ins^{\Sigma}$ can be a
+program (as long as it is not a GOTO statement to a non-existent label).
+Furthermore, $\lambda i \mathcal{P} [I_i^{\mathcal{P}}]$ is defined for $i = 0$
+(it maps to $\varepsilon$) and for $i \geq n(\mathcal{P} )$ (it also maps to
+$\varepsilon$).
+
+\begin{problem}
+    Prove: If $\mathcal{P}_1, \mathcal{P}_2 \in Pro^{\Sigma}$ then $\mathcal{P}_1
+    \mathcal{P}_1 = \mathcal{P}_2 \mathcal{P}_2 \Rightarrow \mathcal{P}_1 =
+    \mathcal{P}_2$.
+\end{problem}
+
+This follows from the theorem that guarantees that any program $\mathcal{P} \in
+Pro^{\Sigma}$ is a \textit{unique} concatenation of instructions. Let
+$\mathcal{P}_1 = I_1^{\mathcal{P}_1} \ldots I_{n(\mathcal{P}_1)}^{\mathcal{P}_1}$ and $\mathcal{P}_2 = I_1^{\mathcal{P}_2}
+\ldots I_{n(\mathcal{P}_2)}^{\mathcal{P}_2}$. Assume $\mathcal{P}_1\mathcal{P}_1 =
+\mathcal{P}_2 \mathcal{P}_2$. Then 
+
+\begin{align*}
+    I_1^{\mathcal{P}_1} \ldots I_{n(\mathcal{P}_1)}^{\mathcal{P}_1}
+    I_1^{\mathcal{P}_1} \ldots I_{n(\mathcal{P}_1)}^{\mathcal{P}_1} = 
+    I_2^{\mathcal{P}_2} \ldots I_{n(\mathcal{P}_2)}^{\mathcal{P}_2}
+    I_2^{\mathcal{P}_2} \ldots I_{n(\mathcal{P}_2)}^{\mathcal{P}_2}
+\end{align*}
+
+Then, it is a theorem that $I_k^{\mathcal{P}_1} =
+i_k^{\mathcal{P}_2}$. From this follows directly that $\mathcal{P}_1 =
+\mathcal{P}_2$. $\blacksquare$
+
+\end{quote}
+\normalsize
+
+\begin{problem}
+    Give true or false for the following statements.
+\end{problem}
+
+
+\small
+\begin{quote}
+
+
+\textit{Statement 1: If $S_{\mathcal{P}}(i, \overrightarrow{s},
+\overrightarrow{\alpha}) = (i, \overrightarrow{s}, \overrightarrow{\alpha})$
+then $i \not\in [1, n(\mathcal{P})]$}. The statement is false. It could be the
+case that $i \not\in [1, n( \mathcal{P} )]$, in which case we would say the program
+halted. However, consider the program 
+
+\begin{align*}
+    L1 ~ GOTO ~ L1 
+\end{align*}
+
+Evidently, $S_{\mathcal{P}}(1, \overrightarrow{s}, \overrightarrow{\alpha}) =
+(1, \overrightarrow{s}, \overrightarrow{\alpha})$, and $1 \leq 1 \leq
+n(\mathcal{P})$ .
+
+\textit{Statement 2. Let $\mathcal{P} \in Pro^{\Sigma}$ and $d$ an instantaneous
+description whose first coordinate is $i$. If $I_i^{\mathcal{P}} = N_2
+\leftarrow N_2 + 1$, then $$S_{\mathcal{P}}(d) = \left( i+1, \left( N_1,
+Suc(N_2), N_3, \ldots \right), (P_1, P_2, P_3, \ldots)  \right) $$}
+
+The statement is true via direct application of the $S_{\mathcal{P}}$ function.
+
+\textit{Statement 3. Let $\mathcal{P} \in Pro^{\Sigma}$ and $(i,
+\overrightarrow{s}, \overrightarrow{\sigma})$ an instantaneous description. If
+$Bas(I_i^{\mathcal{P}}) = IF ~ P_3 ~ BEGINS ~ a ~ GOTO ~ L_6$ and $[P_3]_1 = a$,
+then $S_{\mathcal{P}}(i, \overrightarrow{s}, \overrightarrow{\sigma}) = (j,
+\overrightarrow{s}, \overrightarrow{\sigma})$, where $j$ is the least number $l$
+s.t. $I_{l}^{\mathcal{P}}$ has label $L_6$}.
+
+Because $[P_3]_1 = a$, the value of $S_{\mathcal{P}}(i, \overrightarrow{s},
+\overrightarrow{\sigma})$ must indeed contain the instruction that has label
+$L_6$. This instruction is the $j$th instruction for some $j$, etc. The
+statement is true.
+
+
+\end{quote}
+\normalsize
+
+\begin{problem}
+    Let $\Sigma = \{@, !\}$. Give a program that computes $f : \{0, 1, 2\}
+    \mapsto \omega $ given by $f(0) = f(1) = 0, f(2) = 5$.
+\end{problem}
+
+
+\small
+\begin{quote}
+
+
+Evidently $f \sim (1, 0, \#)$ and so we must find some $\mathcal{P} \in
+Pro^{\Sigma}$ s.t. $\Psi_{\mathcal{P}}^{1, 0, \#}(x) = f(x)$. The program must
+let $N_1$ hold the value $0$ if the starting state is either $[\![ 0 ]\!]$ or
+$[\![ 1 ]\!]$, and the value $5$ if the starting state is $[\![ 2 ]\!]$. In all
+other cases, it must not halt, to ensure that the domain of
+$\Psi_{\mathcal{P}}^{1, 0, \#}$ is the same as that of $f$. The desired program
+is 
+
+\begin{align*}
+    &N_2 \leftarrow N_1\\
+    &N_2 \leftarrow N_2 - 1\\
+    &IF ~ N_2 \neq 0 ~ GOTO ~L_1 \\ 
+    &GOTO ~ L_4 \\ 
+    L_1 ~ &N_2 \leftarrow N_2 - 1 \\ 
+    &IF ~  N_2 \neq 0 ~ GOTO ~ L_2\\
+    &GOTO L_3\\
+    L_2~& GOTO ~ L_2 \\ 
+    L_3 ~ & N_1 \leftarrow N_1 + 1\\
+    & N_1 \leftarrow N_1 + 1\\
+    & N_1 \leftarrow N_1 + 1 \\ 
+    & GOTO ~ L_5 \\
+    L_4 ~ & N_1 \leftarrow 0 \\ 
+    L_5~& SKIP
+\end{align*}
+
+If $\mathcal{P}$ denotes this program, it is evident that $\mathcal{P}$ only
+halts for starting states $[\![ x_1 ]\!]$ with $x_1 \in \{0, 1, 2\}$.
+Thus, the domain of $\Psi_{\mathcal{P}}^{1, 0, \#}$ is precisely
+$\mathcal{D}_f$. It is easy to verify that, more generally,
+$\Psi_{\mathcal{P}}^{1, 0, \#} = f$.
+
+\end{quote}
+\normalsize
+
+\begin{problem}
+    Using the same alphabet as in the previous problem, find $\mathcal{P} \in
+    Pro^{\Sigma}$ that computes $\lambda xy[x + y]$.
+\end{problem}
+
+
+\small
+\begin{quote}
+
+The desired program is 
+
+\begin{align*}
+    L_1 ~ &IF ~ N_2 = 0 ~ GOTO ~ L_3 \\ 
+          &N_1 \leftarrow N_1 + 1 \\ 
+          &N_2 \leftarrow N_2 - 1 \\ 
+          &GOTO ~ L_1\\
+    L_3 ~ & SKIP
+\end{align*}
+
+\begin{problem}
+    Same for $C_0^{1, 1}_{\mid \{0, 1\} \times  \Sigma^{*}}$
+\end{problem}
+
+
+\small
+\begin{quote}
+
+
+Since the domain of the constant function is restricted t o $\{0, 1\} \times
+\Sigma^{*}$, we must ensure the program only halts for states $[\![ x_1, x_2,
+\alpha ]\!]$ s.t. $x_1,x_2 \in \{0, 1\}$. Thus, the program is 
+
+\begin{align*}
+    &N_1 \leftarrow N_1 - 1 \\
+    &N_2 \leftarrow N_2 - 1 \\
+    &IF N_2 \neq 0 ~ GOTO ~ L_1 \\ 
+    & IF N_1 \neq 0 ~ GOTO ~ L_1 \\ 
+    &GOTO ~ L_2 \\ 
+    L_1~& GOTO ~ L_1 \\ 
+    L_2~ &SKIP
+\end{align*}
+
+\end{quote}
+\normalsize
+
+\end{quote}
+\normalsize
 
 
 
+\begin{problem}
+    Same for $\lambda i\alpha[[\alpha]_i]$ (same alphabet).
+\end{problem}
+
+\small
+\begin{quote}
+
+
+\begin{align*}
+    &IF ~ N_0 \neq 0 ~ GOTO ~ L_1 \\ 
+    &P_1 \leftarrow \varepsilon \\ 
+    & GOTO ~ L_{100} \\
+    L_1 ~ & N_1 \leftarrow N_1 - 1 \\ 
+    L_2 ~ & N_1 \leftarrow N_1 - 1 \\ 
+          &P_1 \leftarrow {}^{\curvearrowright} P_1\\
+    &IF ~ N_1 \neq 0 ~ GOTO ~ L_2\\
+    &IF ~ P_1 ~ STARTSWITH ~ @ ~ GOTO ~ L_2 \\ 
+    &IF ~ P_1 ~ STARTSWITH ~ ! ~ GOTO L_3\\ 
+    & GOTO L_{100}\\
+    L_3~&P_1 \leftarrow ~ !\\
+    L_2 ~ &P_1 \leftarrow  @ \\ 
+    L_{100} ~ & SKIP
+\end{align*}
+
+\textit{Example.} Let $\alpha = @!!@@$. Assume we give $[\![ 4, \alpha ]\!]$.
+Since $4 \neq 0$ we go to $L_1$ immediately. Here $N_1$ is set to three. Then
+$N_1$ is set to two and $P_1$ is set to $!!@@$. Since $N_1 \neq 0$, $N_1$ is now
+set to $1$ and $P_1$ to $!@@$. Once more, $N_1$ is now set to $0$ and $P_1$ to
+$@@$. Since now $N_1 = 0$ , we know the starting character of $P_1$ is the one
+we looked for. We set $P_1$ to be its first character (if $P_1 = \varepsilon$ it
+has no first character and nothings needs to be done, because this means the
+input $[\![ x_1, \alpha ]\!]$ had $x_1 > |\alpha|$). The other cases also work.
+
+\end{quote}
+\normalsize
 
 
 
@@ -686,3 +902,8 @@ suficiente para probar que $L$ es $\Sigma$-p.r.
 
 
 \end{document}
+
+
+
+
+
