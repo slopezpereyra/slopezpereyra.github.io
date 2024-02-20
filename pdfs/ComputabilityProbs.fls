@@ -574,6 +574,7 @@ INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI5.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/newtx/stxscr.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb

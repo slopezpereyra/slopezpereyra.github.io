@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  16 FEB 2024 18:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  18 FEB 2024 15:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -406,37 +406,37 @@ LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 2
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 12.0pt on input line 40.
+(Font)              scaled to size 12.0pt on input line 42.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 12.0pt on input line 40.
+(Font)              scaled to size 12.0pt on input line 42.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 49.
+(Font)              scaled to size 10.95pt on input line 51.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 61.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
 (Font)              scaled to size 10.0pt on input line 63.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 10.95pt on input line 87.
+(Font)              scaled to size 10.0pt on input line 65.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
+(Font)              scaled to size 10.95pt on input line 89.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 97.
+(Font)              scaled to size 8.0pt on input line 99.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.1pt on input line 97.
+(Font)              scaled to size 6.1pt on input line 99.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 7.3pt on input line 105.
+(Font)              scaled to size 7.3pt on input line 107.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 5.5pt on input line 105.
- [2]
-Overfull \hbox (0.50488pt too wide) in paragraph at lines 221--223
+(Font)              scaled to size 5.5pt on input line 107.
+ [2] [3]
+Overfull \hbox (0.50488pt too wide) in paragraph at lines 313--315
 []\T1/ntxtlf/m/it/12 Sea $\U/ntxmia/m/it/12 ^^F = []$\T1/ntxtlf/m/it/12 . En-cuen-tre $\OML/ntxmi/m/it/12 f; g$ \T1/ntxtlf/m/it/12 tales que $\OML/ntxmi/m/it/12 R\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 f; g\LMS/ntxsy/m/n/12 ∫ \U/ntxmia/m/it/12 = \OML/ntxmi/m/it/12 ^^Utx[] []$\T1/ntxtlf/m/it/12 . 
  []
 
-./ComputabilityProbs.tex:237: Undefined control sequence.
+./ComputabilityProbs.tex:329: Undefined control sequence.
 <argument> ...\left [ p_3^{2, 1}, \lambda \alphax 
                                                   \left [ \alpha ^x \right ]...
-l.237 \end{align*}
+l.329 \end{align*}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -444,10 +444,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ComputabilityProbs.tex:237: Undefined control sequence.
+./ComputabilityProbs.tex:329: Undefined control sequence.
 <argument> ...\left [ p_3^{2, 1}, \lambda \alphax 
                                                   \left [ \alpha ^x \right ]...
-l.237 \end{align*}
+l.329 \end{align*}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -455,20 +455,20 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-
-Overfull \hbox (9.75717pt too wide) in paragraph at lines 251--254
+[4]
+Overfull \hbox (9.75717pt too wide) in paragraph at lines 343--346
 []\T1/ntxtlf/m/it/12 Si $\U/ntxmia/m/it/12 ^^F = []$\T1/ntxtlf/m/it/12 , en-cuen-tre $\OML/ntxmi/m/it/12 f; \LMS/ntxsy/m/n/12 G$ \T1/ntxtlf/m/it/12 tales que $\OML/ntxmi/m/it/12 R\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 f; \LMS/ntxsy/m/n/12 G∫ \U/ntxmia/m/it/12 = \OML/ntxmi/m/it/12 ^^U[] []$ 
  []
 
-[3]
-Overfull \hbox (34.28333pt too wide) in paragraph at lines 273--277
+
+Overfull \hbox (34.28333pt too wide) in paragraph at lines 365--369
 []\T1/ntxtlf/m/n/10.95 Tomando la fa-milia in-dex-ada de fun-ciones $\LMS/ntxsy/m/n/10.95 G \U/ntxmia/m/it/10.95 = []$\T1/ntxtlf/m/n/10.95 ,
  []
 
-./ComputabilityProbs.tex:302: Undefined control sequence.
+./ComputabilityProbs.tex:394: Undefined control sequence.
 <argument> ...cal {G})(\alpha _1, \alpha ) \Right 
                                                   ) \\ &= (d_a \circ p_3^{3,...
-l.302 \end{align*}
+l.394 \end{align*}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -476,10 +476,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ComputabilityProbs.tex:302: Extra }, or forgotten \right.
+./ComputabilityProbs.tex:394: Extra }, or forgotten \right.
 <template> }
             $}\ifmeasuring@ \savefieldlength@ \fi \set@field \hfil \endtempl...
-l.302 \end{align*}
+l.394 \end{align*}
                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -487,10 +487,10 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-./ComputabilityProbs.tex:302: Missing \right. inserted.
+./ComputabilityProbs.tex:394: Missing \right. inserted.
 <inserted text> 
                 \right .
-l.302 \end{align*}
+l.394 \end{align*}
                   
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -498,10 +498,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./ComputabilityProbs.tex:302: Missing } inserted.
+./ComputabilityProbs.tex:394: Missing } inserted.
 <inserted text> 
                 }
-l.302 \end{align*}
+l.394 \end{align*}
                   
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -509,10 +509,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./ComputabilityProbs.tex:302: Undefined control sequence.
+./ComputabilityProbs.tex:394: Undefined control sequence.
 <argument> ...cal {G})(\alpha _1, \alpha ) \Right 
                                                   ) \\ &= (d_a \circ p_3^{3,...
-l.302 \end{align*}
+l.394 \end{align*}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -520,10 +520,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./ComputabilityProbs.tex:302: Extra }, or forgotten \right.
+./ComputabilityProbs.tex:394: Extra }, or forgotten \right.
 <template> }
             $}\ifmeasuring@ \savefieldlength@ \fi \set@field \hfil \endtempl...
-l.302 \end{align*}
+l.394 \end{align*}
                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -531,10 +531,10 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-./ComputabilityProbs.tex:302: Missing \right. inserted.
+./ComputabilityProbs.tex:394: Missing \right. inserted.
 <inserted text> 
                 \right .
-l.302 \end{align*}
+l.394 \end{align*}
                   
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -542,10 +542,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./ComputabilityProbs.tex:302: Missing } inserted.
+./ComputabilityProbs.tex:394: Missing } inserted.
 <inserted text> 
                 }
-l.302 \end{align*}
+l.394 \end{align*}
                   
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -554,89 +554,90 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Overfull \hbox (5.36626pt too wide) in paragraph at lines 304--306
+Overfull \hbox (5.36626pt too wide) in paragraph at lines 396--398
 []\T1/ntxtlf/m/n/10.95 Por ejem-plo, $\OML/ntxmi/m/it/10.95 R\LMS/ntxsy/m/n/10.95 π\OML/ntxmi/m/it/10.95 f; \LMS/ntxsy/m/n/10.95 G∫π\OT1/minntx/m/n/10.95 !?!\OML/ntxmi/m/it/10.95 ; \OT1/minntx/m/n/10.95 ?@\LMS/ntxsy/m/n/10.95 ∫ \U/ntxmia/m/it/10.95 = \OML/ntxmi/m/it/10.95 R\LMS/ntxsy/m/n/10.95 π\OML/ntxmi/m/it/10.95 f; \LMS/ntxsy/m/n/10.95 G∫π\OT1/minntx/m/n/10.95 !?!\OML/ntxmi/m/it/10.95 ; \OT1/minntx/m/n/10.95 ?\LMS/ntxsy/m/n/10.95 ∫\OT1/minntx/m/n/10.95 @ \U/ntxmia/m/it/10.95 = \LMS/ntxsy/m/n/10.95 π\OML/ntxmi/m/it/10.95 R\LMS/ntxsy/m/n/10.95 π\OML/ntxmi/m/it/10.95 f; \LMS/ntxsy/m/n/10.95 G∫π\OT1/minntx/m/n/10.95 !?!\OML/ntxmi/m/it/10.95 ; "\LMS/ntxsy/m/n/10.95 ∫\OT1/minntx/m/n/10.95 ?\LMS/ntxsy/m/n/10.95 ∫\OT1/minntx/m/n/10.95 @ \U/ntxmia/m/it/10.95 =
  []
 
-./ComputabilityProbs.tex:322: Double superscript.
-l.322     \Sigma^{*}^
+./ComputabilityProbs.tex:414: Double superscript.
+l.414     \Sigma^{*}^
                      2$, aunque la variable $y$ de la expresi√≥n lambda no sea
 I treat `x^1^2' essentially like `x^1{}^2'.
 
-./ComputabilityProbs.tex:337: Double superscript.
-l.337     \omega^2 \times \Sigma^{*}^
+./ComputabilityProbs.tex:429: Double superscript.
+l.429     \omega^2 \times \Sigma^{*}^
                                      3 : x \leq |\gamma| \right] $ es $\Sigm...
 I treat `x^1^2' essentially like `x^1{}^2'.
 
-./ComputabilityProbs.tex:346: Double superscript.
+./ComputabilityProbs.tex:438: Double superscript.
 <argument>  \chi _S^{\omega ^2 \times \Sigma ^{*}^
                                                   3} = \lambda xy \left [ x ...
-l.346 \end{align*}
+l.438 \end{align*}
                   
 I treat `x^1^2' essentially like `x^1{}^2'.
 
-./ComputabilityProbs.tex:346: Double superscript.
+./ComputabilityProbs.tex:438: Double superscript.
 <argument>  \chi _S^{\omega ^2 \times \Sigma ^{*}^
                                                   3} = \lambda xy \left [ x ...
-l.346 \end{align*}
+l.438 \end{align*}
                   
-I treat `x^1^2' essentially like `x^1{}^2'.
-
-./ComputabilityProbs.tex:350: Double superscript.
-l.350 \Sigma^{*}^
-                 3}$ es $\Sigma$-p.r.
-I treat `x^1^2' essentially like `x^1{}^2'.
-
-[4]
-./ComputabilityProbs.tex:390: Double subscript.
-l.390 ...funci√≥n $\Sigma$-p.r., tenemos que $f_1_
-                                                  {\mid S_1},
-I treat `x_1_2' essentially like `x_1{}_2'.
-
-./ComputabilityProbs.tex:391: Double subscript.
-l.391 f_2_
-          {\mid S_2}$ son $\Sigma$-p.r.  Luego $f = f_1_{\mid S_1} \cup f_2_...
-I treat `x_1_2' essentially like `x_1{}_2'.
-
-./ComputabilityProbs.tex:391: Double subscript.
-l.391 ... S_2}$ son $\Sigma$-p.r.  Luego $f = f_1_
-                                                  {\mid S_1} \cup f_2_{\mid ...
-I treat `x_1_2' essentially like `x_1{}_2'.
-
-./ComputabilityProbs.tex:391: Double subscript.
-l.391 ...p.r.  Luego $f = f_1_{\mid S_1} \cup f_2_
-                                                  {\mid S_2}$ es $\Sigma$-p.r.
-I treat `x_1_2' essentially like `x_1{}_2'.
-
-./ComputabilityProbs.tex:429: Double superscript.
-l.429 \omega^3 \times \Sigma^{*}^
-                                 2 : z \geq 1 \land |\alpha| \geq 2 \right\}...
 I treat `x^1^2' essentially like `x^1{}^2'.
 
 [5]
-Overfull \hbox (27.12987pt too wide) detected at line 442
+./ComputabilityProbs.tex:442: Double superscript.
+l.442 \Sigma^{*}^
+                 3}$ es $\Sigma$-p.r.
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+./ComputabilityProbs.tex:482: Double subscript.
+l.482 ...funci√≥n $\Sigma$-p.r., tenemos que $f_1_
+                                                  {\mid S_1},
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+./ComputabilityProbs.tex:483: Double subscript.
+l.483 f_2_
+          {\mid S_2}$ son $\Sigma$-p.r.  Luego $f = f_1_{\mid S_1} \cup f_2_...
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+./ComputabilityProbs.tex:483: Double subscript.
+l.483 ... S_2}$ son $\Sigma$-p.r.  Luego $f = f_1_
+                                                  {\mid S_1} \cup f_2_{\mid ...
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+./ComputabilityProbs.tex:483: Double subscript.
+l.483 ...p.r.  Luego $f = f_1_{\mid S_1} \cup f_2_
+                                                  {\mid S_2}$ es $\Sigma$-p.r.
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+[6]
+./ComputabilityProbs.tex:521: Double superscript.
+l.521 \omega^3 \times \Sigma^{*}^
+                                 2 : z \geq 1 \land |\alpha| \geq 2 \right\}...
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+
+Overfull \hbox (27.12987pt too wide) detected at line 534
 []
  []
 
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 8.8pt on input line 468.
+(Font)              scaled to size 8.8pt on input line 560.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 6.6pt on input line 468.
+(Font)              scaled to size 6.6pt on input line 560.
 
-Overfull \hbox (12.12442pt too wide) in paragraph at lines 466--469
+Overfull \hbox (12.12442pt too wide) in paragraph at lines 558--561
 []\T1/ntxtlf/m/it/12 Use que $\OML/ntxmi/m/it/12 x \LMS/ntxsy/m/n/12 2 \U/ntxsym/m/n/12 N$ \T1/ntxtlf/m/it/12 es primo si y solo si $\OML/ntxmi/m/it/12 x > \OT1/minntx/m/n/12 1 \LMS/ntxsy/m/n/12 ^ []$
  []
 
-[6]
-./ComputabilityProbs.tex:489: Double superscript.
-l.489 ...pha, \beta) \in \omega \times \Sigma^{*}^
+[7]
+./ComputabilityProbs.tex:581: Double superscript.
+l.581 ...pha, \beta) \in \omega \times \Sigma^{*}^
                                                   2 : \left(
 I treat `x^1^2' essentially like `x^1{}^2'.
 
-./ComputabilityProbs.tex:498: Missing } inserted.
+./ComputabilityProbs.tex:590: Missing } inserted.
 <inserted text> 
                 }
-l.498 ...pues $\chi_{\omega}^{\omega} = C_1^{1, 0$
+l.590 ...pues $\chi_{\omega}^{\omega} = C_1^{1, 0$
                                                   ). Fijemos un elemento
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -644,100 +645,100 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./ComputabilityProbs.tex:517: Double superscript.
+./ComputabilityProbs.tex:609: Double superscript.
 <argument>  \chi _{L}^{\omega \times \Sigma ^{*}^
                                                  {2}} = \lambda x x_0 \alpha...
-l.517     \end{align*}
+l.609     \end{align*}
                       
 I treat `x^1^2' essentially like `x^1{}^2'.
 
-./ComputabilityProbs.tex:517: Double superscript.
+./ComputabilityProbs.tex:609: Double superscript.
 <argument>  \chi _{L}^{\omega \times \Sigma ^{*}^
                                                  {2}} = \lambda x x_0 \alpha...
-l.517     \end{align*}
+l.609     \end{align*}
                       
 I treat `x^1^2' essentially like `x^1{}^2'.
 
 
-Overfull \hbox (11.27936pt too wide) detected at line 517
+Overfull \hbox (11.27936pt too wide) detected at line 609
 []
  []
 
-[7]
-./ComputabilityProbs.tex:579: Double superscript.
+[8]
+./ComputabilityProbs.tex:671: Double superscript.
 <argument>  \chi _L^{\omega \times \Sigma ^{*}^
                                                2} = \lambda xy\alpha \beta &...
-l.579 \end{align*}
+l.671 \end{align*}
                   
 I treat `x^1^2' essentially like `x^1{}^2'.
 
-./ComputabilityProbs.tex:579: Double superscript.
+./ComputabilityProbs.tex:671: Double superscript.
 <argument>  \chi _L^{\omega \times \Sigma ^{*}^
                                                2} = \lambda xy\alpha \beta &...
-l.579 \end{align*}
+l.671 \end{align*}
                   
 I treat `x^1^2' essentially like `x^1{}^2'.
 
-./ComputabilityProbs.tex:600: Double superscript.
+./ComputabilityProbs.tex:692: Double superscript.
 <argument> ...eta ) \in \omega \times \Sigma ^{*}^
                                                   2 : \left ( \exists t \in ...
-l.600     \end{align*}
+l.692     \end{align*}
                       
 I treat `x^1^2' essentially like `x^1{}^2'.
 
-./ComputabilityProbs.tex:600: Double superscript.
+./ComputabilityProbs.tex:692: Double superscript.
 <argument> ...eta ) \in \omega \times \Sigma ^{*}^
                                                   2 : \left ( \exists t \in ...
-l.600     \end{align*}
+l.692     \end{align*}
                       
 I treat `x^1^2' essentially like `x^1{}^2'.
 
-./ComputabilityProbs.tex:613: Double superscript.
-l.613 ...que $\chi_{L}^{\omega \times  \Sigma^{*}^
+./ComputabilityProbs.tex:705: Double superscript.
+l.705 ...que $\chi_{L}^{\omega \times  \Sigma^{*}^
                                                   2}$ es el
 I treat `x^1^2' essentially like `x^1{}^2'.
 
 
-Overfull \hbox (32.5256pt too wide) in paragraph at lines 613--616
+Overfull \hbox (32.5256pt too wide) in paragraph at lines 705--708
 []\T1/ntxtlf/m/it/10.95 (2) \T1/ntxtlf/m/n/10.95 Sabe-mos que $\OML/ntxmi/m/it/10.95 ^^_[]$ \T1/ntxtlf/m/n/10.95 es el pred-i-cado $\OML/ntxmi/m/it/10.95 P \U/ntxmia/m/it/10.95 = \OML/ntxmi/m/it/10.95 ^^Ux[]^^L []$\T1/ntxtlf/m/n/10.95 . 
  []
 
-[8]
-./ComputabilityProbs.tex:637: Double superscript.
+[9]
+./ComputabilityProbs.tex:729: Double superscript.
 <argument>  \chi _L^{\omega \times \Sigma ^{*}^
                                                2} = \lambda xy\alpha \beta &...
-l.637     \end{align*}
+l.729     \end{align*}
                       
 I treat `x^1^2' essentially like `x^1{}^2'.
 
-./ComputabilityProbs.tex:637: Double superscript.
+./ComputabilityProbs.tex:729: Double superscript.
 <argument>  \chi _L^{\omega \times \Sigma ^{*}^
                                                2} = \lambda xy\alpha \beta &...
-l.637     \end{align*}
+l.729     \end{align*}
                       
 I treat `x^1^2' essentially like `x^1{}^2'.
 
-./ComputabilityProbs.tex:649: Double superscript.
-l.649 \Sigma^{*}^
+./ComputabilityProbs.tex:741: Double superscript.
+l.741 \Sigma^{*}^
                  2}$ es $\Sigma$-p.r.
 I treat `x^1^2' essentially like `x^1{}^2'.
 
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/it' will be
-(Font)              scaled to size 12.0pt on input line 662.
+(Font)              scaled to size 12.0pt on input line 754.
 
-Overfull \hbox (7.89737pt too wide) in paragraph at lines 662--664
+Overfull \hbox (7.89737pt too wide) in paragraph at lines 754--756
 []\T1/ntxtlf/m/it/12 Use the \T1/ntxtlf/b/it/12 U rule \T1/ntxtlf/m/it/12 to find a pred-i-cate $\OML/ntxmi/m/it/12 P$ \T1/ntxtlf/m/it/12 s.t. $\OML/ntxmi/m/it/12 M\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 P\LMS/ntxsy/m/n/12 ∫ \U/ntxmia/m/it/12 = \OML/ntxmi/m/it/12 ^^Ux\LMS/ntxsy/m/n/12 ª[][]º$
  []
 
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 10.95pt on input line 697.
-[9] [10]
-./ComputabilityProbs.tex:832: Double subscript.
-l.832     Same for $C_0^{1, 1}_
+(Font)              scaled to size 10.95pt on input line 789.
+[10] [11]
+./ComputabilityProbs.tex:924: Double subscript.
+l.924     Same for $C_0^{1, 1}_
                                {\mid \{0, 1\} \times  \Sigma^{*}}$
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-[11] [12] (./ComputabilityProbs.aux) ) 
+[12] [13] (./ComputabilityProbs.aux) ) 
 Here is how much of TeX's memory you used:
  5645 strings out of 476091
  76997 string characters out of 5794081
@@ -746,11 +747,11 @@ Here is how much of TeX's memory you used:
  624967 words of font info for 208 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,14n,76p,339b,279s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on ComputabilityProbs.pdf (12 pages, 237237 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/stxscr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
+Output written on ComputabilityProbs.pdf (13 pages, 244602 bytes).
 PDF statistics:
- 108 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
+ 117 PDF objects out of 1000 (max. 8388607)
+ 74 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

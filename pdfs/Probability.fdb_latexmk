@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1708207546 "Probability.tex" "Probability.pdf" "Probability" 1708207546 2
+["pdflatex"] 1708451895 "Probability.tex" "Probability.pdf" "Probability" 1708451896 2
   "/etc/texmf/web2c/texmf.cnf" 1695394668 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1640468671 2914 8283dfc24eaf1964346f843d7605c2b0 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc" 1422827479 2083 60e36f8eac802fcaf19eabe2633b406e ""
@@ -107,8 +107,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1695394817 4623455 fa0568a71dd9a288d6c226ee477506c6 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1695394844 7879794 eff26094dbe002b6e482c026ea4c81e2 ""
-  "Probability.aux" 1708207546 1126 ece20ea816da2f64f0ab9bef09e1243e "pdflatex"
-  "Probability.tex" 1708207544 41105 50975aab3664e3b5765bcd562798588c ""
+  "Probability.aux" 1708451896 1236 4d092e5cbf3846bb9e03e93a7f37676e "pdflatex"
+  "Probability.tex" 1708451894 55588 7d0164908e405d0d97e0128164f2fc7a ""
   (generated)
   "Probability.aux"
   "Probability.log"

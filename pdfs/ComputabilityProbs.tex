@@ -20,14 +20,16 @@
 \section{Comentario preliminar}
 
 Usamos $\varphi$ para denotar un elemento arbitrario del alfabeto $\{\#, *\}$. Usamos la notación $f \sim (n, m, \varphi)$ para decir "$f$ es de
-tipo $(n, m, \varphi)$".
+tipo $(n, m, \varphi)$". En el paradigma de Turing, usamos $\mathbb{D}$ en vez
+de $Des$ para denotar el conjunto de
+descripciones instanáneas.
 
 Muchos de estos problemas están resueltos en inglés. Esto es una desgracia
 porque es poco democrático. La razón es que los ejercicios fueron hechos con Vim
 + VimTex, y los atajos de teclado de Vim y LaTex son muy imprácticos si el
 teclado está configurado en castellano. Si hubiera escrito estos problemas con
 la intención de compartirlos, habría resuelto esta incompatibilidad. Lo cierto
-es que los escribí sin intención de compartirlos. 
+es que los escribí sin anticipar que los haría públicos. 
 
 No asuma que los ejercicios son correctos. Allí donde lo sean, no asuma que la
 solución dada es la más elegante. Fueron hechos por un estudiante, nada más.
@@ -129,24 +131,114 @@ $x = \langle 2, 4, (x)_3, (x)_4, \ldots \ldots\rangle $. Por ejemplo, $2^2 + 3^4
 \end{quote}
 \normalsize
 
+\pagebreak
 \section{Guia 4}
 
 \begin{problem}
-Si $M$ es una máquina de Turing, entonces $\delta$ es una función $\Sigma$-mixta.
+    Diga verdadero o falso.
 \end{problem}
+
+\textit{(1)} Si $d \in \mathbb{D}$ entonces $d$ es una 3-UPLA.
+
 
 \small
 \begin{quote}
 
-Se dice que una función es una función $\Sigma$-mixta si $\mathcal{D}_f \subseteq
-\omega^n \times \Sigma^{m}$ para algunos $n, m \geq 0$ y $\mathcal{I}_f \subseteq
-\omega$ o $\mathcal{I}_f \subseteq \Sigma^{}$. La función $\delta$ no satisface
-ninguna de estas propiedades; por ejemplo, su dominio es un conjunto de estados
-$Q \times \Gamma \not\subseteq \Sigma^{*m}$.
+Recuerde que una descripción instantánea es una palabra de la forma $\alpha q
+\beta$, con $q \in Q$ y $[\beta]_{|\beta|} \neq B$. La proposición es falsa. 
+
+
 \end{quote}
 \normalsize
 
+\textit{(2)} Si $d \in \mathbb{D}$, entonces $St(d) = d \cap  Q$.
 
+
+\small
+\begin{quote}
+
+Ya dijimos que $d$ es una palabra. La operación binaria $\cap $ está definida
+cuando los términos operantes son conjuntos. La expresión $d \cap Q$ carece de
+significado.
+
+\end{quote}
+\normalsize
+
+\textit{(3)} $\forall d \in \mathbb{D} : d \vdash d$.
+
+
+\small
+\begin{quote}
+
+Evidentemente falso. Si fuera verdadero ninguna máquina podría realizar ninguna
+operación. Si quiere probarlo formalmente, halle un contraejemplo (esto es
+trivial).
+
+\end{quote}
+\normalsize
+
+\textit{(4)} Si $\alpha p \beta \not\vdash d$ para toda $d \in \mathbb{D}$,
+entonces $\delta(p, \left[ \beta B\right]_1 ) = \emptyset$.
+
+
+\small
+\begin{quote}
+
+    La proposición es falsa. Considere como contraejemplo la descripción
+    instantánea $\varepsilon  p \beta$, es decir una descripción que indica que el
+    cabezal está al inicio de la cinta, y asuma $\beta = a\beta'$ con $a \in
+    \Sigma$. Si $\delta(p, a) = (q, w, L)$ para cualesquiera $q \in Q, w \in
+    \Sigma$, tenemos que $\varepsilon q\beta \not\vdash d$ para todo $d$, pues
+    el símbolo $\vdash $  con instrucciones que van hacia la izquierda ($L$) no
+    está definidio cuando la palabra la izquierda del cabezal es $\varepsilon $.
+
+\end{quote}
+\normalsize
+
+\textit{(5)} Si $(p, a, L) \in \delta(p, a)$, entonces $pa \not\vdash d$ para
+toda $d \in \mathbb{D}$.
+
+
+\small
+\begin{quote}
+
+Verdadero por el mismo principio que nos dio el contraejemplo del caso anterior.
+El símbolo $\vdash $ no está definido si la dirección es $L$ (izquierda) y el
+cabezal está al comienzo de la cinta.
+
+\end{quote}
+\normalsize
+
+\textit{(6)} Dadas $d, d' \in \mathbb{D}$, si $d \vdash d'$ entonces $|d| \leq
+|d'| + 1$.
+
+
+\small
+\begin{quote}
+
+Es fácil ver que esto es falso con un contraejemplo.
+
+\end{quote}
+\normalsize
+
+\begin{problem}
+    Find a Turing machine that accepts by reach of final state the language
+    $\mathscr{L} = \left\{ w \in \left\{ a, b \right\}^{*} : |w|_a = 2|w|_b
+    \right\} $.
+\end{problem}
+
+
+
+
+
+
+
+
+
+
+
+
+\pagebreak
 
 \section{Guías 5 y 6}
 

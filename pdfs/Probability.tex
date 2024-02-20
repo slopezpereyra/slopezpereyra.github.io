@@ -1206,11 +1206,416 @@ It is unbiased.
 \end{quote}
 \normalsize
 
+\pagebreak 
+
+\subsection{Final 2022-02-10}
+
+\begin{problem}
+    A box contains $400$ items of which $176$ are worth $70\$$,120 are worth
+    $50\$$, and the rest are worth $30\$$. A randomly chosen item is selected
+    and sold at $50\$$. \textit{(1)} What is the probability of having sold an
+    item worth at least $50\$$? \textit{(2)} What is the probability of having
+    sold one that worth $70\$$ if we know that it was worth \textit{at least}
+    $50\$$? \textit{(3)} Let $G$ denote the variable denoting how much
+    was lost/won in the sell. Find its PMF, its CDF, its expected value and its
+    standard deviation.
+\end{problem}
 
 
+\small
+\begin{quote}
+
+    Let $\Omega = \left\{ A_{1}, \ldots, A_{176}, B_{1}, \ldots, B_{120}, C_{1},
+    .., C_{104}\right\} $ denote the events of finding an arbitrary item of each
+    worth. Let $\mathcal{A} = \mathcal{P}(\Omega)$ be the associated
+    $\sigma$-algebra. Let $P(X) = \frac{1}{400}$ for any $X \subseteq
+    \mathcal{A}$ s.t. $|X| = 1$.
+
+    \textit{(1)} Let $P(A) = P(A_1 \cup \ldots \cup A_{176})$, and the same for
+    $P(B), P(C)$. $P(A \cup B) = P(A) + P(B) = \frac{176}{400} + \frac{120}{400}
+    = .74$.
+
+    \textit{(2)} We are asked for $P(A \mid A \cup B)$. We know this is 
+
+    \begin{align*}
+        \frac{P\left( A \cap \left( A \cup B \right)  \right)}{P(A \cup B)} &=
+        \frac{P(A)}{.74} = .594
+    \end{align*}
 
 
+    \textit{(3)} Clearly, $G : \left\{ -20, 0, 20 \right\} \mapsto \mathbb{R}$. In
+    particular, $p_{G}(-20) = .44, p_{G}(0) = .3, p_{G}(20) = .26$. This entirely
+    defines the PMF. The CDF is 
+    
+    \begin{align*}
+        F_{G}(x) = \begin{cases}
+            .44 & x = -20 \\ 
+             .74 & x = 0 \\ 
+             1 &= x = 20
+        \end{cases}
+    \end{align*}
 
+    Now, $\mathbb{E}\left[ G \right] = \sum_{y \in   \mathcal{D}_{G}} yp_G(y) =
+    -20(.44) + 20(.26) = -3.6$. The variance is 
+
+    \begin{align*}
+        \mathbb{E}\left[ (G + 3.6)^2 \right] &= \sum_{y \in Im(G)} (y +
+        3.6)^2p_G(y) \\ 
+                                             &= 118.34 + 144.80 \\ 
+                                             &= 263.14
+    \end{align*}
+
+    The standard deviation is then $\sqrt{263.14} = 16.22 $.
+    
+
+\end{quote}
+\normalsize
+
+\pagebreak 
+
+\begin{problem}
+    The time (in hours) required for an event is a random variable $X$ with PDF 
+
+    \begin{align*}
+        f(x) = \begin{cases}
+            c x^2 + x & 0 < x < 1 \\ 
+            0 & otherwise
+        \end{cases}
+    \end{align*}
+
+    \textit{(1)} Find the value of $c$; \textit{(2)} find the probability that
+    the event occurs in less than half an hour; \textit{(3)} find the
+    probability that the event takes at least half an hour assuming it takes at
+    least $15$ minutes to occur. \textit{(4)} Find the expected value and
+    variance of $X$.
+\end{problem}
+
+
+\small
+\begin{quote}
+
+We require that 
+
+\begin{align*}
+    c \int_{0}^{1} x^2 ~ dx + \int_{0}^{1} x~ dx &= 1
+\end{align*}
+
+Observe that $c\int_0^1 x^2 ~ dx + \int_{0}^1 x ~ dx = \frac{c}{3} +
+\frac{1}{2}$. Then the equation gives $c =\frac{3}{2}$. We should preserve in
+mind the fact that the CDF of $f$ is
+
+\begin{align*}
+    F(x) = \int f(x) ~ dx = \frac{x^3}{2} + \frac{x^2}{2} + C
+\end{align*}
+
+The probability that the event occurs in less than half an hour is
+$F(\frac{1}{2}) = \frac{1}{16} + \frac{1}{8} = \frac{3}{16}$. The probability
+that it takes \textit{at least} half an hour assuming it takes \textit{at least}
+fifteen minutes is 
+
+\begin{align*}
+    P( X \geq \frac{1}{2} \mid X \geq \frac{1}{4}) &= 
+    \frac{ P(X \geq \frac{1}{2} \cap X \geq \frac{1}{4}) }{P(X \geq
+    \frac{1}{4})} \\ 
+                                                   &= \frac{P(X \geq
+                                                   \frac{1}{2})}{P(X \geq
+                                               \frac{1}{4})} \\ 
+                                                   &= \frac{ 1 - F(\frac{1}{2})
+                                                   }{1 - F(\frac{1}{4})} \\ 
+                                                   &=0.845
+\end{align*}
+
+\end{quote}
+\normalsize
+
+
+\pagebreak
+
+\begin{problem}
+    Wires in a computer are supposed to have a resistance between of $0.12$ and
+    $0.14$ ohms. Assume two companies, $A$ and $B$, produce wires with normally
+    distributed resistances. In the case of $A$, $X \sim \mathcal{N}(.13,
+    .005)$; in the case of $B$, $Y \sim \mathcal{N}(.125, .005)$.
+
+    \textit{(1)} Which company has more probability of producing good wires? 
+
+    \textit{(2)} Find the probability that company $A$ produces a wire with more
+    resistance than one produced by $B$.
+
+    \textit{(3)} Nine wires are randomly selected from $B$. Find the probability
+    that \textit{at least} eight are good, and find the $30$ percentile for the
+    sample mean.
+\end{problem}
+
+
+\small
+\begin{quote}
+
+\textit{(1)} Intuitively, it must be $A$, because its mean is right in between
+the standard limits, and the standard deviations are the same. But we can prove
+this. Observe that $P(X \in [.12, .14]) = \Phi \left( \frac{.14 - .13}{.005}
+\right) - \Phi\left( \frac{.12 - .13}{.005} \right) $. This gives 
+
+\begin{align*}
+    \Phi(2) - \Phi(-2) = .975 -.022 = .953
+\end{align*}
+
+The same logic gives $P(Y \in [.12, .13]) = \Phi\left( \frac{.14 - .125}{.005}
+    \right) -
+\Phi\left( \frac{.12 - .125}{.005} \right) $, which yields
+
+\begin{align*}
+    \Phi(3) - \Phi(-1) = .998 - .158 = .84
+\end{align*}
+
+This proves $A$ is more likely to satisfy the standards.
+
+\textit{(2)} Observe that $P(X > Y) = P(X - Y > 0)$. Using the properties of
+normal distribution, we know $Z = X - Y \sim \mathcal{N}(.005, .01)$. Then 
+
+\begin{align*}
+    P(Z > 0) &= 1 - P(Z \leq 0)  \\ 
+             &= 1 - \Phi\left( -\frac{.005}{.01} \right) \\ 
+             &= 1 - \Phi\left(-\frac{1}{2}\right) \\ 
+             &= 1 - .308 \\ 
+             &= .692
+\end{align*}
+
+\textit{(3)} This can be modeled as a binomial experiment with $n = 10$ and $p =
+P(Y \in [.12. 14]) = .84$. The probability that at least eight successes or
+occur is the probability that eight, nine or ten successes occur. In other
+words, it is 
+
+\begin{align*}
+    &\binom{10}{8}(.84)^{8}(.16)^2 + 
+    \binom{10}{9}(.94)^{8}(.16)^1 + 
+    \binom{10}{10}(.84)^{10}(.16)^0 
+\end{align*}
+
+We do not calculate this here because it is simply a matter of grabbing the
+calculator.
+
+Now, we must recall that given a sample $Y_1, \ldots, Y_{10}$ we have
+$\overline{X} \sim (.125, \frac{.005}{\sqrt{10} })$, or rather $\overline{X}
+\sim (.125, \approx .0015)$. The $30$ percentile of this distribution will be 
+
+\begin{align*}
+    \arg_z ~ \int_0^{z} f_{\overline{X}}(t) ~ dt = .3
+\end{align*}
+
+In the standard normal distribution, it is the $z$-score $-0.5$ that which
+contains $30\%$ of the distribution "behind". Therefore, we simply require to
+find the solution of 
+
+\begin{align*}
+    &\frac{y - .125}{.005}\sqrt{10}  &= -\frac{1}{2} \\ 
+    &(y - .125)\sqrt{10}  &= -.0025 \\ 
+    &y - .125 &= .0008 \\ 
+    & y &= .1258
+\end{align*}
+
+In other words, $F_{\overline{X}}(.1258) = .3$. So, this is the percentile $30$.
+
+\end{quote}
+\normalsize
+
+\pagebreak 
+
+\begin{problem}
+    According to the ministry, $30\%$ of women in a country smoke. A sample of $1200$ women is taken;
+    $312$ were smokers. \textit{(1)} Build a confidence interval of $95\%$ for
+    $p$. \textit{(2)} If an interval is made with these data and it has a length
+    of $.03$, what is the confidence of the interval? Comparing this with the
+    one of \textit{(1)}, say which one is more precise. \textit{(3)} Is there
+    sufficient evidence to say the proportion of women in the country differs
+    from what the ministry says?
+\end{problem}
+
+
+\small
+\begin{quote}
+
+\textit{(1)} We have $\hat{p} = .26$. With this large sample size, $\hat{p} \sim
+\mathcal{N}(1200p, .012)$. Thus, our desired confidence interval is given by
+$.26 \pm z_{.025} ~ .012$. Since $z_{.025} = -1.96$ we have 
+
+\begin{align*}
+    CI = .26 \pm 1.96 (.012) = [.23648, .28352]
+\end{align*}
+
+\textit{(2)} Any interval built with these values is of the form $.26 \pm
+z_{\frac{\alpha}{2}} ~ (.012)$. We ask for the value of $\alpha$ s.t. $.26 +
+z_{\frac{\alpha}{2}}(.012) - (.26 - z_{\frac{\alpha}{2}}(.012)) = .03$. This gives 
+
+\begin{align*}
+    2z_{\frac{\alpha}{2}} = .03 \Rightarrow z_{\frac{\alpha}{2}} = .015
+\end{align*}
+
+Now we must remember the relationship betwenn $z_{\alpha}$ and $\alpha$. In
+particular, we recall that $z_{\alpha} = u$ if and only if $\Phi(u) = \alpha$.
+In our particular case, $\Phi(.015) = 1 - \frac{\alpha}{2}$. Then $\Phi(0.15) =
+1 - .55962 = \frac{\alpha}{2} \Rightarrow \frac{\alpha}{2} = .44038 \Rightarrow
+\alpha=.88076$. In other words, we would be dealing with a confidence interval
+with $88.076\%$ confidence. This interval would be more precise than the
+previous one, because it would be smaller---hence the loss in confidence. 
+
+\textit{(3)} Let $H_0 : p = .3, H_a : p \neq .3$. Let us assume that the null
+hypothesis holds for a moment. For a $p$-value of $.01$ in a two-tailed test, we
+must test with an $\alpha$ level of $.005$. This approximately corresoponds to a
+$z$-score of $\pm 2.567$. Under $H_0$, the standard deviation is
+$\sqrt{\frac{.3(.7)}{1200}} = .013 $. Observing that $.3 \pm 2.567(.013)$ gives
+$.26, .33$, respectively, we see that
+
+\begin{align*}
+    P(\hat{p} < .26 \cup  \hat{p} > .33) &= 1 - P( \hat{p} \in [.26, .33] ) \\ 
+                                         &=1 - [\Phi( 2.307 ) -
+                                         -1 \Phi(-3.076)] \\ 
+                                         &= 1 - (.98928 - .00135) \\ 
+                                         &= 1- .98793 \\ 
+                                         &= .01207
+\end{align*}
+
+This is the $p$-value. Since this value is greater than $.01$, we do not reject
+the null hypothesis.
+
+\end{quote}
+\normalsize
+
+\pagebreak
+
+\begin{problem}
+    Let $X \sim \mathcal{N}(\mu, \sigma )$. A random sample $X_1, \ldots,
+    X_{15}$ is obtained with $\overline{X} = 10.88$ and $s_{n-1} = 2.082$.
+    \textit{(1)} Give MLE estimators of $(u + 3 \sigma)$, the $90$ percentile
+    of $X$, and $P(X \geq 9)$. \textit{(2)} Find estimators of $\mu, \sigma^2$
+    via the method of moments. \textit{(3)} Find a confidence interval of $99\%$
+    for $\mu$. \textit{(4)} Is there sufficient evidence to conclude from the
+    sample that $\mu > 9$?
+\end{problem}
+
+
+\small
+\begin{quote}
+
+\textit{(1)} Recall that ML estimators are functionally invariant. From this
+follows that the MLE of $u + 3\sigma$ is $\overline{X} + 3 s_{n-1}$. The same
+principle gives as best estimation of $P(X \geq 9)$:
+
+\begin{align*}
+    \Phi \left( \frac{9 - 10.88}{2.082} \right) =
+    \Phi(-.902) = .178
+\end{align*}
+
+Furthermore, let us strictly pose $X' \sim \mathcal{N}(10.88, 2.082)$. Then we
+find as estimator the 90 percentile of this distribution (functional invariance
+of MLE). We solve
+
+\begin{align*}
+    \Phi\left( \frac{z - 10.88}{2.082} \right) = .90 \iff \left( \frac{z -
+    10.88}{2.082} \right) \approx 1.285
+\end{align*}
+
+Then we have $z = 13.55537$ the $90$ percentile.
+
+
+\textit{(2)} The first sample moment is $\overline{X}$ and the first moment is
+$\mu$, so immediately we have $\hat{\mu} = \overline{X}$. I don't remember the
+second moment of $\mathcal{N}$ so will derive it. The simplest way of deriving
+it is to remember that $\mathbb{V}\left[ X \right] = \mathbb{E}\left[ X^2
+\right] - \mathbb{E}\left[ X \right]^2 \Rightarrow \mathbb{E}\left[ X^2 \right]=
+\sigma^2 + \mu^2$. Then we make 
+
+\begin{align*}
+    &\sigma^2 + \mu^2 = \frac{1}{n} \sum X_i^2 \\ 
+    &\sigma^2 = \frac{1}{n} \sum X_i^2 - \mu^2 \\ 
+    &\sigma^2 =  \frac{1}{n} \sum (X_i - \mu)^2 \\ 
+    &\sigma^2 = s_n^2
+\end{align*}
+
+
+\textit{(3)} Since $\alpha = .01$ we have $\frac{\alpha}{2} = .005$. We know
+$z_{.005} = 2.58$ Then the desired interval is $10.88 \pm 2.082 \cdot 2.58 = [
+5.50844, 16.12156  ] $.
+
+\textit{(4)} Let $H_0 : \mu = 9, H_a : \mu > 9$. The test statistic we use is $t
+= \frac{10.88 - 9}{2.082} \sqrt{15}  = 3.497$. The probability of finding a sample mean as extreme
+or more (to the right) than $10.88$, under the null hypothesis, is $1 -
+F(3.497)$, where $F$ is the CDF of the $t$ distribution. For $14$ degrees of
+freedom, that value $2.977$ already has a probability of $.005$, so our $p$
+value on this occasion is $p < .005$. So we reject the null hypothesis.
+
+
+\end{quote}
+\normalsize
+
+\pagebreak 
+
+\begin{problem}
+
+    Let $X$ have PDF 
+
+    \begin{align*}
+        f(x; \theta) = \begin{cases}
+            \frac{x}{\theta} \exp (-\frac{x^2}{2\theta}) & x > 0 \\ 
+            0 & otherwise
+        \end{cases}
+    \end{align*}
+
+    and $X_1, \ldots, X_n$ a random sample. (1) Prove $\mathbb{E}\left[ X^2 \right]
+    = 2 \theta$. (2) Find $k$ s.t. $\hat{\theta} = k \sum X_i^2$ is unbiased.
+    
+\end{problem}
+
+
+\small
+\begin{quote}
+
+\textit{(1)} Let $u = -\frac{x^2}{2\theta}$, so that $du = -\frac{x}{\theta}
+dx$ and $x^2 = -u 2\theta$. Then
+
+\begin{align*}
+    \int \frac{x^3}{\theta} \exp\left( -\frac{x^2}{2\theta} \right) &= -\int
+    x^2  e^u \left(-\frac{x}{\theta}\right) ~ dx \\ 
+                                                                   &= -\int
+                                                                   (-u
+                                                                   2\theta)e^u
+                                                                   ~ du
+\end{align*}
+
+Using integration by parts, this gives 
+
+\begin{align*}
+    2\theta \left[ ue^u - e^u \right] &= 2\theta \left[ -\frac{x^2}{2\theta}
+    e^{-\frac{x^2}{2\theta}} - e^{-\frac{x^2}{2\theta}}\right]  \\ 
+                                       &= -x^2 e^{-\frac{x^2}{2\theta}} -
+                                       2\theta e^{-\frac{x^2}{2\theta}}
+\end{align*}
+
+
+Since $e^{ -\frac{x^2}{2\theta} } \to 0$ when $x \to \infty$ we have 
+
+\begin{align*}
+    \int_0^{\infty} f(x)x^2 ~ dx &= \lim_{t \to \infty} \left[ \left( t^2 e^{-\frac{t^2}{2\theta}} + 2\theta
+    e^{-\frac{t^2}{2\theta}} \right)  - (0 - 2\theta)\right]  \\ 
+    &= 2\theta ~ \blacksquare
+\end{align*}
+
+\textit{(2)} Observe that 
+
+\begin{align*}
+    \mathbb{E}\left[ k \sum X_i^2  \right] &= k \sum \mathbb{E}\left[ X_i^2
+    \right]  \\ 
+                                           &= k  n 2\theta
+\end{align*}
+
+For this estimator to be unbiased, we require 
+
+\begin{align*}
+    kn2\theta = \theta \iff k = \frac{1}{2n}
+\end{align*}
+
+\end{quote}
+\normalsize
 
 
 
