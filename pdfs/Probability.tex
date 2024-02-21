@@ -1618,6 +1618,151 @@ For this estimator to be unbiased, we require
 \normalsize
 
 
+\pagebreak 
+
+\subsection{Final 2021-12-21}
+
+\begin{problem}
+    Let $A, B, C$ be events in a sample space $\Omega$. Let $P(A) = .1, P(B) =
+    .08, P(C) = .12$. Assume $A, B, C$ are independent. \textit{(1)} Give the
+    probability that all $A, B, C$ occur. \textit{(2)} Give the probability that
+    $A$ and not $B$ occur. \textit{(3)} Give the probability that exactly one of
+    the three events happen. \textit{(4)} Give the probability that $C$ occurs
+    assuming exactly two events occurred.
+\end{problem}
+
+
+\small
+\begin{quote}
+
+\textit{(1)} Since they are independent this probability is simply $.1 \times
+.08 \times .12 = .00096$.
+
+\textit{(2)} $P(A \cap \overline{B}) = .1 \times .92$.
+
+\textit{(3)} Observe that
+
+\begin{align*}
+    P\left(A \cap (\overline{B} \cap \overline{C})\right) &= .1 \times .92
+    \times . 88 = .08096\\
+    P\left(B \cap (\overline{A} \cap \overline{C})\right) &= .08 \times .9
+    \times . 88 = .06336\\
+    P\left(C \cap (\overline{A} \cap \overline{B})\right) &= .12 \times .9
+    \times .92 = .09936
+\end{align*}
+
+The events of each of these probabilities are obviously mutually exclusive. Then
+the probability that either of these events occur is their sum, which gives
+$.24368$.
+
+\textit{(4)} Obviously if we assume $C$ is one of the two events which occurred
+the probability of $C$ is $1$. So let us inspect the case $P(C \mid A \cap
+B)$. This gives 
+
+\begin{align*}
+    \frac{P \left( C \cap (A \cap B) \right) }{P(A \cap B)} =
+    \frac{.00096}{.008} = .12
+\end{align*}
+
+\end{quote}
+\normalsize
+
+\pagebreak 
+
+\begin{problem}
+    Let $X$ a r.v. with CDF 
+
+    \begin{align*}
+        F(x) = \begin{cases}
+            a & x < 1 \\ 
+            b(x-1)^2 & x \in [1, 5) \\ 
+            c & x \geq 5
+        \end{cases}
+    \end{align*}
+
+    with $a, b, c$ constants. \textit{(1)} Find the value of the constants.
+    \textit{(2)} Find the PDF of $X$. \textit{(3)} Find the expected value and
+    variance of $X$. \textit{(4)} Find the expected value of $W = 7X^2 - 8X$.
+\end{problem}
+
+
+\small
+\begin{quote}
+
+\textit{(1)} To satisfy the definition of a CDF, we require that $a = 0$ and $c
+= 1$, and
+
+\begin{align*}
+    F(5) - F(1) = 1 \iff 16b = 1 \Rightarrow b = \frac{1}{16}
+\end{align*}
+
+\textit{(2)} The PDF is $f(x) = \frac{1}{16}(2x - 2) = \frac{1}{8}(x - 1)$ in $[1, 5)$ and zero
+otherwise. We can verify that $\frac{1}{8}\int_1^{5} (x - 1) ~ dx =
+\frac{1}{8}\left[ 12 - 4 \right] = 1$.
+
+\textit{(3)} 
+
+\begin{align*}
+    \mathbb{E}\left[ X \right]  &= \frac{1}{8}\int_1^{5} x^2 - x ~ dx \\ 
+    &= \frac{1}{8} \left[ \frac{124}{3} - 12   \right] \\ 
+    &= 3.666
+\end{align*}
+
+Furthermore,
+
+\begin{align*}
+    \mathbb{E}\left[ X^2 \right]  &= \frac{1}{8} \int_1^{5} x^3 - x^2 ~ dx \\ 
+    &= \frac{1}{8} \left[ \frac{624}{4} - \frac{124}{3} \right]  \\ 
+    &= \frac{43}{3}
+\end{align*}
+
+Then $\mathbb{V}\left[ X \right] = \frac{44}{3} - (\frac{11}{3})^2 \approx
+\frac{8}{9}$. 
+
+\textit{(4)} We have 
+
+\begin{align*}
+    \mathbb{E}\left[ 7X^2 - 8x \right] &= 7\mathbb{E}\left[ X^2 \right] -8
+    \mathbb{E}\left[ X \right]  \\ 
+                                       &=7 \frac{43}{3} - 8 \frac{11}{3} \\ 
+                                       &= 9 \frac{2}{3}
+\end{align*}
+
+\end{quote}
+\normalsize
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
