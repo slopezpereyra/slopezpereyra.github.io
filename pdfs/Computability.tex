@@ -5240,8 +5240,74 @@ Como $f$ es $\Sigma$-recursiva, es $\Sigma$-computable y tiene un macro $[V1
 \normalsize
 
 
+\pagebreak 
+
+\begin{problem}
+    Let  
+
+    \begin{align*}
+        L = \left\{ \mathcal{P} \in Pro^{\Sigma_p} : \left( \exists n \in
+        \mathbb{N} \right) ~ \Psi_{\mathcal{P}}^{1, 1, *}(x, EBE) = EBE  \right\} 
+    \end{align*}
+
+    Find a program $Q \in Pro^{\Sigma_p}$ that enumerates $L$.
+\end{problem}
 
 
+\small
+\begin{quote}
+
+Observe that $SKIP \in L$. The program in question will make effective the
+following procedure with input $x \in \omega$: 
+
+\begin{quote}
+    \textit{(1)} If $x = 0$ go to \textit{(7)}. 
+    
+    \textit{(2)} Compute $(x)_1, (x)_2, (x)_3, (x)_4$.
+
+    \textit{(3)} Let $\alpha = *^{\leq}\left( \left( x \right)_4  \right), \beta
+    = *^{\leq}\left( (x)_3 \right) $. 
+
+    \textit{(4)} If $\alpha \not\in Pro^{\Sigma_p}$ go to \textit{(7)}. 
+
+    \textit{(5)} Evaluate whether $\alpha$ halts in $(x)_1$ steps with input
+    $(x)_2, \beta$. If it does not, go to \textit{(7)}. 
+
+    \textit{(6)} Evaluate whether the output of $\alpha$ after $(x)_1$ steps
+    with input $(x)_2, \beta$ is $EBE$. If it is, go to $\textit{(8)}$.
+
+    \textit{(7)} Return $SKIP$ and stop. 
+
+    \textit{(8)} Return $\alpha$ and stop.
+\end{quote}
+
+The program is 
+
+\begin{align*}
+    &IF ~ N_1 \neq 0 ~ GOTO ~ L_1 \\ 
+    &GOTO ~ L_{666} \\ 
+    L_1 ~ ~ ~ &[N_2 \leftarrow (N_1)_1] \\ 
+    &[N_3 \leftarrow (N_1)_2]\\
+    &[N_4 \leftarrow (N_1)_3]\\
+    &[N_5 \leftarrow (N_1)_4] \\ 
+    &[P_1 \leftarrow *^{\leq}(N_5)]\\
+    &[P_2 \leftarrow *^{\leq}(N_4)]\\
+    &[IF ~ P_1 \in Pro^{\Sigma_p} ~ GOTO ~ L_2] \\ 
+    &GOTO ~ L_{666} \\ 
+    L_2 ~ ~ ~ &[IF ~ Halt^{1, 1}(N_2, N_3, P_2, P_1) ~ GOTO ~ L_3] \\ 
+              &GOTO ~ L_{666} \\ 
+    L_3 ~ ~ ~ &[IF ~  E_{*}^{1, 1}\left( N_2, N_3, P_2, P_1 \right) = EBE ~ GOTO ~
+    L_4] \\ 
+    L_{666}~ ~ ~& P_1 \leftarrow  SKIP \\
+    L_4 ~ ~ ~ &SKIP
+\end{align*}
+
+The macros we use correspond to $(x)_i$ the $i$th prime function, which is
+$\Sigma$-p.r. We $Halt^{n, m}$ function is $\Sigma^{*}$ p.r. etc.
+
+
+\end{quote}
+\normalsize
 
 
 
