@@ -1,0 +1,260 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{newtxtext} \usepackage{newtxmath}
+\usepackage{amsmath, amssymb}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example} \newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+
+
+\begin{document}
+
+
+\section{Equivalence relations}
+
+\begin{definition}
+    Given a set $A$, a binary relation over $A$ is a subset of $A^2$.
+\end{definition}
+
+Observe that $\emptyset$ is a binary relationship over any set $A$. We use $A
+\propto B$ to say "$A$ is a binary relation over $B$". The notation $aRb$ is a
+shorthand for $(a, b) \in R$.
+
+Observe that $R \propto A$ and $A \subseteq B$ implies $R \propto B$. Many
+properties of the $\propto $ relation follow from the properties of the $\subseteq $
+relation. The properties that a binary relation $R$ \textit{may} follow are the
+following, given any $R \propto A$:
+
+\begin{itemize}
+    \item $\propto $ is reflexive: $aRa$ for any $a \in A$.
+    \item $\propto $ is transitive: $aRb$ and $bRc$ implies $aRc$ for any $a, b,
+        c \in A$.
+    \item $\propto $ is symmetric: $aRb \Rightarrow bRa$ for any $a, b \in A$.
+    \item $\propto $ is anti-symmetric: $aRb$ and $bRa$ implies $a = b$ for any
+        $a, b \in A$.
+\end{itemize}
+
+Whether and which of these properties hold depends on the sets in question. 
+
+
+\small
+\begin{quote}
+
+\textbf{Example.} Consider $R = \left\{ (x, y) \in  \mathbb{N}^2 : x \leq y
+\right\} $. Then $R \propto \mathbb{N}$ and $R \propto \omega$. However, $R$ is
+reflexive with respect to $\mathbb{N}$ but not with respect to $\omega$, because
+$(0, 0) \not\in R$.
+
+\end{quote}
+\normalsize
+
+\begin{definition}
+    An equivalence relation over $A$ is a binary relation $R \propto A$ s.t. $R$
+    is reflexive, transitive and symmetric with respect to $A$.
+\end{definition}
+
+We write $R \ddot{\propto} A$ to say $R$ is an equivalence relation over $A$.
+
+\small
+\begin{quote}
+
+\begin{problem}
+    Determine true or false for the following statements.
+\end{problem}
+
+\textit{(1) Given $X$ a set, then $R = \emptyset$ is a binary relation over $X$
+that is transitive, symmetric and anti-symmetric with respect to $X$.}
+
+We know $\emptyset \propto X$ for any $X$. Recall that $xRx$ is a shorthand for
+$(x, x) \in R$ where $R$ is a binary relation. In particular, $(x, x) \not\in
+\emptyset$ for any $x \in X$, so $\emptyset$ is not reflexive. The same applies
+to all other properties. The statement is false.
+
+\textit{(2) If $R \propto X$ and $R$ is not anti-symmetric with respect to $X$,
+then $R$ is symmetric with respect to $X$}.
+
+The statement is false. Consider $R = \left\{ (1, 2), (2, 1), (5, 3) \right\} $ where $R \propto
+\omega$. Evidently $R$ is not anti-symmetric over $\omega$, because $1R2$ and
+$2R 1$ and yet $2 \neq 1$. However, it is also not symmetric, because $5R 3$ and
+$\neg (3 R 5)$.
+
+\textit{(3) If $A$ a set then $A^2 \propto A$}. 
+
+Trivially true, since $A^2 \subseteq A^2$.
+
+\textit{(4) If $R = \left\{ (x, y) \in \mathbb{N}^2 : x = y \right\} $ then $R
+~\ddot{\propto }~ \omega$}.
+
+By definition $xRx$ holds. Evidently, $xRy \Rightarrow yRx$ so it is symmetric.
+Furthermore, $xRy \land yRz \Rightarrow xRz$. The statement is true.
+
+\textit{(5)} If $R ~ \ddot{\propto} ~ B$ and $A \subseteq B$ then $R ~
+\ddot{\propto} ~A$.
+
+We need not even impose the constraint of an \textit{equivalence} relation since
+the statement is false for any binary relation. In fact, $R \subseteq B^2$ and
+$A \subseteq B$ does not imply $R \subseteq A^2$. For example, $R = \left\{ (1,
+2), (2, 3), (3, 4) \right\} \subseteq \omega^2 $ and $A = \left\{ 1, 2 \right\}
+ \subseteq \omega$. However, $R \not\propto A$. Since the statement is false for
+ all binary relations, and equivalence relations are a form of binary relation,
+ the statement is false.
+
+\end{quote}
+\normalsize
+
+\begin{definition}
+    The equivalence class of $a \in A$ with respect to equivalence relation $R ~
+    \ddot{\propto} ~A$ is $$[a]_{R} = \left\{ b \in A : aRb \right\} $$.
+\end{definition}
+
+We sometimes write simply $[a]$ if the equivalence relation $R$ is understood by
+the context. 
+
+
+\small
+\begin{quote}
+
+\textbf{Example.} Let $R = \left\{ (x, y) \in \mathbb{Z}^2 : x \text{ has the same parity than }
+y\right\} $. Then $[2]$ denotes the set of all numbers that have the same parity
+than $2$; this is, all even numbers.
+
+If $R = \left\{ (x, y) \in  \mathbb{Z}^2 : 5 \mid x - y \right\} $ then $[0] =
+\left\{ 5t : t \in \mathbb{Z} \right\} $.
+
+\end{quote}
+\normalsize
+
+
+\small
+\begin{quote}
+
+\begin{problem}
+    If $R ~ \ddot{\propto} ~A$  and $a \in A$ then $a \in [a]$.
+\end{problem}
+
+True because $R$ is reflexive: $aRa \Rightarrow a \in [a]$ by definition. 
+
+\begin{problem}
+    If $R ~ \ddot{\propto} ~A$ and $a, b \in  A$, then $aRb \iff [a] = [b]$. 
+\end{problem}
+
+Assume $aRb$. Then, for any $x \in [b]$, transitivity tells us $aRx$. And
+because $aRb \Rightarrow bRa$ we have, via the same argument, that for any $y
+\in [a]$ $bRy$. Of course, 
+
+\begin{align*}
+    \langle \forall x : x \in A : x \in B \rangle \land \langle \forall y : y
+    \in B : y \in A \rangle \Rightarrow A = B
+\end{align*}
+
+So $[a] = [b]$. $\blacksquare$
+
+If we assume $[a] = [b]$ then of course $aRx \iff bRx$. By symmetry we have
+$xRa$ and then by transitivity $bRx \land xRa \Rightarrow bRa \Rightarrow aRb$.
+$\blacksquare$
+
+\begin{problem}
+    Let $R ~ \ddot{\propto} ~ A$ and $a, b \in A$. Then $[a] \cap [b] =
+    \emptyset$ or $[a] =  [b]$.
+\end{problem}
+
+Assume $[a] \cap [b] \neq \emptyset$ and $[a] \neq [b]$, which is the negation
+of the statement we want to prove. Since $[a] \neq [b]$ we cannot have $aRb$,
+due to what was proven in the previous exercise. However, since $[a] \cap [b]
+\neq \emptyset$ there is some $z \in A$ s.t. $aRz$ and $bRz$. However, $bRz
+\Rightarrow zRb$ and then $aRb$ by transitivity. This is a contradiction. Then
+the statement is true.
+
+\end{quote}
+\normalsize
+
+\begin{definition}
+    We use $A / R$ to denote $\left\{ [a] : a \in A \right\} $ and call this set
+    the quotient of $A$ by $R$.
+\end{definition}
+
+In other words, given $R ~ \ddot{\propto} ~A$, the quotient of $A$ by $R$ is the
+set of all equivalence classes. For example, if $R = \left\{ (x, y) \in
+\mathbb{R}^2 : x = y \right\} $ then $\mathbb{R} / R = \left\{ \left\{ x \right\}  : x \in
+\mathbb{R} \right\} $. 
+
+
+\small
+\begin{quote}
+
+\begin{problem}
+    Let $R = \left\{ (x, y) \in \mathbb{Z}^2 : 5 \mid x - y \right\} $. Find
+    $\mathbb{Z} / R$.
+\end{problem}
+
+Observe that $(5, 0), (6, 1), (7, 2), (8, 3), (9, 4) \in R$. From that point
+onward (and from $(5, 0)$ downward) we deal with the same equivalence class.
+
+
+More formally,  $[5] = \left\{ 5t : t \in \mathbb{Z} \right\}
+$, $[6] = \left\{ 1, 6, 11, \ldots \right\} = \left\{ 5(t + 1) : t \in
+\mathbb{Z} \right\}  $. In general, if $A(t) = \left\{ 5t : t \in \mathbb{Z}
+\right\} $, then
+
+\begin{align*}
+    \left\{ A(0), A(1), \ldots, A(4) \right\} = \mathbb{Z} / R
+\end{align*}
+
+Observe that this can be generalized. If $R = \left\{ (x, y) : z \mid x - y
+\right\} $ for some fixed $z \in \mathbb{N}$, then 
+
+\begin{align*}
+    \left\{  \left\{ zt : t \in \mathbb{Z} \right\}, \left\{ z(t+1) : t \in
+    \mathbb{Z} \right\}, \ldots, \left\{ z(t + z-1) : t \in \mathbb{Z} \right\}
+\right\}  = \mathbb{Z}/R
+\end{align*}
+
+always with $z$ elements.
+
+\subsection{Partitions and equivalence}
+
+Given a partition $\mathcal{P}$ of a set $A$, a valid binary relation is 
+
+\begin{align*}
+    R_{\mathcal{P}} = \left\{ (a, b) : a, b \in  S \text{ for some } S \in
+    \mathcal{P} \right\} 
+\end{align*}
+
+This is in fact an equivalence relation. 
+
+\begin{theorem}
+    Let $A$ an arbitrary set, $\mathscr{P}_A$ the set of all partitions of $A$
+    and $\mathscr{R}_A$ the set of all binary equivalence relations over $A$.
+    Then 
+
+    \begin{align*}
+        \mathscr{P}_A &\mapsto \mathscr{R}_A &\mathscr{R}_A  &\mapsto \mathscr{P}_A \\ 
+        \mathcal{P} &\mapsto R_{\mathcal{P}} & R &\mapsto A / R
+    \end{align*}
+
+
+    are bijections one the inverse of the other.
+\end{theorem}
+
+
+
+
+\end{quote}
+\normalsize
+
+
+
+
+\end{document}
+
+
+

@@ -5309,6 +5309,117 @@ $\Sigma$-p.r. We $Halt^{n, m}$ function is $\Sigma^{*}$ p.r. etc.
 \end{quote}
 \normalsize
 
+\begin{problem}
+    Let $\Sigma = \left\{ @, ! \right\} $ and 
+
+    \begin{align*}
+        P : \{ x \in  \omega: x \text{ odd }\} \times \Sigma^{*} &\mapsto \omega
+        \\ 
+        (x, \alpha) &\mapsto \begin{cases}
+            x & x \geq 3 \\ 
+            |\alpha| & otherwise
+        \end{cases}
+    \end{align*}
+
+    Prove that $P$ is $\Sigma$-p.r. 
+\end{problem}
+
+
+\small
+\begin{quote}
+
+\textit{(1)} Let $f_1 := \lambda x\alpha \left[  x \right], f_2 : \lambda
+x\alpha \left[ |\alpha|  \right]$. Both functions are $\Sigma$-p.r. 
+
+\textit{(2)} The set of tuples $(x, \alpha)$ with $x$ odd is $\Sigma$-p.r.
+Simply observe that if $S$ denotes that set, $\chi_{S}^{\omega \times
+\Sigma^{*}} = \lambda x\alpha \left[ \neg ~ x \text{ is even}  \right]$, which
+is $\Sigma$-p.r. 
+
+\textit{(3)} Let $S' = \left\{ (x, \alpha) \in S: x \geq 3 \right\} $. This is
+trivially a $\Sigma$-p.r. set. Then it is clear that 
+
+\begin{align*}
+    P = f_1_{\mid S'} \cup f_{2\mid \overline{S'}}
+\end{align*}
+
+Then $P$ is a union of $\Sigma$-p.r. functions with disjoint domains restricted
+to $\Sigma$-p.r. sets. Then $P$ is $\Sigma$-p.r. 
+
+
+\end{quote}
+\normalsize
+
+\begin{problem}
+    True or false?
+\end{problem}
+
+\pagebreak 
+
+\begin{problem}
+    Let $\Sigma = \left\{ \%, ! \right\} $ and 
+
+    \begin{align*}
+        S = \left\{ (x, x+ 1, x + 2, \%\% !!) : x \in  \omega \right\} 
+    \end{align*}
+
+    Give a program that enumerates $S$ without using macros.
+\end{problem}
+
+
+\small
+\begin{quote}
+
+Since the fourth element in the tuples of $S$ is constantly $\%\% ! !$ and all
+other elements are functions of a single natural number $x \in \omega$, we
+enumerate $S$ with the following program $\mathcal{P}$:
+
+\begin{align*}
+    &P_1 \leftarrow P_1.\% \\ 
+    &P_1 \leftarrow P_1.\% \\
+    &P_1 \leftarrow P_1.! \\
+    &P_1 \leftarrow P_1.!\\
+    &N_2 \leftarrow N_1 + 1 \\ 
+    &N_3 \leftarrow N_2 + 1
+\end{align*}
+
+Then, for any $x \in  \omega$, $\mathcal{P}$ starting from $[\![ x ]\!]$ halts
+at a state $[\![ x, x+1, x+2, \%\%!! ]\!]$. Furthermore, for any $(x, x+1, x+2,
+\%\%!!) \in S$, running the program with input $x$ leads to a final state $[\![
+x, x+1, x+2, \%\%!!]\!]$. Then condition \textit{(2)} of the previous
+proposition holds. Then $\mathcal{P}$ enumerates $S$.
+
+
+\end{quote}
+\normalsize
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
