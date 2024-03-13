@@ -4936,6 +4936,1634 @@ is $\Sigma$-p.r.  Pero $\Psi_{\mathcal{P}}^{1, 0, \#} =
 
 \pagebreak 
 
+\section{Combos del listado de teoremas (2024 Enero)}
+
+\subsection{Definiciones del listado}
+
+\textit{(1)} El conjunto $S \subseteq \omega^{n} \times \Sigma^{*m} $ es
+$\Sigma$-recursivo.
+
+
+\small
+\begin{quote}
+
+Decimos que $S \subseteq \omega^{n} \times \Sigma^{*m} $ es $\Sigma$-recursivo
+cuando existe una función $\Sigma$-recursiva que decide la pertenencia de un
+elemento $x \in \omega^{n} \times \Sigma^{*m} $ respecto de $S$. En otras
+palabras, cuando la función característica $\chi_{S}^{\omega^{n} \times
+\Sigma^{*m} }$ es $\Sigma$-recursiva.
+
+\end{quote}
+\normalsize
+
+\textit{(2)} $\langle s_1, s_2, \ldots \rangle $
+
+
+\small
+\begin{quote}
+
+    Dada una infinitupla $(s_1, s_2, \ldots) \in \omega^{[\mathbb{N}]}$,
+    definimos 
+
+    \begin{align*}
+        \langle s_1, s_2, \ldots \rangle  = \prod_{i=1}^{\infty} pr(i)^{s_i}
+    \end{align*}
+
+
+
+\end{quote}
+\normalsize
+
+\textit{(3)} $f$ es una función $\Sigma$-mixta.
+
+
+\small
+\begin{quote}
+
+    Decimos que $f$ es una función $\Sigma$-mixta si es una función cuyo dominio
+    es un subconjunto de $\omega^{n} \times \Sigma^{*m} $ para algún $n, m \in
+    \omega$ y cuya imagen es o bien $\omega$ o bien $\Sigma^{*}$.
+
+\end{quote}
+\normalsize
+
+\textit{(4)} Familia indexada de funciones.
+
+
+\small
+\begin{quote}
+
+Una familia $\Sigma$-indexada de funciones $\mathcal{G}$ es una función cuyo dominio es
+un alfabeto $\Sigma$ y cuya imagemn es un conjunto de funciones; es decir,
+$\mathcal{G}(a)$ es una función para toda $a \in \Sigma$.
+
+\end{quote}
+\normalsize
+
+\textit{(4)} $R(f, \mathcal{G})$
+
+
+\small
+\begin{quote}
+
+$R(f, \mathcal{G})$ es una función definida recursivamente con caso base
+dependiente de $f$ y caso recursivo dependiente de $\mathcal{G}$, y tal que la
+recursión se hace sobre una variable alfabética. Si $R(f,
+\mathcal{G}) :  \omega^{n} \times \Sigma^{*m} \times \Sigma^{*} \mapsto
+\Sigma^{*}$, entonces 
+
+\begin{align*}
+    R(\vec{x}, \vec{\alpha}, \alpha) = \begin{cases}
+        f(\vec{x}, \vec{\alpha}) & \alpha = \epsilon \\ 
+        \mathcal{G}_{[\alpha]_{|\alpha|}} \left( \vec{x}, \vec{\alpha}, \alpha {}^{\curvearrowleft},
+        R(f, \mathcal{G})(\vec{x}, \vec{\alpha}, \alpha {}^{\curvearrowleft})
+    \right)  & \alpha \neq \epsilon
+    \end{cases} 
+\end{align*}
+
+Si $R(f, \mathcal{G}) \mapsto \omega$ entonces 
+
+\begin{align*}
+    R(\vec{x}, \vec{\alpha}, \alpha) = \begin{cases}
+        f(\vec{x}, \vec{\alpha}) & \alpha = \epsilon \\ 
+        \mathcal{G}_{[\alpha]_{|\alpha|}} \left( R(f, \mathcal{G})(\vec{x},
+        \vec{\alpha}, \alpha {}^{\curvearrowleft}), \vec{x}, \vec{\alpha},
+    \alpha {}^{\curvearrowleft} \right)  & \alpha \neq \epsilon
+    \end{cases}
+\end{align*}
+
+\end{quote}
+\normalsize
+
+\pagebreak 
+
+\textit{(1)} $d \vdash^n d'$
+
+
+\small
+\begin{quote}
+
+Dadas dos descripciones instantáneas $d, d' \in Des$, decimos que $d \vdash^n
+d'$ si y solo si existen $d_1, \ldots, d_{n+1} \in Des$ tales que 
+
+\begin{itemize}
+    \item $d_1 = d$ 
+    \item $d_i \vdash d_{i+1}$ 
+    \item $d_{n+1} = d'$
+\end{itemize}
+
+Evidentemente, $d \vdash^0 d'$ sii $d = d'$.
+
+
+
+\end{quote}
+\normalsize
+
+\textit{(2)} $L(M)$
+
+
+\small
+\begin{quote}
+
+Dada una máquina de Turing $M = (Q, \Sigma, \Gamma, \delta, q_0, B, F)$, usamos
+$L(M)$ para denotar el conjunto de palabras que son aceptadas por dicha máquina
+por alcance de estado final. Es decir, 
+
+\begin{align*}
+    L(M) = \left\{ w \in \Sigma^{*} : (\exists d \in Des) \left\lfloor q_0Bw \right\rfloor
+    \vdash^{*} d \land St(d) \in F\right\} 
+\end{align*}
+
+\end{quote}
+\normalsize
+
+\textit{(3)} $H(M)$
+
+
+\small
+\begin{quote}
+
+Dada una máquina de Turing $M = (Q, \Sigma, \Gamma, \delta, q_0, B, F)$,
+denotamos con $H(M)$ el conjunto de palabras que son aceptadas por detención por
+dicha máquina; es decir 
+
+\begin{align*}
+    H(M) = \left\{ w \in \Sigma^{*} : (\exists d \in Des) ~ \left\lfloor q_0 B w
+    \right\rfloor \vdash d \land \neg(d \vdash d') \text{ para todo } d' \in Des \right\} 
+\end{align*}
+
+\end{quote}
+\normalsize
+
+\textit{(4)} $f$ es de tipo $(n, m, s)$
+
+
+\small
+\begin{quote}
+
+Cuando $n, m \in \omega$ y $s \in \left\{ \#, * \right\} $, decimos
+que una función $\Sigma$-mixed $f$ es de tipo $(n, m, s)$ si y solo si
+$\mathcal{D}_f \subseteq \omega^{n} \times \Sigma^{*m} $ y $Im_{f} \subseteq
+g(s)$, con $g(s) = \Sigma^{*}$ si $s = *$ y $g(s) = \omega$ si $s = \#$.
+
+\end{quote}
+\normalsize
+
+\textit{(5)} $(x)$
+
+
+\small
+\begin{quote}
+
+Dado un número $x \in \mathbb{N}$, tenemos que $(x) = (s_1, s_2, \ldots) \in
+\omega^{[\mathbb{N}]}$ la infinitupla tal que $x = \langle s_1, s_2, \ldots
+\rangle $.
+
+\end{quote}
+\normalsize
+
+\textit{(6)} $(x)_i$
+
+
+\small
+\begin{quote}
+
+$(x)_i$ es una función con dominio $\mathbb{N}^2$, y denota el exponente del
+$i$-écimo primo en la descomposición prima de $x$.
+
+\end{quote}
+\normalsize
+
+\pagebreak 
+
+\textit{(1)} Defina cuando $S \subseteq \omega^{n} \times \Sigma^{*m} $ es
+$\Sigma$-r.e.
+
+
+\small
+\begin{quote}
+
+Decimos que $S \subseteq \omega^{n} \times \Sigma^{*m} $ es
+$\Sigma$-recursivamente enumerable si y solo si existe una función $F : \omega
+\mapsto \omega^{n} \times \Sigma^{*m} $ tal que $Im(F) = S$ y $F_{(i)}$ es
+$\Sigma$-recursiva.
+
+\end{quote}
+\normalsize
+
+\textit{(2)} Defina $s^{\leq}$.
+
+
+\small
+\begin{quote}
+
+    La función $s^{\leq} : \Sigma^{*} \mapsto \Sigma^{*}$ dado un orden $\leq$
+    sobre $\Sigma$ mapea cada palabra $\alpha \in \Sigma^{*}$ con su sucesora en
+    el orden. Se define de manera recursiva. En general, si $\Sigma = \left\{
+    a_1, \ldots, a_n \right\} $, tenemos que 
+
+    \begin{align*}
+        s^{\leq}(a_n^{m}) = a_1^{m+1}
+    \end{align*}
+
+    para todo $m \in  \omega$, y 
+
+
+    \begin{align*}
+        s^{\leq}(\alpha a_i a_n^{m}) = \alpha_{i+1} a_1^m
+    \end{align*}
+
+    con $\alpha \in \Sigma^{*}, 1\leq i < n, m \in  \omega$.
+
+    Un lenguaje puede entonces enumerarse de manera ordenada así: $\varepsilon,
+    s^{\leq}(\varepsilon ), s^{\leq}(s ^{\leq}(\varepsilon )), \ldots$
+
+\end{quote}
+\normalsize
+
+\textit{(3)} Defina $*^{\leq}$
+
+
+\small
+\begin{quote}
+
+Dado $\Sigma$ un alfabeto y $\leq$ un orden sobre dicho alfabeto, la función
+$\Sigma$-mixta $*^{\leq} : \omega \mapsto \Sigma^{*}$ es una biyección entre
+$\omega$ y $\Sigma^{*}$. En particular, $*^{\leq}(0) = \varepsilon $ y
+
+\begin{align*}
+    *^{\leq}(k + 1) = s^{\leq}( *^{\leq}(i) )
+\end{align*}
+
+En general, le asigna a cada número $i$ la $i$-écima palabra de acuerdo con el
+listado generado por $s^{\leq}$.
+
+\end{quote}
+\normalsize
+
+\textit{(4)} Defina $\#^{\leq}$
+
+
+\small
+\begin{quote}
+
+    La función $\#^{\leq}$ es la inversa de $*^{\leq}$, de lo cual se sigue que
+    tiene dominio $\Sigma^{*}$ e imagen $\omega$. Si $\Sigma = \left\{ a_1,
+    \ldots, a_n \right\} $, su definición es:
+    $\#^{\leq}(\varepsilon ) = 0$, 
+
+    \begin{align*}
+        \#^{\leq}(a_{i_k} \ldots a_{i_0}) = i_kn^k + \ldots + i_0 n^0
+    \end{align*}
+
+\end{quote}
+\normalsize
+
+\pagebreak 
+
+\textit{(1)} Dada $f : \mathcal{D}_f \subseteq \omega^{n} \times \Sigma^{*m}
+\mapsto \omega$ con $f$ $\Sigma$-efectivos computable, defina "el procedimiento
+$\mathbb{P}$ computa a $f$".
+
+
+\small
+\begin{quote}
+
+Decimos que el procedimiento $\mathbb{P}$ computa  a $f : \mathcal{D}_f
+\subseteq \omega^{n} \times \Sigma^{*m} \mapsto \omega$ si y solo si: 
+
+\begin{itemize}
+    \item (1) El conjunto de datos de entrada de $\mathbb{P}$ es $\omega^{n} \times \Sigma^{*m} $ 
+    \item El conjunto de datos de salida de $\mathbb{P}$ está contenido en $\omega$ 
+    \item Si el valor de entrada $(\vec{x}, \vec{\alpha}) \in \omega^{n} \times
+        \Sigma^{*m} $ pertenece al dominio de $f$, el procedimiento termina y
+        devuelve $f(\vec{x}, \vec{\alpha}) $. 
+    \item Si el valor de entrada $(\vec{x}, \vec{\alpha}) $ no pertenece al
+        dominio de $f$, el procedimiento nunca termina.
+\end{itemize}
+
+
+
+
+\end{quote}
+\normalsize
+
+\pagebreak 
+
+\textit{(1)} Defina cuándo $S \subseteq \omega^{n} \times \Sigma^{*m} $ es
+$\Sigma$-efectivamente computable y defina "el procedimiento $\mathbb{P}$ decide
+la pertenencia a $S$".
+
+
+\small
+\begin{quote}
+
+Un conjunto $S \subseteq \omega^{n} \times \Sigma^{*m} $ es
+$\Sigma$-efectivamente computable si y solo si $\chi_S^{\omega^{n} \times
+\Sigma^{*m} }$ es $\Sigma$-efectivamente computable.
+
+Decimos que $\mathbb{P}$ decida la pertenencia a $S$ si y solo si 
+
+\begin{itemize}
+    \item El conjunto de datos de entrada de $\mathbb{P}$ es $\omega^{n} \times
+        \Sigma^{*m} $, siempre termina, y da como resultado un valor en $\left\{
+        0, 1\right\} $
+    \item Si el input $\omega^{n} \times \Sigma^{*m} $ pertenece a $S$ da como
+        salida $1$, de otro modo da como salida $0$.
+
+\end{itemize}
+
+
+\end{quote}
+\normalsize
+
+\pagebreak 
+
+\textit{(1)} Defina cuándo la función $f : \mathcal{D}_f \subseteq \omega^{n} \times
+\Sigma^{*m} \mapsto \omega$ es $\Sigma$-Turing computable y "la
+máquina de Turing $M$ computa a $f$".
+
+
+\small
+\begin{quote}
+
+La función $f : \mathcal{D}_f \subseteq \omega^{n} \times \Sigma^{*m} \mapsto
+\omega$ es $\Sigma$-Turing computable si $f$ es una función $\Sigma$-mixta y
+existe una máquina de Turing $M = (Q, \Sigma, \Gamma, \delta, q_0, B, F)$ que
+computa a $f$. Decimos que $M$ comput a $f$ si y solo si: 
+
+
+\textit{(a)} Dado $(\vec{x}, \vec{\alpha}) \in \mathcal{D}_f$, sucede que 
+
+\begin{align*}
+    \left\lfloor q_0 B i^{x_1} B \ldots B i^{x_n} B \alpha_1 B \ldots B \alpha_m
+    \right\rfloor \vdash^{*}_{(M)} \left\lfloor p B i^{f(\vec{x}, \vec{\alpha}) } \right\rfloor
+\end{align*}
+
+con $p \in Q$ y $\neg \left(\left\lfloor p i^{f(\vec{x}, \vec{\alpha}) } \right\rfloor
+\vdash d\right)$ para todo $d \in Des$.
+
+\textit{(b)} Dado $(\vec{x}, \vec{\alpha}) \in (\omega^{n} \times \Sigma^{*m} )
+- \mathcal{D}_f$, entonces $M$ no se detiene partiendo de $\left\lfloor q_0 B
+i^{x_1} B \ldots B i^{x_n} B \alpha_1 B \ldots B \alpha_m \right\rfloor$.
+
+\end{quote}
+\normalsize
+
+\pagebreak 
+
+\textit{(1)} $M(P)$
+
+
+\small
+\begin{quote}
+
+Dado un predicado $P : \omega \times  \omega^{n} \times \Sigma^{*m} \mapsto
+\omega$, $M(P)$ denota la función 
+
+\begin{align*}
+    \lambda \vec{x}\vec{\alpha} \left[ \min_t P(t, \vec{x}, \vec{\alpha})  \right]
+\end{align*}
+
+El dominio de $M(P)$ es $\left\{ (\vec{x}, \vec{\alpha}) \in \omega^{n} \times
+\Sigma^{*m} : (\exists t \in \omega) ~ P(t, \vec{x}, \vec{\alpha}) = 1 \right\}
+$. Su conjunto de llegada es naturalmente $\omega$.
+
+\end{quote}
+\normalsize
+
+\textit{(2)} $Lt$
+
+
+\small
+\begin{quote}
+
+$Lt : \mathbb{N} \mapsto \omega$ es la función que asocia un número natural $x$
+al mayor $i$ tal que $(x)_i \neq 0$. Es decir, 
+
+\begin{align*}
+    Lt(x) = \begin{cases}
+        \max_i (x)_i \neq 0 & x > 1\\ 
+        0 & x = 1
+    \end{cases}
+\end{align*}
+
+\end{quote}
+\normalsize
+
+\textit{(3)} Conjunto rectangular.
+
+
+\small
+\begin{quote}
+
+Un conjunto $A$  es rectangular si y solo si $A = S_1 \times \ldots S_n \times
+L_1 \times \ldots \times L_m$ con $S_i \subseteq \omega, L_i \subseteq
+\omega^{n} \times \Sigma^{*m} $. Por ser fruto de productos cartesianos, los
+conjuntos rectangulares satisfacen que si $(\vec{x}, \vec{\alpha}) \in A,
+(\vec{y}, \vec{\beta}) \in A$, entonces $(\vec{x}, \vec{\beta}) \in A$.
+
+\end{quote}
+\normalsize
+
+\textit{(4)} $S$ es un conjunto de tipo $(n, m)$
+
+
+\small
+\begin{quote}
+
+Decimos que $S$ un conjunto $\Sigma$-mixto es un conjunto de tipo $(n, m)$ si y
+solo si $S \subseteq \omega^{n} \times \Sigma^{*m} $. Observe que $\emptyset
+\subseteq \omega^{n} \times \Sigma^{*m} $ para todo $n, m \in \omega$; es decir,
+$\emptyset$ es de tipo $(0, 0), (0, 1), (1, 0), (1, 1), \ldots$ etc. Si $S \neq
+\emptyset$, existe un único par $n, m \in \omega$ tal que $S$ es de tipo $(n,
+m)$.
+
+\end{quote}
+\normalsize
+
+
+
+\pagebreak
+
+\textit{(1)} $I$ es una instrucción de $\mathcal{S}^{\Sigma}$.
+
+
+\small
+\begin{quote}
+
+    Decimos que $I$ es una instrucción de $\mathcal{S}^{\Sigma}$ si $I$ es una
+    palabra de $(\Sigma \cup \Sigma_p)$ que es o bien una instrucción básica o
+    es de la forma $\alpha J$, con $J$ una instrucción básica y $\alpha =
+    L\overline{n}$ para algún $n \in \mathbb{N}$.
+
+\end{quote}
+\normalsize
+
+\textit{(2)} $\mathcal{P}$ es un programa de $\mathcal{S}^{\Sigma}$
+
+
+\small
+\begin{quote}
+
+    Decimos que $\mathcal{P}$ es un programa de $\mathcal{S}^{\Sigma}$ si
+    $\mathcal{P}$ es una concatenación de instrucciones $I_1 \ldots I_n$ y
+    satisface la ley de los GOTO; es decir, si $GOTO ª L\overline{n}$ es tramo
+    final de $I_j$ para algunos $i, j \in \mathbb{N}$, entonces existe un $I_i$,
+    $i \in \mathbb{N}$, tal que $L \overline{n}$ es el label de $I_i$.
+
+\end{quote}
+\normalsize
+
+\textit{(3)} $I_i^{\mathcal{P}}$
+
+
+\small
+\begin{quote}
+
+$I_i \mathcal{P}$ es una función que, dado un programa $\mathcal{P} =
+I_1\ldotsI_n \in
+Pro^{\Sigma}$ y un natural $i \in \mathbb{N}$, devuelve $I_i$ si $1 \leq i \leq
+n$, y $\varepsilon $ de otro modo.
+
+\end{quote}
+\normalsize
+
+\textit{(4)} $n(\mathcal{P})$
+
+
+\small
+\begin{quote}
+
+Dado un programa $\mathcal{P} = I_1 \ldots I_n \in Pro^{\Sigma}$, la expressión
+$n(\mathcal{P})$ denota $n$; es decir, la cantidad de instrucciones que
+participan en la concatenación de instrucciones $\mathcal{P}$.
+
+
+\end{quote}
+\normalsize
+\textit{(5)} $Bas$
+
+
+\small
+\begin{quote}
+
+    $Bas : Ins^{\Sigma} \mapsto (\Sigma \cup \Sigma_p)^{*}$ es una función que,
+    dada una instrucción $I \in Ins^{\Sigma}$, devuelve solo la parte de $I$ que
+    constituye una instrucción básica. Formalmente, 
+
+    \begin{align*}
+        Bas (J) = \begin{cases}
+            I & J = L\overline{n}I \text{ para cierto } n \in \mathbb{N} y $I
+            \in Ins^{\Sigma}$ \\ 
+            J & \text{de otro modo}
+        \end{cases}
+    \end{align*}
+
+\end{quote}
+\normalsize
+
+\pagebreak 
+
+Todas las definiciones son relativas a $\mathcal{S}^{\Sigma}$.
+
+\textit{(1)} "estado"
+
+
+\small
+\begin{quote}
+
+Un estado es una $2-UPLA$ $(\vec{s}, \vec{\sigma})$ tal que $\vec{s} \in
+\omega^{[\mathbb{N}]}$ y $\vec{\sigma} \in \Sigma^{*}^{[\mathbb{N}]}$. Se habla
+generalmente del estado de un programa $\mathcal{P}$, y decir que $(\vec{s},
+\vec{\alpha})$ es el estado de $\mathcal{P}$ luego de $t$ pasos equivale a decir
+que, luego de $t$ pasos en la ejecución de $\mathcal{P}$, las variables $N_1,
+N_2, \ldots$ tienen valores $s_1, s_2, \ldots$, y las variables $P_1, P_2,
+\ldots$ tienen valores $\sigma_1, \sigma_2, \ldots$.
+
+\end{quote}
+\normalsize
+
+\textit{(2)} Descripción instantánea
+
+
+\small
+\begin{quote}
+
+Una descripción instantánea es una $3$-UPLA $(i, \vec{s}, \vec{\sigma})$, con $i
+\in \omega, \vec{s} \in \omega^{[\mathbb{N}]}, \vec{\sigma} \in
+\Sigma^{*}^{[\mathbb{N}]}$. Se habla en general de la descripción instantánea de
+un programa $\mathcal{P}$. Decir que $(i, \vec{s}, \vec{\sigma})$ es la
+descripción instantánea de $\mathcal{P}$ equivale a decir que el estado de
+$\mathcal{P}$ es $(\vec{s}, \vec{\sigma})$,y que está por ejecutarse la
+$i$-écima instrucción de $\mathcal{P}$. Cuando $i = 0$ o $i > n(\mathcal{P})$,
+entendemos que la instrucción a realizarse es $\varepsilon $; es decir, no hacer
+nada.
+
+\end{quote}
+\normalsize
+
+\textit{(3)} $S_\mathcal{P}$
+
+
+\small
+\begin{quote}
+
+    $ S_{\mathcal{P}} : \omega \times \omega^{[\mathbb{N}]} \times
+    \Sigma^{*}^{[\mathbb{N}]} \mapsto \omega \times  \omega^{[\mathbb{N}]}
+    \times  \Sigma^{*}^{[\mathbb{N}]}$ es una función que asocia una descripción
+    instantánea $(i, \vec{s}, \vec{\sigma})$ de $\mathcal{P}$ con la descripción
+    instantánea $(j, \vec{s}', \vec{\sigma}')$ que describe al programa luego
+    de ejecutar la $i$-écima instrucción desde el estado $(\vec{s},
+    \vec{\sigma})$.
+
+
+\end{quote}
+\normalsize
+
+\textit{(4)} Estado obtenido luego de $t$ pasos partiendo del estado $(\vec{s},
+\vec{\sigma})$.
+
+
+\small
+\begin{quote}
+
+Dado un programa $\mathcal{P} \in Pro^{\Sigma}$, decimos que $(\vec{s}',
+\vec{\sigma}')$ es el estado obtenido luego de $t$ pasos si y solo si 
+
+\begin{align*}
+    (j, \vec{s}', \vec{\sigma}') = \overbrace{S_{\mathcal{P}} (S_{\mathcal{P}}( \ldots (S_{\mathcal{P}}(1,
+    \vec{s}, \vec{\alpha}) \ldots ))}^{t \text{ veces }}
+\end{align*}
+
+\end{quote}
+\normalsize
+
+\textit{(5)} $\mathcal{P}$ se detine luego de $t$ pasos partiendo de $(\vec{s},
+\vec{\alpha})$.
+
+
+\small
+\begin{quote}
+
+Decimos que $\mathcal{P}$ se detiene luego de $t$ pasos partiendo de $(\vec{s},
+\vec{\alpha})$ si y solo si la primera coordenada de 
+
+\begin{align*}
+    \overbrace{ S_{\mathcal{P}}( S_{\mathcal{P}} \ldots S_{\mathcal{P}}}^{t
+    \text{ veces }}(1, \vec{s}, \vec{\alpha})\ldots)
+\end{align*}
+
+es $n(\mathcal{P}) + 1$.
+
+\pagebreak 
+
+\textit{(1)} $\Psi_{\mathcal{P}}^{n, m, \#}$
+
+
+\small
+\begin{quote}
+
+Dado un programa $\mathcal{P}$, la función $\Psi_{\mathcal{P}}^{n, m, \#} :
+\omega^{n} \times \Sigma^{*m} \mapsto \omega$ es tal que 
+
+\begin{align*}
+    \Psi_{\mathcal{P}}^{n, m, \#}(\vec{x}, \vec{\alpha}) = \text{valor de $N_1$
+    en el estado final de $\mathcal{P}$ partiendo de $[\![ \vec{x},
+    \vec{\alpha}]\!]$}
+\end{align*}
+
+Es importante notar que 
+
+$$\mathcal{D}_{\Psi_{\mathcal{P}}^{n, m, \#}} = \left\{
+(\vec{x}, \vec{\alpha}) \in \omega^{n} \times \Sigma^{*m} : \mathcal{P} \text{
+termina partiendo de } [\![ \vec{x}, \vec{\alpha} ]\!] \right\} $$
+
+\end{quote}
+\normalsize
+
+\textit{(2)} $f$ es $\Sigma$-computable  
+
+
+\small
+\begin{quote}
+
+Decimos que una función $\Sigma$-mixta $f$ es $\Sigma$-computable si y solo si
+existe un program $\mathcal{P}$ tal que $\Psi_{\mathcal{P}}^{n, m, \#} = f$.
+
+\end{quote}
+\normalsize
+
+\textit{(3)} $\mathcal{P}$ computa a $f$
+
+\small
+\begin{quote}
+
+Si $\mathcal{P} \in Pro^{\Sigma}$ y $f$ es $\Sigma$-mixta, decimos que
+$\mathcal{P}$ computa a $f$ si $f = \Psi_{\mathcal{P}}^{n, m, \#}$.
+
+\end{quote}
+\normalsize
+
+\textit{(4)} $M^{\leq}(P)$
+
+
+\small
+\begin{quote}
+
+Dado un predicado $P : \omega^{n} \times \Sigma^{*m} \times \Sigma^{*}$ y $\leq$
+un orden sobre $\Sigma$, por definición 
+
+\begin{align*}
+    M^{\leq}(P) = \lambda \vec{x}\vec{\alpha} \left[ \min_{\alpha}^{\leq} P(\vec{x},
+    \vec{\alpha}, \alpha) = 1  \right]
+\end{align*}
+
+\end{quote}
+\normalsize
+
+
+
+\end{quote}
+\normalsize
+
+\pagebreak 
+
+\textit{(1)} Cuando $S \subseteq \omega^{n} \times \Sigma^{*m} $ es
+$\Sigma$-computable; cuando es $\Sigma$-enumerable; defina $\mathcal{P}$ enumera
+a $S$.
+
+
+\small
+\begin{quote}
+
+Decimos que $S \subseteq \omega^{n} \times \Sigma^{*m} $ es $\Sigma$-computable
+si y solo si $\chi_{S}^{\omega^{n} \times \Sigma^{*m} }$ es $\Sigma$-computable;
+es decir, existe un $\mathcal{P} \in Pro^{\Sigma}$ tal que $\chi_{S}^{\omega^{n}
+\times \Sigma^{*m} } = \Psi_{\mathcal{P}}^{n, m, \#} $.
+
+Decimos que $\Sigma$ es $\Sigma$-enumerable si es vacío o existe un programa
+existe una función $\Sigma$-mixta $F : \omega \mapsto \omega^{n} \times
+\Sigma^{*m} $ tal que 
+
+\begin{itemize}
+    \item $Im(F) = S$ 
+    \item $F_{(i)}$ es $\Sigma$-computable para todo $1 \leq 1 \leq n + m$.
+\end{itemize}
+
+Decimos que $\mathcal{P}$ enumera a $S$ si 
+
+\begin{itemize}
+    \item para cada $x \in  \omega$,
+$\mathcal{P}$ se detiene partiendo de $[\![ x ]\!]$ llegando a un estado $[\![
+x_1, \ldots, x_n, \alpha_1, \ldots, \alpha_m ]\!]$ tal que $(x_1, \ldots, x_n,
+\alpha_1, \ldots, \alpha_m) \in S$ 
+    \item para cada $(x_1, \ldots, x_n, \alpha_1, \ldots, \alpha_m) \in S$,
+        existe un $x \in \omega$ tal que $\mathcal{P}$ se detiene partiendo de
+        $[\![ x ]\!]$ alcanzando el estado $[\![ x_1, \ldots, x_n, \alpha_1,
+        \ldots, \alpha_m ]\!]$.
+\end{itemize}
+
+
+\end{quote}
+\normalsize
+
+
+\pagebreak 
+
+
+
+
+
+
+\subsection{Combo I}
+
+\begin{problem}
+    Un conjunto es $\Sigma$-p.r. sii es el dominio de una función $\Sigma$-p.r.
+    Hacer solo el caso de la composición.
+\end{problem}
+
+\textbf{Lema a utilizar.} Si $f$ es una función $\Sigma$-mixta, existe una
+función $\Sigma$-total  $\overline{f}$ que es $\Sigma$-p.r. y tal que $f =
+\overline{f}_{\mathcal{D}_f}$.
+
+
+($\Rightarrow$) Asuma $S \subseteq \omega^{n} \times \Sigma^{*m} $ es $\Sigma$-p.r. Entonces $S = \mathcal{D}_{Pred \circ
+\chi_{S}^{\omega^{n} \times \Sigma^{*m} }}$. 
+
+$(\Leftarrow)$ Si $f = \emptyset$ no hay nada que probar. Tomemos el caso. El caso $f \in PR_0^{\Sigma}$ es trivial, y podemos asumir entonces que el
+postulado vale para $PR_{k}^{\Sigma}$. Sea $f \in PR_{k+1}^{\Sigma}$ de la forma
+$f = g \circ \left[ g_1, \ldots, g_{n+m} \right] $, con 
+
+\begin{align*}
+    &\mathcal{D}_f : \omega^{n} \times \Sigma^{*m} \mapsto O & ~ \\ 
+    &g_i : \omega^{a} \times \Sigma^{*b}  \mapsto  \omega & 1 \leq i \leq n\\
+    &g_i : \omega^{a} \times \Sigma^{*b}  \mapsto \Sigma^{*} & n + 1 \leq i \leq
+    m
+\end{align*}
+
+y $g, g_i \in PR_{k}^{\Sigma}$ para todo $i$.
+
+Para cada $g_i$, sabemos que existe $\overline{g}_i$ $\Sigma$-p.r. y
+$\Sigma$-total tal que $g_i = \overline{g_i}\mid_{\mathcal{D}_{g_i}}$. Si $f = g
+\circ \left[ g_1, \ldots, g_{n+m} \right] $, el dominio $f$ es el conjunto
+
+$$\mathcal{D}_f : \left\{ (\vec{x}, \vec{\alpha}) \in \omega^{a} \times
+\Sigma^{*b} : (\vec{x}, \vec{\alpha}) \in \mathcal{D}_{g_i} \land g_i(\vec{x},
+\vec{\alpha}) \in \mathcal{D}_{g} \text{ para toda } i \right\} $$
+
+Por hipótesis inductiva, $\chi_{\mathcal{D}_g}^{\omega^{n} \times \Sigma^{*m}}$
+es $\Sigma$-p.r. y $\chi_{\mathcal{D}_{g_i}}^{\omega^{a} \times \Sigma^{*b} }$
+también para cada $i$. Más aún, 
+
+\begin{align*}
+    S = \bigcap_{i=1}^{n+m} \mathcal{D}_{g_i}
+\end{align*}
+
+es $\Sigma$-p.r. Es fácil deducir de lo anterior que 
+
+\begin{align*}
+    \chi_{\mathcal{D}_f}^{\omega^{a} \times \Sigma^{*b} } = \left(
+    \chi_{\mathcal{D}_g}^{\omega^{n} \times \Sigma^{*m} } \circ \left[
+\overline{g_1}, \ldots, \overline{g_{n+m}} \right]  \land  \chi_{S}^{\omega^{a} \times \Sigma^{*b} } \right) 
+\end{align*}
+
+\pagebreak
+
+\begin{problem}
+    Si $h$ is $\Sigma$-recursiva, entonces $h$ es $\Sigma$-computable. (Solo el
+    caso $R(f, \mathcal{G}))$.
+\end{problem}
+
+Es fácil dar con programas que computen las funciones en $R_{0}^{\Sigma}$. Por
+lo tanto, asumimos que las funciones en $PR_{k}^{\Sigma}$ son
+$\Sigma$-computables y probaremos que esto se cumple para $PR_{k+1}^{\Sigma}$.
+En particular, lo demostraremos para el caso en que $R \in PR_{k+1}^{\Sigma}$ es
+de la forma $R(f, \mathcal{G})$ con $f, \mathcal{G}_a \in PR_{k}^{\Sigma}$.
+Por hipótesis inductiva, $f$ y $\mathcal{G}_a$ son $\Sigma$-computables (para
+cada $a \in \Sigma$).
+
+Tenemos que $f \sim (n, m, *), \mathcal{G}_a \sim (n, m + 2, *)$ para todo $a
+\in \Sigma$. Dada una evaluación $R(f, g)(\vec{x}, \vec{\alpha}, \alpha a)$,
+debemos dar con un programa que compute
+
+\begin{align*}
+    \mathcal{G}_a \left( \vec{x}, \vec{\alpha}, \alpha, R(f, g)(\vec{x},
+    \vec{\alpha}, \alpha) \right) 
+\end{align*}
+
+El programa debe ser tal que desde el estado $[\![ \vec{x}, \vec{\alpha},
+\alpha  ]\!]$ deje en $P_1$ el valor de la función dada arriba. Es decir,
+partiendo de $[\![ \vec{x}, \vec{\alpha}, \alpha ]\!]$, con $\alpha = \alpha_1
+\ldots \alpha_n$, $\alpha_i \in \Sigma$, el programa deberá computar la
+recursión desde el caso base "hacia arriba", tal como esquematiza el siguiente
+procedimiento:
+
+\begin{quote}
+    \textit{(1)} Computar el caso base $\varphi_0 = f(\vec{x}, \vec{\alpha})$. 
+
+    \textit{(2)} Computar $\varphi_1 = \mathcal{G}_a ( \vec{x}, \vec{\alpha}, \epsilon,
+    \varphi_0 )$ con $a$ la palabra inicial de $\alpha$.
+
+    \textit{(3)} Computar $\varphi_2 = \mathcal{G}_a \left( \vec{x},
+    \vec{\alpha}, \alpha_1, \varphi_1 \right) $ 
+
+       ~$\vdots$
+
+       \textit{(r+1)} Computar y devolver $\varphi_r = \mathcal{G}(\vec{x}, \vec{\alpha},
+       \alpha_1\ldots \alpha_{n-1}, \varphi_{r-1})$
+\end{quote}
+
+Aquí se ve que los valores variables son $\varphi_i$ y las subcadenas de
+$\alpha$ que van en cada evaluación. Guardaremos cada $\varphi_i$ en
+$P\overline{m+3}$ y cada subcadena en $P\overline{m+2}$ (que adecuadamente
+empieza vacía). Entonces, si $\Sigma = \left\{ a_1, \ldots, a_r \right\} $:
+
+
+\small
+\begin{quote}
+
+\begin{quote}
+\begin{align*}
+    &[ P\overline{m+3} \leftarrow  f(N1, \ldots, N{\overline{n}}, P_1, \ldots, P
+    \overline{m})] \\ 
+    L \overline{r+1} ~ ~ ~  &IF ~ P \overline{m+1} ~ BEGINS ~ a_1 ~ GOTO ~ L \overline{1} \\ 
+          &\vdots \\ 
+          &IF ~ P \overline{m+1} ~ BEGINS ~ a_r ~ GOTO ~ L
+    \overline{r+r} \\ 
+                          &GOTO ~ L \overline{r1} \\
+    L \overline{1} ~ ~ ~ & P \overline{m+1} \leftarrow  {}^{\curvearrowright}
+    P \overline{m+1} \\ 
+                           &\left[ P \overline{m+3} \leftarrow
+                           \mathcal{G}_{a_{1}} \left( N_1, \ldots, N
+                       \overline{n}, P_1, \ldots, P \overline{m}, P
+               \overline{m+2}, P \overline{m+3} \right)  \right]  \\ 
+                           &P \overline{m+2} \leftarrow P \overline{m+2}.a_1 \\ 
+                           & GOTO ~ L \overline{r+1} \\
+    & \vdots \\
+    L \overline{r} ~ ~ ~ & P \overline{m+1} \leftarrow  {}^{\curvearrowright}
+    P \overline{m+1} \\ 
+                           &\left[ P \overline{m+3} \leftarrow
+                           \mathcal{G}_{a_{r}} \left( N_1, \ldots, N
+                       \overline{n}, P_1, \ldots, P \overline{m}, P
+               \overline{m+2}, P \overline{m+3} \right)  \right]  \\ 
+                           &P \overline{m+2} \leftarrow P \overline{m+2}.a_r\\
+                           & GOTO ~ L \overline{r+1} \\ 
+    L \overline{r+r +1} ~ ~ ~ &P_1 \leftarrow  P \overline{m+3}
+\end{align*}
+\end{quote}
+
+\end{quote}
+\normalsize
+
+
+
+\pagebreak 
+
+\subsection{Combo II}
+
+\begin{problem}
+    Supongamos $f_i : \mathcal{D}_f \subseteq \omega^{n} \times \Sigma^{*m}
+    \mapsto \Sigma^{*}$ con $i = 1,\ldots,k$. son funciones $\Sigma$-p.r con
+    $\mathcal{D}_{f_i} \cap \mathcal{D}_{f_j} \neq \emptyset$ para cada $i \neq
+    j$. Entonces $f_1 \cup \ldots \cup f_k$ es $\Sigma$-p.r. 
+\end{problem}
+
+
+\small
+\begin{quote}
+
+Sea $k = 2$. Existen $\overline{f_1}, \overline{f_2}$ $\Sigma$-p.r. y
+$\Sigma$-totales tal que $f_1, f_2$ son las restricciones de $\overline{f_1},
+\overline{f_2}$ a sus respectivos dominios. Usaremos el hecho de que el dominio
+de una función $\Sigma$-p.r. es $\Sigma$-p.r. para construir la siguiente
+función:
+
+\begin{align*}
+    H_{f} = \lambda x\alpha \left[ \alpha^x  \right] \circ \left[
+    \chi_{f}^{\omega^{n} \times \Sigma^{*m} }, \overline{f} \right] 
+\end{align*}
+
+donde $f = \overline{f}_{\mathcal{D}_{f}}$ son $\Sigma$-p.r. Es claro que $H_f$
+es $\Sigma$-p.r. y que
+$\mathcal{D}_{H_f} = \omega^{n} \times \Sigma^{*m} $, y que 
+
+\begin{align*}
+    H_f(\vec{x}, \vec{\alpha}) = \begin{cases}
+        \epsilon & (\vec{x}, \vec{\alpha}) \not\in \mathcal{D}_{f} \\ 
+        \overline{f}(\vec{x}, \vec{\alpha}) & (\vec{x}, \vec{\alpha}) \in
+        \mathcal{D}_{f}
+    \end{cases}
+\end{align*}
+
+Entonces vemos que 
+
+\begin{align*}
+    f_1 \cup f_2 = \left(   \lambda \alpha\beta \left[ \alpha \beta  \right]
+    \circ \left[ H_{f_1}, H_{f_2} \right]  \right)_{\mathcal{D}_{f_1} \cup
+\mathcal{D}_{f_2}}
+\end{align*}
+
+Si asumimos que el postulado vale para $k$ arbitrario, entonces usamos el hecho
+de que $\bigcup_{i=1}^{k+1} f_i = \left( \bigcup_{i=1}^{k} f_i \right) \cup
+f_{k+1} $. Por HI, $F := \bigcup_{i=1}^{k} f_i$ es $\Sigma$-p.r. y por lo tanto
+$H_{F}$ está bien definida. Luego 
+
+\begin{align*}
+    \bigcup_{i=1}^{k+1} f_i = F \cup f_{k+1} = \left( \lambda \alpha\beta \left[
+    H_{F}, H_{f_{k+1}}\right] \right)_{\mathcal{D}_{F} \cup \mathcal{D}_{f_{k+1}}}
+\end{align*}
+
+\end{quote}
+\normalsize
+
+
+\pagebreak 
+
+\begin{problem}
+    Only give the idea of the following proof: Assume $f : S \subseteq
+    \omega^{n} \times \Sigma^{*m}  \mapsto \Sigma^{*}$ is $\Sigma$-Turing
+    computable. Entonces $f$ es $\Sigma$-recursiva.  No es necesario probar que
+    $d \vdash^n d'$ son $(\Gamma \cup Q)$-p.r. ni tampoco que $P$ es
+    $(\Gamma\cup Q)$-p.r.
+\end{problem}
+
+\textbf{Teorema a recordar.} Si $\Sigma, \Gamma$ son alfabetos arbitrarios y $f$
+es $\Sigma$-mixta y $\Gamma$-mixta, entonces $f$ es $\Sigma$-p.r. (o
+$\Sigma$-recursiva) sii es $\Gamma$-p.r. (o $\Gamma$-recursiva). Lo mismo aplica
+a conjuntos $\Sigma$ o $\Gamma$-recursivos.
+
+\textbf{Lemmas a utilizar.} 
+
+\begin{quote}
+    \textit{(1)} $Des$ es $(\Gamma\cup Q)$-p.r.; $St : Des \to Q$ es
+    $(\Gamma \cup Q)$-p.r.  
+
+    \textit{(2)} $\lambda dd' \left[ d \vdash d'  \right]$ es $(\Gamma \cup Q)$-p.r. 
+
+    \textit{(3)} Tanto $\lambda \alpha \left[ \left\lfloor \alpha \right\rfloor
+    \right]$ como $\lambda \alpha \left[ {}^{\curvearrowright}\alpha  \right],
+    \lambda \alpha \left[ \alpha{}^{\curvearrowleft}  \right]$ son $(\Gamma \cup
+    Q)$-p.r.
+\end{quote}
+
+Un punto importante es comprender que nos manejaremos en el alfabeto $(\Gamma
+\cup Q)$ frecuentemente, pues debemos lidiar con descripciones instantáneas.
+
+Sea $M = (Q, \Sigma, \Gamma, \delta, q_0, B, i, F)$ una máquina de Turing
+determinística con unit que computa a $f$. La idea es dar un predicado $P :
+\omega \times \omega^{n} \times \Sigma^{*m} $ que sea $(\Gamma
+\cup Q)$-p.r. y equivalga a "$M$ se detiene en $(x)_1$ pasos con input $(\vec{x},
+\vec{\alpha}) $ y con output $*^{\leq} \left( (x)_2 \right)  $". En el contexto de una
+máquina de Turing, este predicado es 
+
+\begin{align*}
+    &(\exists q \in Q) ~ \left\lfloor q_0 B i^{x_1} B \ldots B i^{x_n} B
+    \alpha_{1} B \ldots B \alpha_m \right\rfloor \vdash^{(x)_1}_{M} \left\lfloor
+q B *^{\leq}( (x)_2 )\right\rfloor \land  \\ 
+    &(\forall d \in Des)_{|d| \leq | *^{\leq}((x)_2) | + 2} \left\lfloor q B
+    *^{\leq} ((x)_2) \right\rfloor \not\vdash_{M}  d
+\end{align*}
+
+Este predicado es $(\Gamma \cup Q)$-p.r. La idea para probarlo sería primero
+observar que cada predicado en la conjunción tiene el mismo dominio.
+Segundamente, $Q$ es finito y por lo tanto $(Q \cup \Gamma)$-p.r. y $Des$ es $(Q
+\cup \Gamma)$-p.r. por lemma; es decir, que las cuantificaciones se hacen sobre
+conjuntos decidibles. Las funciones $*^{\leq}, \vdash_M, \vdash^n_M$, son
+$(\Gamma \cup Q)$-p.r. El hecho de que $(\exists q \in Q)$ no esté acotado no es
+un problema porque $Q$ es finito; por lo tanto, puede recorrerse su espacio
+comprobando si algún $q$ satisface el predicado.
+
+Ahora que tenemos un predicado $P(x, \vec{x}, \vec{\alpha})$ equivalente a "$M$
+se detiene en $(x)_1$ pasos con output $*^{\leq}((x)_2)$", usamos el hecho de
+que $M$ computa a $f$ para observar que si el predicado es verdadero, entonces
+$*^{\leq}((x)_2)$ es $f(\vec{x}, \vec{\alpha}) $. Con esto, construimos una
+función recursiva que computa $f(\vec{x}, \vec{\alpha}) $; a saber, 
+
+\begin{align*}
+    f = \lambda \vec{x}\vec{\alpha} \left[ *^{\leq} \left(\left( M(P)
+        \right)_2\right)   \right]
+\end{align*}
+
+\pagebreak
+
+\subsection{Combo III}
+
+\begin{problem}
+    Si $f : \mathcal{D}_f \subseteq \omega^{n} \times \Sigma^{*m} \mapsto
+    \Sigma^{*}$ es $\Sigma$-computable, entonces es $\Sigma$-recursiva.
+\end{problem}
+
+Asuma que $f$ es $\Sigma$-computable. Entonces existe un programa $\mathcal{P}_0
+\in Pro^{\Sigma}$ que computa a $f$, es decir tal que 
+
+\begin{align*}
+    f = \Psi_{\mathcal{P}_0}^{n, m, \#}
+\end{align*}
+
+Recordemos que $\Phi(\vec{x}, \vec{\alpha}, \mathcal{P}) :=
+\Psi_{\mathcal{P}}^{n, m, \#}(\vec{x}, \vec{\alpha})$ es una función
+$(\Sigma\cup \Sigma_p)$-recursiva. Evidentemente, 
+
+\begin{align*}
+    f = \Phi_{\mathcal{P}}^{n, m, \#} \circ \left[ p_1, \ldots, p_n, p_{n+1},
+    \ldots, p_{n + m}, C_{\mathcal{P}_0}^{n, m}\right] 
+\end{align*}
+
+donde $p_i, C_{\mathcal{P}_0^{n, m}}^{n, m}$ son dadas respecto al alfabeto $(\Sigma
+\cup S_p)$. Pues todas estas funciones son $(\Sigma \cup \Sigma_p)$-recursivas, $f$ es $(\Sigma
+\cup \Sigma_p)$-recursiva. Por independencia del alfabeto, es $\Sigma$-recursiva.
+
+\pagebreak 
+
+\begin{problem}
+    Sea $\Sigma$ finito. Si $f : \omega \times S_1 \times  \ldots \times S_n
+    \times L_1 \times L_m \mapsto \omega$ es $\Sigma$-p.r. con $S_i \subseteq
+    \omega, L_i \subseteq \Sigma^{*}$ no vacios, entonces 
+
+    \begin{align*}
+        F := \lambda xy \vec{x}\vec{\alpha} \left[ \sum_{t=x}^{t=y} f(t, \vec{x},
+        \vec{y})  \right]
+    \end{align*}
+
+    es $\Sigma$-p.r. 
+\end{problem}
+
+Sea $G = \lambda tx \vec{x}\vec{\alpha} \left[ \sum_{i = x}^{i = t} f(i,
+\vec{x}, \vec{\alpha})  \right]$. Esta forma es deseable porque haremos
+recursión sobre el primer argumento $t$. Pero primero observemos que, dado que
+
+\begin{align*}
+    F = G \circ \left[ p_2^{n+2, m}, p_{1}^{n+2, m}, p_3^{n+2, m}, \ldots, p_{n
+    + 2 + m}^{n+2, m} \right] 
+\end{align*}
+
+solo basta probar que $G$ es $\Sigma$-p.r. La idea es dar con $h, g$ tales que
+$G = R(h, g)$. Puesto que
+
+\begin{align*}
+    G(0, x, \vec{x}, \vec{\alpha}) &= \begin{cases}
+        0 & x > 0 \\ 
+        f(0, \vec{x}, \vec{\alpha}) & x = 0
+    \end{cases} \\ 
+        G(t + 1, x, \vec{x}, \vec{\alpha}) &= \begin{cases}
+            0 & x > t + 1 \\ 
+            G(t, x, \vec{x}, \vec{\alpha}) + f(t + 1, \vec{x}, \vec{\alpha}) & x
+            \leq t+1
+        \end{cases}
+\end{align*}
+
+Por supuesto, $G(t, x, \vec{x}, \vec{\alpha}) \in \omega$ y por lo tanto, si
+
+\begin{align*}
+    h : \omega \times S_1 \times \ldots \times S_n \times L_1 \times  \ldots
+    \times L_m &\mapsto \omega \\ (x, \vec{x}, \vec{\alpha}) &\mapsto  
+    \begin{cases}
+        0 & x > 0 \\ 
+        f(0, \vec{x}, \vec{\alpha})  & x = 0
+    \end{cases} \\
+    g : \omega^3 \times S_1 \times  \ldots \times S_n \times L_1 \times \ldots
+    \times L_m &\mapsto \omega \\ 
+    (A, t, x, \vec{x}, \vec{\alpha}) &\mapsto \begin{cases}
+        0 & x > t + 1 \\ 
+        A + f(t + 1, \vec{x}, \vec{\alpha}) & x \leq t + 1
+    \end{cases}
+\end{align*}
+
+entonces $G = R(f, h)$. Solo nos queda probar que $g, h$ son $\Sigma$-p.r. 
+
+\textit{(1)} Sea $H_1 = \left\{ (x, \vec{x}, \vec{\alpha}) \in \omega^{n} \times
+\Sigma^{*m} : x > 0 \right\} $ y $H_2 = \overline{H_1}$. Es claro que $h =
+C_{0}^{n+1, m}\mid_{H_1} \cup f\mid_{H_2}$. Que $H_0, H_1$ son $\Sigma$-p.r. es
+trivial. Luego las restricciones en cuestión son $\Sigma$-p.r. Pues los dominios
+son disjuntos, la unión de las funciones restringidas es $\Sigma$-p.r. Luego $h$
+es $\Sigma$-p.r. 
+
+\textit{(2)} Sea $D_1 = \left\{ (A, t, x, \vec{x}, \vec{\alpha}) \in
+\omega^{n+3} \times \Sigma^{*m}  : x > t + 1 \right\} $ y $D_2 =
+\overline{D_1}$. Entonces 
+
+\begin{align*}
+    g = C_0^{n+3, m} \mid_{D_1} \cup \lambda Atx\vec{x}\vec{\alpha} \left[ A +
+    f(t+1, \vec{x}, \vec{\alpha})  \right] \mid_{D_2}
+\end{align*}
+
+Es claro que 
+
+\begin{align*}
+    \lambda A t x \vec{x}\vec{\alpha} \left[ A + f(t+1, \vec{x}, \vec{\alpha})
+    \right] &= \lambda xy \left[ x + y  \right] \circ \left[ p_1^{n+3, m},  f
+    \circ \left[ Suc \circ p_2^{n+3, m}, p_4^{n+3, m}, \ldots, p_{n+3+m}^{n+3, m} \right]  \right] 
+\end{align*}
+
+Que $D_1, D_2$ son $\Sigma$-p.r. es trivial. Entonces $g$ es $\Sigma$-p.r. 
+
+\pagebreak 
+
+\subsection{Combo V}
+
+\begin{problem}
+    Sean $S_1, S_2 \subseteq \omega^{n} \times \Sigma^{*m} $ efectivamente
+    enumerables. Entonces $S_1 \cap S_2$ es $\Sigma$-efectivamente enumerable.
+\end{problem}
+
+Pues $S_1, S_2$ son $\Sigma$-efectivamente enumerables, hay procedimientos
+efectivos $\mathbb{P}_{1}, \mathbb{P}_2$ que dado un input $x \in \omega$
+devuelven un elemento de $S_1, S_2$, respectivamente. Podemos enumerar $S_1 \cap
+S_2$ de la siguiente manera.
+
+Dado $\varphi \in S_1 \cap S_2$ arbitrario, el procedimiento efectivo es el
+siguiente: Dado un input $x \in \omega$,
+
+\small
+\begin{quote}
+    \textit{(0)} Haga $\varrho = \varphi$.
+
+    \textit{(1)} Si $x = 0$ vaya a \textit{(7)}; de otro modo, continúe. 
+
+    \textit{(2)} Compute $(x)_1, (x)_2$. 
+
+    \textit{(3)} Guarde en $A$ el resultado de correr $\mathbb{P}_{1}$ con input
+    $(x)_1$. 
+
+    \textit{(4)} Guarde en $B$ el resultado de correr $\mathbb{P}_2$ con input
+    $(x)_2$
+
+    \textit{(5)} Si $A \neq B$ vaya a \textit{(7)}; de otro modo, continúe. 
+
+    \textit{(6)} Haga $\varrho = A$.
+
+    \textit{(7)} Devuelva $\varrho$.
+\end{quote}
+
+\normalsize
+
+Pues $\mathbb{P}_1, \mathbb{P}_2$ enumeran a $S_1, S_2$, y $((x)_1, (x)_2)$
+recorren la totalidad del espacio $\omega^2$,  el programa enumera todos los
+pares posibles de elementos $\pi \in S_1, \zeta \in S_2$, y devuelve solo
+aquellos que están en ambos.
+
+\begin{quote}
+    \textbf{Note.} $((x)_1, (x)_2)$ da todos los pares posibles de valores
+    porque todo $(a, b) \in \omega^2$ es alcanzado por el input $2^a 3^b$
+\end{quote}
+
+\pagebreak 
+
+\begin{problem}
+    Sea $\Sigma$ un alfabeto finito. Sea $P : S \times S_1 \times \ldots S_n
+    \times L_1 \times \ldots \times L_m \mapsto \omega$  un predicado
+    $\Sigma$-p.r. Asuma $\overline{S} \subseteq S$ es $\Sigma$-p.r. Entonces 
+
+    \begin{align*}
+        \lambda x \vec{x}\vec{\alpha} \left[ (\forall t \in \overline{S})_{t
+        \leq x} P(t, \vec{x}, \vec{\alpha})  \right]
+    \end{align*}
+
+    es $\Sigma$-p.r. 
+\end{problem}
+
+Puesto que $P$ es $\Sigma$-p.r. su dominio es $\Sigma$-p.r. 
+
+Un conjunto rectangular $S \times S_1 \times S_n \times L_1 \times  \ldots \times  L_m$ es $\Sigma$-p.r. sii
+cada $S_i, L_i$ son $\Sigma$-p.r. 
+Más aún, pues $\overline{S}$ es $\Sigma$-p.r. también lo es
+$\omega - \overline{S}$. Entonces 
+
+\begin{align*}
+    A :=~ &\overline{S} \times S_1 \times  \ldots \times S_n \times L_1 \times
+    \ldots\times  L_m \\ 
+    B :=~ &( \omega - \overline{S} ) \times  S_1 \times  \ldots \times S_n \times L_1
+    \times  \ldots \times L_m
+\end{align*}
+
+son ambos $\Sigma$-p.r. 
+
+Definamos $\overline{P} = P \mid_{A} \cup C_1^{n+1, m} \mid_{B}$. Entonces
+$\overline{P}$ es claramente $\Sigma$-p.r. Observemos que 
+
+\begin{align*}
+    \lambda x \vec{x}\vec{\alpha} \left[ (\forall t \in \overline{S})_{t \leq x}
+    P(t, \vec{x}, \vec{\alpha})\right] &= \lambda x \vec{x}\vec{\alpha} \left[
+\prod_{t=0}^{t = x} \overline{P}(x, \vec{x}, \vec{\alpha})  \right] \\ 
+                                       &= \lambda xy\vec{x}\vec{\alpha} \left[
+                                       \prod_{t=x}^{t=y} \overline{P}(t,
+                                   \vec{x}, \vec{\alpha})  \right]  \circ \left[
+                               C_0^{n+1, m}, p_1^{n+1, m},  \ldots,
+                           p_{n+1+m}^{n+1, m}\right] 
+\end{align*}
+
+Sabemos que esto es $\Sigma$-p.r. 
+
+\pagebreak 
+
+\begin{problem}
+    Si $S \subseteq \omega^{n} \times \Sigma^{*m} $ es $\Sigma$-efectivamente
+    computable, entonces $S$ es $\Sigma$-efectivamente enumerable.
+\end{problem}
+
+
+Este es muy fácil. Se enumera $\omega^{n} \times \Sigma^{*m}$, que siempre es
+enumerable usando bajadas, y en cada enumeración se decide si el elemento
+pertenece a $S$ o no. Si es así se lo devuelve.
+
+\begin{problem}
+    Solo probar $(2) \Rightarrow (3)$. Dado $S \subseteq \omega^{n} \times
+    \Sigma^{*m} $, son equivalentes: 
+
+    \textit{(1)} $S$ es $\Sigma$-recursivamente enumerable. 
+
+    \textit{(2)} $S = I_F$ para alguna $F : \mathcal{D}_F \subseteq \omega^{k}
+    \times \Sigma^{*l} \mapsto \omega^{n} \times \Sigma^{*m}  $ tal que cada
+    $F_{(i)}$  es $\Sigma$-recursiva. 
+
+    \textit{(3)} $S = \mathcal{D}_f$ para alguna $f$ $\Sigma$-recursiva.
+\end{problem}
+
+Asuma que $S = I_{F}$ para $F : \mathcal{D}_{F} \subseteq \omega^{k} \times
+\Sigma^{*l} \mapsto \omega^{n} \times \Sigma^{*m}  $ con cada $F_{(i)}$
+$\Sigma$-recursiva. Entonces existen programas $\mathcal{P}_1, \ldots,
+\mathcal{P}_k, \mathcal{P}_{k+1}, \ldots, \mathcal{P}_{k+l} \in Pro^{\Sigma}$
+que computan cada $F_{(i)}$.
+
+Haremos un programa que, dado un input $(\vec{x}, \vec{\alpha}) \in \omega^{l}
+\times \Sigma^{*k} $, termina si y solo si ese input está en $S$. Para esto,
+usaremos $F$ para generar valores de $S$ y compararlos con el input.
+
+Definamos 
+
+\begin{align*}
+    H_i = \lambda t \vec{x}\vec{\alpha} \left[ \neg Halt^{k, l} (t, \vec{x},
+    \vec{\alpha}, \mathcal{P}_i)  \right]
+\end{align*}
+
+Pues $Halt^{k, l}$ es $(\Sigma \cup \Sigma_p)$-p.r. y aquí solo estamos negando
+su composición con una constante, la función $H_i$ es $\Sigma$-p.r. 
+
+Más aún, para $1 \leq i \leq l$ definimos 
+
+\begin{align*}
+    E_i = \lambda x t \vec{x}\vec{\alpha} \left[ x \neq E_{#1}^{k, l}(t,
+    \vec{x}, \vec{\alpha}, \mathcal{P}_i)  \right]
+\end{align*}
+
+Y para $l+1 \leq i \leq k$ definimos 
+
+\begin{align*}
+    E_i = \lambda x t \vec{x}\vec{\alpha} \left[ x \neq E_{*1}^{k, l}(t,
+    \vec{x}, \vec{\alpha}, \mathcal{P}_i)  \right]
+\end{align*}
+
+Como todas estas funciones son $(\Sigma \cup \Sigma_p)$-p.r. son $\Sigma$-p.r. y
+tienen macros asociados, que usaremos libremente. También usaremos macros para
+$\lambda xi \left[ (x)_i  \right]$ y $\lambda x i \left[ *^{\leq}( (x)_i )
+\right]$. El programa, dado $[\![ x_1, \ldots, x_k, \alpha_1, \ldots, \alpha_l
+]\!]$, hará:
+
+
+\small
+\begin{quote}
+    \begin{align*}
+        L_1 ~ ~ ~ & N \overline{k+1} \leftarrow N \overline{k+1} + 1 \\ 
+                  &[N \overline{k+2} \leftarrow (N \overline{k+1})_1]  &
+                  \text{ Steps } \\
+                  &\left[ N \overline{k + 3} \leftarrow (N
+                  \overline{k+1})_2 \right] \\ 
+                  &\vdots \\ 
+                  &\left[ N \overline{k + 3 + k -1} \leftarrow (N
+                  \overline{k+1})_{k+1} \right] \\ 
+                  &\left[ P \overline{l + 1} \leftarrow *^{\leq}(N
+                  \overline{k+1})_{k+2} \right] \\ 
+                  &\vdots \\ 
+                  &\left[ P \overline{l + 1 + l - 1} \leftarrow (N
+                  \overline{k+1})_{k+l+1} \right] \\ 
+                  &\left[ IF ~ \neg Halt^{k, l}(t, N \overline{k+3}, \ldots,
+                  N\overline{k+3+k-1}, P \overline{l+1}, \ldots, P \overline{l +
+              1 + l -1}, \mathcal{P}_1) ~ GOTO ~ L_1 \right]  \\ 
+                  & \vdots \\ 
+                  &\left[ IF ~ \neg Halt^{k, l}(t, N \overline{k+3}, \ldots,
+                  N\overline{k+3+k-1}, P \overline{l+1}, \ldots, P \overline{l +
+              1 + l -1}, \mathcal{P}_{k+l}) ~ GOTO ~ L_1 \right] 
+                  &[IF ~ N_1 \neq E_{1#}^{k, l} \left(  \right) ]
+    \end{align*}
+
+\end{quote}
+\normalsize
+
+
+\pagebreak
+
+\subsection{Combo VII}
+
+\begin{problem}
+    Sean $n, m \geq 0$. Sea $P : \mathcal{D}_P \subseteq \omega \times
+    \omega^{n} \times \Sigma^{*m} \mapsto \omega$ un predicado $\Sigma$-p.r.
+    Entonces \textit{(1)} $M(P)$ es $\Sigma$-recursiva y \textit{(2)} Si existe
+    $f: \omega^{n} \times \Sigma^{*m}  \mapsto \omega$ $\Sigma$-p.r.  tal que
+    $M(P)(\vec{x}, \vec{\alpha}) = \min_t P(t, \vec{x}, \vec{\alpha}) \leq
+    f(\vec{x}, \vec{\alpha})$ para toda $(\vec{x}, \vec{\alpha}) \in
+    \mathcal{D}_{M(P)}$, entonces $M(P)$ es $\Sigma$-p.r. 
+\end{problem}
+
+
+\small
+\begin{quote}
+
+\begin{quote}
+    \textbf{Idea.} Usar $\overline{P} = P \cup C_0^{n + 1, m}$ para tener una
+    función $\Sigma$-total t.q. $M(P) = M(\overline{P})$. Se demuestra que
+    $M(\overline{P})$ es $\Sigma$-recursiva fácilmente.  
+
+    Expresar $M(P)(\vec{x}, \vec{\alpha})  = 1^{0} \times 2^{0} \times  \ldots
+    \times t^{1}$ con $t$ el mínimo valor. Hacer esto usando un predicado en el
+    exponente de cada valor $t$ en una productoria. Se puede mostrar que esta
+    productoria es $\Sigma$-p.r. al estar limitada por $f$.
+\end{quote}
+
+\end{quote}
+\normalsize
+
+
+\textit{(1)} Sea $\overline{P} = P \cup C_0^{n+1, m}\mid_{\omega^{n+1} \times
+\Sigma^{*m} - \mathcal{D}_{P}}$. Evidentemente $\overline{P}$ es $\Sigma$-total
+y $\Sigma$-p.r. Observe que 
+
+\begin{align*}
+    \mathcal{D}_{M(\overline{P})} = \left\{ (\vec{x}, \vec{\alpha}) \in
+    \omega^{n} \times \Sigma^{*m} : (\exists t \in \omega) ~ \overline{P}(t,
+\vec{x}, \vec{\alpha}) = 1 \right\} = \mathcal{D}_{M(P)}
+\end{align*}
+
+puesto que $P(t, \vec{x}, \vec{\alpha}) = 1 \iff \overline{P}(t, \vec{x},
+\vec{\alpha}) = 1$. Además, $M(P)(\vec{x}, \vec{\alpha}) =
+M(\overline{P})(\vec{x}, \vec{\alpha}) $. Luego $M(P) = M(\overline{P})$. Pues
+$\overline{P}$ es $\Sigma$-recursive y $\Sigma$-total, por definición pertenece
+a $R^{\Sigma}$. Pues recordemos que uno de los conjuntos en la unión de
+$R_{k+1}^{\Sigma}$ es 
+
+\begin{align*}
+    \left\{ M(P) : P \text{ es $\Sigma$-total y }  P \in PR_{k}^{\Sigma} \right\} 
+\end{align*}
+
+\textit{(2)} Pues $M(P) = M(\overline{P})$ basta probar que $M(\overline{P})$ es
+$\Sigma$-p.r. Y pues $M(P)(\vec{x}, \vec{\alpha}) \leq f(\vec{x}, \vec{\alpha})
+$, tenemos que 
+
+\begin{align*}
+    \chi_{\mathcal{D}_{M(\overline{P})}}^{\omega^{n} \times \Sigma^{*m} } =
+    \left\{ (\exists t \in \omega)_{t \leq f(\vec{x}, \vec{\alpha}) } ~
+    \overline{P}(t, \vec{x}, \vec{\alpha}) = 1 \right\} 
+\end{align*}
+
+que es una composición de la cuantificación con $f$, que es $\Sigma$-p.r., sobre
+un conjunto $\Sigma$-p.r. ($\omega$) y un predicado $\Sigma$-p.r.
+($\overline{P}$). Luego el dominio de $M(\overline{P})$ es $\Sigma$-p.r. 
+
+Ahora bien, sea 
+
+\begin{align*}
+    P_1 = \lambda t \vec{x}\vec{\alpha} \left[ \overline{P}(t, \vec{x},
+    \vec{\alpha}) \land (\forall j \in \omega)_{j \leq t} ~j = t \lor  \overline{P}(j,
+\vec{x}, \vec{\alpha}) = 0  \right]
+\end{align*}
+
+Es fácil ver que $P_1$ es $\Sigma$-total y $\Sigma$-p.r., y que 
+
+$$M(\overline{P})(\vec{x},\vec{\alpha}) = t \iff (\vec{x}, \vec{\alpha}) \in \mathcal{D}(M(\overline{P})) \land P_1(t, \vec{x}, \vec{\alpha}) = 1$$ 
+
+Entonces 
+
+\begin{align*}
+    M(\overline{P}) = \lambda \vec{x}\vec{\alpha}  \left( \left[
+    \prod_{i=0}^{f(\vec{x}, \vec{\alpha}) } t^{P_1(t, \vec{x}, \vec{\alpha})}
+\right]
+\right)_{\mathcal{D}_{M(\overline{P})}}
+\end{align*}
+
+\pagebreak 
+
+\begin{problem}
+    Si $f : \mathcal{D}_f \subseteq \omega^{n} \times \Sigma^{*m} \mapsto O$ es
+    $\Sigma$-recursiva y $S \subseteq \mathcal{D}_f$ es $\Sigma$-r.e. entonces
+    $f\mid_S$ es $\Sigma$-recursiva.
+\end{problem}
+
+\small
+\begin{quote}
+
+\begin{quote}
+    \textbf{Idea.} Dar un programa $\mathcal{P}$ que enumere a $S$, y solo
+    compute $f$ cuando la enumeración coincida con el input.
+\end{quote}
+
+\end{quote}
+\normalsize
+
+Pues $S$ es $\Sigma$-r.e. hay una $F : \omega \mapsto \omega^{n} \times
+\Sigma^{*m} $ tal que $Im(F) = S$ y $F_{(1)}, \ldots, F_{ (n+m) }$ son $\Sigma$-recursivas y por lo
+tanto $\Sigma$-computables. Haremos uso de los macros de cada una de estas
+$F_{(i)}$. Entonces 
+
+
+\small
+\begin{quote}
+
+\begin{align*}
+    L_1 ~ ~ ~ &[N \overline{n+1} \leftarrow F_1(N \overline{n + m + 1})] \\ 
+    &\vdots\\
+    &[N \overline{n+n} \leftarrow F_n(N \overline{n + m + 1})] \\ 
+    &[P \overline{m+1} \leftarrow F_{n+1}(N \overline{n + m + 1})] \\ 
+    &\vdots\\
+    &[P \overline{n+m} \leftarrow F_{n+m}(N \overline{n + m + 1})] \\ 
+    &[IF ~ N_1 \neq N \overline{n+1} ~ GOTO ~ L_2] \\ 
+    &\vdots\\
+    &[IF ~ N\overline{n} \neq N \overline{n+n} ~ GOTO ~ L_2] \\ 
+    &[IF ~ P_1 \neq P \overline{m+1} ~ GOTO ~ L_2] \\ 
+    &\vdots\\
+    &[IF ~ P\overline{m} \neq P \overline{n+m} ~ GOTO ~ L_2] \\ 
+    &GOTO ~ L_3 \\ 
+    L_2 ~ ~ ~ & N \overline{n+m+1} \leftarrow N \overline{n+m+1} + 1 \\ 
+              &GOTO ~ L_1 \\ 
+    L_3 ~ ~ ~ & \left[ N_1 \leftarrow f(N_1, \ldots, N \overline{n}, P_1,
+    \ldots, P \overline{m}) \right] 
+\end{align*}
+
+\end{quote}
+\normalsize
+
+
+\pagebreak
+
+
+\subsection{Combo XVIII} 
+
+\begin{problem}
+    Sea $\Sigma \supseteq \Sigma_p$. Entonces $AutoHalt^{\Sigma}$ no es
+    $\Sigma$-recursivo.
+\end{problem}
+
+Recuerde que $AutoHalt^{\Sigma} = \lambda \mathcal{P} \left[ (\exists t \in
+\omega) ~ Halt^{0, 1}(t, \mathcal{P}, \mathcal{P})  \right]$. El dominio es
+$Pro^{\Sigma}$ y $AutoHalt^{\Sigma}(\mathcal{P}) \iff \mathcal{P}$ termina
+partiendo de $[\![ \mathcal{P} ]\!]$.
+
+Suponga que $AutoHalt^{\Sigma}$ es $\Sigma$-recursivo. Entonces hay un macro
+
+$$[IF ~ AutoHalt^{\Sigma}(W_1) ~ GOTO ~ A_1]$$
+
+Sea $\mathcal{P}_0$ el siguiente programa:
+
+\begin{align*}
+    A_1 ~ ~ ~ [IF ~ AutoHalt^{\Sigma}(P_1) ~ GOTO ~ A_1]
+\end{align*}
+
+Dado input $[\![ \mathcal{P}_0 ]\!]$, si $\mathcal{P}_0$ termina partiendo de sí
+mismo, entonces no termina; y si no termina partiendo de sí mismo, entonces
+termina. La contradicción surge de asumir que $AutoHalt^{\Sigma}$ es
+$\Sigma$-recursivo.
+
+\begin{problem}
+    Suponga $\Sigma \supseteq \Sigma_p$. Entonces $AutoHalt^{\Sigma}$ no es
+    $\Sigma$-efectivamente computable.
+\end{problem}
+
+Si fuera $\Sigma$-efectivamente computable, la tesis de Church nos diría que es
+$\Sigma$-computable, lo cual contradice el resultado anterior.
+
+\begin{problem}
+    Suponga $\Sigma \supseteq \Sigma_p$. Entonces 
+
+    \begin{align*}
+        A = \left\{ P \in Pro^{\Sigma} : AutoHalt^{\Sigma}(\mathcal{P}) = 1
+        \right\}
+    \end{align*}
+
+    es $\Sigma$-r.e. y no es $\Sigma$-recursivo, y 
+
+    \begin{align*}
+        N = \left\{ \mathcal{P} \in Pro^{\Sigma} :
+        AutoHalt^{\Sigma}(\mathcal{P})(0) \right\} 
+    \end{align*}
+
+    no es $\Sigma$-r.e.
+\end{problem}
+
+\textit{(1)} Usamos el resultado que establece que un conjunto es
+$\Sigma$-recursivamente enumerable si es el dominio de una función
+$\Sigma$-recursiva. Considere 
+
+$$P = \lambda t\mathcal{P} \left[ Halt^{0, 1}(t,
+\mathcal{P}, \mathcal{P})  \right]$$
+
+Pues $Halt^{n, m}$ es $\Sigma$-p.r. tenemos que $P$ es $\Sigma$-p.r. y por lo
+tanto $M(P)$ es $\Sigma$-recursiva. Pero el dominio de $M(P)$ es $A$. $\blacksquare$
+
+\textit{(2)} Asuma que $N$ es $\Sigma$-r.e. Observe que 
+
+\begin{align*}
+    AutoHalt^{\Sigma} = C_1^{0, 1} \mid_A \cup C_0^{0, 1} \mid_N
+\end{align*}
+
+donde cada función en la unión es $\Sigma$-recursiva por ser restricción de
+función $\Sigma$-recursiva a un conjunto $\Sigma$-r.e. Pero entonces
+$AutoHalt^{\Sigma}$ es $\Sigma$-recursiva, por lema de división por casos, lo
+cual contradice el primer resultado. Luego $N$  no es $\Sigma$-r.e.
+
+\textit{(3)} Solo queda probar que $A$ no es $\Sigma$-recursivo. Pero si $A$
+fuera $\Sigma$-recursivo, entonces $(\Sigma^{*} - A) \cap Pro^{\Sigma}$ debería
+serlo. Pero este conjunto es $N$, que no puede ser $\Sigma$-recursivo pues
+sería enumerable.
+
+\begin{problem}[Neumann vence a Godel]
+    Si $h$ es $\Sigma$-recursiva entonces $h$ es $\Sigma$-computable (Solo el
+    caso $h = M(P)$).
+\end{problem}
+
+Probaremos que si $h$ es $\Sigma$-computable pertenece a algún $R_k^{\Sigma}$
+haciendo inducción en $k$. El caso $k = 0$ puede hacerse fácilmente. Asumimos
+que el postulado vale para un $k$ arbitrario y mostramos que vale para $k + 1$. 
+
+Asuma $h \in R_{k+1}^{\Sigma} - R_{k}^{\Sigma}$ y $h = M(P)$, con $P : \omega
+\times \omega^{n} \times \Sigma^{*m} \mapsto \omega$. Pues $P$ es por
+definición de $R_k^{\Sigma}$ un predicado $\Sigma$-recursivo, es
+$\Sigma$-computable y tiene un macro asociado. Entonces el programa 
+
+\begin{align*}
+    A_1 &[IF ~ P(N\overline{n + 1}, N_1, \ldots, N \overline{n}, P_1, \ldots,
+    P\overline{m}) ~ GOTO ~ A_2] \\ 
+        &N\overline{n+1} \leftarrow  N\overline{n+1} + 1 \\ 
+        &GOTO ~ A_1 \\ 
+    A_2 ~ ~ ~ & N_1 \leftarrow N\overline{n + 1}
+\end{align*}
+
+Evidentemente el programa computa a $h = M(P)$.
+
+\pagebreak 
+
+\subsection{Combo IX}
+
+\begin{problem}
+    Suponga $f_i : \mathcal{D}_{f_i} \subseteq \omega^{n} \times \Sigma^{*m}
+    \mapsto O$, con $i = 1,\ldots, k$, son funciones $\Sigma$-recursivas tales
+    que $D_{f_i} \cap D_{f_j} = \emptyset$ si $i \neq j$. Entonces $f_1 \cup
+    \ldots \cup f_k$ es $\Sigma$-recursiva. 
+\end{problem}
+
+Sean $\mathcal{P}_1, \ldots, \mathcal{P}_k \in Pro^{\Sigma}$ los programas que
+computan $f_1, \ldots, f_k$, respectivamente. Sabemos que $H_i := \lambda t
+\vec{x}\vec{\alpha} \left[ Halt^{n, m}(t, \vec{x}, \vec{\alpha}, \mathcal{P}_i)  \right]$
+es $(\Sigma \cup \Sigma_p)$-p.r. y por lo tanto $\Sigma$-p.r. Entonces,
+asumiendo $O = \omega$, el
+programa 
+
+\begin{align*}
+    L_{1} ~ ~ ~ &N \overline{n+1} \leftarrow N+1 \\ 
+                 &[IF ~ H_1(N\overline{n+1}, N_1, \ldots, N\overline{n}, P_1,
+                 \ldots, P\overline{m}) ~ GOTO ~ L 2]\\
+                 &\vdots\\
+                 &[IF ~ H_k(N\overline{n+1}, N_1, \ldots, N\overline{n}, P_1,
+                 \ldots, P\overline{m}) ~ GOTO ~ L \overline{2 + k - 1}]\\ 
+    L_2 ~ ~ ~ & [N_1 \leftarrow  f_1(N_1, \ldots, N\overline{n}, P_1, \ldots,
+    P\overline{m})] \\ 
+              &GOTO ~ L\overline{2+k}\\
+              &\vdots \\ 
+    L_\overline{2 + k - 1} ~ ~ ~ & [N_1 \leftarrow  f_k(N_1, \ldots, N\overline{n}, P_1, \ldots,
+    P\overline{m})] \\ 
+              &GOTO ~ L\overline{2+k}\\ 
+    L\overline{2+k} ~ ~ ~ & SKIP
+\end{align*}
+
+computa $\bigcup f_i$. Para el caso $O = \Sigma^{*}$ solo se debe cambiar $N_1
+\leftarrow  f_i(\ldots)$ etc. por $P_1 \leftarrow  f_i(\ldots)$ etc.
+
+\begin{problem}
+    $Halt^{n, m}$ es $(\Sigma \cup \Sigma_p)$-p.r.
+\end{problem}
+
+Recordemos que $Halt^{n, m} = \lambda t\vec{x}\vec{\alpha}\mathcal{P} \left[
+i^{n, m}(t, \vec{x}, \vec{\alpha}, \mathcal{P}) = n(\mathcal{P}) + 1  \right]$.
+Recordemos además que $i^{n, m}$ y $\lambda \mathcal{P} \left[ n(\mathcal{P})
+\right]$ son $(\Sigma \cup \Sigma_p)$-p.r. Entonces 
+
+\begin{align*}
+    Halt^{n, m} = \lambda xy \left[ x = y  \right] \circ \left[ i^{n, m} \circ
+    \left[ p_1^{n+1, m+1}, \ldots, p_{n+m+2}^{n + 1, m+1} \right], Suc \circ
+\left[ n \circ p_{n+m+2}^{n + 1, m+1} \right]   \right] 
+\end{align*}
+
+Por independencia del alfabeto, es $\Sigma$-p.r. 
+
+\begin{problem}
+    $T^{n, m}$ es $(\Sigma \cup \Sigma_p)$-recursiva.
+\end{problem}
+
+Es un resultado teórico que si $P$ es un predicado $\Sigma$-p.r. entonces $M(P)$
+es $\Sigma$-recursivo.
+
+
+
+\pagebreak
+
 \section{Finales}
 
 \subsection{Final 2020-02}
@@ -5393,7 +7021,211 @@ proposition holds. Then $\mathcal{P}$ enumerates $S$.
 \end{quote}
 \normalsize
 
+\pagebreak 
 
+\begin{problem}
+    Sea $\Sigma$ finito y tal que $\Sigma_p \subseteq \Sigma$, y sean $n, m, l,
+    k \in \omega$. Existe una función $\Sigma$-p.r. $S_{n,l,m,k} : \omega^{l}
+    \times \Sigma^{*k} \times Pro^{\Sigma} \mapsto Pro^{\Sigma}$ tal que 
+
+    \begin{align*}
+        \Phi(\vec{x}, \vec{y}, \vec{\alpha}, \vec{\beta}, \mathcal{P}) \thickapprox
+        \Phi\left(\vec{x}, \vec{\alpha}, S_{n, l, m, k} (\vec{y}, \vec{\beta},
+        \mathcal{P})\right)
+    \end{align*}
+\end{problem}
+
+\pagebreak
+
+\textbf{Parte 1}. Sea $\Sigma = \left\{ a_1, \ldots, a_r \right\}$. Definamos
+$\mathcal{Q}$ una familia $\Sigma$-indexada de funciones con dominio
+$\mathbb{N}$ y tal que para todo $i \in \mathbb{N}$, $\mathcal{Q}_i :  \omega
+\mapsto Pro^{\Sigma}$ se define como
+
+\begin{align*}
+    \mathcal{Q}_i := \lambda \alpha\beta \left[ \alpha\beta  \right] \circ
+    \left[ C_{N\overline{i} \leftarrow 0}^{1, 0}, \lambda x\alpha \left[
+    \alpha^x \right] \circ \left[ p_1^{1, 0}, C_{N\overline{i} \leftarrow
+N\overline{i} + 1}^{1, 0} \right]  \right] 
+\end{align*}
+
+Evidentemente, para toda $i \in \mathbb{N}$ tenemos que $\mathcal{Q}_i$ es
+$\Sigma$-p.r. y es tal que $\mathcal{Q}_i(x)$ concatena $N\overline{i}
+\leftarrow 0$ con $x$ veces $N\overline{i} \leftarrow N\overline{i} + 1$. Es
+decir, $\mathcal{Q}_i$ devuelve un programa que guarda en $N\overline{i}$ el valor
+$x$.  
+
+Definamos también $\mathcal{R}$ una familia $\Sigma$-indexada de funciones con
+dominio $\mathbb{N}$ y tal que $ \mathcal{R}_i : \Sigma^{*} \mapsto
+Pro^{\Sigma}$ se define como $\mathcal{R}_i = R(f, \mathcal{G})$ para 
+
+\begin{align*}
+    f &:= C_{SKIP}^{0, 0}\\
+    \mathcal{G}_a &:= \lambda \alpha\beta \left[ \alpha\beta \right] \circ
+    \left[p_2,^{0, 2}, d_a \circ
+    C^{0, 2}_{P\overline{i} \leftarrow P\overline{i}.}\right] 
+\end{align*} 
+
+Es claro que, para todo $i$, $\mathcal{R}_i$ es $\Sigma$-p.r. y que
+$\mathcal{R}_i(\alpha)$ devuelve un programa que guarda en $P\overline{i}$ la
+palabra $\alpha$.
+
+
+\small
+\begin{quote}
+
+\begin{quote}
+\textbf{Nota.} Para dar un ejemplo (y chequear!), hacemos la computación de
+$\mathcal{R}_{3}(word)$ sobre $\Sigma = \left\{ w, o, r, d \right\} $:
+
+\begin{quote}
+    \begin{align*}
+        \mathcal{R}_3(word) &= \mathcal{G}_d(wor, R(f, \mathcal{G})(wor)) \\ 
+                        &= R(f, \mathcal{G})(wor) (P_3 \leftarrow P_3.d)\\ 
+                        &\vdots \\ 
+                        &SKIP(P_3 \leftarrow  P_3.w)(P_3 \leftarrow
+                        P_3.o)(P_3 \leftarrow P_3.r)(P_3 \leftarrow P_3.d)
+    \end{align*}
+
+    que es lo que esperábamos.
+\end{quote}
+\end{quote}
+
+\end{quote}
+\normalsize
+
+El resultado de esta primera parte es que contamos con $\mathcal{Q},
+\mathcal{R}$ familias $\Sigma$-indexadas de funciones. Las funciones de estas familias
+devuelven programas que agregan un valor arbitrario a una variable numérica o
+alfabética, respectivamente. Además, son todas $\Sigma$-p.r. 
+
+\pagebreak
+
+\textbf{Parte 2}. Dados $n, l, m, k \in \omega$, definimos $S_{n, l, m, k}
+    : \omega^{l} \times \Sigma^{*k} \mapsto Pro^{\Sigma}$ de la siguiente
+    manera:
+
+    \begin{align*}
+        S_{n, l, m, k}(\vec{y}, \vec{\beta}, \mathcal{P}) =
+        \mathcal{Q}_{n+1}(y_1) \ldots
+        \mathcal{Q}_{n+l}(y_l)\mathcal{R}_{m+1}(\beta_1)\ldots
+        \mathcal{R}_{m+k}(\beta_k)
+        \mathcal{P}
+    \end{align*}
+
+    Cada $\mathcal{Q}_i, \mathcal{R}_i$ son $\Sigma$-p.r. y sus evaluaciones son
+    palabras; la concatenación de palabras es $\Sigma$-p.r. Luego $S_{n, l, m,
+    k}$ es $\Sigma$-p.r. (¿Debería darle más rigor a esto?)
+    
+    Entonces, veamos que $\Phi^{n, m}_{\#}\left(\vec{x}, \vec{\alpha}, S_{n, l,
+    m, k}(\vec{y}, \vec{\beta}, \mathcal{P})\right)$ "ejecuta" el programa
+
+        $$\mathcal{Q}_{n+1}(y_1) \ldots
+        \mathcal{Q}_{n+l}(y_l)\mathcal{R}_{m+1}(\beta_1)\ldots
+        \mathcal{R}_{m+k}(\beta_k)
+        \mathcal{P}$$
+
+        partiendo del estado
+$$[\![ x_1, \ldots,
+x_n, \alpha_1, \ldots, \alpha_m]\!]$$
+
+Eventualmente, tras las ejecuciones de cada $\mathcal{Q}_{i},
+\mathcal{R}_{i}$, la computación conducirá a un
+estado 
+
+\begin{align*}
+    [\![ x_1, \ldots, x_n, y_1, \ldots, y_l, \alpha_1, \ldots, \alpha_m,
+    \beta_1, \ldots, \beta_k ]\!]
+\end{align*}
+
+y solo entonces comenzará la computación de $\mathcal{P}$ (desde ese estado).
+Pues computará a $\mathcal{P}$ desde ese estado, es claro que 
+
+$$ \Phi^{n, m}_{\#}\left(\vec{x}, \vec{\alpha}, S_{n, l, m, k}(\vec{y},
+\vec{\beta})\right) \thickapprox \Phi^{n, l, m, k}_{\#}(\vec{x}, \vec{y}, \vec{\alpha},
+\vec{\beta}, \mathcal{P})$$
+
+
+
+\end{quote}
+\normalsize
+
+\pagebreak 
+
+\begin{problem}
+    Sea $f : S \subseteq \omega^{n} \times \Sigma^{*m} \times Pro^{\Sigma} \mapsto
+    \omega$ una función $\Sigma$-computable. Entonces existe $\mathcal{P} \in
+    Pro^{\Sigma}$ tal que 
+
+    \begin{align*}
+        f(\vec{x}, \vec{\alpha}, \mathcal{P}) \thickapprox  \Phi_{\#}^{n, m} (\vec{x},
+        \vec{\alpha}, \mathcal{P})
+    \end{align*}
+\end{problem}
+
+
+
+\small
+\begin{quote}
+
+    ¿Qué condiciones debe satisfacer el programa $\mathcal{P}$ deseado? Ejecutar
+    $\mathcal{P}$ partiendo de $[\![ x_1, \ldots, x_n, \alpha_1, \ldots,
+    \alpha_m ]\!]$ debe equivaler a ejecutar $f(\vec{x}, \vec{\alpha},
+    \mathcal{P}) $. Sabemos que $f$ tiene un programa $\mathcal{F} \in
+    Pro^{\Sigma}$ asociado; parece natural suponer que el $\mathcal{P}$ deseado
+    debe ser de la forma $\mathcal{W}\mathcal{F}$ con $\mathcal{W} \in
+    Pro^{\Sigma}$. Lo difícil es notar que $\mathcal{W}$ debe ejecutarse de modo
+    tal que, al terminar, el mismo $\mathcal{W}$ está guardado en
+    $P\overline{m+1}$. Es decir, 
+
+    \begin{align*}
+        \mathcal{W} = \mathcal{R}_{m+1}(\mathcal{W})
+    \end{align*}
+
+    lo cual es una auto-referencia que no tiene sentido. No tiene sentido porque
+    si
+    $\mathcal{W} = q_1 \ldots q_k$ entonces (omitiendo el $SKIP$ inicial)
+
+\begin{align*}
+     q_1\ldots q_k = (P\overline{m+1} \leftarrow
+     P\overline{m+1}.q_1) \ldots (P\overline{m+1} \leftarrow
+     P\overline{m+1}.q_k)
+\end{align*}
+
+Es decir que $q_1 = P\overline{m+1} \leftarrow P\overline{m+1}.\left(
+P\overline{m+1} \leftarrow P\overline{m+1}.\left( \ldots \right)  \right) $.
+
+La pregunta es: ¿Hay otra forma de dar con un programa $\mathcal{W} \in
+Pro^{\Sigma}$ tal que $\mathcal{W}$ termina consigo mismo en $P\overline{m+1}$?
+¿Y qué si partimos $\mathcal{W}$? Sabemos que $\mathcal{W} = \mathcal{W}_1
+\mathcal{W}_2$ con $\mathcal{W}_1, \mathcal{W}_2 \in Pro^{\Sigma}$. ¿Podemos
+hacer que $\mathcal{W}_1$ guarde en $P\overline{m+1}$ el contenido de $\mathcal{W}_2$ y vice-versa? Así
+evitaríamos las auto-referencias complicadas.
+
+O sea, podríamos hacer
+
+\begin{align*}
+    \mathcal{W}_2 = R_{m+1}(\mathcal{W}_1) \\ 
+    \mathcal{W}_1 = R_{m+2}(\mathcal{W}_2)
+\end{align*}
+
+y luego concatenar a $\mathcal{W}_2 \mathcal{W}_1$ un programa que "pegue" los
+dos programas. Pero acá otra vez hay circularidad!! Porque con esta definición 
+
+\begin{align*}
+    \mathcal{W}_2 = R_{m+1} \left( R_{m+2}(\mathcal{W}_2) \right) 
+\end{align*}
+
+Se me hace que esta idea de partir $\mathcal{W}$ y hacer $\mathcal{W}_2 =
+R_{m+1}(\mathcal{W}_1)$ es un buen comienzo; pero no sé si se puede evitar la
+circularidad anterior. ¿Tal vez hay que usar $S_{n,
+l, m, k}$ de alguna forma? 
+
+
+
+
+\end{quote}
+\normalsize
 
 
 

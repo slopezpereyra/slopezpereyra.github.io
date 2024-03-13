@@ -1,5 +1,8 @@
 \documentclass[a4paper, 12pt]{article}
 
+\usepackage{mathtools}
+\usepackage{graphicx}
+\graphicspath{ {../Images/} }
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
@@ -18,7 +21,51 @@
 
 \begin{document}
 
+\begin{titlepage}
+   \begin{center}
+       \vspace*{1cm}
 
+       \textbf{Logics}
+
+       \small
+       \vspace{0.5cm}
+        FAMAF - UNC
+            
+       \vspace{1.5cm}
+       \footnotesize
+       \textbf{SLP}
+       \normalsize
+
+       \vfill
+            
+            
+     
+   \end{center}
+\end{titlepage}
+
+
+\tableofcontents
+\newpage
+
+\section{Functions}
+
+A function $f : A \mapsto B$ is a set of tuples $\left\{ (a, b) : a \in A \text{
+and} b \in B \right\} $. The domain $\mathcal{D}_f$ and image $I_f$ of a
+function have the usual definitions. The kernel of a function is 
+
+\begin{align*}
+    ker(f) = \left\{ (a, b) \in \mathcal{D}_f^2 : f(a) = f(b) \right\} 
+\end{align*}
+
+From this follows that a function $f$ is injective---that it maps to each element
+in $\mathcal{D}_f$ a distinct element in the range---iff $ker(f) =
+\left\{ (a, b) \in \mathcal{D}_f^2 : a = b \right\} $.
+
+Given $F : A \mapsto B$ and $S \subseteq A$, we will use $F(S)$ to denote
+$\left\{ F(a) : a \in S \right\} $.
+
+
+\pagebreak
 \section{Equivalence relations}
 
 \begin{definition}
@@ -117,7 +164,7 @@ $A \subseteq B$ does not imply $R \subseteq A^2$. For example, $R = \left\{ (1,
 \end{definition}
 
 We sometimes write simply $[a]$ if the equivalence relation $R$ is understood by
-the context. 
+the context. We may also write $a / R$ to denote the equivalence class $[a]_R$.
 
 
 \small
@@ -187,6 +234,17 @@ set of all equivalence classes. For example, if $R = \left\{ (x, y) \in
 \mathbb{R}^2 : x = y \right\} $ then $\mathbb{R} / R = \left\{ \left\{ x \right\}  : x \in
 \mathbb{R} \right\} $. 
 
+\begin{definition}
+    If $R ~ \ddot{\propto} ~A$, we define $\pi_R : A \mapsto A / R$ defined as
+    $\pi_R(a) = a /R$ for every $a \in A$. We call this function the
+    \textbf{canonic projection} with respect to $R$.
+\end{definition}
+
+\begin{theorem}
+    If $R ~ \ddot{\propto} ~A$, then $ker(\pi_R) = R$. This entails that $\pi_R$
+    is injective iff $R = \left\{ (x, y) \in A^2 : x = y \right\} $.
+\end{theorem}
+
 
 \small
 \begin{quote}
@@ -220,7 +278,130 @@ Observe that this can be generalized. If $R = \left\{ (x, y) : z \mid x - y
 
 always with $z$ elements.
 
+\begin{problem}
+    Let $R = \left\{ (x, y) \in \mathbb{N}^2 : x, y \leq 6 \right\}  \cup
+    \left\{ (x, y) \in \mathbb{N}^2 : x > 6 \land  y > 6 \right\} $. Prove that
+    $R$ is an equivalence relation over $\mathbb{N}$ and find $\mathbb{Z} / R$.
+    How many elements does it have?
+\end{problem}
+
+\textit{(1)} Let $(a, b) \in R$. We have two possible cases. If $(a, b)$ is s.t.
+$a, b \leq 6$, then if $b R c$ for some $c \in \mathbb{N}$ we must have $c
+\leq 6$. This implies $(a, c) \in R$, which means the relation is transitive. A
+similar argument shows transitivity applies to the case $a, b > 6$. It is very
+simple to show that the relation is reflexive. To show it is symmetric, simply
+observe that $(a, b) \in  R$ implies either $a, b \leq 6$ or $a, b > 6$ which
+implies $(b, a) \in  R$.
+
+\textit{(2)} Evidently, $6R 5, 6R 4, 6R 3,\ldots $, and $7 R 8, 7R 9, 7R 10,
+\ldots$. Thus, the equivalence relation $R$ over $\mathbb{Z}$ has a quotient space
+
+$$\mathbb{Z} / R = \left\{ \left\{ z \in \mathbb{Z} : z \leq 6 \right\}, \left\{
+z \in \mathbb{Z} : z > 6\right\}   \right\}  = \left\{ 6 / R, 7 / R \right\} $$
+
+\begin{problem}
+    Give true or false for the following statements.
+\end{problem}
+
+\textit{(1)} If $R$ an equivalence relation over $A \neq \emptyset$, then $|A /
+R| = 1 \iff R = A \times A$.
+
+\begin{quote}
+    $(\Leftarrow)$ It is easy to see that $R = A \times A$ is by definition the
+    equivalence relation where any $a \in A$ is equivalent to any $b \in A$. So
+    $|R / A| = 1 $.
+
+    ($\Rightarrow$) Let  $R = A\times A$. Assume $|A / R| \neq 1$. Since $A \neq
+    \emptyset, A \times A \neq \emptyset$ and $|A / R| > 0$. So we must have $|
+    A / R| > 1$. This implies there is some $a,b \in A$ s.t. $\neg(aRb)$
+    (otherwise a unique equivalence class would exist). But then
+    $(a, b) \not\in A^2$, which contradicts the definition of Cartesian product.
+    Then if $R = A \times A, |A / R| = 1$.
+
+    In conclusion, the statement is true.
+\end{quote}
+
+\textit{(2)} If $R ~ \ddot{\propto} ~ A$ then $A / R = \left\{ \left\{ a / R
+\right\} : a \in A  \right\} $. 
+
+\begin{quote}
+    False. By definition: $A / R = \left\{ a / R : a \in A \right\} \neq \left\{
+    \left\{ a / R  \right\} : a \in A\right\} $
+\end{quote}
+
+\textit{(3)} Let $R ~ \ddot{\propto} ~ A$ with $A = \left\{ 1, 2,3,4,5 \right\}
+$. Then $ | \left\{ i / R : i \in A \right\}  | = 5$.
+
+\begin{quote}
+    False. It depends on $R$, which is unspecified. E.g. we have shown that if
+    $R = A^2$ then $ | A / R | = 1 $.
+\end{quote}
+
+\textit{(4)} $A / \left\{ (x, y) \in A^2 : x = y \right\} = A$ .
+
+\begin{quote}
+    False, but it is made look like it is true. By definition of $R = \left\{ (x, y) \in A^2 : x = y \right\} $ we have $x,
+    y \in A \land x\neq y \Rightarrow \neg(xRy)$. So $a \in A$ belongs to a
+    single equivalence class $a / R$. Then $A / R = \left\{ \left\{ a \right\} :
+    a \in A\right\}  \neq A$.
+\end{quote}
+
+\textit{(5)} Let $R ~ \ddot{\propto} ~A$ and $C \subseteq A, C \neq \emptyset$.
+Assume $xRy$ for any $x, y \in C$. Then $C \in A /R$.
+
+\begin{quote}
+    The statement is false. Observe that 
+
+    $$c / R = C \cup \left\{ x \in A : x
+    \not\in C \land  cRx \right\} $$
+
+    If the second set is non-empty then $C \not\in A / R$.
+
+    \textbf{Counter example.} Let $A = \left\{ 1, 2,3, 4, 5 \right\} $ and $C = \left\{
+    1, 2 \right\} $, satisfying the constraints of the problem. If $(1, 3) \in
+    R$ and we assume no non-reflexive relations other than $(1, 2), (1, 3)$ exist, then $A
+    / R = \left\{ \left\{ 1, 2, 3 \right\}  \right\} \not\supseteq C$.
+
+
+\end{quote}
+
+\begin{problem}
+    Let $R ~ \ddot{\propto} ~A$. Prove \textit{(1)} that $ker(\pi_R) = R$ and
+    \textit{(2)} $\pi_R$ is injective iff $R = \left\{ (x, y) \in A^2 : x = y
+    \right\} $.
+\end{problem}
+
+\textit{(1)} By definition $\pi_R(a) = a / R$ which entails that $ker ~ \pi_R =
+\left\{ (a, b) : a/R = b / R \right\} $. Of course $a / R = b / R
+\iff aRb$. Then $ker (\pi_R) = \left\{ (a, b) : aRb \right\} = \left\{ (a, b) :
+(a, b) \in R\right\}  = R $.
+
+\textit{(2)} ($\Rightarrow$) Assume $\pi_R$ is injective. Then no two elements in the domain map
+to the same element. Then $\pi_R(a) \neq \pi_R(b)$ for all $a, b \in A, a \neq b$, which
+entails $a / R \neq b / R$ for all $a, b \in  A, a \neq b$. Then each element is
+only equivalent to itself. Then $R = \left\{ (a, b) \in A^2 : a = b \right\} $.
+
+($\Leftarrow$) Assume $R = \left\{ (a, b) \in A^2 : a = b \right\} $. Then
+$\neg(aRb)$ for any $a, b \in A, a \neq b$. Then $\pi_R(a) \neq \pi_R(b)$ for
+all $a, b \in A, a \neq b$. Then $\pi_R$ is injective.
+
+\end{quote}
+\normalsize
+
+\begin{figure}
+    \caption{Graph of a quotient space with 7 equivalent classes. Any two
+    connected vertices denote equivalent elements of a set.}
+\centering
+\includegraphics[scale=0.3]{equiv}
+\end{figure}
+
+
+
 \subsection{Partitions and equivalence}
+
+A partition $\mathcal{P}$ of a set $A$ is a set s.t. every $P \in \mathcal{P}$
+is a subset of $A$, $P_1 \cap P_2 = \emptyset$ for any $P_1, P_2 \in
+\mathcal{P}, P_1 \neq P_2$; and $\bigcup_{P \in \mathcal{P}} P = A$.
 
 Given a partition $\mathcal{P}$ of a set $A$, a valid binary relation is 
 
@@ -229,7 +410,20 @@ Given a partition $\mathcal{P}$ of a set $A$, a valid binary relation is
     \mathcal{P} \right\} 
 \end{align*}
 
-This is in fact an equivalence relation. 
+Observe that $R_{\mathcal{P}}$ is an equivalence relation. First of all,
+$aR_{\mathcal{P}}a$ because $a$ is always in the same partition than $a$.
+Furthermore, if $aR_{\mathcal{P}}b$ and $bR_{\mathcal{P}}c$ then $a$ and $c$ are
+in the same partition. Lastly, if $a$ is in the same partition than $b$, then
+$b$ is in the same partition than $a$ (symmetry).
+
+Furthermore, if $R ~ \ddot{\propto} ~A$ is an arbitrary equivalence relation, then $A
+/ R$ is a partition of $A$. To each element $a \in A$ corresponds some $a / R$
+that \textit{at least} contains $a$; from this follows trivially that
+$\bigcup_{a \in A} a / R = A$. Furthermore, if $a / R \neq b / R$ for some $a, b
+\in  A$, then $a / R \cap b / R = \emptyset$---otherwise, some element $c \in A$
+equivalent to $a$ and $b$ should exist, but this would contradict the hypothesis
+that $a$ and $b$ are not equivalent. That $a / R \subseteq A$ for every $a \in
+A$ follows trivially from the definition of equivalence class.
 
 \begin{theorem}
     Let $A$ an arbitrary set, $\mathscr{P}_A$ the set of all partitions of $A$
@@ -245,11 +439,1079 @@ This is in fact an equivalence relation.
     are bijections one the inverse of the other.
 \end{theorem}
 
+\small
+\begin{quote}
+
+\begin{problem}
+    Say true, false or imprecise the following statements.
+\end{problem}
+
+\textit{(1)} If $\mathcal{P}$ a partition of $X$ and $x \in X$, then $x /
+\mathcal{P} \in \mathcal{P}$.
+
+\begin{quote}
+    Imprecise. $\mathcal{P}$ is a partition, not a binary relation, and thus the
+    expression $x / \mathcal{P}$ is undefined.
+\end{quote}
+
+\textit{(2)} $\mathcal{P} = \left\{ 1, 3 / 2, 4 / 5, 6 \right\} $ is a partition
+of $\left\{ 1, 2, 3, 4, 5, 6 \right\} $.
+
+\begin{quote}
+    Imprecise. The expression $3 / 2, 4 / 5$, etc. are undefined.
+\end{quote}
+
+\textit{(3)} If $\mathcal{P}$ a partition of $X$, then $\mathcal{P} \cap X =
+\emptyset$.
+
+\begin{quote}
+    The statement is true. The set $\mathcal{P}$ contains \textit{sets} of
+    elements of $X$; the set $X$ contains elements of $X$. Therefore, each $P
+    \in \mathcal{P}$ is of a different type than each $x \in X$.
+\end{quote}
+
+\textit{(4)} If $R ~ \ddot{\propto} ~ A$, then $A \cap A / R = \emptyset$.
+
+\begin{quote}
+    We know $A / R$ is a partition of $A$, and in the previous problem we have
+    already stated that $A \cap \mathcal{P} = \emptyset$ for any partition
+    $\mathcal{P}$ of $A$. So the statement is true.
+\end{quote}
+
+\textit{(5)} If $R ~ \ddot{\propto} ~ A$ and there is a bijection between $A$
+and $A / R$, then $R = \left\{ (x, y ) \in A^2  : x = y \right\} $.
+
+\begin{quote}
+    The statement is false. Consider $A = \mathbb{N}$ and $R$ the equivalence
+    relation s.t. $A / R$ is the partition 
+    
+    $$\left\{ \left\{ 1 \right\}, \left\{
+    2, 3\right\}, \left\{ 4, 5, 6 \right\}, \left\{ 7, 8, 9, 10 \right\}, \ldots
+\right\} $$
+
+    Then $F(1) = \left\{ 1 \right\} , F(2) = \left\{ 2, 3 \right\}, F(3) =
+    \left\{ 4, 5, 6 \right\}, \ldots  $ is a bijection.
+
+    It is interesting to study the finite case, however. If $A = \left\{ a_1,
+    \ldots, a_n \right\} $ a finite set,and $F$ is bijective, we must have
+
+    \begin{align*}
+        F(a_1) = X_1, \ldots, F(a_{n}) = X_{n}
+    \end{align*}
+
+    with $X_i \neq X_j$ for $i, j \in [1, n]$. In other words, $|A / R| = |A|$, which implies $A / R$
+    is a partition of $A$ into singleton sets. And because every element must be
+    equivalent to itself, $A / R = \left\{ \left\{ a_1 \right\}, \ldots, \left\{
+    a_n\right\}   \right\} \Rightarrow R = \left\{ (x, y) \in A^2 : x = y
+    \right\} $.
+
+
+\end{quote}
+
+\end{quote}
+\normalsize
+
+
+
+\subsection{Functions with domain $A / R$}
+
+In general, defining $f : A / R \mapsto B$ leads to ambiguity. For example, if
+we define $f(a / R) = f([a]) = a^2$ and $R$ is the relationship "has the same
+parity", then the fact that $[2] = [4]$ would lead us to expect $f([2]) = 4 =
+f([4]) = 16$.
+
+Notwithstanding, one of the fundamental ideas of modern algebra relates to a
+function of precisely this form:
+
+\begin{theorem}
+    If $f : A \mapsto B$ is onto, then $\overline{f}(a / ker ~ f) = f(a)$
+    defines a bijection $\overline{f} : A / ker ~ f \mapsto B$.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Proof.} \textit{(Is a function)} Observe that $\overline{f}(a / ker ~ f) = f(a)$
+is uniquely determined for any $a \in A$.
+
+\textit{(Injective)} Let $a_1, a_2 \in A$ arbitrary elements
+with $a_1 / ker ~ f \neq a_2 / ker ~ f$. Assume $\overline{f}(a_1) =
+\overline{f}(a_2)$. Then $f(a_1) = f(a_2)$, which entails $(a_1, a_2) \in ker ~
+f$, which contradicts the assumption. Then $\overline{f}$ is injective.
+
+\textit{(Surjective)} Let $b \in B$ an arbitrary element. Since $f$ is
+surjective, $b = f(a)$ for some $a \in A$. From this follows $b = \overline{f}(a
+/ ker ~ f)$. 
+
+Since $\overline{f}$ is injective and surjective, $\overline{f}$ is a bijection.
+
+\end{quote}
+\normalsize
+
+The theorem above guarantees, for any surjective $f$, the existence of a mapping from the quotient space
+$A / ker ~ f$ onto $I_f$.
+
+
+\small
+\begin{quote}
+
+\begin{problem}
+    Say true, false or imprecise for the following statements.
+\end{problem}
+
+\textit{(1)} Let $R = \left\{ (x, y) \in \mathbb{Z}^2 : 2 \mid x - y \right\} $.
+The equation $f(n / R) = \frac{1}{n^2 + 1}$ correctly defines a function.
+
+\begin{quote}
+    False. Observe that 
+
+    $$\mathbb{Z} / R =  \left\{ \left\{ z \in \mathbb{Z} : z
+    \text{ is even }\right\}, \left\{ z \in \mathbb{Z} : z \text{ is odd }
+\right\}   \right\} $$
+
+We would then expect $f(0 / R) = f(2 / R) \iff 1 = \frac{1}{5}$. ($\bot$)
+
+\end{quote}
+
+\textit{(2)} If $R ~ \ddot{\propto} ~A$ then $f : A / R \mapsto A$ defined as
+$f(a / R) = a$ is onto.
+
+\begin{quote}
+    Imprecise because $f$ is not necessarily a function and hence we cannot say
+    it is onto.
+\end{quote}
+
+
+\end{quote}
+\normalsize
+
+
+\pagebreak
+\section{Partial orders}
+
+\begin{definition}
+    If $R \propto A$ is reflexive, transitive and anti-symmetric, then it is a
+    partial order.
+\end{definition}
+
+We use $\leq$ to denote the binary relation that is a partial order. Because we
+define $\leq$ as a binary relation, we must emphasize that $\leq$ denotes a set
+of 2-uples. Furthermore, $<$ denotes $\left\{ (a, b) \in ~ \leq ~ : a \leq b \land a
+\neq b\right\} $. 
+
+\begin{definition}
+    Let $\leq$ be a partial order over $A$. If $a < b$ and there is no $z$ s.t.
+    $a < z$ and $z < b$, then we write $a \prec b$ and read "$b$ covers $a$" or
+    "$a$ is covered by $b$".
+\end{definition}
+
+Observe that $\prec$ is itself the binary relation 
+$$\left\{ (a, b) \in A^2 : a <
+b \land \neg \left( \exists z \in A : a < z \land z < b \right) \right\} $$
+
+\begin{definition}
+    We say $\leq$ is a total order over $A$ if it is a partial order s.t. $x
+    \leq y$ or $y \leq x$ for any $x, y \in A$.
+\end{definition}
+
+Partially or totally ordered sets are pairs $(P, \leq)$ where $\leq$ is a
+partial or total order (respectively) over $P$.
+
+\subsection{Maximum, minimum, maximal, minimal}
+
+Given a poset $(P, \leq)$, $x$ is a maximum if $a \leq x$ for all $a \in P$. The
+definition of a minimum is analogous.  
+
+\begin{theorem}
+    If $(P, \leq)$ a poset, then $(P, \leq) $ has at most one maximum.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Proof.} Assume $(P, \leq) $ is a poset with two distinct maximums $x, y$. By
+definition then $x \leq y$ and $y \leq x$. By anti-symmetry we have $x = y$,
+which is a contradiction.
+
+\end{quote}
+\normalsize
+
+Given a poset $(P, \leq) $, we use $1$ to denote its maximum and $0$ to denote
+its minimum, if they exist. 
+
+~ 
+
+A maximal element of a poset $(P, \leq) $ is any $a \in P$ s.t. there is no $b
+\in P$ s.t. $a < b$. In other words, a maximal element is an element that has no
+successor in the order. Similarly, $a \in P$ is minimal if there is no $b \in P$
+s.t. $b < a$. In other words, a minimal element is one that has no predecessor.
+
+
+\small
+\begin{quote}
+
+\begin{problem}
+    True or false: If $(P, \leq) $ a poset and $a \in P$ is not a maximum, then
+    $a < b$ for some $p \in B$.
+\end{problem}
+
+False. Consider any poset $(P, \leq) $ that has $n > 1$ maximals $m_1, \ldots,
+m_n$.
+Then, for any $i, j = 1, \ldots, n$, $m_i$ is not a maximum (because $m_j \not<
+m_i$) but $m_i \not< b$ for all $b \in B$. For an example of a poset with $n =
+3$ maximals, see the graph below.
+
+\begin{center}
+\includegraphics[scale=1]{threemaximals}
+\end{center}
+
+\begin{problem}
+    True or false: If $(P, \leq) $ a poset without maximal elements, then $P$ is
+    infinite.
+\end{problem}
+
+False, but only for a special case. If $P \neq \emptyset$, then it is true that
+for any $a_1 \in P$ there is some $a_2$ s.t. $a_1 < a_2$, and this extends to
+infinity: $a_1 < a_2 < \ldots $. However, if $P = \emptyset$, then the only
+binary relation over $\emptyset$ is $\emptyset^2 = \emptyset$, which gives the
+poset $(\emptyset, \emptyset)$. This poset is not only a partial order but a
+total order; it contains no maximal elements, and yet it is not infinite.
+
+\end{quote}
+\normalsize
+
+
+\subsection{Supremum and infimum}
+
+Let $(P, \leq) $ a poset and $S \subseteq P$. We say $a \in P$ is an upper bound
+of $S$ in $(P, \leq) $ when $b \leq a$ for all $b \in S$. 
+
+\begin{quote}
+    \textbf{Note}. $\emptyset \subseteq P$, so what's the deal? Well, every
+    element in $\emptyset$ (which is no element at all) is lesser than any $a
+    \in P$. In other words, every element in $P$ is an upper bound of
+    $\emptyset$.
+
+    \textbf{Note 2.} For any given $S \subseteq P$, many upper bounds may exist
+    (see the previous note).
+\end{quote}
+
+An element $a \in P$ is called the \textit{supremum} of $S$ in $(P, \leq) $ when
+two properties hold: 
+
+\begin{quote}
+\begin{itemize}
+    \item $a$ is an upper bound of $S$ in $(P, \leq) $ 
+    \item For any $b \in P$, if $b$ is an upper bound of $S$ in $(P, \leq) $,
+        then $a \leq b$.
+\end{itemize}
+\end{quote}
+
+In other words, $a$ is a supremum if it is the lesser upper bound. It is always
+unique.
+
+
+\small
+\begin{quote}
+
+    \textbf{Example.} Let $(\mathbb{N}, \leq)$ denote the usual order over
+    $\mathbb{N}$ and $S = \left\{ 1, 2, 3 \right\} $. Any natural $n \geq 3$ is an upper
+    bound of $S$ in $(\mathbb{N}, \leq)$. However, $3$ is the only supremum of
+    $S$.
+
+\end{quote}
+\normalsize
+
+The definitions of the lower bound and the infimum are analogous. A lower bound
+of $S \subseteq P$ in $(P, \leq) $ is any $a \in P$ s.t. $a \leq b$ for all $b
+\in S$. The infimum is the greatest lower bound, or the lower bound $a$
+satisfying that any lower bound $a'$ is s.t. $a' \leq a$.
+
+
+\small
+\begin{quote}
+
+\begin{problem}
+    Prove that if $a, a'$ are supremums of $S$ in $(P, \leq) $, then $a = a'$.
+\end{problem}
+
+By definition, $a, a'$ are the least upper bounds of $S$. If $a < a'$ then $a'$
+is no longer the least upper bound and hence $a' \leq a$. The same reasoning
+gives $a \leq a'$. Then, by anti-symmetry, $a = a'$.
+
+\end{quote}
+\normalsize
+
+The previous problem shows that we can speak of \textit{the} supremum of $S
+\subseteq P$ for any poset $(P, \leq) $.
+
+
+\small
+\begin{quote}
+
+\begin{problem}
+    Let $(P, \leq) $ a poset. \textit{(1)} If $a \leq b$ then $\text{sup}\{a, b\}
+    = b$. \textit{(2)} Find $\left\{ a \in P : a \text{ is upper bound of }
+    \emptyset \text{ in } (P, \leq)  \right\} $. \textit{(3)} If the supremum of
+    $\emptyset$ in $(P, \leq) $ exists, it is a minimum element of $(P, \leq) $.
+\end{problem}
+
+\textit{(1)} The statement is trivially true. 
+
+\textit{(2)} Assume $P \neq \emptyset$. Since $\emptyset \subseteq P$ it is
+correct to speak of the upper bound of $\emptyset$ in $(P, \leq) $. However, any
+element $a \in P$ is an upper bound of $\emptyset$ in $(P, \leq) $. The reason
+is that to prove $a \in P$ is \textit{not} an upper bound of $\emptyset$, we
+should find some $x \in \emptyset$ s.t. $x \not\leq a$---in other words, because
+the definition of upper bound involves a universal quantifier, its negation
+involves an existential, a counter-example. And since $\emptyset$ has no
+elements, there is no such counter-example. In conclusion, 
+
+\begin{align*} \left\{ a \in  P : a \text{ is upper bound of } \emptyset \text{
+in } (P, \leq)  \right\} = P \end{align*}
+
+However, if $P = \emptyset$ (and therefore $\leq ~= \emptyset = \emptyset^2$), there is no
+upper bound of $\emptyset$ in $(\emptyset, \emptyset)$.
+
+\textit{(3)}  The statement is false. The hypothesis gives $P \neq \emptyset$,
+and we know any $a \in P$ is an upper-bound of $\emptyset$. If we assume
+$\emptyset$ has a supremum over $(P, \leq) $, then it is the least upper-bound.
+In other words, it is some $m \in P$ s.t. $m \leq a$ for any $a \in P$. By
+definition, $m$ is a minimum.
+
+\begin{problem}
+    Give a finite poset with three elements $x_1, x_2, x_3$ s.t. \textit{(1)}
+    $\left\{ x_1, x_2, x_3 \right\} $ is an anti-chain, meaning that $x_i
+    \not\leq x_j$ when $i \neq j$; \textit{(2)} $\text{sup}\{x_i, x_j\} $
+    doesn't exist for any $i \neq j$; \textit{(3)} $\text{sup}\{x_1, x_2,x_3\} $
+    exists.
+\end{problem}
+
+A poset that satisfies this can be any that has the following Hasse diagram:
+
+\begin{center}
+\includegraphics[scale=0.4]{graph}
+\end{center}
+
+Here, $0, 1, 2$ are $x_1, x_2, x_3$. The supremum on any pair of them does not
+exist because each $\left\{ x_i, x_j \right\} $ has two upper bounds that are
+not ordered with respect to one another. For example, the two smallest upper
+bounds of $\left\{ 1, 0 \right\} $ are $10, 7$. But $10 \not\leq 7$ and $7
+\not\leq 10$. However, $\text{sup}\{0, 1, 2\} = 12 $.
+
+\begin{problem}
+    If $(P, \leq) $ a poset and $a = \text{sup}(S)$ then $a = \text{sup}(S \cup
+    \left\{ a \right\} )$.
+\end{problem}
+
+The statement is true. Our hypothesis is that $x \leq a$ for any $x \in S$, and $a
+\leq b$ for any upper-bound $b$ of $S$. This evidently still holds for $S \cup
+\left\{ a \right\} $, because $a \leq a$.
+
+\begin{problem}
+    Let $(P, \leq) $ a poset and $a \in P$. Then $a$ is a maximum of $(P, \leq)
+    $ iff $a = \text{sup}(P) $.
+\end{problem}
+
+($\Rightarrow$) Assume $a$ is a maximum of $(P, \leq) $. Then $x \leq a$ for all
+$x \in P$. Then $a$ is an upper-bound of $P$. Furthermore, if there were some $u
+\in P$ s.t. $u$ is an upper bound and $u < a$, then by definition $u$ would not
+be an upper-bound of $P$ because $a \not\leq u$. Then $a$ is the least upper
+bound of $P$. $\blacksquare$
+
+($\Leftarrow$) Assume $a$ is the supremum of $P$. Then $x \leq a$ for all $x \in
+P$. The definition of a supremum of $S \subseteq P$ over $(P, \leq) $ requires
+that the supremum be an element of $P$. Then $a \in P$. Then by definition $a$
+is the maximum of $P$.
+
+\textbf{Note.} The problem reveals a property; namely, that if $S \subseteq P$
+and $\text{sup}(S)$ over $(P, \leq) $ satisfies $\text{sup}(S) \in S$, then this
+supremum is the maximum of $(S, \leq)$. Alternatively, this can be stated as
+follows: \textit{The maximum of a poset $(P, \leq) $, if it exists, is the
+supremum $m$ of $P$ over $(P, \leq) $ whenever $m \in P$ }.
+
+\begin{problem}
+    Give true, false or imprecise.
+\end{problem}
+
+\textit{(1)} If $(P, \leq) $ a poset and $S \subseteq P$, then $a =
+\text{sup}(S)$ in $(P, \leq) $ iff $a \in S$ and $b \leq a$, for all $b \in  S$.
+
+\begin{quote}
+    False. It is not necessary that $\text{sup}(S) \in S$. Consider the last
+    graph we gave, where $\text{sup}\left\{ 0, 1, 2 \right\} = 12 $ is not in $\left\{
+    0, 1, 2 \right\} $.
+\end{quote}
+
+\textit{(2)} Let $(P, \leq) $ a poset and $S \subseteq P$ and $a \in P$ an upper
+bound of $S$. If $a$ is not the supremum of $S$, then there is some upper bound
+$b$ of $S$ s.t. $b < a$.
+
+\begin{quote}
+    The statement is false. If $a$ is an upper bound of $S$ but it is not the supremum,
+    it could very well be the case that another upper bound $b$ exists, with $a
+    \not < b$ and $a \not > b$. 
+
+    For an example, go at the last graph we showed;
+    imagine the maximum (i.e. $12$) does not exist. Then consider that $10$ is
+    an upper bound of $\left\{ 0, 1 \right\} $ but not a supremum, and yet there
+    is no upper bound $b$ of $\left\{ 0, 1 \right\} $ s.t. $10 < b$.
+
+
+    \begin{problem}
+        Let $P = \left\{ 0 \right\} \cup \left\{ x \in \mathbb{R} : 1 < x \leq 2
+        \right\} $. Let 
+
+        $$\leq = \left\{ (x, y) \in P^2 : x \leq y \right\} $$
+
+        Let $S = \left\{ x \in \mathbb{Q} : 1 < x \leq 2 \right\} $. Does $S$
+        have an infimum over $(P, \leq) $?
+    \end{problem}
+
+    The order is the usual order, but over $P = \left\{ 0 \right\}  \cup (1, 2]$.
+    The set $S$ (and in fact $P$ as well) has only one lower bound over $(P,
+    \leq) $; namely, $0$. Observe that $1$ is not a lower bound because $1
+    \not\in P$, and there is no such thing as the "first rational number". Since
+    $0$ is the \textit{only} lower bound it is also the greatest lower bound.
+
+    \begin{problem}
+        Say true or false. Let 
+
+        $$\mathcal{D} \left( (x_0, y_0), r \right) = \left\{ (x, y) \in
+        \mathbb{R}^2 : (x - x_0)^2 + (y - y_0)^2 \leq r^2 \right\} $$
+
+        Let $P = \left\{ \emptyset \right\} \cup \left\{ \mathcal{D}\left( (x_0,
+        y_0), r \right) : x_0, y_0 \in \mathbb{R}, r > 0  \right\} $. In the
+        poset $(P, \subseteq ) $, there is always $\text{inf}\left\{ D_1, D_2
+        \right\} $, for any $D_1, D_2 \in P$.
+    \end{problem}
+
+     $\mathcal{D}\left( (x_0, y_0), r \right) $ is the set of
+     points within a circumference with center $(x_0, y_0)$ and radius $r$. So
+     $P$ is the set of all disks, including $\emptyset$. Two disks may be
+     related in one and only one of the ways schematized by the following Venn diagrams:
+
+
+\begin{center}
+\includegraphics[scale=0.2]{circles}
+\end{center}
+
+Formally, for $D_1, D_2 \in P$, the image depicts the following exhaustive and
+mutually exclusive cases: 
+
+\begin{itemize}
+    \item $D_1 \subseteq  D_2$, 
+    \item $ D_1 \cap D_2 \neq \emptyset$ but $D_1 \not\subseteq D_2$
+    \item $D_1 \cap D_2 = \emptyset$. 
+\end{itemize}
+
+It is easy to prove that in the first and third cases, there is an infimum.
+However, consider the case $D_1 \cap D_2 \neq \emptyset$ with $D_1 \not\subseteq
+D_2$. Let $D_3$ a disk s.t. $D_3 \subseteq D_1 \cap D_2$---this is, $D_3$ is an
+arbitrary, non-empty lower bound of $\left\{ D_1, D_2 \right\} $. Then, given
+any arbitrary $(z_1, z_2) \not\in D_3$ that
+lies in $D_1 \cap D_2$, we can define $D_z = \mathcal{D}((z_1, z_2), \epsilon)$, with
+$\epsilon > 0$ a quantity sufficiently small to guarantee $D_z \cap D_3 =
+\emptyset$ and $D_z \in D_1 \cap D_2$. It is evident that $D_z$ is a lower bound
+of $\left\{ D_1, D_2 \right\} $; but since $D_z \not\subseteq D_3$ we cannot say
+$D_3$ is the greatest lower bound.
+
+The argument above holds for any lower bound $D_3 \subseteq D_1 \cap D_2$. In
+general terms, we have shown that, in the case $D_1 \cap D_2 \neq \emptyset, D_1
+\not\subseteq D_2$, for any lower bound $D_3$ of $\left\{ D_1, D_2 \right\} $,
+we can find a lower bound $D_z$ that is not a subset of $D_3$. Therefore no
+greater lower bound exists and there is no infimum. Thus, the statement is
+false.
+
+
 
 
 
 \end{quote}
 \normalsize
+
+
+
+\subsection{Poset homomorphism}
+
+Let $(P, \leq), (Q, \leq')  $ two posets. A function $F : P \mapsto Q$ is called
+a homomorphism from $(P, \leq) $ to $(Q, \leq')$ iff 
+
+\begin{align*}
+    \forall x, y \in P : x \leq y \Rightarrow F(x) \leq' F(y)
+\end{align*}
+
+
+We say $F$ is an isomorphism of $(P, \leq) $ in $(Q, \leq') $ if $F$ is a
+bijective homomorphism and $F^{-1}$ is a homomorphism from $(Q, \leq') $ in
+$(P, \leq) $. 
+
+
+\small
+\begin{quote}
+
+\textbf{Note.} Not all bijective homomorphism satisfy the last property. For
+example, 
+
+\begin{align*}
+    P &= \left( \left\{ 1, 2 \right\}, \left\{ (1, 1), (2, 2) \right\}\right) \\
+    Q &= \left( \left\{ 1, 2 \right\}, \left\{ (1, 2),(2, 2), (1, 2)
+\right\}   \right) 
+\end{align*}
+
+Then $F : \left\{ 1, 2 \right\} \mapsto \left\{ 1, 2
+\right\} $ with $F(1) = 1, F(2) = 2$ is a bijective homomorphism. However,
+$F^{-1}$ is not a homomorphism because $1 \leq' 2$ and $F^{-1}(1) = 1, F^{-1}(2)
+= 2, 1 \not\leq 2$.
+
+\end{quote}
+\normalsize
+
+
+The following theorem states that a homomorphism preserves all the properties of
+interest.
+
+\begin{theorem}
+    Let $(P, \leq), (Q, \leq') $ two posets. Assume $F$ is an isomorphism from
+    $(P, \leq) $ to $(Q, \leq') $. Then $x \leq y$ iff $F(x) \leq' F(y)$.
+    Furthermore, if $x$ is a maximum, a minimum, a maximal or a minimal of $(P,
+    \leq) $, then $F(x)$ is that same thing of $(Q, \leq') $. Moreover, for any
+    $x, y, z \in P$, $z = \text{sup}\left\{ x, y \right\} $ if and only if $F(z)
+    = \text{sup}\left\{ F(x), F(y) \right\} $, and the same applies to the
+    infimum. Lastly, $x \prec y$ if and only if $F(x) \prec' F(y)$.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\begin{problem}
+    Prove that if $(P, \leq) , (Q, \leq') $ posets with an isomorphism $F$, then
+    for all $x, y \in P$ we have $x < y \iff F(x) <' F(y)$.
+\end{problem}
+
+($\Rightarrow$) Assume $x < y$. Then $F(x) \leq' F(y)$. Assume $F(x) = F(y)$.
+Then $F^{-1}(F(x)) = F^{-1}(F(y))$, which contradicts the assumption. Then $F(x) <'
+F(y)$.
+
+$(\Leftarrow)$ Assume $F(x) <' F(y)$. Then we have $x \leq y$ (because $F^{-1}$
+is an homomorphism). If $x = y$ and $F(x) <' F(y)$, we have $F(y)$ covers $F(x)$
+but $y$ does not cover $x$ ($\bot$). Then $x < y$.
+
+\begin{problem}
+    Now prove $x$ is a maximum iff $F(x)$ is a maximum.
+\end{problem}
+
+$(\Rightarrow)$ Assume $x \in P$ is a maximum of $(P, \leq) $. Then $\forall y
+\in P : y \leq x$. Then $\forall y \in P: F(y) \leq' F(x)$. Then $F(x)$ is a
+maximum of $(Q, \leq') $.
+
+$(\Leftarrow)$ Assume $F(x)$ is a maximum of $(Q, \leq') $ with $x \in P$. Then
+$\forall y \in P : F(y) \leq' F(x)$. Then $\forall y \in P : F^{-1} \left( F(y)
+\right) \leq F^{-1} \left( F(x) \right) $ or rather $\forall y \in  P : y \leq
+x$.
+
+\begin{problem}
+    Now prove $x \prec y \iff F(x) \prec F(y)$.
+\end{problem}
+
+Assume $x \prec y$ for $x, y \in P$. Then $y \leq x$ and for all $z \in P$ s.t.
+$y \leq z$ we have $x \leq z$. The first fact gives $F(y) \leq' F(x)$. The
+second fact gives $F(x) \leq F(z)$ for all $z \in P$ s.t. $y \leq z$. Then $F(x)
+\prec' F(y)$ . The other side of the implication is left to the reader.
+
+\begin{problem}
+    Give true, false or imprecise for the following statements.
+\end{problem}
+
+\textit{(1)} If $(P, \leq) , (P, \leq') $ are finite and isomorphic, then $\leq
+= \leq'$.
+
+\begin{quote}
+    True. Observe that $x \leq y \iff x \leq' y$ which by definition entails
+    $(x, y) \in  \leq \iff (x, y) \in  \leq'$.
+\end{quote}
+
+\textit{(2)} If $(P, \leq) $ a poset s.t. every $F : P \mapsto P$ is
+homomorphic from $(P, \leq) $ in $(P, \leq) $, then $|P| = 1$.
+
+\begin{quote}
+
+    False. Assume $P = \emptyset$. There is only one function $F : P \to P$,
+    namely $\emptyset^2 = \emptyset$. This function is a homomorphism because no
+    counter-example can be found to the defining properties of a homomorphism in
+    the empty set. So $P = \emptyset$ satisfies the properties but $|P| \neq 1$.
+\end{quote}
+
+\end{quote}
+\normalsize
+
+
+\subsection{Lattices}
+
+A poset $(P, \leq) $ is called a lattice if for any $x, y \in P,
+\text{sup}\left\{ x, y \right\} $ and $\text{inf}\left\{ x, y \right\} $ exist. Informally, this means that any pair
+of elements in $P$ is related to some common successor and some common
+predecessor in $P$. We use $(L, \leq)$ to denote a lattice.
+
+
+\small
+\begin{quote}
+
+\begin{problem}
+    Prove that $(\mathbb{N}, \mid)$ is a lattice. Does it have maximum and
+    minimum?
+\end{problem}
+
+We skip the proof that $(\mathbb{N}, \mid)$ is a poset. Let $n_1, n_2 \in \mathbb{N}$ two arbitrary numbers. Because the set
+$\mathcal{D}(n_1, n_2) = \left\{ d \in \mathbb{N} : d \mid n_1, d \mid n_2
+\right\} $ is a finite set over the natural numbers, it has a maximum. Of
+course, from a lattice perspective, $\mathcal{D}(n_1, n_2)$ is the set of lower
+bounds of $\left\{n_1, n_2 \right\} $. Then $\text{inf}\left\{ n_1, n_2 \right\}
+=\max \mathcal{D}(n_1, n_2)$ is guaranteed to exist. The proof that
+$\text{sup}\left\{ n_1, n_2 \right\} $ exists is similar.
+
+Because $1 \mid n$ for any $n \in \mathbb{N}$, $1$ is a minimum. However, there
+is no natural $m \in \mathbb{N}$ s.t. $n \mid m$ for every $n$, so the set lacks
+a maximum.
+
+\begin{problem}
+    Show that if $(P, \leq)$ is a total order then it is lattice.
+\end{problem}
+
+   Assume $(P, \leq) $ is a total order. If $\ldots \leq p_0 \leq p_1\leq  p_2 < \ldots$ 
+   is the (potentially infinite) order of $P$, then for any 
+   $i, k \in \omega$,  $\text{sup}\left\{ p_i, p_{i + k} \right\} = p _{i + k}$
+   and $\text{inf}\left\{ p_i, p_{i +k} \right\} = p_i$. Then $(P, \leq) $ is a
+   lattice.  
+
+   \begin{problem}
+       If $(P, \leq) $ a lattice then $\text{sup}(S)$ exists for any $S
+       \subseteq P$?
+   \end{problem}
+
+   The statement is false. $(\mathbb{N}, \leq)$ with $\leq$ the usual order is a
+   total order and therefore a lattice, and $\text{sup}(\mathbb{N}) $ does not
+   exist.
+
+   \begin{problem}
+       True or false: If $(P, \leq) $ a lattice and $S \subseteq P$, then $(S,
+       \leq ~ \cap ~ S^2)$ is a lattice.
+   \end{problem}
+
+   False. Consider as a counter example $(\left\{ 1, 2, 3, 6 \right\}, \mid )$.
+   It is evident that this is a lattice, and here 
+
+   $$\mid ~ = \left\{ (1, 2), (1,3), (1,6), (2, 6), (3, 6)\right\} $$
+
+   Now consider $\left( \left\{ 1, 2, 3 \right\}, \left\{ (1, 2), (1, 3)
+   \right\}   \right) $. This is obviously not a lattice.
+
+\begin{problem}
+    True or false: If $(P, \leq) $ a lattice and $S \subseteq P$ non-empty and
+    s.t. $(S, \leq ~ \cap S^2)$ a lattice, then for any $a, b \in S$,
+    $\text{inf}\left\{ a, b \right\} $ in $(P, \leq) $ coincides with
+    $\text{inf}\left\{ a, b \right\} $ in $(S, \leq ~ \cap S^2)$.
+\end{problem}
+
+Should be true. COMPLETE.
+
+\begin{problem}
+    Let $P \subseteq \mathcal{P}(\mathbb{N})$ and assume $(P, \leq)$ a lattice
+    with 
+
+    \begin{align*}
+        \leq ~ = \left\{ (A, B) \in P \times P : A \subseteq B \right\} 
+    \end{align*}
+
+    Is $\text{inf}\left\{ A, B \right\} = A ~ \cap |_{P^2} B $?
+\end{problem}
+
+Since $(P, \leq) $ a lattice we know the infimum of any pair of elements always
+exist. Let $A, B \in P$ and assume $\text{inf}\left\{ A, B \right\} = I $. Then,
+by definition, $I \subseteq A$ and $I \subseteq B$. Furthermore, for any $I' \in
+P$ s.t. $I' \subseteq A$ and $I' \subseteq B$ we have $I' \subseteq I$. It
+follows that for every $x \in A \cap B$ we have $x \in I$. Then $I = A \cap B$.
+And since we have imposed the condition $A, B \in P$, the restriction of the
+intersection to $P^2$ satisfies what we have shown. The statement is true.
+
+\begin{problem}
+    If $(P, \leq) $ a lattice and $m$ is a maximal element of $(P, \leq) $,
+    then $m$ is a maximum of $(P, \leq) $. Is this true if $(P, \leq) $ is not a
+    lattice?
+\end{problem}
+
+The statement is true. Assume $m$ is not a maximum. Then either there is some
+$m' \in P$ s.t. $m \leq m', m \neq m'$, or there is some $x \in P$
+s.t. $x \not\leq m$. If the first case holds then $m$ is not maximal ($\bot$).
+If the second case holds then $\text{sup}\left\{ x, m \right\} $ does not exist
+and $(P, \leq) $ is not a lattice ($\bot$). Then $m$ is a maximum. $\blacksquare$
+
+
+\end{quote}
+\normalsize
+
+
+
+\subsection{Binary operations}
+
+Given a set $A$, a binary operation over $A$ is a function $f : A^2 \to A$ s.t.
+$\mathcal{D}_f = A$. A lattice has by definition two binary operations: inf and
+sup. We will write $a \lor b$ and $a \land b$ to denote the supremum
+and infimum of $\left\{ a, b \right\} \subseteq P$, respectively.
+
+\textbf{Some properties with their proofs:} Assume $x, y \in (L, \leq)$ a
+lattice.
+
+\begin{quote}
+    \textit{(1)} $x \leq x \lor  y$ 
+
+    \begin{quote}
+        \textbf{Proof.} $x \leq x \lor  y$ by definition of supremum, because $x
+        \lor  y$ is the least $z \in L$ s.t. $x \leq z, y \leq z$.
+    \end{quote}
+
+    \textit{(2)} $x \land  y \leq x$
+    \begin{quote}
+        \textbf{Proof.} The proof is similar to the previous case.
+    \end{quote}
+
+    \textit{(3)} $x \lor  x = x$
+
+    \begin{quote}
+        \textbf{Proof.} $\text{sup}\left\{ x, x \right\} = \text{sup}\left\{ x
+        \right\} $ and of course $x$ is the lesser element in $L$ s.t. $x \leq
+        x$.
+    \end{quote}
+
+    \textit{(4)} $x \land  x = x$
+    \begin{quote}
+        \textbf{Proof.} Similar to the previous case.
+    \end{quote}
+
+
+    \textit{(5)} $x \lor y = y \lor  x$
+    
+    \begin{quote}
+        \textbf{Proof.} Trivial; left to the reader.
+    \end{quote}
+
+    \textit{(6)} $x \land  y = y \land  x$
+
+
+\end{quote}
+
+
+
+\begin{theorem}
+    Let $(L, \leq)$ a lattice. For any $x, y \in L$, we have $x \leq y \iff x
+    \lor y = y$. Furthermore, $x \leq y \iff x \land y = x$.
+\end{theorem}
+
+\begin{theorem}[Absortion laws]
+    Let $(L, \leq)$ a lattice and $x, y, z \in L$. Then \textit{(1)} $x \lor (x
+    \land y) = x$ and \textit{(2)} $x \land (x \lor y) = x$.
+\end{theorem}
+
+\begin{theorem}[Order preservation]
+    If $x \leq z$ and $y \leq w$, then $x \circ y \leq z \circ w$, with $\circ
+    \in \left\{ \lor, \land \right\} $.
+\end{theorem}
+
+\textbf{Some proving tips.}
+
+\begin{itemize}
+    \item If you want to prove $x \lor  y \leq z$, it suffices to show $x \leq
+        z$ and $y \leq z$. 
+
+        \begin{quote}
+            \textit{Justification.} Assume $x \leq z, y \leq z$. Then $z$ is an
+            upper bound of $\left\{ x, y \right\} $. Since $x \lor  y$ is the
+            least upper bound, $x \lor y \leq z$.
+        \end{quote}
+
+    \item If you want to prove $z \leq x \land  y$, it suffices to show $z \leq
+        x$ and $z \leq y$. 
+
+        \begin{quote}
+            \textit{Justification.} If $z \leq x, z \leq y$, then $z$ is a lower
+            bound of $\left\{ x, y \right\} $. Then, because $x \land  y$ is the
+            least lower bound of this set, $z \leq x \land  y$.
+        \end{quote}
+\end{itemize} 
+
+\begin{theorem}[Associativity]
+    For any $x, y, z \in L$ with $(L, \leq)$ a lattice, $(x \lor y) \lor z = x
+    \lor (y \lor  z)$, and the same holds for $\land $.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Proof.} \textit{(1)} Firstly, we will prove $(x \lor  y) \lor  z \leq x
+\lor  (y \lor  z)$. To do this, we will prove the expression to the right is an
+upper-bound of the terms in the expressions to the left. 
+
+\begin{quote}
+
+    \textit{(1.1)} It follows directly from the definition of supremum that $x
+    \leq x \lor  (y \lor  z)$. Furthermore, let $\varphi = y \lor  z$, so that
+    by definition $y \leq \varphi$. Since $\varphi \leq x \lor  \varphi$ we have
+    $y \leq x \lor \varphi$ by transitivity. In other words, $y \leq x \lor  (y
+    \lor  z)$. Then $x \lor  (y \lor  z)$ is an upper bound of $\left\{ x, y
+    \right\} $. Then $x \lor y \leq x \lor  (y \lor  z)$.
+
+    \textit{(1. 2)} That $z \leq x \lor  (y \lor  z)$ is clear from the fact
+    that $z \leq y \lor  z$ and $y \lor  z \leq x \lor  (y \lor  z)$ (apply
+    transitivity).
+
+\end{quote}
+
+From \textit{(1.1, 1.2)} follows that $x \lor (y \lor  z)$ is an upper bound of
+$\left\{ x \lor  y, z \right\} $. Then $(x \lor  y) \lor  z \leq x \lor  (y \lor
+z)$. $\blacksquare$
+
+\textit{(2)} In a similar way, we can prove that $x \lor  (y \lor  z) \leq (x
+\lor  y) \lor  z$. Since $\varphi \leq \psi$ and $\psi \leq \varphi$ imply
+$\varphi = \psi$ for any $\varphi, \psi \in L$, this concludes the proof.
+
+\end{quote}
+\normalsize
+
+\begin{theorem}
+    If $(L, \leq)$ a lattice and $x, y, z \in L$, then $(x \land y) \lor (x
+    \land z) = x \land (y \lor  z)$. 
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Proof.} \textit{(1)} Observe that $(x \land  y) \lor   (x \land  z) \leq
+x$. The reason is that $x \land  y \leq x $ trivially, $x \land  z \leq x$
+trivially, and therefore $x$ is an upper bound of $\left\{ x \land  y, x \land
+z\right\} $. Then the supremum of this set is necessarily less than or equal to
+$x$.
+
+\textit{(2)} Observe that $(x \land  y) \lor  (x \land z) \leq y \lor  z$. The
+reason is that $x \land  y \leq y \leq y \lor  z$ and $x \land  z \leq  
+z \leq y \lor  z$. Then $y \lor  z$ is an upper bound of $\left\{ x \land  y, x
+\land  z\right\} $, and then the supremum of this set is less than or equal to
+$y \lor  z$.
+
+\textit{(3)} Results \textit{(1)} and \textit{(2)} entail $(x \land  y) \lor (x
+\land  z)$ is a lower bound of $\left\{ x, y \lor  z \right\} $. Then $(x \land
+y) \lor  (x \land  z) \leq x \land  (y \lor  z)$.
+
+Using the same tricks we can prove $x \land  (y \lor  z) \leq (x \land  y) \lor
+(x \land  z)$, which completes the proof. $\blacksquare$
+
+\end{quote}
+\normalsize
+
+
+
+\section{Lattices as algebras}
+
+We have treated lattices as a special kind of poset. However, a lattice can be
+modeled as a special kind of algebra. In general, a lattice is any $3$-uple $(L, \lor,
+\land)$ with $L$ a set and $\lor, \land$ binary relations over $L$ that satisfy
+the following properties: 
+
+
+\small
+\begin{quote}
+
+    For any $x, y, z \in L$:
+
+\begin{itemize}
+    \item $x \lor x = x \land x$ 
+    \item $x \lor y = y \lor x$ (Commutativity)
+    \item $x \land y = y \land x$ (Commutativity)
+    \item $(x \lor y) \lor z = x \lor (y \lor z)$ (Associativity)
+    \item $(x \land y) \land z = x \land (y \land z)$ (Associativity)
+    \item $x \lor (x \land y) = x $
+    \item $x \land (x \lor y) = x$
+\end{itemize}
+
+\end{quote}
+\normalsize
+
+Viewed in this way, if $(L, \leq)$ a lattice \textit{in the poset} sense, then
+we have $(L, \lor, \land)$ a lattice \textit{in the algebraice sense} where
+$\lor, \land$ denote the supremum and infimum operators. More formally,
+
+\begin{theorem}[Dedekind]
+    If $(L, \lor, \land)$ a lattice, the binary relation $x \leq y \iff x
+    \lor y = y$ is a partial order over $L$ s.t. $\text{sup}\left\{ x, y
+    \right\} = x \lor y, \text{inf}\left\{ x, y \right\} = x \land y$, for any
+    $x, y \in L$.
+\end{theorem}
+
+
+We call $\leq$ the order associated to $(L, \lor, \land)$ and $(L, \leq)$ the
+poset associated to $(L, \lor, \land)$.
+
+\subsection{Distributive lattice}
+
+A lattice $(L, \lor, \land)$ is said to be distributive when, for any $x, y, z,
+\in L$, we have $x \land (y \lor z) = (x \land y) \lor (x \land z)$. It can be
+proven that if this property holds (distributivity of $\land$ over $\lor$), its
+complementary property holds (distributivity of $\lor$ over $\land$). 
+
+\subsection{Sub-lattices and sub-universes}
+
+If $(L, \land, \lor), (L', \land', \lor')$ are lattices, we say the first is a
+sub-lattice of the other iff 
+
+\begin{itemize}
+    \item $L \subseteq L'$
+    \item $\lor = \lor'\mid_{L \times L}$ and $\land = \land'\mid_{L \times L}$
+\end{itemize}
+
+We say $S \subseteq L$ is a sub-universe of $(L, \lor, \land)$ if $S \neq
+\emptyset$ and $S$ is closed under $\lor, \land$.
+
+
+\small
+\begin{quote}
+
+\textbf{Note.} The concepts of sub-lattice and sub-universe are similar but not
+identical. A sub-universe of $(L, \lor, \land)$ is a \textit{set}; a sub-lattice
+of $(L, \lor, \land)$ is a lattice. It is true that if $S$ is a sub-universe,
+then $(S, \lor \mid_{S \times S}, \land \mid_{S \times S})$ is a sub-lattice,
+and that every sub-lattice is obtained in this manner. In other words, there is
+a bijection between sub-lattices and sub-universes. 
+
+
+\end{quote}
+\normalsize
+
+\subsection{Lattice homomorphisms and isomorphisms}
+
+Let $(L, \lor, \land), (L', \lor', \land')$ be lattices. A function $F : L
+\mapsto L'$ is a lattice homomorphism from $(L, \lor, \land)$ in $(L', \lor',
+\land')$ iff 
+
+\begin{align*}
+    F(x \circ y) = F(x) \circ' F(y)
+\end{align*}
+
+with $\circ$ either $\lor$ or $\land$. A homomorphism is called an isomorphism
+when it is bijective and its inverse is a homomorphism as well. We write $(L,
+\land, \lor)
+\simeq (L', \land', \lor') $ to say that two lattices are isomorphic.
+
+\begin{theorem}
+    If $F$ is a bijective homomorphism between two lattices, then it is an
+    isomorphism.
+\end{theorem}
+
+\begin{theorem}
+    Let $F$ an homomorphism from  $(L, \lor, \land) $ in $ (L', \lor',
+    \land')$. Then $I_F$ is a sub-universe of $(L', \lor', \land')$, and in
+    consequence $F$ is an homomorphism from $(L, \lor, \land)$ in $(I_F,
+    \lor'\mid_{I_F \times I_F}, \land'\mid_{I_F \times I_F})$.
+\end{theorem}
+
+\begin{theorem}
+    Let $(L, \lor, \land )$ and $(L', \lor ', \land ')$ lattices with associated
+    posets $(L, \leq), (L', \leq')$. Then $F$ is an isomorphism of $(L, \lor ,
+    \land )$ in $(L', \lor ', \land ')$ iff $F$ is an isomorphism from $(L,
+    \leq)$ to $(L', \leq')$.
+\end{theorem}
+
+\subsection{Lattice congruence}
+
+A congruence over a lattice $(L, \lor , \land )$ is an equivalence relation
+$\theta ~ \ddot{\propto} ~ L$ s.t. 
+
+\begin{align*}
+    x_1 \theta x_2 \text{ and } y_1 \theta y_2 \Rightarrow (x_1 \lor  y_1)
+    \theta (x_2 \lor  y_2) \text{ and } (x_1 \land y_1) \theta (x_2 \theta y_2)
+\end{align*}
+
+This condition allows us to define two binary operations $\hat{\lor },
+\hat{\land }$ over $L / \theta$ as follows: 
+
+\begin{align*}
+    x / \theta \widetilde{\lor } y / \theta = (x \lor y) / \theta\\
+    x / \theta \widetilde{\land  } y / \theta = (x \land  y) / \theta
+\end{align*}
+
+
+\small
+\begin{quote}
+
+\textbf{Examples.} \textit{(1)} Consider the lattice $\left( \left\{ 1, 2, 3, 4,
+5, 6\right\}, \max, \min  \right) $. Let $\theta$ be the equivalence relation
+given by the partition $\left\{ \left\{ 1, 2 \right\}, \left\{ 3 \right\},
+\left\{ 4, 5 \right\}   \right\} $. Then $\theta$ is a congruence. For example, 
+
+\begin{align*}
+    \begin{rcases*}
+        1 ~\theta~ 2 \\ 
+        4 ~\theta~ 5
+    \end{rcases*} \Rightarrow (1 \max 4) \theta (2 \max 5)
+\end{align*}
+
+which holds, because $4 ~ \theta ~ 5$. The same can be verified for the $\min$
+operation. Of course, we have that $\left\{ 1, 2 \right\} \widetilde{\max}
+\left\{ 4, 5 \right\} = (1 \max  4) / \theta = 4 / \theta = \left\{ 4, 5
+\right\} $. In a sense, we are taking the supremum and infimum operations to a
+broader dimension, not applying to individual elements but to sets of equivalent
+elements.
+
+\textbf{Note.} Observe that a congruence is an equivalence relation that is
+preserved in the supremum and infimum operations of a lattice. In the previous
+example, because it is a congruence, we expect that because $1$ is equivalent to
+$2$, and $4$ is equivalent to $5$, that the supremum of $1$ and $4$ matches the
+supremum of $2$ and $5$.
+
+\end{quote}
+\normalsize
+
+\begin{theorem}
+    If $(L, \lor , \land )$ a lattice and $\theta$ a congruence relation of this
+    lattice, then $(L / \theta, \widetilde{ \lor  }, \widetilde{ \land  }  )$ is
+    a lattice.
+\end{theorem}
+
+We use $\widetilde{ \leq } $ to denote the partial order associated to the
+lattice $(L / \theta, \widetilde{ \lor  }, \widetilde{ \land  }  )$.
+
+\begin{theorem}
+    If $(L, \lor , \land )$ a lattice and $\theta$ a congruence over this
+    lattice, then 
+
+    \begin{align*}
+        x / \theta ~ \widetilde{ \leq } y / \theta  ~ \iff y \theta (x \lor  y)
+    \end{align*}
+
+    for any $x, y \in L$.
+\end{theorem}
+
+\begin{theorem}
+    If $F : (L, \land , \lor ) \mapsto (L', \land ', \lor ')$ an homomorphism,
+    then $ker(F)$ is a congruence over $(L, \land , \lor )$.
+\end{theorem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

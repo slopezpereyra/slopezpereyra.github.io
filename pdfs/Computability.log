@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  25 FEB 2024 21:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  13 MAR 2024 11:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -908,25 +908,220 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[81] [82] [83] [84] [85]
-./Computability.tex:5150: Double superscript.
+[81] [82]
+Overfull \hbox (14.23892pt too wide) detected at line 5093
+[]
+ []
+
+[83]
+Overfull \hbox (52.82253pt too wide) in paragraph at lines 5178--5180
+[]\T1/ntxtlf/m/n/10.95 Un lenguaje puede en-tonces enu-mer-arse de man-era or-de-nada así: $\OML/ntxmi/m/it/10.95 "; s[]\LMS/ntxsy/m/n/10.95 ¹\OML/ntxmi/m/it/10.95 "\LMS/ntxsy/m/n/10.95 º\OML/ntxmi/m/it/10.95 ; s[]\LMS/ntxsy/m/n/10.95 ¹\OML/ntxmi/m/it/10.95 s[]\LMS/ntxsy/m/n/10.95 ¹\OML/ntxmi/m/it/10.95 "\LMS/ntxsy/m/n/10.95 ºº\OML/ntxmi/m/it/10.95 ; []$ 
+ []
+
+[84] [85] [86] [87] [88]
+
+LaTeX Warning: Command \textordfeminine invalid in math mode on input line 5411.
+
+
+LaTeX Warning: Command \textordfeminine invalid in math mode on input line 5411.
+
+Missing character: There is no ª in font ntx-Regular-tlf-ot1!
+./Computability.tex:5425: Undefined control sequence.
+l.5425 I_1\ldotsI
+                 _n \in
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Computability.tex:5425: Double subscript.
+l.5425 I_1\ldotsI_
+                  n \in
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+./Computability.tex:5461: Missing $ inserted.
+<inserted text> 
+                $
+l.5461     \end{align*}
+                       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Computability.tex:5461: Missing $ inserted.
+<inserted text> 
+                $
+l.5461     \end{align*}
+                       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Computability.tex:5461: Missing $ inserted.
+<inserted text> 
+                $
+l.5461     \end{align*}
+                       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Computability.tex:5461: Missing $ inserted.
+<inserted text> 
+                $
+l.5461     \end{align*}
+                       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+[89]
+./Computability.tex:5477: Double superscript.
+l.5477 ...bb{N}]}$ y $\vec{\sigma} \in \Sigma^{*}^
+                                                  {[\mathbb{N}]}$. Se habla
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+./Computability.tex:5495: Double superscript.
+l.5495 \Sigma^{*}^
+                  {[\mathbb{N}]}$. Se habla en general de la descripciÃ³n in...
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+./Computability.tex:5513: Double superscript.
+l.5513     \Sigma^{*}^
+                      {[\mathbb{N}]} \mapsto \omega \times  \omega^{[\mathbb...
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+./Computability.tex:5514: Double superscript.
+l.5514     \times  \Sigma^{*}^
+                              {[\mathbb{N}]}$ es una funciÃ³n que asocia una...
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+[90]
+Overfull \hbox (31.47627pt too wide) detected at line 5574
+[]
+ []
+
+
+Overfull \hbox (4.28296pt too wide) detected at line 5580
+\LMS/ntxsy/m/n/10.95 D[] \U/ntxmia/m/it/10.95 = []
+ []
+
+[91] [92] [93]
+Overfull \hbox (44.21686pt too wide) detected at line 5813
+[]
+ []
+
+[94] [95] [96] [97] [98] [99]
+Overfull \hbox (56.72414pt too wide) detected at line 6057
+[]
+ []
+
+[100] [101]
+Overfull \hbox (20.87755pt too wide) detected at line 6154
+[]
+ []
+
+[102]
+./Computability.tex:6208: You can't use `macro parameter character #' in math mode.
+<argument> ...}\vec {\alpha } \left [ x \neq E_{##
+                                                  1}^{k, l}(t, \vec {x}, \ve...
+l.6208 \end{align*}
+                   
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./Computability.tex:6208: You can't use `macro parameter character #' in math mode.
+<argument> ...}\vec {\alpha } \left [ x \neq E_{##
+                                                  1}^{k, l}(t, \vec {x}, \ve...
+l.6208 \end{align*}
+                   
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./Computability.tex:6248: You can't use `macro parameter character #' in math mode.
+<argument> ... L_1 \right ] &[IF ~ N_1 \neq E_{1##
+                                                  }^{k, l} \left ( \right ) ] 
+l.6248     \end{align*}
+                       
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./Computability.tex:6248: You can't use `macro parameter character #' in math mode.
+<argument> ... L_1 \right ] &[IF ~ N_1 \neq E_{1##
+                                                  }^{k, l} \left ( \right ) ] 
+l.6248     \end{align*}
+                       
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+Overfull \hbox (173.50266pt too wide) detected at line 6248
+[]
+ []
+
+[103] [104] [105] [106] [107] [108] [109]
+./Computability.tex:6534: Missing { inserted.
+<to be read again> 
+                   \@@overline 
+l.6534 \end{align*}
+                   
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+./Computability.tex:6534: Missing } inserted.
+<inserted text> 
+                }
+l.6534 \end{align*}
+                   
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+./Computability.tex:6534: Missing { inserted.
+<to be read again> 
+                   \@@overline 
+l.6534 \end{align*}
+                   
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+./Computability.tex:6534: Missing } inserted.
+<inserted text> 
+                }
+l.6534 \end{align*}
+                   
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+[110] [111] [112] [113] [114]
+./Computability.tex:6778: Double superscript.
 <argument> ... ) \in \omega ^2 \times \Sigma ^{*}^
                                                   2 : x \geq 5 \land (\exist...
-l.5150     \end{align*}
+l.6778     \end{align*}
                        
 I treat `x^1^2' essentially like `x^1{}^2'.
 
-./Computability.tex:5150: Double superscript.
+./Computability.tex:6778: Double superscript.
 <argument> ... ) \in \omega ^2 \times \Sigma ^{*}^
                                                   2 : x \geq 5 \land (\exist...
-l.5150     \end{align*}
+l.6778     \end{align*}
                        
 I treat `x^1^2' essentially like `x^1{}^2'.
 
-./Computability.tex:5165: Undefined control sequence.
+./Computability.tex:6793: Undefined control sequence.
 <argument> ...\alpha \beta \left [ (\exists \gama 
                                                   \in \Sigma ^{*}) @b = \gam...
-l.5165 \end{align*}
+l.6793 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -934,10 +1129,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Computability.tex:5165: Undefined control sequence.
+./Computability.tex:6793: Undefined control sequence.
 <argument> ...\alpha \beta \left [ (\exists \gama 
                                                   \in \Sigma ^{*}) @b = \gam...
-l.5165 \end{align*}
+l.6793 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -945,56 +1140,82 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[86] [87] [88]
-./Computability.tex:5235: You can't use `macro parameter character #' in math mode.
+[115] [116] [117]
+./Computability.tex:6863: You can't use `macro parameter character #' in math mode.
 <argument> ...row f(N_1)]\\ &[N_1 \leftarrow E_{##
                                                    1}^{1, 0}(N_2, N_1, \math...
-l.5235 \end{align*}
+l.6863 \end{align*}
                    
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./Computability.tex:5235: You can't use `macro parameter character #' in math mode.
+./Computability.tex:6863: You can't use `macro parameter character #' in math mode.
 <argument> ...row f(N_1)]\\ &[N_1 \leftarrow E_{##
                                                    1}^{1, 0}(N_2, N_1, \math...
-l.5235 \end{align*}
+l.6863 \end{align*}
                    
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-[89] [90]
-./Computability.tex:5344: Double subscript.
+[118] [119]
+./Computability.tex:6972: Double subscript.
 <argument>  P = f_1_
                     {\mid S'} \cup f_{2\mid \overline {S'}} 
-l.5344 \end{align*}
+l.6972 \end{align*}
                    
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-./Computability.tex:5344: Double subscript.
+./Computability.tex:6972: Double subscript.
 <argument>  P = f_1_
                     {\mid S'} \cup f_{2\mid \overline {S'}} 
-l.5344 \end{align*}
+l.6972 \end{align*}
                    
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-[91] [92] (./Computability.aux) ) 
+[120] [121] [122]
+Overfull \hbox (72.27177pt too wide) detected at line 7088
+[]
+ []
+
+[123]
+
+./Computability.tex:7150: LaTeX Error: \begin{document} ended by \end{quote}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7150 \end{quote}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./Computability.tex:7150: Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.7150 \end{quote}
+                  
+Things are pretty mixed up, but I think the worst is over.
+
+[124] [125] (./Computability.aux) ) 
 Here is how much of TeX's memory you used:
- 5858 strings out of 476091
- 80610 string characters out of 5794081
+ 5892 strings out of 476091
+ 81213 string characters out of 5794081
  1875330 words of memory out of 5000000
- 26081 multiletter control sequences out of 15000+600000
- 716389 words of font info for 376 fonts, out of 8000000 for 9000
+ 26114 multiletter control sequences out of 15000+600000
+ 729303 words of font info for 407 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,27n,76p,334b,387s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/stxscr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexas.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on Computability.pdf (93 pages, 467829 bytes).
+Output written on Computability.pdf (126 pages, 547219 bytes).
 PDF statistics:
- 386 PDF objects out of 1000 (max. 8388607)
- 257 compressed objects within 3 object streams
+ 492 PDF objects out of 1000 (max. 8388607)
+ 329 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
