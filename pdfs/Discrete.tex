@@ -134,14 +134,8 @@ A veces usamos $H \subseteq G$ para decir "$H$ es un subgrafo de $G$", pero no
 debe entenderse por esto que $H$ y $G$ son conjuntos.
 
 Observe que no todo $W \subseteq V, F \subseteq E$ satisfacen que $(W, F)$ es un
-grafo. Por ejemplo ejemplo, si $F = \emptyset$ tenemos $F \subseteq E$, pero $F$
+grafo. Por ejemplo, si $F = \emptyset$ tenemos $F \subseteq E$, pero $F$
 no cumple la propiedad de que todos sus elementos sean conjuntos con cardinalidad $2$.
-
-
-\textbf{Convención}. Escribimos $xy$ para denotar $\left\{ x, y \right\} $.
-
-\textbf{Convención}. Si bien cualquier elemento puede ser un vértice, usualmente
-dado un grafo $G(V, E) $ asumimos que $V = \left\{ 0, 1, \ldots, n-1 \right\} $. 
 
 \begin{definition}[Densidad]
     Decimos que un grafo es denso si $m = O(n^2)$. Decimos que un grafo es raro
@@ -262,14 +256,12 @@ un algoritmo polinomial que se aproxime a $\chi$.
 \subsection{Un algoritmo greedy de coloreo}
 ~ ~ 
 
-El algoritmo colorea un grafo $G$ con vértices $v_1, \ldots, v_n$ y colores $\left\{
-c_1, c_2, \ldots, c_n \right\} $. Para que el algoritmo funcione, los colores
-deben tener un orden; por eso se usan números para denotarlos. También se
-requiere que los vértices tengan un orden (en este caso dado por los
-subíndices).
+Damos un algoritmo que colorea un grafo $G$ con vértices $v_1, \ldots, v_n$ y
+colores $ c_1, c_2, \ldots, c_n  $. Para que el algoritmo
+funcione, los colores y los vértices deben tener un orden (en nuestro caso
+dado por los subíndices).
 
 
-\small
 \begin{quote}
 
 \textbf{Invariante del algoritmo.} Los coloreos parciales son propios. Es decir,
@@ -284,7 +276,6 @@ resultante debe ser propio.
 satisfaga el invariante).
 
 \end{quote}
-\normalsize
 
 
 
@@ -294,7 +285,7 @@ Generalmente nos interesa encontar $\chi(G)$ dado un grafo $G = (V, E) $. Damos
 unas pautas y observaciones generales para acotar $\chi(G)$ y así facilitar su
 hallazgo.
 
-\begin{lemma}[(El profesor no dio esto como un lema pero yo sí)]
+\begin{lemma}
     Si existe un coloreo propio de $G = (V, E)$ con $k$ colores, entonces
     $\chi(G) \leq k$.
 \end{lemma}
@@ -313,7 +304,7 @@ El lema significa que para acotar $\chi$ por arriba solo basta dar un coloreo
 con $k$ colores.
 
 \begin{lemma}
-    Si $H$ es un subrafo de $G$, $\chi(H) \leq \chi(G)$.
+    Si $H$ es un subgrafo de $G$, $\chi(H) \leq \chi(G)$.
 \end{lemma}
 
 Este lema nos dice que podemos acotar $\chi$ por abajo si encontramos un
