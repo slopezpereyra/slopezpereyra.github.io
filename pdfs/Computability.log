@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  13 MAR 2024 11:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  17 MAR 2024 19:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1202,7 +1202,67 @@ l.7150 \end{quote}
                   
 Things are pretty mixed up, but I think the worst is over.
 
-[124] [125] (./Computability.aux) ) 
+[124] [125]
+./Computability.tex:7212: Misplaced alignment tab character &.
+l.7212             &
+                    \thickapprox   f\left(\vec{x}, \vec{\alpha}, \mathcal{P}...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+Overfull \hbox (37.29195pt too wide) detected at line 7231
+[]
+ []
+
+
+Overfull \hbox (1.99307pt too wide) in paragraph at lines 7248--7257
+\U/ntxmia/m/it/10.95 ^^H\LMS/ntxsy/m/n/10.95 ¹[]\OML/ntxmi/m/it/10.95 ; \OT1/minntx/m/n/10.95 #[]\LMS/ntxsy/m/n/10.95 ¹Q[]º\OML/ntxmi/m/it/10.95 ; []; \LMS/ntxsy/m/n/10.95 Q[]º$ \T1/ntxtlf/m/n/10.95 y $\OML/ntxmi/m/it/10.95 f\LMS/ntxsy/m/n/10.95 ¹[]\OML/ntxmi/m/it/10.95 ; []; \LMS/ntxsy/m/n/10.95 Q[]º$ \T1/ntxtlf/m/n/10.95 es-tán definidas para el mismo
+ []
+
+[126] [127] [128]
+
+./Computability.tex:7419: LaTeX Error: \begin{document} ended by \end{quote}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7419 \end{quote}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./Computability.tex:7419: Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.7419 \end{quote}
+                  
+Things are pretty mixed up, but I think the worst is over.
+
+./Computability.tex:7437: Double superscript.
+l.7437 ..., \beta) \in \omega^2 \times \Sigma^{*}^
+                                                  2$. Luego
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+[129]
+Overfull \hbox (16.67119pt too wide) in paragraph at lines 7455--7459
+[]\T1/ntxtlf/m/n/12 Claramente, $\OML/ntxmi/m/it/12 G$ \T1/ntxtlf/m/n/12 es $\U/ntxmia/m/it/12 ^^F$\T1/ntxtlf/m/n/12 -computable, por ser com-posi-ción de las fun-ciones $\U/ntxmia/m/it/12 ^^H[]\OML/ntxmi/m/it/12 ; p[]$
+ []
+
+./Computability.tex:7478: You can't use `macro parameter character #' in math mode.
+l.7478 ...a}, \mathcal{G}_0) \thickapprox  \Phi_{#
+                                                  }^{n,
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+[130] (./Computability.aux) ) 
 Here is how much of TeX's memory you used:
  5892 strings out of 476091
  81213 string characters out of 5794081
@@ -1212,10 +1272,10 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  71i,27n,76p,334b,387s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/stxscr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexas.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on Computability.pdf (126 pages, 547219 bytes).
+Output written on Computability.pdf (131 pages, 557857 bytes).
 PDF statistics:
- 492 PDF objects out of 1000 (max. 8388607)
- 329 compressed objects within 4 object streams
+ 508 PDF objects out of 1000 (max. 8388607)
+ 340 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

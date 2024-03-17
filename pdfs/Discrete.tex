@@ -280,6 +280,9 @@ satisfaga el invariante).
 \end{quote}
 
 
+\begin{center}
+\includegraphics[scale=0.35]{coloring}
+\end{center}
 
 \subsection{Acotando $\chi$}
 
@@ -332,26 +335,165 @@ quedamos con el siguiente teorema:
 \end{theorem}
 
 \begin{theorem}
-    Si $\chi(G) \geq 3$, entonces $G$ contiene un ciclo impar.
+    
+    Sea $G = (V, E) $ un grafo. Entonces 
+
+    $$\chi(G) = \max \left\{ \chi(C) : C \text{ es componente
+conexa de  } G \right\} $$
+
 \end{theorem}
 
 
+\begin{theorem}
+    Sea $G = (V, E) $ un grafo. Entonces $G$ contiene un ciclo impar si y solo
+    si $\chi(G) \geq 3$.
+\end{theorem}
+
+\small
+\begin{quote}
+
+\textbf{Proof.} $(\Rightarrow)$ Trivial. 
+
+$(\Leftarrow)$ Damos una prueba algorítmica. La prueba es simple, pero debe
+tenerse presente que usamos \textbf{tres} grafos diferentes en ella: el grafo
+$G = (V, E) $ del teorema, una componente conexa $C \subseteq G$, y un grafo
+$\mathcal{B} \subseteq C$ resultante de correr BFS de a partir de un vértice de
+$C$. El algoritmo determina si $\chi(G) = 2$ y de no serlo construye un ciclo
+impar. Usamos la notación $n(z)$ si $z \in V$ para denotar el nivel de $z$ en
+$\mathcal{B}$. Dividimos la prueba en tres partes.
+
+\textit{(1)} Como $\chi(G) = \max \left\{ \chi(C) : C \text{ es componente
+conexa de  } G \right\} $, tenemos que 
+
+\begin{align*}
+    \chi(G) \geq 3 \Rightarrow\exists \text{ c.c. $C$ tal que } \chi(C) \geq 3
+\end{align*}
+
+Elegimos $x \in C$ y corremos BFS a partir de él, generando un subgrafo
+$\mathcal{B} \subseteq C$ con todos los vértices de $C$ (pero no todos los
+lados).
+
+\textit{(2)} Coloreamos cada vértice de $C$ como sigue: como sigue: $c(z)$ será el nivel
+BFS de $z$ módulo 2. Esto equivale a hacer $c(x) = 0$ y cada vez que $y$ agrega
+a $z$ a la cola de BFS, hacer $c(z) =  1 - c(y)$.
+
+Esto da un coloreo con $2$ colores, pero podría no ser propio (por ejemplo, dos
+vecinos de la raíz que son vecinos entre sí tendrían ambos color $1$). Por lo
+tanto verificamos si es propio o no. 
+
+\textit{(3)} Si es propio tenemos un coloreo propio de dos colores y $\chi(G) =
+2$. Si es impropio, construiremos un ciclo impar. En particular, si no es
+propio, existen $u, v \in V$ tales que $c(u) = c(v) $ y $uv \in E$. Pero si
+$c(u) = c(v)$, entonces
+
+\begin{align*}
+    n(u) \equiv n(v) \mod 2
+\end{align*}
+
+Pero en un árbol siempre existe un camino
+de la raíz a cualquier vértice arbitrario. Entonces, en $\mathcal{B}$ existe un
+camino desde $x$ hasta $u$, y existe un camino desde $x$ hasta $v$. En
+particular, existe un vértice $z$ que está en ambos caminos y a partir del cual
+los caminos se separan (note que puede ser $x$). Pero en $C$, $uv$ forman un
+lado. Luego, en $C$ tenemos el ciclo $z, u, v, z$. 
+
+¿Cuántos lados tiene el ciclo? Vea que de $z$ a $u$ hay $n(u) - n(z)$
+lados. De $u$ a $v$ un solo lado, y de $v$ a $z$ otra vez $n(v) - n(z)$.
+En total, hay 
+
+\begin{align*}
+     n(u) + n(v) - 2 n(z) + 1
+\end{align*}
+
+lados. Pero $n(u) \equiv n(v) \mod 2$ y su suma
+es par. Luego la suma anterior es impar. Luego existe un ciclo impar en $G$.
+
+\end{quote}
+\normalsize
+
+\end{quote}
+\normalsize
+
+\begin{theorem}
+    Para todo gafo $G = (V, E) $, $\chi(G) \leq \Delta + 1$.
+\end{theorem}
 
 
 \small
 \begin{quote}
 
-\textbf{Proof.} Damos una prueba algorítmica. Llamamos a a este algoritmo
-"bipartito" o "2-color". En tiempo polinomial, determina si $G$ se puede
-colorear con dos colores; si $\chi(G) = 2$ da un coloreo, de otro modo devuelve
-un ciclo impar que es subgrafo de $G$. (El profe no llegó a dar la prueba.)
+\textbf{Proof.} Greedy siempre colorea con $\Delta + 1$  colores o menos. Tome
+cualquier orden $v_1 \ldots v_n$ sobre $V$. Para colorear un vértice cualquiera
+excepto $v_1$, se miran los vecinos anteriores. El peor caso posible es que
+todos los vecinos sean vecinos anteriores y todos tengan colores distintos. En
+ese caso, greedy no considera ninguno de esos colores; es decir, $d(x)$ colores.
+Como $d(x) \leq \Delta$, entonces greedy, al colorear $x$, elimina a lo sumo
+$\Delta$ colores. Por lo tanto, en $\left\{ 1, 2, \ldots, \Delta, \Delta + 1
+\right\} $ habrá al menos un color disponible. $\blacksquare$
 
 \end{quote}
 \normalsize
 
-\begin{center}
-\includegraphics[scale=0.35]{coloring}
-\end{center}
+Una pregunta natural es si hay grafos que alcancen la cota. La respuesta es sí:
+a saber, 
+
+\begin{itemize}
+    \item $\chi(K_n) = n$ y $\Delta = n - 1$.
+    \item $\chi(C_{2r+1}) = 3$ y $\Delta = 2$.
+\end{itemize}
+
+\begin{theorem}[Brooks]
+    Sea $G = (V, E) $ un grafo conexo distinto de un $K_n$ y un $C_{2r + 1}$.
+    Entonces $\chi(G) \leq \Delta$.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Proof.} Complicada, una hora y media o dos de hacer. Triste.
+
+\end{quote}
+\normalsize
+
+\begin{theorem}[Baby Brooks o Brooks para bebés]
+    Si $G = (V, E) $ un grafo conexo y no regular, entonces $\chi(G) \leq
+    \Delta$.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Proof.} Es un caso particular del teorema de Brooks. Corramos BFS$(x)$
+con $d(x) = \delta$.
+Como $G$ es conexo, obtenemos todos los vértices. Pues los vértices son
+agregados iterativamente al árbol del BFS, existe un orden dado precisamente por
+el orden de inserción al árbol.
+
+Daremos un orden (que no es el anterior) tal que Greedy colorea $G$ con a lo
+sumo $\Delta$ colores. En particular, es el orden inverso al anterior. Es decir
+que el último elemento del orden es la raíz $x$.
+
+Como siempre el color del primer elemento es $1$. Sea $z \neq v_1$ (en el orden
+del Greedy). El peor caso posible, que $z$ tenga como vecinos a todos los
+anteriores, es imposible aquí, porque en el orden de DFS todo $y \neq x$ es
+insertado en el árbol por un vértice que ya estaba en el árbol. Y ese vértice
+debe ser un vecino. Es decir, en el orden de inserción del BFS, todo vértice
+tiene un vecino que es anterior en el orden. Entonces, en el orden inverso, todo
+$y \neq x$ tiene al menos un vecino posterior. Entonces, en el peor de los
+casos, tiene $d(y) - 1$ vecinos anteriores. Por lo tanto, greedy elimina a lo
+sumo $d(y) -
+1 \leq \Delta - 1$ colores. $\therefore $ Siempre puede colorear a $y$ con un
+color en $\left\{ 1, 2, \ldots, \Delta \right\} $.
+
+Cuando llega a $x$, Greedy elimina a lo sumo $d(x) = \delta$ colores. Y como $G$
+no es regular, $\delta < \Delta$. $\therefore $ Existe al menos un color para
+$x$.
+
+\end{quote}
+\normalsize
+
 
 \subsection{¿Para qué acotar $\chi$? Para encontar $\chi$!}
 
@@ -362,6 +504,282 @@ hemos encontrado $\chi(G)$. Si este no es el caso de igual modo estamos
 restringiendo el espacio de soluciones posibles. Por ejemplo, si $3 \leq \chi(G)
 \leq 4$, tenemos que $\chi(G) = 3$ o $\chi(G) = 4$, y a veces es fácil ver (y
 demostrar) cuál de los casos es correcto.
+
+\pagebreak
+
+\subsection{Limitaciones de Greedy}
+
+
+\textbf{Ejemplo de Greedy mal.} Sea $G = (V, E)$ un grafo tal que $n = 2i$ es par
+y 
+
+\begin{align*}
+    E = \left\{ xy : x \text{ impar }, y \text{ par }, y \neq x + 1\right\} 
+\end{align*}
+
+El grafo es claramente bipartito (un par nunca se conecta con un par, un impar
+nunca con un impar) y tiene un coloreo de 2 colores. Sin embargo, al correr
+Greedy sobre este grafo, obtenemos un coloreo sub-óptimo.
+
+Se deja al lector verificar los coloreos sub-óptimos que resultan si $n = 2, 4,
+6$. Se presenta la siguiente hipótesis inductiva haciendo inducción sobre $i$:
+
+
+\small
+\begin{quote}
+
+\textit{Hipótesis inductiva}. Para todo $j \leq k$, Greedy colorea el grafo con
+$c(2j - 1) = c(2j) = j$ colores.
+
+\end{quote}
+\normalsize
+
+\small
+\begin{quote}
+
+    \textit{Caso inductivo.} Si $j \leq k$ por $HI$ tenemos $c(2j - 1) = c(2j) =
+    j$. Si $j = k + 1$, tenemos que $2(k+1) - 1$ es impar y forma lados con
+    todos los pares anteriores. Luego greedy no puede asignarle el color de
+    ningún par anterior. Es decir, no puede asignar ningún color entre $1$ y
+    $k$. Luego greedy lo colorea con $k + 1$. El mismo razonamiento muestra que
+    el vértice $2(k+1)$ se colorea con $i + 1$.
+
+    Por lo tanto, greedy colorea $G$ con $\frac{n}{2}$ colores.
+
+
+\end{quote}
+\normalsize
+
+
+\subsection{Hill clmbing}
+
+Hill climbing es un algoritmo de optimización matemática. Dada una función $f :
+\mathbb{R}^n \to \mathbb{R}$ que se quiere maximizar, el algoritmo toma un punto
+arbitrario
+$\vec{x} \in \mathcal{D}_f$ y evalúa $f(\vec{x})$. Luego se hace $\Delta\vec{x} =
+(x_1, \ldots, x_{i} + \epsilon, \ldots, x_n)$ con $\epsilon \in R$ e $i$
+arbitario y se vuelve a testear. Si la función incrementa, se hace
+$\vec{x} = \Delta\vec{x}$: si no, se hace la modificación inversa. Este proceso
+se repite iterativamente hasta que un criterio es satisfecho.
+
+El principal problema del algoritmo de Hill climbing es que encuentra solo
+óptimos locales. Para lidiar con este problema, se usa \textit{simulated
+annealing}. Si $\Delta \vec{x}$ va mejor se lo acepta; pero si $\Delta \vec{x}$
+va peor se otorga una cierta probabilidad de aceptarlo de todos modos. La
+probabilidad de aceptar va reduciendo con el tiempo. La idea es permitir la
+salida de optimos locales con el tiempo.
+
+En coloreo de grafos, Hill climbing toma la siguiente forma. Se prueba un orden
+de $V$ arbitrario y se lo colorea con Greedy. Luego hacer una pequeña
+permutación y se prueba de nuevo, etc. 
+
+Existe un modo de asegurarnos que la mutación $\Delta \vec{x}$ de $\vec{x}$
+nunca empeore (puede permanecer igual). El problema es que para hacer esto,
+reducimos el espacio de búsqueda; es decir, las permutaciones que
+exploraremos (las que no pueden empeorar el rendimiento) son muy pocas, y puede
+ser que ninguna mejore el rendimiento. 
+
+Una forma de lidiar con esto es elegir varios órdenes iniciales al azar y
+aplicar esta idea a cada una de ellas.
+
+\begin{theorem}[VIT]
+
+    Sea $G = (V, E) $ un grafo con un coloreo propio $c$ con $r$ colores $c_1,
+    \ldots, c_r$. Sea $V_{c_i} := \left\{ x \in V : c(x) = c_i \right\} $. Sea $P$
+    una permutación de $c_1, \ldots, c_r$. Es claro que $P : \left\{ c_1, \ldots, c_r
+    \right\} \mapsto \left\{ c_1, \ldots, c_r \right\} $ es una biyección.
+
+
+    Ordenemos los vértices poniendo primero los vértices de $V_{P(c_1)}$; luego
+    los de $V_{P(c_2)}$, etc. Es decir, ordenamos los vértices por bloques de
+    color. Entonces Greedy con ese orden usa a lo sumo $r$ colores.
+    
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Proof.} Hacemos inducción sobre $r$. 
+
+\textit{Caso base $i = 1$.} Los vértices de $V_{P(c_i)}$ tienen el mismo color $P(c_i)$.
+Porque $c$ es un coloreo propio, y los vértices en cada $V_{P(c_i)}$ no pueden
+formar lados entre sí.
+Pues todos mis primeros vértices (los de $V_{P(c_1)}$) no tienen lados entre sí,
+Greedy los colorea a todos con el color 1 y usa un color. $\blacksquare$
+
+
+$HI(i) \Rightarrow HI(i+1)$: Sea $x \in V_{P(c_1)} \cup  \ldots \cup
+V_{P(c_{i+1})}$. Si $x$ está en alguno de los primeros $i$ bloques, Greedy lo
+colorea con uno de entre $i$ colores por hipótesis inductiva. 
+
+Si $x \in V_{P(c_{i+1})}$, el
+caso en que Greedy lo colorea con un color menor o igual a $i + 1$ no viola lo
+que queremos demostrar. Pero asumamos que lo colorea con el color $i +
+2$. Entonces ningún color menor estaba disponible; entonces $x$ es vecino de
+algún $z$ de color $i + 1$. Pero todos los vértices de $V_{P(c_{i})}$ están
+coloreados el color $c_i$. Luego $z \in V_{P(c_{i+1})}$. Pero si
+tanto $x, z \in V_{P(c_{i+1})}$ entonces $c(x) = c(z) = P(c_{i+1})$, lo cual
+implica que $c$ no es propio. $(\bot)$
+
+\end{quote}
+\normalsize
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\pagebreak
+
+
+\section{Prácticos}
+
+\subsection{Práctico 1}
+
+\begin{problem}
+    Dar el algoritmo más rápido posible que resuelva el problema siguiente: 
+
+    \begin{quote}
+        Dado un input $(T, n, m)$ con $T$ un árbol, $n$ el número de vértices,
+        $m$ el número de lados, dar $\chi(G)$.
+    \end{quote}
+\end{problem}
+
+El número cromático de un árbol siempre es dos. Se puede probar por inducción.
+El caso $n = 2$ es trivial. Asumamos vale para $k \in \mathbb{N}$ arbitrario.
+Sea $T = (V, E)$ un árbol con $k + 1$ vértices (y por lo tanto $k$ lados).
+Sea $x \in V$ un vértice tal que $d(x) = 1$ y sea $y$ el único $y \in V$ tal que
+$\left\{ x, y \right\} \in E $. (Si lo desea, demuestre que si $T$
+es un árbol entonces necesariamente existe un vértice de grado $1$; es trivial
+por def de árbol.) 
+
+Definamos $T' \subseteq T$ el sub-árbol cuyos vertices son $V - \left\{ x
+\right\} $ y cuyos lados son $E - \left\{ x, y \right\} $. Pues $T'$ tiene $k$
+vértices, $\chi(T') = 2$. Ahora bien, aplicando cualquier coloreo propio de dos
+colores en $\left\{ 0, 1 \right\} $ a los vértices de $T'$, si hacemos $c(x) = 1
+- c(y)$ obtenemos un coloreo propio de $T$. 
+
+$\therefore $ $\chi(T) = 2$ para todo árbol $T$.
+
+Por lo tanto, el algoritmo más rápido que devuelve el número cromático de un
+árbol es:
+
+~
+
+\textbf{Algoritmo.} 
+\begin{quote}
+    \textit{(1)} Output 2.
+\end{quote}
+
+\begin{problem}[Ejercicio 6]
+\end{problem} 
+
+G contiene un $C_{2r + 1}$ y por lo tanto $\chi(G) \geq 3$. Es fácil dar un
+coloreo de cuatro colores para $G_{2r+1}$; utilice los tres colores necesarios
+para el $C_{2r+1}$ contenido en $x_0, \ldots, x_{2r}$ y construya el resto de
+los valores desde allí; se llega por necesidad a cuatro colores. Entonces
+$\chi(G) \leq 4$. Mostraremos que $\chi(G) \neq 3$.
+
+Asuma que existe un coloreo propio de tres colores. El $C_{2r+1}$ contenido en
+$x_0, \ldots, x_{2r}$ debe colorearse con tres colores; digamos, con $0$ en los
+índices pares, $1$ en los impares, y $2$ en el caso $x_{2r}$.
+
+De esto se sigue que $c(y_i) = 1, c(z_i) = 2$ donde $i$ es par (podríamos
+invertir esta asignación pero da lo mismo); $c(y_i) = 0, c(z_i) = 2$ si $i$
+impar; excepto en el caso $c(y_{2r}) = 0, c(z_{2r}) = 1$.
+
+Habiendo coloreado cada triángulo $x_i, y_i, z_i$, queda un solo color posible
+para cada $w_i$; a saber, $c(w_i) = 0$ si $i$ par; $c(w_i) = 1$ si $i$ impar, y
+el caso especial $c(w_{2r}) = 2$.
+
+Cada $w_i$ se conecta con $p$. Pero los $w_i$ ya tienen tres colores en total.
+(Y observe que para todo $r$, $G_r$ siempre tendrá al menos tres $w_i$) Entonces
+no hay forma de dar un coloreo para $p$ que sea propio.
+
+Pues $\chi(G) \leq 4$ y $\chi(G) \neq 3$ tenemos que $\chi(G) = 4$.
+\pagebreak
+\begin{problem}
+    Dado $n$ natural, sea $G_n$ el grafo con vértices $1, 2, \ldots, n$ y cuyos
+    lados son $\left\{ i, j \right\} $ tales que $\mcd(i, j) = 1$ (coprimos).
+    Calcular $\chi(G_{100})$.
+\end{problem}
+
+Es fácil notar que $1$ y los $z$ números primos en $2, 3, \ldots, n$ forman un
+$K_{n+1}$ y por lo tanto $\chi(G_{n}) \geq z + 1$. Damos un coloreo propio con $z +
+1$ colores; a saber,
+
+
+\begin{align*}
+    c(i) = \begin{cases}
+        1 & i = 1 \\ 
+        \min_{p} \left\{ p \text{ primo  y } p \mid i  \right\}  & i > 1
+    \end{cases}
+\end{align*}
+
+Que es propio se sigue de que $c(i) = c(j) \Rightarrow \gcd(i, j) = 1$ lo cual
+implica que no comparten ningún primo en su factorización; y en particular, no
+comparten el mínimo. Todo número no primo se expresa con el color del menor
+primo que está en su descomposición; es decir, no utiliza un color propiamente
+nuevo. Luego los únicos colores usados son los que identifican a los $z$ primos
+y al $1$. Es decir, es un coloreo propio de $z + 1$ colores. 
+
+~ 
+
+\textit{Conclusión}. $\chi(100) = 25 + 1 = 26$ (Hay 25 primos entre $1$ y
+$100$).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

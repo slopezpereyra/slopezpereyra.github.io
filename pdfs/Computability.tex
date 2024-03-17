@@ -7154,78 +7154,342 @@ $$ \Phi^{n, m}_{\#}\left(\vec{x}, \vec{\alpha}, S_{n, l, m, k}(\vec{y},
 
 \begin{problem}
     Sea $f : S \subseteq \omega^{n} \times \Sigma^{*m} \times Pro^{\Sigma} \mapsto
-    \omega$ una función $\Sigma$-computable. Entonces existe $\mathcal{P} \in
+    \omega$ una función $\Sigma$-computable. Entonces existe $\mathcal{P}_0 \in
     Pro^{\Sigma}$ tal que 
 
     \begin{align*}
-        f(\vec{x}, \vec{\alpha}, \mathcal{P}) \thickapprox  \Phi_{\#}^{n, m} (\vec{x},
-        \vec{\alpha}, \mathcal{P})
+        f(\vec{x}, \vec{\alpha}, \mathcal{P}_0) \thickapprox  \Phi_{\#}^{n, m} (\vec{x},
+        \vec{\alpha}, \mathcal{P}_0)
     \end{align*}
 \end{problem}
-
-
 
 \small
 \begin{quote}
 
-    ¿Qué condiciones debe satisfacer el programa $\mathcal{P}$ deseado? Ejecutar
-    $\mathcal{P}$ partiendo de $[\![ x_1, \ldots, x_n, \alpha_1, \ldots,
-    \alpha_m ]\!]$ debe equivaler a ejecutar $f(\vec{x}, \vec{\alpha},
-    \mathcal{P}) $. Sabemos que $f$ tiene un programa $\mathcal{F} \in
-    Pro^{\Sigma}$ asociado; parece natural suponer que el $\mathcal{P}$ deseado
-    debe ser de la forma $\mathcal{W}\mathcal{F}$ con $\mathcal{W} \in
-    Pro^{\Sigma}$. Lo difícil es notar que $\mathcal{W}$ debe ejecutarse de modo
-    tal que, al terminar, el mismo $\mathcal{W}$ está guardado en
-    $P\overline{m+1}$. Es decir, 
+    Definamos
 
     \begin{align*}
-        \mathcal{W} = \mathcal{R}_{m+1}(\mathcal{W})
+        \mathscr{F} = \lambda \vec{x} x\vec{\alpha}  \left[ f\left(\vec{x},
+        \vec{\alpha}, S_{n, 1, m, 0}^{\Sigma} (x, *^<(x))\right)  \right]
     \end{align*}
 
-    lo cual es una auto-referencia que no tiene sentido. No tiene sentido porque
-    si
-    $\mathcal{W} = q_1 \ldots q_k$ entonces (omitiendo el $SKIP$ inicial)
+    Sea $\mathcal{Q}_0$ el programa que computa $\mathscr{F}$ y 
+    $\mathcal{P}_0 = S_{n, 1, m ,0}^{\Sigma}(\#^<(\mathcal{Q}_0),
+\mathcal{Q}_0)$. Veamos que
 
-\begin{align*}
-     q_1\ldots q_k = (P\overline{m+1} \leftarrow
-     P\overline{m+1}.q_1) \ldots (P\overline{m+1} \leftarrow
-     P\overline{m+1}.q_k)
-\end{align*}
+    \begin{equation}
+        \Phi_{\#}^{n, m}\left( \vec{x}, \vec{\alpha}, \mathcal{P}_0 \right)
+        \thickapprox \Phi_{\#}^{n+1, m}\left( \vec{x}, \#^{<}\left(\mathcal{Q}_0
+        \right), \vec{\alpha}, \mathcal{Q}_0\right) 
+    \end{equation}
 
-Es decir que $q_1 = P\overline{m+1} \leftarrow P\overline{m+1}.\left(
-P\overline{m+1} \leftarrow P\overline{m+1}.\left( \ldots \right)  \right) $.
+    \begin{quote}
+        \textbf{Proof.} Por definición de $\mathcal{P}_0$,
+    
+        \begin{align*} 
+        \Phi_{\#}^{n, m}\left( \vec{x}, \vec{\alpha}, \mathcal{P}_0
+            \right) &\thickapprox \Phi_{\#}^{n, m}\left( \vec{x}, \vec{\alpha},
+                S_{n, 1, m, 0}^{\Sigma}(\#^{<}(\mathcal{Q}_0), \mathcal{Q}_0)\right)
+                 \\ &\thickapprox  
+                 \Phi_{\#}^{n+1, m}\left( \vec{x}, \#^{<}\left(\mathcal{Q}_0 \right), \vec{\alpha}, \mathcal{Q}_0\right) 
+            \end{align*}
 
-La pregunta es: ¿Hay otra forma de dar con un programa $\mathcal{W} \in
-Pro^{\Sigma}$ tal que $\mathcal{W}$ termina consigo mismo en $P\overline{m+1}$?
-¿Y qué si partimos $\mathcal{W}$? Sabemos que $\mathcal{W} = \mathcal{W}_1
-\mathcal{W}_2$ con $\mathcal{W}_1, \mathcal{W}_2 \in Pro^{\Sigma}$. ¿Podemos
-hacer que $\mathcal{W}_1$ guarde en $P\overline{m+1}$ el contenido de $\mathcal{W}_2$ y vice-versa? Así
-evitaríamos las auto-referencias complicadas.
+    por el teorema del parámetro. (El uso de $\thickapprox $ está claramente
+    justificado porque las expresiones son iguales por definición de
+    $\mathcal{P}_0$; es decir, sólo estamos reemplazando un símbolo por su
+    definición explícita.)
+    \end{quote}
 
-O sea, podríamos hacer
+    \pagebreak
 
-\begin{align*}
-    \mathcal{W}_2 = R_{m+1}(\mathcal{W}_1) \\ 
-    \mathcal{W}_1 = R_{m+2}(\mathcal{W}_2)
-\end{align*}
 
-y luego concatenar a $\mathcal{W}_2 \mathcal{W}_1$ un programa que "pegue" los
-dos programas. Pero acá otra vez hay circularidad!! Porque con esta definición 
+    Ahora veamos que
 
-\begin{align*}
-    \mathcal{W}_2 = R_{m+1} \left( R_{m+2}(\mathcal{W}_2) \right) 
-\end{align*}
 
-Se me hace que esta idea de partir $\mathcal{W}$ y hacer $\mathcal{W}_2 =
-R_{m+1}(\mathcal{W}_1)$ es un buen comienzo; pero no sé si se puede evitar la
-circularidad anterior. ¿Tal vez hay que usar $S_{n,
-l, m, k}$ de alguna forma? 
+    \begin{equation}
+            \Phi_{\#}^{n+1, m}\left( \vec{x}, \#^{<}\left(\mathcal{Q}_0 \right),
+            \vec{\alpha}, \mathcal{Q}_0\right) 
+            &\thickapprox   f\left(\vec{x}, \vec{\alpha}, \mathcal{P}_0\right)
+    \end{equation}
 
+    \begin{quote}
+        \textbf{Proof.} Asuma por ahora que las expresiones en \textit{(2)}
+        están simultáneamente definidas. Pues $\mathcal{Q}_0$ computa
+        $\mathscr{F}$,
+
+    \begin{align*}
+            \Phi_{\#}^{n+1, m}\left( \vec{x}, \#^{<}\left(\mathcal{Q}_0 \right),
+            \vec{\alpha}, \mathcal{Q}_0\right) &=
+            \mathscr{F}\left( \vec{x}, \#^< \left( \mathcal{Q}_0 \right),
+            \vec{\alpha} \right) \\
+            &=  f\left(\vec{x}, \vec{\alpha}, S_{n, 1, m, 0}^{\Sigma}\left(
+            \#^{<}(\mathcal{Q}_0), *^<\left( \#^< \left( \mathcal{Q}_0 \right)
+        \right)  \right) \right) \\ 
+            &=  f\left(\vec{x}, \vec{\alpha}, S_{n, 1, m, 0}^{\Sigma}\left(
+            \#^{<}(\mathcal{Q}_0), \mathcal{Q}_0 \right) \right) \\ 
+            &=  f\left(\vec{x}, \vec{\alpha}, \mathcal{P}_0\right)
+    \end{align*}
+
+    De esto se sigue que, de estar simultáneamente definidas, las expresiones en
+    la ecuación dos toman el mismo valor. Probaremos que en efecto están
+    simultáneamente definidas.
+
+    Observe que la expresión que involucra a $\Phi$ en \textit{(2)} solo está
+    definida si $(\vec{x}, \#^<(\mathcal{Q}_0), \vec{\alpha}) \in
+    D_{\mathscr{F}}$, por ser $\mathscr{F}$ la función que computa a
+    $\mathcal{Q}_0$. Ahora bien, por la definición de
+    $f$, tenemos que
+
+    \begin{align*}
+        D_{\mathscr{F}} = \left\{ (\vec{x}, x, \vec{\alpha}) : *^<(x) \in
+        Pro^{\Sigma} \land (\vec{x}, \vec{\alpha}, *^<(x)) \in S  \right\} 
+    \end{align*}
+
+    Pues $\#$ y $*$ son funciones inversas, y por hipótesis $\mathcal{Q}_0 \in
+    Pro^{\Sigma}$, tenemos que $*^<(\#(\mathcal{Q}_0)) = \mathcal{Q}_0 \in
+    Pro^{\Sigma}$, y por lo tanto $(\vec{x}, \#^<(\mathcal{Q}_0), \vec{\alpha})
+    \in D_{\mathscr{F}} \iff (\vec{x}, \vec{\alpha}, \mathcal{Q}_0) \in S$. Es
+    decir que $\Phi(\vec{x}, \#^<(\mathcal{Q}_0), \vec{\alpha}, \mathcal{Q}_0)$
+    y $f(\vec{x}, \vec{\alpha}, \mathcal{Q}_0)$ están definidas para el mismo
+    conjunto de valores; a saber, los $(\vec{x}, \vec{\alpha}) \in \omega^{n}
+    \times \Sigma^{*m} $ tales que $(\vec{x}, \vec{\alpha}, \mathcal{Q}_0) \in S
+    $.
+
+
+
+    \end{quote}
+
+    Usando la igualdad \textit{(2)} en la \textit{(1)} obtenemos
+    
+    \begin{equation}
+        \Phi_{\#}^{n, m}\left( \vec{x},
+    \vec{\alpha}, \mathcal{P}_0\right) 
+            \thickapprox   f\left(\vec{x}, \vec{\alpha}, \mathcal{P}_0\right)
+            ~ ~ \blacksquare
+    \end{equation}
 
 
 
 \end{quote}
 \normalsize
+
+\pagebreak 
+\textit{Observación.} Sean $f : \omega^{n} \times \Sigma^{*m} \mapsto O$, $g :
+\omega^{n} \times \Sigma^{*m} \mapsto  O$, con $O \in \left\{ \omega, \Sigma^{*}
+\right\}$. Si para todo $(\vec{x}, \vec{\alpha}) \in \omega^{n} \times
+\Sigma^{*m} $ sucede $f(\vec{x},
+\vec{\alpha}) \thickapprox g(\vec{x}, \vec{\alpha})$, entonces $ f =
+g$. Inversamente, $f = g \Rightarrow f(\vec{x}, \vec{\alpha}) \thickapprox
+g(\vec{x}, \vec{\alpha}) $ para todo $(\vec{x}, \vec{\alpha}) \in \omega^{n}
+\times \Sigma^{*m} $.
+
+
+\small
+\begin{quote}
+
+\textbf{Proof.} $(\Rightarrow)$ La notación $f(\vec{x}, \vec{\alpha}) \thickapprox g(\vec{x},
+\vec{\alpha}) $ denota que o bien ambas expresiones no están definidas, o ambas están
+definidas y toman el mismo valor. (Es decir, fortalece la idea de que decir que
+dos expresiones toman el mismo valor es decir \textit{dos} cosas: que
+sus computaciones ambas terminan, y que
+terminan dando el mismo output.) Entonces, si $f(\vec{x}, \vec{\alpha})
+\thickapprox g(\vec{x}, \vec{\alpha}) $ para todo $(\vec{x}, \vec{\alpha}) \in
+\omega^{n} \times \Sigma^{*m} $, tenemos que $\mathcal{D}_f = \mathcal{D}_g$. Y
+pues siempre que están definidas toman el mismo valor, sucede $f =g $. La prueba
+de $\Leftarrow$ es similar.
+
+\end{quote}
+\normalsize
+
+Usaré esta observación en los siguientes ejercicios.
+
+\pagebreak
+
+
+\begin{problem}
+    Probar que existe $\mathcal{P} \in Pro^{\Sigma}$ tal que
+    $\Psi_{\mathcal{P}}^{1, 0, \#}(x) = x + |\mathcal{P}|$ para cada $x \in
+    \omega$.
+\end{problem}
+
+
+
+
+~
+
+Sea $f : \omega\times Pro^{\Sigma} \mapsto \omega $ definida como $f := \lambda
+x\mathcal{P} \left[ x + |\mathcal{P}|  \right]$. Es fácil ver que la función es
+$\Sigma$-p.r. (recuerde que asumimos $\Sigma \supseteq \Sigma_p$) y por lo tanto
+$\Sigma$-computable. Por aplicación directa del teorema de la recursión, existe
+un programa $\mathcal{P}_0 \in Pro^{\Sigma}$ tal que $f(x, \mathcal{P}_0) \thickapprox 
+\Phi(x, \mathcal{P}_0) \thickapprox  \Psi_{\mathcal{P}_0}^{1, 0, \#}(x)$.
+Observe que $f(x, \mathcal{P}_0)$ está definida para toda $x \in  \omega$. Por
+lo tanto,
+
+\begin{align*}
+    f(x, \mathcal{P}_0) = x + |\mathcal{P}_0| = \Psi_{\mathcal{P}_0}^{1, 0,
+    \#}(x)
+\end{align*}
+
+para cada $x \in  \omega$.
+
+
+\begin{problem}
+    Pruebe que hay un $\mathcal{P} \in Pro^{\Sigma}$ tal que
+    $\Psi_{\mathcal{P}}^{1, 0, \#}= C^{1,
+    0}_{|\mathcal{P}|}$.
+\end{problem}
+
+Sea $f : \omega \times Pro^{\Sigma} \mapsto \omega $ definida como $f := \lambda
+x\mathcal{P}\left[ |\mathcal{P}|  \right]$. Claramente la función es
+$\Sigma$-computable. Por teorema de la recursión, existe $\mathcal{P}_0 \in
+Pro^{\Sigma}$ tal que $f(x, \mathcal{P}_0)   \thickapprox 
+\Psi_{\mathcal{P}_0}^{1, 0, \#}(x)$. Ahora bien, $f(x, \mathcal{P}_0) = f \circ
+\left[ p_1^{1, 0}, C_{\mathcal{P}_0}^{1, 0} \right] = C_{|\mathcal{P}_0|}^{1,
+0}$. Es decir que,
+  $C_{|\mathcal{P}_0|}^{1, 0}(x) \thickapprox
+\Psi_{\mathcal{P}_0}^{1, 0, \#}(x)$. Pues $C_{|\mathcal{P}_0|}^{1, 0}$ está
+definida para toda $x \in \omega$ (es $\Sigma$-total), la igualdad anterior vale
+para todo $x \in \omega$. Usando la observación dada al principio, resulta
+entonces que $C_{|\mathcal{P}_0|}^{1, 0} =
+\Psi_{\mathcal{P}_0}^{1, 0, \#}$.
+
+\pagebreak
+
+\begin{problem}
+    Enuncie el teorema de la recursión para $f$ con imagen contenida en
+    $\Sigma^{*}$ y analice la prueba.
+\end{problem}
+
+El teorema se enuncia como sigue:
+
+
+\small
+\begin{quote}
+
+    Sea $f : S \subseteq \omega^{n} \times \Sigma^{*m} \times Pro^{\Sigma} \mapsto
+    \Sigma^{*}$ una función $\Sigma$-computable. Entonces existe $\mathcal{P}_0 \in
+    Pro^{\Sigma}$ tal que 
+
+    \begin{align*}
+        f(\vec{x}, \vec{\alpha}, \mathcal{P}_0) \thickapprox  \Phi_{*}^{n, m} (\vec{x},
+        \vec{\alpha}, \mathcal{P}_0)
+    \end{align*}
+
+\end{quote}
+\normalsize
+
+La prueba es prácticamente idéntica. Se define $\mathcal{Q}_0$ como el programa
+que computa
+
+    \begin{align*}
+        \mathscr{F} = \lambda \vec{x} x\vec{\alpha}  \left[ f\left(\vec{x},
+        \vec{\alpha}, S_{n, 1, m, 0}^{\Sigma} (x, *^<(x))\right)  \right]
+    \end{align*}
+
+   y se define $\mathcal{P}_0 = S_{n, 1, m ,0}^{\Sigma}(\#^<(\mathcal{Q}_0),
+   \mathcal{Q}_0)$. Aplicando el teorema del parámetro, se ve que
+   $\Phi_{\#}^{n, m}\left( \vec{x}, \vec{\alpha}, \mathcal{P}_0 \right)
+   \thickapprox \Phi_{\#}^{n+1, m}\left( \vec{x}, \#^{<}\left(\mathcal{Q}_0
+   \right), \vec{\alpha}, \mathcal{Q}_0\right) $
+
+
+   Se muestra entonces que 
+
+
+    \begin{align*}
+            \Phi_{\#}^{n+1, m}\left( \vec{x}, \#^{<}\left(\mathcal{Q}_0 \right),
+            \vec{\alpha}, \mathcal{Q}_0\right) 
+            &\thickapprox   f\left(\vec{x}, \vec{\alpha}, \mathcal{P}_0\right)
+    \end{align*}
+
+    usando la definición de $\mathscr{F}$ y teorema del parámetro. Por
+    transitividad de $\thickapprox$ (la transitividad de la relación es clara
+    por su definición), se obtiene entonces
+    
+    \begin{equation}
+        \Phi_{*}^{n, m}\left( \vec{x},
+    \vec{\alpha}, \mathcal{P}_0\right) 
+            \thickapprox   f\left(\vec{x}, \vec{\alpha}, \mathcal{P}_0\right)
+            ~ ~ \blacksquare
+    \end{equation}
+
+
+
+\end{quote}
+\normalsize
+
+\begin{problem}
+    Pruebe que hay un $\mathcal{P} \in Pro^{\Sigma}$ tal que
+    $\Psi_{\mathcal{P}}^{2, 2, *} = C_{\mathcal{P}}^{2, 2}$.
+\end{problem}
+
+Sea $f := \lambda xy\alpha\beta\mathcal{P} \left[ C_{\mathcal{P}}^{2, 2}(x, y,
+\alpha, \beta) \right]$. Claramente, $f$ es una función constante y por lo tanto
+$\Sigma$-computable. Por aplicación directa del teorema de la recursión,
+obtenemos que existe un programa $\mathcal{P}_0 \in Pro^{\Sigma}$ tal que $f(x,
+y, \alpha, \beta, \mathcal{P}_0) \thickapprox \Phi_{*}^{2, 2}(x, y, \alpha,
+\beta, \mathcal{P}_0)$. Pero $ f(x, y, \alpha, \beta, \mathcal{P}_0)= f
+\circ \left[ p_1^{2, 2,}, p_2^{2, 2}, p_3^{2, 2}, p_4^{2, 2},
+C_{\mathcal{P}_0}^{2, 2} \right] =  C_{\mathcal{P}_0}^{2, 2}$. Por lo tanto, lo
+que hemos obtenido es que $C_{\mathcal{P}_0}^{2, 2}(x, y, \alpha, \beta)
+\thickapprox  \Psi_{\mathcal{P}_0}^{2, 2, *}(x, y, \alpha, \beta)$ para todo
+$(x, y, \alpha, \beta) \in \omega^2 \times \Sigma^{*}^2$. Luego
+$C_{\mathcal{P}_0}^{2, 2} = \Psi_{\mathcal{P}_0}^{2, 2, \#}$. 
+
+\pagebreak
+
+\begin{problem}
+    Sea $f : Pro^{\Sigma} \mapsto Pro^{\Sigma}$ una función $\Sigma$-computable.
+    Dados $n, m \in \omega$, existe $\mathcal{P} \in Pro^{\Sigma}$ tal que
+    $\Psi_{\mathcal{P}}^{n, m, \#} = \Psi_{f( \mathcal{P} )}^{n, m, \#}$
+\end{problem}
+
+
+Sea $G : \omega^{n} \times \Sigma^{*m} \times Pro^{\Sigma} \mapsto \omega$ definida como 
+
+$$G = \lambda \vec{x}\vec{\alpha}\mathcal{P} \left[ \Phi_{\#}^{n, m}(\vec{x},
+    \vec{\alpha}, f( \mathcal{P} ))  \right] = \Phi_{\#}^{n, m} \circ \left[ p_1^{n, m+1},
+\ldots, p_{n+m}^{n, m+1}, f \circ p_{n+m+1}^{n, m+1} \right] $$
+
+Claramente, $G$ es $\Sigma$-computable, por ser composición de las funciones
+$\Phi^{n, m}_{\#}, p_{j}^{n, m+ 1}$ y $f$, todas $\Sigma$-computables. Luego $G$
+satisface las condiciones del teorema de la recursión, y por lo tanto existe un
+$\mathcal{P}_0 \in Pro^{\Sigma}$ tal que
+
+\begin{equation}
+    G(\vec{x}, \vec{\alpha}, \mathcal{P}_0) \thickapprox  \Phi_{\#}^{n, m}(\vec{x},
+    \vec{\alpha}, \mathcal{P}_0)
+\end{equation}
+
+Sea $\mathcal{G}_0$ el programa que computa a $G(\vec{x}, \vec{\alpha},
+\mathcal{P}_0)$. Entonces, la ecuación $(5)$ puede escribirse
+
+\begin{equation}
+    \Phi_{\#}^{n, m}(\vec{x}, \vec{\alpha}, \mathcal{G}_0) \thickapprox  \Phi_{\#}^{n,
+    m}(\vec{x}, \vec{\alpha}, \mathcal{P}_0)
+\end{equation}
+
+Por definición de $G$, tenemos que $G(\vec{x}, \vec{\alpha},
+\mathcal{P}_0) \thickapprox  \Phi_{\#}^{n, m}(\vec{x}, \vec{\alpha}, f(\mathcal{P}_0))$; es
+decir, que
+
+\begin{equation}
+    \Phi_{\#}^{n, m}(\vec{x}, \vec{\alpha}, \mathcal{G}_0) \thickapprox  \Phi_{#}^{n,
+    m}(\vec{x}, \vec{\alpha}, f(\mathcal{P}_0))
+\end{equation}
+
+Por lo tanto, usando $(6)$ y $(7)$, $\Phi_{\#}^{n, m}\left( \vec{x}, \vec{\alpha}, \mathcal{P}_0
+\right) \thickapprox   \Phi_{\#}^{n, m}\left( \vec{x}, \vec{\alpha}, f\left( \mathcal{P}_0
+\right)  \right) $ lo cual implica 
+
+\begin{align*}
+    \Psi_{\mathcal{P}_0}^{n, m, \#} = \Psi_{f( \mathcal{P}_0 )}^{n, m, \#}
+\end{align*}
+
+
+\pagebreak 
+
 
 
 
