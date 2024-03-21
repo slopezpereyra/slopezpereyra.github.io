@@ -74,7 +74,7 @@ La biliografía está en el programa 2023.
 \normalsize
 
 \begin{center}
-\includegraphics[scale=0.3]{graph}
+\includegraphics[scale=0.5]{graph}
 \end{center}
 
 Los elementos de $V$ se llaman vértices o nodos. Los elementos de $E$ se llaman
@@ -98,8 +98,8 @@ Es trivial comproabar que $\sim$ es una relación de equivalencia. Cada clase de
 equivalencia $a / \sim$ con $a \in V$ se llama una componente conexa de $G$.
 
 \begin{definition}
-    Decimos que $G$ es conexo si y solo si tiene una sola componente conexa. Es
-    decir, si $|V \sim ~ | = 1$.
+    Decimos que $G = (V, E) $ es conexo si y solo si tiene una sola componente
+    conexa. Es decir, si $|V / \sim | = 1$.
 \end{definition}
 
 
@@ -173,6 +173,14 @@ d(x) : x \in V\right\} $. Si $\delta = \Delta$ se dice que $G$ es regular. Por
 ejemplo, los
 grafos cíclicos y los completos son regulares.
 
+\begin{definition}
+    Dado un grafo $G = (V, E) $, decimos que $G$ es regular si $d(x) = d(y)$
+    para todo $x, y \in V$.
+\end{definition}
+
+Es decir, un grafo es regular si todo vértice tiene la misma cantidad de
+vecinos.
+
 
 
 \subsection{Repaso de BFS y DFS}
@@ -207,9 +215,6 @@ grafos cíclicos y los completos son regulares.
         que $C_3 = K_3$; pero de allí en adelante difieren.
 \end{itemize}
 
-
-
-
 \subsection{Coloreo de grafos}
 
 \begin{definition}
@@ -224,9 +229,6 @@ grafos cíclicos y los completos son regulares.
 
 Intuitivamente, un coloreo asigna $k$ propiedades a los vértices de modo tal que
 ningún par de grafos adyacentes cumple la misma propiedad. 
-
-
-
 
 \small
 \begin{quote}
@@ -318,8 +320,8 @@ r$ para todo $r > 1$. Es menos directo pero en clase se demostró que
 
 \begin{align*}
     \chi(C_r) = \begin{cases}
-        2 & r \mod 2 \equiv 0 \\ 
-        3 & r \mod 2 \equiv 1
+        2 & r \equiv 0 \mod 2  \\ 
+        3 & r \equiv 1 \mod 2 
     \end{cases}
 \end{align*}
 
@@ -423,24 +425,29 @@ es par. Luego la suma anterior es impar. Luego existe un ciclo impar en $G$.
 \begin{quote}
 
 \textbf{Proof.} Greedy siempre colorea con $\Delta + 1$  colores o menos. Tome
-cualquier orden $v_1 \ldots v_n$ sobre $V$. Para colorear un vértice cualquiera
-excepto $v_1$, se miran los vecinos anteriores. El peor caso posible es que
-todos los vecinos sean vecinos anteriores y todos tengan colores distintos. En
-ese caso, greedy no considera ninguno de esos colores; es decir, $d(x)$ colores.
-Como $d(x) \leq \Delta$, entonces greedy, al colorear $x$, elimina a lo sumo
-$\Delta$ colores. Por lo tanto, en $\left\{ 1, 2, \ldots, \Delta, \Delta + 1
-\right\} $ habrá al menos un color disponible. $\blacksquare$
+cualquier orden $v_1 \ldots v_n$ sobre $V$. Para colorear $v_i, i \neq 1$, se
+mira el color de los vecinos de $v_i$ que son anteriores en el orden.
+
+El peor caso posible es que todos los vecinos sean anteriores en el orden y
+todos tengan colores distintos. En ese caso, Greedy descarta $d(v_i)$ colores.
+Como $d(v_i) \leq \Delta$, entonces Greedy descarta a lo sumo $\Delta$ colores.
+Por lo tanto, siempre habrá al menos un color disponible en $\left\{ 1, 2,
+\ldots, \Delta, \Delta + 1 \right\} $.
+$\blacksquare$
 
 \end{quote}
 \normalsize
 
-Una pregunta natural es si hay grafos que alcancen la cota. La respuesta es sí:
-a saber, 
+Una pregunta natural es si hay grafos cuyo número cromático alcanza la cota
+$\Delta + 1$. La respuesta es sí: a saber, 
 
 \begin{itemize}
     \item $\chi(K_n) = n$ y $\Delta = n - 1$.
     \item $\chi(C_{2r+1}) = 3$ y $\Delta = 2$.
 \end{itemize}
+
+El siguiente teorema establece que, de todos los grafos conexos, $K_n$ y
+$C_{2r+1}$ son los únicos que alcanzan la cota.
 
 \begin{theorem}[Brooks]
     Sea $G = (V, E) $ un grafo conexo distinto de un $K_n$ y un $C_{2r + 1}$.
@@ -489,7 +496,7 @@ color en $\left\{ 1, 2, \ldots, \Delta \right\} $.
 
 Cuando llega a $x$, Greedy elimina a lo sumo $d(x) = \delta$ colores. Y como $G$
 no es regular, $\delta < \Delta$. $\therefore $ Existe al menos un color para
-$x$.
+$x$ en $\left\{ 1, 2, \ldots, \Delta \right\} $.
 
 \end{quote}
 \normalsize
@@ -604,9 +611,8 @@ aplicar esta idea a cada una de ellas.
 
 \textit{Caso base $i = 1$.} Los vértices de $V_{P(c_i)}$ tienen el mismo color $P(c_i)$.
 Porque $c$ es un coloreo propio, y los vértices en cada $V_{P(c_i)}$ no pueden
-formar lados entre sí.
-Pues todos mis primeros vértices (los de $V_{P(c_1)}$) no tienen lados entre sí,
-Greedy los colorea a todos con el color 1 y usa un color. $\blacksquare$
+formar lados entre sí, Greedy los colorea a todos con el color 1 y usa un color.
+$\blacksquare$
 
 
 $HI(i) \Rightarrow HI(i+1)$: Sea $x \in V_{P(c_1)} \cup  \ldots \cup
@@ -625,22 +631,236 @@ implica que $c$ no es propio. $(\bot)$
 \end{quote}
 \normalsize
 
+\pagebreak 
+
+\section{Redes y flujos}
+
+Una red es un grafo dirigido con un límite en la información o carga
+transferible de un nodo a otro. 
+
+El modelo de problema central es una red de productores y
+consumidores. Se trata de encontrar el máximo de información (o producto)
+transferible de los productores a los consumidores. Lo transferido de
+productores a consumidores se llama flujo. Llamamos a este problema \textit{max
+flow}.
+
+\begin{definition}
+    Un grafo $G = (V, E) $ con $V$ un conjunto y $E \subseteq V \times V$ se
+    llama dirigido.
+\end{definition}
+
+Usaremos $\overrightarrow{xy}$ para denotar $(x, y)$ donde $(x, y) \in E$. Observe que
+$\overrightarrow{xy} \neq \overrightarrow{yx}$.
+
+\begin{definition}
+    Una red o network es una $3$-upla $(V, E, c)$ donde $(V, E)$ es un grafo
+    dirigido y $c : E \to \mathbb{R}^{+}$ es una función.
+\end{definition}
+
+La función $c$ denota la capacidad de cada uno de los lados.
+
+\begin{definition}[Vecinos]
+    Definimos $\Gamma^{+}(x) = \left\{ x \in V : \overrightarrow{xy} \in E \right\} $ y,
+    por otro lado,
+    $\Gamma^{-}(x) = \left\{ y \in V : \overrightarrow{yx} \in E \right\} $
+\end{definition}
+
+Usualmente nos preguntamos no cuánta información puede enviarse de un nodo a
+otro, sino cuánta puede enviarse de un conjunto de nodos a otro (de una parte
+del grafo a otra). Esto inspira la siguiente notación.
+
+\begin{definition}
+    Sea $g : E \to \mathbb{R}$ y sean $A, B \subseteq V$. Definimos  
+
+    \begin{align*}
+        g(A, B) = \sum_{x \in A, y \in B \text{ t.q. } \exists \overrightarrow{xy} \in E}
+        g(\overrightarrow{xy})
+    \end{align*}
+\end{definition}
+
+Usualmente usamos la siguiente notación: Si $\zeta$ es una expresión booleana,
+$[\zeta]$ es su evaluación en $\left\{ 0, 1 \right\} $. Esto a veces facilita
+las cosas; por ejemplo, la definición anterior es equivalente a
+
+\begin{align*}
+    g(A, B) = \sum_{\overrightarrow{xy} \in E}[x \in A] [y \in B] [\overrightarrow{xy} \in E] g(\overrightarrow{xy})
+\end{align*}
+
+\begin{definition}
+    Sea $\mathcal{N} = (V, E, c)$ una network. Sea $x \in V$ y $g : E \to
+    \mathbb{R}$. Definimos 
+
+    \begin{align*}
+        \text{out}_{g}(x) \sum_{E} [y \in V][\overrightarrow{xy} \in E]g(x) &= g \left(
+        \left\{ x \right\}, V  \right) 
+    \end{align*}
+
+    Análogamente, 
+
+    \begin{align*}
+        \text{in}_g(x) = \sum[y \in V] [\overrightarrow{yx} \in E]g(\overrightarrow{yx}) = g\left( V,
+        \left\{ x \right\} \right) 
+    \end{align*}
+\end{definition}
+
+\begin{definition}
+    Dada $\mathcal{N} = (V, E, c)$ una network y $s, t \in V$, una función $f
+    :E \to \mathbb{R}$ es un flujo si y solo si 
+
+    \begin{quote}
+        
+    \begin{enumerate}
+        \item $0 \leq f(\overrightarrow{xy}) \leq c(\overrightarrow{xy}) ~ \forall \overrightarrow{xy} \in E$
+            (feasability)
+        \item $\text{in}_f(x) = \text{out}_f(x) ~ \forall x \in V - \left\{ s, t
+            \right\} $ (conservación) 
+        \item $\text{out}_f(s) \geq \text{in}_f(s)$ ($s$ es una source o
+            productor)
+        \item $\text{in}_f(t) \geq \text{out}_f(t)$ (t es un consumidor o sink)
+    \end{enumerate}
+    \end{quote}
+
+\end{definition}
+
+A veces se pide que lo que entra a $s$ sea cero y lo que salga de $t$ sea cero,
+pero esto no es necesario. A fines prácticos, en los ejemplos que veremos esta
+última restricción se cumple. Más aún, suele suceder que $\Gamma^{+}(t) =
+\emptyset$ y $\Gamma^{-}(s) =\emptyset$.
+
+\begin{definition}
+    Sea $\mathcal{N} = (V, E, c)$ una network y $f$ un flujo en $\mathcal{N}$
+    de $s$ a $t$. Definimos el valor de un flujo como sigue:
+
+    \begin{align*}
+        v(f) = \text{out}_f(s) - \text{in}_f(s)
+    \end{align*}
+\end{definition}
+
+El valor de un flujo es, por lo tanto. lo que "sale" de $s$ en ese flujo; o
+bien, la cantidad total de información que está siendo transferida desde $s$
+hacia $t$. Es intuitivo pensar que esto será lo mismo que la cantidad de
+información que llega a $t$. El siguiente teorema establece esta equivalencia.
+
+\begin{theorem}
+    Sea $\mathcal{N} = (V, E, c)$ una network y $f$ un flujo en $\mathcal{N}$.
+    Luego $v(f) = in_f(t) - out_f(t)$.
+\end{theorem}
 
 
+\small
+\begin{quote}
+
+    \textbf{Proof.} Observe que 
+
+    \begin{align*}
+        f(V, V) &= \sum_{\overrightarrow{xy} \in E} f(\overrightarrow{xy}) \\ 
+                &= \sum_{x \in V} \sum_{y \in V, \overrightarrow{xy} \in E} f(\overrightarrow{xy}) \\ 
+                &= \sum_{x \in V} out_f(x)
+    \end{align*}
+
+    Ahora bien, el mismo razonamiento indica que $f(V, V) = \sum_{x \in V}
+    \text{in}_f(x)$. Es decir, 
+
+    \begin{align*}
+        \sum_{x \in V} \text{out}_f(x) = \sum_{x \in V} \text{in}_f(x)
+    \end{align*}
+
+    Por la propiedad \textit{(2)} de un flujo, tenemos que $in_f(x) = out_f(x)$.
+    Cancelando términos en las sumatorias, llegamos a 
+
+    \begin{align*}
+        \sum_{x \in V} \text{out}_f(x) &= \sum_{x \in V} \text{in}_f(x) \\ 
+        \Rightarrow ~& \text{out}_f(s) - \text{in}_f(s) = \text{in}_f(t) -
+        \text{out}_f(t) = v(t) ~ \blacksquare
+    \end{align*}
+    
+    \begin{quote}
+        (Incidentalmente, como $\text{out}_f(s) \geq \text{in}_f(s)$, tenemos que
+        $v(t) \geq 0$, y por lo tanto $\text{in}_f(t) \geq \text{out}_f(t)$, lo
+        cual es la propiedad \textit{(4)} de un flujo.)
+    \end{quote}
+
+\end{quote}
+\normalsize
+
+\begin{definition}
+    Sea $\mathcal{N} = (V, E, c)$ una network y $f$ un flujo en $\mathcal{N}$ de
+    $s$ a $t$.
+    $f$ se dice maximal si y solo si $v(f) \geq v(g)$ para toda $g$ que sea un
+    flujo en $\mathcal{N}$ de $s$ a $t$.
+\end{definition}
 
 
+\begin{lemma}[Un lema obvio]
+    Sean $f, g$ funciones sobre los lados con $f(\overrightarrow{xy}) \leq g(\overrightarrow{xy})$
+    para toda $\overrightarrow{xy} \in E$. Entonces $f(A, B) \leq g(A, B)$ para todo $A, B
+    \subseteq V$.
+\end{lemma}
+
+Observemos que si $v(f) = c(\left\{ s \right\}, V)$, entonces $f$ es maximal. Es
+el caso en que saturamos completamente la capacidad de $s$. Sin embargo, la
+inversa no se cumple: si un flujo es maximal, no necesariamente saturamos los
+lados de $s$.
+
+\begin{theorem}[Probar que flujo es maximal]
+    Sea $f$ un flujo sobre $\mathcal{N} = (G, E, c)$ de $s$ a $t$. Entonces
+    $v(f) = c(\left\{ s \right\}, V) \Rightarrow f$ es maximal.
+\end{theorem}
 
 
+\small
+\begin{quote}
+
+\textbf{Proof.} Sea $g$ un flujo en $\mathcal{N} = (V, E, c)$ de $s$ a $t$. Por
+popiedad \textit{(1)} de la definición de flujo, $g(\overrightarrow{xy}) \leq c(\overrightarrow{xy})$
+para todo $\overrightarrow{xy} \in E$. Por el lema anterior, 
+
+\begin{align*} g(\left\{ s \right\}, V) \leq c( \left\{ s \right\}, V  )\end{align*}
+
+Vea que $v(g) = out_g(s) - in_g(s) \leq out_g(s)$. Pues $out_g(s) = g(\left\{ s
+\right\}, v ) \leq c(\left\{ s \right\}, v ) = v(f)$. Obtenemos entonces $v(g)
+\leq v(f)$.
+
+\end{quote}
+\normalsize
+
+\subsection{Algoritmo Greedy para flujo}
+
+Damos un algoritmo para encontrar un flujo $f$ sobre una network $\mathcal{N} =
+(V, E, c)$. Recordemos que el flujo $f$ de una network es simplemente una
+función que asigna valores a sus lados. El algorimo hace lo siguiente:
+
+\begin{quote}
+
+    \textit{(1)} Inicializa el flujo en $f(\overrightarrow{xy}) = 0$ para todo $\overrightarrow{xy}
+    \in E$. 
+
+    \textit{(2)} Encuentra un camino no saturado de $s$ a $t$; es decir, un
+    camino tal que el flujo es inferior a la capacidad en cada lado. Si el
+    camino no existe, termina.
+
+    \textit{(3)} Suma al flujo de cada lado en el camino el valor máximo que
+    puede sumarse sin sobrepasar la capacidad de ningún lado.
+
+    \textit{(4)} Regresa a \textit{(2)}.
+    
+\end{quote}
+
+En pseudo-código, el algoritmo es:
 
 
-
-
-
-
-
-
-
-
+\begin{align*}
+    &f(\overrightarrow{xy}) = 0 \text{ for all $\overrightarrow{xy} \in E$ } \\ 
+    &\textbf{while} ~ (\exists \text{ camino no saturado de $s$ a $t$ })
+    ~\textbf{do}\\
+    & ~ ~ ~ ~ \text{Encuentra camino no saturado $sx_0 \ldots x_{r} t$}\\
+    &~ ~ ~ ~ \epsilon = \min_{0 \leq i < r} \Big\{ c(\overrightarrow{x_i x_{i+1}}) -
+    f(\overrightarrow{x_i x_{i+1}})\Big\}\\
+    &~ ~ ~ ~ \textbf{for} ~ i := 0 ~ \textbf{do}\\ 
+    &~ ~ ~ ~  ~ ~ ~ ~  f(\overrightarrow{x_i x_{i+1}}) := f(\overrightarrow{x_i x_{i+1}}) + \epsilon \\
+    &~ ~ ~ ~ \textbf{od} \\ 
+    &\textbf{od}
+\end{align*}
 
 
 
@@ -694,6 +914,8 @@ Por lo tanto, el algoritmo más rápido que devuelve el número cromático de un
 \begin{quote}
     \textit{(1)} Output 2.
 \end{quote}
+
+\pagebreak
 
 \begin{problem}[Ejercicio 6]
 \end{problem} 
@@ -752,24 +974,170 @@ y al $1$. Es decir, es un coloreo propio de $z + 1$ colores.
 \textit{Conclusión}. $\chi(100) = 25 + 1 = 26$ (Hay 25 primos entre $1$ y
 $100$).
 
+\pagebreak
+
+\begin{problem}
+    Sea $Q_n$ el Queen graph. Probar que si $n$ coprimo con $6$, entonces
+    $\chi(G) = n$.
+\end{problem}
+
+Sea $v_{00}, \ldots, v_{(n-1)(n-1)}$ un orden sobre los $n^2$ vértices de $Q_n$,
+donde damos a entender que $v_{ij}$ es el vértice que está en la casilla $(i,
+j)$ del tablero. Asuma que $\text{mcd}(n, 6) = 1$. Naturalmente, cada columna
+$v_{0i}v_{1i}\ldots v_{(n-1)i}$, cada fila $v_{i 0}v_{i 1}\ldots v_{i (n - 1)}$,
+y cada diagonal $v_{ij}v_{(i+1)(j+1) \ldots}$ necesitan $n$ colores porque
+cada cual es un subgrafo $K_n$. Damos el siguiente coloreo: 
+
+\begin{align*}
+    c(v_i) = i \mod n
+\end{align*}
 
 
 
 
+Daremos una
+fórmula para los lados. En particular, la $k$-écima horizontal es de la forma
+$v_{nk}, v_{nk+1}, \ldots, v_{nk + (n -1)}$. Luego
+
+\begin{align*}
+    E_{H} = \left\{ v_{nk} v_{nk + i} : k, i \in  \mathbb{N}_0, k < n, i < n \right\}  
+\end{align*}
+
+La $i$-écima vertical es de la forma $v_{i}, v_{n + i}, v_{2n + }, \ldots,
+v_{(n - 1)n + i}$. Es decir, 
+
+\begin{align*}
+    E_V = \left\{ v_{nk + i} : k, i \in \mathbb{N}_0, k < n, i < n \right\} 
+\end{align*}
+
+Finalmente, las diagonales son de la forma $v_{nk + j}, v_{n(k+1) + (j + 1)},
+\ldots , $
+
+\begin{align*}
+    E = \left\{ v_{nk + j}v_{n(k+p) + (j + p)} : k \in \mathbb{N}, j \in
+    \mathbb{N}, k < n, j < n \right\} 
+\end{align*}
+
+\pagebreak 
+
+\begin{problem}
+    Sea $G = (V, E) $ un grafo coloreado por Greedy con $t$ colores y $V_i$ el
+    conjunto de colores con el color $i$. Diga V o F:
+\end{problem}
+
+
+\small
+\begin{quote}
+
+\textit{Nota.} Este problema es lindo para ver diversas permutaciones del orden
+$V_0, \ldots, V_{t - 1}$ y entender que algunas mejoran el rendimiento de Greedy
+y otras no. En directa relación con el \textbf{Theorem 7}.
+
+\end{quote}
+\normalsize
+
+
+\textit{(1)} Si se ordenan los vértices poniendo primero los de $V_0$, luego los
+de $V_1$, y así hasta $V_{t-1}$, entonces Greedy con ese orden colorea con
+exactamente $t$ colores. 
+
+\small
+\begin{quote}
+    Pues Greedy asigna un color mínimo a cada vértice, sólo asigna el color $i$
+    a un vértice si éste tiene vecinos de color $0, 1, \ldots, i -1$. Es decir
+    que cada $v \in V_i$ tiene un vecino en $V_j$ para cada $j < i$. Luego $V_0$
+    se colorea con $0$, y el único color disponible para $V_1$ es $1$, y el
+    único disponible para $V_2$ es $2$, etc. Se usan exactamente $t$ colores.
+\end{quote}
+
+
+\textit{(2)} Suponga $t \geq 3$. Si se ordenan los vértices poniendo primero los
+de $V_0$, luego los de $V_1$, y así hasta $V_{t - 3}$, y se ponen luego los de
+$V_{t - 1}, V_{t-2}$. Entonces correr Greedy con este nuevo orden colorea $G$
+con exactamente $t$ colores.
+
+
+\small
+\begin{quote}
+
+    Recordemos otra vez que si un vértice está en $V_i$, entonces tiene vecinos
+    en cada $V_{j}$ tal que $j < i$. Esto significa que usaremos $t - 3$ colores
+    para colorear el orden desde $V_0$ hasta $V_{t - 3}$. Ahora bien, $V_{t -
+    1}$ no puede tener los colores en $\left\{ 0, \ldots, t - 3 \right\} $, y
+    por lo tanto se colorea con el color $t - 2$. Finalmente, $V_{t - 2}$ tiene
+    vértices asociados con todos sus predecesores, y sabemos que $V_{t - 1}$
+    tiene lados con $V_{t - 2}$. Entonces los colores $\left\{ 0, \ldots, t - 2
+    \right\} $ no están disponibles. Se usa el color $t - 1$ y Greedy colorea
+    con exactamente $t$ colores.
+
+\end{quote}
+\normalsize
+
+\textit{(3)} Suponga $t \geq 3$. Si se ordenan los vértices poniendo primero los
+de $V_0$, luego los de $V_1$, etc. hasta $V_{t - 4}$; y luego se ponen los de
+$V_{t-2}$, los de $V_{t - 3}$, y al final los de $V_{t - 1}$, entonces corriendo
+Greedy con este nuevo orden colorea $G$ con exactamente $t$ colores.
 
 
 
+\small
+\begin{quote}
+
+    El razonamiento es igual. Hasta $V_{t - 4}$ tenemos que usar $t - 4$
+    colores. Es decir que $V_{t - 2}$ tiene un solo color posible; a saber, $t -
+    3$. 
+
+    Ahora bien, todo vértice en $V_{t - 3}$ tiene vecinos en $V_0, \ldots, V_{t
+    - 4}$. Pero si bien todo vértice en $V_{t - 2}$ tiene un vecino en $V_{t -
+    3}$, no necesariamente todo vértice en $V_{t -3}$ tiene un vecino en $V_{t
+    -2}$. 
+
+    Entonces es posible que parte de los vértices de $V_{t-3}$ se coloreen con
+    $t - 2$ (si tienen vecinos en $V_{t-2}$) y otros con $t - 3$ (si no tienen
+    vecinos en $V_{t-2}$).
+
+    Finalmente, debemos colorear los de $V_{t - 1}$. El mejor caso posible es
+    que los vértices de $V_{t - 3}$ que son vecinos de $V_{t -
+    1}$ sean los de color $t - 3$ (los que no son vecinos de $V_{t - 2}$). En
+    este caso, se colorea $V_{t - 1}$ con el color $t - 2$.
+
+    Pues en el mejor de los casos, Greedy usa $t - 1$ colores, es falso que en
+    este orden Greedy usa exactamente $t$ colores.
 
 
+\end{quote}
+\normalsize
+
+\pagebreak 
+
+\begin{problem}[10]
+    Pruebe que el gráfico en la figura tiene número cromático 4.
+\end{problem}
+
+Pues $C_5 \subseteq G$, $\chi(G) \geq 3$. Es fácil dar un coloreo de $4$
+colores:
 
 
+\begin{center}
+\includegraphics[scale=0.3]{Grafo10}
+\end{center}
 
+Ahora considere el siguiente subgrafo de $G$:
 
+\begin{center}
+\includegraphics[scale=0.3]{Subgrafo10}
+\end{center}
 
+(Aquí los números denotan nombres de las aristas y no colores, como en el caso
+anterior). Pues contiene a $C_3$ necesitamos al menos tres colores para
+colorearlo propiamente. Asuma que existe un coloreo propio de tres colores. Los
+dos $C_3$s se colorearán con los colores necesarios; por ejemplo, $c(a) = c(c) =
+0, c(b) = 1, c(d) = c(e) = 2$. El único color disponible para $f$ es $1$; y si
+se colorea a $f$ con $1$ no existe ningún color disponible para $g$ (y
+viceversa). Es decir, no existe un coloreo propio de tres colores. 
 
-
-
-
+El resultado anterior implica que $\chi(G) \geq 4$. Pero ya dimos un coloreo
+propio de cuatro colores de $G$. Luego $\chi(G) = 4$.
 
 
 

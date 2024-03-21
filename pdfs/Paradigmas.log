@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  20 MAR 2024 22:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  19 MAR 2024 09:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**Discrete.tex
-(./Discrete.tex
+**Paradigmas.tex
+(./Paradigmas.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-01-16> (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
@@ -22,28 +22,10 @@ File: size12.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip48
 \belowcaptionskip=\skip49
 \bibindent=\dimen140
-) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
- (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
-\KV@toks@=\toks16
-) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
- (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
-) (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
-File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
-)
-Package graphics Info: Driver file: pdftex.def on input line 107.
- (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
-))
-\Gin@req@height=\dimen141
-\Gin@req@width=\dimen142
 ) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
-\inpenc@prehook=\toks17
-\inpenc@posthook=\toks18
+\inpenc@prehook=\toks16
+\inpenc@posthook=\toks17
 ) (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 ) (/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
@@ -52,7 +34,7 @@ Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\@emptytoks=\toks19
+\@emptytoks=\toks18
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
@@ -65,9 +47,9 @@ Package: iftex 2022/02/03 v1.0f TeX engine tests
 ) (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
  (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks20
-\XKV@tempa@toks=\toks21
-)
+\XKV@toks=\toks19
+\XKV@tempa@toks=\toks20
+ (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/keyval.tex))
 \XKV@depth=\count193
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 )) (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
@@ -115,11 +97,11 @@ For additional information on amsmath, use the `?' option.
 Package: amstext 2021/08/26 v2.01 AMS text
  (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks22
-\ex@=\dimen143
+\@emptytoks=\toks21
+\ex@=\dimen141
 )) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen144
+\pmbraise@=\dimen142
 ) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
@@ -140,7 +122,7 @@ LaTeX Info: Redefining \big on input line 722.
 LaTeX Info: Redefining \Big on input line 723.
 LaTeX Info: Redefining \bigg on input line 724.
 LaTeX Info: Redefining \Bigg on input line 725.
-\big@size=\dimen145
+\big@size=\dimen143
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \macc@depth=\count270
@@ -153,21 +135,21 @@ LaTeX Info: Redefining \Relbar on input line 971.
 \dotsspace@=\muskip16
 \c@parentequation=\count272
 \dspbrk@lvl=\count273
-\tag@help=\toks23
+\tag@help=\toks22
 \row@=\count274
 \column@=\count275
 \maxfields@=\count276
-\andhelp@=\toks24
-\eqnshift@=\dimen146
-\alignsep@=\dimen147
-\tagshift@=\dimen148
-\tagwidth@=\dimen149
-\totwidth@=\dimen150
-\lineht@=\dimen151
-\@envbody=\toks25
+\andhelp@=\toks23
+\eqnshift@=\dimen144
+\alignsep@=\dimen145
+\tagshift@=\dimen146
+\tagwidth@=\dimen147
+\totwidth@=\dimen148
+\lineht@=\dimen149
+\@envbody=\toks24
 \multlinegap=\skip51
 \multlinetaggap=\skip52
-\mathdisplay@stack=\toks26
+\mathdisplay@stack=\toks25
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
 ) (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifxetex.sty
@@ -181,8 +163,8 @@ Package: centernot 2016/05/16 v1.4 Centers the not symbol horizontally (HO)
  (/usr/share/texlive/texmf-dist/tex/generic/kastrup/binhex.tex)
 \tx@Isdigit=\count278
 \tx@IsAlNum=\count279
-\tx@tA=\toks27
-\tx@tB=\toks28
+\tx@tA=\toks26
+\tx@tB=\toks27
 \tx@su=\read2
 
 amsthm NOT loaded
@@ -265,7 +247,7 @@ LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 \symlargesymbolsTXA=\mathgroup9
 LaTeX Font Info:    Overwriting symbol font `largesymbolsTXA' in version `bold'
 (Font)                  U/ntxexa/m/n --> U/ntxexa/b/n on input line 643.
-\tx@sbptoks=\toks29
+\tx@sbptoks=\toks28
 LaTeX Font Info:    Redeclaring math delimiter \lfloor on input line 866.
 LaTeX Font Info:    Redeclaring math delimiter \rfloor on input line 867.
 LaTeX Font Info:    Redeclaring math delimiter \lceil on input line 868.
@@ -288,28 +270,28 @@ LaTeX Info: Redefining \not on input line 2959.
 \c@theorem=\count283
 
 
-./Discrete.tex:16: LaTeX Error: Command \problem already defined.
+./Paradigmas.tex:14: LaTeX Error: Command \problem already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.16 \newtheorem
+l.14 \newtheorem
                 {example}{Example} \newtheorem{definition}{Definition}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./Discrete.tex:16: LaTeX Error: Command \example already defined.
+./Paradigmas.tex:14: LaTeX Error: Command \example already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.16 \newtheorem{example}{Example} \newtheorem
+l.14 \newtheorem{example}{Example} \newtheorem
                                               {definition}{Definition}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -317,328 +299,104 @@ or  <return>  to continue without it.
 
 \c@definition=\count284
 
-./Discrete.tex:18: LaTeX Error: Command \lemma already defined.
+./Paradigmas.tex:16: LaTeX Error: Command \lemma already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.18 \newtheorem
+l.16 \newtheorem
                 {theorem}{Theorem}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./Discrete.tex:19: LaTeX Error: Command \theorem already defined.
+./Paradigmas.tex:17: LaTeX Error: Command \theorem already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.19 
+l.17 
      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-LaTeX Font Info:    Trying to load font information for T1+ntxtlf on input line 21.
+LaTeX Font Info:    Trying to load font information for T1+ntxtlf on input line 19.
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/t1ntxtlf.fd
 File: t1ntxtlf.fd 2021/05/24 v1.1 font definition file for T1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 21.
+(Font)              scaled to size 12.0pt on input line 19.
  (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count285
 \l__pdf_internal_box=\box53
-) (./Discrete.aux)
-\openout1 = `Discrete.aux'.
+) (./Paradigmas.aux)
+\openout1 = `Paradigmas.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 21.
-LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 21.
+LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 19.
+LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 19.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/omlntxmi.fd
 File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
 )
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 21.
-LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 21.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 19.
+LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 19.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxexa.fd
 File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 )
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 21.
-LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 21.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 19.
+LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 19.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/lmsntxsy.fd
 File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
 )
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 21.
-LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line 21.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 19.
+LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line 19.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/lmxntxexx.fd
 File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
 )
-LaTeX Font Info:    ... okay on input line 21.
- (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count286
-\scratchdimen=\dimen152
-\scratchbox=\box54
-\nofMPsegments=\count287
-\nofMParguments=\count288
-\everyMPshowfont=\toks30
-\MPscratchCnt=\count289
-\MPscratchDim=\dimen153
-\MPnumerator=\count290
-\makeMPintoPDFobject=\count291
-\everyMPtoPDFconversion=\toks31
-) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
-Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
- (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
-))
-\c@mv@tabular=\count292
-\c@mv@boldtabular=\count293
-LaTeX Info: Command `\dddot' is already robust on input line 21.
-LaTeX Info: Command `\ddddot' is already robust on input line 21.
+LaTeX Font Info:    ... okay on input line 19.
+\c@mv@tabular=\count286
+\c@mv@boldtabular=\count287
+LaTeX Info: Command `\dddot' is already robust on input line 19.
+LaTeX Info: Command `\ddddot' is already robust on input line 19.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 17.28pt on input line 27.
+(Font)              scaled to size 17.28pt on input line 21.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 17.28pt on input line 27.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 14.4pt on input line 29.
-LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 14.4pt on input line 29.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 12.0pt on input line 31.
-LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input line 36.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
-File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
-)
-LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 36.
-LaTeX Font Info:    Trying to load font information for OT1+minntx on input line 51.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1minntx.fd
-File: ot1minntx.fd 2022/01/20 v1.0 font definition file for OT1/minntx
-)
-LaTeX Font Info:    Trying to load font information for U+msa on input line 51.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 51.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 51.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxmia.fd
-File: untxmia.fd 2018/04/14 Fontinst v1.933 font definitions for U/ntxmia.
-)
-LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 51.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsym.fd
-File: untxsym.fd 2015/03/20 Fontinst v1.933 font definitions for U/ntxsym.
-)
-LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 51.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsyc.fd
-File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
-)
-LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 12.0pt on input line 63.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 68.
-LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 10.95pt on input line 71.
-<../Images//graph.png, id=1, 764.8575pt x 764.8575pt>
-File: ../Images//graph.png Graphic file (type png)
-<use ../Images//graph.png>
-Package pdftex.def Info: ../Images//graph.png  used on input line 77.
-(pdftex.def)             Requested size: 382.42781pt x 382.42781pt.
+(Font)              scaled to size 17.28pt on input line 21.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.8pt on input line 94.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.6pt on input line 94.
- [2 <../Images//graph.png>]
-<../Images//equiv.png, id=21, 542.025pt x 542.025pt>
-File: ../Images//equiv.png Graphic file (type png)
-<use ../Images//equiv.png>
-Package pdftex.def Info: ../Images//equiv.png  used on input line 118.
-(pdftex.def)             Requested size: 135.5059pt x 135.5059pt.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 10.95pt on input line 151.
-
-./Discrete.tex:157: Missing $ inserted.
-<inserted text> 
-                $
-l.157 https://en.wikipedia.org/wiki/Three_
-                                          Witches
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./Discrete.tex:158: Missing $ inserted.
-<inserted text> 
-                $
-l.158 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./Discrete.tex:158: Missing } inserted.
-<inserted text> 
-                }
-l.158 
-      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./Discrete.tex:158: Extra }, or forgotten \endgroup.
-\par ...m \@noitemerr {\@@par }\fi \else {\@@par }
-                                                  \fi 
-l.158 
-      
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-[3 <../Images//equiv.png>]
-./Discrete.tex:211: Missing delimiter (. inserted).
-<to be read again> 
-                   {
-l.211         $$C_n = \left( \left{
-                                    1, 2, \ldots, n \right},
-I was expecting to see something like `(' or `\{' or
-`\}' here. If you typed, e.g., `{' instead of `\{', you
-should probably delete the `{' by typing `1' now, so that
-braces don't get unbalanced. Otherwise just proceed.
-Acceptable delimiters are characters whose \delcode is
-nonnegative, or you can use `\delimiter <delimiter code>'.
-
-./Discrete.tex:211: Missing } inserted.
-<inserted text> 
-                }
-l.211 ..._n = \left( \left{ 1, 2, \ldots, n \right
-                                                  },
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./Discrete.tex:211: Missing delimiter (. inserted).
-<to be read again> 
-                   }
-l.211 ...n = \left( \left{ 1, 2, \ldots, n \right}
-                                                  ,
-I was expecting to see something like `(' or `\{' or
-`\}' here. If you typed, e.g., `{' instead of `\{', you
-should probably delete the `{' by typing `1' now, so that
-braces don't get unbalanced. Otherwise just proceed.
-Acceptable delimiters are characters whose \delcode is
-nonnegative, or you can use `\delimiter <delimiter code>'.
-
-./Discrete.tex:211: Extra }, or forgotten \right.
-<recently read> }
-                 
-l.211 ...n = \left( \left{ 1, 2, \ldots, n \right}
-                                                  ,
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-[4]
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 8.8pt on input line 254.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 6.6pt on input line 254.
-<../Images//coloring.png, id=30, 907.39pt x 515.9275pt>
-File: ../Images//coloring.png Graphic file (type png)
-<use ../Images//coloring.png>
-Package pdftex.def Info: ../Images//coloring.png  used on input line 286.
-(pdftex.def)             Requested size: 317.59126pt x 180.57733pt.
- [5] [6 <../Images//coloring.png>]
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 368.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.1pt on input line 368.
- [7]
-
-./Discrete.tex:416: LaTeX Error: \begin{document} ended by \end{quote}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.416 \end{quote}
-                 
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-./Discrete.tex:416: Extra \endgroup.
-<recently read> \endgroup 
-                          
-l.416 \end{quote}
-                 
-Things are pretty mixed up, but I think the worst is over.
-
-[8] [9] [10] [11] [12] [13] [14] [15] [16] [17]
-./Discrete.tex:949: Undefined control sequence.
-<recently read> \mcd 
-                     
-l.949 ... $\left\{ i, j \right\} $ tales que $\mcd
-                                                  (i, j) = 1$ (coprimos).
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[18] [19] [20]
-<../Images//Grafo10.png, id=86, 425.59pt x 455.7025pt>
-File: ../Images//Grafo10.png Graphic file (type png)
-<use ../Images//Grafo10.png>
-Package pdftex.def Info: ../Images//Grafo10.png  used on input line 1122.
-(pdftex.def)             Requested size: 127.67798pt x 136.71179pt.
-<../Images//Subgrafo10.png, id=87, 361.35pt x 363.3575pt>
-File: ../Images//Subgrafo10.png Graphic file (type png)
-<use ../Images//Subgrafo10.png>
-Package pdftex.def Info: ../Images//Subgrafo10.png  used on input line 1128.
-(pdftex.def)             Requested size: 108.40584pt x 109.00809pt.
- [21 <../Images//Grafo10.png> <../Images//Subgrafo10.png>] (./Discrete.aux) ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./Paradigmas.aux) ) 
 Here is how much of TeX's memory you used:
- 6629 strings out of 476091
- 92911 string characters out of 5794081
- 1866330 words of memory out of 5000000
- 26861 multiletter control sequences out of 15000+600000
- 655136 words of font info for 269 fonts, out of 8000000 for 9000
+ 5362 strings out of 476091
+ 72650 string characters out of 5794081
+ 1849330 words of memory out of 5000000
+ 25714 multiletter control sequences out of 15000+600000
+ 521767 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,24n,76p,329b,292s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on Discrete.pdf (21 pages, 430681 bytes).
+ 71i,5n,76p,331b,111s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
+Output written on Paradigmas.pdf (1 page, 58408 bytes).
 PDF statistics:
- 149 PDF objects out of 1000 (max. 8388607)
- 90 compressed objects within 1 object stream
+ 19 PDF objects out of 1000 (max. 8388607)
+ 11 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
