@@ -79,11 +79,6 @@ joyfulness of her, whether God in fact exists.) It is as if she came to ensure,
 once I escaped the grip of death, that I should never die again. 
 
 
-<p align="center">
-  <img src="../Images/seleyyo3.jpg">
-</p>
-
-
 There is another sense in which she acted as a restorer of compassion and
 positive affect. As I said, I knew my wife at a very early age. Some time after,
 I devoted myself to reading the classical works of the socialist tradition. I
@@ -210,10 +205,6 @@ passion is the *background* of a daily life where more tranquile affects are
 protagonists—it is *el fondo*  where the shining *astrums* of quieter affections
 gently flow and blaze—it is an atmosphere, an ambiance that only at times
 devours it all. 
-
-<p align="center">
-  <img src="../Images/seleyyo4.jpg">
-</p>
 
 On another note, our memories of love are truly a singular curiosity. I have
 many times endeavored to predict that a particular moment I was living would not
