@@ -887,13 +887,20 @@ adaptación adecuada, antes damos una nueva definición.
         
         \begin{itemize}
         \item $\overrightarrow{x_i x_{i+1}} \in E$ y
-            $f(\overrightarrow{x_i}{x_{i+1}}) < c(\overrightarrow{x_ix_{i+1}})$.
-        \item $\overrightarrow{x_{i+1}x_i} \in E$ y
-            $f(\overrightarrow{x_{i+1}x_i}) > 0$.
+        $f(\overrightarrow{x_ix_{i+1}}) < c(\overrightarrow{x_ix_{i+1}})$.
+    \item $\overleftarrow{x_{i}x_{i+1}} \in E$ y
+            $f(\overleftarrow{x_{i}x_{i+1}}) > 0$.
         \end{itemize}
     \end{quote}
 
+
 \end{definition}
+    
+La primera condición establece que si un trecho del camino es \textit{forward}
+($\overrightarrow{x_i x_{i+1}} \in E$), el flujo circulante en ese trecho es inferior
+a su capacidad. La segunda condición establece que si un trecho del camino es
+\textit{backward} ($\overleftarrow{x_{i}x_{i+1}} \in E$), el flujo circulante en
+ese trecho es mayor a cero. 
 
 \begin{theorem}
     Si $f$ es un flujo de valor $v$, y aumentamos $f$ con un $f$-camino
@@ -904,30 +911,41 @@ adaptación adecuada, antes damos una nueva definición.
 La propiedad linda de Ford-Fulkerson es que, si termina, devuelve un flujo
 maximal. La propiedad fea es que no siempre termina.
 
+\begin{quote}
 \begin{align*}
-    &f(\overrightarrow{xy}) = 0 \text{ for all $\overrightarrow{xy} \in E$ } \\ 
+    &f(\overrightarrow{xy}) := 0 \text{ for all $\overrightarrow{xy} \in E$ } \\ 
     &\textbf{while} ~ (\exists \text{ $f$-camino aumentante $s$ a $t$ })
     ~\textbf{do}\\
-    & ~ ~ ~ ~ C.A. := \text{$f$-camino aumentante $sx_0 \ldots x_{r-1} t$}\\
-    &~ ~ ~ ~ \epsilon_i := \begin{cases}
+    & ~ ~ ~ ~\text{Hallar $f$-camino aumentante $x_0 \ldots x_{r-1}x_r$
+    con $x_0 = s, x_{r} = t$}\\
+    &~ ~ ~ ~ \textbf{for} ~ i := 0 \textbf{ to } r  \textbf{ do}\\ 
+    &~ ~ ~ ~ ~ ~ ~ ~ ~ \epsilon_i := \begin{cases}
         c(\overrightarrow{x_ix_{i+1}}) - f(\overrightarrow{x_ix_{i+1}}) &
-        \text{Primer caso del $f$-camino aumentante} \\ 
-        f(\overrightarrow{x_{i+1}x_i}) &\text{Segundo caso del $f$-camino
-        aumentante}
+        \overrightarrow{x_ix_{i+1}}\in E\\ 
+        f(\overleftarrow{x{i}x_{i+1}}) & \overleftarrow{x_{i}x_{i+1}} \in E
     \end{cases} &  \\
-    &~ ~ ~ ~  \epsilon = \min \epsilon_i\\
-    &~ ~ ~ ~ \textbf{for} ~ \overrightarrow{xy} \in C.A. ~ \textbf{do}\\ 
-    &~ ~ ~ ~  ~ ~ ~ ~  f(\overrightarrow{x_i x_{i+1}}) := \begin{cases}
-        f(\overrightarrow{\overrightarrow{xy}}) + \epsilon & \text{Si la arista es
-        forward} \\ 
-            f(\overrightarrow{xy}) - \epsilon & \text{Si la arista es
-        backward} 
-    \end{cases} \\
-    &~ ~ ~ ~ \textbf{od} \\ 
+    &~ ~ ~ ~ \textbf{od}\\
+    &~ ~ ~ ~  \epsilon = \min \left\{ \epsilon_0, \ldots, \epsilon_{r} \right\} \\
+    &~ ~ ~ ~ \textbf{for} ~ i := 0 \textbf{ to } r  \textbf{ do}\\ 
+    &~ ~ ~ ~ ~ ~ ~ ~ ~ \textbf{if } ~ \overrightarrow{x_ix_{i+1}} \in E \textbf{
+    then}\\ 
+    & ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ f(\overrightarrow{x_{i}x_{i+1}}) :=
+    f(\overrightarrow{x_{i}x_{i+1}}) + \epsilon\\
+    & ~ ~ ~ ~ ~ ~ ~ ~ ~  \textbf{else} \\ 
+    & ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ f(\overleftarrow{x_{i}x_{i+1}}) :=
+    f(\overleftarrow{x_{i}x_{i+1}}) - \epsilon\\
+    & ~ ~ ~ ~ ~ ~ ~ ~  \textbf{fi}\\
+    & ~ ~ ~ ~ \textbf{od}\\
     &\textbf{od}
 \end{align*}
 
+\end{quote}
+\normalsize
 
+Como puede observarse, el algoritmo encuentra un camino aumentante arbitrario,
+encuentra la menor cantidad de flujo que puede o bien agregarse o bien removerse
+de la circulación en cada trecho del camino, y luego lo agrega o lo sustrae en
+cada trecho dependiendo del caso.
 
 
 \pagebreak
