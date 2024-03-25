@@ -1233,11 +1233,14 @@ colorearse propiamente con $3$ colores, lo cual concluye la prueba.
     \subseteq G$. Probar que $\chi(G) \leq \delta + 1$.
 \end{problem}
 
-La idea parece ser tomar un subgrafo de $G$ adecuado y demostrar que su número
-cromático es $\delta$; luego la propiedad de que $G$ es crítico termina la
-prueba.
+Asuma que $\chi(G) > \delta + 1$. Esto implica que $\delta < \chi(G) - 1$. Sea
+$G'$ el grafo inducido por un vértice de grado $\delta$ y todos sus vecinos. Es
+trivial observar que en el peor caso este grafo tiene $\chi(G') = \delta + 1$,
+Pues $G$ es crítico, tendríamos que $\delta + 1 < \chi(G)$, lo cual contradice
+la hipótesis.
 
-En particular, tomemos $G = (V - \left\{ d \right\} )$
+Pues existe al menos un caso que contradice la hipótesis, y la hipótesis es
+general, la contradicción es general. Es decir, $\chi(G) \leq \delta + 1$.
 
 
 
