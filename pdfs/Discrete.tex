@@ -947,6 +947,230 @@ encuentra la menor cantidad de flujo que puede o bien agregarse o bien removerse
 de la circulación en cada trecho del camino, y luego lo agrega o lo sustrae en
 cada trecho dependiendo del caso.
 
+\subsection{Análisis de Ford-Fulkerson}
+
+\begin{definition}
+    Un corte es un conjunto de vértices que tiene la fuente y no tiene el
+    resumidero; o bien es un conjunto $S \subseteq V$ t.q. $s \in S \land t
+    \not\in S$.
+\end{definition}
+
+\begin{lemma}
+    Sea $f$ un flujo, $S$ un corte. Entonces $v(f) = f(S, \overline{S}) -
+    f(\overline{S}, S)$.
+\end{lemma}
+
+
+\small
+\begin{quote}
+
+\textbf{Prueba.} Recordemos que $out_f (x) - in_f(x) = 0$ si $x \neq s, t$.
+Recordemos además que $out_f(s) - in_f(s) = v(f)$ por definición. Entonces 
+
+\begin{align*}
+    \sum_{x \in S} \left( out_f(x) - in_f(x) \right) &= out_f(s) - in_f(s) +
+    \sum_{x \in S, x \neq s} out_f(x) - in_f(x)  \\ 
+                                                     &= out_f(s) - in_f(s) \\ 
+                                                     &= v(f)
+\end{align*}
+
+Ahora bien, la sumatoria dada puede expresarse de otra forma. Observe que 
+
+\begin{align*}
+    \sum_{x \in S} \left( out_f(x) - in_f(x) \right)  &= \sum_{x \in S} \Big[f\left(
+    \left\{ x \right\}, V \right) - f(V, \left( x \right) )\Big] \\ 
+\end{align*}
+
+Por la definición de $g(A, B)$, si partimos los dos términos dentro de la
+sumatoria en dos sumatorias separadas, obtenemos que lo anterior es
+
+\begin{align*}
+    f(S, V) - f(V, S) &= f(S, S \cup \overline{S}) - f(S \cup \overline{S}, S)
+    \\ 
+                      &=\left[ f(S, S) + f(S, \overline{S}) \right]  - \left[
+                      f(S, S) + f(\overline{S}, S) \right] 
+\end{align*}
+
+En resumen, 
+
+\begin{align*}
+    \sum_{x \in S}\left( out_f(x) - in_f(x) \right)  &= f(S, S) + f(S,
+    \overline{S}) - f(S, S) - f(\overline{S}, S) \\ 
+                                                     &= f(S, \overline{S}) -
+                                                     f(\overline{S}, S)
+\end{align*}
+
+Combinando ambos resultados, $v(f) = f(S, \overline{S}) - f(\overline{S}, S)$.
+
+\end{quote}
+\normalsize
+
+\begin{definition}
+    La capacidad de un corte $S$ se define como $Cap(S) = c(S, \overline{S})$.
+\end{definition}
+
+Es decir, es la suma de las capacidades de todos los vértices que van desde el
+corte hacia fuera del corte.
+
+\begin{definition}
+    Un corte $S$ es minimal si su capacidad es menor o igual a la de todo otro
+    corte.
+\end{definition}
+
+\begin{theorem}[Max flow, min cut]
+    Sea $S$ un corte arbitrario sobre una network $\mathcal{N} = (V, E, c)$ con
+    flujo $f$. Luego $v(f) \leq Cap(S)$. Más aún, $f$ es maximal si y solo si
+    existe un corte $\mathcal{S}$ (que siempre es minimal) tal que $v(f) =
+    Cap(\mathcal{S})$.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Prueba.} \textit{(1)} Probaremos que $f \leq Cap(S)$ para un corte $S$ y
+un flujo $f$ arbitrarios. Por el lema anterior, $v(f) = f(S, \overline{S}) -
+f(\overline{S}, S)$.
+
+Consider que el segundo término es una suma de la forma $\sum
+f(\overrightarrow{xy})$, etc. Por definición, cada término en esa sumatoria es
+mayor o igual a cero, y por lo tanto la sumatoria es positiva. Es decir que
+$-f(\overline{S}, S) \leq 0$. Luego 
+
+\begin{align*}
+    v(f) = f(S, \overline{S}) - f(\overline{S}, S) \leq f(S, \overline{S})
+\end{align*}
+
+El primer término también es una sumatoria de términos positivos y es por lo
+tanto mayor a cero, pero cada término es a su vez menor a la capacidad de cada
+lado. es decir $f(S, \overline{S}) \leq c(S, \overline{S}) = Cap(S)$. Más
+prolijo, 
+
+\begin{align*}
+    v(f) \leq f(S, \overline{S}) \leq Cap(S) ~ ~ ~ \blacksquare
+\end{align*}
+
+$(\Leftarrow)$ Sea ahora $f$ un flujo y $S$ un corte con $v(f) = Cap(S)$. Sea
+$g$ cualquier otro flujo. Entonces, por la propiedad recién demostrada, $v(g)
+\leq Cap(S)$. Pues $Cap(S) = v(f)$, tenemos $v(g) \leq v(f)$. Por lo tanto $f$
+es maximal. Como detalle, si $T$ es un corte, $Cap(T) \geq v(f) = Cap(S)$, lo
+cual implica que $S$ is minimal.
+
+$(\Rightarrow)$ Asuma que $f$ es maximal. Probaremos que existe un corte $S$ con
+$v(f) = Cap(S)$. Para esto, debemos construir $S$ a partir $f$. Definiremos 
+
+\begin{align*}
+    S = \left\{ s \right\} \cup \left\{ x \in V : \exists f\text{-camino
+    aumentante entre $s$ y $x$} \right\} 
+\end{align*}
+
+Que $S$ es un corte se sigue por contradicción. Si $S$ no es corte, debe
+contener a $t$. Luego existe un $f$-camino aumentante desde $s$ a $t$. Esto
+implica que puedo aumentar el flujo $f$, lo cual contradice que $f$ es maximal.
+$(\bot)$
+
+Sabiendo que $S$ es un corte, tenemos 
+
+\begin{equation}
+    v(f) = f(S, \overline{S}) - f(\overline{S}, S)
+\end{equation}
+
+Considere el primer término en la resta de \textit{(1)}:
+
+\begin{align*}
+    f(S, \overline{S}) &= \sum_{x \in S, z \not\in S, \overrightarrow{xz} \in E}
+    f(\overrightarrow{xz})
+\end{align*}
+
+Sea $\overrightarrow{xz}$ un par dentro del rango de la suma de arriba. Pues $x
+\in S$, existe un $f$-camino aumentante de $s$ a $x$. Pues $z \not\in S$, no
+existe un $f$-camino aumentante de $s$ a $z$. Pero el lado $\overrightarrow{xz}$
+sí existe. Así que $s \ldots x ~ z$ podría ser un $f$-camino aumentante; como
+tal camino no existe por hipótesis, no es aumentante. Esto implica que
+$f(\overrightarrow{xz}) = c(\overrightarrow{xz})$. La conclusión es que
+$f(\overrightarrow{xz}) = c(\overrightarrow{xz})$ para todo $x \in S$, $z
+\not\in S, \overrightarrow{xz}\in E$. Entonces 
+
+\begin{align*}
+    f(S, \overline{S}) = \sum_{\ldots} f(\overrightarrow{xz}) = \sum_{\ldots}
+    c(\overrightarrow{xz}) = Cap(S)
+\end{align*}
+
+Ahora consideremos el segundo término de la ecuación \textit{(1)}. 
+
+\begin{align*}
+    f(\overline{S}, S) = \sum_{w \not\in S, x \in S, \overrightarrow{wx} \in E}
+    f(\overrightarrow{wx})
+\end{align*}
+
+Sea $\overrightarrow{wx}$ un par arbitrario en el rango de la suma. Como antes,
+$x \in S \Rightarrow$ que hay un camino aumentante de $s$ a $x$; pero no existe
+camino aumentante entre $s$ y $w$; pero $\overrightarrow{wx}$ es un lado. Es
+decir, $s \ldots ~ \overleftarrow(xw)$ podría ser un $f$-camino aumentante; y
+como no lo es sucede que $f(\overleftarrow{wx}) = 0$. Luego 
+
+\begin{align*}
+    f(\overline{S}, S) = \sum_{\ldots} f(\overrightarrow{wx}) = 0
+\end{align*}
+
+Luego $v(f) = Cap(S) - 0 = Cap(S)$. $\blacksquare$
+
+\textit{Observación.} La hipótesis de $f$ maximal se usa solo para demostrar que $S$
+es corte. Es decir que en realidad hemos probado que hay tres proposiciones
+equivalentes: $f$ es maximal, el $S$ "especial" dado es un corte, y $v(f) =
+Cap(S)$ para cualquier $S$.
+
+\end{quote}
+\normalsize
+
+El corolario importante de la prueba es el siguiente: Si Ford-Fulkerson termina,
+termina con un flujo maximal. La prueba de esto es simple: Ford-Fulkerson
+termina solo cuando no existe un $f$-camino aumentante de $s$ a $t$; es decir,
+cuando $S$ es corte.
+
+\begin{theorem}[Integralidad]
+    Si las capacidades son todas enteras, Ford-Fulkerson termina, y termina con
+    un flujo "entero".
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Prueba.} Ford-Fulkerson empieza con $f(\overrightarrow{xy}) = 0$ para
+todo $\overrightarrow{xy} \in E$. Este flujo es entero. Demostraremos que si las
+capacidades son todas enteras, el hecho de que $f(\overrightarrow{xy}) \in
+\mathbb{N}_0$ para todo $\overrightarrow{xy} \in E$ es una invariante del
+algoritmo.
+
+Asuma que $f$ es un flujo entero y que aumentamos a un flujo $f'$ por medio de
+Ford-Fulkerson. Por definición del algortimo de Ford-Fulkerson, 
+
+\begin{align*}
+    \epsilon_i = \begin{cases}
+        c(\overrightarrow{x_i x_{i+1}}) - f(\overrightarrow{x_i x_{i+1}}) \\  
+        f(\overrightarrow{x_{i+1}x_i})
+    \end{cases}
+\end{align*}
+
+La hipótesis de que los argumentos son enteros hace que los valores de
+$\epsilon_i$ sean enteros; en particular, $\epsilon = \min \left\{ e_0, \ldots,
+\epsilon_r \right\} \in \mathbb{N}$. Ahora bien, para $f'$, el valor de cada
+lado va a ser bien o $f$, o $f + \epsilon$, o $f - \epsilon$, dependiendo del
+caso. Entonces todos los valores en $f'$ son enteros. $\blacksquare$
+
+Como $\epsilon \in \mathbb{N} \Rightarrow \epsilon \geq 1 \Rightarrow v(f') \geq
+v(f) + 1 \Rightarrow $ Ford-Fulkerson termina.
+
+\end{quote}
+\normalsize
+
+\subsection{Edmonds-Karp: Una mejora sobre Ford-Fulkerson}
+
+Edmonds-Karp dieron un criterio para elegir uno entre todos los $f$-caminos
+aumentates posibles; en particular, elegir siempre el que tiene menor longitud
+usando BFS. La combinación Ford-Fulkerson + BFS siempre termina y es polinomial
+$O(nm^2)$.
 
 \pagebreak
 
