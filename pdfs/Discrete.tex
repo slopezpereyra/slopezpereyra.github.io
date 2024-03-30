@@ -691,14 +691,14 @@ las cosas; por ejemplo, la definición anterior es equivalente a
     \mathbb{R}$. Definimos 
 
     \begin{align*}
-        \text{out}_{g}(x) \sum_{E} [y \in V][\overrightarrow{xy} \in E]g(x) &= g \left(
+        \text{out}_{g}(x) := \sum_{E} [y \in V][\overrightarrow{xy} \in E]g(x) &= g \left(
         \left\{ x \right\}, V  \right) 
     \end{align*}
 
     Análogamente, 
 
     \begin{align*}
-        \text{in}_g(x) = \sum[y \in V] [\overrightarrow{yx} \in E]g(\overrightarrow{yx}) = g\left( V,
+        \text{in}_g(x) := \sum[y \in V] [\overrightarrow{yx} \in E]g(\overrightarrow{yx}) = g\left( V,
         \left\{ x \right\} \right) 
     \end{align*}
 \end{definition}
@@ -950,14 +950,13 @@ cada trecho dependiendo del caso.
 \subsection{Análisis de Ford-Fulkerson}
 
 \begin{definition}
-    Un corte es un conjunto de vértices que tiene la fuente y no tiene el
-    resumidero; o bien es un conjunto $S \subseteq V$ t.q. $s \in S \land t
-    \not\in S$.
+    Sea $\mathcal{N} = (V, E, c)$ una network. Un corte es un conjunto $S
+    \subseteq V$ tal que $s \in S, t \not\in S$.
 \end{definition}
 
 \begin{lemma}
-    Sea $f$ un flujo, $S$ un corte. Entonces $v(f) = f(S, \overline{S}) -
-    f(\overline{S}, S)$.
+    Sea $f$ un flujo sobre una network $\mathcal{N}$ con un corte $S$. Entonces
+    $v(f) = f(S, \overline{S}) - f(\overline{S}, S)$.
 \end{lemma}
 
 
@@ -1020,7 +1019,7 @@ corte hacia fuera del corte.
 \begin{theorem}[Max flow, min cut]
     Sea $S$ un corte arbitrario sobre una network $\mathcal{N} = (V, E, c)$ con
     flujo $f$. Luego $v(f) \leq Cap(S)$. Más aún, $f$ es maximal si y solo si
-    existe un corte $\mathcal{S}$ (que siempre es minimal) tal que $v(f) =
+    existe un corte minimal $\mathcal{S}$ tal que $v(f) =
     Cap(\mathcal{S})$.
 \end{theorem}
 
@@ -1466,10 +1465,167 @@ la hipótesis.
 Pues existe al menos un caso que contradice la hipótesis, y la hipótesis es
 general, la contradicción es general. Es decir, $\chi(G) \leq \delta + 1$.
 
+\pagebreak
+\subsection{Practico 2}
 
+\begin{problem}
+    Cambie la definición de network permitiendo que cada lado tenga dos
+    capacidades asociades, $c_1(\overrightarrow{xy})$ y
+    $c_2(\overrightarrow{xy})$, con $c_1(\overrightarrow{xy}) \leq
+    c_2(\overrightarrow{xy})$ para todo $\overrightarrow{xy} \in E$. Cambie la
+    definición de flujo agregando la restricción de que
+    $c_{1}(\overrightarrow{xy}) \leq f(\overrightarrow{xy}) \leq
+    c_2(\overrightarrow{xy})$.
 
+    Encuentro una network donde pueda no existir ningún flujo de $s$ a $t$.
+\end{problem}
 
+Sea $\mathcal{N} = (V, E, c_1, c_2)$ una network bajo la nueva definición.
+Queremos construir $\mathcal{N}$ de modo tal que no exista ninguna $f$ que
+satisfaga simultáneamente las siguientes propiedades: 
 
+\begin{quote}
+    \begin{itemize}
+        \item $c_1(\overrightarrow{xy}) \leq f(\overrightarrow{xy}) \leq c_2(\overrightarrow{xy})$
+        \item $in_f(x) = out_f(x) ~ \forall x \in \left( V - \left\{ s, t \right\}  \right) $
+        \item $out_f(s) \geq in_f(s) $
+        \item $in_f(t) \geq out_f(t) $
+    \end{itemize}
+\end{quote}
+
+\begin{problem}
+    Sea $\mathcal{N} = (V, E, c)$ una network con max flow $\mathcal{M}$. Sea
+    $\mathcal{N}' = (V, E, c')$ donde $c'(\overrightarrow{xy}) =
+    c(\overrightarrow{xy}) + k$ para toda $\overrightarrow{xy} \in E$. Determine
+    si el max flow $\mathcal{M}'$ de $\mathcal{N}'$ es mayor a $\mathcal{M}$ y
+    (de serlo) cuánto.
+\end{problem}
+
+Sea $f$ un flujo maximal de $\mathcal{N}$; es decir, un flujo tal que $v(f) =
+\mathcal{M}$. Luego $out_f(s) - in_f(s) = \mathcal{M}$ (por definición).
+
+Sea $f'$ un flujo sobre $\mathcal{N}'$ definido como $f'(\overrightarrow{xy}) =
+f(\overrightarrow{xy}) + k$ para todo $\overrightarrow{xy} \in E$, excepto
+cuando $y = s$, donde se define simplemente como $f(\overrightarrow{xs})$. Observe que
+
+\begin{align*}
+    v(f') &= \sum_{x \in V \land \overrightarrow{sx} \in E}
+    f'(\overrightarrow{sx}) - \sum_{x \in V \land  \overrightarrow{xs} \in E}
+    f'(\overrightarrow{xs}) \\ 
+    &= \sum_{\ldots} \left[ f(\overrightarrow{sx}) + k \right]  - \sum_{\ldots}
+    \left[ f(\overrightarrow{xs})\right]  \\ 
+    &= v(f) + kw  \\ 
+    &= \mathcal{M} + kw \\ 
+\end{align*}
+
+donde $w$ es la cantidad de lados que salen de $s$. 
+Esto basta para probar que el max flow de $\mathcal{N}'$ es al menos
+$\mathcal{M} + k$, y aumenta proporcionalmente a la cantidad de lados que salen
+de $s$.
+
+\begin{problem}[Ejercicio 3]
+
+    
+\end{problem}
+
+    Sea $\mathcal{N} = (V, E, c)$ una network tal que existen loops y lados
+    bidireccionales y sea $\mathcal{N}' = (V, E', c)$ la misma network pero con todos los
+    loops y lados bidireccionales removidos; es decir, $E' = E - \left\{
+    \overrightarrow{xy} \in E : x = y \lor \overrightarrow{yx} \in E \right\} $.
+    Sea $f'$ un flujo sobre $\mathcal{N}$. Observe que, si existen lados
+    bidireccionales o loops que involucren a $s$, tenemos 
+
+    \begin{align*}
+        v(f) &= \sum_{\ldots} f(\overrightarrow{sx}) -
+        \sum_{\ldots}f(\overrightarrow{xs}) \\ 
+             &= \left[ \sum_{\ldots} f(\overrightarrow{sx}) +
+                 \sum_{\text{bidirecciones}} f(\overrightarrow{sx}) +
+                 f(\overrightarrow{ss}) \right] - \left[  \sum_{\ldots}
+             f(\overrightarrow{xs}) + \sum_{\text{bidirecciones}} f(\overrightarrow{xs})+  f(\overrightarrow{ss}) \right] \\ 
+             &= \sum_{\text{respecto a } E'} f(\overrightarrow{sx}) -
+             \sum_{\text{respecto a } E'}f(\overrightarrow{xs}) \\ 
+             &=v(f) \text{ respecto a  } \mathcal{N}'
+    \end{align*}
+
+En otras palabras, los loops y las bidirecciones no contribuyen al valor de un
+flujo, y el valor de todo flujo $f$ en un grafo con loops y bidirecciones es
+igual al valor de ese mismo flujo sobre el grafo sin loop y bidirecciones.
+Observe que la identidad indica lo mismo en el sentido inverso; es decir $v(f)$
+sobre $\mathcal{N}'$ equivale a $v(f)$ sobre $\mathcal{N}$.
+
+Luego, si tenemos una caja negra que encuentra flujos maximales para grafos sin
+loops y bidirecciones, simplemente la usamos para encontrar el flujo maximal de
+$\mathcal{N}'$, y ese mismo flujo (cualquiera sea el valor que asigne a los
+loops y bidirecciones) será maximal en $\mathcal{N}$.
+
+\begin{problem}[Ejercicio 4]
+    
+\end{problem}
+
+Usaremos $s$ para denotar la única fuente de la network que queremos construir,
+y $s_1, \ldots, s_n$ las $n$ fuentes de la network dada. 
+
+La primera cuestión obvia es que $\overrightarrow{sx}$ debe existir para todo
+$x $ tal que $\overrightarrow{s_i x}$ existe. Es decir, si un nodo puede recibir
+flujo de alguna de las $n$ fuentes del grafo original, la fuente de nuestro
+grafo construido debe poder transferir flujo a ese nodo.
+
+La segunda cuestión obvia es que si $\mathscr{I}$ es la cantidad total de flujo
+que puede recibir $x$ desde las $n$ fuentes originales, la fuente $s$ de nuestro
+grafo construido debe poder ser capaz de transferir $\mathscr{I}$ a $x$. Es
+decir, $c(\overrightarrow{sx})$ debe hacerse igual a $c(\left\{ s_1, \ldots, s_n
+\right\}, x )$. Es fácil ver que estas dos condiciones concluyen el problema. 
+
+Transformar $k$ resumideros $t_1, \ldots, t_k$ en uno solo es análogo.
+
+\begin{problem}[Ejercicio 6]
+   Algoritmo: 
+
+   
+   \small
+   \begin{quote}
+   
+   \begin{itemize}
+       \item Buscar todos los cortes 
+        \item Calcular sus capacidades 
+        \item Retornar la menor capacidad
+   \end{itemize}
+   
+   \end{quote}
+   \normalsize
+   
+
+\end{problem}
+
+Por max-flow min-cut, sabemos que este algoritmo devuelve el max flow. Deben
+computarse todos los subconjuntos $S \subseteq V - \left\{ t \right\} $ que
+contengan a $s$. Hay $2^{n}$ subconjuntos de $V$; si excluimos $t$, hay $2^{n -
+1}$ subconjuntos de $V$; y si aseguramos que $s$ se encuentre en ellos, hay
+$2^{n - 2}$.
+
+Por cada uno de estos cortes, debemos computar su capacidad, lo cual involucra
+sumar las capacidades de todos los lados desde el conjunto hacia afuera del
+conjunto. Es evidente que $\frac{n(n-1)}{2}$, la máxima cantidad de lados, es
+una cota a la cantidad de capacidades a sumar. Esto nos dice que la complejidad
+del cálculo de las capacidades es \textit{a lo sumo} $O(n^2)$. Pues esto es
+menor a la complejidad exponencial del primer paso, no hace falta considerarlo
+más. 
+
+El último paso (retornar la menor capacidad) también requiere $2^{n-1}$ pasos.
+La complejidad del algoritmo es $O(2^{n-2})$.
+
+\begin{problem}[Ejercicio 7]
+    
+\end{problem}
+
+Por min-cut max-flow, el valor de cualquier flujo maximal es la capacidad del
+corte minimal. En particular, $\mathcal{S} = \left\{ s \right\} \cup  \left\{ x
+\in V : \exists f\text{-c.a.} \text{ de $s$ a $x$ }\right\} $ es un corte
+minimal.
+
+Si todos los lados tienen capacidad par, la suma de las
+capacidades de los lados que van desde hacia fuera del corte minimal es una suma
+par. $\blacksquare$
 
 
 

@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1711563753 "Discrete.tex" "Discrete.pdf" "Discrete" 1711563754 2
+["pdflatex"] 1711742637 "Discrete.tex" "Discrete.pdf" "Discrete" 1711742638 2
   "../Images//Grafo10.png" 1710977523 22270 c478eda9368cdd72980ff8388bc206cc ""
   "../Images//Subgrafo10.png" 1710977543 15843 20a839c91158b1f696a17f87fad5a72d ""
   "../Images//coloring.png" 1710375426 170111 a0d599f1669349a4d540cfb1728fb05d ""
@@ -47,6 +47,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb" 1572128992 32409 1452fa0ce4fabfb48acd5d077e296f6d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI5.pfb" 1572128992 35776 3cf3205badc1a3a38b65b34f4cef78d9 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb" 1572128992 34733 61fa3c01fac511e451670c1b454ff211 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/newtx/stxscr.pfb" 1569879884 77528 91dab0df394911709956637eb6c0fe2a ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb" 1621283831 33424 f912ebe54685d0a65d3c046e3d517e38 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb" 1635022465 56686 b959be5e2e4a0232f5aa4c1c4be4574a ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb" 1569879884 40320 53cb337366eff502cad8f44871c88e39 ""
@@ -123,8 +124,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1695394817 4623455 fa0568a71dd9a288d6c226ee477506c6 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1695394844 7879794 eff26094dbe002b6e482c026ea4c81e2 ""
-  "Discrete.aux" 1711563754 2110 b7da0a8a9678164bfcc610c423e06cfc "pdflatex"
-  "Discrete.tex" 1711563752 52405 088711f0fd5a2b2521c24202106eb1db ""
+  "Discrete.aux" 1711742638 2214 6d028bf2a830616ab19ad07a5f13405f "pdflatex"
+  "Discrete.tex" 1711742636 59289 460de6945d719fa112610aa7fa0521cb ""
   (generated)
   "Discrete.aux"
   "Discrete.log"

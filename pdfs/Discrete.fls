@@ -713,6 +713,10 @@ INPUT ../Images//Subgrafo10.png
 INPUT ../Images//Subgrafo10.png
 INPUT ../Images//Subgrafo10.png
 INPUT ../Images//Subgrafo10.png
+INPUT /usr/share/texmf/fonts/tfm/public/tex-gyre/ts1-qtmr.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/newtx/ntxsy7.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/txsys.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/txex-bar.tfm
 INPUT Discrete.aux
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc
 INPUT /usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc
@@ -721,6 +725,7 @@ INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI5.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb
 INPUT /usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/newtx/stxscr.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb
