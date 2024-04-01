@@ -20,12 +20,12 @@ infinito; no recordaba quiénes éramos. Mi padre desapareció por la noche y nu
 más se supo de él. Dejó su cuaderno de viaje; en la última página se leen una y
 otra vez las palabras:
 
-> Quien tenía noticia de lo anterior al Diluvio 
-> emprendió largos viajes, con esfuerzo y fatiga,
+> Quien tenía noticia de lo anterior al Diluvio<br>
+> emprendió largos viajes, con esfuerzo y fatiga,<br>
 > y sus afanes han sido grabados en una piedra… 
 
 Incoherentes trazos dicen que “ha vivido todo este tiempo” y que “no fue
 literatura la epopeya”. Difícilmente conseguí quien tradujera la inscripción
-funeraria; en sumerio antiguo dicen: “*Aquí yace el vencedor de Humbaba*”. El
+funeraria; en sumerio antiguo, dice: “*Aquí yace el vencedor de Humbaba*”. El
 nombre del tonto del pueblo es antiguo como el sol o como la facultad del sueño.
 El nombre del tonto del pueblo es Gilgamesh.
