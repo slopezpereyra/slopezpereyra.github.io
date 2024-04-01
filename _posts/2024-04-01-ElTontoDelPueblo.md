@@ -24,8 +24,9 @@ otra vez las palabras:
 > emprendió largos viajes, con esfuerzo y fatiga,<br>
 > y sus afanes han sido grabados en una piedra… 
 
-Incoherentes trazos dicen que “ha vivido todo este tiempo” y que “no fue
-literatura la epopeya”. Difícilmente conseguí quien tradujera la inscripción
-funeraria; en sumerio antiguo, dice: “*Aquí yace el vencedor de Humbaba*”. El
-nombre del tonto del pueblo es antiguo como el sol o como la facultad del sueño.
-El nombre del tonto del pueblo es Gilgamesh.
+Incoherentes trazos dicen que “ha vivido todo este tiempo”, que “no fue
+literatura la epopeya”, que "el mito está falseado" porque el hombre sí "halló
+lo que la muerte le hizo salir a buscar". Difícilmente conseguí quien tradujera
+la inscripción funeraria; en sumerio antiguo, dice: “*Aquí yace Enkidu, vencedor
+de Humbaba*”. El nombre del tonto del pueblo es antiguo como el sol o como la
+facultad del sueño. El nombre del tonto del pueblo es Gilgamesh.
