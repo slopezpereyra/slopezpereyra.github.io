@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1711555347 "EduPub.tex" "EduPub.pdf" "EduPub" 1711555463 2
+["pdflatex"] 1711816872 "EduPub.tex" "EduPub.pdf" "EduPub" 1711816872 2
   "/etc/texmf/web2c/texmf.cnf" 1695394668 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1640468671 2914 8283dfc24eaf1964346f843d7605c2b0 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -49,8 +49,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1695394817 4623455 fa0568a71dd9a288d6c226ee477506c6 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1695394844 7879794 eff26094dbe002b6e482c026ea4c81e2 ""
-  "EduPub.aux" 1711555347 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "EduPub.tex" 1711555345 2039 38f92045f318546d35a5e6b61e0eb115 ""
+  "EduPub.aux" 1711816872 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "EduPub.tex" 1711816871 2414 c333ba6563dd1f33ca9849567bc73400 ""
   (generated)
   "EduPub.aux"
   "EduPub.log"
