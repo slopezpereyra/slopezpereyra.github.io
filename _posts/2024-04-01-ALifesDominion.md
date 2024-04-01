@@ -12,7 +12,7 @@ cielo de noche. Quiero decir que los hechos que deseo ofrecer, como todos los
 hechos, son una efigie de algo que nunca he de discernir, algo que solo puedo
 intuir en la medida que fueron algo *para mí*. 
 
-Hace tres años un hombre fue enterrado por parricidio. Dijo haber encontrado a
+Hace tres años un hombre fue apresado por parricidio. Dijo haber encontrado a
 su padre muerto en el escritorio donde traducía un volumen. El título del
 volumen era *A life’s dominion*, un poema épico que el padre había recibido de un
 escritor que conoció en un viaje a Escocia. El nombre del escritor era Sven
