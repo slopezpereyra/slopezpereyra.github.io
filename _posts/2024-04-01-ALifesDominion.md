@@ -27,16 +27,16 @@ oscura sangre, pareciera haberse entregado a esa traducción hasta morir de
 hambre. No había signos de lucha, ni siquiera de percatación: el hombre yacía
 muerto con la pluma en la mano y la mano sobre una hoja.
 
-Hace un año visité al condenado en la cárcel. Lo conocía; nunca creí que hubiera
-asesinado a su padre. Juró que un círculo maligno había cercado a su padre por
-medio del libro; me suplicó que averiguara de Nyhus. Llamé a la *Scottish
-Association of Writers*: nadie bajo el nombre de Sven Nyhus estaba registrado.
-Consulté en el catálogo de la *National Library of Scotland*: el libro *A life's
-dominion* no existía. Imaginé que el padre era el verdadero autor del libro, que
-ese otro autor imaginario era una forma de pudor o anonimato. El hijo desestimó
-esta explicación; su padre no era un escritor, nunca podría haberlo sido.
-Caviloso, en voz muy baja, me dijo que había una llave bajo la quinta maceta de
-la entrada; me pidió que le llevara el libro.
+Poco después visité al condenado en la cárcel. Lo conocía; nunca creí que
+hubiera asesinado a su padre. Juró que un círculo maligno había cercado a su
+padre por medio del libro; me suplicó que averiguara de Nyhus. Llamé a la
+*Scottish Association of Writers*: nadie bajo el nombre de Sven Nyhus estaba
+registrado. Consulté en el catálogo de la *National Library of Scotland*: el
+libro *A life's dominion* no existía. Imaginé que el padre era el verdadero
+autor del libro, que ese otro autor imaginario era una forma de pudor o
+anonimato. El hijo desestimó esta explicación; su padre no era un escritor,
+nunca podría haberlo sido. Caviloso, en voz muy baja, me dijo que había una
+llave bajo la quinta maceta de la entrada; me pidió que le llevara el libro.
 
 Por un milagro pude escapar de Nyhus; por un milagro pude escapar de aquel
 desierto. Mi entrada a ese otro universo fue lenta, como un sueño, y comenzó
@@ -51,5 +51,6 @@ tomarlo y le quité la vida.
 
 Cuando regresé, el libro había desaparecido; mi cara y mis brazos sangraban, y
 habían pasado muchos días. Nunca volví a ver al hijo; ya no había un libro que
-llevarle ni una verdad que descubrir. Aunque trate de olvidarlo, pienso en él
+llevarle ni una verdad que descubrir. Aunque trate de olvidarlo, de vez en 
+cuando pienso en él.
 todos los días.
