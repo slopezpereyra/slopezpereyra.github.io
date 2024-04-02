@@ -53,4 +53,3 @@ Cuando regresé, el libro había desaparecido; mi cara y mis brazos sangraban, y
 habían pasado muchos días. Nunca volví a ver al hijo; ya no había un libro que
 llevarle ni una verdad que descubrir. Aunque trate de olvidarlo, de vez en 
 cuando pienso en él.
-todos los días.
