@@ -424,13 +424,13 @@ es par. Luego la suma anterior es impar. Luego existe un ciclo impar en $G$.
 \small
 \begin{quote}
 
-\textbf{Proof.} Greedy siempre colorea con $\Delta + 1$  colores o menos. Tome
+\textbf{Proof.} $\mathscr{G}$ siempre colorea con $\Delta + 1$  colores o menos. Tome
 cualquier orden $v_1 \ldots v_n$ sobre $V$. Para colorear $v_i, i \neq 1$, se
 mira el color de los vecinos de $v_i$ que son anteriores en el orden.
 
 El peor caso posible es que todos los vecinos sean anteriores en el orden y
-todos tengan colores distintos. En ese caso, Greedy descarta $d(v_i)$ colores.
-Como $d(v_i) \leq \Delta$, entonces Greedy descarta a lo sumo $\Delta$ colores.
+todos tengan colores distintos. En ese caso, $\mathscr{G}$ descarta $d(v_i)$ colores.
+Como $d(v_i) \leq \Delta$, entonces $\mathscr{G}$ descarta a lo sumo $\Delta$ colores.
 Por lo tanto, siempre habrá al menos un color disponible en $\left\{ 1, 2,
 \ldots, \Delta, \Delta + 1 \right\} $.
 $\blacksquare$
@@ -478,12 +478,12 @@ Como $G$ es conexo, obtenemos todos los vértices. Pues los vértices son
 agregados iterativamente al árbol del BFS, existe un orden dado precisamente por
 el orden de inserción al árbol.
 
-Daremos un orden (que no es el anterior) tal que Greedy colorea $G$ con a lo
+Daremos un orden (que no es el anterior) tal que $\mathscr{G}$ colorea $G$ con a lo
 sumo $\Delta$ colores. En particular, es el orden inverso al anterior. Es decir
 que el último elemento del orden es la raíz $x$.
 
 Como siempre el color del primer elemento es $1$. Sea $z \neq v_1$ (en el orden
-del Greedy). El peor caso posible, que $z$ tenga como vecinos a todos los
+del $\mathscr{G}$). El peor caso posible, que $z$ tenga como vecinos a todos los
 anteriores, es imposible aquí, porque en el orden de DFS todo $y \neq x$ es
 insertado en el árbol por un vértice que ya estaba en el árbol. Y ese vértice
 debe ser un vecino. Es decir, en el orden de inserción del BFS, todo vértice
@@ -494,7 +494,7 @@ sumo $d(y) -
 1 \leq \Delta - 1$ colores. $\therefore $ Siempre puede colorear a $y$ con un
 color en $\left\{ 1, 2, \ldots, \Delta \right\} $.
 
-Cuando llega a $x$, Greedy elimina a lo sumo $d(x) = \delta$ colores. Y como $G$
+Cuando llega a $x$, $\mathscr{G}$ elimina a lo sumo $d(x) = \delta$ colores. Y como $G$
 no es regular, $\delta < \Delta$. $\therefore $ Existe al menos un color para
 $x$ en $\left\{ 1, 2, \ldots, \Delta \right\} $.
 
@@ -514,10 +514,10 @@ demostrar) cuál de los casos es correcto.
 
 \pagebreak
 
-\subsection{Limitaciones de Greedy}
+\subsection{Limitaciones de $\mathscr{G}$}
 
 
-\textbf{Ejemplo de Greedy mal.} Sea $G = (V, E)$ un grafo tal que $n = 2i$ es par
+\textbf{Ejemplo de $\mathscr{G}$ mal.} Sea $G = (V, E)$ un grafo tal que $n = 2i$ es par
 y 
 
 \begin{align*}
@@ -526,7 +526,7 @@ y
 
 El grafo es claramente bipartito (un par nunca se conecta con un par, un impar
 nunca con un impar) y tiene un coloreo de 2 colores. Sin embargo, al correr
-Greedy sobre este grafo, obtenemos un coloreo sub-óptimo.
+$\mathscr{G}$ sobre este grafo, obtenemos un coloreo sub-óptimo.
 
 Se deja al lector verificar los coloreos sub-óptimos que resultan si $n = 2, 4,
 6$. Se presenta la siguiente hipótesis inductiva haciendo inducción sobre $i$:
@@ -535,7 +535,7 @@ Se deja al lector verificar los coloreos sub-óptimos que resultan si $n = 2, 4,
 \small
 \begin{quote}
 
-\textit{Hipótesis inductiva}. Para todo $j \leq k$, Greedy colorea el grafo con
+\textit{Hipótesis inductiva}. Para todo $j \leq k$, $\mathscr{G}$ colorea el grafo con
 $c(2j - 1) = c(2j) = j$ colores.
 
 \end{quote}
@@ -577,7 +577,7 @@ probabilidad de aceptar va reduciendo con el tiempo. La idea es permitir la
 salida de optimos locales con el tiempo.
 
 En coloreo de grafos, Hill climbing toma la siguiente forma. Se prueba un orden
-de $V$ arbitrario y se lo colorea con Greedy. Luego hacer una pequeña
+de $V$ arbitrario y se lo colorea con $\mathscr{G}$. Luego hacer una pequeña
 permutación y se prueba de nuevo, etc. 
 
 Existe un modo de asegurarnos que la mutación $\Delta \vec{x}$ de $\vec{x}$
@@ -599,7 +599,7 @@ aplicar esta idea a cada una de ellas.
 
     Ordenemos los vértices poniendo primero los vértices de $V_{P(c_1)}$; luego
     los de $V_{P(c_2)}$, etc. Es decir, ordenamos los vértices por bloques de
-    color. Entonces Greedy con ese orden usa a lo sumo $r$ colores.
+    color. Entonces $\mathscr{G}$ con ese orden usa a lo sumo $r$ colores.
     
 \end{theorem}
 
@@ -611,16 +611,16 @@ aplicar esta idea a cada una de ellas.
 
 \textit{Caso base $i = 1$.} Los vértices de $V_{P(c_i)}$ tienen el mismo color $P(c_i)$.
 Porque $c$ es un coloreo propio, y los vértices en cada $V_{P(c_i)}$ no pueden
-formar lados entre sí, Greedy los colorea a todos con el color 1 y usa un color.
+formar lados entre sí, $\mathscr{G}$ los colorea a todos con el color 1 y usa un color.
 $\blacksquare$
 
 
 $HI(i) \Rightarrow HI(i+1)$: Sea $x \in V_{P(c_1)} \cup  \ldots \cup
-V_{P(c_{i+1})}$. Si $x$ está en alguno de los primeros $i$ bloques, Greedy lo
+V_{P(c_{i+1})}$. Si $x$ está en alguno de los primeros $i$ bloques, $\mathscr{G}$ lo
 colorea con uno de entre $i$ colores por hipótesis inductiva. 
 
 Si $x \in V_{P(c_{i+1})}$, el
-caso en que Greedy lo colorea con un color menor o igual a $i + 1$ no viola lo
+caso en que $\mathscr{G}$ lo colorea con un color menor o igual a $i + 1$ no viola lo
 que queremos demostrar. Pero asumamos que lo colorea con el color $i +
 2$. Entonces ningún color menor estaba disponible; entonces $x$ es vecino de
 algún $z$ de color $i + 1$. Pero todos los vértices de $V_{P(c_{i})}$ están
@@ -824,7 +824,7 @@ Vea que $v(g) = out_g(s) - in_g(s) \leq out_g(s)$. Pues $out_g(s) = g(\left\{ s
 \end{quote}
 \normalsize
 
-\subsection{Algoritmo Greedy para flujo}
+\subsection{Algoritmo $\mathscr{G}$ para flujo}
 
 Damos un algoritmo para encontrar un flujo $f$ sobre una network $\mathcal{N} =
 (V, E, c)$. Recordemos que el flujo $f$ de una network es simplemente una
@@ -862,7 +862,7 @@ En pseudo-código, el algoritmo es:
     &\textbf{od}
 \end{align*}
 
-Algunas propiedades buenas del algoritmo Greedy para flujos son las siguientes:
+Algunas propiedades buenas del algoritmo $\mathscr{G}$ para flujos son las siguientes:
 
 \begin{itemize}
     \item Siempre devuelve un flujo 
@@ -873,7 +873,7 @@ Algunas propiedades buenas del algoritmo Greedy para flujos son las siguientes:
 \end{itemize}
 
 Su gran propiedad mala es que no siempre devuelve un flujo maximal. Pero esto
-puede resolverse si adaptamos un poco el algoritmo de Greedy. Para dar con la
+puede resolverse si adaptamos un poco el algoritmo de $\mathscr{G}$. Para dar con la
 adaptación adecuada, antes damos una nueva definición. 
 
 \subsection{Algoritmo Ford-Fulkerson}
@@ -1171,6 +1171,501 @@ aumentates posibles; en particular, elegir siempre el que tiene menor longitud
 usando BFS. La combinación Ford-Fulkerson + BFS siempre termina y es polinomial
 $O(nm^2)$.
 
+
+\begin{theorem}
+    Edmonds-Karp siempre termina y opera con complejidad $O(nm^2)$.
+\end{theorem}
+
+Para probar esto, necesitamos hacer dos demostraciones auxiliares vinculadas a las siguientes definiciones:
+
+\begin{definition}[Primera definición para el teorema]
+    Un lado es (o se vuelve) crítico en un paso dado del algoritmo Edmonds-Karp si es usado para actualizar el flujo y satisface que: (a) se usa en modo forward y se satura, o (b) se usa en modo backward y se vacía.
+\end{definition}
+
+Cuando un lado se vuelve crítico, no puede volver a usarse (en la misma
+dirección) en el próximo paso; si se satura, no puede enviarse más flujo
+forward; si se vacía, no puede enviarse más flujo backward.
+
+\begin{definition}[Segunda definición para el teorema]
+    Dados $x, z \in V$  en una network con flujo $f$, definimos $d_{f}(x, z)$
+    la distancia entre esos vértices relativa al flujo $f$ como sigue:
+
+    \begin{align*}
+        d_f(x, z) := \begin{cases}
+            0 & x = z \\ 
+            \infty &\text{No existe $f$-c.a. de $x$ a $z$} \\ 
+            \min \left\{ \text{longitudes de los $f$-c.a. de $x$ a $z$} \right\} &\text{otherwise}
+        \end{cases}
+    \end{align*}
+\end{definition}
+
+\begin{theorem}[Teorema auxiliar uno]
+    Sean $f_0, f_1, \ldots, $ los flujos que se van obteniendo en las
+    iteraciones $0, 1, \ldots$ de Edmonds-Karp. Definamos 
+
+    $$d_k(x) = d_{f_k}(s,x),  ~ ~ ~ b_k(x) = d_{f_k}(x, t)$$ Entonces, para todo $x \in V$,
+
+    \begin{align*}
+        \textit{(1)} &~d_k(x) \leq d_{k+1}(x) \\ 
+        \textit{(2)} &~b_k(x) \leq b_{k+1}(x)
+    \end{align*}
+
+    Es decir, la longitud de los $f$-caminos aumentates que se obtienen
+    iterativamente con Edmonds-Karp nunca decrece.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Prueba.} Sea $A = \left\{ x : d_{k+1}(x) < d_k(x) \right\} $. Suponga
+que $A \neq \emptyset$. Sea $x_0 \in A$ el elemento tal que la distancia
+$d_{k+1}(x_0)$ es menor a todas las distancias $d_{k+1}(y)$ con $y \in A$.
+Observe que $x_0 \in A \Rightarrow d_{k+1}(x_0) < d_{k}(x_0) \leq \infty
+\Rightarrow d_{k+1} < \infty$. Entonces existe un $f_{k+1}$-c.a. entre $s$ y
+$x_0$.
+
+Sea $p_{k+1} := s \ldots x_0$ el $f_{k+1}$-c.a. de longitud mínima entre $s$ y
+$x_0$; es decir, de longitud $d_{k+1}(x)$. En este camino existe un vértice $z$
+inmediatamente anterior a $x_0$; es decir, $p_{k+1}$ es de la
+forma $s \ldots z x_0$. Pues este camino es de longitud mínima entre $s$ y
+$x_0$, es de longitud mínima entre $s$ y cualquier otro vértice en el medio,
+incluyendo a $z$.
+
+Por lo tanto,
+
+\begin{equation} d_{k+1}(z) = d_{k+1}(x_0) - 1 \end{equation}
+
+Observe que esto implica que $z \not\in A$ (piense por qué). Ahora bien, como
+$s \ldots zx_0$ es $f_{k+1}$-c.a., o existe $\overrightarrow{zx}$ o existe
+$\overrightarrow{xz}$ (forward o backward). Analizamos los dos casos.
+
+\textit{(1)} Si $\overrightarrow{zx}$ es un lado, tenemos que
+$d_{k+1}(z) < d_{k+1}(x)$. Pero 
+
+$$z \not\in A \Rightarrow d_{k}(z) \leq d_{k+1}(z) < d_{k+1}(x) < \infty$$ 
+
+Como $d_{k}(z) < \infty$, existe un $f_k$-camino aumentante entre $s$ y $z$. Lo
+denotamos $p_k$. Como $\overrightarrow{zx}$ es un lado, podría, en principio,
+agregar $x$ al final de $p_k$, obteniendo un $f_k$-c.a. entre $s$ y $x$ que
+pasa por $z$. Pero entonces tendríamos $d_k(x) \leq d_k(z) + 1 \leq d_{k+1}(z)
++ 1 \leq d_{k+1}(x)$. Pero esto implica $x \not\in A$. ($\bot$)
+
+Por lo tanto, no puedo agregar $x$ al final de $p_k$. Entonces, o bien el lado
+$\overrightarrow{zx}$ está saturado en el paso $k$, o bien
+$f_k(\overrightarrow{zx}) = c(\overrightarrow{zx})$. Pero $p_{k+1}$ era
+aumentante; es decir, sus lados no pueden estar saturados; lo cual implica que
+$f_{k+1}(\overrightarrow{zx}) < c(\overrightarrow{zx})$ en el paso $k+1$.
+Luego, para pasar de $f_k$ a $f_{k+1}$, se usó el lado $\overrightarrow{xz}$ y
+se usó backwards en el camino 
+
+\begin{align*} \tilde{p}_k : s \ldots \overleftarrow{xz} \ldots t \end{align*}
+
+Como este camino se usa en Edmonds-Karp, es de longitud mínima. Por lo tanto,
+$d_k(z) = d_{k}(x) + 1$. 
+
+De aquí deriva una contradicción de manera mística.
+
+\textit{(2)} Si $\overrightarrow{xz}$ es un lado, tenemos que $p_{k+1}$ es de
+la forma $s \ldots \overleftarrow{zx}$. Como antes, 
+
+\begin{align*} d_{k+1}(z) < d_{k+1}(x) \Rightarrow z \in A \Rightarrow d_k(z)
+\leq d_{k+1}(z) \end{align*}
+
+lo cual a su vez implica que existe un $f_k$-c.a. entre $s$ y $z$: 
+
+\begin{align*} p_k : s \ldots z \end{align*}
+
+Podríamos agregar a $x$ en el final de este camino usando $\overrightarrow{xz}$
+backwad; llegaríamos a la misma contradicción de antes, en que no podíamos
+agregar a $x$. En este caso, si no lo podemos agregar, es porque
+$f_k(\overrightarrow{xz}) = 0$. Pero $p_{k+1}$ es $f_{k+1}$-aumentante, lo cual
+implica que $f_{k+1}(\overrightarrow{xz}) > 0$. Luego debimos haber usado
+$\overrightarrow{xz}$ en modo forward al pasar de $f_k$ a $f_{k+1}$. Por lo
+tanto, existe un $f_k$-c.a. de la forma 
+
+\begin{align*} \tilde{p}_k : s \ldots \overrightarrow{xz} \ldots t \end{align*}
+
+Y como usamos Edmonds-Karp, este camino aumentante es de longitud mínima. Luego
+$d_k(z) = d_{k}(x) + 1$, de lo cual deriva la contradicción de la misma manera
+mística.
+
+\textbf{Conclusión.} $A = \emptyset$.
+
+
+\end{quote}
+\normalsize
+
+
+\small
+\begin{quote}
+
+\textbf{Prueba.} Edmonds-Karp construye una sucesión de caminos aumentantes.
+Cada camino se encuentra con BFS, que es $O(m)$. $\therefore $ la complejidad
+de Edmonds-Karp es $O(m \zeta)$ donde $\zeta$ es la cantidad de caminos
+aumentantes. Solo basta observar que $\zeta = nm$. 
+
+Sean $f_0, f_1, f_2, \ldots$ los flujos que se van obteniendo en Edmonds-Karp.
+Sea $d_k(x) = d_{f_k}(s, x)$ y $b_k(x) = d_{f_k}(x, t)$.
+
+Si ambas son finitas, $d_k(t) = d_k(x) + b_k(x)$ para cualquier $x \in V$.
+
+A su vez, para todo $x \in V$, $d_k(x) \leq d_{k+1}(x)$ y $b_k(x) \leq b_{k+1}(x)$; es decir, las distancias son crecientes respecto a los flujos $f_0, f_1_, \ldots$. Hacemos la prueba para $d$; queda como ejercicio hacer para $b$.
+
+
+UF! Ya sabemos que las distancias de los $f$-caminos aumentantes que usa
+Edmonds-Karp aumentan con cada iteración, o bien que $d_{k}(x) \leq d_{k+1}(x)$. Ahora preguntamos: cuántas veces puede un lado volverse crítico en Edmonds-Karp? 
+
+Sea $\overrightarrow{xy}$ un lado que se vuelve crítico en el paso $k$.
+Entonces o bien el lado se satura con forward o bien se vacía con backward.
+
+\begin{quote}
+
+    \textit{(1)} Asuma que $\overrightarrow{xy}$ se satura. Entonces
+    $f_{k}(\overrightarrow{xy}) < c(\overrightarrow{xy})$ y
+    $f_{k+1}(\overrightarrow{xy}) = c(\overrightarrow{xy})$. $\therefore $ De
+    $f_k$ a $f_{k+1}$ usamos un camino aumentante de la forma $s \ldots xy
+    \ldots t$. Como estamos usando Edmonds-Karp, este camino es de longitud
+    mínima. $\therefore $ $d_k(y) = d_{k}(x) + 1$. Supongamos que $\overrightarrow{xy}$ se vuevlve a volver crítico en algún paso $j > k$. Se puede volver crítico: 
+
+    \begin{quote}
+        \textit{(a)} Porque se vació; es decir, usamos $\overrightarrow{xy}$ backward en el paso $j$. 
+
+        \textit{(b)} Se saturó, habiendo devuelto backward sin vaciarse en
+        algún paso $i$ con $k < i < j$.
+    \end{quote}
+
+    En ambos casos, existe un $k < i \leq j$ tal que $\overrightarrow{xy}$ se
+    usa en forma backward. Es decir, usamos un $f_i$-c.a. de la forma 
+
+    \begin{align*}
+        s \ldots \overleftarrow{yx} \ldots t
+    \end{align*}
+
+    Como estamos usando Edmonds-Karp, ese camino es de longitud mínima. Por lo
+    tanto, $d_i(x) = d_i(y) + 1$. 
+
+    AHora bien, $d_j(t) \geq d_i(t) = d_i(x) + b_i(x)$. Por el último resultado, esto equivale a 
+
+    \begin{align*}
+        d_j(t) \geq d_i(y) + 1 + b_i(x) \geq d_k(y) + 1 + b_k
+    \end{align*}
+
+    porque las distancias no disminuyen. Pero $d_k(y) = d_k(x) + 1$. Luego 
+
+    \begin{align*}
+        d_j(t) \geq d_k(x) + 1 + 1 + b_k(x) 
+    \end{align*}
+
+    o bien $d_j(t) \leq d_k(t) + 2$.
+
+
+    \textit{(2)} Asuma que $\overrightarrow{xy}$ se vacía. Entonces, la próxima
+    vez que se vuelva crítico, va a ser porque se saturó, o bien porque se
+    vació otra vez, habiéndose llenado un poco antes. En cualquier caso, el
+    paso $k$ lo usa backwards con c.a. $s \ldots \overleftarrow{yx} \ldots t$,
+    que implica $d_{k}(x) = d_k(y) + 1$. Al reutilizarlo forward en algún paso
+    $i$ obtenemos $d_i(y) = d_i(x) + 1$. Luego 
+
+    \begin{align*}
+        d_j(t) &\geq d_i(t)  \\ 
+               &=d_i(y) + b_i(y) \\ 
+               &= d_i(x) + 1 + b_i(y) \\ 
+               &\leq d_k(x) + 1 + b_k(y) \\ 
+               &= d_k(y) + 1 + 1 + b_k(y) \\ 
+               &=d_k(t) + 2
+    \end{align*}
+    
+\end{quote}
+
+En conclusión, para cualquiera de los dos casos, $d_j(t) \geq d_k(t) + 2$. Es
+decir, una vez un lado se vuelve crítico, para poder volver a volerverse
+crítico, la distancia entre $s$ y $t$ debe aumentar al menos en $2$. Como la
+distancia entre $s$ y $t$ varía entre $1$ y $n - 1$, un lado puede volverse
+crítico a lo sumo $(\frac{n}{2}) = O(n)$ veces.
+
+En resumen, cada camino aumentante vuelve crítico al menos un lado; cada lado
+se vuelve crítico a lo sumo $O(n)$ veces; hay $m$ lados. Luego hay $O(mn)$
+caminos aumentantes.
+
+\end{quote}
+\normalsize
+
+\textbf{Corolario.} Siempre existe al menos un flujo maximal.
+
+\subsection{Algoritmo de Dinitz}
+
+El algorimo de Dinitz es una mejora sobre Edmonds-Karp. Utiliza una estructura
+auxiliar, que llamaremos \textit{network auxiliar}.
+
+\begin{definition}
+    Un network por niveles es un network con $V_i \subseteq V$, $0 \leq i \leq
+    r$, tales que: 
+
+    \begin{itemize}
+        \item $V_i \cap V_j = \emptyset$ 
+        \item $V = \cup_{i=0}^{r} V_i$  
+        \item $E \subseteq \cup_{i=0}^{r - 1} \left( V_i \times V_{i+1} \right) $
+    \end{itemize}
+\end{definition}
+
+\begin{definition}
+    Dado un flujo $f$ sobre un network $\mathcal{N}$, definimos el network auxiliar (relativo a $f$) como el network por niveles dado por: 
+
+    \begin{itemize}
+        \item $r = d_f(s, t)$ 
+        \item $V_0 = \left\{ s \right\} $ 
+        \item $V_r = \left\{ t \right\} $
+        \item $V_i = \left\{ x : d_f(s, x) = i \right\} $ donde $0 < i < r$.
+        \item $E = \left\{ (x, y) : \exists i : x \in V_i, y \in V_{i+1} \land \left( \overrightarrow{xy} \in E_{\mathcal{N}} \land  f(\overrightarrow{xy}) < c(\overrightarrow{xy}) \right) \lor  \left( \overrightarrow{yx} \in E_{\mathcal{N}} \land  f(\overrightarrow{yx}) > 0 \right)   \right\} $
+    \end{itemize}
+\end{definition}
+
+\begin{definition}[Blocking flow]
+    Un flujo en un network $\mathcal{N} = (V, E, c)$ se dice bloqueante si, al querer correr greedy a partir de ese flujo, el flujo no puede aumentarse.
+\end{definition}
+
+La definición anterior equivale a decir que todo camino dirigido desde $s$ a
+$t$ tiene al menos un lado saturado bajo el flujo bloqueante.
+
+\textbf{Algoritmos tipo Dinitz.} Los algoritmos "tipo Dinitz" tienen la siguiente forma:
+
+\begin{quote}
+\begin{itemize}
+    \item Se comienza con $f = 0$.
+    \item Se construye un network auxiliar a partir de $f$.
+    \item Se halla un flujo bloqueante $g$ en el network auxiliar. 
+    \item Se usa $g$ para cambiar $f$.
+\end{itemize}
+\end{quote}
+
+Estos algoritmos se detienen cuando en el network auxiliar ya no puede llegarse
+a $t$. La diferencia entre los algoritmos de la familia Dinitz está en cómo se
+halla el flujo bloqueante del network auxiliar. En la versión original y la
+versión occidental del algoritmo de Dinitz, el flujo bloqueante se encuentra corriendo 
+$\mathscr{G}$ usando DFS. Observe que en el network auxiliar no se usarán lados backward.
+
+
+\small
+\begin{quote}
+
+\textbf{Ejemplo.} Considere este grafo: 
+
+\begin{align*}
+    sA : 80~ ~ ~& DA : 20 \\ 
+    sB : 70~ ~ ~& DC : 90 \\
+    sD : 90~ ~ ~& DG : 90 \\
+    sG : 90~ ~ ~& Et : 90 \\
+    AC : 90~ ~ ~& EF : 90 \\
+    AE : 10~ ~ ~& Ft : 90 \\
+    AI : 40~ ~ ~& GA : 10 \\
+    BH : 90~ ~ ~& GH : 90 \\
+    BJ : 90~ ~ ~& Ht : 70 \\
+    Ct : 80~ ~ ~& It : 90 \\
+    CE : 10~ ~ ~& Jt : 90 \\
+    CG : 90~ ~ ~&
+\end{align*}
+
+El primer nivel es $V_0 = \left\{ s \right\} $. Consturimos los niveles tal como construimos la cola en Edmonds-Karp, pero ahora agregando todos los lados posibles en cada nivel. De esto se sigue: 
+
+\begin{align*}
+    V_1 = \left\{ A, B, D, G \right\} 
+\end{align*}
+
+Entonces $s$ queda conectado a todos estos vértices. Luego consideramos los vecinos de $A$: 
+
+\begin{align*}
+    V_2 = \left\{ \overbrace{C, E, I}^{A}, \overbrace{H, J}^{B}, \overbrace{C}^{D}, \overbrace{H}^{G} \right\} 
+\end{align*}
+
+El $dA$ y $dG$ no los podemos agregar, porque $A, G$ están en un nivel
+anterior. Pero si agregamos $DC$. Cada vértice en $V_2$ está conectado con el
+vértice de $V_1$ que estå encima suyo. Si repetimos, vemos que en $V_3$  solo
+está $t$, y está conectado con todos los de $V_2$.
+
+Una vez que armamos por niveles es fácil encontrar un camino a $t$; por
+ejemplo, $sACt$ se halla fácil, y puede enviarse $80$ por él. Como antes,
+debemos actualizar la capacidad restante; por ejemplo, una vez este camino es
+usado, la capacidad de $AC$ es $10$ y la de los otros lados involucrados queda
+en $0$. Más aún, como se usa $\mathscr{G}$, los lados no se desaturan; por lo tanto,
+los lados $sA$, $AC$, $Ct$ quedan saturados y no pueden volverse a usar.
+
+Cada vez que el algoritmo llega con DFS a un vértice que no puede ya conducir
+flujo a $t$, elimina el lado que conduce a él. Eventualmente no quedan más
+lados que ocnsiderar y el flujo bloqueante en el network auxiliar fue encontrado.
+
+Luego se encuentra $sBHt : 70$, también usando $\mathscr{G}$. Una vez se hace esto no hay más lados que usar. 
+
+Ahora construimos otro auxiliar, teninendo en cuenta que algunos lados ya no pueden usarse (se han saturado):
+
+Se hace $\left\{ s \right\}, \left\{ sD, sG \right\}, \left\{ GA,DC, DA, GH \right\}, \left\{ AE, CE, AI, HB \right\}, \left\{ Et, It \right\}    $
+
+(El lado $HB$ en el network auxiliar corresponde a $BH$ backwards en el network
+original.) Aquí se halla fácil $sDAEt : 10$; como el lado $AE$ se satura, se lo
+borra. Luego se halla $sDAIt : 10$, sin saturar ningún lado. Luego se halla
+$sDCEt$ saturando $DA$. Luego se encuentra $sGAIt : 10$, saturando $GA$. Aquí
+se termina, se actualiza el flujo en el network original, y se empieza a
+construir otro network auxiliar.
+
+El tercer network auxiliar será: 
+
+$$\left\{ s \right\}, \left\{ sD, sG \right\}, \left\{ DC, GH \right\},
+\left\{CA, HB \right\}, \left\{ AI, BJ \right\}, \left\{ It, Jt \right\}    $$
+
+$CA$ y $HB$ corresponden a $AC$ y $HB$ backwards en el network original. Los
+caminos son $sD\overleftarrow{CA}IG : 20$ y $sG \overleftarrow{HB}Jt : 70$.
+
+
+\small
+\begin{quote}
+
+\textbf{Nota}. Observe que los caminos de cada network auxiliar son de la misma
+longitud, y el network auxiliar $i$ siempre tiene caminos más largos que el
+network auxiliar $i - 1$. Estas dos propiedades siempre se cumplen.
+
+\end{quote}
+\normalsize
+
+El último network auxiliar resulta 
+
+\begin{align*}
+    \left\{ s \right\}, \left\{ sD, sG \right\}  , \left\{ DC, GH \right\} , \left\{ CA \right\} 
+\end{align*}
+
+Ya no puede llegarse a $t$ y se termina. Y el corte minimal son los vértices
+del último network auxiliar; es decir, $\mathcal{S} = \left\{ s, D, C, A, G, H
+\right\} $
+
+\end{quote}
+\normalsize
+
+\begin{theorem}
+    La distancia entre $s$ y $t$ (esto es, el nivel de $t$) aumenta en networks
+    auxiliares sucesivos.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Prueba.} Próxima clase. :)
+
+\end{quote}
+\normalsize
+
+\begin{theorem}
+    La complejidad de Dinitz, en su versión original como occidental, es $O(n^2m)$.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Prueba.} Como el nivel de $t$ en los networks auxiliares aumenta, solo
+puede haber $O(n)$ networks auxiliares. $\therefore $ La complejidad de Dinitz
+es igual a la complejidad de hallar un flujo bloqueante en un network auxiliar,
+más la complejidad de construir un network auxiliar, por la cantidad de
+networks auxiliares---que es $O(n)$. Porque usamos DFS, la complejidad de construir un network auxiliar es $O(m)$. Basta probar que la complejidad de hayar un flujo bloqueante es $O(nm)$, porque tendremos 
+
+\begin{align*}
+    \left( O(nm) + O(m) \right) O(m) = O(n^2 m)
+\end{align*}
+
+En la versión original del algoritmo, el n.a. es tal que no hay vértices sin
+lado de salida. Esto implica que DFS siempre llega a $t$ sin hacer
+backtracking. Entonces, DFS no es $O(m)$ sino $O(\text{cantidad de niveles})$
+que podemos simplificar como $O(n)$. Como cada camino borra al menos un lado
+del n.a. hay $O(m)$ caminos. Luego la complejidad de hallar los caminos y
+aumentar el flujo por ellos es $O(nm)$. Pero debemos calcular el costo de que
+el n.a. satisfaga la propiedad de que no hay vértices sin lados de salida. 
+
+Para esto, lueg de cada camino hay que hacer algo para mantener esa propiedad
+como invariante. Dinitz llamó a la operación que logra esto "podar". La
+operación consiste en recorrer los vértices desde los niveles más altos a los
+más bajos, chequea si el vértice tiene lados de salida; si tiene no hace nada,
+si no lo tiene lo borra.
+
+Chequear si el lado tiene lados de salida es $O(1)$; hay $O(n)$ vértices, y hay
+un "podar" por cada camino y hay $O(m)$ caminos. Esto entonces también es $O(mn)$.
+
+Nos queda anlizar la complejidad de borrar el vértice y sus lados; esto se hace
+a lo sumo una vez por vértice, y una vez que podamos un vértice es probable que podar 
+los siguientes requiera una complejidad menor (porque estamos quitando lados).
+Esto nos dice que podemos pensar en la complejidad promedio del problema, y no
+en la complejidad límite (es decir como cota).
+
+Borrar un vértice $x$ y sus lados es $O\left( d(x) \right) $; sobre todos los
+vérticos, esto da $\sum O\left( d(x) \right) = O(m)$ (por la propiedad del
+apretón de manos). Luego la complejidad de hallar un flujo bloqueante es 
+
+\begin{align*}
+    O(nm) + O(nm) + O(m) = O(nm)
+\end{align*}
+
+Ahora consideremos la versión occidental. Lo más cómodo es dar el
+pseudo-código. Estamos hablando del network auxiliar y el problema de hallar un
+flujo bloqueante en él; no asuma que hablamos del network original.
+
+\begin{align*}
+    &g := 0 \\ 
+    &\textbf{bool } flag := \textbf{true} \\ 
+    &\textbf{while } flag ~ \textbf{ do} \\ 
+    & ~ ~ ~ ~ \textbf{type } path := [s] \\ 
+    & ~ ~ ~ ~ \textbf{int } x := s \\ 
+    & ~ ~ ~ ~ ~ ~ ~ ~ \textbf{while } x \neq t \textbf{ do } \\ 
+    & ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \textbf{if } \Gamma^{+}(x) \neq 0 \textbf{ then } \\ 
+    & ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \text{tomar } y \in \Gamma^{+}(x) \\ 
+    & ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \text{agregar } y \text{ a } path \\ 
+    & ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ x := y &\left\{ \text{Esta línea y la anterior son la parte (A) de avanzar} \right\}  \\ 
+    & ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \textbf{else }  \\ 
+    & ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \textbf{if } x \neq s \textbf{ then }  &\left\{ \text{(R) Retroceder} \right\} \\ 
+    & ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ z := \text{elemento anterior a $x$ en  } path  \\ 
+    & ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \text{borro } x \text{ de } path\\ 
+    & ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \text{borro } \overrightarrow{zx} \text{ de la n.a.}\\ 
+    & ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ x := z\\ 
+    & ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \textbf{else }   \\ 
+    & ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ flag := 0   \\ 
+    & ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~\textbf{fi} \\ 
+    & ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \textbf{fi}\\
+    & ~ ~ ~ ~ ~ ~ ~ ~ \textbf{od } \\
+    & ~ ~ ~ ~ ~ ~ ~ ~ \textbf{if } x = t \textbf{ then } &\left\{ \text{(I) Incrementar} \right\}  \\ 
+    & ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \text{aumentar flujo $g$ a lo largo de } path \\
+    & ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \text{borrar lados saturados} \\ 
+    & ~ ~ ~ ~ ~ ~ ~ ~ \textbf{fi}\\
+    &\textbf{od}
+\end{align*}
+
+\end{quote}
+\normalsize
+
+Entonces, una corrida de Dinitz occidental es una palabra $A A A I A A A R A A
+R R A \ldots$ Miraremos subpalabras de la forma $A \ldots A X$ con $X \in
+\left\{ I, R \right\} $. Cada $A$ es $O(1)$; cada $R$ es $O(1)$; cada $I$ es
+recorrer un camino dos veces (una para incrementar el flujo, otra para borrar
+los lados), y resulta ser $O(n)$.
+
+La cantidad de $A$s en $A \ldots A X$ se calcula como sigue. Cada avanzar, mueve
+el pivote $x$ de un nivel al siguiente. $\therefore $ Hay $O(n)$ letras $A$. 
+
+$\therefore O(A \ldots A R) = O(n) + O(1) + O(n)$ y $O(A \ldots AI) = O(n)(\#A) + O(n)(\#I) = O(n)$
+
+donde $\#Z$ es la cantidad de veces que ocurre la letra $Z$ en la palabra en cuestión. En resumen, $O(A\ldots AX) = O(n)$. Y la cantidad de palabras $A \ldots AX$ en una corrida se calcula así: Cada $R$ borra un lado, y cada $I$ borra \textit{al menos} un lado; luego hay $O(m)$ palabras $A \ldots A X$. Luego la complejidad total es $O(nm)$.
+
+
+
+
+
+
+
+\pagebreak
+
+
+
+
+
+
+
+
 \pagebreak
 
 
@@ -1319,7 +1814,7 @@ Finalmente, las diagonales son de la forma $v_{nk + j}, v_{n(k+1) + (j + 1)},
 \pagebreak 
 
 \begin{problem}
-    Sea $G = (V, E) $ un grafo coloreado por Greedy con $t$ colores y $V_i$ el
+    Sea $G = (V, E) $ un grafo coloreado por $\mathscr{G}$ con $t$ colores y $V_i$ el
     conjunto de colores con el color $i$. Diga V o F:
 \end{problem}
 
@@ -1328,7 +1823,7 @@ Finalmente, las diagonales son de la forma $v_{nk + j}, v_{n(k+1) + (j + 1)},
 \begin{quote}
 
 \textit{Nota.} Este problema es lindo para ver diversas permutaciones del orden
-$V_0, \ldots, V_{t - 1}$ y entender que algunas mejoran el rendimiento de Greedy
+$V_0, \ldots, V_{t - 1}$ y entender que algunas mejoran el rendimiento de $\mathscr{G}$
 y otras no. En directa relación con el \textbf{Theorem 7}.
 
 \end{quote}
@@ -1336,12 +1831,12 @@ y otras no. En directa relación con el \textbf{Theorem 7}.
 
 
 \textit{(1)} Si se ordenan los vértices poniendo primero los de $V_0$, luego los
-de $V_1$, y así hasta $V_{t-1}$, entonces Greedy con ese orden colorea con
+de $V_1$, y así hasta $V_{t-1}$, entonces $\mathscr{G}$ con ese orden colorea con
 exactamente $t$ colores. 
 
 \small
 \begin{quote}
-    Pues Greedy asigna un color mínimo a cada vértice, sólo asigna el color $i$
+    Pues $\mathscr{G}$ asigna un color mínimo a cada vértice, sólo asigna el color $i$
     a un vértice si éste tiene vecinos de color $0, 1, \ldots, i -1$. Es decir
     que cada $v \in V_i$ tiene un vecino en $V_j$ para cada $j < i$. Luego $V_0$
     se colorea con $0$, y el único color disponible para $V_1$ es $1$, y el
@@ -1351,7 +1846,7 @@ exactamente $t$ colores.
 
 \textit{(2)} Suponga $t \geq 3$. Si se ordenan los vértices poniendo primero los
 de $V_0$, luego los de $V_1$, y así hasta $V_{t - 3}$, y se ponen luego los de
-$V_{t - 1}, V_{t-2}$. Entonces correr Greedy con este nuevo orden colorea $G$
+$V_{t - 1}, V_{t-2}$. Entonces correr $\mathscr{G}$ con este nuevo orden colorea $G$
 con exactamente $t$ colores.
 
 
@@ -1365,7 +1860,7 @@ con exactamente $t$ colores.
     por lo tanto se colorea con el color $t - 2$. Finalmente, $V_{t - 2}$ tiene
     vértices asociados con todos sus predecesores, y sabemos que $V_{t - 1}$
     tiene lados con $V_{t - 2}$. Entonces los colores $\left\{ 0, \ldots, t - 2
-    \right\} $ no están disponibles. Se usa el color $t - 1$ y Greedy colorea
+    \right\} $ no están disponibles. Se usa el color $t - 1$ y $\mathscr{G}$ colorea
     con exactamente $t$ colores.
 
 \end{quote}
@@ -1374,7 +1869,7 @@ con exactamente $t$ colores.
 \textit{(3)} Suponga $t \geq 3$. Si se ordenan los vértices poniendo primero los
 de $V_0$, luego los de $V_1$, etc. hasta $V_{t - 4}$; y luego se ponen los de
 $V_{t-2}$, los de $V_{t - 3}$, y al final los de $V_{t - 1}$, entonces corriendo
-Greedy con este nuevo orden colorea $G$ con exactamente $t$ colores.
+$\mathscr{G}$ con este nuevo orden colorea $G$ con exactamente $t$ colores.
 
 
 
@@ -1399,8 +1894,8 @@ Greedy con este nuevo orden colorea $G$ con exactamente $t$ colores.
     1}$ sean los de color $t - 3$ (los que no son vecinos de $V_{t - 2}$). En
     este caso, se colorea $V_{t - 1}$ con el color $t - 2$.
 
-    Pues en el mejor de los casos, Greedy usa $t - 1$ colores, es falso que en
-    este orden Greedy usa exactamente $t$ colores.
+    Pues en el mejor de los casos, $\mathscr{G}$ usa $t - 1$ colores, es falso que en
+    este orden $\mathscr{G}$ usa exactamente $t$ colores.
 
 
 \end{quote}
@@ -1444,7 +1939,7 @@ propio de cuatro colores de $G$. Luego $\chi(G) = 4$.
     Igual que el anterior pero con un $C_7$.
 \end{problem}
 
-Es fácil notar que Greedy da un coloreo propio de $4$ colores, con lo cual
+Es fácil notar que $\mathscr{G}$ da un coloreo propio de $4$ colores, con lo cual
 $\chi(G) \leq 4$. Pues $C_7 \subseteq G$, $\chi(G) \geq 3$. Es decir, $\chi(G)
 \in \left\{ 3, 4 \right\} $. Es fácil encontrar un subgrafo de $G$ que no puede
 colorearse propiamente con $3$ colores, lo cual concluye la prueba.

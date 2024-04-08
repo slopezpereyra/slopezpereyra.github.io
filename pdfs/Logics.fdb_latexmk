@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1709672448 "Logics.tex" "Logics.pdf" "Logics" 1709672449 2
+["pdflatex"] 1712277281 "Logics.tex" "Logics.pdf" "Logics" 1712277282 2
   "../Images//circles.png" 1709507659 179825 e4a82cbdf3b8d8b5c28bf497469c50e2 ""
   "../Images//equiv.png" 1709329351 29240 79a755b81c0facd6bc9d9648c8720e58 ""
   "../Images//graph.png" 1709501024 45198 cd1da829a26b3b946b7b48a485939544 ""
@@ -122,9 +122,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1695394817 4623455 fa0568a71dd9a288d6c226ee477506c6 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1695394844 7879794 eff26094dbe002b6e482c026ea4c81e2 ""
-  "Logics.aux" 1709672449 1960 accdcffe540c4c7797c8195d2258cc84 "pdflatex"
-  "Logics.tex" 1709672447 54037 bb8bdda6aa27a4c62c0b196b3430bc6d ""
-  "Logics.toc" 1709672449 1093 5aaaccc0e38f52f29c607bd5c4aa1265 "pdflatex"
+  "Logics.aux" 1712277282 1960 accdcffe540c4c7797c8195d2258cc84 "pdflatex"
+  "Logics.tex" 1712277280 54038 2cf0e13f62b08c60b8a15dea14cd9ea8 ""
+  "Logics.toc" 1712277282 1093 5aaaccc0e38f52f29c607bd5c4aa1265 "pdflatex"
   (generated)
   "Logics.aux"
   "Logics.log"
