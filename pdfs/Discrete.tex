@@ -1,4 +1,4 @@
-\documentclass[a4paper, 12pt]{article}
+\documentclass[a4paper]{article}
 
 \usepackage{graphicx}
 \graphicspath{ {../Images/} }
@@ -6,7 +6,6 @@
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
 \usepackage{amssymb}
-\usepackage{newtxtext} \usepackage{newtxmath}
 \usepackage{amsmath, amssymb}
 \newtheorem{problem}{Problem}
 \newtheorem{example}{Example}
@@ -19,7 +18,6 @@
 
 
 \begin{document}
-
     
 
 \pagebreak
@@ -1544,11 +1542,123 @@ del último network auxiliar; es decir, $\mathcal{S} = \left\{ s, D, C, A, G, H
     auxiliares sucesivos.
 \end{theorem}
 
+\small
+\begin{quote}
+
+\textbf{Prueba.} Para esta prueba, introducimos una network util. Dado un flujo $f$ aosbre una network $\mathcal{N}$,
+la \textbf{network residual} $\mathcal{N}_f$ relativo a $f$ es la network que tiene a todos los 
+vertices de $N$ y tiene lados 
+
+\begin{align*}
+    E(\mathcal{N}_f) = \left\{ (x, y) \in E(\mathcal{N}) :
+    f(\overrightarrow{xy}) < c(\overrightarrow{xy}) \lor \overrightarrow{yx}
+\in E(\mathcal{N}) : f(\overrightarrow{yx}) > 0\right\} 
+\end{align*}
+
+Es lo mismo que la network auxiliar, pero no dividido por niveles. En
+particular, si para un lado la capacidad es 10 y el flujo es 7, tendremos el
+$\overrightarrow{xy}$ con capacidad restante 3 y el $\overrightarrow{yx}$ con
+capacidad restante 7. (Lo que puedo enviar, lo que puedo devolver...).
+
+Sea $\mathcal{N}_A$ una network auxuliar relativa a un flujo $f$, $\mathcal{N}_f$ el flujo 
+residual, y $f'$ el flujo que se obtiene luego de encontrar un flujo bloqueante en 
+$\mathcal{N}_A$. Definimos $\mathcal{N}_A', \mathcal{N}_{f'}$ de igual modo 
+pero relativa a $f'$.
+
+Sean $d, b$ las distancias definidas en Edmonds-Karp pero para en
+$\mathcal{N}_f$, y $d', b'$ las distancias en $N_{f'}$. (Recuerde que $d_f(x) =
+d_f(s, x), b_f(x) = d_f(x, t)$)
+
+Por Edmonds-Karp, sabemos que $d \leq d'$ y $b \leq b'$. Queremos demostrar que 
+en el algoritmo de Dinitz, se da un menor estricto.
+
 
 \small
 \begin{quote}
 
-\textbf{Prueba.} Próxima clase. :)
+\textbf{Caso 1.} $d'(t) = \infty$. Luego $d(t) < \infty = d'(t)$. $\blacksquare$
+
+\textbf{Caso 2.} $d'(t) < \infty$. En este caso, existe un $f'$-c.a. entre $s$
+y $t$, y esto da lugar a un camino dirigido en $\mathcal{N}_A'$ entre $s$ y
+$t$. Si $x_0 = s, x_r = t$, denotamos el camino en cuestión $x_0, x_1, \ldots,
+x_r$. (Aquí el nivel de $t$ es $r$.)
+
+Como $\mathcal{N}_A'$ es network por niveles, entonces $d'(x_i) = i$ para todo
+$i$. 
+
+Como para pasar de $\mathcal{N}_A$ a $\mathcal{N}_A'$ tuvimos que encontrar un
+flujo bloqueante, ese camino no puede estar en $\mathcal{N}_A$. (Si estuviera
+en $\mathcal{N}_A$,  algún lado está saturado al apsar a $\mathcal{N}_A'$, y no
+podríamos formar el camino en primer lugar.)
+
+Como no está en $\mathcal{N}_A$, debe pasar alguno de los dos casos siguientes. 
+
+
+\small
+\begin{quote}
+
+\textbf{Subcaso 2.1: Falta al menos un vertice}. Existe un $i$ tal que $x_i
+\not\in \mathcal{N}_A$. Como $t \in \mathcal{N}_A$, $i < r$. Pero, para que 
+un vertice no este en la network auxiliar, debe suceder que $d(t) \leq d(x_i)$. Pero, 
+por lo demostrado para Edmonds-Karp, $d(x_i) \leq d'(x_i)$. Podemos expandir esto 
+usando algunos hechos conocidos: 
+
+\begin{align*}
+    d(t) \leq d'(x_i) = i < r \Rightarrow d(t) < r \Rightarrow d(t) < d'(t)
+\end{align*}
+
+En otras palabras, $d(t) < d'(t)$.
+
+\textbf{Subcaso 2.2: Todos los vertices están pero falta un lado}. Pueden haber
+muchos lados que falten, pero tomemos el primero. Sea $i$ el primer indice tal
+que $\overrightarrow{x_i x_{i+1}}$ no está en $E(\mathcal{N}_A)$. Por ser el
+primero que falta, todos los anteriores están. Por lo tanto, el camino $s x_1
+\ldots x_i$ está en $\mathcal{N}_A$. Entonces, los niveles de estos vertices se
+corresponden con sus indices; es decir, $d(x_j) = j $ para todo $j \leq i$.
+
+Aquí otra vez hay dos casos a considerar. 
+
+
+\small
+\begin{quote}
+
+    \textbf{Caso 2.2.1} $d(x_{i+1}) = i + 1$. Es decir, $x_i, x_{i+1}$ están en
+    los niveles correctos pero el lado entre ellos no existe en
+    $\mathcal{N}_A$. Pero este lado debe existir en $\mathcal{N}_A'$. Entonces
+    debio usarse en la otra dirección al pasar de $\mathcal{N}_A$ a
+    $\mathcal{N}_A'$. Esto implica que existe un camino en $\mathcal{N}_A$ de
+    la forma $s \ldots x_{i+1}x_i \ldots t$. Pero esto implica que $d(x_i) =
+    d(x_{i+1}) + 1 \Rightarrow i = i + 1 + 1 \Rightarrow 0 = 2$ $( \bot )$.
+    Este caso es imposible. 
+
+    \textbf{Caso 2.2.2} $d(x_{i+1}) < i + 1$. Como $x_{i+1} \in \mathcal{N}_A$,
+    existe un camino $s \ldots x_{i+1}$ en $\mathcal{N}_A$. Pero consideremos
+    que $b(x_{i+1}) \leq b'(x_{i+1}) < \infty$, pues $x_{i+1}x_{i+2} \ldots t$
+    es un camino en $\mathcal{N}_A'$. Entonces, existe un camino $x_{i+1}
+    \ldots t $ en $\mathcal{N}_A$. Entonces existe un camino $s \ldots x_{i+1}
+    \ldots t$ en $\mathcal{N}_A$.
+
+    Esto implica que $d(t) = d(x_{i+1}) + b(x_{i+1})$. Pero 
+    la hipótesis de este subacso es que $d(x_{i+1}) < i + 1$. De lo cual 
+    se sigue 
+
+    \begin{align*}
+        d(x_{i+1}) + b(x_{i+1}) &< i+1 + b(x_{i})  \\ &\leq i+1 + b'(x_{i+1}) \\&= d'(x_{i+1}) + b'(x_{i+1}) \\&= d'(t)
+    \end{align*}
+
+    Es decir, $d(t) < d'(t)$. $\blacksquare$
+
+\end{quote}
+\normalsize
+
+
+\end{quote}
+\normalsize
+
+
+\end{quote}
+\normalsize
+
 
 \end{quote}
 \normalsize
@@ -1655,15 +1765,129 @@ donde $\#Z$ es la cantidad de veces que ocurre la letra $Z$ en la palabra en cue
 
 
 
-
-
 \pagebreak
 
+\subsection{Algoritmo wave de Tarjan}
+
+Pertenece a una familia de algoritmos llamada \textit{push-pull}. Hasta ahora,
+los algoritmos que vimos se basan en construir el flujo usando caminos
+aumentantes, un camino por vez. La idea de esta familia de algoritmos es 
+no construir uno por vez, sino usar el network auxuliar para construir 
+muchos caminos de manera simultánea.
+
+Recuerde que el invariante del algortimo de Dinitz es que siempre se lidia con
+un flujo. El algoritmo se detiene cuando el flujo es bloqueante. En wave, se
+invierte el orden: El invariante es que sea bloqueante, y el stop es que sea un
+flujo. Es decir, construye "pseudo-flujos" que no son flujos, pero son
+bloqueantes, y las va cambiando hasta que se da con un flujo.
+
+La propiedad de los flujos que se va a violar es que algunos vertices podran
+enviar menos flujo de lo que reciben (es decir, es posible que $in(x) >
+out(x)$). En estos casos, diremos que el vértice está desbalanceado. Lo que el
+algoritmo intenta hacer es ir balanceando estos vértices desbalanceados. Una
+vez los balancea, se tiene un flujo.
+
+El algoritmo de Tarjan para encontrar un flujo bloqueante es el siguiente.
+
+\small
+\begin{quote}
+
+\textit{(1)} Manda todo el flujo que se pueda de $s$ a su vecino. De allí en
+mas, hace unas "olas" hacia adelante y "olas" hacia atras como sigue:
+
+\textit{(2)} En cada vertice del nivel $V_i$, envia todo lo que pueda sus
+vecinos en $V_{i+1}$, hasta llegar a $t$. (Esto es la ola hacia adelante).
+Este es el caso en el que se trata de balancear, es decir se trata
+de sacar de cada vertice todo lo que recibe.
+
+Si el vértice no logra balancearse, el vértice se "bloquea".
+
+\textit{(3)} En la "ola hacia atras", recorremos los vértices desde el nivel $t
+- 1$ al nivel $1$, mirando cada vértice bloqueado y desbalanceado, y 
+devolvemos el flujo necesario para balancearlo.
+
+\end{quote}
+\normalsize
+
+\begin{theorem}
+    La complejidad de Tarjan es $O(n^3)$.
+\end{theorem}
+
+Esta complejidad es igual a la de Dinitz para grafos raros, pero la supera para
+grafos densos.
+
+
+\small
+\begin{quote}
+
+\textbf{Prueba.} Como es un algoritmo de tipo Dinitz, la distancia en
+$\mathcal{N}_A$ aumenta. Por lo tanto hay $O(n)$ networks auxiliares. Basta
+probar que la complejidad de hallar un flujo bloqueante en Tarjan es $O(n^2)$.
+
+Dividiremos la complejidad en varias partes. Los "balanceos hacia a delante"
+involucran pararse en un vértice, mirar uno por uno todos los vecinos, y enviar
+todo lo que se pueda. Cuando un vértice $x$ manda flujo a otro $z$, puede pasar
+que $zoverrightarrow{xw}$ se sature o que no se sature. Sean $S$  los pasos
+donde se satura un lado, y $P$ los pasos donde se envio un flujo parcial (no se
+saturó un lado).
+
+\textit{Análisis de $S$.} Supongamos que $\overrightarrow{xz}$ se saturó. La pregunta es si puede volver
+a saturarse en alguna otra ola hacia adelante. Para volver a saturarse, debe
+primero desaturarse. Por lo tanto, $z$ debe devolver flujo a $x$. Esto implica
+que $z$ debe estar bloqueado. Pero, en las olas hacia adelante, cuando un vértice
+chequea sus vecinos, solo manda flujo a vértices no bloqueados. Por lo tanto, si 
+$z$ devuelve a $x$, $x$ no puede volver a enviar flujo a $z$. Por lo tanto,
+$\overrightarrow{xz}$ no puede volverse a saturar. 
+
+$\therefore $ Cada lado se satura a lo sumo una vez, y la complejidad de $S$ es
+$O(m)$.
+
+En los "balanceos hacia atras", el razonamiento es análogo. Cuando devolvemos
+flujo, podemos devolverlo todo o solo un poco. Sea $V$ toda parte donde un lado
+se vacía y sea $P$ toda parte donde se devuelve flujo solo parcialmente. 
+
+\textit{Análisis de $V$}. La pregunta es cuantas veces puede vaciarse un lado.
+La respuesta es muy similar al caso de $S$. Sea $x$ devuelve flujo a $u$ y se
+vacía $\overrightarrow{ux}$, entonces $x$ debe esar bloqueado. Por lo tanto, 
+$u$ nunca puede volver a enviar flujo, y por lo tanto no puede volver a 
+vaciarse (porque no puede volver a enviar nada). 
+
+$\therefore $ Cada lado se vacía a lo sumo una vez. Por lo tanto, la
+complejidad de vaciado es $O(m)$.
+
+\textit{Análisis de $P$ y $Q$}. Cuando intentamos balancear hacia adelante desde 
+un vértice, todos los lados excepto quizas el ultimo se saturan. Es decir, 
+en cada vértice de cada ola hacia adelante, hay a lo sumo un lado 
+que no se satura, y "cuenta" para la complejidad de $P$. Enviar flujo por ese
+lado es $O(1)$. Luego la complejidad de $P$ es $O(n) \times \zeta$ donde
+$\zeta$ es la cantidad de olas. 
+
+Con $Q$ el análisis es similar. Al balancear hacia atras, en cada vértice se
+vacían todos los lados excepto a lo sumo uno. Luego la complejidad de $Q$ es
+$O(n) \times \varphi$, con $\varphi$ la cantidad de olas hacia atras.
+
+Ahora, es claro que $\varphi = \zeta$ (a cada ola hacia adelante corresponde
+una ola hacia atras). La pregunta es cual es el valor de $\varphi$. En cada ola
+hacia adelante excepto la ultima (cuando se logra el balanceo), algun vertice
+queda desbalanceado. Pero entonces la ola debio de bloquearlo. Por lo tanto,
+en cada ola hacia adelante excepto tal vez la ultima, se bloquea al menos un
+vertice. Los vertices nunca se desbloquean. Luego hay $O(n)$ olas.
+
+Luego, la complejidad de $P$ es igual a la de $Q$, que es $O(n) \times O(n) =
+O(n^2)$. 
+
+La complejidad del paso bloqueante es, en conclusión:
+
+\begin{align*}
+    O(m) + O(m) + O(n^2) + O(n^2) &= O(m) + O(n^2) &\left\{ m = O(n^2) \right\}
+                               \\ &= O(n^2)
+\end{align*}
 
 
 
 
-
+\end{quote}
+\normalsize
 
 
 \pagebreak
@@ -2123,8 +2347,10 @@ capacidades de los lados que van desde hacia fuera del corte minimal es una suma
 par. $\blacksquare$
 
 
-
 \end{document}
+
+
+
 
 
 
