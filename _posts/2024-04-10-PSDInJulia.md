@@ -5,20 +5,20 @@ categories: [ Science ]
 
 In [another entry](https://slopezpereyra.github.io/2024-04-07-PSDInR/), I gave
 a quick review of the fundamental concepts of power spectral analysis and
-provided an R implementation. This was motivated by the fact that R is a
-commonly used language, as well as by the fact that R packages used to estimate
-power spectral densities (PSD) tend to be rather obscure. A clear example 
-of this obscurity is `gsignal`'s lack of documentation on the fact that 
+provided R functions for power spectral density (PSD) estimation. This was
+motivated by the fact that, though R is commonly used by social scientists,
+packages with PSD estimation functions tend to be rather obscure. A clear
+example of this obscurity is `gsignal`'s lack of documentation on the fact that
 their `pwelch` function, which uses Welch's method to estimate the PSD of a
-vector, normalizes the result to units of power over Hertz ---i.e. multiples
-the power spectrum by $1 / f_s$. 
+vector, normalizes the result to units of power over Hertz.
 
-There is one fact that ought to be taken into account, however, a fact 
-so simple and plain that it surprises me that it is not an axiom among 
-computer scientists---this is, that R is a tasteless language, offensive
-to the aesthetic sense with which nature has blessed humankind. Thus,
-eager to dwell in prettier meadows, I rapidly turned to implement in Julia
-what was degraded in R. I present the implementation without further ado.
+There is one fact that ought to be taken into account, however, a fact so
+simple and plain that it surprises me that it isn't yet an axiom among
+civilized people. I mean of course that R is a tasteless language, offensive to the
+aesthetic instinct with which nature has blessed humankind. Thus, eager to
+dwell in prettier meadows, after writing that previous entry, I rapidly turned
+to implement in Julia what I condenscended to desacrate in R. Without further 
+ado, the implementation:
 
 ```jl
 using FFTW
@@ -56,6 +56,40 @@ mutable struct PSD
 end
 ```
 
+where 
+
+```jl
+function overlaps(v::Vector{T}, L::Int, overlap_frac::Float64) where T
+    if L > length(v)
+        throw(ArgumentError("Segment length L must be less than or equal to the length of the vector."))
+    end
+    
+    if overlap_frac < 0.0 || overlap_frac >= 1.0
+        throw(ArgumentError("Overlap fraction must be in the range [0, 1)."))
+    end
+
+    D = L * overlap_frac
+    M = Int(ceil(( length(v) - L )/(L - D)))
+    
+    segments = Vector{Vector{T}}(undef, M)
+    step = Int(floor((1 - overlap_frac) * L))  # Calculate step size
+    
+    for i in 1:M
+        start_idx = 1 + (i - 1) * step
+        end_idx = start_idx + L - 1
+        
+        # Ensure the last segment does not exceed the length of the vector
+        if end_idx > length(v)
+            break
+        end
+        
+        segments[i] = v[start_idx:end_idx]
+    end
+    
+    return segments
+end
+```
+
 I compared our estimation with `DSP`'s `welch_pgram` function, with almost
 identical results. For the comparison, I used a full-night EEG (8 hours) with a
 sampling rate of $500\text{Hz}$. In particular, I used the C3 channel. I did it
@@ -66,7 +100,7 @@ without filtering nor artifact-rejecting the data. The result looked like this.
   <img src="../Images/julia_spec.png">
 </p>
 
-If I limit the plot to frequencies below $30\text{Hz}$, it looks like this.
+If I limit the plot to frequencies below $30\text{Hz}$, this is the agreement.
 <p align="center">
   <img src="../Images/julia_spec_30.png">
 </p>
