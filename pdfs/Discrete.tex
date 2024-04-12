@@ -1,5 +1,6 @@
 \documentclass[a4paper]{article}
 
+\usepackage{newtxtext} \usepackage{newtxmath}
 \usepackage{graphicx}
 \graphicspath{ {../Images/} }
 \usepackage[utf8]{inputenc}
@@ -1889,6 +1890,125 @@ La complejidad del paso bloqueante es, en conclusión:
 \end{quote}
 \normalsize
 
+\pagebreak 
+
+\section{Matchings}
+
+\begin{definition}
+    Sea $G = (V, E) $ un grafo no dirigido. Un matching en $G$ es un subgrao $M \subseteq G$ tal que $d_M(x) = 1$ para todo $x \in M$.
+\end{definition}
+
+Un problema general es encontrar un \textit{matching maximal}; i.e. uno con la 
+mayor cantidad de lados posibles.
+
+\begin{definition}
+    Sea $G = (V, E) $ un grafo y $M \subseteq G$ un matching. Decimos que $M$ es maximal 
+    si $|E(M) \geq |E(M')|$ para todo matching $M' \subseteq G$.
+\end{definition}
+
+Como el problema de hallar matchings maximales es muy difícil, estudiaremos
+sólo un subproblema; a saber, cómo encontrar matchings maximales en grafos
+bipartitos. Este subproblema fue resuelto en las décadas del 30' al 50'. 
+El problema general fue resulto por Edmonds (de Edmonds-Karp) en 1966.
+
+Un ejemplo del tipo de problemas que los matchings modelan es el siguiente.
+Imaginemos un conjunto de trabajadores y un conjunto de trabajos, tal que 
+unimos un trabajador a un trabajo solo si ese trabajador puede hacer ese 
+trabajo. Queremos unir trabajadores con trabajos de manera tal que la 
+mayor cantidad de trabajos se realizen. La asociación trabajador $\to $ trabajo
+es un matching.
+
+Transformaremos este problema en un problema de flujos maximales. Es decir,
+expresaremos el problema de los matchings en términos de la teoría de redes.
+
+~ 
+
+\textit{Notación.} Sea $G = (V, E) $ un grafo bipartito. Usamos $X, Y$ para
+denotar los conjuntos tales que $V = X \cup Y$ con $X \cap Y = \emptyset$ y $E
+\subseteq \left\{ xy :  x \in X \land y \in Y \right\} $
+
+
+~
+
+\begin{definition}
+    
+    El network $N$ asociado $G = (V, E) $ es el network con $V(N) = \left\{ s, t \right\} \cup V(G)$
+
+    \begin{align*}
+        E(N) = \bigcup_{x \in X} \left\{ \overrightarrow{sx} \right\} \cup \bigcup_{y \in Y}\left\{ \overrightarrow{yt} \right\} \cup \bigcup_{xy \in E(G), x \in X, y \in Y} \left\{ \overrightarrow{xy} \right\} 
+    \end{align*}
+\end{definition}
+
+\begin{theorem}[Una propiedad]
+    Sea $N$ el network asociado a $G = (V, E) $. Un flujo entero $f$ relativo a
+    $N$ se corresponde con un matching en $G$. En particular, un flujo maximal
+    en $N$ se corresponde con un matching maximal en $G$.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Prueba.} Sea $f$ un flujo en $N$. Definamos $M_f \subseteq G$ como el subgrafo de $G$ con
+
+\begin{align*}
+    V(M_f) &= \left\{ x \in X : f(\overrightarrow{sx}) = 1 \right\} \cup \left\{ y \in Y : f(\overrightarrow{yt}) = 1 \right\} \\ 
+    E(M_f) &= \left\{ xy \in E(G) : x \in X \land  y \in Y \land f(\overrightarrow{xy}) = 1 \right\} 
+\end{align*}
+
+Observe que $M_f$ es un subgrafo, porque $f(\overrightarrow{xy}) = 1
+\Rightarrow \text{out}_f(x) = 1 = \text{in}_f(x)$. Luego $f(\overrightarrow{sx}) > 0$.
+$\therefore f(\overrightarrow{sx}) = 1$. $\therefore $ $x \in V(M_f)$. La
+prueba para $y$ es similar. Ahora veamos que es un matching. 
+
+Asuma que $d_{M_f}(y) \geq 2$. Luego existen $x_1, x_2$ distintos entre sí
+tales que $x_1 y, x_2 y \in E(M_f)$. Por lo tanto, $f(\overrightarrow{x_1y}) =
+f(\overrightarrow{x_2 y}) = 1$. Luego $\text{in}_f(y) \geq 2$. Pero $y$ sólo
+conduce a $t$ con $\text{out}_f(y) = 1$. $(\bot)$ La prueba para $x$ es similar.
+
+$\therefore M_f$ es un matching.
+
+Ahora observe que 
+
+\begin{align*}
+    v(f) &= \text{out}_f(s) \\ 
+         &= \sum_{x \in X} f(\overrightarrow{sx}) \\ 
+         &= \# \left\{ x \in X : f(\overrightarrow{sx}) = 1 \right\}  \\ 
+         &= \# \left\{ x \in X : \text{out}_f(x) = \text{in}_f(x) = 1 \right\} 
+\end{align*}
+
+Pero si $f(\overrightarrow{sx}) = 1$, entonces está en $M_f$. Es decir, 
+
+\begin{align*}
+    # \left\{ x \in X : \text{out}_f(x) = \text{in}_f(x) = 1 \right\}  &= |(V(M_f) \cap X )| \\ 
+                                                                       &= |E(M_f)|
+\end{align*}
+
+La recíproca también vale; es decir, si $M$ un matching, definimos un flujo en $N$ como 
+
+\begin{align*}
+    &f_M(\overrightarrow{xy}) = 1 & \forall xy \in  E(M) \\ 
+    &f_M(\overrightarrow{xy}) = 0 & xy \not\in E(M) \\ 
+    &f_M(\overrightarrow{sx}) = \begin{cases}
+        1 & x \in V(M) \\ 
+        0 & x \not\in V(M)
+    \end{cases} \\ 
+    &f_m(\overrightarrow{yt}) = \begin{cases}
+        1 & y \in V(M) \\ 
+        0 & y \not\in V(M)
+    \end{cases}
+\end{align*}
+
+Es trivial ver que $f_m$ es un flujo y que $M_{f_m} = M$ y $f_{M_f} = f$.
+
+$\therefore $ Todo matching se corresponde con un flujo entero, y como $v(f) = |E(M_f)|$, un flujo maximal 
+corresponde a un matching maximal.
+
+\end{quote}
+\normalsize
+
+
+
 
 \pagebreak
 
@@ -2345,6 +2465,53 @@ minimal.
 Si todos los lados tienen capacidad par, la suma de las
 capacidades de los lados que van desde hacia fuera del corte minimal es una suma
 par. $\blacksquare$
+
+\pagebreak 
+
+\subsection{Practico 4 (Dinitz)}
+
+\begin{align*}
+&sA: 144/44 \quad sB: 96 \quad sN: 150 \\ 
+&AC: 100 / 20 \quad AD: 70 \quad AF: 85 \quad AL: 17\\
+&BC: 10 \quad BD :17 \quad BG :102 \quad BL: 35 \\
+&Ct: 80/0 \quad CJ :5 \quad Dt: 80\\
+&EC: 100 \quad ED: 15 \quad EG: 10\\
+&FH: 15 \quad FK :100 \quad Gt: 80\\
+&Ht: 20 \quad HM :40 \quad ID :22 \quad IG :10 \\
+&JA: 5 \quad Kt :120 \quad LH :30 \quad LK :60 \\ 
+&Mt: 30 \quad NE: 110 \quad NI: 40
+\end{align*}
+
+
+El primer network auxiliar es 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \end{document}
