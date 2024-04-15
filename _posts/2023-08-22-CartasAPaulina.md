@@ -93,27 +93,17 @@ recuerdo, la última piedra inalienable, que no han de llevar las aguas de
 ninguno de los mares? Y si bien inamovible, ¿no la erosionarán los impiadosos
 embates? Quiero decir: Aun si jamás te olvido, ¿a quién estaré recordando?
 
-§ What warmth lived in your arms...! I'm sorry. I wish that you forgive me. I
-was a fool. Crying you said to me: *I wish to see you*. I did not want to
-listen. Among the many records of your voice there is that cry. I should have
-went to you. I did not know that you would die. Forgive this sorry soul—I swear
-that all of it was true—everything I said was true. How terrible is death! We,
-the living, are lost—but now you have attained the wisest form of peace. Your
+§ What warmth lived in your arms...! I wish that you forgive me. I swear that
+all of it was true—everything I said was true. How terrible is death! We, the
+living, are lost—but now you have attained the wisest form of peace. Your
 love... it warms me still! 
 
-§ I've lost it. No! It was taken from me! The last record of you is gone. Now
-only this failing neurons—so prone to error—so short-living and weak. My
-sweetest friend, how much I wish to show you that these stars blind us still,
-that rivers stubbornly flow, that I live on and well! Now that I've lost your
-voice I come to speak: I did not want to speak—I wanted to know of the silence
-you've become—but now I come to speak and tell that all insists to be and life
-persists and I live on!
-
-§ Esta mañana leía *The private memoirs and confessions of a justified sinner*.
-La oscuridad no fue tuya desde siempre, pero alguna vez también has encontrado,
-en algún lugar de tu camino, un diablo metamorfo. La influencia del misterioso
-diablo sobre el protagonista me hizo pensar en tu adicción. Pero nunca he de
-saber lo que sentiste. 
+§ The last record of you is gone. Now only this failing neurons—so prone to
+error—so short-living and weak. My sweetest friend, how much I wish to show you
+that these stars blind us still, that I live on and well! Now that I've lost
+your voice I come to speak: I did not want to speak—I wanted to know of the
+silence you've become—but now I come to speak and tell that all insists to be
+and life persists and I live on!
 
 § Esta es mi última carta. Puedo sentirlo, pero no sé por qué. Nuestro propio
 corazón es insondable: ¿tal vez he alcanzado la paz o me aproximo al olvido?
