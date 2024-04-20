@@ -1,6 +1,5 @@
 \documentclass[a4paper]{article}
 
-\usepackage{newtxtext} \usepackage{newtxmath}
 \usepackage{graphicx}
 \graphicspath{ {../Images/} }
 \usepackage[utf8]{inputenc}
@@ -16,7 +15,7 @@
 \newtheorem{example}{Example} \newtheorem{definition}{Definition}
 \newtheorem{lemma}{Lemma}
 \newtheorem{theorem}{Theorem}
-
+\usepackage{parskip}
 
 \begin{document}
     
@@ -1895,15 +1894,16 @@ La complejidad del paso bloqueante es, en conclusión:
 \section{Matchings}
 
 \begin{definition}
-    Sea $G = (V, E) $ un grafo no dirigido. Un matching en $G$ es un subgrao $M \subseteq G$ tal que $d_M(x) = 1$ para todo $x \in M$.
+    Sea $G = (V, E) $ un grafo no dirigido. Un matching en $G$ es un subgrafo $M
+    \subseteq G$ tal que $d_M(x) = 1$ para todo $x \in M$.
 \end{definition}
 
 Un problema general es encontrar un \textit{matching maximal}; i.e. uno con la 
 mayor cantidad de lados posibles.
 
 \begin{definition}
-    Sea $G = (V, E) $ un grafo y $M \subseteq G$ un matching. Decimos que $M$ es maximal 
-    si $|E(M) \geq |E(M')|$ para todo matching $M' \subseteq G$.
+    Sea $G = (V, E) $ un grafo y $M \subseteq G$ un matching. Decimos que $M$
+    es maximal si $|E(M)| \geq |E(M')|$ para todo matching $M' \subseteq G$.
 \end{definition}
 
 Como el problema de hallar matchings maximales es muy difícil, estudiaremos
@@ -1932,7 +1932,7 @@ denotar los conjuntos tales que $V = X \cup Y$ con $X \cap Y = \emptyset$ y $E
 
 \begin{definition}
     
-    El network $N$ asociado $G = (V, E) $ es el network con $V(N) = \left\{ s, t \right\} \cup V(G)$
+    El network $N$ asociado $G = (V, E) $ es el network con $V(N) = \left\{ s, t \right\} \cup V(G)$ y
 
     \begin{align*}
         E(N) = \bigcup_{x \in X} \left\{ \overrightarrow{sx} \right\} \cup \bigcup_{y \in Y}\left\{ \overrightarrow{yt} \right\} \cup \bigcup_{xy \in E(G), x \in X, y \in Y} \left\{ \overrightarrow{xy} \right\} 
@@ -2006,6 +2006,369 @@ corresponde a un matching maximal.
 
 \end{quote}
 \normalsize
+
+\subsection{Matchings en grafos bipartitos}
+
+Para hallar un matching maximal en un grafo bipartito:
+
+\begin{itemize}
+    \item Transformamos $G$ en un network $N$.
+    \item Hallamos un flujo maximal en $N$.
+\end{itemize}
+
+En los ejercicios, operaremos bajo ciertos supuestos para grafos con pesos y
+bipartitos con partes $X, Y$.
+
+\begin{itemize}
+    \item $|X| = |Y|$
+    \item Existe al menos un matching "perfecto"; es decir un matching con $|X| = |Y|$ lados.
+\end{itemize}
+
+Usamos $\Omega^{n\times n}$ para denotar la matriz de costos, tal que las filas
+corresponden a elementos de $X$, las columnas a elementos de $Y$, y los valores
+a los pesos asociados a los lados entre los vértices de $X$ e $Y$. Observe que
+ahora $n$ no refiere a la cantidad de vértices en $G$ sino a la cantidad de
+vertices en $X$ e $Y$.
+
+En un grafo con pesos (costos), hay dos formas de aproximarse al problema de
+hallar un matching de costo mínimo. Podemos minimizar el mayor costo en el
+matching, o minimizar la suma de los costos. Estos no son equivalentes.
+
+\subsection{Minimizar el máximo}
+
+Sea $M$ un mathcing cuyo mayor costo es $\alpha$. La pregunta es si podemos
+mejorarlo. Es decir, determinar si existe algún matching perfecto cuyo costo
+sea menor a $\alpha$.
+
+La estrategia es buscar los sub-grafos cuyos lados tienen costos menores que
+$\alpha$, y determinar si ellos son matchings. 
+
+Una manera de hacer esto es hacer una búsqueda binaria con $\alpha$ como valor
+de referencia. Se ordenan los pesos $\Omega_{ij}$ con un algoritmo de ordenamiento
+y se hace una matriz auxiliar $\Omega'$. En este punto tenemos los costos ordenados 
+
+\begin{align*}
+    \omega_1, \ldots, \omega_{n^2}
+\end{align*}
+
+Seteamos $\alpha = \omega_{\frac{n^2}{2}}$ (es decir empezamos con $\alpha$ el
+costo medio) y vemos si existe un matching con costo menor o igual (yendonos
+hacia la mitad izquierda). Si lo hay continuamos allí; si no, nos vamos a la
+mitad derecha, etc.
+
+Para encontrar el matching en cada paso, en la matriz auxiliar ponemos un cero
+en cada entrada con costo mayor a $\alpha$ y uno en cada entrada con costo
+menor o igual a $\alpha$. Es decir, en términos booleanos, la matriz auxiliar
+se define como
+
+\begin{align*}
+    \Omega'_{ij} := \left[ \Omega_{ij} \leq \alpha \right] 
+\end{align*}
+
+Sobre la matriz auxiliar, se hace el network auxiliar y el matching. En algún momento,
+no podemos extender el matching; usamos $S$ para denotar las filas etiquetadas al final, $T$
+para denotar las columnas etiquetadas al final. 
+
+\begin{definition}
+    Dado $W \subseteq V$, $\Gamma(W) = \bigcup_{x \in W} \Gamma(x)$.
+\end{definition}
+
+En general, $\Gamma(S) = \Gamma(T)$, y siempre que el algoritmo se detiene es porque 
+ $S$ tal que $|S| < |\Gamma(S)|$.
+
+ \begin{theorem}[Teorema de Hall]
+    Sea $G = (V, E)$ bipartito con partes $X$ e $Y$. Existe un matching
+    completo de $X$ a $Y$ (i.e. existe un matching $M \subseteq G$ tal que
+    $|E(M)| = |Z|$ con $Z \in \left\{ X, Y \right\} $) si y solo si
+
+    \begin{align*}
+        \forall S \subseteq Z : |\Gamma(S)| \geq |S|
+    \end{align*}
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Prueba.} $(\Rightarrow)$. La prueba es obvia, pues si existe un tal matching, 
+ese matching induce una función inyectiva $f : X \to Y$ tal que 
+$f(x) \in \Gamma(x)$. Pues $f$ es inyectiva, $|f(S)| = |S|$ para todo $S$. Luego 
+$f(S) \subseteq \Gamma(S) \Rightarrow |S| \leq |\Gamma(S)|$.
+
+$(\Leftarrow)$ Sea $|\Gamma(S)| \geq |S|$ para todo $S \subseteq X$ la
+condición de Hall. Asuma que la condición de Hall se cumple. Asuma además que,
+al correr el algoritmo para hallar matching maximal, nos quedamos con un
+matching maximal $M_{max}$ tal que $|E(M_{max})| < |X|$; es decir, un matching
+incompleto en $X$ (podría ser en $Y$). Construiremos un $S \subseteq X$ que
+viola la condición de Hall, es decir tal que $|\Gamma(S)| < |S|$, llegando a un
+absurdo.
+
+Corramos el algoritmo de extensión de matching sobre el último matching
+$M_{max}$. Como este matching no cubre a $X$, existen filas sin matchear,
+más otras filas etiquetadas. Sea $S$ el conjunto de filas etiquetadas, incluyendo 
+las etiquetadas con "$*$", y sea $T$ el conjunto de columnas etiquetadas.
+
+Sea $S_0$ el conjunto de filas estiquetadas con "$*$"; es decir, las filas 
+que no forman parte del matching. 
+
+
+\small
+\begin{quote}
+
+\textit{Nota.} Como el matching no es completo, $S_0 \neq \emptyset$.
+
+\end{quote}
+\normalsize
+
+Sea $T_1$ el conjunto de las columnas etiquetadas por filas de $S_0$. En
+general, $T_{i+1}$ serán las columnas etiquetadas por $S_i$; y $S_j$ son las
+filas etiquetadas por $T_j$. Las sucesiones son finitas y $S = S_0 \cup S_1
+\cup  \ldots$ con uniones disjuntas, y $T = T_1 \cup T_2 \cup \ldots$ con
+uniones disjuntas.
+
+Cuando revisamos una columna, o está libre y el matching se extiende (lo cual
+en este caso no sucede por hipótesis), o encuentra una fila matcheada con esa
+columna y la etiqueta. Por lo tanto, el algoritmo nunca se detiene cuando pasa
+de algún $T_j$ al $S_j$. Es decir que el algoritmo se detiene sólo al pasar de
+un $S_k$ a un $T_{k+1}$ que es vacío; \textit{es decir cuando, al revisar un
+conjunto de vecinos para una fila, no hay vecinos libres.}
+
+Observemos que, como cada columna etiqueta a la fila con la cual está
+matcheada, cada columna etiquetada etiqueta a una sola fila. Se sigue que
+
+\begin{equation}
+    |T_j| = |S_j|
+\end{equation}
+
+Porque el $T_j$ crea al $S_j$. 
+
+\begin{align*}
+    |S| &= |S_0| + |S_1| + \ldots + |S_k|  \\ 
+        &= |S_0| + |T_1| + T|_2| + \ldots + |T_k| & \left\{ \text{Por \textit{(3)}} \right\}  \\ 
+        &= |S_0| + |T| > |T| &\left\{ \text{Pues } S_0 \neq \emptyset \right\} 
+\end{align*}
+
+$\therefore |S| > |T|$ Si demostráramos que $T = \Gamma(S)$, la prueba concluiría. 
+
+Recordemos que $T$ son las columnas etiquetadas, y las columnas son etiquetadas
+por filas de $S$. Y una fila solo etiqueta columnas vecinas. Esto implica que
+$T \subseteq \Gamma(S)$. Ahora probaremos que $\Gamma(S) \subseteq T$.
+
+Sea $y \in \Gamma(S)$. Si $y \in T$, la prueba concluye. Si $y \not\in T$,
+entonces no está etiquetado. Pero, pues $y \in \Gamma(S)$, tenemos que existe
+un $x \in S$ tal que $y \in \Gamma(x)$. Cada vez que escaneamos a $x$, vamos a
+encontrar a $y$, y  $x$ debería etiquetarlo. Pero esto es absurdo pues dijimos
+que $y$ no está etiquetado. Luego todo $y \in \Gamma(S)$ satisface $y \in T$.
+
+\end{quote}
+\normalsize
+
+\begin{theorem}[Teorema del matrimonio de Koenig]
+    Todo grafo bipartito (con $\chi(G) = 2$) regular tiene matching perfecto.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Prueba.} Dado $W \subseteq V$, definimos 
+
+\begin{align*}
+    E_W = \left\{ wu : w \in W \right\} 
+\end{align*}
+
+Sean $X, Y$ las partes de $G$. Sea $S \subseteq X$. Sea $l \in E_{S}$. Se sigue que 
+
+\begin{align*}
+    \exists x \in S, y \in Y : l = xy = yx 
+\end{align*}
+
+Es decir que $y \in \Gamma(x)$. Pero $x \in S$. Entonces $y \in \Gamma(S)$. Entonces $l \in E_{\Gamma(S)}$. $\therefore $ $E_S \subseteq E_{\Gamma(S)}$. Por lo tanto
+
+\begin{equation}
+    |E_S| \leq |E_{\Gamma(S)}|
+\end{equation}
+
+Calculemos en general $|E_W|$ cuando $W \subseteq X$ o $W \subseteq Y$. Si $wu
+\in E_W$, entonces $v \not\in W$, pues $W \subseteq X \Rightarrow v \in Y$, y
+$W \subseteq Y \Rightarrow v \in X$.
+
+De lo anterior se sigue que 
+
+\begin{equation}
+    E_W = \bigcup_{w \in W} \left\{ wv : v \in \Gamma(w) \right\} 
+\end{equation}
+
+donde la unión es disjunta. Luego 
+
+\begin{equation}
+    |E_W| = \sum_{w \in W} |\Gamma(w)| = \sum_{w \in W} d(w)
+\end{equation}
+
+Como $G$ es regular, $d(w) = \delta = \Delta$. Luego 
+
+\begin{equation}
+    |E_W| = \Delta |W|
+\end{equation}
+
+Usando \textit{(4)} i \textit{(7)} tenemos que 
+
+\begin{equation}
+    |S| \Delta \leq |\Gamma(S)| \Delta \Rightarrow |S| \leq |\Gamma(S)| 
+\end{equation}
+
+Como esto vale para todo $S \subseteq X$, el teorema de Hall implica que existe
+un matching completo de $X$ a $Y$. Si demostramos que $|X| = |Y|$, se seguirá
+que ese matching será perfecto. 
+
+La primera forma de probar esto es ver que como $X, Y$ son las partes de $G$,
+$E = E_X = E_Y$. Entonces $|E_X| = |E_Y|$, de lo cual se sigue que $|X| \Delta
+= |Y| \delta \Rightarrow |X| = |Y|$.
+
+Otra forma de verlo es observar que, dado que existe un matching completo de $X$ a $Y$, $|X| \leq |Y|$. 
+Pero la elección de $X$ sobre $Y$ en la prueba fue arbitraria. Por lo tanto vale lo mismo para $Y$.
+Luego $|X| = |Y|$.
+
+En ambos casos, el matching es perfecto.
+
+\end{quote}
+\normalsize
+
+\begin{definition}
+    Un coloreo propio lateral o de lados de un grafo $G = (V, E) $ es una
+    función $c : E \to A$ con $A$ arbitrario tal que 
+
+    \begin{align*}
+        C(l) \neq C(\tilde{l}) \iff l \cap \tilde{l} = \emptyset
+    \end{align*}
+
+    En otras palabras, para cualesquiera lados $xy$ y $xz$ (con un vértice en común), 
+    los colores serán distintos.
+\end{definition}
+
+En vez de colorear los vértices adyacentes de manera diferente, coloreamos los
+vértices \textit{incidentes} de manera diferente.
+
+\begin{definition}
+    $\chi'(G)$ se llama el índice cromático y es el menor número de colores con el cual 
+    existe un coloreo propio lateral.
+\end{definition}
+
+Una observación trivial es que todos los lados $xy$ con $y$ fijo e $y \in
+\Gamma(x)$ tienen que tener colores distintos. Esto implica que $\chi'(G) \geq
+d(x)$ para todo $x$. Es decir que $\chi'(G) \geq \Delta$.
+
+\begin{theorem}[Teorema de Vizing, 1964]
+    $\chi'(G) \leq \Delta + 1$
+\end{theorem}
+
+Informalmente hablando, $\chi'(G)$ está acotado en un espacio muy chico; o es
+$\Delta$ o es $\Delta + 1$.
+
+\begin{theorem}[Teorema de Koenig]
+    Si $G = (V, E) $ es bipartito, $\chi'(G) = \Delta$.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Prueba.} \textit{(1 : Caso regular)}. Suponga que $G = (V, E) $ es
+regular además de bipartito. Haremos inducción en $\Delta$. Si $\Delta = 1$,
+$G$ es un matching y los lados de $G$ son disjuntos; los coloreo todos con
+color $1$ y $\chi'(G) = 1$.
+
+Ahora suponga $\Delta(G) > 1$ y sea la HI que el teorema vale para grafos
+bipartitos regulares con $\Delta < \Delta(G)$.
+
+Como $G$ bipartito regular, por el teorema del matrimonio de Koenig, existe un
+matching perfecto $M$ en $G$.
+
+Sea $\tilde{ G } = G - E(M)$ (borramos los lados de $M$ pero no los extremos).
+Si se borra un lado $xy$ de un grafo $G$, entonces $d_{borrado}(x) = d_G(x) -
+1$. Como $M$ es un matching, sus lados no se tocan, y esto implica que los
+extremos de cada lado de $M$ disminuyen su grado en exactamente 1. Se sigue que 
+
+\begin{align*} d_{\tilde{ G }}(z) = d_G(z) - 1, \forall  z \end{align*}
+
+Pero $G$ es regular, con $d_G(z) = \Delta$ y por lo tanto $d_{\tilde{ G }}(z) =
+\Delta - 1$. Por lo tanto $\tilde{ G }$ es regular con $\Delta(\tilde{ G }) =
+\Delta - 1$. Por HI, $\chi'(G) = \Delta - 1$, y puede colorearse con los
+colores $\left\{ 1, 2, \ldots, \Delta - 1 \right\} $, y coloreo los lados de
+$M$ con el color $\Delta$. Luego $\chi'(G) = \Delta$.
+
+\textit{(2 : Caso no regular)}.  Suponga que probamos que $\forall G$
+bipartito, existe $H$ bipartito regular con $G \subseteq H$, y con $\Delta(G) =
+\Delta(H)$. Es decir, que podemos "extender" un grafo bipartito 
+no regular a un grafo bipartito regular sin modificar su $\Delta$.
+
+Como $H$ es regular, $\chi'(H) = \Delta(H)$. Y como $G \subseteq H$ tenemos
+$\chi'(G) \leq \chi'(H)$, o bien $\chi'(G) \leq \Delta(G)$. Pero sabemos que
+$\chi'(G) \in \left\{ \Delta, \Delta + 1 \right\} $. Luego $\chi(G) =
+\Delta(G)$.
+
+
+\small
+\begin{quote}
+
+\textbf{Subprueba.} Demostraremos la existencia del $H$ deseado. Para esto,
+probaremos que $\exists G$ bipartito con $G \subseteq \tilde{ G }, \Delta(G) =
+\Delta(\tilde{ G }), \delta(G) + 1 = \delta(\tilde{ G })$. Repitiendo esta
+construcción muchas veces ($\tilde{ G }$, $\tilde{ \tilde{ G } }, \tilde{
+\tilde{ \tilde{ G } } }, \ldots$) llegamos a un grafo tal que 
+
+\begin{align*}
+    \delta(\tilde{ \tilde{ \tilde{ \tilde{ G }} } }) = \Delta(\tilde{ \tilde{ \tilde{ \tilde{ G } } } })
+\end{align*}
+
+Sean $X, Y$ las partes de $G$. Para cada $v \in V$ sea $v^*$ una "copia" de $v$. Sea 
+
+\begin{align*}
+    X^* = \left\{ x^* : x \in X \right\} 
+\end{align*}
+
+y lo mismo para $Y^*$. Más aún, sea $E^* = \left\{ x^*y^* : xy \in E \right\}
+$. 
+
+Sea $\tilde{ X } = X \cup Y^*, \tilde{ Y } = Y \cup X^*$. Construimos $\tilde{ G }$ con $V(\tilde{ G }) = \tilde{ X } \cup \tilde{ Y }$ y 
+
+\begin{align*}
+    E(\tilde{ G }) = E \cup  E^* \cup  \overbrace{\left\{ v v^* : d_G(v) < \Delta \right\} }^{:= F}
+\end{align*}
+
+Vemos que $E$ une vértices de $X$ con $Y$, $E^*$ une vértices de $Y^*$ con
+$X^*$, y $F$ une vértices de $X$ con $X^*$ o $Y^*$ con $Y$. Es decir,
+$E(\tilde{ G })$ une vértices de $\tilde{ X }$ con $\tilde{ Y }$ y entonces
+$\tilde{ G }$ es bipartito.
+
+Además, 
+
+\begin{align*}
+    d_{\tilde{ G }}(v) = \begin{cases}
+        \Delta & d_G(v) = \Delta \\ 
+        d_G(v) + 1 & d_G(v) < \Delta
+    \end{cases} = d_{\tilde{ G }}(v^*)
+\end{align*}
+
+De esto se sigue que $\Delta(\tilde{ G }) = \Delta(G)$ y $\delta(\tilde{ G }) = \delta(G) + 1$.
+
+
+
+
+
+
+
+
+\end{quote}
+\normalsize
+
+
+\end{quote}
+\normalsize
+
+
+
+
 
 
 

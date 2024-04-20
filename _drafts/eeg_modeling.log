@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  16 APR 2024 09:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  15 APR 2024 10:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**Paradigmas.tex
-(./Paradigmas.tex
+**eeg_modeling.tex
+(./eeg_modeling.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-01-16> (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
@@ -270,7 +270,7 @@ LaTeX Info: Redefining \not on input line 2959.
 \c@theorem=\count283
 
 
-./Paradigmas.tex:14: LaTeX Error: Command \problem already defined.
+./eeg_modeling.tex:14: LaTeX Error: Command \problem already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -284,7 +284,7 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./Paradigmas.tex:14: LaTeX Error: Command \example already defined.
+./eeg_modeling.tex:14: LaTeX Error: Command \example already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -299,7 +299,7 @@ or  <return>  to continue without it.
 
 \c@definition=\count284
 
-./Paradigmas.tex:16: LaTeX Error: Command \lemma already defined.
+./eeg_modeling.tex:16: LaTeX Error: Command \lemma already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -313,7 +313,7 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./Paradigmas.tex:17: LaTeX Error: Command \theorem already defined.
+./eeg_modeling.tex:17: LaTeX Error: Command \theorem already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -336,8 +336,8 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count285
 \l__pdf_internal_box=\box53
-) (./Paradigmas.aux)
-\openout1 = `Paradigmas.aux'.
+) (./eeg_modeling.aux)
+\openout1 = `eeg_modeling.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 19.
 LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 19.
@@ -377,54 +377,61 @@ LaTeX Font Info:    ... okay on input line 19.
 \c@mv@boldtabular=\count287
 LaTeX Info: Command `\dddot' is already robust on input line 19.
 LaTeX Info: Command `\ddddot' is already robust on input line 19.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 17.28pt on input line 21.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 17.28pt on input line 21.
-LaTeX Font Info:    Trying to load font information for OT1+minntx on input line 27.
+(Font)              scaled to size 12.0pt on input line 23.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
+(Font)              scaled to size 12.0pt on input line 23.
+LaTeX Font Info:    Trying to load font information for OT1+minntx on input line 23.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1minntx.fd
 File: ot1minntx.fd 2022/01/20 v1.0 font definition file for OT1/minntx
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 27.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 23.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 27.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 23.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 27.
+LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 23.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxmia.fd
 File: untxmia.fd 2018/04/14 Fontinst v1.933 font definitions for U/ntxmia.
 )
-LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 27.
+LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 23.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsym.fd
 File: untxsym.fd 2015/03/20 Fontinst v1.933 font definitions for U/ntxsym.
 )
-LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 27.
+LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 23.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 12.0pt on input line 55.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 76.
- [1
+./eeg_modeling.tex:25: Undefined control sequence.
+<recently read> \Omegam 
+                        
+l.25     of the signals, and $\Omegam
+                                      \in S \times k$ is the signal matrix.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] (./Paradigmas.aux) ) 
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./eeg_modeling.aux) ) 
 Here is how much of TeX's memory you used:
- 5505 strings out of 476091
- 75187 string characters out of 5794081
+ 5514 strings out of 476091
+ 75250 string characters out of 5794081
  1857330 words of memory out of 5000000
- 25818 multiletter control sequences out of 15000+600000
- 542958 words of font info for 75 fonts, out of 8000000 for 9000
+ 25817 multiletter control sequences out of 15000+600000
+ 540828 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,5n,76p,331b,186s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on Paradigmas.pdf (3 pages, 112950 bytes).
+ 71i,12n,76p,333b,203s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
+Output written on eeg_modeling.pdf (1 page, 127987 bytes).
 PDF statistics:
- 44 PDF objects out of 1000 (max. 8388607)
- 27 compressed objects within 1 object stream
+ 53 PDF objects out of 1000 (max. 8388607)
+ 32 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

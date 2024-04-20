@@ -1,0 +1,69 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{newtxtext} \usepackage{newtxmath}
+\usepackage{amsmath, amssymb}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example} \newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+
+
+\begin{document}
+
+    
+\begin{definition}
+    An EEG is a $3$-uple $E = (S, f_s, \Omega)$ where $S \in \mathbb{N}$ is the
+    number of samples in each signal, $f_s \in \mathbb{N}$ is the sampling rate
+    of the signals, and $\Omegam \in S \times k$ is the signal matrix.
+\end{definition}
+
+In general, EEG signals are interpreted by epochs of length $L_e \in \mathbb{N}$
+seconds, which are sometimes in its turn divided in $m$ subepochs.
+Of course,
+
+\begin{align*}
+    S = L_e f_s N_e
+\end{align*}
+
+where $N_e$ is the number of epochs in the EEG. From which follows that 
+
+\begin{align*}
+    N_e = \frac{S}{L_e f_s}
+\end{align*}
+
+Since an epoch refers to a certain portion of the EEG in the temporal
+dimension, it is useful to model an epoch $e$ as follows.
+
+\begin{definition}
+    Let $E = (S, f_s, \Omega)$ an EEG. An epoch $e : \mathbb{N} \to \mathbb{N}^2$ is defined as 
+
+    \begin{align*}
+        e(n) =  \Big( (n-1) L_e f_s + 1, ~ n L_e f_s \Big) 
+    \end{align*}
+\end{definition}
+
+This definition is such that if $e(n) = (l, u)$ then every row $\Omega_{i *}$
+with $l \leq i \leq u$ corresponds to a record within the $n$th epoch, or
+rather that the $n$th epoch consists of the signals $\Omega_{l*},
+\Omega_{(l+1)*}, \ldots, \Omega_{u*} $.
+
+We may overload this convention and let $e(n, m) = \left( \left(n-1 \right)L_e
+f_s, mL_e f_s  \right) $ and take $e(n)$ to be simply the case $e(n, n)$. Thus,
+$e(n, m)$ is the $2$-uple with the lower and upper bounds of all rows in
+$\Omega$ corresponding to epochs $n, n+1, \ldots, m$.
+
+
+
+
+\end{document}
+
+
+
