@@ -1,0 +1,72 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{newtxtext} \usepackage{newtxmath}
+\usepackage{amsmath, amssymb}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example} \newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+
+
+\begin{document}
+
+\section{Angluin-Style learning of NFA}
+
+
+\textit{An example of a residual}. $\Sigma = \left\{ 0, 1 \right\} $, $L =  0^*1 0^* $. Then 
+$L' = 10^* $ is a residual language of $L$,
+because $L' = 0^{-1} L$.
+
+\begin{align*}
+    L' \text{ residual of } L \iff \exists u \in \Sigma^{*} : \forall w \in L' : uw \in L
+\end{align*}
+
+The set of all residuales of a language $L$ is $Res(L)$. 
+
+A residual FSA (RFSA) is a NFA $\mathcal{R} = \left( Q, Q_0, F, \delta \right) $ 
+such that 
+
+\begin{align*}
+    \forall q \in Q : L_{q} \in Res \left( L \left( \mathcal{R} \right)  \right) 
+\end{align*}
+
+What does this mean? Evidently, $L_{Q_0} = L(\mathcal{R})$. Then, each state must accept 
+some residual of this language. For example, if $\alpha^*\beta^*\gamma^ = L$, the 
+following could be languages of other states:
+
+\begin{align*}
+    &\beta \gamma^* \\ 
+    &\beta^* \gamma \\ 
+    &\left\{ \beta \beta \beta \gamma, \beta \gamma \right\}  \\ 
+    &\left\{ \epsilon \right\} \\
+    &\left\{ \gamma, \gamma\gamma\gamma, \ldots, \gamma^{2k + 1} \right\} 
+\end{align*}
+
+In a sense, a RFSA is well-structured in the sense that the language of each 
+state "completes" some portion of the language of the automaton.
+
+A residual $L'$ of $L$ is prime if it is not the union of other residual languages.
+
+The canonical RFSA of a language $L$ is $\mathcal{R}(L) = (Q, Q_{0},1 F, \delta)$ with $Q = Primes(L)$,
+
+\begin{align*}
+    Q_0 &= \left\{ L' \in Q : L' \subseteq L \right\}  \\ 
+    F &= \left\{ L' \in Q : \epsilon \in L' \right\}  \\ 
+    \delta(L_1, a) &= \left\{ L_2 \in Q \mid L_2 \subseteq a^{-1} L_1 \right\} 
+\end{align*}
+
+Unpacking: Given a symbol $a$, the automaton transitions to any prime 
+residual language that completes the word $a$ into a word in the language.
+
+\end{document}
+
+
+

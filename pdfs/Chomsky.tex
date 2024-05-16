@@ -5,7 +5,6 @@
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
 \usepackage{amssymb}
-\usepackage{newtxtext} \usepackage{newtxmath}
 \usepackage{amsmath, amssymb}
 \newtheorem{problem}{Problem}
 \newtheorem{example}{Example}
@@ -20,26 +19,235 @@
 \begin{document}
 
 
+$a \sim b$ si y solo si $3$ divide a $a - b$; demostrar que $\sim$ es de equivalencia.
 
-A phrase structure grammar is a set of rewriting or transformation rules of the
-form $\varphi \to  \psi$, with $\varphi$ and $\psi$ strings of symbols.
+Para demostrar que es una relación de equivalencia, hay que ver que sea 
+transitiva, reflexiva y simétrica. 
 
-\textit{Example.} The grammar with rules 
+\textit{(1: Transtividad)} Asuma $a \sim b$ y $b \sim c$: queremos probar que
+entonces $a \sim c$. Puesto que $a \sim b$, por definición, tenemos que 
+
+\begin{equation}
+a - b = 3q
+\end{equation}
+para algún $q \in \mathbb{Z}$. Y puesto que $b \sim c$, tenemos que 
+
+\begin{equation}
+    b - c = 3q'
+\end{equation}
+
+para algún $q' \in \mathbb{Z}$. Por definición,
+
+\begin{equation}
+    a \sim c \iff 3 \mid (a - c)
+\end{equation}
+
+Usando la ecuación (1) vemos que $a = 3q + b$, y que $c = b - 3q'$. Por lo tanto,
+podemos sutituir $a$ y $c$ en (3) y obtenemos 
 
 \begin{align*}
-    S &\to AB \\ 
-    A &\to C \\ 
-    CB&\to Cb \\ 
-    C &\to A
+    a \sim c &\iff 3 | (3q + b - (b - 3q)) \\ 
+             &\iff 3 \mid (3q - 3q') \\ 
+             &\iff 3 \mid 3(q - q')
 \end{align*}
 
-provides the derivation 
+lo cual es obviamente cierto. 
+
+Hemos visto que asumir $a \sim b$ y $b \sim c$ conduce a $a \sim c$. Luego la relación es transitiva.
+
+\textit{(2 : Reflexividad)} Queremos ver que $a \sim a$. Pero $a \sim a$ si y solo si 
 
 \begin{align*}
-    D = (S, AB, CB, Cb, ab)
+    3 \mid (a - a) \iff 3 \mid 0
 \end{align*}
 
-which has a diagram structure.
+Cualquier número divide a $0$. La relación es reflexiva. 
+
+\textit{(3: Simétrica)} Asuma que $a \sim b$. Queremos ver que entonces $b \sim a$. Nuestro supuesto nos dice que 
+
+\begin{align*}
+    a - b = 3q
+\end{align*}
+
+para algún $q \in \mathbb{Z}$. Multiplicando ambos lados por $-1$, tenemos 
+
+\begin{align*}
+    -(a - b) = -3q \iff b - a = 3(-q)
+\end{align*}
+
+(pongo el paréntesis in el $(q)$ para que se vea claro que tres por $(-q)$ da
+lo de la izquierda). Entonces, por definición, $3$ divide a $b - a$. Entonces $b \sim a$.
+
+
+\pagebreak 
+
+Sea $A$ el conjunto de todos los subconjuntos finitos de $\mathbb{N}$. Decimos
+que dos conjuntos $X, Y$ que pertenezcan a $A$ están relacionados si tienen la
+misma cardinalidad. Es decir, $X \sim Y \iff |X| = |Y|$.
+
+Sea $\mathbb{N}_k = \left\{ 1, 2, \ldots, k \right\} $; es decir, el conjunto
+de los primeros $k$ números naturales. Para ser rigurosos, hagamos
+$\mathbb{N}_0 = \emptyset$; o sea que $\emptyset$ es el conjunto de los $0$
+primeros números naturales.
+
+Claramente, $[\mathbb{N}_1]$ es la clase de equivalencia de todos los elementos
+de $A$ con cardinalidad $1$; $[\mathbb{N}_2]$, la de los elementos de $A$ con
+cardinalidad $2$; etc. (Si no entendés por qué, revisá la definición de clase
+de equivalencia. Si después de revisarla sigue sin ser claro, escribime y te lo
+aclaro).
+
+Por lo tanto, para cada $i \in \mathbb{N}$, los conjuntos de cardinalidad $i$
+están en la clase de equivalencia de $\mathbb{N}_i$, y este último 
+conjunto puede tomarse como su representante.
+
+La cantidad de clases de equivalencia es infinita, porque hay una 
+por cada cardinalidad (es decir, una por cada número natural,
+y hay infinitos naturales).
+
+\pagebreak 
+
+$u_1 = 3, u_2 = 5, u_n = 3u_{n-1} - 2 u_{n-2}$. Probar que $u_n = 2^n + 1$.
+
+El caso base es $n = 3$, donde $u_3 = 3u_2 - 2u_1 = 3 \times 5 - 2 \times 3 =
+15 - 6 = 9$. Efectivamente se cumple que $2^3 + 1 = 8 + 1 = 9$.
+
+Usaremos inducción fuerte. Nuestra hipótesis inductiva será 
+
+\begin{align*}
+    u_j = 2^j + 1, ~ ~ ~ ~ 1 \leq j \leq k
+\end{align*}
+
+con $k \in \mathbb{Z}$ arbitrario. (Acordate que inducción "normal" es asumir 
+que vale para algún $k$, pero inducción fuerte es asumir que vale 
+para todos los números naturales menores o iguales a algún $k$, que 
+es lo que dice nuestra HI).
+
+Nuestra tesis es 
+
+\begin{align*}
+    u_{k+1} = 2^{k+1} + 1
+\end{align*}
+
+Usemos la definición recursiva de $u_n$; nos dice que, si $j \geq 3$,
+
+\begin{align*}
+    u_{k+1} = 3u_k - 2u_{k-1}
+\end{align*}
+
+Como $k$ y $k-1$ son menores o iguales a $k$, nuestra hipótesis inductiva vale. 
+(Fijate que por esto teníamos que usar inducción fuerte, porque nos queda 
+$u_{k-1}$, entonces hay que asumir algo no sólo respecto de $k$ sino de 
+los números menores a $k$). Aplicando la HI, 
+
+\begin{align*}
+    u_{k+1} &= 3\left( 2^{k} + 1 \right) - 2\left( 2^{k-1} + 1  \right) \\
+            &=3\times 2^{k} + 3 - 2^k - 2 \\ 
+            &=3\times 2^k - 2^k + 1 \\ 
+            &=2^k(3 -1 ) + 1 \\ 
+            &=2^k\times 2 + 1 \\ 
+            &= 2^{k+1} + 1
+\end{align*}
+
+que es lo que queríamos demostrar.
+
+\pagebreak 
+
+$n^2 \leq 2^n$ para todo $n > 3$.
+
+Caso base con $n = 4$ es fácil. 
+
+HI: $k^2 \leq 2^k$. 
+
+Tesis: $(k+1)^2 \leq 2^{k+1}$
+
+Fijate que 
+
+\begin{align*}
+    (k+1)^2 \leq 2^{k+1} &\iff k^2 + 2k + 1 \leq 2^{k} \times 2
+\end{align*}
+
+Si multiplicamos ambos lados de nuestra HI por $2k$, tenemos 
+
+\begin{align*}
+    2k^2  \leq 2^{k+1}
+\end{align*}
+
+Si pudiéramos demostrar que $k^2 +2k + 1 \leq 2k^2$, por transitividad, tendríamos nuestra tesis.
+Pero
+
+\begin{align*}
+    k^2 + 2k + 1 \leq 2k^2 &\iff 2k + 1 \leq 2k^2 - k^2 \\& \iff 2k+1 \leq k^2(2 - 1) \\&\iff 2k-1 \leq k^2
+\end{align*}
+
+Esto es lo que demostraste en el inciso $(a)$, o sea que sabemos que es verdad. Entonces, 
+efectivamente $k^2  + 2k + 1 \leq 2k^2 \leq 2^{k+1}$. O sea que, por transitividad,
+
+\begin{align*}
+    k^2 + 2k + 1 \leq 2^{k+1}
+\end{align*}
+
+\pagebreak 
+
+HI: $8 \mid 3^k - 1$
+
+Tesis: $8 \mid 3^{2k + 2} - 1$
+
+
+De la HI se sigue que $8 \mid (3^k - 1) \times 3^{2+k}$, es decir 
+
+\begin{align*}
+    8 \mid 3^{2k+2} - 9 \times 3^k
+\end{align*}
+
+De esto se sigue que $8q = 3^{2k+2} - 9\times 3^k$ para algún $q \in
+\mathbb{Z}$, lo cual implica que $8q + 9\times 3^k = 3^{2k+2}$. Ahora bien, $9$
+divide a $3^2$ y por lo tanto divide a $3^2 \times c$ para cualquier $c$; es
+decir que $9$ divide a $3^m$ para cualquier $m \geq 2$. Entonces podemos
+escribir $3^k$ como $9q'$, y nos queda
+
+\begin{align*}
+    8q + 9 \times 9q' = 3^{2k+2} \Rightarrow 8q + 9q'' = 3^{2k+2}
+\end{align*}
+
+donde $q'' = 9q'$.
+
+Ahora, el truco inteligente es ver que $8x + 9y$ siempre tiene resto $1$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{align*}
+    \Sigma = \left\{ 1, 2, 3, 4, 5, 6 \right\} 
+\end{align*}
+
+Si $Om$
+
+\begin{align*}
+    \phi_i
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

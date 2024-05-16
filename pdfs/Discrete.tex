@@ -1,5 +1,6 @@
 \documentclass[a4paper]{article}
 
+\usepackage{newtxtext} \usepackage{newtxmath}
 \usepackage{graphicx}
 \graphicspath{ {../Images/} }
 \usepackage[utf8]{inputenc}
@@ -1257,7 +1258,7 @@ $f_{k+1}(\overrightarrow{zx}) < c(\overrightarrow{zx})$ en el paso $k+1$.
 Luego, para pasar de $f_k$ a $f_{k+1}$, se usó el lado $\overrightarrow{xz}$ y
 se usó backwards en el camino 
 
-\begin{align*} \tilde{p}_k : s \ldots \overleftarrow{xz} \ldots t \end{align*}
+\begin{align*} \widetilde{p}_k : s \ldots \overleftarrow{xz} \ldots t \end{align*}
 
 Como este camino se usa en Edmonds-Karp, es de longitud mínima. Por lo tanto,
 $d_k(z) = d_{k}(x) + 1$. 
@@ -1282,7 +1283,7 @@ implica que $f_{k+1}(\overrightarrow{xz}) > 0$. Luego debimos haber usado
 $\overrightarrow{xz}$ en modo forward al pasar de $f_k$ a $f_{k+1}$. Por lo
 tanto, existe un $f_k$-c.a. de la forma 
 
-\begin{align*} \tilde{p}_k : s \ldots \overrightarrow{xz} \ldots t \end{align*}
+\begin{align*} \widetilde{p}_k : s \ldots \overrightarrow{xz} \ldots t \end{align*}
 
 Y como usamos Edmonds-Karp, este camino aumentante es de longitud mínima. Luego
 $d_k(z) = d_{k}(x) + 1$, de lo cual deriva la contradicción de la misma manera
@@ -2239,7 +2240,7 @@ En ambos casos, el matching es perfecto.
     función $c : E \to A$ con $A$ arbitrario tal que 
 
     \begin{align*}
-        C(l) \neq C(\tilde{l}) \iff l \cap \tilde{l} = \emptyset
+        C(l) \neq C(\widetilde{l}) \iff l \cap \widetilde{l} = \emptyset
     \end{align*}
 
     En otras palabras, para cualesquiera lados $xy$ y $xz$ (con un vértice en común), 
@@ -2284,15 +2285,15 @@ bipartitos regulares con $\Delta < \Delta(G)$.
 Como $G$ bipartito regular, por el teorema del matrimonio de Koenig, existe un
 matching perfecto $M$ en $G$.
 
-Sea $\tilde{ G } = G - E(M)$ (borramos los lados de $M$ pero no los extremos).
+Sea $\widetilde{ G } = G - E(M)$ (borramos los lados de $M$ pero no los extremos).
 Si se borra un lado $xy$ de un grafo $G$, entonces $d_{borrado}(x) = d_G(x) -
 1$. Como $M$ es un matching, sus lados no se tocan, y esto implica que los
 extremos de cada lado de $M$ disminuyen su grado en exactamente 1. Se sigue que 
 
-\begin{align*} d_{\tilde{ G }}(z) = d_G(z) - 1, \forall  z \end{align*}
+\begin{align*} d_{\widetilde{ G }}(z) = d_G(z) - 1, \forall  z \end{align*}
 
-Pero $G$ es regular, con $d_G(z) = \Delta$ y por lo tanto $d_{\tilde{ G }}(z) =
-\Delta - 1$. Por lo tanto $\tilde{ G }$ es regular con $\Delta(\tilde{ G }) =
+Pero $G$ es regular, con $d_G(z) = \Delta$ y por lo tanto $d_{\widetilde{ G }}(z) =
+\Delta - 1$. Por lo tanto $\widetilde{ G }$ es regular con $\Delta(\widetilde{ G }) =
 \Delta - 1$. Por HI, $\chi'(G) = \Delta - 1$, y puede colorearse con los
 colores $\left\{ 1, 2, \ldots, \Delta - 1 \right\} $, y coloreo los lados de
 $M$ con el color $\Delta$. Luego $\chi'(G) = \Delta$.
@@ -2312,13 +2313,13 @@ $\chi'(G) \in \left\{ \Delta, \Delta + 1 \right\} $. Luego $\chi(G) =
 \begin{quote}
 
 \textbf{Subprueba.} Demostraremos la existencia del $H$ deseado. Para esto,
-probaremos que $\exists G$ bipartito con $G \subseteq \tilde{ G }, \Delta(G) =
-\Delta(\tilde{ G }), \delta(G) + 1 = \delta(\tilde{ G })$. Repitiendo esta
-construcción muchas veces ($\tilde{ G }$, $\tilde{ \tilde{ G } }, \tilde{
-\tilde{ \tilde{ G } } }, \ldots$) llegamos a un grafo tal que 
+probaremos que $\exists G$ bipartito con $G \subseteq \widetilde{ G }, \Delta(G) =
+\Delta(\widetilde{ G }), \delta(G) + 1 = \delta(\widetilde{ G })$. Repitiendo esta
+construcción muchas veces ($\widetilde{ G }$, $\widetilde{ \widetilde{ G } }, \widetilde{
+\widetilde{ \widetilde{ G } } }, \ldots$) llegamos a un grafo tal que 
 
 \begin{align*}
-    \delta(\tilde{ \tilde{ \tilde{ \tilde{ G }} } }) = \Delta(\tilde{ \tilde{ \tilde{ \tilde{ G } } } })
+    \delta(\widetilde{ \widetilde{ \widetilde{ \widetilde{ G }} } }) = \Delta(\widetilde{ \widetilde{ \widetilde{ \widetilde{ G } } } })
 \end{align*}
 
 Sean $X, Y$ las partes de $G$. Para cada $v \in V$ sea $v^*$ una "copia" de $v$. Sea 
@@ -2330,29 +2331,28 @@ Sean $X, Y$ las partes de $G$. Para cada $v \in V$ sea $v^*$ una "copia" de $v$.
 y lo mismo para $Y^*$. Más aún, sea $E^* = \left\{ x^*y^* : xy \in E \right\}
 $. 
 
-Sea $\tilde{ X } = X \cup Y^*, \tilde{ Y } = Y \cup X^*$. Construimos $\tilde{ G }$ con $V(\tilde{ G }) = \tilde{ X } \cup \tilde{ Y }$ y 
+Sea $\widetilde{ X } = X \cup Y^*, \widetilde{ Y } = Y \cup X^*$. Construimos $\widetilde{ G }$ con $V(\widetilde{ G }) = \widetilde{ X } \cup \widetilde{ Y }$ y 
 
 \begin{align*}
-    E(\tilde{ G }) = E \cup  E^* \cup  \overbrace{\left\{ v v^* : d_G(v) < \Delta \right\} }^{:= F}
+    E(\widetilde{ G }) = E \cup  E^* \cup  \overbrace{\left\{ v v^* : d_G(v) < \Delta \right\} }^{:= F}
 \end{align*}
 
 Vemos que $E$ une vértices de $X$ con $Y$, $E^*$ une vértices de $Y^*$ con
 $X^*$, y $F$ une vértices de $X$ con $X^*$ o $Y^*$ con $Y$. Es decir,
-$E(\tilde{ G })$ une vértices de $\tilde{ X }$ con $\tilde{ Y }$ y entonces
-$\tilde{ G }$ es bipartito.
+$E(\widetilde{ G })$ une vértices de $\widetilde{ X }$ con $\widetilde{ Y }$ y entonces
+$\widetilde{ G }$ es bipartito.
 
 Además, 
 
 \begin{align*}
-    d_{\tilde{ G }}(v) = \begin{cases}
+    d_{\widetilde{ G }}(v) = \begin{cases}
         \Delta & d_G(v) = \Delta \\ 
         d_G(v) + 1 & d_G(v) < \Delta
-    \end{cases} = d_{\tilde{ G }}(v^*)
+    \end{cases} = d_{\widetilde{ G }}(v^*)
 \end{align*}
 
-De esto se sigue que $\Delta(\tilde{ G }) = \Delta(G)$ y $\delta(\tilde{ G }) = \delta(G) + 1$.
-
-
+De esto se sigue que $\Delta(\widetilde{ G }) = \Delta(G)$ y $\delta(\widetilde{ G }) = \delta(G) + 1$.
+y 
 
 
 
@@ -2368,8 +2368,1058 @@ De esto se sigue que $\Delta(\tilde{ G }) = \Delta(G)$ y $\delta(\tilde{ G }) = 
 
 
 
+\subsection{Minimizar la suma}
+
+Dada una matriz $\Omega^{n\times n}$ de costos, se nos pide hallar un matching
+maximal que minimice la suma de los costos.
+
+Pues asumimos $n \times n$ (misma cantidad de filas y columnas, o $|X| = |Y|$),
+todo matching perfecto da una biyección entre filas y columnas (o entre 
+elementos de $X$ e $Y$). A su vez, toda biyección entre filas y columnas 
+es un matching perfecto. 
+
+\textit{Notación}. Hacemos 
+
+$$S_n = \left\{ \sigma : \left\{ 1, \ldots, n
+\right\} \to  \left\{ 1, \ldots, n \right\}  \text{ es una biyección} \right\} $$
+
+Dada una matriz de costos $\Omega^{n \times  n}$ y una biyección $\sigma \in S_n$,
+definimos la suma de costos relativa a $\sigma$ como 
+
+\begin{align*}
+    SC_{\sigma}(\Omega) = \sum_{i = 1}^{n} \Omega_{i, \sigma(i)}
+\end{align*}
+
+En términos intuitivos, $SC_\sigma$ es la suma de los costos asociados 
+al matching que equivale a la biyección $\sigma$. 
+
+Deseamos encontrar $\sigma$ tal que $SC_{\sigma}(\Omega) \leq SC_{\tau}(\Omega)$ para todo $\tau \in S_n$.
+
+\begin{lemma}[Lema súper fácil pero MUY importante]
+    Sea $\Omega^{n\times n}$ una matriz de costos, $c$ una constante, y 
+    $\widetilde{ \Omega }$ la matriz que se obtiene de $\Omega$
+    restando $c$ a una fila o una columna. Entonces 
+
+    \begin{align*}
+        SC_{\sigma}(\Omega) \leq SC_{\tau}(\Omega) ~ \forall \tau \in S_n \iff SC_{\sigma}(\widetilde{ \Omega }) \leq SC_{\tau} (\widetilde{ \Omega }) ~ \forall \tau \in S_n wt
+    \end{align*}
+\end{lemma}
 
 
+\small
+\begin{quote}
+
+\textbf{Prueba.} Suponga que restamos $c$ a la $k$-écima fila de $\Omega$ (la prueba 
+es similar para columnas). Entonces 
+
+\begin{align*}
+    \widetilde{ \Omega }_{ij}  = \begin{cases}
+        \Omega_{ij} & i \neq k \\ 
+        \Omega_{ij} - c & i = k
+    \end{cases}
+\end{align*}
+
+Encontremos $SC_{\tau}(\widetilde{ \Omega }) $ para un $\tau \in S_n$ arbitrario. Por definición, 
+
+\begin{align*}
+    SC_{\tau}(\widetilde{ \Omega } ) &= \sum_{i=1}^{n} \widetilde{ \Omega }_{i, \tau(i)} \\ 
+                                     &= \left( \sum_{i \neq k} \widetilde{ \Omega }_{i, \tau(i)}  \right)  + \widetilde{ \Omega }_{k, \tau(k)} \\ 
+                                     &= \left( \sum_{i \neq k } \Omega_{i, \tau(i)} \right)  + \Omega_{k, \tau(k)} - c \\ 
+                                     &= \left(\sum_{i=1}^{n} \Omega_{i, \tau(i)}\right) - c \\ 
+                                     &= SC_{\tau}(\Omega) - c
+\end{align*}
+
+Entonces $SC_{\sigma}(\widetilde{ \Omega }) \leq SC_{\tau} (\widetilde{ \Omega } ) ~ \forall \tau \in S_n $  si y solo si 
+
+\begin{align*}
+    &SC_{\sigma}(\Omega) - c \leq SC_{\tau}(\Omega) - c \\ 
+    \iff & SC_{\sigma}(\Omega) \leq SC_{\tau}(\Omega) 
+\end{align*}
+
+para todo $\tau \in S_n$.
+
+\end{quote}
+\normalsize
+
+
+\begin{lemma}[Otro obvio pero crucial] 
+    Sea $\Omega^{n \times n}$ una matriz de costos con $\Omega_{ij} \geq 0$ para todo $i, j$.
+    Entonces un matching "de ceros" minimiza la suma de los costos; 
+    es decir, $M_{i, \sigma(i)} = 0 ~ \forall  i \Rightarrow SC_{\sigma}(\Omega) \leq SC_{\tau}(\Omega) ~ \forall \tau \in S_n$.
+\end{lemma}
+
+Los dos lemas anteriors nos dan una estrategia para minimizar la suma. Utilizamos el primer 
+lema repetidas veces para construir una matriz $\widetilde{ \Omega } $ con suficientes ceros 
+para hallar un matching de ceros. Ahora traducimos la estrategia a un algoritmo. 
+
+\textit{Primera parte del algoritmo.} Dada una matriz de costos $\Omega$:
+
+\begin{enumerate}
+    \item  Restar a cada fila su mínimo, asegurando que en cada fila hay un cero.
+    \item Restar a cada columna su mínimo, asegurando que en cada columna hay un cero. 
+    \item Hallar, o al menos tratar de hallar, un matching de 0.
+\end{enumerate}
+
+Ahora damos un ejemplo. Sea 
+
+\begin{align*}
+    \Omega^{7\times 7} = \begin{bmatrix} 
+        10 & 8 & 12 & 14 & 3 & 13 & 3 \\ 
+        7 & 5 & 3 & 9 & 3 & 9 & 4 \\ 
+        10 & 9 & 8 & 12 & 11 & 11 & 12 \\ 
+        12 & 7 & 5 & 10 & 1 & 12 & 1 \\ 
+        8 & 8 & 5 & 13 & 7 & 11 & 5 \\ 
+        11 & 10 & 7 & 15 & 9 & 17 & 7 \\ 
+        13 & 11 & 2 & 10 & 2 & 17 & 3
+    \end{bmatrix} 
+\end{align*}
+
+la matriz de costos. Restando el mínimo a cada fila y luego el mínimo a cada columna 
+obtenemos la siguiente matriz de costos, en la que resaltamos los matchings con 
+un cuadrado y etiquetamos con $*$ los que pares que no pudimos matchear.
+
+\begin{align*}
+    \begin{bmatrix} 
+        & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\ 
+        & - & - & - & - & - & - & -\\
+        A\mid&5& 4 &9 &7 &\boxed{ 0 }  &7 &0 &\mid & \\ 
+        B\mid&2& 1 &\boxed{ 0 }  &2 &0 &3 &1 &\mid & \\ 
+        C\mid&\boxed{ 0 } & 0 &0 &0 &3 &0 &4 &\mid & \\
+        D\mid&9& 5 &4 &5 &0 &8 &\boxed{ 0 }  &\mid & \\
+        E\mid&1& 2 &0 &4 &2 &3 &0 &\mid &* \\
+        F\mid&2& 2 &0 &4 &2 &7 &0 &\mid &* \\
+        G\mid&9& 8 &0 &4 &0 &12& 1&\mid &* \\
+    \end{bmatrix} 
+\end{align*}
+
+Una vez llegado a este punto, debemos usar el procedimiento
+usual para aumentar el matching, revisando las filas estrelladas 
+y agregando a la cola de cada fila las columnas que son sus 
+vecinas.
+
+\begin{align*}
+    \begin{bmatrix} 
+        & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\ 
+        & - & - & - & - & - & - & -\\
+        A\mid&5& 4 &9 &7 &\boxed{ 0 }  &7 &0 &\mid & 5\\ 
+        B\mid&2& 1 &\boxed{ 0 }  &2 &0 &3 &1 &\mid & 3 \\ 
+        C\mid&\boxed{ 0 } & 0 &0 &0 &3 &0 &4 &\mid & \\
+        D\mid&9& 5 &4 &5 &0 &8 &\boxed{ 0 }  &\mid & 7\\
+        E\mid&1& 2 &0 &4 &2 &3 &0 &\mid &* \\
+        F\mid&2& 2 &0 &4 &2 &7 &0 &\mid &* \\
+        G\mid&9& 8 &0 &4 &0 &12& 1&\mid &* \\
+        & - & - & - & - & - & - & -\\
+        & & & E & & G & & E
+    \end{bmatrix} 
+\end{align*}
+
+Una vez llegado a este punto, debemos realizar una operación que agregue 
+nuevos ceros a la matriz de alguna forma inteligente.  Recordamos que, por el 
+teorema de Hall, $S = \left\{ \text{filas etiquetadas} \right\} $ es un conjunto tal que 
+$|S| \leq |\Gamma(S)|$. En nuestro ejemplo, $S = \left\{ A, B, D, E, F, G \right\} $.
+
+El algoritmo restará $\varphi := \min \left\{ \widetilde{ \Omega }_{ij} : i \in S, j \not\in \Gamma(S)  \right\} $ a 
+todos los vértices de $S \times  \overline{\Gamma(S)}$ y suma $\varphi$
+a las columnas de $\Gamma(S)$. Esto produce nuevos ceros con los que 
+incrementar el matching. 
+
+Este proceso se repite hasta dar con un matching perfecto.
+
+\subsection{Complejidades}
+
+\textbf{Matching maximal en grafo sin pesos}. Vimos dos implementaciones; una
+es usar Dinitz, otra usar una matriz. Con la matriz, se revisa cada fila
+buscando vecinos, lo cual es $O(n)$ por cada fila. Luego se revisa cada columna 
+para ver si está "libre" o encontrar una fila matcheada. Esto es $O(n)$ por
+cada columna. El matching inicial es revisar todas las filas: $O(n^2)$. Para
+luego extender el matching en uno, potencialmente habrá que revisar $O(n)$
+filas y $O(n)$ columnas. Entonces la complejidad total hasta aquí es $O(n^2) + O(n^2) = O(n^2)$.
+
+Como el matching se puede extender a lo sumo $O(n)$ veces, la complejidad total es 
+
+\begin{align*}
+    O(n^2) + \overbrace{ O(n^2)O(n) }^{\text{extensión}} = O(n^3)
+\end{align*}
+
+Si usamos Dinitz, que tenía complejidad $O(n^2 m)$, que en grafos densos llega
+a $O(n^4)$. Pero en un network que tiene todas las capacidades $=1$, y tal que 
+para todo $x \not\in \left\{ s, t \right\} $ resulta que $|\Gamma^{+}(x)|=1 \lor
+|\Gamma^{-}(x)| = 1$, tiene complejidad $O(\sqrt{n} m) $ (esto no se demuestra). En 
+este caso especial, esta complejidad es mejor que la de la implementación
+matricial. Por ejemplo, si $m = O(n^2)$ (un grafo denso), resulta $O(\sqrt{n}m)
+= O(n^{\frac{5}{2}}) $.
+
+\textbf{Minimizar el máximo.} El primer paso era ordenar los $n^2$ posibles
+valores distintos, a fin de realizar una búsqueda binaria. Usando un algoritmo
+bueno, la complejidad de la ordenación es $O(n^2 \log n^2) = O(n^2 2 \log n) =
+O(n^2 \log n)$. 
+
+Luego, se revisa el grafo a sociado a un "umbral" de valores  para ver si
+existe o no un matching perfecto. Para esto se usa el algoritmo de encontrar un
+matching, y por lo tanto es $O(n^3)$ o $O(\sqrt{n}m) $, dependiendo de la
+implementación. Esto se hace con búsqueda binaria, y por lo tanto se hace 
+$O(\log n^2) = O(2 \log n) = O(\log n)$ veces. La complejidad total es, por lo tanto, 
+
+\begin{align*}
+    O(n^2 \log n) + O(n^3 \log n) = O(n^3 \log n)
+\end{align*}
+
+o bien, usando Dinitz,
+
+\begin{align*}
+    O(n^2 \log n) + O(\sqrt{n} m \log n ) = \begin{cases}
+        O(n^{\frac{5}{2}} \log n) & \text{Para grafos densos} \\ 
+        O(n^2 \log n) & \text{Para grafos raros}
+    \end{cases}
+\end{align*}
+
+\textbf{Minimizar la suma.} Demos esto como un teorema. 
+
+\begin{theorem}
+    La complejidad del algoritmo "minimizar la suma", también llamado
+    "algoritmo húngaro", tal como fue dado en clase haciéndolo a mano,
+    es $O(n^4)$.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Prueba.} Hallar un matching inicial es $O(n^2)$. La complejidad total
+será $O(n^2) + O(n) \times \zeta$, donde $\zeta$ es la complejidad de extender
+el matching en un lado.
+
+Como vimos, si no hubiera cambios de matrices, la complejidad de extender el
+matching en un lado sería $O(n^2)$. Pero, como hay cambios de matrices, si 
+continuamos el matching luego de cambiar la matriz, a partir del matching con 
+el que veníamos, la complejidad de extender el matching en un lado es
+
+\begin{align*}
+    \overbrace{O(n^2)}^{\text{Revisar filas y columnas}} + \phi \omega
+\end{align*}
+
+con $\phi$ la cantidad de matrices hasta extender el matching, $\omega$ la
+complejidad de cambiar la matriz.
+
+Debemos demostrar que siempre podemos continuar con el matching con el que
+veníamos. Para esto, debemos ver que los ceros del matching nunca se pierden al
+cambiar la matriz. La demostración de que estos ceros nunca se pierden es
+gráfica. Partiendo la matriz de costos en cuatro cuadrantes, dos en los que se
+suma y resta, respectivamente, y dos en los que no se cambia nada, se observa
+que todos los ceros que pueden perderse están en la región de la suma; es
+decir, en $\overline{S} \times \Gamma(S)$. Pero $\Gamma(S)$ es el conjunto 
+de columnas etiquetadas, y cada columna etiquetada se revisa, y si tiene
+algún cero del matching, se agrega la fila correspondiente a $S$. Por lo tanto,
+como las filas que se suman están en $\overline{S}$, los ceros del matching no 
+están entre los valores que incrementan.
+
+Lo único que queda por hacer es calcular $\phi$ y $\omega$.
+
+\begin{lemma}[Lema interno]
+    Luego de un cambio de matriz, si se continúa la búsqueda a partir del 
+    matching con el que se venía, entonces o bien se extiende el matching, o bien 
+    crece el conjunto $S$.
+\end{lemma}
+
+Con "crece" queremos decir que si cambiamos la matriz usando un $S$, y en la nueva
+matriz no podemos extender el matching llegando a un $S_{\text{nueov}}$, entonces $|S_{\text{nuevo}}| > |S|$, 
+y $S \subset S_{\text{nuevo}}$.
+
+
+\begin{quote}
+
+\textbf{Prueba.} La demostración es gráfica, una vez más. Se hace la misma partición de la
+matriz de costos. Como se toma $\varphi = \min (S \times \overline{\Gamma(S)})$, en 
+$S \times \overline{\Gamma(S)}$ hay ceros nuevos. Como cada columna 
+en donde hay un cero nuevo no estaba en $\Gamma(S)$, no estaban etiquetadas,
+y se etiquetan luego del cambio de matriz. Como se etiquetan, se revisan.
+
+\textit{Completar.}
+
+\end{quote}
+
+Como consecuencia del lema interno, dado que $1 \leq |S| \leq n $, hay $O(n)$
+cambios de matriz antes de tener que extender el matching. Es decir,
+$\phi = O(n)$.
+
+Para el cambio de matriz, debemos calcular $\varphi := \min S \times \overline{\Gamma(S)}$,
+restarlo a algunas filas y sumarlo a algunas columnas. Encontrar $\varphi$
+es $O(n^2)$, y restarlo de algunas filas es $O(n)$ por cada fila o columna; 
+es decir $O(n^2)$. Es decir, $\omega = O($
+
+\begin{align*}
+    \therefore O(n^2) + O(n)\left( O(n^2) + O(n)O(n^2) \right) &= O(n^2) + O(n^3) + O(n^4) \\ 
+    &= O(n^4)
+\end{align*}
+
+En la suma larga (antes del $=$), el primer término es , el segundo término es
+la cantidad de matrices en la extensión. Dentro del paréntesis, el $O(n^2)$ es
+revisar filas/columnas, $O(n)$ es la cantidad de cambio de matrices, y $O(n^2)$
+es la complejidad del cambio de matrices.
+
+\end{quote}
+\normalsize
+
+\begin{theorem}
+    El algoritmo húngaro se puede codificar con complejidad $O(n^3)$.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+    \textbf{Prueba.} Si el cambio de matrices pudiera hacerse en $O(n)$, tendríamos la 
+    complejidad total $O(n^3)$. Pero para esto, debemos usar un par de trucos 
+    sucios relativos a cómo funcionan las computadoras modernas.
+
+    El primer truco sucio es el siguiente. Trataremos de restar/sumar una constante 
+    en tiempo $O(1)$ en vez de $O(n)$. El truco sucio es \textit{no} hacer la suma/resta 
+    sino "dejarla indicada". A cada fila $x$ asociamos un valor $RF(x)$ que asigna 
+    cuánto hay que restarle a la fila. Lo mismo haríamos con $SC(y)$, el valor de 
+    cuánto hay que sumarle a la columna $y$.
+
+    La pregunta es cómo buscar ceros, si los ceros no aparecen! Supongamos que la matriz 
+    de costos es $\Omega$. Donde deberíamos hacer $\textbf{if }(0 == \Omega[x][y])$,
+    el checkeo de si una entrada es cero, hacemos 
+
+    \begin{align*}
+        \textbf{if } \left(0 == C[x][y] - RF(x) + SC(y)\right)
+    \end{align*}
+
+    Asumimos que la computadora realiza estas operaciones en $O(1)$.
+
+    El segundo truco sucio es calcular $\varphi$ en $O(n)$. Recordemos que 
+
+    \begin{align*}
+        \varphi = \min S \times \overline{\Gamma(S)} &= \min \left\{ C[x, y] : x \in S, y \not\in \Gamma(s) \right\}  \\ 
+                                                     &= \min_{y \not\in \Gamma(S)} \left( \min_{x \in S} \left\{ C[x, y] \right\} \right) 
+    \end{align*}
+
+    Supongamos que guardamos esto en $MS[y]$. Es decir, $MS[y]$ sería el mínimo
+    de la intersección de la columna $y$ con las filas del conjunto $S$. Los
+    valores de $MS$ se pueden inicializar en infinito e ir actualizándose.
+    Entonces $\varphi$ será $O(n)$, porque será ahora el mínimo entre $n$
+    elementos. 
+
+    Solo queda observar que $MS[y]$ debe actualizarse cuando revisamos las
+    filas. Cada vez que etiquetamos una fila, la misma se incluye en $S$ y debe
+    ser revisada en busca de algún cero (algún vecino). Con los que no son vecinos 
+    no se hace nada. Pero se puede aprovechar que se revisan todas las columnas para 
+    actualizar $MS[y]$ para cada columna $y$. Es decir, la revisar $x$, se agrega 
+     un $if$ del tipo 
+
+     \begin{align*}
+         \textbf{if } (C[x, y] < MS[y]) \textbf{ then } MS[y] = C[x, y] \textbf{ fi }
+     \end{align*}
+
+
+
+\end{quote}
+\normalsize
+
+\pagebreak
+
+\section{Códigos de corrección de errores}
+
+La idea es la siguiente. Dado un emisor que envía un mensaje a un receptor a través de un canal dado, 
+
+\begin{align*}
+    E \overbrace{\longrightarrow}^{\text{canal}} R
+\end{align*}
+
+La idea es definir códigos tales que, si existe ruido que distorsione el
+mensaje enviado a través del canal, permitan al receptor entender el mensaje de
+todos modos.
+
+\begin{definition}
+    Un código de bloque de longitud $n$ es un subconjunto de $\Sigma^n$ para algún alfabeto $\Sigma$. 
+\end{definition}
+
+Para un alfabeto binario $\Sigma = \left\{ 0, 1 \right\} $, el código se llama
+binario. Salvo que se explicite lo contrario, \textit{código} significará
+\textit{código binario en bloque}. También supondremos que el código en
+cuestión tiene al menos dos palabras.
+
+
+\small
+\begin{quote}
+
+\textbf{Ejemplo.} El código Morse es binario, pero no es de bloque porque no todas las palabras
+tienen la misma longitud.
+
+\end{quote}
+\normalsize
+
+Respecto al canal de transmisión, suponemos lo siguiente: 
+
+
+\small
+\begin{quote}
+
+\begin{enumerate}
+    \item El canal puede invertir bits, pero no agregar ni destruir bits. 
+    \item La probabilidad de invertir un bit es la misma independientemente del bit.
+    \item La probabilidad de que cambie el bit $i$ es independientemente de que 
+        cambie el bit $j$.
+    \item La probabilidad de que cambie el bit $i$ es igual a la probabilidad de que 
+        cambie el bit $j$.
+    \item Si llamamos $p$ a la probabilidad de que cambie el bit $i$-écimo, suponemos 
+        que $0 < p < \frac{1}{2}$.
+\end{enumerate}
+
+\end{quote}
+\normalsize
+
+
+\small
+\begin{quote}
+
+\textbf{Ejemplo.} Supongamos que tenemos $4$ instrucciones para dar a un
+receptor. Como son cuatro instrucciones, necesito como mínimo $n = 2$ bits. Por
+lo tanto, podríamos tomar el código $C_1 = \left\{ 00, 01, 10, 11 \right\} $.
+Suponga que enviamos $01$ y, dado un cierto ruido, se recibe $11$.
+Pero por la poca cantidad de símbolos, no podemos decidir si 
+$11$ fue un error o no. Este es un ejemplo que motiva una búsqueda 
+de equilibrio: demasiados bits permiten descifrar más fácilmente,
+pero es ineficiente, y viceversa. 
+
+Tomemos entonces $C_2 = \left\{ 000, 101, 110, 011 \right\} $. 
+Supongamos que enviamos $101$ y hubo un solo error.
+Las palabras posibles que el receptor tiene son $001, 111, 100$.
+Aquí hay una ventaja: si el receptor recibe $001$, puede saber 
+que hubo un error porque $001$ no existe en $C_2$. Lo mismo 
+sucede con las demás.
+
+Pero la palabra que llegara fuera $001$, cuál es la palabra 
+original más probable? La probabilidad de que $000$ o $101$
+sean las originales es $p$, y lo mismo pasa con $011$ (solo 
+un error genera esas palabras). Por lo tanto, no tenemos 
+un criterio para discriminar los candidatos posibles y corregir el error.
+
+Tomemos $C_3 = \left\{ 11111, 10000, 01100, 00011 \right\} $ y veamos 
+si es mejor, y denotemos $\alpha_i$ a la iécima palabra 
+del alfabeto. 
+
+Si el receptor recibe $01101$, sabe que hubo un error. La probabilidad de que
+$\alpha_3$ genere ese error es $p$, mientras que la de $\alpha_1, \alpha_3,
+\alpha_4$ son $p^2, p^4, p^3$, respectivamente. 
+
+Vemos que para la palabra $01101$ tenemos criterio suficiente para 
+discriminar y corregir. Puede demostrarse que, si usamos $C_3$, esto es así
+para todos los errores posibles.
+
+\end{quote}
+\normalsize
+
+\begin{definition}[Distancia de Hamming]
+    La distancia de Hamming entre dos palabras $\alpha, \gamma \in \left\{ 0, 1 \right\}^{*} $
+    es $\delta_{H} = \# \left\{ i : \alpha_i \neq \gamma_i \right\} $.
+\end{definition}
+
+Como la distancia de Hamming es la cantidad de bits diferentes entre $\alpha$ y
+$\gamma$, puede interpretarse como la cantidad de errores necesarios para que
+enviando $\alpha$ se reciba $\gamma$.
+
+La distancia de Hamming es una distancia en el sentido estricto; es decir, 
+
+
+\small
+\begin{quote}
+
+\begin{enumerate}
+    \item $d_H (\alpha, \gamma) \geq 0$ 
+    \item $d_H(\alpha, \gamma) = 0 \iff \alpha = \gamma$
+    \item $d_H(\alpha, \gamma) = d_H(\gamma, \alpha)$
+    \item $d_H (\alpha, \gamma) \leq d_H(\gamma, \beta) + d_H(\beta,\gamma)$
+\end{enumerate}
+
+\end{quote}
+\normalsize
+
+Todas estas propiedades son triviales excepto la $4.$, que se llama desigualdad
+triangular.  Daremos una prueba de esta propiedad. 
+
+
+\small
+\begin{quote}
+
+\textbf{Prueba (desigualdad triangular).} Sean 
+
+\begin{align*}
+    A &= \left\{ i : \alpha_i = \gamma_i \right\}  \\ 
+    B &= \left\{ i : \alpha_i = \beta_i \right\} \\
+    C &= \left\{ i : \beta_i = \gamma_i \right\} 
+\end{align*}
+
+Observe que, por definición, 
+
+\begin{align*}
+    d_H (\alpha, \gamma) &= n - |A| = |\overline{A}| \\ 
+    d_H (\alpha, \beta) &= n - |B| = |\overline{B}| \\ 
+    d_H (\gamma, \beta) &= n - |C| = |\overline{C}|
+\end{align*}
+
+Sea $i \in  B \cap C$; es decir, $i$ un bit que $\alpha$ y $\beta$ comparten, y que
+$\beta$ y $\gamma$ comparten. Por transitividad, $\alpha_i =\gamma_i$.
+Y por definición resulta $i \in A$. Es decir, $B \cap C \subseteq A$.
+De esto se sigue que $\overline{A} \subseteq \overline{B \cap C}$. Pero, por de Morgan, 
+$\overline{B \cap C} = \overline{B} \cup \overline{C}$. Por lo tanto tenemos 
+
+\begin{align*}
+    d_H(\alpha, \gamma) = |\overline{A}| \leq |\overline{B} cup\overline{C}| \leq |\overline{B}| + |\overline{C}| = d_H(\alpha. \beta) + d_H(\beta, \gamma)
+\end{align*}
+
+Esto concluye la prueba.
+\end{quote}
+\normalsize
+
+\begin{definition}[Disco]
+    El disco de radios alrededor de $\alpha \in \left\{ 0, 1 \right\}^n $ es 
+
+    \begin{align*}
+        D_r(\alpha) = \left\{ \gamma \in \left\{ 0, 1 \right\}^n : d_H(\alpha, \gamma) \leq r  \right\} 
+    \end{align*}
+\end{definition}
+
+En otras palabras, el disco de radio $r$ alrededor de una palabra $\alpha$ del
+código es el conjunto de palabras del código que difiere de $\alpha$ por a lo
+sumo $r$ símbolos. Como $\alpha$ difiera de $\alpha$ por cero símbolos, es
+claro que $\alpha \in D_r(\alpha)$ para todo $r$.
+
+\begin{definition}[Detección]
+    Un código $C \subseteq \left\{ 0, 1 \right\}^n $ detecta (hasta) $r$ errores si 
+
+    \begin{align*}
+        \forall \alpha \in C : D_r(\alpha) \cap C = \left\{ \alpha \right\} 
+    \end{align*}
+\end{definition}
+
+La definición establece que, dado un mensaje $\alpha$, en el código no hay
+palabras en el código que difieran de $\alpha$ por menos de $r$ símbolos. Esto
+es lo que permite la detección. Por ejemplo, si $C = \left\{ 0001, 0011, 0111
+\right\} $, resulta que $D_1(0001) \cap C = \left\{ 0001, 0011 \right\} $, y el
+código \textit{no} detecta (hasta) 1 error. Intuitivamente, esto significa que
+podríamos enviar $0001$ y recibir $0011$, pero como $0011 \in C$ no podríamos
+detectar que hubo un error.
+
+En cambio, si $C = \left\{ 0001, 0111, 1000 \right\} $, resulta que
+$D_1(\alpha) \cap C = \left\{ \alpha \right\} $ para cada $\alpha \in C$. Esto
+significa que si enviamos una palabra del código y sucede un error, podríamos
+detectarlo. Sin embargo, $D_2(\alpha) \cap C \neq \left\{ \alpha \right\} $
+para todo $\alpha \in C$, porque $D_2(\alpha) \cap C = C$.
+
+
+\begin{definition}[Corrección]
+    Un código $C \subseteq \left\{ 0, 1 \right\}^{n} $ corrige hasta $t$ errores si 
+
+    \begin{align*}
+        \forall \alpha, \gamma \in C : \alpha \neq \gamma : D_t(\alpha) \cap D_t(\gamma) = \emptyset
+    \end{align*}
+\end{definition}
+
+Si esto se satisface, será tal que si una palabra $\alpha \in C$ se envía con hasta
+$t$ errores, no existe ninguna otra palabra en $C$ que haya podido generar
+$\alpha$ a través de $t$ errores.
+
+Por ejemplo, el ejemplo $C = \left\{ 0001, 0111, 1000 \right\} $ no corrige 
+hasta un error. Intuitivamente, si enviamos $0001$ y el error 
+es $0101$, es imposible determinar si este error vino de $0001$
+o de $0111$---ambas palabras están "a un error de distancia"
+del mensaje recibido. Formalmente, esto significa que 
+
+\begin{align*}
+    D_1(0001) \cap D_1(0111) = \left\{ 0101, 0011 \right\} \neq \emptyset
+\end{align*}
+
+
+
+\begin{definition}[$\delta(C)$]
+    Dado $C \subseteq \left\{ 0, 1 \right\}^{n} $, definimos 
+
+    \begin{align*}
+        \delta(C) = \min \left\{ d_H (\alpha, \gamma) : \alpha, \gamma \in C \land  \alpha \neq \gamma \right\} 
+    \end{align*}
+\end{definition}
+
+Si tenemos solo un código $C$, usamos $\delta$ para denotar $\delta(C)$. Como
+esta es la distancia mínima existente entre dos palabras del código, cuanto
+mayor sea $\delta$ mayor será la cantidad mínima de errores necesaria para
+producir un error que no se puede detectar---esto es, un error que lleva de una
+palabra del alfabeto a otra palabra del alfabeto.
+
+\small
+\begin{quote}
+
+\textbf{Ejemplo.} Hagamos una tabla para las distancias entre las palabras de $C_1, C_2$ y $C_3$
+dadas en el primer ejemplo de este capítulo. Para $C_1$ tenemos
+
+\begin{align*}
+    \begin{bmatrix} 
+         & 00 & 01 &10 &11 \\ 
+        00 & 0 & 1 & 1 & 2  \\ 
+        01 & 1 & 0 & 2 & 1 \\ 
+        10 & 1 & 2 & 0 & 1 \\ 
+        11 & 2 & 1 & 1 & 0
+    \end{bmatrix} 
+\end{align*}
+
+Para $C_2$, 
+
+\begin{align*}
+    \begin{bmatrix} 
+         & 000 & 101 & 110 & 011 \\ 
+        000 & 0 & 2 & 2 & 2  \\ 
+        101 & 2 & 0 & 2 & 2 \\ 
+        110 & 2 & 2 & 0 & 2 \\ 
+        011 & 2 & 2 & 2 & 0
+    \end{bmatrix} 
+\end{align*}
+
+Para $C_3$,
+
+\begin{align*}
+    \begin{bmatrix} 
+         & 11111 & 10000 & 01100 & 00011 \\ 
+        11111 & 0 & 4 & 3 & 3  \\ 
+        10000 & 4 & 0 & 3 & 3 \\ 
+        01100 & 3 & 3 & 0 & 4 \\ 
+        00011 & 3 & 3 & 4 & 0
+    \end{bmatrix} 
+\end{align*}
+
+Si recordamos lo que vimos en el ejemplo con $C_1, C_2, C_3$,
+recordaremos que $C_1$ no detectaba ni corregía errores, 
+que $C_2$ detectaba pero no corregía errores, y que $C_3$
+detectaba y corregía errores. Es intuitivo pensar que 
+existe cierta relación entre $\delta$ y la calidad del 
+código, en tanto que $\delta_1 = 1, \delta_2 = 2, \delta_3 = 3$.
+
+
+\end{quote}
+\normalsize
+
+\begin{theorem}
+    Sea $C \subseteq \left\{ 0, 1 \right\}^{n} $ y $\delta = \delta(C)$.
+    Entonces \textit{(1)} $C$ detecta $\delta - 1$ errores, pero no detecta
+    $\delta$; y \textit{(2)} Si $t = \left\lfloor \frac{\delta-1}{2}
+    \right\rfloor$, entonces $C$ corrige $t$ errores pero no $t + 1$.
+\end{theorem}
+
+Del teorema se sigue fácilmente que $\delta = 1 \Rightarrow $ no se detectan ni
+corrigen errores; $\delta = 2$ detecta un error y no más, pero no corrige
+errores, pues $\left\lfloor \frac{1}{2} \right\rfloor = 0$. Finalmente, si
+$\delta = 3$, se detectan 2 pero no 3, pero se corrige un error (pero no 2).
+
+Que detecta 2 pero no tres, y corrige uno pero no 2, significa que si 
+dos bits han cambiado me puedo dar cuenta que hubo un error; y que existe al menos 
+un error de dos bits que no se puede corregir. 
+
+
+\small
+\begin{quote}
+
+    \textbf{Prueba.} \textit{(1)} Sea $\alpha \in C$ y $\gamma \in D_{\delta-1}(\alpha) \cap  C$. De esto 
+    se sigue que $d_H(\alpha, \gamma) \leq \delta - 1 < \delta$, lo cual 
+    implica que $\alpha = \gamma$. Luego $C$ detecta 
+    $\delta - 1$ errores (por def.).
+
+    Pero no detecta $\delta$, pues $\delta = \min \left\{ d_H(\alpha,\gamma) :
+    \alpha, \gamma \in C, \alpha \neq \gamma \right\} $. Tomando $v, w \in C$
+    con $\delta = d_H(v, w)$ resula que $w \in D_{\delta}(v) \cap C \land  w
+    \neq v$.
+
+    \textit{(2)} Sea $u \in D_t(v) \cap D_t(w)$ con $v, w \in C, v \neq w$. Entonces 
+
+    \begin{align*}
+        \delta \leq d_H(v, w) \leq d_H(v, u) + d_H(u, w) \leq t + t = 2t
+    \end{align*} 
+
+    Pues $t = \left\lfloor \frac{\delta-1}{2} \right\rfloor \leq \frac{\delta - 1}{2}$ tenemos 
+
+    \begin{align*}
+        d_H(v, w) \leq 2t \leq \delta - 1
+    \end{align*}
+
+    Entonces $\delta \leq \delta - 1$, lo cual es absurdo. Entonces el $u$ en cuestión no existe, 
+    y $D_t(v) \cap D_t(w) = \emptyset$. 
+
+    Ahora veamos que no corrige $t + 1$. Sea $v, w \in C, v \neq w$, tales que
+    $\delta = d_H(v, w)$. Hay $\delta$ bits distintos entre $v$ y $w$. Tomemos
+    $t + 1$ de esos bits, y cambiémoslos en $v$, obteniendo una palabra $u$.
+    Por construcción de $u$, $d_H(v, u) = t + 1$. Luego $u \in D_{t+1}(v)$. Si
+    probamos que $u \in D_{t+1}(w),$ tendremos $D_{t+1}(v) \cap D_{t+1}(w) \neq
+    \emptyset$. Pero, por construcción de $u$,
+
+    \begin{align*}
+        d_H(u, w) &= \delta - (t+1)
+    \end{align*}
+
+    Queremos ver que $\delta - (t + 1) \leq t+ 1$; es decir que
+
+        \begin{align*}
+            \delta \leq 2t + 2
+        \end{align*}
+
+    \textit{(Caso $\delta = 2k + 1$)} En este caso, 
+
+    \begin{align*}
+        t = \left\lfloor \frac{2k}{2} \right\rfloor = k
+    \end{align*}
+
+    y $\delta = 2k+1 \leq 2k+2 = 2t + 2$, que es lo que se quería demostar.
+
+    \textit{(Caseo $\delta = 2k$)} En este caso, 
+
+    \begin{align*}
+        t = \left\lfloor \frac{2k-1}{2} \right\rfloor = \left\lfloor k - \frac{1}{2} \right\rfloor = k - 1
+    \end{align*}
+
+    Entonces $2t + 2 = 2(k-1) + 2 = 2k = \delta$, y $\delta \leq \delta$.
+
+\end{quote}
+\normalsize
+
+\begin{theorem}[Cota de Hamming]
+    Sea $C \subseteq \left\{ 0, 1 \right\}^n $. Sea $\delta = \delta(c)$ y $t =
+    \left\lfloor \frac{\delta-1}{2} \right\rfloor$. Entonces 
+
+    \begin{align*}
+        |C| \leq \frac{2^n}{1 + n + \binom{n}{2} + \ldots  + \binom{n}{t}}
+    \end{align*}
+\end{theorem}
+
+Un ejemplo de aplicación de este teorema es el siguiente. $C_3$ tiene
+cardinalidad $4$, corrige $1$ error (tiene $\delta = 3$), y tiene $n = 5$.
+$C_2$, a su vez, tenía $n = 3$. Entonces, uno podría preguntar si existe algún
+código $C$ con cardinalidad $4$ y $n = 4$ que corriga un error (es decir, que opere tan
+bien como $C_3$ pero usando menos bits). La cota de Hamming nos dice que, 
+si tal código existiese, como $t$ sería $1$, tendríamos 
+
+\begin{align*}
+    4 = |C| \leq \frac{2^4}{1 + 4} = \frac{16}{5} = 3.2
+\end{align*}
+
+lo cual es absurdo. Es decir, no hay ningún código con $n = 4$ de cardinalidad
+$4$ que sea mejor que $C_3$.
+
+
+\small
+\begin{quote}
+
+    \textbf{Prueba de la Cota de Hamming.} Sea $A = \bigcup_{v \in C} D_t(v)$. Como $t = \left\lfloor \frac{\delta-1}{2} \right\rfloor$, $C$ corrige $t$ errores y 
+
+    \begin{align*}
+        \forall v, w \in C: v \neq w : D_t(v) \cap D_t(w) = \emptyset
+    \end{align*}
+
+    Es decir que la unión $A$ es disjunta. Esto implica que $|A| = \sum_{v \in C} |D_t(v)|$.
+
+    Sean
+
+    \begin{align*}
+        S_r(v) = \left\{ w \in \left\{ 0, 1 \right\}^n : d_H(v, w) = r \right\} 
+    \end{align*}
+
+    Entonces $D_t(V) = \bigcup_{r=0}^{t} S_r(v)$, y esta unión es obviamente disjunta. Luego 
+    $|D_t(v)| = \sum_{r = 0}^{t} |S_r(v)|$. La pregunta es cuál es el valor de $|S_r(v)|$.
+
+    Recordemos que 
+
+    \begin{align*}
+        w \in S_r(v) &\iff d_H(v, w) = r \\ 
+                     &\iff w \text{ difiere en exactamente $r$ bits de } v
+    \end{align*}
+
+    Esa última condición nos permite definir un conjunto de bits; es decir, 
+    el conjunto de los $r$ bits en que $v$ y $w$ difieren. Y a su vez, tal 
+    conjunto nos identifica a $w$ (relativo a $v$). 
+
+    Es decir, $w$ mapea a un conjunto de $r$ bits, y el conjunto de $r$ bits 
+    mapea a $w$ cambiando esos $r$ bits a $v$. Es decir, existe una biyección 
+    entre $S_r(V)$ y el conjunto de subconjuntos de $r$ bits, de los $n$
+    bits posibles.
+
+    Como se trata de una biyección, 
+
+    \begin{align*}
+        |S_r(v)| &= \text{ cardinalidad del conjunto de subconjuntos de $r$ bits del conjunto de $n$ bits} \\ 
+                 &= \binom{n}{r}
+    \end{align*}
+
+
+    En consecuencia, 
+
+    \begin{align*}
+        |D_t(v)| &= \sum_{r=0}^{t} |S_r(v)| \\ 
+                 &= \sum_{r=0}^{t} \binom{n}{r}
+    \end{align*}
+
+    Pero como $|A| = \sum_{v \in C} |D_t(v)|$, tenemos 
+
+    \begin{align*}
+        |A| &= \sum_{v \in C} \left( \sum_{r=0}^{t} \binom{n}{r} \right) \\ 
+            &= |C| \sum_{r=0}^{t} \binom{n}{r}
+    \end{align*}
+
+    Por lo tanto, 
+
+    \begin{align*}
+        |C| = \frac{|A|}{\sum_{r=0}^{t} \binom{n}{r}}
+    \end{align*}
+
+    Como $A \subseteq \left\{ 0,1 \right\}^n \Rightarrow |A| \leq 2^n $, tenemos 
+
+    \begin{align*}
+        |C| \leq \frac{2^n}{\sum_{r=0}^{t} \binom{n}{r}}
+    \end{align*}
+
+\end{quote}
+\normalsize
+
+Una pregunta natural es si existen códigos donde la cardinalidad de $C$ alcance 
+exactamente la cota, es decir códigos tal que $|C| = 2^n / \sum^t \binom{n}{r}$.
+
+\begin{definition}[Códigos perfectos]
+    Un código se dice perfecto si alcanza exactamente la cota de Hanning.
+\end{definition}
+
+\subsection{Códigos lineales}
+
+\begin{definition}
+    Si $C \subseteq \left\{ 0, 1 \right\}^n $ es un subespacio vectorial, se llama 
+    un código lineal, suma módulo dos.
+\end{definition}
+
+Recordemos que $C \subseteq V$ es un subespacio vectorial si $V$ es un espacio
+vectorial o si $C$ es en sí mismo un espacio vectorial. En el caso 
+particular de $C = \left\{ 0, 1 \right\}^n $, veremos que $C$ es subespacio 
+vectorial si y solo si 
+
+\begin{itemize}
+    \item $c \neq \emptyset$ 
+    \item $\alpha, \beta \in C \Rightarrow \alpha + \beta \in C$ 
+    \item $\alpha \in C \Rightarrow 1 \cdot \alpha \in  C$
+    \item $\alpha \in C \Rightarrow 0 \cdot \alpha \in  C$
+\end{itemize}
+
+Pero el tercer ítem es trivial porque $1 \cdot \alpha = \alpha$; y el cuarto
+también porque $0 \cdot \alpha = \overrightarrow{0}$, y puede demostrarse que
+$\overrightarrow{0} \in C$. Simplemente debe observarse que 
+$\alpha + \alpha = \overrightarrow{0}$ para todo $\alpha \in C$ ($1 + 1 = 0, 0 + 0 = 0$).
+
+Como ejemplos, 
+
+\begin{align*}
+    C_1 &= \left\{ 00, 01, 10, 11 \right\}  ~ ~ ~ \text{ es lineal }\\
+    C_2 &= \left\{ 000, 101, 110, 011 \right\}  ~ ~ ~ \text{ es lineal }\\
+    C_3 &= \left\{ 11111, 10000, 01100, 00011 \right\}  ~ ~ ~ \text{ no es lineal }\\
+    C_3 &= \left\{ 00000, 01111, 10011, 11100 \right\}  ~ ~ ~ \text{ es lineal }\\
+\end{align*}
+
+\begin{definition}[Peso de Hamming]
+    El peso de Hamming de un código $x$ es $|X| = d_H(x, \overrightarrow{0})$. Esto
+    equivale a la cantidad de $1$'s en $x$.
+\end{definition}
+
+\begin{lemma}
+    Si $C$ es lineal, entonces 
+
+    \begin{align*}
+        \delta = \delta(C) = \min \left\{ |x| : x \in C \land  x \neq \overrightarrow{0} \right\} 
+    \end{align*}
+\end{lemma}
+
+
+\small
+\begin{quote}
+
+\textbf{Prueba.} Sea $ p = \min \left\{ |x| : x \in  C \land  x \neq
+\overrightarrow{0} \right\} $ y $\delta = \delta(C)$. Veremos que $\delta \leq
+p \land  p \leq \delta$. 
+
+Sea $x \in C$ con $\times  \neq 0$ y tal que $p = |x| \Rightarrow p = d_H(x,
+\overrightarrow{0})$. Esto implica que $p \geq \delta$.
+
+Sean $x, y \in C$ distintos con $\delta = d_H(x, y) = |x + y| \in C$ (pues $C$) es lineal. Entonces $yx \neq y \Rightarrow x+y \neq \overrightarrow{0}$. Luego $\delta \geq p$.
+
+
+
+\end{quote}
+\normalsize
+
+Sea $T : V \to W$ una transformación lineal. Entonces $Im(T)$ es un subespacio
+vectorial de $W$ y $Nu(T)$ es un subespacio vectorial de $V$. Dada una matriz
+$A$, la función $T(x) = xA$ es una transformación lineal. Si $A$ es $k \times
+n$, y $\overrightarrow{x} \in \left\{ 0, 1 \right\}^{k} $, entonces
+$\overrightarrow{x}A$ es un vector $1 \times n$. Por ejemplo,
+
+\begin{align*}
+    \begin{bmatrix} 
+        1 \\ 0 \\ 1
+    \end{bmatrix} \begin{bmatrix} 
+    1 & 0 & 0 & 1 \\ 
+    0 & 1 & 1 & 0 \\ 
+    1 & 0 & 1 & 0
+    \end{bmatrix} = \begin{bmatrix} 
+    1 + 0 + 1 & 0 + 0 + 0 & 0 + 0 + 1 & 1 + 0 + 0 
+    \end{bmatrix} = \begin{bmatrix} 
+    0 & 0 & 1 &  1
+    \end{bmatrix} 
+\end{align*}
+
+Recordemos que $B \subseteq V$ es base de $V$ si $B$ genera $V$ y si $B$ es
+linealmente independiente. En este caso, en la generación de $V$ solo se suman
+vectores de $V$, pues los únicos escalares son $0$ y $1$. 
+
+Si $\alpha \in C \Rightarrow 1\alpha = \alpha$ y $0\alpha =
+\overrightarrow{0}$, y por lo tanto ser LI es no ser LD. En resumen, 
+un conjunto $\left\{ \alpha_1, \ldots, \alpha_t \right\}$ es LD si 
+
+\begin{align*}
+    \exists k_1, \ldots, k_t : k_i \in \left\{ 0, 1 \right\} :  k_1 \alpha_1 + \ldots + k_t \alpha_t = 0
+\end{align*}
+
+Pues $k_i \in \left\{ 0, 1 \right\} $, el conjunto será LD si y solo si existe
+un elemento que es suma de otros o existe el cero.
+
+Todas las bases de un espacio $V$ tienen la misma cardinalidad y esa
+cardinalidad se llama la dimensión de $V$.
+
+\textbf{Notación.} Llamamos $n$ a la longitud del código, $k$ a la dimensión
+del código.
+
+\textbf{Observación.} $k = \dim(C) \Rightarrow C \simeq \left\{ 0, 1 \right\}^k
+\Rightarrow |C| = 2^k $, donde $\simeq$ denota un isomorfismo.
+
+\begin{definition}
+    Sea $C$ un código lineal de longitud $n$ y dimensión $k$.
+    Una matriz $G^{k \times n}$ se llama matriz generadora de $C$ si 
+
+    
+    \small
+    \begin{quote}
+    
+    \begin{enumerate}
+        \item $C= Im(G) = \left\{ z \in \left\{ 0, 1 \right\}^n : \exists x \in \left\{ 0, 1 \right\}^k : z = xG   \right\} $
+        \item Las filas de $G$ son base de $C$.
+    \end{enumerate}
+    
+    \end{quote}
+    \normalsize
+    
+\end{definition}
+
+Es importante ver que $(2) \Rightarrow (1)$ y que si 
+
+\begin{align*}
+    (1) \land  \text{las filas de $G$ son LI} \Rightarrow (2)
+\end{align*}
+
+Para conseguir un código de longitud $n$ y dimensión $k$, hay que tomar una
+matriz $G$ con $k$ filas y $n$ columnas con filas LI. Entonces se define
+$C = Im(G)$. En general, $G$ se toma de la forma $(I|A)$ o $(A | I)$.
+
+
+\small
+\begin{quote}
+
+\textbf{Ejemplo.} Sea 
+
+\begin{align*}
+    G = \begin{bmatrix} 
+        1 & 0 & 0 & 1 & 1 & 0 & 0 \\ 
+        0 & 1 & 0 & 0 & 1 & 1 & 0 \\ 
+        0 & 0 & 1 & 0 & 0 & 1 & 1 \\ 
+    \end{bmatrix} 
+\end{align*}
+
+Sea $C$ un código tal que $G$ es su matiz generadora. La longitud de $C$ es $7$,
+pues $G$ tiene $7$ columnas. La cantidad de palabras de $C$ es $2^3$, pues
+$G$ tieen $3$ filas. Pero cuáles son las palabras de $C$?
+
+La respuesta se obtiene tomando todos los elementos $x \in \left\{ 0, 1
+\right\}^3 $ y multiplicándolos por $G$. Las primeras $k=3$ coordenadas 
+de todas las palabras de $C$ son los $x$ por los que se multiplicó 
+$G$. 
+
+
+
+\end{quote}
+\normalsize
+
+La matriz generadora permite separar las palabras que uno quiere enviar 
+del código mismo: 
+
+\begin{align*}
+    \text{Palabras que quiero enviar} \to \text{Palabras del código} \to  \text{Recepción} \to \text{Decodificación}
+\end{align*}
+
+o bien 
+
+\begin{align*}
+    x \in \left\{ 0, 1 \right\}^k \to xG = x(xA) \to x
+\end{align*}
+
+
+\small
+\begin{quote}
+
+\textbf{Ejemplo.} Sea 
+
+\begin{align*}
+    G = \begin{bmatrix} 
+        1 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 
+        0 & 1 & 0 & 1 & 1 & 0 & 1 & 0 & 0 & 0 
+        0 & 0 & 1 & 0 & 0 & 0 & 0 & 1 & 0 & 0 
+        1 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 1 & 0 
+        1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 1 
+    \end{bmatrix} = [A | I]
+\end{align*}
+
+Pues $n = 10, k = 5, |C| = 2^5 = 32$. Tomemos dos palabras no nulas que 
+no sean columnas de $G$; p. ej. $x = 11000, y = 10100$. Entonces 
+
+\begin{align*}
+    xG &= 11111 \overbrace{11000}^{x}\\
+    yG &= 10000 \overbrace{10100}^{y}
+\end{align*}
+
+Con lo cual vemos que $G$ puede escribirse como $[A | I]$.
+
+
+\end{quote}
+\normalsize
+
+\begin{definition}
+    Dado un código lineal $C$, una matriz $H$ se llama matriz de correción de $C$
+    si $C = Nu(H) = \left\{ x \in \left\{ 0, 1 \right\}^n : Hx^t = 0  \right\} $.
+    $H$ debe tener $n$ columnas. 
+\end{definition}
+
+Aunque la definición no lo impone, pediremos que las filas de $H$ sean LI.
+
+\begin{theorem}
+    Sea $C$ código con matriz generadora $G = [A | I]$ of $G = [I | A]$.
+    Entonces $H = [I | A^t]$  (o $H = [A^t | I]$) es una matriz de 
+    chequeo de $C$.
+\end{theorem}
+
+Si $A$ es cuadrada no pasa nada, pero sino lo es, las $I$ de $[A|I]$ y de $[I |
+A^t]$ van a tener dimensiones distintas, y se debe usar aquella que sea
+adecuada.
+
+
+\small
+\begin{quote}
+
+    \textbf{Ejemplo.} Usando $G = [A | I]$ del último ejemplo, tenemos que 
+
+\begin{align*}
+    H = [I | A^t]
+\end{align*}
+
+\end{quote}
+\normalsize
 
 
 
@@ -2614,42 +3664,49 @@ $\mathscr{G}$ con este nuevo orden colorea $G$ con exactamente $t$ colores.
     Pruebe que el gráfico en la figura tiene número cromático 4.
 \end{problem}
 
-Pues $C_5 \subseteq G$, $\chi(G) \geq 3$. Es fácil dar un coloreo de $4$
-colores:
+Pues $C_5 \subseteq G$, $\chi(G) \geq 3$. Es fácil dar un coloreo de $4$ colores. 
+Ahora solo queda ver que un coloreo de 3 colores no es posible.
+
+Denotemos con $c_1, \ldots, c_5$ los vértices que conforman el subgrafo 
+$C_5$; con $w$ el vértice central del subgrafo estrella, y con 
+$x_1, \ldots, x_4$ cada uno de los vértices no centrales 
+del subgrafo estrella.
+
+Asuma que existe un coloreo propio de tres colores sobre $G$. Asumamos, sin
+p.d.g., que los colores que colorean $c_1, \ldots, c_5$ son $\left\{ 0, 1, 2
+\right\} $. Claramente, todos los otros vértices deben colorearse 
+con colores de este conjunto. 
+
+Sea $\varphi \in \left\{ 0, 1, 2 \right\} $ el color asignado a $w$, el vértice
+central de la estrella. Haremos uso de una propiedad que 
+no es difícil de probar (y es trivial observar):
 
 
-\begin{center}
-\includegraphics[scale=0.3]{Grafo10}
-\end{center}
+\small
+\begin{quote}
 
-Ahora considere el siguiente subgrafo de $G$:
+\textit{Propiedad.} En un $C_5$, cada vértice tiene dos vértices no adyacentes.
+En un coloreo propio de tres colores de un $C_5$, todos los vértices comparte
+color con un vértice no adyacente y difiere del otro, excepto por uno que no
+comparte color con ninguno de los vértices.
 
-\begin{center}
-\includegraphics[scale=0.3]{Subgrafo10}
-\end{center}
+\end{quote}
+\normalsize
 
-(Aquí los números denotan nombres de las aristas y no colores, como en el caso
-anterior). Pues contiene a $C_3$ necesitamos al menos tres colores para
-colorearlo propiamente. Asuma que existe un coloreo propio de tres colores. Los
-dos $C_3$s se colorearán con los colores necesarios; por ejemplo, $c(a) = c(c) =
-0, c(b) = 1, c(d) = c(e) = 2$. El único color disponible para $f$ es $1$; y si
-se colorea a $f$ con $1$ no existe ningún color disponible para $g$ (y
-viceversa). Es decir, no existe un coloreo propio de tres colores. 
+Asumamos, sin p.d.g., que $c_5$ es el vértice del $C_5 \subseteq G$ que no
+comparte color con ninguno de los vértices adyacentes. 
 
-El resultado anterior implica que $\chi(G) \geq 4$. Pero ya dimos un coloreo
-propio de cuatro colores de $G$. Luego $\chi(G) = 4$.
+Pues $c(w) = \varphi$, tenemos que existen dos colores posibles para cada $x_1,
+\ldots, x_4$; a saber, $\left\{ 0, 1, 2 \right\} - \varphi$. Pero cada vértice
+$x_1, \ldots, x_4$ se une a un par de vértices del $C_5$ que \textit{no} son
+adyacentes en el $C_5$. En particular, existe un $x_i$ que se une a $c_5$ y
+$c_j$ para algún $1 \geq j < 5$. Pero dado que el color de $c_5$ y $c_j$
+difieren, hay dos colores que $x_i$ no puede tomar. Luego existe un único color
+disponible para $x_i$, llamémosle $\psi$, donde $\varphi \neq \psi$
+necesariamente. 
 
 
-\pagebreak 
 
-\begin{problem}
-    Igual que el anterior pero con un $C_7$.
-\end{problem}
-
-Es fácil notar que $\mathscr{G}$ da un coloreo propio de $4$ colores, con lo cual
-$\chi(G) \leq 4$. Pues $C_7 \subseteq G$, $\chi(G) \geq 3$. Es decir, $\chi(G)
-\in \left\{ 3, 4 \right\} $. Es fácil encontrar un subgrafo de $G$ que no puede
-colorearse propiamente con $3$ colores, lo cual concluye la prueba.
 
 \pagebreak 
 

@@ -1,0 +1,190 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{newtxtext} \usepackage{newtxmath}
+\usepackage{amsmath, amssymb}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example} \newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+
+
+\begin{document}
+
+
+Sabemos que $\chi(G) \geq 3$ si y solo si $G$ contiene un ciclo impar. Asuma
+que $G$ contiene un ciclo impar. Sean $x_1, x_2, x_3, \ldots, x_{2k+1} \in V$ los
+vértices del ciclo, tal que $x_i x_{i+1}$ es un lado para cada $i$ (con módulo, 
+es decir $x_{2k+1} x_1$ es un lado). La regla de transformación que va de $G$ a
+$\overrightarrow{G}$ nos dice que podemos dar una dirección a cada lado en $E$.
+
+Como no existen caminos dirigidos de tres vértices o más en
+$\overrightarrow{G}$, en  $\overrightarrow{G}$ sucede lo siguiente: Si
+$\overrightarrow{x_i x_{i+1}}$ es un lado, entonces
+$\overleftarrow{x_{i+1}x_{i+2}}$ es un lado. De otro modo, $\overrightarrow{x_i
+x_{i+1}x_{i+2}}$ sería un camino de tres vértices. 
+
+En $\overrightarrow{G}$, los vértices del ciclo pueden 
+comenzar con $\overrightarrow{x_1 x_2}$ o con $\overrightarrow{x_2 x_1}$. De lo anterior se sigue que si 
+se empieza con $\overrightarrow{x_1 x_2}$ es un lado, entonces todos los lados
+del ciclo son de la forma 
+
+\begin{align*}
+    x_{2j - 1} \to x_{2j } \leftarrow x_{2j  + 1}, ~ j \in \mathbb{N}
+\end{align*}
+
+Pero sabemos que $x_{2k+1}x_1$ es un lado en $E$. Si $\overrightarrow{x_{2k+1}
+x_1}$ es un lado en $\overrightarrow{G}$, resulta que
+$\overrightarrow{x_{2k+1}x_1 x_2}$ es un lado de tres vértices. Si
+$\overleftarrow{x_{2k+1}x_1}$ es un lado en $\overrightarrow{G}$, resulta que
+$\overleftarrow{x_{2k}x_{2k+1}x_1}$ es un lado de $\overrightarrow{G}$. En
+ambos casos terminamos con lados dirigidos de tres vértices. La contradicción
+se sigue de asumir que $G$ contiene un ciclo impar. Y como no contiene un ciclo
+impar su número cromático es $2$ $ \Rightarrow $ $G$ es bipartito.
+
+La demostración para el caso en que, en $\overrightarrow{G}$, los vértices
+del ciclo comienzan con $\overrightarrow{x_2 x_1}$ es análoga.
+
+\pagebreak 
+
+\begin{problem}
+    Recordemos que $\mathbb{Z}_n$ denota $\left\{ 0, 1, \ldots, n - 1 \right\}
+    $. Sea $G_{p, q}$ el grafo con vértices $v_{i, j}$ con $i \in \mathbb{Z}_p,
+    j \in \mathbb{Z}_q$ y con lados $E = E_1 \cup E_2$, donde 
+
+    \begin{align*}
+        E_1 &= \left\{ v_{i, j} v_{i+1, j} : i \in \mathbb{Z}_p, j \in \mathbb{Z}_q  \right\}  \\ 
+        E_2 &= \left\{ v_{i, j} v_{k, j + 1 } : i, k \in \mathbb{Z}_p, j \in \mathbb{Z}_q \right\} 
+    \end{align*}
+
+    Calcular $\chi(G_{p, q})$ para todo $p, q \geq 3$.
+\end{problem}
+
+\textit{Caso 1 : $q, p $ pares}. Considere los vértices del conjunto
+
+\begin{align*}
+    F_j := \left\{   v_{1, j}, v_{2, j}, \ldots, v_{p, j}  \right\}
+\end{align*}
+
+Llamaremos a este conjunto la $j$-écima fila. 
+
+Por def. de $E_1$, los vértices de $F_0$ forman un ciclo. Pues $q$ par, forman
+un ciclo par que requiere dos colores. Sean esos dos colores $0, 1$.
+
+Ahora bien, cada vértice de $F_0$ está conectado con todos los vértices de
+$F_{1}$, que a su vez constituye otro ciclo par con dos colores necesarios.
+Luego, los dos colores necesarios para $F_{1}$ son distintos de $0, 1$;
+digamos, $2, 3$.
+
+Una vez en $F_3$, podemos volver a colorear el ciclo impar con $0, 1$, $F_4$
+con $2, 3$, etc. En general, se puede dar un coloreo propio del tipo 
+
+\begin{align*}
+    c(v_{i, j}) = \begin{cases}
+        i \mod 2 & j \text{ par } \\ 
+        (i \mod 2) + 2 & j \text{ impar}
+    \end{cases}
+\end{align*}
+
+Que este coloreo es propio es fácil de ver. Asuma que $v_{xy}, v_{wz}$ son
+vecinos. Entonces o bien $v_{xy}v_{wz} \in E_1$ o bien $v_{xy}v_{wz} \in E_2$.
+En el segundo caso, $z$ y $y$ no comparten la misma paridad y la función asigna
+distintos colores a ellos. En el primer caso, los módulo de $x$ y $w$ sobre $2$
+son diferentes. En particular, no hay conflicto entre $F_{q}$ y $F_1$ porque
+$q$ y $1$ no comparten paridad.
+
+~ 
+
+\textit{Caso 2 : $q$ par, $p$ impar}. Puesto que $p$ impar, ahora resulta que $F_j$ es un ciclo 
+impar para todo $j$ y necesita tres colores. El mismo razonamiento que en el caso 
+anterior nos lleva a proponer
+
+\begin{align*}
+    c(v_{i, j}) = \begin{cases}
+        i \mod 3 & j \text{ par } \\ 
+        (i \mod 3) + 3 & j \text{ impar}
+    \end{cases}
+\end{align*}
+
+Es decir, coloreamos las "filas" (los ciclos impares) con los colores $\left\{
+0, 1, 2 \right\} $ en las filas pares, y con $\left\{ 3, 4, 5 \right\} $ en las
+impares. Una vez más, como $q$ y $1$ no comparten paridad, no hay conflicto
+entre $F_q$ y $F_1$.
+
+\pagebreak 
+
+\textit{(c)}   
+
+
+\textit{(1)} $(A \cap  B) \times C = (A \times C) \cap (B \times C) $.
+
+Considere el conjunto $S_1 = (A \cap B) \times C$. 
+
+\begin{align*}
+    S_1 = (A \cap B) \times C = \left\{ (x, y) : x \in A \cap B, y \in C \right\} 
+\end{align*}
+
+Ahora consideremos $S_2 = (A \times C) \cap (B \times C)$. El conjunto 
+$A \times C$ son los pares $(a, c)$ con $a \in A, c \in C$; 
+y el conjunto $B \times C$ son los pares $(b, c)$ con 
+$b \in B, c \in C$. Se sigue que su intersección
+resulta en los pares $(x, c)$ con $x \in A \cap B$. Es decir que 
+
+\begin{align*}
+    S_2 = (A \times C) \cap (B \times C) = \left\{ (x, y) : x \in A \cap B, y \in C \right\} = S_1
+\end{align*}
+
+Es decir que $(A \cap B) \times C = (A \times C) \cap  (B \times C)$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
