@@ -1,7 +1,7 @@
-—
+---
 title: An adolescent letter found in the park
 categories: [ Personal ]
-—
+---
 
 Do you recall the secret which was my offering to you?
 Remember you how young the dreams I dreamt, how pure the
