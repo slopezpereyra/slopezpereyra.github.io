@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  11 MAY 2024 15:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  22 MAY 2024 15:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -959,11 +959,547 @@ You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
 So I'll assume that you meant to type \cr instead.
 
-[49] [50] [51] [52]
-./Discrete.tex:3499: Undefined control sequence.
+[49]
+Overfull \hbox (5.33948pt too wide) in paragraph at lines 3476--3478
+[]\T1/ntxtlf/m/it/10 Sea $\OML/ntxmi/m/it/10 C$ \T1/ntxtlf/m/it/10 un código lin-eal con ma-triz de chequeo
+ []
+
+[50]
+./Discrete.tex:3511: Missing } inserted.
+<inserted text> 
+                }
+l.3511 \end{align*}
+                   
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./Discrete.tex:3511: Missing $ inserted.
+<inserted text> 
+                $
+l.3511 \end{align*}
+                   
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Discrete.tex:3511: Missing { inserted.
+<inserted text> 
+                {
+l.3511 \end{align*}
+                   
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+./Discrete.tex:3511: Extra }, or forgotten $.
+<recently read> }
+                 
+l.3511 \end{align*}
+                   
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./Discrete.tex:3511: Missing $ inserted.
+<inserted text> 
+                $
+l.3511 \end{align*}
+                   
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Discrete.tex:3511: Missing } inserted.
+<inserted text> 
+                }
+l.3511 \end{align*}
+                   
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./Discrete.tex:3511: Missing } inserted.
+<inserted text> 
+                }
+l.3511 \end{align*}
+                   
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./Discrete.tex:3511: Missing $ inserted.
+<inserted text> 
+                $
+l.3511 \end{align*}
+                   
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Discrete.tex:3511: Extra }, or forgotten $.
+<recently read> }
+                 
+l.3511 \end{align*}
+                   
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./Discrete.tex:3511: Missing $ inserted.
+<inserted text> 
+                $
+l.3511 \end{align*}
+                   
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Discrete.tex:3511: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.3511 \end{align*}
+                   
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./Discrete.tex:3511: Missing } inserted.
+<inserted text> 
+                }
+l.3511 \end{align*}
+                   
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./Discrete.tex:3511: Misplaced \omit.
+\math@cr@@@ ...@ \@ne \add@amps \maxfields@ \omit 
+                                                  \kern -\alignsep@ \iftag@ ...
+l.3511 \end{align*}
+                   
+I expect to see \omit only after tab marks or the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+./Discrete.tex:3511: Missing { inserted.
+<inserted text> 
+                {
+l.3511 \end{align*}
+                   
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+[51]
+./Discrete.tex:3615: Undefined control sequence.
+<argument>  x \circ w &= x \irc 
+                                (w_0 + w_1x + \ldots + w_{n-1}x^{n-1}) \\ &=...
+l.3615 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Discrete.tex:3615: Undefined control sequence.
+<argument>  x \circ w &= x \irc 
+                                (w_0 + w_1x + \ldots + w_{n-1}x^{n-1}) \\ &=...
+l.3615 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Runaway argument?
+ 
+./Discrete.tex:3620: Paragraph ended before \align* was complete.
+<to be read again> 
+                   \par 
+l.3620 
+       
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./Discrete.tex:3620: Missing $ inserted.
+<inserted text> 
+                $
+l.3620 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Discrete.tex:3620: Missing } inserted.
+<inserted text> 
+                }
+l.3620 
+       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./Discrete.tex:3620: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.3620 
+       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./Discrete.tex:3620: Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.3620 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+./Discrete.tex:3620: Extra }, or forgotten \endgroup.
+\par ...m \@noitemerr {\@@par }\fi \else {\@@par }
+                                                  \fi 
+l.3620 
+       
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./Discrete.tex:3621: Missing $ inserted.
+<inserted text> 
+                $
+l.3621     (w_
+              0 x + w_1x^2 + \ldots + w_{n-1}x^n) \mod (1 + x^n) &= w_0 x + ...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Discrete.tex:3621: Misplaced alignment tab character &.
+l.3621 ... + \ldots + w_{n-1}x^n) \mod (1 + x^n) &
+                                                  = w_0 x + w_1x^2 + \ldots ...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./Discrete.tex:3622: Misplaced alignment tab character &.
+<recently read> &
+                 
+l.3622 ...                                       &
+                                                  =w_{n-1} + w_0 x + \ldots ...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./Discrete.tex:3623: Misplaced alignment tab character &.
+<recently read> &
+                 
+l.3623 ...                                       &
+                                                  = w_{n-1} w_0 w_1 \ldots w...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./Discrete.tex:3624: Misplaced alignment tab character &.
+<recently read> &
+                 
+l.3624 ...                                       &
+                                                  = Rot(w)
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./Discrete.tex:3625: Misplaced \cr.
+\math@cr@@@ ->\cr 
+                  
+l.3625 \end{align*}
+                   
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./Discrete.tex:3625: Misplaced \noalign.
+\math@cr@@ ... \iffalse }\fi \math@cr@@@ \noalign 
+                                                  {\vskip #1\relax }
+l.3625 \end{align*}
+                   
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+./Discrete.tex:3625: Missing $ inserted.
+<inserted text> 
+                $
+l.3625 \end{align*}
+                   
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Discrete.tex:3625: Missing } inserted.
+<inserted text> 
+                }
+l.3625 \end{align*}
+                   
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./Discrete.tex:3625: Extra }, or forgotten \endgroup.
+\math@cr@@ ...th@cr@@@ \noalign {\vskip #1\relax }
+                                                  
+l.3625 \end{align*}
+                   
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./Discrete.tex:3625: Misplaced \noalign.
+\black@ #1->\noalign 
+                     {\ifdim #1>\displaywidth \dimen@ \prevdepth \nointerlin...
+l.3625 \end{align*}
+                   
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Overfull \hbox (208.39157pt too wide) detected at line 3625
+[]
+ []
+
+./Discrete.tex:3625: Extra }, or forgotten \endgroup.
+\endalign ->\math@cr \black@ \totwidth@ \egroup 
+                                                \ifingather@ \restorealignst...
+l.3625 \end{align*}
+                   
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./Discrete.tex:3625: Missing $ inserted.
+<inserted text> 
+                $
+l.3625 \end{align*}
+                   
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./Discrete.tex:3625: Display math should end with $$.
+<to be read again> 
+                   \endgroup 
+l.3625 \end{align*}
+                   
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+[52] [53]
+./Discrete.tex:3755: Undefined control sequence.
+<argument> ...\\ &=a(b\times 1_F) \\ &= \overcase 
+                                                  {b \times 1_F + \ldots b \...
+l.3755 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Discrete.tex:3755: Undefined control sequence.
+<argument> ...a \text { veces}} \\ &= b(\overcase 
+                                                  {1_F + \ldots + 1_F}^{a \t...
+l.3755 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Discrete.tex:3755: Undefined control sequence.
+<argument> ...\\ &=a(b\times 1_F) \\ &= \overcase 
+                                                  {b \times 1_F + \ldots b \...
+l.3755 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Discrete.tex:3755: Undefined control sequence.
+<argument> ...a \text { veces}} \\ &= b(\overcase 
+                                                  {1_F + \ldots + 1_F}^{a \t...
+l.3755 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[54] [55] [56]
+./Discrete.tex:3930: Undefined control sequence.
+<argument> ...alpha ^2) \\ &= \alpha ^2 + \alphax 
+                                                  + (\alpha + \alpha ^2)x^2 ...
+l.3930 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Discrete.tex:3930: Undefined control sequence.
+<argument> ...alpha ^2) \\ &= \alpha ^2 + \alphax 
+                                                  + (\alpha + \alpha ^2)x^2 ...
+l.3930 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Discrete.tex:3957: Undefined control sequence.
+<argument> ...\mod g) \\ &= \alpha ^2 x + \alphax 
+                                                  ^2 + (\alpha + \alpha ^2)x...
+l.3957 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Discrete.tex:3957: Undefined control sequence.
+<argument> ...alpha ^2)x^3 + (\alpha ^2 + \alphax 
+                                                  + (\alpha + \alpha ^2)x^2 ...
+l.3957 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Discrete.tex:3957: Undefined control sequence.
+<argument> ...\mod g) \\ &= \alpha ^2 x + \alphax 
+                                                  ^2 + (\alpha + \alpha ^2)x...
+l.3957 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Discrete.tex:3957: Undefined control sequence.
+<argument> ...alpha ^2)x^3 + (\alpha ^2 + \alphax 
+                                                  + (\alpha + \alpha ^2)x^2 ...
+l.3957 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Discrete.tex:3972: Undefined control sequence.
+<argument> ...3) &= \alpha ^4(\alpha ^2 + \alphax 
+                                                  + \alpha ^{-1} x + x^3) \\...
+l.3972 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Discrete.tex:3972: Undefined control sequence.
+<argument> ...3) &= \alpha ^4(\alpha ^2 + \alphax 
+                                                  + \alpha ^{-1} x + x^3) \\...
+l.3972 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[57]
+Overfull \hbox (22.28992pt too wide) detected at line 3980
+[]
+ []
+
+./Discrete.tex:3998: Undefined control sequence.
+<argument> ...x^3 + \alpha ^5(\alpha ^2 + \alphax 
+                                                  + \alpha ^{-1} x^2 + x^3) ...
+l.3998 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Discrete.tex:3998: Undefined control sequence.
+<argument> ...x^3 + \alpha ^5(\alpha ^2 + \alphax 
+                                                  + \alpha ^{-1} x^2 + x^3) ...
+l.3998 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (21.5499pt too wide) detected at line 3998
+[]
+ []
+
+[58] [59] [60]
+./Discrete.tex:4102: Undefined control sequence.
 <recently read> \mcd 
                      
-l.3499 ...$\left\{ i, j \right\} $ tales que $\mcd
+l.4102 ...$\left\{ i, j \right\} $ tales que $\mcd
                                                   (i, j) = 1$ (coprimos).
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -971,33 +1507,33 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[53] [54]
-Overfull \hbox (2.3011pt too wide) in paragraph at lines 3582--3585
+[61] [62]
+Overfull \hbox (2.3011pt too wide) in paragraph at lines 4185--4188
 []\T1/ntxtlf/m/it/9 Nota. \T1/ntxtlf/m/n/9 Este prob-lema es lindo para ver di-ver-sas per-muta-ciones del or-den $\OML/ntxmi/m/it/9 V[]; [] ; V[]$
  []
 
-[55] [56] [57]
-Overfull \hbox (7.8049pt too wide) detected at line 3807
+[63] [64] [65]
+Overfull \hbox (7.8049pt too wide) detected at line 4410
 []
  []
 
-[58]
+[66]
 LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 9.0pt on input line 3848.
- [59] [60] [61] (./Discrete.aux) ) 
+(Font)              scaled to size 9.0pt on input line 4451.
+ [67] [68] [69] (./Discrete.aux) ) 
 Here is how much of TeX's memory you used:
- 6968 strings out of 476091
- 99151 string characters out of 5794081
+ 6971 strings out of 476091
+ 99168 string characters out of 5794081
  1885330 words of memory out of 5000000
- 27190 multiletter control sequences out of 15000+600000
+ 27193 multiletter control sequences out of 15000+600000
  619755 words of font info for 200 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,26n,76p,501b,433s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/stxscr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexas.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on Discrete.pdf (61 pages, 565165 bytes).
+Output written on Discrete.pdf (69 pages, 590690 bytes).
 PDF statistics:
- 285 PDF objects out of 1000 (max. 8388607)
- 185 compressed objects within 2 object streams
+ 311 PDF objects out of 1000 (max. 8388607)
+ 202 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

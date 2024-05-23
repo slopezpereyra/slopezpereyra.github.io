@@ -3421,9 +3421,612 @@ adecuada.
 \end{quote}
 \normalsize
 
+\begin{theorem}[Teorema fundamental del álgebra lineal]
+    Si $V, W$ son espacioes vectoriales y $T : V \to W$ una transformación lineal, 
+    entonces $\dim(V) = \dim \left( Nu(T) \right) + \dim \left( Im (T) \right) $.
+\end{theorem}
+
+\begin{definition}
+    Dada una matriz $A$, el espacio fila es el espacio vectorial generado por las filas 
+    de $A$, y el rango fila de $A$ es la dimensión de este espacio. Lo mismo se define 
+    para las columnas.
+\end{definition}
+
+\begin{theorem}[Teorema del rango]
+
+    $Row(A) = Col(A)$ y se define como $Rank(A)$.
+    
+\end{theorem}
+
+\begin{lemma}
+    Sea $H$ una matriz de chequeo de un código $C$, donde las filas de $H$ son LI. 
+    Entonces $\dim(C) = \# \text{columnas}(H) = \# \text{filas}(H)$.
+\end{lemma}
+
+
+\small
+\begin{quote}
+
+\textbf{Prueba.} Sea $V = \left\{ 0, 1 \right\}^n $ con $n$ la longitud de $C =
+\#\text{columnas}(H)$. Sea $F = \#\text{filas}(H)$. Sea $T : V \to \left\{ 0, 1
+\right\}^F $ dada por $T(x) = Hx^t$. Por teorema fundamental del álgebra lineal, 
+
+\begin{align*}
+    \dim V &= \dim (Nu (T)) - \dim (Im(T)) \Rightarrow \dim V = n \\ 
+    Nu(T) &= Nu(H) = C \Rightarrow \dim (Nu(T)) = \dim C = k \\ 
+    n &= k + \dim (Im(T)) \Rightarrow k = n - \dim (Im(T))
+\end{align*}
+
+y como $n = \# \text{columnas}(H)$ basta ver que $\dim(Im(T)) = F = \#
+\text{filas}(H)$.
+
+\textbf{COMPLETAR.}
+
+\end{quote}
+\normalsize
+
+\begin{theorem}
+    $[A \mid I]$ es generadora de $C$ si y solo si $[I | A^t]$ es de chequeo de $C$.
+    Análogamente, $[I|A]$ es generadora si y solo si $[A^t|I]$ es de chequeo.
+\end{theorem}
+
+\textbf{COMPLETAR. PRUEBA.}
+
+\begin{theorem}[Teorema muy importante]
+    Sea $C$ un código lineal con matriz de chequeo $H$. Entonces $\delta(C)$ es el 
+    mínimo número de columnas LD de $H$.
+\end{theorem}
+
+En general, nos darán $H$ tal que $\delta(C) = 3$ o $4$.
+
+Por ejemplo, en 
+
+\begin{align*}
+    H = \begin{bmatrix} 
+        1 & 0 & 0 & 1 & 0 & 0 & 0 \\ 
+        1 & 1 & 0 & 0 & 1 & 0 & 0 \\ 
+        0 & 1 & 1 & 1 & 0 & 1 & 0 \\ 
+        0 & 0 & 1 & 0 & 0 & 0 & 1 \\ 
+    \end{bmatrix} 
+\end{align*}
+
+resulta que $\delta = 3$.
+
+Un \textbf{Corolario} es que si $C = Nu(H)$ y $H$ no tiene la columna 
+cero ni columnas repetidas, $\delta \geq 3$ y $C$ corrige 
+al menos un error. 
+
+
+\small
+\begin{quote}
+
+\textbf{Prueba.} Como $H$ no tiene col 0 y $\delta > 1$ y 
+no tiene columnas repetidas, entonces $H^{(i)} \neq H^{(j)}$
+para todo $i \neq j$, lo cual implica que 
+
+\begin{align*}
+    H^{i} + H^j \neq 0 \\ 
+    \left\{ H^i, H^j \right\}  \text{ es LI } \\ 
+    $\delta > 2 \Rightarrow \delta \geq 3$
+\end{align*}
+
+La técnica es primero ver si la matriz cumple las condiciones del corolario.
+Luego, sabiendoq ue $\delta 'geq 3$, ver si alguna columna es suma de otras 
+dos, y si lo es, $\delta = 3$. (Esto puede no ser exacto.)
+\end{quote}
+\normalsize
+
+\begin{theorem}
+    Sea $C = Nu(H)$ y supongamos que $C$ corrige al menos un rror.
+    Supongamos que se manda una palabra $v \in C$ y llega una palabra 
+    $w$ con a lo sumo un error. Entonces 
+
+    \begin{enumerate}
+        \item Si $Hw^t = 0$ entonces $v = w$.
+        \item Si $Hw^t = H^i$ para algún $i$, $v = w + C_i$.
+        \item Si no pasa $a$ ni $b$, los supuestos son incorrectos y hubo
+           $\geq 2$ errores.
+    \end{enumerate}
+\end{theorem}
+
+\begin{definition}[Códigos de Hamming]
+    Un código de Hamming es un código lineal que tiene una matriz de 
+    chequeo con algún número de filas y tal que sus columnas 
+    son todas las columnas distinta sde cero con $r$ filas.
+\end{definition}
+
+Denotaremos $\mathcal{H}_r$ a cualquier código de Hamming con $r$ filas en su
+matriz de chequeo. Por ejemplo,
+
+\begin{align*}
+    \mathcal{H}_2 = \begin{bmatrix} 
+        1 & 0 & 1 \\ 
+        0 & 1 & 1
+    \end{bmatrix} 
+\end{align*}
+
+En general, la matriz de chequeo será $r \times (2^r - 1)$
+
+\begin{theorem}
+    Los códigos de Hamming son perfectos.
+\end{theorem}
+
+\subsection{Códigos cíclicos}
+
+\begin{definition}[Código cíclico]
+    Un código es cíclico si es lineal y la rotación de cualquier palabra es una palabra 
+    del código.
+\end{definition}
+
+Aquí, rotacón significa desplazar los bits un bit a la derecha, y el bit de la extrema 
+derecha ponerlo al inicio. Por ejemplo, $C = \left\{ 000, 110, 011, 101 \right\} $ es 
+cíclico.
+
+Si una palabra $w = w_0 \ldots w_{n-1}$ es del código, escribimos $Rot(w_0 w_1
+\ldots w_{n-1}) = w_{n-1}w_0 w_1 \ldots w_{n-2}$.
+
+Recordemos que un anillo es un grupo con operaciones $(+, \cdot)$ y que una
+función polinómica sobre un anillo es cualquier función de la forma $f(x) = a_0
++ a_1x + a_2x^2 + \ldots + a_nx^n$, con $n \in \mathbb{N}$ y $a_i$ en el
+anillo.
+
+Recordemos que dos funciones $f$ y $g$ son iguales si $f(x) = g(x)$ para todo $x$.
+Por ejemplo, sobre $\left\{ 0, 1 \right\} $, resulta que $f(x) = 1 + x$ y $g(x) = 1 + x^2$
+son iguales.
+
+Una forma alternativa de pensar un polinomio es como una palabra infinita a la derecha 
+pero con una cantidad finita de entradas no nulas. Es decir, podemos escribir 
+
+\begin{align*}
+    w = w_0 w_1 \ldots w_{n - 1}
+\end{align*}
+
+como 
+
+\begin{align*}
+    w = w_0 + w_1x + \ldots w_{n-1}x^{n-1}
+\end{align*}
+
+La ventaja de pensar las palabras como polinomios es que podemos multiplicarlas 
+y sumarlas.
+
+Dado un módulo $m(x)$ (polinomio), para un polinomio cualquiera $p(x)$,
+definimos $p(x) \mod m(x)$ como el resto de dividir $p$ por $m$. El resto 
+siempre tiene grado menor al grado de $m(x)$. Para códigos cíclicos,
+otmaremos siempre $m(x) = 1 + x^n$.
+
+Como notación, haemos $p(x) \circ q(x) = \left[ p(x) q(x) \right] \mod (1 + x^n)$
+donde $n$ es la longitud del código.
+
+\begin{lemma}
+    $Rot(w) = x \circ w$ si $w$ es representado como un polinomio.
+\end{lemma}
+
+
+\small
+\begin{quote}
+
+\textbf{Prueba.} Veamos que 
+
+\begin{align*}
+    x \circ w &= x \irc (w_0 + w_1x + \ldots + w_{n-1}x^{n-1}) \\ 
+              &=x \left( w_0 + w_1\times  + \ldots + w_{n-1}x^{n-1} \right) \mod (1 + x^n) \\ 
+              &= (w_0 x + w_1x^2 + \ldots + w_{n-1}x^n) \mod (1 + x^n)
+\end{align*}
+
+Ahora bien, $(1+x^n) \mod (1 + x^n) = 0 \Rightarrow x^n \mod (1 + x^n) = 1$. Entonces 
+
+\begin{align*}
+    
+    (w_0 x + w_1x^2 + \ldots + w_{n-1}x^n) \mod (1 + x^n) &= w_0 x + w_1x^2 + \ldots + w_{n-1}x^{n-1} + w_{n-1} \times 1 \\ 
+                                                          &=w_{n-1} + w_0 x + \ldots + w_{n-2} x^{n-1} \\ 
+                                                          &= w_{n-1} w_0 w_1 \ldots w_{n-2} \\ 
+                                                        &= Rot(w)
+\end{align*}
+
+\end{quote}
+\normalsize
+
+
+\begin{lemma}
+    Si $C$ es lineal y miramos sus palabras como polinomios, entonces existe un 
+    único polinomio no nulo de menor grado en $C$.
+\end{lemma}
+
+
+
+\small
+\begin{quote}
+
+\textbf{Prueba.} COMPLETAR.
+
+\end{quote}
+\normalsize
+
+\begin{definition}
+    Si $C$ es cíclico, el polinomio no nulo de menor grado se llama 
+    el polinomio generador de $C$, y se lo denota $g(x)$.
+\end{definition}
+
+La razón por la cual se llama polinomio generador es dada por el siguiente teorema.
+
+\begin{theorem}
+    Sea $C$ cíclico y $g(x)$ su polinomio generador. Entonces 
+
+    \begin{enumerate}
+        \item $C = \left\{ p(x) : gr\left( p(x) \right) < n \land  g(x) \mid p(x)  \right\} $ ; es decir, 
+            los códigos son los múltiplos de $g(x)$ con grado $<n$. 
+        \item $C = \left\{ g(x) \circ v(x) : v \text{ es un polinomio arbitrario } \right\} $
+    \end{enumerate}
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Prueba.} COMPLETAR.
+
+\end{quote}
+\normalsize
+
+
+
+
+\pagebreak 
+
+\pagebreak 
+
+\subsection{Códigos de Reed-Solomon}
+
+Son códigos cíclicos pero no binarios. 
+
+\begin{definition}[Cuerpo finito]
+    Un cuerpo finito es un cuerpo que tiene una cantidad finita de elementos.
+\end{definition}
+
+Por ejemplo, $\mathbb{Z}_2, \mathbb{Z}_3, \mathbb{Z}_5,$ o generalmente
+$\mathbb{Z}_p$ con $p$ primo son cuerpos finitos. Pero en general no se 
+trabaja sobre los $\mathbb{Z}_p$ porque las computadoras operan 
+bien con binarios. Daremos un cuerpo que satisface una propiedad
+que también satisface $\mathbb{Z}_2$; a saber, que $1 + 1 = 0$.
+Esta propiedad facilita muchas cosas.
+
+\begin{definition}
+    Sea $F$ un cuerpo finito y $1_F$ la unidad de $F$. Para 
+    $k \in \mathbb{N}_0$, definimos 
+
+    $$k \times \alpha = \overbrace{\alpha + \alpha + \ldots + \alpha}^{k \text{ veces}}$$
+
+    para cualquier $\alpha \in F$.
+\end{definition}
+
+Algunas propiedades son:
+
+\begin{itemize}
+    \item $(k+j) \alpha = k \alpha + j \alpha$
+    \item $(kj)\alpha = k(j\alpha)$
+\end{itemize}
+
+\begin{theorem}
+    Sea $F$ un cuerpo finito. Existen un primo $p$ y $r \geq 1$ entero
+    tales que $|F| = p^r$. Más aún, 
+
+    \begin{align*}
+        (F, +) \simeq (\mathbb{Z}^r_p, +)
+    \end{align*}
+
+    donde $\mathbb{Z}_p^r$ es el espacio vectorial $r$-dimensional con
+    sobre $\mathbb{Z}_p$.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Prueba.} Miremos $1_F, 2\times 1_F, 3\times 1_F, 4\times 1_F$, etc.
+Como $F$ es finito, la secuencia anterior no puede consistir de números todos
+distintos. Esto implica que existen $k, j$ con $k \neq j$ tales que $k\times
+1_F = j\times 1_F$. Asumamos que $k > j$ (pues son distintos, uno es mayor que
+el otro); la prueba asumiendo lo contrario es análogo.
+
+Por las propiedades antes mencionadas, 
+
+\begin{align*}
+    k\times 1_F = j \times 1_F \Rightarrow (k - j) 1_F = 0
+\end{align*}
+
+Es decir, existe un $i$ (en este caso $k - j$) tal que $i\times  1_F = 0$.
+Es decir que en la secuencia $1_F, 2 \times 1_F, \ldots, $ en algún momento 
+ocurre cero.
+
+Sea $p$ el menor $i > 0$ tal que $p \times 1_F = 0$. Probaremos que 
+$p$ es primo.
+
+Supongamos que $p$ no es primo. Entonces exsten $a, b$ con $1 < a, b < p$ tales
+que $p = ab$. Entonces, tenemos que 
+
+\begin{align*}
+    0 &= p\times 1_F \\ 
+      &= (ab) \times 1_F \\ 
+      &=a(b\times 1_F) \\ 
+      &= \overcase{b \times 1_F + \ldots b \times 1_F}^{a \text{ veces}} \\ 
+      &= b(\overcase{1_F + \ldots + 1_F}^{a \text{ veces}}) \\ 
+      &= b(a \times 1_F) \\ &\neq 0
+\end{align*}
+
+Pero $b \times 1_F \neq 0$ porque $b < p$ que es el menor $i$ tal que $i \times
+1_F = 0$. 
+
+Pero $(a \times 1_F)(b \times 1_F) = 0$, y como $F$ es un cuerpo 
+esto implica que o bien $a$ es $0$ o bien $b$ es $0$,
+lo cual contradice la hipótesis. $\therefore p$ es primo. 
+
+Ahora bien, pues $\mathbb{Z}_p$ es un cuerpo, podemos intentar darle a $F$ una
+estructura equivalente a la de $\mathbb{Z}_p$ visto como espacio vectorial.
+Para esto, tomamos la suma como la suma de $F$ y el producto por escalares $i
+\in \mathbb{Z}_p$ como
+
+\begin{align*}
+    i \circ \alpha = i \alpha
+\end{align*}
+
+Ahora bien, para todo $k$, $k \alpha = (k \mod p) \circ \alpha$.
+
+Entonces es trivial ver que $(F, +, \circ)$ es un espacio vectorial sobre
+$\mathbb{Z}_p$. Ahora definamos $r = \dim(F)$ visto como espacio 
+vectorial. Entonces $(F, +) \simeq (\mathbb{Z}_p^r, +) \Rightarrow |F| = p^r$.
+
+\end{quote}
+\normalsize
+
+Ahora veamos que siempre existe un cuerpo $F$ con cardinalidad $p^r$ para
+cualquier primo $p$ y $r \in \mathbb{Z}^+$. Haremos una prueba por
+construcción. El primer paso es tomar un polinomio irreducible de grado $r$
+sobre $\mathbb{Z}_p$. Asumamos sin demostración que siempre existe un polinomio 
+irreducible sobre $\mathbb{Z}_p$ para todo $p, r$.
+
+Sea $F = \mathbb{Z}_p[x] / m(x)$ (los restos módulo $m(x)$). Aquí
+$\mathbb{Z}_p[x]$ son todos los polinomios sobre $\mathbb{Z}_p$. Se define $+$
+y $\cdot$ de la manera usual pero modular. Sean $f(x) \in \mathbb{Z}[x] / m(x)$
+tal que $f(x) \neq 0$. Queremos ver que $f$ siempre tiene inverso.
+
+Como $gr(f) < gr(m)$ y $m$ es irreducible, entonces $\gcd\left( m(x), f(x)
+\right) = 1$. Entonces existen $a(x), b(x)$ tal que $1 = a(x)m(x) + b(x)f(x)$ en $\mathbb{Z}_p[x]$.
+Pero tomando módulo $m$ en ambos lados, esto implica que 
+
+\begin{align*}
+    1 \mod m &= 1 \\ 
+             &= b(x) f(x) \mod m(x)
+\end{align*}
+
+lo cual implica que $b(x)$ es el inverso de $f(x)$.
+
+\begin{definition}
+    Un elemento primitivo en un cuerpo $F$ es un $\alpha$ 
+    tal que 
+
+    \begin{align*}
+        F - \left\{ 0 \right\} = \left\{ 1, \alpha, \ldots, \alpha^\text{algo} \right\} 
+    \end{align*}
+\end{definition}
+
+Es decir, un elemento es primitivo si sus potencias son todos 
+los elementos no nulos de $F$.
+
+\begin{theorem}[Teorema del elemento primitivo]
+    Todo cuerpo finito tiene al menos un elemento 
+    primitivo.
+\end{theorem}
+
+
+
+\small
+\begin{quote}
+
+\textbf{Prueba.} Dado un grupo abeliano (y $F - \left\{ 0 \right\} $ es un
+grupo abeliano), se define el orden de un elemento 
+$x$ como el menor $r$ tal que $x^r = 1$.
+
+Se puede demostrar que si $m = \max \left\{ \text{orden}(x) : x \in \text{grupo
+abeliano} \right\} $ entonces $x^m = 1$ para todo $x$.
+
+Sea entonces $m$ el máximo orden de $F - \left\{ 0 \right\} $, y sea $q = |F| =
+p^r$. Sea $\alpha$ tal que $\text{orden}(\alpha) = m$. Entonces $\alpha,
+\ldots, \alpha^{m-1}, \alpha^m = 1$ son todos distintos. Entonces $m \leq q -
+1$ (pues $|F - \left\{ 0 \right\}| = q - 1 $).
+
+Ahora bien, pues $m$ es el máximo orden, $\beta^m = 1$ para todo $\beta \in F -
+\left\{ 0 \right\} $. Entonces, el polinomio $x^m - 1$ tiene a todos los
+elementos de $F - \left\{ 0 \right\} $ como raíces. Como estamos
+en un cuerpo, un polinomio $p(x)$ no puede tener más de 
+$gr(p(x))$ raíces. Y como tiene $q - 1$ raíces, resulta que 
+
+\begin{align*}
+    q - 1 \leq gr(x^m - 1) = m
+\end{align*}
+
+
+
+\end{quote}
+\normalsize
+
+Un corolario es que, dado que $F - \left\{ 0 \right\} $ son las potencias 
+del elemento primitivo, y multiplicar potencias es sumar los 
+exponentes, 
+
+\begin{align*}
+    (F - \left\{ 0 \right\}, \cdot ) \simeq (\mathbb{Z}_{q - 1}, +)
+\end{align*}
+
+Se puede ver que para todo $p$ primo, $r \geq 1$, si $|F| = p^r = |\tilde{ F
+}|$, entonces $(F, +, \cdot) \simeq (\tilde{ F }, +, \cdot)$. Es decir, existe
+un único cuerpo finito de cardinalidad $p^r$. Como hay uno solo, suele
+denotarse $GF(p^r)$ o $\mathbb{F}_{p^r}$., donde $GF$ viene de Galois field.
+
+
+\begin{definition}[Código de Reed-Solomon]
+    Un código de Reed-Solomon $RS(p^r, b)$ es: 
+
+    
+    \small
+    \begin{quote}
+    
+    
+    \begin{enumerate}
+        \item Un código cíclico 
+        \item Es sobre $\mathbb{F}_{p^r}$ (el alfabeto no es binario; sus letras son polinomios) 
+        \item Su polinomio generador es de la forma $g(x) = (x-\beta^t)(x-\beta^{t+1})\ldots(x-\beta^{t+b-2})$ para 
+            algún $t$ y un $\beta$ primitivo.
+    \end{enumerate}
+    
+    \end{quote}
+    \normalsize
+    
+\end{definition}
+
+En general, si $g(x) = (x - \alpha_1)\ldots(x-\alpha_r)$ con los $\alpha_i'$s distintos,
+entonces $\alpha_i^{q-1} = 1 \Rightarrow g(x) \mid x^{q-1} - 1$. Entonces $g(x) \mid x^{q - 1} - 1$
+y por lo tanto $g$ genera un código cíclico de longitud $q - 1$.
+
+Probaremos que el $\delta$ del código es $b$. Pero antes un ejemplo.
+Construyamos un $RS$ que corrija dos errores ($\alpha = 3$).
+Trabajaremos con $GF(2^3)$.
+
+El primer paso en la construcción es tomar $m(\alpha) = 1 + \alpha^2 +
+\alpha^3$. 
+
+
+\small
+\begin{quote}
+
+Por un lado tenemos los elementos del cuerpo $GF(2^3)$, y por otro lado tenemos 
+el polinomoi $g(x)$, que es un polinomio sobre $GF(2^3)$, y las otras palabras
+del alfabeto, que también son palabras sobre $GF(2^3)$. Para éstos usamos coeficiente 
+$x$, pero para los de $GF(2^3)$ usamos $\alpha$.
+
+\end{quote}
+\normalsize
+
+En $GF(2^3) = \mathbb{Z}^2[x]/ m(x)$ tenemos 
+
+\begin{align*}
+    \alpha^3 &= 1 + \alpha^2\\ 
+    \alpha^4 &= \alpha + \alpha^3 = 1 + \alpha + \alpha^2\\ 
+    \alpha^5 &= \alpha+\alpha^2 + \alpha^3 = \alpha + 1 = 1 + \alpha \\ 
+    \alpha^6 &= \alpha + \alpha^2 \\ 
+    \alpha^7 &= \alpha^2 + \alpha^3 = 1
+\end{align*}
+
+Como $GF(2^3)$ debe tener $7$ elementos, estos son todos los elementos y
+efectivamente $\alpha$ es primitivo; es decir, $GF(2^3) - \left\{ 0 \right\}
+=\left\{ \alpha, \alpha^2, \ldots, \alpha^7 = 1 \right\}  $.
+
+Tomo $t = - 1$ y $\beta = \alpha$ (en general, $t$ será elegido entre $-1$, $0$
+y $1$). Entonces 
+
+\begin{align*}
+    g(x) &= (x + \alpha^{-1})(x+\alpha^0)(x+\alpha)(x + \alpha^2) \\ 
+         &= \alpha^2 + \alphax + (\alpha + \alpha^2)x^2 + x^3 + x^4
+\end{align*}
+
+La matriz generadora con el segundo método, donde $k = n - gr(g) = 7 - 4 = 3$,
+es 
+
+\begin{align*}
+    \begin{bmatrix} 
+        x^4 \mod g + x^4 \\ 
+        x^5 \mod g + x^5 \\ 
+        x^6 \mod g + x^6
+    \end{bmatrix} 
+\end{align*}
+
+Ahora bien, 
+
+\begin{align*}
+    x^4 \mod g(x) &= \alpha^2 + \alpha x + (\alpha + \alpha^2)x^2 + x^3 \\ 
+    x^5 \mod g(x) &= x \times x^4 \mod g = \alpha^2 x + \alpha x^2 (\alpha + \alpha^2)x^3 + (x^4 \mod g) \\ 
+                  &= \alpha^2 x + \alphax^2 + (\alpha + \alpha^2)x^3 + (\alpha^2 + \alphax + (\alpha + \alpha^2)x^2 + x^3) \\ 
+                  &= \alpha^2 + \begin{bmatrix} 
+                          \alpha^2 \\ \alpha 
+                  \end{bmatrix}  x + \begin{bmatrix} 
+                          \alpha \\ \alpha + \alpha^2 
+                  \end{bmatrix}  x + \begin{bmatrix} 
+                          \alpha + \alpha^2  \\ 1
+                  \end{bmatrix} x^3 \\ 
+                  &= \alpha^2 + (\alpha + \alpha^2)x + \alpha^2 x^2 + (a + \alpha + \alpha^2)x^3
+\end{align*}
+
+donde la notación matricial no denota vectores sino los coeficientes correspondientes a las variables
+de cada grado. Ahora bien, 
+
+\begin{align*}
+    x^6 \mod g(x) &= \alpha^2 x + (\alpha + \alpha^2)x^2 + \alpha^2x^3 + (1 + \alpha + \alpha^2) (x^4 \mod g(x)) \\ 
+    &= \alpha^2 x + (\alpha + \alpha^2)x^2 + \alpha^2x^3 + (1 + \alpha + \alpha^2) \left[ \alpha^2 + \alpha x + (\alpha + \alpha^2) x^2 + x^3 \right] 
+\end{align*}
+
+Lo más simple es ver que $1 + \alpha + \alpha^2 = \alpha^4$ y que $\alpha + \alpha^2 = \alpha^6 = \alpha^{-1}$. Entonces todo esto resulta
+
+\begin{align*}
+    (a + \alpha + \alpha^2)(\alpha^2 + \alpha x + (\alpha + \alpha^2)x^2 + x^3) &= \alpha^4(\alpha^2 + \alphax + \alpha^{-1} x + x^3) \\ 
+                                                                                &= \alpha^6 + \alpha^5 + \alpha^3 x^2 + \alpha^4 x^3
+\end{align*}
+
+Luego 
+
+\begin{align*}
+    x^6 \mod g &= \alpha^2 x + (\alpha + \alpha^2)x^2 + \alpha^2 x^3 + \left[ \alpha^6 + \alpha^5 x + \alpha^3 x^2 + \alpha^4 x^3 \right]  \\ 
+               &= \alpha^2 x + (\alpha + \alpha^2) x^2 + \alpha^2 x^3 + (\alpha + \alpha^2) + (1+\alpha)x + (1 + \alpha^2)x^2 + (a + \alpha + \alpha^2)x^3 \\ 
+               &= (\alpha + \alpha^2) + (a + \alpha + \alpha^2)x + (1 + \alpha)x^2 + (a + \alpha) x^3
+\end{align*}
+
+Luego, la matriz generadora del código es 
+
+\begin{align*}
+    \begin{bmatrix} 
+    \alpha^2 & \alpha & \alpha + \alpha^2 & 1 & 1 & 0 & 0 \\ 
+    \alpha^2 & \alpha+\alpha^2 & \alpha^2 & 1 + \alpha + \alpha^2 & 0 & 1 &0 \\ 
+    \alpha+\alpha^2 & 1 + \alpha + \alpha^2 & 1 + \alpha & 1 + \alpha & 0 & 0 & 1
+    \end{bmatrix} 
+\end{align*}
+
+Ya que estamos, chequeemos. Veamos que 
+\begin{align*}
+    x^7 \mod g &= (\alpha + \alpha^2) x + (1 + \alpha + \alpha^2) x^2 + (1 + \alpha)x^3 + (1 + \alpha)(\alpha^2 + \alpha x + (\alpha + \alpha^2)x^2 + x^3) \\ 
+               &= (\alpha + \alpha^2 ) x + (1 + \alpha + \alpha^2) x^2 + (a + \alpha)x^3 + \alpha^5(\alpha^2 + \alphax + \alpha^{-1} x^2 + x^3) \\ 
+               &= (\alpha + \alpha^2 ) x + (1 + \alpha + \alpha^2) x^2 + (a + \alpha)x^3 + \alpha^7 + \alpha^6x + \alpha^4x^2 + \alpha^5 x^3\\ 
+               &= 1
+\end{align*}
+
+porque $\alpha^5 = 1 + \alpha$, $\alpha + \alpha^2 = \alpha^6,$ y $1 + \alpha + \alpha^2 = \alpha^4$, y por 
+lo tanto sus sumas se cancelan, y por último $\alpha^7 = 1$.
+
+\begin{theorem}[Cota singleton]
+    $\delta \leq n - k + 1$.
+\end{theorem}
+
+\begin{definition}
+    Si se da el $=$ en la cota singleton, el código se llama un código Maximum
+    Distance Separable (MDS).
+\end{definition}
+
+\begin{theorem}
+    El $\delta$ del código $RS(p^r, b)$ es $b$, y los códigos de Reed-Solomon son MDS.
+\end{theorem}
+
+
+
+
+
+
+
+
+
+
+
 
 
 \pagebreak
+
 
 
 \section{Prácticos}
