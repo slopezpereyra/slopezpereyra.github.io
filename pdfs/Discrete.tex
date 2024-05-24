@@ -3657,6 +3657,9 @@ La razón por la cual se llama polinomio generador es dada por el siguiente teor
         \item $C = \left\{ p(x) : gr\left( p(x) \right) < n \land  g(x) \mid p(x)  \right\} $ ; es decir, 
             los códigos son los múltiplos de $g(x)$ con grado $<n$. 
         \item $C = \left\{ g(x) \circ v(x) : v \text{ es un polinomio arbitrario } \right\} $
+        \item $gr\left( g(x) \right) = n - k$ con $k = \dim C$ 
+        \item $g(x) \mid 1 + x^n$ 
+        \item Si $g(x) = g_0 + g_1x + \ldots, $ entonces $g_0 = 1$
     \end{enumerate}
 \end{theorem}
 
@@ -3669,8 +3672,119 @@ La razón por la cual se llama polinomio generador es dada por el siguiente teor
 \end{quote}
 \normalsize
 
+\textbf{Metodo 1.} Los puntos \textit{(1)} y \textit{(3)} nos dan el primer
+metodo para codificar. Dado $C$ y $g(x)$ y $k = \dim C$, para codificar 
+una $w \in \left\{ 0, 1 \right\}^k $ la tomo como un polinomio $w(x)$
+y la codifico como $w(x) g(x)$. Naturalmente, si $w(x)g(x) = p(x)$,
+el mensaje $p(x)$ se decodifica tomando $p(x) / g(x) = w(x)$.
+
+\small
+\begin{quote}
+
+\textbf{Ejemplo.} Sea $n = 7$ y $g(x) = 1 + x + x^3$. Tomamos $k = n - gr(g) = 7 - 3 = 4$.
+Esto nos da un codigo con $2^4 = 16$ palabras. Codifiquemos $w = 0101$
+como polinomio haciendo $w = x  + x^3$. Luego vemos que 
+
+\begin{align*}
+    p(x) &:= (x+x^3)(1 + x + x^3)  \\ 
+         &= x + x^2 + x^4 + x^5 + x^4 + x^6 \\ 
+         &= x + x^2 + x_3 + x^6 \\ 
+         &= 0111001 & \left\{ \text{Visto como palabra} \right\} 
+\end{align*}
+
+La matriz generadora asociada al metodo $1$ es dada por la base canonica de $\left\{ 0, 1 \right\}^4 $:
+
+\begin{align*}
+    \begin{cases}
+        1000 = 1 & \mapsto g(x)\\ 
+        0100 = x &\mapsto xg(x) \\ 
+        0010 = x^2&\mapsto x^2g(x)  \\ 
+        0001 = x^3&\mapsto x^3g(x)
+    \end{cases} \Rightarrow \begin{bmatrix} 
+        1 & 1 & 0 & 1 & 0 & 0 & 0 \\ 
+        0 & 1 & 1 & 0 & 1 & 0 & 0 \\ 
+        0 & 0 & 1 & 1 & 0 & 1 & 0 \\ 
+        0 & 0 & 0 & 1 & 0 & 0 & 1 \\ 
+    \end{bmatrix} 
+\end{align*}
+
+\end{quote}
+\normalsize
+
+\textbf{Metodo 2.} Otra manera es usar la idea del item \textit{(2)} del teorema,
+usando reduccion modular pero con modulo $g(x)$. En esencia, la 
+idea es generar multiplos de $g(x)$.
+
+\textbf{Notación.} Dado $p(x)$ arbitrario, hacemos $v(x) = \left[ p(x) \mod g(x) \right] + p(x)$.
+
+Entonces, 
+
+\begin{align*}
+    v(x) \mod g(x) &= \left[ \left( p(x) \mod g(x) \right) + p(x)  \right]  \mod g(x) \\ 
+                   &= p(x) \mod g(x) \mod g(x) + p(x) \mod g(x) \\ 
+                   &= p(x) \mod g(x) + p(x) \mod g(x) \\ 
+                   &= 0
+\end{align*}
+
+Es decir, $g(x) \mid v(x)$. Esta será la manera de generar multiplos de $g(x)$.
+Sin embargo, debemos observar que si el polinomio elegido es un $u(x) \in
+\left\{ 0, 1 \right\}^k $, entonces $u(x) \mod g(x) + u(x)$ no funciona porque
+no es inyectivo; es decir, podríamos estar asociando el mismo codigo a palabras
+diferentes. 
+
+Ahora bien, la función no es inyectiva solo si $gr(u) < gr(g)$. Entonces, podemos 
+hacer un "truco"; a saber, usar $x^{gr(g)} u(x)$ en vez de $u(x)$ directamente. Es decir, 
+codificar $u(x)$ con 
+
+\begin{align*}
+    \left[x^{gr(g)} u(x) \mod g(x)\right] + x^{gr(g)}u(x)
+\end{align*}
+
+Obviamente, se sigue cumplinedo que $g(x)$ divide a esta transformación; sin embargo,
+hemos asegurado que la transformación es inyectiva.
 
 
+\small
+\begin{quote}
+
+\textbf{Ejemplo.} Sea $g(x) = 1 + x + x^3$ y $n = 7$. Queremos codificar $u(x) = 1001, v(x) = 0110$,
+que vistos como polinomios son $u(x) = 1 + x^3, v(x) = x + x^2$. El grado de $g$ es $3$.
+Por lo tanto, codificamos 
+
+\begin{align*}
+    1 &\mapsto (x^3 \mod g) + x^3 = 1 + x + x^3 \\ 
+    x &\mapsto  x^4 \mod g + x^4 = x + x^2 + x^4\\
+    x^2 &\mapsto  x^5 \mod g + x^5 = x^2 + 1 + x + x^5\\
+    x^3 &\mapsto  x^6 \mod g + x^6 = 1 + x^2 + x^6\\
+\end{align*}
+
+Esta codficacion nos da la matriz generadora asociada al metodo:
+
+\begin{align*}
+    \begin{bmatrix} 
+        1 & 1 & 0 & 1 & 0 & 0 & 0 \\ 
+        0 & 1 & 1 & 0 & 1 & 0 & 0 \\ 
+        1 & 1 & 1 & 0 & 0 & 1 & 0 \\ 
+        1 & 0 & 1 & 0 & 0 & 0 & 1 \\ 
+    \end{bmatrix} 
+\end{align*}
+
+
+\end{quote}
+\normalsize
+
+Ahora bien, como $g(x) \mid 1 + x^n$, existe $h(x)$ tal que $1 + x^n = g(x)
+h(x)$. Sea $p(x)$ un polinomio con $gr(p) < n$. Sabemos que 
+
+\begin{align*} 
+    p \in C \iff g \mid p \iff \exists  q : p = qg \Rightarrow hp = qgh = q (1 + x^n)
+\end{align*}
+
+De esto se sigue que $h \circ p = hp \mod (1 + x^n) = 0$. Es decir que 
+este criterio puede usarse para ver si una palabra pertenece 
+al codigo.
+
+Para corregir un error, vemos que $v \to w = v + x$
 
 \pagebreak 
 
@@ -4004,18 +4118,382 @@ lo tanto sus sumas se cancelan, y por último $\alpha^7 = 1$.
     $\delta \leq n - k + 1$.
 \end{theorem}
 
+
+\small
+\begin{quote}
+
+    \textbf{Prueba.} Vimos que $\delta = \min$ numero de columnas LD de una
+    matriz de chequeo $H$. Luego todo conjunto de $\delta - 1$ columnas de $H$
+    es LI. Pero un conjunto LI no puede tener mas elementos que la dimension 
+    de su espacio; es decir que $\delta - 1$ es menor o igual que la dimensión 
+    del espacio columna de $H$:
+
+    \begin{align*}
+        \delta - 1 \leq Rank_C(H) \Rightarrow \delta - 1 \leq Rank_F(H)
+    \end{align*}
+
+    Pero $k = n - Rank_F(H)$. Entonces 
+
+    \begin{align*}
+        \delta - 1 \leq n -k
+    \end{align*}
+
+\end{quote}
+\normalsize
+
+Observemos que este teorema es para cualquier codigo lineal ---es decir, no vale solo 
+para los codigos de Reed-Solomon.
+
 \begin{definition}
     Si se da el $=$ en la cota singleton, el código se llama un código Maximum
     Distance Separable (MDS).
 \end{definition}
 
 \begin{theorem}
-    El $\delta$ del código $RS(p^r, b)$ es $b$, y los códigos de Reed-Solomon son MDS.
+    El $\delta$ del código $RS(p^r, b)$ es $b$, $k = p^r - b$, y los códigos de
+    Reed-Solomon son MDS.
 \end{theorem}
 
 
+\small
+\begin{quote}
+
+    \textbf{Prueba.} Recordemos que $RS(p^r, b)$ tiene como generador a algún
+    polinomio de la forma 
+
+    \begin{align*}
+        g(x) = (x - \beta^t)(x-\beta^{t+1})\ldots(x - \beta^{t +  b - 2})
+    \end{align*}
+
+    con $\beta$ un primitivo del espacio. Entonces $gr(g) = b - 1$ y por lo tanto
+    $k = n - gr(g) = n - ( b - 1 )$. Pero la longitud de un codigo de Reed-Solomon es $p^r - 1$. Entonces 
+
+    \begin{align*}
+        gr(g) = p^r - b
+    \end{align*}
+
+    Por la cota singleton, 
+
+    \begin{align*}
+        \delta \leq n - k + 1 &= (p^r - 1) - (p^r - b) + 1 \\ 
+               &= b
+    \end{align*}
+
+    Si probamos $b \leq \delta$ tendremos $\delta = b$. Y ademas tendremos
+    $\delta = b &= n - k + 1 \Rightarrow MDS$.
+
+    Supongamos que $b \leq \delta$ es falso; es decir que $\delta < b
+    \Rightarrow \delta \leq b - 1$. Pero $\delta$ era el minimo numero de
+    columnas LD de cualquier matriz de chequeo $H$ (*). Es decir que para cualquier
+    $H$ existen $b - 1$ columnas LD. La estrategia de la prueba es: Dar una $H$
+    para el codigo $C = RS(p^r, b)$ y como vale (*) existiran $b - 1$ cols. LD 
+    que conduciran a un absurdo.
+
+    Sea 
+
+    \begin{align*}
+        H = \begin{bmatrix} 
+            1 & \beta^t &\ldots & (\beta^t)^{n-1}\\ 
+            1& \beta^{t+1} &\ldots & \beta(^{t+1})^{n-1}\\ 
+            \vdots  &\vdots&\ldots &\vdots\\ 
+            1 & \beta^{t + b - 2} & \ldots & (\beta^{t + b - 2})^{n-1}
+        \end{bmatrix} 
+    \end{align*}
+
+    Los subindices son $i = 0, \ldots, b - 2$ para las filas, $j = 0, \ldots, n
+    - 1$ para las columnas.
+
+    Veamos que $H_{ij} = \left(\beta^{t + i}\right)^{j}$. Sean $g_0, g_1,
+    \ldots$ los coeficientes de $g(x)$. Entonces 
+
+    \begin{align*}
+        g(x) = g_0 + g_1x + g_2x^2 + \ldots + g_{b-1}x^{b-1}
+    \end{align*}
+
+    Si probamos que $H\left( g(x) \right)^t = 0 $, donde el polinomio es visto
+    como una palabra, el hecho de que $g$ es generador de $C$ nos garantizaria
+    que $Hv^t = 0$ para todo $v \in C$. Es decir que $H$ sera matriz de
+    chequeo.
+
+    El polinomio generador visto como palabra es 
+
+    \begin{align*}
+        g(x)^t = \begin{bmatrix} 
+            g_0 & g_1 & \ldots g_{b-1} & 0 & 0 & \ldots & 0)^t 
+        \end{bmatrix} 
+            = \begin{bmatrix} 
+                g_0 \\ g_1 \\ \vdots \\ g_{b-1} \\ 0 \\ 0
+            \end{bmatrix}  
+    \end{align*}
+
+    Veamos que 
+
+    \begin{align*}
+        \left( H(g(X))^t \right)_{i, j} &= \sum_{j=0}^{n-1} H_{ij} (g(x)^t)_{j, 1} \\ 
+                                        &= \sum_{j=0}^{b-1} H_{ij} g_j &\left\{ \text{Porque $g(x)^t_{i, j} = 0$ si $j > b -1$} \right\} \\ 
+                                        &= \sum_{j=0}^{b-1}g_j \left( \beta^{t+i} \right)^{j}
+    \end{align*}
+
+    Pero el polinomio $g$ era 
+
+    \begin{align*}
+        g(x) &= g_0 + g_1x + g_2x^2 + \ldots + g_{b-1}x^{b-1} \\ 
+             &=\sum_{j=0}^{h - 1}g_jx^i
+    \end{align*}
+
+    Entonces
+
+    \begin{align*}
+        \sum_{j=0}^{b-1}g_j \left( \beta^{t+i} \right)^{j} &= g(\beta^{t + 1})
+    \end{align*}
+
+    Pero 
+
+    \begin{align*}
+        g(x) = (x - \beta^t) \ldots (x - \beta^{t + b -2}) \Rightarrow g(\beta^{t + 1}) = 0
+    \end{align*}
+
+    para todo $i =0, \ldots, b - 2$. Entonces 
+
+    \begin{align*}
+        \left( Hg(x)^t \right)_{ij} \Rightarrow g(\beta^{t+1}) = 0
+    \end{align*}
+
+    Es decir que 
+
+    \begin{align*}
+        H(g(x))^t = 0
+    \end{align*}
+
+    Entonces $H$ es de chequeo de $C$. Como suponemos $\delta < b$, existen 
+    $b - 1$ columnas LD de $H$. Es decir, existen $r_1, r_2, \ldots, r_{b-1}$
+    tales que $H_{r_1}, H_{r_2}, \ldots, H_{r_{b-1}}$ es LD.
+
+    Sea $A$ la matriz formada por las columnas LD:
+
+    \begin{align*}
+        A = \begin{bmatrix} 
+            H^{(r_1)}  & H^{(r_2)} & \ldots & H^{(r_{b-1})}
+        \end{bmatrix} 
+    \end{align*}
+
+    Claramente, $A$ es $(b-1) \times  (b-1)$. 
+
+    Como las columnas de $A$ son LD, $\det(A) = 0$. Entonces las filas de $A$
+    son LD. Es decir que existen $c_0, c_1, \ldots, c_{b-2}$ no nulos tales que 
+
+    \begin{align*}
+        \sum_{i=0}^{b - 2} c_i A_i = 0
+    \end{align*}
+
+    donde $A_i$ denota la i-ecima fila de $A$. Entonces 
+
+    \begin{align*}
+        \sum_{i = 0}^{b- 2} c_i A_{i, j} = 0 ~ ~ ~ ~ ~ ~ \text{para todo } j 
+    \end{align*}
+
+    Entonces 
+
+    \begin{align*}
+        0 &= \sum_{i=0}^{b-2} c_i H_{i, r_j} ~ ~ ~ ~ ~ \text{para todo } j \\ 
+          &= \sum_{i=0}^{b-2} c_i \left( b^{t+i} \right)^{r_j} \\ 
+          &= \sum_{i=0}^{b-2} c_i \beta^{(t+i)r_j} \\ 
+          &= \sum_{i=0}^{b-2} c_i \beta^{tr_j + i r_j} \\ 
+          &= \sum_{i=0}^{b-2} c_i \beta^{t r_j} \beta^{ir_j} &\left\{ \text{El 2do factor no depende de $i$} \right\} \\  
+          &= \beta^{tr_j} \sum_{i=0}^{b-2} c_i \beta^{i r_j}
+    \end{align*}
+
+    Pero entonces 
+
+    \begin{enumerate}
+        \item $0 = \beta^{t r_j} \sum_{i=0}^{b-2} c_i \beta^{i r_j}$ 
+        \item $\beta^{t r_j} \neq 0$, porque $\beta$ es primitivo. 
+        \item Vivimos en un cuerpo.
+    \end{enumerate}
+
+    Por lo tanto, debe suceder que 
+
+    \begin{align*}
+        0 &= \sum_{i=0}^{b-2} c_i \beta^{i r_j} ~ ~ ~ ~  ~ \text{para todo } j \\
+          &=\sum_{i=0}^{b-2} c_i \left( \beta^{r_j} \right)^{i}
+    \end{align*}
+
+    Esto parece un polinomio. Hagamos 
+
+    \begin{align*}
+        p(x) = \sum_{i=0}^{b-2} c_i x^i
+    \end{align*}
+
+    Luego
+
+    \begin{align*}
+        \sum_{i=0}^{b-2} c_i \left( \beta^{r_j} \right)^{i} = 0 \Rightarrow p(\beta^{r_j}) = 0
+    \end{align*}
+
+    para todo $j$. Es decir que $p(x)$ tiene raices $\beta^{r_1}, \beta^{r_2},
+    \ldots, \beta^{r_{b - 1}}$. Son $b-1$ raices pero $gr(p) \leq b - 2$.
+    Pues estamos en un cuerpo, un polinomio no nulo de grado $n$ no 
+    puede tener mas de $n$ raices. Entonces sucede que $p(x) = 0$.
+    Pero entonces $c_0 = c_1 = \ldots = c_{b-2} = 0$, lo cual
+    contradice que las filas de $A$ son LD.
 
 
+
+
+
+
+    
+
+\end{quote}
+\normalsize
+
+\pagebreak
+
+\section{P-NP}
+
+El problema P-NP es el primer escalon de un area mas general llamada 
+\textit{Complejidad computacional}.
+
+\begin{definition}[Problema de decision]
+    Un problema de decision es un problema cuyas unicas respuestas
+    son "si" o "no".
+\end{definition}
+
+Esto los distingue de problemas de decision. No es lo mismo calcular el
+determinante de una matriz que decidir si tal determinante existe. 
+
+En general son de la forma 
+
+
+\small
+\begin{quote}
+
+Dado $x \in I$, es cierto que $x \in S$?
+
+\end{quote}
+\normalsize
+
+donde $I, S$ son conjuntos fijos que dependen del problema. El conjunto
+$I$ suele llamarse el "conjunto de instancias".
+
+\begin{definition}
+    $P$ es la familia de problemas de decision para los cuales 
+    existe un algoritmo polinomial.
+\end{definition}
+
+Por ejemplo, el problema de decision
+
+
+\small
+\begin{quote}
+
+Dado un grafo $G$, es $G$ conexo?
+
+\end{quote}
+\normalsize
+
+puede resolverse con DFS o BFS, que es un algoritmo polinomial. Entonces, 
+este problema pertenece a la familia $P$.
+
+
+Un problema de decision famoso es el $k$-clique. Dado un grafo, existe un $K_k$
+dentro de G? Se ha probado que $k$-clique pertenece a $P$ para todo $k$. El
+algoritmo consiste en buscar todos los subconjuntos de $k$ vertices y revisar
+si son completos. La complejidad de revisar si son completos, pues debe revisarse todos 
+los lados, es 
+
+\begin{align*}
+    O(k^2) = \text{constante}
+\end{align*}
+
+porque $k$ es un numero fijo una vez que se da el grafo. La complejidad de encontrar 
+todos los subconjuntos de $k$ elementos es 
+
+\begin{align*}
+     \binom{n}{k}
+\end{align*}
+
+que es un polinomio de grado $\min\left\{ k, n - k \right\} $. Para $n$
+suficientemente grande, resulta en un polinomio de grado $k$.
+Entonces la complejidad del algoritmo para $k$-clique es 
+
+\begin{align*}
+    O(\text{Polinomio de grado } k) = O(n^k)
+\end{align*}
+
+Otro problema es el problema clique (a secas). Pregunta si dados un $G$ y un $k$,
+existe un $K_k$ en $G$. Es decir que ahora $k$ no es una constante dada, sino 
+que es una variable. En otras palabras, $k$ es parte de la instancia.
+
+La complejidad suge de que el numero combinatorio donde $k$ no es fijo no es un
+polinomio bonito.
+
+\begin{definition}
+    NP es la familia de problemas de decision para los cuales existe 
+    un algoritmo no-deterministico polinomial que lo resuelve.
+\end{definition}
+
+Cuando decimos que "lo resuelve", queremos decir lo siguiente. Asumamos que
+tenemos el problema de decision $\Pi$ con instancias $x \in I$, y un algoritmo
+no-deterministico que vamos a denotar $A(E, x)$ con $x \in I$ y $E$ las
+elecciones no-deterministicas que toma. Diremos que $A$ resuelve a $\Pi$ "para
+el si" si y solo si:
+
+\begin{enumerate}
+    \item $A(E, x)$ debe ser "si" o "no se" para todo $E, x$.
+    \item Si existe $E$ tal que $A(E, x) = $ "si", entonces $\Pi(x) = $  si.
+    \item Si $A(E, x) =$ "no se", entonces no se puede decir nada.
+    \item Si $\Pi(x) = $ si, entonces existe alguna instancia $(E, x)$ tal que 
+        $A(E, x) = $ si.
+\end{enumerate}
+
+Si la cantidad de elecciones $E$ es polinomial, puedo resolver el problema 
+tomando todas las decisiones en ese tiempo. EL problema es que en general 
+recorrer las decisiones de $E$ no puede hacerse en tiempo polinomial.
+
+Diremos que $A$ resuelve a $\Pi$ "para el no" si satisface las mismas 
+condiciones, pero cambiando las "si" por "no".
+
+Es importante ver que NP no es el complemento de P, sino que $NP \subset P$.
+
+La definicion correspondiente a NP para el "no" se llama CO-NP. Es decir que NP
+contiene los NP para el si y los NP para el no, aunque siempre que
+digamos NP nos referiremos a NP para el si.
+
+
+\small
+\begin{quote}
+
+\textbf{Ejemplo.} El problema $k$-color, determinar si un grafo $G$ tiene
+$\chi(G) \leq k$, es NP. Porque simplemente puedo intentar un 
+coloreo con algun numero menor a $k$. Si el coloreo es propio 
+la respuesta es si, pero si no lo es la respuesta es "no se"
+(puede haber otro coloreo que funcione). 
+
+Algunos algoritmos son NP y CO-NP al mismo tiempo, pero no es el caso 
+del problema del $k$-color.
+
+\end{quote}
+\normalsize
+
+
+\small
+\begin{quote}
+
+\textbf{Primo.} El problema de decidir si un numero $n$ es primo o no esta en CO-NP. 
+Porque para ver el "no", simplemente elijo dos numeros menores a $n$ y veo 
+si $n$ es su producto. Y esta en NP porque solo podemos recibir un "no" 
+o un "no se".
+
+A su vez, primo esta en NP---es decir, existe una manera no-deterministica de
+decidir si un numero es primo o no.
+
+Mas tarde, el algoritmo AKS sirvio para probar que primo esta en P.
+
+\end{quote}
+\normalsize
+
+Nadie sabe si $P = NP$ ni tampoco si $NP = CO-NP$.
 
 
 
@@ -4026,6 +4504,7 @@ lo tanto sus sumas se cancelan, y por último $\alpha^7 = 1$.
 
 
 \pagebreak
+
 
 
 

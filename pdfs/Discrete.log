@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  22 MAY 2024 15:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  24 MAY 2024 15:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1329,11 +1329,11 @@ l.3625 \end{align*}
 The `$' that I just saw supposedly matches a previous `$$'.
 So I shall assume that you typed `$$' both times.
 
-[52] [53]
-./Discrete.tex:3755: Undefined control sequence.
+[52] [53] [54]
+./Discrete.tex:3869: Undefined control sequence.
 <argument> ...\\ &=a(b\times 1_F) \\ &= \overcase 
                                                   {b \times 1_F + \ldots b \...
-l.3755 \end{align*}
+l.3869 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1341,10 +1341,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Discrete.tex:3755: Undefined control sequence.
+./Discrete.tex:3869: Undefined control sequence.
 <argument> ...a \text { veces}} \\ &= b(\overcase 
                                                   {1_F + \ldots + 1_F}^{a \t...
-l.3755 \end{align*}
+l.3869 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1352,10 +1352,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Discrete.tex:3755: Undefined control sequence.
+./Discrete.tex:3869: Undefined control sequence.
 <argument> ...\\ &=a(b\times 1_F) \\ &= \overcase 
                                                   {b \times 1_F + \ldots b \...
-l.3755 \end{align*}
+l.3869 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1363,10 +1363,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Discrete.tex:3755: Undefined control sequence.
+./Discrete.tex:3869: Undefined control sequence.
 <argument> ...a \text { veces}} \\ &= b(\overcase 
                                                   {1_F + \ldots + 1_F}^{a \t...
-l.3755 \end{align*}
+l.3869 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1374,11 +1374,11 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[54] [55] [56]
-./Discrete.tex:3930: Undefined control sequence.
+[55] [56] [57]
+./Discrete.tex:4044: Undefined control sequence.
 <argument> ...alpha ^2) \\ &= \alpha ^2 + \alphax 
                                                   + (\alpha + \alpha ^2)x^2 ...
-l.3930 \end{align*}
+l.4044 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1386,10 +1386,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Discrete.tex:3930: Undefined control sequence.
+./Discrete.tex:4044: Undefined control sequence.
 <argument> ...alpha ^2) \\ &= \alpha ^2 + \alphax 
                                                   + (\alpha + \alpha ^2)x^2 ...
-l.3930 \end{align*}
+l.4044 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1397,10 +1397,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Discrete.tex:3957: Undefined control sequence.
+./Discrete.tex:4071: Undefined control sequence.
 <argument> ...\mod g) \\ &= \alpha ^2 x + \alphax 
                                                   ^2 + (\alpha + \alpha ^2)x...
-l.3957 \end{align*}
+l.4071 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1408,10 +1408,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Discrete.tex:3957: Undefined control sequence.
+./Discrete.tex:4071: Undefined control sequence.
 <argument> ...alpha ^2)x^3 + (\alpha ^2 + \alphax 
                                                   + (\alpha + \alpha ^2)x^2 ...
-l.3957 \end{align*}
+l.4071 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1419,10 +1419,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Discrete.tex:3957: Undefined control sequence.
+./Discrete.tex:4071: Undefined control sequence.
 <argument> ...\mod g) \\ &= \alpha ^2 x + \alphax 
                                                   ^2 + (\alpha + \alpha ^2)x...
-l.3957 \end{align*}
+l.4071 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1430,10 +1430,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Discrete.tex:3957: Undefined control sequence.
+./Discrete.tex:4071: Undefined control sequence.
 <argument> ...alpha ^2)x^3 + (\alpha ^2 + \alphax 
                                                   + (\alpha + \alpha ^2)x^2 ...
-l.3957 \end{align*}
+l.4071 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1441,10 +1441,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Discrete.tex:3972: Undefined control sequence.
+./Discrete.tex:4086: Undefined control sequence.
 <argument> ...3) &= \alpha ^4(\alpha ^2 + \alphax 
                                                   + \alpha ^{-1} x + x^3) \\...
-l.3972 \end{align*}
+l.4086 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1452,10 +1452,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Discrete.tex:3972: Undefined control sequence.
+./Discrete.tex:4086: Undefined control sequence.
 <argument> ...3) &= \alpha ^4(\alpha ^2 + \alphax 
                                                   + \alpha ^{-1} x + x^3) \\...
-l.3972 \end{align*}
+l.4086 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1463,15 +1463,15 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[57]
-Overfull \hbox (22.28992pt too wide) detected at line 3980
+[58]
+Overfull \hbox (22.28992pt too wide) detected at line 4094
 []
  []
 
-./Discrete.tex:3998: Undefined control sequence.
+./Discrete.tex:4112: Undefined control sequence.
 <argument> ...x^3 + \alpha ^5(\alpha ^2 + \alphax 
                                                   + \alpha ^{-1} x^2 + x^3) ...
-l.3998 \end{align*}
+l.4112 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1479,10 +1479,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Discrete.tex:3998: Undefined control sequence.
+./Discrete.tex:4112: Undefined control sequence.
 <argument> ...x^3 + \alpha ^5(\alpha ^2 + \alphax 
                                                   + \alpha ^{-1} x^2 + x^3) ...
-l.3998 \end{align*}
+l.4112 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1491,15 +1491,26 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (21.5499pt too wide) detected at line 3998
+Overfull \hbox (21.5499pt too wide) detected at line 4112
 []
  []
 
-[58] [59] [60]
-./Discrete.tex:4102: Undefined control sequence.
+[59]
+./Discrete.tex:4183: Misplaced alignment tab character &.
+l.4183     $\delta = b &
+                        = n - k + 1 \Rightarrow MDS$.
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+[60] [61] [62] [63] [64] [65] [66] [67]
+./Discrete.tex:4581: Undefined control sequence.
 <recently read> \mcd 
                      
-l.4102 ...$\left\{ i, j \right\} $ tales que $\mcd
+l.4581 ...$\left\{ i, j \right\} $ tales que $\mcd
                                                   (i, j) = 1$ (coprimos).
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1507,20 +1518,20 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[61] [62]
-Overfull \hbox (2.3011pt too wide) in paragraph at lines 4185--4188
+[68] [69]
+Overfull \hbox (2.3011pt too wide) in paragraph at lines 4664--4667
 []\T1/ntxtlf/m/it/9 Nota. \T1/ntxtlf/m/n/9 Este prob-lema es lindo para ver di-ver-sas per-muta-ciones del or-den $\OML/ntxmi/m/it/9 V[]; [] ; V[]$
  []
 
-[63] [64] [65]
-Overfull \hbox (7.8049pt too wide) detected at line 4410
+[70] [71] [72]
+Overfull \hbox (7.8049pt too wide) detected at line 4889
 []
  []
 
-[66]
+[73]
 LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 9.0pt on input line 4451.
- [67] [68] [69] (./Discrete.aux) ) 
+(Font)              scaled to size 9.0pt on input line 4930.
+ [74] [75] [76] (./Discrete.aux) ) 
 Here is how much of TeX's memory you used:
  6971 strings out of 476091
  99168 string characters out of 5794081
@@ -1530,10 +1541,10 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  71i,26n,76p,501b,433s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/stxscr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexas.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on Discrete.pdf (69 pages, 590690 bytes).
+Output written on Discrete.pdf (76 pages, 610564 bytes).
 PDF statistics:
- 311 PDF objects out of 1000 (max. 8388607)
- 202 compressed objects within 3 object streams
+ 334 PDF objects out of 1000 (max. 8388607)
+ 218 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
