@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  24 MAY 2024 15:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  9 JUN 2024 19:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -886,80 +886,7 @@ Overfull \hbox (7.79759pt too wide) detected at line 3147
 []
  []
 
-[46] [47] [48]
-./Discrete.tex:3377: Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.3377 \end{align*}
-                   
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-./Discrete.tex:3377: Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.3377 \end{align*}
-                   
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-./Discrete.tex:3377: Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.3377 \end{align*}
-                   
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-./Discrete.tex:3377: Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.3377 \end{align*}
-                   
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-./Discrete.tex:3377: Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.3377 \end{align*}
-                   
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-./Discrete.tex:3377: Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.3377 \end{align*}
-                   
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-./Discrete.tex:3377: Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.3377 \end{align*}
-                   
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-./Discrete.tex:3377: Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.3377 \end{align*}
-                   
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-[49]
+[46] [47] [48] [49]
 Overfull \hbox (5.33948pt too wide) in paragraph at lines 3476--3478
 []\T1/ntxtlf/m/it/10 Sea $\OML/ntxmi/m/it/10 C$ \T1/ntxtlf/m/it/10 un código lin-eal con ma-triz de chequeo
  []
@@ -1541,7 +1468,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  71i,26n,76p,501b,433s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/stxscr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexas.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on Discrete.pdf (76 pages, 610564 bytes).
+Output written on Discrete.pdf (76 pages, 610558 bytes).
 PDF statistics:
  334 PDF objects out of 1000 (max. 8388607)
  218 compressed objects within 3 object streams
