@@ -4988,33 +4988,176 @@ par. $\blacksquare$
 El primer network auxiliar es 
 
 
+\subsection{Tips practicos: Codigos}
 
+\textbf{Hallar $\delta$ de un código.} Sea $C = Nu(H)$ con $H$ una matriz de
+chequeo. To determine $\delta$, do the following: 
 
+\begin{enumerate}
+    \item Si $H$ no tiene columna $\overrightarrow{0}$, $\delta > 1$.
+    \item Si $H$ no tiene dos columnas repetidas, $\delta > 2$.
+    \item Si $H^{(i)} + H^{(j)} = H^{(r)}$, $\delta \leq 3$.
+\end{enumerate}
 
+El tercer punto se sigue de que $\delta$a es el mínimo numero de columnas LD de
+$H$. Es importante ver que si se cumple $2$ y se cumple $3$, tenemos $\delta
+\geq 3$ y $\delta \leq 3 \Rightarrow \delta = 3$.
 
+\textbf{Hallar $H$ mínima para un código con $2^k$ palabras que corrija un
+error.} Si pedimos $|C| = 2^k$, hacemos $H^{r\times k+r}$ con $r = r + k \leq
+2^r - 1$. 
 
+Por ejemplo, si se pide $|C| = 1024$, tenemos que $|C| = 2^{10}$. Queremos entonces la mínima $r$ que satisfaga $r + 10 \leq 2^r - 1$.
 
+\begin{itemize}
+    \item $r = 3 \Rightarrow 13 \leq 2^3 - 1 \iff 13 \leq 7$, claramente falso.
+    \item $r = 4 \Rightarrow 14 \leq 2^4 - 1 \iff 14 \leq 15$ que es verdadero.
+\end{itemize}
 
+Entonces, la mínima $H$ para un $C$ con $1024$ palabras tiene $4$ filas y $14$ columnas.
 
+\textbf{Codificar palabras en un código cíclico.} El primer método es muy fácil:
+simplemente se multiplica la palabra $w$ que se desea enviar por el polinomio
+generador $g(x)$. 
 
+El segundo método es algo más complicado. Recordemos que $k = \dim(C) = n -
+gr(g)$, con $n$ la longitud de las palabras del código. Sea $w(x)$ el polinomio
+asociado a $w$. Entonces se codifica la palabra como 
 
+\begin{align*}
+    \left[w(x) x^{gr(g)} \mod g(x)\right] + w(x) x^{gr(g)}
+\end{align*}
 
+Por ejemplo, sea $g(x) = 1 + x + x^3$ y sea $n = 7$. Sea $w = 1001$ con $w(x) =
+1 + x^3$. Entonces, la codificación resulta 
 
+\begin{align*}
+    &\left[(1+x^3)x^3 \mod (1 + x + x^3)\right] + (1+x^3)x^3 \\ 
+    =&\left[x^3 + x^6 \mod (1 + x + x^3)\right] + x^3 + x^6 \\ 
+\end{align*}
 
+Primero, veamos que $x^3 \mod g(x) = 1 + x$. Pues $x^6 = x^3 \times x^3$,
+resulta que $x^6 \mod g(x) = x^3 \left( 1 + x \right)  = x^3 + x^4$. 
 
+Ahora bien, $x^3 + x^4$
+no está en el universo de nuestro módulo. Ya sabemos que $x^3 \mod g(x) = 1 +
+x$. Veamos que $x^4 \mod g(x) = x \times x^3
+\mod g(x) = x(1 + x) = x + x^2$.  Entonces, $x^6 \mod g(x) = x^3 + x^4 = 1 + x +
+x + x^2 = 1 + x^2$. Finalmente, $x^3 + x^6
+\mod g(x)$ resulta $1 + x + 1 + x^2 = x + x^2$.
 
+El resultado final, por lo tanto, es 
 
+\begin{align*}
+    x + x^2 + x^3 + x^6 = 0111001
+\end{align*}
 
+Un segundo ejemplo con el mismo generador es enviar la palabra $w(x) = x + x^2$.
+Tomamos 
 
+\begin{align*}
+    \left[(x + x^2)x^{3} \mod g(x)\right] + (x+x^2) x^3 = \left[x^4 + x^5 \mod
+    g(x)\right] + x^4 + x^5
+\end{align*}
 
+Veamos que $x^4 \mod g(x) = x^3 \times x \mod g(x) = (1+x) \times x \mod g(x) =
+x + x^2 \mod g(x) = x + x^2$.
 
+Veamos a su vez que $x^5 \mod g(x) = x^3 \times x^2 \mod g(x) = (1+x)x^2 \mod
+g(x) = x^2 + x^3 \mod g(x) = x^2 + 1 + x$.
 
+Luego el resultado es 
 
+\begin{align*}
+    x + x^2 + x^2 + 1 + x + x^4 + x^5 = 1 + x^4 + x^5 = 1000110
+\end{align*}
 
+\textbf{Error trapping.} Queremos detectar y corregir hasta dos errores en una
+palabra $w$ recibida. 
 
+Definimos el $i$-écimo síndrome del código como 
 
+\begin{align*}
+    S_i = x^i S_0
+\end{align*}
 
+donde $S_0 = w \mod g(x)$. Definimos $\tilde{ e } = x^{n-i}S_i \mod 1 + x^n$ .
+Queremos hallar $\tilde{ e }$ tal que $|\tilde{ e }| \leq t$. Una vez que esto
+se consiga, tendremos que la palabra original $v$ es $v = w + \tilde{ e }$.
 
+Por ejemplo, sean
+
+\begin{align*}
+    w(x) &= 1 + x^2 + x^7 + x^8 + x^9 + x^{11} + x^{12}  \\ g(x) &= 1 + x^2 + x^4 + x^5 + x^6 + x^{10} + x^{11}.
+\end{align*}
+
+Nos dicen que $n = 23$ y $t = 3$. Nos piden encontrar la palabra enviada más
+probable.
+
+Veamos que 
+
+\begin{align*}
+    S_0 &= \left( \overbrace{1 + x^2 + x^7 + x^8 + x^9}^{\alpha} + x^{11} + x^{12} \right)  \mod
+    \left( \overbrace{1 + x^2 + x^4 + x^5 + x^6 + x^{10}}^{\beta} + x^{11} \right) \\ 
+        &= \alpha + \beta + x\beta \mod g(x) \\ 
+        &= \alpha + \beta + x + x^3 + x^5 + x^6 + x^7 + x^{11} \mod g(x) \\ 
+        &= \alpha + \beta + x + x^3 + x^5 + x^6 + x^7 + \beta \mod g(x) \\ 
+        &= \alpha + x + x^3 + x^5 + x^6 + x^7 \\ 
+        &= 1 + x + x^2 + x^3 +x^5 + x^6 + x^8 + x^9
+\end{align*}
+
+Entonces $|S_0| = 8 > 3 $. Debemos seguir buscando. Veamos que a $S_0$ hay que
+multiplicarle $x^2$ para llegar al módulo 11. Luego, tomamos directamente 
+
+\begin{align*}
+    S_2 &= x^2S_0 =  \overbrace{x^2 + x^3 + x^4 + x^5 + x^7 + x^8 + x^{10}
+}^{\gamma}+ x^{11}   \\ 
+&= \gamma + \beta \\ 
+&= 1 + x^3 + x^6 + x^7 + x^8
+\end{align*}
+
+con $|S_2| > 3$. Debemos continuar. Hacmeos 
+
+\begin{align*}
+    S_5 = x^3S_2 &= \overbrace{x^3 + x^6 + x^9 + x^{10}}^{\lambda} + x^{11} \\
+        &= \lambda + \beta \\ 
+        &= 1 +x^2 + x^3 + x^5 + x^9
+\end{align*}
+
+Debemos continuar. 
+
+\begin{align*}
+    S_7 = x^2 S_5 &= \overbrace{x^2 + x^4 + x^5 + x^7}^{\eta} + x^{11} \\ 
+                  &= \eta + \beta \\ 
+                  &= 1 + x^7 + x^{10}
+\end{align*}
+
+Finalmente, tenemos $|S_7| \leq 3$. Ahora solo debemos recordar que $v = w +
+\tilde{ e }$ con $\tilde{ e } = x^{23 - 7}S_7 \mod (1 + x^{23})$. Veamos
+entonces que 
+
+\begin{align*}
+    \tilde{ e } &= x^{16}(1 + x^7 + x^{10}) \mod (1 + x^{23}) \\ 
+                &= x^{17} + x^{23} + x^{26} \mod (1 + x^{23})\\ 
+                &= (x^{17} + 1) + \left[ x^{26} \mod (1 + x^{23}) \right] 
+\end{align*}
+
+Veamos que 
+
+\begin{align*}
+    x^{26} \mod (1 + x^{23}) &= x^3 x^{23} \mod (1 + x^{23}) \\ 
+                             &= x^3
+\end{align*}
+
+Luego $\tilde{ e } = 1 + x^{3} + x^{17}$ y 
+
+\begin{align*}
+    v &= w(x) + \tilde{ e } \\ 
+      &= ( 1 + x^2 + x^7 + x^8 + x^9 + x^{11} + x^{12} ) + (1 + x^{13} + x^{17})
+      \\ 
+      &= x^2 + x^7 + x^8 + x^9 x^{11} + x^{12} + x^{13} + x^{17}\\ 
+      &= 00100001110111000100000
+\end{align*}
 
 \end{document}
 
