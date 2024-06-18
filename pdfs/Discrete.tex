@@ -4986,7 +4986,110 @@ par. $\blacksquare$
 
 
 El primer network auxiliar es 
+\pagebreak
+\subsection{Practico codigos}
 
+\begin{problem}[V]
+
+    \begin{align*}
+    G = \begin{bmatrix} 
+        1  &0 & 0  &0&  0&  1&  1&  0&  0  \\
+        0  &1 & 0  &0&  0&  1&  0&  1&  0 \\ 
+        0  &0 & 1  &0&  0&  0&  1&  1&  1 \\ 
+        0  &0 & 0  &1&  0&  1&  1&  1&  0 \\ 
+        0  &0 & 0  &0&  1&  0&  1&  0&  1
+    \end{bmatrix} 
+\end{align*}
+   
+\textit{(1)} Dar longitud y dimension de $C = Im(G)$. \textit{(2)} Si se desea enviar 
+$10101 ~ 11010 ~ 00111$, que palabra del codigo debe usarse? \textit{(3)} Dar 
+la matriz de chequeo. (4) Calcular $\delta(C)$. \textit{(5)} Se reciben 
+$100111001 $y $110000001$: cuales son las palabras enviadas mas probables?
+\textit{(6)} ¿ Que puede concluir si recibe la palabra 001111010? ¿ y si recibe la palabra 011100011?
+\end{problem} 
+
+\textit{(1)} For questions regarding dimension and length of the code, what we
+care about are the dimensions of the matrices $G$ or $H$. $G$ has dimensions $5
+\times 9$; the number of columns is the length $n$ of the code, and the number
+of rows is the dimension $k$. So $n = 9, k = 5$.
+
+\textit{(2)} To send that message, we must code the each five-bit section 
+sepparately. Therefore,
+we first send $w_1 = 10101$, and we code like this:
+
+\begin{align*}
+    w_1G = \begin{bmatrix} 
+        1&0&1&0&1  
+    \end{bmatrix} 
+    \begin{bmatrix} 
+        1  &0 & 0  &0&  0&  1&  1&  0&  0  \\
+        0  &1 & 0  &0&  0&  1&  0&  1&  0 \\ 
+        0  &0 & 1  &0&  0&  0&  1&  1&  1 \\ 
+        0  &0 & 0  &1&  0&  1&  1&  1&  0 \\ 
+        0  &0 & 0  &0&  1&  0&  1&  0&  1
+    \end{bmatrix} 
+\end{align*}
+
+Here, each element in the resulting word (vector) is a combination of one column of $G$ with coefficients given by $w_1$. For example, the first element will be $1\times 1 + 0\times 0 + 1 \times 0 + 0\times 0 + 1\times 0 = 1$. The result is
+
+\begin{align*}
+    w_1G = (1, 0, 1, 0, 1, 1, 1, 1, 0)
+\end{align*}
+
+Repeat for the rest of the message and you get the codification.
+
+\textit{(3)} In our case, $G = [I | A]$, so $H$ will be of the form $H = [A^t | I]$. Write $A^t$ and then simply "append" the identity to its right:
+
+\begin{align*}
+    H = \begin{bmatrix} 
+        1& 1 &0& 1& 0& 1& 0& 0& 0 \\ 
+        1& 0 &1& 1 &1 &0 &1 &0 &0\\ 
+        0& 1 &1& 1 &0 &0 &0 &1 &0 \\
+        0& 0 &1& 0 &1 &0 &0 &0 &1\\
+    \end{bmatrix} 
+\end{align*}
+
+Just so you know, we can also infer $n$ and $k$ from $H$. $n$ still is the number of columns. 
+$k$ is the number of columns that are NOT in the identity region of $H$ (the first $5$).
+
+\textit{(4)} Firstly, the column $\overrightarrow{0}$ is not in $H$, so $\delta
+> 1$. Secondly, there aren't repeated columns in $H$, so $\delta > 2$. Now, we
+remember the theorem that says: $\delta = \min j$ such that there is a set 
+of $j$ LD columns in $H$.
+
+Now, the columns that are part of $I$ cannot be LD. So we must see combinations
+of the columns in $A^t$ or a mixture of $A^t$ and $I$. 
+
+It is easy to see the columns $c_3 = (0, 1, 1, 1)$ (the third one) and $c_5 =
+(0, 1, 0, 1)$ (the fifth one) are differnt only by one bit. Then $c_3 = c_5 +
+(0, 0, 1, 0)$, which is one of the columns in the identity region ($c_7$, the
+seventh column). Then $c_3 + c_5 + c_7 = 0$, which means $\left\{ c_3, c_5, c_7
+\right\} $ is LD. Then $\delta = 3$.
+
+Let $w_1 = 100111001 $y $w = 110000001$ received words. To find the most 
+probable sent word, we do 
+
+\begin{align*}
+    Hw_1^t = \begin{bmatrix} 
+           1 \\ 1 \\ 1 \\ 0
+    \end{bmatrix} 
+\end{align*}
+
+This is the $4$th column of $H$. This means the most probable message is $w_1$ with its 
+$t$th bit flipped: $100011001$. Now, 
+
+\begin{align*}
+    Hw_2^t = \begin{bmatrix} 
+            0\\ 1 \\ 1 \\ 1 
+    \end{bmatrix} 
+\end{align*}
+
+the third column of $H$. Then we flip the third bit of $w_2$ to obtain the most probable 
+message: $111000001$.
+
+\textit{(6)} Si multiplicamos $H$ por la traspuesta de la primer palabra, no nos da una columna de $H$ y por lo tanto se produjo mas de un error. Si multiplicamos $H$ por la transpuesta de la segunda palabra, el resultaod es $\overrightarrow{0} = (0, 0, 0, 0)$, y por lo tanto la palabra recibida es la palabra enviada.
+
+\pagebreak
 
 \subsection{Tips practicos: Codigos}
 
@@ -4999,7 +5102,7 @@ chequeo. To determine $\delta$, do the following:
     \item Si $H^{(i)} + H^{(j)} = H^{(r)}$, $\delta \leq 3$.
 \end{enumerate}
 
-El tercer punto se sigue de que $\delta$a es el mínimo numero de columnas LD de
+El tercer punto se sigue de que $\delta$ es el mínimo numero de columnas LD de
 $H$. Es importante ver que si se cumple $2$ y se cumple $3$, tenemos $\delta
 \geq 3$ y $\delta \leq 3 \Rightarrow \delta = 3$.
 
@@ -5158,6 +5261,50 @@ Luego $\tilde{ e } = 1 + x^{3} + x^{17}$ y
       &= x^2 + x^7 + x^8 + x^9 x^{11} + x^{12} + x^{13} + x^{17}\\ 
       &= 00100001110111000100000
 \end{align*}
+
+\textbf{Example: Generating cyclic word with method 2.} 
+
+Let $g(x)= 1 + x^2 + x^4 + x^5 + x^6  +  x^{10}  +  x^{11}$  be  the  generating
+polynomial of a cyclic code and $n = 23$. We want to code the word $x + x^2$,
+which equates to computing 
+
+$$
+(x+x^2)x^{11} \mod g(x) + (x+x^2)x^{11}
+$$
+
+Let us first compute
+
+\begin{align*}
+(x+x^2)x^{11} \mod g(x)
+\end{align*}
+
+I will continue without writing $\mod g(x) $ on each line for brevity, but I
+will always be taking the module.
+
+\begin{align}
+x^{12} + x^{13} &= x \cdot x^{11} + x^2 \cdot x^{11}
+\end{align}
+
+Using the fact that $x^{11} \mod g(x) = 1 + x^2 + x^4 + x^5 + x^6 + x^{10} := \varphi(x)$, this is 
+
+\begin{align}
+    x \cdot x^{11} + x^2 \cdot x^{11} &= x\varphi(x) + x^2\varphi(x) \\ 
+    &= (x + x^3 + x^4 + x^5 + x^6 + x^7 + x^{11}) + (x^2 + x^4 + x^5 + x^6+x^7+x^8+x^{11}) \\ 
+    &=x + x^2 + x^3 +x^8 + x^{11}  \\ 
+    &= x + x^2 + x^3 + x^8 + \varphi(x) \\ 
+    &= 1 + x + x^3 + x^4 + x^5 + x^6 + x^8 + x^{10}
+\end{align}
+
+Then
+
+\begin{align*}
+    (x+x^2)x^{11} \mod g(x) + (x+x^2)x^{11} = 1 + x + x^3 + x^4 + x^5 + x^6 + x^8 + x^{10} + x^{12} + x^{13}
+\end{align*}
+
+which, with $n = 23$, is the word $11011110101011000000000$.
+
+
+
 
 \end{document}
 

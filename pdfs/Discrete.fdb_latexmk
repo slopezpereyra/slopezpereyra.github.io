@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1718575682 "Discrete.tex" "Discrete.pdf" "Discrete" 1718575684 2
+["pdflatex"] 1718732063 "Discrete.tex" "Discrete.pdf" "Discrete" 1718732065 2
   "../Images//coloring.png" 1710375426 170111 a0d599f1669349a4d540cfb1728fb05d ""
   "../Images//equiv.png" 1709329351 29240 79a755b81c0facd6bc9d9648c8720e58 ""
   "../Images//graph.png" 1709501024 45198 cd1da829a26b3b946b7b48a485939544 ""
@@ -129,8 +129,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1695394817 4623455 fa0568a71dd9a288d6c226ee477506c6 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1695394844 7879794 eff26094dbe002b6e482c026ea4c81e2 ""
-  "Discrete.aux" 1718575683 3806 c366e43edb35fff7b1bb05dd4ba4f9e7 "pdflatex"
-  "Discrete.tex" 1718575681 189533 4d977344fdf7a21bb5c330b318981e91 ""
+  "Discrete.aux" 1718732065 3916 02f45df02b66c1a31f3cc5626ee8723b "pdflatex"
+  "Discrete.tex" 1718732062 194906 848312e1f588f806f7defe99968b066b ""
   (generated)
   "Discrete.aux"
   "Discrete.log"
