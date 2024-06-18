@@ -3,7 +3,10 @@ title: Thank you, Noam Chomsky
 categories [ Personal ]
 ---
 
-I have just learned that Noam Chomsky passed away. Comparable to Russell in  his
+Fake news spread to day that Chomsky passed away. 
+
+
+Comparable to Russell in  his
 capacity to achieve both  depth  and  breadth,  his  intellectual  contributions
 surpass    that    of    any    other    figure    in    the    last    century.
 That aside, he was a humane, compassionate, and kind man. The passions which
