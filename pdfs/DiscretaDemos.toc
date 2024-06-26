@@ -1,0 +1,18 @@
+\contentsline {section}{\numberline {1}Read me}{3}{}%
+\contentsline {section}{\numberline {2}Baby Brooks}{4}{}%
+\contentsline {section}{\numberline {3}Max flow, min cut}{5}{}%
+\contentsline {section}{\numberline {4}Edmond-Karp}{7}{}%
+\contentsline {subsection}{\numberline {4.1}Complexity}{7}{}%
+\contentsline {subsection}{\numberline {4.2}Augmenting paths are non-decreasing}{9}{}%
+\contentsline {section}{\numberline {5}Complexity of Dinitz}{11}{}%
+\contentsline {section}{\numberline {6}Codes}{14}{}%
+\contentsline {subsection}{\numberline {6.1}Hamming bound}{14}{}%
+\contentsline {subsection}{\numberline {6.2}$\delta (C) = \min \left \{ j : \exists S \subseteq H_{*n} : |S| = j \land S \text { is LD} \right \} $}{16}{}%
+\contentsline {section}{\numberline {7}Matchings}{17}{}%
+\contentsline {subsection}{\numberline {7.1}Konig}{17}{}%
+\contentsline {subsection}{\numberline {7.2}Hall}{18}{}%
+\contentsline {section}{\numberline {8}P-NP}{20}{}%
+\contentsline {subsection}{\numberline {8.1}2-Color is polynomial}{20}{}%
+\contentsline {subsection}{\numberline {8.2}3SAT es NP-Completo}{22}{}%
+\contentsline {subsection}{\numberline {8.3}3-Color es NP-Completo}{24}{}%
+\contentsline {subsection}{\numberline {8.4}Trisexual marriage}{26}{}%

@@ -1,0 +1,2086 @@
+FUNCTION  <SNR>142_indent_delims()
+    Defined: ~/.local/share/nvim/lazy/vimtex/indent/tex.vim:245
+Called 5 times
+Total time:   0.004626
+ Self time:   0.000217
+
+count  total (s)   self (s)
+    5              0.000020   if s:re_delim_trivial | return 0 | endif
+                            
+    5              0.000014   if s:re_opt.close_indented
+                                return s:sw*(vimtex#util#count(a:prev_line, s:re_open) - vimtex#util#count(a:prev_line, s:re_close))
+    5              0.000004   else
+    5   0.004547   0.000139     return s:sw*(vimtex#util#count_open(a:prev_line, s:re_open, s:re_close)      - vimtex#util#count_close(a:line, s:re_open, s:re_close))
+                              endif
+
+FUNCTION  359()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/qf/latexlog.vim:25
+Called 1 time
+Total time:   0.000538
+ Self time:   0.000443
+
+count  total (s)   self (s)
+                              "
+                              " Note: The errorformat assumes we're using the -file-line-error with
+                              "       [pdf]latex. For more info, see |errorformat-LaTeX|.
+                              "
+                            
+                              " Push file to file stack
+    1   0.000028   0.000023   setlocal errorformat=%-P**%f
+    1   0.000009   0.000006   setlocal errorformat+=%-P**\"%f\"
+                            
+                              " Match errors
+    1   0.000008   0.000005   setlocal errorformat+=%E!\ LaTeX\ %trror:\ %m
+    1   0.000008   0.000005   setlocal errorformat+=%E%f:%l:\ %m
+    1   0.000007   0.000005   setlocal errorformat+=%+ERunaway\ argument?
+    1   0.000007   0.000005   setlocal errorformat+=%+C{%m
+    1   0.000007   0.000005   setlocal errorformat+=%C!\ %m
+                            
+                              " More info for undefined control sequences
+    1   0.000007   0.000005   setlocal errorformat+=%Z<argument>\ %m
+                            
+                              " More info for some errors
+    1   0.000007   0.000004   setlocal errorformat+=%Cl.%l\ %m
+                            
+                              "
+                              " Define general warnings
+                              "
+    1   0.000008   0.000006   setlocal errorformat+=%+WLaTeX\ Font\ Warning:\ %.%#line\ %l%.%#
+    1   0.000008   0.000006   setlocal errorformat+=%-CLaTeX\ Font\ Warning:\ %m
+    1   0.000008   0.000006   setlocal errorformat+=%-C(Font)%m
+                            
+    1   0.000011   0.000009   setlocal errorformat+=%+WLaTeX\ %.%#Warning:\ %.%#line\ %l%.%#
+    1   0.000010   0.000008   setlocal errorformat+=%+WLaTeX\ %.%#Warning:\ %m
+                            
+    1   0.000009   0.000007   setlocal errorformat+=%+WOverfull\ %\\%\\hbox%.%#\ at\ lines\ %l--%*\\d
+    1   0.000010   0.000008   setlocal errorformat+=%+WOverfull\ %\\%\\hbox%.%#\ at\ line\ %l
+    1   0.000013   0.000011   setlocal errorformat+=%+WOverfull\ %\\%\\vbox%.%#\ at\ line\ %l
+                            
+    1   0.000013   0.000011   setlocal errorformat+=%+WUnderfull\ %\\%\\hbox%.%#\ at\ lines\ %l--%*\\d
+    1   0.000012   0.000010   setlocal errorformat+=%+WUnderfull\ %\\%\\vbox%.%#\ at\ line\ %l
+                            
+                              "
+                              " Define package related warnings
+                              "
+    1   0.000014   0.000012   setlocal errorformat+=%+WPackage\ natbib\ Warning:\ %m\ on\ input\ line\ %l.
+                            
+    1   0.000012   0.000010   setlocal errorformat+=%+WPackage\ biblatex\ Warning:\ %m
+    1   0.000012   0.000010   setlocal errorformat+=%-C(biblatex)%.%#in\ t%.%#
+    1   0.000010   0.000008   setlocal errorformat+=%-C(biblatex)%.%#Please\ v%.%#
+    1   0.000015   0.000012   setlocal errorformat+=%-C(biblatex)%.%#LaTeX\ a%.%#
+    1   0.000013   0.000010   setlocal errorformat+=%-C(biblatex)%m
+                            
+    1   0.000013   0.000011   setlocal errorformat+=%+WPackage\ babel\ Warning:\ %m
+    1   0.000014   0.000012   setlocal errorformat+=%-Z(babel)%.%#input\ line\ %l.
+    1   0.000014   0.000012   setlocal errorformat+=%-C(babel)%m
+                            
+    1   0.000016   0.000014   setlocal errorformat+=%+WPackage\ hyperref\ Warning:\ %m
+    1   0.000015   0.000013   setlocal errorformat+=%-C(hyperref)%m\ on\ input\ line\ %l.
+    1   0.000018   0.000016   setlocal errorformat+=%-C(hyperref)%m
+                            
+    1   0.000016   0.000014   setlocal errorformat+=%+WPackage\ scrreprt\ Warning:\ %m
+    1   0.000013   0.000011   setlocal errorformat+=%-C(scrreprt)%m
+                            
+    1   0.000015   0.000013   setlocal errorformat+=%+WPackage\ fixltx2e\ Warning:\ %m
+    1   0.000013   0.000011   setlocal errorformat+=%-C(fixltx2e)%m
+                            
+    1   0.000014   0.000012   setlocal errorformat+=%+WPackage\ titlesec\ Warning:\ %m
+    1   0.000015   0.000013   setlocal errorformat+=%-C(titlesec)%m
+                            
+    1   0.000013   0.000011   setlocal errorformat+=%+WPackage\ %.%#\ Warning:\ %m\ on\ input\ line\ %l.
+    1   0.000015   0.000013   setlocal errorformat+=%+WPackage\ %.%#\ Warning:\ %m
+    1   0.000018   0.000016   setlocal errorformat+=%-Z(%.%#)\ %m\ on\ input\ line\ %l.
+    1   0.000015   0.000013   setlocal errorformat+=%-C(%.%#)\ %m
+                            
+                              " Ignore unmatched lines
+    1   0.000014   0.000011   setlocal errorformat+=%-G%.%#
+
+FUNCTION  <SNR>73_L2U_SetAutoSub()
+    Defined: ~/.local/share/nvim/lazy/julia-vim/autoload/LaTeXtoUnicode.vim:664
+Called 1 time
+Total time:   0.000034
+ Self time:   0.000034
+
+count  total (s)   self (s)
+    1              0.000004   if b:l2u_autosub_set
+                                return
+    1              0.000001   endif
+                              " g:did_insert_enter is set from an autocommand in ftdetect
+    1              0.000007   if a:wait_insert_enter && !get(g:, "did_insert_enter", 0)
+                                return
+    1              0.000001   endif
+    1              0.000010   if !get(g:, "latex_to_unicode_auto", 0) || !b:l2u_enabled
+    1              0.000002     return
+                              endif
+                              " Viable substitutions are searched at every character insertion via the
+                              " autocmd InsertCharPre. The <Enter> key does not seem to be catched in
+                              " this way though, so we use a mapping for that case.
+                            
+                              let b:l2u_prev_map_cr = s:L2U_SetFallbackMapping('<CR>', s:l2u_fallback_trigger_cr)
+                              imap <buffer> <CR> <Plug>L2UAutoSub
+                              exec 'inoremap <buffer><expr> <Plug>L2UAutoSub LaTeXtoUnicode#AutoSub("\n", "' . s:l2u_fallback_trigger_cr . '")'
+                            
+                              augroup L2UAutoSub
+                                autocmd! * <buffer>
+                                autocmd InsertCharPre <buffer> call LaTeXtoUnicode#AutoSub()
+                              augroup END
+                            
+                              let b:l2u_autosub_set = 1
+
+FUNCTION  cmp_nvim_ultisnips#get_current_snippets()
+    Defined: ~/.local/share/nvim/lazy/cmp-nvim-ultisnips/autoload/cmp_nvim_ultisnips.vim:9
+Called 74 times
+Total time:   1.581910
+ Self time:   1.449652
+
+count  total (s)   self (s)
+   74              0.000684 let g:_cmpu_current_snippets = []
+   74              0.000126 python3 << EOF
+                            import vim
+                            from UltiSnips import UltiSnips_Manager, vim_helper
+                            
+                            before = vim_helper.buf.line_till_cursor
+                            visual_content = UltiSnips_Manager._visual_content
+                            expandable_only = vim.eval("a:expandable_only") == "True"
+                            if expandable_only:
+                                snippets = UltiSnips_Manager._snips(before, True)
+                            else:
+                                snippets = UltiSnips_Manager._snips("", True)
+                            
+                            for snippet in snippets:
+                                is_context_snippet = snippet._context_code != None
+                                is_regex_snippet = "r" in snippet._opts
+                                # If show_snippets == "all", the snippets are cached so ignore "dynamic" snippets.
+                                if not expandable_only and (is_context_snippet or is_regex_snippet):
+                                  continue
+                                # For custom context snippets, always check if the context matches.
+                                if is_context_snippet and not snippet._context_match(visual_content, before):
+                                    continue
+                            
+                                vim.command(
+                                  "call add(g:_cmpu_current_snippets, {"
+                                  "'trigger': py3eval('snippet._trigger'),"
+                                  "'description': py3eval('snippet._description'),"
+                                  "'options': py3eval('snippet._opts'),"
+                                  "'value': py3eval('snippet._value'),"
+                                  "'matched': py3eval('snippet._matched'),"
+                                  "})"
+                                )
+                            EOF
+   74              0.000467 return g:_cmpu_current_snippets
+
+FUNCTION  vimtex#pos#set_cursor()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/pos.vim:7
+Called 260 times
+Total time:   0.008604
+ Self time:   0.002603
+
+count  total (s)   self (s)
+  260   0.008420   0.002419   call cursor(s:parse_args(a:000))
+
+FUNCTION  vimtex#paths#is_abs()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/paths.vim:50
+Called 2 times
+Total time:   0.000014
+ Self time:   0.000014
+
+count  total (s)   self (s)
+    2              0.000012   return a:path =~# s:re_abs
+
+FUNCTION  VimtexIndent()
+    Defined: ~/.local/share/nvim/lazy/vimtex/indent/tex.vim:42
+Called 5 times
+Total time:   0.043867
+ Self time:   0.000996
+
+count  total (s)   self (s)
+    5              0.000040   let s:sw = shiftwidth()
+                            
+    5   0.019267   0.000152   let [l:prev_lnum, l:prev_line] = s:get_prev_lnum(prevnonblank(a:lnum - 1))
+    5              0.000027   if l:prev_lnum == 0 | return indent(a:lnum) | endif
+    5   0.000145   0.000066   let l:line = s:clean_line(getline(a:lnum))
+                            
+                              " Check for verbatim modes
+    5   0.017700   0.000047   if s:in_verbatim(a:lnum)
+                                return empty(l:line) ? indent(l:prev_lnum) : indent(a:lnum)
+    5              0.000005   endif
+                            
+                              " Use previous indentation for comments
+    5              0.000031   if l:line =~# '^\s*%'
+                                return indent(a:lnum)
+    5              0.000003   endif
+                            
+                              " Align on ampersands
+    5   0.000552   0.000088   let l:ind = s:indent_amps.check(a:lnum, l:line, l:prev_lnum, l:prev_line)
+    5              0.000019   if s:indent_amps.finished | return l:ind | endif
+    5              0.000014   let l:prev_lnum = s:indent_amps.prev_lnum
+    5              0.000012   let l:prev_line = s:indent_amps.prev_line
+                            
+                              " Indent environments, delimiters, and conditionals
+    5   0.000347   0.000073   let l:ind += s:indent_envs(l:line, l:prev_line)
+    5   0.000362   0.000073   let l:ind += s:indent_items(l:line, a:lnum, l:prev_line, l:prev_lnum)
+    5   0.004705   0.000079   let l:ind += s:indent_delims(l:line, a:lnum, l:prev_line, l:prev_lnum)
+    5   0.000404   0.000077   let l:ind += s:indent_conditionals(l:line, a:lnum, l:prev_line, l:prev_lnum)
+                            
+                              " Indent tikz commands
+    5              0.000012   if g:vimtex_indent_tikz_commands
+    5   0.000107   0.000063     let l:ind += s:indent_tikz(l:prev_lnum, l:prev_line)
+    5              0.000004   endif
+                            
+    5              0.000013   return l:ind < 0 ? 0 : l:ind
+
+FUNCTION  <SNR>119_get_timeout()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/delim.vim:963
+Called 10 times
+Total time:   0.000069
+ Self time:   0.000069
+
+count  total (s)   self (s)
+   10              0.000060   return (empty(v:insertmode) ? mode() : v:insertmode) ==# 'i' ? g:vimtex_delim_insert_timeout : g:vimtex_delim_timeout
+
+FUNCTION  vimtex#syntax#in_mathzone()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/syntax.vim:28
+Called 39 times
+Total time:   0.146650
+ Self time:   0.001590
+
+count  total (s)   self (s)
+                              " The following checks if we are inside a texMathZone environment. The
+                              " arguments to \label{...}, the texRefArg group, and \text{...} like
+                              " commands, the texMathTextArg group, are actively ignored as these should
+                              " not be considered to be math environments.
+   39   0.145690   0.000630   let l:groups = reverse(call('vimtex#syntax#stack', a:000))
+   39              0.000589   let l:group = matchstr(l:groups, '\v^tex%(Math%(Zone|Text|Tag)|RefArg)')
+   39              0.000205   return l:group =~# '^texMathZone'
+
+FUNCTION  vimtex#syntax#in_comment()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/syntax.vim:23
+Called 124 times
+Total time:   0.525279
+ Self time:   0.001512
+
+count  total (s)   self (s)
+  124   0.525193   0.001427   return call('vimtex#syntax#in', ['texComment'] + a:000)
+
+FUNCTION  <SNR>73_L2U_UnsetAutoSub()
+    Defined: ~/.local/share/nvim/lazy/julia-vim/autoload/LaTeXtoUnicode.vim:692
+Called 1 time
+Total time:   0.000009
+ Self time:   0.000009
+
+count  total (s)   self (s)
+    1              0.000005   if !b:l2u_autosub_set
+    1              0.000002     return
+                              endif
+                            
+                              iunmap <buffer> <CR>
+                              if empty(maparg("<CR>", "i"))
+                                call s:L2U_ReinstateMapping(b:l2u_prev_map_cr)
+                              endif
+                              iunmap <buffer> <Plug>L2UAutoSub
+                              exe 'iunmap <buffer> ' . s:l2u_fallback_trigger_cr
+                              augroup L2UAutoSub
+                                autocmd! * <buffer>
+                              augroup END
+                              let b:l2u_autosub_set = 0
+
+FUNCTION  509()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/qf/bibtex.vim:35
+Called 1 time
+Total time:   0.000020
+ Self time:   0.000020
+
+count  total (s)   self (s)
+    1              0.000004   let self.file = a:blg
+                              if empty(self.file) || !filereadable(self.file) | throw 'BibTeX Aborted' | endif
+                            
+                              let self.types = map( filter(items(s:), 'v:val[0] =~# ''^type_'''), 'v:val[1]')
+                              let self.db_files = []
+                            
+                              call vimtex#qf#u#caddfile(self, fnameescape(self.file))
+                            
+                              call self.fix_paths()
+
+FUNCTION  <SNR>142_indent_items()
+    Defined: ~/.local/share/nvim/lazy/vimtex/indent/tex.vim:212
+Called 5 times
+Total time:   0.000289
+ Self time:   0.000289
+
+count  total (s)   self (s)
+    5              0.000017   if s:envs_lists_empty | return 0 | endif
+                            
+    5              0.000048   if a:prev_line =~# s:envs_item && (a:line !~# s:envs_enditem     || (a:line =~# s:envs_item && a:prev_line =~# s:envs_beglist))
+                                return s:sw
+    5              0.000062   elseif a:line =~# s:envs_endlist && a:prev_line !~# s:envs_begitem
+                                return -s:sw
+    5              0.000029   elseif a:line =~# s:envs_item && a:prev_line !~# s:envs_item
+                                let l:prev_lnum = a:prev_lnum
+                                let l:prev_line = a:prev_line
+                                while l:prev_lnum >= 1
+                                  if l:prev_line =~# s:envs_begitem
+                                    return -s:sw*(l:prev_line =~# s:envs_item)
+                                  endif
+                                  let l:prev_lnum = prevnonblank(l:prev_lnum - 1)
+                                  let l:prev_line = getline(l:prev_lnum)
+                                endwhile
+    5              0.000004   endif
+                            
+    5              0.000006   return 0
+
+FUNCTION  <SNR>142_indent_tikz()
+    Defined: ~/.local/share/nvim/lazy/vimtex/indent/tex.vim:290
+Called 5 times
+Total time:   0.000044
+ Self time:   0.000044
+
+count  total (s)   self (s)
+    5              0.000040   if !has_key(b:vimtex.packages, 'tikz') | return 0 | endif
+                            
+                              let l:synstack = vimtex#syntax#stack(a:lnum, 1)
+                              if match(l:synstack, '^texTikzZone') < 0 | return 0 | endif
+                            
+                              let l:env_lnum = search('\\begin\s*{tikzpicture\*\?}', 'bn')
+                              if l:env_lnum > 0 && l:env_lnum < a:lnum
+                                let l:prev_starts = a:prev =~# s:tikz_commands
+                                let l:prev_stops  = a:prev =~# ';\s*$'
+                            
+                                " Increase indent on tikz command start
+                                if l:prev_starts && ! l:prev_stops
+                                  return s:sw
+                                endif
+                            
+                                " Decrease indent on tikz command end, i.e. on semicolon
+                                if ! l:prev_starts && l:prev_stops
+                                  let l:context = join(getline(l:env_lnum, a:lnum-1), '')
+                                  return -s:sw*(l:context =~# s:tikz_commands)
+                                endif
+                              endif
+                            
+                              return 0
+
+FUNCTION  518()
+    Defined: ~/.local/share/nvim/lazy/vimtex/indent/tex.vim:112
+Called 5 times
+Total time:   0.000464
+ Self time:   0.000464
+
+count  total (s)   self (s)
+    5              0.000016   let self.finished = 0
+    5              0.000010   let self.amp_ind = -1
+    5              0.000009   let self.init_ind = -1
+    5              0.000010   let self.prev_lnum = a:plnum
+    5              0.000012   let self.prev_line = a:pline
+    5              0.000029   let self.prev_ind = a:plnum > 0 ? indent(a:plnum) : 0
+    5              0.000025   if !g:vimtex_indent_on_ampersands | return self.prev_ind | endif
+                            
+    5              0.000138   if a:cline =~# s:re_align || a:cline =~# s:re_amp || a:cline =~# '^\v\s*\\%(end|])'
+                                call self.parse_context(a:lnum, a:cline)
+    5              0.000004   endif
+                            
+    5              0.000037   if a:cline =~# s:re_align
+                                let self.finished = 1
+                                let l:ind_diff =   strdisplaywidth(strpart(a:cline, 0, match(a:cline, s:re_amp))) - strdisplaywidth(strpart(a:cline, 0, match(a:cline, '\S')))
+                                return self.amp_ind - l:ind_diff
+    5              0.000004   endif
+                            
+    5              0.000020   if self.amp_ind >= 0 && (a:cline =~# '^\v\s*\\%(end|])' || a:cline =~# s:re_amp)
+                                let self.prev_lnum = self.init_lnum
+                                let self.prev_line = self.init_line
+                                return self.init_ind
+    5              0.000003   endif
+                            
+    5              0.000009   return self.prev_ind
+
+FUNCTION  <SNR>73_L2U_SetKeymap()
+    Defined: ~/.local/share/nvim/lazy/julia-vim/autoload/LaTeXtoUnicode.vim:709
+Called 1 time
+Total time:   0.000023
+ Self time:   0.000023
+
+count  total (s)   self (s)
+    1              0.000012   if !b:l2u_keymap_set && get(g:, "latex_to_unicode_keymap", 0) && b:l2u_enabled
+                                setlocal keymap=latex2unicode
+                                let b:l2u_keymap_set = 1
+    1              0.000001   endif
+
+FUNCTION  471()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/delim.vim:737
+Called 58 times
+Total time:   0.001399
+ Self time:   0.001399
+
+count  total (s)   self (s)
+   58              0.000738   let [lnum, cnum] = searchpos(self.re.corr, self.gms_flags, self.gms_stopline)
+                            
+   58              0.000463   let match = matchstr(getline(lnum), '^' . self.re.corr, cnum-1)
+   58              0.000122   return [match, lnum, cnum]
+
+FUNCTION  <SNR>73_L2U_SetTab()
+    Defined: ~/.local/share/nvim/lazy/julia-vim/autoload/LaTeXtoUnicode.vim:548
+Called 1 time
+Total time:   0.000145
+ Self time:   0.000145
+
+count  total (s)   self (s)
+    1              0.000030   let opt_do_cmdtab = index(["on", "command", "cmd"], get(g:, "latex_to_unicode_tab", "on")) != -1
+    1              0.000018   let opt_do_instab = index(["on", "insert", "ins"], get(g:, "latex_to_unicode_tab", "on")) != -1
+    1              0.000009   if !b:l2u_cmdtab_set && opt_do_cmdtab && b:l2u_enabled
+                                let b:l2u_cmdtab_keys = get(g:, "latex_to_unicode_cmd_mapping", ['<Tab>','<S-Tab>'])
+                                if type(b:l2u_cmdtab_keys) != type([]) " avoid using v:t_list for backward compatibility
+                                  let b:l2u_cmdtab_keys = [b:l2u_cmdtab_keys]
+                                endif
+                                for k in b:l2u_cmdtab_keys
+                                  exec 'let trigger = char2nr("'.(k[0] == '<' ? '\' : '').k.'")'
+                                  exec 'cnoremap <buffer><expr> '.k.' LaTeXtoUnicode#CmdTab('.trigger.')'
+                                endfor
+                                let b:l2u_cmdtab_set = 1
+    1              0.000002   endif
+    1              0.000004   if b:l2u_tab_set
+                                return
+    1              0.000001   endif
+                              " g:did_insert_enter is set from an autocommand in ftdetect
+    1              0.000008   if a:wait_insert_enter && !get(g:, "did_insert_enter", 0)
+                                return
+    1              0.000001   endif
+    1              0.000006   if !opt_do_instab || !b:l2u_enabled
+    1              0.000002     return
+                              endif
+                            
+                              " Backup the previous completefunc (the check is probably not really needed)
+                              if get(b:, "l2u_prev_completefunc", "") != "LaTeXtoUnicode#completefunc"
+                                let b:l2u_prev_completefunc = &completefunc
+                              endif
+                              setlocal completefunc=LaTeXtoUnicode#completefunc
+                            
+                              let b:l2u_prev_map_tab = s:L2U_SetFallbackMapping('<Tab>', s:l2u_fallback_trigger)
+                              imap <buffer> <Tab> <Plug>L2UTab
+                              inoremap <buffer><expr> <Plug>L2UTab LaTeXtoUnicode#Tab()
+                            
+                              let b:l2u_tab_set = 1
+
+FUNCTION  327()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/compiler/latexmk.vim:186
+Called 2 times
+Total time:   0.000205
+ Self time:   0.000191
+
+count  total (s)   self (s)
+    2              0.000010   if g:vimtex_view_use_temp_files && index(['pdf', 'synctex.gz'], a:ext) >= 0
+                                return self.__get_temp_file(a:ext)
+    2              0.000002   endif
+                            
+    9              0.000029   for l:root in [ $VIMTEX_OUTPUT_DIRECTORY, self.aux_dir, self.out_dir, self.file_info.root]
+   14              0.000028     if empty(l:root) | continue | endif
+                            
+    2              0.000015     let l:cand = printf('%s/%s.%s', l:root, self.file_info.jobname, a:ext)
+    2   0.000034   0.000021     if !vimtex#paths#is_abs(l:root)
+                                  let l:cand = self.file_info.root . '/' . l:cand
+    2              0.000002     endif
+                            
+    2              0.000026     if filereadable(l:cand)
+    1              0.000010       return fnamemodify(l:cand, ':p')
+    1              0.000001     endif
+    2              0.000003   endfor
+                            
+    1              0.000002   return ''
+
+FUNCTION  provider#python3#Call()
+    Defined: /snap/nvim/2823/usr/share/nvim/runtime/autoload/provider/python3.vim:5
+Called 1032 times
+Total time:   2.800158
+ Self time:   2.800158
+
+count  total (s)   self (s)
+ 1032              2.607383   return v:lua.vim.provider.python.call(a:method, a:args)
+
+FUNCTION  <SNR>73_L2U_UnsetTab()
+    Defined: ~/.local/share/nvim/lazy/julia-vim/autoload/LaTeXtoUnicode.vim:587
+Called 1 time
+Total time:   0.000046
+ Self time:   0.000046
+
+count  total (s)   self (s)
+    1              0.000006   if b:l2u_cmdtab_set
+                                for k in b:l2u_cmdtab_keys
+                                  exec 'cunmap <buffer> '.k
+                                endfor
+                                let b:l2u_cmdtab_set = 0
+    1              0.000002   endif
+    1              0.000005   if !b:l2u_tab_set
+    1              0.000005     return
+                              endif
+                              exec "setlocal completefunc=" . get(b:, "l2u_prev_completefunc", "")
+                              iunmap <buffer> <Tab>
+                              if empty(maparg("<Tab>", "i"))
+                                call s:L2U_ReinstateMapping(b:l2u_prev_map_tab)
+                              endif
+                              iunmap <buffer> <Plug>L2UTab
+                              exe 'iunmap <buffer> ' . s:l2u_fallback_trigger
+                              let b:l2u_tab_set = 0
+
+FUNCTION  vimtex#log#warning()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/log.vim:20
+Called 1 time
+Total time:   0.004884
+ Self time:   0.000017
+
+count  total (s)   self (s)
+    1   0.004884   0.000017   call s:logger.add(a:000, 'warning')
+
+FUNCTION  vimtex#delim#get_matching()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/delim.vim:392
+Called 68 times
+Total time:   0.058071
+ Self time:   0.005237
+
+count  total (s)   self (s)
+   68              0.000350   if empty(a:delim) || !has_key(a:delim, 'lnum') | return {} | endif
+                            
+                              " Get the matching position
+   68   0.000608   0.000401   let l:save_pos = vimtex#pos#get_cursor()
+   68   0.002164   0.000439   call vimtex#pos#set_cursor(a:delim)
+   68   0.049545   0.000497   let [l:match, l:lnum, l:cnum] = a:delim.get_matching()
+   68   0.002377   0.000521   call vimtex#pos#set_cursor(l:save_pos)
+                            
+                              " Create the match result
+   68              0.000498   let l:matching = deepcopy(a:delim)
+   68              0.000130   let l:matching.lnum = l:lnum
+   68              0.000088   let l:matching.cnum = l:cnum
+   68              0.000104   let l:matching.match = l:match
+   68              0.000116   let l:matching.corr  = a:delim.match
+   68              0.000137   let l:matching.side = a:delim.is_open ? 'close' : 'open'
+   68              0.000118   let l:matching.is_open = !a:delim.is_open
+   68              0.000126   let l:matching.re.corr = a:delim.re.this
+   68              0.000109   let l:matching.re.this = a:delim.re.corr
+                            
+   68              0.000112   if l:matching.type ==# 'delim'
+   10              0.000019     let l:matching.corr_delim = a:delim.delim
+   10              0.000016     let l:matching.corr_mod = a:delim.mod
+   10              0.000016     let l:matching.delim = a:delim.corr_delim
+   10              0.000015     let l:matching.mod = a:delim.corr_mod
+   58              0.000173   elseif l:matching.type ==# 'env' && has_key(l:matching, 'name')
+                                if l:matching.is_open
+                                  let l:matching.env_cmd = vimtex#cmd#get_at(l:lnum, l:cnum)
+                                else
+                                  unlet l:matching.env_cmd
+                                endif
+                                let l:matching.name = matchstr(l:match, '{\zs\k*\ze\*\?}')
+   68              0.000034   endif
+                            
+   68              0.000078   return l:matching
+
+FUNCTION  vimtex#syntax#stack()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/syntax.vim:7
+Called 289 times
+Total time:   1.236234
+ Self time:   1.236234
+
+count  total (s)   self (s)
+  289              0.001998   let l:pos = a:0 > 0 ? [a:1, a:2] : [line('.'), col('.')]
+  289              0.000649   if mode() ==# 'i'
+  265              0.000650     let l:pos[1] -= 1
+  289              0.000209   endif
+  289              0.002429   call map(l:pos, 'max([v:val, 1])')
+                            
+  289              1.229608   return map(synstack(l:pos[0], l:pos[1]), "synIDattr(v:val, 'name')")
+
+FUNCTION  UltiSnips#CursorMoved()
+    Defined: ~/.local/share/nvim/lazy/ultisnips/autoload/UltiSnips.vim:171
+Called 95 times
+Total time:   0.627100
+ Self time:   0.627100
+
+count  total (s)   self (s)
+   95              0.627000     py3 UltiSnips_Manager._cursor_moved()
+
+FUNCTION  vimtex#ui#echo()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/ui.vim:7
+Called 1 time
+Total time:   0.000144
+ Self time:   0.000057
+
+count  total (s)   self (s)
+    1              0.000005   if empty(a:input) | return | endif
+    1              0.000011   let l:opts = extend({'indent': 0}, a:0 > 0 ? a:1 : {})
+                            
+    1              0.000004   if type(a:input) == v:t_string
+                                call s:echo_string(a:input, l:opts)
+    1              0.000004   elseif type(a:input) == v:t_list
+    1   0.000101   0.000014     call s:echo_formatted(a:input, l:opts)
+                              elseif type(a:input) == v:t_dict
+                                call s:echo_dict(a:input, l:opts)
+                              else
+                                call vimtex#log#warn('Argument not supported: ' . type(a:input))
+    1              0.000001   endif
+
+FUNCTION  360()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/qf/latexlog.vim:103
+Called 1 time
+Total time:   0.032342
+ Self time:   0.000149
+
+count  total (s)   self (s)
+    1              0.000014   if empty(a:log) || !filereadable(a:log)
+                                throw 'VimTeX: No log file found'
+    1              0.000001   endif
+                            
+    1   0.030796   0.000023   call vimtex#qf#u#caddfile(self, fnameescape(a:log))
+                            
+                              " Apply some post processing of the quickfix list
+    1              0.000005   let self.main = a:tex
+    1              0.000009   let self.root = fnamemodify(a:tex, ':h')
+    1   0.001512   0.000092   call self.fix_paths(a:log)
+
+FUNCTION  361()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/qf/latexlog.vim:117
+Called 1 time
+Total time:   0.001420
+ Self time:   0.000832
+
+count  total (s)   self (s)
+    1              0.000028   let l:qflist = getqflist()
+    1              0.000360   let l:lines = readfile(a:log)
+    1              0.000006   let l:nlines = len(l:lines)
+    1              0.000006   let l:hbox_cache = {'index': {}, 'paths': {}}
+                            
+    8              0.000015   for l:qf in l:qflist
+                                " Handle missing buffer/filename: Fallback to the main file (this is always
+                                " correct in single-file projects and is thus a good fallback).
+    7              0.000016     if l:qf.bufnr == 0
+                                  let l:bufnr_main = bufnr(self.main)
+                                  if bufnr(self.main) < 0
+                                    execute 'badd' self.main
+                                    let l:bufnr_main = bufnr(self.main)
+                                  endif
+                                  let l:qf.bufnr = l:bufnr_main
+    7              0.000005     endif
+                            
+                                " Try to parse the filename from logfile for certain errors, except for
+                                " large log files where this makes for bad UI because it locks Vim while
+                                " waiting for this parsing to finish.
+    7   0.000214   0.000108     if l:nlines < 10000 && s:fix_paths_hbox_warning(l:qf, l:lines, self.root, l:hbox_cache)
+                                  continue
+    7              0.000004     endif
+                            
+                                " Check and possibly fix invalid file from file:line type entries
+    7   0.000574   0.000092     call s:fix_paths_invalid_bufname(l:qf, self.root)
+    8              0.000009   endfor
+                            
+    1              0.000019   call setqflist(l:qflist, 'r')
+
+FUNCTION  vimtex#qf#bibtex#addqflist()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/qf/bibtex.vim:7
+Called 1 time
+Total time:   0.000057
+ Self time:   0.000037
+
+count  total (s)   self (s)
+    1              0.000009   if get(g:vimtex_quickfix_blgparser, 'disable') | return | endif
+                            
+    1              0.000001   try
+    1   0.000030   0.000010     call s:qf.addqflist(a:blg)
+    1              0.000013   catch /BibTeX Aborted/
+    1              0.000002   endtry
+
+FUNCTION  <SNR>138_echo_formatted()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/ui.vim:187
+Called 1 time
+Total time:   0.000087
+ Self time:   0.000087
+
+count  total (s)   self (s)
+    1              0.000010   echo repeat(' ', a:opts.indent)
+    1              0.000001   try
+    3              0.000006     for l:part in a:parts
+    2              0.000007       if type(l:part) == v:t_string
+    1              0.000002         echohl VimtexMsg
+    1              0.000008         echon l:part
+    1              0.000001       else
+    1              0.000009         execute 'echohl' l:part[0]
+    1              0.000009         echon l:part[1]
+    2              0.000002       endif
+    2              0.000004       unlet l:part
+    3              0.000003     endfor
+    1              0.000002   finally
+    1              0.000002     echohl None
+    1              0.000001   endtry
+
+FUNCTION  <SNR>142_clean_line()
+    Defined: ~/.local/share/nvim/lazy/vimtex/indent/tex.vim:97
+Called 10 times
+Total time:   0.000188
+ Self time:   0.000188
+
+count  total (s)   self (s)
+   10              0.000177   return substitute(a:line, '\s*\\\@<!%.*', '', '')
+
+FUNCTION  vimtex#qf#open()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/qf.vim:42
+Called 1 time
+Total time:   0.032972
+ Self time:   0.000131
+
+count  total (s)   self (s)
+    1              0.000013   if !exists('b:vimtex.qf.addqflist') | return | endif
+                            
+    1              0.000001   try
+    1   0.032811   0.000012     call vimtex#qf#setqflist()
+                              catch /VimTeX: No log file found/
+                                if a:force
+                                  call vimtex#log#warning('No log file found')
+                                endif
+                                if g:vimtex_quickfix_mode > 0
+                                  cclose
+                                endif
+                                return
+                              catch
+                                call vimtex#log#error( 'Something went wrong when parsing log files!', v:exception)
+                                if g:vimtex_quickfix_mode > 0
+                                  cclose
+                                endif
+                                return
+    1              0.000001   endtry
+                            
+    1              0.000031   if empty(getqflist())
+                                if a:force
+                                  call vimtex#log#info('No errors!')
+                                endif
+                                if g:vimtex_quickfix_mode > 0
+                                  cclose
+                                endif
+                                return
+    1              0.000001   endif
+                            
+                              "
+                              " There are two options that determine when to open the quickfix window.  If
+                              " forced, the quickfix window is always opened when there are errors or
+                              " warnings (forced typically imply that the functions is called from the
+                              " normal mode mapping).  Else the behaviour is based on the settings.
+                              "
+    1   0.000058   0.000017   let l:errors_or_warnings = s:qf_has_errors() || g:vimtex_quickfix_open_on_warning
+                            
+    1              0.000004   if a:force || (g:vimtex_quickfix_mode > 0 && l:errors_or_warnings)
+                                let s:previous_window = win_getid()
+                                botright cwindow
+                                if g:vimtex_quickfix_mode == 2
+                                  redraw
+                                  call win_gotoid(s:previous_window)
+                                endif
+                                if g:vimtex_quickfix_autoclose_after_keystrokes > 0
+                                  augroup vimtex_qf_autoclose
+                                    autocmd!
+                                    autocmd CursorMoved,CursorMovedI * call s:qf_autoclose_check()
+                                  augroup END
+                                endif
+                                redraw
+    1              0.000001   endif
+
+FUNCTION  <SNR>119_get_delim()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/delim.vim:510
+Called 124 times
+Total time:   0.663239
+ Self time:   0.107020
+
+count  total (s)   self (s)
+                              " Arguments:
+                              "   opts = {
+                              "     'direction'   :  next
+                              "                      prev
+                              "                      current
+                              "     'type'        :  env_tex
+                              "                      env_math
+                              "                      env_all
+                              "                      delim_tex
+                              "                      delim_math
+                              "                      delim_modq_math (possibly modified math delimiter)
+                              "                      delim_mod_math  (modified math delimiter)
+                              "                      delim_all
+                              "                      all
+                              "     'side'        :  open
+                              "                      close
+                              "                      both
+                              "     'syn_exclude' :  Don't match in given syntax
+                              "  }
+                              "
+                              " Returns:
+                              "   delim = {
+                              "     type    : env | delim
+                              "     side    : open | close
+                              "     name    : name of environment [only for type env]
+                              "     lnum    : number
+                              "     cnum    : number
+                              "     match   : unparsed matched delimiter
+                              "     corr    : corresponding delimiter
+                              "     re : {
+                              "       open  : regexp for the opening part
+                              "       close : regexp for the closing part
+                              "     }
+                              "     remove  : method to remove the delimiter
+                              "   }
+                              "
+  124   0.001522   0.001018   let l:save_pos = vimtex#pos#get_cursor()
+  124              0.000774   let l:re = g:vimtex#delim#re[a:opts.type][a:opts.side]
+  124              0.000213   while 1
+  124              0.080720     let [l:lnum, l:cnum] = a:opts.direction ==# 'next' ? searchpos(l:re, 'cnW', line('.') + g:vimtex_delim_stopline) : a:opts.direction ==# 'prev'   ? searchpos(l:re, 'bcnW', max([line('.') - g:vimtex_delim_stopline, 1]))   : searchpos(l:re, 'bcnW', line('.'))
+  124              0.000564     if l:lnum == 0 | break | endif
+                            
+  117              0.000664     if has_key(a:opts, 'syn_exclude') && vimtex#syntax#in(a:opts.syn_exclude, l:lnum, l:cnum)
+                                  call vimtex#pos#set_cursor(vimtex#pos#prev(l:lnum, l:cnum))
+                                  continue
+  117              0.000057     endif
+                            
+  117              0.000093     break
+  124              0.000193   endwhile
+  124   0.006597   0.001573   call vimtex#pos#set_cursor(l:save_pos)
+                            
+  124              0.007775   let l:match = matchstr(getline(l:lnum), '^' . l:re, l:cnum-1)
+                            
+  124              0.001084   if a:opts.direction ==# 'current' && l:cnum + strlen(l:match) + (mode() ==# 'i' ? 1 : 0) <= col('.')
+   56              0.000130     let l:match = ''
+   56              0.000095     let l:lnum = 0
+   56              0.000080     let l:cnum = 0
+  124              0.000091   endif
+                            
+  502              0.000984   for l:parser in s:parsers
+  446   0.280369   0.002877     if l:parser.detect(l:match)
+   68   0.274585   0.001386       return l:parser.parse({ 'lnum' : l:lnum, 'cnum' : l:cnum, 'match' : l:match, 'remove' : function('s:delim_remove'),}, a:opts)
+  378              0.000250     endif
+  434              0.000353   endfor
+                            
+   56              0.000097   return {}
+
+FUNCTION  vimtex#syntax#in()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/syntax.vim:18
+Called 240 times
+Total time:   1.060035
+ Self time:   0.004619
+
+count  total (s)   self (s)
+  240   1.059859   0.004443   return match(call('vimtex#syntax#stack', a:000), '^' . a:name) >= 0
+
+FUNCTION  vimtex#util#count_close()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/util.vim:48
+Called 5 times
+Total time:   0.002060
+ Self time:   0.002060
+
+count  total (s)   self (s)
+                              " Counts the number of unopened closing patterns in the given line.
+    5              0.000400   let l:i = match(a:line, a:re_close)
+    5              0.000017   if l:i < 0 | return 0 | endif
+                            
+    3              0.000005   let l:sum = 0
+   12              0.000016   while l:i >= 0
+    9              0.000013     let l:sum += 1
+    9              0.000016     let l:imax_first = l:i
+    9              0.000190     let l:i += len(matchstr(a:line, a:re_close, l:i))
+    9              0.000345     let l:i = match(a:line, a:re_close, l:i)
+   12              0.000018   endwhile
+                            
+    3              0.000316   let l:i = match(a:line, a:re_open)
+   12              0.000032   while l:i >= 0 && l:i < l:imax_first
+    9              0.000015     let l:sum -= 1
+    9              0.000199     let l:i += len(matchstr(a:line, a:re_open, l:i))
+    9              0.000379     let l:i = match(a:line, a:re_open, l:i)
+   12              0.000017   endwhile
+                            
+    3              0.000012   return max([l:sum, 0])
+
+FUNCTION  493()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/matchparen.vim:66
+Called 124 times
+Total time:   0.002033
+ Self time:   0.002033
+
+count  total (s)   self (s)
+  124              0.000570   if exists('w:vimtex_match_id1')
+   63              0.000212     call matchdelete(w:vimtex_match_id1)
+   63              0.000123     call matchdelete(w:vimtex_match_id2)
+   63              0.000162     unlet! w:vimtex_match_id1
+   63              0.000062     unlet! w:vimtex_match_id2
+  124              0.000100   endif
+
+FUNCTION  <SNR>93_callback_nvim_output()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/compiler/_template.vim:466
+Called 60 times
+Total time:   0.349396
+ Self time:   0.308196
+
+count  total (s)   self (s)
+                              " Filter out unwanted newlines
+   60              0.001845   let l:data = split(substitute(join(a:data, 'QQ'), '^QQ\|QQ$', '', ''), 'QQ')
+                            
+   60              0.001459   if !empty(l:data) && filewritable(self.output)
+   60              0.299006     call writefile(l:data, self.output, 'a')
+   60              0.000242   endif
+                            
+   60   0.045061   0.003861   call s:check_callback( get(filter(copy(a:data),   {_, x -> x =~# '^vimtex_compiler_callback'}), -1, ''))
+                            
+   60              0.000502   if !exists('b:vimtex.compiler.hooks') | return | endif
+   60              0.000078   try
+   60              0.000241     for l:Hook in b:vimtex.compiler.hooks
+                                  call l:Hook(join(a:data, "\n"))
+   60              0.000076     endfor
+                              catch /E716/
+   60              0.000086   endtry
+
+FUNCTION  LaTeXtoUnicode#Init()
+    Defined: ~/.local/share/nvim/lazy/julia-vim/autoload/LaTeXtoUnicode.vim:725
+Called 1 time
+Total time:   0.000507
+ Self time:   0.000241
+
+count  total (s)   self (s)
+    1              0.000017   let wait_insert_enter = a:0 > 0 ? a:1 : 1
+                            
+    1              0.000006   if !wait_insert_enter
+    1              0.000008     augroup L2UInit
+    1              0.000035       autocmd!
+    1              0.000003     augroup END
+    1              0.000003   endif
+                            
+    1   0.000092   0.000046   call s:L2U_UnsetTab()
+    1   0.000031   0.000022   call s:L2U_UnsetAutoSub()
+    1   0.000028   0.000019   call s:L2U_UnsetKeymap()
+                            
+    1   0.000169   0.000023   call s:L2U_SetTab(wait_insert_enter)
+    1   0.000059   0.000025   call s:L2U_SetAutoSub(wait_insert_enter)
+    1   0.000041   0.000019   call s:L2U_SetKeymap()
+    1              0.000004   return ''
+
+FUNCTION  UltiSnips#TrackChange()
+    Defined: ~/.local/share/nvim/lazy/ultisnips/autoload/UltiSnips.vim:190
+Called 192 times
+Total time:   0.526909
+ Self time:   0.512511
+
+count  total (s)   self (s)
+  192   0.526607   0.512209     py3 UltiSnips_Manager._track_change()
+
+FUNCTION  vimtex#qf#setqflist()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/qf.vim:102
+Called 1 time
+Total time:   0.032799
+ Self time:   0.000195
+
+count  total (s)   self (s)
+    1              0.000007   if !exists('b:vimtex.qf.addqflist') | return | endif
+                            
+    1              0.000003   if a:0 > 0 && !empty(a:1)
+                                let l:tex = a:1
+                                let l:log = fnamemodify(l:tex, ':r') . '.log'
+                                let l:blg = fnamemodify(l:tex, ':r') . '.blg'
+                                let l:jump = 0
+    1              0.000001   else
+    1              0.000003     let l:tex = b:vimtex.tex
+    1   0.000115   0.000012     let l:log = b:vimtex.compiler.get_file('log')
+    1   0.000111   0.000009     let l:blg = b:vimtex.compiler.get_file('blg')
+    1              0.000003     let l:jump = g:vimtex_quickfix_autojump
+    1              0.000001   endif
+                            
+    1              0.000001   try
+                                " Initialize the quickfix list
+                                " Note: Only create new list if the current list is not a VimTeX qf list
+    1              0.000014     if get(getqflist({'title': 1}), 'title') =~# 'VimTeX'
+    1              0.000019       call setqflist([], 'r')
+                                else
+                                  call setqflist([])
+    1              0.000001     endif
+                            
+                                " Parse LaTeX errors
+    1   0.032355   0.000012     call b:vimtex.qf.addqflist(l:tex, l:log)
+                            
+                                " Parse bibliography errors
+    1              0.000005     if has_key(b:vimtex.packages, 'biblatex')
+                                  call vimtex#qf#biblatex#addqflist(l:blg)
+    1              0.000001     else
+    1   0.000098   0.000041       call vimtex#qf#bibtex#addqflist(l:blg)
+    1              0.000001     endif
+                            
+                                " Ignore entries if desired
+    1              0.000004     if !empty(g:vimtex_quickfix_ignore_filters)
+                                  let l:qflist = getqflist()
+                                  for l:re in g:vimtex_quickfix_ignore_filters
+                                    call filter(l:qflist, 'v:val.text !~# l:re')
+                                  endfor
+                                  call setqflist(l:qflist, 'r')
+    1              0.000001     endif
+                            
+                                " Set title if supported
+    1              0.000001     try
+    1              0.000010       call setqflist([], 'r', {'title': 'VimTeX errors (' . b:vimtex.qf.name . ')'})
+                                catch
+    1              0.000001     endtry
+                            
+                                " Jump to first error if wanted
+    1              0.000001     if l:jump
+                                  cfirst
+    1              0.000001     endif
+                              catch /VimTeX: No log file found/
+                                throw 'VimTeX: No log file found'
+    1              0.000001   endtry
+
+FUNCTION  <SNR>73_L2U_UnsetKeymap()
+    Defined: ~/.local/share/nvim/lazy/julia-vim/autoload/LaTeXtoUnicode.vim:716
+Called 1 time
+Total time:   0.000008
+ Self time:   0.000008
+
+count  total (s)   self (s)
+    1              0.000004   if !b:l2u_keymap_set
+    1              0.000002     return
+                              endif
+                              setlocal keymap=
+                              let b:l2u_keymap_set = 0
+
+FUNCTION  <SNR>119_get_re_for_delim()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/delim.vim:970
+Called 20 times
+Total time:   0.001431
+ Self time:   0.001233
+
+count  total (s)   self (s)
+   20              0.000058   let l:type = a:0 > 0 ? a:1 : 'delim_all'
+                            
+                              " First check for unmatched math delimiter
+   20              0.000030   if a:delim ==# '.'
+                                return g:vimtex#delim#re.delim_math[a:side ? 'open' : 'close']
+   20              0.000012   endif
+                            
+                              " Next check normal delimiters
+   20   0.001138   0.000940   let l:index = index(map(   copy(g:vimtex#delim#lists[l:type].name),   {_, x -> x[a:side]}), a:delim)
+   20              0.000093   return l:index >= 0 ? g:vimtex#delim#lists[l:type].re[l:index][a:side] : ''
+
+FUNCTION  <SNR>142_get_prev_lnum()
+    Defined: ~/.local/share/nvim/lazy/vimtex/indent/tex.vim:81
+Called 5 times
+Total time:   0.019115
+ Self time:   0.000398
+
+count  total (s)   self (s)
+    5              0.000021   let l:lnum = a:lnum
+    5              0.000025   let l:line = getline(l:lnum)
+                            
+    5   0.018739   0.000130   while l:lnum > 0 && (l:line =~# '^\s*%' || s:in_verbatim(l:lnum))
+                                let l:lnum = prevnonblank(l:lnum - 1)
+                                let l:line = getline(l:lnum)
+    5              0.000009   endwhile
+                            
+    5   0.000250   0.000141   return [ l:lnum, l:lnum > 0 ? s:clean_line(l:line) : '',]
+
+FUNCTION  <SNR>119_get_corr_delimiter()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/delim.vim:989
+Called 10 times
+Total time:   0.000445
+ Self time:   0.000445
+
+count  total (s)   self (s)
+   10              0.000028   let l:type = a:0 > 0 ? a:1 : 'delim_all'
+                            
+   65              0.000071   for l:pair in g:vimtex#delim#lists[l:type].name
+   65              0.000084     if a:delim ==# l:pair[0]
+    2              0.000002       return l:pair[1]
+   63              0.000079     elseif a:delim ==# l:pair[1]
+    8              0.000011       return l:pair[0]
+   55              0.000019     endif
+   55              0.000025   endfor
+
+FUNCTION  <SNR>98_fix_paths_hbox_warning()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/qf/latexlog.vim:152
+Called 7 times
+Total time:   0.000106
+ Self time:   0.000106
+
+count  total (s)   self (s)
+    7              0.000100   if a:qf.text !~# 'Underfull\|Overfull' | return v:false | endif
+                            
+                              let l:index = index(a:log, a:qf.text)
+                              if l:index < 0 | return v:false | endif
+                            
+                              " Check index cache first
+                              if has_key(a:cache.index, l:index)
+                                if has_key(a:cache.index[l:index], 'bufnr')
+                                  let a:qf.bufnr = a:cache.index[l:index].bufnr
+                                else
+                                  let a:qf.bufnr = 0
+                                  let a:qf.filename = a:cache.index[l:index].filename
+                                endif
+                                return v:true
+                              endif
+                            
+                              " Search for a line above the Overflow/Underflow message that specifies the
+                              " correct source filename
+                              let l:file = ''
+                              let l:level = 1
+                              for l:lnum in range(l:index - 1, 1, -1)
+                                " Check line number cache
+                                if has_key(a:cache.paths, l:lnum)
+                                  let l:file = a:cache.paths[l:lnum]
+                                  let a:cache.paths[l:index] = l:file
+                                  break
+                                endif
+                            
+                                let l:level += vimtex#util#count(a:log[l:lnum], ')')
+                                let l:level -= vimtex#util#count(a:log[l:lnum], '(')
+                                if l:lnum < l:index - 1 && l:level > 0 | continue | endif
+                            
+                                let l:file = matchstr(a:log[l:lnum], '\v\(\zs\f+\ze\)?\s*%(\[\d+]?)?$')
+                                if !empty(l:file)
+                                  " Do some simple parsing and cleanup of the filename
+                                  if !vimtex#paths#is_abs(l:file)
+                                    let l:file = simplify(a:root . '/' . l:file)
+                                  endif
+                            
+                                  " Store in line number cache
+                                  let a:cache.paths[l:index] = l:file
+                                  break
+                                endif
+                              endfor
+                            
+                              if empty(l:file) || !filereadable(l:file) | return v:false | endif
+                            
+                              let l:bufnr = bufnr(l:file)
+                              if l:bufnr > 0
+                                let a:qf.bufnr = bufnr(l:file)
+                                let a:cache.index[l:index] = {'bufnr': a:qf.bufnr}
+                              else
+                                let a:qf.bufnr = 0
+                                let a:qf.filename = fnamemodify(l:file, ':.')
+                                let a:cache.index[l:index] = {'filename': a:qf.filename}
+                              endif
+                            
+                              return v:true
+
+FUNCTION  vimtex#debug#stacktrace()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/debug.vim:7
+Called 1 time
+Total time:   0.004392
+ Self time:   0.002830
+
+count  total (s)   self (s)
+                              " This function builds on Luc Hermite's answer on Stack Exchange:
+                              " http://vi.stackexchange.com/a/6024/21
+                            
+                              " Get stack and exception
+    1              0.000003   if empty(v:throwpoint)
+    1              0.000001     try
+    1              0.000008       throw 'dummy'
+    1              0.000008     catch
+    1              0.000014       let l:stack = reverse(split(v:throwpoint, '\.\.'))[1:]
+    1              0.000003       let l:exception = 'Manual stacktrace'
+    1              0.000002     endtry
+                              else
+                                let l:stack = reverse(split(v:throwpoint, '\.\.'))
+                                let l:exception = v:exception
+    1              0.000001   endif
+                            
+                              " Build the quickfix entries
+    1              0.000002   let l:qflist = []
+    1              0.000002   let l:files = {}
+    6              0.000011   for l:func in l:stack
+    5              0.000005     try
+    5              0.000183       let [l:name, l:offset] = (l:func =~# '\S\+\[\d') ? matchlist(l:func, '\(\S\+\)\[\(\d\+\)\]')[1:2] : matchlist(l:func, '\(\S\+\), line \(\d\+\)')[1:2]
+                                catch
+                                  let l:name = l:func
+                                  let l:offset = 0
+    5              0.000005     endtry
+                            
+    5              0.000050     if l:name =~# '\v(\<SNR\>|^)\d+_'
+    2              0.000025       let l:sid = matchstr(l:name, '\v(\<SNR\>|^)\zs\d+\ze_')
+    2              0.000023       let l:name  = substitute(l:name, '\v(\<SNR\>|^)\d+_', 's:', '')
+    2   0.001217   0.000085       let l:filename = substitute( vimtex#util#command('scriptnames')[l:sid-1], '^\s*\d\+:\s*', '', '')
+    3              0.000003     else
+    3              0.000024       let l:func_name = l:name =~# '^\d\+$' ? '{' . l:name . '}' : l:name
+    3   0.000374   0.000045       let l:func_lines = vimtex#util#command('verbose function ' . l:func_name)
+    3              0.000011       if len(l:func_lines) > 1
+    3              0.000082         let l:filename = matchstr( l:func_lines[1], v:lang[0:1] ==# 'en'   ? 'Last set from \zs.*\.vim' : '\f\+\.vim')
+                                  else
+                                    let l:filename = 'NOFILE'
+    3              0.000002       endif
+    5              0.000004     endif
+                            
+    5              0.000084     let l:filename = fnamemodify(l:filename, ':p')
+    5              0.000067     if filereadable(l:filename)
+    5              0.000020       if !has_key(l:files, l:filename)
+    3              0.000444         let l:files[l:filename] = reverse(readfile(l:filename))
+    5              0.000005       endif
+                            
+    5              0.000031       if l:name =~# '^\d\+$'
+    1              0.000002         let l:lnum = 0
+    1   0.000114   0.000014         let l:output = vimtex#util#command('function {' . l:name . '}')
+    1              0.000032         let l:text = substitute( matchstr(l:output, '^\s*' . l:offset), '^\d\+\s*', '', '')
+    4              0.000003       else
+    4              0.000965         let l:lnum = l:offset + len(l:files[l:filename]) - match(l:files[l:filename], '^\s*fu\%[nction]!\=\s\+' . l:name .'(')
+    4              0.000022         let l:lnum_rev = len(l:files[l:filename]) - l:lnum
+    4              0.000043         let l:text = substitute(l:files[l:filename][l:lnum_rev], '^\s*', '', '')
+    5              0.000004       endif
+                                else
+                                  let l:filename = ''
+                                  let l:lnum = 0
+                                  let l:text = ''
+    5              0.000004     endif
+                            
+    5              0.000070     call add(l:qflist, { 'filename': l:filename, 'function': l:name, 'lnum': l:lnum, 'text': len(l:qflist) == 0 ? l:exception : l:text, 'nr': len(l:qflist),})
+    6              0.000012   endfor
+                            
+                              " Fill in empty filenames
+    1              0.000003   let l:prev_filename = '_'
+    1              0.000003   call reverse(l:qflist)
+    6              0.000009   for l:entry in l:qflist
+    5              0.000013     if empty(l:entry.filename)
+                                  let l:entry.filename = l:prev_filename
+    5              0.000004     endif
+    5              0.000013     let l:prev_filename = l:entry.filename
+    6              0.000005   endfor
+    1              0.000003   call reverse(l:qflist)
+                            
+    1              0.000002   if a:0 > 0
+                                call setqflist(l:qflist)
+                                execute 'copen' len(l:qflist) + 2
+                                wincmd p
+    1              0.000001   endif
+                            
+    1              0.000002   return l:qflist
+
+FUNCTION  vimtex#util#count_open()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/util.vim:24
+Called 5 times
+Total time:   0.002349
+ Self time:   0.002349
+
+count  total (s)   self (s)
+                              " Counts the number of unclosed opening patterns in the given line.
+    5              0.000362   let l:i = match(a:line, a:re_open)
+    5              0.000019   if l:i < 0 | return 0 | endif
+                            
+    5              0.000009   let l:sum = 0
+    5              0.000011   let l:imin_last = l:i
+   14              0.000026   while l:i >= 0
+    9              0.000018     let l:sum += 1
+    9              0.000288     let l:i += len(matchstr(a:line, a:re_open, l:i))
+    9              0.000466     let l:i = match(a:line, a:re_open, l:i)
+   14              0.000023   endwhile
+                            
+    5              0.000221   let l:i = match(a:line, a:re_close, l:imin_last)
+   14              0.000026   while l:i >= 0
+    9              0.000017     let l:sum -= 1
+    9              0.000295     let l:i += len(matchstr(a:line, a:re_close, l:i))
+    9              0.000406     let l:i = match(a:line, a:re_close, l:i)
+   14              0.000025   endwhile
+                            
+    5              0.000023   return max([l:sum, 0])
+
+FUNCTION  <SNR>53_Highlight_Matching_Pair()
+    Defined: /snap/nvim/2823/usr/share/nvim/runtime/plugin/matchparen.vim:44
+Called 237 times
+Total time:   1.341541
+ Self time:   1.330220
+
+count  total (s)   self (s)
+  237              0.002044   if !exists("w:matchparen_ids")
+                                let w:matchparen_ids = []
+  237              0.000304   endif
+                              " Remove any previous match.
+  237   0.006418   0.002100   call s:Remove_Matches()
+                            
+                              " Avoid that we remove the popup menu.
+                              " Return when there are no colors (looks like the cursor jumps).
+  237              0.001358   if pumvisible() || (&t_Co < 8 && !has("gui_running"))
+                                return
+  237              0.000128   endif
+                            
+                              " Get the character under the cursor and check if it's in 'matchpairs'.
+  237              0.000943   let c_lnum = line('.')
+  237              0.000738   let c_col = col('.')
+  237              0.000340   let before = 0
+                            
+  237              0.000877   let text = getline(c_lnum)
+  237              0.007641   let matches = matchlist(text, '\(.\)\=\%'.c_col.'c\(.\=\)')
+  237              0.000600   if empty(matches)
+                                let [c_before, c] = ['', '']
+  237              0.000179   else
+  237              0.001244     let [c_before, c] = matches[1:2]
+  237              0.000166   endif
+  237              0.003702   let plist = split(&matchpairs, '.\zs[:,]')
+  237              0.000963   let i = index(plist, c)
+  237              0.000316   if i < 0
+                                " not found, in Insert mode try character before the cursor
+  222              0.001015     if c_col > 1 && (mode() == 'i' || mode() == 'R')
+  202              0.000568       let before = strlen(c_before)
+  202              0.000280       let c = c_before
+  202              0.000443       let i = index(plist, c)
+  222              0.000167     endif
+  222              0.000251     if i < 0
+                                  " not found, nothing to do
+  198              0.000243       return
+   24              0.000012     endif
+   39              0.000020   endif
+                            
+                              " Figure out the arguments for searchpairpos().
+   39              0.000053   if i % 2 == 0
+   20              0.000029     let s_flags = 'nW'
+   20              0.000047     let c2 = plist[i + 1]
+   19              0.000011   else
+   19              0.000034     let s_flags = 'nbW'
+   19              0.000032     let c2 = c
+   19              0.000047     let c = plist[i - 1]
+   39              0.000021   endif
+   39              0.000057   if c == '['
+                                let c = '\['
+                                let c2 = '\]'
+   39              0.000018   endif
+                            
+                              " Find the match.  When it was just before the cursor move it there for a
+                              " moment.
+   39              0.000044   if before > 0
+   24              0.000088     let has_getcurpos = exists("*getcurpos")
+   24              0.000027     if has_getcurpos
+                                  " getcurpos() is more efficient but doesn't exist before 7.4.313.
+   24              0.000075       let save_cursor = getcurpos()
+                                else
+                                  let save_cursor = winsaveview()
+   24              0.000012     endif
+   24              0.000095     call cursor(c_lnum, c_col - before)
+   39              0.000024   endif
+                            
+   39              0.000272   if !has("syntax") || !exists("g:syntax_on")
+                                let s_skip = "0"
+   39              0.000021   else
+                                " Build an expression that detects whether the current cursor position is
+                                " in certain syntax types (string, comment, etc.), for use as
+                                " searchpairpos()'s skip argument.
+                                " We match "escape" for special items, such as lispEscapeSpecial, and
+                                " match "symbol" for lispBarSymbol.
+   39              0.000185     let s_skip = 'synstack(".", col("."))' . '->indexof({_, id -> synIDattr(id, "name") =~? ' . '"string\\|character\\|singlequote\\|escape\\|symbol\\|comment"}) >= 0'
+                                " If executing the expression determines that the cursor is currently in
+                                " one of the syntax types, then we want searchpairpos() to find the pair
+                                " within those syntax types (i.e., not skip).  Otherwise, the cursor is
+                                " outside of the syntax types and s_skip should keep its value so we skip
+                                " any matching pair inside the syntax types.
+                                " Catch if this throws E363: pattern uses more memory than 'maxmempattern'.
+   39              0.000044     try
+   39   0.188950   0.187945       execute 'if ' . s_skip . ' | let s_skip = "0" | endif'
+                                catch /^Vim\%((\a\+)\)\=:E363/
+                                  " We won't find anything, so skip searching, should keep Vim responsive.
+                                  return
+   39              0.000038     endtry
+   39              0.000023   endif
+                            
+                              " Limit the search to lines visible in the window.
+   39              0.000172   let stoplinebottom = line('w$')
+   39              0.000087   let stoplinetop = line('w0')
+   39              0.000058   if i % 2 == 0
+   20              0.000037     let stopline = stoplinebottom
+   19              0.000015   else
+   19              0.000051     let stopline = stoplinetop
+   39              0.000021   endif
+                            
+                              " Limit the search time to 300 msec to avoid a hang on very long lines.
+                              " This fails when a timeout is not supported.
+   39              0.000106   if mode() == 'i' || mode() == 'R'
+   31              0.000156     let timeout = exists("b:matchparen_insert_timeout") ? b:matchparen_insert_timeout : g:matchparen_insert_timeout
+    8              0.000006   else
+    8              0.000052     let timeout = exists("b:matchparen_timeout") ? b:matchparen_timeout : g:matchparen_timeout
+   39              0.000019   endif
+   39              0.000034   try
+   39   1.111030   1.105031     let [m_lnum, m_col] = searchpairpos(c, '', c2, s_flags, s_skip, stopline, timeout)
+                              catch /E118/
+                                " Can't use the timeout, restrict the stopline a bit more to avoid taking
+                                " a long time on closed folds and long lines.
+                                " The "viewable" variables give a range in which we can scroll while
+                                " keeping the cursor at the same position.
+                                " adjustedScrolloff accounts for very large numbers of scrolloff.
+                                let adjustedScrolloff = min([&scrolloff, (line('w$') - line('w0')) / 2])
+                                let bottom_viewable = min([line('$'), c_lnum + &lines - adjustedScrolloff - 2])
+                                let top_viewable = max([1, c_lnum-&lines+adjustedScrolloff + 2])
+                                " one of these stoplines will be adjusted below, but the current values are
+                                " minimal boundaries within the current window
+                                if i % 2 == 0
+                                  if has("byte_offset") && has("syntax_items") && &smc > 0
+                            	let stopbyte = min([line2byte("$"), line2byte(".") + col(".") + &smc * 2])
+                            	let stopline = min([bottom_viewable, byte2line(stopbyte)])
+                                  else
+                            	let stopline = min([bottom_viewable, c_lnum + 100])
+                                  endif
+                                  let stoplinebottom = stopline
+                                else
+                                  if has("byte_offset") && has("syntax_items") && &smc > 0
+                            	let stopbyte = max([1, line2byte(".") + col(".") - &smc * 2])
+                            	let stopline = max([top_viewable, byte2line(stopbyte)])
+                                  else
+                            	let stopline = max([top_viewable, c_lnum - 100])
+                                  endif
+                                  let stoplinetop = stopline
+                                endif
+                                let [m_lnum, m_col] = searchpairpos(c, '', c2, s_flags, s_skip, stopline)
+   39              0.000043   endtry
+                            
+   39              0.000057   if before > 0
+   24              0.000025     if has_getcurpos
+   24              0.000107       call setpos('.', save_cursor)
+                                else
+                                  call winrestview(save_cursor)
+   24              0.000016     endif
+   39              0.000019   endif
+                            
+                              " If a match is found setup match highlighting.
+   39              0.000107   if m_lnum > 0 && m_lnum >= stoplinetop && m_lnum <= stoplinebottom 
+   23              0.000035     if s:has_matchaddpos
+   23              0.000281       call add(w:matchparen_ids, matchaddpos('MatchParen', [[c_lnum, c_col - before], [m_lnum, m_col]], 10))
+                                else
+                                  exe '3match MatchParen /\(\%' . c_lnum . 'l\%' . (c_col - before) . 'c\)\|\(\%' . m_lnum . 'l\%' . m_col . 'c\)/'
+                                  call add(w:matchparen_ids, 3)
+   23              0.000013     endif
+   23              0.000050     let w:paren_hl_on = 1
+   39              0.000021   endif
+
+FUNCTION  vimtex#pos#get_cursor()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/pos.vim:12
+Called 192 times
+Total time:   0.000711
+ Self time:   0.000711
+
+count  total (s)   self (s)
+  192              0.000594   return getcurpos()
+
+FUNCTION  UltiSnips#LeavingInsertMode()
+    Defined: ~/.local/share/nvim/lazy/ultisnips/autoload/UltiSnips.vim:186
+Called 11 times
+Total time:   0.009300
+ Self time:   0.009300
+
+count  total (s)   self (s)
+   11              0.009269     py3 UltiSnips_Manager._leaving_insert_mode()
+
+FUNCTION  <SNR>98_fix_paths_invalid_bufname()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/qf/latexlog.vim:214
+Called 7 times
+Total time:   0.000483
+ Self time:   0.000483
+
+count  total (s)   self (s)
+                              " First check if the entry bufnr is already valid
+    7              0.000063   let l:file = getbufinfo(a:qf.bufnr)[0].name
+    7              0.000086   if filereadable(l:file) | return | endif
+                            
+                              " The file names of all file:line type entries in the log output are listed
+                              " relative to the root of the main LaTeX file. The quickfix mechanism adds
+                              " the buffer with the file string. Thus, if the current buffer is not
+                              " correct, we can fix by prepending the root to the filename.
+    6              0.000070   let l:file = fnamemodify( simplify(a:root . '/' . bufname(a:qf.bufnr)), ':.')
+    6              0.000067   if !filereadable(l:file) | return | endif
+                            
+    6              0.000071   let l:bufnr = bufnr(l:file)
+    6              0.000010   if l:bufnr > 0
+    6              0.000060     let a:qf.bufnr = bufnr(l:file)
+                              else
+                                let a:qf.bufnr = 0
+                                let a:qf.filename = l:file
+    6              0.000004   endif
+
+FUNCTION  <SNR>131_parse_args()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/pos.vim:67
+Called 260 times
+Total time:   0.006001
+ Self time:   0.006001
+
+count  total (s)   self (s)
+                              "
+                              " The arguments should be in one of the following forms (when unpacked):
+                              "
+                              "   [lnum, cnum]
+                              "   [bufnum, lnum, cnum, ...]
+                              "   {'lnum' : lnum, 'cnum' : cnum}
+                              "
+                            
+  260              0.000702   if len(a:args) > 1
+                                return s:parse_args([a:args])
+  260              0.000513   elseif len(a:args) == 1
+  260              0.000782     if type(a:args[0]) == v:t_dict
+   68              0.000264       return [get(a:args[0], 'lnum'), get(a:args[0], 'cnum')]
+  192              0.000128     else
+  192              0.000378       if len(a:args[0]) == 2
+                                    return a:args[0]
+  192              0.000108       else
+  192              0.000490         return a:args[0][1:]
+                                  endif
+                                endif
+                              else
+                                return a:args
+                              endif
+
+FUNCTION  vimtex#qf#u#caddfile()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/qf/u.vim:7
+Called 1 time
+Total time:   0.030773
+ Self time:   0.030228
+
+count  total (s)   self (s)
+                              " This is a utility function for loading errors from a file into the quickfix
+                              " window with ":caddfile" without calling possibly defined QuickFixCmdPost
+                              " autotocmds e.g. from plugins like vim-qf.
+                            
+    1              0.000006   let l:errorformat_saved = &l:errorformat
+    1   0.000545   0.000007   call a:qf.set_errorformat()
+    1              0.030177   noautocmd execute 'caddfile' a:file
+    1   0.000041   0.000034   let &l:errorformat = l:errorformat_saved
+
+FUNCTION  vimtex#util#command()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/util.vim:7
+Called 6 times
+Total time:   0.001562
+ Self time:   0.001562
+
+count  total (s)   self (s)
+    6              0.001556   return split(execute(a:cmd, 'silent!'), "\n")
+
+FUNCTION  <SNR>97_qf_has_errors()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/qf.vim:193
+Called 1 time
+Total time:   0.000041
+ Self time:   0.000041
+
+count  total (s)   self (s)
+    1              0.000041   return len(filter(getqflist(), 'v:val.type ==# ''E''')) > 0
+
+FUNCTION  <SNR>142_in_verbatim()
+    Defined: ~/.local/share/nvim/lazy/vimtex/indent/tex.vim:102
+Called 10 times
+Total time:   0.036262
+ Self time:   0.000504
+
+count  total (s)   self (s)
+   10   0.035953   0.000196   let l:synstack = vimtex#syntax#stack(a:lnum, col([a:lnum, '$']) - 2)
+                            
+   10              0.000279   return match(l:synstack, '\v^tex%(Lst|Verb|Markdown|Minted)Zone') >= 0 && match(l:synstack, '\v^tex%(Minted)?Env') < 0
+
+FUNCTION  466()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/delim.vim:622
+Called 124 times
+Total time:   0.000916
+ Self time:   0.000916
+
+count  total (s)   self (s)
+  124              0.000824   return a:match =~# '^\\\%(begin\|end\)\>'
+
+FUNCTION  469()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/delim.vim:675
+Called 124 times
+Total time:   0.272150
+ Self time:   0.001056
+
+count  total (s)   self (s)
+  124   0.272078   0.000985   return a:x =~# '^\$\$\?' && !vimtex#syntax#in('texComment')
+
+FUNCTION  <SNR>142_indent_envs()
+    Defined: ~/.local/share/nvim/lazy/vimtex/indent/tex.vim:192
+Called 5 times
+Total time:   0.000274
+ Self time:   0.000274
+
+count  total (s)   self (s)
+    5              0.000011   let l:ind = 0
+                            
+    5              0.000128   let l:ind += s:sw*(    a:prev_line =~# s:envs_begin && a:prev_line !~# s:envs_end && a:prev_line !~# s:envs_ignored)
+    5              0.000112   let l:ind -= s:sw*(    a:line !~# s:envs_begin && a:line =~# s:envs_end && a:line !~# s:envs_ignored)
+                            
+    5              0.000008   return l:ind
+
+FUNCTION  470()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/delim.vim:680
+Called 58 times
+Total time:   0.269675
+ Self time:   0.004499
+
+count  total (s)   self (s)
+                              "
+                              " TeX shorthand are these
+                              "
+                              "   $ ... $   (inline math)
+                              "   $$ ... $$ (displayed equations)
+                              "
+                              " The notation does not provide the delimiter side directly, which provides
+                              " a slight problem. However, we can utilize the syntax information to parse
+                              " the side.
+                              "
+   58              0.000614   let result = extend(deepcopy(self), a:ctx, 'keep')
+   58              0.000126   unlet result.detect
+   58              0.000057   unlet result.parse
+                            
+   58              0.000129   let result.corr = a:ctx.match
+   58              0.000589   let result.re = { 'this'  : '\m' . escape(a:ctx.match, '$'), 'corr'  : '\m' . escape(a:ctx.match, '$'), 'open'  : '\m' . escape(a:ctx.match, '$'), 'close' : '\m' . escape(a:ctx.match, '$'),}
+   58   0.265814   0.000639   let result.side = vimtex#syntax#in(   (a:ctx.match ==# '$' ? 'texMathZoneTI' : 'texMathZoneTD'),   a:ctx.lnum, a:ctx.cnum+1) ? 'open' : 'close'
+   58              0.000216   let result.is_open = result.side ==# 'open'
+   58              0.000123   let result.gms_flags = result.is_open ? 'nW' : 'bnW'
+   58              0.000402   let result.gms_stopline = result.is_open ? line('.') + g:vimtex_delim_stopline : max([1, line('.') - g:vimtex_delim_stopline])
+                            
+   58              0.000177   if (a:opts.side !=# 'both') && (a:opts.side !=# result.side)
+                                "
+                                " The current match ($ or $$) is not the correct side, so we must
+                                " continue the search recursively. We do this by changing the cursor
+                                " position, since the function searchpos relies on the current cursor
+                                " position.
+                                "
+                                let l:save_pos = vimtex#pos#get_cursor()
+                            
+                                " Move the cursor
+                                call vimtex#pos#set_cursor(a:opts.direction ==# 'next' ? vimtex#pos#next(a:ctx.lnum, a:ctx.cnum) : vimtex#pos#prev(a:ctx.lnum, a:ctx.cnum))
+                            
+                                " Get new result
+                                let result = s:get_delim(a:opts)
+                            
+                                " Restore the cursor
+                                call vimtex#pos#set_cursor(l:save_pos)
+   58              0.000046   endif
+                            
+   58              0.000074   return result
+
+FUNCTION  472()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/delim.vim:749
+Called 66 times
+Total time:   0.000468
+ Self time:   0.000468
+
+count  total (s)   self (s)
+   66              0.000429   return a:match =~# '^\\\%((\|)\|\[\|\]\)'
+
+FUNCTION  475()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/delim.vim:796
+Called 66 times
+Total time:   0.000447
+ Self time:   0.000447
+
+count  total (s)   self (s)
+   66              0.000408   return a:match =~# '^\\\%(left\|right\)\s*\.'
+
+FUNCTION  478()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/delim.vim:885
+Called 66 times
+Total time:   0.003512
+ Self time:   0.003512
+
+count  total (s)   self (s)
+   66              0.003465   return a:match =~# '^' . g:vimtex#delim#re.delim_all.both
+
+FUNCTION  479()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/delim.vim:890
+Called 10 times
+Total time:   0.003524
+ Self time:   0.001648
+
+count  total (s)   self (s)
+   10              0.000108   let result = extend(deepcopy(self), a:ctx, 'keep')
+   10              0.000024   unlet result.detect
+   10              0.000011   unlet result.parse
+                            
+   10              0.000337   let result.side = a:ctx.match =~# g:vimtex#delim#re.delim_all.open ? 'open' : 'close'
+   10              0.000029   let result.is_open = result.side ==# 'open'
+   10              0.000023   let result.gms_flags = result.is_open ? 'nW' : 'bnW'
+   10              0.000081   let result.gms_stopline = result.is_open ? line('.') + g:vimtex_delim_stopline : max([1, line('.') - g:vimtex_delim_stopline])
+                            
+                              " Find corresponding delimiter and the regexps
+   10              0.000189   if a:ctx.match =~# '^' . g:vimtex#delim#re.mods.both
+                                let m1 = matchstr(a:ctx.match, '^' . g:vimtex#delim#re.mods.both)
+                                let d1 = substitute(strpart(a:ctx.match, len(m1)), '^\s*', '', '')
+                                let s1 = !result.is_open
+                                let re1 = s:get_re_for_delim(m1, s1, 'mods')  . '\s*' . s:get_re_for_delim(d1, s1, 'delim_math')
+                            
+                                let m2 = s:get_corr_delimiter(m1, 'mods')
+                                let d2 = s:get_corr_delimiter(d1, 'delim_math')
+                                let s2 = result.is_open
+                                let re2 = s:get_re_for_delim(m2, s2, 'mods') . '\s*' . (m1 =~# '\\\%(left\|right\)'   ? '\%(' . s:get_re_for_delim(d2, s2, 'delim_math') . '\|\.\)'   : s:get_re_for_delim(d2, s2, 'delim_math'))
+   10              0.000008   else
+   10              0.000020     let d1 = a:ctx.match
+   10              0.000013     let m1 = ''
+   10   0.000878   0.000101     let re1 = s:get_re_for_delim(a:ctx.match, !result.is_open)
+                            
+   10   0.000560   0.000115     let d2 = s:get_corr_delimiter(a:ctx.match)
+   10              0.000012     let m2 = ''
+   10   0.000733   0.000081     let re2 = s:get_re_for_delim(d2, result.is_open)
+   10              0.000006   endif
+                            
+   10              0.000023   let result.delim = d1
+   10              0.000016   let result.mod = m1
+   10              0.000025   let result.corr = m2 . d2
+   10              0.000029   let result.corr_delim = d2
+   10              0.000014   let result.corr_mod = m2
+   10              0.000068   let result.re = { 'this'  : re1, 'corr'  : re2, 'open'  : result.is_open ? re1 : re2, 'close' : result.is_open ? re2 : re1,}
+                            
+   10              0.000012   return result
+
+FUNCTION  vimtex#compiler#callback()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/compiler.vim:52
+Called 2 times
+Total time:   0.038345
+ Self time:   0.000488
+
+count  total (s)   self (s)
+                              " Status:
+                              " 1: Compilation cycle has started
+                              " 2: Compilation complete - Success
+                              " 3: Compilation complete - Failed
+    2              0.000037   if !exists('b:vimtex.compiler') | return | endif
+    2              0.000100   silent! call s:output.pause()
+                            
+    2              0.000026   let l:__silent = b:vimtex.compiler.silence_next_callback
+    2              0.000010   if l:__silent
+                                let b:vimtex.compiler.silence_next_callback = v:false
+                                if g:vimtex_compiler_silent
+                                  let l:__silent = v:false
+                                else
+                                  call vimtex#log#set_silent()
+                                endif
+    2              0.000004   endif
+                            
+    2              0.000021   let b:vimtex.compiler.status = a:status
+                            
+    2              0.000011   if a:status == 1
+    1              0.000024     if exists('#User#VimtexEventCompiling')
+                                  doautocmd <nomodeline> User VimtexEventCompiling
+    1              0.000004     endif
+    1              0.000045     silent! call s:output.resume()
+    1              0.000007     return
+    1              0.000001   endif
+                            
+    1              0.000002   if a:status == 2
+                                if !g:vimtex_compiler_silent
+                                  call vimtex#log#info('Compilation completed')
+                                endif
+                            
+                                if exists('b:vimtex')
+                                  call b:vimtex.update_packages()
+                                  call vimtex#syntax#packages#init()
+                                endif
+                            
+                                call vimtex#qf#open(0)
+                                if exists('#User#VimtexEventCompileSuccess')
+                                  doautocmd <nomodeline> User VimtexEventCompileSuccess
+                                endif
+    1              0.000002   elseif a:status == 3
+    1              0.000002     if !g:vimtex_compiler_silent
+    1   0.004900   0.000015       call vimtex#log#warning('Compilation failed!')
+    1              0.000001     endif
+                            
+    1   0.032986   0.000015     call vimtex#qf#open(0)
+    1              0.000007     if exists('#User#VimtexEventCompileFailed')
+                                  doautocmd <nomodeline> User VimtexEventCompileFailed
+    1              0.000001     endif
+    1              0.000001   endif
+                            
+    1              0.000002   if l:__silent
+                                call vimtex#log#set_silent_restore()
+    1              0.000001   endif
+                            
+    1              0.000013   silent! call s:output.resume()
+
+FUNCTION  provider#clipboard#Call()
+    Defined: /snap/nvim/2823/usr/share/nvim/runtime/autoload/provider/clipboard.vim:243
+Called 1 time
+Total time:   0.016429
+ Self time:   0.000168
+
+count  total (s)   self (s)
+    1              0.000027   if get(s:, 'here', v:false)  " Clipboard provider must not recurse. #7184
+                                return 0
+    1              0.000004   endif
+    1              0.000010   let s:here = v:true
+    1              0.000004   try
+    1   0.016339   0.000078     return call(s:clipboard[a:method],a:args,s:clipboard)
+    1              0.000009   finally
+    1              0.000013     let s:here = v:false
+    1              0.000004   endtry
+
+FUNCTION  270()
+    Defined: /snap/nvim/2823/usr/share/nvim/runtime/autoload/provider/clipboard.vim:22
+Called 1 time
+Total time:   0.000034
+ Self time:   0.000034
+
+count  total (s)   self (s)
+                              " At this point this nvim instance might already have launched
+                              " a new provider instance. Don't drop ownership in this case.
+    1              0.000009   if self.owner == a:jobid
+    1              0.000005     let self.owner = 0
+    1              0.000001   endif
+                              " Don't print if exit code is >= 128 ( exit is 128+SIGNUM if by signal (e.g. 143 on SIGTERM))
+    1              0.000003   if a:data > 0 && a:data < 128
+                                echohl WarningMsg
+                                echomsg 'clipboard: error invoking '.get(self.argv, 0, '?').': '.join(self.stderr)
+                                echohl None
+    1              0.000001   endif
+
+FUNCTION  272()
+    Defined: /snap/nvim/2823/usr/share/nvim/runtime/autoload/provider/clipboard.vim:184
+Called 1 time
+Total time:   0.016261
+ Self time:   0.016261
+
+count  total (s)   self (s)
+    1              0.000007   if a:reg == '"'
+                                call s:clipboard.set(a:lines,a:regtype,'+')
+                                if s:copy['*'] != s:copy['+']
+                                  call s:clipboard.set(a:lines,a:regtype,'*')
+                                end
+                                return 0
+    1              0.000002   end
+                            
+    1              0.000020   if type(s:copy[a:reg]) == v:t_func
+                                call s:copy[a:reg](a:lines, a:regtype)
+                                return 0
+    1              0.000002   end
+                            
+    1              0.000008   if s:cache_enabled == 0
+                                call s:try_cmd(s:copy[a:reg], a:lines)
+                                "Cache it anyway we can compare it later to get regtype of the yank
+                                let s:selections[a:reg] = copy(s:selection)
+                                let s:selections[a:reg].data = [a:lines, a:regtype]
+                                return 0
+    1              0.000003   end
+                            
+    1              0.000017   if s:selections[a:reg].owner > 0
+    1              0.000021     let prev_job = s:selections[a:reg].owner
+    1              0.000003   end
+    1              0.000020   let s:selections[a:reg] = copy(s:selection)
+    1              0.000008   let selection = s:selections[a:reg]
+    1              0.000010   let selection.data = [a:lines, a:regtype]
+    1              0.000008   let selection.argv = s:copy[a:reg]
+    1              0.000006   let selection.detach = s:cache_enabled
+    1              0.000006   let selection.cwd = "/"
+    1              0.015722   let jobid = jobstart(selection.argv, selection)
+    1              0.000018   if jobid > 0
+    1              0.000064     call jobsend(jobid, a:lines)
+    1              0.000012     call jobclose(jobid, 'stdin')
+                                " xclip does not close stdout when receiving input via stdin
+    1              0.000012     if selection.argv[0] ==# 'xclip'
+    1              0.000007       call jobclose(jobid, 'stdout')
+    1              0.000003     endif
+    1              0.000015     let selection.owner = jobid
+    1              0.000005     let ret = 1
+                              else
+                                echohl WarningMsg
+                                echomsg 'clipboard: failed to execute: '.(s:copy[a:reg])
+                                echohl None
+                                let ret = 1
+    1              0.000002   endif
+                            
+                              " The previous provider instance should exit when the new one takes
+                              " ownership, but kill it to be sure we don't fill up the job table.
+    1              0.000009   if exists('prev_job')
+    1              0.000061     call timer_start(1000, {... -> jobwait([prev_job], 0)[0] == -1 && jobstop(prev_job)})
+    1              0.000002   endif
+                            
+    1              0.000011   return ret
+
+FUNCTION  <SNR>93_check_callback()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/compiler/_template.vim:499
+Called 60 times
+Total time:   0.039600
+ Self time:   0.001256
+
+count  total (s)   self (s)
+   60              0.000773   let l:status = get(s:callbacks, substitute(a:line, '\r', '', ''))
+   60              0.000285   if l:status <= 0 | return | endif
+                            
+    2   0.038417   0.000072   call vimtex#compiler#callback(l:status)
+
+FUNCTION  480()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/delim.vim:944
+Called 10 times
+Total time:   0.047649
+ Self time:   0.047581
+
+count  total (s)   self (s)
+   10              0.000012   try
+   10   0.047387   0.047319     let [lnum, cnum] = searchpairpos(self.re.open, '', self.re.close, self.gms_flags, 'synIDattr(synID(line("."), col("."), 0), "name") =~? "comment"', 0, s:get_timeout())
+                              catch /E118/
+                                let [lnum, cnum] = searchpairpos(self.re.open, '', self.re.close, self.gms_flags, 'synIDattr(synID(line("."), col("."), 0), "name") =~? "comment"', self.gms_stopline)
+   10              0.000011   endtry
+                            
+   10              0.000108   let match = matchstr(getline(lnum), '^' . self.re.corr, cnum-1)
+   10              0.000028   return [match, lnum, cnum]
+
+FUNCTION  487()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/log.vim:76
+Called 1 time
+Total time:   0.004867
+ Self time:   0.000288
+
+count  total (s)   self (s)
+    1              0.000003   let l:msg_list = []
+    2              0.000005   for l:msg in a:msg_arg
+    1              0.000005     if type(l:msg) == v:t_string
+    1              0.000004       call add(l:msg_list, l:msg)
+                                elseif type(l:msg) == v:t_list
+                                  call extend(l:msg_list, filter(l:msg, 'type(v:val) == v:t_string'))
+    1              0.000001     endif
+    2              0.000002   endfor
+                            
+    1              0.000003   let l:entry = {}
+    1              0.000003   let l:entry.type = a:type
+    1              0.000012   let l:entry.time = strftime('%T')
+    1              0.000003   let l:entry.msg = l:msg_list
+    1   0.004521   0.000129   let l:entry.callstack = vimtex#debug#stacktrace()[2:]
+    4              0.000007   for l:level in l:entry.callstack
+    3              0.000007     let l:level.nr -= 2
+    4              0.000003   endfor
+    1              0.000004   call add(self.entries, l:entry)
+                            
+    1              0.000002   if self.verbose
+    1              0.000003     if self.type_to_level[a:type] > 1
+    1   0.000246   0.000059       unsilent call self.notify(l:msg_list, a:type)
+                                else
+                                  call self.notify(l:msg_list, a:type)
+    1              0.000001     endif
+    1              0.000001   endif
+
+FUNCTION  488()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/log.vim:106
+Called 1 time
+Total time:   0.000188
+ Self time:   0.000044
+
+count  total (s)   self (s)
+    1              0.000006   for l:re in get(g:, 'vimtex_log_ignore', [])
+                                if join(a:msg_list) =~# l:re | return | endif
+    1              0.000001   endfor
+                            
+    1   0.000164   0.000020   call vimtex#ui#echo([ [self.type_to_highlight[a:type], 'VimTeX:'], ' ' . a:msg_list[0]])
+                            
+                              " if len(a:msg_list) > 1
+                              "   call vimtex#ui#echo(
+                              "         \ join(map(a:msg_list[1:], "'        ' . v:val"), "\n"))
+                              " endif
+    1              0.000003   for l:msg in a:msg_list[1:]
+                                call vimtex#ui#echo(l:msg, {'indent': 8})
+    1              0.000001   endfor
+
+FUNCTION  <SNR>142_indent_conditionals()
+    Defined: ~/.local/share/nvim/lazy/vimtex/indent/tex.vim:272
+Called 5 times
+Total time:   0.000327
+ Self time:   0.000327
+
+count  total (s)   self (s)
+    5              0.000032   if empty(s:conditionals) | return 0 | endif
+                            
+    5              0.000144   let l:ind = s:sw*(    (a:prev_line =~# s:conditionals.open     || a:prev_line =~# s:conditionals.else) && a:prev_line !~# s:conditionals.close)
+    5              0.000131   let l:ind -= s:sw*(    a:line !~# s:conditionals.open && (a:line =~# s:conditionals.close     || a:line =~# s:conditionals.else))
+                            
+    5              0.000008   return l:ind
+
+FUNCTION  VimtexIndentExpr()
+    Defined: ~/.local/share/nvim/lazy/vimtex/indent/tex.vim:32
+Called 5 times
+Total time:   0.043991
+ Self time:   0.000125
+
+count  total (s)   self (s)
+                              " This wrapper function is used because of rnoweb[0] that "misuses" the
+                              " indentexpr and assumes it takes no arguments.
+                              "
+                              " [0]: /usr/share/nvim/runtime/indent/rnoweb.vim:21
+                            
+    5   0.043952   0.000086   return VimtexIndent(v:lnum)
+
+FUNCTION  vimtex#delim#get_current()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/delim.vim:383
+Called 124 times
+Total time:   0.666178
+ Self time:   0.002939
+
+count  total (s)   self (s)
+  124   0.666079   0.002840   return s:get_delim(extend({ 'direction' : 'current', 'type' : a:type, 'side' : a:side,}, get(a:, '1', {})))
+
+FUNCTION  494()
+    Defined: ~/.local/share/nvim/lazy/vimtex/autoload/vimtex/matchparen.vim:74
+Called 124 times
+Total time:   1.260751
+ Self time:   0.009189
+
+count  total (s)   self (s)
+  124   0.002705   0.000671   call self.clear()
+                            
+  124   0.526629   0.001350   if vimtex#syntax#in_comment() | return | endif
+                            
+                              " This is a hack to ensure that $ in visual block mode adhers to the rule
+                              " specified in :help v_$
+  124              0.000617   if mode() ==# "\<c-v>"
+                                let l:pos = vimtex#pos#get_cursor()
+                                if len(l:pos) == 5 && l:pos[-1] == 2147483647
+                                  call feedkeys('$', 'in')
+                                endif
+  124              0.000084   endif
+                            
+  124   0.668008   0.001830   let l:current = vimtex#delim#get_current('all', 'both')
+  124              0.000463   if empty(l:current) | return | endif
+                            
+   68   0.058881   0.000810   let l:corresponding = vimtex#delim#get_matching(l:current)
+   68              0.000196   if empty(l:corresponding) | return | endif
+   68              0.000174   if empty(l:corresponding.match) | return | endif
+                            
+   63              0.000294   let [l:open, l:close] = l:current.is_open ? [l:current, l:corresponding] : [l:corresponding, l:current]
+                            
+   63              0.000532   let w:vimtex_match_id1 = matchaddpos('MatchParen', [[l:open.lnum, l:open.cnum, strlen(l:open.match)]])
+   63              0.000353   let w:vimtex_match_id2 = matchaddpos('MatchParen', [[l:close.lnum, l:close.cnum, strlen(l:close.match)]])
+
+FUNCTION  <SNR>53_Remove_Matches()
+    Defined: /snap/nvim/2823/usr/share/nvim/runtime/plugin/matchparen.vim:206
+Called 237 times
+Total time:   0.004318
+ Self time:   0.004318
+
+count  total (s)   self (s)
+  237              0.001033   if exists('w:paren_hl_on') && w:paren_hl_on
+   46              0.000135     while !empty(w:matchparen_ids)
+   23              0.000177       silent! call remove(w:matchparen_ids, 0)->matchdelete()
+   46              0.000059     endwhile
+   23              0.000064     let w:paren_hl_on = 0
+  237              0.000152   endif
+
+FUNCTIONS SORTED ON TOTAL TIME
+count  total (s)   self (s)  function
+ 1032   2.800158             provider#python3#Call()
+   74   1.581910   1.449652  cmp_nvim_ultisnips#get_current_snippets()
+  237   1.341541   1.330220  <SNR>53_Highlight_Matching_Pair()
+  124   1.260751   0.009189  494()
+  289   1.236234             vimtex#syntax#stack()
+  240   1.060035   0.004619  vimtex#syntax#in()
+  124   0.666178   0.002939  vimtex#delim#get_current()
+  124   0.663239   0.107020  <SNR>119_get_delim()
+   95   0.627100             UltiSnips#CursorMoved()
+  192   0.526909   0.512511  UltiSnips#TrackChange()
+  124   0.525279   0.001512  vimtex#syntax#in_comment()
+   60   0.349396   0.308196  <SNR>93_callback_nvim_output()
+  124   0.272150   0.001056  469()
+   58   0.269675   0.004499  470()
+   39   0.146650   0.001590  vimtex#syntax#in_mathzone()
+   68   0.058071   0.005237  vimtex#delim#get_matching()
+   10   0.047649   0.047581  480()
+    5   0.043991   0.000125  VimtexIndentExpr()
+    5   0.043867   0.000996  VimtexIndent()
+   60   0.039600   0.001256  <SNR>93_check_callback()
+
+FUNCTIONS SORTED ON SELF TIME
+count  total (s)   self (s)  function
+ 1032              2.800158  provider#python3#Call()
+   74   1.581910   1.449652  cmp_nvim_ultisnips#get_current_snippets()
+  237   1.341541   1.330220  <SNR>53_Highlight_Matching_Pair()
+  289              1.236234  vimtex#syntax#stack()
+   95              0.627100  UltiSnips#CursorMoved()
+  192   0.526909   0.512511  UltiSnips#TrackChange()
+   60   0.349396   0.308196  <SNR>93_callback_nvim_output()
+  124   0.663239   0.107020  <SNR>119_get_delim()
+   10   0.047649   0.047581  480()
+    1   0.030773   0.030228  vimtex#qf#u#caddfile()
+    1              0.016261  272()
+   11              0.009300  UltiSnips#LeavingInsertMode()
+  124   1.260751   0.009189  494()
+  260              0.006001  <SNR>131_parse_args()
+   68   0.058071   0.005237  vimtex#delim#get_matching()
+  240   1.060035   0.004619  vimtex#syntax#in()
+   58   0.269675   0.004499  470()
+  237              0.004318  <SNR>53_Remove_Matches()
+   66              0.003512  478()
+  124   0.666178   0.002939  vimtex#delim#get_current()
+
