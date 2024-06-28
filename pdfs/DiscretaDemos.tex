@@ -261,50 +261,20 @@ the complexity of Edmond-Karp is $(\varphi \times m) \times O(m) = O(nm^2)$.
 
 \subsection{Augmenting paths are non-decreasing}
 
-Given $x, z \in V$ in a network with flow $f$, we define $d_{f}(x, z)$ as
-
-\begin{align*}
-    d_f(x, z) := \begin{cases}
-        0 & x = z \\ 
-        \infty &\text{There is no $f$-a.p. from $x$ to $z$} \\ 
-        \min \left\{ \text{length of $f$-a.p. from $x$ to $z$} \right\} &\text{otherwise}
-    \end{cases}
-\end{align*}
-
-We define $d_f(x) = d_f(s, x), b_f(x) = d_f(x, t)$. We shall prove
- $d_k(x) \leq d_{k+1}(x)$  
-
-\begin{quote}
-    
-    \textbf{Notation.} We will use $f_i$ to denote the $f$-augmenting path
-    found by E.K. on the $i$th iteration---i.e. the one used to update the
-    flow. We will use $\mathcal{P}_i$ to denote an arbitrary augmenting path
-    existing on the $i$th iteration, but which may not be the one used to
-    update the flow.
-
-    Do not confuse $f_i$, an augmenting path, with
-    $f_i(\overrightarrow{ab})$, a function mapping $\overrightarrow{ab} \in
-    E$ to its value with the $i$th flow.
-\end{quote}
-
-\textbf{Proof.} Let $A = \left\{ x \in V : d_{k+1}(x) < d_k(x) \right\} $ and
+Let $A = \left\{ x \in V : d_{k+1}(x) < d_k(x) \right\} $ and
 assume $A \neq \emptyset$. Let $x_0 \in A$ be the vertex whose distance
 $d_{k+1}(x_0)$ from $s$ is minimal; i.e. $d_{k+1}(x_0) \leq d_{k+1}(y) ~
 \forall y \in A$. Since $x_0 \in A$, $d_{k+1}(x_0) < d_k(x_0) \leq \infty$.
-Then there exists a $\mathcal{P}_{k+1} = s \ldots zx_0$ of minimal length,
-where we use $z$ to denote the arbitrary predecessor of $x_0$.
+Then there exists a $\mathcal{P}_{k+1} = s \ldots x_0$ of minimal length.
+Let $z$ be the predecessor of $x_0$ in this path.
 
+By definition of $d_f$, the length of the path is $d_{k+1}(x_0)$. Because the
+path is of minimal length to $x_0$, it is of minimal length to any predecessor
+of $x_0$ in it, including $z$. Then $d_{k+1}(z) = d_{k+1}(x_0) - 1$. This
+implies $z \not\in A$.
 
-By definition of $d_f$, the length of $\mathcal{P}_{k+1}$ is $d_{k+1}(x_0)$;
-clearly, $\mathcal{P}_{k+1}$ is of minimal length from $s$ to any vertex in
-the path, including $z$. This implies $d_{k+1}(z) = d_{k+1}(x_0) - 1$. But
-this implies $z \not\in A$ (\textbf{Complete}).
-
-Since $\mathcal{P}_{k+1}$ is an augmenting path, either
-$\overrightarrow{zx_0}$ or $\overrightarrow{x_0z}$ are a side in the network.
-We will look at both cases in the next page.
-
-\pagebreak 
+There are two possible cases: either $\overrightarrow{xz} \in E$
+or $\overrightarrow{zx} \in E$.
 
 \textit{(Case 1):} If $\overrightarrow{zx_0} \in E$, then
 $d_{k+1}(z) < d_{k+1}(x_0)$. Since $z \not\in A$,
@@ -313,41 +283,59 @@ $d_{k+1}(z) < d_{k+1}(x_0)$. Since $z \not\in A$,
     d_k(z) \leq d_{k+1}(z) < d_{k+1}(x_0) < \infty
 \end{align*}
 
-Since $d_k(z) < \infty$, there is a $\mathcal{P}_k = s \ldots z$. Since
-$\overrightarrow{xz} \in E$, $s \ldots z x$ is also an augmenting path. But
-then $d_k(x_0) \leq d_k(z) + 1 \leq d_{k+1}(z) + 1 \leq d_{k+1}(x_0)$. But
-this implies $x_0 \not\in A$ ($\bot$). Then $x_0$ cannot be appended to
-$\mathcal{P}_k$, which means $f_k(\overrightarrow{zx_0}) =
-c(\overrightarrow{zx_0})$ (the side is saturated). But $\mathcal{P}_{k+1}$ is
-augmenting path, which means its side cannot be saturated, which means
-$f_{k+1}(\overrightarrow{zx_0}) < c(\overrightarrow{zx_0})$. This means
-$\overrightarrow{xz}$ was used backwards in the $k$th iteration, or rather
-that $f_k = s \ldots \overleftarrow{x_0z} \ldots t$
+Since $d_k(z) < \infty$, there is an $f_{k}$-augmenting path from $s$ to $z$.
+Then, in principle, $s \ldots z x$ could be  an augmenting path. But
+if this were the case, 
 
-Since this is Edmond-Karp, augmenting paths are of minimal length,
-which means $d_k(z) = d_k(x_0) + 1 > d_{k+1}(x_0) + 1$. This means 
-$d_k(z) > d_{k+1}(x_0)$, which contradicts what we found at the 
-beginning. So $\overrightarrow{zx_0}$ cannot 
-be a side.
+$$d_k(x_0) \leq d_k(z) + 1 \leq d_{k+1}(z) + 1 = d_{k+1}(x)$$ 
 
-\textit{1.3.2} If  $\mathcal{P}_{k+1}$
-is of the form $s \ldots \overleftarrow{zx_0}$,
-then again
+which implies $x_0 \not\in A$ ($\bot$). $s\ldots zx$ is not $f_k$-a.p. This can
+only happen if $f_k(\overrightarrow{zx_0}) = c(\overrightarrow{zx_0})$ (the
+side is saturated). Since the side is used in a $f_{k+1}$-a.p. it must be the
+case that $f_{k+1}(\overrightarrow{zx_0}) < c(\overrightarrow{zx_0})$. This
+means $\overrightarrow{zx}$ was used backwards in the $k$th iteration, or
+rather that $f_k = s \ldots \overleftarrow{x_0z} \ldots t$.
+
+Since this is Edmond-Karp, augmenting paths are of minimal length. Then 
+
+\begin{align*}
+    d_{k}(z) &= d_k(x_0) + 1   \\ 
+             &> d_{k+1}(x_0) + 1 \\ 
+             &=d_{k+1}(z) + 2 \\ 
+             & \geq d_{k}(z) + 2
+\end{align*}
+
+which is absurd.
+
+\textit{1.3.2} If  $\overrightarrow{xz}$ is a side then again
 
 \begin{align*}
     d_k(z) \leq d_{k+1}(z) < d_{k+1}(x_0) < \infty
 \end{align*}
 
-Since $d_k(z) < \infty$ there is a $\mathcal{P}_k = s \ldots z$. If we append
-$x_0$ to this path using the backward direction $\overleftarrow{x_0z}$, we
-arrive at the same contradiction than in the previous case. Since we cannot
-add this backward flow, it must be the case that $f_k(\overrightarrow{x_0z})
-= 0$. But $\mathcal{P}_{k+1}$ is augmenting, which means
-$f_{k+1}(\overrightarrow{x_0z}) > 0$. Then $\overrightarrow{x_0z}$ (forward)
-was used in the $k$th iteration. Then there is a $f_k$-a.p. $s \ldots
-\overrightarrow{xz} \ldots t$. Since this is E.K., this path is of minimal
-length, implying $d_k(z) = d_k(x_0) + 1 > d_{k+1}(x_0) + 1$. Then $d_k(z) >
-d_{k+1}(x_0)$, which contradicts $d_k(z) \leq d_{k+1}(z) < d_{k+1}(x_0)$.
+Then there is an $f_k$-a.p. $s \ldots z$ and, at least in principle, 
+$s \ldots \overrightarrow{zx}$ could also be augmenting. But if this were the case,
+we would have 
+
+$$
+d_k(x_0) = d_k(z) + 1 \leq d_{k+1}(z) + 1 = d_{k+1}(x_0) 
+$$
+
+which would imply $x_0 \not\in A$ ($\bot$). Then $s \ldots \overrightarrow{zx_0}$ is 
+not augmenting, which means the side $\overrightarrow{x_0z}$ cannot 
+be used backwards. This can only be true if $f_k(\overrightarrow{x_0z} = 0$.
+But since the side is used backwards in the $f_{k+1}$-augmenting path,
+it must be used forward in this iteration. Which means $s \ldots \overrightarrow{x_0z} \ldots t$
+is augmenting. But then 
+
+\begin{align*}
+    d_{k}(z) &= d_{k}(x_0) + 1 \\ 
+             &> d_{k+1}(x_0) + 1 \\ 
+             &= d_{k+1}(z) +2 \\ 
+             &\geq d_{k}(z) + 2 
+\end{align*}
+
+which is absurd.
 
 \textit{Conclusion.} In both cases a contradiction arises. The contradiction
 comes from assuming $A \neq \emptyset$. Then $A = \emptyset$. $\blacksquare$
@@ -958,24 +946,6 @@ in the claw, $\left\{ b_{i 1}, b_{i 2}, b_{i 3} \right\} $. Let $c(b_{ij}) =
 We have given a proper coloring of all vertices using $\overrightarrow{b}$.
 
 \subsection{Trisexual marriage}
-
-A hypergraph is a graph $G = (V, E) $ with $E \subseteq \mathcal{P}(E)$. An
-$r$-hypergraph is s.t. $|S| = r$ for all $S \in E$. Intuitively, in a
-hypergraph, any given edge may connect more than two vertices.
-
-The 3D-marriage problem consists in determining whether a tripartite
-$3$-hypergraph with parts of equal cardinality has a perfect matching.
-We will prove the problem is NP-Complete by proving $3$-SAT $\leq_p$ 3D-marriage.
-
-Let $B = D_1 \land  \ldots D_m$ an instance of $3$-SAT with variables 
-$x_1, \ldots, x_n$ and literals $l_{jr}$. We construct the 
-following hypergraph:
-
-
-
-
-
-
 
 \end{document}
 

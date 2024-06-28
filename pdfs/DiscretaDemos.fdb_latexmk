@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1719425995 "DiscretaDemos.tex" "DiscretaDemos.pdf" "DiscretaDemos" 1719425996 2
+["pdflatex"] 1719547631 "DiscretaDemos.tex" "DiscretaDemos.pdf" "DiscretaDemos" 1719547632 2
   "../Images//equiv.png" 1709329351 29240 79a755b81c0facd6bc9d9648c8720e58 ""
   "/etc/texmf/web2c/texmf.cnf" 1695394668 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1640468671 2914 8283dfc24eaf1964346f843d7605c2b0 ""
@@ -115,9 +115,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1695394817 4623455 fa0568a71dd9a288d6c226ee477506c6 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1695394844 7879794 eff26094dbe002b6e482c026ea4c81e2 ""
-  "DiscretaDemos.aux" 1719425996 2014 790abcf7684eb8012d2487a28a636f1c "pdflatex"
-  "DiscretaDemos.tex" 1719425994 39102 eac34cabf09e17b71d2923e902f86f7a ""
-  "DiscretaDemos.toc" 1719425996 1242 b5c29119c0cefd752757576aeaedcc87 "pdflatex"
+  "DiscretaDemos.aux" 1719547632 2014 790abcf7684eb8012d2487a28a636f1c "pdflatex"
+  "DiscretaDemos.tex" 1719547630 37470 74cd0efa18e170e6bb889df86ae51a97 ""
+  "DiscretaDemos.toc" 1719547632 1242 b5c29119c0cefd752757576aeaedcc87 "pdflatex"
   (generated)
   "DiscretaDemos.aux"
   "DiscretaDemos.log"
