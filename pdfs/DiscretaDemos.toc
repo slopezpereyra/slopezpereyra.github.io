@@ -8,11 +8,12 @@
 \contentsline {section}{\numberline {6}Codes}{14}{}%
 \contentsline {subsection}{\numberline {6.1}Hamming bound}{14}{}%
 \contentsline {subsection}{\numberline {6.2}$\delta (C) = \min \left \{ j : \exists S \subseteq H_{*n} : |S| = j \land S \text { is LD} \right \} $}{16}{}%
-\contentsline {section}{\numberline {7}Matchings}{17}{}%
-\contentsline {subsection}{\numberline {7.1}Konig}{17}{}%
-\contentsline {subsection}{\numberline {7.2}Hall}{18}{}%
-\contentsline {section}{\numberline {8}P-NP}{20}{}%
-\contentsline {subsection}{\numberline {8.1}2-Color is polynomial}{20}{}%
-\contentsline {subsection}{\numberline {8.2}3SAT es NP-Completo}{22}{}%
-\contentsline {subsection}{\numberline {8.3}3-Color es NP-Completo}{24}{}%
-\contentsline {subsection}{\numberline {8.4}Trisexual marriage}{26}{}%
+\contentsline {subsection}{\numberline {6.3}Three statements around a generating polynomial}{17}{}%
+\contentsline {section}{\numberline {7}Matchings}{20}{}%
+\contentsline {subsection}{\numberline {7.1}Konig}{20}{}%
+\contentsline {subsection}{\numberline {7.2}Hall}{21}{}%
+\contentsline {section}{\numberline {8}P-NP}{23}{}%
+\contentsline {subsection}{\numberline {8.1}2-Color is polynomial}{23}{}%
+\contentsline {subsection}{\numberline {8.2}3SAT es NP-Completo}{25}{}%
+\contentsline {subsection}{\numberline {8.3}3-Color es NP-Completo}{27}{}%
+\contentsline {subsection}{\numberline {8.4}Trisexual marriage}{29}{}%

@@ -557,7 +557,115 @@ $\therefore  s \leq \delta$.
 
 \textit{(3)} Points \textit{(1)} and \textit{(3)} imply $s = \delta$.
 
+\pagebreak 
 
+\subsection{Three statements around a generating polynomial}
+
+Let $C$ a code of length $n$ and dimension $k$ with generating polynomial 
+$g(x)$. We will prove: 
+
+
+\small
+\begin{quote}
+
+\begin{enumerate}
+    \item $C = \left\{ p(x) : gr(p) < n \land  g(x) \mid p(x) \right\} := C_1$
+    \item $C = \left\{ v(x) \odot g(x) : v(x) \in F[x] \right\} := C_2$ 
+    \item $gr(g) = n - k$
+    \item $g(x) \mid (1 + x^n)$
+\end{enumerate}
+
+\end{quote}
+\normalsize
+
+\textit{(1 and 2) :} We shall prove $C_1 \subseteq C_2 \subseteq C \subseteq C_1$.
+
+Let $p(x) \in C_1$.Then there is some $q(x)$ s.t. $p(x) = g(x) q(x)$ and 
+$gr \left( g(x)q(x) \right) < n $.
+
+$\therefore ~ g(x) q(x) = g(x) \odot q(x) \in C_2$.
+
+$\therefore ~ C_1 \subseteq C_2$.
+
+Now let $p(x) = v(x) \odot g(x) \in C_2$ with $v(x)$ an arbitrary polynomial.
+Then
+
+\begin{align*}
+    p(x) &= \left( v_0 + v_1x + \ldots + v_{gr(v)} x^{gr(v)} \right)  \odot g(x) \\ 
+         &= v_0 \odot g(x) + v_1 \left( x \odot g(x) \right)  + v_2 \left( x_2 \odot g(x) \right)  + \ldots + v_{gr(v)} \left( x^{gr(v)} \odot g(x) \right)  \\ 
+         &= v_0 g(x) + v_1 Rot\left( g(x) \right)  + v_2 Rot^2\left( g(x) \right)  + \ldots  +v_{gr(v)} Rot^{gr(v)}\left( g(x) \right)  
+\end{align*}
+
+All rotations of $g(x)$ belong to $C$. 
+
+$\therefore $ $p(x) \in C$.
+
+$\therefore C_2 \subseteq C$.
+
+Now let $p(x) \in C$. By definition, $gr(p) < n$, which implies $p(x) = p(x)
+\mod (1 + x^n)$. We know
+
+\begin{align*}
+    p(x) = g(x) q(x) + r(x)
+\end{align*}
+
+for some $q(x), r(x)$ s.t. $gr(r) < gr(g)$. Then
+
+\begin{align*}
+    p(x) &= \left( g(x) q(x) + r(x) \right)  \mod (1 + x^n)\\ 
+         &= g(x) \odot q(x) + \left( r(x) \mod (1 + x^n) \right)  \\ 
+         &= g(x) \odot q(x) + r(x) &\left\{ \text{Since $gr(r) < gr(g) < n$} \right\} 
+\end{align*}
+
+$\therefore $ $r(x) = p(x) + g(x) \odot q(x)$. 
+
+We know $p \in C$ and $g(x) \odot q(x) \in C^2 \subseteq C$. 
+
+$\therefore $ $r(x) \in C$.
+
+But since $g$ is generating polynomial, it is the unique polynomial with the
+least non-null degree in $C$.
+
+$\therefore ~ gr(r) < gr(g) \Rightarrow r(x) = 0$.
+
+$\therefore g(x) \mid p(x)$ and then $p(x) \in C_1$.
+
+$\therefore C \subseteq C_1$
+
+\textit{(3)} Let $p(x) \in C$. Then there is $q(x)$ s.t. $p(x) = g(x) q(x)$
+with $n > gr(p) = gr(g) + gr(q)$. This readily implies $gr(q) < n - gr(g) < n$.
+Then $g(x) q(x) \in C$.
+
+This entails there is a bijection between $C$ and the set of polynomials of
+degree $\< n - gr(g)$. Then 
+
+\begin{align*}
+    |C| &= |\left\{ p(x) : gr(p) < n - gr(g) \right\} | \\ 
+    \iff ~ 2^k &= 2^{n-gr(g)} \\ 
+    \iff k &= n - gr(g) \\ 
+    \iff ~ gr(g) &= n - k ~ \blacksquare
+\end{align*}
+
+\textit{(4)} Divide $(1 + x^n)$ by $g(x)$ to obtain 
+
+\begin{align*}
+    1 + x^n = g(x) q(x) + r(x)
+\end{align*}
+
+with $gr(r) < gr(g)$. Taking the modulus, 
+
+\begin{align*}
+    0 &= (1 + x^n) \mod (1 + x^n) \\ 
+      &=\left( g(x) q(x) + r(x) \right) \mod (1 + x^n) \\ 
+      &= \left( g(x) \odot q(x) \right)  + \left( r(x) \mod 1 + x^n \right)  \\ 
+      & g(x) \odot q(x) = r(x)
+\end{align*}
+
+because $gr(r) < gr(g) < n$.
+
+$\therefore ~ r(x) = g(x) \odot  q(x) \in C$.
+
+But $gr(r) < gr(g)$. $\therefore  r(x) = 0$ and $g(x) \mid (1 + x^n)$.
 
 
 
