@@ -16,41 +16,6 @@
 \newtheorem{example}{Example} \newtheorem{definition}{Definition}
 \newtheorem{lemma}{Lemma}
 \newtheorem{theorem}{Theorem}
-\usepackage{parskip}
-
-\author{SLP}
-\title{Discrete mathematics II : Final exam proofs}
-
-\begin{document}
-
-\maketitle
-~ 
-~
-\begin{center}
-\includegraphics[scale=0.35]{equiv}
-\end{center}
-
-\clearpage
-\tableofcontents
-\clearpage 
-
-\section{Read me}
-
-Most proofs in this document come directly from lectures. A few from PDFs from
-previous years. In most cases I assume the reader is familiar with the relevant
-definitions---e.g. in proving a problem is NP-complete I do not waste time
-reminding him what NP-completeness is---.
-
-This document may contain errors. It will probably contain typing errors,
-though I have strived to correct all of them. It will perhaps, though hopefully
-not, contain conceptual errors. In short, these are the notes of a student, not
-of an expert. Study them with a watchful and critical eye. Should you find an
-error, let the author know or send a pull request correcting it. All corrections
-are welcome.
-
-~ 
-
-
 
 
 \clearpage 
@@ -74,10 +39,10 @@ $x_0$ last. We will prove $\mathcal{G}$ colors $G$ with at most $\Delta$ colors
 if it uses the ordering $\mathcal{O}$.
 
 
-Observe that, in the DFS run, every $x \neq x_0$ is inserted by a neighbor that
+Observe that, in the BFS run, every $x \neq x_0$ is inserted by a neighbor that
 was already in the tree. In other words, in the $\mathcal{O}^{-1}$ order, every
 vertex has a neighbor that precedes him in the order. Consequently, in
-$\mathcal{O}^{-1}$, every $x \neq x_0$ has a neighbor that succeeds him in the
+$\mathcal{O}$, every $x \neq x_0$ has a neighbor that succeeds him in the
 order. 
 
 It follows that the worst case scenario for the coloring of $x \neq x_0$ is
@@ -165,101 +130,77 @@ $\therefore $  $v(f) = Cap(S) - 0 = Cap(S)$. $\blacksquare$
 
 \pagebreak
 
-\section{Edmond-Karp}
+\section{Networks}
 
-Primero, recordemos algunas definiciones: 
+\subsection{Edmond-Karp: Complexity}
 
-\begin{itemize}
-    \item \textit{Cut :} A cut is a set $S \subseteq V$ s.t. $s \in S, t
-        \not\in S$. A theorem establishes that $v(f) \leq CAP(S)$ for any cut
-        $S$. If $CAP(S) = v(f)$, we say $S$ is minimal. 
-\end{itemize}
+The complexity of E.K. is determined by the complexity of finding the
+$f_i$-augmenting paths, the number of such paths, and the complexity 
+of updating the flow with such paths. 
 
-Furthermore, if $v(f) = CAP(S)$, then $f$ is maximal and $S$ is minimal. And if $f$ is maximal,
-necessarily there is some $S$ s.t. $v(f) = CAP(S)$.
+To find $f_i$-augmenting paths, EK uses BFS with a complexity $O(m)$. Updating
+the flow has complexity $O(n)$. So the question is what is the number $\varphi$
+of $f_i$ augmenting paths (or runs of BFS) that are used.
 
-\subsection{Complexity}
+The number of such paths is bounded by the number of sides times the number of
+times a side may become critical. We shall determine how many times a side may
+become critical.
 
-Edmond-Karp runs BFS $\zeta$ times to find the $f$-augmenting path. At the end
-of each run, it updates the flow. Each BFS run has complexity $O(\sum_{x \in V}
-d(x)) = O(2m) = O(m)$. Updating the flow has a complexity $O(n)$ because the
-$f$-augmenting path is of length at most $n$. Then the complexity is $\zeta
-\left( O(m) + O(n) \right) = \zeta O(m)$. 
+Let $f_1, f_2, \ldots$ be the iterations of EK. Let $\overrightarrow{xz}$ be a
+side that became critical at iteration $k$. There are two options: it either
+saturated being forward or emptied being backward.
 
-$\zeta$ is bounded by the number of $f$-augmenting paths that can be found.
-This number is $m \times \varphi$, where $\varphi$ is the number of times a
-side can become critical. Let us determine $\varphi$.
+\textit{Saturated being forward.} If $\overrightarrow{xz}$ saturated being
+forward, then $p_k = s \ldots \overrightarrow{xz} \ldots t$ is the form of the
+augmenting path used to determine $f_k$. 
 
+Assume $\overrightarrow{xz}$ becomes critical again at some iteration $j$, so
+that $p_j = s \ldots \overrightarrow{xz} \ldots t$ is an augmenting path. For
+this to occur there must exist some iteration $i$, with $k < i < j$, such that
+$p_i = s \ldots \overleftarrow{xz} \ldots t$ is an augmenting path. In other
+words, $z$ must have returned some of the flow to $x$. Since we are using EK,
+the augmenting paths are of minimal length, and the distance between two
+vertices never decreases. This means 
 
-Let $f_0, f_1, f_2, \ldots$ the flows obtained over the iterations of E.K. Let
-$\overrightarrow{xy}$ a side that becomes critical at iteration $k$. Then
-either it saturated being forward, or it emptied being backward. Let us look at
-each case.
+\begin{align*}
+    d_j(t) &\geq d_i(x) + b_i(x)  \\ 
+           &=d_i(z) + 1 + b_i(x) \\ 
+           &\geq d_k(z) + 1 + d_k(x) \\ 
+           &=d_k(x) + 1 + 1 + b_k(x) \\ 
+           &=d_k(t) + 2
+\end{align*}
 
-\textit{Case 1: It saturated being forward.}
+\textit{Emptied being backward.} Now, assume $\overrightarrow{xz}$ is a side
+that saturated being backward on the $k$th iteration; this is, that $p_k = s
+\ldots \overleftarrow{xz} \ldots t$ was the path found. Assume it empties again
+at some iteration $j$, so that $p_j = s \ldots \overleftarrow{xz} \ldots t$ is
+the $f_j$ path. Then there is some $i$, with $k < i < j$, such that $p_i = s
+\ldots \overrightarrow{xz} \ldots t$ is a path; i.e. the side was used forward.
+Now, all these paths are of minimal length, because we are using 
+E.K. And in all succesive paths, the distance from $s$ to $t$ never 
+decreases. Then,
 
-\textit{(1.1)} Assume it saturated being forward. Then a $f_k$-augmenting path of
-the form $s \ldots \overrightarrow{xy} \ldots t$ was found. Since we are using
-E.K., this path is of minimal length, which means $d_k(y) = d_k(x) + 1$.
+\begin{align*}
+    d_j(t) &\geq d_i(t) \\ 
+           &= d_i(z) + b_i(z) \\ 
+           &= d_i(x) + 1 + b_i(z) \\ 
+           &\geq d_k(x) +1 + b_k(z) \\ 
+           &=d_k(z) + 1 + 1 + b_k(z) \\ 
+           &= d_k(t) + 2
+\end{align*}
 
-\textit{( 1.2 )} Assume $\overrightarrow{xy}$ becomes critical again 
-at some iteration $j > k$. There are two options: it emptied because 
-$\overrightarrow{yx}$ was used backwardly in the iteration, or it 
-saturated again because, in some iteration $i \in (k, j)$, a fraction
-of the flow was returned backwardly. In both cases, there is a $i \leq k$ s.t.
-a $f_i$-augmenting path of the form $s \ldots \overrightarrow{yx} \ldots t$ was
-found. Since we are using E.K., this path is of minimal length, 
-and $d_i(x) = d_i(y) + 1$.
+In both cases, the distance from $s$ to $t$ had to increase by at least 
+two unites. But the distance from $s$ to $t$ is bounded by $n$; this is, 
+it is $O(n)$. Then a side may become critical $O(\frac{n}{2}) = O(n)$ times.
+Since there are $m$ sides, the number of times an arbitrary side will become 
+critical is $O(mn)$.
 
-\textit{(1. 3)} Because the length of the augmenting paths 
-never decreases across iterations, $d_j(t) \geq d_i(t) = d_i(x) + b_i(x)$.
-This means 
+$\therefore $ The complexity is $O(mn) \left[ O(n) + O(m) \right] = O(mn)O(m) = O(m^2n) $.
 
-    \begin{align*}
-        d_j(t) \geq d_i(y) + 1 + b_i(x) \geq d_k(y) + 1 + b_k
-    \end{align*}
-
-But $d_k(y) = d_k(x) + 1$. Then
-
-    \begin{align*}
-        d_j(t) \geq d_k(x) + 1 + 1 + b_k(x) = d_k(t) + 2
-    \end{align*}
-
-\textit{Case 2: It emptied being backwards}
-
-\textit{(1.1)} Assume $\overrightarrow{xy}$ empties. Then the $f_k$-augmenting 
-path is of the form $s \ldots \overrightarrow{yx} \ldots t$ with 
-$d_k(x) = d_k(y) + 1$.
-
-\textit{(1.2)} Assume it becomes critical again at iteration $j$.
-Then it is either saturated or emptied again. In both cases, 
-some iteration $i \leq j$ must find the $f_i$-augmenting path 
-$s \ldots \overrightarrow{xy} \ldots t$ and therefore 
-$d_i(y) = d_i(x) + 1$. 
-
-\textit{(1.3)} We know $d_j(t) \geq d_i(t)$. But
-
-    \begin{align*}
-               &=d_i(y) + b_i(y) \\ 
-               &= d_i(x) + 1 + b_i(y) \\ 
-               &\leq d_k(x) + 1 + b_k(y) \\ 
-               &= d_k(y) + 1 + 1 + b_k(y) \\ 
-               &=d_k(t) + 2
-    \end{align*}
-
-Then $d_j(t) \geq d_k(t) + 2$.
-
-\textit{Conclusion.} Once a side $\overrightarrow{xy}$ becomes 
-critical, the length of the augmenting paths found 
-must increase at least by two before it can become 
-critical again. Then a side can become critical 
-at most $\varphi = \frac{n}{2} = O(n)$ times. Then 
-the complexity of Edmond-Karp is $(\varphi \times m) \times O(m) = O(nm^2)$.
-    
 
 \pagebreak 
 
-\subsection{Augmenting paths are non-decreasing}
+\subsection{Edmond-Karp: Augmenting paths are non-decreasing}
 
 Let $A = \left\{ x \in V : d_{k+1}(x) < d_k(x) \right\} $ and
 assume $A \neq \emptyset$. Let $x_0 \in A$ be the vertex whose distance
@@ -343,99 +284,145 @@ comes from assuming $A \neq \emptyset$. Then $A = \emptyset$. $\blacksquare$
 
 \pagebreak
 
-\section{Complexity of Dinitz}
+\section{Dinitz: Complexity}
 
 
-We will prove the complexity of Dinitz is $O(n^2m)$.
+We will prove the complexity of Dinitz is $O(n^2m)$. 
 
-Let $\psi$ the complexity of finding a blocking flow and $\varphi$ the
-complexity of building an auxiliary network. We know the level $t$ in the
-auxiliary networks is increasing, which implies there are at most $n$ auxiliary
-networks. $\therefore $ The complexity of Dinitz is $\left( \psi + \varphi
-\right) O(n) $.
-
-Since we use DFS, $\varphi = O(m)$. Let us prove $\psi = O(nm)$. If we can
-prove this, we will have the overall complexity $\left( O(nm) + O(m) \right)
-O(n) = O(n^2m) $, which is what we want.
-
-\textbf{Original algorithm.} In this version, the auxiliary network is s.t. all
-vertices have an exiting edge. This means DFS always reachs $t$ without need to
-backtrack. Then DFS is not $O(m)$ but $O(N) = O(n)$, where $N$ is the number of
-levels in the auxiliary network.
-
-Every path deletes at least one edge from the auxiliary network. $\therefore $
-There are $O(m)$ paths.  $\therefore $ the complexity of finding the 
-paths and updating the flow with them is $O(nm)$. But there is 
-an extra cost associated to the property that all vertices have an 
-exiting edge.
-
-To enforce this invariant, Dinitz used the pruning operation (\textit{podar}).
-Pruning goes from high- to low-level vertices and deletes the sides that have
-no exiting edge. Checking if a vertex has an exiting edge is $O(1)$; there are
-$O(n)$ vertices and one pruning operation per path; there are $O(m)$ paths.
-$\therefore $ Pruning so far is $O(mn)$.
-
-But erasing the vertices has some complexity. This is done at most once per
-vertex, and it is likely that once we prune one vertex, pruning the following
-ones is less complex (because we are removing edges). So we will calculate the
-\textit{average} complexity, not the worst-case complexity, of the problem.
-
-Deleting a vertex $x$ and its edges is $O(d(x))$; over all vertices this gives
-$\sum O(d(x)) = O(m)$ (Handshaking Lemma).  $\therefore $ $\psi = O(nm) + O(nm)
-+ O(m)= O(nm)$.
-
-$\therefore $ The complexity of Dinitz is $\left( O(nm) + O(m) \right)O(n) = O(n^2m) $
-
-\textbf{Western version.} The simplest approach is to give the pseudo-code. We
-are speaking of finding a blocking flow in the auxiliary network, do not think
-we are talking of the original network.
+Recall that Dinitz builds succesive auxiliary networks with BFS, uses DFS to find blocking 
+paths in them, and uses these paths to update the flow. Since the level 
+of $t$ augments in each succesive network, there are at most $O(n)$ auxiliary 
+networks. So the complexity of Dinitz is 
 
 \begin{align*}
-    &g := 0 \\ 
-    &\textbf{bool } flag := \textbf{true} \\ 
-    &\textbf{while } flag ~ \textbf{ do} \\ 
-    & ~ ~ ~ ~ \textbf{type } path := [s] \\ 
-    & ~ ~ ~ ~ \textbf{int } x := s \\ 
-    & ~ ~ ~ ~ ~ ~ ~ ~ \textbf{while } x \neq t \textbf{ do } \\ 
-    & ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \textbf{if } \Gamma^{+}(x) \neq 0 \textbf{ then } \\ 
-    & ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \text{tomar } y \in \Gamma^{+}(x) \\ 
-    & ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \text{agregar } y \text{ a } path \\ 
-    & ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ x := y &\left\{ \text{Esta línea y la anterior son la parte (A) de avanzar} \right\}  \\ 
-    & ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \textbf{else }  \\ 
-    & ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \textbf{if } x \neq s \textbf{ then }  &\left\{ \text{(R) Retroceder} \right\} \\ 
-    & ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ z := \text{elemento anterior a $x$ en  } path  \\ 
-    & ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \text{borro } x \text{ de } path\\ 
-    & ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \text{borro } \overrightarrow{zx} \text{ de la n.a.}\\ 
-    & ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ x := z\\ 
-    & ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \textbf{else }   \\ 
-    & ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ flag := 0   \\ 
-    & ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~\textbf{fi} \\ 
-    & ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \textbf{fi}\\
-    & ~ ~ ~ ~ ~ ~ ~ ~ \textbf{od } \\
-    & ~ ~ ~ ~ ~ ~ ~ ~ \textbf{if } x = t \textbf{ then } &\left\{ \text{(I) Incrementar} \right\}  \\ 
-    & ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \text{aumentar flujo $g$ a lo largo de } path \\
-    & ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \text{borrar lados saturados} \\ 
-    & ~ ~ ~ ~ ~ ~ ~ ~ \textbf{fi}\\
-    &\textbf{od}
+    O(n) \left[ \text{Comp. of building A.N.} + \text{Comp. of finding blocking flow in A.N.} \right] 
 \end{align*}
 
-Let $\Sigma = \left\{ A, I, R \right\} $. A Dinitz run (in the Western version)
-is a word $w \in \Sigma^{*} $. Consider all  over this language of the form $A
-\ldots AX$ with $X \in \Sigma$, $X \neq A$. Each $A$ is $O(1)$;
-each $R$ is $O(1)$; each $I$ is traversing the path twice, once to update the flow,
-once to erase the edges $\Rightarrow$ $I$ is $O(n)$.
+The complexity of building the A.N. is the complexity of BFS,  which is $O(m)$.
+The process of finding the blocking path varies is the Western and the original
+algorithms. 
 
-Each $A$ moves the pivot $x$ from one level to the next. $\therefore $ There 
-are $O(n)$ letters $A$ in the word. 
+\textit{Original version.} The original Dinitz algorithm enforced the following
+invariant: In any given auxiliary network, all vertices have edges connecting
+to the next level. This invariant implies that the DFS run always reaches $t$
+without need to backtrack. In consequence, the complexity of the DFS run is
+$O(n)$. The complexity of updating the flow is $O(n)$, and each time this happens 
+at least one side is saturated and removed. Then there are $O(m)$ paths.
+$\therefore $ The complexity of finding the paths and updating the flow
+is $O(n \times m)$.
+
+However, there is some extra cost associated to preserving this invariant. Each
+time a path is found, saturated sides are removed with a prunning operation.
+The prunning operation goes from the highest to the lowest levels in the
+network, checks for vertices whose exiting edge is saturated, and deletes them.
+This means that, for each vertex, a process of $O(1)$ complexity checks if it
+is saturated. This happens each time a path is found, so $O(n \times m)$ times.
+Once these sides have been detected, they and their neighbors are removed,
+which has complexity $O(d(x))$. Since this happens at worst for all vertices,
+the deleting operation is $O\left( \sum_{x \in V} d(x) \right) = O(m)$. The
+total cost of enforcing the invariant is then $O(n \times m) + O(m)$, which
+means the complexity of finding the blocking paths and updating the flow is
+$O(n \times m) + O(n \times m) + O(m) = O(n \times m) $. Then the complexity of
+Dinitz is $O(n^2m)$.
+
+\textit{Western version.} The Western version finds blocking paths and updates 
+the flow inside a while loop with three clauses. The first clause is 
+running BFS to advance; i.e. setting $x = s$ and iteratively making 
+$x$ be the first neighbor of $x$ until $t$ is reached. This clause executes 
+as long as there is a neighbor and we call it $A$.
+
+The second clause considers the case where $x$, the vertex we are 
+traversing, has no neighbors in the next level. Then the algorithm
+backtracks to its predecessor, removes the side leading from it to $x$,
+and attempts $A$ once more. We call this part $R$.
+
+The last clause considers the case where $t$ is reached. Here, 
+the flow is augmented using the path found and all saturated 
+sides are removed.
+
+Thus, finding the blocking flow and updating the path can be modeled 
+as a word $A \ldots I A \ldots R A \ldots R A\ldots I$; i.e. as a succession 
+of words of the form $A \ldots X$ with $X \in \left\{ R, I \right\} $.
+
+The process $R$ has complexity $O(1)$ because it simply involves going
+backwards and deleting a side. The process $A$ has complexity $O(1)$ because it
+simply involves moving forward, but at most $O(n)$ successions of $A$ may 
+occur. This means $O(A \ldots A) = O(n)$. The process $I$ has complexity $O(n)$
+because the flow is updated across at most all vertices. Then  
+$O(A\ldots I) = O(n) + O(n) = O(n)$ and $O(A\ldots R) = O(n) + O(1) = O(n)$.
+The question is how many words of the form $A \ldots X$ exist. At worst, all
+paths are traversed in the process of finding $t$, so there are $O(m)$ words of
+this form. Then the complexity of the run is 
 
 \begin{align*}
-    \therefore \qquad &(1) O(A \ldots A R) &= O(n) + O(1) + O(n) \\ 
-               &\textit{(2)} O(A \ldots AI) &= O(n)(\#A) + O(n)(\#I) = O(n)
+    O(m) \left[ O(n) + O(n) \right]  = O(nm)
 \end{align*}
 
-Each $R$ deletes an edge and each $R$ deletes \textit{at least} an edge.
-$\therefore $ There are $O(m)$ words of the form $A\ldots AX$.$\therefore $ The
-total complexity is $O(nm)$.
+Then the complexity of Dinitz is $O(n^2m)$.
+
+\pagebreak
+
+\subsection{Wave: Complexity}
+
+We know the distance between $s$ and $t$ in auxiliary networks is increasing.
+The distance is bounded by $n$. $\therefore $ There are $O(n)$ auxiliary
+networks. Now, each auxiliary network is first constructed and then 
+used to find a blocking flow. Then the complexity of Wave is 
+
+\begin{align*}
+    O(n) \left[ F + B \right] 
+\end{align*}
+
+where $F$ is the complexity of finding a blocking flow in an auxiliary network 
+and $B$ the complexity of building an auxiliary network. To build the auxiliary 
+network we use BFS. $\therefore  $ $B = O(m)$. Let us examine $F$.
+
+To find blocking flows we attempt to balance in forward and backward waves.
+When going forward, let $V$ be the steps where a side is saturated,
+$\overline{V}$ those where a side is not saturated. When going 
+backward, let $S$ be the steps where a side is emptied, $\overline{S}$ those 
+there a side is not emptied. 
+
+\textit{Complexity of $V$}. Assume $\overrightarrow{xz}$ is a side and is
+saturated in a forward wave. To saturate again it must empty at least a little
+bit before. If it empties, then $z$ was blocked and returned the flow to $x$;
+and since $z$ is blocked, $\overrightarrow{xz}$ will never again be used. Then
+each side can saturate at most once. $\therefore $ the complexity of $V$ is
+$O(m)$.
+
+\textit{Complexity of $S$}. Assume  $\overrightarrow{zx}$ is a side and 
+it empties in a backward wave. Since $x$  returned flow, it 
+is blocked and $z$ will not send flow to $x$ a gain. Then $\overrightarrow{zx}$
+cannot be emptied ever again. $\therefore $ The complexity of $S$ is $O(m)$.
+
+\textit{Complexity of $\overline{V}$}. When a vertex sends flow to 
+its neighbors, it saturates all sides except perhaps one.
+Then, for any given vertex, each forward wave will send 
+partial flow through at most one side. $\therefore $ The 
+complexity of $\overline{V}$ is $O(n) \times \varphi$, with 
+$\varphi$ the number of forward waves.
+
+\textit{Complexity of $\overline{S}$}. When a vertex returns flow 
+to its predecessors, it empties all sides except perhaps 
+one. Then, for any given vertex in a backward wave, 
+at most one side is partially emptied. $\therefore $ The 
+complexity of $\overline{S}$ is $O(n) = \psi$ where $\psi$ 
+is the number of backward waves.
+
+Now, it is trivialy to see $\varphi = \psi$ and there are 
+at most $n$ forward waves. $\therefore ~ O(\varphi) = n$ . 
+
+$\therefore $ The complexity of $\overline{S}, \overline{V}$ are both 
+$O(n) \times O(n) = O(n^2)$.
+
+$\therefore $ $F = O(n^2) + O(n^2) + O(m) + O(m) = O(n^2) + O(m)$.
+
+But $O(n^2) + O(m) = O(n^2)$, because $m \leq \binom{n}{2} = O(n^2)$.
+
+$\therefore $ $F = O(n^2)$.
+
+$\therefore $ The complexity of Dinitz is $O(n) \left[ O(m) + O(n^2) \right] = O(n)O(n^2) = O(n^3) $
+
 
 
 
@@ -446,75 +433,48 @@ total complexity is $O(nm)$.
 
 \subsection{Hamming bound}
 
-\begin{quote}
-\begin{theorem}[Cota de Hamming]
-    Sea $C \subseteq \left\{ 0, 1 \right\}^n $. Sea $\delta = \delta(c)$ y $t =
-    \left\lfloor \frac{\delta-1}{2} \right\rfloor$. Entonces 
-
-    \begin{align*}
-        |C| \leq \frac{2^n}{1 + n + \binom{n}{2} + \ldots  + \binom{n}{t}}
-    \end{align*}
-\end{theorem}
-
-
-    \begin{definition}[Disco]
-        The disk of radius $r$ around $\alpha \in \left\{ 0, 1 \right\}^n $ is
-    
-        \begin{align*}
-            D_r(\alpha) = \left\{ \gamma \in \left\{ 0, 1 \right\}^n : d_H(\alpha, \gamma) \leq r  \right\} 
-        \end{align*}
-    \end{definition}
-\end{quote}
-
-Let $A = \bigcup_{v \in C} D_t(v)$. Since $C$ corrects $t$ errors, for any two 
-different words $v, w \in C$,$ D_t(v) \cap D_t(w) = \emptyset$. This means $A$
-is a disjoint union. $\therefore $ $|A| = \sum_{v \in C} |D_t(v)|$.
-
-Let $S_r(v) = \left\{ w \in \left\{ 0, 1 \right\}^n : d_H(v, w) = r \right\} $.
-Then $D_t(v) = \bigcup_{r=0}^{t}S_r(v)$, and this union is trivially disjoint.
-Then $|D_t(v)| = \sum_{r = 0}^{t} |S_r(v)|$. The question is what is the value
-of $|S_r(v)|$.
-
-Recall that
+Let $C \subseteq \left\{ 0, 1 \right\}^{n} $. We want to prove 
 
 \begin{align*}
-    w \in S_r(v) &\iff d_H(v, w) = r \\ 
-          &\iff w \text{ differes by $r$ bits from } v
+    |C| = \frac{2^n}{\sum_{i=0}^{t} \binom{n}{i}}
 \end{align*}
 
-In other words, each $w \in S_r(v)$ is fully determined by the 
-bits which makes it different from $v$, and this set of bits 
-fully determine $w$. This means there is a bijection $\psi : S_r(v) \to B$ where 
-$B$ is the set of all subsets of $r$ bits from a set of $n$ bits.
-set of all subsets of $r$  bits from a set of $n$ bits.
+Let $A = \bigcup_{v \in C} D_t(v)$. Recall that $D_t(v)$ is the set of words in 
+$\left\{ 0, 1 \right\}^n$ that are at a Hamming distance of $t$ or less from $v$.
 
-Because it is a bijection,
-
+Let $S_v(r) = \left\{ w \in \left\{ 0, 1 \right\}^n : d_H(v, w) = r  \right\}
+$. Then it follows by definition that $D_t(v) = \bigcup_{r=0}^{t} S_v(r)$. Of course,
+this union is disjoint. It follows that 
 
 \begin{align*}
-    |S_r(v)| &= |B| = \binom{n}{r}
+    A = \bigcup_{v \in C} \bigcup_{r = 0}^{t} S_v(r)
 \end{align*}
 
-This means
+and 
 
-    \begin{align*}
-        |D_t(v)| &= \sum_{r=0}^{t} |S_r(v)| \\ 
-                 &= \sum_{r=0}^{t} \binom{n}{r}
-    \end{align*}
+\begin{align*}
+    |A| = |C| \times \sum_{r=0}^{t} |S_v(r)|
+\end{align*}
 
-By definition of $A$,
+So now we must only determine $|S_v(r)|$. But this is easy to do if we consider
+that any $w \in S_v(r)$ differs from $v$ by exactly $r$ bits, and is fully
+determined by this difference. In other words, there is a bijection between any
+$w \in S_v(r)$ and the set of the $r$ bits out of all $n$ possible bits that
+make up the difference between $w$ and $v$. This readily entails that $|S_v(r)|
+= \binom{n}{r}$. This readily gives 
 
-    \begin{align*}
-        |A| &= \sum_{v \in C} \left( \sum_{r=0}^{t} \binom{n}{r} \right) \\ 
-            &= |C| \sum_{r=0}^{t} \binom{n}{r}\\
-        \Rightarrow |C| &=  \frac{|A|}{\sum_{r=0}^{t} \binom{n}{r}}
-    \end{align*}
+\begin{align*}
+    |A| &= |C| \times \sum_{r=0}^{t} \binom{n}{r} \\ 
+    \Rightarrow |C| &= \frac{|A|}{\sum_{r=0}^{t} \binom{n}{r} |}
+\end{align*}
 
-    Since $A \subseteq \left\{ 0,1 \right\}^n \Rightarrow |A| \leq 2^n $, 
+We do not know the cardinality of $A$, but since $A \subseteq \left\{ 0, 1 \right\}^n $
+we know $|A| \leq 2^n$. Then
 
-    \begin{align*}
-        |C| \leq \frac{2^n}{\sum_{r=0}^{t} \binom{n}{r}}
-    \end{align*}
+\begin{align*}
+    |C| \leq \frac{2^n}{\sum_{r=0}^{t} \binom{n}{r}}
+\end{align*}
+
 
 \pagebreak
 
