@@ -753,64 +753,87 @@ matching. $\blacksquare$
 
 \subsection{2-Color is polynomial}
 
-We must give a polynomial algorithm that decides whether an arbitrary $G = (V,
-E)$ is $\chi(G) = 2$. 
+To prove $2$-color is polynomial, we must provide an algorithm $\mathcal{A}$
+that correctly decides whether any given $G = (V, E)$ is $2$-colorable in
+polynomial time. We will first provide $\mathcal{A}$ and then show its
+correctness and its belonging to $P$.
+
+The algorithm takes an arbitrary non-colored vertex to be the root of its
+connected component and colors it with $1$. Within each connected component, it
+runs BFS from the given root to explore it. Each time BFS
+pivots over a vertex $p \in V$ and enqueues its neighbors, the algorithm also
+colors each neighbor with $3 - c(p)$, thus ensuring that all colors are in the
+range $\left\{ 1, 2 \right\} $.
+
+It is important to note that the color of any given vertex is fully determined
+by the parity of its level in the BFS tree. Since the root at level zero is set
+to $1$, all vertices in the second level are colored with $2$, those in the
+third with $1$, and so on.
 
 \begin{align*}
-    &n\_colored := 0 \\ 
-    &\textbf{while } j < n \textbf{ do }\\ 
-    &\qquad x := v \in V, v \text{ not colored} \\ 
-    &\qquad C(x) := 1 \\ 
-    &\qquad n\_colored :=  n\_colored + 1 \\ 
-    & \qquad Q = \text{queue with only } x \\ 
-    & \qquad\textbf{while } Q \neq \emptyset \textbf{ do } \\ 
-    & \qquad \qquad p := pop!(Q) \\ 
-    & \qquad \qquad \textbf{for } w \in \Gamma(p) \textbf{ do } \\ 
-    & \qquad\qquad\qquad \textbf{if } w \text{ is not colored } \textbf{do} \\ 
-    & \qquad\qquad\qquad\qquad push!(w, Q) \\ 
-    & \qquad\qquad\qquad\qquad C(w) = 3 - C(p) \\ 
-    & \qquad\qquad\qquad\qquad n\_colored = n\_colored + 1 \\ 
-    & \textbf{for } \left\{ v, w \right\} \in  E \textbf{ do }\\ 
-    & \qquad\textbf{if } C(v) = C(w) \textbf{ return } False \textbf{ else } \textbf{return } True
+    &j := 1\\
+    &\textbf{while } j < n \textbf{ do } \\
+    &\qquad r = \text{arbitrary non-colored vertex} \\ 
+    &\qquad c(r) = 1 \\ 
+    &\qquad queue = \left\{ r \right\} \\ 
+    & \qquad\textbf{while } queue \neq \emptyset \textbf{ do } \\ 
+    & \qquad \qquad p = pop(queue) \\ 
+    &\qquad\qquad \textbf{for } x \in \Gamma(p) \textbf{ do } \\ 
+    & \qquad \qquad \qquad \textbf{if } x \text{ not colored} \textbf{ do} \\ 
+    &\qquad \qquad \qquad \qquad c(x) = 3 - c(p)\\ 
+    &\qquad \qquad \qquad \qquad push(queue, x)\\
+    &\qquad\qquad\qquad\textbf{fi}\\
+    &\qquad\qquad \textbf{od}\\ 
+    &\qquad\textbf{od}\\
+    &\textbf{od}\\
+    &\textbf{for } \left\{ x y \right\}  \in E \textbf{ do } \\ 
+    &\qquad \textbf{if } c(x) = c(y) ~  \textbf{do } return \textbf{ False fi} \\ 
+    &\textbf{od}\\
+    &return \textbf{ True}
 \end{align*}
 
-\textbf{Complexity.} The inner \textbf{while} traverses the vertices in the
-connected component of $x$, which means the outer \textbf{while} is executed
-once per connected component. Furthermore, inside the inner \textbf{while} we
-loop through $\Gamma(p)$. Then the complexity of the inner \textbf{while} is 
+The inner while runs BFS with a slight modification to color vertices when they
+are enqueued and is thus $O(m)$. It is executed per each connected component
+and the number of connected components is $O(n)$. $\therefore $ The algorithm 
+is polynomial. 
 
-\begin{align*} O \left[ \sum_{p \in \mathcal{C}(x)} d(p) \right] = O \left[ 2
-\times \text{edges in } \mathcal{C}(x) \right]  = O(\# \text{edges in }
-\mathcal{C}(x)) \end{align*}
+That the algorithm correctly decides that a graph is two-colorable is trivial.
+To prove that it also correctly decides that a graph is not two-colorable, we
+shall prove a negative answer entails the graph contains an odd cycle.
 
-where $\mathcal{C}(x)$ is the connected component of $x$. The \textbf{for} loop
-is $O(m)$ of course. $\therefore $ the algorithm is polynomial.
+Assume the algorithm was executed over $G = (V, E)$ and returned
+$\textbf{False}$. Then there is some $\overrightarrow{xy} \in E$, in a
+particular connected component $\mathcal{C} \subseteq G$, s.t.
+$c(x) = c(y)$. Let us presume, without loss of generality, that 
+$x$ was enqueued before $y$. Let us denote with $r$ the root 
+of $\mathcal{C}$ from which BFS was ran.
 
-\textbf{Correctness.} It is trivial to note that if the algorithm returns
-$True$ then $G$ is $2$-color. Now, assume the algorithm returned $False$. Then
-there is some $\left\{ v, w \right\} \in E$ s.t. $C(v) = C(w)$. These belong to
-the same connected component.
+Assume $x$ enqueues $y$. Then $c(y) = 3 - c(x) \neq c(x)$, a contradiction.
+Then $x$ does not enqueue $y$. But this can only happen if, when $x$ is the at
+front of the queue, $y$ was already enqueued by some other vertex. 
 
-Let $x$  be the root of this connected component from which the queue was
-built. Without loss of generality, assume $v$ entered the queue first. 
-Then, when $v$ became the first element in the queue, $w$ must have 
-already been in the queue. Otherwise, because they are neighbors, $v$
-would have added $w$ with the color $3 - C(v)$, which contradicts the 
-hypothesis. Then there is a chain of inclusion in the queue
+In particular, there is a vertex $w$ that is the vertex of greater level common
+to $x$ and $y$ in the BFS tree---i.e. the vertex from which $x$ and $y$
+diverge---. Let $\eta(w)$ be the level of $w$ in the BFS
+tree.
 
-$$x = v_r \to v_{r-1} \to  \ldots \to v_1 \to  v_0 = v$$
-$$x = w_t \to w_{t-1} \to  \ldots \to w_1 \to  w_0 = w$$
+Consider the cycle $w \ldots x y \ldots w$, which exists because all these
+vertices belong to $\mathcal{C}$. There are $\eta(x) - \eta(w)$ edges from $w$ to
+$x$, and $\eta(y) - \eta(w)$ edges from $y$ to $w$. There is one 
+extra edge for $xy$. The total amount is then 
 
-Since $v$ came first, we must have $r \leq t$, but since $w$ is the queue when
-$v$ is its first element, $t \leq r+1$. Now, since the color depends of the
-parity of $r$ and $t$, $C(v) = C(w) \Rightarrow t \equiv r \mod 2$. Then $t =
-r$.
+\begin{align*}
+    \eta(x) - \eta(w) + \eta(y) - \eta(w) + 1 &= \eta(x) + \eta(y) - 2\eta(w) + 1
+\end{align*}
 
-Let $k$ the first index s.t. $v_k = w_k$; then we have a path $v \to  v_1 \to
-v_k = w_k \to  w_{k-1} \to  w_{k-2} \ldots w$ with $wk + 1$ vertices. But since
-$v, w$ are an edge, the graph contains $C_{2k+1}$. $\therefore \chi(G) \leq 3$.
+By assumption, $\eta(x)$ and $\eta(y)$ are both greater than $\eta(w)$.
+$\therefore $ $\eta(x) + \eta(y) > 2\eta(w)$ and length of the path is greater
+than zero (sanity check). 
 
+Since $c(x) = c(y)$, $\eta(x) \equiv \eta(y) \mod 2$ and therefore $\eta(x) +
+\eta(y)$ is even. Then the length of the cycle is odd. 
 
+$\therefore $ $C_{2k+1} \subseteq \mathcal{C}$ and $\chi(G) \geq 3$.
 
 
 \pagebreak

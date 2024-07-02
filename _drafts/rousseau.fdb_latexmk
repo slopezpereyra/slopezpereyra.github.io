@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1719591696 "rousseau.tex" "rousseau.pdf" "rousseau" 1719591697 0
+["pdflatex"] 1719872971 "rousseau.tex" "rousseau.pdf" "rousseau" 1719872971 0
   "/etc/texmf/web2c/texmf.cnf" 1695394668 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm" 1136768653 3584 adb004a0c8e7c46ee66cad73671f37b4 ""
@@ -30,8 +30,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1695394817 4623455 fa0568a71dd9a288d6c226ee477506c6 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1695394844 7879794 eff26094dbe002b6e482c026ea4c81e2 ""
-  "rousseau.aux" 1719591697 32 044b7f8fc9779af7531264e0c5c84b6d "pdflatex"
-  "rousseau.tex" 1719591695 4879 99f2b7fee131feb7c05207764798057f ""
+  "rousseau.aux" 1719872971 32 044b7f8fc9779af7531264e0c5c84b6d "pdflatex"
+  "rousseau.tex" 1719872969 4886 d1568c70cf175d6a89fc646b7d85f2e8 ""
   (generated)
   "rousseau.aux"
   "rousseau.log"

@@ -18,60 +18,157 @@
 
 \begin{document}
 
-Let $G = (V, E)$ a bipartite graph with parts $X$ and $Y$, and let $Z \in
-\left\{ X, Y \right\} $. We want to prove that there is a complete matching
-from $X$ to $Y$ iff $\forall S \subseteq Z : |S| \leq |\Gamma(S)| $.
-
-\textit{($\Rightarrow$)} Assume there is a complete matching from $X$ to $Y$.
-Then there is an injective function $f : S \subseteq X \to Y$ s.t. any $x \in
-S$ is associated to a distinct $y \in Y$ and $|f(S)| = |S|$. Since $G$ is
-bipartite, any $f(S) \subseteq  \Gamma(S)$. Then $|S| \leq |\Gamma(S)|$. The
-proof is equivalent if we take $S \subseteq Y$.
-
-\textit{($\Leftarrow$)} We will use the matching algorithm to construct our
-proof. Take $S \subseteq X$ and assume $|S| \leq |\Gamma(S)|$. Assume that,
-after running the algorithm, an incomplete matching is found.
-
-Let $S_0 \subseteq S$ be the set of rows tagged at the end of the algorithm.
-Then all its neighbors $T_1 = \Gamma(S_0)$ were matched with a non-intersecting
-set of rows $S_1$. On its turn, rows in $S_1$ may have neighbors that are not
-matched, which inspires the definition of $T_2 = \Gamma(S_1) - T_1$.
-In general, we define 
+We shall prove $3$-color is NP complete. In order to do this, we will prove 
+$3$-SAT $\leq_{\rho}$ $3$-Color. In other words, given an instance of $3$-SAT 
+of the form 
 
 \begin{align*}
-    S_i &= \Gamma(T_{i})\\
-    T_{i+1} &= \Gamma(S_{i}) - \bigcup_{j=0}^{i} T_{i}
+    B = \bigwedge{i=1}^{m} (l_{i1} \lor  l_{i2} \lor  l_{i3})
 \end{align*}
 
-This sequence of intermeddling sets, $S_{k}, T_k, S_{k-1}, T_{k-1}, \ldots, S_1,
-T_1, S_0$, describes the run of the algorithm. Now, if the algorithm 
-on $S_0$, it means there were no available neighbors for $S_0$; i.e. 
-no way to construct the next $T_i$.
+with each literal $l_{ij}$ a case of the variables $x_1, \ldots, x_n$, we shall
+provide an effective procedure that constructs a special graph $\mathcal{G}$
+s.t. $\mathcal{G}$ is $3$-colorable iff $B$ is satisfiable.
 
-Observe that each row matches a unique column, and then $|S_i| = |T_i|$ for any
-$i$. Furthermore, the $S_i$ are disjoint and the $T_i$ are disjoint. Then 
+\textit{(1 : Building $\mathcal{G}$)} We shall define $\mathcal{G}$ by parts; namely, 
+
+\begin{enumerate}
+    \item Two special vertices $s$ and $t$ that are connected.
+    \item $n$ triangles, each connecting the vertices in $\left\{ t, v_{i}, w_{i} : 1 \leq i \leq n \right\} $
+    \item $m$ triangles formed by the vertices $\left\{ b_{i1}, b_{i2}, b_{i3} : 1 \leq i \leq m \right\} $
+    \item A tip $u_{ij}$ each connected to $b_{ij}$ and $s$.
+\end{enumerate}
+
+Now let us define 
 
 \begin{align*}
-    |S| &= \sum |S_i| \\ 
-        &= |S_0| + \sum |T_i| \\ 
-        &= |S_0| + |T|
+    \psi(l_{ij}) = \begin{cases}
+        v_{k} & l_{ij} = x_k  \\ 
+        w_{k} & l_{ij} = \overline{x_k}
+    \end{cases}
 \end{align*}
 
-It readily follows that $|S| > |T|$, because by assumption 
-$S_0 \neq \emptyset$. Now, we will prove $T = \Gamma(S)$.
+Then we also include in $\mathcal{G}$ the sides $\left\{ u_{ij} ~ \psi(l_{ij} :
+1 \leq i \leq m, 1 \leq j \leq 3) \right\} $. In other words, we connect each
+tip $u_{ij}$ to either $v_k$ or $w_k$, depending on what the literal $l_{ij}$
+is.
 
-\textit{(1)} $T$ are the labeled columns, and each labeled column 
-is labeled by a neighboring row. So any $t \in T$ has at least 
-one neighbor in$ S$. This means $T \subseteq \Gamma(S)$.
+This completes the construction of $\mathcal{G}$. Now we shall prove 
+$\mathcal{G}$ is 3-colorable iff $B$ is satisfiable.
 
-\textit{(2)} Now assume there is some $y \in \Gamma(S)$ s.t. $y \not\in T$.
-Then $y$ was not labeled. But since $y \in \Gamma(S)$ it 
-could have been labeled by a neighboring row.
-Then $y$ would have been labeled. Then $\Gamma(S) \subseteq T$.
+\textit{(2 : Proving $\Rightarrow$)} Assume $\mathcal{G}$ has a proper coloring
+of three colors or less. Since $\mathcal{G}$ contains triangles,
+it must be a coloring of exactly three colors. We shall define 
 
-Now that we know $\Gamma(S) = T$, we have $|S| > |\Gamma(S)|$.
-This contradicts our assumption. Then there must 
-be a complete matching.
+\begin{align*}
+    \overrightarrow{b_k} = \begin{cases}
+        1 & c(v_k) = c(s) \\ 
+        0 & c(v_k) \neq c(s)
+    \end{cases}
+\end{align*}
+
+and prove that $B(\overrightarrow{b}) = 1$. Proving this equates to proving
+there is at least one $j$ in $\left\{ 1, 2, 3 \right\} $ s.t.
+$l_{ij}(\overrightarrow{b}) = 1$ for any arbitrary $i$. To prove this, we shall
+take $u_{ij}$ and analyze what is color entails about the truth assignment.
+
+The triangle $\left\{ b_{i 1}, b_{i 2}, b_{i 3} \right\} $ must contain $c(t)$
+at some $b_{ij_0}$ fixed. Take $u_{ij_0}$. Note that $c(s) \neq c(u_{ij_0})
+\neq c(t)$. And since $\psi(u_{ij_0})$ cannot have the color of $t$, it must be
+the case that $c \left( \psi\left( u_{ij_0} \right)  \right) = c(s) $. Now consider 
+these cases. 
+
+\textit{Case 1.} If $\psi(u_{ij_0}) = v_k$, it follows that $l_{ij} = x_k$.j
+Then $c(v_k) = c(s) \Rightarrow \overrightarrow{b_k} = 1 \Rightarrow l_{ij}(\overrightarrow{b}) = 1 $. $\therefore ~ B_i (\overrightarrow{b}) = 1$.
+
+\textit{Case 2.} If $\psi(u_{ij_0}) = w_k$ then $l_{ij} = \overline{x_k}$. Since 
+$c(w_k) = c(s)$ in this case, $c(v_k) \neq c(s)$ and $\overrightarrow{b}_k = 0$.
+Then $l_{ij}(\overrightarrow{b}) = 1$. $\therefore  ~ B_i(\overrightarrow{b}) = 1$. 
+
+In both cases, for an arbitrary $i$, the coloring of $\mathcal{G}$ allows us 
+to define an assignment $ve^3$ that makes $B_i(\overrightarrow{b}) = 1$.
+Of course, this assignment is s.t. $B(\overrightarrow{b}) = 1$. $\blacksquare$
+
+
+\pagebreak
+
+
+\textit{(3 : Proving $\Leftarrow$)} Assume $B$ is satisfiable by a boolean
+vector $\overrightarrow{b}$. Then for any given $i$ in $[1, m]$ we have
+$B_i(\overrightarrow{b}) = 1$. Then $l_{ij_{0}}(\overrightarrow{b}) = 1$ for
+(at least) a fixed $j_0$, $1 \leq j_0 \leq 3$. 
+
+Let $C = \left\{ 0, 1, 2 \right\} $ a set of colors and define $c(s) = 0, c(t) = 1$. Let 
+
+\begin{align*}
+    &c(v_k) = \begin{cases}
+        c(s) & \overrightarrow{b}_k = 1 \\ 
+        2    & \overrightarrow{b_k} = 0
+    \end{cases} & c(w_k) = \begin{cases}
+    2 &\overrightarrow{b_k} = 1 \\ 
+    c(s) &\overrightarrow{b_k} = 0
+    \end{cases}
+\end{align*}
+
+Clearly, $\left\{ s, t \right\} $ is properly colored and $\{t, v_i, w_i\}$ is 
+properly colored. All that is left is to color the triangles 
+with tips.
+
+Let 
+
+\begin{align*}
+    c(u_{ij}) = \begin{cases}
+        2 & j = j_0 \\ 
+        c(t) & j \neq j_0
+    \end{cases}
+\end{align*}
+
+Of course, each $\left\{ u_{ij}, s \right\} $ is properly colored. But what about 
+$\left\{ u_{ij}, \psi(l_{ij}) \right\} $? Well, there are two cases to consider. 
+
+If $j = j_0$, $c(u_{ij}) = 2$ and $l_{ij}(\overrightarrow{b}) = 1$. If
+$\psi(l_{ij}) = v_k$, this means $x_{k}(\overrightarrow{b}) = 1 \Rightarrow
+\overrightarrow{b_k} = 1$. Then $v_k$ is colored with $c(s) \neq c(u_{ij})$ and the coloring 
+is correct. If $\psi(l_{ij}) = w_k$, entailing that $l_{ij} = \overline{x_k}$, then 
+$\overrightarrow{b}_k = 0$ necessarily, in which case $c(w_k) = c(s) \neq c(u_{ij})$.
+
+If $j \neq j_0$, then $c(u_{ij}) = c(t)$. But $\psi(l_{ij}) \in \left\{ v_k, w_k \right\} $ never
+takes the color of $t$, and the coloring is correct.
+
+All that is left is to color the triangle $\left\{ b_{i1}, b_{i2}, b_{i 3} \right\} $.
+But this is trivial. Simply let $c(b_{i j_0}) = c(s)$, ensuring 
+that $\left\{ b_{i j_0}, u_{i j_0} \right\} $ are properly colored,
+and color the remaining two vertices with $c(t)$ and $2$ in 
+any order.
+
+We have used $\overrightarrow{b}$ to define a 3-coloring of $\mathcal{G}$. $\blacksquare$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
