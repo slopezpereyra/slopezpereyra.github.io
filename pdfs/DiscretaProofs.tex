@@ -1,0 +1,1043 @@
+
+\usepackage{newtxtext} \usepackage{newtxmath}
+\usepackage{graphicx}
+\graphicspath{ {../Images/} }
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{amsmath, amssymb}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example} \newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+
+
+\clearpage 
+
+\section{Baby Brooks}
+
+\begin{quote}
+    \textbf{Notational note.} I use $\mathcal{G}$ to denote the Greedy 
+    algorithm.
+\end{quote}
+
+We wish to prove that if $G = (V, E)$ is connected and non-regular, then
+$\chi(G) \leq \Delta$.
+
+Let $x_0 \in V$ be s.t. $d(x_0) = \delta$. Since $G$ is
+connected, running BFS from $x_0$ adds all vertices to the BFS tree. Let
+$\mathcal{O}^{-1}$ be the ordering of the vertices s.t. $z$ is the $i$th vertex
+if it was the $i$th one to be added by BFS. Trivially, $x_0$ is the first
+vertex in $\mathcal{O}^{-1}$. Let $\mathcal{O}$ be the reverse order, with
+$x_0$ last. We will prove $\mathcal{G}$ colors $G$ with at most $\Delta$ colors
+if it uses the ordering $\mathcal{O}$.
+
+
+Observe that, in the BFS run, every $x \neq x_0$ is inserted by a neighbor that
+was already in the tree. In other words, in the $\mathcal{O}^{-1}$ order, every
+vertex has a neighbor that precedes him in the order. Consequently, in
+$\mathcal{O}$, every $x \neq x_0$ has a neighbor that succeeds him in the
+order. 
+
+It follows that the worst case scenario for the coloring of $x \neq x_0$ is
+that it has $d(x) - 1$ preceding neighbors. $\therefore $ $\mathcal{G}$
+eliminates at most $d(x) - 1 \leq \Delta - 1$ colors. Then $x$ can be colored
+with a color in $\left\{ 1, \ldots, \Delta \right\} $.
+
+When $\mathcal{G}$ reaches $x_0$ it eliminates at most $d(x_0) = \delta$
+colors. Since $G$ is non-regular $\delta < \Delta$.
+$\therefore $ There is at least one color for $x_0$
+in $\left\{ 1, 2, \ldots, \Delta \right\} $.
+
+\end{quote}
+\normalsize
+
+\pagebreak
+
+\section{Max flow, min cut}
+
+Let $f$ a flow over a network $\mathcal{N}$. We want to prove two things:
+\textit{(1)} $v(f) \leq Cap(S)$ for any cut $S$ and \textit{(2)} $f$ is maximal
+iff there is a cut $S$ s.t. $v(f) = Cap(S)$.
+
+\textit{(1)} We know $v(f) = f(S, \overline{S}) - f(\overline{S}, S)$. Since
+$f(A, B)$ is a sum over $f$ and $0 \leq f(\overrightarrow{ab}) \leq
+c(\overrightarrow{ab})$ for any $\overrightarrow{ab} \in E$, 
+
+$$v(f) = f(S, \overline{S}) - f(\overline{S}, S) \leq f(S, \overline{S})$$
+
+The same logic implies $f(S, \overline{S}) \leq c(S, \overline{S}) = Cap(S)$.
+Then $v(f) \leq f(S, \overline{S}) \leq Cap(S)$. $\blacksquare$
+
+\textit{(2: $\Leftarrow$)} Assume there is a cut $S$ s.t. $v(f) = Cap(S)$. Let
+$g$ an arbitrary flow. Then $v(g) \leq Cap(S) = v(f)$. Then $f$ is maximal.
+Furthermore, it is trivial by definition of $Cap$ that $Cap(T) \geq v(f)$ for
+any cut $T$. Then $Cap(T) \geq Cap(S) \Rightarrow S$ is minimal.
+
+\textit{(2 : $\Rightarrow$)} Assume $f$ is maximal. Let
+
+$$
+S = \left\{ s \right\} \cup \left\{ x \in V : \exists f\text{-camino
+aumentante entre $s$ y $x$} \right\} 
+$$
+
+$S$ is a cut because, if $t \in S$, there is an augmenting path 
+$s \ldots t$ and the flow can be augmented, which contradicts 
+that $f$ is maximal.
+
+Recall that $v(f) = f(S, \overline{S}) - f(\overline{S},S)$. The first 
+term in the difference is
+
+\begin{align*}
+    f(S, \overline{S}) &= \sum_{x \in S, z \not\in S, \overrightarrow{xz} \in E}
+    f(\overrightarrow{xz})
+\end{align*}
+
+Let $\overrightarrow{xz} \in E$ a side in the range of the sum above.
+Then there is an augmenting path $s \ldots x$ and there is no 
+augmenting path $s \ldots z$. But $\overrightarrow{xz} \in E$ and 
+$s\ldots x \ldots z$ is a path. Since it cannot be an augmenting path,
+we must have $f(\overrightarrow{xz}) = c(\overrightarrow{xz})$. 
+Then $f(\overrightarrow{xz}) = c(\overrightarrow{xz})$ for all $x \in S$, $z
+\not\in S, \overrightarrow{xz}\in E$. Therefore
+
+\begin{align*}
+    f(S, \overline{S}) = \sum_{\ldots} f(\overrightarrow{xz}) = \sum_{\ldots}
+    c(\overrightarrow{xz}) = Cap(S)
+\end{align*}
+
+Now consider the second term in the difference:
+
+\begin{align*}
+    f(\overline{S}, S) = \sum_{w \not\in S, x \in S, \overrightarrow{wx} \in E}
+    f(\overrightarrow{wx})
+\end{align*}
+
+Let $\overrightarrow{wx}$ an arbitrary side in the sum above. Again,
+there must be an augmenting path $s \ldots x$, but not one 
+$s \ldots w$. But $\overrightarrow{wx}$ is a side, and then 
+$s \ldots \overleftarrow{xw}$ is not augmenting only if 
+$f(\overleftarrow{xw}) = 0$. This means $f(\overrightarrow{wx}) = 0$
+for all $\overrightarrow{wx}$ in the range of the sum above.
+
+$\therefore $  $v(f) = Cap(S) - 0 = Cap(S)$. $\blacksquare$
+
+\pagebreak
+
+\section{Networks}
+
+\subsection{Edmond-Karp: Complexity}
+
+The complexity of E.K. is determined by the complexity of finding the
+$f_i$-augmenting paths, the number of such paths, and the complexity 
+of updating the flow with such paths. 
+
+To find $f_i$-augmenting paths, EK uses BFS with a complexity $O(m)$. Updating
+the flow has complexity $O(n)$. So the question is what is the number $\varphi$
+of $f_i$ augmenting paths (or runs of BFS) that are used.
+
+The number of such paths is bounded by the number of sides times the number of
+times a side may become critical. We shall determine how many times a side may
+become critical.
+
+Let $f_1, f_2, \ldots$ be the iterations of EK. Let $\overrightarrow{xz}$ be a
+side that became critical at iteration $k$. There are two options: it either
+saturated being forward or emptied being backward.
+
+\textit{Saturated being forward.} If $\overrightarrow{xz}$ saturated being
+forward, then $p_k = s \ldots \overrightarrow{xz} \ldots t$ is the form of the
+augmenting path used to determine $f_k$. 
+
+Assume $\overrightarrow{xz}$ becomes critical again at some iteration $j$, so
+that $p_j = s \ldots \overrightarrow{xz} \ldots t$ is an augmenting path. For
+this to occur there must exist some iteration $i$, with $k < i < j$, such that
+$p_i = s \ldots \overleftarrow{xz} \ldots t$ is an augmenting path. In other
+words, $z$ must have returned some of the flow to $x$. Since we are using EK,
+the augmenting paths are of minimal length, and the distance between two
+vertices never decreases. This means 
+
+\begin{align*}
+    d_j(t) &\geq d_i(x) + b_i(x)  \\ 
+           &=d_i(z) + 1 + b_i(x) \\ 
+           &\geq d_k(z) + 1 + d_k(x) \\ 
+           &=d_k(x) + 1 + 1 + b_k(x) \\ 
+           &=d_k(t) + 2
+\end{align*}
+
+\textit{Emptied being backward.} Now, assume $\overrightarrow{xz}$ is a side
+that saturated being backward on the $k$th iteration; this is, that $p_k = s
+\ldots \overleftarrow{xz} \ldots t$ was the path found. Assume it empties again
+at some iteration $j$, so that $p_j = s \ldots \overleftarrow{xz} \ldots t$ is
+the $f_j$ path. Then there is some $i$, with $k < i < j$, such that $p_i = s
+\ldots \overrightarrow{xz} \ldots t$ is a path; i.e. the side was used forward.
+Now, all these paths are of minimal length, because we are using 
+E.K. And in all succesive paths, the distance from $s$ to $t$ never 
+decreases. Then,
+
+\begin{align*}
+    d_j(t) &\geq d_i(t) \\ 
+           &= d_i(z) + b_i(z) \\ 
+           &= d_i(x) + 1 + b_i(z) \\ 
+           &\geq d_k(x) +1 + b_k(z) \\ 
+           &=d_k(z) + 1 + 1 + b_k(z) \\ 
+           &= d_k(t) + 2
+\end{align*}
+
+In both cases, the distance from $s$ to $t$ had to increase by at least 
+two unites. But the distance from $s$ to $t$ is bounded by $n$; this is, 
+it is $O(n)$. Then a side may become critical $O(\frac{n}{2}) = O(n)$ times.
+Since there are $m$ sides, the number of times an arbitrary side will become 
+critical is $O(mn)$.
+
+$\therefore $ The complexity is $O(mn) \left[ O(n) + O(m) \right] = O(mn)O(m) = O(m^2n) $.
+
+
+\pagebreak 
+
+\subsection{Edmond-Karp: Augmenting paths are non-decreasing}
+
+Let $A = \left\{ x \in V : d_{k+1}(x) < d_k(x) \right\} $ and
+assume $A \neq \emptyset$. Let $x_0 \in A$ be the vertex whose distance
+$d_{k+1}(x_0)$ from $s$ is minimal; i.e. $d_{k+1}(x_0) \leq d_{k+1}(y) ~
+\forall y \in A$. Since $x_0 \in A$, $d_{k+1}(x_0) < d_k(x_0) \leq \infty$.
+Then there exists a $\mathcal{P}_{k+1} = s \ldots x_0$ of minimal length.
+Let $z$ be the predecessor of $x_0$ in this path.
+
+By definition of $d_f$, the length of the path is $d_{k+1}(x_0)$. Because the
+path is of minimal length to $x_0$, it is of minimal length to any predecessor
+of $x_0$ in it, including $z$. Then $d_{k+1}(z) = d_{k+1}(x_0) - 1$. This
+implies $z \not\in A$.
+
+There are two possible cases: either $\overrightarrow{xz} \in E$
+or $\overrightarrow{zx} \in E$.
+
+\textit{(Case 1):} If $\overrightarrow{zx_0} \in E$, then
+$d_{k+1}(z) < d_{k+1}(x_0)$. Since $z \not\in A$,
+
+\begin{align*}
+    d_k(z) \leq d_{k+1}(z) < d_{k+1}(x_0) < \infty
+\end{align*}
+
+Since $d_k(z) < \infty$, there is an $f_{k}$-augmenting path from $s$ to $z$.
+Then, in principle, $s \ldots z x$ could be  an augmenting path. But
+if this were the case, 
+
+$$d_k(x_0) \leq d_k(z) + 1 \leq d_{k+1}(z) + 1 = d_{k+1}(x)$$ 
+
+which implies $x_0 \not\in A$ ($\bot$). $s\ldots zx$ is not $f_k$-a.p. This can
+only happen if $f_k(\overrightarrow{zx_0}) = c(\overrightarrow{zx_0})$ (the
+side is saturated). Since the side is used in a $f_{k+1}$-a.p. it must be the
+case that $f_{k+1}(\overrightarrow{zx_0}) < c(\overrightarrow{zx_0})$. This
+means $\overrightarrow{zx}$ was used backwards in the $k$th iteration, or
+rather that $f_k = s \ldots \overleftarrow{x_0z} \ldots t$.
+
+Since this is Edmond-Karp, augmenting paths are of minimal length. Then 
+
+\begin{align*}
+    d_{k}(z) &= d_k(x_0) + 1   \\ 
+             &> d_{k+1}(x_0) + 1 \\ 
+             &=d_{k+1}(z) + 2 \\ 
+             & \geq d_{k}(z) + 2
+\end{align*}
+
+which is absurd.
+
+\textit{1.3.2} If  $\overrightarrow{xz}$ is a side then again
+
+\begin{align*}
+    d_k(z) \leq d_{k+1}(z) < d_{k+1}(x_0) < \infty
+\end{align*}
+
+Then there is an $f_k$-a.p. $s \ldots z$ and, at least in principle, 
+$s \ldots \overrightarrow{zx}$ could also be augmenting. But if this were the case,
+we would have 
+
+$$
+d_k(x_0) = d_k(z) + 1 \leq d_{k+1}(z) + 1 = d_{k+1}(x_0) 
+$$
+
+which would imply $x_0 \not\in A$ ($\bot$). Then $s \ldots \overrightarrow{zx_0}$ is 
+not augmenting, which means the side $\overrightarrow{x_0z}$ cannot 
+be used backwards. This can only be true if $f_k(\overrightarrow{x_0z} = 0$.
+But since the side is used backwards in the $f_{k+1}$-augmenting path,
+it must be used forward in this iteration. Which means $s \ldots \overrightarrow{x_0z} \ldots t$
+is augmenting. But then 
+
+\begin{align*}
+    d_{k}(z) &= d_{k}(x_0) + 1 \\ 
+             &> d_{k+1}(x_0) + 1 \\ 
+             &= d_{k+1}(z) +2 \\ 
+             &\geq d_{k}(z) + 2 
+\end{align*}
+
+which is absurd.
+
+\textit{Conclusion.} In both cases a contradiction arises. The contradiction
+comes from assuming $A \neq \emptyset$. Then $A = \emptyset$. $\blacksquare$
+
+
+\pagebreak
+
+\section{Dinitz: Complexity}
+
+
+We will prove the complexity of Dinitz is $O(n^2m)$. 
+
+Recall that Dinitz builds succesive auxiliary networks with BFS, uses DFS to find blocking 
+paths in them, and uses these paths to update the flow. Since the level 
+of $t$ augments in each succesive network, there are at most $O(n)$ auxiliary 
+networks. So the complexity of Dinitz is 
+
+\begin{align*}
+    O(n) \left[ \text{Comp. of building A.N.} + \text{Comp. of finding blocking flow in A.N.} \right] 
+\end{align*}
+
+The complexity of building the A.N. is the complexity of BFS,  which is $O(m)$.
+The process of finding the blocking path varies is the Western and the original
+algorithms. 
+
+\textit{Original version.} The original Dinitz algorithm enforced the following
+invariant: In any given auxiliary network, all vertices have edges connecting
+to the next level. This invariant implies that the DFS run always reaches $t$
+without need to backtrack. In consequence, the complexity of the DFS run is
+$O(n)$. The complexity of updating the flow is $O(n)$, and each time this happens 
+at least one side is saturated and removed. Then there are $O(m)$ paths.
+$\therefore $ The complexity of finding the paths and updating the flow
+is $O(n \times m)$.
+
+However, there is some extra cost associated to preserving this invariant. Each
+time a path is found, saturated sides are removed with a prunning operation.
+The prunning operation goes from the highest to the lowest levels in the
+network, checks for vertices whose exiting edge is saturated, and deletes them.
+This means that, for each vertex, a process of $O(1)$ complexity checks if it
+is saturated. This happens each time a path is found, so $O(n \times m)$ times.
+Once these sides have been detected, they and their neighbors are removed,
+which has complexity $O(d(x))$. Since this happens at worst for all vertices,
+the deleting operation is $O\left( \sum_{x \in V} d(x) \right) = O(m)$. The
+total cost of enforcing the invariant is then $O(n \times m) + O(m)$, which
+means the complexity of finding the blocking paths and updating the flow is
+$O(n \times m) + O(n \times m) + O(m) = O(n \times m) $. Then the complexity of
+Dinitz is $O(n^2m)$.
+
+\textit{Western version.} The Western version finds blocking paths and updates 
+the flow inside a while loop with three clauses. The first clause is 
+running BFS to advance; i.e. setting $x = s$ and iteratively making 
+$x$ be the first neighbor of $x$ until $t$ is reached. This clause executes 
+as long as there is a neighbor and we call it $A$.
+
+The second clause considers the case where $x$, the vertex we are 
+traversing, has no neighbors in the next level. Then the algorithm
+backtracks to its predecessor, removes the side leading from it to $x$,
+and attempts $A$ once more. We call this part $R$.
+
+The last clause considers the case where $t$ is reached. Here, 
+the flow is augmented using the path found and all saturated 
+sides are removed.
+
+Thus, finding the blocking flow and updating the path can be modeled 
+as a word $A \ldots I A \ldots R A \ldots R A\ldots I$; i.e. as a succession 
+of words of the form $A \ldots X$ with $X \in \left\{ R, I \right\} $.
+
+The process $R$ has complexity $O(1)$ because it simply involves going
+backwards and deleting a side. The process $A$ has complexity $O(1)$ because it
+simply involves moving forward, but at most $O(n)$ successions of $A$ may 
+occur. This means $O(A \ldots A) = O(n)$. The process $I$ has complexity $O(n)$
+because the flow is updated across at most all vertices. Then  
+$O(A\ldots I) = O(n) + O(n) = O(n)$ and $O(A\ldots R) = O(n) + O(1) = O(n)$.
+The question is how many words of the form $A \ldots X$ exist. At worst, all
+paths are traversed in the process of finding $t$, so there are $O(m)$ words of
+this form. Then the complexity of the run is 
+
+\begin{align*}
+    O(m) \left[ O(n) + O(n) \right]  = O(nm)
+\end{align*}
+
+Then the complexity of Dinitz is $O(n^2m)$.
+
+\pagebreak
+
+\subsection{Wave: Complexity}
+
+We know the distance between $s$ and $t$ in auxiliary networks is increasing.
+The distance is bounded by $n$. $\therefore $ There are $O(n)$ auxiliary
+networks. Now, each auxiliary network is first constructed and then 
+used to find a blocking flow. Then the complexity of Wave is 
+
+\begin{align*}
+    O(n) \left[ F + B \right] 
+\end{align*}
+
+where $F$ is the complexity of finding a blocking flow in an auxiliary network 
+and $B$ the complexity of building an auxiliary network. To build the auxiliary 
+network we use BFS. $\therefore  $ $B = O(m)$. Let us examine $F$.
+
+To find blocking flows we attempt to balance in forward and backward waves.
+When going forward, let $V$ be the steps where a side is saturated,
+$\overline{V}$ those where a side is not saturated. When going 
+backward, let $S$ be the steps where a side is emptied, $\overline{S}$ those 
+there a side is not emptied. 
+
+\textit{Complexity of $V$}. Assume $\overrightarrow{xz}$ is a side and is
+saturated in a forward wave. To saturate again it must empty at least a little
+bit before. If it empties, then $z$ was blocked and returned the flow to $x$;
+and since $z$ is blocked, $\overrightarrow{xz}$ will never again be used. Then
+each side can saturate at most once. $\therefore $ the complexity of $V$ is
+$O(m)$.
+
+\textit{Complexity of $S$}. Assume  $\overrightarrow{zx}$ is a side and 
+it empties in a backward wave. Since $x$  returned flow, it 
+is blocked and $z$ will not send flow to $x$ a gain. Then $\overrightarrow{zx}$
+cannot be emptied ever again. $\therefore $ The complexity of $S$ is $O(m)$.
+
+\textit{Complexity of $\overline{V}$}. When a vertex sends flow to 
+its neighbors, it saturates all sides except perhaps one.
+Then, for any given vertex, each forward wave will send 
+partial flow through at most one side. $\therefore $ The 
+complexity of $\overline{V}$ is $O(n) \times \varphi$, with 
+$\varphi$ the number of forward waves.
+
+\textit{Complexity of $\overline{S}$}. When a vertex returns flow 
+to its predecessors, it empties all sides except perhaps 
+one. Then, for any given vertex in a backward wave, 
+at most one side is partially emptied. $\therefore $ The 
+complexity of $\overline{S}$ is $O(n) = \psi$ where $\psi$ 
+is the number of backward waves.
+
+Now, it is trivialy to see $\varphi = \psi$ and there are 
+at most $n$ forward waves. $\therefore ~ O(\varphi) = n$ . 
+
+$\therefore $ The complexity of $\overline{S}, \overline{V}$ are both 
+$O(n) \times O(n) = O(n^2)$.
+
+$\therefore $ $F = O(n^2) + O(n^2) + O(m) + O(m) = O(n^2) + O(m)$.
+
+But $O(n^2) + O(m) = O(n^2)$, because $m \leq \binom{n}{2} = O(n^2)$.
+
+$\therefore $ $F = O(n^2)$.
+
+$\therefore $ The complexity of Dinitz is $O(n) \left[ O(m) + O(n^2) \right] = O(n)O(n^2) = O(n^3) $
+
+
+
+
+
+\pagebreak
+
+\section{Codes}
+
+\subsection{Hamming bound}
+
+Let $C \subseteq \left\{ 0, 1 \right\}^{n} $. We want to prove 
+
+\begin{align*}
+    |C| = \frac{2^n}{\sum_{i=0}^{t} \binom{n}{i}}
+\end{align*}
+
+Let $A = \bigcup_{v \in C} D_t(v)$. Recall that $D_t(v)$ is the set of words in 
+$\left\{ 0, 1 \right\}^n$ that are at a Hamming distance of $t$ or less from $v$.
+
+Let $S_v(r) = \left\{ w \in \left\{ 0, 1 \right\}^n : d_H(v, w) = r  \right\}
+$. Then it follows by definition that $D_t(v) = \bigcup_{r=0}^{t} S_v(r)$. Of course,
+this union is disjoint. It follows that 
+
+\begin{align*}
+    A = \bigcup_{v \in C} \bigcup_{r = 0}^{t} S_v(r)
+\end{align*}
+
+and 
+
+\begin{align*}
+    |A| = |C| \times \sum_{r=0}^{t} |S_v(r)|
+\end{align*}
+
+So now we must only determine $|S_v(r)|$. But this is easy to do if we consider
+that any $w \in S_v(r)$ differs from $v$ by exactly $r$ bits, and is fully
+determined by this difference. In other words, there is a bijection between any
+$w \in S_v(r)$ and the set of the $r$ bits out of all $n$ possible bits that
+make up the difference between $w$ and $v$. This readily entails that $|S_v(r)|
+= \binom{n}{r}$. This readily gives 
+
+\begin{align*}
+    |A| &= |C| \times \sum_{r=0}^{t} \binom{n}{r} \\ 
+    \Rightarrow |C| &= \frac{|A|}{\sum_{r=0}^{t} \binom{n}{r} |}
+\end{align*}
+
+We do not know the cardinality of $A$, but since $A \subseteq \left\{ 0, 1 \right\}^n $
+we know $|A| \leq 2^n$. Then
+
+\begin{align*}
+    |C| \leq \frac{2^n}{\sum_{r=0}^{t} \binom{n}{r}}
+\end{align*}
+
+
+\pagebreak
+
+
+\subsection{$\delta(C) = \min \left\{ j : \exists S \subseteq H_{*n} : |S| = j \land  S \text{ is LD} \right\} $}
+
+\begin{quote}
+    \textbf{Notation.} I use $H_{*n}$ to denote the set with the $n$ columns
+    of $H$. I use $H^{(i)}$ to denote the $i$th column of $H$.
+\end{quote}
+
+Let $s = \min \left\{ j : \exists S \subseteq H_{*n} : |S| = j \land  S \text{
+is LD} \right\} $. This implies there are $s$ columns $H^{(j_1)}, \ldots,
+H^{(j_s)}$ s.t. $\sum x_i H^{( j_i )} = 0$ for $x_1, \ldots, x_s$ not all null.
+
+\textit{(1)} Let $w := \sum x_i e_{j_i}$ where $e_{k}$ is the vector with all
+zeroes except at the $k$th coordinate. Since not all $x_i$ are zeroes, $w \neq
+0$. Now, 
+
+\begin{align*}
+    Hw^t &= H \left( x_1 e_{j_1} + \ldots + x_s e_{j_s} \right)^t \\ 
+         &= x_1 H e_{j_1}^t + \ldots + x_s H e_{j_s}^t \\ 
+         &= \sum x_i H^{(j_i)} &\left\{ \text{Because } He_j^t = H^{(j)} \right\}  \\ 
+         &= 0
+\end{align*}
+
+Then $w \in Nu(H) = C$. But $|w| \leq s$ and $w \neq 0$. We know $\delta = \min
+\left\{ |x| : x \in C, c \neq 0 \right\} $.
+
+$\therefore ~ \delta \leq |w| \leq s$.
+
+\textit{(2)} Let $v \in  C$ s.t. $\delta = |v|$. Then there are 
+$i_1, \ldots, i_{\delta}$ s.t. $v = e_{i_1} + \ldots + e_{i_\delta}$.
+Since $v \in  C, Hv^t = 0$, which using the same 
+logic as before gives $\sum H^{(i_j)} = Hv^t = 0$.
+
+This implies $\left\{ H^{(i_1)}, \ldots, H^{(i_{\delta})} \right\} $ is LD.
+
+$\therefore  s \leq \delta$.
+
+\textit{(3)} Points \textit{(1)} and \textit{(3)} imply $s = \delta$.
+
+\pagebreak 
+
+\subsection{Three statements around a generating polynomial}
+
+Let $C$ a code of length $n$ and dimension $k$ with generating polynomial 
+$g(x)$. We will prove: 
+
+
+\small
+\begin{quote}
+
+\begin{enumerate}
+    \item $C = \left\{ p(x) : gr(p) < n \land  g(x) \mid p(x) \right\} := C_1$
+    \item $C = \left\{ v(x) \odot g(x) : v(x) \in F[x] \right\} := C_2$ 
+    \item $gr(g) = n - k$
+    \item $g(x) \mid (1 + x^n)$
+\end{enumerate}
+
+\end{quote}
+\normalsize
+
+\textit{(1 and 2) :} We shall prove $C_1 \subseteq C_2 \subseteq C \subseteq C_1$.
+
+Let $p(x) \in C_1$.Then there is some $q(x)$ s.t. $p(x) = g(x) q(x)$ and 
+$gr \left( g(x)q(x) \right) < n $.
+
+$\therefore ~ g(x) q(x) = g(x) \odot q(x) \in C_2$.
+
+$\therefore ~ C_1 \subseteq C_2$.
+
+Now let $p(x) = v(x) \odot g(x) \in C_2$ with $v(x)$ an arbitrary polynomial.
+Then
+
+\begin{align*}
+    p(x) &= \left( v_0 + v_1x + \ldots + v_{gr(v)} x^{gr(v)} \right)  \odot g(x) \\ 
+         &= v_0 \odot g(x) + v_1 \left( x \odot g(x) \right)  + v_2 \left( x_2 \odot g(x) \right)  + \ldots + v_{gr(v)} \left( x^{gr(v)} \odot g(x) \right)  \\ 
+         &= v_0 g(x) + v_1 Rot\left( g(x) \right)  + v_2 Rot^2\left( g(x) \right)  + \ldots  +v_{gr(v)} Rot^{gr(v)}\left( g(x) \right)  
+\end{align*}
+
+All rotations of $g(x)$ belong to $C$. 
+
+$\therefore $ $p(x) \in C$.
+
+$\therefore C_2 \subseteq C$.
+
+Now let $p(x) \in C$. By definition, $gr(p) < n$, which implies $p(x) = p(x)
+\mod (1 + x^n)$. We know
+
+\begin{align*}
+    p(x) = g(x) q(x) + r(x)
+\end{align*}
+
+for some $q(x), r(x)$ s.t. $gr(r) < gr(g)$. Then
+
+\begin{align*}
+    p(x) &= \left( g(x) q(x) + r(x) \right)  \mod (1 + x^n)\\ 
+         &= g(x) \odot q(x) + \left( r(x) \mod (1 + x^n) \right)  \\ 
+         &= g(x) \odot q(x) + r(x) &\left\{ \text{Since $gr(r) < gr(g) < n$} \right\} 
+\end{align*}
+
+$\therefore $ $r(x) = p(x) + g(x) \odot q(x)$. 
+
+We know $p \in C$ and $g(x) \odot q(x) \in C^2 \subseteq C$. 
+
+$\therefore $ $r(x) \in C$.
+
+But since $g$ is generating polynomial, it is the unique polynomial with the
+least non-null degree in $C$.
+
+$\therefore ~ gr(r) < gr(g) \Rightarrow r(x) = 0$.
+
+$\therefore g(x) \mid p(x)$ and then $p(x) \in C_1$.
+
+$\therefore C \subseteq C_1$
+
+\textit{(3)} Let $p(x) \in C$. Then there is $q(x)$ s.t. $p(x) = g(x) q(x)$
+with $n > gr(p) = gr(g) + gr(q)$. This readily implies $gr(q) < n - gr(g) < n$.
+Then $g(x) q(x) \in C$.
+
+This entails there is a bijection between $C$ and the set of polynomials of
+degree $\< n - gr(g)$. Then 
+
+\begin{align*}
+    |C| &= |\left\{ p(x) : gr(p) < n - gr(g) \right\} | \\ 
+    \iff ~ 2^k &= 2^{n-gr(g)} \\ 
+    \iff k &= n - gr(g) \\ 
+    \iff ~ gr(g) &= n - k ~ \blacksquare
+\end{align*}
+
+\textit{(4)} Divide $(1 + x^n)$ by $g(x)$ to obtain 
+
+\begin{align*}
+    1 + x^n = g(x) q(x) + r(x)
+\end{align*}
+
+with $gr(r) < gr(g)$. Taking the modulus, 
+
+\begin{align*}
+    0 &= (1 + x^n) \mod (1 + x^n) \\ 
+      &=\left( g(x) q(x) + r(x) \right) \mod (1 + x^n) \\ 
+      &= \left( g(x) \odot q(x) \right)  + \left( r(x) \mod 1 + x^n \right)  \\ 
+      & g(x) \odot q(x) = r(x)
+\end{align*}
+
+because $gr(r) < gr(g) < n$.
+
+$\therefore ~ r(x) = g(x) \odot  q(x) \in C$.
+
+But $gr(r) < gr(g)$. $\therefore  r(x) = 0$ and $g(x) \mid (1 + x^n)$.
+
+
+
+\pagebreak
+
+\section{Matchings}
+
+\subsection{Konig}
+
+We want to prove that any bipartite and regular graph $G = (V, E) $ has a
+perfect matching. Let $X, Y$ be the two parts of $G$. For any $W \subseteq V$
+let $E_W := \left\{ wu \in E : w \in W \right\} $.
+
+\textit{(1)} Let $S \subseteq X$ and $l \in E_S$. It follows that
+
+\begin{align*}
+    \exists x \in S, y \in Y : l = xy = yx 
+\end{align*}
+
+$\therefore y \in \Gamma(x)$. And since $x \in  S$ we have $y \in \Gamma(S)$ 
+and $l \in E_{\Gamma(S)}$.
+
+$\therefore $ $E_S \subseteq E_{\Gamma(S)}$ and $|E_S| \leq |E_{\Gamma(S)}|$.
+
+\textit{(2)} Let us calculate $|E_W|$ when $W \subseteq X$.
+
+Observe that $E_W = \bigcup_{w \in W} \left\{ wv : v \in \Gamma(w) \right\} $.
+Furthermore, the union is disjoint, because $wv \in E_W \Rightarrow w \in X
+\Rightarrow v \in Y$. Then
+
+\begin{equation*}
+    |E_W| = \sum_{w \in W} |\Gamma(w)| = \sum_{w \in W} d(w)
+\end{equation*}
+
+Since $G$ is regular, $d(w) = \delta = \Delta$. 
+
+$\therefore $ $|E_W| = \Delta |W|$
+
+\textit{(3)} Using what we established in \textit{(1)}, it follows from \textit{(2)} that
+
+\begin{equation*}
+    |S| \Delta \leq |\Gamma(S)| \Delta \Rightarrow |S| \leq |\Gamma(S)| 
+\end{equation*}
+
+This holds for any $S \subseteq X$. Then Hall's theorem implies there is a
+complete matching from $X$ to $Y$. To prove it is perfect, we must prove $|X| =
+|Y|$.
+
+But since $X, Y$ are the two parts of $G$, $E = E_X = E_Y$. Then $|E_X| =
+|E_Y|$, which implies $|X| \Delta = |Y| \delta \Rightarrow |X| =
+|Y|$.
+
+Alternatively, since there is a complete matching from $X$ to $Y$, $|X| \leq
+|Y|$. But the choice of $X$ over $Y$ was arbitrary, and then the same holds for
+$Y$. Then $|X| = |Y|$.
+
+In both caes the matching is perfect.
+
+
+
+\pagebreak 
+
+\subsection{Hall}
+
+Let $G = (V, E)$ a bipartite graph with parts $X$ and $Y$, and let $Z \in
+\left\{ X, Y \right\} $. We want to prove that there is a complete matching
+from $X$ to $Y$ iff $\forall S \subseteq Z : |S| \leq |\Gamma(S)| $.
+
+$(\Rightarrow)$ The proof is trivial, because if such matching exists, it
+induces an injective function $f : X \to Y$ s.t. $f(x) \in \Gamma(x)$. Since it
+is an injection, $|f(S)| = |S|$ for any $S$. Then $f(S) \subseteq \Gamma(S)
+\Rightarrow |S| \leq |\Gamma(S)|$.
+
+$(\Leftarrow)$ Assume the Hall condition $|S| \leq |\Gamma(S)|$ holds. Assume
+that, after running the algorithm to find a maximal matching, an incomplete
+matching is found. We will build $S \subseteq X$ that violates our assumption
+(we could use $S \subseteq Y$ without loss of generality).
+
+\textit{(1)} Let $S_0$ be the set of rows unmatched and $T_1 = \Gamma(S_0)$.
+Observe that, by assumption, $S_0 \neq \emptyset$, and all columns in $T_1$
+have a match that is not in $S_0$. Let $S_1$ the set of rows matching columns
+of $T_1$ and $T_2 = \Gamma(S_1) - T_1$. Generally, 
+
+\begin{align*}
+    S_i &= \text{Rows matching with } T_i \\ 
+    T_{i+1} &= \Gamma(S_i) - \bigcup^{j=i}_{j=0} T_j
+\end{align*}
+
+The algorithm stops only when it is revising a row and this row has no
+available neighbors; this is, it only stops passing from a $S_i$ to a $T_{i+1}$
+when $T_{i+1} = \emptyset$. Furthermore, since each column only labels a single
+row (that of its match), and $T_i$ "creates" $S_i$, we have $|S_j| = |T_j|$. 
+
+Define $S = \bigcup S_i, T = \bigcup T_i$, and note that all the $S_i$ are
+disjoint and all the $T_i$ are disjoint. Then
+
+\begin{align*}
+    |S| &= \sum |S_i| \\ 
+        &= |S_0| + \sum |T_i| \\ 
+        &= |S_0| + |T|
+\end{align*}
+
+$\therefore ~ |S| > |T|$ (since $S_0 \neq \emptyset$).
+
+We must only prove now that $T = \Gamma(S)$. 
+
+\textit{(1)} $T$ are the labeled columns, and each column is labeled by a row in $S$.
+Each row only labels its neighbors. This implies $T \subset \Gamma(S)$.
+
+\textit{(2)} Assume $y \in \Gamma(S)$ and $y \not\in T$. Then $y$ was 
+not labeled. But since $y \in \Gamma(S)$ there is an 
+$x \in S$ s.t. $y \in \Gamma(x)$. Then each time 
+the algorithm passes through $x$ it should label 
+$y$, which contradicts the fact that $y$ is not 
+labeled. Then $y \in T$. Then $\Gamma(S) \subseteq T$.
+
+$\therefore \Gamma(S) = T$ and $|S| > |\Gamma(S)|$. But this contradicts 
+the hypothesis that the Hall condition holds. The 
+contradiction comes from assuming there wasn't a 
+complete matching. $\therefore $ There is a complete
+matching. $\blacksquare$
+
+\pagebreak
+\section{P-NP}
+
+\subsection{2-Color is polynomial}
+
+To prove $2$-color is polynomial, we must provide an algorithm $\mathcal{A}$
+that correctly decides whether any given $G = (V, E)$ is $2$-colorable in
+polynomial time. We will first provide $\mathcal{A}$ and then show its
+correctness and its belonging to $P$.
+
+The algorithm takes an arbitrary non-colored vertex to be the root of its
+connected component and colors it with $1$. Within each connected component, it
+runs BFS from the given root to explore it. Each time BFS
+pivots over a vertex $p \in V$ and enqueues its neighbors, the algorithm also
+colors each neighbor with $3 - c(p)$, thus ensuring that all colors are in the
+range $\left\{ 1, 2 \right\} $.
+
+It is important to note that the color of any given vertex is fully determined
+by the parity of its level in the BFS tree. Since the root at level zero is set
+to $1$, all vertices in the second level are colored with $2$, those in the
+third with $1$, and so on.
+
+\begin{align*}
+    &j := 1\\
+    &\textbf{while } j < n \textbf{ do } \\
+    &\qquad r = \text{arbitrary non-colored vertex} \\ 
+    &\qquad c(r) = 1 \\ 
+    &\qquad queue = \left\{ r \right\} \\ 
+    & \qquad\textbf{while } queue \neq \emptyset \textbf{ do } \\ 
+    & \qquad \qquad p = pop(queue) \\ 
+    &\qquad\qquad \textbf{for } x \in \Gamma(p) \textbf{ do } \\ 
+    & \qquad \qquad \qquad \textbf{if } x \text{ not colored} \textbf{ do} \\ 
+    &\qquad \qquad \qquad \qquad c(x) = 3 - c(p)\\ 
+    &\qquad \qquad \qquad \qquad push(queue, x)\\
+    &\qquad\qquad\qquad\textbf{fi}\\
+    &\qquad\qquad \textbf{od}\\ 
+    &\qquad\textbf{od}\\
+    &\textbf{od}\\
+    &\textbf{for } \left\{ x y \right\}  \in E \textbf{ do } \\ 
+    &\qquad \textbf{if } c(x) = c(y) ~  \textbf{do } return \textbf{ False fi} \\ 
+    &\textbf{od}\\
+    &return \textbf{ True}
+\end{align*}
+
+The inner while runs BFS with a slight modification to color vertices when they
+are enqueued and is thus $O(m)$. It is executed per each connected component
+and the number of connected components is $O(n)$. $\therefore $ The algorithm 
+is polynomial. 
+
+That the algorithm correctly decides that a graph is two-colorable is trivial.
+To prove that it also correctly decides that a graph is not two-colorable, we
+shall prove a negative answer entails the graph contains an odd cycle.
+
+Assume the algorithm was executed over $G = (V, E)$ and returned
+$\textbf{False}$. Then there is some $\overrightarrow{xy} \in E$, in a
+particular connected component $\mathcal{C} \subseteq G$, s.t.
+$c(x) = c(y)$. Let us presume, without loss of generality, that 
+$x$ was enqueued before $y$. Let us denote with $r$ the root 
+of $\mathcal{C}$ from which BFS was ran.
+
+Assume $x$ enqueues $y$. Then $c(y) = 3 - c(x) \neq c(x)$, a contradiction.
+Then $x$ does not enqueue $y$. But this can only happen if, when $x$ is the at
+front of the queue, $y$ was already enqueued by some other vertex. 
+
+In particular, there is a vertex $w$ that is the vertex of greater level common
+to $x$ and $y$ in the BFS tree---i.e. the vertex from which $x$ and $y$
+diverge---. Let $\eta(w)$ be the level of $w$ in the BFS
+tree.
+
+Consider the cycle $w \ldots x y \ldots w$, which exists because all these
+vertices belong to $\mathcal{C}$. There are $\eta(x) - \eta(w)$ edges from $w$ to
+$x$, and $\eta(y) - \eta(w)$ edges from $y$ to $w$. There is one 
+extra edge for $xy$. The total amount is then 
+
+\begin{align*}
+    \eta(x) - \eta(w) + \eta(y) - \eta(w) + 1 &= \eta(x) + \eta(y) - 2\eta(w) + 1
+\end{align*}
+
+By assumption, $\eta(x)$ and $\eta(y)$ are both greater than $\eta(w)$.
+$\therefore $ $\eta(x) + \eta(y) > 2\eta(w)$ and length of the path is greater
+than zero (sanity check). 
+
+Since $c(x) = c(y)$, $\eta(x) \equiv \eta(y) \mod 2$ and therefore $\eta(x) +
+\eta(y)$ is even. Then the length of the cycle is odd. 
+
+$\therefore $ $C_{2k+1} \subseteq \mathcal{C}$ and $\chi(G) \geq 3$.
+
+
+\pagebreak
+
+\subsection{3SAT es NP-Completo}.
+
+Let $B = B_1 \land  \ldots B_m$ an instance of SAT with variables 
+$x_1, \ldots, x_n$. We build an instance of $3$-SAT 
+by transforming each $B_i$ into an $E_i$ as follows:
+
+\textit{Complete.}
+
+\begin{align*}
+E_i = (e_1 \lor  e_2 \lor y_1) \land  (\overline{y_1} \lor  y_2 \lor  e_3) \land  (\overline{y_2} \lor  y_3 \lor  e_4) \lor \ldots (\overline{y_{k-3}} \lor e_{k-1} \lor e_{k})
+\end{align*}
+
+We want to prove
+
+\begin{align*}
+    \exists \overrightarrow{b} : B(\overrightarrow{b}) = 1 \iff \exists \overrightarrow{\alpha} : \tilde{ B }(\overrightarrow{b}, \overrightarrow{\alpha}) = 1
+\end{align*}
+
+\textit{($\Leftarrow$)} Asume $B(\overrightarrow{b}) = 0$. Then
+$D_i(\overrightarrow{b}) = 0$ for some $i$. Let 
+ $e_1, \ldots, e_k$ be the literals in $D_i$.
+
+If $k = 3$ a contradiction ensues trivially. If $k = 2$, then $D_i = e_1 \lor
+e_2$ and then $E_i = (e_1 \lor  e_2 \lor y_1) \land  (e_1 \lor  e_2 \lor
+\overline{y_1})$. Since $D_i = 0$, $e_1 \lor  e_2 = 0$ and therefore $e_1 = e_2
+= 0$ From this follows  $E_i = y_1 \land \overline{y_1} = 1$. $(\bot)$
+
+If $k = 1$ then $e_1 = 0$ and therefore $E_i = (y_1 \lor  y_2) \land  (y_1 \lor
+\overline{y_2}) \land  (\overline{y_1} \lor  y_2) \land  (\overline{y_1} \lor
+\overline{y_2}) = 0$. But by assumption $E_i = 1 (\bot)$.
+
+If $k\geq 4$ we must observe that, since $D_i(\overrightarrow{b}) =
+0$, we have $e_1 = e_2 = \ldots = e_k = 0$. Then this literals 
+are neutral elements in the disjunctions and can be ignored.
+Since $E_i(\overrightarrow{b}, \overrightarrow{\alpha}) = 1$, its first term 
+is true; in other words, $e_1 \lor  e_2 \lor  y_1 = 1
+\Rightarrow y_1 = 1$. In all the following cases (except the last),
+$E_i = \overline{y_{i-1}} \lor  y_i$ must be true; this is,
+$y_i \Rightarrow y_{i+1}$ is true. But the last term is $\overline{y_{k-3}}$,
+which cannot be true because $y_1$ and $ y_1 \Rightarrow y_2 \Rightarrow \ldots
+\Rightarrow y_{k-3}$. ($\bot$)
+
+\textit{($\Rightarrow$)} Assume $B(\overrightarrow{b}) = 1$. For $k = 1, k = 2$, define 
+$y_i = 0$ for all $i$. $\therefore $ $D_i(\overrightarrow{b}) = 1 \Rightarrow
+E_i(\overrightarrow{b}, \overrightarrow{\alpha}) = 1$. For $k = 3$ the result 
+is trivial. Let us consider the case $k \geq 4$.
+
+Since $D_i(\overrightarrow{b}) = 1$ is a true disjunction, at least one $e_r$
+is true under $\overrightarrow{b}$ . Define the following assignment:
+
+\begin{align*}
+    &y_1 = y_2 = \ldots = y_{r-2} = 1 \\ 
+    &y_i = 0 \text{ para todos los demás $i$}
+\end{align*}
+
+Then
+
+\begin{align*}
+    E(\overrightarrow{b}, \overrightarrow{\alpha}) &= \left( e_1 \lor e_2 \lor y_1 \right) &\left\{ \text{True because } y_1 = 1 \right\}  \\ 
+    \land &\left( \overline{y_1} \lor  y_2 \lor  e_3 \right) &\left\{ \text{True because } y_2 = 1 \right\}  \\ 
+          &\vdots& \\ 
+    \land &(\overline{y_{r-3}} \lor  y_{r-2} \lor  e_{r-1}) &\left\{ \text{True because } y_{r-2} = 1 \right\}  \\ 
+    \land&(\overline{y_{r-2}} \lor  y_{r-1} \lor  e_r) &\left\{ \text{True because } e_{r} = 1 \right\}  \\ 
+    \land&(\overline{y_{r-1}} \lor y_{r} \lor  e_{r+1}) &\left\{ \text{True because } y_{r-1} = 0 \right\}  \\ 
+         &\vdots &\\ 
+    \land &(\overline{y_{k-3}} \lor e_{k-1} \lor  e_k) &\left\{ \text{True because } y_{k-3} = 0 \right\} 
+\end{align*}
+
+$\therefore $ Our assignment makes $\tilde{ B }$ true.
+
+\pagebreak 
+
+
+\subsection{3-Color es NP-Completo}
+
+Sabemos que $3$-Color $\in NP$. La idea es ver que $3-SAT \leq_p 3-COLOR$. 
+Debemos crear un grafo $G = (V, E \cup F) $ tal que $B$ es satisfactible 
+si y solo si $\chi(G) \leq 3$.
+
+Let $B = D_1 \land  \ldots \land  B_m$ with variables $x_1, \ldots, x_n$ and each $B_i
+= (l_{i1} \lor l_{i2} \lor  l_{i3})$. Let $\mathcal{G} = (V, E)$ a graph 
+formed as follows: 
+
+\begin{itemize}
+    \item A nucleus $t$ from which $n$ triangles with sides $\left\{ t, v_1, w_1 \right\}, \ldots, \left\{ t, v_n, w_n \right\}  $ form.
+    \item $m$ claws, each with a triangle $\left\{ b_{i1}, b_{12}, b_{13} \right\} $, and such that from each $b_{ij}$ sprouts a tip $u_{ij}$.
+    \item A source $s$ connected to $t$ and to every tip $u_{ij}$.
+\end{itemize}
+
+Now, let $\psi : \left\{ l_{11}, \ldots, l_{m3} \right\} \to V$ a function that maps a literal to $v_k$ if the literal is $x_k$, and to $w_k$ if the literal is $\overline{x_k}$. In other words, 
+
+\begin{align*}
+    \psi(l_{ij}) := \begin{cases}
+        v_k & l_{ij} = x_k \\ 
+        w_k & l_{ij} = \overline{x_k}
+    \end{cases}
+\end{align*}
+
+
+We will use $\psi$ to create our graph $G = (V, E \cup F)$ by letting
+
+
+\begin{align*}
+    F = \left\{ u_{ij}\psi(l_{ij}) : 1 \leq i \leq m, 1 \leq j \leq 3 \right\} 
+\end{align*}
+
+In other words, we connect each $u_{ij}$ to either $v_k$ or $w_k$, depending 
+on whether $l_{ij} = x_k$ or $\overline{x_k}$. Now that we have defined 
+$G$, we must only prove that $B$ is satisfiable iff $G$ is $3$-colorable.
+
+\textit{Proof of $(\Leftarrow)$ :} Assume $\chi(G) \leq 3$. Since $G$ has
+triangles, $\chi(G) = 3$. Let $\overrightarrow{b}_k = \left[ c(v_k) = c(s)
+\right] $.
+
+We must prove $B_i(\overrightarrow{b}) = 1$ for all $1 \leq i \leq m$. Take an
+arbitrary $B_i$. 
+
+
+\begin{quote}
+
+\textit{(1)} The triangle $\left\{ b_{i1}, b_{i 2}, b_{i 3} \right\} $
+must have $c(b_{ij}) = c(t)$ for some $j$. Then, since $\left\{ b_{ij}, u_{ij}
+\right\} $ is a side, $c(u_{ij}) \neq c(t)$. And since $\left\{ u_{ij}, s
+\right\} $ is a side, $c(u_{ij}) \neq c(s)$. $\therefore $ $u_{ij}$ was
+colored with the third color.
+
+\textit{(2)} Since $\left\{ u_{ij}, \psi(l_{ij}) \right\} $ is a side, and
+$\left\{ \psi(l_{ij}), t \right\} $ is a side, $c(\psi(l_{ij})) = c(s)$.
+
+\end{quote}
+
+We have established that $c(\psi(l_{ij})) = c(s)$. By definition, we have two
+cases. 
+
+\begin{quote}
+    \textit{(1)} If $\psi(l_{ij}) = v_k$, $l_{ij} = x_k$ and $c(v_k) = c(s)$, which means $\overrightarrow{b}_k = 1$. Then $l_{ij}(\overrightarrow{b}) = 1$. Then $D_i(\overrightarrow{b}) = 1$.
+
+    \textit{(2)} If $\psi(l_{ij}) = w_k$, then $l_{ij} = \overline{x_k}$. Since $\left\{ v_k, w_k \right\} $ is a side, these vertices have different colors. Then $c(v_k) \neq c(s)$. Then $\overrightarrow{b}_k = 0$. Then $l_{ij}(\overrightarrow{b}) = \overline{x_k}(\overrightarrow{b}) = 1$. Then $D_i(\overrightarrow{b}) = 1$.
+\end{quote}
+
+In both cases, $D_i(\overrightarrow{b}) = 1$. This holds for any $i = 1, 2,
+\ldots, m$. Then $B(\overrightarrow{b}) = 1$. $\blacksquare$
+
+\textit{Proof of $(\Rightarrow)$ :} Assume there is some $\overrightarrow{b}$
+s.t. $B(\overrightarrow{b}) = 1$. Let $C = \left\{ \mathcal{C}_s,
+\mathcal{C}_t, \mathcal{C} \right\} $ a set of three colors, and let $c(s) =
+\mathcal{C}_s, c(t) = \mathcal{C}_t$, and 
+
+\begin{align*}
+    &c(v_k) = \begin{cases}
+        \mathcal{C}_s & b_k = 1 \\ 
+        \mathcal{C} & b_k = 0
+    \end{cases}, &c(w_k) = \begin{cases}
+    \mathcal{C} & b_k = 1 \\ 
+    \mathcal{C}_s & b_k = 0
+    \end{cases}
+\end{align*}
+
+Clearly, we are ensuring $c(v_k) \neq c(w_k) \neq c(t)$, so the triangles
+$\left\{ t, v_i, w_i \right\} $ are all properly colored. And of course,
+$\left\{ t, s \right\} $ is also properly colored. All we have to do is look at
+the claws.
+
+First, since $\exists \overrightarrow{b} : B(\overrightarrow{b}) = 1$, then
+$D_i(\overrightarrow{b}) = 1$ for all $i$. This means, in an arbitrary $D_i$,
+there is at least one $l_{ij}$ s.t. $l_{ij}(\overrightarrow{b}) = 1$. Let's 
+color the tips of the claw as follows:
+
+\begin{align*}
+    c(u_{ir}) = \begin{cases}
+        \mathcal{C} & r = j \\ 
+        \mathcal{C}_t & r \neq j
+    \end{cases}
+\end{align*}
+
+Clearly, $\left\{ u_{ir}, s \right\} $ is properly colored. What about $\left\{ u_{ir}, \psi(l_{ir}) \right\} $? There are two cases: 
+
+\begin{quote}
+    \textit{(Case $r \neq j$) :} In this case, $c(u_{ir}) = \mathcal{C}_t$, and since $\psi(l_{ir})$ is either a $v$ or a $w$, $c(\psi(l_{ir})) \neq \mathcal{C}_t$. 
+
+    \textit{(Case $r = j$) :} Here, $c(u_{ir}) = \mathcal{C}$. If $l_{ij} = x_k$, $\psi(l_{ij}) = v_k$. By definition of $l_{ij}$, $l_{ij}(\overrightarrow{b}) = 1$. Then $c(\psi(l_{ij})) = c(v_k) = \mathcal{C}_s$. 
+\end{quote}
+
+So, in both cases we are properly coloring $\left\{ u_{ir}, \psi(l_{ir})
+\right\} $.
+
+Now that we have colored the tips $u_{ir}$, we only have to color the triangles
+in the claw, $\left\{ b_{i 1}, b_{i 2}, b_{i 3} \right\} $. Let $c(b_{ij}) =
+\mathcal{C}_t$ and the other two be colored in any of the possible ways. Clearly, the triangle is properly colored. Furthermore, 
+
+\begin{itemize}
+    \item $\left\{ b_{ij}, u_{ij} \right\} $ is properly colored, because $c(b_{ij}) = \mathcal{C}_t, c(u_{ij}) = \mathcal{C}$. 
+
+    \item $\left\{ b_{ir}, u_{ir} \right\} $ with $r \neq j$ is properly colored, because $c(u_{ir}) = \mathcal{C}_t$ and $c(b_{ir}) \neq \mathcal{C}_t$.
+\end{itemize}
+
+We have given a proper coloring of all vertices using $\overrightarrow{b}$.
+
+\subsection{Trisexual marriage}
+
+\end{document}
+
+
+

@@ -13,7 +13,8 @@
 \newtheorem{lemma}{Lemma}
 \newtheorem{theorem}{Theorem}
 \newtheorem{problem}{Problem}
-\newtheorem{example}{Example} \newtheorem{definition}{Definition}
+\newtheorem{example}{Example} 
+\newtheorem{definition}{Definition}
 \newtheorem{lemma}{Lemma}
 \newtheorem{theorem}{Theorem}
 
@@ -913,128 +914,130 @@ $\therefore $ Our assignment makes $\tilde{ B }$ true.
 
 \subsection{3-Color es NP-Completo}
 
-Sabemos que $3$-Color $\in NP$. La idea es ver que $3-SAT \leq_p 3-COLOR$. 
-Debemos crear un grafo $G = (V, E \cup F) $ tal que $B$ es satisfactible 
-si y solo si $\chi(G) \leq 3$.
-
-Let $B = D_1 \land  \ldots \land  B_m$ with variables $x_1, \ldots, x_n$ and each $B_i
-= (l_{i1} \lor l_{i2} \lor  l_{i3})$. Let $\mathcal{G} = (V, E)$ a graph 
-formed as follows: 
-
-\begin{itemize}
-    \item A nucleus $t$ from which $n$ triangles with sides $\left\{ t, v_1, w_1 \right\}, \ldots, \left\{ t, v_n, w_n \right\}  $ form.
-    \item $m$ claws, each with a triangle $\left\{ b_{i1}, b_{12}, b_{13} \right\} $, and such that from each $b_{ij}$ sprouts a tip $u_{ij}$.
-    \item A source $s$ connected to $t$ and to every tip $u_{ij}$.
-\end{itemize}
-
-Now, let $\psi : \left\{ l_{11}, \ldots, l_{m3} \right\} \to V$ a function that maps a literal to $v_k$ if the literal is $x_k$, and to $w_k$ if the literal is $\overline{x_k}$. In other words, 
+We shall prove $3$-color is NP complete. In order to do this, we will prove 
+$3$-SAT $\leq_{\rho}$ $3$-Color. In other words, given an instance of $3$-SAT 
+of the form 
 
 \begin{align*}
-    \psi(l_{ij}) := \begin{cases}
-        v_k & l_{ij} = x_k \\ 
-        w_k & l_{ij} = \overline{x_k}
+    B = \bigwedge{i=1}^{m} (l_{i1} \lor  l_{i2} \lor  l_{i3})
+\end{align*}
+
+with each literal $l_{ij}$ a case of the variables $x_1, \ldots, x_n$, we shall
+provide an effective procedure that constructs a special graph $\mathcal{G}$
+s.t. $\mathcal{G}$ is $3$-colorable iff $B$ is satisfiable.
+
+\textit{(1 : Building $\mathcal{G}$)} We shall define $\mathcal{G}$ by parts; namely, 
+
+\begin{enumerate}
+    \item Two special vertices $s$ and $t$ that are connected.
+    \item $n$ triangles, each connecting the vertices in $\left\{ t, v_{i}, w_{i} : 1 \leq i \leq n \right\} $
+    \item $m$ triangles formed by the vertices $\left\{ b_{i1}, b_{i2}, b_{i3} : 1 \leq i \leq m \right\} $
+    \item A tip $u_{ij}$ each connected to $b_{ij}$ and $s$.
+\end{enumerate}
+
+Now let us define 
+
+\begin{align*}
+    \psi(l_{ij}) = \begin{cases}
+        v_{k} & l_{ij} = x_k  \\ 
+        w_{k} & l_{ij} = \overline{x_k}
     \end{cases}
 \end{align*}
 
+Then we also include in $\mathcal{G}$ the sides $\left\{ u_{ij} ~ \psi(l_{ij} :
+1 \leq i \leq m, 1 \leq j \leq 3) \right\} $. In other words, we connect each
+tip $u_{ij}$ to either $v_k$ or $w_k$, depending on what the literal $l_{ij}$
+is.
 
-We will use $\psi$ to create our graph $G = (V, E \cup F)$ by letting
+This completes the construction of $\mathcal{G}$. Now we shall prove 
+$\mathcal{G}$ is 3-colorable iff $B$ is satisfiable.
 
+\textit{(2 : Proving $\Rightarrow$)} Assume $\mathcal{G}$ has a proper coloring
+of three colors or less. Since $\mathcal{G}$ contains triangles,
+it must be a coloring of exactly three colors. We shall define 
 
 \begin{align*}
-    F = \left\{ u_{ij}\psi(l_{ij}) : 1 \leq i \leq m, 1 \leq j \leq 3 \right\} 
+    \overrightarrow{b_k} = \begin{cases}
+        1 & c(v_k) = c(s) \\ 
+        0 & c(v_k) \neq c(s)
+    \end{cases}
 \end{align*}
 
-In other words, we connect each $u_{ij}$ to either $v_k$ or $w_k$, depending 
-on whether $l_{ij} = x_k$ or $\overline{x_k}$. Now that we have defined 
-$G$, we must only prove that $B$ is satisfiable iff $G$ is $3$-colorable.
+and prove that $B(\overrightarrow{b}) = 1$. Proving this equates to proving
+there is at least one $j$ in $\left\{ 1, 2, 3 \right\} $ s.t.
+$l_{ij}(\overrightarrow{b}) = 1$ for any arbitrary $i$. To prove this, we shall
+take $u_{ij}$ and analyze what is color entails about the truth assignment.
 
-\textit{Proof of $(\Leftarrow)$ :} Assume $\chi(G) \leq 3$. Since $G$ has
-triangles, $\chi(G) = 3$. Let $\overrightarrow{b}_k = \left[ c(v_k) = c(s)
-\right] $.
+The triangle $\left\{ b_{i 1}, b_{i 2}, b_{i 3} \right\} $ must contain $c(t)$
+at some $b_{ij_0}$ fixed. Take $u_{ij_0}$. Note that $c(s) \neq c(u_{ij_0})
+\neq c(t)$. And since $\psi(u_{ij_0})$ cannot have the color of $t$, it must be
+the case that $c \left( \psi\left( u_{ij_0} \right)  \right) = c(s) $. Now consider 
+these cases. 
 
-We must prove $B_i(\overrightarrow{b}) = 1$ for all $1 \leq i \leq m$. Take an
-arbitrary $B_i$. 
+\textit{Case 1.} If $\psi(u_{ij_0}) = v_k$, it follows that $l_{ij} = x_k$.j
+Then $c(v_k) = c(s) \Rightarrow \overrightarrow{b_k} = 1 \Rightarrow l_{ij}(\overrightarrow{b}) = 1 $. $\therefore ~ B_i (\overrightarrow{b}) = 1$.
+
+\textit{Case 2.} If $\psi(u_{ij_0}) = w_k$ then $l_{ij} = \overline{x_k}$. Since 
+$c(w_k) = c(s)$ in this case, $c(v_k) \neq c(s)$ and $\overrightarrow{b}_k = 0$.
+Then $l_{ij}(\overrightarrow{b}) = 1$. $\therefore  ~ B_i(\overrightarrow{b}) = 1$. 
+
+In both cases, for an arbitrary $i$, the coloring of $\mathcal{G}$ allows us 
+to define an assignment $ve^3$ that makes $B_i(\overrightarrow{b}) = 1$.
+Of course, this assignment is s.t. $B(\overrightarrow{b}) = 1$. $\blacksquare$
 
 
-\begin{quote}
+\pagebreak
 
-\textit{(1)} The triangle $\left\{ b_{i1}, b_{i 2}, b_{i 3} \right\} $
-must have $c(b_{ij}) = c(t)$ for some $j$. Then, since $\left\{ b_{ij}, u_{ij}
-\right\} $ is a side, $c(u_{ij}) \neq c(t)$. And since $\left\{ u_{ij}, s
-\right\} $ is a side, $c(u_{ij}) \neq c(s)$. $\therefore $ $u_{ij}$ was
-colored with the third color.
 
-\textit{(2)} Since $\left\{ u_{ij}, \psi(l_{ij}) \right\} $ is a side, and
-$\left\{ \psi(l_{ij}), t \right\} $ is a side, $c(\psi(l_{ij})) = c(s)$.
+\textit{(3 : Proving $\Leftarrow$)} Assume $B$ is satisfiable by a boolean
+vector $\overrightarrow{b}$. Then for any given $i$ in $[1, m]$ we have
+$B_i(\overrightarrow{b}) = 1$. Then $l_{ij_{0}}(\overrightarrow{b}) = 1$ for
+(at least) a fixed $j_0$, $1 \leq j_0 \leq 3$. 
 
-\end{quote}
-
-We have established that $c(\psi(l_{ij})) = c(s)$. By definition, we have two
-cases. 
-
-\begin{quote}
-    \textit{(1)} If $\psi(l_{ij}) = v_k$, $l_{ij} = x_k$ and $c(v_k) = c(s)$, which means $\overrightarrow{b}_k = 1$. Then $l_{ij}(\overrightarrow{b}) = 1$. Then $D_i(\overrightarrow{b}) = 1$.
-
-    \textit{(2)} If $\psi(l_{ij}) = w_k$, then $l_{ij} = \overline{x_k}$. Since $\left\{ v_k, w_k \right\} $ is a side, these vertices have different colors. Then $c(v_k) \neq c(s)$. Then $\overrightarrow{b}_k = 0$. Then $l_{ij}(\overrightarrow{b}) = \overline{x_k}(\overrightarrow{b}) = 1$. Then $D_i(\overrightarrow{b}) = 1$.
-\end{quote}
-
-In both cases, $D_i(\overrightarrow{b}) = 1$. This holds for any $i = 1, 2,
-\ldots, m$. Then $B(\overrightarrow{b}) = 1$. $\blacksquare$
-
-\textit{Proof of $(\Rightarrow)$ :} Assume there is some $\overrightarrow{b}$
-s.t. $B(\overrightarrow{b}) = 1$. Let $C = \left\{ \mathcal{C}_s,
-\mathcal{C}_t, \mathcal{C} \right\} $ a set of three colors, and let $c(s) =
-\mathcal{C}_s, c(t) = \mathcal{C}_t$, and 
+Let $C = \left\{ 0, 1, 2 \right\} $ a set of colors and define $c(s) = 0, c(t) = 1$. Let 
 
 \begin{align*}
     &c(v_k) = \begin{cases}
-        \mathcal{C}_s & b_k = 1 \\ 
-        \mathcal{C} & b_k = 0
-    \end{cases}, &c(w_k) = \begin{cases}
-    \mathcal{C} & b_k = 1 \\ 
-    \mathcal{C}_s & b_k = 0
+        c(s) & \overrightarrow{b}_k = 1 \\ 
+        2    & \overrightarrow{b_k} = 0
+    \end{cases} & c(w_k) = \begin{cases}
+    2 &\overrightarrow{b_k} = 1 \\ 
+    c(s) &\overrightarrow{b_k} = 0
     \end{cases}
 \end{align*}
 
-Clearly, we are ensuring $c(v_k) \neq c(w_k) \neq c(t)$, so the triangles
-$\left\{ t, v_i, w_i \right\} $ are all properly colored. And of course,
-$\left\{ t, s \right\} $ is also properly colored. All we have to do is look at
-the claws.
+Clearly, $\left\{ s, t \right\} $ is properly colored and $\{t, v_i, w_i\}$ is 
+properly colored. All that is left is to color the triangles 
+with tips.
 
-First, since $\exists \overrightarrow{b} : B(\overrightarrow{b}) = 1$, then
-$D_i(\overrightarrow{b}) = 1$ for all $i$. This means, in an arbitrary $D_i$,
-there is at least one $l_{ij}$ s.t. $l_{ij}(\overrightarrow{b}) = 1$. Let's 
-color the tips of the claw as follows:
+Let 
 
 \begin{align*}
-    c(u_{ir}) = \begin{cases}
-        \mathcal{C} & r = j \\ 
-        \mathcal{C}_t & r \neq j
+    c(u_{ij}) = \begin{cases}
+        2 & j = j_0 \\ 
+        c(t) & j \neq j_0
     \end{cases}
 \end{align*}
 
-Clearly, $\left\{ u_{ir}, s \right\} $ is properly colored. What about $\left\{ u_{ir}, \psi(l_{ir}) \right\} $? There are two cases: 
+Of course, each $\left\{ u_{ij}, s \right\} $ is properly colored. But what about 
+$\left\{ u_{ij}, \psi(l_{ij}) \right\} $? Well, there are two cases to consider. 
 
-\begin{quote}
-    \textit{(Case $r \neq j$) :} In this case, $c(u_{ir}) = \mathcal{C}_t$, and since $\psi(l_{ir})$ is either a $v$ or a $w$, $c(\psi(l_{ir})) \neq \mathcal{C}_t$. 
+If $j = j_0$, $c(u_{ij}) = 2$ and $l_{ij}(\overrightarrow{b}) = 1$. If
+$\psi(l_{ij}) = v_k$, this means $x_{k}(\overrightarrow{b}) = 1 \Rightarrow
+\overrightarrow{b_k} = 1$. Then $v_k$ is colored with $c(s) \neq c(u_{ij})$ and the coloring 
+is correct. If $\psi(l_{ij}) = w_k$, entailing that $l_{ij} = \overline{x_k}$, then 
+$\overrightarrow{b}_k = 0$ necessarily, in which case $c(w_k) = c(s) \neq c(u_{ij})$.
 
-    \textit{(Case $r = j$) :} Here, $c(u_{ir}) = \mathcal{C}$. If $l_{ij} = x_k$, $\psi(l_{ij}) = v_k$. By definition of $l_{ij}$, $l_{ij}(\overrightarrow{b}) = 1$. Then $c(\psi(l_{ij})) = c(v_k) = \mathcal{C}_s$. 
-\end{quote}
+If $j \neq j_0$, then $c(u_{ij}) = c(t)$. But $\psi(l_{ij}) \in \left\{ v_k, w_k \right\} $ never
+takes the color of $t$, and the coloring is correct.
 
-So, in both cases we are properly coloring $\left\{ u_{ir}, \psi(l_{ir})
-\right\} $.
+All that is left is to color the triangle $\left\{ b_{i1}, b_{i2}, b_{i 3} \right\} $.
+But this is trivial. Simply let $c(b_{i j_0}) = c(s)$, ensuring 
+that $\left\{ b_{i j_0}, u_{i j_0} \right\} $ are properly colored,
+and color the remaining two vertices with $c(t)$ and $2$ in 
+any order.
 
-Now that we have colored the tips $u_{ir}$, we only have to color the triangles
-in the claw, $\left\{ b_{i 1}, b_{i 2}, b_{i 3} \right\} $. Let $c(b_{ij}) =
-\mathcal{C}_t$ and the other two be colored in any of the possible ways. Clearly, the triangle is properly colored. Furthermore, 
-
-\begin{itemize}
-    \item $\left\{ b_{ij}, u_{ij} \right\} $ is properly colored, because $c(b_{ij}) = \mathcal{C}_t, c(u_{ij}) = \mathcal{C}$. 
-
-    \item $\left\{ b_{ir}, u_{ir} \right\} $ with $r \neq j$ is properly colored, because $c(u_{ir}) = \mathcal{C}_t$ and $c(b_{ir}) \neq \mathcal{C}_t$.
-\end{itemize}
-
-We have given a proper coloring of all vertices using $\overrightarrow{b}$.
+We have used $\overrightarrow{b}$ to define a 3-coloring of $\mathcal{G}$. $\blacksquare$
 
 \subsection{Trisexual marriage}
 
