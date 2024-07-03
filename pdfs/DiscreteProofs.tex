@@ -1,4 +1,4 @@
-\documentclass[a4paper, 12pt]{article}
+\documentclass[a4paper]{article}
 
 \usepackage{newtxtext} \usepackage{newtxmath}
 \usepackage{graphicx}
@@ -13,14 +13,15 @@
 \newtheorem{lemma}{Lemma}
 \newtheorem{theorem}{Theorem}
 \newtheorem{problem}{Problem}
-\newtheorem{example}{Example} 
-\newtheorem{definition}{Definition}
+\newtheorem{example}{Example} \newtheorem{definition}{Definition}
 \newtheorem{lemma}{Lemma}
 \newtheorem{theorem}{Theorem}
+\usepackage{parskip}
 
 
-\clearpage 
+\begin{document}
 
+    
 \section{Baby Brooks}
 
 \begin{quote}
@@ -128,6 +129,307 @@ $f(\overleftarrow{xw}) = 0$. This means $f(\overrightarrow{wx}) = 0$
 for all $\overrightarrow{wx}$ in the range of the sum above.
 
 $\therefore $  $v(f) = Cap(S) - 0 = Cap(S)$. $\blacksquare$
+
+\pagebreak
+
+
+
+\section{Networks}
+
+\subsection{Edmond-Karp: Complexity}
+
+The complexity of E.K. is determined by the complexity of finding the
+$f_i$-augmenting paths, the number of such paths, and the complexity 
+of updating the flow with such paths. 
+
+To find $f_i$-augmenting paths, EK uses BFS with a complexity $O(m)$. Updating
+the flow has complexity $O(n)$. So the question is what is the number $\varphi$
+of $f_i$ augmenting paths (or runs of BFS) that are used.
+
+The number of such paths is bounded by the number of sides times the number of
+times a side may become critical. We shall determine how many times a side may
+become critical.
+
+Let $f_1, f_2, \ldots$ be the iterations of EK. Let $\overrightarrow{xz}$ be a
+side that became critical at iteration $k$. There are two options: it either
+saturated being forward or emptied being backward.
+
+\textit{Saturated being forward.} If $\overrightarrow{xz}$ saturated being
+forward, then $p_k = s \ldots \overrightarrow{xz} \ldots t$ is the form of the
+augmenting path used to determine $f_k$. 
+
+Assume $\overrightarrow{xz}$ becomes critical again at some iteration $j$, so
+that $p_j = s \ldots \overrightarrow{xz} \ldots t$ is an augmenting path. For
+this to occur there must exist some iteration $i$, with $k < i < j$, such that
+$p_i = s \ldots \overleftarrow{xz} \ldots t$ is an augmenting path. In other
+words, $z$ must have returned some of the flow to $x$. Since we are using EK,
+the augmenting paths are of minimal length, and the distance between two
+vertices never decreases. This means 
+
+\begin{align*}
+    d_j(t) &\geq d_i(x) + b_i(x)  \\ 
+           &=d_i(z) + 1 + b_i(x) \\ 
+           &\geq d_k(z) + 1 + d_k(x) \\ 
+           &=d_k(x) + 1 + 1 + b_k(x) \\ 
+           &=d_k(t) + 2
+\end{align*}
+
+\textit{Emptied being backward.} Now, assume $\overrightarrow{xz}$ is a side
+that saturated being backward on the $k$th iteration; this is, that $p_k = s
+\ldots \overleftarrow{xz} \ldots t$ was the path found. Assume it empties again
+at some iteration $j$, so that $p_j = s \ldots \overleftarrow{xz} \ldots t$ is
+the $f_j$ path. Then there is some $i$, with $k < i < j$, such that $p_i = s
+\ldots \overrightarrow{xz} \ldots t$ is a path; i.e. the side was used forward.
+Now, all these paths are of minimal length, because we are using 
+E.K. And in all succesive paths, the distance from $s$ to $t$ never 
+decreases. Then,
+
+\begin{align*}
+    d_j(t) &\geq d_i(t) \\ 
+           &= d_i(z) + b_i(z) \\ 
+           &= d_i(x) + 1 + b_i(z) \\ 
+           &\geq d_k(x) +1 + b_k(z) \\ 
+           &=d_k(z) + 1 + 1 + b_k(z) \\ 
+           &= d_k(t) + 2
+\end{align*}
+
+In both cases, the distance from $s$ to $t$ had to increase by at least 
+two unites. But the distance from $s$ to $t$ is bounded by $n$; this is, 
+it is $O(n)$. Then a side may become critical $O(\frac{n}{2}) = O(n)$ times.
+Since there are $m$ sides, the number of times an arbitrary side will become 
+critical is $O(mn)$.
+
+$\therefore $ The complexity is $O(mn) \left[ O(n) + O(m) \right] = O(mn)O(m) = O(m^2n) $.
+
+
+\pagebreak 
+
+\subsection{Edmond-Karp: Augmenting paths are non-decreasing}
+
+Let $A = \left\{ x \in V : d_{k+1}(x) < d_k(x) \right\} $ and
+assume $A \neq \emptyset$. Let $x_0 \in A$ be the vertex whose distance
+$d_{k+1}(x_0)$ from $s$ is minimal; i.e. $d_{k+1}(x_0) \leq d_{k+1}(y) ~
+\forall y \in A$. Since $x_0 \in A$, $d_{k+1}(x_0) < d_k(x_0) \leq \infty$.
+Then there exists a $\mathcal{P}_{k+1} = s \ldots x_0$ of minimal length.
+Let $z$ be the predecessor of $x_0$ in this path.
+
+By definition of $d_f$, the length of the path is $d_{k+1}(x_0)$. Because the
+path is of minimal length to $x_0$, it is of minimal length to any predecessor
+of $x_0$ in it, including $z$. Then $d_{k+1}(z) = d_{k+1}(x_0) - 1$. This
+implies $z \not\in A$.
+
+There are two possible cases: either $\overrightarrow{xz} \in E$
+or $\overrightarrow{zx} \in E$.
+
+\textit{(Case 1):} If $\overrightarrow{zx_0} \in E$, then
+$d_{k+1}(z) < d_{k+1}(x_0)$. Since $z \not\in A$,
+
+\begin{align*}
+    d_k(z) \leq d_{k+1}(z) < d_{k+1}(x_0) < \infty
+\end{align*}
+
+Since $d_k(z) < \infty$, there is an $f_{k}$-augmenting path from $s$ to $z$.
+Then, in principle, $s \ldots z x$ could be  an augmenting path. But
+if this were the case, 
+
+$$d_k(x_0) \leq d_k(z) + 1 \leq d_{k+1}(z) + 1 = d_{k+1}(x)$$ 
+
+which implies $x_0 \not\in A$ ($\bot$). $s\ldots zx$ is not $f_k$-a.p. This can
+only happen if $f_k(\overrightarrow{zx_0}) = c(\overrightarrow{zx_0})$ (the
+side is saturated). Since the side is used in a $f_{k+1}$-a.p. it must be the
+case that $f_{k+1}(\overrightarrow{zx_0}) < c(\overrightarrow{zx_0})$. This
+means $\overrightarrow{zx}$ was used backwards in the $k$th iteration, or
+rather that $f_k = s \ldots \overleftarrow{x_0z} \ldots t$.
+
+Since this is Edmond-Karp, augmenting paths are of minimal length. Then 
+
+\begin{align*}
+    d_{k}(z) &= d_k(x_0) + 1   \\ 
+             &> d_{k+1}(x_0) + 1 \\ 
+             &=d_{k+1}(z) + 2 \\ 
+             & \geq d_{k}(z) + 2
+\end{align*}
+
+which is absurd.
+
+\textit{1.3.2} If  $\overrightarrow{xz}$ is a side then again
+
+\begin{align*}
+    d_k(z) \leq d_{k+1}(z) < d_{k+1}(x_0) < \infty
+\end{align*}
+
+Then there is an $f_k$-a.p. $s \ldots z$ and, at least in principle, 
+$s \ldots \overrightarrow{zx}$ could also be augmenting. But if this were the case,
+we would have 
+
+$$
+d_k(x_0) = d_k(z) + 1 \leq d_{k+1}(z) + 1 = d_{k+1}(x_0) 
+$$
+
+which would imply $x_0 \not\in A$ ($\bot$). Then $s \ldots \overrightarrow{zx_0}$ is 
+not augmenting, which means the side $\overrightarrow{x_0z}$ cannot 
+be used backwards. This can only be true if $f_k(\overrightarrow{x_0z} = 0$.
+But since the side is used backwards in the $f_{k+1}$-augmenting path,
+it must be used forward in this iteration. Which means $s \ldots \overrightarrow{x_0z} \ldots t$
+is augmenting. But then 
+
+\begin{align*}
+    d_{k}(z) &= d_{k}(x_0) + 1 \\ 
+             &> d_{k+1}(x_0) + 1 \\ 
+             &= d_{k+1}(z) +2 \\ 
+             &\geq d_{k}(z) + 2 
+\end{align*}
+
+which is absurd.
+
+\textit{Conclusion.} In both cases a contradiction arises. The contradiction
+comes from assuming $A \neq \emptyset$. Then $A = \emptyset$. $\blacksquare$
+
+
+\pagebreak
+
+\section{Dinitz: Complexity}
+
+
+We will prove the complexity of Dinitz is $O(n^2m)$. 
+
+Recall that Dinitz builds succesive auxiliary networks with BFS, uses DFS to find blocking 
+paths in them, and uses these paths to update the flow. Since the level 
+of $t$ augments in each succesive network, there are at most $O(n)$ auxiliary 
+networks. So the complexity of Dinitz is 
+
+\begin{align*}
+    O(n) \left[ \text{Comp. of building A.N.} + \text{Comp. of finding blocking flow in A.N.} \right] 
+\end{align*}
+
+The complexity of building the A.N. is the complexity of BFS,  which is $O(m)$.
+The process of finding the blocking path varies is the Western and the original
+algorithms. 
+
+\textit{Original version.} The original Dinitz algorithm enforced the following
+invariant: In any given auxiliary network, all vertices have edges connecting
+to the next level. This invariant implies that the DFS run always reaches $t$
+without need to backtrack. In consequence, the complexity of the DFS run is
+$O(n)$. The complexity of updating the flow is $O(n)$, and each time this happens 
+at least one side is saturated and removed. Then there are $O(m)$ paths.
+$\therefore $ The complexity of finding the paths and updating the flow
+is $O(n \times m)$.
+
+However, there is some extra cost associated to preserving this invariant. Each
+time a path is found, saturated sides are removed with a prunning operation.
+The prunning operation goes from the highest to the lowest levels in the
+network, checks for vertices whose exiting edge is saturated, and deletes them.
+This means that, for each vertex, a process of $O(1)$ complexity checks if it
+is saturated. This happens each time a path is found, so $O(n \times m)$ times.
+Once these sides have been detected, they and their neighbors are removed,
+which has complexity $O(d(x))$. Since this happens at worst for all vertices,
+the deleting operation is $O\left( \sum_{x \in V} d(x) \right) = O(m)$. The
+total cost of enforcing the invariant is then $O(n \times m) + O(m)$, which
+means the complexity of finding the blocking paths and updating the flow is
+$O(n \times m) + O(n \times m) + O(m) = O(n \times m) $. Then the complexity of
+Dinitz is $O(n^2m)$.
+
+\textit{Western version.} The Western version finds blocking paths and updates 
+the flow inside a while loop with three clauses. The first clause is 
+running BFS to advance; i.e. setting $x = s$ and iteratively making 
+$x$ be the first neighbor of $x$ until $t$ is reached. This clause executes 
+as long as there is a neighbor and we call it $A$.
+
+The second clause considers the case where $x$, the vertex we are 
+traversing, has no neighbors in the next level. Then the algorithm
+backtracks to its predecessor, removes the side leading from it to $x$,
+and attempts $A$ once more. We call this part $R$.
+
+The last clause considers the case where $t$ is reached. Here, 
+the flow is augmented using the path found and all saturated 
+sides are removed.
+
+Thus, finding the blocking flow and updating the path can be modeled 
+as a word $A \ldots I A \ldots R A \ldots R A\ldots I$; i.e. as a succession 
+of words of the form $A \ldots X$ with $X \in \left\{ R, I \right\} $.
+
+The process $R$ has complexity $O(1)$ because it simply involves going
+backwards and deleting a side. The process $A$ has complexity $O(1)$ because it
+simply involves moving forward, but at most $O(n)$ successions of $A$ may 
+occur. This means $O(A \ldots A) = O(n)$. The process $I$ has complexity $O(n)$
+because the flow is updated across at most all vertices. Then  
+$O(A\ldots I) = O(n) + O(n) = O(n)$ and $O(A\ldots R) = O(n) + O(1) = O(n)$.
+The question is how many words of the form $A \ldots X$ exist. At worst, all
+paths are traversed in the process of finding $t$, so there are $O(m)$ words of
+this form. Then the complexity of the run is 
+
+\begin{align*}
+    O(m) \left[ O(n) + O(n) \right]  = O(nm)
+\end{align*}
+
+Then the complexity of Dinitz is $O(n^2m)$.
+
+\pagebreak
+
+\subsection{Wave: Complexity}
+
+We know the distance between $s$ and $t$ in auxiliary networks is increasing.
+The distance is bounded by $n$. $\therefore $ There are $O(n)$ auxiliary
+networks. Now, each auxiliary network is first constructed and then 
+used to find a blocking flow. Then the complexity of Wave is 
+
+\begin{align*}
+    O(n) \left[ F + B \right] 
+\end{align*}
+
+where $F$ is the complexity of finding a blocking flow in an auxiliary network 
+and $B$ the complexity of building an auxiliary network. To build the auxiliary 
+network we use BFS. $\therefore  $ $B = O(m)$. Let us examine $F$.
+
+To find blocking flows we attempt to balance in forward and backward waves.
+When going forward, let $V$ be the steps where a side is saturated,
+$\overline{V}$ those where a side is not saturated. When going 
+backward, let $S$ be the steps where a side is emptied, $\overline{S}$ those 
+there a side is not emptied. 
+
+\textit{Complexity of $V$}. Assume $\overrightarrow{xz}$ is a side and is
+saturated in a forward wave. To saturate again it must empty at least a little
+bit before. If it empties, then $z$ was blocked and returned the flow to $x$;
+and since $z$ is blocked, $\overrightarrow{xz}$ will never again be used. Then
+each side can saturate at most once. $\therefore $ the complexity of $V$ is
+$O(m)$.
+
+\textit{Complexity of $S$}. Assume  $\overrightarrow{zx}$ is a side and 
+it empties in a backward wave. Since $x$  returned flow, it 
+is blocked and $z$ will not send flow to $x$ a gain. Then $\overrightarrow{zx}$
+cannot be emptied ever again. $\therefore $ The complexity of $S$ is $O(m)$.
+
+\textit{Complexity of $\overline{V}$}. When a vertex sends flow to 
+its neighbors, it saturates all sides except perhaps one.
+Then, for any given vertex, each forward wave will send 
+partial flow through at most one side. $\therefore $ The 
+complexity of $\overline{V}$ is $O(n) \times \varphi$, with 
+$\varphi$ the number of forward waves.
+
+\textit{Complexity of $\overline{S}$}. When a vertex returns flow 
+to its predecessors, it empties all sides except perhaps 
+one. Then, for any given vertex in a backward wave, 
+at most one side is partially emptied. $\therefore $ The 
+complexity of $\overline{S}$ is $O(n) = \psi$ where $\psi$ 
+is the number of backward waves.
+
+Now, it is trivialy to see $\varphi = \psi$ and there are 
+at most $n$ forward waves. $\therefore ~ O(\varphi) = n$ . 
+
+$\therefore $ The complexity of $\overline{S}, \overline{V}$ are both 
+$O(n) \times O(n) = O(n^2)$.
+
+$\therefore $ $F = O(n^2) + O(n^2) + O(m) + O(m) = O(n^2) + O(m)$.
+
+But $O(n^2) + O(m) = O(n^2)$, because $m \leq \binom{n}{2} = O(n^2)$.
+
+$\therefore $ $F = O(n^2)$.
+
+$\therefore $ The complexity of Dinitz is $O(n) \left[ O(m) + O(n^2) \right] = O(n)O(n^2) = O(n^3) $
+
+
+
+
 
 \pagebreak
 
@@ -473,16 +775,18 @@ to $1$, all vertices in the second level are colored with $2$, those in the
 third with $1$, and so on.
 
 \begin{align*}
-    &j := 1\\
+    &j := 0\\
     &\textbf{while } j < n \textbf{ do } \\
     &\qquad r = \text{arbitrary non-colored vertex} \\ 
     &\qquad c(r) = 1 \\ 
+    &\qquad j = j + 1 \\ 
     &\qquad queue = \left\{ r \right\} \\ 
     & \qquad\textbf{while } queue \neq \emptyset \textbf{ do } \\ 
     & \qquad \qquad p = pop(queue) \\ 
     &\qquad\qquad \textbf{for } x \in \Gamma(p) \textbf{ do } \\ 
     & \qquad \qquad \qquad \textbf{if } x \text{ not colored} \textbf{ do} \\ 
     &\qquad \qquad \qquad \qquad c(x) = 3 - c(p)\\ 
+    &\qquad \qquad \qquad \qquad j = j + 1\\ 
     &\qquad \qquad \qquad \qquad push(queue, x)\\
     &\qquad\qquad\qquad\textbf{fi}\\
     &\qquad\qquad \textbf{od}\\ 
@@ -740,7 +1044,129 @@ any order.
 
 We have used $\overrightarrow{b}$ to define a 3-coloring of $\mathcal{G}$. $\blacksquare$
 
+\pagebreak
 \subsection{Trisexual marriage}
+
+Let 
+
+\begin{align*}
+    B = \bigwedge_{i=1}^{m} \left( l_{i 1} \lor  l_{i 2} \lor  l_{i 3} \right) 
+\end{align*}
+
+an instance of $3$-SAT with variables $x_1, \ldots, x_n$. Let 
+
+\begin{align*}
+    i &\in \left\{ 1,\ldots, n \right\}  \\
+    j &\in \left\{ 1,\ldots, m \right\}  \\
+    r &\in \left\{ 1, 2, 3 \right\}  \\
+    k &\in \left\{ 1, \ldots, m(n-1) \right\} 
+\end{align*}
+
+Let $G$ be a tripartite $3$-hypergraph constructed as follows. 
+
+\begin{itemize}
+    \item $X = \left\{ a_{ij} \right\} \cup \left\{ s_j \right\} \cup h_k $
+    \item $Y = \left\{ b_{ij} \right\}  \cup \left\{ t_j \right\}  \cup \left\{ g_k \right\} $
+    \item $Z = \left\{ u_{ij}, w_{ij} \right\} $
+\end{itemize}
+
+for all possible combinations of their indeces. It is easy to see 
+
+\begin{align*}
+    |X| &= nm + m + m(n-1) = 2nm \\ 
+    |Y| &= nm + m + m(n-1) = 2nm \\ 
+    |Z| &= nm + nm = 2nm
+\end{align*}
+
+This is, all parts of the hypergraph have the same number of vertices. For its edges,
+we first define 
+
+\begin{align*}
+    v_{jr} = \begin{cases}
+        u_{ij} & l_{jr} = x_i \\ 
+        w_{ij} & l_{jr} = \overline{x_i} 
+    \end{cases}
+\end{align*}
+
+Then we define $E = E_0 \cup \ldots \cup  E_3$ with
+
+\begin{align*}
+    E_0 &= \left\{ a_{ij}, b_{ij}, u_{ij} \right\} \\
+    E_1 &= \left\{ a_{i(j+1)}, b_{ij}, w_{ij} \right\} \\
+    E_2 &= \left\{ h_k, g_k, u_{ij} \right\} \cup \left\{ h_k, g_k, w_{ij} \right\} \\
+    E_3 &= \left\{ s_j, t_j, v_{jr} \right\} \\
+\end{align*}
+
+for all possible combinations of their indeces.
+
+We shall prove there is a perfect matching over the hypergraph iff $B$
+is satisfiable.
+
+$(\Rightarrow)$ Assume there is a perfect matching $M$. Take an arbitrary $i$
+and a fixed index $j_0$ such that $a_{ij_0}$ is in a side of $M$. Then this
+side must be a side $\left\{ a_{ij_0}, b_{ij_0}, u_{ij_0} \right\} E_0$.
+
+Since $M$ matching, its sides are all disjoint, which means $b_{ij}$
+cannot appear in any other side of $M$. But since $M$ is complete, 
+$a_{ij_0+1}$ must appear in some side, from which follows 
+$\left\{ a_i(j_0+1), b_{ i(j_0+1) }, u_{i(j_0+1)} \right\} \in E(M)$.
+Inductively, it follows 
+
+\begin{align*}
+    \forall j : \left\{ a_{ij}, b_{ij}, u_{ij} \right\} \in E(M) 
+\end{align*}
+
+We call this \textbf{Case 0}.
+
+An analogous analysis gives as a second case that 
+
+\begin{align*}
+    \forall j : \left\{ a_{i(j+1)}, b_{ij}, u_{ij} \right\} \in E(M) 
+\end{align*}
+
+which we call \textbf{Case 1}. Since the $a_{ij}$ vertices only appear in $E_0,
+E_1$, if \textbf{Case 1} is not the case, we must have \textbf{Case 1}, and
+vice-versa.
+
+We define 
+
+\begin{align*}
+    \overrightarrow{b}_i = \begin{cases}
+        1 & \textbf{Case 1} \text{ holds for } i\\
+        0 & \textbf{Case 0} \text{ holds for } i
+    \end{cases}
+\end{align*}
+
+Since we want to prove $B(\overrightarrow{b}) = 1$, suffices to prove that for
+any $j$, there is some $r$ s.t. $l_{jr}(\overrightarrow{b}) = 1$. For any arbitrary 
+$j$, since $M$ is perfect, the verices $t_j, s_j$ must belong to the matching.
+Then there is some $r$ s.t. $\left\{ s_j, t_j, v_{jr} \right\} \in E(M)$.
+
+If $l_{jr} = x_i$, then $v_{jr} = u_{ij}$ and $\left\{ s_j, t_j, u_{ij} \right\} \in E(M)$.
+Then $\left\{ a_{ij}, b_{ij}, u_{ij} \right\} \not\in E(M)$, so we 
+are in \textbf{Case 1}. Then $l_{jr}(\overrightarrow{b}) = 1$.
+
+If $l_{jr} = \overline{x_i}$, then $v_{jr} = w_{ij}$ and $\left\{ s_j, t_j, w_{ij} \right\} \in E$.
+But then $\left\{ a_{i(j+1)}, b_{ij}, w_{ij} \right\} \not\in E(M) $,
+so we are in \textbf{Case 0}. Then $l_{jr}(\overrightarrow{b}) = 1$.
+
+Then, the assignment we have provided makes $B_i$ true for any 
+$B_i$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \end{document}
 
