@@ -1,0 +1,121 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{newtxtext} \usepackage{newtxmath}
+\usepackage{amsmath, amssymb}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example} \newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\usepackage{parskip}
+
+\begin{document}
+
+Hill climbing is a mathematical optimization algorithm. Given a function $f :
+\mathbb{R}^n \to \mathbb{R}$, the algorithm takes an arbitrary
+$\overrightarrow{x} \in \mathcal{D}_f$ and compares $f(\overrightarrow{x}),
+f(\Delta \overrightarrow{x})$. If shifting $\overrightarrow{x}$ increases the
+function, it lets $\overrightarrow{x} := \Delta\overrightarrow{x}$ and repeats
+the process, and thus iteratively until some criteria is met.
+
+Hill climbing can in fact be used to optimize the greedy coloring of a graph.
+The use of this algorithm for greedy coloring is justified by a nice theorem.
+
+Given a graph $G = (V, E)$, the parameter of the Greedy algorithm $\mathcal{G}$
+is an order $\mathcal{O} = v_{i_1}, \ldots, v_{i_n}$ of the vertices, where the
+$i_j$ define the coloring order of $V = \left\{ v_1, \ldots, v_n \right\} $.
+Thus, shiftes in the parameter space correspond to changes
+in the coloring order. 
+
+Such permutations lack a nice property of real functions; namely, that their
+parameters can only be shifted in two directions: positive or negative. Instead
+of these two choices, an order $\mathcal{O}$ of $n$ vertices has $n!$
+permutations. We cannot try them out and chose the one that maximizes our
+function.
+
+There is a property, however, which reveals permutations that may not
+necessarily improve the coloring, but are guaranteed not to worsen it. Such
+property reduces drastically the space of alternative permutations. In fact,
+given an initial ordering $\mathcal{O}$, this space of alternative permutations
+is often so small that none of them improve the coloring. Thus, often $k$
+initial orderings $\mathcal{O}_1, \ldots, \mathcal{O}_k$ are randomly defined,
+and their (reduced) permutation spaces are explored, in hope that one of their
+permutations will in fact improve the coloring. 
+
+The property I'm refering to is the following.
+
+> \textbf{Theorem.} Let $G = (V, E)$ a graph with a proper coloring of $r$
+colors $C = \left\{ c_1, \ldots, c_r \right\} $. Let $V_{c_i} := \left\{ x\in V
+: c(x) =c_i \right\} $. Let $P : C \to C $ a permutation of $c_1, \ldots, c_r$;
+i.e. $P(c_i) = c_j$ entails the $i$th color becomes the $j$th color.
+
+Then $\mathcal{G}$ with the order $V_{P(c_1)}, \ldots, V_{P(c_r)}$ colors 
+$G$ with at most $r$ colors.
+
+
+The proof of this theorem is simple to do inductively over $r$. If $r = 1$ the
+case is trivial. Assume the theorem holds for $r = k$. Let $x_0 \in
+\bigcup_{i=0}^{k+1} V_{P(c_{i})}$. If $x_0$ belongs to any of the first $k$
+sets, $\mathcal{G}$ colors it with one out of $k$ colors by hypothesis.
+If $x_0 \in V_{P(c_{i+1})}$, the case where $\mathcal{G}$
+colors it with a color less than $k+2$ makes our statement true.
+Assume this is not the case. Then there is some $y_0 \in \Gamma(x_0)$
+such that $c(y_0) = k + 1$. But then $y_0 \in V_{P(c_{i+1})}$.
+And since $x_0$ is also in this set, we should have $c(x_0) = c(y_0)$.
+Then the coloring is not proper. $(\bot)$
+
+Informally, if $\mathcal{G}$ colored $V$ into groups $V_{c_1}, \ldots,
+V_{c_r}$, then coloring first the vertices with color $P(c_1), P(c_2), \ldots,
+P(c_r)$ is at least as good as the original coloring. The permutation $P$ that
+we must use is arbitrary: the theorem states nothing special about it. In
+general, one uses permutations that put vertices with highest colors or highest
+degrees first, since these are the problematic ones. We will define two such
+permutations.
+
+\textbf{Permutation 1.} Let 
+
+\begin{align*}
+    m(x) &:= \min \left\{ d(y) : y \in V_{c_x} \right\} \\
+    M(x) &:= \max \left\{ d(y) : y \in V_{c_x} \right\} \\
+\end{align*}
+
+where $d(x)$ is the degree of a vertex $x \in V$.
+
+If $\mathcal{G}$ colored $G$ with colors $1, \ldots, r$, we shall produce the
+following permutation: First, all colors divisible by $4$, ordered decreasingly
+y $M(x)$; then all even colors not divisible by $4$, ordered decreasingly by
+$M(x) + m(x)$; finally, all remaining colors ordered decreasingly by $m(x)$.
+
+This permutation combines high-degree and high-color to account for how "difficult"
+the vertices in a given color were.
+
+\textbf{Permutation 2.} Order the vertices like so:
+
+\begin{align*}
+    x_1, x_2, \ldots, x_{r-1} = 2, x_{r} = 1
+\end{align*}
+
+where $x_1$ is the color with least cardinality, excluding $1$ and $2$; $x_2$
+is the one with least cardinality excluding $1, 2, x_1$, and so on. The
+assumption here is that colors with just a few vertices are the most
+problematic.
+
+--- 
+
+We shall provide code implementations for these permutations and test them with
+$\mathcal{G}$ over a good number of graphs. Both permutations can be
+implemented with $O(n)$ complexity. We shall run $\mathcal{G}$ over a fixed
+number of permutations, so the total complexity of the testing algorithm will
+be $O(m) + O(n)$.
+
+\end{document}
+
+
+

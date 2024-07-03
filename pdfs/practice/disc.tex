@@ -18,158 +18,123 @@
 
 \begin{document}
 
-We shall prove $3$-color is NP complete. In order to do this, we will prove 
-$3$-SAT $\leq_{\rho}$ $3$-Color. In other words, given an instance of $3$-SAT 
-of the form 
-
-\begin{align*}
-    B = \bigwedge{i=1}^{m} (l_{i1} \lor  l_{i2} \lor  l_{i3})
-\end{align*}
-
-with each literal $l_{ij}$ a case of the variables $x_1, \ldots, x_n$, we shall
-provide an effective procedure that constructs a special graph $\mathcal{G}$
-s.t. $\mathcal{G}$ is $3$-colorable iff $B$ is satisfiable.
-
-\textit{(1 : Building $\mathcal{G}$)} We shall define $\mathcal{G}$ by parts; namely, 
-
-\begin{enumerate}
-    \item Two special vertices $s$ and $t$ that are connected.
-    \item $n$ triangles, each connecting the vertices in $\left\{ t, v_{i}, w_{i} : 1 \leq i \leq n \right\} $
-    \item $m$ triangles formed by the vertices $\left\{ b_{i1}, b_{i2}, b_{i3} : 1 \leq i \leq m \right\} $
-    \item A tip $u_{ij}$ each connected to $b_{ij}$ and $s$.
-\end{enumerate}
-
-Now let us define 
-
-\begin{align*}
-    \psi(l_{ij}) = \begin{cases}
-        v_{k} & l_{ij} = x_k  \\ 
-        w_{k} & l_{ij} = \overline{x_k}
-    \end{cases}
-\end{align*}
-
-Then we also include in $\mathcal{G}$ the sides $\left\{ u_{ij} ~ \psi(l_{ij} :
-1 \leq i \leq m, 1 \leq j \leq 3) \right\} $. In other words, we connect each
-tip $u_{ij}$ to either $v_k$ or $w_k$, depending on what the literal $l_{ij}$
-is.
-
-This completes the construction of $\mathcal{G}$. Now we shall prove 
-$\mathcal{G}$ is 3-colorable iff $B$ is satisfiable.
-
-\textit{(2 : Proving $\Rightarrow$)} Assume $\mathcal{G}$ has a proper coloring
-of three colors or less. Since $\mathcal{G}$ contains triangles,
-it must be a coloring of exactly three colors. We shall define 
-
-\begin{align*}
-    \overrightarrow{b_k} = \begin{cases}
-        1 & c(v_k) = c(s) \\ 
-        0 & c(v_k) \neq c(s)
-    \end{cases}
-\end{align*}
-
-and prove that $B(\overrightarrow{b}) = 1$. Proving this equates to proving
-there is at least one $j$ in $\left\{ 1, 2, 3 \right\} $ s.t.
-$l_{ij}(\overrightarrow{b}) = 1$ for any arbitrary $i$. To prove this, we shall
-take $u_{ij}$ and analyze what is color entails about the truth assignment.
-
-The triangle $\left\{ b_{i 1}, b_{i 2}, b_{i 3} \right\} $ must contain $c(t)$
-at some $b_{ij_0}$ fixed. Take $u_{ij_0}$. Note that $c(s) \neq c(u_{ij_0})
-\neq c(t)$. And since $\psi(u_{ij_0})$ cannot have the color of $t$, it must be
-the case that $c \left( \psi\left( u_{ij_0} \right)  \right) = c(s) $. Now consider 
-these cases. 
-
-\textit{Case 1.} If $\psi(u_{ij_0}) = v_k$, it follows that $l_{ij} = x_k$.j
-Then $c(v_k) = c(s) \Rightarrow \overrightarrow{b_k} = 1 \Rightarrow l_{ij}(\overrightarrow{b}) = 1 $. $\therefore ~ B_i (\overrightarrow{b}) = 1$.
-
-\textit{Case 2.} If $\psi(u_{ij_0}) = w_k$ then $l_{ij} = \overline{x_k}$. Since 
-$c(w_k) = c(s)$ in this case, $c(v_k) \neq c(s)$ and $\overrightarrow{b}_k = 0$.
-Then $l_{ij}(\overrightarrow{b}) = 1$. $\therefore  ~ B_i(\overrightarrow{b}) = 1$. 
-
-In both cases, for an arbitrary $i$, the coloring of $\mathcal{G}$ allows us 
-to define an assignment $ve^3$ that makes $B_i(\overrightarrow{b}) = 1$.
-Of course, this assignment is s.t. $B(\overrightarrow{b}) = 1$. $\blacksquare$
-
-
-\pagebreak
-
-
-\textit{(3 : Proving $\Leftarrow$)} Assume $B$ is satisfiable by a boolean
-vector $\overrightarrow{b}$. Then for any given $i$ in $[1, m]$ we have
-$B_i(\overrightarrow{b}) = 1$. Then $l_{ij_{0}}(\overrightarrow{b}) = 1$ for
-(at least) a fixed $j_0$, $1 \leq j_0 \leq 3$. 
-
-Let $C = \left\{ 0, 1, 2 \right\} $ a set of colors and define $c(s) = 0, c(t) = 1$. Let 
-
-\begin{align*}
-    &c(v_k) = \begin{cases}
-        c(s) & \overrightarrow{b}_k = 1 \\ 
-        2    & \overrightarrow{b_k} = 0
-    \end{cases} & c(w_k) = \begin{cases}
-    2 &\overrightarrow{b_k} = 1 \\ 
-    c(s) &\overrightarrow{b_k} = 0
-    \end{cases}
-\end{align*}
-
-Clearly, $\left\{ s, t \right\} $ is properly colored and $\{t, v_i, w_i\}$ is 
-properly colored. All that is left is to color the triangles 
-with tips.
+I shall prove $3$-SAT is NP complete by proving SAT $\leq_\rho$ $3$-SAT. In order 
+to do this, we are to provide an algorithm or effective procedure $\mathcal{A}$
+that is capable of constructing an instance of $3$-SAT from an instance 
+of SAT in polynomial time, and construct it in such a way that one if 
+satisfiable if and only if the other one is satisfiable.  
 
 Let 
 
 \begin{align*}
-    c(u_{ij}) = \begin{cases}
-        2 & j = j_0 \\ 
-        c(t) & j \neq j_0
-    \end{cases}
+    B = \bigwedge_{i=1}^{m} \left\{ l_{i 1} \lor  \ldots \lor l_{i r_i} \right\} 
 \end{align*}
 
-Of course, each $\left\{ u_{ij}, s \right\} $ is properly colored. But what about 
-$\left\{ u_{ij}, \psi(l_{ij}) \right\} $? Well, there are two cases to consider. 
+be an instance of SAT, where $r_i$ is the number of literals in the $i$th term 
+of $B$. We shall define the following effective procedure $\mathcal{P}$: For any
+arbitrary $B_i$, we shall construct $E_i$ as follows:
 
-If $j = j_0$, $c(u_{ij}) = 2$ and $l_{ij}(\overrightarrow{b}) = 1$. If
-$\psi(l_{ij}) = v_k$, this means $x_{k}(\overrightarrow{b}) = 1 \Rightarrow
-\overrightarrow{b_k} = 1$. Then $v_k$ is colored with $c(s) \neq c(u_{ij})$ and the coloring 
-is correct. If $\psi(l_{ij}) = w_k$, entailing that $l_{ij} = \overline{x_k}$, then 
-$\overrightarrow{b}_k = 0$ necessarily, in which case $c(w_k) = c(s) \neq c(u_{ij})$.
+\begin{itemize}
+    \item If $r_i = 1$, 
+        $$E_i = \left( l_{i 1} \lor y_{ 1} \lor  y_{2} \right) \land \left\{
+        l_{i 1} \lor  \overline{y_{ 1}} \lor  y_{ 2} \right\} \land \left(
+    l_{i 1} \lor y_{ 1} \lor  \overline{y_{ 2}} \right) \land \left( l_{i 1}
+\lor  \overline{y_{ 1}} \lor  \overline{y_{ 2}} \right)   $$
+    \item If $r_{i} = 2$, 
+        \begin{equation*}
+            E_i = (l_{i 1} \lor  l_{i 2} \lor  y_{ 1}) \land  (l_{i 1} \lor  l_{i 2} \lor  \overline{y_{ 1}})
+        \end{equation*}
+    \item If $r_{i} = 3$, $E_i = B_i$.
+    \item If $r_i \geq 4$, then 
+        \begin{align*}
+            E_i = &(l_{i 1} \lor  l_{i 2} \lor  y_{ 1}) \land (\overline{y_{ 1}} \lor  y_{ 2} \lor  l_{i 3}) \land (\overline{y_{ 2}} \lor  y_{ 3} \lor l_{i 4}) \\ 
+                  &\land  \ldots \\ 
+                  &\land (\overline{y_{ (r-4)}} \lor  y_{(r_i-3)} \lor  l_{i(r_i-2)}) \land (\overline{y_{ (r_i-3)}} \land l_{i(r_i-1)} \land l_{ir_i})
+        \end{align*}
+\end{itemize}
 
-If $j \neq j_0$, then $c(u_{ij}) = c(t)$. But $\psi(l_{ij}) \in \left\{ v_k, w_k \right\} $ never
-takes the color of $t$, and the coloring is correct.
+where each $y_{j}$ are new variables. We shall prove $E = \bigwedge_{i=1}^{m'}
+E_i$ is satisfiable iff $B$ is satisfiable.
 
-All that is left is to color the triangle $\left\{ b_{i1}, b_{i2}, b_{i 3} \right\} $.
-But this is trivial. Simply let $c(b_{i j_0}) = c(s)$, ensuring 
-that $\left\{ b_{i j_0}, u_{i j_0} \right\} $ are properly colored,
-and color the remaining two vertices with $c(t)$ and $2$ in 
-any order.
+$(\Rightarrow)$ Assume $(\overrightarrow{b}, \overrightarrow{u})$ is an
+assignment for the $x$, $y$ variables respectively s.t. $E(\overrightarrow{b},
+\overrightarrow{u}) =1$. Then, for any arbitrary $E_i$, there is at least some
+literal that evaluates to one under this assignment. Let us consider by cases. 
 
-We have used $\overrightarrow{b}$ to define a 3-coloring of $\mathcal{G}$. $\blacksquare$
+\textit{(1: $r_i = 1$)}. Assume $B_i(\overrightarrow{b})= 0$. Then $l_{i 1}(\overrightarrow{b}) = 0$. But since $E_i(\overrightarrow{b}, \overrightarrow{u}) = 1$, we must have 
+
+\begin{equation*}
+    (y_{ 1} \lor  y_{ 2}) \land  \ldots \land  (\overline{y_{ 1}} \lor  \overline{y_{ 2}})(\overrightarrow{u}) = 1
+\end{equation*}
+
+But it is trivial to see that any of the possible assignments makes some terms
+true and others false simultaneously, which is a contradiction. So
+$B_i(\overrightarrow{b}) = 1$.
+
+\textit{(2 : $r_i = 2$)}. Assume $B_i(\overrightarrow{b}) = 0$. Since $E_{i}(\overrightarrow{b}, \overrightarrow{u}) = 1$ we must have 
+
+\begin{equation*}
+    [ y_{ 1} \land  y_{ 2} ](\overrightarrow{u}) = 1 \Rightarrow \bot
+\end{equation*}
+
+Then $B_i(\overrightarrow{b}) = 1$.
+
+\textit{(3 : $r_i = 3$)}. Trivial. 
+
+\textit{(4: $r_i \geq 4$)}. Assume $B(\overrightarrow{b}) = 0$. Then $E_i$ is
+an expression of the form $y_{ 1} \land  (\overline{y_1} \lor  y_2) \land
+(\overline{y_2} \lor  y_3) \land  \ldots \land  \overline{y_{r_i - 2}}$.
+Necessarily, $y_1$ must be true, which entails $y_2$ must 
+be true, which inductively entails $y_k$ is true for any $k$.
+But then the last term is false. $( \bot )$
+
+In all possible cases, $B_i(\overrightarrow{b}) = 1$ for any $i$. Then
+$B(\overrightarrow{b}) = 1$.
+
+$(\Leftarrow)$ Assume $\overrightarrow{b}$ is an assignment s.t.
+$B(\overrightarrow{b}) = 1$. Take an arbitrary $B_i$. Since it is true under
+$\overrightarrow{b}$, there is at least one fixed $j_0$ s.t.
+$l_{ij_0}(\overrightarrow{b}) = 1$. Let us define the assignment $\overrightarrow{u}$
+as follows:
+
+\begin{align*}
+    &u_1 = u_2 = \ldots = u_{j_0 - 2} = 1 \\
+    &u_{j_0 - 1} = u_{j_0} = \ldots = u_{k} = 0 \\
+\end{align*}
+
+for all $k$ variables $y_1, \ldots, y_k$. We shall prove this assignment makes 
+$E(\overrightarrow{b}, \overrightarrow{u}) = 1$. For this to occur, suffices 
+that $E_i(\overrightarrow{b}, \overrightarrow{u}) = 1$. There are 
+four possible cases.
+
+\textit{(1: $r_i = 1$)}. In this case, each term in the series of conjuctions 
+will either be anterior to the appearence of $l_{i j_0}$, posterior to it,
+or will be the term with $l_{i j_0}$. If it is the term with $l_{ij_0}$ it 
+will be true by assumption. If it is anterior it will contain at least 
+one $y_{k}$, and by definition this will be true. If it is posterior 
+it will contain at least one $\overline{y}_{i k}$ and it will be true.
 
 
+\textit{(2 : $r_i = 2$)}. By def. of $E_i$, both terms contain all 
+$l_{i j}$, so both terms will contain $l_{i j_0}$ and will 
+be true.
 
+\textit{(3 : $r_i = 3$)}. Trivial.
 
+\textit{(4: $r_i \geq 4$)}. Observe that $E_i$ will be of the form 
 
+\begin{align*}
+    E_i &= (l_{i 1} \lor  l_{i 2} \lor  y_{ 1}) &\text{$y_{ 1}(\overrightarrow{u}) = 1$ by def} \\ 
+        &=(\overline{y_{ 1}} \lor  y_{ 2} lor l_{i 3}) &\text{True for the same reason} \\ 
+        &\vdots \\ 
+        &=(\overline{y_{ (j_0 - 3)}} \lor y_{ j_0 - 2} \lor  l_{i (j_0 -1)})\\
+        &=(\overline{y_{ (j_0 - 2)}} \lor y_{ ( j_0 - 1 )} \lor  l_{i j_0})\\
+        &=(\overline{y_{ (j_0 - 1)}} \lor y_{ j_0} \lor  l_{i ( j_0 + 1)})\\
+        &\vdots \\ 
+        &=(\overline{y_{r_i - 2}} \lor  l_{i( r_i - 1 )} \lor  l_{ir})
+\end{align*}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+all true.
 
 
 
