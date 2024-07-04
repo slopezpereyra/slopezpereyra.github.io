@@ -1047,127 +1047,137 @@ We have used $\overrightarrow{b}$ to define a 3-coloring of $\mathcal{G}$. $\bla
 \pagebreak
 \subsection{Trisexual marriage}
 
+We shall prove 3D-Marriage is NP-complete by proving 3-SAT $\leq_{\rho}$ 3D-Marriage. 
+In order to do this, we shall build a tripartite $3$-hypergraph, with parts 
+of equal cardinality, s.t. there is a perfect matching among the three parts 
+iff an arbitrary instance of 3-SAT is satisfiable.
+
+Let $B$ be such instance with $m$ terms, $n$ variables $x_1, \ldots, x_n$, and
+literals $l_{jr}$ for $1 \leq j \leq m, 1 \leq r \leq 3$. Let $k \in \left\{ 1,
+\ldots, m(n-1) \right\} $. Then we define the tree parts of the 3-hypergraph as follows: 
+
+\begin{align*}
+    X &= \left\{ a_{ij} \right\} \cup \left\{ s_j \right\} \cup \left\{ h_k \right\}  \\ 
+    Y&=  \left\{ b_{ij} \right\} \cup \left\{ t_j \right\} \cup \left\{ g_k \right\} \\ 
+    Z &= \left\{ u_{ij} \right\} \cup \left\{ w_{ij} \right\} 
+\end{align*}
+
+for all possible combinations of their variables. It is trivial to see that
+their cardinalities are the same and always equal $2nm$.
+
+We define the edges of the 3-hypergraph as the union of
+
+\begin{align*}
+    E_0 &= \left\{ a_{ij}, b_{ij}, u_{ij} \right\} \\ 
+    E_1 &= \left\{ a_{i(j+1)}, b_{ij}, w_{ij} \right\} \\ 
+    E_2&= \left\{ h_{k}, g_k, u_{ij} \right\} \cup \left\{ h_k, g_k, w_{ij} \right\} \\ 
+    E_3 &= \left\{ s_j, t_j, v_{jr} \right\} 
+\end{align*}
+
+where 
+
+\begin{align*}
+    v_{jr} &= \begin{cases}
+        u_{ij} & \exists i : l_{jr} = x_i \\ 
+        w_{ij} & \exists i: l_{jr} = \overline{x_i}
+    \end{cases}
+\end{align*}
+
+We will prove this 3-hypergraph has a matching iff $B$ is satisfiable.
+
+\textit{($\Rightarrow$)} Assume there is a perfect matching. Let $i$ an fixed and 
+arbitrary element. Since the matching is perfect, for any $j$,
+$a_{ij}$ belongs to the matching. This could happen if $a_{ij}$ is 
+a side of $E_0$ or a side of $E_1$. 
+
+It is trivial to see that if $a_{ij}$ is part of a side of $E_0$, all sides of
+$E_0$ belong to the matching and no side of $E_1$ belong to the matching. Call
+this \textit{Case 0}. Similarly, one sees that if a side of $E_1$ belongs to
+the matching, all sides of $E_1$ belong to the matching and no side of $E_0$
+belong to the matching. Call this \textit{Case 1}. 
+
+It should be evident that if \textit{Case 0} does
+not hold then \textit{Case 1} holds, and vice-versa.
+
 Let 
 
 \begin{align*}
-    B = \bigwedge_{i=1}^{m} \left( l_{i 1} \lor  l_{i 2} \lor  l_{i 3} \right) 
-\end{align*}
-
-an instance of $3$-SAT with variables $x_1, \ldots, x_n$. Let 
-
-\begin{align*}
-    i &\in \left\{ 1,\ldots, n \right\}  \\
-    j &\in \left\{ 1,\ldots, m \right\}  \\
-    r &\in \left\{ 1, 2, 3 \right\}  \\
-    k &\in \left\{ 1, \ldots, m(n-1) \right\} 
-\end{align*}
-
-Let $G$ be a tripartite $3$-hypergraph constructed as follows. 
-
-\begin{itemize}
-    \item $X = \left\{ a_{ij} \right\} \cup \left\{ s_j \right\} \cup h_k $
-    \item $Y = \left\{ b_{ij} \right\}  \cup \left\{ t_j \right\}  \cup \left\{ g_k \right\} $
-    \item $Z = \left\{ u_{ij}, w_{ij} \right\} $
-\end{itemize}
-
-for all possible combinations of their indeces. It is easy to see 
-
-\begin{align*}
-    |X| &= nm + m + m(n-1) = 2nm \\ 
-    |Y| &= nm + m + m(n-1) = 2nm \\ 
-    |Z| &= nm + nm = 2nm
-\end{align*}
-
-This is, all parts of the hypergraph have the same number of vertices. For its edges,
-we first define 
-
-\begin{align*}
-    v_{jr} = \begin{cases}
-        u_{ij} & l_{jr} = x_i \\ 
-        w_{ij} & l_{jr} = \overline{x_i} 
-    \end{cases}
-\end{align*}
-
-Then we define $E = E_0 \cup \ldots \cup  E_3$ with
-
-\begin{align*}
-    E_0 &= \left\{ a_{ij}, b_{ij}, u_{ij} \right\} \\
-    E_1 &= \left\{ a_{i(j+1)}, b_{ij}, w_{ij} \right\} \\
-    E_2 &= \left\{ h_k, g_k, u_{ij} \right\} \cup \left\{ h_k, g_k, w_{ij} \right\} \\
-    E_3 &= \left\{ s_j, t_j, v_{jr} \right\} \\
-\end{align*}
-
-for all possible combinations of their indeces.
-
-We shall prove there is a perfect matching over the hypergraph iff $B$
-is satisfiable.
-
-$(\Rightarrow)$ Assume there is a perfect matching $M$. Take an arbitrary $i$
-and a fixed index $j_0$ such that $a_{ij_0}$ is in a side of $M$. Then this
-side must be a side $\left\{ a_{ij_0}, b_{ij_0}, u_{ij_0} \right\} E_0$.
-
-Since $M$ matching, its sides are all disjoint, which means $b_{ij}$
-cannot appear in any other side of $M$. But since $M$ is complete, 
-$a_{ij_0+1}$ must appear in some side, from which follows 
-$\left\{ a_i(j_0+1), b_{ i(j_0+1) }, u_{i(j_0+1)} \right\} \in E(M)$.
-Inductively, it follows 
-
-\begin{align*}
-    \forall j : \left\{ a_{ij}, b_{ij}, u_{ij} \right\} \in E(M) 
-\end{align*}
-
-We call this \textbf{Case 0}.
-
-An analogous analysis gives as a second case that 
-
-\begin{align*}
-    \forall j : \left\{ a_{i(j+1)}, b_{ij}, u_{ij} \right\} \in E(M) 
-\end{align*}
-
-which we call \textbf{Case 1}. Since the $a_{ij}$ vertices only appear in $E_0,
-E_1$, if \textbf{Case 1} is not the case, we must have \textbf{Case 1}, and
-vice-versa.
-
-We define 
-
-\begin{align*}
     \overrightarrow{b}_i = \begin{cases}
-        1 & \textbf{Case 1} \text{ holds for } i\\
-        0 & \textbf{Case 0} \text{ holds for } i
+        0 & \text{Case 0 holds for }i \\ 
+        1 & \text{Case 1 holds for }i
     \end{cases}
 \end{align*}
 
-Since we want to prove $B(\overrightarrow{b}) = 1$, suffices to prove that for
-any $j$, there is some $r$ s.t. $l_{jr}(\overrightarrow{b}) = 1$. For any arbitrary 
-$j$, since $M$ is perfect, the verices $t_j, s_j$ must belong to the matching.
-Then there is some $r$ s.t. $\left\{ s_j, t_j, v_{jr} \right\} \in E(M)$.
+Since $B = B_1 \land  \ldots \land B_m$, we must only prove $B_j(\overrightarrow{b}) = 1$
+for an arbitrary $j$, which amounts to proving there is some $r$ s.t. 
+$l_{jr}(\overrightarrow{b}) = 1$. But there are two cases for any such 
+$l_{jr}$.
 
-If $l_{jr} = x_i$, then $v_{jr} = u_{ij}$ and $\left\{ s_j, t_j, u_{ij} \right\} \in E(M)$.
-Then $\left\{ a_{ij}, b_{ij}, u_{ij} \right\} \not\in E(M)$, so we 
-are in \textbf{Case 1}. Then $l_{jr}(\overrightarrow{b}) = 1$.
+If $l_{jr} = x_i$, then $v_{jr} = u_{ij}$ and $\left\{ s_j, t_j, u_{ij} \right\} $
+belong to the matching. Then $\left\{ a_{ij}, b_{ij}, u_{ij} \right\} \in E_0$
+cannot belong to the matching. Then we have \textit{Case 1}.
+Then $l_{jr}(\overrightarrow{b}) = x_i(\overrightarrow{b}) = 1$.
 
-If $l_{jr} = \overline{x_i}$, then $v_{jr} = w_{ij}$ and $\left\{ s_j, t_j, w_{ij} \right\} \in E$.
-But then $\left\{ a_{i(j+1)}, b_{ij}, w_{ij} \right\} \not\in E(M) $,
-so we are in \textbf{Case 0}. Then $l_{jr}(\overrightarrow{b}) = 1$.
+Similarly, one proves $l_{jr} = \overline{x_i}$ entails \textit{Case 0}, which
+entails $l_{jr}(\overrightarrow{b}) = \overline{x_i}(\overrightarrow{b}) = 1$.
 
-Then, the assignment we have provided makes $B_i$ true for any 
-$B_i$.
+The assignment makes $B(\overrightarrow{b}) = 1$. $\blacksquare$
 
+($\Leftarrow$) Now assume there is some $\overrightarrow{b}$ s.t.
+$B(\overrightarrow{b}) = 1$. We shall define edges 
+$F_0 \subseteq E_0, \ldots, F_3 \subseteq E_3$ to make up our matching.
+Let 
 
+\begin{align*}
+    F_0 &= \left\{ \left\{ a_{ij}, b_{ij}, u_{ij} \right\} : 1 \leq j \leq m \land  b_i = 0  \right\} \\
+    F_1 &= \left\{ \left\{ a_{i(j+1)}, b_{ij}, w_{ij} \right\} : 1 \leq j \leq m \land  b_i = 1  \right\}
+\end{align*}
 
+These are clearly disjoint. Now, since $B(\overrightarrow{b}) = 1$, for any $j$
+there is some $r_0$ s.t. $l_{jr_0}(\overrightarrow{b}) = 1$. We define 
 
+\begin{equation*}
+    F_3 = \left\{ s_j, t_j, v_{jr_0} \right\} 
+\end{equation*}
 
+If a vertex is common sides in $F_0$ and $F_3$, this entails $v_{jr_0} =
+u_{ij}$ which entails $l_{jr_0} = x_i$. But our assumption is $b_i = 0$, which
+contradicts $l_{jr_0}(\overrightarrow{b}) = 1$. The sets are disjoint. 
 
+Similarly, one sees $F_1$ and $F_3$ are disjoint. So we have 
+provided a matching. However, our matching is not perfect,
+because we have left some vertices of $Z$ uncovered. Let 
 
+\begin{align*}
+    N = \left\{ z \in Z : z \text{ not covered by } F_0, F_1, F_3 \right\} 
+\end{align*}
 
+Let $p = |\left\{ i : b_i = 0 \right\} |, q = |\left\{ i : b_i = 1 \right\}| $,
+s.t. $n = p + q$. It is clear, due to the definition of these sets, that 
 
+\begin{align*}
+    |Z - N| &= |F_0| + |F_1| + |F_3| \\ 
+            &=mp + mq + m \\ 
+            &=m(p+q+1) \\ 
+            &=m(n+1)
+\end{align*}
 
+Now,
 
+\begin{align*}
+    |N| = |Z| - |Z-N| = 2nm - m(n+1) = m(n-1)
+\end{align*}
 
+This readily entails there is a bijection $f : \left\{ 1, \ldots, m(n-1) \right\} \to N$. Thus, we define 
 
+\begin{equation*}
+    F_2 = \left\{ h_k, g_k, f(k) \right\} 
+\end{equation*}
 
+Since $f$ is a bijection, the sides in this set have no vertices in common
+(injection) and all vertices are covered (surjection).
 
-
+$\therefore $ $E(M) = \bigcup_{i=0}^{3} F_i$ induces a perfect matching.
 \end{document}
 
 

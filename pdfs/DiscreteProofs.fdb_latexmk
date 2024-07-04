@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1719972883 "DiscreteProofs.tex" "DiscreteProofs.pdf" "DiscreteProofs" 1719972884 2
+["pdflatex"] 1720066043 "DiscreteProofs.tex" "DiscreteProofs.pdf" "DiscreteProofs" 1720066044 2
   "/etc/texmf/web2c/texmf.cnf" 1695394668 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1640468671 2914 8283dfc24eaf1964346f843d7605c2b0 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc" 1422827479 2083 60e36f8eac802fcaf19eabe2633b406e ""
@@ -102,7 +102,6 @@
   "/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1minntx.fd" 1646341564 2292 afc44864f7d63e485c0ce1dbd16467eb ""
   "/usr/share/texlive/texmf-dist/tex/latex/newtx/t1minntx.fd" 1646341564 2283 0e5ca6062792d042a6858838c3d1ad2e ""
   "/usr/share/texlive/texmf-dist/tex/latex/newtx/t1ntxtlf.fd" 1641850547 2211 2794559346df5bbb0dbf1a757c3cc21f ""
-  "/usr/share/texlive/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd" 1423006468 1219 06811c362a6c86c10e17f80577d8ceee ""
   "/usr/share/texlive/texmf-dist/tex/latex/newtx/untxexa.fd" 1376004569 558 91031960917530f42e0f8fc4d1db1550 ""
   "/usr/share/texlive/texmf-dist/tex/latex/newtx/untxmia.fd" 1596661975 3832 57dfbcfb6f19c9f63a28ca1bfda0abe2 ""
   "/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsyc.fd" 1376004569 558 e8967b9c8273bc0c05b993fe92a9b757 ""
@@ -111,14 +110,11 @@
   "/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty" 1615762720 4288 94714aa7f535440f33181fec52a31963 ""
   "/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty" 1655411236 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
-  "/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc" 1529098226 3124 3813fd4c981d99822890a2861b0d274c ""
-  "/usr/share/texmf/fonts/tfm/public/tex-gyre/ts1-qtmr.tfm" 1480098718 1600 20cdf11dab97d5d39e847571f9314407 ""
-  "/usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb" 1480098745 133302 8dca243a80ecf4cfe00077d4bd995bd7 ""
   "/usr/share/texmf/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1695394817 4623455 fa0568a71dd9a288d6c226ee477506c6 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1695394844 7879794 eff26094dbe002b6e482c026ea4c81e2 ""
-  "DiscreteProofs.aux" 1719972884 2189 61a3835364d73c1cde59e18b64a12307 "pdflatex"
-  "DiscreteProofs.tex" 1719972883 44721 38f2b945ef8b67cee8a59cbe391fc062 ""
+  "DiscreteProofs.aux" 1720066044 2189 b6e3c1f62ea9858811588b83df24d9b1 "pdflatex"
+  "DiscreteProofs.tex" 1720066043 46216 a8ce06b2e9c6c444d81f99a48ba1e522 ""
   (generated)
   "DiscreteProofs.aux"
   "DiscreteProofs.log"

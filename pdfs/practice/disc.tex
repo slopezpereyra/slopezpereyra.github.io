@@ -18,129 +18,128 @@
 
 \begin{document}
 
-I shall prove $3$-SAT is NP complete by proving SAT $\leq_\rho$ $3$-SAT. In order 
-to do this, we are to provide an algorithm or effective procedure $\mathcal{A}$
-that is capable of constructing an instance of $3$-SAT from an instance 
-of SAT in polynomial time, and construct it in such a way that one if 
-satisfiable if and only if the other one is satisfiable.  
+Sea $B$ instancia de $3$-sat. Construyamos el siguiente $3$-hiper grafo. Let $i
+\in \left\{ 1, \ldots, n \right\}, j \in \left\{ 1, \ldots, m \right\}  $, $r
+\in \left\{ 1, 2, 3 \right\}, k \in \left\{ 1\ldots m(n-1) \right\}  $.
 
-Let 
+\textbf{Vertices}. Define 
 
 \begin{align*}
-    B = \bigwedge_{i=1}^{m} \left\{ l_{i 1} \lor  \ldots \lor l_{i r_i} \right\} 
+    X &= \left\{ a_{ij} \right\}  \cup \left\{ s_j \right\} \cup \left\{ h_k \right\} \\ 
+    Y &= \left\{ b_{ij} \right\} \cup \left\{ t_j \right\} \cup \left\{ g_k \right\} \\ 
+    Z &= \left\{ u_{ij} \right\} \cup \left\{ w_{ij} \right\} 
 \end{align*}
 
-be an instance of SAT, where $r_i$ is the number of literals in the $i$th term 
-of $B$. We shall define the following effective procedure $\mathcal{P}$: For any
-arbitrary $B_i$, we shall construct $E_i$ as follows:
+Define 
 
-\begin{itemize}
-    \item If $r_i = 1$, 
-        $$E_i = \left( l_{i 1} \lor y_{ 1} \lor  y_{2} \right) \land \left\{
-        l_{i 1} \lor  \overline{y_{ 1}} \lor  y_{ 2} \right\} \land \left(
-    l_{i 1} \lor y_{ 1} \lor  \overline{y_{ 2}} \right) \land \left( l_{i 1}
-\lor  \overline{y_{ 1}} \lor  \overline{y_{ 2}} \right)   $$
-    \item If $r_{i} = 2$, 
-        \begin{equation*}
-            E_i = (l_{i 1} \lor  l_{i 2} \lor  y_{ 1}) \land  (l_{i 1} \lor  l_{i 2} \lor  \overline{y_{ 1}})
-        \end{equation*}
-    \item If $r_{i} = 3$, $E_i = B_i$.
-    \item If $r_i \geq 4$, then 
-        \begin{align*}
-            E_i = &(l_{i 1} \lor  l_{i 2} \lor  y_{ 1}) \land (\overline{y_{ 1}} \lor  y_{ 2} \lor  l_{i 3}) \land (\overline{y_{ 2}} \lor  y_{ 3} \lor l_{i 4}) \\ 
-                  &\land  \ldots \\ 
-                  &\land (\overline{y_{ (r-4)}} \lor  y_{(r_i-3)} \lor  l_{i(r_i-2)}) \land (\overline{y_{ (r_i-3)}} \land l_{i(r_i-1)} \land l_{ir_i})
-        \end{align*}
-\end{itemize}
+\begin{align*}
+    v_{jr} = \begin{cases}
+        u_{ij} & \exists  i : l_{ir} = x_k \\ 
+        w_{ij} & \exists i : l_{ir} = \overline{x_k}
+    \end{cases}
+\end{align*}
 
-where each $y_{j}$ are new variables. We shall prove $E = \bigwedge_{i=1}^{m'}
-E_i$ is satisfiable iff $B$ is satisfiable.
+Let $E$ be the union of 
 
-$(\Rightarrow)$ Assume $(\overrightarrow{b}, \overrightarrow{u})$ is an
-assignment for the $x$, $y$ variables respectively s.t. $E(\overrightarrow{b},
-\overrightarrow{u}) =1$. Then, for any arbitrary $E_i$, there is at least some
-literal that evaluates to one under this assignment. Let us consider by cases. 
+\begin{align*}
+    E_0 &= \left\{ a_{ij}, b_{ij}, u_{ij} \right\} \\ 
+    E_1 &= \left\{ a_{(i+1)j}, b_{ij}, w_{ij} \right\} \\ 
+    E_2 &= \left\{ h_k, g_k, u_{ij} \right\} \cup \left\{ h_k, g_k w_{ij} \right\} \\ 
+    E_3 &= \left\{ s_j, t_j, v_{jr} \right\} 
+\end{align*}
 
-\textit{(1: $r_i = 1$)}. Assume $B_i(\overrightarrow{b})= 0$. Then $l_{i 1}(\overrightarrow{b}) = 0$. But since $E_i(\overrightarrow{b}, \overrightarrow{u}) = 1$, we must have 
+Assume there is a perfect matching. Take an arbitrary $i$.
+If there is some $j$ s.t. $a_{ij}$ belongs to the matching, 
+then $a_{ij} \in E_0$ or $a_{ij} \in E_1$. If $a_{ij} \in E_0$,
+this is if $\left\{ a_{ij}, b_{ij}, u_{ij} \right\} $ is in the matching, 
+it cannot be the case that $a_{(i+1)j, b_{ij}, w_{ij}}$ is in the matching.
+This inductively implies that now member of $E_1$ is in the matching 
+and all members of $E_0$ are in the matching. Call this CASE 0. 
+
+A similar reasoning reveals that if any side of $E_1$ belongs to 
+the matching, all sides of $E_1$ belong to the matching and no 
+side of $E_0$ belong to the matching. Call this CASE 1. 
+
+Define 
+
+\begin{align*}
+    \overrightarrow{b_i} = \begin{cases}
+        1 & \textbf{CASE 1 for }i\\
+        0 & \textbf{CASE 0 for }i
+    \end{cases}
+\end{align*}
+
+We must only prove there is some $l_{ir}$ s.t. $l_{ir}(\overrightarrow{b}) = 1$ 
+for any $i$. There are two cases. 
+
+If $l_{ir} = x_k$, then $v_{jr} = u_{ij}$. Then $\left\{ s_j, t_j, u_{ij} \right\} $ 
+belongs to the matching. But then $\left\{ a_{ij}, b_{ij}, u_{ij} \right\} $
+cannot belong to the matching. Then Case 1 holds 
+and $l_{ir}(\overrightarrow{b}) = 1$.
+
+If $l_{ir} = \overline{x_k}$, $v_{jr} = w_{ij}$. Then 
+$\left\{ s_j, t_j, w_{ij} \right\} $ belongs to the matching. 
+But then $\left\{ a_{(i+1) j}, b_{ij}, w_{ij} \right\} $
+cannot belong to the matching and we are in case 0.
+Then $l_{ir}(\overrightarrow{b}) = 1$.
+
+In both cases, $l_{ir}(\overrightarrow{b}) = 1$.
+
+
+$(\Leftarrow)$ Assume there is some $\overrightarrow{b}$ s.t. $B(\overrightarrow{b}) = 1$.
+We will build a matching with edges $F_0 \cup \ldots\cup F_3$ such that 
+$F_i \subseteq E_i$.
+
+In particular, we let 
+
+\begin{align*}
+    F_0 = \left\{ \left\{ a_{ij}, b_{ij}, u_{ij} \right\} : b_i = 0  \right\} \\ 
+    F_1 = \left\{ a_{(i+1)j, b_{ij}, w_{ij}} : b_i = 1 \right\} 
+\end{align*}
+
+Now, for any $i$ there is some $l_{ir}$ s.t. $l_{ir}(\overrightarrow{b}) = 1$.
+I make 
+
+\begin{align*}
+    F_3 = \left\{ s_j, t_j, v_{jr} \right\} 
+\end{align*}
+
+If an edge belongs to $F_0$ and $F_3$, we must have $v_{jr} = u_{ij}$. But this
+implies both $l_{jr} = x_i$ and $b_i = 0$, which is absurd. 
+
+If an edge belongs to $F_1$ and $F_3$ then we must have 
+$v_{jr} = w_{ij}$.But this implies $l_{jr} = \overline{x_k}$ and 
+$b_i = 1$, which is absurd. 
+
+So, we have a matching. But we must see that it is perfect.
+For this purpose, we define: 
 
 \begin{equation*}
-    (y_{ 1} \lor  y_{ 2}) \land  \ldots \land  (\overline{y_{ 1}} \lor  \overline{y_{ 2}})(\overrightarrow{u}) = 1
+    N = \left\{ z \in Z : z \text{ not covered by } F_0, F_1, F_2 \right\} 
 \end{equation*}
 
-But it is trivial to see that any of the possible assignments makes some terms
-true and others false simultaneously, which is a contradiction. So
-$B_i(\overrightarrow{b}) = 1$.
-
-\textit{(2 : $r_i = 2$)}. Assume $B_i(\overrightarrow{b}) = 0$. Since $E_{i}(\overrightarrow{b}, \overrightarrow{u}) = 1$ we must have 
-
-\begin{equation*}
-    [ y_{ 1} \land  y_{ 2} ](\overrightarrow{u}) = 1 \Rightarrow \bot
-\end{equation*}
-
-Then $B_i(\overrightarrow{b}) = 1$.
-
-\textit{(3 : $r_i = 3$)}. Trivial. 
-
-\textit{(4: $r_i \geq 4$)}. Assume $B(\overrightarrow{b}) = 0$. Then $E_i$ is
-an expression of the form $y_{ 1} \land  (\overline{y_1} \lor  y_2) \land
-(\overline{y_2} \lor  y_3) \land  \ldots \land  \overline{y_{r_i - 2}}$.
-Necessarily, $y_1$ must be true, which entails $y_2$ must 
-be true, which inductively entails $y_k$ is true for any $k$.
-But then the last term is false. $( \bot )$
-
-In all possible cases, $B_i(\overrightarrow{b}) = 1$ for any $i$. Then
-$B(\overrightarrow{b}) = 1$.
-
-$(\Leftarrow)$ Assume $\overrightarrow{b}$ is an assignment s.t.
-$B(\overrightarrow{b}) = 1$. Take an arbitrary $B_i$. Since it is true under
-$\overrightarrow{b}$, there is at least one fixed $j_0$ s.t.
-$l_{ij_0}(\overrightarrow{b}) = 1$. Let us define the assignment $\overrightarrow{u}$
-as follows:
+Clearly, $|F_3| = m$. Let $p$ be the amount of $i$s s.t. $b_i = 0$
+and $q$ the amount of $i$s s.t. $b_i = 1$. Clearly, $n = p + q$,
+$|F_0| = mp, |F_1| = mq$. Then 
 
 \begin{align*}
-    &u_1 = u_2 = \ldots = u_{j_0 - 2} = 1 \\
-    &u_{j_0 - 1} = u_{j_0} = \ldots = u_{k} = 0 \\
+    |Z - N| = |F_0| + |F_1| + |F_3| = mp + mq + m = m(n+1)
 \end{align*}
 
-for all $k$ variables $y_1, \ldots, y_k$. We shall prove this assignment makes 
-$E(\overrightarrow{b}, \overrightarrow{u}) = 1$. For this to occur, suffices 
-that $E_i(\overrightarrow{b}, \overrightarrow{u}) = 1$. There are 
-four possible cases.
+Then $|N| = |Z| - |Z - N| = 2mn - m(n+1) = m(n-1)$
 
-\textit{(1: $r_i = 1$)}. In this case, each term in the series of conjuctions 
-will either be anterior to the appearence of $l_{i j_0}$, posterior to it,
-or will be the term with $l_{i j_0}$. If it is the term with $l_{ij_0}$ it 
-will be true by assumption. If it is anterior it will contain at least 
-one $y_{k}$, and by definition this will be true. If it is posterior 
-it will contain at least one $\overline{y}_{i k}$ and it will be true.
-
-
-\textit{(2 : $r_i = 2$)}. By def. of $E_i$, both terms contain all 
-$l_{i j}$, so both terms will contain $l_{i j_0}$ and will 
-be true.
-
-\textit{(3 : $r_i = 3$)}. Trivial.
-
-\textit{(4: $r_i \geq 4$)}. Observe that $E_i$ will be of the form 
+Then there is a bijection $f : \left\{ 1, \ldots, m(n-1) \right\} : N $. 
+We define 
 
 \begin{align*}
-    E_i &= (l_{i 1} \lor  l_{i 2} \lor  y_{ 1}) &\text{$y_{ 1}(\overrightarrow{u}) = 1$ by def} \\ 
-        &=(\overline{y_{ 1}} \lor  y_{ 2} lor l_{i 3}) &\text{True for the same reason} \\ 
-        &\vdots \\ 
-        &=(\overline{y_{ (j_0 - 3)}} \lor y_{ j_0 - 2} \lor  l_{i (j_0 -1)})\\
-        &=(\overline{y_{ (j_0 - 2)}} \lor y_{ ( j_0 - 1 )} \lor  l_{i j_0})\\
-        &=(\overline{y_{ (j_0 - 1)}} \lor y_{ j_0} \lor  l_{i ( j_0 + 1)})\\
-        &\vdots \\ 
-        &=(\overline{y_{r_i - 2}} \lor  l_{i( r_i - 1 )} \lor  l_{ir})
+    \left\{ g_k, h_k, f(k) \right\} 
 \end{align*}
 
-all true.
+which has disjoint edges because it is injective and covers 
+every uncovered $z$ because it is surjective. 
 
-
-
-
-
-
+All sides of $Z$ are now covered and since $|X| = |Y| = |Z|$
+the matching is perfect.
 
 \end{document}
 
