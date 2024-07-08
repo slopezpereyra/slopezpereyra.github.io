@@ -116,7 +116,7 @@ connected the generated graph is connected. A pseudo-code algorithm may
 look as follows.
 
 $$
-\begin{aligned}
+\begin{align*}
     &\\textbf{Input: } n, m\\\\
     &(V, E) = \\textbf{genRandomTree}(n)\\\\
     &S = [~N^c(v_1), \\ldots, N^c(v_n)~]  \\\\
@@ -139,7 +139,7 @@ $$
     &\\qquad\\textbf{fi}\\\\
     &\\textbf{od}\\\\
     &\\textbf{return }
-\end{aligned}
+\end{align*}
 $$
 
 Generating a tree from a random Prüfer sequence is $O(n^2)$. Listing all
