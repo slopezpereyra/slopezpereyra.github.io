@@ -19,12 +19,12 @@ Before proceeding, quick definitions.
     $\mathcal{G}_n$ the set of all graphs with $n$ vertices. We shall
     assume the vertices of these graphs are labeled $1, \ldots, n$.
 
--   For any $T \in \mathcal{T}_n$, we define $\mathcal{U}_T := \left\{ G
-            \in \mathcal{G}_n : T \subseteq G  \right\}$ and refer to it
+-   For any $T \in \mathcal{T}_n$, we define $\mathcal{U}_T := \left\\{ G
+            \in \mathcal{G}_n : T \subseteq G  \right\\}$ and refer to it
     as *the universe* of $T$.
 
 -   Let
-    $\Gamma(n) = \left\{ \left\{ x, y \right\} : x, y \in \left\{ 1, \ldots, n\right\}    \right\}$.
+    $\Gamma(n) = \left\\{ \left\{ x, y \right\} : x, y \in \left\{ 1, \ldots, n\right\\}    \right\\}$.
 
 In general, whenever I write of a tree $T$, I mean an arbitrary
 $T \in \mathcal{T}_n$; and whenever I write of a graph $G$, I mean an
@@ -42,7 +42,7 @@ special relationship between $\Gamma(n)$ and $\mathcal{U}_T$ to produce
 random connected graphs.
 
 Each tree is perfectly identified by its Prüfer sequence. Then, for a
-fixed $n$, the language $\left\{ 1, \ldots, n \right\}^{n-2}$ indexes a
+fixed $n$, the language $\left\\{ 1, \ldots, n \right\\}^{n-2}$ indexes a
 family of functions $\mathcal{F}$ defined as:
 
 $$\begin{aligned}
@@ -70,12 +70,12 @@ $n$ vertices.
 >
 > *(2)* Span the tree $T = (V, E)$ of the Prüfer sequence $p$.
 >
-> *(3)* Let $k \in_R \left\{ 0, \ldots, \frac{ n(n-1) }{2} \right\}$.
+> *(3)* Let $k \in_R \left\\{ 0, \ldots, \frac{ n(n-1) }{2} \right\\}$.
 >
 > *(4)* Let $\ell_1, \ldots, \ell_k \in_R \Gamma(n) - E(T)$, all
 > distinct.
 >
-> *(5)* Let $E = E \cup \left\{ \ell_1,\ldots, \ell_k \right\}$
+> *(5)* Let $E = E \cup \left\\{ \ell_1,\ldots, \ell_k \right\\}$
 
 Because all trees of $n$ vertices correspond to a sequence, all tres can
 be sampled. And all connected graphs can be derived from the set of all
@@ -99,13 +99,13 @@ graphs of $n$ edges. The effective procedure to do this is:
 >
 > *(2)* Span the tree $T = (V, E)$ of the Prüfer sequence $p$.
 >
-> *(3)* If $V = \left\{ v_1, \ldots, v_n \right\}$, list all its
+> *(3)* If $V = \left\\{ v_1, \ldots, v_n \right\\}$, list all its
 > non-neighbours; i.e. generate $\Gamma^c(v_1), \ldots, \Gamma^c(v_n)$.
 >
 > *(4)* Sample a random, non-saturated vertex $v \in V$, and sample a
 > random vertex $w$ from $\Gamma^c(v)$.
 >
-> *(5)* Add $\left\{ v, w \right\}$ to $E$. Remove $v$ from the list of
+> *(5)* Add $\left\\{ v, w \right\\}$ to $E$. Remove $v$ from the list of
 > non-neighbours of $w$, and $w$ from the list of non-neighbours of $v$.
 >
 > *(6)* If $|E| = m$, finish. Otherwise go to *4*.
@@ -114,7 +114,8 @@ It is clear that the procedure always finishes, and since the tree is
 connected the generated graph is connected. A pseudo-code algorithm may
 look as follows.
 
-$$\\begin{aligned}
+$$
+\begin{aligned}
     &\\textbf{Input: } n, m\\\\
     &(V, E) = \\textbf{gen\\_random\\_tree}(n)\\\\
     &S = \\big[~\\Gamma^c(v_1), \\ldots, \\Gamma^c(v_n)~\\big] &\\left\\{ \\text{Non-neighbours} \\right\\} \\\\
@@ -136,7 +137,9 @@ $$\\begin{aligned}
     &\\qquad\\qquad\\textbf{delete\\_element}(S[w], v)\\\\ 
     &\\qquad\\textbf{fi}\\\\
     &\\textbf{od}\\\\
-    &\\textbf{return } T\\end{aligned}$$
+    &\\textbf{return }
+\end{aligned}
+    $$
 
 Generating a tree from a random Prüfer sequence is $O(n^2)$. Listing all
 the non-neighbours is also $O(n^2)$. Within the while loop there are
@@ -162,18 +165,18 @@ The algorithm was implemented in C but the generated graphs
 were plotted using the `networkx` Python package.
 
 <p align="center">
-  <img src="../Images/RandST1.png">
+  <img src="../Images/RandST1.png" width=50% style="border: 6px solid #231709;">
 </p>
 
 <p align="center">
-  <img src="../Images/RandG1.png">
+  <img src="../Images/RandG1.png" width=50% style="border: 6px solid #231709;">
 </p>
 
 
 <p align="center">
-  <img src="../Images/RandST2.png">
+  <img src="../Images/RandST2.png" width=50% style="border: 6px solid #231709;">
 </p>
 
 <p align="center">
-  <img src="../Images/Rand2.png">
+  <img src="../Images/Rand2.png" width=50% style="border: 6px solid #231709;">
 </p>
