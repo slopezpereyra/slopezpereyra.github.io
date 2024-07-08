@@ -23,7 +23,7 @@ Before proceeding, quick definitions.
             \in \mathcal{G}_n : T \subseteq G  \right\\}$ and refer to it
     as *the universe* of $T$.
 
--   Let$\Gamma(n) = \left\\{ \left\{ x, y \right\\} : x, y \in \left\\{ 1, \ldots, n\right\\}    \right\\}$.
+-   Let$\Gamma(n) = \\{ \\{ x, y \\} : x, y \in \\{ 1, \ldots, n\\}    \\}$.
 
 In general, whenever I write of a tree $T$, I mean an arbitrary
 $T \in \mathcal{T}_n$; and whenever I write of a graph $G$, I mean an
@@ -45,7 +45,7 @@ fixed $n$, the language $\left\\{ 1, \ldots, n \right\\}^{n-2}$ indexes a
 family of functions $\mathcal{F}$ defined as:
 
 $$\begin{aligned}
-    \mathcal{F}(w) : \mathcal{U}_{T_w} &\to \Gamma(n)  \\ 
+    \mathcal{F}(w) : \mathcal{U}_{T_w} &\to \Gamma(n)  \\ \\
     \mathcal{F}(w)(G) &= E(G) - E(T_w)\end{aligned}$$
 
 where $T_w$ is the tree corresponding to the Prüfer sequence $w$. We
@@ -89,6 +89,8 @@ have the same number of spanning trees. $\therefore$ It is more likely
 to generate a graph with many spanning trees than a graph with few
 spanning trees.
 
+--- 
+
 The second algorithm extends the input from only $n$, the number of
 vertices, to $m$, the number of edges. Thus, it specifies the problem
 further into the question of how to generate denser or sparser connected
@@ -116,24 +118,24 @@ look as follows.
 $$
 \begin{aligned}
     &\\textbf{Input: } n, m\\\\
-    &(V, E) = \\textbf{gen\\_random\\_tree}(n)\\\\
-    &S = [~\\Gamma^c(v_1), \\ldots, \\Gamma^c(v_n)~]  \\\\
+    &(V, E) = \\textbf{genRandomTree}(n)\\\\
+    &S = [~N^c(v_1), \\ldots, N^c(v_n)~]  \\\\
     &C = [~ |S[1]|, \\ldots, |S|[n]|~]  \\\\
     &V = [1, \\ldots, n]   \\\\
     &n' = n\\\\
     &\\textbf{while } |E(T)| < m \\textbf{ do } \\\\ 
     &\\qquad i := \\textbf{random}(1, n') \\\\ 
     &\\qquad v := V[i]\\\\
-    &\\qquad \\textbf{if } \\left( d(v) == n - 1 \\right) \\textbf{ do } \\\\ 
-    &\\qquad \\qquad \\textbf{delete\\_at}(V, i)\\\\ 
+    &\\qquad \\textbf{if }  d(v) == n - 1  \\textbf{ do } \\\\ 
+    &\\qquad \\qquad \\textbf{deleteAt}(V, i)\\\\ 
     &\\qquad\\qquad n' := n' - 1 \\\\ 
     &\\qquad\\textbf{else } \\\\ 
     &\\qquad\\qquad j = \\textbf{random}(1, C[v])\\\\
     &\\qquad\\qquad w := S[v][j] \\\\ 
     &\\qquad\\qquad E(T) := E(T) \\cup  \\left\\{ v, w \\right\\} \\\\
     &\\qquad\\qquad C[v] := C[v] - 1 \\\\ 
-    &\\qquad\\qquad \\textbf{delete\\_at}(S[v], j)  \\\\ 
-    &\\qquad\\qquad\\textbf{delete\\_element}(S[w], v)\\\\ 
+    &\\qquad\\qquad \\textbf{deleteAt}(S[v], j)  \\\\ 
+    &\\qquad\\qquad\\textbf{deleteElement}(S[w], v)\\\\ 
     &\\qquad\\textbf{fi}\\\\
     &\\textbf{od}\\\\
     &\\textbf{return }
@@ -164,18 +166,18 @@ The algorithm was implemented in C but the generated graphs
 were plotted using the `networkx` Python package.
 
 <p align="center">
-  <img src="../Images/RandST1.png" width=50% style="border: 6px solid #231709;">
+  <img src="../Images/RandST1.png" width=75% >
 </p>
 
 <p align="center">
-  <img src="../Images/RandG1.png" width=50% style="border: 6px solid #231709;">
+  <img src="../Images/RandG1.png" width=75% >
 </p>
 
 
 <p align="center">
-  <img src="../Images/RandST2.png" width=50% style="border: 6px solid #231709;">
+  <img src="../Images/RandST2.png" width=75% >
 </p>
 
 <p align="center">
-  <img src="../Images/Rand2.png" width=50% style="border: 6px solid #231709;">
+  <img src="../Images/Rand2.png" width=75% >
 </p>
