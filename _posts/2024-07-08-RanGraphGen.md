@@ -23,8 +23,7 @@ Before proceeding, quick definitions.
             \in \mathcal{G}_n : T \subseteq G  \right\\}$ and refer to it
     as *the universe* of $T$.
 
--   Let
-    $\Gamma(n) = \left\\{ \left\{ x, y \right\} : x, y \in \left\{ 1, \ldots, n\right\\}    \right\\}$.
+-   Let$\Gamma(n) = \left\\{ \left\{ x, y \right\\} : x, y \in \left\\{ 1, \ldots, n\right\\}    \right\\}$.
 
 In general, whenever I write of a tree $T$, I mean an arbitrary
 $T \in \mathcal{T}_n$; and whenever I write of a graph $G$, I mean an
@@ -118,9 +117,9 @@ $$
 \begin{aligned}
     &\\textbf{Input: } n, m\\\\
     &(V, E) = \\textbf{gen\\_random\\_tree}(n)\\\\
-    &S = \\big[~\\Gamma^c(v_1), \\ldots, \\Gamma^c(v_n)~\\big] &\\left\\{ \\text{Non-neighbours} \\right\\} \\\\
-    &C = \\big[~ |S[1]|, \\ldots, |S|[n]|~\\big] & \\left\\{ \\text{Cardinalities} \\right\\} \\\\
-    &V = [1, \\ldots, n] &\\left\\{ \\text{Non-saturated vertices } \\right\\} \\\\
+    &S = [~\\Gamma^c(v_1), \\ldots, \\Gamma^c(v_n)~]  \\\\
+    &C = [~ |S[1]|, \\ldots, |S|[n]|~]  \\\\
+    &V = [1, \\ldots, n]   \\\\
     &n' = n\\\\
     &\\textbf{while } |E(T)| < m \\textbf{ do } \\\\ 
     &\\qquad i := \\textbf{random}(1, n') \\\\ 
@@ -139,7 +138,7 @@ $$
     &\\textbf{od}\\\\
     &\\textbf{return }
 \end{aligned}
-    $$
+$$
 
 Generating a tree from a random Prüfer sequence is $O(n^2)$. Listing all
 the non-neighbours is also $O(n^2)$. Within the while loop there are
