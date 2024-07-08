@@ -1,3 +1,9 @@
+---
+title: Random graph generation 
+categories: [ Science ]
+---
+
+
 The generation of connected random graphs is non-trivial and important
 to many applications. In particular, it is not easy to sample a
 connected random graph from the space $\mathcal{G}$ of all connected
