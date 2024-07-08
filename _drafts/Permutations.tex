@@ -21,18 +21,19 @@
 Hill climbing is a mathematical optimization algorithm. Given a function $f :
 \mathbb{R}^n \to \mathbb{R}$, the algorithm takes an arbitrary
 $\overrightarrow{x} \in \mathcal{D}_f$ and compares $f(\overrightarrow{x}),
-f(\Delta \overrightarrow{x})$. If shifting $\overrightarrow{x}$ increases the
-function, it lets $\overrightarrow{x} := \Delta\overrightarrow{x}$ and repeats
-the process, and thus iteratively until some criteria is met.
+f(\Delta \overrightarrow{x})$. If the sfhit increases the
+function, it lets $\overrightarrow{x} := \Delta\overrightarrow{x}$; otherwise 
+it lets $\overrightarrow{x} := -\Delta\overrightarrow{x}$. The process 
+is repeated until some criteria is met.
 
-Hill climbing can in fact be used to optimize the greedy coloring of a graph.
-The use of this algorithm for greedy coloring is justified by a nice theorem.
+Hill climbing can be used to optimize the greedy coloring of a graph. The use
+of this algorithm for greedy coloring is justified by a nice theorem.
 
-Given a graph $G = (V, E)$, the parameter of the Greedy algorithm $\mathcal{G}$
-is an order $\mathcal{O} = v_{i_1}, \ldots, v_{i_n}$ of the vertices, where the
-$i_j$ define the coloring order of $V = \left\{ v_1, \ldots, v_n \right\} $.
-Thus, shiftes in the parameter space correspond to changes
-in the coloring order. 
+Given a graph $G = (V, E)$, the parameter of the Greedy coloring algorithm
+$\mathcal{G}$ is an order $\mathcal{O} = v_{i_1}, \ldots, v_{i_n}$ of the
+vertices, where the $i_j$ define the coloring order of $V = \left\{ v_1,
+\ldots, v_n \right\} $. Thus, shiftes in the parameter space correspond to
+changes in the coloring order. 
 
 Such permutations lack a nice property of real functions; namely, that their
 parameters can only be shifted in two directions: positive or negative. Instead
@@ -44,12 +45,10 @@ There is a property, however, which reveals permutations that may not
 necessarily improve the coloring, but are guaranteed not to worsen it. Such
 property reduces drastically the space of alternative permutations. In fact,
 given an initial ordering $\mathcal{O}$, this space of alternative permutations
-is often so small that none of them improve the coloring. Thus, often $k$
-initial orderings $\mathcal{O}_1, \ldots, \mathcal{O}_k$ are randomly defined,
-and their (reduced) permutation spaces are explored, in hope that one of their
+is often so small that none of them improve the coloring. Thus, it is commen to
+generate $k$ random initial orderings $\mathcal{O}_1, \ldots, \mathcal{O}_k$,
+so as to explore their (reduced) permutation spaces, in hope that one of their
 permutations will in fact improve the coloring. 
-
-The property I'm refering to is the following.
 
 > \textbf{Theorem.} Let $G = (V, E)$ a graph with a proper coloring of $r$
 colors $C = \left\{ c_1, \ldots, c_r \right\} $. Let $V_{c_i} := \left\{ x\in V
@@ -79,41 +78,93 @@ general, one uses permutations that put vertices with highest colors or highest
 degrees first, since these are the problematic ones. We will define two such
 permutations.
 
-\textbf{Permutation 1.} Let 
+\textbf{Permutation 0.} The first permutation will order the vertices from last
+to first color. Thus, assuming $\mathcal{G}$ used $r$ colors, the order will be
+$V_{c_r}, \ldots, V_{c_1}$. 
+
+To do this, we will create an array $\mathcal{D}$ of $r$ pointers;  each
+$\mathcal{D}[i]$ will point to an array of the vertices $v_1, \ldots, v_k$
+whose color is $i$. Then the array of lenght $n$ spanned by 
 
 \begin{align*}
-    m(x) &:= \min \left\{ d(y) : y \in V_{c_x} \right\} \\
-    M(x) &:= \max \left\{ d(y) : y \in V_{c_x} \right\} \\
+    \left\{ \mathcal{D}[i]_{j_i} : 1 \leq i \leq r, 1 \leq j_i \leq |\mathcal{D}_i| \right\} 
 \end{align*}
 
-where $d(x)$ is the degree of a vertex $x \in V$.
+has the vertices of $G$ ordered decreasingly by coloring. We do not know the
+value of each $|\mathcal{D}[i]|$, but we do know $\sum_{i=1}^{r} |
+\mathcal{D}(i) | = n$.
 
-If $\mathcal{G}$ colored $G$ with colors $1, \ldots, r$, we shall produce the
-following permutation: First, all colors divisible by $4$, ordered decreasingly
-y $M(x)$; then all even colors not divisible by $4$, ordered decreasingly by
-$M(x) + m(x)$; finally, all remaining colors ordered decreasingly by $m(x)$.
-
-This permutation combines high-degree and high-color to account for how "difficult"
-the vertices in a given color were.
-
-\textbf{Permutation 2.} Order the vertices like so:
+A pseudo-code implementation:
 
 \begin{align*}
-    x_1, x_2, \ldots, x_{r-1} = 2, x_{r} = 1
+    &\mathcal{O} = \textbf{int } Array[n]\\
+    &\mathcal{D} := \textbf{Queue } Array[r] \\
+    &\textbf{for } 1 \leq i \leq n \textbf{ do} \\ 
+    &\qquad push!(i, \mathcal{D}[c(v_i)])\\
+    &\textbf{end}\\
+    &\textbf{int } i := 0\\
+    &\textbf{for } queue \textbf{ in } \mathcal{D} \textbf{ do}\\
+    &\qquad\textbf{while } queue \neq \emptyset \textbf{ do}\\
+    &\qquad \qquad O[i] = pop(queue) \\ 
+    &\qquad \qquad i = i + 1\\
+    &\qquad\textbf{end}\\
+    &\textbf{end}\\
+    &\textbf{return } \mathcal{O}
 \end{align*}
 
-where $x_1$ is the color with least cardinality, excluding $1$ and $2$; $x_2$
-is the one with least cardinality excluding $1, 2, x_1$, and so on. The
-assumption here is that colors with just a few vertices are the most
-problematic.
+The first for loop is $O(n)$. Since $\sum_{i}^r |\mathcal{D}_i| = n$, the
+second for loop with its inner while is $O(n)$. $\therefore $ The algorithm is
+$O(n)$.
 
---- 
+\textbf{Permutation 1.} The second permutation we will write is a simple
+cardinality permutation. The color with the most number of vertices goes first,
+the color with the least number of vertices goes last. There are at most $O(n)$
+sets $V_{c_i}$. Using QSort we have $O(n \log n)$ complexity.
 
-We shall provide code implementations for these permutations and test them with
-$\mathcal{G}$ over a good number of graphs. Both permutations can be
-implemented with $O(n)$ complexity. We shall run $\mathcal{G}$ over a fixed
-number of permutations, so the total complexity of the testing algorithm will
-be $O(m) + O(n)$.
+
+\textbf{Permutation 2.} We will order the colors using their divisibility. First will come 
+all colors divisible by four, then all colors divisible by 2, and then all other 
+colors. In pseudo-code, 
+
+\begin{align*}
+    &x = | \left\{ c \in C : c \equiv 0 \mod 4 \right\}  |\\
+    &y = | \left\{ c \in C : c \equiv 0 \mod 2 \land c \not\equiv 0 \mod 4 \right\}  |\\
+    &\mathcal{O} = \textbf{int } Array[n] \\ 
+    &\textbf{int }u = v = w = 0 \\
+    &\textbf{int } index\\
+    &\textbf{for } i \in \left\{ 1, \ldots, r \right\}  \textbf{ do }\\ 
+    &\qquad\textbf{while } \mathcal{D}[i] \neq \emptyset \textbf{ do}\\
+    &\qquad\qquad v = pop(\mathcal{D}[i]) \\ 
+    &\qquad\qquad \textbf{if } i \equiv 0 \mod 4 \textbf{ do} \\ 
+    &\qquad \qquad \qquad index = u \\ 
+    &\qquad\qquad\qquad u = u + 1 \\ 
+    &\qquad\qquad\textbf{else if } i \equiv 0 \mod 2 \textbf{ do } \\ 
+    &\qquad\qquad\qquad index = x + v\\ 
+    &\qquad \qquad \qquad v = v + 1 \\ 
+    &\qquad\qquad\textbf{else do}  \\ 
+    &\qquad\qquad\qquad index = x + y + w\\ 
+    &\qquad \qquad \qquad w = w + 1 \\ 
+    &\qquad\qquad\textbf{fi}\\
+    &\qquad\qquad \mathcal{O}[index] = v \\ 
+    &\qquad\textbf{od}\\
+    &\textbf{od}
+\end{align*}
+
+which is $O(n)$ of course.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \end{document}
 

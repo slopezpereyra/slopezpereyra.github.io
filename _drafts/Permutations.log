@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  4 JUL 2024 14:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  4 JUL 2024 20:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**disc.tex
-(./disc.tex
+**Permutations.tex
+(./Permutations.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-01-16> (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
@@ -270,7 +270,7 @@ LaTeX Info: Redefining \not on input line 2959.
 \c@theorem=\count283
 
 
-./disc.tex:14: LaTeX Error: Command \problem already defined.
+./Permutations.tex:14: LaTeX Error: Command \problem already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -284,7 +284,7 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./disc.tex:14: LaTeX Error: Command \example already defined.
+./Permutations.tex:14: LaTeX Error: Command \example already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -299,7 +299,7 @@ or  <return>  to continue without it.
 
 \c@definition=\count284
 
-./disc.tex:16: LaTeX Error: Command \lemma already defined.
+./Permutations.tex:16: LaTeX Error: Command \lemma already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -313,7 +313,7 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./disc.tex:17: LaTeX Error: Command \theorem already defined.
+./Permutations.tex:17: LaTeX Error: Command \theorem already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -345,8 +345,8 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count285
 \l__pdf_internal_box=\box53
-) (./disc.aux)
-\openout1 = `disc.aux'.
+) (./Permutations.aux)
+\openout1 = `Permutations.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 19.
 LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 19.
@@ -386,8 +386,6 @@ LaTeX Font Info:    ... okay on input line 19.
 \c@mv@boldtabular=\count287
 LaTeX Info: Command `\dddot' is already robust on input line 19.
 LaTeX Info: Command `\ddddot' is already robust on input line 19.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 12.0pt on input line 21.
 LaTeX Font Info:    Trying to load font information for OT1+minntx on input line 21.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1minntx.fd
 File: ot1minntx.fd 2022/01/20 v1.0 font definition file for OT1/minntx
@@ -412,26 +410,29 @@ LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 2
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.8pt on input line 40.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.6pt on input line 40.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 12.0pt on input line 53.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./disc.aux) ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 8.8pt on input line 113.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 6.6pt on input line 113.
+ [2] [3] (./Permutations.aux) ) 
 Here is how much of TeX's memory you used:
- 5894 strings out of 476091
- 82336 string characters out of 5794081
- 1859330 words of memory out of 5000000
- 26187 multiletter control sequences out of 15000+600000
- 542839 words of font info for 81 fonts, out of 8000000 for 9000
+ 5908 strings out of 476091
+ 82540 string characters out of 5794081
+ 1864330 words of memory out of 5000000
+ 26189 multiletter control sequences out of 15000+600000
+ 552218 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,21n,76p,497b,184s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on disc.pdf (2 pages, 91883 bytes).
+ 71i,14n,76p,505b,197s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
+Output written on Permutations.pdf (3 pages, 128151 bytes).
 PDF statistics:
- 46 PDF objects out of 1000 (max. 8388607)
- 28 compressed objects within 1 object stream
+ 69 PDF objects out of 1000 (max. 8388607)
+ 42 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

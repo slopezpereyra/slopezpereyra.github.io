@@ -18,128 +18,96 @@
 
 \begin{document}
 
-Sea $B$ instancia de $3$-sat. Construyamos el siguiente $3$-hiper grafo. Let $i
-\in \left\{ 1, \ldots, n \right\}, j \in \left\{ 1, \ldots, m \right\}  $, $r
-\in \left\{ 1, 2, 3 \right\}, k \in \left\{ 1\ldots m(n-1) \right\}  $.
+\textit{(1)} How many linear codes of length $7$ with $8$ words are there?
 
-\textbf{Vertices}. Define 
+\textit{(2)} How many linear codes of length $7$ with $32$ words are there?
 
-\begin{align*}
-    X &= \left\{ a_{ij} \right\}  \cup \left\{ s_j \right\} \cup \left\{ h_k \right\} \\ 
-    Y &= \left\{ b_{ij} \right\} \cup \left\{ t_j \right\} \cup \left\{ g_k \right\} \\ 
-    Z &= \left\{ u_{ij} \right\} \cup \left\{ w_{ij} \right\} 
-\end{align*}
+\textit{(3)} How many cyclic codes of length $7$ with $8$ words are there?
 
-Define 
+\textit{(4)} How many cyclic codes of length $23.500.002$ with $8$ words are there?
 
-\begin{align*}
-    v_{jr} = \begin{cases}
-        u_{ij} & \exists  i : l_{ir} = x_k \\ 
-        w_{ij} & \exists i : l_{ir} = \overline{x_k}
-    \end{cases}
-\end{align*}
+~
 
-Let $E$ be the union of 
+\textit{(1)} We know $\overrightarrow{0} \in C$ for any linear code. Let us analyze how we can build 
+a code satisfying the constraints.
+
+Each time I add a vector $\alpha$ to the code, I must add all of its linear combinations.
+Thus, any set of words $\left\{ \alpha_1, \alpha_2, \ldots, \alpha_k \right\} $ "generates"
+a code 
 
 \begin{align*}
-    E_0 &= \left\{ a_{ij}, b_{ij}, u_{ij} \right\} \\ 
-    E_1 &= \left\{ a_{(i+1)j}, b_{ij}, w_{ij} \right\} \\ 
-    E_2 &= \left\{ h_k, g_k, u_{ij} \right\} \cup \left\{ h_k, g_k w_{ij} \right\} \\ 
-    E_3 &= \left\{ s_j, t_j, v_{jr} \right\} 
+    C = \left\{ \overrightarrow{0} \right\} \cup \left\{ \text{All non-null linear combinations of } \alpha_1, \ldots, \alpha_k \right\} 
 \end{align*}
 
-Assume there is a perfect matching. Take an arbitrary $i$.
-If there is some $j$ s.t. $a_{ij}$ belongs to the matching, 
-then $a_{ij} \in E_0$ or $a_{ij} \in E_1$. If $a_{ij} \in E_0$,
-this is if $\left\{ a_{ij}, b_{ij}, u_{ij} \right\} $ is in the matching, 
-it cannot be the case that $a_{(i+1)j, b_{ij}, w_{ij}}$ is in the matching.
-This inductively implies that now member of $E_1$ is in the matching 
-and all members of $E_0$ are in the matching. Call this CASE 0. 
+It is simple to observe that there are $2^k$ linear combinations of $k$
+vectors. But this includes the one that is zero. So any set of $k$ words
+generates $2^{k} - 1$ words.
 
-A similar reasoning reveals that if any side of $E_1$ belongs to 
-the matching, all sides of $E_1$ belong to the matching and no 
-side of $E_0$ belong to the matching. Call this CASE 1. 
+So, if we want to create a code with $8$ words, we must choose $3$ vectors because 
+$2^3 - 1 = 7$ and there will be $7$ words plus $\overrightarrow{0} = 8$  words 
+in the code. 
 
-Define 
+We are told that the length of the words is seven. So we must calculate 
+in how many ways I can choose $3$ non-zero words of length $7$. Think about it 
+and you'll see that there are 
 
 \begin{align*}
-    \overrightarrow{b_i} = \begin{cases}
-        1 & \textbf{CASE 1 for }i\\
-        0 & \textbf{CASE 0 for }i
-    \end{cases}
+    \frac{ \left( 2^7 - 1 \right) (2^7 - 2) \left( 2^7 - 3 \right)  }{3!}
 \end{align*}
 
-We must only prove there is some $l_{ir}$ s.t. $l_{ir}(\overrightarrow{b}) = 1$ 
-for any $i$. There are two cases. 
+ways to do this. So this is the number of codes with $8$ words of 
+length $7$.
 
-If $l_{ir} = x_k$, then $v_{jr} = u_{ij}$. Then $\left\{ s_j, t_j, u_{ij} \right\} $ 
-belongs to the matching. But then $\left\{ a_{ij}, b_{ij}, u_{ij} \right\} $
-cannot belong to the matching. Then Case 1 holds 
-and $l_{ir}(\overrightarrow{b}) = 1$.
-
-If $l_{ir} = \overline{x_k}$, $v_{jr} = w_{ij}$. Then 
-$\left\{ s_j, t_j, w_{ij} \right\} $ belongs to the matching. 
-But then $\left\{ a_{(i+1) j}, b_{ij}, w_{ij} \right\} $
-cannot belong to the matching and we are in case 0.
-Then $l_{ir}(\overrightarrow{b}) = 1$.
-
-In both cases, $l_{ir}(\overrightarrow{b}) = 1$.
-
-
-$(\Leftarrow)$ Assume there is some $\overrightarrow{b}$ s.t. $B(\overrightarrow{b}) = 1$.
-We will build a matching with edges $F_0 \cup \ldots\cup F_3$ such that 
-$F_i \subseteq E_i$.
-
-In particular, we let 
+\textit{(2)} Same reasoning tells we must chose $5$ words, becaue $2^5 = 32$.
+There are 
 
 \begin{align*}
-    F_0 = \left\{ \left\{ a_{ij}, b_{ij}, u_{ij} \right\} : b_i = 0  \right\} \\ 
-    F_1 = \left\{ a_{(i+1)j, b_{ij}, w_{ij}} : b_i = 1 \right\} 
+    \frac{ \prod_{i=1}^{5} \left( 2^7 - i \right)  }{5!}
 \end{align*}
 
-Now, for any $i$ there is some $l_{ir}$ s.t. $l_{ir}(\overrightarrow{b}) = 1$.
-I make 
+ways to do this.
 
-\begin{align*}
-    F_3 = \left\{ s_j, t_j, v_{jr} \right\} 
-\end{align*}
 
-If an edge belongs to $F_0$ and $F_3$, we must have $v_{jr} = u_{ij}$. But this
-implies both $l_{jr} = x_i$ and $b_i = 0$, which is absurd. 
+\textit{(3)} Cyclic codes are linear so what we said before still applies. But they also impose the 
+following condition: if a word $w$ is in the code, all its rotations are in the code. It is 
+very simple to observe that a word of length $n$ has $n$ rotations (including itself and 
+excluding repetead words). So whenever we add a word of length $n$ to the code, we are in 
+fact adding $n$ words.
 
-If an edge belongs to $F_1$ and $F_3$ then we must have 
-$v_{jr} = w_{ij}$.But this implies $l_{jr} = \overline{x_k}$ and 
-$b_i = 1$, which is absurd. 
+Using this reasoning, if I add a single word of length $7$ to the code, I'm already adding 
+$7$ words, which (counting the zero vector) already spans a code of $8$ words of length $7$.
+There are $2^7 - 1$ words to chose from. So this is the number codes requested.
 
-So, we have a matching. But we must see that it is perfect.
-For this purpose, we define: 
+\textit{(4)} Using the same reasoning as in \textit{(3)}, there is no cyclic code with $8$
+words of length 23.500.002.
 
-\begin{equation*}
-    N = \left\{ z \in Z : z \text{ not covered by } F_0, F_1, F_2 \right\} 
-\end{equation*}
 
-Clearly, $|F_3| = m$. Let $p$ be the amount of $i$s s.t. $b_i = 0$
-and $q$ the amount of $i$s s.t. $b_i = 1$. Clearly, $n = p + q$,
-$|F_0| = mp, |F_1| = mq$. Then 
 
-\begin{align*}
-    |Z - N| = |F_0| + |F_1| + |F_3| = mp + mq + m = m(n+1)
-\end{align*}
 
-Then $|N| = |Z| - |Z - N| = 2mn - m(n+1) = m(n-1)$
 
-Then there is a bijection $f : \left\{ 1, \ldots, m(n-1) \right\} : N $. 
-We define 
 
-\begin{align*}
-    \left\{ g_k, h_k, f(k) \right\} 
-\end{align*}
 
-which has disjoint edges because it is injective and covers 
-every uncovered $z$ because it is surjective. 
 
-All sides of $Z$ are now covered and since $|X| = |Y| = |Z|$
-the matching is perfect.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \end{document}
 
