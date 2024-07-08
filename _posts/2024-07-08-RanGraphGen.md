@@ -44,9 +44,9 @@ Each tree is perfectly identified by its Prüfer sequence. Then, for a
 fixed $n$, the language $\left\\{ 1, \ldots, n \right\\}^{n-2}$ indexes a
 family of functions $\mathcal{F}$ defined as:
 
-$$\begin{aligned}
-    \mathcal{F}(w) : \mathcal{U}_{T_w} &\to \Lambda(n)  \\ \\
-    \mathcal{F}(w)(G) &= E(G) - E(T_w)\end{aligned}$$
+$$\begin{align*}
+    \mathcal{F}(w) : \mathcal{U}_{T_w} &\to \Lambda(n)  \\\\
+    \mathcal{F}(w)(G) &= E(G) - E(T_w)\end{align*}$$
 
 where $T_w$ is the tree corresponding to the Prüfer sequence $w$. We
 shall use $\mathcal{F}_w$ to abbreviate $\mathcal{F}(w)$.
@@ -166,18 +166,11 @@ The algorithm was implemented in C but the generated graphs
 were plotted using the `networkx` Python package.
 
 <p align="center">
-  <img src="../Images/RandST1.png" width=75% >
+  <img src="../Images/RandST1.png" width="45%">
+  <img src="../Images/RandG1.png" width="45%">
 </p>
 
 <p align="center">
-  <img src="../Images/RandG1.png" width=75% >
-</p>
-
-
-<p align="center">
-  <img src="../Images/RandST2.png" width=75% >
-</p>
-
-<p align="center">
-  <img src="../Images/Rand2.png" width=75% >
+  <img src="../Images/RandST2.png" width="45%">
+  <img src="../Images/Rand2.png" width="45%">
 </p>
