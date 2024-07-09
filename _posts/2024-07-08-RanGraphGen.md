@@ -96,8 +96,8 @@ $$\begin{align*}
     \mathcal{F}(w)(G) &= E(G) - E(T_w)\end{align*}$$
 
 > **$\mathcal{F}(w)$ is a bijection.**
->Let $S \in S_{T_w}$ for an arbitrary $T_w$. Define $G \in \mathcal{G}_n$ as
->the graph whose edges are $S \cup E(T_w)$. Then $T_w \subseteq G$ and $G \in
+>Let $S \in S_{T_w}$ for an arbitrary $T_w$. Define $G = (V(T), S \cup E(T_w)$. 
+> Then $T_w \subseteq G$ and $G \in
 >\mathcal{U}_{T_w}$. The intersection of $E(T_w)$ and $S_{T_w}$ is empty by
 >definition. Then $S = E(G) - E(T_w)$. 
 >
