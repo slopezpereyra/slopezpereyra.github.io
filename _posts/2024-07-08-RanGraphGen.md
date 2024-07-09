@@ -40,27 +40,27 @@ The algorithms hereby presented generate random trees by generating random
 Prüfer sequences. It is easy to construct algorithmically the tree
 corresponding to a Prüfer sequence, and thus a random tree is obtained.
 
-Let $T_2$ denote the single element in $\mathcal{T}_2$. Let $L$ be the label-set, i.e. 
-the set of natural numbers which label the vertices of our graphs. Then, a recursive algorithm
-for constructing the corresponding to a Prüfer sequence $p = p_1\ldots
-p_{n-2}$ over a label set $L$ is the following:
+Let $T_2$ denote the unique tree of two vertices. Let $L$ be the label-set,
+i.e. the set of natural numbers which label the vertices of our graphs. Then, a
+recursive algorithm for constructing the corresponding to a Prüfer sequence $p
+= p_1\ldots p_{n-2}$ over a label set $L$ is the following:
 
 $$
-\begin{align*}
-&\textbf{ begin } \textbf{f}(p, L) \\
-&\quad\quad\textbf{if } |p| = 0 \textbf{ do} \\ 
-&\quad\quad\quad \quad  \textbf{return } T_2 \text{ with labels in } L\\ 
-&\quad\quad\textbf{else} \\ 
-&\quad\quad\quad\quad k := \min_j \{ j \notin p\} \\ 
-&\quad\quad\quad\quad L' := L - \{k\}\\
-&\quad\quad\quad\quad p' := p_2\ldots p_{n-2} \\ 
-&\quad\quad\quad\quad T := \textbf{f}(p', L') \\ 
-&\quad\quad\quad\quad V(T) := V(T) \cup \{k\} \\ 
-&\quad\quad\quad\quad E(T) := E(T) \cup \{\{k, p_1\}\} \\ 
-&\quad\quad\quad\quad \textbf{return } T\\ 
-&\quad\quad\textbf{fi} \\ 
-&\textbf{end}
-\end{align*}
+\\begin{align*}
+&\\textbf{ begin } \\textbf{f}(p, L) \\\\
+&\\quad\\quad\\textbf{if } |p| = 0 \\textbf{ do} \\\\ 
+&\\quad\\quad\\quad \\quad  \\textbf{return } T_2 \\text{ with labels in } L\\\\ 
+&\\quad\\quad\\textbf{else} \\\\ 
+&\\quad\\quad\\quad\\quad k := \\min_j \\{ j \\notin p\\} \\\\ 
+&\\quad\\quad\\quad\\quad L' := L - \\{k\\}\\\\
+&\\quad\\quad\\quad\\quad p' := p_2\\ldots p_{n-2} \\\\ 
+&\\quad\\quad\\quad\\quad T := \\textbf{f}(p', L') \\\\ 
+&\\quad\\quad\\quad\\quad V(T) := V(T) \\cup \\{k\\} \\\\ 
+&\\quad\\quad\\quad\\quad E(T) := E(T) \\cup \\{\\{k, p_1\\}\\} \\\\ 
+&\\quad\\quad\\quad\\quad \\textbf{return } T\\\\ 
+&\\quad\\quad\\textbf{fi} \\\\ 
+&\\textbf{end}
+\\end{align*}
 $$
 
 Here is an illustration of the algorithm ran on $p = 17375$, $L =
