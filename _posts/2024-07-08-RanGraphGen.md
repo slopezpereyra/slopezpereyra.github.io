@@ -190,11 +190,10 @@ $$
 \end{align*}
 $$
 
-Generating a tree from a random Prüfer sequence is $O(n^2)$. Listing all
-the non-neighbours is also $O(n^2)$. Within the while loop there are
-simply index manipulations, so the complexity of the loop is
-$\varphi \times O(1) =
-\varphi$, with $\varphi$ the complexity of the number of iterations.
+Generating a tree from a random Prüfer sequence is $O(n^2)$. Forming $S_T$ is
+also $O(n^2)$. Within the while loop there are simply index manipulations, so
+the complexity of the loop is $\varphi \times O(1) = \varphi$, with $\varphi$
+the complexity of the number of iterations.
 
 All iterations add an edge except those where a saturated vertex is
 chosen. A saturated vertex may be chosen at most once. $\therefore$
