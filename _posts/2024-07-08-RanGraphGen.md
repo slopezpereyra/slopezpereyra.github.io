@@ -231,7 +231,7 @@ The approach discussed above is a bottom-up approach: a spanning tree is
 constructed and from it a graph is spanned. Though the construction is done 
 in linear time, the complexity associated to $O(m - n + 1)$, the edge-adding 
 iterations, becomes very large when a dense graph is desired. The upper bound 
-is reach in the generation of a $K_n$.
+is reached in the generation of a $K_n$.
 
 A top-down approach analogous to the previous algorithms would in principle
 consist in the generation of a $K_n$ and the random removal of edges in the
