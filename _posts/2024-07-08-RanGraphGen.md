@@ -264,49 +264,43 @@ implementation of the effective procedure above is:
 
 $$
 \begin{align*}
-&(V, E) := \\textbf{genKn}(n)\\\\
-&\\Gamma := [\\Gamma(v_1), \\ldots, \\Gamma(v_n)]\\\\
-&V_c := [v_1, \\ldots, v_n]\\\\ 
-&\\textbf{while } |E| \\neq m \\textbf{do } \\\\ 
-&\\quad\\quad v = \\textbf{randFrom}(V_c) \\\\ 
-&\\quad\\quad \\textbf{if } d(v) = 1 \\lor \\Gamma[v] = \\emptyset \\textbf{ do } \\\\
-&\\quad\\quad\\quad\\quad V_c := V_c - \\{v\\} \\\\ 
-&\\quad\\quad\\textbf{else} \\\\ 
-&\\quad\\quad\\quad\\quad w = \\textbf{randomFrom}(\\Gamma[v]) \\\\ 
-&\\quad\\quad\\quad\\quad \\Gamma[v] = \\Gamma[v] - \\{w\\} \\\\ 
-&\\quad\\quad\\quad\\quad \\Gamma[w] = \\Gamma[w] - \\{v\\} \\\\ 
-&\\quad\\quad\\quad\\quad \\textbf{if BFSFind}(E - \\{v, w\\}, v, w) \\textbf{ do}  \\\\ 
-&\\quad\\quad\\quad\\quad\\quad\\quad E := E - \\{v, w\\}\\\\
-&\\quad\\quad\\quad\\quad \\textbf{fi}  \\\\ 
-&\\quad\\quad\\textbf{fi}  \\\\ 
-&\\textbf{od}  \\\\ 
+&(V, E) := \textbf{genKn}(n)\\
+&\Gamma := [\Gamma(v_1), \ldots, \Gamma(v_n)]\\
+&V_c := [v_1, \ldots, v_n]\\ 
+&\textbf{while } |E| \neq m \textbf{do } \\ 
+&\quad\quad v = \textbf{randFrom}(V_c) \\ 
+&\quad\quad w = \textbf{randomFrom}(\Gamma[v]) \\ 
+&\quad\quad \Gamma[v] = \Gamma[v] - \{w\} \\ 
+&\quad\quad \Gamma[w] = \Gamma[w] - \{v\} \\ 
+&\quad\quad \textbf{if BFSFind}(E - \{v, w\}, v, w) \textbf{ do}  \\ 
+&\quad\quad\quad\quad E := E - \{v, w\}\\
+&\quad\quad \textbf{fi}  \\ 
+&\quad\quad \textbf{if } d(v) = 1 \lor \Gamma[v] = \emptyset \textbf{ do } \\
+&\quad\quad\quad\quad V_c := V_c - \{v\} \\ 
+&\quad\quad\textbf{fi}  \\ 
+&\quad\quad \textbf{if } d(w) = 1 \lor \Gamma[w] = \emptyset \textbf{ do } \\
+&\quad\quad\quad\quad V_c := V_c - \{w\} \\ 
+&\quad\quad\textbf{fi}  \\ 
+&\textbf{od}  \\ 
 \end{align*}
 $$
 
 Generating a $K_n$ is $O(n^2)$. The $\textbf{while}$ selects a random vertex from $V_c$ 
-and attempts to erase one of its edges. There are only two cases when an edge is not removed. 
-The first case is when the selected vertex has no candidate neighbors or a
-degree of $1$. Whenever this occurs, the vertex is removed from the candidate
-list. $\therefore$ There are $O(n)$ such cases. 
-
-The second case is when the selected edge is a bridge, in which case it is
-removed from the space of possible selections. Thus, a bridge may be selected 
-at most once. The bound will depend on the number of bridges which can exist 
-in the successive graphs. Removing a bridge creates a new connected component. Then, if there could be 
-more than $n-1$ bridges, we could produce more than $n$ connected components,
-which is absurd. $\therefore$ There are $O(n)$ bridge selections.
+and attempts to erase one of its edges. There is only one case one an edge is not removed;
+namely, when the sampled edge is a bridge. This happens at most once per bridge. There are 
+at most $n - 1$ bridges in a graph. $\therefore$ There are $O(n)$ iterations which do not 
+remove an edge.
 
 The remaining iterations will remove an edge and there will be exactly
 $\frac{n(n-1)}{2} - m$ of them.
 
-$\therefore$ There are $O(n) + O(n) + O(\frac{n(n-1)}{2} - m) = O(n^2 - m)$
+$\therefore$ There are $O(n) + O(\frac{n(n-1)}{2} - m) = O(n^2 - m)$
 iterations.
 
-The operations in each iteration are $O(1)$ except BFS. The complexity of 
-BFS grows linearly with the number of edges, and BFS is ran on every iteration.
-$\therefore$ BFS is $O(n^2)$.
+The operations in each iteration are $O(1)$ except BFS. The complexity of BFS
+grows linearly with the number of edges. $\therefore$ BFS is $O(n^2)$.
 
-$K_n$. $\therefore$ The algorithm is $O(n^2) + O(n^2 - m)O(n^2) = O(n^4 - n^2m)$.
+$\therefore$ The algorithm is $O(n^2) + O(n^2 - m)O(n^2) = O(n^4 - n^2m)$.
 
 It should be noted that in practice the algorithm will perform much better than
 this. For starters, BFS is not done over the whole graph, but should stop
@@ -330,7 +324,10 @@ Below, I display a $K_{100}$ and the random tree generated from it.
   <img src="../Images/TreeFromK100.png" width="45%">
 </p>
 
-
+The question now becomes: is the sampling uniform? In other words, given any 
+$n, m$, do all graphs of $n$ vertices and $m$ edges have the same probability 
+of being generated? And whatever the answer to this question may be, can we 
+produce a formal proof of it? *To be completed*.
 
 
 
