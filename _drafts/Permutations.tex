@@ -41,58 +41,46 @@ of these two choices, an order $\mathcal{O}$ of $n$ vertices has $n!$
 permutations. We cannot try them out and chose the one that maximizes our
 function.
 
-There is a property, however, which reveals permutations that may not
+However, there is a property which points to permutations that may not
 necessarily improve the coloring, but are guaranteed not to worsen it. Such
-property reduces drastically the space of alternative permutations. In fact,
+property reduces drastically the space of candidate permutations. In fact,
 given an initial ordering $\mathcal{O}$, this space of alternative permutations
-is often so small that none of them improve the coloring. Thus, it is commen to
+is often so small that none of them improve the coloring. Thus, it is common to
 generate $k$ random initial orderings $\mathcal{O}_1, \ldots, \mathcal{O}_k$,
 so as to explore their (reduced) permutation spaces, in hope that one of their
 permutations will in fact improve the coloring. 
 
-> \textbf{Theorem.} Let $G = (V, E)$ a graph with a proper coloring of $r$
-colors $C = \left\{ c_1, \ldots, c_r \right\} $. Let $V_{c_i} := \left\{ x\in V
-: c(x) =c_i \right\} $. Let $P : C \to C $ a permutation of $c_1, \ldots, c_r$;
-i.e. $P(c_i) = c_j$ entails the $i$th color becomes the $j$th color.
-
-Then $\mathcal{G}$ with the order $V_{P(c_1)}, \ldots, V_{P(c_r)}$ colors 
-$G$ with at most $r$ colors.
-
+\begin{quote}
+    \textbf{Theorem.} Let $G = (V, E)$ a graph with a proper coloring of $r$
+    colors $C = \left\{ c_1, \ldots, c_r \right\} $. Let $V_{c_i} := \left\{ x\in V
+    : c(x) =c_i \right\} $. Let $P : C \to C $ a permutation of $c_1, \ldots, c_r$;
+    i.e. $P(c_i) = c_j$ entails the $i$th color becomes the $j$th color.
+    
+    $\mathcal{G}$ with the order $V_{P(c_1)}, \ldots, V_{P(c_r)}$ colors 
+    $G$ with at most $r$ colors.
+\end{quote}
 
 The proof of this theorem is simple to do inductively over $r$. If $r = 1$ the
 case is trivial. Assume the theorem holds for $r = k$. Let $x_0 \in
 \bigcup_{i=0}^{k+1} V_{P(c_{i})}$. If $x_0$ belongs to any of the first $k$
-sets, $\mathcal{G}$ colors it with one out of $k$ colors by hypothesis.
-If $x_0 \in V_{P(c_{i+1})}$, the case where $\mathcal{G}$
-colors it with a color less than $k+2$ makes our statement true.
-Assume this is not the case. Then there is some $y_0 \in \Gamma(x_0)$
-such that $c(y_0) = k + 1$. But then $y_0 \in V_{P(c_{i+1})}$.
-And since $x_0$ is also in this set, we should have $c(x_0) = c(y_0)$.
-Then the coloring is not proper. $(\bot)$
+sets, $\mathcal{G}$ colors it with one out of $k$ colors by hypothesis. If $x_0
+\in V_{P(c_{i+1})}$, the case where $\mathcal{G}$ colors it with a color less
+than $k+2$ makes our statement true. Assume this is not the case. Then there is
+some $y_0 \in \Gamma(x_0)$ such that $c(y_0) = k + 1$. But then $y_0 \in
+V_{P(c_{i+1})}$. And since $x_0$ is also in this set, we should have $c(x_0) =
+c(y_0)$. Then the coloring is not proper. $(\bot)$
 
 Informally, if $\mathcal{G}$ colored $V$ into groups $V_{c_1}, \ldots,
 V_{c_r}$, then coloring first the vertices with color $P(c_1), P(c_2), \ldots,
 P(c_r)$ is at least as good as the original coloring. The permutation $P$ that
 we must use is arbitrary: the theorem states nothing special about it. In
 general, one uses permutations that put vertices with highest colors or highest
-degrees first, since these are the problematic ones. We will define two such
+degrees first, since these are the problematic ones. We will define a few such
 permutations.
 
 \textbf{Permutation 0.} The first permutation will order the vertices from last
 to first color. Thus, assuming $\mathcal{G}$ used $r$ colors, the order will be
 $V_{c_r}, \ldots, V_{c_1}$. 
-
-To do this, we will create an array $\mathcal{D}$ of $r$ pointers;  each
-$\mathcal{D}[i]$ will point to an array of the vertices $v_1, \ldots, v_k$
-whose color is $i$. Then the array of lenght $n$ spanned by 
-
-\begin{align*}
-    \left\{ \mathcal{D}[i]_{j_i} : 1 \leq i \leq r, 1 \leq j_i \leq |\mathcal{D}_i| \right\} 
-\end{align*}
-
-has the vertices of $G$ ordered decreasingly by coloring. We do not know the
-value of each $|\mathcal{D}[i]|$, but we do know $\sum_{i=1}^{r} |
-\mathcal{D}(i) | = n$.
 
 A pseudo-code implementation:
 
@@ -152,7 +140,11 @@ colors. In pseudo-code,
 
 which is $O(n)$ of course.
 
-
+I generated a random graph of $n = 30$ vertices and $m = 32$ edges. I tested
+the permutations and found that the last permutation coloured the graph with
+$1$ less color than the other ones. To the left, the Greedy coloring over the 
+natural order of the vertices; to the right, the coloring over the order
+of \textbf{Permutation 2}.
 
 
 

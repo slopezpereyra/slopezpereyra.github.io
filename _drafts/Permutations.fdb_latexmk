@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1720136133 "Permutations.tex" "Permutations.pdf" "Permutations" 1720136134 2
+["pdflatex"] 1720636344 "Permutations.tex" "Permutations.pdf" "Permutations" 1720636344 2
   "/etc/texmf/web2c/texmf.cnf" 1695394668 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1640468671 2914 8283dfc24eaf1964346f843d7605c2b0 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc" 1422827479 2083 60e36f8eac802fcaf19eabe2633b406e ""
@@ -103,8 +103,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1695394817 4623455 fa0568a71dd9a288d6c226ee477506c6 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1695394844 7879794 eff26094dbe002b6e482c026ea4c81e2 ""
-  "Permutations.aux" 1720136134 32 ab05033ccbb38b00a31b200ccedf8001 "pdflatex"
-  "Permutations.tex" 1720136133 6922 1357f0ab4ea13b1a763de642e632fe8d ""
+  "Permutations.aux" 1720636344 32 ab05033ccbb38b00a31b200ccedf8001 "pdflatex"
+  "Permutations.tex" 1720636342 6800 0ab0ab610c7b822279b4823026ae990c ""
   (generated)
   "Permutations.aux"
   "Permutations.log"
