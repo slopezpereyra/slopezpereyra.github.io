@@ -1,5 +1,6 @@
 --- 
-    title: Climbing the Hill of Seven Colors
+title: Climbing the Hill of Seven Colors
+categories: [ Science ]
 ---
 
 The [Hill of Seven
