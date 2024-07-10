@@ -10,31 +10,34 @@ without a bias for graphs of a special kind. This entry contains two algorithms
 for sampling random connected graphs. Though these algorithms do not overcome a
 special kind of bias, their complexity is reasonable.
 
---- 
+## Bottom-up approach
 
-Before proceeding, quick definitions.
+The bottom-up approach consists in generating a simple graph and constructing a
+random graph from it. We shall use spanning trees to (surprise) span graphs
+from them. Some definitions are in order.
 
--   Let $\mathcal{T}_n$ the set of all trees of $n$ vertices,
-    $\mathcal{G}_n$ the set of all graphs with $n$ vertices. We shall
-    assume the vertices of these graphs are labeled $1, \ldots, n$.
+>-   Let $\mathcal{T}_n$ the set of all trees of $n$ vertices,
+>    $\mathcal{G}_n$ the set of all graphs with $n$ vertices. We shall
+>    assume the vertices of these graphs are labeled $1, \ldots, n$.
+>
+>-   For any $T \in \mathcal{T}_n$, we define $\mathcal{U}_T := \left\\{ G
+>            \in \mathcal{G}_n : T \subseteq G  \right\\}$ and refer to it
+>    as *the universe* of $T$. Thus, the universe of $T \in \mathcal{T}_n$ is 
+>    the set of graphs spanned by $T$.
+>
+>-   Let $\Lambda(n) = \\{ \\{ x, y \\} : x, y \in \\{ 1, \ldots, n\\}    \\}$, the set of all 
+>    possible edges in a graph of $n$ vertices.
 
--   For any $T \in \mathcal{T}_n$, we define $\mathcal{U}_T := \left\\{ G
-            \in \mathcal{G}_n : T \subseteq G  \right\\}$ and refer to it
-    as *the universe* of $T$. Thus, the universe of $T \in \mathcal{T}_n$ is 
-    the set of graphs spanned by $T$.
-
--   Let $\Lambda(n) = \\{ \\{ x, y \\} : x, y \in \\{ 1, \ldots, n\\}    \\}$, the set of all 
-    possible edges in a graph of $n$ vertices.
-
----
+Before discussing any graph generation, I must review an important concept
+relating to trees: the Prüfer sequence.
 
 ### Prüfer sequence 
 
 The Prüfer sequence of $T \in \mathcal{T}_n$ is a word over the alphabet
-$\Sigma = \\{0, \ldots, n - 1\\}$ of length $n - 2$. Prüfer proved that
-there is a bijection between $\mathcal{T}_n$ and $\Sigma^{n-2}$, which on its
-turn provided an alternative proof of the fact that there are $n^{n-2}$
-distinct trees of $n$ vertices. 
+$\Sigma = \\{0, \ldots, n - 1\\}$ of length $n - 2$. Prüfer proved that there
+is a bijection between $\mathcal{T}_n$ and $\Sigma^{n-2}$ (which incidentally
+provided a nice proof of the fact that there are $n^{n-2}$ distinct trees of
+$n$ vertices).
 
 The algorithms hereby presented generate random trees by generating random
 Prüfer sequences. It is easy to construct algorithmically the tree
@@ -221,3 +224,118 @@ were plotted using the `networkx` Python package.
   <img src="../Images/RandST2.png" width="45%">
   <img src="../Images/Rand2.png" width="45%">
 </p>
+
+## Top-down approach
+
+The approach discussed above is a bottom-up approach: a spanning tree is 
+constructed and from it a graph is spanned. Though the construction is done 
+in linear time, the complexity associated to $O(m - n + 1)$, the edge-adding 
+iterations, becomes very large when a dense graph is desired. The upper bound 
+is reach in the generation of a $K_n$.
+
+A top-down approach analogous to the previous algorithms would in principle
+consist in the generation of a $K_n$ and the random removal of edges in the
+graph. This involves some extra complexity: while adding edges to a connected
+graph cannot disconnect it, removing edges from a graph may do so. Thus, on
+each iteration, some algorithmic process should determine if an edge can be
+deleted or not without violating the connectivity invariant. 
+
+Thus, an effective procedure goes as follows. Given $n$ and a desired number 
+of edges $m$,
+
+> *(1)* Generate $K_n = (V, E)$.
+>
+> (2) Let $V_c = V$ the list of vertices which can be pruned.
+>
+> *(3)* Let $v \in_R V_c$, $w \in_R \Gamma(v)$.
+>
+> (4) Check if removing $\\{v, w\\}$ preserves connectivity; if so, remove it from $E$.
+>
+> (5) Define $\Gamma(v) = \Gamma(v) - \\{w\\}$, $\Gamma(w) = \Gamma(w) - \\{v\\}$, regardless 
+> of whether the edge was removed.
+>
+> (6) If $d(z) = 1$ or $\Gamma(z) = \emptyset$, remove $z$ from $V_c$, where $z \in \\{v, w\\}$.
+>
+> *(7)* If $|E| \neq m$, go to (3).
+
+Assume $\textbf{BFSFind}(E, x, y)$ is an algorithm that checks if there
+is a path from $x, y$ in a given edge set. Then a pseudo-code 
+implementation of the effective procedure above is:
+
+$$
+\begin{align*}
+&(V, E) := \\textbf{genKn}(n)\\\\
+&\\Gamma := [\\Gamma(v_1), \\ldots, \\Gamma(v_n)]\\\\
+&V_c := [v_1, \\ldots, v_n]\\\\ 
+&\\textbf{while } |E| \\neq m \\textbf{do } \\\\ 
+&\\quad\\quad v = \\textbf{randFrom}(V_c) \\\\ 
+&\\quad\\quad \\textbf{if } d(v) = 1 \\lor \\Gamma[v] = \\emptyset \\textbf{ do } \\\\
+&\\quad\\quad\\quad\\quad V_c := V_c - \\{v\\} \\\\ 
+&\\quad\\quad\\textbf{else} \\\\ 
+&\\quad\\quad\\quad\\quad w = \\textbf{randomFrom}(\\Gamma[v]) \\\\ 
+&\\quad\\quad\\quad\\quad \\Gamma[v] = \\Gamma[v] - \\{w\\} \\\\ 
+&\\quad\\quad\\quad\\quad \\Gamma[w] = \\Gamma[w] - \\{v\\} \\\\ 
+&\\quad\\quad\\quad\\quad \\textbf{if BFSFind}(E - \\{v, w\\}, v, w) \\textbf{ do}  \\\\ 
+&\\quad\\quad\\quad\\quad\\quad\\quad E := E - \\{v, w\\}\\\\
+&\\quad\\quad\\quad\\quad \\textbf{fi}  \\\\ 
+&\\quad\\quad\\textbf{fi}  \\\\ 
+&\\textbf{od}  \\\\ 
+\end{align*}
+$$
+
+Generating a $K_n$ is $O(n^2)$. The $\textbf{while}$ selects a random vertex from $V_c$ 
+and attempts to erase one of its edges. There are only two cases when an edge is not removed. 
+The first case is when the selected vertex has no candidate neighbors or a
+degree of $1$. Whenever this occurs, the vertex is removed from the candidate
+list. $\therefore$ There are $O(n)$ such cases. 
+
+The second case is when the selected edge is a bridge, in which case it is
+removed from the space of possible selections. Thus, a bridge may be selected 
+at most once. The bound will depend on the number of bridges which can exist 
+in the successive graphs. Removing a bridge creates a new connected component. Then, if there could be 
+more than $n-1$ bridges, we could produce more than $n$ connected components,
+which is absurd. $\therefore$ There are $O(n)$ bridge selections.
+
+The remaining iterations will remove an edge and there will be exactly
+$\frac{n(n-1)}{2} - m$ of them.
+
+$\therefore$ There are $O(n) + O(n) + O(\frac{n(n-1)}{2} - m) = O(n^2 - m)$
+iterations.
+
+The operations in each iteration are $O(1)$ except BFS. The complexity of 
+BFS grows linearly with the number of edges, and BFS is ran on every iteration.
+$\therefore$ BFS is $O(n^2)$.
+
+$K_n$. $\therefore$ The algorithm is $O(n^2) + O(n^2 - m)O(n^2) = O(n^4 - n^2m)$.
+
+It should be noted that in practice the algorithm will perform much better than
+this. For starters, BFS is not done over the whole graph, but should stop
+whenever $w$ is find starting from $v$. This still is asymptotically $O(|E|)$,
+but in practice much less. Secondly, BFS is ran on increasingly sparser graphs.
+Thus, though its asymptotic complexity is given by the number of edges in the
+initial $K_n$, it will become less complex per each iteration which removes an
+edge. 
+
+To compare our algorithms, I used the bottom-up approach to build from a
+spanning tree of 100 vertices a $K_{100}$, and the top-down approach to build
+from a $K_{100}$ a tree. Creating a $K_{100}$ from a tree took $0.62$ seconds.
+Creating a tree of $99$ edges from a $K_{100}$ took $0.64$ seconds. All in all,
+the practical efficiency of the top-down algorithm approximated that of the
+bottom-up.
+
+Below, I display a $K_{100}$ and the random tree generated from it.
+
+<p align="center">
+  <img src="../Images/K100.png" width="45%">
+  <img src="../Images/TreeFromK100.png" width="45%">
+</p>
+
+
+
+
+
+
+
+
+
+
