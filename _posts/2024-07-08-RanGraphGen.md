@@ -264,24 +264,24 @@ implementation of the effective procedure above is:
 
 $$
 \begin{align*}
-&(V, E) := \textbf{genKn}(n)\\
-&\Gamma := [\Gamma(v_1), \ldots, \Gamma(v_n)]\\
-&V_c := [v_1, \ldots, v_n]\\ 
-&\textbf{while } |E| \neq m \textbf{do } \\ 
-&\quad\quad v = \textbf{randFrom}(V_c) \\ 
-&\quad\quad w = \textbf{randomFrom}(\Gamma[v]) \\ 
-&\quad\quad \Gamma[v] = \Gamma[v] - \{w\} \\ 
-&\quad\quad \Gamma[w] = \Gamma[w] - \{v\} \\ 
-&\quad\quad \textbf{if BFSFind}(E - \{v, w\}, v, w) \textbf{ do}  \\ 
-&\quad\quad\quad\quad E := E - \{v, w\}\\
-&\quad\quad \textbf{fi}  \\ 
-&\quad\quad \textbf{if } d(v) = 1 \lor \Gamma[v] = \emptyset \textbf{ do } \\
-&\quad\quad\quad\quad V_c := V_c - \{v\} \\ 
-&\quad\quad\textbf{fi}  \\ 
-&\quad\quad \textbf{if } d(w) = 1 \lor \Gamma[w] = \emptyset \textbf{ do } \\
-&\quad\quad\quad\quad V_c := V_c - \{w\} \\ 
-&\quad\quad\textbf{fi}  \\ 
-&\textbf{od}  \\ 
+&(V, E) := \\textbf{genKn}(n)\\\\
+&\\Gamma := [\\Gamma(v_1), \\ldots, \\Gamma(v_n)]\\\\
+&V_c := [v_1, \\ldots, v_n]\\\\ 
+&\\textbf{while } |E| \\neq m \\textbf{do } \\\\ 
+&\\quad\\quad v = \\textbf{randFrom}(V_c) \\\\ 
+&\\quad\\quad w = \\textbf{randomFrom}(\\Gamma[v]) \\\\ 
+&\\quad\\quad \\Gamma[v] = \\Gamma[v] - \\{w\\} \\\\ 
+&\\quad\\quad \\Gamma[w] = \\Gamma[w] - \\{v\\} \\\\ 
+&\\quad\\quad \\textbf{if BFSFind}(E - \\{v, w\\}, v, w) \\textbf{ do}  \\\\ 
+&\\quad\\quad\\quad\\quad E := E - \\{v, w\\}\\\\
+&\\quad\\quad \\textbf{fi}  \\\\ 
+&\\quad\\quad \\textbf{if } d(v) = 1 \\lor \\Gamma[v] = \\emptyset \\textbf{ do } \\\\
+&\\quad\\quad\\quad\\quad V_c := V_c - \\{v\\} \\\\ 
+&\\quad\\quad\\textbf{fi}  \\\\ 
+&\\quad\\quad \\textbf{if } d(w) = 1 \\lor \\Gamma[w] = \\emptyset \\textbf{ do } \\\\
+&\\quad\\quad\\quad\\quad V_c := V_c - \\{w\\} \\\\ 
+&\\quad\\quad\\textbf{fi}  \\\\ 
+&\\textbf{od}
 \end{align*}
 $$
 
