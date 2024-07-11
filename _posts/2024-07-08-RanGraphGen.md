@@ -363,15 +363,14 @@ connectivity invariant is preserved. It is trivial to see that it removes $k :=
 randomly sampled edges, where $e_i$ was sampled at the $i$th edge-removing
 iteration.
 
-It follows that, in the edge-removing iterations, the sampling spaces $E_1,
-\ldots, E_r$ for edges to remove are
+Preserving the invariant entails that, across iterations, the sampling spaces
+$E_1, \ldots, E_r$ from which edges to remove are sampled are:
 
-$$ \begin{align*} E_1 &= \{ e \in W : W \in \mathcal{E}_{n,m}  \}  \\\\ E_2 &=
-\{ e \in W : W \in \mathcal{E}_{n,m} \land \{ e_1 \}  \subseteq  W  \} \\\\ E_3
-&= \{ e \in W : W \in \mathcal{E}_{n,m} \land \{ e_1, e_2 \}  \subseteq  W  \}
-\end{align*} $$
+- $E_1 = \\{ e \in W : W \in \mathcal{E}\_{n,m}  \\}$
+- $E_2 = \\{ e \in W : W \in \mathcal{E}\_{n,m} \land \\{ e_1 \\}  \subseteq  W  \\}$
+- $E_3 = \\{ e \in W : W \in \mathcal{E}\_{n,m} \land \\{ e_1, e_2 \\}  \subseteq  W  \\}$
 
-and so on. Thus, the general form is $E_i = \\{ e \in W : W \in \mathcal{E}\_{n,m} \land \\{ e_1, \ldots, e\_{i-1}\\} \subseteq W \\} $.
+etc. Thus, the general form is $E_i = \\{ e \in W : W \in \mathcal{E}\_{n,m} \land \\{ e_1, \ldots, e\_{i-1}\\} \subseteq W \\} $.
 
 It follows that $S = \\{ e_1, \ldots, e_k \\} \subseteq W$ for some $W
 \in \mathcal{E}\_{n,m}$. But $|S| = |W| = k$. Then $S = W$ and $S \in
