@@ -18,7 +18,7 @@ random graph from it. We shall use spanning trees to (surprise) span graphs
 from them. Some definitions are in order.
 
 >-   Let $\mathcal{T}_n$ the set of all trees of $n$ vertices, $\mathcal{G}_n$
->    the set of all graphs with $n$ vertices, and $\mathcal{G}_{n, m}$ the the
+>    the set of all graphs with $n$ vertices, and $\mathcal{G}\_{n, m}$ the
 >    set of all graphs with $n$ vertices and $m$ edges. We shall assume the
 >    vertices of these graphs are labeled $1, \ldots, n$.
 >
