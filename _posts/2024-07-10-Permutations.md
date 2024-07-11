@@ -23,7 +23,7 @@ of this algorithm for greedy coloring is justified by a nice theorem.
 Given a graph $G = (V, E)$, the parameter of the Greedy coloring algorithm
 $\mathcal{G}$ is an order $\mathcal{O} = v_{i_1}, \ldots, v_{i_n}$ of the
 vertices, where the $i_j$ define the coloring order of $V = \\{ v_1,
-\ldots, v_n \right\\}$. Thus, shiftes in the parameter space correspond to
+\ldots, v_n \\}$. Thus, shiftes in the parameter space correspond to
 changes in the coloring order.
 
 Such permutations lack a nice property of real functions; namely, that

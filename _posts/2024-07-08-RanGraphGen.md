@@ -6,9 +6,10 @@ categories: [ Science ]
 The generation of connected random graphs is non-trivial and important to many
 applications. In particular, it is not easy to sample a connected random graph
 from the space $\mathcal{G}$ of all connected graphs with uniformity; i.e.
-without a bias for graphs of a special kind. This entry contains two algorithms
-for sampling random connected graphs. Though these algorithms do not overcome a
-special kind of bias, their complexity is reasonable.
+without a bias for graphs of a special kind. This entry contains three
+algorithms for sampling random connected graphs. The first two are simple and
+of reasonable complexity, but biased. The third algorithm is more less
+efficient, but it can be proven that it samples graphs without bias.
 
 ## Bottom-up approach
 
@@ -324,10 +325,122 @@ Below, I display a $K_{100}$ and the random tree generated from it.
   <img src="../Images/TreeFromK100.png" width="45%">
 </p>
 
-The question now becomes: is the sampling uniform? In other words, given any 
-$n, m$, do all graphs of $n$ vertices and $m$ edges have the same probability 
-of being generated? And whatever the answer to this question may be, can we 
-produce a formal proof of it? *To be completed*.
+The question now becomes: is the sampling uniform? In
+other words, given any $n, m$, do all graphs of $n$
+vertices and $m$ edges have the same probability of
+being generated? And whatever the answer to this
+question may be, can we produce a formal proof of it? 
+
+This question is difficult but we may still attempt to answer it. Two
+complications arise: (1) It is not easy to determine the number of possible
+elements in the sample space; i.e. the number of graphs which can be generated.
+(2) Secondly, the set $\mathcal{E}$ of edges which can be removed is not constant
+in the algorithm.
+
+It should be evidente that any connected $\mathcal{G}_n$ can be generated. It is 
+straightforward to note that the number of graphs which can be spanned if $\mathcal{E}$ 
+were constant is
+
+$$
+\begin{align*}
+    \binom{\frac{n(n-1)}{2}}{\frac{n(n-1)}{2} - m} = \binom{\frac{n(n-1)}{2}}{m} =: C_{n, m}
+\end{align*}
+$$
+
+This is the number of all graphs with $n$ vertices, $m$ edges, including
+disconnected ones. This inspires the definition of a generating function for
+the class $\mathcal{A}$ of graphs of $n$ vertices, $m$ edges. Namely,
+
+
+$$
+\begin{align*}
+    A(x) &= \sum_{n=0}^{\infty}\left(\sum_{m = 0}^{\infty} \binom{\frac{n(n-1)}{2}}{m}  y^m\right) \frac{x^n}{n!}\\
+                                                               &=\sum_{n=0}^{\infty}(1 + y)^{\frac{n(n-1)}{2}} \frac{x^n}{n!} \\ 
+                                                               &= 1 + \sum_{n=1}^{\infty} (1+y)^{n(n-1)/2} \frac{x^n}{n!}
+\end{align*}
+$$
+
+Now, every graph in $\mathcal{A}$ is a set of connected graphs. In other words,
+if we define $\mathcal{C}$ the class of connected graphs, the relationship
+    between these two classes is the set-of relation. This means $A(x) = \exp
+    C(x)$, where $C(x)$ is the exponential generating function of
+    $\mathcal{C}$. It then follows
+
+
+$$
+\begin{align*}
+    C(x) &= \ln \left[1 + \sum_{n=1}^{\infty} (1+y)^{n(n-1)/2} \frac{x^n}{n!}\right]
+\end{align*}
+$$
+
+Here, we recall that 
+
+$$
+\begin{align*}
+    \log (1 + u) &= \sum_{k=1}^{\infty} (-1)^{k+1} \frac{u^k}{k}
+\end{align*}
+$$
+
+which entails 
+
+$$
+\begin{align*}
+    C(x) &= \sum_{k=1}^{\infty} \frac{ (-1)^{k+1} }{k} \left[ \sum_{n=1}^{\infty}\left( 1+y \right)^{n (n-1) / 2} \frac{x^n}{n!}  \right]^{k} 
+\end{align*}
+$$
+
+Thus, $C(x)$ enumerates the number connected graphs of $n$ vertices, $m$ edges,
+and we can arrive at the expression for all connected graphs of $N$ vertices
+and $M$ edges:
+
+$$
+\begin{align*}
+    \mathbb{G}(N, M) = N! ~ [ x^N ][ y^M ] \sum_{k=1}^{N} \frac{ (-1)^{k+1} }{k} \left[ \sum_{n=1}^{N}\left( 1+y \right)^{n (n-1) / 2} \frac{x^n}{n!}  \right]^{k} 
+\end{align*}
+$$
+
+where $[z^k]G(z)$ is the $a_k$ coefficient of the generating function $G$. 
+
+For $M = N - 1$ across $N = 2, 3, \ldots$, $\mathbb{G}$ effectively produces the sequence
+
+$$    1, 1, 3, 16, 125, 1296, \ldots $$
+
+which we know is correct because there are $n^{n-2}$ Prufer sequences of length $n$.
+
+The conclusion of this digression is that our algorithm samples one out of
+$\mathbb{G}(n, m)$ possible connected graphs. Each of these corresponds
+uniquely to a set of edges which are to be removed from $K_n$ in order to
+generate it. In other words, $\mathbb{G}(n, m) = k$ entails there are $k$ sets
+of edges of $K_n$ which can be removed without creating a new connected
+component.
+
+The algorithm deletes edges at random, and the order in which the edges are
+chosen is irrelevant: it only matters which set of edges was chosen by the time
+the algorithm halts.
+
+$\therefore$ The probability that any possible graph is generated is
+$1/\mathbb{G}(n, m)$. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

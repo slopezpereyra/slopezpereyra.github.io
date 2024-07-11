@@ -31,39 +31,73 @@ Some observations:
         loses an element per generated bridge.
 \end{itemize}
 
-Sea $\Lambda(n) = \left\{ \left\{ x, y \right\} : x, y \in \left\{ 1,\ldots,n
-\right\}  \right\} $ el conjunto de todos los lados posibles en un grafo
-etiquetado de $n$ vértices. Sabemos que $|\Lambda(n)| = \binom{n}{2}$.
-
-El problema es generar un grafo arbitrario de $n$ vértices, $m$ lados con un
-algoritmo que borra lados de un $K_n$. El algoritmo es fácil de dar: generar un
-$K_n$, seleccionar aleatoriamente un vértice que no sea un puente y borrarlo;
-repetir hasta que el grafo resultante tenga $m$ lados.
-
-Mi preocupación es si la probabilidad de generar cada posible grafo es la
-misma; es decir, si existe o no un sesgo por algún tipo de grafo.
-
-Hay dos problemas. Incluso si asumimos que el conjunto de lados que puede
-borrarse permanece constante en cada iteración (no lo hace), es difícil
-determinar cuántos grafos conexos pueden generarse. Sabemos que $|\Lambda(n)| =
-\binom{n}{2}$, y por lo tanto generar un grafo cualquier de $m$ lados a a
-partir del $K_n$ involucra seleccionar $\frac{ n(n-1) }{2} - m$ lados del
-conjunto de lados posibles. Es decir, hay
+We know $|\Lambda(n)| = \binom{n}{2}$. There are 
 
 \begin{align*}
     \binom{\frac{n(n-1)}{2}}{\frac{n(n-1)}{2} - m} = \binom{\frac{n(n-1)}{2}}{m} =: C_{n, m}
 \end{align*}
 
-tales grafos. El problema es que algunos son conexos y otros no. Y no logro
-identificar una manera de contar cuántos grafos disconexos estamos contando,
-excepto cuando la cantidad de lados deseados es $n-1$ (es decir, excepto cuando
-queremos generar árboles).
+graphs in $\mathcal{G}_{n, m}$, but some of them are disconnected. The question
+is: how many of them are disconnected. 
 
-Fuera de eso, el conjunto de lados que podemos seleccionar no permanece
-constante. Cada vez que removemos un lado, es posible que algún otro se
-convierta en un puente y por lo tanto no pueda seleccionarse en el futuro. Pero
-tampoco parece haber una manera de determinar cuándo sucederá esto ni cuántas
-veces.
+Let $\mathcal{A}$ be the class of all graphs. We wish to produce a generating
+function for $\mathcal{A}$; this is, a series s.t. its $k$th coefficient is the
+number of graphs with $n$ vertices, $m$ edges. We know this quantity
+due to the derivation above, and all that is left is to expand it into a series
+for each $n, m$.
+
+The mixed exponential generating function for $\mathcal{A}$ is then
+
+\begin{align*}
+    A(x) &= \sum_{n=0}^{\infty}\left(\sum_{m = 0}^{\infty} \binom{\frac{n(n-1)}{2}}{m}  y^m\right) \frac{x^n}{n!}\\
+                                                               &=\sum_{n=0}^{\infty}(1 + y)^{\frac{n(n-1)}{2}} \frac{x^n}{n!} \\ 
+                                                               &= 1 + \sum_{n=1}^{\infty} (1+y)^{n(n-1)/2} \frac{x^n}{n!}
+\end{align*}
+
+Now, every graph in $\mathcal{A}$ is a set of connected graphs. In other words,
+if we define $\mathcal{C}$ the class of connected graphs, the relationship
+between these two clases is the set-of relation. This means 
+
+\begin{equation*}
+    A(x) = \exp C(x)
+\end{equation*}
+
+But we know $A(x)$, so we can find $C(x)$ by taking $\ln A(x)$:
+
+\begin{align*}
+    C(x) &= \ln \left[1 + \sum_{n=1}^{\infty} (1+y)^{n(n-1)/2} \frac{x^n}{n!}\right]
+\end{align*}
+
+Here, we recall that 
+
+\begin{align*}
+    \log (1 + u) &= \sum_{k=1}^{\infty} (-1)^{k+1} \frac{u^k}{k}
+\end{align*}
+
+which entails 
+
+\begin{align*}
+    C(x) &= \sum_{k=1}^{\infty} \frac{ (-1)^{k+1} }{k} \left[ \sum_{n=1}^{\infty}\left( 1+y \right)^{n (n-1) / 2} \frac{x^n}{n!}  \right]^{k} 
+\end{align*}
+
+Thus, $C(x)$ produces an enumeration of all connected graphs of $n$ vertices, and we can arrive at the expression for all connected graphs of $N$ vertices and $M$ edges:
+
+\begin{align*}
+    N! y^M x^N \sum_{k=1}^{N} \frac{ (-1)^{k+1} }{k} \left[ \sum_{n=1}^{N}\left( 1+y \right)^{n (n-1) / 2} \frac{x^n}{n!}  \right]^{k} 
+\end{align*}
+
+For example, for $M = N - 1$ across $N = 2, 3, \ldots$, this effectively produces the sequence 
+
+\begin{align*}
+    1, 1, 3, 16, 125, 1296, \ldots
+\end{align*}
+
+which matches the number of trees indicated by the Prufer sequence.
+
+
+
+
+
 
 
 
