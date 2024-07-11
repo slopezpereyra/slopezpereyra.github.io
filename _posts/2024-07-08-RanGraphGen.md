@@ -367,17 +367,17 @@ It follows that, in the edge-removing iterations, the sampling spaces $E_1,
 \ldots, E_r$ for edges to remove are
 
 \begin{align*}
-    E_1 &= \left\{ e \in W : W \in \mathcal{E}_{n,m}  \right\}  \\ 
-    E_2 &= \left\{ e \in W : W \in \mathcal{E}_{n,m} \land \\{ e_1 \right\\}  \subseteq  W  \right\} \\ 
-    E_3 &= \left\{ e \in W : W \in \mathcal{E}_{n,m} \land \\{ e_1, e_2 \\}  \subseteq  W  \right\} \\ 
-    \vdots 
+    E_1 &= \\\\{ e \\in W : W \\in \\mathcal{E}_{n,m}  \\\\}  \\\\ 
+    E_2 &= \\\\{ e \\in W : W \\in \\mathcal{E}_{n,m} \\land \\\\{ e_1 \\\\\\}  \\subseteq  W  \\\\} \\\\ 
+    E_3 &= \\\\{ e \\in W : W \\in \\mathcal{E}_{n,m} \\land \\\\{ e_1, e_2 \\\\}  \\subseteq  W  \\\\} \\\\ 
+    \\vdots 
 \end{align*}
 
-Thus, the general form is $E_i = \left\{ e \in W : W \in \mathcal{E}\_{n,m} \land \\{ e_1, \ldots, e\_{i-1}\\} \subseteq W \right\} $.
+Thus, the general form is $E_i = \\{ e \in W : W \in \mathcal{E}\_{n,m} \land \\{ e_1, \ldots, e\_{i-1}\\} \subseteq W \\} $.
 
 It follows that $S = \\{ e_1, \ldots, e_k \\} \subseteq W$ for some $W
-\in \mathcal{E}_{n,m}$. But $|S| = |W| = k$. Then $S = W$ and $S \in
-\mathcal{E}_{n,m}$. And since $S$ is the set of removed edges, the algorithm
+\in \mathcal{E}\_{n,m}$. But $|S| = |W| = k$. Then $S = W$ and $S \in
+\mathcal{E}\_{n,m}$. And since $S$ is the set of removed edges, the algorithm
 computes $f(S)$.
 
 *(2)* Since there is a bijection between $\mathcal{C}\_{n,m}$ and
@@ -386,8 +386,7 @@ is a set $S \in \mathcal{E}\_{n,m}$ that is more probably constructed than other
 This could only be true for two cases: *(1)* An edge or set of edges in
 $S$ is more likely to be chosen, or *(2)* $S$ contains more elements
 than other members of $\mathcal{E}\_{n,m}$. But \textit{(1)} is impossible if
-the selection is random, and \textit{(2)} contradicts that $|S| = \binom{n}{2}
-- m$ for every $S \in \mathcal{E}\_{n,m}$.
+the selection is random, and \textit{(2)} contradicts that $|S| = \binom{n}{2} - m$ for every $S \in \mathcal{E}\_{n,m}$.
 
 $\therefore$ The algorithm is correct and is unbiased.
 
@@ -413,11 +412,11 @@ $$
 \end{align*}
 $$
 
-An important observation is that any $G \in \mathcal{G}_{n,m}$ is a set of
-elements $G_1, \ldots, G_r \in \mathcal{C}_{n, m}$. Informally, any graph is a
-set of connected graphs. Since the relationship of the class $\mathcal{A}_{n,
-m}$ and the class $\mathcal{C}_{n, m}$ is the set-of relation, the generating
-function $C(z, u)$ of $\mathcal{C}_{n,m}$ is satisfies
+An important observation is that any $G \in \mathcal{G}\_{n,m}$ is a set of
+elements $G_1, \ldots, G_r \in \mathcal{C}\_{n, m}$. Informally, any graph is a
+set of connected graphs. Since the relationship of the class $\mathcal{G}\_{n,
+m}$ and the class $\mathcal{C}\_{n, m}$ is the set-of relation, the generating
+function $C(z, u)$ of $\mathcal{C}\_{n,m}$ is satisfies
 
 $$A(x) = e^{C(z, u)}    $$
 
@@ -425,7 +424,7 @@ Then
 
 $$
 \begin{align*}
-    C(z, u) &= \ln \left[1 + \sum_{k=1}^{\infty} (1+u)^{k(k-1)/2} \frac{z^k}{k!}\right] \\
+    C(z, u) &= \ln \left[1 + \sum_{k=1}^{\infty} (1+u)^{k(k-1)/2} \frac{z^k}{k!}\right] \\\\
     &= \sum_{q=1}^{\infty} \frac{ (-1)^{q+1} }{q} \left[ \sum_{k=1}^{\infty}\left( 1+u \right)^{k (k-1) / 2} \frac{z^k}{k!}  \right]^{q} 
 \end{align*}
 $$
