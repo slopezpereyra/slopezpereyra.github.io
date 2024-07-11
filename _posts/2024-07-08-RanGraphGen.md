@@ -366,13 +366,10 @@ iteration.
 It follows that, in the edge-removing iterations, the sampling spaces $E_1,
 \ldots, E_r$ for edges to remove are
 
-$$
-\begin{align*}
-    E_1 &= \{ e \in W : W \in \mathcal{E}_{n,m}  \}  \\\\
-    E_2 &= \{ e \in W : W \in \mathcal{E}_{n,m} \land \{ e_1 \}  \subseteq  W  \} \\\\
-    E_3 &= \{ e \in W : W \in \mathcal{E}_{n,m} \land \{ e_1, e_2 \}  \subseteq  W  \} \\\\
-\end{align*}
-$$
+$$ \begin{align*} E_1 &= \{ e \in W : W \in \mathcal{E}_{n,m}  \}  \\\\ E_2 &=
+\{ e \in W : W \in \mathcal{E}_{n,m} \land \{ e_1 \}  \subseteq  W  \} \\\\ E_3
+&= \{ e \in W : W \in \mathcal{E}_{n,m} \land \{ e_1, e_2 \}  \subseteq  W  \}
+\end{align*} $$
 
 and so on. Thus, the general form is $E_i = \\{ e \in W : W \in \mathcal{E}\_{n,m} \land \\{ e_1, \ldots, e\_{i-1}\\} \subseteq W \\} $.
 
