@@ -382,8 +382,8 @@ $\mathcal{E}\_{n,m}$, a graph is more probable than others if and only if there
 is a set $S \in \mathcal{E}\_{n,m}$ that is more probably constructed than others.
 This could only be true for two cases: *(1)* An edge or set of edges in
 $S$ is more likely to be chosen, or *(2)* $S$ contains more elements
-than other members of $\mathcal{E}\_{n,m}$. But \textit{(1)} is impossible if
-the selection is random, and \textit{(2)} contradicts that $|S| = \binom{n}{2} - m$ for every $S \in \mathcal{E}\_{n,m}$.
+than other members of $\mathcal{E}\_{n,m}$. But *(1)* is impossible if
+the selection is random, and *(2)* contradicts that $|S| = \binom{n}{2} - m$ for every $S \in \mathcal{E}\_{n,m}$.
 
 $\therefore$ The algorithm is correct and is unbiased.
 
