@@ -354,8 +354,8 @@ the class $\mathcal{A}$ of graphs of $n$ vertices, $m$ edges. Namely,
 
 $$
 \begin{align*}
-    A(x) &= \sum_{n=0}^{\infty}\left(\sum_{m = 0}^{\infty} \binom{\frac{n(n-1)}{2}}{m}  y^m\right) \frac{x^n}{n!}\\
-                                                               &=\sum_{n=0}^{\infty}(1 + y)^{\frac{n(n-1)}{2}} \frac{x^n}{n!} \\ 
+    A(x) &= \sum_{n=0}^{\infty}\left(\sum_{m = 0}^{\infty} \binom{\frac{n(n-1)}{2}}{m}  y^m\right) \frac{x^n}{n!}\\\\
+                                                               &=\sum_{n=0}^{\infty}(1 + y)^{\frac{n(n-1)}{2}} \frac{x^n}{n!} \\\\
                                                                &= 1 + \sum_{n=1}^{\infty} (1+y)^{n(n-1)/2} \frac{x^n}{n!}
 \end{align*}
 $$
