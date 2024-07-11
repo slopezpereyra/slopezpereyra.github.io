@@ -323,7 +323,7 @@ Below, I display a $K_{100}$ and the random tree generated from it.
 
 The two questions are: (1) is the algorithm correct and (2) is the sampling 
 uniform? In other words, will it always produce connected graphs and do all 
-connected graphs in $\mathcal{G}_{n,m}$ have the same probability of being 
+connected graphs in $\mathcal{G}\_{n,m}$ have the same probability of being 
 generated?
 
 Two observations are in order. Firstly, is not easy to determine the number of
@@ -334,15 +334,15 @@ it is interesting to at least determine its size. Secondly, the set
 $\mathcal{E}$ of edges which can be removed is not constant in the algorithm,
 which induces certain amount of complexity. 
 
-Let us define the class $\mathcal{C}_{n,m}$ of *connected* graphs of $n$
-vertices, $m$ edges, and let $\mathbb{C}(n,m) = |\mathcal{C}_{n,m}|$. We will
+Let us define the class $\mathcal{C}\_{n,m}$ of *connected* graphs of $n$
+vertices, $m$ edges, and let $\mathbb{C}(n,m) = |\mathcal{C}\_{n,m}|$. We will
 provide a generating function for this sequence, but first let us study our
 algorithm.
 
-Any $G \in \mathcal{C}_{n, m}$ corresponds univocally to a set of edges
+Any $G \in \mathcal{C}\_{n, m}$ corresponds univocally to a set of edges
 s.t. removing those edges from a $K_n$ produces $G$. This readily entails that,
-if we let $\mathcal{E}_{n, m} \subseteq \Lambda(n)$ be the class of edges which,
-if removed from a $K_n$, produce a graph in $\mathcal{C}_{n, m}$,
+if we let $\mathcal{E}\_{n, m} \subseteq \Lambda(n)$ be the class of edges which,
+if removed from a $K_n$, produce a graph in $\mathcal{C}\_{n, m}$,
 
 $$
 |\mathcal{E}_{n, m}| = \mathbb{G}(n, m)
@@ -351,10 +351,10 @@ $$
 Furthermore, for any $W \in \mathcal{E}_{n, m}$ it is the case that $|W| =
 \binom{n}{2} - m$. 
 
-Let $f_{n,m} : \mathcal{E}_{n,m} \mapsto \mathcal{C}_{n, m}$ denote the
+Let $f\_{n,m} : \mathcal{E}\_{n,m} \mapsto \mathcal{C}_{n, m}$ denote the
 bijection $f(W) = \Big(V(K_n), E(K_n) - W\Big)$. We shall prove that
-*(1)* our algorithm effectively constructs a $W \in \mathcal{E}_{n,m}$
-and computes $f(W)$ and *(2)* that any $W \in \mathcal{E}_{n,m}$ has an
+*(1)* our algorithm effectively constructs a $W \in \mathcal{E}\_{n,m}$
+and computes $f(W)$ and *(2)* that any $W \in \mathcal{E}\_{n,m}$ has an
 equal probability of being constructed.
 
 *(1)* The algorithm iteratively removes edges ensuring that the
@@ -373,21 +373,21 @@ It follows that, in the edge-removing iterations, the sampling spaces $E_1,
     \vdots 
 \end{align*}
 
-Thus, the general form is $E_i = \left\{ e \in W : W \in \mathcal{E}_{n,m} \land \\{ e_1, \ldots, e_{i-1}\\} \subseteq W \right\} $.
+Thus, the general form is $E_i = \left\{ e \in W : W \in \mathcal{E}\_{n,m} \land \\{ e_1, \ldots, e\_{i-1}\\} \subseteq W \right\} $.
 
 It follows that $S = \\{ e_1, \ldots, e_k \\} \subseteq W$ for some $W
 \in \mathcal{E}_{n,m}$. But $|S| = |W| = k$. Then $S = W$ and $S \in
 \mathcal{E}_{n,m}$. And since $S$ is the set of removed edges, the algorithm
 computes $f(S)$.
 
-*(2)* Since there is a bijection between $\mathcal{C}_{n,m}$ and
-$\mathcal{E}_{n,m}$, a graph is more probable than others if and only if there
-is a set $S \in \mathcal{E}_{n,m}$ that is more probably constructed than others.
+*(2)* Since there is a bijection between $\mathcal{C}\_{n,m}$ and
+$\mathcal{E}\_{n,m}$, a graph is more probable than others if and only if there
+is a set $S \in \mathcal{E}\_{n,m}$ that is more probably constructed than others.
 This could only be true for two cases: *(1)* An edge or set of edges in
 $S$ is more likely to be chosen, or *(2)* $S$ contains more elements
-than other members of $\mathcal{E}_{n,m}$. But \textit{(1)} is impossible if
+than other members of $\mathcal{E}\_{n,m}$. But \textit{(1)} is impossible if
 the selection is random, and \textit{(2)} contradicts that $|S| = \binom{n}{2}
-- m$ for every $S \in \mathcal{E}_{n,m}$.
+- m$ for every $S \in \mathcal{E}\_{n,m}$.
 
 $\therefore$ The algorithm is correct and is unbiased.
 
