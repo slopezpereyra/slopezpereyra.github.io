@@ -367,13 +367,12 @@ It follows that, in the edge-removing iterations, the sampling spaces $E_1,
 \ldots, E_r$ for edges to remove are
 
 \begin{align*}
-    E_1 &= \\\\{ e \\in W : W \\in \\mathcal{E}_{n,m}  \\\\}  \\\\ 
-    E_2 &= \\\\{ e \\in W : W \\in \\mathcal{E}_{n,m} \\land \\\\{ e_1 \\\\\\}  \\subseteq  W  \\\\} \\\\ 
-    E_3 &= \\\\{ e \\in W : W \\in \\mathcal{E}_{n,m} \\land \\\\{ e_1, e_2 \\\\}  \\subseteq  W  \\\\} \\\\ 
-    \\vdots 
+    E_1 &= \\{ e \\in W : W \\in \\mathcal{E}_{n,m}  \\}  \\\\
+    E_2 &= \\{ e \\in W : W \\in \\mathcal{E}_{n,m} \\land \\{ e_1 \\\\}  \\subseteq  W  \\} \\\\
+    E_3 &= \\{ e \\in W : W \\in \\mathcal{E}_{n,m} \\land \\{ e_1, e_2 \\}  \\subseteq  W  \\} \\\\
 \end{align*}
 
-Thus, the general form is $E_i = \\{ e \in W : W \in \mathcal{E}\_{n,m} \land \\{ e_1, \ldots, e\_{i-1}\\} \subseteq W \\} $.
+and so on. Thus, the general form is $E_i = \\{ e \in W : W \in \mathcal{E}\_{n,m} \land \\{ e_1, \ldots, e\_{i-1}\\} \subseteq W \\} $.
 
 It follows that $S = \\{ e_1, \ldots, e_k \\} \subseteq W$ for some $W
 \in \mathcal{E}\_{n,m}$. But $|S| = |W| = k$. Then $S = W$ and $S \in
@@ -430,7 +429,7 @@ $$
 $$
 
 Thus, $C(z, u)$ is the generating function of the composite sequence
-$\{\{|\mathcal{C}_{n, m}|\}_{n\geq 1}\}_{m\geq0}$. The resulting 
+$\\{\\{|\mathcal{C}\_{n, m}|\\}\_{n\geq 1}\\}\_{m\geq 0}$. The resulting 
 expression for the number of connected graphs of $n$ vertices, $m$ edges is:
 
 $$
