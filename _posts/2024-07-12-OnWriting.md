@@ -63,7 +63,7 @@ academic writing. Bewilderment is the precursor of science—in any
 matter the essential question is *what are the facts*—but thought is
 not and cannot be merely *fact enumeration*. In the pursuit of knowledge
 there is a sense of mystery which can only be equated to the fathomless
-perplexities of human passions. If one writes as one thinks, all
+perplexities of human passion. If one writes as one thinks, all
 these—fact and mystery, precision and passion—intertwine.
 
 If I confuse myself or write equivocally on some matter, I pay little
