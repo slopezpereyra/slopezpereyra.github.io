@@ -224,12 +224,6 @@ were plotted using the `networkx` Python package.
 
 ## Top-down approach
 
-The approach discussed above is a bottom-up approach: a spanning tree is 
-constructed and from it a graph is spanned. Though the construction is done 
-in linear time, the complexity associated to $O(m - n + 1)$, the edge-adding 
-iterations, becomes very large when a dense graph is desired. The upper bound 
-is reached in the generation of a $K_n$.
-
 A top-down approach analogous to the previous algorithms would in principle
 consist in the generation of a $K_n$ and the random removal of edges in the
 graph. This involves some extra complexity: while adding edges to a connected
@@ -282,11 +276,11 @@ $$
 \end{align*}
 $$
 
-Generating a $K_n$ is $O(n^2)$. The $\textbf{while}$ selects a random vertex from $V_c$ 
-and attempts to erase one of its edges. There is only one case one an edge is not removed;
-namely, when the sampled edge is a bridge. This happens at most once per bridge. There are 
-at most $n - 1$ bridges in a graph. $\therefore$ There are $O(n)$ iterations which do not 
-remove an edge.
+Generating a $K_n$ is $O(n^2)$. The $\textbf{while}$ selects a random vertex
+from $V_c$ and attempts to erase one of its edges. There is only one case one
+an edge is not removed; namely, when the sampled edge is a bridge. This happens
+at most once per bridge. There are at most $n - 1$ bridges in a graph.
+$\therefore$ There are $O(n)$ iterations which do not remove an edge.
 
 The remaining iterations will remove an edge and there will be exactly
 $\frac{n(n-1)}{2} - m$ of them.
@@ -299,20 +293,12 @@ grows linearly with the number of edges. $\therefore$ BFS is $O(n^2)$.
 
 $\therefore$ The algorithm is $O(n^2) + O(n^2 - m)O(n^2) = O(n^4 - n^2m)$.
 
-It should be noted that in practice the algorithm will perform much better than
-this. For starters, BFS is not done over the whole graph, but should stop
-whenever $w$ is find starting from $v$. This still is asymptotically $O(|E|)$,
-but in practice much less. Secondly, BFS is ran on increasingly sparser graphs.
-Thus, though its asymptotic complexity is given by the number of edges in the
-initial $K_n$, it will become less complex per each iteration which removes an
-edge. 
-
-To compare our algorithms, I used the bottom-up approach to build from a
-spanning tree of 100 vertices a $K_{100}$, and the top-down approach to build
-from a $K_{100}$ a tree. Creating a $K_{100}$ from a tree took $0.62$ seconds.
-Creating a tree of $99$ edges from a $K_{100}$ took $0.64$ seconds. All in all,
-the practical efficiency of the top-down algorithm approximated that of the
-bottom-up.
+In practice the algorithm will perform better than this. BFS is stops whenever
+$w$ is find starting from $v$. This still is asymptotically $O(|E|)$, but in
+practice the bound will seldom be reached. Furthermore, BFS is ran on
+increasingly sparser graphs. Its asymptotic complexity is given by the number
+of edges in the initial $K_n$, but it decreases with each edge-removing
+iteration.
 
 Below, I display a $K_{100}$ and the random tree generated from it.
 
@@ -321,37 +307,21 @@ Below, I display a $K_{100}$ and the random tree generated from it.
   <img src="../Images/TreeFromK100.png" width="45%">
 </p>
 
-The two questions are: (1) is the algorithm correct and (2) is the sampling 
-uniform? In other words, will it always produce connected graphs and do all 
-connected graphs in $\mathcal{G}\_{n,m}$ have the same probability of being 
-generated?
-
-Two observations are in order. Firstly, is not easy to determine the number of
-possible elements in the sample space; i.e. the number of connected graphs of
-$n$ vertices and $m$ edges. This is not essential to proving the correctness of
-the algorithm, but since the sampling space of the algorithm is clearly finite
-it is interesting to at least determine its size. Secondly, the set
-$\mathcal{E}$ of edges which can be removed is not constant in the algorithm,
-which induces certain amount of complexity. 
-
-Let us define the class $\mathcal{C}\_{n,m}$ of *connected* graphs of $n$
-vertices, $m$ edges, and let $\mathbb{C}(n,m) = |\mathcal{C}\_{n,m}|$. We will
-provide a generating function for this sequence, but first let us study our
-algorithm.
-
-Any $G \in \mathcal{C}\_{n, m}$ corresponds univocally to a set of edges
-s.t. removing those edges from a $K_n$ produces $G$. This readily entails that,
-if we let $\mathcal{E}\_{n, m} \subseteq \Lambda(n)$ be the class of edges which,
-if removed from a $K_n$, produce a graph in $\mathcal{C}\_{n, m}$,
+To prove that our algorithm is correct and unbiased requires more
+formalization. Let $\mathcal{C}\_{n,m} \subset \mathcal{G}\_{n,m}$ be the set
+of connected graphs of $n$ vertices, $m$ edges. Let $\mathbb{C}(n,m) =
+|\mathcal{C}\_{n,m}|$. Let $\mathcal{E}\_{n, m}$ be the
+class of edges which, if removed from a $K_n$, produce a graph in
+$\mathcal{C}\_{n, m}$. Since any $G \in \mathcal{C}\_{n, m}$ corresponds
+univocally to a set of edges $W \in \mathcal{E}\_{n,m}$,
 
 $$
 |\mathcal{E}_{n, m}| = \mathbb{G}(n, m)
 $$
 
-(Furthermore, for any $W \in \mathcal{E}\_{n, m}$ it is the case that $|W| = \binom{n}{2} - m$.) 
-So there is a bijection $f\_{n,m} : \mathcal{E}\_{n,m}
-\mapsto \mathcal{C}_{n, m}$ mapping a set of edges to the connected graph
-generated by removing those edges from $K_n$.
+and there is a bijection $f\_{n,m} : \mathcal{E}\_{n,m} \mapsto \mathcal{C}_{n,
+m}$ mapping a set of edges to the connected graph generated by removing those
+edges from $K_n$.
 
 We shall prove that *(1)* our algorithm effectively constructs a $W \in
 \mathcal{E}\_{n,m}$ and computes $f(W)$ and *(2)* that any $W \in
@@ -385,7 +355,7 @@ $S$ is more likely to be chosen, or *(2)* $S$ contains more elements
 than other members of $\mathcal{E}\_{n,m}$. But *(1)* is impossible if
 the selection is random, and *(2)* contradicts that $|S| = \binom{n}{2} - m$ for every $S \in \mathcal{E}\_{n,m}$.
 
-$\therefore$ The algorithm is correct and is unbiased.
+$\therefore$ The algorithm is correct and unbiased.
 
 --- 
 
