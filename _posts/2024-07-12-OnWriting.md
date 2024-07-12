@@ -12,7 +12,7 @@ statement about the world as a declaration of sentiment.
 On mathematics, I lack any form of special talent, except a powerful
 tendency to be gripped and become obsessed by certain problems; and
 anyone who reads what I have written on it will find that I was merely
-taking notes---and not profound ones. The truest of the things I write
+taking notes—and not profound ones. The truest of the things I write
 is poetry, which is the single mode of expression, among those which I
 practice, that is honest about the fact that it pretends nothing but to
 release the soul from its burdens. In fact, the force which drives me to
@@ -39,8 +39,8 @@ limitations evident in failing to appreciate a man of greater fame than
 me. I often recall the lesser rather than the central aspects of a work,
 and an occasional curiosity can captivate me more than the solid gist of
 a deep argument. Above all, I despise grandiloquent or convoluted works,
-and feel no shame in saying that I saw nothing to enjoy---nor even to
-comprehend--- in the likes of a Hegel or a Heidgger, however deep they
+and feel no shame in saying that I saw nothing to enjoy—nor even to
+comprehend— in the likes of a Hegel or a Heidgger, however deep they
 are claimed to be. I pursue matters with candour and joy, and thus
 clarity and honesty compel me above all things.
 
@@ -55,16 +55,16 @@ On each occasion, our conversations were rich and I could recollect them
 after waking up.
 
 In everything I seek love, and in almost everything I find it. The
-pursuit of knowledge is, to me, romantic---as much as the pursuit of
-artistic expression and human affection---. Though, on intellectual
+pursuit of knowledge is, to me, romantic—as much as the pursuit of
+artistic expression and human affection—. Though, on intellectual
 matters, I strive for clarity and precision, I do not confuse these
 qualities with the sterile and passionless attitude which characterizes
-academic writing. Bewilderment is the precursor of science---in any
-matter the essential question is *what are the facts*---but thought is
+academic writing. Bewilderment is the precursor of science—in any
+matter the essential question is *what are the facts*—but thought is
 not and cannot be merely *fact enumeration*. In the pursuit of knowledge
 there is a sense of mystery which can only be equated to the fathomless
 perplexities of human passions. If one writes as one thinks, all
-these---fact and mystery, precision and passion---intertwine.
+these—fact and mystery, precision and passion—intertwine.
 
 If I confuse myself or write equivocally on some matter, I pay little
 attention to it. I treat my trains of thought as axiomatically dubious,
