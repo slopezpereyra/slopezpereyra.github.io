@@ -11,6 +11,10 @@ algorithms for sampling random connected graphs. The first two are simple and
 of reasonable complexity, but biased. The third algorithm is less efficient,
 but it can be proven that it samples graphs without bias.
 
+<p align="center">
+  <img src="../Images/RandGraphs.png" width="85%">
+</p>
+
 ## Bottom-up approach
 
 The bottom-up approach consists in generating a simple graph and constructing a

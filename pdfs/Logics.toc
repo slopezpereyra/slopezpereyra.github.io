@@ -1,15 +1,15 @@
 \contentsline {section}{\numberline {1}Functions}{2}{}%
 \contentsline {section}{\numberline {2}Equivalence relations}{3}{}%
 \contentsline {subsection}{\numberline {2.1}Partitions and equivalence}{8}{}%
-\contentsline {subsection}{\numberline {2.2}Functions with domain $A / R$}{9}{}%
+\contentsline {subsection}{\numberline {2.2}Functions with domain $A / R$}{10}{}%
 \contentsline {section}{\numberline {3}Partial orders}{11}{}%
 \contentsline {subsection}{\numberline {3.1}Maximum, minimum, maximal, minimal}{11}{}%
 \contentsline {subsection}{\numberline {3.2}Supremum and infimum}{12}{}%
-\contentsline {subsection}{\numberline {3.3}Poset homomorphism}{17}{}%
+\contentsline {subsection}{\numberline {3.3}Poset homomorphism}{16}{}%
 \contentsline {subsection}{\numberline {3.4}Lattices}{18}{}%
 \contentsline {subsection}{\numberline {3.5}Binary operations}{20}{}%
-\contentsline {section}{\numberline {4}Lattices as algebras}{22}{}%
-\contentsline {subsection}{\numberline {4.1}Distributive lattice}{23}{}%
-\contentsline {subsection}{\numberline {4.2}Sub-lattices and sub-universes}{23}{}%
-\contentsline {subsection}{\numberline {4.3}Lattice homomorphisms and isomorphisms}{23}{}%
-\contentsline {subsection}{\numberline {4.4}Lattice congruence}{24}{}%
+\contentsline {section}{\numberline {4}Lattices as algebras}{23}{}%
+\contentsline {subsection}{\numberline {4.1}Distributive lattice}{25}{}%
+\contentsline {subsection}{\numberline {4.2}Sub-lattices and sub-universes}{26}{}%
+\contentsline {subsection}{\numberline {4.3}Lattice homomorphisms and isomorphisms}{27}{}%
+\contentsline {subsection}{\numberline {4.4}Lattice congruence}{28}{}%

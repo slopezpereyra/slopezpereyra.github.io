@@ -17,6 +17,7 @@
 \newtheorem{example}{Example} \newtheorem{definition}{Definition}
 \newtheorem{lemma}{Lemma}
 \newtheorem{theorem}{Theorem}
+\DeclareMathOperator{\lcm}{lcm}
 
 
 \begin{document}
@@ -51,7 +52,7 @@
 
 
 A function $f : A \mapsto B$ is a set of tuples $\left\{ (a, b) : a \in A \text{
-and} b \in B \right\} $. The domain $\mathcal{D}_f$ and image $I_f$ of a
+and } b \in B \right\} $. The domain $\mathcal{D}_f$ and image $I_f$ of a
 function have the usual definitions. The kernel of a function is 
 
 \begin{align*}
@@ -241,10 +242,41 @@ set of all equivalence classes. For example, if $R = \left\{ (x, y) \in
     \textbf{canonic projection} with respect to $R$.
 \end{definition}
 
+\begin{center}
+\includegraphics[scale=0.05]{Sep}
+\end{center}
 \begin{theorem}
     If $R ~ \ddot{\propto} ~A$, then $ker(\pi_R) = R$. This entails that $\pi_R$
     is injective iff $R = \left\{ (x, y) \in A^2 : x = y \right\} $.
 \end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Proof.} Recall that $ker(f) = \left\{ (a, b) \in \mathcal{D}_f^2 : f(a)
+= f(b) \right\} $. The canonic projection $\pi_R$ maps elements of a set to
+their equivalence class over $R$. It follows that $\pi_R(a) = \pi_R(b)$ iff
+$[a] = [b]$. So 
+
+\begin{align*}
+    ker(\pi_R) &= \left\{ (a, b) : [a] = [b] \right\} \\ 
+               &=\left\{ (a, b) : aRb \right\} \\ 
+               &= R ~ \blacksquare
+\end{align*}
+
+Assume $\pi_R$ is injective. Then no two distinct elements can have the same
+equivalence class. Which entails no two distinct elements are qeuivalent.
+$\therefore ~ R = \left\{ (a, b) \in A^2 : a = b \right\} $. $\blacksquare$ The
+other direction of the implication is trivial.
+
+
+\end{quote}
+\normalsize
+
+\begin{center}
+\includegraphics[scale=0.05]{Sep}
+\end{center}
 
 
 \small
@@ -260,8 +292,8 @@ onward (and from $(5, 0)$ downward) we deal with the same equivalence class.
 
 
 More formally,  $[5] = \left\{ 5t : t \in \mathbb{Z} \right\}
-$, $[6] = \left\{ 1, 6, 11, \ldots \right\} = \left\{ 5(t + 1) : t \in
-\mathbb{Z} \right\}  $. In general, if $A(t) = \left\{ 5t : t \in \mathbb{Z}
+$, $[6] = \left\{ 1, 6, 11, \ldots \right\} = \left\{ 5t + 1 : t \in
+\mathbb{Z} \right\}  $. In general, if $A(k) = \left\{ 5t + k : t \in \mathbb{Z}
 \right\} $, then
 
 \begin{align*}
@@ -272,12 +304,12 @@ Observe that this can be generalized. If $R = \left\{ (x, y) : z \mid x - y
 \right\} $ for some fixed $z \in \mathbb{N}$, then 
 
 \begin{align*}
-    \left\{  \left\{ zt : t \in \mathbb{Z} \right\}, \left\{ z(t+1) : t \in
-    \mathbb{Z} \right\}, \ldots, \left\{ z(t + z-1) : t \in \mathbb{Z} \right\}
+    \left\{  \left\{ zt : t \in \mathbb{Z} \right\}, \left\{ zt+1 : t \in
+    \mathbb{Z} \right\}, \ldots, \left\{ zt + ( z-1 ) : t \in \mathbb{Z} \right\}
 \right\}  = \mathbb{Z}/R
 \end{align*}
 
-always with $z$ elements.
+and $|\mathbb{Z}/R| = z$.
 
 \begin{problem}
     Let $R = \left\{ (x, y) \in \mathbb{N}^2 : x, y \leq 6 \right\}  \cup
@@ -341,10 +373,10 @@ $. Then $ | \left\{ i / R : i \in A \right\}  | = 5$.
 \textit{(4)} $A / \left\{ (x, y) \in A^2 : x = y \right\} = A$ .
 
 \begin{quote}
-    False, but it is made look like it is true. By definition of $R = \left\{ (x, y) \in A^2 : x = y \right\} $ we have $x,
-    y \in A \land x\neq y \Rightarrow \neg(xRy)$. So $a \in A$ belongs to a
-    single equivalence class $a / R$. Then $A / R = \left\{ \left\{ a \right\} :
-    a \in A\right\}  \neq A$.
+    False, but easy to mistake as true. By definition of $R = \left\{ (x, y)
+    \in A^2 : x = y \right\} $ we have $x, y \in A \land x\neq y \Rightarrow
+    \neg(xRy)$. So $a \in A$ belongs to a singleton class $a / R$. Then $A / R
+    = \left\{ \left\{ a \right\} : a \in A\right\}  \neq A$.
 \end{quote}
 
 \textit{(5)} Let $R ~ \ddot{\propto} ~A$ and $C \subseteq A, C \neq \emptyset$.
@@ -419,7 +451,7 @@ $b$ is in the same partition than $a$ (symmetry).
 
 Furthermore, if $R ~ \ddot{\propto} ~A$ is an arbitrary equivalence relation, then $A
 / R$ is a partition of $A$. To each element $a \in A$ corresponds some $a / R$
-that \textit{at least} contains $a$; from this follows trivially that
+that contains \textit{at least} $a$; from this follows trivially that
 $\bigcup_{a \in A} a / R = A$. Furthermore, if $a / R \neq b / R$ for some $a, b
 \in  A$, then $a / R \cap b / R = \emptyset$---otherwise, some element $c \in A$
 equivalent to $a$ and $b$ should exist, but this would contradict the hypothesis
@@ -776,11 +808,10 @@ in } (P, \leq)  \right\} = P \end{align*}
 However, if $P = \emptyset$ (and therefore $\leq ~= \emptyset = \emptyset^2$), there is no
 upper bound of $\emptyset$ in $(\emptyset, \emptyset)$.
 
-\textit{(3)}  The statement is false. The hypothesis gives $P \neq \emptyset$,
-and we know any $a \in P$ is an upper-bound of $\emptyset$. If we assume
-$\emptyset$ has a supremum over $(P, \leq) $, then it is the least upper-bound.
-In other words, it is some $m \in P$ s.t. $m \leq a$ for any $a \in P$. By
-definition, $m$ is a minimum.
+\textit{(3)}  Due to \textit{(2)}, if the supremum exists then $P \neq \emptyset$.
+Then any $a \in P$ is an upper-bound of $\emptyset$,
+and the supremum is some $m \in P$ s.t. $m \leq a$ for any $a \in P$. 
+$\therefore $ The supremum is the minimum of $(P, \leq)$.
 
 \begin{problem}
     Give a finite poset with three elements $x_1, x_2, x_3$ s.t. \textit{(1)}
@@ -793,7 +824,7 @@ definition, $m$ is a minimum.
 A poset that satisfies this can be any that has the following Hasse diagram:
 
 \begin{center}
-\includegraphics[scale=0.4]{graph}
+\includegraphics[scale=0.3]{graph}
 \end{center}
 
 Here, $0, 1, 2$ are $x_1, x_2, x_3$. The supremum on any pair of them does not
@@ -859,7 +890,7 @@ $b$ of $S$ s.t. $b < a$.
     imagine the maximum (i.e. $12$) does not exist. Then consider that $10$ is
     an upper bound of $\left\{ 0, 1 \right\} $ but not a supremum, and yet there
     is no upper bound $b$ of $\left\{ 0, 1 \right\} $ s.t. $10 < b$.
-
+\end{quote}
 
     \begin{problem}
         Let $P = \left\{ 0 \right\} \cup \left\{ x \in \mathbb{R} : 1 < x \leq 2
@@ -871,11 +902,20 @@ $b$ of $S$ s.t. $b < a$.
         have an infimum over $(P, \leq) $?
     \end{problem}
 
+
+\small
+\begin{quote}
+
+
     The order is the usual order, but over $P = \left\{ 0 \right\}  \cup (1, 2]$.
     The set $S$ (and in fact $P$ as well) has only one lower bound over $(P,
     \leq) $; namely, $0$. Observe that $1$ is not a lower bound because $1
     \not\in P$, and there is no such thing as the "first rational number". Since
     $0$ is the \textit{only} lower bound it is also the greatest lower bound.
+
+\end{quote}
+\normalsize
+
 
     \begin{problem}
         Say true or false. Let 
@@ -889,13 +929,16 @@ $b$ of $S$ s.t. $b < a$.
         \right\} $, for any $D_1, D_2 \in P$.
     \end{problem}
 
+
+\small
+\begin{quote}
+
      $\mathcal{D}\left( (x_0, y_0), r \right) $ is the set of
      points within a circumference with center $(x_0, y_0)$ and radius $r$. So
      $P$ is the set of all disks, including $\emptyset$. Two disks may be
      related in one and only one of the ways schematized by the following Venn diagrams:
 
-
-\begin{center}
+     \begin{center}
 \includegraphics[scale=0.2]{circles}
 \end{center}
 
@@ -926,12 +969,9 @@ we can find a lower bound $D_z$ that is not a subset of $D_3$. Therefore no
 greater lower bound exists and there is no infimum. Thus, the statement is
 false.
 
-
-
-
-
 \end{quote}
 \normalsize
+
 
 
 
@@ -1053,9 +1093,10 @@ homomorphic from $(P, \leq) $ in $(P, \leq) $, then $|P| = 1$.
 \subsection{Lattices}
 
 A poset $(P, \leq) $ is called a lattice if for any $x, y \in P,
-\text{sup}\left\{ x, y \right\} $ and $\text{inf}\left\{ x, y \right\} $ exist. Informally, this means that any pair
-of elements in $P$ is related to some common successor and some common
-predecessor in $P$. We use $(L, \leq)$ to denote a lattice.
+\text{sup}\left\{ x, y \right\} $ and $\text{inf}\left\{ x, y \right\} $ exist.
+Informally, this means that any pair of elements in $P$ is related to some
+common successor and some common predecessor in $P$. We use $(L, \leq)$ to
+denote a lattice.
 
 
 \small
@@ -1159,7 +1200,7 @@ and $(P, \leq) $ is not a lattice ($\bot$). Then $m$ is a maximum. $\blacksquare
 \subsection{Binary operations}
 
 Given a set $A$, a binary operation over $A$ is a function $f : A^2 \to A$ s.t.
-$\mathcal{D}_f = A$. A lattice has by definition two binary operations: inf and
+$\mathcal{D}_f = A^2$. A lattice has by definition two binary operations: inf and
 sup. We will write $a \lor b$ and $a \land b$ to denote the supremum
 and infimum of $\left\{ a, b \right\} \subseteq P$, respectively.
 
@@ -1314,13 +1355,13 @@ Using the same tricks we can prove $x \land  (y \lor  z) \leq (x \land  y) \lor
 \normalsize
 
 
-
+\pagebreak
 \section{Lattices as algebras}
 
 We have treated lattices as a special kind of poset. However, a lattice can be
-modeled as a special kind of algebra. In general, a lattice is any $3$-uple $(L, \lor,
-\land)$ with $L$ a set and $\lor, \land$ binary relations over $L$ that satisfy
-the following properties: 
+modeled as a special kind of algebra. In general, a lattice is any $3$-uple
+$(L, \lor, \land)$ with $L$ a set and $\lor, \land$ binary relations over $L$
+that satisfy the following properties: 
 
 
 \small
@@ -1347,14 +1388,145 @@ $\lor, \land$ denote the supremum and infimum operators. More formally,
 
 \begin{theorem}[Dedekind]
     If $(L, \lor, \land)$ a lattice, the binary relation $x \leq y \iff x
-    \lor y = y$ is a partial order over $L$ s.t. $\text{sup}\left\{ x, y
+    \lor y = y$ is a partial order over $L$ and it satisfies $\text{sup}\left\{ x, y
     \right\} = x \lor y, \text{inf}\left\{ x, y \right\} = x \land y$, for any
     $x, y \in L$.
 \end{theorem}
 
 
-We call $\leq$ the order associated to $(L, \lor, \land)$ and $(L, \leq)$ the
-poset associated to $(L, \lor, \land)$.
+\small
+\begin{quote}
+
+\textbf{Note.} The theorem above states that any lattice in the algebraic sense
+\textit{induces} a lattice in the poset sense. The \textit{operations} which
+define the algebra induce a partial order where these operations correspond to
+the supremum and minimum.
+
+\end{quote}
+\normalsize
+
+
+We call $\leq$ the partial order induced by $(L, \lor, \land)$ and $(L, \leq)$ the
+poset induced by $(L, \lor, \land)$.
+
+\begin{problem}
+    Compute the cardinality of the set 
+
+    \begin{equation*}
+        S = \left\{ \left( \left\{ 1, 2,3 \right\}, \lor , \land   \right) : \left( \left\{ 1, 2, 3 \right\}, \lor , \land   \right)  \text{ is a lattice} \right\} 
+    \end{equation*}
+\end{problem}
+
+
+\small
+\begin{quote}
+
+    The set consists of all possible lattices (in the algebraic sense) over
+    $\left\{ 1, 2, 3 \right\} $, and thus we are interested in finding how many
+    possible such lattices are there. Dedekind's theorem states that any such
+    lattice induces a lattice partial order $\leq$ s.t. $(P, \leq)$ is a
+    partial order and $a \leq b \iff a \lor b = b$. Thus, the question becomes
+    how many lattice partial orders exist over $\left\{ 1, 2, 3 \right\} $.
+    There are $3! = 6$ total orders that are evidently lattices. 
+    
+    The partial orders are of two kinds: no element is in relation to another,
+    and one element is not in relation to the others. In the first case, the
+    supremum between two elements does not exist and the poset is not a
+    lattice. In the second case, the supremum between the isolated element 
+    and any of the others does not exist.
+
+    $\therefore $ There are $3! = 6$ lattices over a set of $3$ elements,
+    and $|S| = 6$.
+\end{quote}
+\normalsize
+
+\begin{problem}
+    If $(L, \lor , \land )$ is a lattice then $(L, \land , \lor )$ is a lattice.
+    What is the relation between the posets induced by them?
+\end{problem}
+
+
+\small
+\begin{quote}
+
+The lattice poset induced by the first lattice satisfies $x \leq y \iff x \lor
+y = y$, while the one induced by the second lattice satisfies $x \leq y \iff x
+\lor  y = x $. So the ordering between the two posets is inverse; i.e. if $a
+\leq_1 b$ then $b \leq_2 a$. The Hasse diagrams of these posets will be
+horizontal mirrors of each other. 
+
+\end{quote}
+\normalsize
+
+\begin{problem}
+    True, false or imprecise: If $(L, \lor , \land) $ a lattice and $t \in \lor$,
+    then $Ti(t) = 3\text{-UPLE}$.
+\end{problem}
+
+
+\small
+\begin{quote}
+
+    $\lor $ is a function; i.e. a set of $2$-uples. So if $t \in \lor $
+    we have $Ti(t) = 2$-uple. The statement is false.
+
+\end{quote}
+\normalsize
+
+
+\begin{problem}
+    True, false or imprecise: If $(L, \lor , \lor ) $ a lattice, 
+    then $L$ has exactly one element.
+\end{problem}
+
+
+\small
+\begin{quote}
+
+    False. $(\emptyset, \lor , \lor)$ is a lattice for any function $\lor$, but
+    $|\emptyset| \neq 1$. Only if we assume $L \neq \emptyset$ can we say the
+    statement is true. And this because if more than one element existed, we
+    would require that any pair $x \neq y$ in the induced lattice poset
+    satisfies $\text{sup}\left\{ x, y \right\} = x \iff \text{inf}\left\{ x, y
+    \right\} = y $. But if the functions inducing the supremum and infimum are the same, 
+    this would entail $x \lor  y = x$ and $x \lor y = y$, which in turn implies
+    $y \leq x$ and $x \leq y$. But then $\leq$ is not anti-symmetric, which 
+    contradicts that $(L, \leq)$ is a lattice.
+
+\end{quote}
+\normalsize
+
+\begin{problem}
+    True, false or imprecise: If $(L, \lor , \land  ) $ a lattice, 
+    then it is always the case that $\land  \leq \lor $.
+\end{problem}
+
+
+\small
+\begin{quote}
+
+    The statement is equivalent to $(\lor, \land ) \in \left\{ (x, y) : x \lor
+    y = y \right\} \subseteq L^2 $. But clearly $\lor \not\in L, \land \not\in
+    L$. The statement is false.
+
+\end{quote}
+\normalsize
+
+\begin{problem}
+    True, false or imprecise: If $(L, \lor , \land  ) $ a lattice, 
+    then $\lor (x, y, z) = \land (x, y, z)$ for any $x, y, z \in L$.
+\end{problem}
+
+
+\small
+\begin{quote}
+
+    Imprecise. There are no $3$-argument functions $\lor ,\land $ defined 
+    in this context.
+
+\end{quote}
+\normalsize
+
 
 \subsection{Distributive lattice}
 
@@ -1362,6 +1534,60 @@ A lattice $(L, \lor, \land)$ is said to be distributive when, for any $x, y, z,
 \in L$, we have $x \land (y \lor z) = (x \land y) \lor (x \land z)$. It can be
 proven that if this property holds (distributivity of $\land$ over $\lor$), its
 complementary property holds (distributivity of $\lor$ over $\land$). 
+
+\begin{problem}
+    Prove that $(\mathbb{R}, \max, \min)$ and $(\mathcal{P}(\mathbb{N}), \cup, \cap )$
+    are distributive.
+\end{problem}
+
+
+\small
+\begin{quote}
+
+\textit{(1)} We skip the proof that $(\mathbb{R}, \max, \min)$ is a lattice.
+Let $\land , \lor $ denote $\min$ and $\max$. Let $u = x \lor  y$ and $w = z
+\land  u$. Let us examine the cases where $x \leq y$ and 
+$y < x$, and let us use $A$ and $B$ to denote the expressions 
+of the distributive property.
+
+$( x \leq y )$ Here $A = x \land (y \lor  z) = x$, because 
+$x \leq y \leq y \lor  z$. At the same time, 
+$B =  x \lor (x \land  z) = x$ because $x \geq (x \land  z)$.
+$\therefore A = B$. $\blacksquare$
+
+$(y < x)$ Again, two cases. 
+
+\begin{itemize}
+    \item $(x \leq z)$ Here $y < x \leq z$. Then $A = x \land y = x$ 
+and $B = y \lor x = x$. $\therefore A = B$. 
+    \item $(z \leq x)$ Here $A = x \land (y\lor  z) = y \lor  z$. 
+        Simultaneously, $B = y \lor z$.
+        So $A = B$.
+\end{itemize}
+
+
+\textit{(2)} We will again inspect two cases given $A, B, C \in
+\mathcal{P}(\mathbb{N})$. Observe that the order induced by these operations is
+$\subseteq$, since $A \leq B \iff A \cup B = B$, and $A \leq B \iff A \cap B =
+A$. We will use $\varphi, \psi$ to denote the sides of the distributive
+property. 
+
+$(A \subseteq B)$ Since $A \subseteq B \subseteq (B \cup C)$, we have 
+$A \subseteq (B \cup C)$ and
+
+\begin{align*}
+    A &= A \cap (B \cup C) \\ 
+      &= A
+\end{align*}
+
+Furthermore, $(A \cap B) \cup (A \cap C) = A \cup (A \cap C) = A$. Then $\varphi = \psi$. 
+
+$(B \subseteq A)$ Similar to the previous excercise. COMPLETE.
+
+
+\end{quote}
+\normalsize
+
 
 \subsection{Sub-lattices and sub-universes}
 
@@ -1391,6 +1617,54 @@ a bijection between sub-lattices and sub-universes.
 \end{quote}
 \normalsize
 
+\begin{problem}
+    What are the sub-universes of:
+
+    \textit{(1)} $\left( \mathcal{P}(\left\{ 1,2
+    \right\}, \cup, \cap ) \right) $ 
+
+    \textit{(2)} $\left( \left\{ 1, 2, 3, 6,
+    12 \right\}, \gcd, \lcm  \right) $
+
+    \textit{(3)} $\left( \mathbb{R}, \max, \min \right) $
+\end{problem}
+
+
+\small
+\begin{quote}
+
+    \textit{(1)} A sub-universe of a poset is a non-empty subset of the poset
+    that is closed under $\land , \lor $. Since $\left\{ 1, 2 \right\} $ has
+    two elements, no strict subset of it is a sub-universe. $\therefore $
+    $\left\{ 1, 2 \right\} $ is the only sub-universe of $\left\{ 1, 2 \right\}
+    $.
+
+    \textit{(2)} The only subset which is not a sub-universe is $\left\{ 2, 3 \right\} $,
+    (the primes) since $\gcd(2, 3) = 1$. Any other subset contains 
+    either a prime in $\left\{ 2, 3 \right\} $ with non-prime numbers,
+    or only non-prime numbers. It is easy to see that the subsets
+    with non-prime numbers only,
+
+    \begin{equation*}
+        \left\{ 12, 6 \right\}, \left\{ 12, 6, 1 \right\}, \left\{ 1, 6 \right\}, \left\{ 1, 12 \right\} 
+    \end{equation*}
+
+    are closed under $\gcd$ and $\lcm$. The sets containing a prime among other
+    elements are also cloesd. So the sub-universes of the set $S = \left\{ 1,
+    2, 3,6,12 \right\} $ are $U = \left\{ W \in \mathcal{P}(S) : W \neq \left\{
+    2,3 \right\} \land  |W| > 1  \right\} $.
+
+    \textit{(3)} Every subset $S \subseteq \mathbb{R}$ with $|S| > 1$ is 
+    closed under $\max$ and $\min$. Then the sub-universes of this 
+    poset are all possible sets of real numbers with more than one 
+    element.
+
+
+
+\end{quote}
+\normalsize
+
+
 \subsection{Lattice homomorphisms and isomorphisms}
 
 Let $(L, \lor, \land), (L', \lor', \land')$ be lattices. A function $F : L
@@ -1408,8 +1682,34 @@ when it is bijective and its inverse is a homomorphism as well. We write $(L,
 
 \begin{theorem}
     If $F$ is a bijective homomorphism between two lattices, then it is an
-    isomorphism.
+    isomorphism. The set $\left\{ 1, 2 \right\} $
 \end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Proof.} Assume $F$ a bijective homomorphism. Observe that, since 
+$F$ is a homomorphism,
+
+\begin{align*}
+    F \left[F^{-1}(x) \circ F^{-1}(y)\right] &= F\left[ F^{-1}(x) \right] \circ' F \left[ F^{-1}(y) \right]  \\ 
+                                             &=x \circ' y
+\end{align*}
+
+It follows that 
+
+\begin{equation*}
+    F^{-1}\left[ x \circ' y \right] &= F^{-1} \left[ F \left( F^{-1}(x) \circ F^{-1}(y) \right)  \right] \\ 
+                                    &=F^{-1}(x) \circ F^{-1}(y)
+\end{equation*}
+
+$\blacksquare$
+
+\end{quote}
+\normalsize
+
+\pagebreak
 
 \begin{theorem}
     Let $F$ an homomorphism from  $(L, \lor, \land) $ in $ (L', \lor',
@@ -1449,7 +1749,7 @@ This condition allows us to define two binary operations $\hat{\lor },
 
 \textbf{Examples.} \textit{(1)} Consider the lattice $\left( \left\{ 1, 2, 3, 4,
 5, 6\right\}, \max, \min  \right) $. Let $\theta$ be the equivalence relation
-given by the partition $\left\{ \left\{ 1, 2 \right\}, \left\{ 3 \right\},
+induced by the partition $\left\{ \left\{ 1, 2 \right\}, \left\{ 3 \right\},
 \left\{ 4, 5 \right\}   \right\} $. Then $\theta$ is a congruence. For example, 
 
 \begin{align*}
