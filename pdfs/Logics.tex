@@ -1,5 +1,6 @@
 \documentclass[a4paper, 12pt]{article}
 
+\usepackage[top=1.5cm]{geometry}
 \usepackage{mathtools}
 \usepackage{graphicx}
 \graphicspath{ {../Images/} }
@@ -7,22 +8,94 @@
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
 \usepackage{amssymb}
-\usepackage{newtxtext} \usepackage{newtxmath}
+\usepackage{newtxmath}
+\usepackage{ebgaramond}
 \usepackage{amsmath, amssymb}
-\newtheorem{problem}{Problem}
-\newtheorem{example}{Example}
-\newtheorem{lemma}{Lemma}
-\newtheorem{theorem}{Theorem}
-\newtheorem{problem}{Problem}
-\newtheorem{example}{Example} \newtheorem{definition}{Definition}
-\newtheorem{lemma}{Lemma}
-\newtheorem{theorem}{Theorem}
-\DeclareMathOperator{\lcm}{lcm}
+\usepackage{amsthm}
 
+
+\newtheorem{theorem}{Theorem}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+
+\theoremstyle{definition}
+\newtheorem{example}{Example} 
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\newtheorem{lemma}{Lemma}
+\newtheorem{pro}{Proof}
+
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\ker}{ker}
+\usepackage{lettrine}
+\usepackage{color}
+\usepackage{pgfornament}
+\usetikzlibrary{chains}
+\definecolor{darkmidnightblue}{rgb}{0.0, 0.2, 0.4}
+\definecolor{darkscarlet}{rgb}{0.34, 0.01, 0.1}
+\usepackage{xcolor}
+\usepackage{sectsty}
+\chapterfont{\color{darkscarlet}}  % sets colour of chapters
+\sectionfont{\color{darkscarlet}}  
+
+\newcommand{\corner}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=north west] at (current page.north west){%
+      \pgfornament[width=2cm]{#1}};
+    \node[anchor=north east] at (current page.north east){%
+      \pgfornament[width=2cm,symmetry=v]{#1}};
+    \node[anchor=south west] at (current page.south west){%
+      \pgfornament[width=2cm,symmetry=h]{#1}};
+    \node[anchor=south east] at (current page.south east){%
+      \pgfornament[width=2cm,symmetry=c]{#1}};
+  \end{tikzpicture}%
+}
+\newcommand{\cornerplus}[2]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=north west] at (current page.north west){%
+      \pgfornament[width=2cm]{#1}};
+    \node[anchor=north east] at (current page.north east){%
+      \pgfornament[width=2cm,symmetry=v]{#1}};
+    \node[anchor=south west] at (current page.south west){%
+      \pgfornament[width=2cm,symmetry=h]{#1}};
+    \node[anchor=south east] at (current page.south east){%
+      \pgfornament[width=2cm,symmetry=c]{#1}};
+    \node[anchor=north] at (current page.north){%
+      \pgfornament[width=6.5cm,symmetry=h]{#2}};
+    \node[anchor=south] at (current page.south){%
+      \pgfornament[width=6.5cm]{#2}};
+  \end{tikzpicture}%
+}
+\newcommand{\pt}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=north] at (current page.north){%
+      \pgfornament[symmetry=h]{#1}};
+    \node[anchor=south] at (current page.south){%
+      \pgfornament[symmetry=h]{#1}};
+  \end{tikzpicture}%
+}
 
 \begin{document}
 
+
 \begin{titlepage}
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm]
+    \node (nworn) [shift={(0mm,0mm)}, anchor=north west, on chain ] at (current page.north west) {\pgfornament[width=10mm, color=darkscarlet]{7}};
+    \foreach \i in {1,...,17}
+      \node [on chain] {\pgfornament[width=10mm, color=darkscarlet]{7}};
+    \node (neorn) [on chain] {\pgfornament[width=10mm, color=darkscarlet]{7}};
+    \foreach \i in {1,...,25}
+      \node [continue chain=going below, on chain] {\pgfornament[width=10mm, color=darkscarlet]{7}};
+    \node (seorn) [on chain] {\pgfornament[width=10mm, color=darkscarlet]{7}};
+    \foreach \i in {1,...,17}
+      \node [continue chain=going left, on chain] {\pgfornament[width=10mm, color=darkscarlet]{7}};
+    \node (sworn) [on chain] {\pgfornament[width=10mm]{7}};
+    \foreach \i in {1,...,25}
+      \node [continue chain=going above, on chain] {\pgfornament[width=10mm, color=darkscarlet]{7}};
+\end{tikzpicture}
    \begin{center}
        \vspace*{1cm}
 
@@ -47,17 +120,19 @@
 
 \tableofcontents
 \newpage
-
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(0mm, 10mm)}]
+    \foreach \i in {1,...,3}
+    \node [on chain]  {\pgfornament[width=6.42cm, color=darkscarlet]{71}};
+\end{tikzpicture}
 \section{Functions}
 
-
-A function $f : A \mapsto B$ is a set of tuples $\left\{ (a, b) : a \in A \text{
+\lettrine{A}{ function } $f : A \mapsto B$ is a set of tuples $\left\{ (a, b) : a \in A \text{
 and } b \in B \right\} $. The domain $\mathcal{D}_f$ and image $I_f$ of a
 function have the usual definitions. The kernel of a function is 
 
-\begin{align*}
+\begin{equation*}
     ker(f) = \left\{ (a, b) \in \mathcal{D}_f^2 : f(a) = f(b) \right\} 
-\end{align*}
+\end{equation*}
 
 From this follows that a function $f$ is injective---that it maps to each element
 in $\mathcal{D}_f$ a distinct element in the range---iff $ker(f) =
@@ -68,7 +143,17 @@ $\left\{ F(a) : a \in S \right\} $.
 
 
 \pagebreak
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(0mm, 10mm)}]
+    \foreach \i in {1,...,3}
+    \node [on chain]  {\pgfornament[width=6.42cm, color=darkscarlet]{71}};
+\end{tikzpicture}
 \section{Equivalence relations}
+
+\lettrine{E}{ quivalence relations} are a formalization of the notion 
+that certain elements in a set are in some sense equivalent. This 
+sense might be functional (e.g. they map to identical values via some 
+function $F$) or structural (e.g. the elements are in the same level of 
+a Hasse diagram).
 
 \begin{definition}
     Given a set $A$, a binary relation over $A$ is a subset of $A^2$.
@@ -242,9 +327,6 @@ set of all equivalence classes. For example, if $R = \left\{ (x, y) \in
     \textbf{canonic projection} with respect to $R$.
 \end{definition}
 
-\begin{center}
-\includegraphics[scale=0.05]{Sep}
-\end{center}
 \begin{theorem}
     If $R ~ \ddot{\propto} ~A$, then $ker(\pi_R) = R$. This entails that $\pi_R$
     is injective iff $R = \left\{ (x, y) \in A^2 : x = y \right\} $.
@@ -254,7 +336,8 @@ set of all equivalence classes. For example, if $R = \left\{ (x, y) \in
 \small
 \begin{quote}
 
-\textbf{Proof.} Recall that $ker(f) = \left\{ (a, b) \in \mathcal{D}_f^2 : f(a)
+\begin{pro}
+Recall that $ker(f) = \left\{ (a, b) \in \mathcal{D}_f^2 : f(a)
 = f(b) \right\} $. The canonic projection $\pi_R$ maps elements of a set to
 their equivalence class over $R$. It follows that $\pi_R(a) = \pi_R(b)$ iff
 $[a] = [b]$. So 
@@ -270,14 +353,11 @@ equivalence class. Which entails no two distinct elements are qeuivalent.
 $\therefore ~ R = \left\{ (a, b) \in A^2 : a = b \right\} $. $\blacksquare$ The
 other direction of the implication is trivial.
 
+\end{pro}
+
 
 \end{quote}
 \normalsize
-
-\begin{center}
-\includegraphics[scale=0.05]{Sep}
-\end{center}
-
 
 \small
 \begin{quote}
@@ -425,14 +505,17 @@ all $a, b \in A, a \neq b$. Then $\pi_R$ is injective.
     \caption{Graph of a quotient space with 7 equivalent classes. Any two
     connected vertices denote equivalent elements of a set.}
 \centering
-\includegraphics[scale=0.3]{equiv}
+\includegraphics[scale=0.5]{equiv}
 \end{figure}
+\pagebreak 
+~ 
 
-
-
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
 \subsection{Partitions and equivalence}
 
-A partition $\mathcal{P}$ of a set $A$ is a set s.t. every $P \in \mathcal{P}$
+\lettrine{A}{  partition } $\mathcal{P}$ of a set $A$ is a set s.t. every $P \in \mathcal{P}$
 is a subset of $A$, $P_1 \cap P_2 = \emptyset$ for any $P_1, P_2 \in
 \mathcal{P}, P_1 \neq P_2$; and $\bigcup_{P \in \mathcal{P}} P = A$.
 
@@ -471,6 +554,18 @@ A$ follows trivially from the definition of equivalence class.
 
     are bijections one the inverse of the other.
 \end{theorem}
+
+
+\small
+\begin{quote}
+
+\begin{pro}
+    Complete.
+\end{pro}
+
+\end{quote}
+\normalsize
+
 
 \small
 \begin{quote}
@@ -543,15 +638,18 @@ and $A / R$, then $R = \left\{ (x, y ) \in A^2  : x = y \right\} $.
 
 \end{quote}
 \normalsize
+\pagebreak
 
-
-
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
 \subsection{Functions with domain $A / R$}
 
-In general, defining $f : A / R \mapsto B$ leads to ambiguity. For example, if
-we define $f(a / R) = f([a]) = a^2$ and $R$ is the relationship "has the same
-parity", then the fact that $[2] = [4]$ would lead us to expect $f([2]) = 4 =
-f([4]) = 16$.
+\lettrine{H}{aving} defined a space of equivalence class $A / R$, it is natural 
+to study functions over this space. In general, functions of the form $f : A /
+R \mapsto B$ are ambiguous. For example, if we define $f(a / R) = f([a]) = a^2$
+and $R$ is the relationship "has the same parity", then the fact that $[2] =
+[4]$ would lead us to expect $f([2]) = 4 = f([4]) = 16$.
 
 Notwithstanding, one of the fundamental ideas of modern algebra relates to a
 function of precisely this form:
@@ -565,7 +663,9 @@ function of precisely this form:
 \small
 \begin{quote}
 
-\textbf{Proof.} \textit{(Is a function)} Observe that $\overline{f}(a / ker ~ f) = f(a)$
+\begin{pro}
+    
+\textit{(Is a function)} Observe that $\overline{f}(a / ker ~ f) = f(a)$
 is uniquely determined for any $a \in A$.
 
 \textit{(Injective)} Let $a_1, a_2 \in A$ arbitrary elements
@@ -578,6 +678,7 @@ surjective, $b = f(a)$ for some $a \in A$. From this follows $b = \overline{f}(a
 / ker ~ f)$. 
 
 Since $\overline{f}$ is injective and surjective, $\overline{f}$ is a bijection.
+\end{pro} 
 
 \end{quote}
 \normalsize
@@ -621,6 +722,10 @@ $f(a / R) = a$ is onto.
 
 
 \pagebreak
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(0mm, 10mm)}]
+    \foreach \i in {1,...,3}
+    \node [on chain]  {\pgfornament[width=6.42cm, color=darkscarlet]{71}};
+\end{tikzpicture}
 \section{Partial orders}
 
 \begin{definition}
@@ -651,6 +756,9 @@ b \land \neg \left( \exists z \in A : a < z \land z < b \right) \right\} $$
 Partially or totally ordered sets are pairs $(P, \leq)$ where $\leq$ is a
 partial or total order (respectively) over $P$.
 
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
 \subsection{Maximum, minimum, maximal, minimal}
 
 Given a poset $(P, \leq)$, $x$ is a maximum if $a \leq x$ for all $a \in P$. The
@@ -664,9 +772,11 @@ definition of a minimum is analogous.
 \small
 \begin{quote}
 
-\textbf{Proof.} Assume $(P, \leq) $ is a poset with two distinct maximums $x, y$. By
-definition then $x \leq y$ and $y \leq x$. By anti-symmetry we have $x = y$,
-which is a contradiction.
+    \begin{pro}
+         Assume $(P, \leq) $ is a poset with two distinct maximums $x, y$. By
+         definition then $x \leq y$ and $y \leq x$. By anti-symmetry we have $x
+         = y$, which is a contradiction.
+    \end{pro}
 
 \end{quote}
 \normalsize
@@ -716,8 +826,10 @@ total order; it contains no maximal elements, and yet it is not infinite.
 \normalsize
 
 
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
 \subsection{Supremum and infimum}
-
 Let $(P, \leq) $ a poset and $S \subseteq P$. We say $a \in P$ is an upper bound
 of $S$ in $(P, \leq) $ when $b \leq a$ for all $b \in S$. 
 
@@ -785,9 +897,15 @@ The previous problem shows that we can speak of \textit{the} supremum of $S
 \begin{quote}
 
 \begin{problem}
-    Let $(P, \leq) $ a poset. \textit{(1)} If $a \leq b$ then $\text{sup}\{a, b\}
-    = b$. \textit{(2)} Find $\left\{ a \in P : a \text{ is upper bound of }
-    \emptyset \text{ in } (P, \leq)  \right\} $. \textit{(3)} If the supremum of
+    Let $(P, \leq) $ a poset. 
+
+    \textit{(1)} If $a \leq b$ then $\text{sup}\{a, b\}
+    = b$. 
+
+    \textit{(2)} Find $\left\{ a \in P : a \text{ is upper bound of }
+    \emptyset \text{ in } (P, \leq)  \right\} $. 
+
+    \textit{(3)} If the supremum of
     $\emptyset$ in $(P, \leq) $ exists, it is a minimum element of $(P, \leq) $.
 \end{problem}
 
@@ -974,7 +1092,9 @@ false.
 
 
 
-
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
 \subsection{Poset homomorphism}
 
 Let $(P, \leq), (Q, \leq')  $ two posets. A function $F : P \mapsto Q$ is called
@@ -1023,6 +1143,17 @@ interest.
     = \text{sup}\left\{ F(x), F(y) \right\} $, and the same applies to the
     infimum. Lastly, $x \prec y$ if and only if $F(x) \prec' F(y)$.
 \end{theorem}
+
+
+\small
+\begin{quote}
+
+\begin{pro}
+    Complete.
+\end{pro}
+
+\end{quote}
+\normalsize
 
 
 \small
@@ -1090,6 +1221,9 @@ homomorphic from $(P, \leq) $ in $(P, \leq) $, then $|P| = 1$.
 \normalsize
 
 
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
 \subsection{Lattices}
 
 A poset $(P, \leq) $ is called a lattice if for any $x, y \in P,
@@ -1196,7 +1330,9 @@ and $(P, \leq) $ is not a lattice ($\bot$). Then $m$ is a maximum. $\blacksquare
 \normalsize
 
 
-
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
 \subsection{Binary operations}
 
 Given a set $A$, a binary operation over $A$ is a function $f : A^2 \to A$ s.t.
@@ -1252,15 +1388,48 @@ lattice.
     \lor y = y$. Furthermore, $x \leq y \iff x \land y = x$.
 \end{theorem}
 
+
+\small
+\begin{quote}
+
+\begin{pro}
+    Complete.
+\end{pro}
+
+\end{quote}
+\normalsize
+
+
 \begin{theorem}[Absortion laws]
     Let $(L, \leq)$ a lattice and $x, y, z \in L$. Then \textit{(1)} $x \lor (x
     \land y) = x$ and \textit{(2)} $x \land (x \lor y) = x$.
 \end{theorem}
 
+
+\small
+\begin{quote}
+
+\begin{pro}
+    Complete.
+\end{pro}
+
+\end{quote}
+\normalsize
+
 \begin{theorem}[Order preservation]
     If $x \leq z$ and $y \leq w$, then $x \circ y \leq z \circ w$, with $\circ
     \in \left\{ \lor, \land \right\} $.
 \end{theorem}
+
+\small
+\begin{quote}
+
+\begin{pro}
+    Complete.
+\end{pro}
+
+\end{quote}
+\normalsize
 
 \textbf{Some proving tips.}
 
@@ -1289,11 +1458,11 @@ lattice.
     \lor (y \lor  z)$, and the same holds for $\land $.
 \end{theorem}
 
-
 \small
 \begin{quote}
 
-\textbf{Proof.} \textit{(1)} Firstly, we will prove $(x \lor  y) \lor  z \leq x
+\begin{pro}
+\textit{(1)} Firstly, we will prove $(x \lor  y) \lor  z \leq x
 \lor  (y \lor  z)$. To do this, we will prove the expression to the right is an
 upper-bound of the terms in the expressions to the left. 
 
@@ -1320,8 +1489,11 @@ z)$. $\blacksquare$
 \lor  y) \lor  z$. Since $\varphi \leq \psi$ and $\psi \leq \varphi$ imply
 $\varphi = \psi$ for any $\varphi, \psi \in L$, this concludes the proof.
 
+\end{pro}
+
 \end{quote}
 \normalsize
+
 
 \begin{theorem}
     If $(L, \leq)$ a lattice and $x, y, z \in L$, then $(x \land y) \lor (x
@@ -1332,7 +1504,9 @@ $\varphi = \psi$ for any $\varphi, \psi \in L$, this concludes the proof.
 \small
 \begin{quote}
 
-\textbf{Proof.} \textit{(1)} Observe that $(x \land  y) \lor   (x \land  z) \leq
+    \begin{pro}
+        
+\textit{(1)} Observe that $(x \land  y) \lor   (x \land  z) \leq
 x$. The reason is that $x \land  y \leq x $ trivially, $x \land  z \leq x$
 trivially, and therefore $x$ is an upper bound of $\left\{ x \land  y, x \land
 z\right\} $. Then the supremum of this set is necessarily less than or equal to
@@ -1350,12 +1524,17 @@ y) \lor  (x \land  z) \leq x \land  (y \lor  z)$.
 
 Using the same tricks we can prove $x \land  (y \lor  z) \leq (x \land  y) \lor
 (x \land  z)$, which completes the proof. $\blacksquare$
+    \end{pro}
 
 \end{quote}
 \normalsize
 
 
 \pagebreak
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(0mm, 10mm)}]
+    \foreach \i in {1,...,3}
+    \node [on chain]  {\pgfornament[width=6.42cm, color=darkscarlet]{71}};
+\end{tikzpicture}
 \section{Lattices as algebras}
 
 We have treated lattices as a special kind of poset. However, a lattice can be
@@ -1392,6 +1571,17 @@ $\lor, \land$ denote the supremum and infimum operators. More formally,
     \right\} = x \lor y, \text{inf}\left\{ x, y \right\} = x \land y$, for any
     $x, y \in L$.
 \end{theorem}
+
+
+\small
+\begin{quote}
+
+\begin{pro}
+    Complete.
+\end{pro}
+
+\end{quote}
+\normalsize
 
 
 \small
@@ -1527,7 +1717,10 @@ horizontal mirrors of each other.
 \end{quote}
 \normalsize
 
-
+\pagebreak
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
 \subsection{Distributive lattice}
 
 A lattice $(L, \lor, \land)$ is said to be distributive when, for any $x, y, z,
@@ -1589,6 +1782,9 @@ $(B \subseteq A)$ Similar to the previous excercise. COMPLETE.
 \normalsize
 
 
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
 \subsection{Sub-lattices and sub-universes}
 
 If $(L, \land, \lor), (L', \land', \lor')$ are lattices, we say the first is a
@@ -1665,6 +1861,9 @@ a bijection between sub-lattices and sub-universes.
 \normalsize
 
 
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
 \subsection{Lattice homomorphisms and isomorphisms}
 
 Let $(L, \lor, \land), (L', \lor', \land')$ be lattices. A function $F : L
@@ -1689,7 +1888,8 @@ when it is bijective and its inverse is a homomorphism as well. We write $(L,
 \small
 \begin{quote}
 
-\textbf{Proof.} Assume $F$ a bijective homomorphism. Observe that, since 
+    \begin{pro}
+ Assume $F$ a bijective homomorphism. Observe that, since 
 $F$ is a homomorphism,
 
 \begin{align*}
@@ -1705,11 +1905,10 @@ It follows that
 \end{equation*}
 
 $\blacksquare$
+    \end{pro}
 
 \end{quote}
 \normalsize
-
-\pagebreak
 
 \begin{theorem}
     Let $F$ an homomorphism from  $(L, \lor, \land) $ in $ (L', \lor',
@@ -1718,6 +1917,18 @@ $\blacksquare$
     \lor'\mid_{I_F \times I_F}, \land'\mid_{I_F \times I_F})$.
 \end{theorem}
 
+
+\small
+\begin{quote}
+
+\begin{pro}
+    Complete
+\end{pro}
+
+\end{quote}
+\normalsize
+
+
 \begin{theorem}
     Let $(L, \lor, \land )$ and $(L', \lor ', \land ')$ lattices with associated
     posets $(L, \leq), (L', \leq')$. Then $F$ is an isomorphism of $(L, \lor ,
@@ -1725,6 +1936,20 @@ $\blacksquare$
     \leq)$ to $(L', \leq')$.
 \end{theorem}
 
+\small
+\begin{quote}
+
+\begin{pro}
+    Complete
+\end{pro}
+
+\end{quote}
+\normalsize
+
+
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
 \subsection{Lattice congruence}
 
 A congruence over a lattice $(L, \lor , \land )$ is an equivalence relation
@@ -1735,42 +1960,36 @@ $\theta ~ \ddot{\propto} ~ L$ s.t.
     \theta (x_2 \lor  y_2) \text{ and } (x_1 \land y_1) \theta (x_2 \theta y_2)
 \end{align*}
 
-This condition allows us to define two binary operations $\hat{\lor },
-\hat{\land }$ over $L / \theta$ as follows: 
+This condition essentially requires that equivalence is preserved in the
+lattice operations; i.e. the supremum/infimum between members of two classes
+should be equivalent to the supremum/infimum between any other members of those
+two classes. 
+
+Because equivalence is preserved among the classes of equivalence in the
+lattice operations, it is possible to define the supremum/infimum between 
+two classes:
 
 \begin{align*}
-    x / \theta \widetilde{\lor } y / \theta = (x \lor y) / \theta\\
-    x / \theta \widetilde{\land  } y / \theta = (x \land  y) / \theta
+    x / \theta ~ \widetilde{\circ } ~ y / \theta = (x \circ y) / \theta
 \end{align*}
 
+with $\circ \in \left\{ \lor , \land  \right\} $.
 
 \small
 \begin{quote}
 
-\textbf{Examples.} \textit{(1)} Consider the lattice $\left( \left\{ 1, 2, 3, 4,
+\textbf{Example.} \textit{(1)} Consider the lattice $\left( \left\{ 1, 2, 3, 4,
 5, 6\right\}, \max, \min  \right) $. Let $\theta$ be the equivalence relation
 induced by the partition $\left\{ \left\{ 1, 2 \right\}, \left\{ 3 \right\},
 \left\{ 4, 5 \right\}   \right\} $. Then $\theta$ is a congruence. For example, 
 
 \begin{align*}
-    \begin{rcases*}
-        1 ~\theta~ 2 \\ 
-        4 ~\theta~ 5
-    \end{rcases*} \Rightarrow (1 \max 4) \theta (2 \max 5)
+    1\theta 2, 4 \theta 5 \text{ and } (1 \max 4) \theta (2 \max 5)
 \end{align*}
 
-which holds, because $4 ~ \theta ~ 5$. The same can be verified for the $\min$
-operation. Of course, we have that $\left\{ 1, 2 \right\} \widetilde{\max}
-\left\{ 4, 5 \right\} = (1 \max  4) / \theta = 4 / \theta = \left\{ 4, 5
-\right\} $. In a sense, we are taking the supremum and infimum operations to a
-broader dimension, not applying to individual elements but to sets of equivalent
-elements.
-
-\textbf{Note.} Observe that a congruence is an equivalence relation that is
-preserved in the supremum and infimum operations of a lattice. In the previous
-example, because it is a congruence, we expect that because $1$ is equivalent to
-$2$, and $4$ is equivalent to $5$, that the supremum of $1$ and $4$ matches the
-supremum of $2$ and $5$.
+The same can be verified for the $\min$ operation. Of course, we have that
+$\left\{ 1, 2 \right\} \widetilde{\max} \left\{ 4, 5 \right\} = (1 \max  4) /
+\theta = 4 / \theta = \left\{ 4, 5 \right\} $. 
 
 \end{quote}
 \normalsize
@@ -1784,6 +2003,45 @@ supremum of $2$ and $5$.
 We use $\widetilde{ \leq } $ to denote the partial order associated to the
 lattice $(L / \theta, \widetilde{ \lor  }, \widetilde{ \land  }  )$.
 
+
+\small
+\begin{quote}
+\begin{pro}
+    
+    Since $(L, \lor , \land )$ is a lattice, $x \lor   y = x \land  y $. By definition, 
+
+    $$[x] \widetilde{ \lor  } [y] =  [ (x \lor y) ] = [(x \land  y)] = [x] \widetilde{ \land  } [y] $$
+
+    Commutativity is similar (we give it only for $\widetilde{ \lor  } $):
+
+    $$[x] \widetilde{ \lor  } [y] = [ (x \lor y) ] = [( y \lor  x )] = [y] \widetilde{ \lor  } [x]$$
+
+    Associativity (we give it only for $\widetilde{ \lor  }  $):
+
+    \begin{align*}
+        ( [x] \widetilde{ \lor } [y] ) \widetilde{ \lor  } [z] &= \left[ \left( x \lor y \right)  \right] \widetilde{ \lor  } [z] \\ 
+                                                               &= \left[ (x \lor y) \lor  z \right] \\ 
+                                                               &=\left[ x \lor (y lor z) \right] \\ 
+                                                               &= [x] \widetilde{ \lor  } \left( [y] \widetilde{ \lor  }  [z]\right) 
+    \end{align*}
+
+    Now we will prove $[x] \widetilde{ \lor  } ([x] \widetilde{ \land   } [y])
+    = [x]$. But this can be done with words. The infimum $[x] \widetilde{ \land
+    } [y] $ will be the equivalence class of the infimum between $x$ and $y$ in
+    the original lattice. If the result is $[x]$ then the property follows
+    immediately. If the result is $[y]$ we have $y \land  x = y \Rightarrow y
+    \lor x = x$ which entails $[x] \widetilde{ \lor  }   [y] = [x]$. 
+
+    Then $(L/\theta, \widetilde{ \land  }, \widetilde{  \lor   })$ is a
+    lattice. $\blacksquare$
+
+
+\end{pro}
+
+\end{quote}
+\normalsize
+
+
 \begin{theorem}
     If $(L, \lor , \land )$ a lattice and $\theta$ a congruence over this
     lattice, then 
@@ -1795,10 +2053,255 @@ lattice $(L / \theta, \widetilde{ \lor  }, \widetilde{ \land  }  )$.
     for any $x, y \in L$.
 \end{theorem}
 
+
+\small
+\begin{quote}
+
+\begin{pro}
+Recall that the order induced by a lattice $(L, \lor , \land )$
+is $x \leq y \iff x \lor  y = y$. So to prove this theorem we must study
+the order induced by $(L / \theta, \widetilde{ \land  }, \widetilde{  \lor   }
+) $; namely, 
+
+\begin{equation*}
+    [x] \widetilde{ \leq }  [y] \iff [x] \widetilde{ \lor  } [y] = [y]
+\end{equation*}
+
+It is clear that if $[x] \widetilde{  \lor   } [y] = [y]$ we have $[(x \lor
+y)] = [y]$, which is exactly the same as saying $(x\lor y)\theta y$. $\blacksquare$
+\end{pro}
+
+\end{quote}
+\normalsize
+
+
 \begin{theorem}
     If $F : (L, \land , \lor ) \mapsto (L', \land ', \lor ')$ an homomorphism,
     then $ker(F)$ is a congruence over $(L, \land , \lor )$.
 \end{theorem}
+
+
+\small
+\begin{quote}
+\begin{pro}
+    
+Let $\theta = ker(F)$ with $F$ a homomorphism between two
+arbitrary lattices $(L, \land , \lor ), (L', \land ', \lor ')$. If $\theta =
+\emptyset$ then $\theta$ is a congruence by lack of counter-examples. Assume
+$\theta \neq \emptyset$.
+
+Let $x_0, x_1, y_0, y_1$ be elements of $L$ s.t. $x_0 \theta x_1$ and $y_0
+\theta y_1$. Then $F(x_0) = F(x_1)$ and $F(y_0) = F(y_1)$.
+Since $x_0 \circ x_1 \in \left\{ x_0, x_1 \right\} $, we have 
+$F(x_0 \circ x_1) = F(x_0)$, and $F(y_0 \circ y_1) = F(y_0)$.
+
+We know $F(x_0 \circ y_0) \in \left\{ F(x_0), F(y_0) \right\} $, and $F(x_1
+\circ y_1) \in \left\{ F(x_1), F(y_1) \right\} $. We wish to prove $F(x_0 \circ
+y_0) \neq F(x_1 \circ y_1)$. The only problematic case is when the first
+expression is $F(x_0)$ and the latter $F(y_1)$ or vice-versa.
+
+Assume without loss of generality that $\circ = \lor$ and 
+
+\begin{align*}
+    \textit{(1)} ~ &F(x_0 \circ y_0) = F(x_0)\\
+    \textit{(2)} ~ &F(x_1 \circ y_1) = F( y_1 )
+\end{align*}
+
+Prop. \textit{(1)} entails $(x_0 \lor y_0)\theta x_0$. Then, in the order
+induced by $\theta$, $[y_0] \tilde{ \leq } [x_0]$. But $[y_0] = [y_1], [x_0] =
+[x_1]$, and then $[y_1] \tilde{ \leq } [x_1]$. But then $(y_1 \lor x_1)\theta
+x_1$. 
+
+$\therefore $ $F(y_1 \lor  x_1) = F(x_1)$ and \textit{(2)} gives $F(x_1) = F(y_1)$.
+
+$\therefore $ $F(x_0) = F(x_1) = F(y_1)$ and \textit{(1)} and \textit{(2)} give 
+$F(x_0 \lor  y_0) = F(x_1 \lor  y_1)$. $\blacksquare$
+
+\end{pro}
+
+\end{quote}
+\normalsize
+
+\begin{theorem}
+    Let $(L, \lor , \land )$ a lattice and $\theta$ a congruence over it. 
+    Then $\pi_{\theta}$ is a homomorphism from $(L, \lor , \land )$ to 
+    $(L / \theta, \widetilde{ \lor  }, \widetilde{ \land  } ) $, and 
+    $\ker(\pi_{\theta}) = \emptyset$.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+    \begin{pro}
+        
+Let $x, y \in L$. Then 
+
+\begin{equation*}
+    \pi_{\theta}(x \circ  y) = (x \circ y) / \theta
+                            = x / \theta ~ \widetilde{ \circ }  y / \theta\\ 
+                            = \pi_{\theta}(x) ~ \widetilde{ \circ }  ~ \pi_{\theta}(y)
+\end{equation*}
+    \end{pro}
+
+
+\end{quote}
+\normalsize
+
+\begin{problem}
+    Give all the congruences of $(\left\{ 1, 2, 3, 6, 12 \right\}, \gcd, \lcm )$.
+\end{problem}
+
+
+\small
+\begin{quote}
+
+
+    Complete.
+
+
+\end{quote}
+\normalsize
+
+\begin{problem}
+    Let $\theta$ a congruence over $(L, \lor , \land )$. Prove 
+    that, if $c \in L / \theta$,
+
+    \textit{(1)} $c$ is a sub-universe of the lattice.
+
+    \textit{(2)} $c$ is a convex subset of the lattice; i.e. for any 
+    $x,y,z \in L$ 
+    \begin{equation*}
+        x,y \in c \text{ and } x \leq z \leq y \Rightarrow z\in c
+    \end{equation*}
+\end{problem}
+
+
+\small
+\begin{quote}
+
+    \textit{(1)} A sub-universe is a non-empty subset of a lattice that 
+    is closed under the lattice operations. That $c / \theta \subseteq L$ 
+    is trivial, and it must be non-empty because each element is 
+    at least equivalent to itself. Assume it is not closed under 
+    the lattice operations; i.e. assume there are $x_0, x_1 \in c /\theta$
+    s.t. $u = x_0 \circ x_1 \not\in c / \theta$. 
+
+    Theorem \textbf{18} ensures that $\pi_{\theta}$ is a homomorphism from $(L,
+    \lor , \land )$ to $(L / \theta, \widetilde{ \lor  }, \widetilde{ \land  }
+    ) $. But by assumption:
+
+    \begin{align*}
+        \pi_{\theta}(x_0 \circ x_1) \neq c /\theta \Rightarrow \pi_{\theta}(x_0) ~\widetilde{ \circ } ~ \pi_{\theta}(x_1) \neq c / \theta
+    \end{align*}
+
+    But this entails $c / \theta ~ \widetilde{ \circ } ~ c / \theta \neq c / \theta$, 
+    which is absurd because $(L / \theta, \widetilde{ \lor  }, \widetilde{
+    \land  } ) $ is a lattice. Then $c / \theta$ must be closed and hence must
+    be a sub-universe. $\blacksquare$
+
+    \textit{(2)} Let $x, y, z \in L$. Assume $x, y \in c$ and $x \leq z \leq y$.
+    We wish to prove this entails $z \in c$.
+
+    Since $(L / \theta, \widetilde{ \land  }, \widetilde{ \lor  })  $ is 
+    a lattice (\textbf{Theorem 15}), it induces a poset $(L, \widetilde{ \leq }) $
+    s.t. 
+
+    \begin{equation*}
+        a \widetilde{ \leq } b \iff b\theta(a \widetilde{ \lor  } b)
+    \end{equation*}
+
+    Since $x \leq z \leq y$ we have 
+
+    \begin{enumerate}
+        \item $z \theta(x\lor z)$ 
+        \item $y\theta(z \lor y)$
+    \end{enumerate}
+
+    In terms of the homomorphism $\pi_{\theta}$, this means 
+
+    \begin{enumerate}
+        \item $\pi_{\theta}(z) &= \pi_{\theta}(x) \widetilde{ \lor  } \pi_{\theta}(z)$
+        \item $\pi_{\theta}(y) &= \pi_{\theta}(z) \widetilde{ \lor  } \pi_{\theta}(y)$
+    \end{enumerate}
+
+    Since $x, y \in c$ we have $\pi_{\theta}(x) = \pi_{\theta}(y)$. If we look
+    at equations (1) and (2), this entails $\pi_{\theta}(z) = \pi_{\theta}(y)$.
+    
+
+    $\therefore ~$ $\pi_{\theta}(z) \neq \pi_{\theta}(y) \Rightarrow
+    \ker(\pi_{\theta}) \neq \emptyset$. But, according to \textbf{Theorem 18},
+    the homomorphism $\pi_{\theta}$ necessarily has an empty kernel. 
+
+    $\therefore ~$ $\pi_{\theta}(y) = \pi_{\theta}(z)$, which by definition
+    entails $z \in c$.
+    
+\end{quote}
+\normalsize
+
+\begin{problem}
+    Say true, false or imprecise for the following statements, 
+    where $(L, \lor , \land )$ is a lattice.
+\end{problem}
+
+
+\small
+\begin{quote}
+
+\textit{(1)} Let $S$ a sub-universe of the lattice and $\theta$ a congruence 
+of $(S, \lor_{S\times S}, \land_{S\times S})$. There is a congruence 
+$\lambda$ of $(L, \lor , \land )$ s.t. $\theta = \lambda \cap S^2$.
+
+Let $\lambda = \theta \cup \left\{ (x, x) : x \not\in S  \right\} $. All pairs
+in $\theta$ conform a congruence, and all singletons in $\left\{ (x, x) : x
+\not\in S  \right\} $ conform a congruence. We must only inspect whether,
+given $x_0, x_1 \not\in S, y_0, y_1 \in S$, the congruence 
+property is preserved. This will be the case iff 
+
+\begin{equation*}
+    (x_0 \circ y_0) \lambda (x_1 \circ y_1)
+\end{equation*}
+
+Now, since 
+
+
+
+\textit{(2)} Assume the lattice is distributive and $\theta$ is a congruence 
+over it. Then $(L / \theta, \widetilde{ \lor  }, \widetilde{ \land  })$ is 
+distributive.
+
+\textit{(3)} Let $\theta$ a congruence over the lattice. If $u \in L$
+is s.t. $u / \theta$ is a maximum of $(L, \lor , \land ) / \theta$,
+then $u$ is a maximum of the original lattice.
+
+
+\end{quote}
+\normalsize
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

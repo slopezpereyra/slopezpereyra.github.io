@@ -6,6 +6,7 @@ layout: null
 @import url("https://cdn.jsdelivr.net/gh/vsalvino/computer-modern@main/fonts/serif.css");
 @import url(https://db.onlinewebfonts.com/c/13343fe3cdd1b7834dac829e74a1b304?family=Artful+Dodger+W00+Regular);
 @import url('https://fonts.cdnfonts.com/css/new-caledonia-lt-std');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
 
 /*@font-face {
 /*    font-family: "Computer Modern Serif", serif; 
@@ -19,10 +20,11 @@ layout: null
  */
 
 
-/* --- General --- */
+/* --- General --- */ 
+/*font-family: "Computer Modern Serif", serif; */
 
 body {
-  font-family: "Computer Modern Serif", serif; 
+  font-family: "EB Garamond", serif; 
   font-weight: 450;
   font-size: 20px;
   text-align: justify;
