@@ -21,12 +21,12 @@ layout: null
 
 
 /* --- General --- */ 
-/*font-family: "Computer Modern Serif", serif; */
+/*font-family: "Computer Modern Serif", serif; font-size:20 */
 
 body {
   font-family: "EB Garamond", serif; 
   font-weight: 450;
-  font-size: 20px;
+  font-size: 23px;
   text-align: justify;
   letter-spacing: 0px;
   /* --- name --- */
