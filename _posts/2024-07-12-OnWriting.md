@@ -47,7 +47,12 @@ clarity and honesty compel me above all things.
 The authors which I read are friends to me, more than authorities. I
 tend to admire their intelligence just as much as their personal
 qualities. I'm interested in their lives and in their works, and find it
-hard to appreciate an author who I deem to be a questionable individual.
+hard to appreciate an author whom I wouldn't take as friend.
+Like Quevedo, who said
+
+> vivo en conversación con los difuntos,
+> y escucho con mis ojos a los muertos.
+
 I converse with them in my mind and, rather often, in my dreams. I have
 dreamt myself discussing poems with Miguel Hernández, walking Borges
 across a sublime library, or drinking a cold beer with Bertrand Russell.
@@ -73,12 +78,12 @@ not attaining truth, when I deem myself so ill-prepared? If I happen to
 find a truth, or to demonstrate a property, I feel unspeakable joy. But
 if I fail to do so, which is most often the case, and like Tantalus
 cannot attain the fruit that I unceasingly envision, I feel no
-frustration nor consider this a curse: the struggle itself is a source
-of pleasure, and failure not a source of anguish. And so, as one can
-see, I am so disposed that I stand with nothing to loss and much to win.
+frustration nor consider this a curse: the beauty lies in the struggle, and
+failure causes me no anguish. And so, as one can see, I am so disposed that I
+stand with nothing to loss and much to win.
 
-And so my writings come to be: eclectic and unorganized, dubious and
-superficial, more a testament to how close or far I can see than to what
-there is to see. If anything, aside from serving me to put certain
-things in order, and to reach a cathartic equilibrium, the only question
-they can answer is not *what did he know* but *what did he think about*?
+And so my writings come to be: eclectic and unorganized, dubious and vain, more
+a testament to how close or far I get to see than to what there is to see. If
+anything, aside from serving me to put certain things in order, and to reach a
+cathartic equilibrium, the only question they can answer is not *what did he
+know* but *what did he think about*?

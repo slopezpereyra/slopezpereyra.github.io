@@ -51,7 +51,7 @@ corresponding to a Prüfer sequence, and thus a random tree is obtained.
 
 Let $T_2$ denote the unique tree of two vertices. Let $L$ be the label-set,
 i.e. the set of natural numbers which label the vertices of our graphs. Then, a
-recursive algorithm for constructing the corresponding to a Prüfer sequence $p
+recursive algorithm for constructing the tree corresponding to a Prüfer sequence $p
 = p_1\ldots p_{n-2}$ over a label set $L$ is the following:
 
 $$

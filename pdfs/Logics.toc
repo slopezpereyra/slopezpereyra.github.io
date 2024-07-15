@@ -13,3 +13,5 @@
 \contentsline {subsection}{\numberline {4.2}Sub-lattices and sub-universes}{22}{}%
 \contentsline {subsection}{\numberline {4.3}Lattice homomorphisms and isomorphisms}{23}{}%
 \contentsline {subsection}{\numberline {4.4}Lattice congruence}{24}{}%
+\contentsline {section}{\numberline {5}Bounded lattices}{29}{}%
+\contentsline {subsection}{\numberline {5.1}Bounded sub-lattices}{29}{}%
