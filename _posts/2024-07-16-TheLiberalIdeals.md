@@ -37,13 +37,13 @@ surprising that even educated readers would confuse a random passage
 from *The Wealth of Nations* with, say, the *Manuscripts of 1848*. From
 an ideological perspective, the similarities are unsurprising. It
 *should* be a triviality to identify Enlightened ideals with the
-primitive utopians— e.g. the likes of Étienne Cabet—as well as
+primitive utopians—e.g. the likes of Étienne Cabet—as well as
 modern socialists. The fact that this identification is not perceived,
 even by public intellectuals, is (pun intended) illuminating.
 
 But what was the liberal ideal? It is of course impossible to reduce a
 complex and rich tradition to a few sentences. Yet certain key features
-are common across its spectrum. These, are for instance, that freedom to
+are common across its spectrum. These are, for instance, that freedom to
 exercise critical thought and creative activity, in solitude or in
 association with others, is fundamental. That people ought to be
 educated enough so as to be capable of independence, and powerful enough
