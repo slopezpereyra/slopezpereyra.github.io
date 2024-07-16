@@ -1,10 +1,11 @@
 # Fdb version 4
-["pdflatex"] 1721098318 "Logics.tex" "Logics.pdf" "Logics" 1721098323 2
+["pdflatex"] 1721164200 "Logics.tex" "Logics.pdf" "Logics" 1721164204 2
   "../Images//circles.png" 1709507659 179825 e4a82cbdf3b8d8b5c28bf497469c50e2 ""
   "../Images//compLattice.png" 1721078651 8556 02d9e506bc254cde2c96a90be63733f5 ""
   "../Images//diamond.png" 1721079706 8224 157d05b85db34a75405947ed6ea81ba2 ""
   "../Images//equiv.png" 1709329351 29240 79a755b81c0facd6bc9d9648c8720e58 ""
   "../Images//graph.png" 1709501024 45198 cd1da829a26b3b946b7b48a485939544 ""
+  "../Images//latticeRings.png" 1721163251 83461 bd04daed66f7dba41c511f3db7b664b9 ""
   "../Images//threemaximals.png" 1709496982 22288 fb1c728852d3cae77dc909bb4d25baba ""
   "/etc/texmf/web2c/texmf.cnf" 1695394668 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_byuyni.enc" 1571867360 3536 0b568a348f6bb401cdf4107d502ced4e ""
@@ -226,9 +227,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1695394817 4623455 fa0568a71dd9a288d6c226ee477506c6 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1695394844 7879794 eff26094dbe002b6e482c026ea4c81e2 ""
-  "Logics.aux" 1721098323 9852 a47dfb27cdcd50d4bb1c1fbaeb0e0d07 "pdflatex"
-  "Logics.tex" 1721098316 112300 6d2c180b71df67134a1c29eb28843a22 ""
-  "Logics.toc" 1721098323 1900 d2073d8dc759d112113545320c7f39ea "pdflatex"
+  "Logics.aux" 1721164204 10364 f6dec84f66f8aa9637e05e67ebd5f9a6 "pdflatex"
+  "Logics.tex" 1721164198 117422 8cba5cdec38d38d265d057812ead1f88 ""
+  "Logics.toc" 1721164204 2058 f1bcee3a4eabfc545db5ba8eb063a227 "pdflatex"
   (generated)
   "Logics.aux"
   "Logics.log"

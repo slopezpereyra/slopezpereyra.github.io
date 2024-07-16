@@ -1184,6 +1184,14 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntxsyc.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntxsyc.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
+INPUT /usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf
+INPUT /usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf
+INPUT /usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf
+INPUT ../Images//latticeRings.png
+INPUT ../Images//latticeRings.png
+INPUT ../Images//latticeRings.png
+INPUT ../Images//latticeRings.png
+INPUT /usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf
 INPUT Logics.aux
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_ljow5q.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_ld6df2.enc

@@ -3049,7 +3049,7 @@ The answer is no; we need distributivity. But prove it. Complete.
 \begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
     \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
 \end{tikzpicture}
-\subsection{Prime filters and Rasiova-Sikorski's lemma}
+\subsection{Prime filters and Rasiova-Sikorski's theorem}
 
 \begin{definition}
     A filter of a lattice $(L, \lor, \land)$ will be any non-empty subset $F \subseteq L$ s.t. 
@@ -3277,35 +3277,136 @@ n \in \mathbb{N} \right\} $.
     It is clear that $G \neq \emptyset$. Assume $x, y \in G$. Let $F_1, F_2 \in
     \mathcal{F}$ s.t. $x \in F_1$ and $y \in F_2$.
 
+    If $F_1 \subseteq F_2$, since $F_2$ a filter we have $x \land  y \in F_2
+    \subseteq G$. If $F_2 \subseteq F_1$ then $x\land  y \in F_1 \subseteq G$.
+    Since $C$ a chain $x \land  y \in G$. The remaining 
+    property is proved in analogous fashion.
+
+    $\therefore $ $G$ is a filter. 
+
+    Since $x_0 \not\in G$ we know $G \in \mathcal{F}$ is upper-bound of $C$.
+    Due to Zorn's theorem, $(\mathcal{F},\subseteq )$ has a maximal element
+    $\mathcal{M}$. We shall show $\mathcal{M}$ is prime.
+
+    Assume $x \lor  y \in \mathcal{M}$ and $x, y \not\in \mathcal{M}$.
+    Observe that $[\mathcal{M} \cup \left\{ x \right\}) $ is a filter 
+    which properly contains $\mathcal{M}$. Since $\mathcal{M}$
+    is maximal of $(\mathcal{F}, \subseteq)$ we have $x_0 \in [\mathcal{M} \cup \left\{ x \right\}) $.
+    Analogously, $x_0 \in [\mathcal{M} \cup \left\{ y \right\} )$. 
+    
+    Since $x_0 \in [\mathcal{M} \cup \left\{ x \right\}) $ there 
+    are $m_1, \ldots, m_n \in \mathcal{M}$ s.t. 
+
+    \begin{equation*}
+        x_0 \geq m_1 \land  \ldots \land  m_n \land  x
+    \end{equation*}
+
+    Since $x_0 \in [\mathcal{M}, \left\{ y \right\}) $ there are 
+    $m'_1, \ldots, m'_r \in \mathcal{M}$ s.t. 
+
+    \begin{equation*}
+        x_0 \geq m_1' \land  \ldots m_r' \land  y
+    \end{equation*}
+
+    Let $m := m_1 \land  \ldots \land  m_n \land  m_1' \land  \ldots \land  m_r'$.
+    Then we have $x_0 \geq m \land  x$ and $x_0 \geq m \land  y$.
+
+    $\therefore $ $x_0 \geq (m \land  x) \lor  (m \land  y) = m\land (x \lor  y)$.
+
+    But this is absurd because $x_0 \not\in \mathcal{M}$. The contradiction 
+    ensued from assuming $x, y \not\in \mathcal{M}$.
+
+    $\therefore $ Either $x \in \mathcal{M}$ or $y \in \mathcal{M}$.
+
+    $\therefore $ $\mathcal{M}$ is prime.
+    
+
 
 \end{pro}
 
 \end{quote}
 \normalsize
 
+Let us unpack the theorem. Assume $\textbf{L}$ is a distributive lattice 
+and $F$ is a filter over it. Assume as well that some $x_0 \in L$ is not 
+contained in the filter. We are interested in the family $\mathcal{F}$ of filters which do not contain
+$x_0$ and contain all elements of $F$. Informally, we may call these
+\textit{extensions of $F$ around $x_0$}. Such family conforms a poset
+$(\mathcal{F}, \subseteq )$. The theorem states that \textit{(1)} this poset
+has a maximal element and \textit{(2)} it is a prime filter.
+
+\begin{theorem}[Rasiova-Sikorski's]
+    Let $\textbf{B}$ a Boolean algebra. Let $\varphi \in B$ a non-zero element. Assume $(A_1, A_2, \ldots )$
+    is an infinituple of subsets of $B$ s.t. each subset has an infimum. Then there is a 
+    prime filter $P$ which satisfies: 
+
+    \begin{itemize}
+        \item $\varphi \in P$
+        \item $\forall j \in \mathbb{N} : A_j \subseteq P \Rightarrow \text{inf}(A_j) \in P$
+    \end{itemize}
+\end{theorem}
 
 
+\small
+\begin{quote}
+
+\begin{pro}
+    It is accepted without proof.
+\end{pro}
+
+\end{quote}
+\normalsize
 
 
+\pagebreak 
+
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(0mm, 10mm)}]
+    \foreach \i in {1,...,3}
+    \node [on chain]  {\pgfornament[width=6.72cm, color=darkscarlet]{71}};
+\end{tikzpicture}
+\section{Structures and their associated languages}
+
+We have so far studied several kinds of structures. We begain with posets and
+noted that they were, in a certain sense, equivalent to algebraic lattices. We 
+studied different families of lattices, which are schematized in the diagram 
+below.
+
+\includegraphics[scale=0.35]{latticeRings}
+
+We will associate to each structure a set of sentences which we call
+\textit{elementary formulas}. These formulas will serve as axioms to, in turn,
+conform another type of sentence termed \textit{elementary proofs}. It is
+important to observe that these sentences are relative to the particular kind of
+structure that is being considered.
+
+Elementary formulas will be formed with the usual symbols $\forall , \exists , \neg, \land , \ldots$ 
+etc. We use $x, y, z,\ldots$ to denote variables and $a, b, c, \ldots$ to denote 
+fixed elements. For instance, 
+
+\begin{equation*}
+    \neg\exists y \left( x \leq y \land \neg(y = x)  \right) 
+\end{equation*}
+
+is an elementary formula. Importantly, if $\varphi$ is a formula, then the type
+of $\varphi$ is \textbf{word}.
+
+A formula will be true or false depending on a particular poset $(P, \leq) $.
+The variables of the formula will receive their values from said poset. When 
+the formula has no free variables, we say it is an \textit{elementary poset sentence}.
+Furthermore, as a convention, the quantifiers $\forall $ and $\exists $ always 
+range over $P$. To keep matters clear, we will never quantify over fixed elements;
+i.e. $\forall a(a=x)$ is not an elementary formula. 
 
 
+\begin{example}
+    Let $\textbf{P} = (\mathbb{N}, \mid)$. The formula $(x \leq y)$ is true when 
+    $x$ is assigned $6$ and $y$ $36$. But the formula $\forall x \forall y\left( x \leq y \lor y \eq x \right) $ is false.
+\end{example}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
+\subsection{Free variables}
 
 
 
