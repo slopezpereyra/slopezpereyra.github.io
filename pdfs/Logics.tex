@@ -30,7 +30,6 @@
 
 \DeclareMathOperator{\lcm}{lcm}
 \DeclareMathOperator{\ker}{ker}
-\usepackage{lettrine}
 \usepackage{color}
 \usepackage{pgfornament}
 \usetikzlibrary{chains}
@@ -78,6 +77,7 @@
   \end{tikzpicture}%
 }
 
+\usepackage{lettrine}
 \begin{document}
 
 
@@ -1881,7 +1881,7 @@ when it is bijective and its inverse is a homomorphism as well. We write $(L,
 
 \begin{theorem}
     If $F$ is a bijective homomorphism between two lattices, then it is an
-    isomorphism. The set $\left\{ 1, 2 \right\} $
+    isomorphism. 
 \end{theorem}
 
 
@@ -2126,7 +2126,7 @@ $F(x_0 \lor  y_0) = F(x_1 \lor  y_1)$. $\blacksquare$
     Let $(L, \lor , \land )$ a lattice and $\theta$ a congruence over it. 
     Then $\pi_{\theta}$ is a homomorphism from $(L, \lor , \land )$ to 
     $(L / \theta, \widetilde{ \lor  }, \widetilde{ \land  } ) $, and 
-    $\ker(\pi_{\theta}) = \emptyset$.
+    $\ker(\pi_{\theta}) = \theta$.
 \end{theorem}
 
 
@@ -2142,6 +2142,15 @@ Let $x, y \in L$. Then
                             = x / \theta ~ \widetilde{ \circ }  y / \theta\\ 
                             = \pi_{\theta}(x) ~ \widetilde{ \circ }  ~ \pi_{\theta}(y)
 \end{equation*}
+
+    Now, $\ker(\pi_\theta) = \left\{ (a, b) \in \mathcal{D}_{\pi_\theta}^2 :
+        \pi_\theta(a)
+    = \pi_\theta(b) \right\} $. Since $\pi_{\theta}$ is 
+    a homomorphism, $\mathcal{D}_{\pi_\theta} = L$, and due 
+    to the definition of canonic projection, 
+    $\pi_\theta(x) = \pi_\theta(y) \iff x\theta y$.
+    Then $\ker(\pi_\theta) = \left\{ (a, b) \in L : a\theta b \right\} $.
+    This is trivially equal to $\theta$.
     \end{pro}
 
 
@@ -2227,14 +2236,9 @@ Let $x, y \in L$. Then
 
     Since $x, y \in c$ we have $\pi_{\theta}(x) = \pi_{\theta}(y)$. If we look
     at equations (1) and (2), this entails $\pi_{\theta}(z) = \pi_{\theta}(y)$.
+
+    $\therefore  $ $z \in c$.
     
-
-    $\therefore ~$ $\pi_{\theta}(z) \neq \pi_{\theta}(y) \Rightarrow
-    \ker(\pi_{\theta}) \neq \emptyset$. But, according to \textbf{Theorem 18},
-    the homomorphism $\pi_{\theta}$ necessarily has an empty kernel. 
-
-    $\therefore ~$ $\pi_{\theta}(y) = \pi_{\theta}(z)$, which by definition
-    entails $z \in c$.
     
 \end{quote}
 \normalsize
@@ -2323,9 +2327,14 @@ $\therefore $ $c_0 \leq c_1$
     \foreach \i in {1,...,3}
     \node [on chain]  {\pgfornament[width=6.40cm, color=darkscarlet]{71}};
 \end{tikzpicture}
-\section{Bounded lattices}
+\section{Bounded and complemented lattices}
 
-\lettrine{A}{ bounded lattice} restricts the notion of lattice to those 
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
+\subsection{Bounded sub-lattices}
+
+A bounded lattice restricts the notion of lattice to those 
 whose elements are bounded, in the supremum and infimum operations, 
 by special elements $0$ and $1$.
 
@@ -2339,10 +2348,6 @@ by special elements $0$ and $1$.
 \end{definition}
 
 
-\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
-    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
-\end{tikzpicture}
-\subsection{Bounded sub-lattices}
 
 \begin{definition}
     Given $(L, \lor, \land, 0, 1)$ and $(L', \lor', \land', 0', 1')$ two bounded
@@ -2391,6 +2396,903 @@ bijection between $\mathcal{S}_L$, the set of bounded sub-lattices of $(L,
 
 \end{quote}
 \normalsize
+
+\begin{definition}
+    Let $(L, \lor, \land, 0, 1), (L', \lor', \land', 0', 1')$ bounded lattices.
+    A function $F : L \to L'$ is an homomorphism from the first to the latter
+    lattice if, $\forall x, y \in L$:
+
+    \begin{enumerate}
+        \item $F(x \circ  y) = F(x) \circ' F(y)$
+        \item $F(0) = 0'$
+        \item $F(1) = 1'$
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}
+    Let $(L, \lor, \land, 0, 1), (L', \lor', \land', 0', 1')$ bounded lattices.
+    A homomorphism $F: L \to L'$ is an isomorphism if it is bijective 
+    and its inverse is a homomorphism.
+\end{definition}
+
+\begin{theorem}
+    If $F$ a bijective homomorphism between two bounded lattices, then $F$
+    is an isomorphism.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\begin{pro}
+    Since $F$ is bijective its inverse is bijective, which means each element
+    in $L'$ corresponds to a unique element in $L$ via $F^{-1}$.
+
+    Since $F(0) = 0', F(1) = 1'$, we have $F^{-1}(0') = 0$ and $F^{-1}(1') =
+    1$. Now let $v, w \in L'$. We wish to prove 
+
+    \begin{equation}
+        F^{-1}(v \circ' w) = F^{-1}(v) \circ F^{-1}(w)
+    \end{equation}
+
+    Observe that
+
+    \begin{equation*}
+    F \left[ F^{-1}(v) \circ F^{-1}(w) \right]  = F\left[ F^{-1}(v) \right] \circ' F\left[ F^{-1}(w) \right] 
+                                                    = v \circ' w
+    \end{equation*}
+
+    At the same time, 
+
+    \begin{equation*}
+        F\left[ F^{-1}(v \circ' w) \right] = v \circ' w 
+    \end{equation*}
+
+    In other words, both sides of equation (2) map to the same value via $F$.
+    But since $F$ is a bijection, two distinct elements can never map to the
+    same value. Then the l.h.s. and the r.h.s. are equal. $\blacksquare$
+
+\end{pro}
+
+\end{quote}
+\normalsize
+
+\textbf{Theorem 19} ensures that, when dealing with bounded lattices, all
+bijective homomorphisms are isomorphisms. This was also the case for simple
+lattices (\textbf{Theorem 12}). The reader may wonder why the definition of
+isomorphism isn't simply a bijective homomorphism. 
+
+The reason is that, though bijective homomorphisms are always isomorphisms in
+the case of simple and bounded lattices, there a structures where this doesn't
+hold. See \textbf{Chapter 3.3} on poset homomorphisms for an example of this.
+
+We will write $F : ((L, \lor, \land, 0, 1) \to (L', \lor', \land', 0', 1')$ to 
+denote a homomorphism from the first to the latter lattice.
+This should not be interpreted as saying that the domain of $F$
+is a subset of $(L, \lor, \land, 0, 1)$, which makes no sense.
+
+\begin{theorem}
+    If $F : (L, \lor, \land, 0, 1) \to (L', \lor', \land', 0', 1')$ is a
+    homomorphism, then $I_F$ is a sub-universe of $(L', \lor', \land', 0', 1')$.
+    This means $F$ is also a homomorphism from $(L, \lor, \land, 0, 1)$
+    to $(I_F, \lor'_{I_F^2}, \land'_{I_F^2}, 0', 1')$.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\begin{pro}
+    We know $I_f \subseteq L'$, and since $F$ is a homomorphism $\left\{ 0', 1'
+    \right\} \in I_F $. In other words, $I_F$ is non-empty. We 
+    must only show that $I_F$ is closed. 
+
+    Given $y_0, y_1 \in I_F$, there are at least two values $x_0, x_1 \in L$
+    s.t. $F(x_0) = y_0, F(x_1) = y_1$. Then $y_0 \circ' y_1 = F(x_0) \circ'
+    F(x_1) = F(x_0 \circ x_1) \in I_F$. $\blacksquare$
+
+\end{pro}
+
+\end{quote}
+\normalsize
+\pagebreak
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
+
+\subsection{Congruences over bounded lattices}
+
+Naturally, it is possible to have congruence relations 
+over a bounded lattice. 
+
+\begin{definition}
+    A congruence over $(L, \lor, \land, 0, 1)$ is an equivalence relation 
+    $\theta$ s.t. $\theta$ is a congruence over $(L, \lor, \land)$.
+\end{definition}
+
+Recall that we defined $x / \theta \widetilde{ \circ } y / \theta = (x \circ y)
+/ \theta $. The $5$-uple $(L / \theta, \widetilde{\lor}, \widetilde{ \land}, 0 / \theta, 1/
+\theta)$ is called \textit{the quotient} of $(L, \lor, \land, 0, 1)$ over
+$\theta$ and is denoted with $(L, \lor, \land, 0, 1) / \theta$.
+
+
+\begin{theorem}
+    Let $(L, \lor, \land, 0, 1)$ a bounded lattice and $\theta$ a congruence 
+    over $(L, \lor, \land, 0, 1)$.
+
+    \begin{itemize}
+        \item $(L / \theta, \widetilde{\lor}, \widetilde{ \land}, 0 / \theta, 1/ \theta)$ is a bounded lattice. 
+        \item $\pi_\theta$ is a homomorphism from $(L, \lor, \land, 0, 1)$ to 
+            $(L, \lor, \land, 0, 1)$ and $\ker(\pi_\theta) = \theta$.
+    \end{itemize}
+\end{theorem}
+
+\small
+\begin{quote}
+
+\begin{pro}
+    Analogous to the proof of \textbf{Theorem 18}.
+\end{pro}
+
+\end{quote}
+\normalsize
+
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
+\subsection{Complemented lattices}
+
+Imagine any bounded lattice, and picture in particular the Hasse diagram
+associated to the lattice viewed as a poset. It is easy to conceive that some pair
+of elements may have no common ancestor other than $0$, and no common successor
+other than $1$. We call such elements \textit{complements}.
+
+\begin{definition}
+    Let $(L, \lor, \land, 0, 1)$ a bounded lattice. We say $a \in L$ is
+    complemented if there is some $b \in L$ s.t. $a \lor b = 1, a\land b=0$.
+    Such $b$ is called the complement of $a$.
+\end{definition}
+
+The image below depicts a lattice and marks the complements as $a$ and $a'$,
+$b$ and $b'$.
+
+\begin{center}
+    \includegraphics[scale=1]{compLattice}
+\end{center}
+
+By definition, $0$ is the common ancestor of all elements,
+and $1$ the common successor of all elements. Inversely, all elements are
+predecessors of $1$ and successors of $0$. Thus, if $1$ is a complement of some
+element $a$, this element must be $0$, and vice-versa.
+
+Given a bounded latice $(L, \lor, \land, 0, 1)$, we define $c : L \mapsto L $
+as the unary \textit{complement} operation. Instead of writing $c(x)$ we shall
+write $x^c$.
+
+\begin{definition}
+    A complemented lattice is a $6$-upla $(L, \lor, \land, ~^c, 0, 1)$ s.t.
+    $(L, \lor, \land, 0, 1)$ is a bounded lattice and $~^c$ is a unary
+    operation over $L$ s.t. $\forall x \in L :x \lor x^c = 1, x \land x^c = 0$.
+\end{definition}
+
+Note that is is possbile to define more than one unary operation that satisfies
+the definition of complement.
+
+\begin{problem}
+    Consider the diamond poset $\left( \left\{ 1, 2, 3, 5, 30 \right\}, \mid
+    \right) $. It clearly corresponds to bounded lattice in the algebraic
+    sense. Find all unary operations $\lambda$ s.t. $(L, \lor, \land, \lambda,
+    0, 1)$ is a complemented lattice.
+\end{problem}
+
+
+\small
+\begin{quote}
+
+    The image below depicts the diamond lattice, where the prime numbers 
+    take the positions of $a, b, c$.
+
+    \begin{center}
+        \includegraphics[scale=0.5]{diamond}
+    \end{center}
+
+    Observe that $a, b$  and $c$ are all complements of each other. Thus, any
+    $\lambda$ s.t. $(L, \lor, \land, \lambda, 0, 1)$ is a complemented lattice
+    must map each prime to either of the other two primes. Thus, 
+    if we let $\mathcal{P} = \left\{ 2, 3, 5 \right\} $ the set of 
+    primes in the lattice, the set of all complement functions is
+
+    \begin{align*}
+        \{ \lambda : L \to L \mid &~\lambda(0) = 1, \\ 
+                                       &\lambda(1) = 0, \\ 
+                                       &\forall p \in \mathcal{P} : \exists p' \in \mathcal{P} : p \neq p' \land  \lambda(p) = p' \}
+    \end{align*}
+
+    It is easy to observe that there are $2^3$ such functions, since we have
+    $2$ options for each of the $3$ prime numbers.
+
+
+\end{quote}
+\normalsize
+
+Let $(P, \leq)$ a poset with a maximum and minimum, and assume there is some
+unary operation $\lambda : P \to P$ s.t. $\text{sup}\{x, \lambda(x)\}  = 1,
+\text{inf}\{x, \lambda(x)\} = 0 $. Then defining $\lor$ and $\land$ as the
+$\text{sup}$ and $\text{inf}$ functions of the poset satisfies that $(L, \lor,
+\land, \lambda, 0, 1)$ is a complemented lattice.
+
+Furthermore, by virtue of Dedekind's theorem, every complemented lattice is
+obtained in this way. This entails that a poset with maximum, minimum and a
+complement operation $\lambda$ is, in a certain sense, the same than its
+corresponding complemented lattice.
+
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
+\subsection{Complemented sub-lattices}
+
+\begin{definition}
+    Given two complemented lattices $(L, \lor, \land, ~^c, 0, 1)$ and $(L',
+    \lor', \land', ~^c', 0', 1')$, we say the first is a complemented
+    sub-lattice of the latter iff
+
+    \begin{itemize}
+        \item $L \subseteq L  $
+        \item $0 = 0', 1 = 1'$
+        \item $\lor  = \lor'_{\mid L^2}, \land = \land'_{\mid L^2}, ~^c = ~^c_{\mid L}$
+    \end{itemize}
+\end{definition}
+
+\begin{definition}
+    Let $(L / \theta, \widetilde{\lor}, \widetilde{\land})$ a complemented
+    lattice. A set $S \subseteq L$ is a sub-universe of the lattice if $\left\{
+    0,1 \right\}\subseteq  S $ and $S$ is closed under $\land , \lor $ and
+    $~^c$.
+\end{definition}
+
+As in previous cases, if $S$ is a sub-universe of $(L, \lor, \land, ~^c, 0,
+1)$, then $(S, \lor_{| S^2}, \land_{|S^2}, ~^c_{|S^2}, 0, 1)$ is a complemented
+sub-lattice of $(L, \lor, \land, ~^c, 0, 1)$, and every complemented
+sub-lattice is obtained in this way. In other words, there is a bijection
+between the set of complemented sub-lattice of $(L, \lor, \land, ~^c, 0, 1)$
+and the set of sub-universes of $(L, \lor, \land, ~^c, 0, 1)$.
+
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
+\subsection{Homorphisms of complemented lattices}
+
+\begin{definition}
+    Let $(L, \lor, \land, ~^c, 0, 1), (L', \lor', \land', ~^c', 0', 1')$ two 
+    complemented lattices. A function $F: L \mapsto  L'$ is a 
+    homomorphism from the first to the latter if $\forall x, y \in L$:
+
+    \begin{itemize}
+        \item $F(x \circ y) = F(x) \circ' F(y)$.
+        \item $F(x^c) = F(x)^{c'}$
+        \item $F(0) = 0', F(1) = 1'$.
+    \end{itemize}
+\end{definition}
+
+A homomorphism is an isomorphism if it is bijective and its inverse is 
+a homorphism. In complemented sub-lattices, like all lattices so far, it
+suffices to show that a homomorphism is bijective to prove that it's an
+isomorphism. 
+
+\begin{theorem}
+    If $F : (L, \lor, \land, ~^c, 0, 1) \mapsto (L', \lor', \land', ~^c', 0', 1')$
+    is a bijective homomorphism, then it is an isomorphism.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\begin{pro}
+    Analogous to previous cases.
+\end{pro}
+
+\end{quote}
+\normalsize
+
+\begin{theorem}
+    If $F: (L, \lor, \land, ~^c, 0, 1)\mapsto (L', \lor', \land', ~^c', 0',
+    1')$ is a homomorphism, then $I_F$ is a sub-universe of $(L', \lor',
+    \land', ~^c', 0', 1')$. Which means $F$ is also a homomorphism from $(L,
+    \lor, \land, ~^c, 0, 1)$ to $(I_F, \lor'_{|I_F^2}, \land'_{|I_F^2}, ^{c'},
+    0', 1')$.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\begin{pro}
+    Analogous to previous cases.
+\end{pro}
+
+\end{quote}
+\normalsize
+
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
+\subsection{Congruences over complemented lattices}
+
+\begin{definition}
+    A congruence over $(L, \lor, \land, ~^c, 0, 1)$ is an equivalence 
+    relation $\theta$ s.t. $\theta$ is a congruence over 
+    $(L, \lor, \land, 0, 1)$ and $x / \theta = y /\theta \Rightarrow x^c / \theta = y^c / \theta$.
+\end{definition}
+
+These conditions allow us to define $\widetilde{ \lor  } $ and $\widetilde{ \land  } $ in a fashion analogous to previous cases:
+
+\begin{align*}
+    &x / \theta ~ \widetilde{ \circ } y / \theta = (x \circ y) / \theta \\ 
+    &(x / \theta)^{\widetilde{ c } } = x^c / \theta
+\end{align*}
+
+The $6$-uple $(L / \theta, \widetilde{\lor}, \widetilde{ \land}, ~^{\widetilde{
+c }},  0 / \theta, 1/ \theta)$ is called the \textit{quotient space} of $(L,
+\lor, \land, ~^c, 0, 1)$ over $\theta$ and we denote it as $(L, \lor, \land,
+~^c, 0, 1) / \theta$.
+
+\begin{theorem}
+    If $(L, \lor, \land, ~^c, 0, 1)$ a complemented lattice and $\theta$ 
+    a congruence over $(L, \lor, \land, ~^c, 0, 1)$:
+
+    \begin{itemize}
+        \item $(L / \theta, \widetilde{\lor}, \widetilde{ \land}, ~^{\widetilde{ c } }, 0 / \theta, 1/ \theta)$ is a complemented lattice. 
+        \item $\pi_{\theta}$ is a homomorphism from $(L, \lor, \land, ~^c, 0, 1)$ to $(L / \theta, \widetilde{\lor}, \widetilde{ \land}, ~^{\widetilde{ c } } , 0 / \theta, 1/ \theta)$ and $\ker(\pi_\theta) = \theta$.
+    \end{itemize}
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\begin{pro}
+    (1) A previous theorem ensures that $(L / \theta, \widetilde{\lor},
+    \widetilde{ \land}, 0 / \theta, 1/ \theta)$ is a bounded lattice, so we
+    only to verify that the lattice identities hold for the $~^\widetilde{ c }
+    $ operation.
+
+    Let $x / \theta \in L / \theta$. By assumption $x \circ x^c = 1$, which entails 
+    $(x \circ x^c) / \theta = 1/ \theta$. Then, by definition, 
+
+    \begin{align*}
+        &x / \theta \widetilde{ \circ  } (x^c) / \theta = 1/\theta \\ 
+        \iff & x / \theta \widetilde{ \circ  } (x / \theta)^{\widetilde{ c } } = 1 / \theta
+    \end{align*}
+
+    (2) A previous theorem ensures that $\pi_{\theta}$ is a homorphism from 
+    $(L, \lor, \land, 0, 1)$ to $(L / \theta, \widetilde{\lor}, \widetilde{
+    \land}, 0 / \theta, 1/ \theta)$ whose kernel is $\theta$. We must only
+    ensure that it satisfies the homorphism definition for the complement
+    operation. 
+
+    Let $x \in L$. We wish to prove $\pi_\theta(x^c) =
+    \pi_\theta(x)^{\widetilde{ c }} $. By definition, 
+
+    \begin{equation*}
+        \pi_\theta(x)^{\widetilde{ c } } = \left( x / \theta \right)^{\widetilde{ c } } = (x^c) / \theta = \pi_\theta(x^c) ~ \blacksquare
+    \end{equation*}
+
+
+
+\end{pro}
+
+\end{quote}
+\normalsize
+
+\begin{theorem}
+    If $F : (L, \lor, \land, ~^c, 0, 1) \mapsto (L', \lor', \land', ~^c', 0',
+    1')$ is a complemented lattice homomorphism, then $\ker(F)$
+    is a congruence over $(L, \lor, \land, ~^c, 0, 1)$.
+\end{theorem}
+
+This is the analogue to \textbf{Theorem 17}, which stated this was the case for
+general lattices.
+
+\small
+\begin{quote}
+
+\begin{pro}
+
+
+
+    Let $\lambda = \ker(F)$. By definition, $\lambda$ is a congruence over $(L,
+    \lor, \land, 0, 1)$. Then all that remains to be shown is that $x / \lambda
+    = y / \lambda \Rightarrow x^c / \lambda = y^c / \lambda$.
+
+    Let $x, y \in L$ s.t. $x / \lambda = y / \lambda$. This entails 
+    $F(x) = F(y)$. Since $F$ a homomorphism, 
+    $F(x^c) = F(x)^c$, which entails 
+
+    \begin{equation*}
+        F(x)^c = F(y)^c \Rightarrow F(x^c) = F(y^c) \Rightarrow (x^c, y^c) \in \ker(F)
+    \end{equation*}
+
+    It follows directly that $x^c / \lambda = y^c / \lambda$. $\blacksquare$
+
+
+
+\end{pro}
+
+\end{quote}
+\normalsize
+
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
+\subsection{A notational convention}
+
+In the $n$-uples we have studied (posets and lattices of various kinds), the
+first element of the $n$-uple was called its \textit{universe}. We shall use
+bold letters to denote the universes of these structures. Thus, the phrase
+"\textbf{L} is a bounded lattice" equates to saying $(L, \lor, \land, 0, 1)$ is
+a bounded lattice.
+
+Then writing that $F : \textbf{L} \mapsto L'$ is a homomorphism equates to
+saying $F : (L, \lor, \land, 0, 1) \mapsto (L', \lor', \land', 0', 1')$ is a
+homomorphism. Similarly, writing $\textbf{L} / \theta$, where $\theta$ a
+congruence, will equate to writing the quotient space of whatever $n$-uple is
+signified by \textbf{L}.
+
+\pagebreak 
+
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(0mm, 10mm)}]
+    \foreach \i in {1,...,3}
+    \node [on chain]  {\pgfornament[width=6.72cm, color=darkscarlet]{71}};
+\end{tikzpicture} 
+\section{Boolean algebras} 
+
+We have so far studied several kinds of mathematical structures
+separately. In particular, we have studied different kinds of lattices,
+observing a special property which defined them.
+
+Now, we come to the study of structures which exhibit several of these
+properties simultaneously. In particular, we will develop an understanding of
+bounded and distributive lattices, show the connection of this combination with
+complemented lattices, and from there develop the concept of a Boolean algebra.
+
+\begin{definition}
+    A bounded or complemented lattice \textbf{L} is said to be distributive 
+    when $(L, \lor, \land)$ is distributive.
+\end{definition}
+
+Let $Dis_1$ denote distributivity of $\land $ with respect to $\lor $,
+and $Dis_2$ the converse.
+
+\begin{theorem}
+    Let $(L, \lor, \land)$ a lattice. Then $(L, \lor, \land)$ satisfies 
+    $Dis_1$ iff it satisfies $Dis_2$.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\begin{pro}
+    Assume $(L, \lor, \land)$ satisfies $Dis_1$. Let $a, b, c \in L$ fixed. 
+    Then 
+
+    \begin{equation*}
+        (a \lor  b) \land  (a \lor  c) = \left( (a \lor  b) \land  a \right)  \lor  \left( (a \lor  b) \land  c \right) 
+    \end{equation*}
+
+    Commutativity then gives 
+
+    \begin{equation*}
+         \left( (a \lor  b) \land  a \right)  \lor  \left( (a \lor  b) \land  c \right) = (a \land (a \lor b)) \lor  (c \land  (a \lor  b))
+    \end{equation*}
+
+
+A funamental property of lattices is that $a \land (a \lor  b) = a$. Using 
+this property with $Dis_1$,
+
+\begin{equation*}
+    (a \land (a \lor b)) \lor  (c \land  (a \lor  b)) = a \lor \left( (c \land  a) \lor  (c \land  b) \right) 
+\end{equation*}
+
+Due to the associative property, 
+
+\begin{equation*}
+    = a \lor \left( (c \land  a) \lor  (c \land  b) \right) = \left( a \lor (c \land a) \right) \lor (c \land b)
+\end{equation*}
+
+Commutativity gives
+
+\begin{equation*}
+    \left( a \lor (c \land a) \right) \lor (c \land b) = (a \lor  (a \land  c)) \lor (b \land  c) = a \lor (b \land  c)
+\end{equation*}
+
+Then we have proven $a \lor (b \land  c) = (a \lor  b) \land  (a \lor c)$. $\blacksquare$.
+
+The other direction of the double implication is analogous.
+
+\end{pro}
+
+\end{quote}
+\normalsize
+
+\begin{definition}
+    A Boolean algebra is a complemented lattice $\textbf{L}$ that is distributive.
+\end{definition}
+
+\begin{theorem}
+    Let $\textbf{L}$ a bounded lattice that is distributive. Then every element 
+    has at most one complement.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\begin{pro}
+    Let $x, y, z \in L$ fixed. Assume $x \lor  y = x \lor  z = 1$ 
+    and $x \land  y = x \land  z = 0$. Observe that 
+    $y = y \land  1 = y \land (x \lor  z)$. Because $\textbf{L}$ is 
+    distributive, we have $y = (y \land  x) \lor  (y \land  z)$.
+    Then $y = 0 \lor  (y \land   z) = y \land  z$.
+
+    The same line of reasoning gives $z = z \land  1 = z \land  (x \lor  y)$, from
+    which follows $z = (z \land  x) \lor  (z \land  y) = z \land  y$.
+
+    $\therefore $ $z = z \land  y = y \land  z = y$.
+
+    $\therefore $ $z = y$.
+\end{pro}
+
+\end{quote}
+\normalsize
+
+\begin{theorem}
+    Let $(B, \lor , \land , ~^c, 0, 1)$ a Boolean algebra. For any $x, y \in B$,
+    $y = (y \land  x) \lor  (y \land x^c)$.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\begin{pro}
+    Let $x, y \in B$. Then
+
+    \begin{align*}
+        (y \land  x) \lor  (y \land x^c) &= \left[ (y\land x) \lor  y \right] \land \left[ (y \land  x) \lor  x^c \right] &\left\{ \text{Dist.} \right\} \\ 
+                                         &=\left[ (y \lor  y) \land  (y \lor  x) \right] \land \left[ (y \lor x^c) \land (x \lor  x^c) \right] &\left\{ \text{Dist.} \right\} \\ 
+                                         &=\left[ y \land (y \lor  x) \right] \land \left[ (y \lor  x^c) \land 1 \right] &\left\{ \text{Comp., abs.} \right\} \\ 
+            &= y \land (y \lor  x^c) \\ 
+            &=y
+    \end{align*}
+
+    where the last two steps use the property $y \land (y\lor x) = y$.
+
+\end{pro}
+
+\end{quote}
+\normalsize
+
+\begin{theorem}
+    Let $\textbf{B}$ a Boolean algebra and $x, y \in B$. Then: 
+
+    \begin{itemize}
+        \item $(x \land y)^c = x^c \lor  y^c$ ~ ~ ~ (DeMorgan's law 1)
+        \item $(x \lor  y)^c = x^c \land   y^c$ ~ ~ ~ (DeMorgan's law 2)
+        \item $(x^c)^c = x$
+        \item $x \land  y = 0 \iff y \leq x^c$
+        \item $x \leq y \iff y^c \leq x^c$
+    \end{itemize}
+\end{theorem}
+
+If one thinks of the associated posset, the proposition $x \land  y = 0$  may
+be read as "$y$ is not an ancestor of $x$". Thus, the fourth property states 
+if $y$ is not an ancestor of $x$, then it must be an ancestor of $x^c$.
+
+Similarly, the last property states that if $x$ is an ancestor of $y$,
+$y^c$ is an ancestor of $x^c$.
+
+
+\small
+\begin{quote}
+
+\begin{pro}
+    We will prove the fourth and fifth properties. 
+
+    \textit{(Property 4)} Assume $x \land  y = 0$. The previous 
+    theorem gives
+
+    \begin{align*}
+        y &= (y \land  x) \lor  (y \land x^c)\\ 
+          &= y \land x^c
+    \end{align*}
+
+    $\therefore $ $y \leq x^c$.
+
+    Now assume $y \leq x^c$. Then $y \land  x \leq x^c \land x$. 
+
+    $\therefore $ $y \land  x \leq 0$. 
+
+    $\therefore $ $y \land  x = 0$.
+
+    \textit{(Property 5)} Assume $x \leq y$. Then $(x \land  y) = x$. Then $(x
+    \land  y)^c = x^c$, and $x^c \lor y^c = x^c$. Then $x^c \land  y^c = y^c$
+    and $y^c \leq x^c$.
+
+    Now assume $y^c \leq x^c$. Then $(y^c \land x^c) = y^c$. Then $(y^c)^c \lor
+    (x^c)^c = (y^c)^c$, which entails $y \lor  x = y$. Then $x \leq y$.
+
+    $\blacksquare$
+
+
+\end{pro}
+
+\end{quote}
+\normalsize
+
+\begin{problem}
+    Due the properties of the previous theorem hold for any complemented 
+    lattice?
+\end{problem}
+
+
+\small
+\begin{quote}
+
+The answer is no; we need distributivity. But prove it. Complete.
+
+\end{quote}
+\normalsize
+
+
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
+\subsection{Prime filters and Rasiova-Sikorski's lemma}
+
+\begin{definition}
+    A filter of a lattice $(L, \lor, \land)$ will be any non-empty subset $F \subseteq L$ s.t. 
+
+    \begin{itemize}
+        \item $x, y \in F \Rightarrow x \land y \in F$ 
+        \item $x \in F$ and $x \leq y \Rightarrowy \in F$
+    \end{itemize}
+\end{definition}
+
+\begin{problem}
+    Describe the filters of $(\mathbb{R}, \max, \min)$. For any given filter, 
+    does it always contain an infimum?
+\end{problem}
+
+
+\small
+\begin{quote}
+
+    Observe that $(\mathbb{R}, \max, \min)$ induces via Dedekind's theorem the
+    totally ordered set $(\mathbb{R}, \leq)$, where $\leq$ is the usual order.
+    Consider any filter $F \subseteq \mathbb{R}$. The inclusion of any element
+    in $F$ implies the inclusion of all numbers greater than that element.
+    Thus, the filters of $(\mathbb{R}, \max, \min)$ consists of all 
+    continuous subsets of $\mathbb{R}$; i.e. 
+
+    \begin{equation*}
+        \text{Set of filters of $(\mathbb{R}, \max, \min)$} = \left\{ [x, \infty) : x \in \mathbb{R} \right\} 
+    \end{equation*}
+
+    Clearly, since any filter is of the form $[x, \infty)$ with $x \in
+    \mathbb{R}$, $x$ is always the infimum of that filter.
+
+\end{quote}
+\normalsize
+
+\begin{problem}
+    Find all filters of $\left( \left\{ 1, 2, 3, 6, 12 \right\}, \lcm, \gcd  \right) $.
+\end{problem}
+
+
+\small
+\begin{quote}
+
+
+Evidently, $\left\{ 1, 2, 3, 6, 12 \right\} $ is a filter, 
+and is the only filter which contains $1$.
+
+Consider a filter which contains $2$. If it contains $3$ it must contain $1$
+and we are back in the first case. So $\left\{ 2, 6, 12 \right\} $ is a filter.
+A similar argument leads to $\left\{ 3, 6, 12 \right\} $.
+
+Lastly, $\left\{ 6, 12 \right\} $ and $\left\{ 12 \right\} $ are filters.
+
+\end{quote}
+\normalsize
+
+Let us present some notation. Given $S \subseteq L$, we use $[S)$ to 
+denote the set 
+
+\begin{equation*}
+    \left\{ x \in L : y \geq (s_1 \land  \ldots \land s_n) \text{ for some } s_1, \ldots, s_n \in S, n \geq 1 \right\} 
+\end{equation*}
+
+and we call it the filter \textit{generated} by $S$.
+
+The set $[S)$ is clearly a subset of $L$. If $l \in L$ is a successor of any
+element of $S$, or of the infimum between any set of elements in $S$, then $l
+\in [S)$. In a certain sense, the elements of $[S)$ are the successors of all
+elements of $S$ or some of their predecessors.
+
+Since any element in $S$ is a successor to itself, all elements of $S$ are in
+$[S)$. In other words, $S \subseteq [S) \subseteq L$.
+
+When $S$ is finite, $[S) = \left\{ y \in L : y \geq \text{inf}(S) \right\} $.
+When $S$ is infinite but has an infimum, in many cases the statement will hold
+as well, but there are exceptions.
+
+\begin{example}
+    Let $\textbf{L} = \left( \mathcal{P}(\mathbb{N}), \cup, \cap  \right) $ and 
+    $S = \left\{ \mathbb{N} - n : n \in \mathbb{N} \right\} $. 
+    The infimum of $S$ is $\emptyset$ and $[S) = \left\{ A \in
+    \mathcal{P}(\mathbb{N}) : \mathbb{N} - A \text{ is finite}\right\} $.
+
+    Then it doesn't hold that $[S) = \left\{ y \in L : y \geq \text{inf} S
+    \right\} $.
+\end{example}
+
+\begin{theorem}
+    Assume $S$ is non-empty. Then $[S)$ is a filter. Furthermore, if $F$ a
+    filter and $S \subseteq F$, then $[S) \subseteq F$. In other words, $[S)$
+    is the minimal filter which contains $S$.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\begin{pro}
+    Since $S \subseteq [S)$ we have $[S) \neq \emptyset$. It is trivial to observe 
+    that $[S)$ satisfies that if an element is in $[S)$, all 
+    its successors will also be in $[S)$. Let us show that 
+    the infimum of any pair in $[S)$ is also in $[S)$.
+
+    Assume $x, y \in [S)$. Then $x \geq s_1 \land  \ldots \land  s_n$ and $y
+    \geq t_1\land \ldots \land  t_m$ for $n, m \geq 1$ and $s_j, t_j \in S$.
+    Then 
+
+    \begin{equation*}
+        x \land  y \geq (s_1 \land  \ldots \land s_n) \land (t_1 \land  \ldots t_m)
+    \end{equation*}
+
+    which completes the proof.
+\end{pro}
+
+\end{quote}
+\normalsize
+
+\begin{definition}
+    Let $(P, \leq)$ a poset. A subset $C \subseteq P$ is a chain if for every
+    $x, in \in C$, $x \leq y$ or $y \leq x$.
+\end{definition}
+
+Chains may be infinite and given an infinite chain $C$, there may not exist an
+infinite sequence $\left\{ c_1, c_2, \ldots \right\} $ s.t. $C = \left\{ c_n :
+n \in \mathbb{N} \right\} $.
+
+\begin{example}
+    Every subset of $\mathbb{R}$ is a chain of $(\mathbb{R}, \leq)$. Observe
+    that there is no discrete infinite sequence $c_1, c_2,\ldots$ which may
+    account for a subset of $\mathbb{R}$.
+\end{example}
+
+
+\begin{theorem}[Zorn's theorem]
+    Let $(P, \leq) $ a poset and assume every chain of $(P, \leq) $ has an
+    upper bound. Then there is a maximal element in $(P, \leq) $.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\begin{pro}
+    Complete.
+\end{pro}
+
+\end{quote}
+\normalsize
+
+\begin{definition}[Prime filter]
+    A filter $F$ on a lattice $(L, \lor, \land)$ is called \textit{prime} when
+    $F \neq L$ and $x \lor  y \in F \Rightarrow x \in F \lor  y \in F$.
+\end{definition}
+
+\begin{problem}
+    Show that every filter of $(\mathbb{R}, \max, \min)$ other than $\mathbb{R}$
+    is prime.
+\end{problem}
+
+
+\small
+\begin{quote}
+
+    The lattice $\textbf{L} = (\mathbb{R}, \max, \min)$ induces the total order
+    $(\mathbb{R}, \leq)$. Let $\mathcal{F}$ an arbitrary filter of \textbf{L}
+    different from $\mathbb{R}$. Assume $x \max y \in \mathcal{F}$ for $x, y
+    \in \mathbb{R}$. Since $x \max y \in \left\{ x, y \right\} $, either $x \in
+    \mathcal{F}$ or $y \in \mathcal{F}$. Then $\mathcal{F}$ is prime.
+    $\blacksquare$
+
+\end{quote}
+\normalsize
+
+\begin{problem}
+    Find all prime filters over $\textbf{L} = \left( \left\{ 1, 2, 3, 6, 12 \right\}, \lcm, \gcd  \right) $.
+\end{problem}
+
+
+\small
+\begin{quote}
+
+    In \textbf{Problem 48} we found all filters of \textbf{L}. The question is
+    which, except for $L$, were prime? 
+
+    Clearly, $\left\{ 6, 12 \right\} $ is not prime, because $6 = 3 \lor 2$ and
+    it doesn't contain either $3$ nor $2$. Same observation 
+    yields that $\left\{ 2, 6, 12 \right\} $ and $\left\{ 3, 6, 12
+    \right\} $ are prime. Finally, $\left\{ 12 \right\} $ is trivially prime:
+    $12 \lor  12 = 12$.
+
+
+\end{quote}
+\normalsize
+
+\begin{theorem}[Prime filter theorem]
+    Let $\textbf{L}$ a distributive lattice and $F$ a filter of $\textbf{L}$.
+    Assume $x_0 \in L - F$. Then there is a prime filter $P$ s.t. 
+    $x_0 \not\in P$ and $F \subseteq P$.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\begin{pro}
+    Let 
+
+    \begin{equation*}
+        \mathcal{F} := \left\{ F_1 : F_1 \text{ is a filter}, x_0 \not\in F_1,F \subseteq F_1 \right\} 
+    \end{equation*}
+
+    Since $F \in \mathcal{F}$, $\mathcal{F} \neq \emptyset$ and $\textbf{F} = (\mathcal{F}, \subseteq )$ 
+    is a poset. Let us prove that every chain in the poset 
+    has an upper bound.
+
+    Let $C$ a chain over $\textbf{F}$. If $C = \emptyset$, every 
+    element in $\mathcal{F}$ is an upper bound. If $C \neq \emptyset$,
+    we can define 
+
+    \begin{equation*}
+        G = \left\{ x \in L : x \in F_1 \text{ for some } F_1 \in C \right\} 
+    \end{equation*}
+
+    It is clear that $G \neq \emptyset$. Assume $x, y \in G$. Let $F_1, F_2 \in
+    \mathcal{F}$ s.t. $x \in F_1$ and $y \in F_2$.
+
+
+\end{pro}
+
+\end{quote}
+\normalsize
+
+
+
+
+
+
+
+
+
+
+
 
 
 

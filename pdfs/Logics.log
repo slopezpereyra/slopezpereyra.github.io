@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  15 JUL 2024 02:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  15 JUL 2024 23:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -362,53 +362,18 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-(/usr/share/texlive/texmf-dist/tex/latex/lettrine/lettrine.sty
-File: lettrine.sty 2022-09-25 v2.30 (Daniel Flipo)
- (/usr/share/texlive/texmf-dist/tex/generic/minifp/minifp.sty
-Package: minifp 2013/12/30 v0.96. Macros for real number operations and a stack-based programing language.
-\MFP@loopctr=\count289
-)
-\c@DefaultLines=\count290
-\c@DefaultDepth=\count291
-\DefaultFindent=\dimen170
-\DefaultNindent=\dimen171
-\DefaultSlope=\dimen172
-\DiscardVskip=\dimen173
-
-Loading lettrine.cfg
-(/usr/share/texlive/texmf-dist/tex/latex/lettrine/lettrine.cfg)
-\L@lbox=\box54
-\L@tbox=\box55
-\c@L@lines=\count292
-\c@L@depth=\count293
-\L@Pindent=\dimen174
-\L@Findent=\dimen175
-\L@Nindent=\dimen176
-\L@lraise=\dimen177
-\L@first=\dimen178
-\L@next=\dimen179
-\L@slope=\dimen180
-\L@height=\dimen181
-\L@novskip=\dimen182
-\L@target@ht=\dimen183
-\L@target@dp=\dimen184
-\L@target@tht=\dimen185
-\LettrineWidth=\dimen186
-\LettrineHeight=\dimen187
-\LettrineDepth=\dimen188
-\Llist@everypar=\toks36
-) (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
  (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 149.
  (/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx)) (/usr/share/texlive/texmf-dist/tex/latex/pgfornament/pgfornament.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks37
-\pgfutil@tempdima=\dimen189
-\pgfutil@tempdimb=\dimen190
+\pgfutil@everybye=\toks36
+\pgfutil@tempdima=\dimen170
+\pgfutil@tempdimb=\dimen171
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box56
+\pgfutil@abb=\box54
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)
 Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
 ))
@@ -416,31 +381,31 @@ Package: pgf 2023-01-15 v3.1.10 (3.1.10)
  (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks38
-\pgfkeys@temptoks=\toks39
+\pgfkeys@pathtoks=\toks37
+\pgfkeys@temptoks=\toks38
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
-\pgfkeys@tmptoks=\toks40
+\pgfkeys@tmptoks=\toks39
 ))
-\pgf@x=\dimen191
-\pgf@y=\dimen192
-\pgf@xa=\dimen193
-\pgf@ya=\dimen194
-\pgf@xb=\dimen195
-\pgf@yb=\dimen196
-\pgf@xc=\dimen197
-\pgf@yc=\dimen198
-\pgf@xd=\dimen199
-\pgf@yd=\dimen256
+\pgf@x=\dimen172
+\pgf@y=\dimen173
+\pgf@xa=\dimen174
+\pgf@ya=\dimen175
+\pgf@xb=\dimen176
+\pgf@yb=\dimen177
+\pgf@xc=\dimen178
+\pgf@yc=\dimen179
+\pgf@xd=\dimen180
+\pgf@yd=\dimen181
 \w@pgf@writea=\write3
 \r@pgf@reada=\read3
-\c@pgf@counta=\count294
-\c@pgf@countb=\count295
-\c@pgf@countc=\count296
-\c@pgf@countd=\count297
-\t@pgf@toka=\toks41
-\t@pgf@tokb=\toks42
-\t@pgf@tokc=\toks43
-\pgf@sys@id@count=\count298
+\c@pgf@counta=\count289
+\c@pgf@countb=\count290
+\c@pgf@countc=\count291
+\c@pgf@countd=\count292
+\t@pgf@toka=\toks40
+\t@pgf@tokb=\toks41
+\t@pgf@tokc=\toks42
+\pgf@sys@id@count=\count293
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
 )
@@ -451,8 +416,8 @@ File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
 File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
 ))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfsyssoftpath@smallbuffer@items=\count299
-\pgfsyssoftpath@bigbuffer@items=\count300
+\pgfsyssoftpath@smallbuffer@items=\count294
+\pgfsyssoftpath@bigbuffer@items=\count295
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
@@ -476,52 +441,52 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
 Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen257
-\pgfmath@count=\count301
-\pgfmath@box=\box57
-\pgfmath@toks=\toks44
-\pgfmath@stack@operand=\toks45
-\pgfmath@stack@operation=\toks46
+\pgfmath@dimen=\dimen182
+\pgfmath@count=\count296
+\pgfmath@box=\box55
+\pgfmath@toks=\toks43
+\pgfmath@stack@operand=\toks44
+\pgfmath@stack@operation=\toks45
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count302
+\c@pgfmathroundto@lastzeros=\count297
 )) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@picminx=\dimen258
-\pgf@picmaxx=\dimen259
-\pgf@picminy=\dimen260
-\pgf@picmaxy=\dimen261
-\pgf@pathminx=\dimen262
-\pgf@pathmaxx=\dimen263
-\pgf@pathminy=\dimen264
-\pgf@pathmaxy=\dimen265
-\pgf@xx=\dimen266
-\pgf@xy=\dimen267
-\pgf@yx=\dimen268
-\pgf@yy=\dimen269
-\pgf@zx=\dimen270
-\pgf@zy=\dimen271
+\pgf@picminx=\dimen183
+\pgf@picmaxx=\dimen184
+\pgf@picminy=\dimen185
+\pgf@picmaxy=\dimen186
+\pgf@pathminx=\dimen187
+\pgf@pathmaxx=\dimen188
+\pgf@pathminy=\dimen189
+\pgf@pathmaxy=\dimen190
+\pgf@xx=\dimen191
+\pgf@xy=\dimen192
+\pgf@yx=\dimen193
+\pgf@yy=\dimen194
+\pgf@zx=\dimen195
+\pgf@zy=\dimen196
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@path@lastx=\dimen272
-\pgf@path@lasty=\dimen273
+\pgf@path@lastx=\dimen197
+\pgf@path@lasty=\dimen198
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@shorten@end@additional=\dimen274
-\pgf@shorten@start@additional=\dimen275
+\pgf@shorten@end@additional=\dimen199
+\pgf@shorten@start@additional=\dimen256
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfpic=\box58
-\pgf@hbox=\box59
-\pgf@layerbox@main=\box60
-\pgf@picture@serial@count=\count303
+\pgfpic=\box56
+\pgf@hbox=\box57
+\pgf@layerbox@main=\box58
+\pgf@picture@serial@count=\count298
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgflinewidth=\dimen276
+\pgflinewidth=\dimen257
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@pt@x=\dimen277
-\pgf@pt@y=\dimen278
-\pgf@pt@temp=\dimen279
+\pgf@pt@x=\dimen258
+\pgf@pt@y=\dimen259
+\pgf@pt@temp=\dimen260
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
@@ -530,18 +495,18 @@ File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowsep=\dimen280
+\pgfarrowsep=\dimen261
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@max=\dimen281
-\pgf@sys@shading@range@num=\count304
-\pgf@shadingcount=\count305
+\pgf@max=\dimen262
+\pgf@sys@shading@range@num=\count299
+\pgf@shadingcount=\count300
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfexternal@startupbox=\box61
+\pgfexternal@startupbox=\box59
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
@@ -552,57 +517,57 @@ File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfnodeparttextbox=\box62
+\pgfnodeparttextbox=\box60
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
-\pgf@nodesepstart=\dimen282
-\pgf@nodesepend=\dimen283
+\pgf@nodesepstart=\dimen263
+\pgf@nodesepend=\dimen264
 ) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
 )) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
-\pgffor@iter=\dimen284
-\pgffor@skip=\dimen285
-\pgffor@stack=\toks47
-\pgffor@toks=\toks48
+\pgffor@iter=\dimen265
+\pgffor@skip=\dimen266
+\pgffor@stack=\toks46
+\pgffor@toks=\toks47
 )) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2023-01-15 v3.1.10 (3.1.10)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@plot@mark@count=\count306
-\pgfplotmarksize=\dimen286
+\pgf@plot@mark@count=\count301
+\pgfplotmarksize=\dimen267
 )
-\tikz@lastx=\dimen287
-\tikz@lasty=\dimen288
-\tikz@lastxsaved=\dimen289
-\tikz@lastysaved=\dimen290
-\tikz@lastmovetox=\dimen291
-\tikz@lastmovetoy=\dimen292
-\tikzleveldistance=\dimen293
-\tikzsiblingdistance=\dimen294
-\tikz@figbox=\box63
-\tikz@figbox@bg=\box64
-\tikz@tempbox=\box65
-\tikz@tempbox@bg=\box66
-\tikztreelevel=\count307
-\tikznumberofchildren=\count308
-\tikznumberofcurrentchild=\count309
-\tikz@fig@count=\count310
+\tikz@lastx=\dimen268
+\tikz@lasty=\dimen269
+\tikz@lastxsaved=\dimen270
+\tikz@lastysaved=\dimen271
+\tikz@lastmovetox=\dimen272
+\tikz@lastmovetoy=\dimen273
+\tikzleveldistance=\dimen274
+\tikzsiblingdistance=\dimen275
+\tikz@figbox=\box61
+\tikz@figbox@bg=\box62
+\tikz@tempbox=\box63
+\tikz@tempbox@bg=\box64
+\tikztreelevel=\count302
+\tikznumberofchildren=\count303
+\tikznumberofcurrentchild=\count304
+\tikz@fig@count=\count305
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfmatrixcurrentrow=\count311
-\pgfmatrixcurrentcolumn=\count312
-\pgf@matrix@numberofcolumns=\count313
+\pgfmatrixcurrentrow=\count306
+\pgfmatrixcurrentcolumn=\count307
+\pgf@matrix@numberofcolumns=\count308
 )
-\tikz@expandcount=\count314
+\tikz@expandcount=\count309
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (/usr/share/texlive/texmf-dist/tex/latex/pgfopts/pgfopts.sty
 Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
-\pgfopts@list@add@a@toks=\toks49
-\pgfopts@list@add@b@toks=\toks50
+\pgfopts@list@add@a@toks=\toks48
+\pgfopts@list@add@b@toks=\toks49
 )
 Package: pgfornament 2020/05/26 v1.2 vector ornaments
  (/usr/share/texlive/texmf-dist/tex/latex/pgfornament/pgflibraryvectorian.code.tex
@@ -622,6 +587,41 @@ LaTeX Warning: Command \underbar  has changed.
 LaTeX Warning: Command \underline  has changed.
                Check if current package is valid.
 
+) (/usr/share/texlive/texmf-dist/tex/latex/lettrine/lettrine.sty
+File: lettrine.sty 2022-09-25 v2.30 (Daniel Flipo)
+ (/usr/share/texlive/texmf-dist/tex/generic/minifp/minifp.sty
+Package: minifp 2013/12/30 v0.96. Macros for real number operations and a stack-based programing language.
+\MFP@loopctr=\count310
+)
+\c@DefaultLines=\count311
+\c@DefaultDepth=\count312
+\DefaultFindent=\dimen276
+\DefaultNindent=\dimen277
+\DefaultSlope=\dimen278
+\DiscardVskip=\dimen279
+
+Loading lettrine.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/lettrine/lettrine.cfg)
+\L@lbox=\box65
+\L@tbox=\box66
+\c@L@lines=\count313
+\c@L@depth=\count314
+\L@Pindent=\dimen280
+\L@Findent=\dimen281
+\L@Nindent=\dimen282
+\L@lraise=\dimen283
+\L@first=\dimen284
+\L@next=\dimen285
+\L@slope=\dimen286
+\L@height=\dimen287
+\L@novskip=\dimen288
+\L@target@ht=\dimen289
+\L@target@dp=\dimen290
+\L@target@tht=\dimen291
+\LettrineWidth=\dimen292
+\LettrineHeight=\dimen293
+\LettrineDepth=\dimen294
+\Llist@everypar=\toks50
 )
 LaTeX Font Info:    Trying to load font information for T1+EBGaramond-OsF on input line 81.
  (/usr/share/texlive/texmf-dist/tex/latex/ebgaramond/T1EBGaramond-OsF.fd
@@ -976,13 +976,13 @@ Overfull \hbox (1.99529pt too wide) in paragraph at lines 2098--2102
  []
 
 
-Overfull \hbox (17.77048pt too wide) in paragraph at lines 2190--2193
+Overfull \hbox (17.77048pt too wide) in paragraph at lines 2199--2202
 []\T1/EBGaramond-OsF/regular/n/10.95 Theorem \T1/EBGaramond-OsF/bold/n/10.95 18 \T1/EBGaramond-OsF/regular/n/10.95 en-sures that $\OML/ntxmi/m/it/10.95 ^^Y[]$ \T1/EBGaramond-OsF/regular/n/10.95 is a ho-mo-mor-phism from $\LMS/ntxsy/m/n/10.95 π\OML/ntxmi/m/it/10.95 L; \LMS/ntxsy/m/n/10.95 _\OML/ntxmi/m/it/10.95 ; \LMS/ntxsy/m/n/10.95 ^∫$ \T1/EBGaramond-OsF/regular/n/10.95 to $\LMS/ntxsy/m/n/10.95 π\OML/ntxmi/m/it/10.95 L\LMS/ntxsy/m/n/10.95 ù\OML/ntxmi/m/it/10.95 ^^R; []; []\LMS/ntxsy/m/n/10.95 ∫$\T1/EBGaramond-OsF/regular/n/10.95 .
  []
 
 [26]
-./Logics.tex:2224: Misplaced alignment tab character &.
-l.2224         \item $\pi_{\theta}(z) &
+./Logics.tex:2233: Misplaced alignment tab character &.
+l.2233         \item $\pi_{\theta}(z) &
                                        = \pi_{\theta}(x) \widetilde{ \lor  }...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -991,8 +991,8 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./Logics.tex:2225: Misplaced alignment tab character &.
-l.2225         \item $\pi_{\theta}(y) &
+./Logics.tex:2234: Misplaced alignment tab character &.
+l.2234         \item $\pi_{\theta}(y) &
                                        = \pi_{\theta}(z) \widetilde{ \lor  }...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1002,24 +1002,180 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-Overfull \hbox (2.08942pt too wide) in paragraph at lines 2251--2254
+Overfull \hbox (2.08942pt too wide) in paragraph at lines 2255--2258
 []\T1/EBGaramond-OsF/regular/it/10.95 (1) \T1/EBGaramond-OsF/regular/n/10.95 Let $\OML/ntxmi/m/it/10.95 S$ \T1/EBGaramond-OsF/regular/n/10.95 a sub-universe of the lat-tice and $\OML/ntxmi/m/it/10.95 ^^R$ \T1/EBGaramond-OsF/regular/n/10.95 a con-gru-ence of $\LMS/ntxsy/m/n/10.95 π\OML/ntxmi/m/it/10.95 S; \LMS/ntxsy/m/n/10.95 _[]\OML/ntxmi/m/it/10.95 ; \LMS/ntxsy/m/n/10.95 ^[]∫$\T1/EBGaramond-OsF/regular/n/10.95 .
  []
 
-[27] [28] (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf) (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf) (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf)
-Package lettrine.sty Info: Targeted height = 19.894pt
-(lettrine.sty)             (for loversize=0, accent excluded),
-(lettrine.sty)             Lettrine height = 19.04022pt (A);
-(lettrine.sty)             reported on input line 2328.
- (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf) [29]
+[27] [28] (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf) (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf) (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf) (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf)
+Overfull \hbox (8.3176pt too wide) in paragraph at lines 2368--2371
+[]\T1/EBGaramond-OsF/bold/n/12 Definition 11. []\T1/EBGaramond-OsF/regular/n/12 Let $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L; \LMS/ntxsy/m/n/12 _\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 0\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 1\LMS/ntxsy/m/n/12 ∫$ \T1/EBGaramond-OsF/regular/n/12 a bounded lat-tice. A sub-universe $\OML/ntxmi/m/it/12 S$ \T1/EBGaramond-OsF/regular/n/12 of $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L; \LMS/ntxsy/m/n/12 _\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^∫$
+ []
 
-./Logics.tex:2422: LaTeX Error: \begin{quote} on input line 897 ended by \end{document}.
+[29]
+Overfull \hbox (18.19585pt too wide) in paragraph at lines 2460--2464
+\T1/EBGaramond-OsF/regular/n/12 mo-mor-phisms are iso-mor-phisms. This was also the case for sim-ple lat-tices (\T1/EBGaramond-OsF/bold/n/12 Theorem
+ []
+
+[30] (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf)
+Overfull \hbox (5.98167pt too wide) in paragraph at lines 2513--2517
+\T1/EBGaramond-OsF/regular/n/12 is called \T1/EBGaramond-OsF/regular/it/12 the quo-tient \T1/EBGaramond-OsF/regular/n/12 of $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L; \LMS/ntxsy/m/n/12 _\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 0\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 1\LMS/ntxsy/m/n/12 ∫$ \T1/EBGaramond-OsF/regular/n/12 over $\OML/ntxmi/m/it/12 ^^R$ \T1/EBGaramond-OsF/regular/n/12 and is de-noted with $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L; \LMS/ntxsy/m/n/12 _\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 0\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 1\LMS/ntxsy/m/n/12 ∫ù\OML/ntxmi/m/it/12 ^^R$\T1/EBGaramond-OsF/regular/n/12 . 
+ []
+
+
+Overfull \hbox (36.86661pt too wide) in paragraph at lines 2520--2522
+[]\T1/EBGaramond-OsF/bold/n/12 Theorem 21. []\T1/EBGaramond-OsF/regular/it/12 Let $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L; \LMS/ntxsy/m/n/12 _\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 0\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 1\LMS/ntxsy/m/n/12 ∫$ \T1/EBGaramond-OsF/regular/it/12 a bounded lat-tice and $\OML/ntxmi/m/it/12 ^^R$ \T1/EBGaramond-OsF/regular/it/12 a con-gru-ence over $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L; \LMS/ntxsy/m/n/12 _\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 0\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 1\LMS/ntxsy/m/n/12 ∫$\T1/EBGaramond-OsF/regular/it/12 . 
+ []
+
+
+Overfull \hbox (2.60933pt too wide) in paragraph at lines 2525--2527
+[]$\OML/ntxmi/m/it/12 ^^Y[]$ \T1/EBGaramond-OsF/regular/it/12 is a ho-mo-mor-phism from $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L; \LMS/ntxsy/m/n/12 _\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 0\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 1\LMS/ntxsy/m/n/12 ∫$ \T1/EBGaramond-OsF/regular/it/12 to $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L; \LMS/ntxsy/m/n/12 _\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 0\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 1\LMS/ntxsy/m/n/12 ∫$ \T1/EBGaramond-OsF/regular/it/12 and $[]\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 ^^Y[]\LMS/ntxsy/m/n/12 ∫ \U/ntxmia/m/it/12 =
+ []
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf)
+<../Images//compLattice.png, id=133, 108.73958pt x 134.5025pt>
+File: ../Images//compLattice.png Graphic file (type png)
+<use ../Images//compLattice.png>
+Package pdftex.def Info: ../Images//compLattice.png  used on input line 2560.
+(pdftex.def)             Requested size: 108.73929pt x 134.50215pt.
+ [31 <../Images//compLattice.png>]
+Overfull \hbox (26.19388pt too wide) in paragraph at lines 2573--2576
+[]\T1/EBGaramond-OsF/bold/n/12 Definition 16. []\T1/EBGaramond-OsF/regular/n/12 A com-ple-mented lat-tice is a $\OT1/cmr/m/n/12 6$\T1/EBGaramond-OsF/regular/n/12 -upla $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L; \LMS/ntxsy/m/n/12 _\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^\OML/ntxmi/m/it/12 ;  [][]; \OT1/cmr/m/n/12 0\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 1\LMS/ntxsy/m/n/12 ∫$ \T1/EBGaramond-OsF/regular/n/12 s.t. $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L; \LMS/ntxsy/m/n/12 _\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 0\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 1\LMS/ntxsy/m/n/12 ∫$
+ []
+
+<../Images//diamond.png, id=138, 200.75pt x 207.77625pt>
+File: ../Images//diamond.png Graphic file (type png)
+<use ../Images//diamond.png>
+Package pdftex.def Info: ../Images//diamond.png  used on input line 2596.
+(pdftex.def)             Requested size: 100.37474pt x 103.88786pt.
+
+Overfull \hbox (27.8968pt too wide) in paragraph at lines 2618--2623
+\T1/EBGaramond-OsF/regular/n/12 defin-ing $\LMS/ntxsy/m/n/12 _$ \T1/EBGaramond-OsF/regular/n/12 and $\LMS/ntxsy/m/n/12 ^$ \T1/EBGaramond-OsF/regular/n/12 as the $[]$ and $[]$ func-tions of the poset sat-is-fies that $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L; \LMS/ntxsy/m/n/12 _\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^\OML/ntxmi/m/it/12 ; ^^U; \OT1/cmr/m/n/12 0\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 1\LMS/ntxsy/m/n/12 ∫$
+ []
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf)
+./Logics.tex:2636: Double superscript.
+<recently read> ^
+                 
+l.2636     \lor', \land', ~^c'
+                              , 0', 1')$, we say the first is a complemented
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+
+Overfull \hbox (59.03601pt too wide) in paragraph at lines 2635--2638
+[]\T1/EBGaramond-OsF/bold/n/12 Definition 17. []\T1/EBGaramond-OsF/regular/n/12 Given two com-ple-mented lat-tices $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L; \LMS/ntxsy/m/n/12 _\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^\OML/ntxmi/m/it/12 ;  [][]; \OT1/cmr/m/n/12 0\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 1\LMS/ntxsy/m/n/12 ∫$ \T1/EBGaramond-OsF/regular/n/12 and $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L[]; \LMS/ntxsy/m/n/12 _[]\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^[]\OML/ntxmi/m/it/12 ;  [][][]; \OT1/cmr/m/n/12 0[]\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 1[]\LMS/ntxsy/m/n/12 ∫$\T1/EBGaramond-OsF/regular/n/12 ,
+ []
+
+[32 <../Images//diamond.png>]
+Overfull \hbox (46.32458pt too wide) in paragraph at lines 2653--2659
+[]\T1/EBGaramond-OsF/regular/n/12 As in pre-vi-ous cases, if $\OML/ntxmi/m/it/12 S$ \T1/EBGaramond-OsF/regular/n/12 is a sub-universe of $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L; \LMS/ntxsy/m/n/12 _\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^\OML/ntxmi/m/it/12 ;  [][]; \OT1/cmr/m/n/12 0\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 1\LMS/ntxsy/m/n/12 ∫$\T1/EBGaramond-OsF/regular/n/12 , then $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 S; \LMS/ntxsy/m/n/12 _[]\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^[]\OML/ntxmi/m/it/12 ;  [][]; \OT1/cmr/m/n/12 0\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 1\LMS/ntxsy/m/n/12 ∫$
+ []
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf)
+./Logics.tex:2666: Double superscript.
+<recently read> ^
+                 
+l.2666 ...nd, ~^c, 0, 1), (L', \lor', \land', ~^c'
+                                                  , 0', 1')$ two
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+./Logics.tex:2683: Double superscript.
+<recently read> ^
+                 
+l.2683 ..., 0, 1) \mapsto (L', \lor', \land', ~^c'
+                                                  , 0', 1')$
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+./Logics.tex:2699: Double superscript.
+<recently read> ^
+                 
+l.2699 ...c, 0, 1)\mapsto (L', \lor', \land', ~^c'
+                                                  , 0',
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+./Logics.tex:2701: Double superscript.
+<recently read> ^
+                 
+l.2701     \land', ~^c'
+                       , 0', 1')$. Which means $F$ is also a homomorphism fr...
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf) [33]
+Overfull \hbox (7.80618pt too wide) in paragraph at lines 2735--2739
+[]\T1/EBGaramond-OsF/regular/n/12 The $\OT1/cmr/m/n/12 6$\T1/EBGaramond-OsF/regular/n/12 -uple $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L\LMS/ntxsy/m/n/12 ù\OML/ntxmi/m/it/12 ^^R; []; [];  [][]; \OT1/cmr/m/n/12 0\LMS/ntxsy/m/n/12 ù\OML/ntxmi/m/it/12 ^^R; \OT1/cmr/m/n/12 1\LMS/ntxsy/m/n/12 ù\OML/ntxmi/m/it/12 ^^R\LMS/ntxsy/m/n/12 ∫$ \T1/EBGaramond-OsF/regular/n/12 is called the \T1/EBGaramond-OsF/regular/it/12 quo-tient space \T1/EBGaramond-OsF/regular/n/12 of $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L; \LMS/ntxsy/m/n/12 _\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^\OML/ntxmi/m/it/12 ;  [][]; \OT1/cmr/m/n/12 0\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 1\LMS/ntxsy/m/n/12 ∫$
+ []
+
+./Logics.tex:2757: Missing { inserted.
+<to be read again> 
+                   \mathaccent 
+l.2757 ...entities hold for the $~^\widetilde{ c }
+                                                  
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+./Logics.tex:2758: Missing } inserted.
+<inserted text> 
+                }
+l.2758     $
+             operation.
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (4.54219pt too wide) in paragraph at lines 2768--2773
+[]\T1/EBGaramond-OsF/regular/n/10.95 (2) A pre-vi-ous the-o-rem en-sures that $\OML/ntxmi/m/it/10.95 ^^Y[]$ \T1/EBGaramond-OsF/regular/n/10.95 is a ho-mor-phism from $\LMS/ntxsy/m/n/10.95 π\OML/ntxmi/m/it/10.95 L; \LMS/ntxsy/m/n/10.95 _\OML/ntxmi/m/it/10.95 ; \LMS/ntxsy/m/n/10.95 ^\OML/ntxmi/m/it/10.95 ; \OT1/cmr/m/n/10.95 0\OML/ntxmi/m/it/10.95 ; \OT1/cmr/m/n/10.95 1\LMS/ntxsy/m/n/10.95 ∫$
+ []
+
+./Logics.tex:2789: Double superscript.
+<recently read> ^
+                 
+l.2789 ..., 0, 1) \mapsto (L', \lor', \land', ~^c'
+                                                  , 0',
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+
+Overfull \hbox (0.47507pt too wide) in paragraph at lines 2789--2792
+\T1/EBGaramond-OsF/regular/it/12 mented lat-tice ho-mo-mor-phism, then $[]\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 F\LMS/ntxsy/m/n/12 ∫$ \T1/EBGaramond-OsF/regular/it/12 is a con-gru-ence over $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L; \LMS/ntxsy/m/n/12 _\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^\OML/ntxmi/m/it/12 ;  [][]; \OT1/cmr/m/n/12 0\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 1\LMS/ntxsy/m/n/12 ∫$\T1/EBGaramond-OsF/regular/it/12 . 
+ []
+
+
+Overfull \hbox (17.40285pt too wide) in paragraph at lines 2804--2807
+[]\T1/EBGaramond-OsF/bold/n/10.95 Proof 25. []\T1/EBGaramond-OsF/regular/n/10.95 Let $\OML/ntxmi/m/it/10.95 ^^U \U/ntxmia/m/it/10.95 = []\LMS/ntxsy/m/n/10.95 π\OML/ntxmi/m/it/10.95 F\LMS/ntxsy/m/n/10.95 ∫$\T1/EBGaramond-OsF/regular/n/10.95 . By def-i-ni-tion, $\OML/ntxmi/m/it/10.95 ^^U$ \T1/EBGaramond-OsF/regular/n/10.95 is a con-gru-ence over $\LMS/ntxsy/m/n/10.95 π\OML/ntxmi/m/it/10.95 L; \LMS/ntxsy/m/n/10.95 _\OML/ntxmi/m/it/10.95 ; \LMS/ntxsy/m/n/10.95 ^\OML/ntxmi/m/it/10.95 ; \OT1/cmr/m/n/10.95 0\OML/ntxmi/m/it/10.95 ; \OT1/cmr/m/n/10.95 1\LMS/ntxsy/m/n/10.95 ∫$\T1/EBGaramond-OsF/regular/n/10.95 .
+ []
+
+[34] (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf) [35] (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf) (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf) (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf)
+LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/b/it' in size <12> not available
+(Font)              Font shape `T1/EBGaramond-OsF/bold/it' tried instead on input line 2924.
+LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/bold/it' will be
+(Font)              scaled to size 12.0pt on input line 2924.
+ [36]
+Overfull \hbox (48.8997pt too wide) detected at line 2968
+[]
+ []
+
+[37] (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf)
+./Logics.tex:3059: Undefined control sequence.
+l.3059 ...tem $x \in F$ and $x \leq y \Rightarrowy
+                                                   \in F$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[38] [39] [40]
+
+./Logics.tex:3324: LaTeX Error: \begin{quote} on input line 897 ended by \end{document}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2422 \end{document}
+l.3324 \end{document}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1028,7 +1184,7 @@ or  <return>  to continue without it.
 (./Logics.aux)
 
 LaTeX Font Warning: Size substitutions with differences
-(Font)              up to 0.45pt have occurred.
+(Font)              up to 1.64499pt have occurred.
 
  )
 (\end occurred inside a group at level 1)
@@ -1036,18 +1192,18 @@ LaTeX Font Warning: Size substitutions with differences
 ### semi simple group (level 1) entered at line 897 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 20433 strings out of 476091
- 398313 string characters out of 5794081
+ 20636 strings out of 476091
+ 403660 string characters out of 5794081
  1987330 words of memory out of 5000000
- 40166 multiletter control sequences out of 15000+600000
- 696872 words of font info for 190 fonts, out of 8000000 for 9000
+ 40338 multiletter control sequences out of 15000+600000
+ 776255 words of font info for 240 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,11n,103p,474b,1062s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_ld6df2.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_ljow5q.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_byuyni.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_tcdnmr.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-Bold.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-Italic.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/stxscr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on Logics.pdf (30 pages, 1100973 bytes).
+ 99i,11n,103p,474b,1064s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_ljow5q.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_ld6df2.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_byuyni.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_tcdnmr.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-Bold.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-BoldItalic.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-Italic.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/stxscr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
+Output written on Logics.pdf (41 pages, 1329341 bytes).
 PDF statistics:
- 208 PDF objects out of 1000 (max. 8388607)
- 130 compressed objects within 2 object streams
+ 259 PDF objects out of 1000 (max. 8388607)
+ 162 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 33 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 43 words of extra memory for PDF output out of 10000 (max. 10000000)
 
