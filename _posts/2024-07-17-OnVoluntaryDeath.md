@@ -16,7 +16,7 @@ women and children committed *Jahuar*—a ritual practice of mass
 self-immolation—the few surviving men left the fort to die in battle.
 
 Gödel, who was paranoid, died of inanition out of fear of someone poisoning his
-food. Yukio Mishima, that exquisite writer, like many others before him,
+food. Yukio Mishima, that exquisite writer, 
 practiced *seppuku* when his attempted *coup d'état* failed. Cato de Younger
 sought death in similar fashion: defeated by Caesar, he plunged his sword into
 his chest and tore his bowels with his hands. Seneca died a slow and
