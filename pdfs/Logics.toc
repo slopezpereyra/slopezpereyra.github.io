@@ -25,3 +25,11 @@
 \contentsline {subsection}{\numberline {6.1}Prime filters and Rasiova-Sikorski's theorem}{38}{}%
 \contentsline {section}{\numberline {7}Structures and their associated languages}{42}{}%
 \contentsline {subsection}{\numberline {7.1}Free variables}{43}{}%
+\contentsline {subsection}{\numberline {7.2}Elementary proofs on posets}{43}{}%
+\contentsline {subsection}{\numberline {7.3}Elementary proofs on lattices}{43}{}%
+\contentsline {subsection}{\numberline {7.4}Cuaternary lattices}{44}{}%
+\contentsline {subsection}{\numberline {7.5}Elementary proofs over complemented lattices}{45}{}%
+\contentsline {subsection}{\numberline {7.6}Graphs and median algebras}{45}{}%
+\contentsline {section}{\numberline {8}Mathematical logics}{47}{}%
+\contentsline {subsection}{\numberline {8.1}Mathematical structures}{47}{}%
+\contentsline {subsection}{\numberline {8.2}$\tau $-structures}{48}{}%

@@ -12,7 +12,7 @@
 \usepackage{ebgaramond}
 \usepackage{amsmath, amssymb}
 \usepackage{amsthm}
-
+\usepackage[cal=boondoxo]{mathalpha}
 
 \newtheorem{theorem}{Theorem}
 
@@ -3407,6 +3407,375 @@ i.e. $\forall a(a=x)$ is not an elementary formula.
     \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
 \end{tikzpicture}
 \subsection{Free variables}
+
+In an elementary formula, a \textit{free variable} is one which is not
+quantified. The same variable may be free and not free in the same formula. For
+instance, in $(x \leq a) \Rightarrow \exists x \left( (a \leq x) \land (b \leq
+x) \right) $, the first ocurrence of $x$ is free while the second is not. If a
+variable is not free we say it is bounded.
+
+We say $x$ is a free variable in a formula $\varphi$ if $x$ occurs freely in
+$\varphi$ at least once.
+
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
+\subsection{Elementary proofs on posets}
+
+The notion of a poset can be axiomatized using elementary formulas. In
+particular, $(P, \leq) $ is a poset if $P \neq \emptyset, \leq \subseteq P^2,$
+and 
+
+\begin{itemize}
+    \item $\forall x(x\leq x)$
+    \item $\forall x \forall y \forall z \left( \left( z \leq y \land  y \leq z \right) \Rightarrow x \leq z  \right) $
+    \item $\forall x \forall y \left( \left( x \leq y \land  y \leq x \right) \Rightarrow x = y  \right) $
+\end{itemize}
+
+Elementary proofs over a poset consist in proving that a certain elementary 
+sentence is true for every poset. 
+
+
+\small
+\begin{quote}
+
+\begin{example}
+    Let us prove $\mu = \forall x \forall  y \left( \left( \forall z ~ z \leq x \land \forall z ~ z \leq y \right) \Rightarrow x = y \right) $.
+
+    The formula states that for any $x, y$ in a poset, if $x$ and $y$ are 
+    maximums, $x = y$. We will prove this. 
+
+    Let $a, b$ fixed elements. Assume $\left( \forall z ~ z \leq a \land \forall z ~ z \leq b \right) $.
+    This entails $b \leq a$ and $a \leq b$. But the axiom 
+
+    \begin{equation*}
+        \forall x \forall y \left( \left( x \leq y \land  y \leq x \right) \Rightarrow x = y  \right)
+    \end{equation*}
+
+    yields $(a \leq b \land  b \leq a) \Rightarrow a = b$. Since $a, b$ were 
+    arbitrary, $\mu$ holds. $\blacksquare$
+
+\end{example}
+
+
+\end{quote}
+\normalsize
+
+
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
+\subsection{Elementary proofs on lattices}
+
+When dealing with lattices, we face a small problem. The $\land , \lor $
+symbols we used for the supremum and infimum are now used to denote the logical
+conjuction and disjunction. From now on, we shall use $~\mathcal{s}~,
+~\mathcal{i}~$ to denote the supremum and infimum, and we consider this 
+symbols added into the language of our elementary formulas. 
+
+Observe that, since we are now dealing with lattices of the kind $(L, \lor,
+\land)$, we cannot use the symbol $\leq$ anymore, since it is not part of the
+structure.
+
+We give the axioms of a lattice structure: 
+
+\begin{enumerate}
+    \item $\forall x \forall  y \left( x ~\mathcal{s}~ x = x \right) $
+    \item $\forall x \forall  y \left( x ~\mathcal{i}~ x = x \right) $
+    \item $\forall x \forall  y \left( x ~\mathcal{i}~ x = y ~\mathcal{i}~ x \right) $
+    \item $\forall x \forall  y \left( x ~\mathcal{s}~ x = y ~\mathcal{s}~ x \right) $
+    \item $\forall x \forall  y \forall z\left( (x ~\mathcal{s}~y) ~\mathcal{s}~z = x ~\mathcal{s}~(y ~\mathcal{s}~z) \right) $
+    \item $\forall x \forall  y \forall z\left( (x ~\mathcal{i}~y) ~\mathcal{i}~z = x ~\mathcal{i}~(y ~\mathcal{i}~z) \right) $
+    \item $\forall x \forall  y \left( x ~\mathcal{s}~(x ~\hat{\land }~y) = x \right) $
+    \item $\forall x \forall  y \left( x ~\hat{\land }~(x ~\mathcal{s}~y) = x \right) $
+\end{enumerate}
+
+
+\small
+\begin{quote}
+
+\begin{example}
+    Let us prove $\tau = \forall x \forall y \left( x ~\mathcal{s}~y = y \Rightarrow x ~\mathcal{i}~ y = x \right) $. 
+
+    Take $a, b$ arbitrary elements. Assume $(a ~\mathcal{s}~b = b)$. The axiom 
+
+    \begin{equation*}
+        \forall x \forall y (x ~\mathcal{i}~ (x ~\mathcal{s}~ y) = x)
+    \end{equation*}
+
+    gives 
+
+    \begin{equation*}
+        a ~\mathcal{i}~(a ~\mathcal{s}~b) = a
+    \end{equation*}
+
+    We assume $a ~\mathcal{s}~b = b$ so we obtain 
+
+    \begin{equation*}
+        a ~\mathcal{i}~b = a
+    \end{equation*}
+
+    Because this follows from our assumption, we have proven $(a ~\mathcal{s}~b
+    = b \Rightarrowa ~\mathcal{i}~b = a)$. Since $a, b$ were arbitrary, $\tau$
+    holds.
+\end{example}
+
+\end{quote}
+\normalsize
+
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
+\subsection{Cuaternary lattices}
+
+The inexistence of the $\leq$ symbol in ternary lattices $(L, \lor, \land)$ makes proving 
+things rather difficult. Though $x \leq y$ can be written as $x ~\mathcal{s}~ y = y$,
+in large proofs even this simple solution can overcomplicate our lives. Thus, 
+we present a new type of structure. 
+
+\begin{definition}
+    A cuaternary lattice is a $4$-uple $(L, ~\mathcal{s}~, ~\mathcal{i}~, \leq)$ s.t. $L$ is non-empty,
+    $~\mathcal{s}~, ~\mathcal{i}~$ are binary operations over $L$, $\leq$ is a binary 
+    relation over $L$, and the following axioms hold:
+
+    \begin{enumerate}
+        \item $A_{\leq R} := \forall x(x \leq x) $
+        \item $A_{\leq T} := \forall x \forall y \forall z \left( (x \leq y \land  y \leq z) \Rightarrow x \leq z \right) $
+        \item $A_{\leq A} := \forall x \forall y \left( (x \leq y \land  y \leq z) \Rightarrow x = y\right) $
+        \item $A_{\text{s es} C} := \forall x \forall y \left( x \leq x ~\mathcal{s}~ y \land  y \leq y ~\mathcal{s}~ y \right) $
+        \item $A_{s\leqC} := \forall x \forall y \forall z \left( (x \leq z \land  y \leq z) \Rightarrow x ~\mathcal{s}~ y \leq z \right)  $
+        \item $A_{i\text{ es } C} := \forall x \forall y \left( x ~\mathcal{i}~y \leq x \land  x ~\mathcal{i}~ y \leq y \right)  $
+        \item $A_{i \geq C} := \forall x \forall y \forall z \left( (z \leq x \lnad z \leq y) \Rightarrow z \leq x ~\mathcal{i}~ y\right) $
+    \end{enumerate}
+\end{definition}
+
+If the axioms above are inspected with care, the reader will realize that, by
+virtue of Dedeking's theorem, the $4$-uple $(L, ~\mathcal{s}~, ~\mathcal{i}~,
+\leq)$ is a quaternary lattice iff $(L, ~\mathcal{s}~, ~\mathcal{i}~)$ is a
+lattice and $\leq$ its associated order.
+
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
+\subsection{Elementary proofs over complemented lattices}
+
+A complemented lattice will have the same axioms than a standard lattice, with
+some inclusions related to the complement operation.
+
+
+\begin{enumerate}
+    \item $\forall x \forall  y \left( x ~\mathcal{s}~ x = x \right) $
+    \item $\forall x \forall  y \left( x ~\mathcal{i}~ x = x \right) $
+    \item $\forall x \forall  y \left( x ~\mathcal{i}~ x = y ~\mathcal{i}~ x \right) $
+    \item $\forall x \forall  y \left( x ~\mathcal{s}~ x = y ~\mathcal{s}~ x \right) $
+    \item $\forall x \forall  y \forall z\left( (x ~\mathcal{s}~y) ~\mathcal{s}~z = x ~\mathcal{s}~(y ~\mathcal{s}~z) \right) $
+    \item $\forall x \forall  y \forall z\left( (x ~\mathcal{i}~y) ~\mathcal{i}~z = x ~\mathcal{i}~(y ~\mathcal{i}~z) \right) $
+    \item $\forall x \forall  y \left( x ~\mathcal{s}~(x ~\hat{\land }~y) = x \right) $
+    \item $\forall x \forall  y \left( x ~\hat{\land }~(x ~\mathcal{s}~y) = x \right) $
+    \item $\forall x \left( 0 ~\mathcal{s}~ x  = x\right) $
+    \item $\forall x \left( x ~\hat{\lor }~ 1 \right) = 1 $
+    \item $\forall x \left( x ~\mathcal{s}~ x^c = 1 \right) $
+    \item $\forall x \left( x ~\hat{\land }~ x^c = 0 \right) $
+\end{enumerate}
+
+
+
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
+\subsection{Graphs and median algebras}
+
+\begin{definition}
+    A graph is a tuple $(G, r)$ where $G$ is a non-empty set, $r$ a binary
+    relation over $G$, and $\forall x \forall y \left( r(x, y) \Rightarrow r(y,
+    x) \right) $.
+\end{definition}
+
+\begin{definition}
+    A median algebra is a tuple $(A, M)$ with $A$ a non-empty set and $M: A^3 \to A$ where: 
+
+    \begin{enumerate}
+        \item $\forall x \forall y \forall z \left( M(x, y, z) = M(x, z, y) = M(y, z, x) \right) $
+        \item $\forall x \forall y \left( M(x, x, y) = x \right) $
+        \item $\forall x \forall y \forall z \forall u \forall v \left( M \left( M \left[ x, y, z \right], u, v  \right) = M\left( x, M \left[ y, u, v \right], M\left[ z, u, v \right]   \right)   \right) $
+    \end{enumerate}
+\end{definition}
+
+
+\small
+\begin{quote}
+
+
+\begin{example}
+    If $(L, \lor, \land)$ a lattice and $M(x, z, y) = (x \land  y) \lor (x \land  z) \lor  (y \land  z)$ for every 
+    $x,y,z$ then $(L, M)$ is a median algebra.
+\end{example}
+
+\end{quote}
+\normalsize
+
+As with previous structures, we can have elementary formulas over graphs and median algebras.
+
+\begin{definition}
+    Let $(G, r)$ a graph. A bicoloring is a set $R \subseteq G$  s.t. $\forall x y \in G \left( (x, y) \in r \Rightarrowx\in R \iff y \not\in R \right) $.
+\end{definition}
+
+\begin{definition}
+    A bicolored graph is a $3$-uple $(G, r, R)$ where $(G, r)$ is a graph and $R$ is a bicoloring of 
+    $(G, r)$.
+\end{definition}
+
+\pagebreak 
+
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(0mm, 10mm)}]
+    \foreach \i in {1,...,3}
+    \node [on chain]  {\pgfornament[width=6.72cm, color=darkscarlet]{71}};
+\end{tikzpicture}
+\section{Mathematical logics}
+
+Mathematical logics is, in an informal sense, the study of the procedures which
+mathematicians do when developing their science. Its interest is to further an
+understanding of how mathematics works in terms of its language and its methods
+of demonstration. In brief, it attempts to develop, rather recursively, a
+mathematical description of mathematics itself.
+
+We will limit the scope of our characterization to cuaternary lattices. This
+forbids the use of some of the things we have learned---e.g. prime
+filters---but possibilities are still immense. 
+
+The first step is to provide a mathematical definition of \textit{elementary
+formula}. Then, a mathematical definition of what is meant when we say an
+elementary formula is true under a given assignment. We must then take a rather
+difficult step: providing a mathematical of an \textit{elementary proof}, at
+least over quaternary lattices. Lastly, the most impressive leap: Trying to
+prove mathematically that our notion of proof correctly models the intuitive
+notion of elementary proof.
+
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
+\subsection{Mathematical structures}
+
+We have studied several mathematical structures so far. Whether lattices, posets or graphs, they all 
+possessed three characteristic sets: 
+
+\begin{enumerate}
+    \item A set $\mathcal{R}$ of symbols which denoted the generic relations of the structure. 
+    \item A set $\mathcal{F}$ which denoted the generic operations of the structure.
+    \item A set $\mathcal{C}$ which denoted the distinguished elements of the structure.
+\end{enumerate}
+
+We also knew the arity of each function in $\mathcal{F}$ and each relation in
+$\mathcal{R}$. We define $\mathcal{a} : \mathcal{F} \cup \mathcal{R} \mapsto
+\mathbb{N}$ the function which maps each symbol in $\mathcal{F} \cup
+\mathcal{R}$ to its arity.
+
+
+\small
+\begin{quote}
+
+\begin{example}
+    In a bounded lattice, $\mathcal{C} = \left\{ 0, 1 \right\} $, $\mathcal{F} = \left\{ \lor , \land  \right\} $, $\mathcal{R} = \emptyset$ and $\mathcal{a} = \left\{ (\lor , 2), (\land, 2) \right\} $.
+\end{example}
+
+\end{quote}
+\normalsize
+
+It is very important not to confuse the symbols in $\mathcal{F},\mathcal{R} $
+and $\mathcal{C}$ with the mathematical objects they denote. In the context of
+a lattice $(L, \lor, \land)$, $\lor$ is a binary operation; i.e. its type is
+"function" or "set". But in the context of $\mathcal{F}$, $\lor  \in
+\mathcal{F}$ is a symbol; i.e. a word over an alphabet.
+
+\begin{definition}[First order type]
+    A first-order type is a $4$-uple $\tau = \left\{ \mathcal{C}, \mathcal{F}, \mathcal{R}, \mathcal{a} \right\} $ 
+    s.t. 
+
+    \begin{itemize}
+        \item There are finite alphabets $\Sigma_1, \Sigma_2, \Sigma_3$ s.t. 
+            \begin{itemize}
+                \item $\mathcal{C} \subseteq \Sigma_1^{+}, \mathcal{F} \subseteq \Sigma_2^{+}, \mathcal{R} \subseteq \Sigma_3^+$
+                \item $\Sigma_i \cap \Sigma_j = \emptyset$ for each $i, j$.
+                \item $\Sigma_1 \cup \Sigma_2 \cup \Sigma_3$ does not contain 
+                    any symbol in $$\left\{ \forall , \exists , \neg, \lor , \land , \Rightarrow, \iff, \equiv, X, 0,\ldots, 9, \textbf{0},\ldots, \textbf{9} \right\} $$
+            \end{itemize}
+        \item $\mathcal{a} : \mathcal{F} \cup \mathcal{R} \mapsto \mathbb{N}$ maps each element in $\mathcal{F} \cup \mathcal{R}$ to a natural number called its arity.
+        \item Let $X \in \left\{ \mathcal{C}, \mathcal{F}, \mathcal{R} \right\} $. No symbol in $X$
+            is a proper subword of a different word in $X$.
+    \end{itemize}
+\end{definition}
+
+
+\small
+\begin{quote}
+
+\textbf{Note.} Recall that, with two words $\alpha, \beta$ over an arbitrary alphabet, 
+$\alpha$ is a proper subword of $\beta$ if $\alpha \not\in \left\{ \beta, \epsilon \right\} $
+and there are $\beta_0, \beta_1$ s.t. $\beta = \beta_0\alpha\beta_1$.
+
+\end{quote}
+\normalsize
+
+Let $X \in \left\{ \mathcal{C}, \mathcal{R}, \mathcal{F} \right\} $. Any symbol
+in $X$ is called either: constant name, function name, or relation name of type
+$\tau$, depending on which set $X$ is.
+
+\begin{definition}
+    For every $n \in \mathbb{N}$, 
+
+    \begin{align*}
+        \mathcal{F}_n &= \left\{ f \in \mathcal{F} : \mathcal{a}(f) = n \right\} \\
+        \mathcal{R}_n &= \left\{ r \in \mathcal{R} : \mathcal{a}(r) = n \right\} 
+    \end{align*}
+\end{definition}
+
+\begin{definition}[Poset type]
+    The type $(\emptyset, \emptyset, \left\{ \leq \right\}, \left\{ (\leq, 2) \right\} ) $ is called 
+    the poset type.
+\end{definition}
+
+\begin{definition}[Bounded poset type]
+    The type $\left( \left\{ 0, 1 \right\}, \left\{ \mathcal{s}, \mathcal{i} \right\},  \emptyset, \left\{ (\mathcal{s}, 2), (\mathcal{i}, 2) \right\}    \right) $ is called the bounded poset type.
+\end{definition}
+
+\begin{definition}
+    The type $\left( \emptyset, \left\{ ~\mathcal{s}~, ~\mathcal{i}~ \right\}, \left\{ \leq \right\}, \left\{ (~\mathcal{s}~, 2), (~\mathcal{i}~, 2), (\leq, 2) \right\}    \right) $ is called the type of cuaternary lattices.
+\end{definition}
+
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
+\subsection{$\tau$-structures}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>X</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<p>When I was seventeen, I visited the Ranakpur Jain Temple. I learned
+there of a curious practiced not uncommon to this day. Jain monks live a
+life of silent asceticism. Some of them, upon reaching supreme
+emancipation, abandon themselves to meditation and into desintegration
+by means of inanition.</p>
+<p>During the same trip, I visited the Jaisalmer Fort, built in the dawn
+of the second millennia after Christ. During the thirteenth century,
+succumbing to the siege of the Mongol invader Alauddin, while all the
+women and children committed <em>Jahuar</em>—a ritual practice of mass
+self-immolation— the few surviving men left the fort to die in
+battle.</p>
+<p>Gödel, who was paranoid, died of inanition out of fear of someone
+poisoning his food. Yukio Mishima, that exquisite writer, like many
+others before him, practiced <em>seppuku</em> when his attempted
+<em>coup d’état</em> failed. Seneca died a slow and bureaucratic death
+by command of Nero. The Bolivian agent who executed Che Guevara reported
+his last words to be: <em>Serénese y apunte bien: va a matar un
+hombre</em>. Socrates, out of respect to a ruling which he knew unfair,
+declined to be released by his friends; when the time came, he drank the
+hemlock calmly, and his farewell thought was of a debt he didn’t want to
+leave unpaid.</p>
+<p>Though voluntary death appears to be unnatural, it cannot be.
+Firstly, it exists, and whatever exists exists in nature. It is a
+logical impossibility that anything existing is unnatural. It is in fact
+surprising how decisively a person can rid itself of the will to live or
+embrace the will to die. Thus, we find that nature is complex enough as
+to produce agents which contradict it. A blind designer can bestow its
+creatures with the faculty of rebellion. This apparent contradiction is
+the root of the ancient biblical tale, as Milton put it:</p>
+<blockquote>
+<p>Because we freely love, as in our will</p>
+<p>To love or not; in this we stand or</p>
+<p>fall: And som are fall’n, to disobedience fall’n (…).</p>
+</blockquote>
+<p>In desperate cases, as in the case of the women and children who
+committed <em>Jahuar</em> in Jaisalmer Fort, voluntary death is the
+lesser evil. In what comes to the ascetic surrender of Jain monks, I see
+that it prevents no evil nor it produces any happiness. If anything, it
+seems to be a rather a pointless endeavor to submit oneself to such
+unnecessary suffering. Asceticism in general escapes my understanding.
+As Hesse’s Siddhartha put it:</p>
+<blockquote>
+<p>And Siddhartha said quietly, as if he was talking to himself: "What
+is meditation? What is leaving one’s body? What is fasting? What is
+holding one’s breath? It is fleeing from the self, it is a short escape
+of the agony of being a self, it is a short numbing of the senses
+against the pain and the pointlessness of life. The same escape, the
+same short numbing is what the driver of an ox-cart finds in the inn,
+drinking a few bowls of rice-wine or fermented coconut milk."</p>
+</blockquote>
+</body>
+</html>

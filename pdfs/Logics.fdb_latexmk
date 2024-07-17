@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1721164200 "Logics.tex" "Logics.pdf" "Logics" 1721164204 2
+["pdflatex"] 1721184237 "Logics.tex" "Logics.pdf" "Logics" 1721184243 2
   "../Images//circles.png" 1709507659 179825 e4a82cbdf3b8d8b5c28bf497469c50e2 ""
   "../Images//compLattice.png" 1721078651 8556 02d9e506bc254cde2c96a90be63733f5 ""
   "../Images//diamond.png" 1721079706 8224 157d05b85db34a75405947ed6ea81ba2 ""
@@ -20,6 +20,8 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm" 1246382020 908 2921f8a10601f252058503cc6570e581 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm" 1246382020 940 75ac932a52f80982a9f8ea75d03a34cf ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1246382020 940 228d6584342e91276bf566bcf9716b83 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/boondox/BOONDOX-r-calo.tfm" 1304615349 1116 629cd9dc71d3dd2d951ed001f7b8fe97 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/boondox/zxxrow7z.tfm" 1304615349 720 a1755fd4f1f9580952e4e9df8f3634f1 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr10.tfm" 1136768653 1296 45809c5a464d5f32c8f98ba97c1bb47f ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1136768653 1288 655e228510b4c2a1abe905c368440826 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr6.tfm" 1136768653 1300 b62933e007d01cfd073f79b963c01526 ""
@@ -65,6 +67,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb" 1248133631 33993 9b89b85fd2d9df0482bd47194d1d3bf3 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/boondox/zxxrw8a.pfb" 1304615349 17551 711513621dd81e026c0c1a707362e1e0 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-Bold.pfb" 1544053682 937491 3cc99db96f77a29ff62b877380f4d611 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-BoldItalic.pfb" 1544053682 884179 54c01fefb71f576f65d79c3cf4db5239 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-Italic.pfb" 1544053682 872504 0db3a4a631aa180c9aacc0d19153eafe ""
@@ -78,6 +81,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb" 1569879884 40320 53cb337366eff502cad8f44871c88e39 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb" 1136849748 18865 ebb26de41fddbc82c044d680eec38cec ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb" 1136849748 24244 ffc0312cbd155e940e16287bb7cbb16c ""
+  "/usr/share/texlive/texmf-dist/fonts/vf/public/boondox/BOONDOX-r-calo.vf" 1304615349 836 c668e50a9b8834b1985c13c06ce6e1ca ""
   "/usr/share/texlive/texmf-dist/fonts/vf/public/ebgaramond/EBGaramond-Bold-osf-t1.vf" 1571002637 1716 ce80a92072cde08ddca5b033a161e1ef ""
   "/usr/share/texlive/texmf-dist/fonts/vf/public/ebgaramond/EBGaramond-BoldItalic-osf-t1.vf" 1571002637 1720 26134a342f85c4aae47b5581c27d5277 ""
   "/usr/share/texlive/texmf-dist/fonts/vf/public/ebgaramond/EBGaramond-Italic-osf-t1.vf" 1571002637 1716 cc3fb9b75ce0b0d72c1d30b1cf958615 ""
@@ -194,6 +198,7 @@
   "/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg" 1279039959 678 4792914a8f45be57bb98413425e4c7af ""
   "/usr/share/texlive/texmf-dist/tex/latex/lettrine/lettrine.cfg" 1664137152 1173 083ccddc8e56194e08833908b147c186 ""
   "/usr/share/texlive/texmf-dist/tex/latex/lettrine/lettrine.sty" 1664137152 11125 ff8460e37074d4fcd4e3c1f15730fd58 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/mathalpha/mathalpha.sty" 1637269094 57446 690f30dbdc513bfa750709d825c1de12 ""
   "/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty" 1656621545 62269 5c1837a5bc5db4c0d255eedc225ca44b ""
   "/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty" 1616101747 5582 a43dedf8e5ec418356f1e9dfe5d29fc3 ""
   "/usr/share/texlive/texmf-dist/tex/latex/mweights/mweights.sty" 1490909540 4953 67f29a12ea26221103fce6bae3433e60 ""
@@ -227,9 +232,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1695394817 4623455 fa0568a71dd9a288d6c226ee477506c6 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1695394844 7879794 eff26094dbe002b6e482c026ea4c81e2 ""
-  "Logics.aux" 1721164204 10364 f6dec84f66f8aa9637e05e67ebd5f9a6 "pdflatex"
-  "Logics.tex" 1721164198 117422 8cba5cdec38d38d265d057812ead1f88 ""
-  "Logics.toc" 1721164204 2058 f1bcee3a4eabfc545db5ba8eb063a227 "pdflatex"
+  "Logics.aux" 1721184243 12128 d5b3f01e0cc2f2993a4545eb5e906bb8 "pdflatex"
+  "Logics.tex" 1721184234 132668 190b176f60facf375920cf6518c5194e ""
+  "Logics.toc" 1721184243 2682 501120f86844de4855c8e6f19865d62e "pdflatex"
   (generated)
   "Logics.aux"
   "Logics.log"
