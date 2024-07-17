@@ -11,7 +11,7 @@ themselves to meditation and into desintegration by means of inanition.
 
 During the same trip, I visited the Jaisalmer Fort, built in the dawn of
 the second millennia after Christ. During the thirteenth century,
-succumbing to the siege of the Mongol invader Alauddin, while all the
+succumbing to the siege of the invader Alauddin, while all the
 women and children committed *Jahuar*—a ritual practice of mass
 self-immolation—the few surviving men left the fort to die in battle.
 

@@ -3747,6 +3747,223 @@ $\tau$, depending on which set $X$ is.
 \end{tikzpicture}
 \subsection{$\tau$-structures}
 
+From an intuitive perspective, a $\tau$-structure, or structure of type $\tau$,
+consist of non-empty set and an interpretation of every element in the 
+set. The set in question is called the \textit{universe} of the structure. 
+
+For instance, if $\tau$ is understood to be the poset type; i.e. if $\tau =
+\left( \emptyset, \emptyset, \left\{ \leq \right\}, \left\{ (\leq, 2) \right\}
+\right) $, the interpretation is that $\leq$ is a binary operation. But this
+binary operation could be \textit{any} binary operation, and only 
+in those structures where $\leq$ denotes a partial order does $\tau$
+truly correspond to posets.
+
+\begin{definition}
+    Let $\tau$ a type. A structure or model of type $\tau$, also called 
+    $\tau$-structure, is a tuple $\textbf{A} = (A, i)$ s.t.
+
+    \begin{itemize}
+        \item $A$ is a non-empty set 
+        \item $i$ is a function with domain $\mathcal{C} \cup \mathcal{F} \cup \mathcal{R}$
+            s.t. 
+            \begin{itemize}
+                \item $i(c) \in A$ for any $c \in \mathcal{C}$
+                \item $i(f)$ is an $n$-ary operation over $A$ for every 
+                    $f \in \mathcal{F}_n, n \geq 1$.
+                \item $i(r)$ is an $n$-ary relation over $A$, for any 
+                    $r \in \mathcal{R}_n, n \geq 1$.
+            \end{itemize}
+    \end{itemize}
+\end{definition}
+
+If $\textbf{A} = (A, i)$ a $\tau$-structure, $A$ is called the universe of
+$\textbf{A}$ and $i$ is called the interpretation function of $\textbf{A}$.
+If $s \in \mathcal{C} \cup \mathcal{F} \cup \mathcal{R}$, we say $i(s)$
+is the interpretation of the symbol $s$ in $\textbf{A}$.
+
+
+\small
+\begin{quote}
+
+\begin{example}
+    Let $\tau = \left( \left\{ \blacktriangle, \blacksquare \right\}, \left\{
+    Locke, Hume \right\}, \left\{ Y \right\}, \left\{ (Locke, 4), (Hume, 1),
+(Y, 3) \right\}     \right) $.
+
+Then $(\mathbb{R}, i)$ is a structure of type $\tau$ if we define $i$ as: 
+
+\begin{itemize}
+    \item $i(\blacktriangle) = \pi$
+    \item $i(\blacksquare) = 0$
+    \item $i(Locke)$ as the operation from $\mathbb{R}^4$ to $\mathbb{R}$ $(x, y, z, w) \to  2x + 4y$
+    \item $i(Hume)$ as the operation from $\mathbb{R}$ to $\mathbb{R}$ $x \to x^5$
+    \item $i(Y) = \left\{ (x, y, z) \in \mathbb{R}^3 : xyz = 9 \right\} $.
+\end{itemize}
+\end{example}
+
+\end{quote}
+\normalsize
+
+
+\small
+\begin{quote}
+
+\begin{example}
+    Let $\tau = \left( \emptyset, \emptyset, \left\{ \leq \right\}, \left\{
+    (\leq, 2) \right\}   \right) $. A $\tau$-structure will be any 
+    tuple $(A, i)$ where $A \neq \emptyset$ and $i(\leq)$ is 
+    a binary relation over $A$.
+
+    Observe that, though this $\tau$ is called the poset type, 
+    the $\tau$-structures which we can build from it could be 
+    very different from a poset.
+
+    Now consider the $\tau$-structure $(\mathbb{N}, i)$ with $i : \left\{ \leq \right\} \mapsto \mathbb{N}^2 $ defined as 
+    \begin{equation*}
+        i(\leq) = \left( (x, y) \in \mathbb{N}^2 : x \mid y \right) 
+    \end{equation*}
+
+    Strictly speaking, $(\mathbb{N}, i)$ is not a poset because $i$ is not 
+    a partial order over $\mathbb{N}$. However, it conveys the same 
+    information than a poset. Thus, structures arising from the 
+    poset type where $\leq$ is interpreted as a partial order 
+    over the universe are "essentially" posets.
+\end{example}
+
+\end{quote}
+\normalsize
+
+\begin{theorem}
+    \textit{(1)} Let $A, B$ non-empty sets. There are $|B|^{|A|}$ functions 
+    of the form $f : A \mapsto B$ whose domain is exactly $A$.
+
+    \textit{(2)} If $A$ an arbitrary set, there are $2^{|A|}$ subsets 
+    of $A$.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\begin{pro}
+    (1) Assume $A = \left\{ a_1, \ldots, a_n \right\} $ with $n = |A|$. Let 
+    $\mathbb{F} = \left\{ f : \mathcal{D}_f = A \land {I}_f \subseteq B \right\} $.
+    It is easy to see there is a bijection  
+    \begin{align*}
+        \mathbb{F} &\mapsto  B^n  \\ 
+        f &\mapsto \left( f(a_1),\ldots, f(a_n) \right) 
+    \end{align*}
+
+    which concludes the proof. 
+
+    (2) Define $\mathbb{F} = \left\{ f : \mathcal{D}_f = A \land I_f = \left\{
+    0, 1 \right\}  \right\} $. Proposition (1) ensures that there are $2^{|A|}$
+    such functions. 
+
+    But every such function maps some elements of $A$ to $1$ and 
+    some to $0$. Thus, every such function corresponds exactly
+    to the subset of $A$ which contains the elements mapping to 
+    $1$.
+
+    $\therefore $ $|\mathcal{P}(A)| = |\mathbb{F}|$.
+
+    $\therefore $ There are $2^{|A|}$ subsets of $A$.
+\end{pro}
+
+\end{quote}
+\normalsize
+
+\begin{problem}
+    Let $\tau = \left( \emptyset, \emptyset, \left\{ \leq \right\}, \left\{ (\leq, 2) \right\}   \right) $.  
+    \begin{enumerate}
+        \item How many $\tau$-structures with universe $\left\{ 1, 2, 3 \right\} $ are there. 
+        \item Is any of them a poset? 
+
+        \item Provide a bijection between the set of all posets and a subset 
+            of  the set of all $\tau$-structures.
+    \end{enumerate}
+\end{problem}
+
+
+\small
+\begin{quote}
+
+(1) Recall that a $\tau$-structure consists of a universe and a function $i$ with
+domain $\mathcal{F} \cup \mathcal{R} \cup \mathcal{C}$ s.t. $i(c) \in A$ for
+any $c \in C$, and which maps function and relationship \textit{symbols} to
+actual (mathematical) functions and relationships.
+
+We are dealing with the poset structure. $\mathcal{C} =\emptyset$ and
+$\mathcal{F} = \emptyset$, for posets contain no special symbols nor special
+functions. They do, however, have a binary relationship.
+
+Since the universe is fixed, the question is how many functions $i$ can we
+produce. The domain of $i$ will be $\emptyset \cup  \emptyset \cup \mathcal{R}
+= \mathcal{R}$, and must map the symbol $\leq$ to a binary relation over
+$\left\{ 1, 2, 3 \right\} $. So the question is: how many binary relations over
+$\left\{ 1, 2, 3 \right\} $ exist. 
+
+Over a set of size $n$, there are $2^{n^2}$ binary relations. 
+
+$\therefore $ There are $2^{9}$ $\tau$-structures possible.
+
+(2) None of them are posets in the mathematical sense. Any $\tau$-structure
+will be a pair $(\left\{ 1, 2,3 \right\}, i) $ with $i$ a function, while 
+a poset is a pair with a set and a binary relation that is reflexive,
+transitive and anti-symmetric. 
+
+However, if $i$ maps $\leq$ to a reflexive, transitive, and anti-symmetric 
+binary relation, then $(\left\{ 1, 2, 3 \right\}, i) $ will contain 
+the same information than a poset, and can be understood to be 
+equivalent in some sense.
+
+(3) Let $\mathbb{P}$ the set of all posets over $\left\{ 1, 2, 3 \right\} $,
+and 
+
+$$\mathbb{T} = \left\{ (\left\{ 1, 2, 3 \right\}, i ) : i(\leq) \text{ is a partial order} \right\} $$
+Evidently, $\mathbb{T}$ is a subset of the set of all 
+$\tau$-structures. Then there is an obvious bijection 
+
+\begin{align*}
+    &\mathbb{T} \mapsto  \mathbb{P} :
+    &(\left\{ 1,2,3 \right\} , i) \mapsto (\left\{ 1, 2, 3 \right\} i(\leq))   \\ 
+    &\mathbb{P} \mapsto \mathbb{T} : &\left( \left\{ 1, 2, 3 \right\}, \leq' \right) \mapsto \left( \left\{ 1, 2, 3 \right\}, \left\{ (\leq, \leq') \right\}   \right) 
+\end{align*}
+
+
+
+
+
+\end{quote}
+\normalsize
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
