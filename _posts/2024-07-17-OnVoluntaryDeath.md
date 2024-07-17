@@ -86,9 +86,9 @@ death. It seems in fact impossible to study this phenomenon. An account of the
 examples which history provides us suffices to conclude that to perceive it as
 unnatural is to confuse the facts. Resignation, willingness, embrace and even
 satisfaction: All these may coexist with death. The chain which links human
-existence to life, though strong, is not unbreakable— and every person seems
-to possess, if not the key which gently frees it, the brutal tools which can
-destroy it.
+existence to life, though strong, is not unbreakable—and everyone seems to
+possess either the key which gently frees it, or the brutal hammer which
+destroys it.
 
 
 
