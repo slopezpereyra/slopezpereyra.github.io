@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1721188860 "X.tex" "X.pdf" "X" 1721188861 2
+["pdflatex"] 1721234700 "X.tex" "X.pdf" "X" 1721234701 2
   "/etc/texmf/web2c/texmf.cnf" 1695394668 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_ljow5q.enc" 1571867360 3091 3883b26aed3242dcea4d1b2dc17d939b ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_tcdnmr.enc" 1571867360 3067 22afe353d2248cced69e25efe7cf48e5 ""
@@ -42,8 +42,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1695394817 4623455 fa0568a71dd9a288d6c226ee477506c6 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1695394844 7879794 eff26094dbe002b6e482c026ea4c81e2 ""
-  "X.aux" 1721188861 32 044b7f8fc9779af7531264e0c5c84b6d "pdflatex"
-  "X.tex" 1721188860 3520 7159c869b62b3afc8d545cb3d1284523 ""
+  "X.aux" 1721234701 32 044b7f8fc9779af7531264e0c5c84b6d "pdflatex"
+  "X.tex" 1721234699 5515 a523556fbbed58d10c147a2882cd964d ""
   (generated)
   "X.aux"
   "X.log"

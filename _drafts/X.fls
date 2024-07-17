@@ -242,11 +242,11 @@ INPUT ./X.aux
 INPUT X.aux
 INPUT X.aux
 OUTPUT X.aux
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/ebgaramond/EBGaramond-Italic-osf-t1.tfm
 OUTPUT X.pdf
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/ebgaramond/EBGaramond-Regular-osf-t1.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/ebgaramond/EBGaramond-Regular-osf-t1--base.tfm
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/ebgaramond/EBGaramond-Italic-osf-t1.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/ebgaramond/EBGaramond-Italic-osf-t1.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/ebgaramond/EBGaramond-Italic-osf-t1--base.tfm
 INPUT X.aux

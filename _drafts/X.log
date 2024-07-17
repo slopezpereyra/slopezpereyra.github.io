@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  17 JUL 2024 01:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  17 JUL 2024 13:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -231,23 +231,44 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
 LaTeX Font Info:    ... okay on input line 19.
 \c@mv@tabular=\count278
 \c@mv@boldtabular=\count279
-LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/it' in size <12> not available
-(Font)              Font shape `T1/EBGaramond-OsF/regular/it' tried instead on input line 29.
-LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/regular/it' will be
-(Font)              scaled to size 12.0pt on input line 29.
- [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./X.aux) ) 
+Overfull \hbox (1.47873pt too wide) in paragraph at lines 55--62
+[]\T1/EBGaramond-OsF/regular/n/12 In des-per-ate cases, as in the case of the women and chil-dren who com-mit-ted *Jahuar*
+ []
+
+Runaway argument?
+./X.tex:71: Paragraph ended before \T1\" was complete.
+<to be read again> 
+                   \par 
+l.71 
+     
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/it' in size <12> not available
+(Font)              Font shape `T1/EBGaramond-OsF/regular/it' tried instead on input line 86.
+LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/regular/it' will be
+(Font)              scaled to size 12.0pt on input line 86.
+
+Overfull \hbox (16.16089pt too wide) in paragraph at lines 91--94
+\T1/EBGaramond-OsF/regular/n/12 there-with; lest these un-cir-cum-cised come and abuse me. But his ar-mourbearer
+ []
+
+[2] (./X.aux) ) 
 Here is how much of TeX's memory you used:
  2764 strings out of 476091
- 45020 string characters out of 5794081
- 1858330 words of memory out of 5000000
+ 45012 string characters out of 5794081
+ 1859330 words of memory out of 5000000
  23154 multiletter control sequences out of 15000+600000
  524194 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,5n,62p,226b,229s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_ljow5q.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_tcdnmr.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-Italic.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-Regular.pfb>
-Output written on X.pdf (2 pages, 191802 bytes).
+Output written on X.pdf (2 pages, 195802 bytes).
 PDF statistics:
  23 PDF objects out of 1000 (max. 8388607)
  14 compressed objects within 1 object stream
