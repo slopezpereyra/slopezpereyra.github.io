@@ -50,8 +50,7 @@ qualities. I'm interested in their lives and in their works, and find it
 hard to appreciate an author whom I wouldn't take as friend.
 Like Quevedo, who said
 
-> vivo en conversación con los difuntos,
->
+> vivo en conversación con los difuntos,<br>
 > y escucho con mis ojos a los muertos.
 
 I converse with them in my mind and, rather often, in my dreams. I have
