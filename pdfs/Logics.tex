@@ -3937,19 +3937,80 @@ $\tau$-structures. Then there is an obvious bijection
 \end{quote}
 \normalsize
 
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
+\subsection{Elementary theories and elementary proofs}
+
+\begin{definition}
+    An elementary theory is a tuple $(\Sigma, \tau)$ s.t. $\tau$ is a type and $\Sigma$
+    is a set of elementary sentences of type $\tau$ which do not 
+    contain constant names.
+\end{definition}
+
+\begin{definition}
+    A model of $(\Sigma, \tau)$ is a $\tau$-structure which makes all 
+    sentences of $\Sigma$ true.
+\end{definition}
 
 
+\small
+\begin{quote}
 
+\begin{example}
+    The elementary theory of the posets is the tuple $(\Sigma, \tau)$ with 
+    $\tau = (\emptyset, \emptyset, \left\{ \leq \right\}, \left\{ (\leq, 2) \right\} )$ 
+    and $\Sigma$ contains the following sentences: 
 
+    \begin{enumerate}
+        \item $\forall x : \leq(x, x)$
+        \item $\forall x \forall y \forall z \left( (\leq(x, y) \land  \leq(y, z) ) \Rightarrow\leq(x, z) \right) $
+        \item $\forall x \forall y \left( (\leq(x, y) \land  \leq(y, x)) \Rightarrow x = y \right) $
+    \end{enumerate}
 
+    The models of this elementary theory are precisely the $\tau$-structures 
+    which correspond to posets.
 
+\end{example}
 
+\end{quote}
+\normalsize
 
+\begin{definition}
+    Let $(\Sigma, \tau)$ en elementary theory and $\varphi$ and elementary 
+    sentence which has no constant names. An elementary 
+    proof of $\varphi$ in $(\Sigma, \tau)$ is a proof of $\varphi$
+    which has the following properties: 
 
+    \begin{itemize}
+        \item Except for very brief clarifications, the proof is done using 
+            only elementary sentences of type $\tau$.
+        \item Each step in the proof is obvious and solid. 
+        \item The proof is valid for \textit{any} structure which satisfies 
+            the axioms of the theory.
+    \end{itemize}
+\end{definition}
 
+\pagebreak 
 
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(0mm, 10mm)}]
+    \foreach \i in {1,...,3}
+    \node [on chain]  {\pgfornament[width=6.72cm, color=darkscarlet]{71}};
+\end{tikzpicture}
+\section{Mathematical model of the elementary syntax}
 
+In this section we will provide a mathematical model of the concept of 
+elementary formula of type $\tau$.
 
+\begin{definition}
+    Let $\left\{ \textbf{0}, \textbf{1}, \ldots, \textbf{9}, \textbf{X}
+    \right\} $ an alphabet and $\mathcal{V}$ the following language of that
+    alphabet:
+
+    \begin{equation*}
+        \mathcal{V} := \left\{ \textbf{X1}, \ldots, \textbf{X 9}, \textbf{X 1 0}, \textbf{X11},\ldots, \textbf{X 1 9}, \ldots, \textbf{2 0}, \textbf{X 2 1}, \ldots \right\} 
+    \end{equation*}
+\end{definition}
 
 
 

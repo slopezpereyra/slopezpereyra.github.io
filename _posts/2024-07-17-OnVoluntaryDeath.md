@@ -77,20 +77,15 @@ we are told that, defeated by the Philistines,
 > therewith; lest these uncircumcised come and abuse me. But his armourbearer
 > would not; for he was sore afraid. So Saul took a sword, and fell upon it.
 
-I have never quite understood the attitude of modern Christians towards death
-and even suicide. Their religion abounds in all its various kinds, from patient
-resignation to gruesome martyrism. 
-
-As far as I know we have no scientific understanding of suicide and voluntary
-death. It seems in fact impossible to study this phenomenon. An account of the
-examples which history provides us suffices to conclude that to perceive it as
-unnatural is to confuse the facts. Resignation, willingness, embrace and even
-satisfaction: All these may coexist with death. The chain which links human
-existence to life, though strong, is not unbreakable—and everyone seems to
-possess either the key which gently frees it, or the brutal hammer which
-destroys it.
+Saint Hilary of Poitiers, as he was in Syria, learned that his only daughter
+was pretended by many wealthy and powerful men. Inspired by the idea that no
+marriage was better for her than one with God, he fervorously prayed for her
+death. Curiously enough, she died, and he rejoiced in her passing. His wife,
+who also found bliss in her daughter's union with God, asked him to pray for
+her death as well. And soon after she died a death of mutual satisfaction.[^1]
 
 
+[^1]: This story is refered by Montaigne.
 
 
 

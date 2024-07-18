@@ -33,3 +33,5 @@
 \contentsline {section}{\numberline {8}Mathematical logics}{47}{}%
 \contentsline {subsection}{\numberline {8.1}Mathematical structures}{47}{}%
 \contentsline {subsection}{\numberline {8.2}$\tau $-structures}{48}{}%
+\contentsline {subsection}{\numberline {8.3}Elementary theories and elementary proofs}{50}{}%
+\contentsline {section}{\numberline {9}Mathematical model of the elementary syntax}{52}{}%
