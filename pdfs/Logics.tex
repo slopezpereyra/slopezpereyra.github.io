@@ -142,6 +142,7 @@ Given $F : A \mapsto B$ and $S \subseteq A$, we will use $F(S)$ to denote
 $\left\{ F(a) : a \in S \right\} $.
 
 
+
 \pagebreak
 \begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(0mm, 10mm)}]
     \foreach \i in {1,...,3}
@@ -3470,7 +3471,7 @@ sentence is true for every poset.
 When dealing with lattices, we face a small problem. The $\land , \lor $
 symbols we used for the supremum and infimum are now used to denote the logical
 conjuction and disjunction. From now on, we shall use $~\mathcal{s}~,
-~\mathcal{i}~$ to denote the supremum and infimum, and we consider this 
+~\mathcal{i}~$ to denote the supremum and infimum, and we consider these 
 symbols added into the language of our elementary formulas. 
 
 Observe that, since we are now dealing with lattices of the kind $(L, \lor,
@@ -3687,8 +3688,14 @@ a lattice $(L, \lor, \land)$, $\lor$ is a binary operation; i.e. its type is
 "function" or "set". But in the context of $\mathcal{F}$, $\lor  \in
 \mathcal{F}$ is a symbol; i.e. a word over an alphabet.
 
+\begin{definition}
+    Given a set $A$, a $n$-ary operation over $A$ is a function with domain
+    $A^n$ and whose image is a subset of $A$.
+\end{definition}
+
+
 \begin{definition}[First order type]
-    A first-order type is a $4$-uple $\tau = \left\{ \mathcal{C}, \mathcal{F}, \mathcal{R}, \mathcal{a} \right\} $ 
+    A first-order type is a $4$-uple $\tau = \left( \mathcal{C}, \mathcal{F}, \mathcal{R}, \mathcal{a} \right) $ 
     s.t. 
 
     \begin{itemize}
@@ -3728,6 +3735,35 @@ $\tau$, depending on which set $X$ is.
         \mathcal{R}_n &= \left\{ r \in \mathcal{R} : \mathcal{a}(r) = n \right\} 
     \end{align*}
 \end{definition}
+
+\begin{problem}
+    Say true, false or imprecise for the following statements. 
+\end{problem}
+
+
+\small
+\begin{quote}
+
+    (1) \textit{Let $\tau = \left( \mathcal{C}, \mathcal{F}, \mathcal{R}, \mathcal{a} \right) $ a type. Then 
+    $Ti(\mathcal{F}) = \textbf{word}$}.
+
+    The statement is false: $\mathcal{F}$ is a set.
+
+    (2) \textit{Let $\tau = \left( \mathcal{C}, \mathcal{F}, \mathcal{R}, \mathcal{a} \right) $ a type. Then, 
+    if $f \in \mathcal{F}$, we have $Ti(f) = \textbf{set}$.}
+
+    The statement is false. $\mathcal{F}$ is a set of \textit{symbols} which denote 
+    functions, not functions. Then $Ti(f) = \textbf{word}$.
+
+    (3) \textit{Let $\tau$ a type and assume $f \in \mathcal{F}_3$. Then $\mathcal{D}_f = A^3$ for 
+    some set $A$}.
+
+    Imprecise. $f$ is of type \textbf{word} and therefore $\mathcal{D}_f$ is 
+    undefined.
+
+\end{quote}
+\normalsize
+
 
 \begin{definition}[Poset type]
     The type $(\emptyset, \emptyset, \left\{ \leq \right\}, \left\{ (\leq, 2) \right\} ) $ is called 
@@ -3933,9 +3969,181 @@ $\tau$-structures. Then there is an obvious bijection
 
 
 
+\end{quote}
+\normalsize
+
+
+\begin{problem}
+    Let $\tau = \left( \emptyset, \left\{ ~\mathcal{s}~, ~\mathcal{i}~ \right\}, \emptyset, \left( (~\mathcal{s}~, 2), (~\mathcal{i}~, 2) \right)   \right) $. 
+
+    \begin{enumerate}
+        \item How many $\tau$-structures with universe $\left\{ 1, 2, 3 \right\} $ are there.
+        \item Is some of them a lattice?
+        \item Which one of them are "essentially" lattices?
+        \item Provide a bijection between the set of all lattices and a subset 
+            of the set of all $\tau$-structures.
+    \end{enumerate}
+\end{problem}
+
+\small
+\begin{quote}
+
+
+(1) Since the universe is fixed, the question is how many functions $i$ exist
+s.t. $(\left\{ 1, 2, 3 \right\}, i)$ is a $\tau$-structure. The domain of any
+said $i$ is $\left\{ ~\mathcal{s}~, ~\mathcal{i}~ \right\} $, and it must map
+these symbols to binary operations over said universe. Thus, the question is 
+how many binary operations exist over $\left\{ 1, 2, 3 \right\} $.
+
+Let $A = \left\{ 1, 2, 3 \right\} $. Since $A^2 = \left\{ (a, b) : a \in A \right\} $,
+it is clear that $|A^2| = |A|^2$. By virtue of \textbf{Theorem 34}, there are
+$(|A|^2)^{|A|}$ functions of the form $f : A^2 \to A$. 
+
+$\therefore $ There are $(3^2)^{3} = 3^{6}$ binary operations over $A$.
+
+$\therefore $ There are $3^6$ possible mappings for $~\mathcal{s}~$, and the same number of mappings for $~\mathcal{i}~$. 
+
+$\therefore $ There $2 \times 3^6$ $\tau$-structures over $\left\{ 1, 2, 3 \right\} $.
+
+(2) None of them is a lattice, since a lattice is a $3$-uple with a set and two
+binary operations, while the $\tau$-structure is a $2$-uple with a set and a
+function mapping symbols to their structural interpretations.
+
+(3) The $\tau$-structures which are essentially lattices are those whose
+mapping $i$ associate the symbols $~\mathcal{s}~$ and $~\mathcal{i}~$ to binary
+operations satisfying the lattice axioms (see \textbf{Section 7.3}).
+
+(4) Let $\mathcal{L}$ denote the set of all lattices over $\left\{ 1, 2, 3
+\right\} $ and $\mathcal{T}$ denote the set of all $\tau$-structures whose $i$
+function maps $~\mathcal{s}~$ and $~\mathcal{i}~$ to binary operations
+satisfying the lattice axioms. Then there is a bijection between $\mathcal{L}$
+and $\mathcal{T}$ defined as:
+ 
+
+\begin{align*}
+    &\mathcal{L} \mapsto \mathcal{T} : (\left\{ 1, 2, 3 \right\} , ~\mathcal{s}'~, ~\mathcal{i}'~ ) \mapsto (\left\{ 1, 2, 3 \right\} , \left\{ (~\mathcal{s}~, ~\mathcal{s}~'), (~\mathcal{i}~, ~\mathcal{i}~') \right\} )    \\ 
+    &\mathcal{T} \mapsto \mathcal{L} : (\left\{ 1, 2, 3 \right\}, \{(~\mathcal{s}~, ~\mathcal{s}~'), (~\mathcal{i}~, ~\mathcal{i}'~ )\} \mapsto (\left\{ 1, 2, 3 \right\}, ~\mathcal{s}'~, ~\mathcal{i}'~ )
+\end{align*}
+
+
 
 \end{quote}
 \normalsize
+
+\begin{problem}
+    Let $\tau = (\left\{ Kant, Hegel \right\}, \emptyset, \emptyset, \emptyset )$. 
+    How many $\tau$-structures with universe $\left\{ 1, 2, 3, 4, 5 \right\} $
+    are there?
+\end{problem}
+
+
+\small
+\begin{quote}
+
+The question comes down to how many functions $i$ satisfy the conditions that
+make $(\left\{ 1,\ldots,5 \right\}, i)$ a $\tau$-structure. But any such
+function has domain $\emptyset \cup \emptyset \cup \emptyset = \emptyset$.
+There is a unique function mapping $\emptyset$ to any set. Then there is a
+single $\tau$-structure of this form.
+
+\end{quote}
+\normalsize
+
+
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
+\subsection{Elementary formulas of type $\tau$}
+
+Let us provide a summary of the first-order types which correspond to the 
+structures we have studied. 
+
+\begin{align*}
+    &\text{Poset type} &= &\left( \emptyset, \emptyset, \left\{ \leq \right\}, \left\{ (\leq, 2) \right\}   \right) \\
+    &\text{Lattice type} &= &\left( \emptyset, \left\{ ~\mathcal{s}~, ~\mathcal{i}~ \right\} ,\emptyset, \left\{ (~\mathcal{s}~, 2), (~\mathcal{i}~, 2) \right\}   \right)  \\ 
+    &\text{Bounded lattice type} &= &\left( \left\{ 0, 1 \right\} , \left\{ ~\mathcal{s}~, ~\mathcal{i}~ \right\} ,\emptyset, \left\{ (~\mathcal{s}~, 2), (~\mathcal{i}~, 2) \right\}   \right)  \\ 
+    &\text{Complemented lattice type} &= &\left( \left\{ 0, 1 \right\} , \left\{ ~\mathcal{s}~, ~\mathcal{i}~, ~^c \right\} ,\emptyset, \left\{ (~\mathcal{s}~, 2), (~\mathcal{i}~, 2), (~^c, 1) \right\}   \right)  \\ 
+    &\text{Cuaternary lattice type} &= &\left( \emptyset , \left\{ ~\mathcal{s}~, ~\mathcal{i}~ \right\}, \left\{ \leq \right\},  \left\{ (~\mathcal{s}~, 2), (~\mathcal{i}~, 2), (\leq, 2) \right\}   \right)  \\ 
+    &\text{Median algebra type} &= &\left( \emptyset, \emptyset, \left\{ r \right\}, \left\{ (r, 2) \right\}   \right) \\
+    &\text{Median algebra type} &= &\left( \emptyset, \emptyset, \left\{ r, R \right\}, \left\{ (r, 2), (R, 1) \right\}   \right) 
+\end{align*}
+
+Observe that the symbols in $\mathcal{C} \cup \mathcal{F} \cup \mathcal{R}$ are the 
+ones used to conform their corresponding elementary 
+formulas. This allows for a generalization of the concept 
+of elementary formula to any structures of any type $\tau$. 
+
+\begin{definition}
+    If $\tau = (\mathcal{C}, \mathcal{F}, \mathcal{R}, \mathcal{a})$ is a type, 
+    an elementary formula of type $\tau$ is a finite 
+    word which uses names in $\mathcal{C} \cup  \mathcal{F} \cup  \mathcal{R}$
+    and the follownig symbols: 
+
+    \begin{itemize}
+        \item $\forall , \exists , \neg, \lor ,\land , \Rightarrow, \iff, (), =$
+        \item $x, y, z, w, \ldots$ for variable names 
+        \item $a, b, c, d, \ldots$ for constant names
+    \end{itemize}
+\end{definition}
+
+An elementary formula of type $\tau$ is true or false depending on 
+an assignment. The assignment will consist of values in the 
+universe of a $\tau$-structure. Thus, given a $\tau$-structure 
+$(A, i)$, quantifiers are understood to range over $A$.
+
+When a formula has no free variables, we say it is an elementary sentence of
+type $\tau$. Its truth-value will depend entirely on the values of its names in
+the universe a given $\tau$-structure.
+
+\begin{problem}
+    Let $\tau = (\emptyset, \emptyset, \left\{ R \right\} , \left\{ (R, 2) \right\} $.
+\end{problem}
+
+
+\small
+\begin{quote}
+
+    (1) Give an elementary sentence $\varphi$ s.t., for any $\tau$-structure $(A, i)$,
+    $\varphi$ is true over $(A, i)$ iff $(A, i(R))$ is a graph.
+
+    Let $\varphi = $.
+    
+
+    (2) Give an elementary sentence $\varphi$ s.t., for any $\tau$-structure 
+    $(A, i)$, $\varphi$ is true iff $i(R)$ is an equivalence  
+    relation over $A$.
+
+    Let $ $
+
+    \begin{align*}
+        \varphi = &\forall x \forall y \left( R(x, y) \Rightarrow R(y, x)  \right) \land \\ 
+        &\forall x \forall y \forall z \left( R(x, y) \land  R(y, z) \Rightarrow R(x, z) \right) \land  \\ 
+        &\forall x \left( R(x, x) \right) 
+    \end{align*}
+
+    Obviously $\tau$ will be true only if $i(R)$ is an equivalence relation,
+    and $i(R)$ will be an equivalence relation if $\tau$ is true.
+
+    (3) 
+
+
+
+
+
+
+
+
+\end{quote}
+\normalsize
+
+
+
+
+
+
+
+
+
 
 \begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
     \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};

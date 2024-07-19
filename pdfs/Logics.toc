@@ -32,6 +32,7 @@
 \contentsline {subsection}{\numberline {7.6}Graphs and median algebras}{45}{}%
 \contentsline {section}{\numberline {8}Mathematical logics}{47}{}%
 \contentsline {subsection}{\numberline {8.1}Mathematical structures}{47}{}%
-\contentsline {subsection}{\numberline {8.2}$\tau $-structures}{48}{}%
-\contentsline {subsection}{\numberline {8.3}Elementary theories and elementary proofs}{50}{}%
-\contentsline {section}{\numberline {9}Mathematical model of the elementary syntax}{52}{}%
+\contentsline {subsection}{\numberline {8.2}$\tau $-structures}{49}{}%
+\contentsline {subsection}{\numberline {8.3}Elementary formulas of type $\tau $}{51}{}%
+\contentsline {subsection}{\numberline {8.4}Elementary theories and elementary proofs}{53}{}%
+\contentsline {section}{\numberline {9}Mathematical model of the elementary syntax}{54}{}%

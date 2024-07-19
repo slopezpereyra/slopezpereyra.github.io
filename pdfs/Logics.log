@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  17 JUL 2024 20:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  18 JUL 2024 20:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -827,143 +827,143 @@ LaTeX Font Info:    Font shape `U/BOONDOX-calo/m/n' will be
 Package lettrine.sty Info: Targeted height = 19.894pt
 (lettrine.sty)             (for loversize=0, accent excluded),
 (lettrine.sty)             Lettrine height = 18.2232pt (E);
-(lettrine.sty)             reported on input line 152.
+(lettrine.sty)             reported on input line 153.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/it' in size <12> not available
-(Font)              Font shape `T1/EBGaramond-OsF/regular/it' tried instead on input line 168.
+(Font)              Font shape `T1/EBGaramond-OsF/regular/it' tried instead on input line 169.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/regular/it' will be
-(Font)              scaled to size 12.0pt on input line 168.
-LaTeX Font Info:    Trying to load font information for TS1+EBGaramond-OsF on input line 172.
+(Font)              scaled to size 12.0pt on input line 169.
+LaTeX Font Info:    Trying to load font information for TS1+EBGaramond-OsF on input line 173.
  (/usr/share/texlive/texmf-dist/tex/latex/ebgaramond/TS1EBGaramond-OsF.fd
 File: TS1EBGaramond-OsF.fd 2019/10/22 (autoinst) Font definitions for TS1/EBGaramond-OsF.
 )
 LaTeX Font Info:    Font shape `TS1/EBGaramond-OsF/m/n' in size <12> not available
-(Font)              Font shape `TS1/EBGaramond-OsF/regular/n' tried instead on input line 172.
+(Font)              Font shape `TS1/EBGaramond-OsF/regular/n' tried instead on input line 173.
 LaTeX Font Info:    Font shape `TS1/EBGaramond-OsF/regular/n' will be
-(Font)              scaled to size 12.0pt on input line 172.
+(Font)              scaled to size 12.0pt on input line 173.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/b/n' in size <10.95> not available
-(Font)              Font shape `T1/EBGaramond-OsF/bold/n' tried instead on input line 186.
+(Font)              Font shape `T1/EBGaramond-OsF/bold/n' tried instead on input line 187.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/bold/n' will be
-(Font)              scaled to size 10.95pt on input line 186.
+(Font)              scaled to size 10.95pt on input line 187.
 LaTeX Font Info:    Font shape `U/BOONDOX-calo/m/n' will be
-(Font)              scaled to size 10.95pt on input line 186.
+(Font)              scaled to size 10.95pt on input line 187.
 LaTeX Font Info:    Font shape `U/BOONDOX-calo/m/n' will be
-(Font)              scaled to size 8.0pt on input line 186.
+(Font)              scaled to size 8.0pt on input line 187.
 LaTeX Font Info:    Font shape `U/BOONDOX-calo/m/n' will be
-(Font)              scaled to size 6.1pt on input line 186.
+(Font)              scaled to size 6.1pt on input line 187.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/it' in size <10.95> not available
-(Font)              Font shape `T1/EBGaramond-OsF/regular/it' tried instead on input line 209.
+(Font)              Font shape `T1/EBGaramond-OsF/regular/it' tried instead on input line 210.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/regular/it' will be
-(Font)              scaled to size 10.95pt on input line 209.
+(Font)              scaled to size 10.95pt on input line 210.
  [3]
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/n' in size <8> not available
-(Font)              Font shape `T1/EBGaramond-OsF/regular/n' tried instead on input line 260.
+(Font)              Font shape `T1/EBGaramond-OsF/regular/n' tried instead on input line 261.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/regular/n' will be
-(Font)              scaled to size 8.0pt on input line 260.
+(Font)              scaled to size 8.0pt on input line 261.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/n' in size <6.1> not available
-(Font)              Font shape `T1/EBGaramond-OsF/regular/n' tried instead on input line 260.
+(Font)              Font shape `T1/EBGaramond-OsF/regular/n' tried instead on input line 261.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/regular/n' will be
-(Font)              scaled to size 6.1pt on input line 260.
+(Font)              scaled to size 6.1pt on input line 261.
 
-Overfull \hbox (44.56848pt too wide) in paragraph at lines 331--333
+Overfull \hbox (44.56848pt too wide) in paragraph at lines 332--334
 []\T1/EBGaramond-OsF/bold/n/12 Theorem 1. []\T1/EBGaramond-OsF/regular/it/12 If $\OML/ntxmi/m/it/12 R [][] []A$\T1/EBGaramond-OsF/regular/it/12 , then $\OML/ntxmi/m/it/12 ker\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 ^^Y[]\LMS/ntxsy/m/n/12 ∫ \U/ntxmia/m/it/12 = \OML/ntxmi/m/it/12 R$\T1/EBGaramond-OsF/regular/it/12 . This en-tails that $\OML/ntxmi/m/it/12 ^^Y[]$ \T1/EBGaramond-OsF/regular/it/12 is in-jec-tive iff $\OML/ntxmi/m/it/12 R \U/ntxmia/m/it/12 = []$\T1/EBGaramond-OsF/regular/it/12 . 
  []
 
 [4]
-Overfull \hbox (15.41438pt too wide) in paragraph at lines 351--355
+Overfull \hbox (15.41438pt too wide) in paragraph at lines 352--356
 \T1/EBGaramond-OsF/regular/n/10.95 class. Which en-tails no two dis-tinct el-e-ments are qeuiv-a-lent. $\U/ntxsym/m/n/10.95 ©  []\OML/ntxmi/m/it/10.95 R \U/ntxmia/m/it/10.95 = []$\T1/EBGaramond-OsF/regular/n/10.95 .
  []
 
 [5]
-Overfull \hbox (5.13464pt too wide) in paragraph at lines 456--460
+Overfull \hbox (5.13464pt too wide) in paragraph at lines 457--461
 []\T1/EBGaramond-OsF/regular/n/10.95 False, but easy to mis-take as true. By def-i-ni-tion of $\OML/ntxmi/m/it/10.95 R \U/ntxmia/m/it/10.95 = []$
  []
 
 
-Overfull \hbox (28.46703pt too wide) in paragraph at lines 487--491
+Overfull \hbox (28.46703pt too wide) in paragraph at lines 488--492
 \T1/EBGaramond-OsF/regular/n/10.95 course $\OML/ntxmi/m/it/10.95 a\LMS/ntxsy/m/n/10.95 ù\OML/ntxmi/m/it/10.95 R \U/ntxmia/m/it/10.95 = \OML/ntxmi/m/it/10.95 b\LMS/ntxsy/m/n/10.95 ù\OML/ntxmi/m/it/10.95 R  \LMS/ntxsy/m/n/10.95 ([])  \OML/ntxmi/m/it/10.95 aRb$\T1/EBGaramond-OsF/regular/n/10.95 . Then $\OML/ntxmi/m/it/10.95 ker\LMS/ntxsy/m/n/10.95 π\OML/ntxmi/m/it/10.95 ^^Y[]\LMS/ntxsy/m/n/10.95 ∫ \U/ntxmia/m/it/10.95 = [] = [] =
  []
 
 <../Images//equiv.png, id=41, 542.025pt x 542.025pt>
 File: ../Images//equiv.png Graphic file (type png)
 <use ../Images//equiv.png>
-Package pdftex.def Info: ../Images//equiv.png  used on input line 508.
+Package pdftex.def Info: ../Images//equiv.png  used on input line 509.
 (pdftex.def)             Requested size: 271.01183pt x 271.01183pt.
 [6] (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf)
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/n' in size <14.4> not available
-(Font)              Font shape `T1/EBGaramond-OsF/regular/n' tried instead on input line 516.
+(Font)              Font shape `T1/EBGaramond-OsF/regular/n' tried instead on input line 517.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/regular/n' will be
-(Font)              scaled to size 14.4pt on input line 516.
+(Font)              scaled to size 14.4pt on input line 517.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/b/n' in size <14.4> not available
-(Font)              Font shape `T1/EBGaramond-OsF/bold/n' tried instead on input line 516.
+(Font)              Font shape `T1/EBGaramond-OsF/bold/n' tried instead on input line 517.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/bold/n' will be
-(Font)              scaled to size 14.4pt on input line 516.
+(Font)              scaled to size 14.4pt on input line 517.
 Package lettrine.sty Info: Targeted height = 19.894pt
 (lettrine.sty)             (for loversize=0, accent excluded),
 (lettrine.sty)             Lettrine height = 19.04022pt (A);
-(lettrine.sty)             reported on input line 518.
+(lettrine.sty)             reported on input line 519.
  [7 <../Images//equiv.png>]
-Overfull \hbox (2.44438pt too wide) in paragraph at lines 609--611
+Overfull \hbox (2.44438pt too wide) in paragraph at lines 610--612
 []\T1/EBGaramond-OsF/regular/it/10.95 (5) \T1/EBGaramond-OsF/regular/n/10.95 If $\OML/ntxmi/m/it/10.95 R [][] []A$ \T1/EBGaramond-OsF/regular/n/10.95 and there is a bi-jec-tion be-tween $\OML/ntxmi/m/it/10.95 A$ \T1/EBGaramond-OsF/regular/n/10.95 and $\OML/ntxmi/m/it/10.95 A\LMS/ntxsy/m/n/10.95 ù\OML/ntxmi/m/it/10.95 R$\T1/EBGaramond-OsF/regular/n/10.95 , then $\OML/ntxmi/m/it/10.95 R \U/ntxmia/m/it/10.95 = []$\T1/EBGaramond-OsF/regular/n/10.95 . 
  []
 
 [8] (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf)
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <10.5> not available
-(Font)              size <10.95> substituted on input line 646.
+(Font)              size <10.95> substituted on input line 647.
 
 LaTeX Font Info:    Font shape `U/BOONDOX-calo/m/n' will be
-(Font)              scaled to size 14.4pt on input line 646.
+(Font)              scaled to size 14.4pt on input line 647.
 LaTeX Font Info:    Font shape `U/BOONDOX-calo/m/n' will be
-(Font)              scaled to size 10.5pt on input line 646.
+(Font)              scaled to size 10.5pt on input line 647.
 LaTeX Font Info:    Font shape `U/BOONDOX-calo/m/n' will be
-(Font)              scaled to size 7.9pt on input line 646.
+(Font)              scaled to size 7.9pt on input line 647.
 Package lettrine.sty Info: Targeted height = 19.894pt
 (lettrine.sty)             (for loversize=0, accent excluded),
 (lettrine.sty)             Lettrine height = 18.2232pt (H);
-(lettrine.sty)             reported on input line 648.
+(lettrine.sty)             reported on input line 649.
 [9] (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf) (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf) (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf) (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf)
 <../Images//threemaximals.png, id=59, 234.8775pt x 129.81833pt>
 File: ../Images//threemaximals.png Graphic file (type png)
 <use ../Images//threemaximals.png>
-Package pdftex.def Info: ../Images//threemaximals.png  used on input line 810.
+Package pdftex.def Info: ../Images//threemaximals.png  used on input line 811.
 (pdftex.def)             Requested size: 234.87692pt x 129.818pt.
  [10] (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf) [11 <../Images//threemaximals.png>]
 <../Images//graph.png, id=67, 764.8575pt x 764.8575pt>
 File: ../Images//graph.png Graphic file (type png)
 <use ../Images//graph.png>
-Package pdftex.def Info: ../Images//graph.png  used on input line 945.
+Package pdftex.def Info: ../Images//graph.png  used on input line 946.
 (pdftex.def)             Requested size: 229.45901pt x 229.45901pt.
  [12 <../Images//graph.png>] [13]
-Overfull \hbox (8.78218pt too wide) in paragraph at lines 1054--1058
+Overfull \hbox (8.78218pt too wide) in paragraph at lines 1055--1059
 []$\U/BOONDOX-calo/m/n/10.95 D []$ \T1/EBGaramond-OsF/regular/n/10.95 is the set of points within a cir-cum-fer-ence with cen-ter $\LMS/ntxsy/m/n/10.95 π\OML/ntxmi/m/it/10.95 x[]; y[]\LMS/ntxsy/m/n/10.95 ∫$
  []
 
 <../Images//circles.png, id=76, 1249.66875pt x 348.30125pt>
 File: ../Images//circles.png Graphic file (type png)
 <use ../Images//circles.png>
-Package pdftex.def Info: ../Images//circles.png  used on input line 1060.
+Package pdftex.def Info: ../Images//circles.png  used on input line 1061.
 (pdftex.def)             Requested size: 249.92932pt x 69.65901pt.
 LaTeX Font Info:    Font shape `TS1/EBGaramond-OsF/m/n' in size <10.95> not available
-(Font)              Font shape `TS1/EBGaramond-OsF/regular/n' tried instead on input line 1067.
+(Font)              Font shape `TS1/EBGaramond-OsF/regular/n' tried instead on input line 1068.
 LaTeX Font Info:    Font shape `TS1/EBGaramond-OsF/regular/n' will be
-(Font)              scaled to size 10.95pt on input line 1067.
+(Font)              scaled to size 10.95pt on input line 1068.
 (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf) [14 <../Images//circles.png>]
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/it' in size <8.8> not available
-(Font)              Font shape `T1/EBGaramond-OsF/regular/it' tried instead on input line 1142.
+(Font)              Font shape `T1/EBGaramond-OsF/regular/it' tried instead on input line 1143.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/regular/it' will be
-(Font)              scaled to size 8.8pt on input line 1142.
+(Font)              scaled to size 8.8pt on input line 1143.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/m/it' in size <6.6> not available
-(Font)              Font shape `T1/EBGaramond-OsF/regular/it' tried instead on input line 1142.
+(Font)              Font shape `T1/EBGaramond-OsF/regular/it' tried instead on input line 1143.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/regular/it' will be
-(Font)              scaled to size 6.6pt on input line 1142.
+(Font)              scaled to size 6.6pt on input line 1143.
  [15] (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf)
-Overfull \hbox (25.464pt too wide) in paragraph at lines 1244--1251
+Overfull \hbox (25.464pt too wide) in paragraph at lines 1245--1252
 [] [] \U/ntxmia/m/it/10.95 = [] \U/BOONDOX-calo/m/n/10.95 D\LMS/ntxsy/m/n/10.95 π\OML/ntxmi/m/it/10.95 n[]; n[]\LMS/ntxsy/m/n/10.95 ∫$ \T1/EBGaramond-OsF/regular/n/10.95 is guar-an-teed to ex-ist. The proof that $[] []$
  []
 
 [16] (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf) [17] [18] [19] (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf) (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf) (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf) [20] [21] (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf) (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf) [22] (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf) [23]
-./Logics.tex:1903: Misplaced alignment tab character &.
-l.1903     F^{-1}\left[ x \circ' y \right] &
+./Logics.tex:1904: Misplaced alignment tab character &.
+l.1904     F^{-1}\left[ x \circ' y \right] &
                                             = F^{-1} \left[ F \left( F^{-1}(...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -972,10 +972,10 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./Logics.tex:1904: Misplaced alignment tab character &.
+./Logics.tex:1905: Misplaced alignment tab character &.
 <recently read> &
                  
-l.1904                                     &
+l.1905                                     &
                                             =F^{-1}(x) \circ F^{-1}(y)
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -985,28 +985,28 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf)
-Overfull \hbox (8.68379pt too wide) in paragraph at lines 1981--1985
+Overfull \hbox (8.68379pt too wide) in paragraph at lines 1982--1986
 \T1/EBGaramond-OsF/regular/n/10.95 the equiv-a-lence re-la-tion in-duced by the par-ti-tion $[]$. Then
  []
 
 [24]
-Overfull \hbox (1.3383pt too wide) in paragraph at lines 2061--2065
+Overfull \hbox (1.3383pt too wide) in paragraph at lines 2062--2066
 []\T1/EBGaramond-OsF/bold/n/10.95 Proof 16. []\T1/EBGaramond-OsF/regular/n/10.95 Re-call that the or-der in-duced by a lat-tice $\LMS/ntxsy/m/n/10.95 π\OML/ntxmi/m/it/10.95 L; \LMS/ntxsy/m/n/10.95 _\OML/ntxmi/m/it/10.95 ; \LMS/ntxsy/m/n/10.95 ^∫$ \T1/EBGaramond-OsF/regular/n/10.95 is $\OML/ntxmi/m/it/10.95 x \LMS/ntxsy/m/n/10.95 ^^T \OML/ntxmi/m/it/10.95 y  \LMS/ntxsy/m/n/10.95 ([])
  []
 
 [25]
-Overfull \hbox (1.99529pt too wide) in paragraph at lines 2098--2102
+Overfull \hbox (1.99529pt too wide) in paragraph at lines 2099--2103
 []\T1/EBGaramond-OsF/regular/n/10.95 We know $\OML/ntxmi/m/it/10.95 F\LMS/ntxsy/m/n/10.95 π\OML/ntxmi/m/it/10.95 x[] \LMS/ntxsy/m/n/10.95 ^^N \OML/ntxmi/m/it/10.95 y[]\LMS/ntxsy/m/n/10.95 ∫ 2 []$\T1/EBGaramond-OsF/regular/n/10.95 , and $\OML/ntxmi/m/it/10.95 F\LMS/ntxsy/m/n/10.95 π\OML/ntxmi/m/it/10.95 x[] \LMS/ntxsy/m/n/10.95 ^^N \OML/ntxmi/m/it/10.95 y[]\LMS/ntxsy/m/n/10.95 ∫ 2 []$\T1/EBGaramond-OsF/regular/n/10.95 .
  []
 
 
-Overfull \hbox (17.77048pt too wide) in paragraph at lines 2199--2202
+Overfull \hbox (17.77048pt too wide) in paragraph at lines 2200--2203
 []\T1/EBGaramond-OsF/regular/n/10.95 Theorem \T1/EBGaramond-OsF/bold/n/10.95 18 \T1/EBGaramond-OsF/regular/n/10.95 en-sures that $\OML/ntxmi/m/it/10.95 ^^Y[]$ \T1/EBGaramond-OsF/regular/n/10.95 is a ho-mo-mor-phism from $\LMS/ntxsy/m/n/10.95 π\OML/ntxmi/m/it/10.95 L; \LMS/ntxsy/m/n/10.95 _\OML/ntxmi/m/it/10.95 ; \LMS/ntxsy/m/n/10.95 ^∫$ \T1/EBGaramond-OsF/regular/n/10.95 to $\LMS/ntxsy/m/n/10.95 π\OML/ntxmi/m/it/10.95 L\LMS/ntxsy/m/n/10.95 ù\OML/ntxmi/m/it/10.95 ^^R; []; []\LMS/ntxsy/m/n/10.95 ∫$\T1/EBGaramond-OsF/regular/n/10.95 .
  []
 
 [26]
-./Logics.tex:2233: Misplaced alignment tab character &.
-l.2233         \item $\pi_{\theta}(z) &
+./Logics.tex:2234: Misplaced alignment tab character &.
+l.2234         \item $\pi_{\theta}(z) &
                                        = \pi_{\theta}(x) \widetilde{ \lor  }...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1015,8 +1015,8 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./Logics.tex:2234: Misplaced alignment tab character &.
-l.2234         \item $\pi_{\theta}(y) &
+./Logics.tex:2235: Misplaced alignment tab character &.
+l.2235         \item $\pi_{\theta}(y) &
                                        = \pi_{\theta}(z) \widetilde{ \lor  }...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1026,32 +1026,32 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-Overfull \hbox (2.08942pt too wide) in paragraph at lines 2255--2258
+Overfull \hbox (2.08942pt too wide) in paragraph at lines 2256--2259
 []\T1/EBGaramond-OsF/regular/it/10.95 (1) \T1/EBGaramond-OsF/regular/n/10.95 Let $\OML/ntxmi/m/it/10.95 S$ \T1/EBGaramond-OsF/regular/n/10.95 a sub-universe of the lat-tice and $\OML/ntxmi/m/it/10.95 ^^R$ \T1/EBGaramond-OsF/regular/n/10.95 a con-gru-ence of $\LMS/ntxsy/m/n/10.95 π\OML/ntxmi/m/it/10.95 S; \LMS/ntxsy/m/n/10.95 _[]\OML/ntxmi/m/it/10.95 ; \LMS/ntxsy/m/n/10.95 ^[]∫$\T1/EBGaramond-OsF/regular/n/10.95 .
  []
 
 [27] [28] (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf) (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf) (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf) (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf)
-Overfull \hbox (8.3176pt too wide) in paragraph at lines 2368--2371
+Overfull \hbox (8.3176pt too wide) in paragraph at lines 2369--2372
 []\T1/EBGaramond-OsF/bold/n/12 Definition 11. []\T1/EBGaramond-OsF/regular/n/12 Let $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L; \LMS/ntxsy/m/n/12 _\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 0\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 1\LMS/ntxsy/m/n/12 ∫$ \T1/EBGaramond-OsF/regular/n/12 a bounded lat-tice. A sub-universe $\OML/ntxmi/m/it/12 S$ \T1/EBGaramond-OsF/regular/n/12 of $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L; \LMS/ntxsy/m/n/12 _\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^∫$
  []
 
 [29]
-Overfull \hbox (18.19585pt too wide) in paragraph at lines 2460--2464
+Overfull \hbox (18.19585pt too wide) in paragraph at lines 2461--2465
 \T1/EBGaramond-OsF/regular/n/12 mo-mor-phisms are iso-mor-phisms. This was also the case for sim-ple lat-tices (\T1/EBGaramond-OsF/bold/n/12 Theorem
  []
 
 [30] (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf)
-Overfull \hbox (5.98167pt too wide) in paragraph at lines 2513--2517
+Overfull \hbox (5.98167pt too wide) in paragraph at lines 2514--2518
 \T1/EBGaramond-OsF/regular/n/12 is called \T1/EBGaramond-OsF/regular/it/12 the quo-tient \T1/EBGaramond-OsF/regular/n/12 of $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L; \LMS/ntxsy/m/n/12 _\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 0\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 1\LMS/ntxsy/m/n/12 ∫$ \T1/EBGaramond-OsF/regular/n/12 over $\OML/ntxmi/m/it/12 ^^R$ \T1/EBGaramond-OsF/regular/n/12 and is de-noted with $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L; \LMS/ntxsy/m/n/12 _\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 0\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 1\LMS/ntxsy/m/n/12 ∫ù\OML/ntxmi/m/it/12 ^^R$\T1/EBGaramond-OsF/regular/n/12 . 
  []
 
 
-Overfull \hbox (36.86661pt too wide) in paragraph at lines 2520--2522
+Overfull \hbox (36.86661pt too wide) in paragraph at lines 2521--2523
 []\T1/EBGaramond-OsF/bold/n/12 Theorem 21. []\T1/EBGaramond-OsF/regular/it/12 Let $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L; \LMS/ntxsy/m/n/12 _\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 0\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 1\LMS/ntxsy/m/n/12 ∫$ \T1/EBGaramond-OsF/regular/it/12 a bounded lat-tice and $\OML/ntxmi/m/it/12 ^^R$ \T1/EBGaramond-OsF/regular/it/12 a con-gru-ence over $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L; \LMS/ntxsy/m/n/12 _\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 0\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 1\LMS/ntxsy/m/n/12 ∫$\T1/EBGaramond-OsF/regular/it/12 . 
  []
 
 
-Overfull \hbox (2.60933pt too wide) in paragraph at lines 2525--2527
+Overfull \hbox (2.60933pt too wide) in paragraph at lines 2526--2528
 []$\OML/ntxmi/m/it/12 ^^Y[]$ \T1/EBGaramond-OsF/regular/it/12 is a ho-mo-mor-phism from $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L; \LMS/ntxsy/m/n/12 _\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 0\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 1\LMS/ntxsy/m/n/12 ∫$ \T1/EBGaramond-OsF/regular/it/12 to $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L; \LMS/ntxsy/m/n/12 _\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 0\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 1\LMS/ntxsy/m/n/12 ∫$ \T1/EBGaramond-OsF/regular/it/12 and $[]\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 ^^Y[]\LMS/ntxsy/m/n/12 ∫ \U/ntxmia/m/it/12 =
  []
 
@@ -1059,89 +1059,89 @@ Overfull \hbox (2.60933pt too wide) in paragraph at lines 2525--2527
 <../Images//compLattice.png, id=134, 108.73958pt x 134.5025pt>
 File: ../Images//compLattice.png Graphic file (type png)
 <use ../Images//compLattice.png>
-Package pdftex.def Info: ../Images//compLattice.png  used on input line 2560.
+Package pdftex.def Info: ../Images//compLattice.png  used on input line 2561.
 (pdftex.def)             Requested size: 108.73929pt x 134.50215pt.
  [31 <../Images//compLattice.png>]
-Overfull \hbox (26.19388pt too wide) in paragraph at lines 2573--2576
+Overfull \hbox (26.19388pt too wide) in paragraph at lines 2574--2577
 []\T1/EBGaramond-OsF/bold/n/12 Definition 16. []\T1/EBGaramond-OsF/regular/n/12 A com-ple-mented lat-tice is a $\OT1/cmr/m/n/12 6$\T1/EBGaramond-OsF/regular/n/12 -upla $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L; \LMS/ntxsy/m/n/12 _\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^\OML/ntxmi/m/it/12 ;  [][]; \OT1/cmr/m/n/12 0\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 1\LMS/ntxsy/m/n/12 ∫$ \T1/EBGaramond-OsF/regular/n/12 s.t. $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L; \LMS/ntxsy/m/n/12 _\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 0\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 1\LMS/ntxsy/m/n/12 ∫$
  []
 
 <../Images//diamond.png, id=139, 200.75pt x 207.77625pt>
 File: ../Images//diamond.png Graphic file (type png)
 <use ../Images//diamond.png>
-Package pdftex.def Info: ../Images//diamond.png  used on input line 2596.
+Package pdftex.def Info: ../Images//diamond.png  used on input line 2597.
 (pdftex.def)             Requested size: 100.37474pt x 103.88786pt.
 
-Overfull \hbox (27.8968pt too wide) in paragraph at lines 2618--2623
+Overfull \hbox (27.8968pt too wide) in paragraph at lines 2619--2624
 \T1/EBGaramond-OsF/regular/n/12 defin-ing $\LMS/ntxsy/m/n/12 _$ \T1/EBGaramond-OsF/regular/n/12 and $\LMS/ntxsy/m/n/12 ^$ \T1/EBGaramond-OsF/regular/n/12 as the $[]$ and $[]$ func-tions of the poset sat-is-fies that $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L; \LMS/ntxsy/m/n/12 _\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^\OML/ntxmi/m/it/12 ; ^^U; \OT1/cmr/m/n/12 0\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 1\LMS/ntxsy/m/n/12 ∫$
  []
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf)
-./Logics.tex:2636: Double superscript.
+./Logics.tex:2637: Double superscript.
 <recently read> ^
                  
-l.2636     \lor', \land', ~^c'
+l.2637     \lor', \land', ~^c'
                               , 0', 1')$, we say the first is a complemented
 I treat `x^1^2' essentially like `x^1{}^2'.
 
 
-Overfull \hbox (59.03601pt too wide) in paragraph at lines 2635--2638
+Overfull \hbox (59.03601pt too wide) in paragraph at lines 2636--2639
 []\T1/EBGaramond-OsF/bold/n/12 Definition 17. []\T1/EBGaramond-OsF/regular/n/12 Given two com-ple-mented lat-tices $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L; \LMS/ntxsy/m/n/12 _\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^\OML/ntxmi/m/it/12 ;  [][]; \OT1/cmr/m/n/12 0\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 1\LMS/ntxsy/m/n/12 ∫$ \T1/EBGaramond-OsF/regular/n/12 and $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L[]; \LMS/ntxsy/m/n/12 _[]\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^[]\OML/ntxmi/m/it/12 ;  [][][]; \OT1/cmr/m/n/12 0[]\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 1[]\LMS/ntxsy/m/n/12 ∫$\T1/EBGaramond-OsF/regular/n/12 ,
  []
 
 [32 <../Images//diamond.png>]
-Overfull \hbox (46.32458pt too wide) in paragraph at lines 2653--2659
+Overfull \hbox (46.32458pt too wide) in paragraph at lines 2654--2660
 []\T1/EBGaramond-OsF/regular/n/12 As in pre-vi-ous cases, if $\OML/ntxmi/m/it/12 S$ \T1/EBGaramond-OsF/regular/n/12 is a sub-universe of $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L; \LMS/ntxsy/m/n/12 _\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^\OML/ntxmi/m/it/12 ;  [][]; \OT1/cmr/m/n/12 0\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 1\LMS/ntxsy/m/n/12 ∫$\T1/EBGaramond-OsF/regular/n/12 , then $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 S; \LMS/ntxsy/m/n/12 _[]\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^[]\OML/ntxmi/m/it/12 ;  [][]; \OT1/cmr/m/n/12 0\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 1\LMS/ntxsy/m/n/12 ∫$
  []
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf)
-./Logics.tex:2666: Double superscript.
+./Logics.tex:2667: Double superscript.
 <recently read> ^
                  
-l.2666 ...nd, ~^c, 0, 1), (L', \lor', \land', ~^c'
+l.2667 ...nd, ~^c, 0, 1), (L', \lor', \land', ~^c'
                                                   , 0', 1')$ two
 I treat `x^1^2' essentially like `x^1{}^2'.
 
-./Logics.tex:2683: Double superscript.
+./Logics.tex:2684: Double superscript.
 <recently read> ^
                  
-l.2683 ..., 0, 1) \mapsto (L', \lor', \land', ~^c'
+l.2684 ..., 0, 1) \mapsto (L', \lor', \land', ~^c'
                                                   , 0', 1')$
 I treat `x^1^2' essentially like `x^1{}^2'.
 
-./Logics.tex:2699: Double superscript.
+./Logics.tex:2700: Double superscript.
 <recently read> ^
                  
-l.2699 ...c, 0, 1)\mapsto (L', \lor', \land', ~^c'
+l.2700 ...c, 0, 1)\mapsto (L', \lor', \land', ~^c'
                                                   , 0',
 I treat `x^1^2' essentially like `x^1{}^2'.
 
-./Logics.tex:2701: Double superscript.
+./Logics.tex:2702: Double superscript.
 <recently read> ^
                  
-l.2701     \land', ~^c'
+l.2702     \land', ~^c'
                        , 0', 1')$. Which means $F$ is also a homomorphism fr...
 I treat `x^1^2' essentially like `x^1{}^2'.
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf) [33]
-Overfull \hbox (7.80618pt too wide) in paragraph at lines 2735--2739
+Overfull \hbox (7.80618pt too wide) in paragraph at lines 2736--2740
 []\T1/EBGaramond-OsF/regular/n/12 The $\OT1/cmr/m/n/12 6$\T1/EBGaramond-OsF/regular/n/12 -uple $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L\LMS/ntxsy/m/n/12 ù\OML/ntxmi/m/it/12 ^^R; []; [];  [][]; \OT1/cmr/m/n/12 0\LMS/ntxsy/m/n/12 ù\OML/ntxmi/m/it/12 ^^R; \OT1/cmr/m/n/12 1\LMS/ntxsy/m/n/12 ù\OML/ntxmi/m/it/12 ^^R\LMS/ntxsy/m/n/12 ∫$ \T1/EBGaramond-OsF/regular/n/12 is called the \T1/EBGaramond-OsF/regular/it/12 quo-tient space \T1/EBGaramond-OsF/regular/n/12 of $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L; \LMS/ntxsy/m/n/12 _\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^\OML/ntxmi/m/it/12 ;  [][]; \OT1/cmr/m/n/12 0\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 1\LMS/ntxsy/m/n/12 ∫$
  []
 
-./Logics.tex:2757: Missing { inserted.
+./Logics.tex:2758: Missing { inserted.
 <to be read again> 
                    \mathaccent 
-l.2757 ...entities hold for the $~^\widetilde{ c }
+l.2758 ...entities hold for the $~^\widetilde{ c }
                                                   
 A left brace was mandatory here, so I've put one in.
 You might want to delete and/or insert some corrections
 so that I will find a matching right brace soon.
 (If you're confused by all this, try typing `I}' now.)
 
-./Logics.tex:2758: Missing } inserted.
+./Logics.tex:2759: Missing } inserted.
 <inserted text> 
                 }
-l.2758     $
+l.2759     $
              operation.
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1150,40 +1150,40 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Overfull \hbox (4.54219pt too wide) in paragraph at lines 2768--2773
+Overfull \hbox (4.54219pt too wide) in paragraph at lines 2769--2774
 []\T1/EBGaramond-OsF/regular/n/10.95 (2) A pre-vi-ous the-o-rem en-sures that $\OML/ntxmi/m/it/10.95 ^^Y[]$ \T1/EBGaramond-OsF/regular/n/10.95 is a ho-mor-phism from $\LMS/ntxsy/m/n/10.95 π\OML/ntxmi/m/it/10.95 L; \LMS/ntxsy/m/n/10.95 _\OML/ntxmi/m/it/10.95 ; \LMS/ntxsy/m/n/10.95 ^\OML/ntxmi/m/it/10.95 ; \OT1/cmr/m/n/10.95 0\OML/ntxmi/m/it/10.95 ; \OT1/cmr/m/n/10.95 1\LMS/ntxsy/m/n/10.95 ∫$
  []
 
-./Logics.tex:2789: Double superscript.
+./Logics.tex:2790: Double superscript.
 <recently read> ^
                  
-l.2789 ..., 0, 1) \mapsto (L', \lor', \land', ~^c'
+l.2790 ..., 0, 1) \mapsto (L', \lor', \land', ~^c'
                                                   , 0',
 I treat `x^1^2' essentially like `x^1{}^2'.
 
 
-Overfull \hbox (0.47507pt too wide) in paragraph at lines 2789--2792
+Overfull \hbox (0.47507pt too wide) in paragraph at lines 2790--2793
 \T1/EBGaramond-OsF/regular/it/12 mented lat-tice ho-mo-mor-phism, then $[]\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 F\LMS/ntxsy/m/n/12 ∫$ \T1/EBGaramond-OsF/regular/it/12 is a con-gru-ence over $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L; \LMS/ntxsy/m/n/12 _\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^\OML/ntxmi/m/it/12 ;  [][]; \OT1/cmr/m/n/12 0\OML/ntxmi/m/it/12 ; \OT1/cmr/m/n/12 1\LMS/ntxsy/m/n/12 ∫$\T1/EBGaramond-OsF/regular/it/12 . 
  []
 
 
-Overfull \hbox (17.40285pt too wide) in paragraph at lines 2804--2807
+Overfull \hbox (17.40285pt too wide) in paragraph at lines 2805--2808
 []\T1/EBGaramond-OsF/bold/n/10.95 Proof 25. []\T1/EBGaramond-OsF/regular/n/10.95 Let $\OML/ntxmi/m/it/10.95 ^^U \U/ntxmia/m/it/10.95 = []\LMS/ntxsy/m/n/10.95 π\OML/ntxmi/m/it/10.95 F\LMS/ntxsy/m/n/10.95 ∫$\T1/EBGaramond-OsF/regular/n/10.95 . By def-i-ni-tion, $\OML/ntxmi/m/it/10.95 ^^U$ \T1/EBGaramond-OsF/regular/n/10.95 is a con-gru-ence over $\LMS/ntxsy/m/n/10.95 π\OML/ntxmi/m/it/10.95 L; \LMS/ntxsy/m/n/10.95 _\OML/ntxmi/m/it/10.95 ; \LMS/ntxsy/m/n/10.95 ^\OML/ntxmi/m/it/10.95 ; \OT1/cmr/m/n/10.95 0\OML/ntxmi/m/it/10.95 ; \OT1/cmr/m/n/10.95 1\LMS/ntxsy/m/n/10.95 ∫$\T1/EBGaramond-OsF/regular/n/10.95 .
  []
 
 [34] (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf) [35] (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf) (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf) (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf)
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/b/it' in size <12> not available
-(Font)              Font shape `T1/EBGaramond-OsF/bold/it' tried instead on input line 2924.
+(Font)              Font shape `T1/EBGaramond-OsF/bold/it' tried instead on input line 2925.
 LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/bold/it' will be
-(Font)              scaled to size 12.0pt on input line 2924.
+(Font)              scaled to size 12.0pt on input line 2925.
  [36]
-Overfull \hbox (48.8997pt too wide) detected at line 2968
+Overfull \hbox (48.8997pt too wide) detected at line 2969
 []
  []
 
 [37] (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf)
-./Logics.tex:3059: Undefined control sequence.
-l.3059 ...tem $x \in F$ and $x \leq y \Rightarrowy
+./Logics.tex:3060: Undefined control sequence.
+l.3060 ...tem $x \in F$ and $x \leq y \Rightarrowy
                                                    \in F$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1195,15 +1195,15 @@ and I'll forget about whatever was undefined.
 <../Images//latticeRings.png, id=173, 1445.4pt x 813.0375pt>
 File: ../Images//latticeRings.png Graphic file (type png)
 <use ../Images//latticeRings.png>
-Package pdftex.def Info: ../Images//latticeRings.png  used on input line 3374.
+Package pdftex.def Info: ../Images//latticeRings.png  used on input line 3375.
 (pdftex.def)             Requested size: 505.89758pt x 284.56738pt.
 
-Overfull \hbox (146.3933pt too wide) in paragraph at lines 3374--3375
+Overfull \hbox (146.3933pt too wide) in paragraph at lines 3375--3376
 [][] 
  []
 
-./Logics.tex:3403: Undefined control sequence.
-l.3403 ...ll x \forall y\left( x \leq y \lor y \eq
+./Logics.tex:3404: Undefined control sequence.
+l.3404 ...ll x \forall y\left( x \leq y \lor y \eq
                                                    x \right) $ is false.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1212,8 +1212,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 [42 <../Images//latticeRings.png (PNG copy)>] (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf) (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf) (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf) [43]
-./Logics.tex:3519: Undefined control sequence.
-l.3519     = b \Rightarrowa
+./Logics.tex:3520: Undefined control sequence.
+l.3520     = b \Rightarrowa
                             ~\mathcal{i}~b = a)$. Since $a, b$ were arbitrar...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1222,12 +1222,12 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf)
-Overfull \hbox (3.6502pt too wide) in paragraph at lines 3531--3535
+Overfull \hbox (3.6502pt too wide) in paragraph at lines 3532--3536
 \T1/EBGaramond-OsF/regular/n/12 The in-ex-is-tence of the $\LMS/ntxsy/m/n/12 ^^T$ \T1/EBGaramond-OsF/regular/n/12 sym-bol in ternary lat-tices $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L; \LMS/ntxsy/m/n/12 _\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^∫$ \T1/EBGaramond-OsF/regular/n/12 makes prov-ing things
  []
 
-./Logics.tex:3546: Undefined control sequence.
-l.3546         \item $A_{s\leqC
+./Logics.tex:3547: Undefined control sequence.
+l.3547         \item $A_{s\leqC
                                } := \forall x \forall y \forall z \left( (x ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1235,8 +1235,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Logics.tex:3548: Undefined control sequence.
-l.3548 ...orall y \forall z \left( (z \leq x \lnad
+./Logics.tex:3549: Undefined control sequence.
+l.3549 ...orall y \forall z \left( (z \leq x \lnad
                                                    z \leq y) \Rightarrow z \...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1245,13 +1245,13 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 [44]
-Overfull \hbox (7.50226pt too wide) in paragraph at lines 3552--3556
+Overfull \hbox (7.50226pt too wide) in paragraph at lines 3553--3557
 \T1/EBGaramond-OsF/regular/n/12 of Dedek-ing's the-o-rem, the $\OT1/cmr/m/n/12 4$\T1/EBGaramond-OsF/regular/n/12 -uple $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L;  []\U/BOONDOX-calo/m/n/12 s []\OML/ntxmi/m/it/12 ;  []\U/BOONDOX-calo/m/n/12 i []\OML/ntxmi/m/it/12 ; \LMS/ntxsy/m/n/12 ^^T∫$ \T1/EBGaramond-OsF/regular/n/12 is a qua-ter-nary lat-tice iff $\LMS/ntxsy/m/n/12 π\OML/ntxmi/m/it/12 L;  []\U/BOONDOX-calo/m/n/12 s []\OML/ntxmi/m/it/12 ;  []\U/BOONDOX-calo/m/n/12 i []\LMS/ntxsy/m/n/12 ∫$
  []
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf) (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf) [45]
-./Logics.tex:3620: Undefined control sequence.
-l.3620 ...y \in G \left( (x, y) \in r \Rightarrowx
+./Logics.tex:3621: Undefined control sequence.
+l.3621 ...y \in G \left( (x, y) \in r \Rightarrowx
                                                   \in R \iff y \not\in R \ri...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1260,39 +1260,49 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 [46] (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf) (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf) (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf) (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf)
-Overfull \hbox (0.2646pt too wide) in paragraph at lines 3691--3693
-[]\T1/EBGaramond-OsF/bold/n/12 Definition 31 \T1/EBGaramond-OsF/regular/n/12 (First or-der type)\T1/EBGaramond-OsF/bold/n/12 . []\T1/EBGaramond-OsF/regular/n/12 A first-order type is a $\OT1/cmr/m/n/12 4$\T1/EBGaramond-OsF/regular/n/12 -uple $\OML/ntxmi/m/it/12 ^^\ \U/ntxmia/m/it/12 = []$
+Overfull \hbox (0.54059pt too wide) in paragraph at lines 3698--3700
+[]\T1/EBGaramond-OsF/bold/n/12 Definition 32 \T1/EBGaramond-OsF/regular/n/12 (First or-der type)\T1/EBGaramond-OsF/bold/n/12 . []\T1/EBGaramond-OsF/regular/n/12 A first-order type is a $\OT1/cmr/m/n/12 4$\T1/EBGaramond-OsF/regular/n/12 -uple $\OML/ntxmi/m/it/12 ^^\ \U/ntxmia/m/it/12 = []$
  []
 
 [47]
-Overfull \hbox (14.03697pt too wide) in paragraph at lines 3738--3739
-[]\T1/EBGaramond-OsF/bold/n/12 Definition 34 \T1/EBGaramond-OsF/regular/n/12 (Bounded poset type)\T1/EBGaramond-OsF/bold/n/12 . []\T1/EBGaramond-OsF/regular/n/12 The type $[]$
+LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/b/it' in size <10.95> not available
+(Font)              Font shape `T1/EBGaramond-OsF/bold/it' tried instead on input line 3748.
+LaTeX Font Info:    Font shape `T1/EBGaramond-OsF/bold/it' will be
+(Font)              scaled to size 10.95pt on input line 3748.
+
+Overfull \hbox (12.10497pt too wide) in paragraph at lines 3774--3775
+[]\T1/EBGaramond-OsF/bold/n/12 Definition 35 \T1/EBGaramond-OsF/regular/n/12 (Bounded poset type)\T1/EBGaramond-OsF/bold/n/12 . []\T1/EBGaramond-OsF/regular/n/12 The type $[]$
  []
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf)
-Overfull \hbox (15.67131pt too wide) in paragraph at lines 3754--3760
+Overfull \hbox (15.67131pt too wide) in paragraph at lines 3790--3796
 []\T1/EBGaramond-OsF/regular/n/12 For in-stance, if $\OML/ntxmi/m/it/12 ^^\$ \T1/EBGaramond-OsF/regular/n/12 is un-der-stood to be the poset type; i.e. if $\OML/ntxmi/m/it/12 ^^\ \U/ntxmia/m/it/12 = []$\T1/EBGaramond-OsF/regular/n/12 ,
  []
 
 [48]
-Overfull \hbox (70.49219pt too wide) in paragraph at lines 3789--3792
+Overfull \hbox (70.49219pt too wide) in paragraph at lines 3825--3828
 []\T1/EBGaramond-OsF/bold/n/10.95 Example 8. []\T1/EBGaramond-OsF/regular/n/10.95 Let $\OML/ntxmi/m/it/10.95 ^^\ \U/ntxmia/m/it/10.95 = []$\T1/EBGaramond-OsF/regular/n/10.95 . 
  []
 
 
-Overfull \hbox (62.21495pt too wide) in paragraph at lines 3849--3852
+Overfull \hbox (62.21495pt too wide) in paragraph at lines 3885--3888
 []\T1/EBGaramond-OsF/bold/n/10.95 Proof 34. []\T1/EBGaramond-OsF/regular/n/10.95 (1) As-sume $\OML/ntxmi/m/it/10.95 A \U/ntxmia/m/it/10.95 = []$ \T1/EBGaramond-OsF/regular/n/10.95 with $\OML/ntxmi/m/it/10.95 n \U/ntxmia/m/it/10.95 = \LMS/ntxsy/m/n/10.95 j\OML/ntxmi/m/it/10.95 A\LMS/ntxsy/m/n/10.95 j$\T1/EBGaramond-OsF/regular/n/10.95 . Let $\U/ntxsym/m/n/10.95 F \U/ntxmia/m/it/10.95 = []$\T1/EBGaramond-OsF/regular/n/10.95 .
  []
 
-[49] (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf) [50] [51] (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf) (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf) (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf) [52]
+[49] [50] (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf)
+Overfull \hbox (8.01254pt too wide) detected at line 4069
+[]
+ []
 
-./Logics.tex:4072: LaTeX Error: \begin{quote} on input line 897 ended by \end{document}.
+[51] (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf) [52] [53] (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf) (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf) (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf) [54]
+
+./Logics.tex:4283: LaTeX Error: \begin{quote} on input line 898 ended by \end{document}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.4072 \end{document}
+l.4283 \end{document}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1309,21 +1319,21 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
  )
 (\end occurred inside a group at level 1)
 
-### semi simple group (level 1) entered at line 897 (\begingroup)
+### semi simple group (level 1) entered at line 898 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 21018 strings out of 476091
- 413857 string characters out of 5794081
+ 21037 strings out of 476091
+ 414426 string characters out of 5794081
  1987330 words of memory out of 5000000
- 40674 multiletter control sequences out of 15000+600000
- 781062 words of font info for 259 fonts, out of 8000000 for 9000
+ 40690 multiletter control sequences out of 15000+600000
+ 805986 words of font info for 263 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,11n,103p,474b,1070s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_ljow5q.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_ld6df2.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_byuyni.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_tcdnmr.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-Bold.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-BoldItalic.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-Italic.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/stxscr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/boondox/zxxrw8a.pfb>
-Output written on Logics.pdf (53 pages, 1658381 bytes).
+Output written on Logics.pdf (55 pages, 1675472 bytes).
 PDF statistics:
- 303 PDF objects out of 1000 (max. 8388607)
- 191 compressed objects within 2 object streams
+ 310 PDF objects out of 1000 (max. 8388607)
+ 196 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  48 words of extra memory for PDF output out of 10000 (max. 10000000)
 
