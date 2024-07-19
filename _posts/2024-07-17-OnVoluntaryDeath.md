@@ -39,7 +39,7 @@ Jesus: *If I should die with thee, I will not deny thee in any wise*. In
 
 Saint Hilary of Poitiers, as he was in Syria, learned that his only daughter
 was pretended by many wealthy and powerful men. Inspired by the idea that no
-marriage was better for her than one with God, he fervourously prayed for her  
+marriage was better for her than one with God, he fervourously prayed for her
 death. Curiously enough, she died, and he rejoiced in her passing. His wife,
 who also found bliss in her daughter's union with God, asked him to pray for
 her death as well. And soon after she died a death of mutual satisfaction.[^1]
