@@ -37,13 +37,13 @@ by the examples of Scotus Eriugena, Origen of Alexandria, Pascal, Spinoza and
 Saint Agustine. That it is very rare is also proven by the lack of more
 examples, at least as far as my inquiries have gone. But even then, whatever 
 value it has, is literary. (Origen's exegesis are simply exquisite 
-to read, as are Augustine's \textit{Confessions} and Pascal's
-\textit{Thoughts}.) One may argue that literary value is enough to make these
+to read, as are Augustine's *Confessions* and Pascal's
+*Thoughts*.) One may argue that literary value is enough to make these
 authors great, and this I do not object. But in what comes to philosophical
 matters, at least if philosophy is to have something to do with truth, however
 remotely, theology generally offers very little. 
 
-The above exceptions aside, all my readings of theology were \textit{at best}
+The above exceptions aside, all my readings of theology were *at best*
 bearable. Their arguments never followed a straight path, but like a serpent
 meandered in search of a conclusion in accordance with the Scriptures. Every
 conclusion was beforehand an assumption, and problematic questions were solved,
@@ -111,22 +111,15 @@ such eternal faculties of the mind are what Jung confuses with evolutionary
 endowments.
 
 Burckhardt was a very sophisticated man in possession of an outstanding
-education. If anything, he's an example of the way in
-which fanaticism corrupts even potent intellects, rendering them sterile.
-Intelligence and education are in general not sufficient to acquire even the
-most elementary scientific intuition. Perhaps the greatest example of this is
-Aristotle, whose non-natural works are of the deepest intelligence, but whose
-natural philosophy and treatment of the Φύσις were flawed in their entirety. It
-would have sufficed to him, as well as to most of the so-called natural
-philosophers, to have even the most primitive embryo of an experimental method,
-to find that most of their claims were wrong. 
+education. If anything, he's an example of the way in which fanaticism corrupts
+even potent intellects, rendering them sterile. Intelligence and education are
+in general not sufficient to acquire even the most elementary scientific
+intuition. Specially if one's central concern is agreeing with the barbaric
+doctrines of some ancient desert-wanderers.
 
-These philosophers are excused because they cared to explained the word with
-the tools they had at their disposal. Little doubt remains that, if the
-scientific method would have existed in his time, they would have certainly
-been the first to appreciate its power. Burckhardt, as well as the rest of
-modern theologians, have everything at their disposal to inquire about the
-world. They simply find it more important to agree with the barbaric doctrines
-of some ancient desert-wanderers.
+It is hard to find anything of value in fanaticism. Yet, in general, it at
+least contains the appeal of Dionysiac fervour. Theology somehow obliterates
+this only, if not virtue, at least living characteristic. What remains is a
+sterile desert of narrow-mindedness and dogma.
 
 
