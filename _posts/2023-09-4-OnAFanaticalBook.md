@@ -17,7 +17,7 @@ place I never knew, and enjoyed in peace the life of a happier—though to me
 quite exotic—man.
 
 Whether the book is truly as remarkable as I recall, it's difficult to say. It
-is often not its content what makes memorable a work of art, but the alchemy
+is often not the content what makes memorable a work of art, but the alchemy
 incurred upon its opposition to our peculiar state of conscience. I content
 myself to say that, in memory, the book is exquisite.
 
@@ -88,7 +88,7 @@ things; then the desired conclusion is drawn from such assumption. It would be
 equally valid to assume the Pythagorean notion that all numbers are rational to
 prove that π is a rational number. (In fact, even this wouldn't be as flawed as
 Burckhardt's logic, in that the premise *all numbers are rational* is
-refutable, while the platonic assumptions of our author are almost a mater of
+refutable, while the platonic assumptions of our author are almost a matter of
 taste.) 
 
 This, if any, is the method of theology: Take an arbitrary assumption,
