@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  18 JUL 2024 20:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  19 JUL 2024 15:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1294,15 +1294,30 @@ Overfull \hbox (8.01254pt too wide) detected at line 4069
 []
  []
 
-[51] (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf) [52] [53] (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf) (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf) (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf) [54]
+[51] [52] (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian158.pgf) [53] (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf) (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf) (/usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf)
+Overfull \hbox (11.0976pt too wide) in paragraph at lines 4273--4276
+[]\T1/EBGaramond-OsF/regular/n/10.95 The words $\OML/ntxmi/m/it/10.95 John\LMS/ntxsy/m/n/10.95 ¹\OML/ntxmi/m/it/10.95 Kafka; Kipling; [][][]; []\LMS/ntxsy/m/n/10.95 º$ \T1/EBGaramond-OsF/regular/n/10.95 and $\OML/ntxmi/m/it/10.95 Doe\LMS/ntxsy/m/n/10.95 ¹\OML/ntxmi/m/it/10.95 Kafka\LMS/ntxsy/m/n/10.95 º$ \T1/EBGaramond-OsF/regular/n/10.95 are $\OML/ntxmi/m/it/10.95 ^^\$ \T1/EBGaramond-OsF/regular/n/10.95 terms
+ []
 
-./Logics.tex:4283: LaTeX Error: \begin{quote} on input line 898 ended by \end{document}.
+
+Overfull \hbox (24.56354pt too wide) in paragraph at lines 4277--4280
+[]\T1/EBGaramond-OsF/regular/n/10.95 The words $\OML/ntxmi/m/it/10.95 Doe []$ \T1/EBGaramond-OsF/regular/n/10.95 and $\OML/ntxmi/m/it/10.95 John\LMS/ntxsy/m/n/10.95 ¹\OML/ntxmi/m/it/10.95 Doe\LMS/ntxsy/m/n/10.95 ¹[]º\OML/ntxmi/m/it/10.95 ; Kafka; Kipling;$\T1/EBGaramond-OsF/bold/n/10.95 X5$\LMS/ntxsy/m/n/10.95 º$
+ []
+
+[54]
+Overfull \hbox (11.68298pt too wide) in paragraph at lines 4360--4364
+\T1/EBGaramond-OsF/regular/n/10.95 Then, by \T1/EBGaramond-OsF/bold/n/10.95 The-o-rem 36\T1/EBGaramond-OsF/regular/n/10.95 , $\OML/ntxmi/m/it/10.95 t[] \U/ntxmia/m/it/10.95 = \OML/ntxmi/m/it/10.95 s[]$\T1/EBGaramond-OsF/regular/n/10.95 . The same rea-son-ing in-duces $\OML/ntxmi/m/it/10.95 t[] \U/ntxmia/m/it/10.95 = \OML/ntxmi/m/it/10.95 s[]; [] ; t[] \U/ntxmia/m/it/10.95 =
+ []
+
+[55]
+
+./Logics.tex:4406: LaTeX Error: \begin{quote} on input line 898 ended by \end{document}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.4283 \end{document}
+l.4406 \end{document}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1313,27 +1328,24 @@ or  <return>  to continue without it.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.64499pt have occurred.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  )
 (\end occurred inside a group at level 1)
 
 ### semi simple group (level 1) entered at line 898 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 21037 strings out of 476091
- 414426 string characters out of 5794081
+ 21039 strings out of 476091
+ 414436 string characters out of 5794081
  1987330 words of memory out of 5000000
  40690 multiletter control sequences out of 15000+600000
- 805986 words of font info for 263 fonts, out of 8000000 for 9000
+ 806428 words of font info for 265 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,11n,103p,474b,1070s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_ljow5q.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_ld6df2.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_byuyni.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_tcdnmr.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-Bold.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-BoldItalic.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-Italic.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ebgaramond/EBGaramond-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/stxscr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/boondox/zxxrw8a.pfb>
-Output written on Logics.pdf (55 pages, 1675472 bytes).
+Output written on Logics.pdf (56 pages, 1683354 bytes).
 PDF statistics:
- 310 PDF objects out of 1000 (max. 8388607)
- 196 compressed objects within 2 object streams
+ 313 PDF objects out of 1000 (max. 8388607)
+ 198 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  48 words of extra memory for PDF output out of 10000 (max. 10000000)
 

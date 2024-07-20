@@ -50,7 +50,7 @@ live or embrace the will to die. When I was younger, I found it puzzling that a
 biological being could dispose so readily of the will to perpetuate its own
 existence (I misunderstood evolution). It is fascinating that nature is complex
 enough so as to produce agents which seem to contradict it. In this, it
-resembles a designer which bestow his creatures with the faculty of rebellion,
+resembles a designer which bestows his creatures with the faculty of rebellion,
 a notion which is the root of the biblical tale, as Milton put it:
 
 > Because we freely love, as in our will<br>

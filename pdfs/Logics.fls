@@ -1247,6 +1247,9 @@ INPUT /usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian1
 INPUT /usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf
 INPUT /usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf
 INPUT /usr/share/texlive/texmf-dist/tex/generic/pgfornament/vectorian/vectorian71.pgf
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/newtx/ntxsym.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/txsyb.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/txsya.tfm
 INPUT Logics.aux
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_ljow5q.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/ebgaramond/ebgm_ld6df2.enc

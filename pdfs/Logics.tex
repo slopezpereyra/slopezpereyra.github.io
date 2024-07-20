@@ -4106,7 +4106,10 @@ the universe a given $\tau$-structure.
     (1) Give an elementary sentence $\varphi$ s.t., for any $\tau$-structure $(A, i)$,
     $\varphi$ is true over $(A, i)$ iff $(A, i(R))$ is a graph.
 
-    Let $\varphi = $.
+    Let $\varphi = \forall x \forall y \left( R(x, y) \Rightarrow R(y, x) \right) $.
+
+    It is clear that $\varphi$ is a sentence because it has no free variables.
+    It is trivial to show that it is true iff $(A, i(R))$ is a graph.
     
 
     (2) Give an elementary sentence $\varphi$ s.t., for any $\tau$-structure 
@@ -4124,25 +4127,27 @@ the universe a given $\tau$-structure.
     Obviously $\tau$ will be true only if $i(R)$ is an equivalence relation,
     and $i(R)$ will be an equivalence relation if $\tau$ is true.
 
-    (3) 
+    (3) Give an elementary formula whose only free variable is $x$
+    and which has the following semantics:
 
+    \begin{quote}
+        $i(R)$ is a partial order over $A$ and $x$ is a minimum element of 
+        $(A, i(R))$.
+    \end{quote}
 
+    Let $\varphi$ be the sentence of point (2). Then 
 
-
-
-
+    \begin{equation*}
+        \psi := \varphi \land \forall y (R(x, y))
+    \end{equation*}
 
 
 \end{quote}
 \normalsize
 
-
-
-
-
-
-
-
+\begin{problem}
+    Let $\tau = \left( \left\{ \alpha \right\}, \left\{ \beta \right\}, \left\{ \gamma \right\}, \left\{ (\beta, 2), (\gamma, 2) \right\}     \right) $. Let $\textbf{A} = (\omega, i)$ with $i(\alpha) = 1, i(\gamma) = \left\{ (x, y) \in \omega : x \leq y \right\}  $ and $i(\beta)$ the product operation over $\omega$.
+\end{problem}
 
 
 \begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
@@ -4171,7 +4176,7 @@ the universe a given $\tau$-structure.
     and $\Sigma$ contains the following sentences: 
 
     \begin{enumerate}
-        \item $\forall x : \leq(x, x)$
+        \item $\forall x  \leq(x, x)$
         \item $\forall x \forall y \forall z \left( (\leq(x, y) \land  \leq(y, z) ) \Rightarrow\leq(x, z) \right) $
         \item $\forall x \forall y \left( (\leq(x, y) \land  \leq(y, x)) \Rightarrow x = y \right) $
     \end{enumerate}
@@ -4212,33 +4217,154 @@ elementary formula of type $\tau$.
 
 \begin{definition}
     Let $\left\{ \textbf{0}, \textbf{1}, \ldots, \textbf{9}, \textbf{X}
-    \right\} $ an alphabet and $\mathcal{V}$ the following language of that
-    alphabet:
+    \right\} $ an alphabet and $\mathcal{V}$ the following sequence of words
+    over said alphabet:
 
     \begin{equation*}
-        \mathcal{V} := \left\{ \textbf{X1}, \ldots, \textbf{X 9}, \textbf{X 1 0}, \textbf{X11},\ldots, \textbf{X 1 9}, \ldots, \textbf{2 0}, \textbf{X 2 1}, \ldots \right\} 
+        \mathcal{V} := \left\{ \textbf{X1}, \ldots, \textbf{X 9}, \textbf{X}\textit{1}\textbf{0}, \textbf{X}\textit{1}\textbf{1},\ldots, \textbf{X}\textit{1}\textbf{9}, \ldots, \textbf{X}\textit{2}, \textbf{X}\textit{2}\textbf{1}, \ldots \right\} 
+    \end{equation*}
+\end{definition}
+
+In short, the $n$th element of $\mathcal{V}$ is the word $\textbf{X}\alpha$ with $\alpha$
+the result of replacing, in the symbol of the number $n$, the last numeral 
+by its bold numeral and the rest by its italic equivalents. For instance, if 
+$n = 51239$ we have $\textbf{X}\textit{5123}\textbf{9}$.
+
+If $v \in \mathcal{V}$, we say $v$ is a variable. We use $x_i$ to denote $\mathcal{V}_{i}$,
+with $i \in \mathbb{N}$.
+
+\begin{definition}
+    Let $\tau$ a type. Then 
+
+    \begin{align*}
+        \mathcal{T}_0^{\tau} &= \mathcal{V} \cup \mathcal{C} \\ 
+        \mathcal{T}_{k+1}^{\tau} &= \mathcal{T}_k^{\tau} \cup \left\{ f(t_1, \ldots, t_n) : f \in \bigcup_{n\in \mathbb{N}} \mathcal{F}_n \land t_1,\ldots, t_n \in \mathcal{T}_k^{\tau} \right\} 
+    \end{align*}
+
+    Then 
+
+    \begin{equation*}
+        \mathcal{T}^{\tau} := \bigcup_{k\geq 0} \mathcal{T}_k^{\tau}
+    \end{equation*}
+
+    and each element in $\mathcal{T}^\tau$ is called a term of type $\tau$ or a $\tau$-term.
+\end{definition}
+
+\begin{definition}
+    Let $t$ a $\tau$-term over an arbitrary type $\tau$. We say $t$ is closed if $x_i$ does not 
+    appear in $t$ for every $i$, and we define 
+
+    \begin{equation*}
+        \mathcal{T}_c^{\tau} = \left\{ t \in \mathcal{T}^{\tau} : t \text{ is closed} \right\} 
     \end{equation*}
 \end{definition}
 
 
+\small
+\begin{quote}
+
+\begin{example}
+    Let $\tau = \left( \left\{ Kafka, Kipling \right\}, \left\{ John, Doe \right\}, \left\{ ! \right\}, a    \right) $
+    with $a(John) = 4, a(Doe) = 1, a(!) = 3$.
+
+    The words $Kafka, Kipling, \textbf{X}\textit{15666}\textbf{9}$ are $\tau$-terms since 
+    they belong to $\mathcal{T}_0^{\tau}$.
+
+    The words $John(Kafka, Kipling, \textbf{X}\textit{1}\textbf{9},
+    \textbf{X5})$ and $Doe(Kafka)$ are $\tau$ terms since they belong to
+    $\mathcal{T}_1^{\tau}$.
+
+    The words $Doe \left( Doe \left( Kafka \right)  \right) $ and $John (
+    Doe(\textbf{X 4}), Kafka, Kipling, $\textbf{X5}$) $ are $\tau$-terms
+    because they belong to $T_2^{\tau}$.
+\end{example}
+
+\end{quote}
+\normalsize
 
 
+\begin{theorem}
+    Assume $t \in \mathcal{T}_k^\tau$ with $k\geq 1$. Then either 
+    $t \in \mathcal{V} \cup \mathcal{C}$ or 
+    $t = f(t_1, \ldots, t_n)$ with $f \in \mathcal{F}_n$, $n \geq 1$,
+    and $t_1,\ldots, t_n \in \mathcal{T}_{k-1}^\tau$.
+\end{theorem}
 
 
+\small
+\begin{quote}
+
+\begin{pro}
+    The proof follows from definition using induction.
+\end{pro}
+
+\end{quote}
+\normalsize
+
+\begin{definition}
+    Let $\alpha, \beta$ words over an alphabet. We say $\beta$ is a propper initial section
+    of $\alpha$ if $\alpha = \beta \gamma$ for some non-empty $\gamma$ and 
+    $\beta \not\in \left\{ \epsilon, \alpha \right\} $.
+\end{definition}
+
+Observe that, given a word $\alpha$, every propper initial section of it is a
+subchain. In the definition of a first-order type, we required that a constant
+name can never be a subchain of another constant name, which guarantees that it
+can never be a propper initial section. The only possible case of two constants
+being similar is if the ending section of one is an initial section of the
+other; for example, if the two constants are $Hegel$ and $Eladio$.
+
+The following theorem ensures that this is the only case.
+
+\begin{theorem}[Mordizqueo de términos]
+    Let $s, t \in \mathcal{T}^\tau$. Assume there are words 
+    $\alpha, \beta, \gamma$ with $\beta \neq \epsilon$ s.t. 
+    $s = \alpha\beta$ and $t = \beta \gamma$.
+    Then either $\alpha = \beta = \gamma$ or 
+    $s, t \in \mathcal{C}$.
+\end{theorem}
 
 
+\small
+\begin{quote}
+
+\begin{pro}
+    Accepted without proof.
+\end{pro}
+
+\end{quote}
+\normalsize
+
+\begin{theorem}[Unicity of term reading]
+    Let $i \in \mathcal{T}^{\tau}$. Then one of the following statements 
+    hold: 
+
+    \begin{itemize}
+        \item $t \in \mathcal{V} \cup \mathcal{C}$
+        \item There is a single $n \in \mathbb{N}$ such that 
+            there are unique $f_n \in \mathcal{F}_n$,
+            $t_1, \ldots, t_n \in \mathcal{T}^{\tau}$ satisfying
+            $t = f(t_1, \ldots, t_n)$
+    \end{itemize}
+\end{theorem}
 
 
+\small
+\begin{quote}
 
+\begin{pro}
+    Due to \textbf{Theorem 35}, all that is left to prove is the unicity of the
+    second point. Assume $t = f(t_1, \ldots, t_n) = g(s_1, \ldots, s_m)$. Then
+    $f = g$ and then $n = m = a(f)$. 
 
+    Observe that either $t_1$ is initial section of $s_1$ or 
+    $s_1$ is initial section of $t_1$. Then, by \textbf{Theorem 36},
+    $t_1 = s_1$. The same reasoning induces $t_2 = s_2, \ldots, t_n = s_n$. 
+    $\blacksquare$
+\end{pro}
 
-
-
-
-
-
-
-
+\end{quote}
+\normalsize
 
 
 
