@@ -4367,7 +4367,237 @@ The following theorem ensures that this is the only case.
 \normalsize
 
 
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
+\subsection{Occurrences and sub-terms}
 
+Given two words $\alpha, \beta \in \Sigma^{*}$ of length $\geq 1$, we say
+$\alpha$ occurs in $\beta$ from $i$ onwards iff $\beta = \delta \alpha \gamma$
+with $|\delta| = i - 1$ and $\delta, \gamma \in \Sigma^{*}$. A word me ay occur
+in another from $i_1, \ldots, i_k$ onwards, $i_j \neq i_r$. We shall then speak
+of the different occurrences of the word.
+
+\begin{definition}
+    Let $\alpha, \beta \in \Sigma^{*}$. Assume $\alpha$ occurs in $\beta$ from 
+    $i_1$ onwards, and from $i_2$ onwards, and so on, up to 
+    $i_k$ for $k \geq 1$. The $j$th occurrence of $\alpha$
+    in $\beta$ is the occurrence that begins at 
+    $i_j$ and ends at $i_j + |\alpha| - 1$.
+\end{definition}
+
+\begin{definition}
+    Let $s, t \in \mathcal{T}^{\tau}$. We say $s$ is a (proper) sub-term of $t$ if $s$
+    is different from $t$ and is a sub-word of $t$.
+\end{definition}
+
+\begin{theorem}
+    Let $r, s, t \in \mathcal{T}^\tau$. 
+
+    \begin{itemize}
+        \item If $s \neq t = f(t_1, \ldots, t_n)$ and $s$ occurs in $t$, then such 
+            occurrence is within some $t_j$, $j = 1, \ldots, n$.
+        \item If $r, s$ occur in $t$, then either these occurrences are disjoint o one 
+            occurs within the other. In particular, distinct occurrences of $r$
+            in $t$ are disjoint. 
+        \item If $t'$ is the result of replacing an occurrence of $s$ in $t$ with $r$,
+            then $t' \in \mathcal{T}^\tau$.
+    \end{itemize}
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\begin{pro}
+    COMPLETE.
+\end{pro}
+
+\end{quote}
+\normalsize
+
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
+\subsection{Formulas}
+
+\begin{definition}
+    Let $\tau$ a type. Words of one of the following forms:
+
+    \begin{itemize}
+        \item $(t \equiv s)$, with $t, s \in \mathcal{T}^\tau$
+        \item $r(t_1,\ldots, t_n)$, with $r \in \mathcal{R}_n$, $t_1, \ldots, t_n \in \mathcal{T}^\tau$
+    \end{itemize}
+
+    are called atomic formulas of type $\tau$.
+\end{definition}
+
+Given a type $\tau$ and an elementary formula $\varphi$ over that type, we use
+$At(\varphi)$ to say that $\varphi$ is atomic.
+
+\begin{definition}
+    Given a type $\tau$, we define
+
+    \begin{align*}
+        &F_0^{\tau} &= &\left\{ \varphi : At(\varphi) \right\} \\ 
+        &F_{k+1}^{\tau} &= &F_k^{\tau} \cup \left\{ \neg \varphi : \varphi \in F_{k} \right\}  \\ 
+        &&\cup &\left\{ (\varphi \lor \psi) : \varphi, \psi \in F_k^\tau \right\} \\ 
+        &&\cup &\left\{ (\varphi \land  \psi) : \varphi, \psi \in F_k^\tau \right\}  \\ 
+        &&\cup &\left\{ (\varphi \Rightarrow \psi) : \varphi, \psi \in F_k^\tau \right\} \\ 
+        &&\cup &\left\{ (\varphi \iff\psi) : \varphi, \psi \in F_k^\tau \right\} \\ 
+        &&\cup &\left\{ \forall v \varphi : \varphi \in F_k^\tau, v \in \mathcal{V} \right\}  \\ 
+        &&\cup & \left\{ \exists v \varphi : \varphi \in F_k^\tau, v \in \mathcal{V} \right\} 
+    \end{align*}
+
+    and $F^\tau = \bigcup_{k\geq 0} F_k^\tau$.
+\end{definition}
+
+All elements in $F^\tau$ are called \textit{formulas of type } $\tau$.
+
+\begin{theorem}
+    Assume $\varphi \in F_k^\tau$ with $k \geq 1$. Then $\varphi$ is of one of 
+    the following forms. 
+
+    \begin{itemize}
+        \item $(t \equiv s), t, s \in \mathcal{T}^\tau$.
+        \item $r(t_1, \ldots, t_n), r \in \mathcal{R}_n, t_1, \ldots, t_n \in \mathcal{T}^\tau$
+        \item $(\varphi_1 \circ \varphi_2), \circ \in \left\{ \land , \lor , \Rightarrow, \iff \right\} $ and $\varphi_1, \varphi_2 \in  F_{k-1}^{\tau}$
+        \item $\neg \varphi_1, \varphi_1 \in F_{k-1}^{\tau}$
+        \item $Q v \varphi$ with $Q \in \left\{ \forall , \exists  \right\} $ and $\varphi_1 \in F_{k-1}^{\tau}$.
+    \end{itemize}
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\begin{pro}
+    Induction over $k$.
+\end{pro}
+
+\end{quote}
+\normalsize
+
+\begin{theorem}
+    Given $\varphi \in F^\tau$, one and only one of the following hold: 
+
+    \begin{itemize}
+        \item $\varphi = (t \equiv s), t, s \in \mathcal{T}^\tau$.
+        \item $\varphi = r(t_1, \ldots, t_n), r \in \mathcal{R}_n, t_1, \ldots, t_n \in \mathcal{T}^\tau$
+        \item $\varphi = (\varphi_1 \circ \varphi_2), \circ \in \left\{ \land , \lor , \Rightarrow, \iff \right\} $ and $\varphi_1, \varphi_2 \in  F_{k-1}^{\tau}$
+        \item $\varphi = \neg \varphi_1, \varphi_1 \in F_{k-1}^{\tau}$
+        \item $\varphi = Q v \varphi$ with $Q \in \left\{ \forall , \exists  \right\} $ and $\varphi_1 \in F_{k-1}^{\tau}$.
+    \end{itemize}
+
+    Furthermore, each of these decompositions is unique.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\begin{pro}
+
+    If $\varphi$ is of the first form, it cannot contain symbols in $\left\{ \land , \lor , \Rightarrow, \iff  \right\} $ 
+    and hence cannot be of the third form. It cannot be of either of the following forms 
+    because it begins with $($. The other points are proven similarly.
+\end{pro}
+
+\end{quote}
+\normalsize
+
+\begin{definition}
+    A formula $\varphi$ is a (proper) sub-formula of a formula $\psi$ when $\varphi \neq \psi$
+    and $\varphi$ is a sub-word of $\psi$.
+\end{definition}
+
+\begin{theorem}
+    Let $\tau$ a type. 
+
+    \begin{itemize}
+        \item Atomic formulas have no proper sub-formulas. 
+        \item If $\varphi$ occurs properly in $\phi \circ \psi$, such occurrence 
+            is either in $\psi$ or in $\phi$. 
+        \item If $\varphi$ occurs properly in $\neg \psi$, such occurrence is $\psi$.
+        \item If $\varphi$ occurs properly in $Q x_k \psi$, such occurrence is 
+            in $\psi$.
+        \item If $\varphi_1, \varphi_2$ occur in $\varphi$, either such occurrences 
+            are disjoint, or one contains the other. 
+        \item If $\lambda'$ results from replacing an occurrence of $\varphi$ in $\lambda$
+            with $\psi$, then $\lambda' \in F^\tau$.
+    \end{itemize}
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\begin{pro}
+    Accepted without proof since it is analogous to a previous theorem.
+\end{pro}
+
+\end{quote}
+\normalsize
+
+
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
+\subsection{Free variables}
+
+\begin{definition}
+    Let $v \in \mathcal{V}, \varphi \in F^\tau, i \in \left\{ 1, \ldots,
+    |\varphi| \right\} $. We say $v$ occurs freely in $\varphi$ from $i$
+    onwards differently depending on the form of $\varphi$:
+
+    \begin{itemize}
+        \item If $At(\varphi)$, we mean that $v$ occurs in $\varphi$ from $i$ onwards. 
+        \item If $\varphi = (\varphi_1 \circ \varphi_2)$, we mean that either $v$ occurs freely 
+            in $\varphi_1$ from $i - 1$ onwards, or $v$ occurs freely 
+            in $\varphi_2$ from $i - | \varphi_1 \circ|$ onwards. 
+        \item If $\varphi = \neg \varphi_1$, we mean $v$ occurs freely 
+            in $\varphi_1$ from $i - 1$ onwards. 
+        \item If $\varphi = Q w \varphi_1$ (and $v \neq w$), we mean $v$ occurs
+            freely in $\varphi_1$ from $i - |Qw|$ onwards. 
+    \end{itemize}
+
+    We say $v$ is a bounded occurrence in $\varphi$ from $i$ onwards if $v$ does not 
+    occur freely in $\varphi$ from $i$ onwards.
+\end{definition}
+
+We define 
+
+\begin{equation*}
+    Fr(\varphi) := \left\{ v \in \mathcal{V} : \exists i : v \text{ occurs freely in } \varphi \text{ from $i$ onwards} \right\} 
+\end{equation*}
+
+The elements of $Fr(\varphi)$ are called \textit{free variables of} $\varphi$.
+Note that a \textit{sentence} is a formula $\varphi$ s.t. $Li(\varphi) =
+\emptyset$. We use $S^\tau$ to denote the set of all sentences of type $\tau$.
+
+As a notational note, given two words $\alpha, \beta$, we will use the notation
+$\alpha \in \beta$ to say $\alpha$ occurs in $\beta$, and $\alpha \in_i \beta$
+to say $\alpha$ occurs in $\beta$ from $i$ onwards.
+
+\begin{theorem}
+    Let $\tau$ a type. 
+
+    \begin{itemize}
+        \item $Li\left( (t \equiv s) \right) = \left\{ v \in \mathcal{V} : v \in t \lor v \in S \right\} $
+        \item $Li\left( r(t_1,\ldots,t_n) \right) = \left\{ v \in \mathcal{V} : \exists i \text{ s.t. } v \in t_i  \right\} $
+        \item $Li(\neg \varphi) = Li(\varphi)$
+        \item $Li \left( \left( \varphi \circ \psi \right)  \right) = Li(\varphi) \cup Li(\psi)$
+        \item $Li \left( Qx_j \varphi \right) = Li(\varphi) - \left\{ x_j \right\}  $
+    \end{itemize}
+\end{theorem}
+
+\pagebreak 
+
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(0mm, 10mm)}]
+    \foreach \i in {1,...,3}
+    \node [on chain]  {\pgfornament[width=6.72cm, color=darkscarlet]{71}};
+\end{tikzpicture}
+\section{Formulas and truth}
 
 
 

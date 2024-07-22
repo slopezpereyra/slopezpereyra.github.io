@@ -1,38 +1,42 @@
-\contentsline {section}{\numberline {1}Functions}{2}{}%
-\contentsline {section}{\numberline {2}Equivalence relations}{3}{}%
-\contentsline {subsection}{\numberline {2.1}Partitions and equivalence}{7}{}%
-\contentsline {subsection}{\numberline {2.2}Functions with domain $A / R$}{9}{}%
-\contentsline {section}{\numberline {3}Partial orders}{10}{}%
-\contentsline {subsection}{\numberline {3.1}Maximum, minimum, maximal, minimal}{10}{}%
-\contentsline {subsection}{\numberline {3.2}Supremum and infimum}{11}{}%
-\contentsline {subsection}{\numberline {3.3}Poset homomorphism}{14}{}%
-\contentsline {subsection}{\numberline {3.4}Lattices}{16}{}%
-\contentsline {subsection}{\numberline {3.5}Binary operations}{17}{}%
-\contentsline {section}{\numberline {4}Lattices as algebras}{20}{}%
-\contentsline {subsection}{\numberline {4.1}Distributive lattice}{22}{}%
-\contentsline {subsection}{\numberline {4.2}Sub-lattices and sub-universes}{22}{}%
-\contentsline {subsection}{\numberline {4.3}Lattice homomorphisms and isomorphisms}{23}{}%
-\contentsline {subsection}{\numberline {4.4}Lattice congruence}{24}{}%
-\contentsline {section}{\numberline {5}Bounded and complemented lattices}{29}{}%
-\contentsline {subsection}{\numberline {5.1}Bounded sub-lattices}{29}{}%
-\contentsline {subsection}{\numberline {5.2}Congruences over bounded lattices}{31}{}%
-\contentsline {subsection}{\numberline {5.3}Complemented lattices}{31}{}%
-\contentsline {subsection}{\numberline {5.4}Complemented sub-lattices}{33}{}%
-\contentsline {subsection}{\numberline {5.5}Homorphisms of complemented lattices}{33}{}%
-\contentsline {subsection}{\numberline {5.6}Congruences over complemented lattices}{34}{}%
-\contentsline {subsection}{\numberline {5.7}A notational convention}{35}{}%
-\contentsline {section}{\numberline {6}Boolean algebras}{36}{}%
-\contentsline {subsection}{\numberline {6.1}Prime filters and Rasiova-Sikorski's theorem}{38}{}%
-\contentsline {section}{\numberline {7}Structures and their associated languages}{42}{}%
-\contentsline {subsection}{\numberline {7.1}Free variables}{43}{}%
-\contentsline {subsection}{\numberline {7.2}Elementary proofs on posets}{43}{}%
-\contentsline {subsection}{\numberline {7.3}Elementary proofs on lattices}{43}{}%
-\contentsline {subsection}{\numberline {7.4}Cuaternary lattices}{44}{}%
-\contentsline {subsection}{\numberline {7.5}Elementary proofs over complemented lattices}{45}{}%
-\contentsline {subsection}{\numberline {7.6}Graphs and median algebras}{45}{}%
-\contentsline {section}{\numberline {8}Mathematical logics}{47}{}%
-\contentsline {subsection}{\numberline {8.1}Mathematical structures}{47}{}%
-\contentsline {subsection}{\numberline {8.2}$\tau $-structures}{49}{}%
-\contentsline {subsection}{\numberline {8.3}Elementary formulas of type $\tau $}{51}{}%
-\contentsline {subsection}{\numberline {8.4}Elementary theories and elementary proofs}{53}{}%
-\contentsline {section}{\numberline {9}Mathematical model of the elementary syntax}{54}{}%
+\contentsline {section}{\numberline {1}Functions}{3}{}%
+\contentsline {section}{\numberline {2}Equivalence relations}{4}{}%
+\contentsline {subsection}{\numberline {2.1}Partitions and equivalence}{8}{}%
+\contentsline {subsection}{\numberline {2.2}Functions with domain $A / R$}{10}{}%
+\contentsline {section}{\numberline {3}Partial orders}{11}{}%
+\contentsline {subsection}{\numberline {3.1}Maximum, minimum, maximal, minimal}{11}{}%
+\contentsline {subsection}{\numberline {3.2}Supremum and infimum}{12}{}%
+\contentsline {subsection}{\numberline {3.3}Poset homomorphism}{15}{}%
+\contentsline {subsection}{\numberline {3.4}Lattices}{17}{}%
+\contentsline {subsection}{\numberline {3.5}Binary operations}{18}{}%
+\contentsline {section}{\numberline {4}Lattices as algebras}{21}{}%
+\contentsline {subsection}{\numberline {4.1}Distributive lattice}{23}{}%
+\contentsline {subsection}{\numberline {4.2}Sub-lattices and sub-universes}{23}{}%
+\contentsline {subsection}{\numberline {4.3}Lattice homomorphisms and isomorphisms}{24}{}%
+\contentsline {subsection}{\numberline {4.4}Lattice congruence}{25}{}%
+\contentsline {section}{\numberline {5}Bounded and complemented lattices}{30}{}%
+\contentsline {subsection}{\numberline {5.1}Bounded sub-lattices}{30}{}%
+\contentsline {subsection}{\numberline {5.2}Congruences over bounded lattices}{32}{}%
+\contentsline {subsection}{\numberline {5.3}Complemented lattices}{32}{}%
+\contentsline {subsection}{\numberline {5.4}Complemented sub-lattices}{34}{}%
+\contentsline {subsection}{\numberline {5.5}Homorphisms of complemented lattices}{34}{}%
+\contentsline {subsection}{\numberline {5.6}Congruences over complemented lattices}{35}{}%
+\contentsline {subsection}{\numberline {5.7}A notational convention}{36}{}%
+\contentsline {section}{\numberline {6}Boolean algebras}{37}{}%
+\contentsline {subsection}{\numberline {6.1}Prime filters and Rasiova-Sikorski's theorem}{39}{}%
+\contentsline {section}{\numberline {7}Structures and their associated languages}{43}{}%
+\contentsline {subsection}{\numberline {7.1}Free variables}{44}{}%
+\contentsline {subsection}{\numberline {7.2}Elementary proofs on posets}{44}{}%
+\contentsline {subsection}{\numberline {7.3}Elementary proofs on lattices}{44}{}%
+\contentsline {subsection}{\numberline {7.4}Cuaternary lattices}{45}{}%
+\contentsline {subsection}{\numberline {7.5}Elementary proofs over complemented lattices}{46}{}%
+\contentsline {subsection}{\numberline {7.6}Graphs and median algebras}{46}{}%
+\contentsline {section}{\numberline {8}Mathematical logics}{48}{}%
+\contentsline {subsection}{\numberline {8.1}Mathematical structures}{48}{}%
+\contentsline {subsection}{\numberline {8.2}$\tau $-structures}{50}{}%
+\contentsline {subsection}{\numberline {8.3}Elementary formulas of type $\tau $}{52}{}%
+\contentsline {subsection}{\numberline {8.4}Elementary theories and elementary proofs}{54}{}%
+\contentsline {section}{\numberline {9}Mathematical model of the elementary syntax}{55}{}%
+\contentsline {subsection}{\numberline {9.1}Occurrences and sub-terms}{56}{}%
+\contentsline {subsection}{\numberline {9.2}Formulas}{57}{}%
+\contentsline {subsection}{\numberline {9.3}Free variables}{59}{}%
+\contentsline {section}{\numberline {10}Formulas and truth}{60}{}%
