@@ -1,6 +1,6 @@
 --- 
 title: A probability problem from Jane Street 
-categories: [ Science, Personal ]
+categories: [ Science ]
 ---
 
 ### The problem

@@ -34,9 +34,15 @@
 \contentsline {subsection}{\numberline {8.1}Mathematical structures}{48}{}%
 \contentsline {subsection}{\numberline {8.2}$\tau $-structures}{50}{}%
 \contentsline {subsection}{\numberline {8.3}Elementary formulas of type $\tau $}{52}{}%
-\contentsline {subsection}{\numberline {8.4}Elementary theories and elementary proofs}{54}{}%
+\contentsline {subsection}{\numberline {8.4}Elementary theories, models, and elementary proofs}{54}{}%
 \contentsline {section}{\numberline {9}Mathematical model of the elementary syntax}{55}{}%
 \contentsline {subsection}{\numberline {9.1}Occurrences and sub-terms}{56}{}%
 \contentsline {subsection}{\numberline {9.2}Formulas}{57}{}%
 \contentsline {subsection}{\numberline {9.3}Free variables}{59}{}%
 \contentsline {section}{\numberline {10}Formulas and truth}{60}{}%
+\contentsline {subsection}{\numberline {10.1}The $\vDash $ relation}{61}{}%
+\contentsline {subsection}{\numberline {10.2}Formula equivalence}{62}{}%
+\contentsline {subsection}{\numberline {10.3}Model homomorphisms}{63}{}%
+\contentsline {subsection}{\numberline {10.4}Notational conventions on terms}{63}{}%
+\contentsline {subsection}{\numberline {10.5}Definable elements}{64}{}%
+\contentsline {subsection}{\numberline {10.6}Two replacement theorems}{65}{}%

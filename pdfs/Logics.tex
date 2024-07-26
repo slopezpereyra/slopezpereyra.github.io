@@ -4153,7 +4153,7 @@ the universe a given $\tau$-structure.
 \begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
     \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
 \end{tikzpicture}
-\subsection{Elementary theories and elementary proofs}
+\subsection{Elementary theories, models, and elementary proofs}
 
 \begin{definition}
     An elementary theory is a tuple $(\Sigma, \tau)$ s.t. $\tau$ is a type and $\Sigma$
@@ -4186,8 +4186,13 @@ the universe a given $\tau$-structure.
 
 \end{example}
 
+
 \end{quote}
 \normalsize
+
+Observe that an elementary theory is a strictly syntactic object, since it
+refers only to sets of words. A model, however, is a semantic object, since it
+is a structure which makes all sentences of the theory true.
 
 \begin{definition}
     Let $(\Sigma, \tau)$ en elementary theory and $\varphi$ and elementary 
@@ -4599,6 +4604,431 @@ to say $\alpha$ occurs in $\beta$ from $i$ onwards.
 \end{tikzpicture}
 \section{Formulas and truth}
 
+We shall now formalize the intuitive notion of a formula being true given 
+a particular structure and an assignment.
+
+\begin{definition}
+    Let $\textbf{A} = (A, i)$ a $\tau$-structure. An assignment of $\textbf{A}$ will be 
+    an element of $A^{\mathbb{N}}$.
+\end{definition}
+
+If $\overrightarrow{a} = (a_1, a_2, \ldots ) $ is an assignment, we say $a_j$
+is the value assigned by $\overrightarrow{a}$ to the variable $x_j$.
+
+Given a $\tau$-structure $\textbf{A}$, a term $t \in \mathcal{T}^\tau$, and 
+an assignment $\overrightarrow{a} \in A^{\mathbb{N}}$, we define 
+$t^{\textbf{A}}[\overrightarrow{a}]$ recursively: 
+
+\begin{align*}
+    t^{\textbf{A}}[\overrightarrow{a}] = \begin{cases}
+        a_i & t = x_i \in \mathcal{V} \\ 
+        i(c) & t = c \in \mathcal{C} \\ 
+        i(f)\left( t_1^{\textbf{A}}[\overrightarrow{a}], \ldots, t_n^{\textbf{A}}[\overrightarrow{a}] \right) & t = f(t_1, \ldots, t_n) \text{ for } f \in \mathcal{F}_n, t_1, \ldots, t_n \in \mathcal{T}^\tau
+    \end{cases}
+\end{align*}
+
+The element $t^{\textbf{A}}[\overrightarrow{a}]$ is called the \textit{value of $t$ in the structure $\textbf{A}$ under 
+the assignment $\overrightarrow{a}$}.
+
+\begin{theorem}
+    Let $\textbf{A}$ a $\tau$-structure and $t \in \mathcal{T}^\tau$. Suppose
+    $\overrightarrow{a}, \overrightarrow{b}$ are assignments s.t. $a_i = b_i$
+    for every $i$ s.t. $x_i \in t$. Then $t^{\textbf{A}}[\overrightarrow{a}] =
+    t^{\textbf{A}}[\overrightarrow{b}]$.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\begin{pro}
+    It is easy to prove that the theorem holds for $t \in \mathcal{T}_0^{\tau}$. We shall use induction. 
+
+    Assume the theorem holds for $t \in \mathcal{T}_k^\tau$. Let $s \in \mathcal{T}_{k+1}^\tau - \mathcal{T}_k^\tau$.
+    Observe that $s = f(t_1, \ldots., t_n)$ with $f \in \mathcal{F}_n$ and 
+    $t_1, \ldots, t_n \in \mathcal{T}_k^\tau$. Because $a_i = b_i$ for any 
+    $i$ s.t. $x_i \in t_1, \ldots, t_n$, the inductive hypothesis gives 
+
+    \begin{equation*}
+        t_j^{\textbf{A}}[\overrightarrow{a}] = t_j^{\textbf{A}}[\overrightarrow{b}], ~ ~ ~ j = 1,\ldots, n
+    \end{equation*}
+
+    Then 
+
+    \begin{align*}
+        s^{\textbf{A}}[\overrightarrow{a}] &= i(f) \left( t_1^{\textbf{A}}[\overrightarrow{a}], \ldots, t_n^{\textbf{A}}[\overrightarrow{a}] \right)  \\ 
+                                           &= i(f) \left( t_1^{\textbf{A}}[\overrightarrow{b}], \ldots, t_n^{\textbf{A}}[\overrightarrow{b}] \right) \\ 
+                                           &= t^{\textbf{A}}[\overrightarrow{b}]
+    \end{align*}
+
+    \textit{quod eram demonstrandum}.
+\end{pro}
+
+\end{quote}
+\normalsize
+
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
+\subsection{The $\vDash$ relation}
+
+Given an assignment $\overrightarrow{a} \in A^\mathbb{N}$, we use
+$\downarrow_{i}^{a}(\overrightarrow{a})$ the assignment which results from
+replacing the $i$th element in $\overrightarrow{a}$ with $a$.
+
+Given a $\tau$-structure $\textbf{A}$, an assignment $\overrightarrow{a}$ and 
+$\varphi \in F^{\tau}$, we say $A \vDash \varphi[\overrightarrow{a}]$ in the 
+following cases:
+
+\begin{center}
+\includegraphics[scale=0.7]{vDash}
+\end{center}
+
+When $\textbf{A} \vDash \varphi[\overrightarrow{a}]$, we say the
+$\tau$-structure $\textbf{A}$ satisfies $\varphi$ in the assignment
+$\overrightarrow{a}$. In this case, we also say $\varphi$ is true in
+$\textbf{A}$ for assignment $\overrightarrow{a}$. The truth value of $\varphi$
+in $\textbf{A}$ for assignment $\overrightarrow{a}$ is understood to be $1$ if
+$\textbf{A}\vDash \varphi [\overrightarrow{a}]$, and $0$ otherwise.
+
+\begin{theorem}
+    Let $\overrightarrow{a}, \overrightarrow{b}$ assignments s.t. $x_1 \in Li(\varphi)$
+    entails $a_i = b_i$. Then $\textbf{A} \vDash \varphi [\overrightarrow{a}]$ iff 
+    $\textbf{A} \vDash \varphi [\overrightarrow{b}]$.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\begin{pro}
+    COMPLETE.
+\end{pro}
+
+\end{quote}
+\normalsize
+
+\begin{theorem}[Corollary of previous theorem]
+    If $\varphi$ is a sentence, then $\textbf{A} \vDash \varphi [\overrightarrow{a}]$ iff 
+    $\textbf{A} \vDash \varphi [\overrightarrow{b}]$ for whichever 
+    assignments $\overrightarrow{a}, \overrightarrow{b}$.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\begin{pro}
+    Left to the reader.
+\end{pro}
+
+\end{quote}
+\normalsize
+
+The corollary above reveals that the truth-value of a sentence over a structure
+does not depend of the assignment; i.e. it is either $1$ for any assignment or
+$0$ for any assignment. In the first case, we say $\varphi$ is true in
+$\textbf{A}$ and write $\textbf{A} \vDash \varphi$; otherwise we say $\varphi$
+is false in $\textbf{A}$ and write $\textbf{A} \not\vDash \varphi$.
+
+\begin{definition}
+    A $\tau$-sentence is said to be universally valid if it is true on every $\tau$-model.
+\end{definition}
+
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
+\subsection{Formula equivalence}
+
+We say two formulas $\varphi, \psi \in F^{\tau}$ are equivalent when, for any $\tau$-model,
+every $\tau$-structure $\textbf{A}$, and every assignment $\overrightarrow{a} \in A^\mathbb{N}$,
+
+\begin{equation*}
+    \textbf{A} \vDash \varphi[\overrightarrow{a}] \iff \textbf{A} \vDash \psi[\overrightarrow{a}]
+\end{equation*}
+
+We write $\varphi \sim \psi$ when these are equivalent. Observe that $\left\{
+(\varphi, \psi) \in F^\tau: \varphi \sim \psi \right\} $ is an equivalence
+relation over $F^\tau$.
+
+\begin{theorem}
+    The following statements are true: 
+
+    \begin{itemize}
+        \item If $Li(\phi) \cup Li(\psi) \subseteq \left\{ x_{i_1},\ldots, x_{i_n} \right\} $, then 
+            $\psi \sim \phi$ iff the sentence 
+
+            \begin{equation*}
+                \forall x_{i_1} \ldots \forall x_{i_n} \left( \psi \iff \phi \right) 
+            \end{equation*}
+
+            is universally valid.
+
+        \item If $\phi_i \sim \psi_i$ with $i \in \left\{ 1, 2 \right\} $, then 
+
+            \begin{align*}
+                (1)~ &\neg \psi_1 \sim \neg \phi_1 \\ 
+                (2)~ &(\psi_1 \circ \psi_2)\sim (\phi_1 \circ \phi_2) \\ 
+                (3)~ &Qv\phi_1 \sim Qv\psi_1\\
+            \end{align*}
+
+        \item If $tp \sim \phi$ and $\alpha'$ results from replacing in a formula $\alpha$
+            some occurrences (perhaps zero) of $\psi$ with $\phi$, then 
+            $\alpha \sim \alpha'$.
+    \end{itemize}
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\begin{pro}
+    Complete.
+\end{pro}
+
+\end{quote}
+\normalsize
+
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
+\subsection{Model homomorphisms}
+
+Given a model $\textbf{A} = (A, i)$, for any $s \in
+\mathcal{C} \cup \mathcal{F} \cup \mathcal{R}$, we use $s^\textbf{A}$ to denote
+$i(s)$.
+
+\begin{definition}[Model homomorphism]
+    Let $\textbf{A}, \textbf{B}$ two $\tau$-models. A function $F : A \mapsto B$ is a homomorphism 
+    of $A$ in $B$ if 
+
+    \begin{enumerate}
+        \item $F(c^\textbf{A}) = c^\textbf{B}$ for every $c \in \mathcal{C}$
+        \item $F \left( f^\textbf{A} \left( a_1, \ldots, a_n \right)  \right) =
+            f^\textbf{B} \left( F(a_1), \ldots, F(a_n) \right) $ for every $f
+            \in \mathcal{F}_n, a_1, \ldots, a_n \in A$.
+        \item $(a_1, \ldots, a_n) \in r^\textbf{A}$ implies $\left( F(a_1),
+            \ldots, F(a_n) \right) \in r^\textbf{B} $ for every $r \in
+            \mathcal{R}_n, a_1, \ldots, a_n \in A$.
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}[Model isomorphism]
+    A model isomorphism from $\textbf{A}$ in $\textbf{B}$ is a homomorphism
+    from $\textbf{A}$ in $\textbf{B}$ that is bijective and whose inverse is a
+    homomorphism from $\textbf{B}$ in $\textbf{A}$.
+\end{definition}
+
+We say the models $\textbf{A}, \textbf{B}$ are isomorphic and write $\textbf{A}
+\simeq \textbf{B}$ when there is an isomorphism from one in the other.
+
+\begin{theorem}
+    Let $F$ an homomorphism from $\textbf{A}$ in $\textbf{B}$. Then 
+
+    \begin{equation*}
+        F \left( t^\textbf{A} \left[ (a_1, a_2, \ldots) \right]  \right) = t^\textbf{B} \left[ (F(a_1), F(a_2), \ldots) \right] 
+    \end{equation*}
+
+    for every $t \in \mathcal{T}^\tau$ and $(a_1, a_2, \ldots) \in A^\mathbb{N}$.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\begin{pro}
+    COMPLETE.
+\end{pro}
+
+\end{quote}
+\normalsize
+
+\begin{theorem}
+    Let $F$ an isomorphism from $\textbf{A}$ in $\textbf{B}$. Let $\varphi \in F^\tau$.
+    Then 
+
+    \begin{equation*}
+        \textbf{A} \vDash \varphi\left[ (a_1, a_2, \ldots) \right] \iff \textbf{B} \vDash \left[ (F(a_1), F(a_2), \ldots) \right] 
+    \end{equation*}
+
+    for every $(a_1, a_2, \ldots) \in  A^\mathbb{N}$. In particular, 
+    $\textbf{A}, \textbf{B}$ satisfy the same $\tau$-sentences.
+\end{theorem}
+
+
+
+\small
+\begin{quote}
+
+\begin{pro}
+    Complete.
+\end{pro}
+
+\end{quote}
+\normalsize
+
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
+\subsection{Notational conventions on terms}
+
+If $\tau$ is a term of type $\tau$, we write $t =_d t(v_1, \ldots, v_n)$ to
+declare that $v_1, \ldots, v_n$ are all distinct variables s.t. every variable
+which appears in $t$ is in $\left\{ v_1, \ldots, v_n \right\} $. Observe that
+it isn't necessary that every $v_j$ appears in $t$.
+
+
+Let $\alpha_1, \ldots, \alpha_n$ arbitrary words---not necessarily terms. When
+the declaration $t =_d t(v_1, \ldots, v_n)$ has been done, the word
+$t(\alpha_1, \ldots, \alpha_n)$ denotes the word which results from replacing
+every occurrence of $v_i$ in $t$  with $\alpha_i$, $i = 1, \ldots, n$.
+
+When the words $\alpha_i$ are terms, $t(\alpha_1, \ldots, \alpha_n)$ is 
+a term. Furthermore, different order of $\alpha_1, \ldots, \alpha_n$ 
+will yield different words. In other words, if 
+$P : \left\{ \alpha_1, \ldots, \alpha_n \right\} \to \left\{ \alpha_1, \ldots, \alpha_n \right\} $
+is a permutation, 
+
+\begin{equation*}
+    t(\alpha_1, \ldots, \alpha_n) \neq t\big( P(\alpha_1), \ldots, P(\alpha_n) \big)
+\end{equation*}
+
+
+\small
+\begin{quote}
+
+\begin{example}
+    Let $\tau = \left( \emptyset, \left\{ f \right\}, \emptyset, \left\{ (f, 2) \right\}   \right) $
+    and $t = f\left( f\left( x_2, x_1 \right), x_3  \right) $. 
+
+    Let $t =_D t(x_3, x_2, x_1)$. Then $$t(\lambda, \mu, \eta) = f\left( f\left( \mu, \eta \right), \lambda  \right) $$.
+\end{example}
+
+\end{quote}
+\normalsize
+
+Assume $\textbf{A}$ is a model of type $\tau$ and $a_1, \ldots, a_n \in A$. If
+$t =_d t(v_1, \ldots, v_n)$ has been declared, we use $t^\textbf{A}[a_1,
+\ldots, a_n]$ to denote the element $t^\textbf{A}[\overrightarrow{b}]$, where
+$\overrightarrow{b}$ is the assignment which assigns $a_i$ to every $v_i$.
+
+If $\varphi$ is a formula of type $\tau$, we write $\varphi =_d \varphi(v_1,
+\ldots, v_n)$ to declare that $v_1, \ldots, v_n$ are distinct variables s.t.
+$Li(\varphi) \subseteq \left\{ v_1, \ldots, v_n \right\} $.
+
+Let $\alpha_1, \ldots, \alpha_n$ arbitrary words. If the declaration $\varphi
+=_d \varphi(v_1, \ldots, v_n)$ has been made, then $\varphi(\alpha_1, \ldots,
+\alpha_n)$ denotes the word which results from replacing each occurrence of
+$v_i$ in $\varphi$ with $\alpha_i$.
+
+Again, if $\alpha_1, \ldots, \alpha_n$ are terms, $\varphi(\alpha_1, \ldots,
+\alpha_n)$ is a formula.
+
+Lastly, let $a_1, \ldots, a_n \in A$ and $\textbf{A}$ a model of type $\tau$.
+If we have declared $\varphi =_d \varphi(v_1, \ldots, v_n)$, then $\textbf{A}
+\vDash \varphi[a_1, \ldots, a_n]$ means $\textbf{A} \vDash
+\varphi[\overrightarrow{b}]$, where $\overrightarrow{b}$ is the assignment
+which assigns $a_i$ to every $v_i$.
+
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
+\subsection{Definable elements}
+
+Let $\textbf{A}$ a model of type $\tau$. We say an element $a \in A$ is
+definable in $\textbf{A}$ if there is a formula $\varphi =_d \varphi(v)$ s.t.
+$\textbf{A} \vDash \varphi[a]$, and for every $b \in A - \left\{ a \right\} $
+we have $\textbf{A} \not\vDash \varphi[b]$. If this holds, we 
+say $\varphi$ \textit{defines} $a$.
+
+\begin{theorem}
+    Let $\textbf{A}$ a model of type $\tau$ and $a \in A$ s.t. $F(a) \neq a$ for some 
+    isomorphism $F : \textbf{A} \to  \textbf{A}$. Then $a$ is not 
+    definable in $\textbf{A}$.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\begin{pro}
+    Complete.
+\end{pro}
+
+\end{quote}
+\normalsize
+
+\begin{theorem}
+    Let $\tau$ a type and $t \in \mathcal{T}^\tau$. If $t =_d t(v_1, \ldots, v_n)$,
+    one and only one of the following hods: 
+
+    \begin{itemize}
+        \item $t = c$ for $c \in \mathcal{C}$
+        \item $t = v_j$ for some $j$
+        \item $t = f(t_1, \ldots, t_m)$ with $f \in \mathcal{F}_m, t_1, \ldots, t_m \in \mathcal{T}^\tau$.
+    \end{itemize}
+\end{theorem}
+
+When we have declared $t =_d t(v_1, \ldots, v_n)$ and the last case of the
+previous theorem holds, we will assume we have also made the declarations $t_i
+=_d t_i(v_1,\ldots, v_n)$ for every $i$. This inspires a recursive perspective 
+on the notation $t^\textbf{A}[a_1, \ldots, a_n]$: 
+
+\begin{theorem}
+    Let $\tau$ a type and $t \in \mathcal{T}^\tau$. Assume $t =_d t(v_1, \ldots, v_n)$.
+    Let $\textbf{A}$ a model of type $\tau$ and $a_1, \ldots, a_n \in A$.
+    Then 
+
+    \begin{itemize}
+        \item $t = c \Rightarrow t^\textbf{A}[a_1, \ldots, a_n] = c^\textbf{A}$
+        \item $t = v_j \Rightarrow t^\textbf{A}[a_1, \ldots, a_n] = a_j$
+        \item $t = f(t_1,\ldots, t_m) \Rightarrow t^\textbf{A}[a_1, \ldots, a_n] = f^\textbf{A}(t_1^\textbf{A}[a_1, \ldots, a_n], \ldots, t_m^\textbf{A}[a_1,\ldots, a_m])$.
+    \end{itemize}
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\begin{pro}
+    Complete.
+\end{pro}
+
+\end{quote}
+\normalsize
+
+\begin{tikzpicture}[remember picture, overlay, start chain, node distance=-2mm, shift={(-18mm, -12mm)}]
+    \node [on chain]  {\pgfornament[width=1.72cm, color=darkscarlet]{158}};
+\end{tikzpicture}
+\subsection{Two replacement theorems}
+
+\begin{theorem}
+    Assume $t =_d t(w_1, \ldots, w_k)$ and $s_i =_d s_i(v_1,\ldots, v_k)$ for $i = 1, \ldots, k$.
+    Every variable in $t(s_1, \ldots, s_k)$ are in $\left\{ v_1, \ldots, v_n \right\} $ and 
+    if we declare $t(s_1, \ldots, s_k) =_d t(s_1, \ldots, s_k)(v_1, \ldots, v_n)$, then 
+    for any $\tau$-structure $\textbf{A}$ and $a_1, \ldots, a_n \in A$ we have 
+
+    \begin{equation*}
+        t(s_1, \ldots, s_k)^\textbf{A}\left[ a_1,\ldots, a_n \right] = t^\textbf{A}\left[ s_1^\textbf{A}[a_1,\ldots, a_n], \ldots, s_k^\textbf{A}[a_1, \ldots, a_n] \right] 
+    \end{equation*}
+
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\begin{pro}
+    Accepted without proof.
+\end{pro}
+
+\end{quote}
+\normalsize
+
+\begin{definition}
+    We say $v$ is replaceable by $w$ in $\varphi$ when no free occurrence of $v$ in $\varphi$
+    is part of a subformula of the form $Q w \psi$ in $\varphi$.
+\end{definition}
 
 
 
