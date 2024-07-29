@@ -86,7 +86,7 @@ de continuar su vida con normalidad. Los azotan sentimientos de vergüenza y
 autodesprecio. Se ocupan tan ardua y esmeradamente del castigo de sí mismos,
 que nos les queda tiempo de nada más; y así, al final del día, a la desdicha
 original le agregan también la de sentir que el tiempo se les fue de las manos
-sin haberlo logrado que rinda frutos.
+sin haber gozado de su vendimia.
 
 Si bien somos educados para sentir vergüenza por nuestras desviaciones, y hasta
 cierto punto esto es indicativo de cierta sensibilidad, pienso que podemos
