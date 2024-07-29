@@ -107,7 +107,7 @@ antisociales y soberbios justifican su desprecio de la gente con una supuesta
 superioridad moral o intelectual? Leen a Antonio Machado, que nos dice de los
 hombres felices:
 
-> donde hay vino, beben vino;
+> donde hay vino, beben vino;<br>
 > donde no hay vino, agua fresca
 
 y asienten solemnemente, pero son incapaces de disfrutar de la fraternidad
