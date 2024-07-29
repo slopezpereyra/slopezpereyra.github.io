@@ -15,7 +15,7 @@ virtud es anticuado, y al pronunciarlo no quiero hacerme pasar por un griego.
 La virtud es algo verdadero, y todos conocemos no sólo personas virtuosas, sino
 el delicioso amor que nos inspiran. Sólo un necio no ha suspirado alguna vez
 pensando en la compasión, la capacidad de perdonar, o la rectitud de alguna
-persona que la vida puso en su camino. De \textit{esa} virtud estoy hablando,
+persona que la vida puso en su camino. De *esa* virtud estoy hablando,
 y no de un ideal abstracto.
 
 Platón cometió el error de asociar la educación con la virtud y el vicio con la
@@ -54,7 +54,7 @@ que mi tiempo no es suficiente.
 Si estudiamos el asunto con algo de frialdad, es evidente que la culpa que
 nos generan nuestros vicios es inconducente. No contribuyen ni a expiar un
 error cometido ni a reparar un daño, y si examinamos el estado general de las
-cosas, \textit{ceteris paribus}, un mundo en que una persona está sintiendo
+cosas, *ceteris paribus*, un mundo en que una persona está sintiendo
 culpa es peor que uno en que no la está sintiendo. En la medida de lo posible,
 debemos olvidar todo lo que hagamos mal, a no ser que sea para aprender a
 actuar mejor.
@@ -70,12 +70,12 @@ rítmicamente sus pechos:
 > por mi gran culpa.
 
 Pero la culpa es un sentimiento verdaderamente terrible. César Vallejo, en
-\textit{Los heraldos negros}, describe al hombre azotado por todas las
+*Los heraldos negros*, describe al hombre azotado por todas las
 tragedias como uno cuyos ojos traicionan que su vida se enpoza en un
-\textit{charco de culpa}. Todos conocemos la historia de Judas, que lloró:
-\textit{I have sinned in that I have betrayed the innocent blood}, y se ahorcó.
-Dante, poco después de entrar en el cuarto círculo, exclama: "\textit{¿Por qué
-dejamos que nuestra culpa nos consuma de este modo?}". Y Edipo, al descubrir su
+*charco de culpa*. Todos conocemos la historia de Judas, que lloró:
+*I have sinned in that I have betrayed the innocent blood*, y se ahorcó.
+Dante, poco después de entrar en el cuarto círculo, exclama: "*¿Por qué
+dejamos que nuestra culpa nos consuma de este modo?*". Y Edipo, al descubrir su
 propio crimen, se quitó la vista. Cualquier educación sentimental que se precie
 debería prevenirnos de este mal, que no es un fin en sí mismo ni un medio para un
 fin feliz.
