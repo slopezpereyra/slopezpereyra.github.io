@@ -10,7 +10,7 @@ está la culpa, que es degradante e inútil; por otro la autocomplacencia, o
 simplemente la pereza que nos da tratar de perfeccionarnos. 
 
 Sin embargo, pienso que debemos ser intransigentes con
-nosotros mismos, y no despreocuparnos de procupar la virtud. La palabra
+nosotros mismos, y no despreocuparnos de procurar la virtud. La palabra
 *virtud* es anticuada, y al decirla no quiero hacerme pasar por un griego.
 Ella es algo verdadero, y todos conocemos no sólo personas virtuosas, sino
 el delicioso amor que nos inspiran. Sólo un necio no ha suspirado alguna vez
