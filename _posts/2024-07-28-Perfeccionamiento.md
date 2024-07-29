@@ -1,22 +1,8 @@
-\documentclass[a4paper, 12pt]{article}
+---
+title: Del perfeccionamiento de uno mismo
+categories: [ Personal ]
+---
 
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{textcomp}
-\usepackage{amssymb}
-\usepackage{newtxtext} \usepackage{newtxmath}
-\usepackage{amsmath, amssymb}
-\newtheorem{problem}{Problem}
-\newtheorem{example}{Example}
-\newtheorem{lemma}{Lemma}
-\newtheorem{theorem}{Theorem}
-\newtheorem{problem}{Problem}
-\newtheorem{example}{Example} \newtheorem{definition}{Definition}
-\newtheorem{lemma}{Lemma}
-\newtheorem{theorem}{Theorem}
-\usepackage{parskip}
-
-\begin{document}
 
 Una cosa muy triste de la condición humana es que, cuando tratamos de lidiar
 con nuestros defectos, es muy difícil no incurrir en otros peores. Por un lado
@@ -57,12 +43,12 @@ corriente: la impresión de la huella divina y el pecado original vibran en mí
 con igual potencia. 
 
 El primer obstáculo que encuentro al tratar de examinarme, o simplemente al
-lidiar conmigo mismo cada día---que no es fácil---, es la culpa que me generan
+lidiar conmigo mismo cada día—que no es fácil—, es la culpa que me generan
 mis propios vicios y defectos. Me desagrado fácilmente: mi rutina no es lo
 suficientemente buena, no leo tanto como quisiera, y no estudio tantas
 matemáticas como me gustaría. Incluso cuando mis días son excelentes, y son
-dedicados por completo al estudio y al trabajo, me pesa la sensación---que mi
-historial familiar justifica---de que no viviré demasiado y, por lo tanto, de
+dedicados por completo al estudio y al trabajo, me pesa la sensación—que mi
+historial familiar justifica—de que no viviré demasiado y, por lo tanto, de
 que mi tiempo no es suficiente. 
 
 Si estudiamos el asunto con algo de frialdad, es evidente que la culpa que
@@ -176,11 +162,6 @@ volverse al menos un poco mejor.
 
 
 
-
-
-
-
-\end{document}
 
 
 

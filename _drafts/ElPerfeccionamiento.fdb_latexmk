@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1722106236 "ElPerfeccionamiento.tex" "ElPerfeccionamiento.pdf" "ElPerfeccionamiento" 1722106237 2
+["pdflatex"] 1722215527 "ElPerfeccionamiento.tex" "ElPerfeccionamiento.pdf" "ElPerfeccionamiento" 1722215528 2
   "/etc/texmf/web2c/texmf.cnf" 1695394668 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1640468671 2914 8283dfc24eaf1964346f843d7605c2b0 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -53,8 +53,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1695394817 4623455 fa0568a71dd9a288d6c226ee477506c6 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1695394844 7879794 eff26094dbe002b6e482c026ea4c81e2 ""
-  "ElPerfeccionamiento.aux" 1722106237 32 ab05033ccbb38b00a31b200ccedf8001 "pdflatex"
-  "ElPerfeccionamiento.tex" 1722106236 8296 6ba60b46bfd09ec13f36595b361461c0 ""
+  "ElPerfeccionamiento.aux" 1722215528 32 c81c40425fbb5e93b90fba65da0b5e61 "pdflatex"
+  "ElPerfeccionamiento.tex" 1722215526 9291 c68b8b242cf0777afbf179d6155c8696 ""
   (generated)
   "ElPerfeccionamiento.aux"
   "ElPerfeccionamiento.log"
