@@ -9,10 +9,10 @@ con nuestros defectos, es muy difícil no incurrir en otros peores. Por un lado
 está la culpa, que es degradante e inútil; por otro la autocomplacencia, o
 simplemente la pereza que nos da tratar de perfeccionarnos. 
 
-Sin embargo, pienso que debemos ser, en cierto sentido, intransigentes con
-nosotros mismos, y no despreocuparnos de procupar la virtud. El concepto de
-virtud es anticuado, y al pronunciarlo no quiero hacerme pasar por un griego.
-La virtud es algo verdadero, y todos conocemos no sólo personas virtuosas, sino
+Sin embargo, pienso que debemos ser intransigentes con
+nosotros mismos, y no despreocuparnos de procupar la virtud. La palabra
+*virtud* es anticuada, y al decirla no quiero hacerme pasar por un griego.
+Ella es algo verdadero, y todos conocemos no sólo personas virtuosas, sino
 el delicioso amor que nos inspiran. Sólo un necio no ha suspirado alguna vez
 pensando en la compasión, la capacidad de perdonar, o la rectitud de alguna
 persona que la vida puso en su camino. De *esa* virtud estoy hablando,
@@ -20,7 +20,7 @@ y no de un ideal abstracto.
 
 Platón cometió el error de asociar la educación con la virtud y el vicio con la
 ignorancia. Esto es, sin duda, un ideal aristocrático, y mi experiencia lo
-desprueba. La educación puede mejorar a una buena persona tanto como emeporar a
+desprueba. La educación puede mejorar a una buena persona tanto como empeorar a
 una mala, y por sí sola nos dice muy poco acerca de su calidad humana. Una de
 las personas más virtuosas que he conocido, cuya vida pareciera transcurrir en
 incesante dicha y amor, es una
@@ -90,14 +90,14 @@ sin haber gozado de su vendimia.
 
 Si bien somos educados para sentir vergüenza por nuestras desviaciones, y hasta
 cierto punto esto es indicativo de cierta sensibilidad, pienso que podemos
-despojarnos de ese sentimiento si lo examinamos racionalmente. Es falso que
-seamos del todo racionales, y en general no controlamos lo que sentimos, pero
-es verdadera la máxima estoica según la cual no nos afectan las cosas, sino
-nuestras ideas de las cosas. Si las personas se entregaran a un examen genuino
-de la culpa, creo que verían fácilmente cuán inconducente es, y pienso que esto
-sí reduce nuestra propensión a sentirla. Mi propio caso es evidencia, puesto
-que siempre tendí a sentirme culpable incluso por cosas menores, y logré
-liberarme hasta cierto punto de ese defecto a través de su análsis.
+despojarnos de ese sentimiento si lo examinamos racionalmente. 
+Aunque en general no controlamos lo que sentimos, es verdadera la máxima
+estoica según la cual no nos afectan las cosas, sino nuestras ideas de las
+cosas. Si las personas se entregaran a un examen genuino de la culpa, creo que
+verían fácilmente cuán inconducente es, y pienso que esto sí reduciría su
+propensión a sentirla. Mi propio caso es evidencia, puesto que siempre tendí a
+a la culpa incluso por cosas menores, y logré liberarme hasta cierto punto de
+ese defecto a través de su análsis.
 
 Por otro lado, algunas personas se eximen demasiado fácilmente de la
 responsabilidad de lidiar con sus vicios. En algunos casos incluso los
@@ -116,29 +116,30 @@ autoabsolución, al menos revela un atisbo de sensibilidad para con nuestros
 errores; y de todos los malos modos en que podemos lidiar con nuestros
 defectos, no hacerlo en absoluto es el peor. 
 
-Parece que estoy diciendo cosas triviales, y en verdad es así, pero hay
-trivialidades cuya práctica es muy difícil. Nuestros defectos se arraigan con
-más facilidad que nuestras virtudes, y la tentación de hacer la vista gorda con
-ellos es muy grande.
+Existe gente que sería capaz de corregirse si pudiera verse con un poco más de
+claridad. Cualquiera que haya convivido con alguien puede ver cuánto las
+personas chocan una y otra vez con la misma piedra. Cuando sufren por algo,
+simplemente sufren: no se detienen a examinar de qué manera contribuyen a su
+propio sufrimiento. Por regla general, nos es más fácil ver estas flaquezas en
+otros, pero pienso que todos somos al menos un poco así. Necesitamos una cierta 
+dosis de autorevisionismo e introspección; la evolución es imposible de otro modo.
 
-Además, existe gente que sería capaz de corregirse si dedicara un poco más de
-sus vidas a la introspección. Mirar dentro de uno mismo es un arte peligroso que
-fácilmente se transforma en solipsismo y estupidez. Véase nomás hasta qué punto
-incluso un hombre como Jung llegó a perderse por ella. La introspección no es
-un fin en sí mismo y debería ser resolutiva; es decir, orientada a tomar una
-decisión enérgica. Una vez se alcanza la resolución, nuestro tiempo está mejor
-gastado lidiando con las hermosuras que nos ofrece el mundo, que no son pocas,
-antes que en la exploración de nuestras propias almas, que no son muy atractivas.
+Una total falta del hábito introspectivo es el medio más seguro para la
+constancia. Quien no se examina no se cuestiona; quien no se cuestiona no
+cambia, y quien no cambia no mejora. No es suficiente carecer de la vanidad que
+nos impide reconocer nuestros defectos: primero hay que contar con la capacidad
+de verlos. Por si esto no fuera poco, una vez que los vemos hay decidir
+correctamente qué hacer con ellos: diagnóstico y remedio son cosas diferentes,
+y el mundo está repleto de aprendices de brujo que, queriendo volverse
+dragones, se convirtieron en sapos.
 
-Habiendo dicho esto, una total falta de hábito introspectivo es el medio más
-seguro para la constancia. Quien no se examina no se cuestiona; quien no se
-cuestiona no cambia, y quien no cambia no evoluciona. No es suficiente carecer
-de la vanidad que nos impide reconocer nuestras defectos: primero hay que
-contar con la capacidad de verlos. Cualquiera que haya convivido con alguien
-puede ver cuánto las personas chocan una y otra vez con la misma piedra. Cuando
-sufren por algo, simplemente sufren; no se detienen a examinar si contribuyen a
-su propio sufrimiento. Por regla general, nos es más fácil ver estas flaquezas
-en otros, pero pienso que todos somos al menos un poco así.
+Aunque la recomiendo, la introspección es un arte peligroso que fácilmente se
+transforma en solipsismo y estupidez. No es un fin en sí mismo, y que debería
+perpetrarse con el propósito de alcanzar una resolución; es decir, con el fin
+de cambiar un hábito o dirigir nuestras acciones. En cuanto una decisión es
+alcanzada, debería abandonarse: nuestro tiempo está mejor gastado lidiando con
+las hermosuras que nos ofrece el mundo, que no son pocas, antes que en la
+exploración de nuestras propias almas.
 
 En suma, encuentro que son tres los caminos que pueden ayudarnos a volvernos
 mejores: la introspección orientada a formar reglas para la acción, la
