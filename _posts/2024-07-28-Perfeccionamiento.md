@@ -9,38 +9,42 @@ con nuestros defectos, es muy difícil no incurrir en otros peores. Por un lado
 está la culpa, que es degradante e inútil; por otro la autocomplacencia, o
 simplemente la pereza que nos da tratar de perfeccionarnos. 
 
-Sin embargo, pienso que debemos ser intransigentes con
-nosotros mismos, y no despreocuparnos de procurar la virtud. La palabra
-*virtud* es anticuada, y al decirla no quiero hacerme pasar por un griego.
-La virtud es algo verdadero, y todos conocemos no sólo personas virtuosas, sino
-el delicioso amor que nos inspiran. Sólo un necio no ha suspirado alguna vez
-pensando en la compasión, la capacidad de perdonar, o la rectitud de alguna
-persona que la vida puso en su camino. De *esa* virtud estoy hablando,
-y no de un ideal abstracto.
+Sin embargo, pienso que debemos ser intransigentes con nosotros mismos, y no
+despreocuparnos de procurar la virtud. La palabra *virtud* es anticuada, y al
+decirla no quiero hacerme pasar por un griego. La virtud es algo verdadero, y
+todos conocemos no sólo personas virtuosas, sino el delicioso amor que nos
+inspiran. Sólo un necio no ha suspirado alguna vez pensando en la compasión, la
+capacidad de perdonar, o la rectitud de alguna persona que la vida puso en su
+camino. De *esa* virtud estoy hablando, y no de un ideal abstracto.
 
 Platón cometió el error de asociar la educación con la virtud y el vicio con la
 ignorancia. Esto es, sin duda, un ideal aristocrático, y mi experiencia lo
-desprueba. La educación puede mejorar a una buena persona tanto como empeorar a
-una mala, y por sí sola nos dice muy poco acerca de su calidad humana. Una de
-las personas más virtuosas que he conocido, cuya vida pareciera transcurrir en
-incesante dicha y amor, es una
-hermosa mujer que aprendió a leer en su edad adulta, llevó por mucho tiempo una
-vida campesina, y apenas recibió educación formal. Por otra parte, conozco
-personas ruines con una educación excelente, y sus lecturas y saberes sólo
-las vuelven más sutiles.
+desprueba. Una de las personas más virtuosas que he conocido, cuya vida
+pareciera transcurrir en incesante piedad, es una hermosa mujer que aprendió a
+leer en su edad adulta, llevó por mucho tiempo una vida campesina, y apenas
+recibió educación formal. Por otra parte, conozco personas ruines con una
+educación excelente, cuyas lecturas y saberes sólo las vuelven más sutiles.
 
-Debo aclarar que lo que digo no parte de una falsa sensación de superioridad o
-sabiduría. En verdad, conozco pocas personas tan llenas de rasgos infelices
-como yo. Por cada virtud encuentro al menos una falencia, y en mi memoria
-atesoro ciertas cosas que me enorgullecen y otras tantas que me avergüenzan.
-Una de mis memorias más felices es un día en que salvé cientos de peces en una
-sequía, pero en mi adolescencia, por simple brutalidad, asesiné a una hermosa
-lechuza. Con muchas dificultades, salvé a un cachorro de morir de frío; a otro,
-que vi siendo maltratado por un bruto, lo olvidé. A mis amigos les he ofrecido
-un hombro para llorar; en cierta ocasión, lleno de ira, también quise
-ofrendarles mi castigo y mi violencia. Soy, en suma, un hombre común y
-corriente: la impresión de la huella divina y el pecado original vibran en mí
-con igual potencia. 
+Por mi parte, creo carecer de una falsa sensación de superioridad o sabiduría.
+En verdad, conozco pocas personas tan llenas de rasgos infelices como yo. Por
+cada virtud encuentro al menos una falencia, y en mi memoria atesoro ciertas
+cosas que me enorgullecen y otras tantas que me avergüenzan. Una de mis
+memorias más felices es un día en que salvé cientos de peces en una sequía,
+pero en mi adolescencia, por simple brutalidad, asesiné a una hermosa lechuza.
+Con muchas dificultades, salvé a un cachorro de morir de frío; a otro, que vi
+siendo maltratado por un bruto, lo olvidé. A mis amigos les he ofrecido un
+hombro para llorar; en cierta ocasión, lleno de ira, también quise ofrendarles
+mi castigo y mi violencia. Soy, en suma, un hombre común y corriente: la
+impresión de la huella divina y el pecado original vibran en mí con igual
+potencia. 
+
+Tuve, eso sí, una educación extraordinaria, sentimental e intelectual. A ella
+le debo todo, porque en verdad mis talentos naturales son muy limitados y
+pocos, y considero que a ella le debo todo cuanto soy de bueno. Mi padre procuró
+que fuera un joven en pleno contacto con las preciosuras de la vida: el 
+contacto con la naturaleza, los viajes a tierras extranjeras y la amistad
+con personas de distintas clases y trasfondos sociales son algunas de tales 
+dichas.
 
 El primer obstáculo que encuentro al tratar de examinarme, o simplemente al
 lidiar conmigo mismo cada día—que no es fácil—, es la culpa que me generan

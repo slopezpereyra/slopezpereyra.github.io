@@ -8,7 +8,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
 \usepackage{amssymb}
-\usepackage{newtxmath}
+\DeclareSymbolFont{letters}{OML}{ztmcm}{m}{it}
 \usepackage{ebgaramond}
 \usepackage{amsmath, amssymb}
 \usepackage{amsthm}
@@ -5030,9 +5030,34 @@ on the notation $t^\textbf{A}[a_1, \ldots, a_n]$:
     is part of a subformula of the form $Q w \psi$ in $\varphi$.
 \end{definition}
 
+More generally, we say $v$ is replaceable by $t$ in $\varphi$ when $v$ is replaceable in $\varphi$
+for each variable that occurs in $t$. In general, the following properties 
+hold: 
 
+\begin{itemize}
+    \item If $\varphi$ is atomic, then $v$ is replaceable by $w$ in $\varphi$
+    \item If $\varphi = (\varphi_1 \lambda \varphi_2)$, then $v$ is replaceable by $w$ in $\varphi$
+        iff $v$ is replaceable by $w$ in $\varphi_1$ and $\varphi$.
+    \item If $\varphi = \neg \psi$, then $v$ is replaceable in $\varphi$ iff it is 
+        replacable in $\psi$ (by $w$).
+    \item Etc.
+\end{itemize}
 
+\begin{theorem}
+    Assume $\varphi =_d \varphi(w_1, \ldots, w_k)$, and $t_i =_d t_i(v_1, \ldots, v_n)$
+    for $i = 1,2,\ldots, k$. If $w_j$ is replaceable by $t_j$
+    in $\varphi$, then 
 
+    \begin{itemize}
+        \item $Li\left( \varphi\left( t_1, \ldots, t_k \right)  \right) \subseteq \left\{ v_1,\ldots, v_n \right\} $
+        \item If we declare $\varphi(t_1, \ldots, t_k) =_d \varphi(t_1, \ldots, t_k)(v_1, \ldots, v_n)$, then 
+            for every structure $\textbf{A}$ and $\overrightarrow{a} \in A^n$, 
+
+            \begin{equation*}
+                \textbf{A} \vDash \varphi(t_1, \ldots, t_k)[\overrightarrow{a}] \iff \textbf{A} \vDash \varphi\left[ t_1^{\textbf{A}}_1[\overrightarrow{a}], \ldots, t_k^\textbf{A}[\overrightarrow{a}] \right] 
+            \end{equation*}
+    \end{itemize}
+\end{theorem}
 
 
 
