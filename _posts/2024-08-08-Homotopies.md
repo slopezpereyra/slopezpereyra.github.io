@@ -46,12 +46,11 @@ $t \in [0, 1]$, $h(-, t) : X \to Y$ is a continuous mapping.
 
 We can use the fact that for any
 $f \in \mathbb{R}^n, g \in \mathbb{R}^m$, there is a homotopy given by
-$h(x, t) = (1 - t)f(x) + t g(x)$ to provide any number of examples.
-
-For example, below I plot the family of functions induced by the 
-homotopy between a quadratic and a linear function, followed by the 
-surface of the function multivariable $h(x, t)$. The surface plot 
-shows how at $t = 0$ and $t=1$ the curve coincides with $f$ and $g$.
+$h(x, t) = (1 - t)f(x) + t g(x)$ to provide any number of examples. For
+instance, below I plot the family of functions induced by the homotopy between
+a quadratic and a linear function, followed by the surface of the
+multivariable function $h(x, t)$. The surface plot shows how at $t = 0$ and $t=1$ the
+curve coincides with $f$ and $g$.
 
 <p align="center">
   <img src="../Images/linear_quad_homotopy.gif">
@@ -63,6 +62,11 @@ shows how at $t = 0$ and $t=1$ the curve coincides with $f$ and $g$.
 
 Just because, here is a plot of the family induced by the homotopy 
 between an exponential function and a polynomial of degree $4$.
+
+<p align="center">
+  <img src="../Images/poly_with_exp.gif">
+</p>
+
 
 <p align="center">
   <img src="../Images/poly_with_exp.png">
