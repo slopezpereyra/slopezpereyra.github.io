@@ -20,10 +20,10 @@ components of $X$ and the set of path components of $Y$.
 
 The notion of equivalence induced by homeomorphisms is stronger than one
 might in principle desire. For instance, a disk in $\mathbb{R}^2$ and a
-point $\left\{ x \right\}$ have the same number of path components and
+point $\\{ x \\}$ have the same number of path components and
 could in some sense be deemed to have the same shape. However, they are
 not homeomorphic, since there is no bijective map from the disk to
-$\left\{ x \right\}$.
+$\\{ x \\}$.
 
 The \"weak\" notion of equivalence we are looking for is that of a
 *homotopy*. Two functions $f, g : X \mapsto Y$ are homotopic if there is
@@ -130,11 +130,11 @@ In other words, to spaces are homotopy equivalent if we can map one onto
 the other, and if their compositions result in the identity.
 
 On one hand, any spaces which are homeomorphic are homotopy equivalent.
-But take our problematic case of $\left\{ x \right\}$ and
+But take our problematic case of $\\{ x \\}$ and
 $B_\epsilon(x)$ a disk with radius $\epsilon$ around $x$. The inclusion
-$i : \left\{ x \right\} \mapsto B_{\epsilon}(x)$ and the constant map
+$i : \\{ x \\} \mapsto B_{\epsilon}(x)$ and the constant map
 
-$$p : B_\\epsilon(x) \\to  \\left\\{ x \\right\\}$$
+$$p : B_\\epsilon(x) \\to  \\{ x \\}$$
 
 induces a homotopy equivalence. Evidently,
 
@@ -143,7 +143,7 @@ $$( p \\circ i )(x) = p(i(x)) = p(x) = x$$
 Now, we can prove $i \circ p \simeq \mathbb{I}_{ B_\epsilon(x) }$ by
 defining the radial contraction
 
-$$h\\left( (r, \\theta), t \\right) = (tr, \\theta)$$
+$$h( (r, \\theta), t ) = (tr, \\theta)$$
 
 using polar coordinates. This contraction is equal to the disk when
 $t = 0$, "shrinks" it around its center as $t$ increases, and is equal
