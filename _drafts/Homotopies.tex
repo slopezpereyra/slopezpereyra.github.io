@@ -1,0 +1,109 @@
+
+
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{newtxtext} \usepackage{newtxmath}
+\usepackage{amsmath, amssymb}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example} \newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+
+
+\begin{document}
+
+
+Let $(X, \mathcal{U}_X), (Y, \mathcal{U}_Y)$ two topological spaces. As in most
+structures, we say these are homeomorphic if there is a bijection $f : X
+\mapsto Y$ s.t. $f$ and $f^{-1}$ are continuous maps. We must recall that, in a
+topological context, a map is continuous iff for any neighborhood 
+$V$ around $f(x)$ there is a neighborhood $U$ around $x$ satisfying 
+$f(U) \subseteq V$. Informally, all points "around" $x$ are mapped to 
+points "around" $f(x)$. 
+
+The intuitive idea is that two spaces are homeomorphic when one 
+is a deformation of the other that involves only stretching and 
+bending (tearing up or gluing together sections is forbidden). Naturally, if
+$f$ is a homeomorphism, then it induces a bijection between the set of path
+components of $X$ and the set of path components of $Y$.
+
+The notion of equivalence induced by homeomorphisms is stronger than one might
+in principle desire. For instance, a disk in $\mathbb{R}^2$ and a point
+$\left\{ x \right\} $ have the same number of path components and could in some
+sense be deemed to have the same shape. However, they are not homeomorphic,
+since there is no bijective map from the disk to $\left\{ x \right\} $.
+
+The "weak" notion of equivalence we are looking for is that of a \textit{homotopy}.
+Two functions $f, g : X \mapsto Y$ are homotopic if there is a continuous map 
+$h : X \times [0, 1] \mapsto Y$ s.t. 
+
+\begin{align*}
+    \begin{cases}
+        h(x, 0) &= f(x)\\ 
+        h(x, 1) &= g(x)
+    \end{cases}
+\end{align*}
+
+We say $h$ is a homotopy and we write $f \simeq g$ to say they are homotopic. 
+
+The second paramter $t$, ranging from $0$ to $1$, induces a family of maps 
+that interpolate "between" $f$ and $g$. In other words, for each $t \in [0, 1]$,
+$h(-, t) : X \to Y$ is a continuous mapping. 
+
+We can use the fact that for any $f \in \mathbb{R}^n, g \in \mathbb{R}^m$, there is 
+a homotopy given by $h(x, t) = (1 - t)f(x) + t g(x)$ to provide 
+any number of examples.
+
+examples 
+
+
+Our weak notion of equivalence thus emerges, considering maps $f : X \mapsto Y$
+that admit continuous inverses up to homotopy. In particular, if $X, Y$
+are topological spaces, we say they are homotopy equivalent if $f, g$ 
+are continuous and
+
+\begin{equation*}
+    f\circ g \simeq \mathbb{I}_Y ~ ~ ~ ~ ~ ~ g \circ f \simeq \mathbb{I}_X
+\end{equation*}
+
+In other words, to spaces are homotopy equivalent if we can map one onto the other,
+and if their compositions result in the identity.
+
+On one hand, any spaces which are homeomorphic are homotopy equivalent. But 
+take our problematic case of $\left\{ x \right\} $ and $B_\epsilon(x)$ a disk with 
+radius $\epsilon$ around $x$. The inclusion $i : \left\{ x \right\} \mapsto B_{\epsilon}(x) $
+and the constant map
+
+\begin{equation*}
+    p : B_\epsilon(x) \to  \left\{ x \right\} 
+\end{equation*}
+
+induces a homotopy equivalence. Evidently, 
+
+\begin{equation*}
+    ( p \circ i )(x) = p(i(x)) = p(x) = x
+\end{equation*}
+
+Now, we can prove $i \circ p \simeq \mathbb{I}_{ B_\epsilon(x) }$ by defining the radial contraction
+
+\begin{equation*}
+    h\left( (r, \theta), t \right) = (tr, \theta)
+\end{equation*}
+
+using polar coordinates. This contraction is equal to the disk when $t = 0$,
+"shrinks" it around its center as $t$ increases, and is equal to the point when
+$t = 1$. This proves that $i \circ p$ is homotopic to the identity. 
+
+
+\end{document}
+
+
+
