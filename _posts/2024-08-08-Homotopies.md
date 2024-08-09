@@ -47,6 +47,10 @@ $t \in [0, 1]$, $h(-, t) : X \to Y$ is a continuous mapping.
 ---
 
 <p align="center">
+  <img src="../Images/parametric.gif">
+</p>
+
+<p align="center">
   <img src="../Images/linear_quad_homotopy.gif" width="45%">
   <img src="../Images/surface_homotopy.png" width="45%">
 </p>
