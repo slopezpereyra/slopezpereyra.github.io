@@ -44,82 +44,28 @@ The second paramter $t$, ranging from $0$ to $1$, induces a family of
 maps that interpolate \"between\" $f$ and $g$. In other words, for each
 $t \in [0, 1]$, $h(-, t) : X \to Y$ is a continuous mapping.
 
-We can use the fact that for any
-$f \in \mathbb{R}^n, g \in \mathbb{R}^m$, there is a homotopy given by
-$h(x, t) = (1 - t)f(x) + t g(x)$ to provide any number of examples. For
-instance, below I plot the family of functions induced by the homotopy between
-a quadratic and a linear function, followed by the surface of the
-multivariable function $h(x, t)$. The surface plot shows how at $t = 0$ and $t=1$ the
-curve coincides with $f$ and $g$.
+---
 
 <p align="center">
-  <img src="../Images/linear_quad_homotopy.gif">
-</p>
-
-<p align="center">
-  <img src="../Images/surface_homotopy.png">
-</p>
-
-Just because, here is a plot of the family induced by the homotopy 
-between an exponential function and a polynomial of degree $4$.
-
-<p align="center">
-  <img src="../Images/poly_with_exp.gif">
+  <img src="../Images/linear_quad_homotopy.gif" width="45%">
+  <img src="../Images/surface_homotopy.png" width="45%">
 </p>
 
 
+---
+
 <p align="center">
-  <img src="../Images/poly_with_exp.png">
+  <img src="../Images/poly_with_exp.gif" width="45%">
+  <img src="../Images/poly_with_exp.png" width="45%">
 </p>
 
---- 
-
-As a bonus, I provide the code to generate and plot homotopies 
-between two arbitrary functions in Julia.
-
-```julia 
-
-function homotopy(f::Function, g::Function, x, t)
-    h(x, t) = (1 - t)f(x) + t * g(x)
-    return h(x, t)
-end
-
-function plot_homotopy(f, g, a, b, step, fname)
-    x = a:step:b
-    h(x, t) = homotopy(f, g, x, t)
-    y_f = [f(xi) for xi in x]
-    y_g = [g(xi) for xi in x]
-    # Create the plot and save as a GIF
-    anim = @animate for t in 0:0.1:1 
-        y_h = [h(xi, t) for xi in x]
-        plot(x, y_f, label=L"f(x)", ylim=(-5, 20), linewidth=2, color = :purple)
-        plot!(x, y_g, label=L"g(x)", linewidth = 2, color=:purple)
-        plot!(x, y_h, label=L"h(x, t)", title="Homotopy with " * L"t = 0, 0.1, ..., 1", color=:green)
-    end
-    gif(anim, fname*".gif", fps = 5)
-end
-
-function plot_homotopy_3d(f, g, a, b, step, fname)
-    x = a:step:b
-    t = 0:0.1:1
-    h(x, t) = homotopy(f, g, x, t)
-    # Compute the z values for the homotopy function
-    z = [h(xi, ti) for xi in x, ti in t]
-    p = surface(z, xlabel=L"t/10", ylabel=L"x", zlabel=L"h(x, t)")
-    savefig(p, fname*".png")
-    open("example.html", "w") do io
-        PlotlyBase.to_html(io, p)
-    end  
-end
-
-# Example 
-
-plot_homotopy_3d(x -> x^4 + 2*x^3 - 3*x^2 - x + 1, 
-            y -> exp(y), 
-              -10, 10, 0.1, "poly_with_exp")
+---
 
 
-```
+<p align="center">
+  <img src="../Images/log_with_exp.gif" width="45%">
+  <img src="../Images/log_with_exp.png" width="45%">
+</p>
 
 ---
 
@@ -144,7 +90,7 @@ induces a homotopy equivalence. Evidently,
 
 $$( p \\circ i )(x) = p(i(x)) = p(x) = x$$
 
-Now, we can prove $i \circ p \simeq \mathbb{I}_{ B_\epsilon(x) }$ by
+Now, we can prove $i \circ p \simeq \mathbb{I}_{ B\_\epsilon(x) }$ by
 defining the radial contraction
 
 $$h( (r, \\theta), t ) = (tr, \\theta)$$
