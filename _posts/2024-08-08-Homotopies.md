@@ -80,7 +80,7 @@ equivalent if $f, g$ are continuous and
 
 $$f\\circ g \\simeq \\mathbb{I}_Y ~ ~ ~ ~ ~ ~ g \\circ f \\simeq \\mathbb{I}_X$$
 
-In other words, to spaces are homotopy equivalent if we can map one onto
+In other words, two spaces are homotopy equivalent if we can map one onto
 the other, and if their compositions result in the identity.
 
 On one hand, any spaces which are homeomorphic are homotopy equivalent.
