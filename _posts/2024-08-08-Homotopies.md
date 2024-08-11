@@ -103,3 +103,14 @@ using polar coordinates. This contraction is equal to the disk when
 $t = 0$, "shrinks" it around its center as $t$ increases, and is equal
 to the point when $t = 1$. This proves that $i \circ p$ is homotopic to
 the identity.
+
+--- 
+
+Here I plot a three-dimensional example of a point expanding into a sphere and
+refracting back into a point.
+
+<p align="center">
+  <img src="../Images/sphere_to_point.gif">
+</p>
+
+
