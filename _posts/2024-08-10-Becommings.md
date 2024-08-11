@@ -7,7 +7,7 @@ Some things can never be. I draw a curve today which dreams to be a sphere. It
 never will be. It reaches, it aspires - but it cannot achieve. 
 
 <p align="center">
-  <img src="../Images/RandGraphs.png">
+  <img src="../Images/sphere.gif">
 </p>
 
 It is beautiful, isn't it? As $k$ tends to infinity, there is no point in an
