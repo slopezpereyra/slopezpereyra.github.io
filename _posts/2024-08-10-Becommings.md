@@ -3,8 +3,8 @@ title: Becommings
 categories: [ Personal ]
 ---
 
-Nothing can truly *be*. I draw a curve today which dreams to be a sphere. It
-never will be. It reaches, it aspires - but it cannot achieve. 
+Nothing can truly *be*. I draw a curve today which dreams to be a sphere.
+It reaches, it aspires - but it cannot achieve. 
 
 <p align="center">
   <img src="../Images/sphere.gif">
