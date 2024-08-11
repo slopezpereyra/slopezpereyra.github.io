@@ -3,7 +3,7 @@ title: Becommings
 categories: [ Personal ]
 ---
 
-Some things can never be. I draw a curve today which dreams to be a sphere. It
+Nothing can truly *be*. I draw a curve today which dreams to be a sphere. It
 never will be. It reaches, it aspires - but it cannot achieve. 
 
 <p align="center">
