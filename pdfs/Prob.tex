@@ -1,0 +1,505 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{newtxtext} \usepackage{newtxmath}
+\usepackage{amsmath, amssymb}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example} \newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\usepackage{parskip}
+
+\begin{document}
+
+   
+\section{P1}
+
+Let us recall that $P : \mathcal{P}(\Omega) \mapsto [0, 1]$ satisfies the following three 
+conditions:
+
+\begin{itemize}
+    \item $\forall \zeta \in \subseteq \Omega : 0 \leq P(\zeta) \leq 1$
+    \item $P(\Omega) = 1$
+    \item $\forall \left\{ \zeta \right\}_{I \subseteq \mathbb{N}} : \zeta_i \cap  \zeta_j = \emptyset : P(\bigcup_{i \in I}) \zeta_i = \sum_{i \in I} P(\zeta_i) $
+\end{itemize}
+
+In general, I use $\omega$ to denote $|\Omega|$, and we should recall that whenever $P$ is a constant 
+map (i.e. when events are equiprobable) we have $\forall A \subseteq \Omega : P(A) = \frac{|A|}{\omega}$.
+
+To keep notation brief, we shall speak of probabilities $P(A)$ without specifying that 
+$A \subseteq \Omega$.
+
+We recall the following properties, which follow strictly from the aforementioned 
+facts:
+
+\begin{itemize}
+    \item $P(\emptyset) = 0$
+    \item $P(A^c) = 1 - P(A)$
+    \item $A \subseteq B \Rightarrow P(A) \leq P(B)$
+    \item $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
+\end{itemize}
+
+\pagebreak
+
+\begin{problem}[Problem 2 of the sheet]
+    Prove that $A \subseteq B \subseteq \Omega \Rightarrow P(B- A) = P(B) - P(A)$ and also
+    $P(A) \leq P(B)$.
+\end{problem}
+
+Let $A \subseteq B \subseteq \Omega$.
+
+\begin{align*}
+    B - A &= \left\{ x \in B : x \not\in A \right\}  \\ 
+    &=\left\{ x \in \Omega : x \in B \land  x\not\in A \right\} \\
+    &= \left\{ x \in \Omega : x \in B \land x \in A^c \right\}  \\ 
+    &= B \cap A^c
+\end{align*}
+
+Since $P(A \cup B) = P(A) + P(B) - P(A \cap B)$, we have 
+$$P(A \cap B) = P(A) + P(B) - P(A \cup B)$$ 
+
+Then 
+
+\begin{align*}
+    P(B - A) &= P(B \cap A^c) \\ 
+             &=P(B) + P(A^c) - P(B \cup A^c)\\ 
+             &=P(B) + \left[ 1 - P(A) \right] - P(B \cup A^c)
+\end{align*}
+
+It is easy to see that, since $A \subseteq B$, $B \cup A^c = \Omega$.
+We readily obtain
+
+
+\begin{align*}
+    P(B - A) &= P(B) + \left[ 1 - P(A) \right] - P(\Omega) \\ 
+    &=P(B) + 1 - P(A) - 1 \\ 
+    &= P(B) - P(A)
+\end{align*}
+
+\textit{quod erat demonstrandum}. And since $P(B - A) = P(B) - P(A) \geq 0$, we must have 
+$P(B) \geq P(A)$.
+
+\pagebreak 
+
+\begin{problem}[3]
+    
+\end{problem}
+
+ 
+For ease of mind, let us write here that 
+
+\begin{align*}
+    P(A_i) = \begin{cases}
+        .22 & i = 1 \\ 
+        .25 & i = 2 \\ 
+        .28 & i = 3
+    \end{cases}
+\end{align*}
+
+We are also given 
+
+\begin{equation*}
+    P(A_1 \cap A_2) = .11 ~ ~ ~ ~ ~ P(A_1 \cap A_3) = .005 ~ ~ ~ ~ ~ ~ ~ P(A_1 \cap A_3) = .07 ~ ~ ~ ~ ~ ~ P(A_1 \cap A_2 \cap A_3) = .01
+\end{equation*}
+
+    (1 : $P(A_1 \cup A_2)$ Observe that $P(A_1 \cap A_2) \neq P(A_1)P(A_2)$,
+    which entails the events are not independent. We then have 
+
+    \begin{align*}
+        P(A_1 \cup A_2) &= P(A_1) + P(A_2) - P(A_1 \cap A_2) \\ 
+                        &= .22 + .25 - .11 \\ 
+                        &= .36
+    \end{align*}
+
+    (2: $P(A_1^c \cap A_2^c \cap A_3)$) Observe that 
+
+    \begin{align*}
+        P(A_1^c \cap A_2^c \cap A_3) &= P( \left[ A_1^c \cap A_2^c \right] \cap A_3^c ) \\ 
+                                     &= P(\left[ A_1 \cup A_2 \right]^c \cap A_3^c )\\ 
+                                     &=P(( \left[ A_1 \cup A_2 \right] \cup A_3 )^c ) \\ 
+                                     &= P(\Omega^c) \\ 
+                                     &= P(\emptyset) \\ 
+                                     &= 0
+    \end{align*}
+
+
+    (3: $P( (A_1^c \cap A_2^c) \cup A^c )$)
+
+    \pagebreak 
+
+    \begin{problem}[4]
+        
+    \end{problem}
+
+    Se nos dice que cinco empresas deben firmar contratos de un grupo de $3$ 
+    contratos posibles. Se nos dice además que cada empresa firma a lo sumo 
+    un contrato. 
+
+    
+    \small
+    \begin{quote}
+    
+    Mucho ojo: no se nos dice que cada contrato se da a lo sumo a una empresa, sino que 
+    cada empresa firma a lo sumo un contrato. Es decir que varias empresas podrían firmar 
+    el mismo contrato.
+    \end{quote}
+    \normalsize
+
+    Si contamos la opción "no firma ningún contrato", hay $4$ opciones para cada 
+    una de las $5$ empresas; es decir, hay $\omega = 4^5$ puntos en el espacio 
+    muestral.
+
+    Si cada evento es equiprobable, la probabilidad de que la tercera empresa
+    reciba un contrato es 
+
+    \begin{align*} \frac{| \left\{ x \in \Omega : 3\text{era empresa firma
+    contrato} \right\}  |}{\omega} \end{align*}
+
+    El numerador puede calcularse restando a $\omega$ la cantidad de casos en que 
+    la tercera empresa no firma un contrato. Claramente, la cantidad de tales 
+    casos es $4^4$; es decir, hay $4^5 - 4^4 = 768$ casos en que 
+    la tercera empresa firma algún contrato. Lo cual nos da una probabilidad 
+    de $768 / 4^5 = .75$.
+
+    \textit{Solución alternativa}. Sea $\alpha$ una palabra sobre el alfabeto $\left\{ 0,\ldots,3 \right\} $
+    de longitud $5$. ¿Cuántas tales palabras hay? Naturalmente, $4^5 = \omega$.
+    Asumamos que $\alpha_3 \neq 0$; es decir que el tercer símbolo de $\alpha$
+    es no-nulo. ¿Cuántas palabras así hay? Naturalmente, $4^4 \times 3 = 768$.
+    Es decir, $\frac{768}{4^5} = .75$ de las palabras tienen $\alpha_3 \neq 0$,
+    lo cual coincide con nuestro resultado anterior.
+
+
+    \pagebreak 
+
+    \begin{problem}[5]
+        
+    \end{problem}
+
+
+    From a set of $25$ buses, $8$ present flaws. $5$ are randomly (in this
+    context, uniformly) chosen. We are therefore dealing with equiprobable
+    events.  
+
+    There are $\omega = \binom{25}{5}$ possible ways of selecting the $5$ buses. 
+    There are $\binom{8}{4}$ possible ways of selecting $4$ out of the $8$
+    flawed buses and $\binom{25-8}{1} = \binom{17}{1}$ ways of selecting the 
+    remaining bus from the set of non-flawed buses. From this follows that the desired probability is
+
+    \begin{align*}
+        \frac{\binom{8}{4} \cdot\binom{17}{1}}{\binom{25}{5}}= \frac{70 \cdot 17}{53130} = .022
+    \end{align*}
+
+
+    With regards to the probability that at least $4$ have flaws, we must take 
+    into account the cases where $4$ have flaws and the cases where $5$ have 
+    flaws, which are clearly disjoint. The probability then is
+
+    \begin{equation*}
+        .022 + \frac{\binom{8}{5}}{53130} = .022 + .001 = .023
+    \end{equation*}
+
+    
+    \small
+    \begin{quote}
+    
+    \textbf{Note.} This is obviously a problem involving the hypergeometric distribution, 
+    closely related to the binomial distribution. But since we have not studied 
+    distributions yet, we cannot use this fact.
+    
+    \end{quote}
+    \normalsize
+    
+
+    \pagebreak 
+
+    \begin{problem}[6]
+        
+    \end{problem}
+
+    Let $A, B, C, D, E$ denote the five faculty members. Two papers from a set
+    of five are drawn to decide who will be chosen. 
+
+    Observe that the order does not matter; i.e. drawing $A$ and then $B$ is the 
+    same than drawing $B$ and then $A$. It follows that 
+
+    \begin{equation*}
+        \Omega = \mathcal{P}_2(\left\{ A, \ldots, E \right\} )
+    \end{equation*}
+
+    where $\mathcal{P}_i(\zeta) = \left\{ S \in \mathcal{P}(\zeta) : |S| = i \right\} $.
+    Naturally, $\omega = 5 \times 4 \cdot \frac{1}{2} = 10$, where we 
+    divide by $2$ to exclude equivalent pairs (e.g. $A, B$ and $B, A$).
+
+    
+    \small
+    \begin{quote}
+    
+    Alternatively, we could have reasoned that $\omega = \binom{5}{2} = 10$, the number 
+    of $2$-element subsets of a $5$-element set.
+    
+    \end{quote}
+    \normalsize
+
+    ($a$) We are asked for the probability of the event $\left\{ A, B \right\} $. It 
+    should be obvious that all events $S \in \Omega$ are equiprobable, 
+    which entails $P(\left\{ A, B \right\}) = \frac{1}{10} = .1 $.
+
+    
+    \small
+    \begin{quote}
+    
+    Alternatively, we could have reasoned the following. There are two ways in
+    which $A$ and $B$ may be chosen: $A$ is chosen first and then $B$, or $B$
+    is chosen first and then $A$. This gives $\frac{1}{5} \cdot \frac{1}{4} +
+    \frac{1}{5} \cdot \frac{1}{4} = \frac{2 \cdot}{5\cdot4} = \frac{2}{20} =
+    .1$
+    
+    \end{quote}
+    \normalsize
+
+    ($b$) We are asked for the probability that the selection contains $C$ or
+    $D$. It is straightforward to reason that there are $\binom{3}{2} = 3$ sets
+    that do not contain neither $C$ nor $D$. From which readily follows that 
+    there are $10 - 3 = 7$ sets containing $C$, $D$ or both. $\therefore $
+    The desired probability is $\frac{7}{10}$.
+
+    ($c$) Let us change the notation a bit. Let $\left\{ 1,\ldots, 5 \right\} $
+    be the professors we used to call $A, \ldots, E$. Let $a_i := \left\{ 3, 6,
+    7, 10, 14 \right\} $ be the set of years of teaching of each professor,
+    assuming $a_1$ corresponds to $A$, $a_2$ to $B$, etc. We are asked for the
+    probability that the selected pair $\left\{ j, k \right\} $ satisfies 
+    $a_j + a_k \geq 15$.
+
+    There are two ways to solve this problem: one slow but direct, one 
+    pretty but a bit more clever.
+
+    \textit{Direct solution.} It is easy to see that, of all pairs $j, k$, only the following 
+    satisfy the requirement:
+
+   
+   \small
+   \begin{quote}
+   
+   
+    \begin{itemize}
+        \item $1, 5 \mapsto a_1 + a_5 = 17$ 
+        \item $2, 4 \mapsto a_2 + a_4 = 16$
+        \item $2, 5 \mapsto  a_2 + a_5 = 20$.
+        \item $3, 4 \mapsto a_3 + a_4 = 17$
+        \item $3, 5 \mapsto  a_3 + a_5 = 21$
+        \item $4, 5 \mapsto a_4+a_5=24$
+    \end{itemize}
+   
+   \end{quote}
+   \normalsize
+  
+   So only $6$ out of the $10$ possible pairs satisfy the relationship, giving us 
+   the desired probability: $\frac{6}{10} = \frac{3}{5} = .6$.
+
+   \textit{Pretty solution.} Draw the $4\times 5$ boolean matrix $\mathcal{A}$
+   whose coefficients $\mathcal{A}_{ij}$ are $1$ if $a_i + a_j \geq 15$, $0$
+   otherwise. Since upper and lower diagonal entries are equivalent (the matrix
+   is symmetric), and because $i \neq j$ in our experiment, the diagonal of the
+   matrix should not be considered. This gives the representation
+
+   \begin{align*}
+   \begin{bmatrix} 
+       ~ & 0 & 0 &0 &1 \\ 
+       ~&~&0&1&1 \\ 
+       ~&~&~&1&1 \\ 
+       ~ &~&~&~&1
+   \end{bmatrix} 
+   \end{align*}
+
+   where $6$ out of $10$ relevant entries are $1$.
+
+
+   \pagebreak 
+
+   \begin{problem}[7]
+       
+   \end{problem}
+
+   Let $M := \left\{ m_1, \ldots, m_4 \right\} $ and $W := \left\{ w_1, \ldots,
+   w_4 \right\} $ be alphabets denoting the men and women, respectively. The
+   sample space $\Omega$ consists of all permutations in $M \cup W$, which
+   readily entails $\omega = 8!$.
+
+   $(a)$ Consider the event $\zeta$ when at least one women $w \in W$ is among the first three elements in the 
+   sampled permutation. Then $w$ could be the first, the second or the third element in the permutation, 
+   and we impose no condition on the rest of the elements. These events are evidently disjoint. So, 
+   if we denote with $e_i$ the event where $w$ is the $i$th element of the permutation, we have 
+
+   \begin{equation*}
+       P(\zeta) = \frac{ P(e_1) + P(e_2) + P(e_3) }{8!}
+   \end{equation*}
+
+   Each $e_i$ may occur in $7!$ ways, since we fix $w$ at the $i$th element and we must only 
+   choose from the remaining $7$ assistants.
+
+
+   $\therefore $ $P(\zeta) = \frac{ 3 \cdot 7! }{8!} = \frac{3}{8}$
+
+   
+   \small
+   \begin{quote}
+   
+   \textbf{Note.} If you are interested in being very formal, this are the rigorous 
+   steps taken above.
+   
+   (1) $\zeta = e_1 \cup e_2 \cup  e_3 \Rightarrow P(\zeta) = P(e_1 \cup e_2 \cup e_3)$.
+
+   (2) $( \forall i, j : e_i \cap e_j = \emptyset ) \Rightarrow P(\zeta) = P(e_1) + P(e_2) + P(e_3)$. 
+   
+   (3) Since events are equiprobable, $P(e_i) = |e_i| / \omega$. 
+
+   (4) $|e_i| = 7!$ because $e_i$ is a permutation of $7$ elements.
+
+   (5) $P(\zeta) = |e_1|/\omega + |e_2| / \omega + |e_3|/\omega = \frac{3\times 7!}{8}$.
+   
+   \end{quote}
+   \normalsize
+   
+
+
+   $(b)$ Let $\varrho$ denote the event where, after the first five meetings,
+   all female assistants have been met. Let $(p_1,\ldots, p_8) \in \varrho$ be an arbitrary
+   permutation, and denote it with $\overrightarrow{p}$. (Remember that an event is a subset of the sample space, and
+   hence a set, so the expresssion $\overrightarrow{p} \in \varrho$ is well defined.)
+
+
+   The definition of $\varrho$ entails that one and only one $m_j$ exists in $p_1, \ldots, p_5$,
+   since all $w_1, \ldots, w_4$ must lie in this sequence. So the number of 
+   ways in which we may construct $\overrightarrow{p}$ (i.e. the cardinality 
+   of $\varrho$) is readily determined by the number of ways in which we can 
+   place exactly one $m_j$ among the first elements of $\overrightarrow{p}$.
+
+   There are $5$ positions to place $m_j$, and $4$ elements in $M$ to choose
+   from. Assuming $m_j$ was placed at the $k$th position, we know there are
+   $4!$ ways of placing the $4$ women among the remaining positions in $p_1,
+   \ldots, p_5$. So there are $5 \times 4 \times 4!$ ways to construct $p_1,
+   \ldots, p_5$ for $\overrightarrow{p} \in \varrho$. 
+
+   The positions $p_6, p_7, p_8$ must be chosen from the remaining 
+   $3$ men, so there are $3 \times 2$ possibilities. 
+
+   $\therefore $ $|\varrho| = 5\times 4 \times 4! \times 3 = 60 \times 4!$.
+
+   $\therefore $ $P(\varrho) =  \frac{ |\varrho| }{\omega} = \frac{60 \times 4!}{8!} = .036$
+  
+   \pagebreak
+
+   \section{Conditional probability} 
+
+   \begin{problem}[8]
+       A box contains $6$ red balls and $4$ green balls. A second box contains 
+       $7$ red balls and $3$ green balls. A ball is randomly chosen from 
+       the first box and placed into the second. Then a ball is drawn 
+       from the second box and placed into the first.
+   \end{problem}
+
+
+   (1) Let $R_i$ denote the event of choosing a red ball in the $i$th draw, and
+   $G_i$ the event of choosing a green ball in the $i$th draw. Evidently,
+   $P(R_1) = \frac{6}{10}$. 
+
+   If the event $R_1$ occurs, when the second draw is made, the second box 
+   contains $8$ red balls and $3$ green balls, entailing that 
+   $P(R_2 \mid  R_1) = \frac{8}{11} $.
+
+   So, using the conditional probability formula, the event when both balls are
+   red, $R_1 \cap R_2$, has probability $P(R_1 \cap R_2) = P(R_1) \cdot P(R_2
+   \mid R_1) = \frac{6}{10} \cdot \frac{8}{11} = .436$.
+
+   (2) We now inquire the probability that the number of red and green balls in the 
+   first box are the same at the beginning and the end of the experiment. Naturally, 
+   this entails either drawing both times a red or both times a green ball. We have 
+   already computed the probability of drawing both times a red ball. The probability 
+   of drawing both times a green ball is similarly computed: 
+
+   \begin{align*}
+       P(G_1 \cap G_2) &= P(G_1) \cdot P(G_2 \mid G_1) \\ 
+       &= \frac{4}{10} \cdot \frac{4}{11} \\ 
+       &= .145
+   \end{align*}
+
+
+   Since $R_1 \cap R_2$ and $G_1 \cap G_2$ are obviously disjoint, the probability that 
+   either of them occurs is simply $.436 + .145 = .581$, the sum of the probabilities 
+   of both events.
+
+   \pagebreak 
+
+
+   \begin{problem}[10]
+       Given events $A, B$ with $P(B) > 0$, prove $P(A \mid B) + P(\overline{A} \mid B) = 1$.
+   \end{problem}
+
+   ($a$) We know 
+
+   \begin{equation*}
+       P(A \mid B) = \frac{P(A \cap B)}{P(B)}, ~ ~ ~ P(\overline{A} \mid B) = \frac{P(\overline{A} \cap B)}{P(B)}
+   \end{equation*}
+
+   It follows 
+
+   \begin{align*}
+       P(A \mid B) + P(\overline{A} \mid B) &= \frac{P(A \cap B) + P(\overline{A} \cap B)}{P(B)}  \\ 
+                                            &= \frac{P\left((A \cap B) \cup (\overline{A} \cap B)\right)}{P(B)} &\left\{ A \cap B \text{  and } \overline{A} \cap B \text{ are disjoint}\right\} \\ 
+                                            &= \frac{ P\left( ( A \cup \overline{A} ) \cap B \right)    }{P(B)} \\ 
+                                            &= \frac{ P(\Omega \cap B) }{P(B)} \\ 
+                                            &= \frac{P(B)}{P(B)} \\ 
+                                            &= 1
+   \end{align*}
+
+   \textit{quod erat demonstrandum}.
+
+   $(b)$ Assume $P(B \mid A) > P(B)$. We want to prove $P(\overline{B} | A) <
+   P(\overline{B})$. 
+
+   By assumption,
+
+   \begin{align*}
+       \frac{P(A \cap B)}{P(A)} > P(B) &\Rightarrow P(A \cap B) > P(B)P(A)
+   \end{align*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+

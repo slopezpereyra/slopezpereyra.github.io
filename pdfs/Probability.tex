@@ -17,7 +17,52 @@
 
 \begin{document}
 
-\section{Read me}
+\section{Set theory}%
+\label{sec:Set theory}
+
+We take the standard definition of set: an unordered collection of elements. For any given set $A$,
+we presume the existence of a corresponding set $\mathbb{U}$ which we call \textit{universe}, s.t. 
+$A \subseteq \mathbb{U}, \overline{A} \in \mathbb{U}$, and $A \cup \overline{A} = \mathbb{U}$.
+We also take the standard definition of set difference:
+
+\begin{equation*}
+    A  - B := \left\{ a \in A : a \not\in B \right\} 
+\end{equation*}
+
+and define the \textit{symmetric diference}
+
+\begin{equation*}
+    A \Delta B := (A - B) \cup (B -A)
+\end{equation*}
+
+For example, if $\mathcal{P}$ is the set of prime numbers and $\mathcal{A} = \left\{ n \in \mathbb{N} : n \equiv 0 \mod 2 \right\} $, we have 
+
+\begin{align*}
+    \mathcal{P} \Delta \mathcal{A} &= \left\{ a \in \mathcal{P} : a \not\in \mathcal{A} \right\} \cup \left\{ a \in \mathcal{A} : a \not\in \mathcal{P} \right\}  \\ 
+                                   &= (\mathcal{P} - \left\{ 2 \right\} ) \cup (\mathcal{A} - \left\{ 2 \right\} ) \\ 
+                                   &= (\mathcal{P} \cup \mathcal{A}) - \left\{  2 \right\} 
+\end{align*}
+
+the set containing all prime numbers that are not even---all primes except 2---and all
+even numbers that aren't prime---all even numbers except 2---.
+
+\begin{theorem}
+    $A \subseteq B$ if and only if $B^c \subseteq A^c$.
+\end{theorem}
+
+If $I$ is a countable set of indexes $i_1, i_2, \ldots$, potentially finite,
+such that $A_i$ is a set, we say $\left\{ A_i : i \in I \right\} $ is an
+indexed family of sets, and we denote it by $\left\{ A_i \right\}_{i \in I} $.
+We analogously define an indexed family of set elements $\left\{ a_i
+\right\}_{i \in I} $.
+
+
+
+
+
+
+
+\pagebreak
 
 These notes are extremely limited and sketchy. The reason is that I was familiar
 with probability theory before taking this class. Thus, I did not need to take
