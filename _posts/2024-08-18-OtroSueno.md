@@ -25,4 +25,4 @@ se volviera un hongo negro de la tierra <br>
 
 tan sólo contemplé aquel escenario <br>
 
-y el lóbrego guepardo se dormía.
+y el lóbrego guepardo se dormía
