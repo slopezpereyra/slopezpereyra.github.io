@@ -3,7 +3,7 @@ title: Otro sueño
 categories: [ Literature ]
 ---
 
- Soñé a una amante muerta: y un guepardo <br>
+ Soñé a una amante muerta: un guepardo <br>
 custodiaba el rígido cadáver. <br>
 Su rostro era la sombra de la muerte, no la muerte, <br>
 de la cual solo vemos un vestigio <br>
