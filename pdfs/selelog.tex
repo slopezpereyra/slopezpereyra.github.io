@@ -287,7 +287,73 @@ is transitive; i.e. if $b$ is a consequence of $a$, and $c$ a consequence of
 $b$, then $c$ is a consequence of $a$.
 
 Your test typically adds a trap: instead of presenting an event $A$ as a consequence 
-of an event $B$, it presents an event $A$ as a condition of an event $B$.
+of an event $B$, it presents an event $A$ as a condition of an event $B$. This is,
+it presents arguments of the following kind:
+
+\begin{align*}
+    &\neg \varphi \Rightarrow \neg \psi \\ 
+    &\neg \psi \Rightarrow \neg \phi \\ 
+    \therefore &\neg \varphi \Rightarrow \neg \phi
+\end{align*}
+
+which reads "$\varphi$ is a condition for $\psi$", etc. It should be obvious
+that \textit{the form} of the argument is the same, since $\neg \varphi, \neg
+\psi, \neg \phi$ are propositions just as much as $\varphi, \psi, \phi$ 
+are propositions. It should also be obvious that the "chain" of 
+implications could have as many terms as desired; i.e. that 
+
+\begin{align*}
+    &\varphi_1 \Rightarrow \varphi_2 \\ 
+    &\varphi_2 \Rightarrow \varphi_3 \\ 
+    &\vdots \\ 
+    &\varphi_{n-1} \Rightarrow \varphi_n\\
+    &\varphi_{n} \Rightarrow \psi\\
+    \therefore & \varphi_{1} \Rightarrow \psi
+\end{align*}
+
+is of the same form. Two of the "find the hidden assumption" problems you had a
+problem with were of the form 
+
+\begin{align*}
+    &\neg \varphi_1 \Rightarrow \neg \varphi_2 \\ 
+    &\neg \varphi_2 \Rightarrow \neg \varphi_3 \\ 
+    &(?) \\ 
+    \therefore &\neg \varphi_1 \Rightarrow \psi
+\end{align*}
+
+\begin{problem}
+    Find the hidden assumption.
+\end{problem}
+
+\begin{quote}
+    Crossing the river requires a boat. The building of a boat requires buying wood of 
+    the kind $\zeta$. Crossing the river is impossible with our budget.
+\end{quote}
+
+\begin{problem}
+    Find the hidden assumption.
+\end{problem}
+
+\begin{quote}
+    Politician: Reducing the fiscal deficit will, in the long run, produce a 
+    more equitable society. Indeed, reducing the deficit is impossible
+    impossible if the evil state, which I know you all detest as much as I do,
+    doesn't shrink to its bare minimum. Such reduction must be carried out in
+    multiple spheres, but in none as strongly as in public spending, which
+    cannot be achieved without virtually shutting public infrastructure down. 
+    This, accompanied by the right economical policies, will lure private investment.
+\end{quote}
+
+\begin{problem}
+    Hidden assumption.
+\end{problem}
+
+\begin{quote}
+    For a function to be a homotopy, it must be a continuous mapping between 
+    two topological spaces with domain $[0, 1]$. But this is true only if 
+    the function is differentiable in $\mathbb{R}$. Hence, for a function 
+    to be a homotopy, it must have a non-complex range.
+\end{quote}
 
 
 
@@ -299,6 +365,66 @@ of an event $B$, it presents an event $A$ as a condition of an event $B$.
 
 
 
+
+
+
+
+\pagebreak
+\subsection{Proof by cases}
+
+A proposition $\tau$ is a tautology if it is always true. For example, $\tau = \varphi \lor \neg \varphi$
+is a tautology: it is always true that either $\varphi$ is true, or $\neg \varphi$ 
+is true, making $\tau$ true in all cases.
+
+The tautology $\varphi \lor \neg \varphi$ is used in a special kind of 
+argument, called proof by cases. It has the following 
+form: 
+
+\begin{align*}
+    &\varphi \Rightarrow \psi \\ 
+    &\neg \varphi \Rightarrow \psi \\ 
+    \therefore  & \psi
+\end{align*}
+
+You probably use this argument in everyday life without noticing. For example,
+"if I get a job, I have to move to Buenos Aires (to work there); if I don't get
+a job, I have to move to Buenos Aires (to look for one). Therefore, I must move
+to Buenos Aires". 
+
+\begin{problem}
+    Find hidden assumption.
+\end{problem}
+
+\begin{quote}
+    If we do not deal with the infestation this month, we'll have to do it next month.
+    Doing it next month requires aliens to come to earth in order to slave humankind,
+    for only if humankind is slaved by aliens can the infestation be stopped next month.
+    Which is indeed sad. Stopping the infestation this month is not easier, for, alas,
+    such thing can only be accomplished with the coming of Christ. It seems reasonable to 
+    say, then, that stopping the infestation is unlikely.
+\end{quote}
+
+
+\pagebreak 
+
+\subsection{Proof by contradiction (reductio ad absurdum)}
+
+Perhaps the most famous type of argument in logics. In logics, contradictions
+(i.e. propositions of the form $\varphi \land \neg \varphi$) are impossible:
+all contradictions are false, and anything entailing a contradiction is false.
+
+To prove $\varphi$ by contradiction, you simply disregard $\varphi$ and examine
+what happens if you assume $\neg \varphi$ is true (i.e. if you assume that
+$\varphi$ is false). If you prove $\neg \varphi$ leads to a contradiction,
+you have proved it must be false, and hence $\varphi$ must be true.
+
+For example, a famous proof by contradiction is the proof that $\sqrt{2} $ is
+an irrational number. It starts by assuming $\sqrt{2} $ is rational, i.e. it is
+expressable as a ratio $\frac{a}{b}$. It then goes on to show that assuming
+that this ratio exists leads to a contradictory situation. Hence $\sqrt{2} $
+cannot be rational. Hippasus of Metapontum found this proof and was murdered by
+the Pithagoreans for doing so, because the Pythagorean dogma was that all
+numbers were rational.
 
 
 
