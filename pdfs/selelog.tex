@@ -1,0 +1,325 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{newtxtext} \usepackage{newtxmath}
+\usepackage{amsmath, amssymb}
+\usepackage{forest}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example} \newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+
+
+\begin{document}
+
+\section{Introduction}
+
+I will give you two kinds of problems. The first kind is the one you face in
+your exam: finding the logical structure of non-formal arguments. The second
+kind is the reverse of the first, and thus constitutes a good practice for it:
+writing formal arguments in a non-formal way. 
+
+For instance, a problem of the first kind could consist in detecting that the 
+phrase 
+
+\begin{quote}
+    Sin ruedas, ningún automóvil puede moverse.
+\end{quote}
+
+resolves to $$\forall a \in A : \neg R(a) \Rightarrow \neg M(a)$$ where $A$ is
+the set of all automoviles, $R$ the property of having wheels, and $M$ the
+property of being able to move. In essence, this means detecting ($a$) that it
+is a \textit{universal} argument (it verses about all elements in a set),
+that it involves two predicates ($R$ and $M$), and that it states that 
+one is a \textit{necessary condition} of the other.
+
+A problem of the second kind could consist of reading a formal deductive argument such as 
+
+\begin{align*}
+    &\varphi \\ 
+    &\varphi \Rightarrow \psi \\ 
+    &\therefore \psi
+\end{align*}
+
+and inventing a scenario for it substituting its symbols (in this case $\varphi, \psi$) with 
+real phrases. For example, if $\varphi$ where "Pigs fly" and $\psi$ where "I love 
+my husband", the argument would be translated to any of the following forms:
+
+\begin{quote}
+    \begin{itemize}
+        \item Pigs fly, and if pigs could fly I'd love my husband. Therefore, I love my husband. 
+        \item If pigs could fly I'd love my husband, and pigs indeed fly. It follows that I love 
+            my husband.
+        \item I love my husband, because pig's fly, and that is all my love for him needs to 
+            exist.
+        \item etc.
+    \end{itemize}
+\end{quote}
+
+But before moving on, let me remind you the meaning of logical symbols, and how to use them.
+
+\subsection{Logic operators}
+
+We use $\varphi, \psi, \phi$, and other such symbols to mean propositions. Propositions are 
+statements susceptible of being true or false, and are the atoms which make up 
+an argument. The symbol $\therefore $ means "therefore", and is usually used to 
+mark the conclusion of an argument. 
+
+
+Logical connectors are operators which link propositions.
+
+\begin{itemize}
+    \item $\varphi \equiv \psi$ means both formulas are entirely equivalent,
+        and what makes one true/false makes the other one true/false. In any
+        phrase, one may be replaced with the other without altering the meaning
+        of the phrase.
+    \item $\varphi \land  \psi$ is true if and only if both $\varphi$ and
+        $\psi$ are true, and it reads "$\varphi$ and $\psi$".
+    \item $\varphi \lor  \phi$ is true if and only if at least one of the propositions is true, 
+        and it reads "$\varphi$ or $\phi$".
+    \item $\varphi \Rightarrow \psi$ means that if $\varphi$ is true, then 
+        $\psi$ is true as well, and it reads "$\varphi$ implies/entails $\psi$".
+     
+    \item $\varphi \iff \psi$ means that if $\varphi$ is true then $\psi$ is true, 
+    and if $\psi$ is true then $\varphi$ is true. It reads "$\varphi$ if and only if $\psi$".
+    \item $\neg \psi$ is true if $\psi$ is false, and viceversa, and it reads "not $\psi$".
+\end{itemize}
+
+\begin{problem}
+    Is it true that $\varphi \Rightarrow \psi$ is the same than "$\varphi$ is a sufficient condition for $\psi$"?
+\end{problem}
+
+\begin{problem}
+    Is it true that $\varphi \Rightarrow \psi$ is the same than "$\varphi$ is a necessary 
+    condition for $\psi$"?
+\end{problem}
+
+\begin{problem}
+    Is it true that $\varphi \iff \psi$ is the same than "$\varphi$ is a necessary and sufficient 
+    condition for $\psi$"?
+\end{problem}
+
+\begin{problem}
+    How would you write "$\varphi$ is a condition for $\psi$" in logical terms, without specifying 
+    necessity nor sufficiency?
+\end{problem}
+
+Quantifications are important when propositions verse about elements in a
+collection. For example, a proposition may speak of "all men" or "some men".
+Expressions of the first kind are termed universal. Expressions of the second
+kind are termed existential. 
+
+In terms of logic, universal statements state that all elements in a set satisfy 
+some predicate. If that set is called $S$, and the property they satisify is called $P$,
+we write 
+
+\begin{equation*}
+    \forall x \in S : P(x)
+\end{equation*}
+
+to say any element $x$ of $S$ satisfies the property $P$. The classic example is 
+to have $S$ be the set of all men and $P$ the property of being mortal, where 
+the formula above means "all men are mortal". 
+
+To say some element(s) of $S$ satisfies the property $P$, we write 
+
+\begin{equation*}
+    \exists x \in S : P(x)
+\end{equation*}
+
+For example, some (but not all) men are white. So if $P$ is the property of 
+being white, the statement above is true. 
+
+Observe that if $\forall x \in S : P(x)$ is true, then $\exists x \in S : P(x)$
+is true as well. If all elements satisfy $P$, obviously some members of $S$
+satisfy $P$. This means the universal quantification is, in a sense, stronger
+than the existential quantification.
+
+An important fact of logic is that to negate an existential quantification is
+to say \textit{no} element in the set satisfies the property, and to negate a
+universal quantification is to say \textit{at least} one element does not
+satisfy the property. In logical terms,
+
+\begin{align*}
+    &\neg \left( \forall x : P(x) \right) \equiv \exists x : \neg P(x) \\ 
+    &\neg(\exists x : P(x)) \equiv \forall x : \neg P(x)
+\end{align*}
+
+Think about the equivalences above and why they make sense. 
+
+\begin{problem}
+    How could you negate the statement: "All dogs are brown"
+\end{problem}
+
+\begin{problem}
+    What negates the statement: "There are some houses in Britain which reach a
+    hundred meters in altitude"? Write the negation in logical terms.
+\end{problem}
+
+\begin{problem}
+    A laboratory at Yale cultivates transgenic worms of the \textit{C. elegans} species. The particular 
+    mutation of the lab is kept secret, so that the species of \textit{C. elegans} in the lab 
+    is found nowhere else in the world. It should be obvious, however, that the world 
+    is filled with \textit{C. elegans} worms of the usual (non-mutant) kind. 
+
+    (1) The lab claims to have proved that all \textit{C. elegans} worms 
+    posses a particular gen which encodes the protein $K_9B\alpha$. What 
+    finding could refute this claim?
+
+    (2) A second lab has their own transgenic mutant species of \textit{C.
+    elegans}. Yale's lab claims that all of their \textit{C. elegans} worms are
+    genetically identical to all \textit{C. elegans} at the second lab.
+    What would constitue conclusive evidence against the claim?
+
+    (3) The lab claims that some naturally occuring \textit{C. elegans} in the
+    wild are genetically identical to their mutant species. In other words,
+    that the mutation they have induced occurs naturally as well. What would be
+    the minimal amount of evidence required to make their claim true? What would 
+    be the least amount of evidence required to make their claim false? Which one 
+    is easier to obtain?
+
+    (4) Write the claims in point (1), (2), (3) using formal language.
+\end{problem}
+
+A proposition may be simple or complex. A simple proposition has no operators
+and no quantifications. For instance, "coffe is brown" has no "and", "or", no
+implication, nothing. A complex proposition involves operators. For instance,
+"if Coffe were brown, all cars would have both wheels and the ability to move"
+has implications, quantifications, and logical ands: 
+
+\begin{align*}
+    &\text{Coffe is brown}&\text{implies} &~ ~ ~ ~ \text{All cars}&\text{Have wheels and move}\\
+    &\varphi &\Rightarrow  &~ ~ ~ ~ \forall a \in A : &R(a) \land M(a)
+\end{align*}
+
+Thus, whenever you see a symbol such as $\varphi$ standing for a proposition,
+do not assume $\varphi$ is a simple proposition. $\varphi$ might be composed of
+a hundred propositions connected in intricate ways!
+
+\section{Types of deductive arguments}
+
+We say two arguments are of the same type when their logical structure is the
+same. Understanding and being acquainted with the different types of deductive
+arguments is crucial in rapidly detecting flaws or hidden assumptions.
+
+\subsection{Modus ponens}
+
+\textit{Modus ponens} is the paradigmatic example of deductive argument. A \textit{modus ponens}
+argument is of the form 
+
+\begin{align*}
+    &\varphi \Rightarrow \phi \\ 
+    &\varphi \\ 
+   \therefore  & \psi
+\end{align*}
+
+For example, "If it rains, I use an umbrella. It is raining. Therefore, I am using an umbrella". 
+
+\begin{problem}
+    Give a sophisticated example of \textit{modus ponens} where $P$ and $Q$ are complex propositions 
+    (i.e. they involve quantifications, logical operators, etc). The argument must not 
+    necessarily correspond to reality.
+\end{problem}
+
+\subsection{Modus tollens}
+
+\textit{Modus tollens} is the reverse of \textit{modus ponens}. It is of the form 
+
+\begin{align*}
+    &\varphi \Rightarrow \phi \\ 
+    &\neg \phi \\ 
+    \therefore &\neg \varphi
+\end{align*}
+
+For example: "If it rains, I use an umbrella. I am not using an umbrella. Hence, it cannot be raining."
+
+\begin{problem}
+    Same as with modus tollens.
+\end{problem}
+
+\begin{problem}
+    Find the hidden assumption in the argument below:
+\end{problem}
+
+\begin{quote}
+    Professor: It is easy to prove that $n$ is not prime. There are two ways in which this can 
+    be done: the first involves the fact that prime numbers conform a ring in $\mathbb{Z}$. But 
+    simpler is to observe that there is a number between $2$ and $n - 10$ which divides $n$, 
+    from which our conclusion follows directly. 
+\end{quote}
+
+\begin{problem}
+    Consider the argument above, including the hidden premise (i.e. take it as a complete argument). 
+    Is it correct to say that, under a certain perspective, it is a modus ponens, and under another 
+    perspective, it is a modus tollens? 
+\end{problem}
+
+\begin{problem}
+    Why is the argument below \textbf{not} a modus ponens?
+\end{problem}
+
+\begin{quote}
+    By definition, a kilometer is a thousand meters. The distance from $A$ to $B$ is 
+    a thousand meters. Therefore, the distance from $A$ to $B$ is a kilometer.
+\end{quote}
+
+\subsection{Hypothetical syllogism (important for the test!)}
+
+A hypothetical syllogism is an argument of the following form: 
+
+\begin{align*}
+    &\varphi \Rightarrow \psi \\ 
+    &\psi \Rightarrow \phi \\ 
+    \therefore &\varphi \Rightarrow \phi
+\end{align*}
+
+Why is this important for the test? Because it is the kind of argument which
+appeared in the "what is the hidden assumption" problems you got wrong! The
+essence of this syllogism is that the relationship of being "a consequence of"
+is transitive; i.e. if $b$ is a consequence of $a$, and $c$ a consequence of
+$b$, then $c$ is a consequence of $a$.
+
+Your test typically adds a trap: instead of presenting an event $A$ as a consequence 
+of an event $B$, it presents an event $A$ as a condition of an event $B$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+

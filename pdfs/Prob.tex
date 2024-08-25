@@ -471,12 +471,154 @@ We are also given
    \end{align*}
 
 
+   We want to prove
+
+   \begin{align*}
+       \frac{P(\overline{B} \cap A)}{P(A)} < P(\overline{B}) \equiv P(\overline{B} \cap A) < P(\overline{B})P(A)
+   \end{align*}
+
+   \pagebreak 
+
+   \begin{problem}[]
+       One every $25$ adults have a disease. Let $s$ be a subject. If $s$ has the disease, the diagnostic 
+       test is positive $.99$ of the times. If $s$ does not have the disease, the diagnostic test 
+       is positive $.02$ of the times.
+   \end{problem}
+
+   ($a$) We are asked to find the probability of a result being positive. The law of total 
+   probability readily states that
+
+   \begin{align*}
+       P(\text{positive}) &= P(\text{positive} | \text{enfermo})P(\text{enfermo}) + P(\text{positive} | \text{sano})P(\text{sano})  \\ 
+       &= .99 \cdot \frac{1}{25} + .02 \cdot \frac{24}{25} \\ 
+       &= .395 + .0192 \\ 
+       &= .058
+   \end{align*}
+
+   (b) We are requested to find $P(\text{enfermo} | \text{positivo})$. Observe that we know the 
+   "reverse" of this; i.e. $P(\text{positivo} | \text{enfermo})$. This type of 
+   scenario calls for Bayes theorem, which states 
+
+   \begin{align*}
+       P(\text{enfermo}|\text{positivo}) &= \frac{P(\text{positivo}| \text{enfermo})P(\text{enfermo})}{P(\text{positivo})} \\ 
+                                         &= \frac{.99 \cdot \frac{1}{25}}{.058} \\ 
+                                         &=.682
+   \end{align*}
+
+   (c) Similarly, 
+
+   \begin{align*}
+       P(\text{sano} | \text{negativo}) &= \frac{P(\text{negativo} | \text{sano}) P(\text{sano})}{P(\text{negativo})} \\ 
+                                        &= \frac{.98 \cdot \frac{24}{25}}{1-.058} \\ 
+                                        &=.998
+   \end{align*}
 
 
+   \pagebreak 
 
+   \begin{problem}[12]
+       
+   \end{problem}
 
+   Recall that there are two equivalent definitions of independence. Two events 
+   $\varphi, \psi$ are independent if $P(\varphi \cap \psi) = P(\varphi)P(\psi)$,
+   or equivalently if $P(\varphi \mid \psi) = P(\varphi)$. We must use both 
+   definitions in order to prove the properties.
 
+   $(a)$ We are required to prove $P(\overline{A} \cap B) = P(\overline{A})P(B)$. Observe that 
 
+   \begin{align*}
+       P(\overline{A} \cap B) = P(B) - P(A \cap B)
+   \end{align*}
+
+   (This follows from the fact that $B = (A \cap B) \cup (\overline{A} \cap B)$ and the fact that 
+   the events in the union are obviously disjoint.) Then, due to the independence of 
+   $A$ and $B$,
+
+   \begin{align*}
+       P(\overline{A} \cap B) &= P(B) - P(A)P(B)\\ 
+                              &= P(B)\left[ 1 - P(A) \right]  \\ 
+                              &=P(B)P( \overline{A} )
+   \end{align*}
+
+  \textit{quod erat demonstrandum}.
+
+  $(c)$ By DeMorgan's law, $(\overline{A} \cap \overline{B}) = \overline{(A \cup B)}$. Then 
+
+  \begin{align*}
+      P(\overline{A} \cap \overline{B}) &= 1 - P(A \cup B) \\
+                                        &=1 - \left[ P(A) + P(B) - P(A \cap B) \right]  \\ 
+                                        &=1 - \left[ P(A) + P(B) - P(A)P(B) \right] \\ 
+                                        &=1 - P(A) - P(B) + P(A)P(B) \\ 
+                                        &=P(\overline{A}) - P(B) + P(A)P(B) \\ 
+                                        &=P(\overline{A}) - P(B)\left[1 - P(A) \right]  \\ 
+                                        &=P(\overline{A}) - P(B)P(\overline{A}) \\ 
+                                        &=P(\overline{A})(1 -P(B)) \\ 
+                                        &=P(\overline{A})P(\overline{B})
+  \end{align*}
+
+  \pagebreak 
+
+  \begin{problem}[13]
+      A collection $\chi$ of 10 items has 2 satisfying the predicate $\varphi : \chi \mapsto \left\{ 0, 1 \right\} $.  
+      Two random samples $x_1, x_2$ are taken from $\chi$. Let $A = \left\{ \varphi(x_1) \right\} $, $B = \left\{ \varphi(x_2) \right\} $.
+      Compute $P(A), P(B), P(A \cap B)$. Are $A$ and $B$ independent?
+  \end{problem}
+
+  Obviously, $P(A) = \frac{2}{10} = \frac{1}{5}$ and 
+
+  \begin{align*}
+      P(B) &= P(B \mid A)P(A) + P(B \mid \overline{A})P(\overline{A}) \\ 
+           &= \frac{1}{9} \frac{2}{10} + \frac{2}{9} \frac{8}{10} \\ 
+           &=.\frac{2}{90} + \frac{16}{90} \\ 
+           &=\frac{18}{90} \\ 
+           &= \frac{2}{10} \\ 
+           &= \frac{1}{5}
+  \end{align*}
+
+  We know 
+
+  \begin{equation*}
+      P(A \cap B) = P(B \mid A)P(A) = \frac{1}{9} \frac{2}{10} = \frac{1}{45}
+  \end{equation*}
+
+  Then $P(A)P(B) = \frac{1}{5} \cdot \frac{1}{5} \neq P(A \cap B)$. The events are not independent.
+
+\pagebreak 
+
+\begin{problem}[14]
+    From a deck of 52 spanish cards, 4 players $p_1, \ldots, p_4$ receive $13$ cards each.
+\end{problem}
+
+$(a)$ Let $w, x, y, z$ be the four types of cards. The probability of $p_1$ receiving 
+the 13 cards of type $w$ is $1 / \binom{52}{13}$. The same logic gives that the probability of 
+all of them receiving the corresponding hands is 
+
+\begin{equation*}
+    P(\zeta) = \prod_{i=0}^{3} \frac{1}{\binom{52 - 13i}{13}}
+\end{equation*}
+
+where $\zeta$ denotes the corresponding event.
+
+$(b)$ If a player has all cards of same type, it has all cards of that type
+(13). There are $4!$ ways of distributing the types among the players. Then the
+probability of this event is $4! P(\zeta)$.
+
+$(c)$ There are $4$ aces: $ \mathcal{A} = x_{13}, y_{13}, w_{13}, z_{13}$. There are 
+$\binom{48}{13}$ hands without these elements. $\therefore $ The probability 
+is $1 / \binom{48}{13}$.
+
+$(d)$ For each player to receive an element in $\mathcal{A}$, each must get exactly 
+one such element.
+
+The probability of $A$ receiving exactly one $A$ is $\frac{4}{\binom{51}{12}}$, where 
+$4$ accounts for which element it receives and $\binom{51}{12}$ is the number of 
+hands containing that fixed ace. Similar logic gives that the probability of all 
+players reciving exactly one ace is 
+
+\begin{align*}
+    4! \prod_{i=0}^{3} \frac{1}{\binom{51 - 12i}{12}}
+\end{align*}
 
 
 

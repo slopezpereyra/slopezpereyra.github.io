@@ -14,7 +14,7 @@
 \newtheorem{example}{Example} \newtheorem{definition}{Definition}
 \newtheorem{lemma}{Lemma}
 \newtheorem{theorem}{Theorem}
-
+\usepackage{parskip}
 
 \begin{document}
 
@@ -55,8 +55,52 @@ Para cada fase, existe una entrada y una salida. Las necesidades son abstractas,
 un detalle preciso de lo que sera un sistema. Respecto a los requerimientos, son generalmente 
 faciles de comprender y especificar si la escala es pequena, pero dificil si es grande.
 
+\pagebreak 
 
+\section{Game}
 
+Two types of cards: movement cards and figure cards. Figure cards are public,
+movement cards are private. Figure cards are of two types: white and blue. Each
+type of card (movement, figure blue, figure white) are dealt modulo the number
+of players to each player.
+
+When a a player's turn ends, if he has freed himself from all figure cards, three new figure cards are 
+dealt to him.
+
+Each time a figure is formed, it may be used in one and only one action:
+freeing that figure from the former's hand, or blocking that figure from
+another player's hand. If $k$ figures are formed, each figure may be used in
+one and only one action still, amounting to $k$ distinct actions.
+
+Each time a figure is used to enact an action, it changes the forbidden color 
+to the color of that figure.
+
+When a movement card is used, it goes to the maze and may be re-dealt. When a
+figure card is used, it disappears.
+
+A player's turn ends when he uses all his movement cards or he cannot form any
+valid figure (or cannot find a way to do so).
+
+The game ends when a player frees himself from all his figure cards.
+
+\textbf{Blocking cards.} 
+
+A player $p_i$ may form a figure owned by $p_j$. If this occurs, $p_j$ cannot
+form that figure. If the figure is possesed by both $p_j$ and $p_i$, $p_i$ may
+chose whether the formation has a blocking effect agains $p_j$ or if he
+disposes himself of his figure card.
+
+If $p_j$ has a blocked figure, no more of his figures can be blocked. If a
+player has only 1 figure card, this card cannot be blocked. In other words, 
+a figure card can be blocked iff its owner has $\geq 2$ figure cards.
+
+If a figure card is blocked, its owner must free his other cards before being 
+able to free it. New figure cards are dealt to him only once he frees (uses)
+his blocked card.
+
+Incidentally, if two figures are formed after a sequence of movement cards are used, 
+the two figures can be used in any standard legal way; i.e. to block two players, or 
+two free one of my figures and block another player, etc.
 
 
 
