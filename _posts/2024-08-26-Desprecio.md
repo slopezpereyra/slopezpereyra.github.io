@@ -3,19 +3,19 @@ title: Desprecio
 categories: [ Literature ]
 ---
 
-en la fangosa carne de las cosas
-siento cómo tus manos configuran
-la cruz de mi castigo…!
+en la fangosa carne de las cosas<br>
+siento cómo tus manos configuran<br>
+la cruz de mi castigo…!<br>
 
-en un cenit estúpido mi vida
-vomita las serpientes que he tragado
-luna tras luna, manso y sometido
+en un cenit estúpido mi vida<br>
+vomita las serpientes que he tragado<br>
+luna tras luna, manso y sometido<br>
 
-detesto que mis tardes hayan sido
-un cáliz putrefacto que a miserables gotas
-llené con la ilusión de ser tu amigo
+detesto que mis tardes hayan sido<br>
+un cáliz putrefacto que a miserables gotas<br>
+llené con la ilusión de ser tu amigo<br>
 
-detesto haberte amado como un perro
-detesto la penumbra de tu boca
+detesto haberte amado como un perro<br>
+detesto la penumbra de tu boca<br>
 y el junio sepulcral que me ha parido…!
 
