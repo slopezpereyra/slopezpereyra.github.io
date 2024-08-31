@@ -3,10 +3,11 @@ title: Los rostros
 categories: [ Personal ]
 ---
 
-Como una pleura fina y extensible, un rostro desconocido se pliega sobre el
-mío. La curva de mi nariz y de mis pómulos, el lunar que me hace ver estúpido 
-o hermoso, el arco ruinoso de mis labios: todo es estudiado delicada y agudamente
-por la máscara idiota, hasta adquirir su misma forma.
+Como una pleura fina y extensible, un rostro sustituto se pliega sobre el mío,
+extiende sus tentáculos y apreta las ventosas húmedas contra una piel que ya ha
+palidecido. La curva de mi nariz y de mis pómulos, el lunar que me hace ver
+estúpido o hermoso, el arco ruinoso de mis labios: todo es estudiado con oscura
+pericia por la máscara idiota, hasta adquirir su misma forma.
 
 De todas las personas no vemos más que una lámina frágil, adaptable,
 multiforme, una cáscara sutil que ahoga hacia dentro pero brilla, tornasolada,
