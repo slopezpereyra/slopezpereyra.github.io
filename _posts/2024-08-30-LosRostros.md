@@ -5,7 +5,7 @@ categories: [ Personal ]
 
 Como una pleura fina y extensible, un rostro desconocido se pliega sobre el
 mío. La curva de mi nariz y de mis pómulos, el lunar que me hace ver estúpido 
-o hermoso, y el arco ruinoso de mis labios: todo es estudiado delicada y agudamente
+o hermoso, el arco ruinoso de mis labios: todo es estudiado delicada y agudamente
 por la máscara idiota, hasta adquirir su misma forma.
 
 De todas las personas no vemos más que una lámina frágil, adaptable,
