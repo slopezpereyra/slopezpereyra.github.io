@@ -10,7 +10,7 @@ Sobre todas las personas no vemos más que una lámina frágil, adaptable,
 multiforme, una cáscara sutil que ahoga hacia dentro pero brilla, tornasolada,
 desde fuera. Y en ella pasan los días, algunas veces satisfechas, otras dando
 largas bocanadas de aire, pataleando. Luego un haz la desgarra con violencia,
-de dónde nunca se sabe, como un dios enfurecido. La cáscara parece entonces un
+como un dios enfurecido, sin que nunca se sepa desde dónde. La cáscara parece entonces un
 papel de diario encendido: se deshace en pedacitos, algunos más grandes que
 otros, cada cual desintegrándose, consumiéndose en el rayo, soñando ya con la
 quietud de lo que ha sido extinto. Sólo entonces, en lo que dura el haz de luz
