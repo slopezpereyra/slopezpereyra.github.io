@@ -14,7 +14,7 @@ desde fuera. En ella pasan los días, algunas veces satisfechas y aburridas, otr
 largas bocanadas de aire, pataleando, dándose por vencido. En ella pasan los días 
 hasta que un haz de luz la desgarra con violencia,
 como un dios enfurecido, sin que se sepa nunca desde dónde. La cáscara toma entonces los colores 
-y el terrible dinamismo de papel de diario encendido: se deshace en pedacitos,
+y el terrible dinamismo de un papel de diario encendido: se deshace en pedacitos,
 algunos más grandes que otros, cada cual desintegrándose, consumiéndose en el
 rayo, soñando ya con la quietud de lo que ha sido extinto. Sólo entonces, en lo
 que dura el haz de luz que lo descubre, el rostro del hombre es aparente. A
