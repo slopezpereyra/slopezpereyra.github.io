@@ -6,8 +6,9 @@ categories: [ Personal ]
 Como una pleura fina y extensible, un rostro desconocido se pliega sobre el
 mío. La curva de mi nariz y de mis pómulos, el lunar que me hace ver estúpido 
 o hermoso, y el arco ruinoso de mis labios: todo es estudiado delicada y agudamente
-por la máscara idiota, hasta adquirir su misma forma.<br>
-    De todas las personas no vemos más que una lámina frágil, adaptable,
+por la máscara idiota, hasta adquirir su misma forma.
+
+De todas las personas no vemos más que una lámina frágil, adaptable,
 multiforme, una cáscara sutil que ahoga hacia dentro pero brilla, tornasolada,
 desde fuera. En ella pasan los días, algunas veces satisfechas y aburridas, otras dando
 largas bocanadas de aire, pataleando, dándose por vencido. En ella pasan los días 
@@ -21,8 +22,9 @@ veces es tan bello que los lirios, acongojados, vuelven a cerrarse. Otras veces
 tiene manchas grandes y negras, como pústulas de carbón, que ofenden a la luna.
 Las más de las veces, sin embargo, lo que se descubre es una quieta forma de la
 tristeza, una angustia sepultada que flota sobre el rostro como un loto, fijo e
-imperturbable, sin nada que lo haga vibrar. <br> 
-    Entonces, casi inmediatamente, como nacida del aire, otra máscara se forma, estudia la cansada geometría del
+imperturbable, sin nada que lo haga vibrar. 
+
+Entonces, casi inmediatamente, como nacida del aire, otra máscara se forma, estudia la cansada geometría del
 rostro, y en una urgente homotopía lo cubre por completo. «*Este es el señor
 X*», decimos entonces, «*esta la señora Y*». Mientras, el loto, incólume y
 oculto, sueña con florecer y no florece nunca.
