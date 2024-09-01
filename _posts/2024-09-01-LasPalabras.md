@@ -38,5 +38,7 @@ generosidad ni la clemencia, una osamenta cruda cuya antigua vida nadie pudo
 atestiguar y es incluso puesta en duda por tu ira supersticiosa, un pobre
 montón de huesos sin savia que ha olvidado ya la dulce irrigación de la carne.
 Algo, al fin y al cabo, algo pétreo y receptivo, como esos monumentos que nadie
-mira al pasar y cuya placa ha sido borrada por el tiempo. Tú seguías hablando
-de la oscuridad de las cosas. Y yo, como una piedra, te escuchaba...
+mira al pasar y cuya placa ha sido borrada por el tiempo. 
+
+En ese estático escenario, tú hablabas de la oscuridad de las cosas. Y
+yo, como una piedra, te escuchaba...
