@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1724606177 "selelog.tex" "selelog.pdf" "selelog" 1724606178 2
+["pdflatex"] 1725206493 "selelog.tex" "selelog.pdf" "selelog" 1725206494 2
   "/etc/texmf/web2c/texmf.cnf" 1695394668 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1640468671 2914 8283dfc24eaf1964346f843d7605c2b0 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc" 1422827479 2083 60e36f8eac802fcaf19eabe2633b406e ""
@@ -196,8 +196,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1695394817 4623455 fa0568a71dd9a288d6c226ee477506c6 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1695394844 7879794 eff26094dbe002b6e482c026ea4c81e2 ""
-  "selelog.aux" 1724606178 953 b006b24694ef8282ae8a9104343aad4e "pdflatex"
-  "selelog.tex" 1724606176 16480 28f114adfc58e0a0a1459918be8643e3 ""
+  "selelog.aux" 1725206494 1060 bfe14310c82301cb3e92784df3a367ac "pdflatex"
+  "selelog.tex" 1725206491 21276 f025c988fac6888e6db011e50fb9e7dd ""
   (generated)
   "selelog.aux"
   "selelog.log"
