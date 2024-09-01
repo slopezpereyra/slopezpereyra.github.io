@@ -15,7 +15,7 @@ estará nunca) a la altura de la ocasión, que incluso los justos de corazón
 condescienden, al final, a una vida quieta y sin ardores, a una no-vida sin
 ansias, y se esconden en una cáscara de sombra gris, como el gusano que busca
 nacer pero es al cabo consumido por la fauce sanguinaria. Recuerdo el odio
-adolescenteque no podías masticar, que debías escupir como una bilis corrosiva
+adolescente que no podías masticar, que debías escupir como una bilis corrosiva
 que también, aunque invisible, perturbaba la mansa placidez de la naturaleza,
 agostando las flores y volviendo secas y amarillas las hierbas. Todo en aquella
 quinta era sublime y solitario, desde tu pie firme, ensuciado de jardines, a la
