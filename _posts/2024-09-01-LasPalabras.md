@@ -3,26 +3,24 @@ title: Un recuerdo
 categories: [ Personal ]
 ---
 
-A lo lejos, se oían las palabras del agua. El viento la hacía temblar como en
-un cálido arrorró… Los perros nos daban vueltas, de vez en cuando sentándose,
-fijándose en un punto preciso de la tierra, obrando un cataclismo en el
-violento mundo de las chinches y las hormigas. En esa mañana de invierno, el
-mismo sol era un hielo, colosal y lejano, y había en mi corazón el hormigueo de
-un miembro entumecido.
+A lo lejos, se oían las palabras del agua y el arrorró de un viento frío.
+Algunos perros daban vueltas alrededor de nuestro encuentro, de tanto en tanto
+fijándose, como asustados por una visión más allá de nuestros sentidos. En esa
+mañana de invierno, el mismo sol era un hielo y había en mi corazón el
+hormigueo de un miembro entumecido.
 
 Recuerdo lo que dijiste entonces: que todos son unos garcas, que nadie está (ni
 estará nunca) a la altura de la ocasión, que incluso los justos de corazón
 condescienden, al final, a una vida quieta y sin ardores, a una no-vida sin
 ansias, y se esconden en una cáscara de sombra gris, como el gusano que busca
 nacer pero es al cabo consumido por la fauce sanguinaria. Recuerdo el odio
-adolescente que no podías masticar, que debías escupir como una bilis corrosiva
-que también, aunque invisible, perturbaba la mansa placidez de la naturaleza,
-agostando las flores y volviendo secas y amarillas las hierbas. Todo en aquella
-quinta era sublime y solitario, desde tu pie firme, ensuciado de jardines, a la
-barroca virgen que entreví tras la ventana, más allá de las durantas. Nada era
-digno de ti: eso es lo que sentías, y es lo que yo veía arder en tu mirada.
-Todo era una sucia mugre desde tu corazón, que era infinitamente más joven
-y salvaje que tu cuerpo.
+adolescente que no podías masticar, que debías escupir como una bilis que, 
+al igual que tu voz, perturbaba el manso silencio de la casa familiar. 
+Todo en aquella quinta era sublime y solitario, desde tu pie ensuciado
+de jardines a la barroca virgen que entreví tras la ventana, más allá de las
+durantas. Nada era digno de ti: eso es lo que sentías, y es lo que yo veía
+arder en tu mirada. Todo era una sucia mugre desde tu corazón, que era
+infinitamente más joven y salvaje que tu cuerpo.
 
 Lo interesante, lo más interesante, sin embargo, no eras tú, sino tu alrededor.
 En esa quinta desierta todo dormía y podías verlo. Un lapacho, una piedra, los
