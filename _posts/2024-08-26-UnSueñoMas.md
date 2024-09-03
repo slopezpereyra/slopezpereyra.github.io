@@ -1,5 +1,5 @@
 ---
-title: Otro sueño sobre el Génesis
+title: Génesis (2)
 categories: [ Literature ]
 ---
 
