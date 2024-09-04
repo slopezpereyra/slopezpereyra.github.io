@@ -1,5 +1,5 @@
 ---
-title: Génesis (3)
+title: Génesis 3
 categories: [ Literature ]
 ---
 
