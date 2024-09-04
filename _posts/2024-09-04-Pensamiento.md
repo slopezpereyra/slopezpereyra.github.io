@@ -23,9 +23,10 @@ corazón.
 
 Conozco una persona, por otro lado, en quien lo más valioso de la especie
 humana brota natural y espontáneamente. Incluso sus defectos son dignos de un
-alma noble y hermosa. Es como si hubieras nacido con siglos de sabiduría. Su
-corazón no es perfecto, ninguno lo es: pero es verdaderamente puro. Por eso
-y por mucho más la admiro a la distancia y me lamento de que le haya tocado amarme. 
+alma noble y hermosa. Es como si hubiera nacido con siglos de sabiduría. Su
+corazón no es perfecto, ninguno lo es: pero es verdaderamente puro. Por eso y
+por mucho más la admiro a la distancia, y me lamento de que le haya tocado por
+destino amarme. 
 
 Intento no apegarme a ella. El apego es un obstáculo al amor. Nada la ata a mi
 lado y yo tampoco quiero hacerlo. Espero que encuentre gente que la quiera
