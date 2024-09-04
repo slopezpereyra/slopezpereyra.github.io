@@ -3,7 +3,6 @@ title: Génesis 3
 categories: [ Literature ]
 ---
 
-
 La luz avariciosa, incluso en esta<br>
 penumbra que nos hunde, te pretende.<br>
 Al fin, aunque el silencio se defiende,<br>

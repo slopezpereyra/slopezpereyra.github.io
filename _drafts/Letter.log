@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  10 JUN 2024 22:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  4 SEP 2024 16:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -192,18 +192,18 @@ LaTeX Font Info:    ... okay on input line 18.
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./Letter.aux) ) 
 Here is how much of TeX's memory you used:
- 1971 strings out of 476091
- 27297 string characters out of 5794081
- 1853330 words of memory out of 5000000
- 22400 multiletter control sequences out of 15000+600000
- 514033 words of font info for 35 fonts, out of 8000000 for 9000
+ 1969 strings out of 476091
+ 27275 string characters out of 5794081
+ 1849330 words of memory out of 5000000
+ 22399 multiletter control sequences out of 15000+600000
+ 513349 words of font info for 34 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,5n,62p,231b,111s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on Letter.pdf (1 page, 42348 bytes).
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on Letter.pdf (1 page, 15534 bytes).
 PDF statistics:
- 19 PDF objects out of 1000 (max. 8388607)
- 11 compressed objects within 1 object stream
+ 14 PDF objects out of 1000 (max. 8388607)
+ 8 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
