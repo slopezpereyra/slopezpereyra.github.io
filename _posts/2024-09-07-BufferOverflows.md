@@ -6,7 +6,7 @@ categories: [ Science ]
 > Ver *Hacking: The art of exploitation*, de Erickson, para referencia.
 
 Un *buffer overflow* es un fenómeno que ocurre cuando $k$ bytes son escritos en un
-buffer para el cual sólo habían $w < k$ bytes asignados. Los $k - w := r$ bytes
+buffer para el cual sólo habían $w < k$ bytes asignados. Los $k - w$ bytes
 restantes se "derraman" fuera de la memoria asignada y sobreescriben los bloques
 de memoria adyacentes. Si el derrame sobreescribe piezas críticas de
 información (por ejemplo, el valor de otra variable del programa), pueden
@@ -139,7 +139,7 @@ evaluación devuelve `true`.
 --- 
 
 *Fair enough*. Pero cuanto hemos dicho depende de la posición relativa (en memoria)
-de los dos variables de interés: `auth_flag` y `password_buffer`. Cambiemos nuestro 
+de las dos variables de interés: `auth_flag` y `password_buffer`. Cambiemos nuestro 
 código de manera tal que el orden en que estas variables son declaradas es 
 invertido:
 
@@ -202,15 +202,17 @@ las variables locales de un stack frame: su
 > en assembly. Cada una de tales instrucciones está guardada en alguna
 > dirección de memoria. Un registro especial (en las arquitecturas 
 > x86) llamado *Extended instruction pointer* (EIP) contiene, en cada estado, la 
-> dirección de la instrucción que debe ejecutarse ahora. En nuestro caso, 
+> dirección de la instrucción que debe ejecutarse ahora. 
 >
 >  Cuando se ejecuta una función (por ejemplo, `my_custom_function`), se crea
 >  un nuevo stack frame, que contendrá las variables locales de dicha función, sus
 >  argumentos, y otros detalles. En particular, contendrá un valor especial
 >  llamado *return address*, que guardará la dirección que está en el EIP en el
->  momento en que el stack fue creado Usando el *return address*, el programa
+>  momento en que el stack fue creado. Usando el *return address*, el programa
 >  sabe qué debe ejecutar una vez la ejecución localizada de la función
->  termina. Por ejemplo, justo antes de ejecutar `my_custom_function`, el EIP 
+>  termina. 
+> 
+> Por ejemplo, justo antes de ejecutar `my_custom_function`, el EIP 
 > apuntaría a la dirección de la primera instrucción de `printf("Bye")`, y tal 
 > dirección sería el contenido del *return address* en el stack frame de `my_custom_function`.
 
@@ -221,7 +223,7 @@ antes de que se ejecute la función `check_authentication`.
   <img src="../Images/stackgdb.png">
 </p>
 
-Vemos que, en este punto, el stack pointer register (SP) es `0x7fffffffdcd8`.
+Vemos que, en este punto, el stack pointer register (SP) es `0x7fffffffdbb0`.
 Con `x/32x2 $sp` imprimimos la parte superior del stack. Pasemos al siguiente 
 break, en la línea que llama `strcpy`.
 
@@ -266,9 +268,31 @@ nada. Pero, asumiendo que usted es pillo, ya debe estar pensando triquiñuelas.
 ¿No tendríamos entonces control sobre el flujo de ejecución? ¿Y qué
 podríamos hacer con eso?
 
+--- 
+
+Veamos el código de assembly correspondiente a nuestra función `main` usando 
+el comando `disas main` en gdb.
 
 
+<p align="center">
+  <img src="../Images/gdb-dis.png">
+</p>
 
+Corté la imagen a partir del punto en que se llama la función
+`check_authentication`, cuya return address es el registro `eax`. La llamada a
+`test` determina la lógica del `if` statement, comparando el valor del registro
+`eax` con cero. La instrucción `je` salta al registro `0x12c1` si `%eax` es
+cero, lo cual nos indica que el código a partir de `0x12c1` se corresponde con
+la impresión de `Access denied`. Las instrucciones que suceden a `je`, a partir
+de `0x1292`, corresponden entonces al caso en que `eax` no es cero; esto es, al
+caso en que la autenticación fue verdadera. Si pudiéramos reemplazar la *return
+address* de `check_authentication` con `0x1292`, el código retornaría
+directamente al pedazo de código correspondiente a *access granted*, y
+habríamos logrado romper todas las defensas.
+
+Ya sabemos que podemos llenar el *return address* con valores arbitrarios 
+y cómo hacerlo. Recordemos que debemos ordenar los pares de bytes al revés;
+es decir, debemos llenar el *return address* con `0x9212`.
 
 
 
