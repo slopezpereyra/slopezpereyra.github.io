@@ -228,27 +228,27 @@ Con `x/32x2 $sp` imprimimos la parte superior del stack. Pasemos al siguiente
 break, en la línea que llama `strcpy`.
 
 <p align="center">
-  <img src="../Images/stackgdb3.png">
+  <img src="../Images/gdb4.png">
 </p>
 
 Acá ya vemos un par de cosas interesantes. En primer lugar, la dirección del SP
-ahora es `0x7fffffffdb60`. Esta dirección es menor a la anterior. Esto se debe
+ahora es `0x7fffffffdb70`. Esta dirección es menor a la anterior. Esto se debe
 a que, al hacer lugar en el stack para el nuevo stack frame (es decir, el stack
 frame de la función `check_authentication`), el SP se mueve hacia arriba. Además, 
 podemos ver en el stack dónde están guardadas las variables `password_buffer`
 y `&auth_flag`, y comprobar que esta última está ahora ubicada antes de la
-primera. Toda la tercera fila (que empieza en `0x7fffffffdb80`) corresponde a
+primera. Toda la tercera fila (que empieza en `0x7fffffffdb90`) corresponde a
 los 16 bytes de `password_buffer`, mientras la última columna de la segunda
-fila corresponde a `&auth_flag` (`0x7fffffffdb7c`). 
+fila corresponde a `&auth_flag` (`0x7fffffffdb8c`). 
 
-Si ejecutamos `info frame`, veremos que la *return address* es `0x5555528e`, es
-decir es el valor guardado en la dirección `0x7fffffffdb9b` (cuarta fila,
+Si ejecutamos `info frame`, veremos que la *return address* es `0x0040126c`, es
+decir es el valor guardado en la dirección `0x7fffffffdbab` (cuarta fila,
 tercera columna). La idea es simple: `password_buffer` ya no puede sobreescribir 
 `auth_flag`, ¡pero puede sobreescribir la *return address*! Pasemos al siguiente 
 breakpoint.
 
 <p align="center">
-  <img src="../Images/stackgdb4.png">
+  <img src="../Images/gdb5.png">
 </p>
 
 Oops! Acá vemos que, tras la ejecución del `strcpy`, la dirección donde 
@@ -275,26 +275,95 @@ el comando `disas main` en gdb.
 
 
 <p align="center">
-  <img src="../Images/gdb-dis.png">
+  <img src="../Images/gdb-disass.png">
 </p>
 
 Corté la imagen a partir del punto en que se llama la función
 `check_authentication`, cuya return address es el registro `eax`. La llamada a
 `test` determina la lógica del `if` statement, comparando el valor del registro
-`eax` con cero. La instrucción `je` salta al registro `0x12c1` si `%eax` es
-cero, lo cual nos indica que el código a partir de `0x12c1` se corresponde con
+`eax` con cero. La instrucción `je` salta al registro `0x401290` si `%eax` es
+cero, lo cual nos indica que el código a partir de `0x401290` se corresponde con
 la impresión de `Access denied`. Las instrucciones que suceden a `je`, a partir
-de `0x1292`, corresponden entonces al caso en que `eax` no es cero; esto es, al
+de `0x401270`, corresponden entonces al caso en que `eax` no es cero; esto es, al
 caso en que la autenticación fue verdadera. Si pudiéramos reemplazar la *return
-address* de `check_authentication` con `0x1292`, el código retornaría
+address* de `check_authentication` con `0x401270`, el código retornaría
 directamente al pedazo de código correspondiente a *access granted*, y
 habríamos logrado romper todas las defensas.
 
-Ya sabemos que podemos llenar el *return address* con valores arbitrarios 
-y cómo hacerlo. Recordemos que debemos ordenar los pares de bytes al revés;
-es decir, debemos llenar el *return address* con `0x9212`.
+Ya sabemos que podemos llenar el *return address* con valores arbitrarios y
+cómo hacerlo. Recordemos que debemos ordenar los pares de bytes al revés; es
+decir, debemos llenar el *return address* con `0x701240`. Si no es claro por
+qué esto es así, leé más sobre el formato little-endian.
 
+Sin embargo, hay un pequeño problema. No es suficiente con repetir `0x701240` muchas 
+veces, porque faltan dos bytes, y lo que generamos es una repetición indeseada que 
+no llena el *return address* de la manera deseada. Es decir, si llamamos
 
+```
+gdb -q --args silly_password $(perl -e 'print "\x70\x12\x40" x 30;')
+```
 
+el stack, en la línea `return(auth_flag)`, se ve así:
 
+<p align="center">
+  <img src="../Images/gdb6.png">
+</p>
 
+El problema es que no podemos simplemente llamar 
+
+```
+gdb -q --args silly_password $(perl -e 'print "\x00\x70\x12\x40" x 30;')
+```
+
+para resolver este problema, porque `\x00` no es una string ASCII. Mejor dicho,
+se corresponde a la string vacía, que C interpreta como un *terminating symbol*.
+Por lo tanto, si pasamos ese argumento, el stack simplemente quedará llena de 
+ceros, como si no hubiéramos pasado nada como argument. 
+
+La solución es usar aritmética simple para llenar todos los registros con
+ruido, justo hasta el que precede al de la *return address*, y añadir la string
+`\x70\x12\x40` entonces. Desde la dirección del `password_buffer`
+(`0x7fffffffdb50`, o tercera fila, primer columna) hasta la dirección
+*anterior* de la return address (cuarta fila, tercera columna), hay 6
+registros. Cada registro tiene 8 bytes, y cada byte corresponde a un caracter.
+Es decir, debemos meter $8\cdot 6 / 2 =24$ caracteres para llenar todos los registros 
+anteriores a la return address. Luego, insertamos la dirección deseada, y habremos ganado.
+Por ejemplo,
+
+```
+gdb -q --args silly_password $(perl -e 'print "\x41" x 24 . "\x70\x12\x40";')
+```
+ejecuta `gdb` con el argumento: 24 veces A, y luego "\x70\x12\x40". Si hacemos esto, 
+el stack se ve como sigue justo antes de ejecutar `return(auth_flag)`:
+
+<p align="center">
+  <img src="../Images/gdb7.png">
+</p>
+
+¡Éxito! Hemos llenado de ruido (`0x41`, o caracteres "A") los registros intermedios entre el 
+`password_buffer` y la *return address*, e insertado en la *return address* el valor 
+`0x00401270`. Como esta era la instrucción correspondiente a imprimir *Access granted*,
+es efectivamente lo que sucede cuando continuamos el programa:
+
+``` 
+-=-=-=-=-=-=-=-=-=-=-=-=-=-
+ Access Granted.
+-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Program received signal SIGBUS, Bus error.
+```
+--- 
+
+Repasemos lo que hicimos.
+
+- Identificamos cuál era el registro que guardaba la *return address* de la
+  función `check_authentication` en su stack frame.
+
+- Identificamos el lugar en memoria que contiene la instrucción correspondiente 
+a la sección *Acess granted* (que representa acceso a datos sensibles, u otro tipo 
+de explotación).
+
+- Usamos un *buffer overfolw* para derramar, desde el registro de `password_buffer` hacia 
+el de la *return address*, la dirección de memoria de la instrucción del punto anterior. 
+
+De este modo, ganamos control del flujo de programa.
