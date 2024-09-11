@@ -53,7 +53,8 @@ int main(int argc, char *argv[]) {
     } else {
         printf("\nAccess Denied.\n");
     }
-} ```
+} 
+```
 
 Sí, el programa es bastante tonto: asigna 16 bytes al `password_buffer`
 pero jamás chequea que la contraseña quepa en este espacio. ¡Mal! Pero lo que 
