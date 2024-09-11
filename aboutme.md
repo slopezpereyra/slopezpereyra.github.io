@@ -19,8 +19,8 @@ science. Originally, I wanted to major in philosophy, to the study of which I
 devoted my teenage years. It was only at eighteen years of age that,
 upon discovering the work of Bertrand Russell, and subsequently that of Frege,
 I became interested in mathematics and formal logics. These interests, combined
-with my taste for the philosophy of mind, evolved into a passion for computer
-science and, particularly, its application to neuroscience.
+with my taste for the philosophy of mind, are what evolved into a passion for
+computer science and, particularly, its application to neuroscience.
 
 I also write (very questionable) poetry, though without an interest in
 publishing. Despite what became my professional destiny, I like to think I am a
