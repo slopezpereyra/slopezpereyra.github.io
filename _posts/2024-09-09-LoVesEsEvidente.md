@@ -1,25 +1,24 @@
 ---
-title: ¿Lo escuchas? Yo lo siento...
+title: Incomprensión
 categories: [ Literature ]
 ---
 
-¿escuchas entre todo tu silencio<br>
-un eco crepitante, un arroró...?
+¿escuchas, desde el núcleo del silencio, <br>
+un eco crepitante, un arroró?
 
 es una hogaza pobre de pan envejecido<br>
-que alguna vez ardió en mi corazón<br>
+que alguna vez ardió en mi corazón...<br>
 
-¿ayer? ayer te quise como un perro <br>
-que nunca es comprendido, porque no tiene voz<br>
+soy yo ladrando estúpido a la luna,
+soñando confesarte que yo ya no soy yo 
 
-ladré como un estúpido a la luna<br>
-quise advertirte tanto, tanto, y no… <br>
-
-todo era indiferencia en tus oídos, <br>
-todo era el débil eco de un rumor<br>
+pero no escuchas nada: en tus oídos <br>
+todo es el débil eco de un rumor<br>
 
 un peso de cadenas me dobla y me desprecia<br>
+sólo me escucha un hombre: mi cristo redentor<br>
 
-ya espero el día final de nuestro amor<br>
-postrado ante la puerta, cansado y sometido,<br>
-y sin que vos entiendas qué pasa o qué paso...
+que vio cuánto yo quise decirte mis secretos<br>
+y, viéndote indolente, al fin lloró...!
+
+
