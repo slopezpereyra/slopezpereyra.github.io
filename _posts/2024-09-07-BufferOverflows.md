@@ -69,10 +69,11 @@ mecanismos que tiene gcd para prevenir buffer overflows, y ejecutemos
 
 > Lo sano sería ejecutar `./silly_password $(perl -e 'print "A" x 29;')`,
 > donde el comando de Perl se evalúa a repetir el caracter $A$ veintinueve
-> veces. De ahora en adelante, usaremos perl para generar los caracteres
+> veces. De ahora en adelante, usaremos Perl para generar los caracteres
 > deseados. La sintaxis es muy intuitiva, no debería ser un problema.
-> Esperaríamos que el programa nos niegue el acceso, dado que nuestra 
-> contraseña es una total patraña... ¡Pero no! He aquí el resultado:
+
+Esperaríamos que el programa nos niegue el acceso, dado que nuestra 
+contraseña es una total patraña... ¡Pero no! He aquí el resultado:
 
 ``` 
 -=-=-=-=-=-=-=-=-=-=-=-=-=- 
