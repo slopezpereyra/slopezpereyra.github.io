@@ -5,10 +5,10 @@ categories: [ Science ]
 
 > Ver *Hacking: The art of exploitation*, de Erickson, para referencia.
 
-Un *buffer overflow* es un fenómeno que ocurre cuando $k$ bytes son escritos en un
-buffer para el cual sólo habían $w < k$ bytes asignados. Los $k - w$ bytes
-restantes se "derraman" fuera de la memoria asignada y sobreescriben los bloques
-de memoria adyacentes. Si el derrame sobreescribe piezas críticas de
+Un *buffer overflow* es un fenómeno que ocurre cuando $k$ bytes son escritos en
+un buffer para el cual sólo habían $w < k$ bytes asignados. Los $k - w$ bytes
+restantes se "derraman" fuera de la memoria asignada y sobreescriben los
+bloques de memoria adyacentes. Si el derrame sobreescribe piezas críticas de
 información (por ejemplo, el valor de otra variable del programa), pueden
 producirse *crashes* o comportamientos inesperados.
 
@@ -18,9 +18,11 @@ estudio de dichas vulnerabilidades se presta bien al análisis de cómo funciona
 el stack de un programa y algunos otros mecanismos de bajo nivel. El propósito
 de esta entrada es mostrar resumidamente estas cosas bonitas. 
 
+---
+
 Consideremos el siguiente programa, que llamaremos `silly_password.c`. El
 programa toma un *command line argument* (una contraseña) y verifica que sea
-idéntico a una de dos strings predefinidas. Si lo es, setea la flag de 
+idéntico a una de dos strings predefinidas. Si lo es, setea la flag de
 autenticación en 1; de otro modo, la flag permanece en cero. ¿Simple, no?
 
 ```c
@@ -51,8 +53,7 @@ int main(int argc, char *argv[]) {
     } else {
         printf("\nAccess Denied.\n");
     }
-}
-```
+} ```
 
 Sí, el programa es bastante tonto: asigna 16 bytes al `password_buffer`
 pero jamás chequea que la contraseña quepa en este espacio. ¡Mal! Pero lo que 
@@ -64,17 +65,26 @@ mecanismos que tiene gcd para prevenir buffer overflows, y ejecutemos
 ``` 
 ./silly_password AAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 ```
+
+> Lo sano sería ejecutar `./silly_password $(perl -e 'print "A" x 29;')`,
+> donde el comando de Perl se evalúa a repetir el caracter $A$ veintinueve
+> veces. De ahora en adelante, usaremos perl para generar los caracteres
+> deseados. La sintaxis es muy intuitiva, no debería ser un problema.
+
 Esperaríamos que el programa nos niegue el acceso, dado que nuestra 
 contraseña es una total patraña... ¡Pero no! He aquí el resultado:
 
-<p align="center">
-  <img src="../Images/BuffOv.png">
-</p>
+``` 
+-=-=-=-=-=-=-=-=-=-=-=-=-=- 
+Access Granted. 
+-=-=-=-=-=-=-=-=-=-=-=-=-=- ```
 
-Oops... Usemos el `gdb` debugger para entender mejor lo que está pasando.
-Como el problema claramente está en la authentication flag, que debería
-ser cero, vamos a poner line breaks en la línea 8 y la 13, que corresponden 
-a `strcpy(password_buffer, password)` y `return auth_flag`. El primer break 
+Oops... Algo raro está sucediendo. Dimos una contraseña arbitraria pero se
+nos concedió acceso. Usemos el `gdb` debugger para entender mejor esta
+vulnerabilidad.  Como el problema claramente está en la authentication
+flag, que debería ser cero, vamos a poner line breaks en las líneas
+8 y 13, que corresponden a `strcpy(password_buffer, password)` y `return
+auth_flag` dentro de la función `check_authentication`. El primer break
 point se ve así:
 
 
@@ -91,10 +101,10 @@ del bloque de memoria que comienza en `password_buffer`: en la segunda fila,
 última columna, hay un registro `0x00000000`. Es precisamente el registro de
 `auth_flag`. 
 
-> Observe que hay 16 bytes por registro; esto es, 8 dígitos hex. Del primer registro,
-que coresponde al comienzo de `password_buffer`, al anterior del registro de 
-`auth_flag`, hay 56 dígitos hex. Y como dos tales dígitos son un byte, allí 
-tenemos nuestros 28 bytes de diferencia.
+> Observe que hay 16 bytes por registro; esto es, 8 dígitos hex. Del
+> primer registro, que coresponde al comienzo de `password_buffer`, al
+> anterior del registro de `auth_flag`, hay 56 dígitos hex. Y como dos
+> tales dígitos son un byte, allí tenemos nuestros 28 bytes de diferencia.
 
 Tal vez ya se empiece a notar la trampa... Veamos el siguiente 
 breakpoint.
@@ -295,9 +305,10 @@ cómo hacerlo. Recordemos que debemos ordenar los pares de bytes al revés; es
 decir, debemos llenar el *return address* con `0x701240`. Si no es claro por
 qué esto es así, leé más sobre el formato little-endian.
 
-Sin embargo, hay un pequeño problema. No es suficiente con repetir `0x701240` muchas 
-veces, porque faltan dos bytes, y lo que generamos es una repetición indeseada que 
-no llena el *return address* de la manera deseada. Es decir, si llamamos
+Sin embargo, hay un pequeño problema. No es suficiente con repetir
+`0x701240` muchas veces: cada registro se llena con 8 bytes, y `0x701240`
+tiene seis. Si repetimos este número, vemos que no llenamos el stack
+correctamente. Ejecutando 
 
 ```
 gdb -q --args silly_password $(perl -e 'print "\x70\x12\x40" x 30;')
@@ -309,41 +320,54 @@ el stack, en la línea `return(auth_flag)`, se ve así:
   <img src="../Images/gdb6.png">
 </p>
 
-El problema es que no podemos simplemente llamar 
 
+Ahora bien, parecería que sólo debemos llamar
+
+``` 
+gdb -q --args silly_password $(perl -e 'print "\x70\x12\x40\x00" x 30;')
 ```
-gdb -q --args silly_password $(perl -e 'print "\x00\x70\x12\x40" x 30;')
-```
 
-para resolver este problema, porque `\x00` no es una string ASCII. Mejor dicho,
-se corresponde a la string vacía, que C interpreta como un *terminating symbol*.
-Por lo tanto, si pasamos ese argumento, el stack simplemente quedará llena de 
-ceros, como si no hubiéramos pasado nada como argument. 
+para resolver este problema. Pero esto no funciona, porque `\x00` no es
+una string ASCII. El número hex `0x0` corresponde a la string vacía, que
+C interpreta como un *terminating symbol*. Por lo tanto, si pasamos ese
+argumento como contraseña, el compilador dejará de leer el argumento
+a partir del primer `\x00`. Por lo tanto, el argumento `argv[]` será
+`0x70124000` y no una repetición de este valor treinta veces. Para 
+ser visuales, ejecutemos `gdb -q --args silly_password $(perl -e 'print
+"\x70\x12\x40\x00" x 30;')` y añadamos un break en `return auth_flag`. El
+stack, en vez quedar con los registros llenos de `0x00401270`, se ve del
+siguiente modo: 
 
-La solución es usar aritmética simple para llenar todos los registros con
-ruido, justo hasta el que precede al de la *return address*, y añadir la string
-`\x70\x12\x40` entonces. Desde la dirección del `password_buffer`
-(`0x7fffffffdb50`, o tercera fila, primer columna) hasta la dirección
-*anterior* de la return address (cuarta fila, tercera columna), hay 6
-registros. Cada registro tiene 8 bytes, y cada byte corresponde a un caracter.
-Es decir, debemos meter $8\cdot 6 / 2 =24$ caracteres para llenar todos los registros 
-anteriores a la return address. Luego, insertamos la dirección deseada, y habremos ganado.
-Por ejemplo,
+> 0x7fffffffda30:	**0x00401270**	0x00000000	0x00000000	0x00000000
+> 0x7fffffffda40:	0x00000000	0x00000000	0x00000000	0x00000000
+
+donde señalamos en negrita el registro de `password_buffer`. 
+
+Por suerte, la solución es simple. Un poco de aritmética simple nos permite
+llenar todos los registros con ruido, justo hasta el que precede al de la
+*return address*, y añadir la string `\x70\x12\x40` entonces. Desde la
+dirección del `password_buffer` (`0x7fffffffdb50`, o tercera fila, primer
+columna) hasta la dirección *anterior* de la return address (cuarta fila,
+tercera columna), hay 6 registros. Cada registro tiene 8 bytes, y cada byte
+corresponde a un caracter. Es decir, debemos meter $8\cdot 6 / 2 =24$
+caracteres para llenar todos los registros anteriores a la return address.
+Luego, insertamos la dirección deseada, y habremos conseguido nuestro objetivo. Por ejemplo,
 
 ```
 gdb -q --args silly_password $(perl -e 'print "\x41" x 24 . "\x70\x12\x40";')
 ```
-ejecuta `gdb` con el argumento: 24 veces A, y luego "\x70\x12\x40". Si hacemos esto, 
-el stack se ve como sigue justo antes de ejecutar `return(auth_flag)`:
+ejecuta `gdb` con el argumento: 24 veces A, y luego "\x70\x12\x40". Si hacemos
+esto, el stack se ve como sigue justo antes de ejecutar `return(auth_flag)`:
 
 <p align="center">
   <img src="../Images/gdb7.png">
 </p>
 
-¡Éxito! Hemos llenado de ruido (`0x41`, o caracteres "A") los registros intermedios entre el 
-`password_buffer` y la *return address*, e insertado en la *return address* el valor 
-`0x00401270`. Como esta era la instrucción correspondiente a imprimir *Access granted*,
-es efectivamente lo que sucede cuando continuamos el programa:
+¡Éxito! Hemos llenado de ruido (`0x41`, o caracteres "A") los registros
+intermedios entre el `password_buffer` y la *return address*, e insertado en la
+*return address* el valor `0x00401270`. Como esta era la instrucción
+correspondiente a imprimir *Access granted*, es efectivamente lo que sucede
+cuando continuamos el programa:
 
 ``` 
 -=-=-=-=-=-=-=-=-=-=-=-=-=-
