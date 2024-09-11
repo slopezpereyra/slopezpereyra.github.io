@@ -70,14 +70,14 @@ mecanismos que tiene gcd para prevenir buffer overflows, y ejecutemos
 > donde el comando de Perl se evalúa a repetir el caracter $A$ veintinueve
 > veces. De ahora en adelante, usaremos perl para generar los caracteres
 > deseados. La sintaxis es muy intuitiva, no debería ser un problema.
-
-Esperaríamos que el programa nos niegue el acceso, dado que nuestra 
-contraseña es una total patraña... ¡Pero no! He aquí el resultado:
+> Esperaríamos que el programa nos niegue el acceso, dado que nuestra 
+> contraseña es una total patraña... ¡Pero no! He aquí el resultado:
 
 ``` 
 -=-=-=-=-=-=-=-=-=-=-=-=-=- 
 Access Granted. 
--=-=-=-=-=-=-=-=-=-=-=-=-=- ```
+-=-=-=-=-=-=-=-=-=-=-=-=-=- 
+```
 
 Oops... Algo raro está sucediendo. Dimos una contraseña arbitraria pero se
 nos concedió acceso. Usemos el `gdb` debugger para entender mejor esta
