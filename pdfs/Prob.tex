@@ -1,10 +1,10 @@
 \documentclass[a4paper, 12pt]{article}
 
+\usepackage{mathtools}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
 \usepackage{amssymb}
-\usepackage{newtxtext} \usepackage{newtxmath}
 \usepackage{amsmath, amssymb}
 \newtheorem{problem}{Problem}
 \newtheorem{example}{Example}
@@ -15,6 +15,8 @@
 \newtheorem{lemma}{Lemma}
 \newtheorem{theorem}{Theorem}
 \usepackage{parskip}
+
+\newcommand\myeq{\stackrel{\mathclap{\normalfont\mbox{def}}}{=}}
 
 \begin{document}
 
@@ -850,6 +852,185 @@ which
 \end{align*}
 
 both easily derivable from the binomial distribution formula.
+
+\pagebreak 
+
+\section{P3}
+
+\begin{problem}
+    Let $X$ a r.v. with density function $f(x) = \frac{x}{2}$ whenever $0 \leq
+    x \leq 2$, and zero otherwise. (1) Calculate $P(X\leq 1), P(\frac{1}{2}
+    \leq X \leq \frac{3}{2}), P(\frac{3}{2} \leq X)$. Then (2) find the 
+    CDF of $X$ and (3) the expected value, variance and standard deviation 
+    of $X$. (4) If we define $h(X) = X^2$, what is the expected value of 
+    $Y  = h(X)$?
+\end{problem}
+
+(1) First of all, observe that $F(x) = \frac{1}{2}\int x dx = \frac{x^2}{4}$.
+Incidentally, this is the CDF of $X$, which was requested in point (2). 
+We then have
+
+\begin{align*}
+    P(X\leq 1) &= \int_{0}^{1} f(x) ~ dx \\ 
+               &= \frac{ 1^2  }{4}- \frac{ 0^2 }{4} \\ 
+               &=\frac{1}{4} \\ 
+    P(\frac{1}{2} \leq X \leq \frac{3}{2}) &= F(\frac{3}{2}) - F(\frac{1}{2}) \\ 
+                                           &=\left( \frac{9}{16} \right) - \left( \frac{1}{16} \right)  \\ 
+                                           &= \frac{8}{16} \\ 
+                                           &= \frac{1}{2}
+\end{align*}
+
+(3) The expected value is 
+
+\begin{equation*}
+    \int_{\mathbb{R}} f(x) x ~ dx &= \int_{0}^{2} \frac{x^2}{2} = \left[ \frac{x^3}{6} \right]_0^{2}  = \frac{8}{6} = \frac{4}{3} \approx 1.33
+\end{equation*}
+
+The simplest way to calculate the variance is to recall that $\mathbb{V}\left[ X \right] = \mathbb{E}\left[ X^2 \right] - \mathbb{E}\left[ X \right]^2   $. Then, we observe that 
+
+\begin{align*}
+    \mathbb{E}\left[ X^2 \right] &= \frac{1}{2} \int_0^2 x^3 ~ dx \\ 
+                                 &= \frac{1}{2} \left[ \frac{x^4}{4} \right]_0^2 \\ 
+                                 &= \frac{1}{2} \left( \frac{16}{4} - 0 \right)  \\ 
+                                 &=\frac{4}{2} \\ 
+                                 &= 2
+\end{align*}
+
+It follows that $\mathbb{V}\left[ X \right] = 2 - (\frac{4}{3})^2 = 2 -
+\frac{16}{9} = \frac{2}{9}$.
+
+(4) The expected value of $Y = h(X)$ is 
+
+\begin{equation*}
+    \int_0^2 h(x) f(x) ~ dx = \frac{1}{2} \int_0^2 x^3~ dx = \mathbb{E}\left[ X^2 \right] = 2
+\end{equation*}
+
+\pagebreak 
+
+Let 
+
+\begin{equation*}
+    f_X(x) = \begin{cases}
+        kx^2 & 0 \leq x \leq 2 \\ 
+        0 & \text{otherwise}
+    \end{cases}
+\end{equation*}
+
+the PDF of r.v. $X$. The value of $k$ must be s.t. it satisfies 
+
+\begin{align*}
+    \int_{\mathbb{R}} f(x) ~ dx = 1
+\end{align*}
+
+Since $\int f(x) = \frac{kx^3}{3}$ at the only interval of interest (i.e. $[0, 2]$), we know that $k$
+must satisfy 
+
+\begin{equation*}
+    \left[ kx^3 / 3 \right]_{0}^{2} = 1 \iff \frac{k8}{3} = 1 \iff k = \frac{3}{8}
+\end{equation*}
+
+The CDF of $X$ is precisely the function we have derived above; i.e. $(kx^3) / 3$. With the value 
+of $k$ found, we know 
+
+\begin{equation*}
+    F_X(x) = \frac{ x^3 }{8}
+\end{equation*}
+
+The $.75$ percentile of the distribution is the value $\varphi \in \mathbb{R}$ s.t. 
+$F_X(\varphi) = .75$. Therefore, $\varphi$ satisfies
+
+\begin{align*}
+    \frac{\varphi^3}{8} = .75 \iff \varphi^3 = 6 \iff \varphi = \sqrt[3]{6} \approx 1.81
+\end{align*}
+
+
+The expected value of $X$ is 
+
+\begin{align*}
+    \mathbb{E}\left[ X \right] ~&\myeq \int_{\mathbb{R}} x f(x) ~ dx \\ 
+                                &= \frac{3}{8}\int_0^2  x^3 ~ dx \\ 
+                                &=\frac{3}{8} \left[ \frac{x^4}{4} \right]_0^2  \\ 
+                                &=\frac{3}{2} 
+\end{align*}
+
+To compute the standard deviation, we first observe that 
+
+\begin{align*}
+    \mathbb{E}\left[ X^2 \right] &= \frac{3}{8}\int_0^2 x^4 ~dx\\ 
+                                 &= \frac{3}{8} \left[ \frac{x^5}{5} \right]_0^2 \\ 
+                                 &=\frac{3}{8} \frac{32}{5} \\ 
+                                 &= 2.4
+\end{align*}
+
+Then we can compute $\mathbb{V}\left[ X \right] = \mathbb{E}\left[ X^2 \right]
+- \mathbb{E}\left[ X \right]^2 = 2.4 - 2.25 = .15  $. From which follows that
+$\sigma_X = \sqrt{.15} \approx .387 $. 
+
+The probability that $X$ is less than one standard deviation from its mean is
+the probability that $X$ falls in the range $[\frac{3}{2}-.387, \frac{3}{2} +
+.387]$. If we let $l, u$ denote the lower and upper bounds of this interval,
+the probability is simply given by $F_X(u) - F_X(l)$.
+
+\pagebreak 
+
+Let $X \sim \mathcal{U}\left( 25, 35 \right) $. The density function of $X$
+is then given by 
+
+\begin{equation*}
+    f_X(x) = \begin{cases}
+        \frac{1}{10} & 25 \leq x \leq 35 \\ 
+        0 & \text{otherwise}
+    \end{cases}
+\end{equation*}
+
+The CDF is then 
+
+\begin{equation*}
+    F_X(x) = \int_{25}^{35} f(x) ~ dx = \frac{x-25}{10}
+\end{equation*}
+
+We can verify that $\int_{\mathbb{R}} f(x) ~ dx = F_X(35) - F_X(25) = 1 - 0  =
+1$. The probability of $X \geq 33$ is simply $1 - P(X \leq 33) = 1 - F_X(33) =
+1- \frac{8}{10} = \frac{1}{5}$.
+
+Given $a \in \mathbb{R}$ s.t. $25 < a < a+2 < 35$ the probability of $X$
+falling in $[a, a+2]$ is 
+
+\begin{align*}
+    \int_a^{a+2} f(x) ~ dx &= F(a + 2 ) - F(a) \\ 
+                           &= \frac{a+2 - 25}{10} - \frac{a - 25}{10} \\ 
+                           &=\frac{1}{5}
+\end{align*}
+
+The expected value of $X$ is 
+
+\begin{align*}
+    \mathbb{E}\left[ X \right] &= \int_{\mathbb{R}} x f(x) ~ dx \\ 
+                               &= \int_{25}^{35} \frac{x}{10} ~ dx \\ 
+                               &= \frac{1}{10} \left[ \frac{x^2}{2} \right]_{25}^{35}  \\ 
+                               &=\frac{1}{10}\left( \frac{35^2}{2} - \frac{25^2}{2} \right)  \\ 
+                               &= \frac{300}{10} \\ 
+                               &= 30
+\end{align*}
+
+We could have also used the simple formula for the uniform distribution, which
+states that $\mu = \frac{1}{2}(a+b)$. Now we observe that 
+
+\begin{align*}
+    \mathbb{E}\left[ X^2 \right] &= \frac{1}{10} \int_{25}^{35}x^2 ~ dx \\ 
+                               &= \frac{1}{10} \left[ \frac{x^3}{3} \right]_{25}^{35}  \\ 
+                               &=\frac{1}{10}\left( \frac{35^3}{3} - \frac{25^3}{3} \right)  \\ 
+                               &= \frac{2725}{3} \\ 
+                               &\approx 908.3
+\end{align*}
+
+From which follows that $\mathbb{V}\left[ X \right] = 908.3 - 30^2 = 8.3$. $\therefore ~ \sigma = \sqrt{8.3} $.
+
+
+
+
+
+
 
 
 
