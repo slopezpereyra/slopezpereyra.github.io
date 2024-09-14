@@ -9,8 +9,9 @@ de un eco crepitante, un arroró...?<br>
 es una hogaza pobre de pan envejecido<br>
 que alguna vez ardió en mi corazón<br>
 
-o es un ladrido estúpido que Cristo <br>
-silencia con la muerte de una flor<br>
+o es un ladrido estúpido que Cristo, <br> 
+borracho de crepúsculo y cizañas,<br>
+silencia con la muerte de una flor...<br>
 
 
 
