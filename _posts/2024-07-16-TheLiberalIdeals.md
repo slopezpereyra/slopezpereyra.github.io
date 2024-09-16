@@ -63,7 +63,7 @@ them. Rather than a reason to disregard them, this is a reason to
 resucitate them. So-called liberals suddenly appear as lovers of the
 exercise of violence and force, apologists of tyrannies, and
 subordinates to concentrated private power. This should not be
-tolerated. The left, at least the libertarian left—I used the word
+tolerated. The left, at least the libertarian left—I use the word
 *libertarian* in its original sense—should persist in drawing from the
 Enlightened ideals. Since they have been forgotten, since what little is
 remembered is distorted, the left should resurrect them. Socialism, in
