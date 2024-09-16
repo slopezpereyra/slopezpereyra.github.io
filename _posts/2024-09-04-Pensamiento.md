@@ -4,32 +4,19 @@ categories: [ Personal ]
 ---
 
 
-Me he preguntado: ¿quién soy? La respuesta es: *un desconocido*. Soy una cosa
-más entre las cosas, como esta taza o esa mesa, o bien un objeto absoluto o un
-sujeto absolutamente relativo. Es cierto lo que dicen de mí: amo la vida. La
-música todavía me consuela, aún escribo y pienso, y no he dejado de amar. Pero
-eso hace más dura la vergüenza de confesar que a veces sueño con terminarlo
-todo. 
+Me he preguntado: ¿quién soy? La respuesta es: *un desconocido*. O bien un
+objeto absoluto o un sujeto absolutamente relativo. Un corazón atado a la vida
+por un hilo secreto, unos pies que (como dijera Goytisolo) *aún están en el
+camino*. Y también un pozo de sombra fresca del que beben y se sacian los
+crepúsculos.
 
-Yo sé que estoy atado a la vida, que (como dijera Goytisolo) *yo aún estoy en
-el camino*. Pero soy vicioso y ruin y hago daño a quienes quiero. Quisiera ser
-como un loto y florecer preciosamente, y conocer lo que hay en mí de la gracia
-divina, pero a cada paso doy con una sombra. Los logros exteriores me
-interesan, pero no me resultan esenciales. Lo que persigo es una forma de
-iluminación, alguna forma de volverme *verdaderamente bueno*, alguna manera de
-ser gobernada por la compasión y el amor, pero a cada paso están mis vicios
-y defectos, y actúo penosamente, y extingo las pocas luces que arden en mi
-corazón. 
-
-Conozco una persona, por otro lado, en quien lo más valioso de la especie
-humana brota natural y espontáneamente. Incluso sus defectos son dignos de un
-alma noble y hermosa. Es como si hubiera nacido con siglos de sabiduría. Su
-corazón no es perfecto, ninguno lo es: pero es verdaderamente puro. Por eso y
-por mucho más la admiro a la distancia, y me lamento de que le haya tocado por
-destino amarme. 
-
-Intento no apegarme a ella. El apego es un obstáculo al amor. Nada la ata a mi
-lado y yo tampoco quiero hacerlo. Espero que encuentre gente que la quiera
-y ella quiera también y que sea amada dulcemente. Quisiera tener la sabiduría
-de aceptarlo todo, como una flor acepta ser mecida por el viento, y siempre ver
-con claridad su rostro permanente.
+Después me pregunté: ¿qué quiero ser? Y me dije: Quisiera ser como un loto y
+florecer preciosamente, y conocer lo que hay en mí de la gracia divina. (Pero a
+cada paso das con una sombra.) Quisiera una rara especie de iluminación, alguna
+forma de volverme *verdaderamente bueno*, alguna manera de ser gobernada por la
+compasión y el amor. (Pero en tu pensamiento pesan cosas que jusgazte del
+sueño o del olvido, y con ellos extingues las pocas luces que arden en tu
+corazón.) Quisiera sentir, como comprendo, que el apego es un obstáculo al
+amor, tener la sabiduría de aceptarlo todo, como una flor acepta ser mecida por
+el viento, y siempre ver con claridad el rostro permanente de la mujer que yo
+quiero.
