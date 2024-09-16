@@ -12,12 +12,14 @@ pesan cosas que jusgazte del sueño o del olvido, y en ellas extingues las pocas
 luces que arden en tu corazón.) Quisiera  aceptarlo todo, como una flor acepta
 ser mecida por el viento, y siempre ver el rostro permanente de las cosas, no
 su máscara salvaje y transitoria. (Pero en el abrirse y el cerrarse de una
-puerta sólo ves a un hombre que se aleja, sólo escuchas el eco de sus pasos, y
-entristeces.) Quisiera ser un hombre simple que ama a los hombres simples
-simplemente. (Pero tus pies aún están en el camino, en ese camino que nos lleva
-a un pozo con agua de sombra donde beben los crepúsculos.) Quisiera volverla a
-ver, la mustia noche de su muerte, para mirarla esta vez con compasión y
-ternura. (Pero sigues esperando que esté viva, que aparezca a la vuelta de
-cualquier esquina, y finges que su muerte ha sido un sueño.)
+puerta sólo ves a un hombre que se aleja, sólo escuchas el eco de sus pasos.)
+Quisiera ser un hombre simple que ama a los hombres simples simplemente. (Pero
+al más pobre y al más rico por igual miras bajo la luz de tu crepúsculo.)
+Quisiera despedirme de una joven que, en la febril infancia de una vida
+lamentable, renunció a toda abnegación y a toda pausa, temió que el tiempo
+pudiera detenerse y a los crueles espejos y al amor, y evadió el sueño y la
+pureza, la culpa y el ocaso y la agridulce esencia de la vida. (Pero sigues
+esperando que esté viva, que aparezca a la vuelta de cualquier esquina, y
+finges que su muerte ha sido un sueño.)
 
 
