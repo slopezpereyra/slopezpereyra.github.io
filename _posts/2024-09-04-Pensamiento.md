@@ -19,6 +19,6 @@ febril infancia de una vida lamentable, renunció a toda abnegación y a toda
 pausa, temió que el tiempo pudiera detenerse y a los crueles espejos y al amor,
 y evadió el sueño y la pureza, la culpa y el ocaso y la agridulce esencia de la
 vida. (Pero sigues esperando que esté viva, que aparezca a la vuelta de la
-esquina, y finges que su muerte ha sido un sueño.)
+esquina, y finges que su muerte ha sido un sueño.) 
 
 
