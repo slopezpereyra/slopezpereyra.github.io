@@ -1,0 +1,183 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{newtxtext} \usepackage{newtxmath}
+\usepackage{amsmath, amssymb}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example} \newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+
+
+\begin{document}
+
+    
+\section{El proceso como abstracción}
+
+\subsection{Introducción}
+
+Una de las abstracciones fundamentales en un sistema operativo es la del
+\textit{proceso}. Si pensamos, antes de definirlo, qué es un proceso, vemos que
+no es trivial llegar a una idea provechosa. En principio, todo lo que una
+computadora hace es, precisamente, computar: ¿es un proceso una serie de
+computaciones? Si es así, ¿toda serie de computaciones es un proceso? ¿No puede
+un conjunto \textit{no consecutivo} de computaciones constituir un proceso? ¿Es
+una única computación un proceso? Si no, ¿cuál es la cantidad de computaciones
+que hace que algo sea un proceso?
+
+No vamos a discutir estas ideas a fondo, pero es interesante plantearlas.
+Por el momento, diremos que un proceso es simplemente un programa que se 
+está ejecutando, y asumimos que todos entendmos qué queremos decir con un 
+programa.
+
+En sí mismo, el programa es algo inerte: es un conjunto de instrucciones en el
+disco esperando que algo difunda en él el soplo de la vida, como el barro
+originario en los mitos hebreos. Es precisamente el sistema operativo quien 
+insufla vida en el programa, haciéndolo correr.
+
+Sin embargo, el problema que enfrenta el sistema operativo es muy diferente al
+que enfrentó Yavhé cuando quiso darle vida a la materia inerte. Dios es
+todopoderoso, pero un procesador no. Si tenemos un solo procesador, ¿cómo
+podemos darle vida a múltiples procesos? La respuesta simple es: \textit{no
+podemos}. La respuesta interesante, sin embargo, es: podemos simular que lo
+hacemos. Es decir, podemos olvidarnos de nuestra pretensión de ser Dios, y 
+contentarnos con ser un practicante de ilusiones. Menos glorioso, sí, pero 
+es lo que nos toca.
+
+\subsection{Virtualización}
+
+Cuando utilizando un único hardware para simular una multiplicidad simultánea
+de procesos, decimos que estamos \textit{virtualizando}. La forma básica en que
+el sistema operativo (SO) virtualiza la CPU es ejecutar un proceso durante un
+quantum (corto) de tiempo $t$, deteniéndolo y corriendo otro, y así
+sucesivamente. Esta técnica se llama \textit{time sharing}, y sacrifica
+\textit{performance} a cambio de la ilusión de simultaneidad.  
+
+\begin{quote}
+    Imaginemos dos dos canicas situadas en los extremos opuestos de una mesa.
+    Imaginemos que las muevo muy poco, primero una y luego la otra, hacia el
+    centro de la mesa, hasta que se tocan. Si mis manos fueran lo
+    suficientemente rápidas, creerías ver que la canicas se mueven al mismo
+    tiempo.
+\end{quote}
+
+
+Para implementar la Virtualización de la CPU, y hacerlo bien, el SO necesita 
+$(a)$ procedimientos de bajo nivel y $(b)$ inteligencia de alto nivel. A los 
+procedimientos de bajo nivel se los llama \textit{mecanismos}, y consisten 
+en protocolos que implementan una funcionalidad. La inteligencia de 
+alto nivel se refiere a políticas que determinan criterios y decisiones 
+en el sistema operativo.
+
+\begin{quote}
+    Por ejemplo, una política puede referirse a qué hacer cuando múltiples procesos 
+    llegan a la CPU al mismo tiempo. ¿Cuál debe ejecutarse primero?
+\end{quote}
+
+\subsection{Machine state del proceso}
+
+Para comprender mejor qué es un proceso, debemos entender su \textit{machine
+state}; es decir, qué puede el programa leer o cambiar cuando está
+ejecutándose.
+
+Un componente obvio del \textit{machine state} es la memoria. Con
+\textit{memoria} nos referimos tanto a las instrucciones del proceso, los datos
+que el programa puede leer o escribir, etc. Otro componente son los
+\textit{registros}, como el \textit{instruction pointer}, \textit{program
+counter}, etc. Por último, la información de \textit{input/output} (I/O), como
+una lista de los archivos que el proceso tiene abiertos, es parte de su
+\textit{machine state}.
+
+\subsection{API del proceso}
+
+Una idea preliminar de la API de un proceso es dada por la siguiente 
+lista de interfaces:
+
+\begin{itemize}
+    \item \textit{Crear:} Un SO debe poder crear procesos nuevos.
+    \item \textit{Destruir:} Un SO debe poder destruir procesos que se están
+        ejecutando.
+    \item \textit{Esperar:} Un SO debe poder esperar que un proceso se 
+        termine de ejecutar. 
+    \item \textit{Control vario:} Además de destruir o esperar por un proceso, 
+        otros mecanismos de control son posibles, como suspender 
+        un proceso para resumirlo más tarde. 
+    \item \textit{Status:} Un SO usualmente provee interfaces que 
+        dan información acerca de un proceso, como hace cuánto 
+        se está ejecutando y cuál es su estado.
+\end{itemize}
+
+\subsection{Creación de procesos}
+
+¿Cómo es que el SO transforma programas en procesos? Es decir, ¿cómo 
+da inicio a la ejecución de un programa?
+
+El primer paso es cargar (\textit{load}) el código y cualquier dato estático
+necesario en la memoria; particularmente, en el \textit{address space} del
+programa. Este proceso consiste esencialmente en leer bytes del disco y
+ubicarlos en alguna región de la memoria. Los SOs modernos realizan este
+proceso \textit{lazily} (perezosamente), cargando los bytes de a poco y a
+medida que se van necesitando.
+
+Una vez el código estático ha sido ubicado en memoria, hay poco más 
+que deba hacerse. Se aloca algo de memoria para el stack y el heap 
+del programa, y se realizan algunas tareas de inicialización. Por 
+ejemplo, en sistemas UNIX, cada proceso tiene tres \textit{file descriptors}:
+standard input, standard output, y standard error.
+
+\begin{quote}
+    Un \textit{file descriptor} es una representación abstracta que el 
+    sistema operativo hace para acceder y manejar archivos, sockets,
+    y pipes. Cada vez que un proceso abre un archivo u otro recurso
+    de I/O, el kernel le asigna a ese recurso un entero que lo identifica,
+    Ese es su \textit{file descriptor}. De allí en más, el programa sólo
+    usa ese identificador para operar con el recurso.  
+
+    El \textit{standard input} es el \textit{file descriptor} 0, y 
+    su propósito es recibir datos de input para un proceso,
+    típicamente del teclado. En general, a menos que se especifique 
+    lo contrario, el \textit{standard input} lee de la terminal.
+    Cada vez que llamas un comando de terminal, el mismo se envía
+    a un programa a través de standard input.
+\end{quote}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
