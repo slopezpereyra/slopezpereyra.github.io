@@ -13,7 +13,7 @@ como una flor acepta ser mecida por el viento, y siempre ver el rostro
 permanente de las cosas, no su máscara salvaje. (Pero en el
 abrirse y el cerrarse de una puerta sólo ves a un hombre que se aleja, sólo
 escuchas el eco de unos pasos.) Quisiera ser un hombre simple que ama a los
-hombres simples simplemente. (Pero al más pobre y al más rico por igual miras
+hombres simples. (Pero al más pobre y al más rico por igual miras
 bajo la luz de tu crepúsculo.) Quisiera despedirme de una joven que, en la
 febril infancia de una vida lamentable, renunció a toda abnegación y a toda
 pausa, temió que el tiempo pudiera detenerse y a los crueles espejos y al amor,
