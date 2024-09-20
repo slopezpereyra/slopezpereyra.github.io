@@ -23,6 +23,20 @@ layout: null
 /* --- General --- */ 
 /*font-family: "Computer Modern Serif", serif; font-size:20 */
 
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.03); /* Adjust the transparency for the grain effect */
+  background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png'); /* Example of a noise pattern */
+  z-index: 9999; /* Ensures the grain stays on top */
+}
+
 body {
   font-family: "EB Garamond", serif; 
   font-weight: 450;
