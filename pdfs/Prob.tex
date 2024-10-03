@@ -6,6 +6,7 @@
 \usepackage{textcomp}
 \usepackage{amssymb}
 \usepackage{amsmath, amssymb}
+\usepackage{newtxtext} \usepackage{newtxmath}
 \newtheorem{problem}{Problem}
 \newtheorem{example}{Example}
 \newtheorem{lemma}{Lemma}
@@ -1052,24 +1053,383 @@ played. $P(N = 2) = \frac{1}{4}$, of course. And $P(N = 3) = 2 (\frac{1}{2})^3
 \frac{3}{16}$, which resolves to $\frac{11}{16}$.
 
 
+\pagebreak 
+
+\textbf{Ej. 6.}  Let $\mu=8.8, \sigma=2.8$. $(a)$ The probability of $X \sim (\mu, \sigma^2)$ being 
+at most $10$ is given by 
+
+\begin{align*}
+    P(X \leq 10) = \Phi( \frac{10 - \mu}{\sigma}) &= \Phi(1.2 / 2.8) \\ 
+                                   &= \Phi(0.428) \\ 
+                                   &\approx \Phi(0.43) \\ 
+                                   &\approx .666
+\end{align*}
+
+So quite curiously the probability approximates a nice fraction: $\frac{2}{3}$.
+
+$(b)$ The probability of $X$ being between $5$ and $10$ is simply 
+
+\begin{equation*}
+    P(X \leq 10) - P(X \leq 5) = \frac{2}{3} - \Phi(-1.357) = .666 - .085 = .581
+\end{equation*}
+
+where the second probability is computed easily with the table.
+
+($d$) The process of drawing $5$ samples of $X$, $\overrightarrow{x} = (x_1,
+\ldots, x_5)$ randomly, where we consider the case $x_i \in [5, 10]$ a success,
+is a binomial process with $n = 5$, $p = P(X \in [5, 10]) = .581$.
+If we let $Y$ denote the number of successes, then
+
+\begin{align*}
+    P(Y = 1) &= \binom{5}{1} \cdot .581 \cdot (1 - .581)^{4} \\ 
+    &= 5 \cdot .581 \cdot .419^4 \\ 
+    &= .089
+\end{align*}
+
+\pagebreak 
+
+\textbf{Ej. 7} Let $X \sim \mathcal{N}(\mu, \sigma)$. We know $10\%$ of the
+samples of $X$ fall above $10.256$ and $5\%$ fall below $9.671$. 
+We are asked to find $\mu, \sigma$. We are essentialyl 
+requested to find $\mu, \sigma$ s.t. the following 
+equations are both satisfied:
+
+\begin{align*}
+    \begin{cases}
+        \Phi(\frac{ 10.256 - \mu }{\sigma}) &= .9 \\ 
+        \Phi(\frac{9.671 - \mu}{\sigma}) &= .05
+    \end{cases}
+\end{align*}
+
+
+(The first equation comes from the fact that $1 - \Phi(\frac{10.256  - \mu}{\sigma}) = .1$).
+
+
+\small
+\begin{quote}
+
+\textbf{NOTE.} There is very little difference between $10.256$ and $9.671$. However,
+the difference in probabilities is huge. Furthermore, both probabilities 
+fall on the opposite tails of the distribution. This means our result must be
+some distribution with \textit{very low variance} and centered somewhere
+between $10.256$ and $9.671$. We can use this as sanitiy check.
+\end{quote}
+\normalsize
+
+
+This equations entail that we need (approximately)
+
+\begin{align*}
+    \begin{cases}
+        \frac{10.256 - \mu}{\sigma} &= 1.29 \\
+            \frac{9.671 - \mu}{\sigma} &= -1.64
+    \end{cases}
+\end{align*}
+
+The first equation yields 
+
+\begin{equation*}
+    \mu = -1.29\sigma + 10.256
+\end{equation*}
+
+Using this in the second equation gives 
+
+\begin{align*}
+    9.671 + 1.29\sigma - 10.256 = -1.64\sigma \iff 2.93\sigma = .585
+\end{align*}
+
+This gives $\sigma = .199$, which we approximate with $\sigma = .2$. Then 
+$\mu = -1.29\cdot .2 + 10.256 = 9.998$, which we aproximate with 
+$\mu = 10$.
+
+$\therefore \mu = 10, \sigma = .2$.
+
+\pagebreak 
+
+\textbf{Ej. 10}. We only look at point $(b)$. We are given $X \sim \mathcal{N}(70, 3^2)$.
+We are asked for $\varphi \in \mathbb{R}$ s.t. $I = (70 - \varphi, 70 + \varphi)$
+covers $95\%$ of all samples.
+
+For the interval $I$ to cover $95\%$ of the distribution, it must 
+leave $2.5\%$ unoccupied on each tail. Which means $\varphi$ must 
+satisfy
+
+\begin{align*}
+    \begin{cases}
+        \Phi\Big( \frac{70 - (70 - \varphi)}{3} \Big) &= 0.025 \\
+        \Phi\Big(\frac{70- (70 + \varphi)}{3}\Big) &= 0.975
+    \end{cases}
+\end{align*}
+
+
+Using the normal distribution table, this entails 
+
+\begin{align*}
+    \begin{cases}
+        \frac{70 - (70 - \varphi)}{3} \B&= -1.96 \\ 
+        \frac{70- (70 + \varphi)}{3}&= 1.96
+    \end{cases}
+\end{align*}
+
+Both equations give $\varphi = -1.96(3) = -5.88$. Of course, the sign doesn't mean anything here,
+since $\varphi$ simply determines the amplitude of the centering around $\mu$.  
+
+$\therefore  ~ \varphi = 5.88.$
+
+\pagebreak 
+
+\section{Exponential distribution}
+
+The exponential distribution is 
+
+\begin{align*}
+    f_X(x; \lambda) = \begin{cases}
+        \lambda e^{-\lambda}x & x \geq 0 \\ 
+        0 & \text{otherwise}
+    \end{cases}
+\end{align*}
+
+Its CDF (in the proper interval) is $F_X(x; \lambda) = 1 - e^{-\lambda x}$, its mean is $\frac{1}{\lambda}$, and its variance $\frac{1}{\lambda^2}$.
+
+\textbf{Problem 11.} We are given $X \sim \text{Exp}(.01386)$. $(a)$ $P(X \leq 100)$ is 
+computed directly from the CDF: 
+
+\begin{equation*}
+    F_X(100; .01386) = 1 - e^{-100 \cdot .01386} = 1 - e^{-1.386} = .7499 \approx \frac{3}{4}
+\end{equation*}
+
+The probability $P(100 \leq X \leq 200)$ is simply given by $F_X(200) - F_X(100)$, which 
+is simple to compute.
+
+\textbf{Problem 12.} A sistem has five componentes connected thus:
+
+\begin{equation*}
+    c_1 \to c_2 \to  \ldots \to  c_5
+\end{equation*}
+
+If one component fails, the whole system fails. Each component has a duration
+$\delta_i \sim \text{Exp}(.01)$, and failures in one component are independent
+of failures in others. Let $A_i$ denote the event of the $i$th component 
+lasting for at least $t$ hours. Let $X$ the time at which the system fails,
+i.e. the least duration among all systems.
+
+$(a)$ The event $\left\{ X \geq t \right\} $ is equivalent to what event 
+where $A_1, \ldots, A_5$ appear?
+
+
+\small
+\begin{quote}
+
+    The event $\left\{ X \geq t \right\} $ is equivalent to the event $\bigcap_{i=1}^{5} A_i$, i.e. 
+    the event where each component lasts at least $t$ hours.
+
+\end{quote}
+\normalsize
+
+
+$(b)$ Using the independence of events $A_i$, find $P(X \geq t)$ and find $F(t) = P(X \leq t)$, 
+as well as the PDF of $X$.
+
+
+\small
+\begin{quote}
+
+Since the events are independent, given what was said in $(a)$, this probability is 
+
+\begin{align*}
+    P(X \geq t) = \prod_{i=1}^{5} P(A_i) &= \prod_{i=1}^{5} P(\delta_i \geq t) \\ 
+                           &= \prod_{i=1}^{5} \left( 1 - P(\delta_i \leq t) \right) \\
+                           &= \Big( 1 - \left( 1 - e^{-t \cdot .01} \right) \Big)^{5} \\ 
+                           &= e^{-t \cdot 0.1 \cdot 5}\\
+                           &= e^{-t \cdot 0.5}
+\end{align*}
+
+Same reasoning gives $F_X(t) = (1 - e^{-t \cdot 0.5})$, which means the PDF is 
+
+\begin{align*}
+    f_X(t) = \frac{d}{dt} \left[ 1 - e^{-t \cdot 0.5} \right] = -\frac{d}{du} e^{u} \frac{d}{dt} u
+\end{align*}
+
+with $u = -t \cdot 0.5$. Since $\frac{d}{dt} u = -\frac{1}{2}$ we have 
+
+\begin{equation*}
+    f_X(t) = -e^u \cdot (- \frac{t}{2}) = \frac{e^{-\frac{t}{2}}}{2}
+\end{equation*}
+
+\end{quote}
+\normalsize
 
 
 
 
+$(c)$ Assume $n$ components exist, each with duration $\delta \sim \text{Exp}(\lambda)$. What is the distribution of $X$?
 
 
+By the same token, 
+
+\begin{align*}
+    F_X(x) &= \prod^{n}_{i=1} P(\delta_i \geq t) = e^{-t \frac{n}{10}}
+\end{align*}
+
+\pagebreak 
+
+\section{Prob. Conjuntas}
+
+\textbf{Problem (1)} Let 
+
+\begin{align*}
+    f(x, y) = \begin{cases}
+        kxy & 0 \leq x \leq 1 \land  0 \leq y \leq 1 \land  x + y \leq 1 \\ 
+        0 &\text{otherwise}
+    \end{cases}
+\end{align*}
+
+with $k \in \mathbb{R}^{+}$. 
+
+$(a)$ Determine $k$ so that $f$ is a joint PDF of $( X, Y )$.
 
 
+\small
+\begin{quote}
+
+We require that 
+
+\begin{align*}
+    \int_{0}^{1} \int_{0}^{1-x} f(x, y) dy ~ dx &= k \int_0^1 x \int_0^{1-x} y ~ dy ~ dx \\ 
+                                                &= k \int_0^1 x \left[ \frac{y^2}{2} \right]^{1-x}_0 ~ dx \\ 
+                                                &= k \int _0^1 x \left( \frac{( 1-x )^2}{2} \right)  ~ dx \\ 
+                                                &= \frac{k}{2} \int_0^1 x\left( 1 -2x + x^2 \right)  ~ dx \\ 
+                                                &= \frac{k}{2} \int_0^1 x - 2x^2 +x^3 ~ dx \\ 
+                                                &= \frac{k}{2} \Big( \left[ \frac{x^2}{2} \right]_0^{1} - 2 \left[ \frac{x^3}{3} \right]_0^1 + \left[ \frac{x^4}{4} \right]_0^1   \Big) \\ 
+                                                &=\frac{k}{2} \left( \frac{1}{2} - \frac{2}{3} + \frac{1}{4} \right)  \\ 
+                                                &=\frac{k}{2} \cdot \frac{1}{12} \\ 
+                                                &= \frac{k}{24}
+\end{align*}
+
+\end{quote}
+\normalsize
+
+This entails $k$ must be $24$ in order for $f$ to be a joint PDF of $(X, Y)$.
 
 
+$(b)$ The marginal probability distribution of $Y$ is 
+
+\begin{align*}
+    f_Y(y) &= 24\int_0^1 xy ~ dx &= 24y \int_0^1 x ~ dx \\ 
+                       &=24y y \left[ \frac{x^2}{2} \right]_0^1 \\ 
+                       &= 24 y \cdot \frac{1}{2} \\ 
+                       &= 12y
+\end{align*}
 
 
+Same reasoning gives $f_X(x) = 12x$.
 
+$(c)$ Since $f_X(x) f_Y(y) = 12x \cdot 12y = 12^2xy \neq f(x, y)$,
+the r.vs are not independent.
 
+\pagebreak 
 
+\textbf{Problem 3} Let 
 
+\begin{align*}
+    f(x, y) = \begin{cases}
+        k(x + y) & 0 \leq x \leq 10 \land  0 \leq y \leq 10 \\ 
+        0 & \text{otherwise}
+    \end{cases}
+\end{align*}
 
+$(a)$ The value of $k$ can be found solving the equation
 
+\begin{equation}
+    k \int_0^{10} \int_0^{10} (x + y) dy ~ dx = 1
+\end{equation}
+
+Observe that 
+
+\begin{align*}
+    \int_0^{10}(x+y) dy &= x\int_0^{10} dy + \int_0^{10} y ~ dy \\ 
+                        &= 10x + \frac{10^2}{2} \\ 
+                        &= 10x + 50
+\end{align*}
+
+The left-hand side of equation $(1)$ then becomes 
+
+\begin{align*}
+    k \int_0^{10} 10x + 50 ~ dx &= k \left[ 10 \left[ \frac{x^2}{2} \right]^{10}_0 + 500  \right]  \\ 
+                                &=k \left[ 500 + 500 \right] \\ 
+                                &=1000k
+\end{align*}
+
+Hence, the solution to $(1)$ is $k = \frac{1}{1000}$.
+
+$(b)$ Now that we know that the PDF is $f(x, y) = (x+y) / 1000$ (for $x, y \in 0, 10]$), 
+we can find $P(X + Y < 5)$:
+
+\begin{equation*}
+    \int_{x=0}^{5} \int_{y = 0}^{5 - x} \frac{x + y}{1000} ~ dy ~ dx
+\end{equation*}
+
+Observe that 
+
+\begin{align*}
+    \frac{1}{1000} \int_0^{5 - x} x + y ~ dy &= \frac{1}{1000} \left[ x(5-x) + \frac{(5-x)^2}{2} \right] \\ 
+                                            &=\frac{1}{1000} \frac{10x - 2x^2 + 25 - 10x + x^2}{2} \\ 
+                                            &=\frac{25 - x^2}{2000}
+\end{align*}
+
+Then 
+
+\begin{align*}
+    P(X + Y < 5) &= \frac{1}{2000}\int_0^{5} 25 - x^2 ~ dx \\ 
+                 &= \frac{1}{2000} \left( 25(5) - \frac{5^3}{3} \right)  \\ 
+                 &=\frac{1}{2000}\left( \frac{2\cdot 5^3}{3} \right)  \\ 
+                 &= \frac{250}{6000} \\ 
+                 &= \frac{125}{3000} \\ 
+                 &= \frac{25}{600} \\ 
+                 &= \frac{1}{24}
+\end{align*}
+
+$(c)$ It is easy to see that 
+
+\begin{equation*}
+    f_Y(y) = \frac{1}{1000}  \int_0^{10} x + y ~ dx &= \frac{1}{20} + \frac{y}{100}
+\end{equation*}
+
+\begin{equation*}
+    f_X(x) = \frac{1}{1000} \int_0^{10} x + y ~ dy = \frac{1}{20} + \frac{x}{100}
+\end{equation*}
+
+Note that 
+
+\begin{align*}
+    f_X(x) \cdot f_Y(y) &= \frac{5+y}{100}\frac{5+x}{100} \\ 
+                        &=\frac{25 + 5x +5y + yx}{100^2} \\ 
+                        &\neq f(x, y)
+\end{align*}
+
+The variables are not independent.
+
+$(d)$ It is straightforward to compute
+
+\begin{equation*}
+    \mathbb{E}\left[ Y \right]  = \mathbb{E}\left[ X \right] &= \int_0^{10} \frac{5x + x^2}{100} ~ dx = \frac{35}{6}
+\end{equation*}
+
+Now, observe that 
+
+\begin{equation*}
+    \mathbb{E}\left[ X Y \right] &= \int_0^{10} \int_0^{10} \left( xy \right) \frac{x+y}{100} ~dy ~ dx = \frac{100}{3}
+\end{equation*}
+
+The covariance is 
+
+\begin{align*}
+    Cov(X, Y) &= \mathbb{E}\left[X  Y  \right] - \mathbb{E}\left[ X \right] \mathbb{E}\left[ Y \right]  \\ 
+    &= \frac{100}{3} - ( \frac{35}{6} )^2 \\ 
+    &= -0.694
+\end{align*}
+
+In short, there is a slight negative correlation between the variables.
 
 
 

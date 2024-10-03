@@ -8,7 +8,7 @@ Quisiera ser como un loto y florecer preciosamente, y conocer lo que hay en mí
 de la gracia divina. (Pero a cada paso das con una sombra.) Quisiera una rara
 especie de iluminación, alguna forma de volverme *verdaderamente bueno*, alguna
 manera de ser gobernada por la compasión y el amor. (Pero en tu pensamiento
-pesan cosas que jusgazte del sueño o del olvido.) Quisiera  aceptarlo todo,
+pesan cosas que juzgaste del sueño o del olvido.) Quisiera  aceptarlo todo,
 como una flor acepta ser mecida por el viento, y siempre ver el rostro
 permanente de las cosas, no su máscara salvaje. (Pero en el
 abrirse y el cerrarse de una puerta sólo ves a un hombre que se aleja, sólo
