@@ -1432,6 +1432,187 @@ The covariance is
 In short, there is a slight negative correlation between the variables.
 
 
+\pagebreak 
+
+Let $Y \sim \Gamma(\alpha = 100, \beta = 20)$. Let $L = 30Y + 2Y^2$. Compute 
+the expected value and variance of $L$.
+
+Let us recall that $\mathbb{E}\left[ Y \right] = \alpha\beta$, and 
+$\mathbb{V}\left[ Y \right] = \alpha\beta^2$. From this, using linearity of the expectation, 
+
+
+\begin{align*}
+    \mathbb{E}\left[ L \right] &= 30\mathbb{E}\left[ Y \right] + 2 \mathbb{E}\left[ Y^2 \right] 
+\end{align*}
+
+Observe that 
+
+\begin{align*}
+    \mathbb{E}\left[ Y^2 \right] &= \mathbb{V}\left[ Y \right] + \mathbb{E}^2\left[ Y \right] \\ 
+                                 &= (100)20^2 + (100\cdot 20)^2
+\end{align*}
+
+
+from which $\mathbb{E}\left[ L \right] $ is deduced.
+
+\pagebreak 
+
+Let $X, Y$ be two Poisson-distributed independent r.vs with parameters
+$\lambda_X, \lambda_Y$, respectively.
+
+$(a)$ Since $X, Y$ are independent, their joint PDFs is 
+
+\begin{align*}
+    f_{X, Y}(n, m) &= f_X(n)f_Y(m) \\ 
+                   &= \left( \frac{ \lambda_X^{n}e^{-\lambda_X} }{n!} \right) \left( \frac{\lambda_Y^m e^{-\lambda_Y}}{m!} \right)  \\ 
+                   &=\frac{ \lambda_X^n \lambda_Y^m \exp( -\lambda_X - \lambda_Y )}{n!m!}
+\end{align*}
+
+$(b)$ The probability that \textit{at most} one event occurs considering both
+vars is the probability that $(X, Y) \in \left\{ (0, 0), (1, 0), (0, 1)
+\right\} $. This are obviously disjoint events, from which we get the
+probability $f_{XY}(0, 0) + f_{XY}(0, 1) + f_{XY}(1, 0)$. Observe 
+that this is naturally equal to 
+
+\begin{align*}
+    \sum_{n=0}^{1} \sum_{m=0}^{1 - n} f_{XY}(n, m)
+\end{align*}
+
+$(c)$ The general expression for the probability that the total number of
+events, either $X$ or $Y$, is exactly equal to $\varphi$, must be an expression
+for $P(X + Y = \varphi)$. This is of course the probability of $(X, Y) \in \{(0,
+\varphi), (1, \varphi - 1), \ldots, (\varphi - 1, 1), (\varphi, 0)\}$.
+All of these events are obviously disjoint. So
+
+\begin{align*}
+    P(X + Y = \varphi) &= \sum_{n=0}^{\varphi} f_{XY}(n, \varphi - n)
+\end{align*}
+
+\pagebreak 
+
+Let $X, Y$ two independent and exponentially distributed r.vs with $\lambda = 1$.
+
+$(a)$ The joint PDF of $X, Y$ (using the fact that they are independent) is 
+
+\begin{align*}
+    f_{XY}(x, y) &= f_X(x) f_Y(y) \\ 
+                 &= \left( \lambda e^{-\lambda x} \right) \left( \lambda e^{- \lambda y} \right) \\ 
+                 &=\lambda^2 \exp(-\lambda x - \lambda y) \\ 
+                 &= \exp(-x - y)
+\end{align*}
+
+for $x, y \geq 0$, and zero otherwise.
+
+$(b)$ The probability that both $X$ and $Y$ fall in $[0, 1000]$ is 
+
+\begin{equation*}
+    \int_{x=0}^{1000} \int_{y=0}^{1000} f_{XY}(x, y) ~ dy ~ dx &= \int_{x=0}^{1000} \int_{y=0}^{1000} e^{-x} e^{-y} ~ dy ~ dx
+\end{equation*}
+
+Let $u = -x, w = -y$. Clearly, $\frac{dw}{dy} = -1 \Rightarrow dw = -dy$. Similarly,
+$du = -dx$. Finally, if $y = 1000, w = -1000$. So,
+
+\begin{align*}
+    \int_{0}^{1000} e^{-y} &= -\int_0^{-1000} e^w ~ dw \\ 
+                           &= - \left( - \int_{-1000}^{0} e^w ~ dw \right)  \\
+                           &= \left[ e^{w} \right]_{-1000}^{0} \\ 
+                           &= \left[ e^0 - e^{-1000} \right] \\ 
+                           &= \left[ 1 - e^{-1000} \right] \\ 
+                           &= 1 - \frac{1}{e^{1000}}
+\end{align*}
+
+So the probability is 
+
+\begin{align*}
+    \left( 1 - \frac{1}{e^{1000}} \right) \int_{x=0}^{1000} e^{-x} ~ dx
+\end{align*}
+
+The same reasoning, substituting with $u = -x$, gives that $\int_0^{1000} e^{-x} ~ dx = 1 - e^{-1000}$, 
+and hence the result is
+
+\begin{equation*}
+    \left( 1 - e^{-1000} \right)^{2}
+\end{equation*}
+
+$(c)$ The probability that the total duration of both events is at most $2000$ is $P(X + Y \leq 2000)$,
+which resolves to 
+
+
+\begin{align*}
+    \int_{x=0}^{2000} \int_{y = 0}^{2000 - x} f_{XY}(x, y) ~ dy ~ dx &= \int_{x=0}^{2000} \int_{y = 0}^{2000 - x} e^{-x} e^{-y} ~ dy ~ dx
+\end{align*}
+
+We already know $\int_0^b e^{-y} ~ dy = 1 - e^{-b}$, which means we have obtain 
+
+\begin{align*}
+    P(X + Y \leq 2000) &= \int_{x=0}^{2000} e^{-x} \left( 1 - e^{-2000 + x} \right) ~ dx\\ 
+                       &=\int_0^{2000}e^{-x} ~ dx - \int_{x=0}^{2000} e^{-2000} ~ dx \\ 
+                       &=\left( 1 - e^{-2000} \right) - e^{-2000} (2000 - 0) \\ 
+                       &= \left( 1 - e^{-2000} \right) - 2000 e^{-2000} \\ 
+                       &=1 - 2001 e^{-2000} 
+\end{align*}
+
+\pagebreak 
+
+Let $X$ an r.v. with CDF
+
+\begin{align*}
+    F(x) = \begin{cases}
+        0 & x < -1 \\
+        a & -1 \leq x < \frac{1}{2} \\
+        \frac{3}{4} & \frac{1}{2} \leq x < 1\\
+        b & 1 \leq x \\
+    \end{cases}
+\end{align*}
+
+and assume $E(X) = -\frac{1}{8}$.
+
+
+$(a)$ It is necessary that $b = 1$ for the CDF to make sense. The value of 
+$a$ can be found by recalling two things: (1) that $p(x_i) = F(x_i) - F(x_{i-1})$,
+and that $\sum_{x \in Im(X)} x p(x) = E(X)$. So we have 
+
+\begin{align*}
+    \sum_{i = 1}^{3} x_i \left( F(x_i) - F(x_{i-1}) \right) &= (-1)a + \frac{1}{2} \left( \frac{3}{4} - a \right) + \left( 1 - \frac{3}{4} \right) \\ 
+                                                            &= -a + \frac{3}{8} -\frac{a}{2} + \frac{1}{4} \\ 
+                                                            &= - \frac{3a}{2} + \frac{5}{8} \\ 
+                                                            &= E(X)
+\end{align*}
+
+Since $E(X) = -\frac{1}{8}$ we have 
+
+\begin{align*}
+    - \frac{3a}{2} + \frac{5}{8} = -\frac{1}{8} \iff -\frac{3a}{2} = -\frac{3}{4} \iff -3a = -\frac{3}{2}
+\end{align*}
+
+This entails $a = \frac{1}{2}$.
+
+$(b)$ The PMF of $X$ is 
+
+\begin{align*}
+    p_X(x) = \begin{cases}
+        \frac{1}{2} & x = -1 \\ 
+        \frac{1}{4} & x = \frac{1}{2} \\ 
+        \frac{1}{4} &= x = 1
+    \end{cases}
+\end{align*}
+
+The variance of $X$ is $E(X^2) - E^2(X)$. The second term is known. The first can be computed:
+
+\begin{align*}
+    E(X^2) &= \sum_{x \in Im(X)} x^2 p_X(x) \\ 
+           &= (-1)^2 \frac{1}{2} + \frac{1}{2^2} \frac{1}{4} + 1^2 \frac{1}{4} \\ 
+           &=\frac{1}{2} + \frac{1}{2} + \frac{1}{4} \\ 
+           &=\frac{5}{4}
+\end{align*}
+
+
+
+
+
+
+
+
 
 \end{document}
 
