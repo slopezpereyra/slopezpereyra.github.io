@@ -5,7 +5,7 @@ categories: [ Personal ]
 
 What makes a man dangerous is not the strength of his arms, but the
 content of his heart. The weakest men, resented or enraged, poses more 
-reason to worry any gentle giant. The absolute inverse of this statement 
+reason to worry than any gentle giant. The absolute inverse of this statement 
 is also true: what makes beautiful a person is not the power, but the purity of
 their thoughts. 
 
@@ -22,7 +22,7 @@ For instance, a few days ago I spent a sweet afternoon with a girl
 with whom (so I believed) I shared very little. Whilst my childhood was
 stable and comfortable, she was the daughter of an adolescent mother and a
 criminal father who ended up going to jail. The city I was born, though far from
-being a great city, was is the capital of my province—she had been born in
+being a great city, is the capital of my province—she had been born in
 the deepest interior of a neighboring province, which (on top of it all) she fled to
 escape her father, winding up in the austral barrens of Usuahia. We could not
 talk about politics—she wasn't interested—nor books or arts—she wasn't
