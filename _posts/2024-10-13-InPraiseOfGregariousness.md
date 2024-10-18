@@ -5,14 +5,13 @@ categories: [ Personal ]
 
 What makes a man dangerous is not the strength of his arms, but the
 content of his heart. The weakest men, resented or enraged, poses more 
-reason to worry than any gentle giant. The absolute inverse of this statement 
-is also true: what makes beautiful a person is not the power, but the purity of
-their thoughts. 
+reason to worry than any gentle giant. Similarly, what makes beautiful a person
+is not the power, but the purity of their thoughts. 
 
 Gregariousness is a precious virtue. The world, with all its sorrows, is
 filled with kind and beautiful people, some as simple and immediate as a flower,
 some as complex and mysterious as an abyss or the moon. With the exception of
-serious flaws—violence and wickedness are real—one need only practice a
+serious flaws—for violence and wickedness are real—one need only practice a
 radical acceptance of the other for their virtues to become almost instantly
 apparent, and to learn how very much alike we all are. (If one is not willing
 nor capable of practicing such acceptance, one has very little right to any
