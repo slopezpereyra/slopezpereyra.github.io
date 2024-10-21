@@ -23,7 +23,8 @@ As we debate which of these equally terrible faiths to endure, just when the
 final rays of light are perishing at last, as if from another world, my
 father's voice appears, calling us in from the upper floor. We blindly go up
 the stairs, passing by the painting of virgin Mary (in Andean Baroque style),
-barely making our way to the frail candlelight that is burning in the distance.
+barely making our way to the frail candlelight that in the distance burns.
+
 We find my father in the little terrace. Directly over the floor, three
 mattresses are lined up next to one another, with little space between them.
 Above them, because we are far from the city and there are no lights during the
