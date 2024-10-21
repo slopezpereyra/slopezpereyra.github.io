@@ -14,7 +14,7 @@ obscurity and kindness, weariness and hope: these are his avatars.
 One memory, in particular, comes to me, conjured through the mystic fingers of
 the night. L and I are swimming in a hostile summer day. At sunset, tired and
 sublimely happy, we head back to my house. As it was usual in the hellish
-summers, there is a blackout and we have no electricity. A familiar dilemma is
+summers of Corrientes, there is a blackout and we have no electricity. A familiar dilemma is
 faced: Open the windows and allow the nightly breeze to flow, but with it the
 innumerable mosquitoes; keep the windows closed, the plague at bay, and bare
 the heat. And then, when the final rays of light are finally perishing, as if
