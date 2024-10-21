@@ -1,5 +1,5 @@
 ---
-title: To be married to my wife
+title: On one I love
 categories: [ Personal ]
 ---
 
@@ -8,7 +8,7 @@ lives can we trace to a definite genesis? And the genealogy of what fraction of
 our joys could we produce? *Ex nihilo nihil fit*; everything is begotten. But
 faith is woven silently: We never know whether an ocean was just set in chaotic
 motion, whose onslaught may already, though in chrysalis, be our faith. It is
-natural, then, that the day I met my wife passed like any other. I was twelve
+natural, then, that the day I met my girlfriend passed like any other. I was twelve
 years old. And although I do not wish to detail the circunstancial aspects of
 this meeting, I do care to comment on its metaphysics. I find it curious to
 think that, in that very day, the writing of this entry was fixed; perhaps even
@@ -18,7 +18,7 @@ light a match, fire appears as if instantly combusting before our eyes; in
 relative terms, however, the match underwent a process of extraordinary
 duration. Similarly, under the right perspective, any pair of events in life are
 infinitesimally close to each other, however distant they might seem—And so
-indeed the day I met my wife, in more than a literary sense, was the day I wrote
+indeed the day I met my girlfriend, in more than a literary sense, was the day I wrote
 these words—and the day I died beside her. We sometimes speak of our wish to die
 with one another; we forget we already have. I am already resting in our warm
 and common grave—I have been since that twelve-year-old laid eyes on her. And if
@@ -41,13 +41,13 @@ spirit that I wrote the poem:
 > oirás el rechinar de mi zapato<br> 
 > y olerás en la muerte mi perfume
 
-But my wife and I have different tastes in poetry. She likes to be shocked,
+But my girlfriend and I have different tastes in poetry. She likes to be shocked,
 caught off guard—she cares not for structure, metrics—she is passionate and also
 modern. I strive (with little success, that is) for more classical lyricism; to
 me semantics precede wording; I very rarely enjoy free verse and think no
 structure almost always implies no pace nor rhythm. And although it would be
 false to claim this wasn't problematic at first—she doesn't like my poetry, and
-I am a prideful man—our differences kept a hidden pearl. My wife taught me to
+I am a prideful man—our differences kept a hidden pearl. My girlfriend taught me to
 appreciate poetry in a different way. I saw that accents could be placed in
 manners altogether different to those I was accustomed to. For any man of
 sensibility, to be introduced to new literature or music is a delicious
@@ -64,11 +64,11 @@ the anguish and dismality which reigned my life, because I was alone
 deep, and the structures which used to support my life were so in ruins, and my
 identity so forgotten, that I have no memory of that time except for these
 vexing feelings. An almost total amnesia has consumed the whole year which this
-crisis lasted. My wife did not precisely save me from this languid and
+crisis lasted. My girlfriend did not precisely save me from this languid and
 despondent state, and I would be suspicious of the foundations of my love if I
 were to consider her a savior. As a matter of fact, she came to my life not
 during this time, but some months after I had started to regain my strength and
-live again; after a sense of purpose had been restored or manufactured. My wife
+live again; after a sense of purpose had been restored or manufactured. My girlfriend
 is not the reason why I managed to survive the crisis—and I speak of survival in
 a very literal sense. She is, more rightly, the sweet apotheosis of my coming
 back to life. Put differently, it is not that she infused *new* life within me:
@@ -80,7 +80,7 @@ once I escaped the grip of death, that I should never die again.
 
 
 There is another sense in which she acted as a restorer of compassion and
-positive affect. As I said, I knew my wife at a very early age. Some time after,
+positive affect. As I said, I knew my girlfriend at a very early age. Some time after,
 I devoted myself to reading the classical works of the socialist tradition. I
 studied anarchism and Marxism; in fact, I distinctly recall finishing my reading
 of *Das Kapital* the day I turned sixteen, in a hotel bed in Buenos Aires, alone
@@ -103,7 +103,7 @@ was when I was an adolescent, I have come to the intellectual conclusion that
 this in no way contradicts a socialist commitment—if anything, it strengthens
 it. But this intellectual realization came not on its own, but was a consequence
 of an emotional and sentimental rebirth, induced by the example set daily by my
-wife.
+girlfriend.
 
 Indeed, I have never known a more generous person, a soul more decidedly
 committed to giving. I avoid commenting too much on the lives of those I mention
@@ -128,7 +128,7 @@ industries for computer scientists, where piles of money are given in exchange
 for the most unproductive and useless of labors, and shifted my attention to
 aspects of scientific development which bear at least potential for the
 betterment of human life. I have written elsewhere on this; those reflections
-are a product of my wife's example.
+are a product of my girlfriend's example.
 
 <p align="center">
   <img src="../Images/seleyyo.jpg">
@@ -152,7 +152,7 @@ that asks: *My son, are you hurt?* The moral of the story is not only clear, but
 true. I acknowledge unconditional love is not a universal fact, not even for
 motherly love, but it is a fact in any case. Love may transcend a persons
 actions and, so to speak, reach a person's essence or identity. I had a dream
-some time ago: My wife, in a strange frenzy, killed me. I died with unspeakable
+some time ago: My girlfriend, in a strange frenzy, killed me. I died with unspeakable
 sadness, but I was not sad for me. The thought which broke my dying heart was
 bound to her: I knew that she would suffer once she realized what she had done.
 I admit: *This* is a dream, *that* is a story; but almost always a tale is not a
@@ -166,7 +166,7 @@ tale and a dream is not a dream; or this at least was Epicurus claim:
 
 And so, although I should not wish to test this theory, both the dream I
 mentioned as well as mental experimentation force me to the conclusion that I
-would not cease to love my wife, even if she were to kill me. And nothing is
+would not cease to love my girlfriend, even if she were to kill me. And nothing is
 worst than murder. It follows, then, in the most classic syllogistic manner,
 that nothing she could do would make me cease to love her. Who can dispute to me
 then that there is no such thing like unconditional love? Of course, the cynic
@@ -184,7 +184,7 @@ said that we have overcome the romantic spirit; that we are saner, more prudent,
 smarter. I am suspicious of these claims, although this is no place to speak of
 this. I will not make the case, not here, that a romantic *ethos* is superior to
 our contemporary obsession with contractual arrangements and our sober apathy. I
-should only wish to say my love for my wife is, at least in its core,
+should only wish to say my love for my girlfriend is, at least in its core,
 romantic—in the true sense of the word. I say *in its core* because merely
 romantic love almost always never lasts—or at least such is my experience. Like
 a series of concentric rings, whose center is the most incandescent passion,
@@ -210,22 +210,22 @@ On another note, our memories of love are truly a singular curiosity. I have
 many times endeavored to predict that a particular moment I was living would not
 be forgotten. Almost always this prediction is wrong, and I am left only with
 the memory of my *intention* to remember. And if I suspend, at least as much as
-anybody can, the willing direction of my thoughts, and allow memories of my wife
+anybody can, the willing direction of my thoughts, and allow memories of my girlfriend
 to appear before me in a somewhat random fashion, I find many that I would not
 have suspected were preserved. Most of these are precious; some are maybe sad;
 no love can exist, I think, without a mixture of these two sentiments, which are
 mistakenly taken to be *simple* opposites, instead of *complementary* ones. This
 is so true indeed that I cannot imagine a more beautiful image than the face of
-my wife when, saddened by a minor or a serious event, tears are shedding from
+my girlfriend when, saddened by a minor or a serious event, tears are shedding from
 her eyes and through the blushing cheeks. The imagination is painful, yes, but
-it is also beautiful. My wife, particularly, cries quite a lot, and for the most
+it is also beautiful. My girlfriend, particularly, cries quite a lot, and for the most
 minor of occasions; so much so that I anticipate her tears whenever we, say, set
 out to watch a movie or listen to certain music. This does not trouble me at
 all; I am fond of her sensibility. Besides, at least compared to the mean of the
 masculine distribution, I cry rather often too, though in general not from
 sadness. I am particularly sensible to the merciless whip of music, and my tears
 are often effected by overwhelming or sublime artistic expression rather than
-melancholic dejection. I do not think, however, that my wife has seen me cry
+melancholic dejection. I do not think, however, that my girlfriend has seen me cry
 that often, nor anybody for that matter; it is almost always a secret moment.
 She is, this I concede, the only one who has seen me shed tears of gratitude and
 love, of profuse and staggering joy, and more importantly the only one who has
@@ -257,7 +257,7 @@ view of marriage is more common than I would have imagined. It belongs to a set
 of myths that aim to represent frustrations arising from stupidity and impotence
 rather than from the institution of marriage itself. Perhaps the most common of
 these myths, at least among men, is that the relationship between husband and
-wife is almost sexless, if not completely. That there are sexless relations I do
+girlfriend is almost sexless, if not completely. That there are sexless relations I do
 not doubt, but this is not unique to marriage. And though it is true that, for
 some couples, the frequency of their sexual interactions decreases after an
 initial period of intense activity, it is absurd to think, if the couple is
@@ -273,7 +273,7 @@ or even having casual sexual interactions, is not only ridiculously costly in
 terms of time and resources, material and emotional, but it has a tremendous
 drawback: Most people are not worth interacting with. But let us not delve in
 this too much; for, even if you still desire the liberty to sleep with multiple
-people, nothing stops you from discussing it with your wife or husband and
+people, nothing stops you from discussing it with your girlfriend or husband and
 coming to some arrangement on the matter. I do not see why marriage should imply
 monogamy. This is at least superior to what seem to be the two natural
 alternatives: To cheat or, even worse, to grow resentful due to lacking a
@@ -283,7 +283,7 @@ almost always it is their incapacity to pose a difficult conversation, their
 cowardice in living up to their desires, which is to blame.
 
 As far as my personal experience goes, the constancy of marriage, and the trust
-and comfort which I feel around my wife, allowed for exploration and curiosity
+and comfort which I feel around my girlfriend, allowed for exploration and curiosity
 to blossom unprecedentedly. I have always treated sensual pleasures in a
 somewhat oriental manner; having no religious education, no taboos nor
 impediments hindered my pursuit of a rich and varied sexual life from a
@@ -296,7 +296,7 @@ attraction for one's partner. The number of people committed to partners which
 they don't find attractive is incredible; in some cases, their partners *became*
 unattractive, be it due to a deterioration in their aspect or simply out of
 boredom; in other cases, which are to me rather strange, physical attraction was
-never particularly present. As for myself, I am very much attracted to my wife,
+never particularly present. As for myself, I am very much attracted to my girlfriend,
 the description of whose beauty is impossible in words. And so, I have found
 that the masculine teachings of our previous generation were, in this regard,
 blatantly wrong. Not only marriage does not lead to a sexless life, but it
@@ -330,7 +330,7 @@ five or twenty years? With regards to this, however precious a marriage might
 be, no matter how solid its foundation, there is nothing but complete and utter
 uncertainty. This is the great gamble in love, its most extraordinary stake; we
 risk it all, our eyes closed, our inferences weak, to this: That those who will
-take the place of us, husband and wife, two lovers, two friends, in twenty
+take the place of us, husband and girlfriend, two lovers, two friends, in twenty
 years, will also be meant for each other. Absolutely nothing justifies any
 prediction on this matter; it is a myth that personalities are constant, and a
 fact that circumstances are changing. This is the primary reason for divorce, of
@@ -344,7 +344,7 @@ true, as Virgil said, that
 > *Possunt, quia posse videntur.* 
 
 It is precisely this art, to *can* by virtue of believing that one can, the one
-at which my wife excels. Contrarily to myself, she was born in a working class
+at which my girlfriend excels. Contrarily to myself, she was born in a working class
 family, with virtually all odds set out against her. An absent father, economic
 instability, a mother suffering from a psychiatric disorder, and many others
 were the factors which made, to any sensible observer, impossible to guess what
@@ -357,7 +357,7 @@ unbreakable spirit, of her character, and of her capacity to accomplish that
 which she sets to achieve, I would have to tell too much of our romantic story;
 and I do not wish to share anecdotes here. Suffices to say, I have known no
 person so devoted to her goals, and so capable of achieving them; so focused and
-hard-working; so serious and committed. This is such a desirable trait in a wife
+hard-working; so serious and committed. This is such a desirable trait in a girlfriend
 as I could not express, for that same force of spirit and devotion are exerted
 on our marriage, with the purpose of making the relationship grow as well as to
 further our advancement in life. 
@@ -368,14 +368,14 @@ necessary way, I came to find it acts as a protective and fostering ring when
 love exists. I am aware that many of the joys I have spoken about  are not
 peculiar to marriage, but rather to the fact that I married a loving and
 extraordinary individual. Perhaps the praises I have given of the institution
-are but a diversion; perhaps I have been only too lucky. I have a wife that I
-miss when left without her; a wife that I find attractive; a wife of remarkable
+are but a diversion; perhaps I have been only too lucky. I have a girlfriend that I
+miss when left without her; a girlfriend that I find attractive; a girlfriend of remarkable
 intelligence and talent; kind and tranquile, generous and loving. Does marriage
 require extraordinary individuals, extraordinary relations, in order to function
 properly? Statistics suggest so, for an impassioned analysis of the facts leads
 to the conclusion that marriage can be, and almost always is, a recipe for
 disaster; half of marriages end in divorce; of those that don't, how many are
-truly happy? But enough of this. I praise my wife with due devotion; I know
+truly happy? But enough of this. I praise my girlfriend with due devotion; I know
 no love as giving, unselfish and generous as that we have for each other. I wish
 everybody knew what it is like to experience the wonder of such a love; most
 people live a loveless life.  

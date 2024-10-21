@@ -25,10 +25,12 @@ father's voice appears, calling us in from the upper floor. We blindly go up
 the stairs, passing by the painting of virgin Mary (in Andean Baroque style),
 barely making our way to the frail candlelight that in the distance burns.
 
-We find my father in the little terrace. Directly over the floor, three
-mattresses are lined up next to one another, with little space between them.
-Above them, because we are far from the city and there are no lights during the
-blackout, a myriad of stars of every color blaze. The breeze is strong enough
-to keep the mosquitoes away. As we all lie there, in the terrace, without
-blankets or pillows, my father begins to speak: *Those are the* Tres Marías,
-*that is* Orión... And so we fall asleep.
+The dying flames of the candle whispered something indecipherable and true. The
+silhouette of my father, like a shadow, was standing in the little terrace,
+looking at the sky. Above him, because we were far from the city and there were
+no lights during the blackout, a myriad of stars of every color blazed. Over the
+floor of the terrace, three mattresses were lined up next to one another, with
+little space between them. The breeze was strong enough to keep the mosquitoes
+away. As we lie there, below the starry nakedness which roofed our
+weariness, without blankets or pillows, my father began to speak: *Those are
+the* Tres Marías, *that is* Orión... And so we fell asleep.
