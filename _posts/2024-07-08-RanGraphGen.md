@@ -311,7 +311,7 @@ Below, I display a $K_{100}$ and the random tree generated from it.
   <img src="../Images/TreeFromK100.png" width="45%">
 </p>
 
-To prove that our algorithm is correct and unbiased requires more
+To prove that the algorithm is correct and unbiased requires more
 formalization. Let $\mathcal{C}\_{n,m} \subset \mathcal{G}\_{n,m}$ be the set
 of connected graphs of $n$ vertices, $m$ edges. Let $\mathbb{C}(n,m) =
 |\mathcal{C}\_{n,m}|$. Let $\mathcal{E}\_{n, m}$ be the
