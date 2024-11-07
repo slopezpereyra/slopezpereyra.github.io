@@ -36,9 +36,9 @@ sistema de vigilancia y su sucesiva desarticulación. La violación, que era
 digna de un escándalo, aunque cubierta por varios medios internacionales, fue
 ignorada en el periodismo nacional. La población, por lo general, permanece en
 pleno desconocimiento del problema. Acaso por esta razón el fallo de la corte
-fue de corto vuelo: ante la crisis en Rosario, el gobierno nacional avisa —una
-vez más, en nombre del cuidado de sus ciudadanos— que instalará centenares de
-estas cámaras en la ciudad afectada.
+fue de corto vuelo: ante la crisis criminal en Rosario, el gobierno de Alberto Fernández —una
+vez más, en nombre del cuidado de sus ciudadanos— instaló centenares de estas
+cámaras en la ciudad.
 
 La forma y la intensidad de la vigilancia son una función de la ideología:
 varían de un gobierno a otro. Sin embargo, su existencia no lo es. El uso de
@@ -62,7 +62,7 @@ Esta tasa, que supera toda expectativa, sería celebrable sólo allí donde los
 falsos positivos son relativamente inconscecuentes, o la cantidad de
 observaciones relativamente pequeña. La identificación de prófugos no satisface
 ninguna de estas dos condiciones. Más de $1.3$ millones de personas utilizan
-—por tomar un ejemplo fácil— el subterráneo porteño diaraiamente. La tasa que
+—por tomar un ejemplo fácil— el subterráneo porteño diariamente. La tasa que
 hemos supuesto nos garantiza, en este caso, una esperanza de $\approx 130$
 falsos positivos diarios; es decir, alrededor de $130$ personas identificadas
 erróneamente de manera diaria. Queda por determinar si el costo compensa los
