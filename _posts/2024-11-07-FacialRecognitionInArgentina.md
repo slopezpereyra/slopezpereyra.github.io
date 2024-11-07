@@ -104,8 +104,10 @@ de esto es que, con toda probabilidad, los falsos positivos recaerán
 principalmente sobre personas también pertenecientes a dichos sectores. En
 otras palabras, incluso con una muestra de entrenamiento no sesgada, la muestra
 de identificación necesariamente acaba por introducir segos de raza o clase. En
-definitiva, se automatiza la detección del famoso crimen de portación de cara.
-
+definitiva, se automatiza la detección del famoso crimen de portación de cara. 
+(Este problema se ubica en un contexto discutido por otros en el uso de inteligencia 
+artificial; a saber, el curioso surgimiento de una frenología moderna. Véase, 
+por ejemplo, [este trabajo](https://www.cell.com/patterns/fulltext/S2666-3899(24)00160-0?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS2666389924001600%3Fshowall%3Dtrue&fbclid=IwY2xjawFaigtleHRuA2FlbQIxMAABHQNTjsLNaCbhUEyfNReAMYOemeZk6eZMnJBz627KUgEJKUET3SAtN2QH4g_aem_IhjU1jVkZm8s92CS4jdNlg) de Mel Andrews).
 
 Un tercer problema deriva del hecho de que el software que lleva a cabo el
 proceso de identificación es implementado, pero no desarrollado, por el Estado.
