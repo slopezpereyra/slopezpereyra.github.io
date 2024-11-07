@@ -53,8 +53,8 @@ principle*. Por lo pronto, deseo enfocarme en lo primero.
 
 El primer problema, de naturaleza tecnológica, es curiosamente simple. El
 reconocimiento facial es realizado a través de redes neuronales. Asumamos un
-escenario óptimo: una tasa de falsos positivos de $0.01 \%$. Es decir, asumamos
-que sólo en el $0.01\%$ de los casos, el rostro de un individuo que *no*
+escenario óptimo: una tasa de falsos positivos de $0.01$%. Es decir, asumamos
+que sólo en el $0.01$% de los casos, el rostro de un individuo que *no*
 pertenece al grupo que se pretende identificar—en este caso, prófugos—es
 identificado como tal. 
 
@@ -73,7 +73,7 @@ positivo](https://www.pagina12.com.ar/209910-seis-dias-arrestado-por-un-error-de
 esté de acuerdo conmigo.
 
 Corresponde señalar que el gobierno argentino declaró, en principio, una tasa
-de error del 4$\%$ (!). No dio información respecto a la proporción de falsos
+de error del 4% (!). No dio información respecto a la proporción de falsos
 positivos y falsos negativos que componen ese total. En cualquier caso, [según
 lo investigado por el NIST](https://www.nist.gov/speech-testimony/facial-recognition-technology-part-iii-ensuring-commercial-transparency-accuracy), en Estados Unidos, el caso general para las
 tecnologías de reconocimiento facial es una preponderancia de los falsos
