@@ -1608,6 +1608,89 @@ The variance of $X$ is $E(X^2) - E^2(X)$. The second term is known. The first ca
 
 
 
+\pagebreak 
+
+\section{Parte 2: Estimación}
+
+\subsection{Desigualdad de Chebyshev}
+
+\begin{theorem}
+    Sea $X$ r.v. con media $\mu$ y varianza $\sigma^2$. Sea $t \in \mathbb{R}^+$. Luego 
+
+    \begin{equation}
+        P(X \geq t) \leq \frac{E(X)}{t}
+    \end{equation}
+
+    Además, 
+
+    \begin{equation}
+        P\left( |X - \mu| \geq t \right)  \leq \frac{\sigma^2}{t^2}
+    \end{equation}
+
+    Por último, de lo anterior se deduce que, escribiendo $t$ como $\sigma k$,
+    con $k \in \mathbb{R}$,
+
+    \begin{equation}
+        P\left( |X-\mu| \geq k\sigma \right) \leq \frac{1}{k^2}
+    \end{equation}
+\end{theorem}
+
+El teorema anterior es útil porque ciertas probabilidades $P(X > a)$ pueden expresarse 
+como $P(X - \mu > a - \mu)$, habilitando una aplicación del teorema.
+
+\begin{definition}
+    If $\left\{ X_n \right\} $ is a sequence of random variables, we say $\left\{ X_n \right\} $
+    converges in probability to $Y$ if for any $\epsilon > 0$ 
+
+    \begin{equation*}
+        \lim_{n \to \infty} P(|X_n - Y| \geq \epsilon) = 0
+    \end{equation*}
+\end{definition}
+
+\begin{theorem}[Weak large numbers]
+    Let $X_1, \ldots, X_n$ random vars with equal mean $\mu$ and equal 
+    variance $\sigma^2$. Let $\overline{X}_n$ be the mean 
+    value of the sequence.
+
+    For every $\epsilon > 0$,
+
+    \begin{align*}
+        &P(|\overline{X}_n - \mu| \geq \epsilon) \leq \frac{\sigma^2}{n \epsilon^2} \\
+        &P(|\overline{X}_n - \mu| \leq \epsilon) \geq 1 - \frac{\sigma^2}{n \epsilon^2}
+    \end{align*}
+
+    This entails 
+
+    \begin{align*}
+        &\lim_{n \to \infty} P(|\overline{X}_n - \mu| \geq \epsilon) = 0 \\ 
+        &\lim_{n \to \infty} P(|\overline{X}_n - \mu| \leq \epsilon) = 1
+    \end{align*}
+
+    Therefore, $\left\{ \overline{X}_n \right\} $ converges in probability 
+    to the random variable that is centered at $\mu$.
+
+\end{theorem}
+
+Intuitively, this means that if a sequence $\{ X_n \}$ converges in probability
+to $Y$, we can make the probability of $(|X_n - X| < \epsilon)$ arbitrarily
+close to $1$ for any $\epsilon$, taking a sufficiently large $n$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

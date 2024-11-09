@@ -4,50 +4,54 @@ categories: [ Science ]
 ---
 
 The generation of connected random graphs is non-trivial and important to many
-applications. In particular, it is not easy to sample a connected random graph
-from the space $\mathcal{G}$ of all connected graphs with uniformity; i.e.
-without a bias for graphs of a special kind. This entry contains three
-algorithms for sampling random connected graphs. The first two are simple and
-of reasonable complexity, but biased. The third algorithm is less efficient,
-but it can be proven that it samples graphs without bias.
+applications. In general, given$n, m \in \mathbb{N}$,  it is not difficult to
+sample a random graph from the space of all graphs of $n$ vertices, $m$ edges.
+The problem becomes more difficult when we require $(a)$ that the randomly
+generated be *connected* and, if possible, $(b)$ that any possible such graph
+has the same probability of being generated (i.e. that we sample the connected
+graphs with uniformity).
+
+This entry contains two algorithms for sampling random connected graphs. Both
+algorithms are of reasonable complexity, as a formal analysis as well as
+practical benchmarking will show. Only one of them however, samples graphs with
+uniformity, at the expense of some extra computational expense.
 
 <p align="center">
-  <img src="../Images/RandGraphs.png" width="85%">
+  <img src="../Images/RandGraphs.png" alt="Randomly generated graphs" width="85%">
 </p>
+
+
 
 ## Bottom-up approach
 
-The bottom-up approach consists in generating a simple graph and constructing a
-random graph from it. We shall use spanning trees to (surprise) span graphs
-from them. Some definitions are in order.
+The bottom-up approach consists in generating a random spanning tree and
+constructing a random graph from it by adding edges. The advantage of this
+approach is that, once a spanning tree is generated, edge-adition is guaranteed
+to preserve the connectivity invariant.
 
->-   Let $\mathcal{T}_n$ the set of all trees of $n$ vertices, $\mathcal{G}_n$
->    the set of all graphs with $n$ vertices, and $\mathcal{G}\_{n, m}$ the
->    set of all graphs with $n$ vertices and $m$ edges. We shall assume the
->    vertices of these graphs are labeled $1, \ldots, n$.
->
->-   For any $T \in \mathcal{T}_n$, we define $\mathcal{U}_T := \left\\{ G
->            \in \mathcal{G}_n : T \subseteq G  \right\\}$ and refer to it
->    as *the universe* of $T$. Thus, the universe of $T \in \mathcal{T}_n$ is 
->    the set of graphs spanned by $T$.
->
->-   Let $\Lambda(n) = \\{ \\{ x, y \\} : x, y \in \\{ 1, \ldots, n\\}    \\}$, the set of all 
->    possible edges in a graph of $n$ vertices.
+Before proceeding, let us give a few definitions.
 
-Before discussing any graph generation, I must review an important concept
-relating to trees: the Prüfer sequence.
 
-### Prüfer sequence 
+-   We use $\mathcal{T}_n$ to denote the set of all trees of $n$ vertices,
+$\mathcal{G}_n$ the set of all graphs with $n$ vertices, and $\mathcal{G}\_{n,
+m}$ the set of all graphs with $n$ vertices and $m$ edges. We shall assume the
+vertices of these graphs are labeled $1, \ldots, n$.
+
+-   For any $T \in \mathcal{T}_n$, we define $\mathcal{U}_T := \left\\{ G \in
+\mathcal{G}_n : T \subseteq G  \right\\}$ and refer to it as *the universe* of
+$T$. Thus, the universe of $T \in \mathcal{T}_n$ is the set of graphs spanned
+by $T$.
+
+-   Let $\Lambda(n) = \\{ \\{ x, y \\} : x, y \in \\{ 1, \ldots, n\\}    \\}$,
+the set of all possible edges in a graph of $n$ vertices.
+
+### Prüfer sequences
 
 The Prüfer sequence of $T \in \mathcal{T}_n$ is a word over the alphabet
 $\Sigma = \\{0, \ldots, n - 1\\}$ of length $n - 2$. Prüfer proved that there
 is a bijection between $\mathcal{T}_n$ and $\Sigma^{n-2}$ (which incidentally
 provided a nice proof of the fact that there are $n^{n-2}$ distinct trees of
-$n$ vertices).
-
-The algorithms hereby presented generate random trees by generating random
-Prüfer sequences. It is easy to construct algorithmically the tree
-corresponding to a Prüfer sequence, and thus a random tree is obtained.
+$n$ vertices). We will use random Prüfer sequences to construct random trees. 
 
 Let $T_2$ denote the unique tree of two vertices. Let $L$ be the label-set,
 i.e. the set of natural numbers which label the vertices of our graphs. Then, a
@@ -83,18 +87,12 @@ source](https://www.cs.tufts.edu/comp/150GT/documents/Prufer%20sequences%20-%20f
 </p>
 
 
-### Random graph generation
+### The bottom-up algorithm
 
-Let $T_w$ denote the graph corresponding to the Prüfer sequence $w$. Given a tree $T$ we 
-define a special family of edges: 
-
-$$ 
-S_T = \\{e \in \Lambda(n) : e \notin E(T)\\} = \Lambda(n) - E(T)
-$$
-
-These are called the *spanning edges*, since these are the edges required to
-span connected graphs from the spanning tree $T$. Observe that $\emptyset \in
-S_T$ and is the set of edges required to span $T$ out of $T$.
+Let $T_w$ denote the graph corresponding to the Prüfer sequence $w$. Given a
+tree $T$ we define the *spanning edges* of $T$ as $S_T = \Lambda(n) - E(T)$.
+Observe that $\emptyset \in S_T$ and is the set of edges required to span $T$
+out of $T$.
 
 Then, for any fixed $n$, we let the language $\left\\{ 1, \ldots, n
 \right\\}^{n-2}$ be the index set of an indexed family of functions
@@ -103,6 +101,9 @@ $\mathcal{F}$ defined as:
 $$\begin{align*}
     \mathcal{F}(w) : \mathcal{U}_{T_w} &\to S_T  \\\\
     \mathcal{F}(w)(G) &= E(G) - E(T_w)\end{align*}$$
+
+
+It is easy to see that $\mathcalF}(w)$ is a bijection.
 
 > **$\mathcal{F}(w)$ is a bijection.**
 >Let $S \in S_{T_w}$ for an arbitrary $T_w$. Define $G = (V(T), S \cup E(T_w)$. 
