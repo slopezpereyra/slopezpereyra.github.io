@@ -103,36 +103,14 @@ $$\begin{align*}
     \mathcal{F}(w)(G) &= E(G) - E(T_w)\end{align*}$$
 
 
-It is easy to see that $\mathcalF}(w)$ is a bijection.
+It is easy to see that $\mathcal{F}(w)$ is a bijection, and that with it 
+we are ready to provide the following generation pipeline:
 
-> **$\mathcal{F}(w)$ is a bijection.**
->Let $S \in S_{T_w}$ for an arbitrary $T_w$. Define $G = (V(T), S \cup E(T_w)$. 
-> Then $T_w \subseteq G$ and $G$ belongs to the domain of $\mathcal{F}(w)$.
-> $E(T_w) \cap S_{T_w} = \emptyset$ by
->definition. Then $S = E(G) - E(T_w)$. 
->
-> $\therefore$ $\mathcal{F}(w)$ is
->surjective.
->
->Let $G, G' \in \mathcal{U}_{T_w}$ for an arbitrary $T_w$. Assume
->$\mathcal{F}(w)(G) = \mathcal{F}(w)(G')$. Assume $G \neq G'$. Since $T_w$
->spans both, all edges in $T_w$ are in $G, G'$ and their difference must lie in
->an edge outside of $T_w$. But all edges outside of $T_w$ are in
->$\mathcal{F}(w)(G)$ and $\mathcal{F}(w)(G')$ respectively, which are the
->same. This is a contradiction. $\therefore$ $G = G'$.
->
-> $\therefore$ $\mathcal{F}(w)$ is injective.
-> 
-> $\therefore$ $\mathcal{F}(w)$ is bijective.
-
-To summarize the relations we have established, we see that there is a nice generative 
-path
 
 $$
-\text{Prüfer sequence} \to \text{Tree} \to S \in S_T \to G \in \mathcal{U}_T
+\text{Random Prüfer sequence} \to \text{Tree} \to S \in S_T \to G \in \mathcal{U}_T
 $$
 
-which inspires effective procedures for random graph generation. The most 
 obvious procedure is the following. Given an desired number of vertices $n$,
 
 
