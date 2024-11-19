@@ -4,7 +4,7 @@ categories: [ Science ]
 ---
 
 The generation of connected random graphs is non-trivial and important to many
-applications. In general, given$n, m \in \mathbb{N}$,  it is not difficult to
+applications. In general, given $n, m \in \mathbb{N}$, it is not difficult to
 sample a random graph from the space of all graphs of $n$ vertices, $m$ edges.
 The problem becomes more difficult when we require $(a)$ that the randomly
 generated be *connected* and, if possible, $(b)$ that any possible such graph
@@ -13,8 +13,8 @@ graphs with uniformity).
 
 This entry contains two algorithms for sampling random connected graphs. Both
 algorithms are of reasonable complexity, as a formal analysis as well as
-practical benchmarking will show. Only one of them however, samples graphs with
-uniformity, at the expense of some extra computational expense.
+practical benchmarking will show. Only one of them, however, samples graphs
+with uniformity, at the expense of some extra computational expense.
 
 <p align="center">
   <img src="../Images/RandGraphs.png" alt="Randomly generated graphs" width="85%">
@@ -209,10 +209,10 @@ were plotted using the `networkx` Python package.
 
 A top-down approach analogous to the previous algorithms would in principle
 consist in the generation of a $K_n$ and the random removal of edges in the
-graph. This involves some extra complexity: while adding edges to a connected
-graph cannot disconnect it, removing edges from a graph may do so. Thus, on
-each iteration, some algorithmic process should determine if an edge can be
-deleted or not without violating the connectivity invariant. 
+graph. This involves some extra complexity: while adding edges to a random tree
+preserves the connectivity invariant, removing edges from a graph may not.
+Thus, on each edge-removing iteration, some algorithmic process should
+determine if an edge can be deleted or not without violating the invariant. 
 
 Thus, an effective procedure goes as follows. Given $n$ and a desired number 
 of edges $m$,
@@ -260,9 +260,9 @@ $$
 $$
 
 Generating a $K_n$ is $O(n^2)$. The $\textbf{while}$ selects a random vertex
-from $V_c$ and attempts to erase one of its edges. There is only one case one
-an edge is not removed; namely, when the sampled edge is a bridge. This happens
-at most once per bridge. There are at most $n - 1$ bridges in a graph.
+from $V_c$ and attempts to erase one of its edges. There is only one case in
+which an edge is not removed; namely, when the sampled edge is a bridge. This
+happens at most once per bridge. There are at most $n - 1$ bridges in a graph.
 $\therefore$ There are $O(n)$ iterations which do not remove an edge.
 
 The remaining iterations will remove an edge and there will be exactly
@@ -276,8 +276,8 @@ grows linearly with the number of edges. $\therefore$ BFS is $O(n^2)$.
 
 $\therefore$ The algorithm is $O(n^2) + O(n^2 - m)O(n^2) = O(n^4 - n^2m)$.
 
-In practice the algorithm will perform better than this. BFS is stops whenever
-$w$ is find starting from $v$. This still is asymptotically $O(|E|)$, but in
+In practice the algorithm will perform better than this. BFS stops whenever $w$
+is found starting from $v$. This still is asymptotically $O(|E|)$, but in
 practice the bound will seldom be reached. Furthermore, BFS is ran on
 increasingly sparser graphs. Its asymptotic complexity is given by the number
 of edges in the initial $K_n$, but it decreases with each edge-removing
