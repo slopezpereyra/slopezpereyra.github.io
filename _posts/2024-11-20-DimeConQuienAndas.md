@@ -32,7 +32,7 @@ La mayor parte de dichas donaciones provino de su
 [super PAC](https://www.npr.org/2024/10/16/g-s1-28591/elon-musk-donald-trump-america-pac-fec)[^2]. 
 El total de $128 millones es un 11.7% del [total financiado en la campaña](https://www.opensecrets.org/2024-presidential-race/donald-trump/candidate?id=N00023864), casi un 40% del dinero 
 proveniente de grandes donaciones privadas, y supera el dinero total acumulado en pequeñas 
-donaciones. A esto debe sumarse [el apoyo mediático de Musk](https://www.aljazeera.com/features/2024/11/7/the-elon-musk-effect-how-donald-trump-gained-from-billionaires-support), que consta---a mis ojos incomprensiblemente---con una incontable masa de jóvenes que lo admiran.
+donaciones. A esto debe sumarse [el apoyo mediático de Musk](https://www.aljazeera.com/features/2024/11/7/the-elon-musk-effect-how-donald-trump-gained-from-billionaires-support), que consta—a mis ojos incomprensiblemente—con una incontable masa de jóvenes que lo admiran.
 
 Es un hecho conocido que pequeños grupos económicos tienen una influencia
 desmedida en el triunfo y la caída de las campañas electorales. Se gana 
@@ -54,7 +54,7 @@ Musk compartirá la dirección del nuevo departamento de estado con
 otra figura pública: el candidato republicano Ramaswamy. Durante su campaña, Ramaswany militó un recorte brutal del gasto público, incluso [prometiendo](https://www.npr.org/2024/01/04/1222756097/republican-candidates-economy-inflation-social-security) despedir no menos del 90% del personal de la *Federal Reserve*.
 [Consideró](https://www.nbcnews.com/politics/2024-election/vivek-ramaswamy-deport-children-undocumented-immigrants-born-us-rcna104143) además una deportación masiva que incluiría hasta a los hijos de inmigrantes ilegales nacidos en
 territorio estadounidense. En el contexto yanqui, esto es radical, 
-pues los nacidos en suelo estadounidense son declarados ciudadanos y protegidos bajo la
+pues los nacidos en suelo estadounidense son declarados ciudadanos y protegidos bajo
 [la catorceava enmienda](https://www.archives.gov/milestone-documents/14th-amendment) (algo que Ramaswamy [prometió cambiar](https://thehill.com/homenews/campaign/4227711-ramaswamy-end-birthright-citizenship-2024-debate/)). Uno podría desestimar esta amenaza desde una perspectiva económica, 
 dado que una deportación masiva [sería económicamente desastrosa](https://www.theguardian.com/us-news/2024/oct/30/trump-deportation-plan-economic-disaster), pero es más inmediato 
 a la sensibilidad humana señalar la crueldad y el odio xenófobo que la inspiran para convencerse del 
@@ -69,7 +69,7 @@ Recientemente [dijo a la CNN](https://www.democracynow.org/2024/11/13/headlines/
 > Hay ciertas palabras que me niego a usar... Cisjordania no existe. Es Judea y Samaria. No existen los asentamientos:
 son comunidades, son vecindarios, son ciudades. No hay tal cosa como una ocupación.
 
-Huckabee refuta así definitvamente [el fallo de la Corte Internacional de
+Huckabee refuta así definitivamente [el fallo de la Corte Internacional de
 Justicia](https://www.bbc.com/news/articles/cjerjzxlpvdo) declarando ilegal la
 ocupación, pues el mismo parecería versar sobre una entidad inexistente.
 
@@ -109,6 +109,7 @@ y espero sinceramente que sea recordada principalmente por el apoyo al
 genocidio en Gaza. Pero el elenco de Donald Trump viene a recordarnos una 
 verdad que olvidamos frecuentemente: *siempre puede ser peor*.
 
+------
 
 [^1]: Musk dijo en tono de sospecha: "Me he hecho cuatro pruebas de COVID hoy. Dos pruebas fueron negativas, dos positivas". Es concebible que un escalofrío atravesara en ese momento el cuerpo de Thomas Bayes, haciéndolo revolcar en su tumba. Ignoro si Musk es estúpido o mal intencionado.
 [^2]: Un super PAC es un comité independiente que puede recaudar una cantidad ilimitada de fondos de corporaciones, sindicatos, etc., para gastarlos advocando a favor o en contra de candidatos políticos.
