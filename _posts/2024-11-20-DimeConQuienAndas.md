@@ -33,13 +33,13 @@ contenido que no vale la pena discutir.
 En lo que toca a su nuevo puesto, Musk [prometió](https://www.washingtonpost.com/business/2024/10/29/elon-musk-2-trillion-budget-cuts-trump-election/) llevar adelante 
 recortes de dos trillones de dólares en su nueva posición. 
 Según [fuentes oficiales](https://fiscaldata.treasury.gov/americas-finance-guide/federal-spending/), el gasto 
-total del 2024 fue de aproximademente $6 trillones, con lo cual Musk fantasea con un recorte del
-$1 / 3$ del gasto público. La cifra es descabellada y probablemente sea simple populismo.
-Pero vale la pena observar que, según la misma fuente gubernamental citada
-antes, uno de los gastos más importantes del 2024 fue la defensa nacional ($103
-billones). No es concebible que los Estados Unidos haga recortes aquí, y seguramente
-el ahorro lo pagarán la seguridad social (el mayor gasto), Medicare, y la salud
-en general.
+total del 2024 fue de aproximademente $6 trillones, con lo cual Musk fantasea
+con un recorte del 1/3 del gasto público. La cifra es descabellada y
+probablemente sea simple populismo. Pero vale la pena observar que, según la
+misma fuente gubernamental citada antes, uno de los gastos más importantes del
+2024 fue la defensa nacional ($103 billones). No es concebible que los Estados
+Unidos haga recortes aquí, y seguramente el ahorro lo pagarán la seguridad
+social (el mayor gasto), Medicare, y la salud en general.
 
 El nuevo rol gubernamental de Musk no surge de la nada. El magnate donó exorbitantes sumas de dinero a la campaña elecotral de Trump: sus contribuciones
 [superan por más de nueve veces](https://www.eenews.net/articles/top-energy-donors-to-trump-and-harris-dwarfed-by-elon-musk/) las de toda la industria petrolera.
