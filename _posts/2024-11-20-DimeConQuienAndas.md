@@ -33,7 +33,7 @@ contenido que no vale la pena discutir.
 En lo que toca a su nuevo puesto, Musk [prometió](https://www.washingtonpost.com/business/2024/10/29/elon-musk-2-trillion-budget-cuts-trump-election/) llevar adelante 
 recortes de dos trillones de dólares.
 Según [fuentes oficiales](https://fiscaldata.treasury.gov/americas-finance-guide/federal-spending/), el gasto 
-total del 2024 fue de aproximademente $6 trillones, con lo cual Musk fantasea
+total del 2024 fue de aproximademente seis trillones, con lo cual Musk fantasea
 con un recorte del 1/3 del gasto público. La cifra es descabellada y
 probablemente sea simple populismo. Pero vale la pena observar que, según la
 misma fuente gubernamental citada antes, uno de los gastos más importantes del
