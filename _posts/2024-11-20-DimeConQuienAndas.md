@@ -41,7 +41,9 @@ misma fuente gubernamental citada antes, uno de los gastos más importantes del
 Unidos haga recortes aquí, y seguramente el ahorro lo pagarán la seguridad
 social (el mayor gasto), Medicare, y la salud en general.
 
-El nuevo rol gubernamental de Musk no surge de la nada. El magnate donó exorbitantes sumas de dinero a la campaña elecotral de Trump: sus contribuciones
+El nuevo rol gubernamental de Musk no surge de la nada. El magnate donó
+exorbitantes sumas de dinero a la campaña electoral de Trump: sus
+contribuciones
 [superan por más de nueve veces](https://www.eenews.net/articles/top-energy-donors-to-trump-and-harris-dwarfed-by-elon-musk/) las de toda la industria petrolera.
 La mayor parte de dichas donaciones provino de su
 [super PAC](https://www.npr.org/2024/10/16/g-s1-28591/elon-musk-donald-trump-america-pac-fec)[^2]. 
