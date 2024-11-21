@@ -31,7 +31,7 @@ Ni hablar de su [declarada guerra contra el *woke virus*](https://www.usatoday.c
 contenido que no vale la pena discutir. 
 
 En lo que toca a su nuevo puesto, Musk [prometió](https://www.washingtonpost.com/business/2024/10/29/elon-musk-2-trillion-budget-cuts-trump-election/) llevar adelante 
-recortes de dos trillones de dólares en su nueva posición. 
+recortes de dos trillones de dólares.
 Según [fuentes oficiales](https://fiscaldata.treasury.gov/americas-finance-guide/federal-spending/), el gasto 
 total del 2024 fue de aproximademente $6 trillones, con lo cual Musk fantasea
 con un recorte del 1/3 del gasto público. La cifra es descabellada y
