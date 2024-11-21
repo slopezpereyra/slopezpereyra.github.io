@@ -1,6 +1,6 @@
 ---
 title: Dime con quién andas - El gabinete de D. Trump 
-categories: [ Personal ]
+categories: [ Politics ]
 ---
 
 

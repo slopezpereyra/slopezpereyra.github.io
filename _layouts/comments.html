@@ -1,0 +1,21 @@
+---
+layout: base
+title: Commentary
+subtitle: Commentaries on world affairs
+use-site-title: true
+---
+
+<div class="tags-expo-section">
+  <h2>World Affairs</h2>
+  <ul class="tags-expo-posts">
+    {% assign comment_posts = site.categories.Comment %}
+    {% for post in comment_posts %}
+    <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+      <li>
+        {{ post.title }}
+        <small class="post-date">{{ post.date | date_to_string }}</small>
+      </li>
+    </a>
+    {% endfor %}
+  </ul>
+</div>
