@@ -32,7 +32,7 @@ La mayor parte de dichas donaciones provino de su
 [super PAC](https://www.npr.org/2024/10/16/g-s1-28591/elon-musk-donald-trump-america-pac-fec)[^2]. 
 El total de $128 millones es un 11.7% del [total financiado en la campaña](https://www.opensecrets.org/2024-presidential-race/donald-trump/candidate?id=N00023864), casi un 40% del dinero 
 proveniente de grandes donaciones privadas, y supera el dinero total acumulado en pequeñas 
-donaciones. A esto debe sumarse [el apoyo mediático de Musk](https://www.aljazeera.com/features/2024/11/7/the-elon-musk-effect-how-donald-trump-gained-from-billionaires-support), que consta—a mis ojos incomprensiblemente—con una incontable masa de jóvenes que lo admiran.
+donaciones. A esto debe sumarse [el apoyo mediático de Musk](https://www.aljazeera.com/features/2024/11/7/the-elon-musk-effect-how-donald-trump-gained-from-billionaires-support), que cuenta—a mis ojos incomprensiblemente—con una incontable masa de jóvenes que lo admiran.
 
 Es un hecho conocido que pequeños grupos económicos tienen una influencia
 desmedida en el triunfo y la caída de las campañas electorales. Se gana 
@@ -124,8 +124,8 @@ resumen divertido de las ridiculeces pronunciadas por Kennedy puede leerse
 Mi repaso no es exhaustivo: he pasado por alto [muchos otros miembros](https://www.cbsnews.com/news/who-might-be-in-donald-trump-cabinet/)
 del futuro gabinete. Una cobertura más general es dada en [este artículo](https://www.theguardian.com/us-news/2024/nov/13/trump-america-first-foreign-policy),
 donde se señala que el denominador común entre los elegidos de Trump no 
-es la experiencia política---algunos, como Linda McMahon, carecen totalmente 
-de ella---sino la lealtad a su persona. La presidencia de Biden, al menos en
+es la experiencia política—algunos, como Linda McMahon, carecen totalmente 
+de ella—sino la lealtad a su persona. La presidencia de Biden, al menos en
 términos internacionales, fue un absoluto desastre, y espero sinceramente que
 sea recordada principalmente por el apoyo al genocidio en Gaza. Pero el elenco
 de Donald Trump viene a recordarnos una verdad que olvidamos frecuentemente:
