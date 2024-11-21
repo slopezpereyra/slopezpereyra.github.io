@@ -71,7 +71,7 @@ Musk compartirá la dirección del nuevo departamento de estado con
 otra figura pública: el candidato republicano Ramaswamy. Durante su campaña, Ramaswany militó un recorte brutal del gasto público, incluso [prometiendo](https://www.npr.org/2024/01/04/1222756097/republican-candidates-economy-inflation-social-security) despedir no menos del 90% del personal de la *Federal Reserve*. 
 Ha [profesado simpatía](https://x.com/VivekGRamaswamy/status/1858559544202502250) por la motosierra de Milei, sugiriendo 
 que "recortes al estilo Milei, pero con esteroides" son una fórmula razonable para 
-los EStados Unidos.
+los Estados Unidos.
 [Consideró](https://www.nbcnews.com/politics/2024-election/vivek-ramaswamy-deport-children-undocumented-immigrants-born-us-rcna104143) además una deportación masiva que incluiría hasta a los hijos de inmigrantes ilegales nacidos en
 territorio estadounidense. En el contexto yanqui, esto es radical, 
 pues los nacidos en suelo estadounidense son declarados ciudadanos y protegidos bajo
