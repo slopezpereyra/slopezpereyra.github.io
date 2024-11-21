@@ -49,7 +49,7 @@ La mayor parte de dichas donaciones provino de su
 [super PAC](https://www.npr.org/2024/10/16/g-s1-28591/elon-musk-donald-trump-america-pac-fec)[^2]. 
 El total de $128 millones es un 11.7% del [total financiado en la campaña](https://www.opensecrets.org/2024-presidential-race/donald-trump/candidate?id=N00023864), casi un 40% del dinero 
 proveniente de grandes donaciones privadas, y supera el dinero total acumulado en pequeñas 
-donaciones. A esto debe sumarse [el apoyo mediático de Musk](https://www.aljazeera.com/features/2024/11/7/the-elon-musk-effect-how-donald-trump-gained-from-billionaires-support), que tiene—a mis ojos incomprensiblemente—con una incontable masa de jóvenes que lo admiran.
+donaciones. A esto debe sumarse [el apoyo mediático de Musk](https://www.aljazeera.com/features/2024/11/7/the-elon-musk-effect-how-donald-trump-gained-from-billionaires-support), que tiene—a mis ojos incomprensiblemente—una incontable masa de jóvenes que lo admiran.
 
 Es un hecho conocido que pequeños grupos económicos tienen una influencia
 desmedida en el triunfo y la caída de las campañas electorales. Se gana 
