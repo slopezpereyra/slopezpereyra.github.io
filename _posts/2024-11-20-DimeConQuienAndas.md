@@ -91,7 +91,8 @@ La EPA [ya había sufrido](https://www.dw.com/en/is-trumps-environment-agency-si
 se deteriore todavía más.
 
 
-Por otro lado, el jefe de gabinete será Stephen Miller, cuyos [lazos directos con el nacionalismo blanco](https://www.nytimes.com/2019/11/18/us/politics/stephen-miller-white-nationalism.html) son públicamente conocidos. Miller fue asesor de Trump en su presidencia anterior, y entre sus logros se cuenta [prohibir](https://www.washingtonpost.com/politics/2019/09/26/trumps-muslim-ban-really-was-muslim-ban-thats-what-data-suggest/) la inmigración 
+Por otro lado, el *chief advisor* en seguridad seguridad interna [será Stephen Miller](https://www.npr.org/2024/11/11/g-s1-33741/trump-stephen-miller-deputy-chief-of-staff-immigration-policy-deportations),
+cuyos [lazos directos con el nacionalismo blanco](https://www.nytimes.com/2019/11/18/us/politics/stephen-miller-white-nationalism.html) son públicamente conocidos. Miller fue asesor de Trump en su presidencia anterior, y entre sus logros se cuenta [prohibir](https://www.washingtonpost.com/politics/2019/09/26/trumps-muslim-ban-really-was-muslim-ban-thats-what-data-suggest/) la inmigración 
 desde ciertos países musulmanes. Ahora se propone [terminar con el racismo
 anti-blanco](https://www.theguardian.com/us-news/2024/apr/01/trump-stephen-miller-anti-white-racism-plan),
 que tan hondamente lastima la sociedad norteamericana... Un [leak de sus
@@ -104,10 +105,31 @@ algunos sitios comerciales retiraron de la venta símbolos confederados
 tras [la masacre de Charleston](
 https://en.wikipedia.org/wiki/Charleston_church_shooting). 
 
-La presidencia de Biden, en términos internacionales, fue un absoluto desastre,
-y espero sinceramente que sea recordada principalmente por el apoyo al
-genocidio en Gaza. Pero el elenco de Donald Trump viene a recordarnos una 
-verdad que olvidamos frecuentemente: *siempre puede ser peor*.
+Como secretario del departamento de salud (HHS), [Trump eligió a Robert F. Kennedy Jr.](https://edition.cnn.com/2024/11/14/politics/robert-f-kennedy-donald-trump-hhs/index.html),
+un [antivacunas](https://www.infobae.com/america/agencias/2024/11/15/trump-elige-al-antivacunas-robert-kennedy-jr-como-secretario-de-salud/) confeso.
+El pobre hombre es tan bruto que comparó las vacunas del COVID-19 con el holocausto nazi.
+Supervisará algunas de las cosas buenas que tienen los Estados Unidos, como los programas 
+Medicare y Medicaid. Dado que [Trump dijo](https://www.nbcnews.com/video/-trump-says-he-would-let-anti-vaccine-advocate-rfk-jr-go-wild-on-health-222810181633)
+que 
+
+> he will let Kennedy go wild on health (...)
+
+es esperable que incluso esas aisladas frutas sanas del sistema de salud se pudran. Medicaid 
+provee cobertura médica [para 72 millones de estadouniadenses de bajos ingresos](https://news.bloomberglaw.com/health-law-and-business/rfk-jr-fuels-uncertainty-on-policies-from-medicare-to-abortion).
+Kennedy Jr. no se ha pronunciado sobre Medicaid, pero dado el afán por reducir
+el gasto público, es esperable que se haga un ajuste serio del sistema. Un 
+resumen divertido de las ridiculeces pronunciadas por Kennedy puede leerse 
+[aquí](https://robertreich.substack.com/p/trump-wants-robert-f-kennedy-jr-to).
+
+Mi repaso no es exhaustivo: he pasado por alto [muchos otros miembros](https://www.cbsnews.com/news/who-might-be-in-donald-trump-cabinet/)
+del futuro gabinete. Una cobertura más general es dada en [este artículo](https://www.theguardian.com/us-news/2024/nov/13/trump-america-first-foreign-policy),
+donde se señala que el denominador común entre los elegidos de Trump no 
+es la experiencia política---algunos, como Linda McMahon, carecen totalmente 
+de ella---sino la lealtad a su persona. La presidencia de Biden, al menos en
+términos internacionales, fue un absoluto desastre, y espero sinceramente que
+sea recordada principalmente por el apoyo al genocidio en Gaza. Pero el elenco
+de Donald Trump viene a recordarnos una verdad que olvidamos frecuentemente:
+*siempre puede ser peor*.
 
 ------
 
