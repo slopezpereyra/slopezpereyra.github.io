@@ -14,7 +14,12 @@ panorama ideológico de la venidera presidencia.
 
 
 Según anunció Trump, Musk estará en la silla directiva de un [nuevo
-departamento de estado](https://edition.cnn.com/2024/11/12/politics/elon-musk-vivek-ramaswamy-department-of-government-efficiency-trump/index.html) destinado a recortar el gasto público.
+Departamento de Eficiencia del Estado (DOGE)](https://edition.cnn.com/2024/11/12/politics/elon-musk-vivek-ramaswamy-department-of-government-efficiency-trump/index.html), encargado de recortar el gasto público.
+El carácter institucional del "departamento" es ambigüo: [Trump dijo](https://www.bbc.com/news/articles/c93qwn8p0l0o) que 
+su función será aconsejar al gobierno sin ser un departamento oficial
+(la creación de un nuevo departamento necesita [aprobación del congreso](https://jacobin.com/2024/11/musk-doge-trump-government-efficiency)).
+
+
 La decisión es dudosa por el obvio conflicto de intereses: Musk podría [regular a los reguladores](https://www.nytimes.com/2024/10/20/us/politics/elon-musk-federal-agencies-contracts.html) que limitan la acción de sus propias compañías. Pero incluso poniendo eso de lado, Musk no es un candidato atractivo para ocupar ningún tipo de poder político. No sólo abraza 
 sino que difunde teorías conspirativas, como en [este bizarro twit](https://x.com/elonmusk/status/1849718117297246377?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1849718117297246377%7Ctwgr%5E0ee6d957b285a79f874530bc89b809a33503fb9d%7Ctwcon%5Es1_c10&ref_url=https%3A%2F%2F) o en [sus comentarios sobre el COVID-19](https://www.infobae.com/america/eeuu/2020/11/13/elon-musk-ceo-y-fundador-de-tesla-alimenta-las-teorias-conspirativas-alrededor-del-coronavirus-hablo-sobre-los-cuatro-test-que-se-hizo-en-un-dia/)[^1]. Ante la acusación de que 
 el gobierno de EEUU organizó un golpe de Estado en Bolivia para asegurarse el litio 
@@ -25,6 +30,16 @@ del país, [Musk dijo](https://www.theguardian.com/books/2023/nov/25/we-will-cou
 Ni hablar de su [declarada guerra contra el *woke virus*](https://www.usatoday.com/story/tech/2024/07/22/elon-musk-jordan-peterson-interview/74506785007/), una idiotez tan norteamericana y carente de 
 contenido que no vale la pena discutir. 
 
+En lo que toca a su nuevo puesto, Musk [prometió](https://www.washingtonpost.com/business/2024/10/29/elon-musk-2-trillion-budget-cuts-trump-election/) llevar adelante 
+recortes de dos trillones de dólares en su nueva posición. 
+Según [fuentes oficiales](https://fiscaldata.treasury.gov/americas-finance-guide/federal-spending/), el gasto 
+total del 2024 fue de aproximademente $6 trillones, con lo cual Musk fantasea con un recorte del
+$1 / 3$ del gasto público. La cifra es descabellada y probablemente sea simple populismo.
+Pero vale la pena observar que, según la misma fuente gubernamental citada
+antes, uno de los gastos más importantes del 2024 fue la defensa nacional ($103
+billones). No es concebible que los Estados Unidos haga recortes aquí, y seguramente
+el ahorro lo pagarán la seguridad social (el mayor gasto), Medicare, y la salud
+en general.
 
 El nuevo rol gubernamental de Musk no surge de la nada. El magnate donó exorbitantes sumas de dinero a la campaña elecotral de Trump: sus contribuciones
 [superan por más de nueve veces](https://www.eenews.net/articles/top-energy-donors-to-trump-and-harris-dwarfed-by-elon-musk/) las de toda la industria petrolera.
@@ -51,7 +66,10 @@ la elección no era realmente aleatoria (lo cual condujo a que miles de personas
 se sintieran estafadas y se formara una demanda colectiva).
 
 Musk compartirá la dirección del nuevo departamento de estado con
-otra figura pública: el candidato republicano Ramaswamy. Durante su campaña, Ramaswany militó un recorte brutal del gasto público, incluso [prometiendo](https://www.npr.org/2024/01/04/1222756097/republican-candidates-economy-inflation-social-security) despedir no menos del 90% del personal de la *Federal Reserve*.
+otra figura pública: el candidato republicano Ramaswamy. Durante su campaña, Ramaswany militó un recorte brutal del gasto público, incluso [prometiendo](https://www.npr.org/2024/01/04/1222756097/republican-candidates-economy-inflation-social-security) despedir no menos del 90% del personal de la *Federal Reserve*. 
+Ha [profesado simpatía](https://x.com/VivekGRamaswamy/status/1858559544202502250) por la motosierra de Milei, sugiriendo 
+que "recortes al estilo Milei, pero con esteroides" son una fórmula razonable para 
+los EStados Unidos.
 [Consideró](https://www.nbcnews.com/politics/2024-election/vivek-ramaswamy-deport-children-undocumented-immigrants-born-us-rcna104143) además una deportación masiva que incluiría hasta a los hijos de inmigrantes ilegales nacidos en
 territorio estadounidense. En el contexto yanqui, esto es radical, 
 pues los nacidos en suelo estadounidense son declarados ciudadanos y protegidos bajo
@@ -77,7 +95,7 @@ ocupación, pues el mismo parecería versar sobre una entidad inexistente.
 Como embajadora en la 
 ONU, eligió a Elise Stefanik, una figura clave en [promover](https://www.nbcnews.com/politics/congress/rep-elise-stefanik-university-pennsylvania-presidents-resignation-one-rcna128939)
 la (absurda) idea de que simpatía con la causa palestina equivale a antisemitismo.
-En la agenda de Stefanik está [cortar la ayuda humanitaria](https://www.nbcnews.com/news/world/israel-unwra-ban-devastating-palestinians-rcna177766) que proveen las Naciones Unidas a refugiados palestinos. Cuando, en septiembre de este año, las Naciones Unides votaron [una resolución](https://news.un.org/en/story/2024/09/1154496) en pos de que Israel terminara 
+En la agenda de Stefanik está [cortar la ayuda humanitaria](https://www.nbcnews.com/news/world/israel-unwra-ban-devastating-palestinians-rcna177766) que proveen las Naciones Unidas a refugiados palestinos. Cuando, en septiembre de este año, las Naciones Unidas votaron [una resolución](https://news.un.org/en/story/2024/09/1154496) en pos de que Israel terminara 
 la ocupación ilegal, Stefanik no tardó en redactar una [diatriba virulenta](https://stefanik.house.gov/2024/9/stefanik-statement-on-un-s-disgraceful-antisemitic-resolution-against-israel). La resolución tuvo un apoyo abrumador, con 124 votos a favor, 14 en contra, y 43 abstenciones, y está en pleno lineamiento con el derecho internacional. Pero Stefanik la considera antisemita, sin otro motivo que el que deja implícito: oponerse a Israel es 
 odiar a los judíos. Según su lectura (por lo demás infradotada), la resolución sólo demanda a Israel que se 
 rinda ante "bárbaros terroristas" (pienso que se refiere a esos [peligrosos niños](https://www.bbc.com/news/articles/c5y5zy1vvmlo) y [desplazados](https://www.aljazeera.com/program/newsfeed/2024/11/17/israeli-attack-targets-gaza-school-sheltering-displaced-palestinians) que se esconden 
