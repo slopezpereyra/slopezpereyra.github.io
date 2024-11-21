@@ -68,11 +68,12 @@ la elección no era realmente aleatoria (lo cual condujo a que miles de personas
 se sintieran estafadas y se formara una demanda colectiva).
 
 Musk compartirá la dirección del nuevo departamento de estado con
-otra figura pública: el candidato republicano Ramaswamy. Durante su campaña, Ramaswany militó un recorte brutal del gasto público, incluso [prometiendo](https://www.npr.org/2024/01/04/1222756097/republican-candidates-economy-inflation-social-security) despedir no menos del 90% del personal de la *Federal Reserve*. 
+otra figura pública: el candidato republicano Ramaswamy. Durante su campaña, Ramaswamy militó un recorte brutal del gasto público, incluso [prometiendo](https://www.npr.org/2024/01/04/1222756097/republican-candidates-economy-inflation-social-security) despedir no menos del 90% del personal de la *Federal Reserve*. 
 Ha [profesado simpatía](https://x.com/VivekGRamaswamy/status/1858559544202502250) por la motosierra de Milei, sugiriendo 
 que "recortes al estilo Milei, pero con esteroides" son una fórmula razonable para 
 los Estados Unidos.
-[Consideró](https://www.nbcnews.com/politics/2024-election/vivek-ramaswamy-deport-children-undocumented-immigrants-born-us-rcna104143) además una deportación masiva que incluiría hasta a los hijos de inmigrantes ilegales nacidos en
+
+Ramaswamy también [consideró](https://www.nbcnews.com/politics/2024-election/vivek-ramaswamy-deport-children-undocumented-immigrants-born-us-rcna104143) una deportación masiva que incluiría hasta a los hijos de inmigrantes ilegales nacidos en
 territorio estadounidense. En el contexto yanqui, esto es radical, 
 pues los nacidos en suelo estadounidense son declarados ciudadanos y protegidos bajo
 [la catorceava enmienda](https://www.archives.gov/milestone-documents/14th-amendment) (algo que Ramaswamy [prometió cambiar](https://thehill.com/homenews/campaign/4227711-ramaswamy-end-birthright-citizenship-2024-debate/)). Uno podría desestimar esta amenaza desde una perspectiva económica, 
