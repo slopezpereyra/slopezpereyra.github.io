@@ -5,7 +5,7 @@ categories: [Politics]
 
 Un considerable número de [tropas norcoreanas](https://www.aljazeera.com/news/2024/11/13/what-do-we-know-about-the-north-korean-troops-joining-russias-war)
 se unió al combate contra Ucrania. La asistencia sucede en el contexto 
-de un [nuevo pacto](https://www.aljazeera.com/news/2024/11/12/north-korea-ratifies-landmark-mutual-defence-treaty-with-russia) de defensa mutua firmado entre Rusia y Ucrania.
+de un [nuevo pacto](https://www.aljazeera.com/news/2024/11/12/north-korea-ratifies-landmark-mutual-defence-treaty-with-russia) de defensa mutua firmado entre Rusia y Corea del Norte.
 
 A pocos días de la reelección de Trump, la administración de Biden 
 [dio el visto bueno a Ucrania](https://www.aljazeera.com/news/2024/11/20/biden-has-pivoted-to-allow-ukraine-to-use-us-missiles-in-russia-why-now)
