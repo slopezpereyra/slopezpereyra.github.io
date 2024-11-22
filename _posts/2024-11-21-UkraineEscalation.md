@@ -1,5 +1,5 @@
 ---
-title: Escalada nuclear en la guerra en Ucrania
+title: Escala el conflicto en Ucrania
 categories: [Politics]
 ---
 
