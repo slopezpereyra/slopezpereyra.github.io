@@ -42,7 +42,7 @@ comunicado dice lo obvio:
 > it must stop.
 
 
-El realismo internacional se asemeja a un matemático que, tras modelar una red
+El realismo se asemeja a un matemático que, tras modelar una red
 de comunicación con un grafo, imagina haber abolido los cables pelados y las
 tormentas eléctricas. Lo cierto es que [Rusia tiene ≈5880 armas nucleares](https://fas.org/initiative/status-world-nuclear-forces/) 
 y ha flexibilizao las condiciones que habilitarían su uso. Tal como señala la ICAN en 
