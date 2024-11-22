@@ -13,12 +13,16 @@ para el uso de misiles tácticos de largo alcance, dando pie al
 [primer ataque](https://www.bbc.com/news/articles/c0mzjm7knw7o) de misiles dentro 
 de territorio ruso.
 
-En respuesta, Putin [ablandó](https://www.aljazeera.com/program/newsfeed/2024/11/19/could-russias-loosened-nuclear-doctrine-lead-to-a-test-detonation) las restricciones al uso 
-de armas nucleares y [estrenó un nuevo misil](https://www.bbc.com/news/articles/cy4n9vgwnnyo) 
-sobre Dnipró.
+En respuesta, además de [estrenar un nuevo misil](https://www.bbc.com/news/articles/cy4n9vgwnnyo) 
+sobre Dnipró, Putin [ablandó](https://www.aljazeera.com/program/newsfeed/2024/11/19/could-russias-loosened-nuclear-doctrine-lead-to-a-test-detonation) las restricciones al uso 
+de armas nucleares. En particular, [estableció](https://www.icanw.org/new_russian_doctrine_increases_possible_nuclear_weapons_use_scenarios) que Rusia 
+podrá responder nuclearmente al ataque de un país sin armamento nuclear 
+que cuente con el apoyo de un país con armamento nuclear. 
+Esta nueva doctrina legitima, al menos desde la perspectiva
+rusa, un ataque nuclear sobre Ucrania.
 
-
-
+La amenaza nuclear no debería desestimarse ni interpretarse 
+como un amague.
 
 
 
