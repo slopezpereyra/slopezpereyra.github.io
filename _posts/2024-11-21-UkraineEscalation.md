@@ -45,10 +45,9 @@ comunicado dice lo obvio:
 El realismo se asemeja a un matemático que, tras modelar una red
 de comunicación con un grafo, imagina haber abolido los cables pelados y las
 tormentas eléctricas. Lo cierto es que [Rusia tiene ≈5880 armas nucleares](https://fas.org/initiative/status-world-nuclear-forces/) 
-y ha flexibilizao las condiciones que habilitarían su uso. Tal como señala la ICAN en 
+y ha flexibilizado las condiciones que habilitarían su uso. Tal como señala la ICAN en 
 una corta [serie de twits](https://x.com/nuclearban/status/1858889590238540235), 
-no podemos interpretar ninguna amenaza nuclear como un simples amague 
-o un *bluff*. 
+no podemos desestimar una amenaza nuclear como un simple *bluff*. 
 
 
 
