@@ -1,0 +1,207 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{newtxtext} \usepackage{newtxmath}
+\usepackage{amsmath, amssymb}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example} \newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+
+
+\begin{document}
+
+
+Assuming a body $b$ at time $t$ is at one and only one place, and that 
+the movement of $b$ is continuous---i.e. moving from $a$ to $b$ entails 
+moving through all intermediate points---, then there exists 
+a mathematical function $x(t)$ which describes the movement of $b$.
+
+If a body moves \textbf{linearly} (i.e. with uniform rectilinear movement),
+suffices to measure two points $(t_1, x_1), (t_2, x_2)$ to describe 
+its moevement. In particular, if 
+
+\begin{align*}
+    x(t) = at_1 + b ~ ~ ~ \text{ and measures } \begin{cases}
+        x_1 &= at_1 + b \\ 
+        x_2 &= at_2 + b
+    \end{cases}
+\end{align*}
+
+we have 
+
+\begin{equation*}
+a = \frac{x_2 - x_1}{t_2 - t_1} ~ ; ~ b = \frac{t_2x_1 - t_{1}x_2}{t_2 - t_1}
+\end{equation*}
+
+If a body moves parabolically, knowing that three points are sufficient to 
+fully describe a parabole, we need only measure three instances 
+$(t_1, x_1), (t_2, x_2), (t_3, x_3)$
+
+and with a bit of algebra we can find the parameters $a, b, c$ of $x(t) = ax^2 + bx + c$.
+
+\subsection{Distance and displacement}
+
+The \textbf{distance traveled} is the length of the path a body has traveled 
+in a given time frame. The \textbf{displacement} is the measure of how 
+much its position has modified respect to its initial position.
+
+If $x = x(t)$ is the movement, then in the time interval $[t_1, t_2]$
+its displacement is $\Delta x = x(t_2) - x(t_1) = x_2 - x_1$. 
+Its distance traveled is denoted with $d_{12}$.
+
+\subsection{Velocity and derivatives}
+
+The velocity $\overline{v}$ of a body is the quotient between its 
+displacement and the time frame of said displacement. If $x(t)$
+is the movement function and $x_1 = x(t_1), x_2 = x(t_2)$, then 
+the \textbf{median velocity} in $\Delta t = t_2 - t_1$ is 
+
+\begin{equation*}
+    \overline{v}(t_1, t_2) = \overline{v}(t_1, \Delta t) = \frac{x(t_2) - x(t_1)}{t_2 - t_1} = \frac{\Delta x}{\Delta t}
+\end{equation*}
+
+The unity of said average velocity is given by the unity of distance $[\ell]$ and the unity 
+of time $[t]$:
+
+\begin{equation*}
+    \left[ V \right]  = \frac{\left[ \ell \right] }{\left[ t \right] }
+\end{equation*}
+
+For instance, $m / s$ or $km / h$, etc.
+
+
+\small
+\begin{quote}
+
+\textbf{Note.} If $x(t_1) = x(t_2)$ (the body returns at its initial point), then $\overline{v} = 0$.
+But the body has moved. This reflects that the \textbf{median velocity} is not the 
+average velocity, which is defined as $d / t$. The \textbf{median velocity} describes 
+how much the position of the object has changed with respect to time!
+
+\end{quote}
+\normalsize
+
+Consider that: 
+
+\begin{align*}
+    &x(t) = c &\Rightarrow &&\overline{v} = \frac{c - c}{t_2 - t_1} = 0 \\ 
+    &x(t) = at + b &\Rightarrow &&\overline{v} = \frac{a(t_2 - t_1)}{t_2 - t_1} = a \\ 
+    &x(t) = ax_2 + bx + c &\Rightarrow &&\overline{v} = (2t_1 + \Delta t) + b
+\end{align*}
+
+\subsection{Instantaneous velocity and acceleration}
+
+Given $\Delta t = t_2 - t_1$, the instantaneous velocity is
+
+\begin{equation*}
+    v(t) := \lim_{ \Delta t \to 0 } \frac{x(t+ \Delta t) - x(t) }{\Delta t} = \lim_{\Delta t \to  0} \frac{\Delta x}{\Delta t} = \frac{\partial x(t)}{\partial t}
+\end{equation*}
+
+The \textbf{median acceleration} is
+
+
+\begin{equation*}
+    \overline{a}(t_1, \Delta t) := \frac{v(t_2) - v(t_1)}{\Delta t} = \frac{\Delta v}{\Delta t}
+\end{equation*}
+
+and the immediate acceleration is 
+
+\begin{equation*}
+    a(t) := \lim_{\Delta t \to  0} \overline{a}(t, \Delta t) = \lim_{\Delta t \to  0} \frac{\Delta v}{\Delta t} = \frac{\partial v(t)}{\partial t}
+\end{equation*}
+
+Using the definition of $v$ as the derivative of the movement function with 
+respect to time, we have 
+ 
+\begin{equation*}
+    a = \frac{\partial v(t)}{\partial t} = \frac{\partial d}{\partial dt} \left( \frac{\partial x(t)}{\partial t} \right) = \frac{\partial^2 x(t)}{\partial t^2}
+\end{equation*}
+
+\subsection{Piecewise acceleration}
+
+The movement function $x(t)$ is continuous and has a continuous, differentiable 
+derivative $v(t)$. The velocity is continuous and differentiable, but its 
+derivative $a(t)$ is not necessarily continuous nor differentiable. 
+
+For instance, we could have 
+
+\begin{equation*}
+    a(t) = \begin{cases}
+        1 \frac{m}{s^2} & t < 1s \\ 
+        2 \frac{m}{s^2} & t \geq 1s
+    \end{cases}
+\end{equation*}
+
+Assuming we know $v(t = 0) = 1 \frac{m}{s}, x(t = 2 s) = 2m$,
+we can find the velocity 
+
+\begin{equation*}
+    v(t) = \int a(t) ~ dt = \begin{cases}
+        1 \frac{m}{s^2} t + C_1 & t < 1s \\ 
+        2 \frac{m}{s^2} t + C_2 & t \geq 1 s
+    \end{cases}
+\end{equation*}
+
+Since $v(t = 0) = 1 \frac{m}{s}$, we have $C_1 = 1 \frac{m}{s}$.
+And since the velocity function is \textbf{continuous}, in particular 
+it is continuous for $t = 1 s$, and this means 
+
+\begin{equation*}
+    \lim_{t \to 1^- s} v(t) v(t) = \lim_{t \to 1^+ s} v(t) = \lim_{t \to 1} v(t)
+\end{equation*}
+
+Then 
+
+\begin{align*}
+    \lim_{t \to 1^- s} v(t) = \lim_{t\to 1^+ s} &\iff 1 \frac{m}{s^2} 1 s + 1 \frac{m}{s} = 2 \frac{m}{s^2}1 s + C_2 \\ 
+                                                &\iff C_2 = 0
+\end{align*}
+
+
+Having found the velocity, we could find the movement function by integrating the 
+velocity.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
