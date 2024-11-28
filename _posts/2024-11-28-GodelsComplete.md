@@ -1,5 +1,5 @@
 ---
-title: Gödel's completeness theorem
+title: Gödel's completeness theorem (for non-specialized readers)
 categories: [ Science ]
 ---
 
