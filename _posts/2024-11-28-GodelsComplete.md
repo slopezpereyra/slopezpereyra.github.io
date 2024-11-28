@@ -160,5 +160,5 @@ theory is provable under such theory.
 
 
 
-[1] Gentzen's heart did not raise to the status of his mind: he was a Nazi 
+[^1] Gentzen's heart did not raise to the status of his mind: he was a Nazi 
 and died in a prison camp after being detained during the Prague uprising.
