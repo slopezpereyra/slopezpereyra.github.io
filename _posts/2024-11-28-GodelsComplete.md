@@ -31,9 +31,9 @@ may in turn prove things about it.
 
 Perhaps the most widely known mathematical model of a proof is *natural
 deduction*, developed by
-Gentzen. Suffices to
+Gentzen[^1]. Suffices to
 mention that natural deduction is a rigorous proof system, with rules so clear
-that a computer could follow. Given axioms $\varphi_1, \ldots, \varphi_n$, natural 
+that a computer could verify. Given axioms $\varphi_1, \ldots, \varphi_n$, natural 
 deduction systematizes the operations which our intuitive understanding of deduction 
 considers valid to perform with these axioms.
 
@@ -42,7 +42,7 @@ rules to manipulate symbols, is a syntactic object. In a sense, if we were to
 define a language $\mathcal{L}$ with the usual logical symbols ($\land, \lor,
 \forall, \neg$, etc.), with its words satisfying the syntax of logics (e.g. 
 $\varphi \land \phi$ is in $\mathcal{L}$, but $\varphi \land$ is not),
-a proof system in its whole could be considered as a function $f : \mathcal{L}^+ \to \mathcal{L}^+$ - 
+a proof system could be considered as a function $f : \mathcal{L}^+ \to \mathcal{L}^+$ - 
 this is, a mapping from valid logical sentences to other valid logical
 sentences. There is no such thing as *meaning* and not a glimpse of *truth values*.
 Only grammar.
@@ -93,7 +93,7 @@ are pure in the sense that, under whatever model of $\tau$, they will never
 speak of specific elements, but will make general statements about what is true
 or false. 
 
-> *Example*. Assume the of constants in $\tau$ is $\\{ a, aa, aaa, aaaa, \ldots
+> *Example*. Assume the set of constants in $\tau$ is $\\{ a, aa, aaa, aaaa, \ldots
 > \\}$, the set of relationships is $\\{ \leq \\}$, and the other sets are
 > empty. Assume the arity of $\leq$ is $2$. Then a theory would never contain a sentence 
 > of the form $aa \leq aaa$, because that speaks of particular elements, but it could 
@@ -131,7 +131,7 @@ systematic definition under a system of proof?
 It is conceivable that, given a system of proof such as *natural deduction*,
 tomorrow, or in a century, a mathematician may think of a clever deduction rule
 which our system does not incorporate. Such rule could potentially allow us to
-prove new things, things we could not prove before. In short, it is conceivable
+prove new things, things that are true but we could not prove before. In short, it is conceivable
 that our proof system is incomplete.
 
 What Gödel proved is that this imagination, though conceivable, is not the case.
@@ -142,10 +142,10 @@ $$
 (\Sigma, \tau) \vDash \varphi \implies (\Sigma, \tau) \vdash \varphi
 $$
 
-for any theory $(\Sigma, \tau)$ and any logical sentence $\varphi$. The theorem 
-thus ensures a tight and tranquilizing link between *semantics* and *syntax*,
-assuring us that whatever is semantically true under a theory is provable under 
-such theory.
+for any theory $(\Sigma, \tau)$ and any logical sentence $\varphi$. The theorem
+thus ensures a tight and tranquilizing link between th e*semantics* and the
+*syntax* of mathematics, assuring us that whatever is semantically true under a
+theory is provable under such theory.
 
 
 
@@ -156,9 +156,9 @@ such theory.
 
 
 
+---
 
 
 
-
-[^1] Getzen's heart did not raise to the status of his mind: he was a Nazi 
+[1] Gentzen's heart did not raise to the status of his mind: he was a Nazi 
 and died in a prison camp after being detained during the Prague uprising.
