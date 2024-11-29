@@ -19,7 +19,7 @@ mathematics - it is mathematics describing itself.
 Mathematicians prove things. A proof is to the mathematician what a
 note is to the musician. As the musician combines notes to form chords, and these
 are in turn organized in harmonic progressions, and from this organization the
-beauty of music emerges, the mathematicians too combine their proofs, use them
+beauty of music emerges, mathematicians too combine their proofs, use them
 to derive new ones, and from these workings of the mind truth, or at least a
 glimpse of it, arises. But what is a proof?
 
@@ -160,5 +160,5 @@ theory is provable under such theory.
 
 
 
-[^1] Gentzen's heart did not raise to the status of his mind: he was a Nazi 
+[^1]: Gentzen's heart did not raise to the status of his mind: he was a Nazi 
 and died in a prison camp after being detained during the Prague uprising.
