@@ -12,7 +12,7 @@ theory, etc.) are only schematically described. For a more advanced covering of
 these subjects, visit the *Logics* document in the *Studies* section of this
 site.
 
-Gödel's incompleteness theorem is a foundational piece of mathematical logic.
+Gödel's completeness theorem is a foundational piece of mathematical logic.
 Mathematical logic concerns itself with the mathematical description of
 mathematics - it is mathematics describing itself. 
 
