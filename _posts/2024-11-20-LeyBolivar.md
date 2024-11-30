@@ -11,7 +11,7 @@ cualquier persona o entidad que tenga operaciones comerciales con Venezuela.
 Las razones *declaradas* son que el gobierno de Maduro y sus "políticas
 marxistas" son antidemocráticos, y no debe apoyarse ni menos "subsidiarse" un
 régimen antidemocrático. Es cierto que la persecución política, la desaparición forzada
-y la tortura [son una realidad en Venezuela](https://www.amnesty.org/es/documents/amr53/8415/2024/es/). 
+y la tortura [son una realidad en Venezuela](https://www.amnesty.org/es/documents/amr53/0222/2019/es/). 
 Es igualmente cierto que tales crímenes nunca han incomodado a los Estados
 Unidos: a veces los toleran, otras muchas los fomentan activamente. La única
 conclusión es que las razones *reales* de la Ley Bolívar son justamente las más
