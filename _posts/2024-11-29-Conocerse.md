@@ -4,13 +4,13 @@ categories: [ Personal ]
 ---
 
 El templo de Apolo en Delfos tenía escrita la sentencia: *conócete a ti mismo*.
-Montaigne nos dice que esa sentencia inspiró sus ensayos. Pero esta antigua
-máxima debe ser insatisfacible. 
+Montaigne nos dice que esa sentencia inspiró sus ensayos. Hoy siento que esta
+antigua máxima insatisfacible. 
 
 Cuando era niño, solía esconder semillas de girasol en un pañuelo. Luego, en
 algún espacio verde, abriendo el pañuelo con un golpe rápido de mano, esparcía
 las semillas en la tierra. Sentía algo así como: *Esta es mi ofrenda*, aunque no 
-conocía esas palabra. Cuando fui un poco más grande, llené un pañuelo de
+conocía esas palabras. Cuando fui un poco más grande, llené un pañuelo de
 semillas y lo escondí dentro de mí. Esa cosa extraña de la que hablaba al decir
 *yo* estaba, de alguna manera, cifrada en él, imprecisa pero, después de todo,
 inteligible. Hoy el pequeño arcón se ha corrompido, y descubro que nunca fueron
