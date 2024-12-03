@@ -1,0 +1,113 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{newtxtext} \usepackage{newtxmath}
+\usepackage{amsmath, amssymb}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example} \newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+
+
+\begin{document}
+
+    
+Given a first order type $\tau$, we use $S^\tau$ to denote the set of $\tau$-sentences,
+i.e. formulas with no free variables. Let $T = (\Sigma, \tau)$ a theory. 
+Then we can define 
+
+\begin{equation*}
+    \varphi \dashv \vdash_T \psi \iff T \vdash \left( \varphi \leftrightarrow \psi \right) 
+\end{equation*}
+
+or equivalently 
+
+\begin{equation*}
+    \dashv \vdash_T = \left\{ (\varphi, \psi) \in S^\tau : T \vdash \left( \varphi \leftrightarrow \psi \right)  \right\} 
+\end{equation*}
+
+It is easy to see through natural deduction that $\dashv \vdash_T$ is 
+an equivalence relation.
+
+We say that a sentence $\varphi \in S^\tau$ is refutable when $(\Sigma, \tau)
+\vdash \neg \varphi$. It is also easy to prove via natural deduction that the
+set of theorems and the set of refutable sentences form two distinct equivalent
+classes under $\dashv \vdash $. In other words, any pair of theorems 
+imply each other, and any pair of refutable sentences impliy each other.
+
+Let $\left[ \varphi \right] $ denote the equivalent class of $\varphi$
+with respect to $\dashv \vdash_T $. Define $\textbf{s}$ 
+as
+
+\begin{equation*}
+    \left[ \varphi \right]  \textbf{ s } \left[ \psi \right] = \left[ \left( \varphi \lor  \psi \right)  \right] 
+\end{equation*}
+
+In short, let the supremum of the equivalent classes of two formulas be the
+class of their disjunction. In particular, the supremum of (the classes of) two 
+theorems is the class of theorems, and the supremum of (the classes of) a 
+theorem and a refutable sentence still is the class of theorems. Only 
+the supremum of (the classes of) two refutable sentences is the class of 
+refutable sentences.
+
+Define the corresponding operations for the infimum and complement of 
+equivalent classes: 
+
+\begin{align*}
+    &\left[ \varphi \right] \textbf{ i } \left[ \psi \right] = \left[ \left( \varphi \land  \psi \right)  \right] \\ 
+    &\left( \left[ \varphi \right]  \right)^c = \left[ \neg \varphi \right] 
+\end{align*}
+
+With $0^T$ as the set of theorems in $T$, $1^T$ as the set of refutable
+sentences in $T$,
+
+\begin{equation*}
+    \mathcal{B} = \left( S^\tau / \dashv \vdash_T, \textbf{s}, \textbf{i}, ^{^T}, 0^T, 1^T \right) 
+\end{equation*}
+
+is a Boolean algebra. This algebra is called *Lindenbaum*'s algebra 
+(under theory $T$). Observe that, by virtue of Dedekind's theorem,
+this algebra has an associated partial order. This order is described 
+as follows: 
+
+\begin{equation*}
+    \left[ \varphi \right] \leq \left[ \psi \right]  \iff T \vdash \left( \varphi \to \psi \right) 
+\end{equation*}
+
+A Lindenbaum's algebra is used to prove Godel's completeness theorem.
+
+# Further description 
+
+~
+
+Let $\psi \in S^\tau$ s.t. $T \not\vdash \psi$. It is easy to see 
+that natural deduction allows us to conclude, 
+$$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
