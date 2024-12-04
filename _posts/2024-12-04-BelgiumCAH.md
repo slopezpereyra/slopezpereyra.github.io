@@ -31,7 +31,7 @@ los niños *méti* desde su temprana infancia, separándolos de sus madres y
 arrojándolos a misiones católicas, algunas en el Congo y otras en Bélgica.
 Las condiciones en estas misiones católicas eran paupérrimas: las monjas 
 jugaban un papel de custodio colonial y los *méti* eran tratados como 
-sujetos de tercera clase. Sus nombres, así como la fecha y lugar lugar de sus
+sujetos de tercera clase. Sus nombres, así como la fecha y lugar de sus
 nacimientos, fueron alterados, haciendo virtualmente imposible que estas
 personas pudieran rastrear sus verdaderos orígenes. Se estima que unos 20.000
 niños fueron así privados de su identidad y arrojados a una vida de discriminación.
