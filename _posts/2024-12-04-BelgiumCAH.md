@@ -7,7 +7,7 @@ Tras el brutal reinado de Leopoldo II, el estado belga continuó la ocupación y
 el control colonial sobre la actual República Democrática del Congo. Poco antes
 de la independencia congolesa, alcanzada en 1960, los colonizadores se
 preocupaban cada vez más por los así llamados *méti*, palabra francesa para
-mestizo. La preocupación no era nueva: en 1913, Joseph Pholien, que luego 
+mestizo. La preocupación no era nueva: en 1913, Joseph Pholien, quien luego 
 sería primer ministro, [decía](https://rebelion.org/el-mayor-secuestro-de-la-historia-los-metis-del-congo-belga/):
 
 > Apartados de la raza blanca y desdeñando el contacto con la raza nativa, los
@@ -15,7 +15,7 @@ sería primer ministro, [decía](https://rebelion.org/el-mayor-secuestro-de-la-h
 > hostil a los europeos, a quienes consideran extranjeros de paso. Si llegan a
 > ser lo suficientemente numerosos y poderosos, se verán alentados a fomentar
 > revueltas que ellos mismos liderarán, conscientes de que solo ellos forman la
-> clase alta nacional, 
+> clase alta nacional.
 
 También decía: 
 
