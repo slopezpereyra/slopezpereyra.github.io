@@ -1,5 +1,5 @@
 ---
-title: Amnesty International determines Israel is comitting genocide 
+title: Amnistía Internacional determina que Israel es culpable de genocidio 
 categories: [Politics]
 ---
 
