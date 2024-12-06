@@ -5,7 +5,7 @@ categories: [ Personal ]
 
 El templo de Apolo en Delfos tenía escrita la sentencia: *conócete a ti mismo*.
 Montaigne nos dice que esa sentencia inspiró sus ensayos. Hoy siento que esta
-antigua máxima insatisfacible. 
+antigua máxima es insatisfacible. 
 
 Cuando era niño, solía esconder semillas de girasol en un pañuelo. Luego, en
 algún espacio verde, abriendo el pañuelo con un golpe rápido de mano, esparcía
