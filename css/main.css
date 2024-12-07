@@ -30,7 +30,7 @@ body {
   font-weight: 450;
   font-size: 20px;
   text-align: justify;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.8px; /* 0.2 before
   /* --- name --- */
   color: #000000;
   position: relative;
