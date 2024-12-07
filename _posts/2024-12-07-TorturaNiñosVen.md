@@ -6,10 +6,10 @@ categories: [Politics]
 De acuerdo con un
 [reporte](https://www.amnesty.org/en/documents/amr53/8783/2024/en/) de Amnistía
 Internacional, casi doscientos niños fueron detenidos arbitrariamente y
-torturados brutalmente en septiembre de este año. Tras días detenidos sin 
+torturados brutalmente en Venezula durante el mes de septiembre. Tras días detenidos sin 
 cargos en su contra, durante los cuales no se les dio de comer ni de beber,
-finalmente fueron llevados ante un juez y acusados de terrorismo sin evidencia.
-Los jueces aparentemente hicieron oídos sordos a los alegatos de tortura de los
+finalmente fueron llevados ante un juez y, sin evidencia alguna, acusados de terrorismo.
+Los jueces hicieron oídos sordos a los alegatos de tortura de los
 niños. La tortura, de acuerdo con lo que reportaron los niños, involucró
 electrocutamiento, apaleamiento con bates de béisbol, asfixia, y amenazas de
 violencia sexual y muerte. (Es concebible, aunque no hay evidencia de esto ni
