@@ -19,7 +19,7 @@ violación y ejecución sumaria de personas. En muchos casos, estos abusos fuero
 por razones religiosas (por ejemplo, dos personas
 [detenidas](https://news.snhr.org/2021/06/01/hts-arrested-2-students-at-an-institution-for-memorizing-the-holy-quran-in-w-aleppo-governorate-on-may-31/)
 por rezar inapropiadamente). Sus incontables violaciones de derechos humanos y
-religiosos, así como sus métodos de tortura, están ampliamente documentadas en [este
+religiosos, así como sus métodos de tortura, están ampliamente documentados en [este
 reporte](https://www.uscirf.gov/sites/default/files/2022-11/2022%20Factsheet%20-%20HTS-Syria.pdf)
 estadounidense, [este
 otro](https://snhr.org/wp-content/pdf/english/The_Most_Notable_Hayat_Tahrir_al_Sham_Violations_Since_the_Establishment_of_Jabhat_al_Nusra_to_Date_1_en.pdf)
