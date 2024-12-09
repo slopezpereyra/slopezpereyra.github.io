@@ -11,7 +11,7 @@ lazos con al-Qaeda y empezó una campaña mediática para distanciarse
 de grupos extremistas y mejorar su reputación. Dicha campaña no fue sostenida 
 con los hechos.
 
-Por ejemplo, nn marzo de 2017, [se
+Por ejemplo, en marzo de 2017, [se
 adjudicó](https://www.hrw.org/news/2024/12/04/syria-civilians-risk-amid-renewed-hostilities)
 un atentado en Damasco que mató al menos 40 personas, en su mayoría chiitas
 irakíes. El grupo ha estado involucrado en la tortura, desaparición forzada,
@@ -41,5 +41,5 @@ El régimen de Bashar Al-Assad fue [repugnante y brutal](https://www.hrw.org/rep
 que Siria no esté mucho mejor ahora que el HTS ha tomado el poder. Si bien el
 grupo ha dicho estar listo para entregar el poder pacíficamente a un gobernante
 electo por el pueblo, los eventos son demasiado recientes para saber si esto es
-cierto o no. El historial del grupo no inspira confianza.
+cierto o no. El historial del grupo no inspira confianza. 
 
