@@ -13,7 +13,7 @@ elogio inmerecido.
 
 Keir Starmer, primer ministro inglés,
 [dice](https://news.sky.com/story/sir-keir-starmer-says-uk-will-play-our-part-on-world-stage-as-he-announces-further-aid-for-syria-13270404)
-que es muy pronto para revocar el status de grupo terrorista del HTSm pero tanto 
+que es muy pronto para revocar el status de grupo terrorista del HTS, pero tanto 
 su gobierno como los Estados Unidos y otros aliados occidentales lo están 
 considerando. La postura razonable es precisamente la contraria: es *muy tarde*
 para revocar su status de grupo terrorista. Las terribles violaciones de
