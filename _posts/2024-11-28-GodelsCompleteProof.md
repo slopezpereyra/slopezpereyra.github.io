@@ -24,14 +24,14 @@ $$[\varphi] \neq 1, ~ ~ ~ [\neg \varphi_0] \neq 0$$
 Let $\overrightarrow{\gamma}$ denote the infinituple containing all
 formulas with at most one free variable. In each
 $\gamma_j =_d \gamma_j(w_j)$, $w_j$ denotes the variable such that
-$\left\{ w_j \right\} \subseteq \mathcal{F}(\gamma_j)$.
+$\\{ w_j \right\\} \subseteq \mathcal{F}(\gamma_j)$.
 
 The infimum lemma for Lindenbaum algebras guarantees that, for any
 formula $\psi \in F^\tau$,
-$\text{inf}\left\{ \left[ \psi(t) \right] : t \in T_c^\tau  \right\}  = \left[ \forall v \psi(v) \right]$.
+$\text{inf}\\{ \left[ \psi(t) \right] : t \in T_c^\tau  \\}  = \left[ \forall v \psi(v) \right]$.
 In particular,
 
-$$\text{inf}\left\{ \left[ \gamma_j(t) \right] : t \in T_c^\tau  \right\} = \left[ \forall w_j \gamma_j(w_j) \right]$$
+$$\text{inf}\\{ \left[ \gamma_j(t) \right] : t \in T_c^\tau  \\} = [ \forall w_j \gamma_j(w_j) ]$$
 
 Furthermore, for any Boolean algebra $\mathcal{B}$, with
 $x \neq 0_\mathcal{B}$ an arbitrary element of $B$, Rasiowa and
@@ -49,8 +49,8 @@ prime filter $\mathcal{U}$ such that:
 -   $\left[ \neg \varphi_0 \right] \in \mathcal{U}$
 
 -   For each $j \in \mathbb{N}$, if
-    $\left\{ [\gamma_j(t)] : t \in T_c^\tau \right\} \subseteq \mathcal{U}$,
-    then $\left[ \forall w_j ~ \gamma_j(w_j) \right] \in \mathcal{U}$
+    $\\{ [\gamma_j(t)] : t \in T_c^\tau \\} \subseteq \mathcal{U}$,
+    then $[ \forall w_j ~ \gamma_j(w_j) ] \in \mathcal{U}$
 
 Let us define $\bowtie$ a binary relation over $T^\tau_c$ as follows:
 
@@ -78,7 +78,7 @@ denote with $\textbf{A}$, as follows:
 -   $f^\textbf{A}(t_1 / \bowtie , \ldots, t_n /\bowtie ) = f(t_1,\ldots, t_n)  / \bowtie$,
     for each $f \in \mathcal{F}_n, t_1,\ldots, t_n \in T_c^\tau$
 
--   $r^\textbf{A} = \left\{ (t_1 / \bowtie , \ldots, t_n / \bowtie ) : \left[ r(t_1,\ldots, t_n) \right] \in \mathcal{U}  \right\}$,
+-   $r^\textbf{A} = \\{ (t_1 / \bowtie , \ldots, t_n / \bowtie ) : [ r(t_1,\ldots, t_n) ] \in \mathcal{U}  \\}$,
     for each $r \in \mathcal{R}_n, t_1,\ldots,t_n \in T_c^\tau$
 
 Accept without proof the following property, which we denote with
@@ -108,10 +108,10 @@ and then
 
 $$\begin{aligned}
     \textbf{A} \vDash \varphi\left[ t_1 / \bowtie ,\ldots, t_n / \bowtie  \right]  
-&\iff \textbf{A} \vDash \varphi_1[\overrightarrow{t / \bowtie }] \text{ and } \textbf{A} \vDash \varphi_2 \left[ \overrightarrow{t / \bowtie } \right]  \\ 
-&\iff \left[ \varphi_1(\overrightarrow{ t / \bowtie }) \right] \in \mathcal{U} \text{ and } \left[ \varphi_2(\overrightarrow{t / \bowtie }) \right]  \in  \mathcal{U} \\ 
-&\iff \left[ \varphi_1 (\overrightarrow{t / \bowtie }) \right] \textbf{ s } \left[ \varphi_2(\overrightarrow{t / \bowtie }) \right] \in  \mathcal{U} \\ 
-&\iff \left[ \varphi_1 (\overrightarrow{t / \bowtie }) \lor \varphi_2(\overrightarrow{t / \bowtie })\right] \in \mathcal{U} \\ 
+&\iff \textbf{A} \vDash \varphi_1[\overrightarrow{t / \bowtie }] \text{ and } \textbf{A} \vDash \varphi_2 \left[ \overrightarrow{t / \bowtie } \right]  \\\\ 
+&\iff \left[ \varphi_1(\overrightarrow{ t / \bowtie }) \right] \in \mathcal{U} \text{ and } \left[ \varphi_2(\overrightarrow{t / \bowtie }) \right]  \in  \mathcal{U} \\\\ 
+&\iff \left[ \varphi_1 (\overrightarrow{t / \bowtie }) \right] \textbf{ s } \left[ \varphi_2(\overrightarrow{t / \bowtie }) \right] \in  \mathcal{U} \\\\ 
+&\iff \left[ \varphi_1 (\overrightarrow{t / \bowtie }) \lor \varphi_2(\overrightarrow{t / \bowtie })\right] \in \mathcal{U} \\\\ 
 &\iff \left[ \varphi(\overrightarrow{t / \bowtie }) \right] \in \mathcal{U}\end{aligned}$$
 
 QED. The proof for the other connective symbols are similar. Now
@@ -121,9 +121,9 @@ $v \neq v_j$ for all $1 \leq j \leq n$. Then
 
 $$\begin{aligned}
     \textbf{A} \vDash \varphi\left[ \overrightarrow{t / \bowtie } \right] 
-&\iff A \vDash \varphi_1 \left[ t_1 / \bowtie ,\ldots, t_n / \bowtie , t / \bowtie  \right] \text{ for all } t \in T^\tau_c \\ 
-&\iff \left[ \varphi_1(t_1,\ldots, t_n, t) \right] \in \mathcal{U} \text{ for all } t \in T_c^\tau\\ 
-&\iff \left[ \forall v \varphi_1(t_1, \ldots, t_n, v) \right] \in \mathcal{U} \\ 
+&\iff A \vDash \varphi_1 \left[ t_1 / \bowtie ,\ldots, t_n / \bowtie , t / \bowtie  \right] \text{ for all } t \in T^\tau_c \\\\ 
+&\iff \left[ \varphi_1(t_1,\ldots, t_n, t) \right] \in \mathcal{U} \text{ for all } t \in T_c^\tau\\\\ 
+&\iff \left[ \forall v \varphi_1(t_1, \ldots, t_n, v) \right] \in \mathcal{U} \\\\ 
 &\iff\left[ \varphi(t_1,\ldots, t_n) \right] \in \mathcal{U}\end{aligned}$$
 
 In the case $\varphi = \exists v \varphi_1$, we again have
@@ -132,14 +132,14 @@ $1 \leq j \leq n$. Then
 
 $$\begin{aligned}
     \textbf{A} \vDash \varphi\left[ \overrightarrow{t / \bowtie } \right] 
-&\iff \textbf{A} \vDash \varphi_1\left[ t_1 / \bowtie , \ldots, t_n / \bowtie , t \right] \text{ for some } t \in  T_c^\tau \\ 
-&\iff \left[ \varphi(t_1,\ldots, t_n, t) \right] \in \mathcal{U} \text{ for some } t \in  T_c^\tau \\ 
-&\iff \left( \left[ \varphi_1(t_1,\ldots, t_n, t) \right]  \right)^c \not\in \mathcal{U} \text{ for some } t \in T_c^\tau \\ 
-&\iff \left[ \neg \varphi_1(t_1,\ldots, t_n, t) \right] \not\in \mathcal{U} \text{ for some } t \in T_c^\tau \\ 
-&\iff\left[ \forall v \neg \varphi_1(t_1, \ldots, t_n, v) \right] \not\in \mathcal{U} \\ 
-&\iff\left(\left[ \forall v \neg \varphi_1(t_1, \ldots, t_n, v) \right]\right)^c \in \mathcal{U} \\ 
-&\iff \left[ \neg \forall v \neg \varphi_1 (t_1, \ldots, t_n, v) \right] \in \mathcal{U} \\ 
-&\iff\left[ \exists v \varphi_1(t_1,\ldots, t_n, v) \right] \in \mathcal{U} \\ 
+&\iff \textbf{A} \vDash \varphi_1\left[ t_1 / \bowtie , \ldots, t_n / \bowtie , t \right] \text{ for some } t \in  T_c^\tau \\\\ 
+&\iff \left[ \varphi(t_1,\ldots, t_n, t) \right] \in \mathcal{U} \text{ for some } t \in  T_c^\tau \\\\ 
+&\iff \left( \left[ \varphi_1(t_1,\ldots, t_n, t) \right]  \right)^c \not\in \mathcal{U} \text{ for some } t \in T_c^\tau \\\\ 
+&\iff \left[ \neg \varphi_1(t_1,\ldots, t_n, t) \right] \not\in \mathcal{U} \text{ for some } t \in T_c^\tau \\\\ 
+&\iff\left[ \forall v \neg \varphi_1(t_1, \ldots, t_n, v) \right] \not\in \mathcal{U} \\\\ 
+&\iff\left(\left[ \forall v \neg \varphi_1(t_1, \ldots, t_n, v) \right]\right)^c \in \mathcal{U} \\\\ 
+&\iff \left[ \neg \forall v \neg \varphi_1 (t_1, \ldots, t_n, v) \right] \in \mathcal{U} \\\\ 
+&\iff\left[ \exists v \varphi_1(t_1,\ldots, t_n, v) \right] \in \mathcal{U} \\\\ 
 &\iff \left[ \varphi(t_1,\ldots, t_n) \right] \in \mathcal{U}\end{aligned}$$
 
 This concludes the proof of the property. However, since
