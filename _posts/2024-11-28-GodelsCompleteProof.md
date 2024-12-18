@@ -24,7 +24,7 @@ $$[\varphi] \neq 1, ~ ~ ~ [\neg \varphi_0] \neq 0$$
 Let $\overrightarrow{\gamma}$ denote the infinituple containing all
 formulas with at most one free variable. In each
 $\gamma_j =_d \gamma_j(w_j)$, $w_j$ denotes the variable such that
-$\\{ w_j \right\\} \subseteq \mathcal{F}(\gamma_j)$.
+$\\{ w_j \\} \subseteq \mathcal{F}(\gamma_j)$.
 
 The infimum lemma for Lindenbaum algebras guarantees that, for any
 formula $\psi \in F^\tau$,
