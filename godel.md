@@ -1,11 +1,3 @@
----
-title: A proof of Godel's completeness theorem 
-categories: [ Science ]
----
-
-> **Gödel's completeness theorem**. Let $T = (\Sigma, \tau)$ a first order 
-theory. Then, for any $\varphi \in S^\tau$, $T \vDash \varphi$ implies $T \vdash
-\varphi$.
 
 
 Assume there is a $\varphi_0 \in S^\tau$ such that $T \vDash \varphi_0$
@@ -153,4 +145,3 @@ is such that $T \vDash \varphi_0$ but $T \not\vdash \varphi_0$.
  
 
 $\therefore$ Godel's completeness theorem is true.
-
