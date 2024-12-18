@@ -36,7 +36,7 @@ $$\text{inf}\\{ \left[ \gamma_j(t) \right] : t \in T_c^\tau  \\} = [ \forall w_j
 Furthermore, for any Boolean algebra $\mathcal{B}$, with
 $x \neq 0_\mathcal{B}$ an arbitrary element of $B$, Rasiowa and
 Sikorski's theorem ensures the following: for any subsets
-$A_1, A_2, \ldots$ of $B$ all of which haven an infimum, there is a
+$A_1, A_2, \ldots$ of $B$ all of which have an infimum, there is a
 prime filter $F$ satisfying:
 
 -   $x \in P$
@@ -81,8 +81,8 @@ denote with $\textbf{A}$, as follows:
 -   $r^\textbf{A} = \\{ (t_1 / \bowtie , \ldots, t_n / \bowtie ) : [ r(t_1,\ldots, t_n) ] \in \mathcal{U}  \\}$,
     for each $r \in \mathcal{R}_n, t_1,\ldots,t_n \in T_c^\tau$
 
-Accept without proof the following property, which we denote with
-$\star$ from now onwards:
+Accept without proof the following property, which is simple to prove by 
+induction:
 
 $$t^\textbf{A}[t_1 / \bowtie , \ldots, t_n /\bowtie ] = t(t_1,\ldots, t_n) / \bowtie$$
 
