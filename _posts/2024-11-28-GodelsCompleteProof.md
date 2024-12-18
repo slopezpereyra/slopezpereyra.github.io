@@ -112,9 +112,9 @@ $$\begin{aligned}
 &\iff \left[ \varphi_1(\overrightarrow{ t / \bowtie }) \right] \in \mathcal{U} \text{ and } \left[ \varphi_2(\overrightarrow{t / \bowtie }) \right]  \in  \mathcal{U} \\\\ 
 &\iff \left[ \varphi_1 (\overrightarrow{t / \bowtie }) \right] \textbf{ s } \left[ \varphi_2(\overrightarrow{t / \bowtie }) \right] \in  \mathcal{U} \\\\ 
 &\iff \left[ \varphi_1 (\overrightarrow{t / \bowtie }) \lor \varphi_2(\overrightarrow{t / \bowtie })\right] \in \mathcal{U} \\\\ 
-&\iff \left[ \varphi(\overrightarrow{t / \bowtie }) \right] \in \mathcal{U}\end{aligned}$$
+&\iff \left[ \varphi(\overrightarrow{t / \bowtie }) \right] \in \mathcal{U} ~ ~ \blacksquare\end{aligned}$$
 
-QED. The proof for the other connective symbols are similar. Now
+The proofs for the other connective symbols are similar. Now
 consider the case $\varphi = \forall v \varphi_1$. By declarational
 convention, we have $\varphi_1 =_d \varphi_1(v_1,\ldots, v_n, v)$, with
 $v \neq v_j$ for all $1 \leq j \leq n$. Then
