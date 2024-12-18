@@ -106,12 +106,14 @@ $$t^\textbf{A}[t_1 / \bowtie , \ldots, t_n /\bowtie ] = t(t_1,\ldots, t_n) / \bo
 
 This theorem is proven by induction over $T^tau$. If $t \in T_0^\tau$, then $t \in Var \cup \mathcal{C}$. If $t = c \in \mathcal{C}$,
 $t^\textbf{A}\left[ \overrightarrow{t / \bowtie } \right] = c^\textbf{A} = c / \bowtie = t(\overrightarrow{t}) / \bowtie $. If $t = v_i$, then necessarily
-$v_i \in \left\{ v_1,\ldots, v_n \right\} $, which entails
+$v_i \in \\{ v_1,\ldots, v_n \\} $, which entails
 $t^\textbf{A}\left[ \overrightarrow{ t / \bowtie } \right] = t_i / \bowtie  = t(\overrightarrow{t}) / \bowtie $.
 
-Assuming the property holds for $t \in T_k^\tau$, $k \in \mathbb{N}$, and taking
-$t =_d t(v_1,\ldots,v_n) \in T_{k+1}^\tau - T_k$, then 
-$t = f(w_1,\ldots, w_m)$ para $f \in \mathcal{F}_m, w_1,\ldots, w_m \in T^\tau_k$.
+Assuming the property holds for $t \in T_k^\tau$, 
+$k \in \mathbb{N}$, 
+and taking
+$t =_d t(v_1,\ldots,v_n) \in T\_{k+1}^\tau - T_k$, then 
+$t = f(w_1,\ldots, w_m)$ for $f \in \mathcal{F}_m, w_1,\ldots, w_m \in T^\tau_k$.
 But then
 
 \begin{align*}
@@ -186,7 +188,5 @@ $\textbf{A} \vDash \neg
 $T \vDash \varphi_0$. The contradiction arises from assuming $\varphi_0$
 is such that $T \vDash \varphi_0$ but $T \not\vdash \varphi_0$.
 
- 
-
-$\therefore$ Godel's completeness theorem is true.
+$\therefore$ If $T \vDash \varphi$, then $T \vdash \varphi$, for any sentence $\varphi$.
 
