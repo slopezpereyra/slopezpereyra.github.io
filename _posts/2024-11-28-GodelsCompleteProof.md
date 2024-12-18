@@ -57,7 +57,7 @@ Let us define $\bowtie$ a binary relation over $T^\tau_c$ as follows:
 $$t \bowtie  s \text{ if and only if } [(t \equiv s)] \in \mathcal{U}$$
 
 We accept without proof that $\bowtie$ is an equivalence relation. We
-also accept without proof two very simple properties:
+set out to prove two simple properties, which we call $P_1, P_2$:
 
 -   For any $\varphi =_d \varphi(v_1,\ldots,v_n)\in F^\tau$, if
     $t_i \bowtie s_i$ with $1 \leq i \leq n$, then
@@ -68,7 +68,26 @@ also accept without proof two very simple properties:
     $1 \leq i \leq n$, then
     $f(t_1,\ldots, t_n) \bowtie f(s_1,\ldots, s_n)$
 
-Let us define too a self-referential model of type $\tau$, which we
+To prove $P_1$, observe that
+
+\begin{equation*}
+    T \vdash ( (t_1 \equiv s_1) \land  \ldots \land  (t_n \equiv s_n) \land \varphi(\overrightarrow{t}) ) \to \varphi(\overrightarrow{s})
+\end{equation*}
+
+Then
+
+\begin{equation*}
+    [ (t_1 \equiv s_1) ]_T \textbf{ i } \ldots \textbf{ i } [ (t_n \equiv s_n) ]_T \textbf{ i } [ \varphi(\overrightarrow{t}) ]_T \leq [ \varphi(\overrightarrow{s}) ]_T
+\end{equation*}
+
+Since $\mathcal{U}$ is a filter, $[ \varphi(\overrightarrow{t}) ]_T \in \mathcal{U} $ entails $[ \varphi(\overrightarrow{s}) ]_T \in \mathcal{U} $. 
+The proof for $(\Leftarrow)$ is analogous.
+
+On the other hand, $P_2$ is a particular case of $P_1$; namely, the case with
+$$\varphi = ( f(v_1,\ldots,v_n) \equiv f(s_1,\ldots, s_n) ) $$
+
+
+Let us now define a model of type $\tau$, which we
 denote with $\textbf{A}$, as follows:
 
 -   Its universe is $T^\tau_c / \bowtie$
@@ -81,19 +100,36 @@ denote with $\textbf{A}$, as follows:
 -   $r^\textbf{A} = \\{ (t_1 / \bowtie , \ldots, t_n / \bowtie ) : [ r(t_1,\ldots, t_n) ] \in \mathcal{U}  \\}$,
     for each $r \in \mathcal{R}_n, t_1,\ldots,t_n \in T_c^\tau$
 
-Accept without proof the following property, which is simple to prove by 
-induction:
+Now take the following theorem:
 
 $$t^\textbf{A}[t_1 / \bowtie , \ldots, t_n /\bowtie ] = t(t_1,\ldots, t_n) / \bowtie$$
 
-We will prove by induction that for any
+This theorem is proven by induction over $T^tau$. If $t \in T_0^\tau$, then $t \in Var \cup \mathcal{C}$. If $t = c \in \mathcal{C}$,
+$t^\textbf{A}\left[ \overrightarrow{t / \bowtie } \right] = c^\textbf{A} = c / \bowtie = t(\overrightarrow{t}) / \bowtie $. If $t = v_i$, then necessarily
+$v_i \in \left\{ v_1,\ldots, v_n \right\} $, which entails
+$t^\textbf{A}\left[ \overrightarrow{ t / \bowtie } \right] = t_i / \bowtie  = t(\overrightarrow{t}) / \bowtie $.
+
+Assuming the property holds for $t \in T_k^\tau$, $k \in \mathbb{N}$, and taking
+$t =_d t(v_1,\ldots,v_n) \in T_{k+1}^\tau - T_k$, then 
+$t = f(w_1,\ldots, w_m)$ para $f \in \mathcal{F}_m, w_1,\ldots, w_m \in T^\tau_k$.
+But then
+
+\begin{align*}
+    t^\textbf{A}\left[ \overrightarrow{t / \bowtie } \right]  
+&= f^\textbf{A} ( w_1^\textbf{A}[ \overrightarrow{t / \bowtie } ],\ldots, w_m^\textbf{A} [ \overrightarrow{ t / \bowtie } ]   ) \\\\ 
+&=f^\textbf{A} ( w_1(\overrightarrow{t}) / \bowtie , \ldots, w_m(\overrightarrow{t}) / \bowtie  )  \\\\ 
+&=f(w_1 (\overrightarrow{t}),\ldots, w_m(\overrightarrow{t})) / \bowtie  \\\\ 
+&= t(\overrightarrow{t}) / \bowtie 
+\end{align*}
+
+which concludes the proof. The theorem proven above allows us to prove a separate theorem, which finally gives the key to Gödel's theorem. Namely,
+that for any
 $\varphi =_d \varphi(v_1,\ldots,v_n) \in F^\tau$, and any
 $t_1,\ldots, t_n \in T^\tau_c$,
 
 $$\textbf{A} \vDash \varphi\left[ t_1 / \bowtie , \ldots, t_n / \bowtie  \right] \text{ if and only if } \left[ \varphi(t_1,\ldots,t_n) \right] \in \mathcal{U}$$
 
-
-If $\varphi \in F_0^\tau$, one of the following cases holds:
+To prove this, observe that if $\varphi \in F_0^\tau$, one of the following cases holds:
 
 1.  $\varphi = (s \equiv t)$ with $s, t \in T^\tau$
 
