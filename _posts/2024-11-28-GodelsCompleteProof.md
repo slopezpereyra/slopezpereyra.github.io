@@ -146,8 +146,8 @@ and then
 
 $$\begin{aligned}
     \textbf{A} \vDash \varphi\left[ t_1 / \bowtie ,\ldots, t_n / \bowtie  \right]  
-&\iff \textbf{A} \vDash \varphi_1[\overrightarrow{t / \bowtie }] \text{ and } \textbf{A} \vDash \varphi_2 \left[ \overrightarrow{t / \bowtie } \right]  \\\\ 
-&\iff \left[ \varphi_1(\overrightarrow{ t / \bowtie }) \right] \in \mathcal{U} \text{ and } \left[ \varphi_2(\overrightarrow{t / \bowtie }) \right]  \in  \mathcal{U} \\\\ 
+&\iff \textbf{A} \vDash \varphi_1[\overrightarrow{t / \bowtie }] \text{ or } \textbf{A} \vDash \varphi_2 \left[ \overrightarrow{t / \bowtie } \right]  \\\\ 
+&\iff \left[ \varphi_1(\overrightarrow{ t / \bowtie }) \right] \in \mathcal{U} \text{ or } \left[ \varphi_2(\overrightarrow{t / \bowtie }) \right]  \in  \mathcal{U} \\\\ 
 &\iff \left[ \varphi_1 (\overrightarrow{t / \bowtie }) \right] \textbf{ s } \left[ \varphi_2(\overrightarrow{t / \bowtie }) \right] \in  \mathcal{U} \\\\ 
 &\iff \left[ \varphi_1 (\overrightarrow{t / \bowtie }) \lor \varphi_2(\overrightarrow{t / \bowtie })\right] \in \mathcal{U} \\\\ 
 &\iff \left[ \varphi(\overrightarrow{t / \bowtie }) \right] \in \mathcal{U} ~ ~ \blacksquare\end{aligned}$$
