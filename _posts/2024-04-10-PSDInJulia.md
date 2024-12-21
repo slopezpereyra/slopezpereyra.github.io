@@ -12,13 +12,10 @@ example of this obscurity is `gsignal`'s lack of documentation on the fact that
 their `pwelch` function, which uses Welch's method to estimate the PSD of a
 vector, normalizes the result to units of power over Hertz.
 
-There is one fact that ought to be taken into account, however, a fact so
-simple and plain that it surprises me that it isn't yet an axiom among
-civilized people. I mean of course that R is a tasteless language, offensive to the
-aesthetic instinct with which nature has blessed humankind. Thus, eager to
-dwell in prettier meadows, after writing that previous entry, I rapidly turned
-to implement in Julia what I condenscended to desacrate in R. Without further 
-ado, the implementation:
+Here I present Julia algorithms for PSD estimation and show that they correctly 
+match other PSD estimation libraries from the Julia environment.
+
+---
 
 ```jl
 using FFTW
