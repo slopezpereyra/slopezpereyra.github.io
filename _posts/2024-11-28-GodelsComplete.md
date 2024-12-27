@@ -133,7 +133,7 @@ axioms in $\Sigma$ entails the truth of $\varphi$, we write $(\Sigma, \tau)
 \vDash \varphi$. This is a semantic entailment: we are not speaking of symbol
 manipulation, but about truth evaluation. We are saying: "under any
 interpretation (semantics) of the symbols of our language, $\varphi$ is true
-if the the axioms in $\Sigma$ are true".
+if the axioms in $\Sigma$ are true".
 
 To get a sense of how general the question which Gödel's theorem answers is,
 consider first this analogue question, more philosophical in question. Assume
