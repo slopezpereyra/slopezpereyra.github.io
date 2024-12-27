@@ -136,7 +136,7 @@ interpretation (semantics) of the symbols of our language, $\varphi$ is true
 if the axioms in $\Sigma$ are true".
 
 To get a sense of how general the question which Gödel's theorem answers is,
-consider first this analogue question, more philosophical in question. Assume
+consider first this analogue question, more philosophical in nature. Assume
 there is something in the world that is true - take this to be as simple a
 truth as you want. Does it follow, from the fact that it is true, that you can 
 express it in your language? In other words, can our language express everything 
