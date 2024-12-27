@@ -108,36 +108,6 @@ The theorem follows trivially from the definition of $\omega^{[\mathbb{N}]}$ and
 the fundamental theorem of arithmetic. 
 
 
-\small
-\begin{quote}
-
-\begin{problem}
-    Prove the previous theorem via complete induction.
-\end{problem}
-
-The base case is trivial. Assume the statement holds for all $n \leq k$. The
-fundamental theorem of arithmetic ensures that $k + 1 = p_1 \cdot \ldots \cdot
-p_m$ where $p_i$ is prime. Assume the factorization above is ordered (this is,
-$p_{j + 1} > p_j$ for all $j \in [1, m]$). Then $k + 1 = p_m \cdot q$ with $q =
-p_1 \cdot \ldots \cdot p_{m - 1}$. 
-
-\footnotesize
-\begin{quote}
-    \textit{Subproof.} We will prove $k + 1 = p_m \cdot q \Rightarrow q \leq k$.
-    Assume the premise holds and the consequence does not. Since $q > k$ we have
-    $q \cdot x > k + 1$ for all $x > 1$. Then $q \cdot x > k + 1$ for all $x$
-    that is prime. Then $q \cdot p_m \neq k + 1$ which is a contradiction. Then,
-    if $k + 1 = q \cdot p_m$, we have $q \leq k$. $\blacksquare$
-\end{quote}
-\small
-
-Since $q \leq k$, via inductive hypothesis, $q$ takes the productorial form of
-the theorem above. Then $k + 1 = q \cdot pr(j)$ where $pr(j) = p_m$. Then the
-theorem holds for all $n \in \mathbb{N}$.
-
-\end{quote}
-\normalsize
-
 
 \begin{theorem}
     If $p, p_1, \ldots, p_m$ are prime ($m \geq 1$) and $p \mid p_1 \ldots p_m$,

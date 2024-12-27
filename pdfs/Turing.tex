@@ -1,0 +1,460 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{newtxtext} \usepackage{newtxmath}
+\usepackage{amsmath, amssymb}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example} \newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\usepackage{parskip}
+
+\usepackage[top=1.5cm]{geometry}
+% Define a new proof environment with smaller font
+\newenvironment{proof}[1][Proof]{\par\small\noindent\textbf{#1:} }{\qed\par\normalsize}
+
+\usepackage[cal=boondoxo]{mathalpha}
+
+\begin{document}
+
+
+\section{Godel numbering}
+
+Let $\left\{ a_i \right\}_{i=0}^{n} $ a sequence of integers. Let 
+
+\begin{equation*}
+    a := \sum_{i=1}^{k} \mathcal{p}_i^{a_i + 1}
+\end{equation*}
+
+We see that $\left\{ a_i \right\} $ provides a pimre encoding of $a$,
+insofar as $a$ can be retrieved from the sequence 
+uniquely (fundametal theorem of arithmetic). This 
+coding is injective but not surjective on $\omega$.
+
+\section{Partial function enumeration}
+
+To characterize all effectively calculable functions, we would 
+like to produce a list $\mathcal{C} = \left\{ f_n \right\}_{n \in \omega} $
+such that: 
+
+\begin{itemize}
+    \item The list includes all and only algorithmically computable functions 
+    \item There is an efective listing of said list, i.e. an algorithmically
+        computable function $g(n, x) = f_n(x)$. 
+    \item Every $f_n$ is total.
+\end{itemize}
+
+\begin{theorem}
+    Total partial functions are not enumerable.
+\end{theorem}
+
+\begin{proof}
+    Assume $\mathcal{C}$ satisfies the conditions above. Let 
+    $h(x) = g(x, x) + 1$. Since $h = \lambda x \left[ Suc \circ \left[ g \circ \left[ p_1^{1}, p_1^1 \right], p_1^1 \right]   \right] $, we know $h$ is a computable function. However, 
+    we imposed the condition that $g(n, x) = f_n(x)$, which entails 
+    $h(x) = f_x(x) + 1 \neq f_x(x)$.
+\end{proof}
+
+
+\section{Turing}
+
+
+If $M = (Q, \Gamma, \mathcal{b}, \Sigma, \delta, q_1, q_0)$ is a Turing machine,
+then the map $\delta$ is called a \textit{Turing program}. 
+We simplify and assume $\Gamma = \Sigma = \left\{ \mathcal{b}, 1 \right\} $, 
+so that we may refer to a Turing machine as 
+$M = (Q, \delta)$, fixing $q_1, q_0$ as the start and 
+halting states.
+
+If $y$ is the number of $1$s on the tape when $M$ reachs 
+$q_0$ with input $x$, and if $\varphi : \omega \to \omega$ is a 
+number-theoretic function s.t. $\varphi(x) = y$,
+we say $M$ computes $\varphi$.
+
+\begin{definition}
+    A Turing computation according to a Turing program $P$ with input $x$
+    is a sequence of instantaneous description $c_0, \ldots, c_n$ such that 
+    $c_0$ represents the machine in the starting state $q_1$ reading 
+    the leftmost symbol of $x$, $c_n$ represents the machine in the 
+    halting state $q_0$, and the transition $c_i \to  c_{i+1}$ 
+    is given by the Turing program $P$.
+\end{definition}
+
+Thus, a \textit{computation} will always refer to a \textit{halting} or 
+\textit{convergent} calculation. 
+
+A partial function $\varphi(\overrightarrow{x})$ is represented 
+by letting the input $\overrightarrow{x}$ be the initial configuration:
+
+\begin{equation*}
+    q_1 \alpha_1 \mathcal{b} \alpha_2 \ldots \mathcal{b} \alpha_n
+\end{equation*}
+
+where $\alpha_i$ consists of $x_i + 1$ repetitions of $1$.
+
+\section{Basic results}
+
+\subsection{Numbering Turing programs}
+
+Let $\left\{ P_e \right\}_{e \in \omega} $ be an enumeration of all Turing 
+programs, and assuming that $P_e$ is such that $e$
+is a Gödel numbering. 
+
+Let $\varphi_e^{(n)}$ be a partial function of $n$ variables 
+computed by $P_e$, and let $\varphi_e$ denote $\varphi_e^{(1)}$.
+We from now on identify each turing program $P_e$
+with $\varphi_e$. 
+
+\begin{theorem}
+    Each partial computable function $\varphi_x$ has infinitely 
+    many indices. Furthermore, for each $x$
+    we can find a set $A_x$ of indices such that 
+    $\varphi_y = \varphi_x$ for all $y \in A_x$.
+\end{theorem}
+
+\begin{proof}
+    Given $\varphi_x$, consider the Turing machine $P_x$. If Turing program
+    $P_x$ mentions only internal states $\left\{ q_0, \ldots, q_n \right\} $,
+    add any amount of extraneous instructions of the form $q_{n+k}\mathcal{b}
+    q_{n+k}\mathcal{b} R$ to create a new program for the same function.
+\end{proof}
+
+\section{Numbering Turing computations}
+
+Let 
+
+\begin{equation*}
+    c = \overline{t} q_i s_1 \overline{s}
+\end{equation*}
+
+denote a Turing computation with $\overline{t} = t_{w}\ldots t_2t_1$,
+$s_1$ the symbol being read, $\overline{s} = s_2\ldots s_v$.
+Thus, the initial configuration is 
+
+\begin{equation*}
+    c_1 = q_1 s_1 s_2 \ldots s_{k+1} = q_1 s_1 \overline{s}
+\end{equation*}
+
+A Turing machine performs the transitions $c_1, \ldots, c_n$ in 
+deterministic fashion. For every $c_i$, there is at most one 
+consequent configuratoin $c_{i+1}$. This passing through an 
+effective sequence of configurations allows for a coding 
+with Gödel numbers as follows.
+
+Once we have assigned numbers to each $s_i, q_j$, we can assign 
+a number to every configuration using the prime power equation. 
+In short, if $\mathcal{G}(\alpha)$, with $\alpha = q_j$ or $\alpha = s_j$,
+denotes the numbering of a tape symbol or a state, we let 
+
+\begin{equation*}
+    \mathcal{G}(t_m\ldots t_1 q_i s_1 \ldots s_k) = \mathcal{p}_1^{\mathcal{G}(q_i) + 1} + \sum_{i=1}^{k} \mathcal{p}_{i+1}^{\mathcal{G}(s_i) + 1}
+\end{equation*}
+
+\section{Enumeration theorem and universal machines}
+
+We know there is no enumeration of all total computable functions. However, 
+the effective numbering for the syntax of Turing machines allows us to give an 
+effective enumeration of all partial computable functions.
+
+\begin{theorem}
+    There is a partial computable function $\psi$ of two arguments such that 
+    $\psi(e, x) = \varphi_e(x)$. Turing's thesis ensures there is 
+    some $i$ such that $\varphi_i(e, x) = \psi(e, x)$.
+\end{theorem}
+
+\begin{proof}
+    Let $M(e, x)$ be the Turing machine which computes $\psi(e, x)$ and 
+    call it universal Turing machine. We provide an effective procedure which can, 
+    by TT, be translated into a Turing program.
+
+    
+    \small
+    \begin{quote}
+    
+        (1) Given input $(e, x)$, convert $e$ to $P_e$ by using the numbering of 
+        Turing programs. 
+
+        (2) Simulate $P_e$ on input $x$. The simulation begins with state 
+        $q_1$ on the leftmost symbol of $x$ in standard input form. 
+        If the simulation is in state $q_j$ reading symbol $s_k$, then 
+        $M$ searches through the tuples (instructions) in $P_e$ until it finds 
+        the indicated action on the simulation tape.
+    
+    \end{quote}
+    \normalsize
+    
+\end{proof}
+
+The enumeration theorem is crucial insofar as it guarantees the existence of a 
+universal computational machine, capable of running any computable program.
+
+\section{Parameter theorem}
+
+\begin{theorem}[Parameter theorem]
+    There is a bijective computable function $\mathcal{s}(x, y)$ such that,
+    for all $x, y, z \in \omega$,
+
+    \begin{equation*}
+    \varphi_{\mathcal{s}(x, y)}(z) = \varphi_x(y, z)
+    \end{equation*}
+\end{theorem}
+
+The theorem specifies that, given the Godel numbering $x$ of a function 
+$\varphi_x$ of two parameters, we can fix the first parameter $y$ and computably 
+find $\mathcal{s}(x, y)$ satisfying that 
+
+\begin{equation*}
+    \varphi_{\mathcal{s}(x, y)}(z) = \varphi_x(y, z)
+\end{equation*}
+
+\begin{example}
+    Let $\varphi_x(y, z) = y + z$. Fix $y = 3$ and consider the resulting function 
+    $f(z) = \varphi_x(3, z) = 3 + z$. Now $f(x)$ is computable and must have 
+    some index $i$ such that $\varphi_i(z) = f(z)$. The parameter theorem 
+    shows that we can pass computably from $x$ and the parameter 
+    $y$ to such an index $i$ for $f(z)$.
+\end{example}
+
+\begin{proof}
+    Let $x$ be the Godel numbering of a function $\varphi_x$ of two parameters,
+    and $P_x$ be the Turing program which computes said function. 
+    Let $\mathcal{S}_y$ be a Turing machine which takes as input a 
+    Turing program $P$, a number $z$, and computes $P$ with input 
+    $(y, z)$. Then clearly, if $y$ is held constant, 
+    $\mathcal{S}_y$ with input $P_x$ and $z$ computes $\varphi_x(y, z)$.
+    Clearly, $\mathcal{S}_y$ corresponds to a partial computable function
+    with one parameter, and it depends directly on $x$ and $y$;
+    i.e. $\mathcal{S}_y$ corresponds to a partial function $\varphi_{\mathcal{s}(x, y)}(z)$.
+
+
+\end{proof}
+
+\begin{proof}[Alternative proof]
+    An alternative proof comes from von Neumann's paradigm. Let $\mathcal{Q}$ be a
+    program which computes $f(y, z)$. Let $\mathcal{P}_y$ be the program 
+    which, on input $z$, sets $N 1 \leftarrow y$, treating 
+    $y$ as a constant, and $N 2 \leftarrow z$. Then, evidently, the 
+    concatenation $\mathcal{P}_y \mathcal{Q}$ computes $f(y, z)$.
+    Which entails 
+
+    \begin{equation*}
+        \Psi_{\mathcal{Q}}(y, z) \simeq \Psi_{\mathcal{P}_y\mathcal{Q}}(z) ~ \blacksquare
+    \end{equation*}
+\end{proof}
+
+\begin{theorem}[Unbounded search]
+    If $\theta(x, y)$ is a partial computable function, and  
+
+    \begin{equation*}
+        \psi(x) = (\mu y) \left[ \theta(x, y)\downarrow = 1 \land \left( \forall z < y \right) \left[ \theta(x, z) \downarrow \neq 1 \right]  \right] 
+    \end{equation*}
+
+    then $\psi(x) = y$ is a partial computable function.
+\end{theorem}
+
+\begin{proof}
+    For a fixed $x_0$, compute $\theta(x_0, y)$ as follos. For fixed $s$,
+    compute $s$ steps for each $y \leq s$ and then proceed to step 
+    $s + 1$. Continue until (if ever) the first $y$ is found 
+    such that $\theta(x, y)\downarrow = 1$. Output $\psi(x) = y$.
+\end{proof}
+
+\subsection{Unsolvable problems}
+
+\textbf{Convention.} If $R \subseteq \omega^n$, then $R$ has 
+the property $P$ if the set 
+$\left\{ \left<x_1,\ldots,x_n \right> : R(x_1, \ldots, x_n)\right\} $ has 
+property $P$, such as being computable.
+
+\begin{definition}
+    A set is computably enumerable if it is the domain of a partial computable function.
+\end{definition}
+
+Let 
+
+\begin{equation*}
+    W_e := \mathcal{D}_{\varphi_e} = \left\{ x : \varphi_e(x)\downarrow \right\} 
+\end{equation*}
+
+Any computable set $A$ is computably enumerable, since if $A$ is computable then 
+$A = \mathcal{D}(\chi_A)$. A theorem establishes that a non-empty set is 
+computably enumerable iff it is the range of a computable function, 
+i.e. if there is an algorithm for listing its members. 
+
+Though all computable sets are computably enumerable, not all computably 
+enumerable sets are computable. 
+
+\begin{definition}
+    Let $K := \left\{ x : \varphi_x(x) \text{ is defined} \right\} = \left\{ x : x \in W_x \right\} $.
+\end{definition}
+
+\begin{theorem}
+    $K$ is computably enumerable.
+\end{theorem}
+
+\begin{proof}
+    The enumeration theorem guarantees that 
+    $\varphi_x(x) = \psi(x, x)$ for some partial computable function $\psi$,
+    and $K$ is the domain $\theta(x) = \psi(x, x)$.
+\end{proof}
+
+\begin{theorem}
+    $K$ is not computable.
+\end{theoremm}
+
+\begin{proof}
+    
+$W_x$ is not computable. If $W_x$ had a computable characteristic function, the
+following function would be computable:
+
+
+\begin{equation*}
+    f(x) = \begin{cases}
+        \varphi_x(x) + 1 & x \in W_x \\ 
+        0 & x \not\in W_x
+    \end{cases}
+\end{equation*}
+
+However, $f$ cannot be computable because $f \neq \varphi_x$ for every $x$.
+\end{proof}
+
+\begin{definition}
+    We define $K_0 := \left\{ \left<x, y \right> : x \in W_y \right\} $.
+\end{definition}
+
+\begin{theorem}
+    $K_0$ is computably enumerable.
+\end{theorem}
+
+\begin{proof}
+$K_0$ is a set of encodings of $(x, y)$ pairs s.t. $x$ is in the domain 
+of $\varphi_y$. We know $\varphi_y(x) = \psi(y, x)$
+due to the enumeration theorem, where $\psi$ is computable. 
+Defining $\theta(\left<x,y \right>) = \psi(y, x)$, we ensure 
+that $\theta(\left<x,y \right>)$ is defined iff $\psi(y, x) $ is defined,
+which happens iff $x \in \mathcal{D}_{\varphi_y}$.
+
+$\therefore $ $K_0 = \mathcal{D}_{\theta}$.
+
+\end{proof}
+
+\begin{theorem}
+    $K_0$ is not computable.
+\end{theorem}
+
+\begin{proof}
+    Note that $x \in K$ iff $\left<x, x \right> \in K_0$. Thus, if $K_0$
+    had a computable characteristic function, so would 
+    $K$.
+\end{proof}
+
+The halting problem consists precisely of deciding, for arbitrary $x$ and $y$,
+whether $\varphi_y(x)$ converges, i.e. whether $\left<x,y \right> \in K_0$.
+The previous theorem ensures the unsolvability of the halting problem.
+
+
+\begin{definition}
+    We write $A \leq_m B$ to say there is a computable $f$ such that 
+    $f(A) \subseteq B$ and $f(\overline{A}) = \overline{B}$.
+    In other words, if $x \in A$ iff $f(x) \in B$.
+\end{definition}
+
+If said $f$ is a bijection, we write $A \leq_1 B$.
+
+\begin{definition}
+    \begin{itemize}
+        \item We say $A \equiv_m B$ if $A \leq_m B$ and $B \leq_m A$,
+            and equivalently for $A \equiv_1 B$.
+        \item $\text{deg}_m(A) = \left\{ B : A \equiv_m B \right\} $,
+            and equivalently for $\text{deg}_1(A)$.
+    \end{itemize}
+\end{definition}
+
+Observe that $\equiv_m, \equiv_1$ define an equivalence relation.
+Their equivalence classes are called the $m$-degrees
+and $1$-degrees, respectively.
+
+\begin{theorem}
+    If $A \leq_m B$ and $B$ is computable, then $A$
+    is computable.
+\end{theorem}
+
+\begin{proof}
+    $\chi_B$ denotes the belonging to $B$. However, for any $a \in A$,
+    we know $a \in A$ iff $f(a) \in B$. So $\chi_A(x) = \chi_B\left( f(x) \right) $.
+\end{proof}
+
+If an unsolvable problem $A$ can be reduced to another problem 
+$B$, then $B$ is also unsolvable. 
+
+\begin{theorem}
+    $K \leq_1 \left\{ x : \varphi_x \text{ is total} \right\} $
+\end{theorem}
+
+\begin{proof}
+    Let $\mathcal{T} := \left\{ x : \varphi_x \text{ is total} \right\} $. Define 
+
+    \begin{equation*}
+        \psi(x, y) = \begin{cases}
+            1 & x \in K \\ 
+            \text{undefined} &\text{otherwise}
+        \end{cases}
+    \end{equation*}
+
+    Clearly, $\psi$ is partially computable because the program to compute 
+    $\psi(x, y)$ says: attempt to compute $\varphi_x(x)$: if this fails 
+    to converge, output nothing; if it converges, then output 1 for every 
+    argument $y$.
+
+    The parameter theorem ensures there is a bijective computable function 
+    $f$ such that 
+
+    \begin{equation*}
+        \psi(x, y) = \varphi_{f(x)}(y)
+    \end{equation*}
+
+    Choose $e$ such that $\varphi_e(x, y) = \psi(x, y)$, and define 
+
+    \begin{equation*}
+        f(x) = \lambda x \left[ s_1^1\left( e, x \right)  \right] 
+    \end{equation*}
+
+    Clearly, $f$ s one to one. Note that
+
+    \begin{itemize}
+        \item $x \in K \rightarrow\varphi_{f(x)} = \lambda y\left[ 1 \right] \Rightarrow \varphi_{f(x)} \text{ total} \Rightarrow f(x) \in \mathcal{T}$.
+    \end{itemize}
+
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+

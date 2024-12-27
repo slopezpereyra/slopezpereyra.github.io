@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  24 DEC 2024 14:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  24 DEC 2024 15:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**kleene.tex
-(./kleene.tex
+**Computability2.tex
+(./Computability2.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-01-16> (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
@@ -270,7 +270,7 @@ LaTeX Info: Redefining \not on input line 2959.
 \c@theorem=\count283
 
 
-./kleene.tex:14: LaTeX Error: Command \problem already defined.
+./Computability2.tex:14: LaTeX Error: Command \problem already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -284,7 +284,7 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./kleene.tex:14: LaTeX Error: Command \example already defined.
+./Computability2.tex:14: LaTeX Error: Command \example already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -299,7 +299,7 @@ or  <return>  to continue without it.
 
 \c@definition=\count284
 
-./kleene.tex:16: LaTeX Error: Command \lemma already defined.
+./Computability2.tex:16: LaTeX Error: Command \lemma already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -313,176 +313,166 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./kleene.tex:17: LaTeX Error: Command \theorem already defined.
+./Computability2.tex:17: LaTeX Error: Command \theorem already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.17 \newtheorem
-                {proof}{Proof}
+l.17 
+     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-\c@proof=\count285
-LaTeX Font Info:    Trying to load font information for T1+ntxtlf on input line 19.
+LaTeX Font Info:    Trying to load font information for T1+ntxtlf on input line 22.
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/t1ntxtlf.fd
 File: t1ntxtlf.fd 2021/05/24 v1.1 font definition file for T1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 19.
+(Font)              scaled to size 12.0pt on input line 22.
  (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count286
+\l__color_backend_stack_int=\count285
 \l__pdf_internal_box=\box53
-) (./kleene.aux)
-\openout1 = `kleene.aux'.
+) (./Computability2.aux)
+\openout1 = `Computability2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 19.
-LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 19.
+LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 22.
+LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 22.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/omlntxmi.fd
 File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
 )
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 19.
-LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 19.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 22.
+LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 22.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxexa.fd
 File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 )
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 19.
-LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 19.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 22.
+LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 22.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/lmsntxsy.fd
 File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
 )
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 19.
-LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line 19.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 22.
+LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line 22.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/lmxntxexx.fd
 File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
 )
-LaTeX Font Info:    ... okay on input line 19.
-\c@mv@tabular=\count287
-\c@mv@boldtabular=\count288
-LaTeX Info: Command `\dddot' is already robust on input line 19.
-LaTeX Info: Command `\ddddot' is already robust on input line 19.
+LaTeX Font Info:    ... okay on input line 22.
+\c@mv@tabular=\count286
+\c@mv@boldtabular=\count287
+LaTeX Info: Command `\dddot' is already robust on input line 22.
+LaTeX Info: Command `\ddddot' is already robust on input line 22.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 12.0pt on input line 28.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 17.28pt on input line 21.
+(Font)              scaled to size 10.95pt on input line 30.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 10.0pt on input line 35.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 17.28pt on input line 21.
+(Font)              scaled to size 10.0pt on input line 36.
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+
+./Computability2.tex:48: LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.48 \begin{document}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 17.28pt on input line 50.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 12.0pt on input line 24.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 12.0pt on input line 24.
-LaTeX Font Info:    Trying to load font information for OT1+minntx on input line 24.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1minntx.fd
+(Font)              scaled to size 17.28pt on input line 50.
+LaTeX Font Info:    Trying to load font information for OT1+minntx on input line 53.
+(/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1minntx.fd
 File: ot1minntx.fd 2022/01/20 v1.0 font definition file for OT1/minntx
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 24.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 53.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 24.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 53.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 24.
+LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 53.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxmia.fd
 File: untxmia.fd 2018/04/14 Fontinst v1.933 font definitions for U/ntxmia.
 )
-LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 24.
+LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 53.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsym.fd
 File: untxsym.fd 2015/03/20 Fontinst v1.933 font definitions for U/ntxsym.
 )
-LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 24.
+LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 53.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 8.8pt on input line 90.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 6.6pt on input line 90.
 
-./kleene.tex:32: LaTeX Error: Environment profe undefined.
+./Computability2.tex:93: Missing { inserted.
+<to be read again> 
+                   }
+l.93 and the domain of each $\Psi_{\mathcal{P}_}
+                                                ^{n, m, z}$ is $\omega$.
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.32 \begin{profe}
-                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
+./Computability2.tex:93: Missing } inserted.
+<inserted text> 
+                }
+l.93 ...in of each $\Psi_{\mathcal{P}_}^{n, m, z}$
+                                                   is $\omega$.
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
+[1] (./Computability2.aux) )
+(\end occurred inside a group at level 1)
 
-./kleene.tex:34: LaTeX Error: \begin{document} ended by \end{profe}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.34 \end{profe}
-                
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-./kleene.tex:55: Undefined control sequence.
-l.55 $M \sim N_1 \sbuset
-                         N$ and $N \sim M_1 \subset M$, we must have
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input line 133.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
-File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
-)
-LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 133.
-
-./kleene.tex:172: Double subscript.
-<recently read> _
-                 
-l.172 and whenever $f(m_1) = m_2$, then $f(m_1'_
-                                                1) = m_2'_2$.
-I treat `x_1_2' essentially like `x_1{}_2'.
-
-./kleene.tex:172: Double subscript.
-<recently read> _
-                 
-l.172 ...r $f(m_1) = m_2$, then $f(m_1'_1) = m_2'_
-                                                  2$.
-I treat `x_1_2' essentially like `x_1{}_2'.
-
-[3] [4] (./kleene.aux) ) 
+### semi simple group (level 1) entered at line 48 (\begingroup)
+### bottom level 
 Here is how much of TeX's memory you used:
- 5557 strings out of 476091
- 75874 string characters out of 5794081
- 1863330 words of memory out of 5000000
- 25854 multiletter control sequences out of 15000+600000
- 547256 words of font info for 88 fonts, out of 8000000 for 9000
+ 5527 strings out of 476091
+ 75432 string characters out of 5794081
+ 1862330 words of memory out of 5000000
+ 25824 multiletter control sequences out of 15000+600000
+ 560395 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,19n,76p,327b,260s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on kleene.pdf (4 pages, 153409 bytes).
+ 71i,14n,76p,335b,188s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
+Output written on Computability2.pdf (2 pages, 110685 bytes).
 PDF statistics:
- 73 PDF objects out of 1000 (max. 8388607)
- 45 compressed objects within 1 object stream
+ 56 PDF objects out of 1000 (max. 8388607)
+ 34 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

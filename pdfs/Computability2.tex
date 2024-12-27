@@ -1,0 +1,108 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{newtxtext} \usepackage{newtxmath}
+\usepackage{amsmath, amssymb}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example} \newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+
+\newenvironment{rcases}
+  {\left.\begin{aligned}}
+  {\end{aligned}\right\rbrace}
+
+\begin{document}
+
+\begin{titlepage}
+   \begin{center}
+       \vspace*{1cm}
+
+       \textbf{Computability theory}
+
+       \small
+       \vspace{0.5cm}
+        FAMAF - UNC
+            
+       \vspace{1.5cm}
+       \footnotesize
+       \textbf{SLP}
+       \normalsize
+
+       \vfill
+            
+            
+     
+   \end{center}
+\end{titlepage}
+
+
+
+\begin{document}
+
+\section{Computational paradigms}
+
+
+$Pro^{\Sigma}$ is a $( \Sigma \cup \Sigma_p )$-p.r. Since each $\mathcal{P} \in Pro^{\Sigma}$
+corresponds to a $\Sigma$-recursive function, this entails 
+$\mathcal{R}$ is $\Sigma$-p.r. Which means there is an 
+enumeration $\varphi_1, \varphi_2, \ldots$ such that every 
+$\Sigma$-recursive function $f$ satisfies that 
+$f = \varphi_i$ for some $i \in \mathbb{N}$.
+
+    
+\section{Halting function}
+
+Recall that we say that $\mathcal{P}$ halts with input $\overrightarrow{s}, \overrightarrow{p}$ in $t$ steps when:
+
+\begin{equation*}
+    S_{\mathcal{P}}^{t}(1, \overrightarrow{s}, \overrightarrow{p}) = \left( n(\mathcal{P}) + 1, \overrightarrow{x}, \overrightarrow{w} \right) 
+\end{equation*}
+
+for any $\overrightarrow{x}, \overrightarrow{w}$. Recall too that, if 
+$\mathcal{P}$ halts with input $\omega^{n} \times \Sigma^{*m} $, we use 
+$\Psi_{\mathcal{P}}^{n, m, \#}$ to denote the value of $N1$ in the halting 
+state. This lead to our definition of $\Sigma$-computability, where 
+we said that $f ~ (n, m, \#)$ is $\Sigma$-computable if and only if 
+there is a program $\mathcal{P}$ such that 
+
+\begin{equation*}
+    f = \Psi_{\mathcal{P}}^{n, m, \#}
+\end{equation*}
+
+(and analogously for the alphabetic case). The computability of sets was 
+analogously defined, with $S$ being $\Sigma$-computable if and only if 
+$\chi_S^{\omega^{n} \times \Sigma^{*m}}$ is $\Sigma$-computable. 
+With regards to $\Sigma$-enumerability, we say a set $S \subseteq \omega^{n} \times \Sigma^{*m} $ is $\Sigma$-enumerable if 
+it is empty or if there is a functon $F : \omega \to \omega^{n} \times \Sigma^{*m} $
+such that $I_F = S$ and $F_{(i)}$ is $\Sigma$-computable. In other words, 
+if there are programs $\mathcal{P}_1, \ldots, \mathcal{P}_{n+m}$ 
+such that 
+
+\begin{equation*}
+    S = \text{Im}\left[ \Psi_{\mathcal{P}_1}^{1, 0, \#},\ldots, \Psi_{\mathcal{P}_n}^{1, 0, \#}, \Psi_{\mathcal{P}_{n+1}}^{1, 0, *},\ldots, \Psi_{\mathcal{P}_{n+m}}^{1, 0, *} \right] 
+\end{equation*}
+
+and the domain of each $\Psi_{\mathcal{P}_}^{n, m, z}$ is $\omega$.
+
+Given $n, m \in \omega$, we define: 
+
+\begin{equation*}
+    \text{Halt}^{n, m} = \lambda t \overrightarrow{x}\overrightarrow{\alpha}\mathcal{P} \left[ i^{n, m}(t, \overrightarrow{x}, \overrightarrow{\alpha}, \mathcal{P}) = n(\mathcal{P}) + 1 \right] 
+\end{equation*}
+
+
+
+
+
+\end{document}
+
+
+

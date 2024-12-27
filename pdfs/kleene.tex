@@ -14,11 +14,234 @@
 \newtheorem{example}{Example} \newtheorem{definition}{Definition}
 \newtheorem{lemma}{Lemma}
 \newtheorem{theorem}{Theorem}
-
+\newtheorem{proof}{Proof}
 
 \begin{document}
 
-    
+\section{Enumerable sets}    
+
+\begin{definition}
+    An infinite set $A$ is countable or enumerable if there is a bijection 
+    $f : \mathbb{N} \to A$.
+\end{definition}
+
+\begin{theorem}
+    Any infinite subset of an enumerable set is enumerable.
+\end{theorem}
+
+\begin{profe}
+    .
+\end{profe}
+
+If $\overrightarrow{a} \in A^\mathbb{N}$ is such that every $a \in A$ is in 
+$\overrightarrow{a}$, we say $\overrightarrow{a}$ is an enumeration 
+of $A$.
+
+\begin{definition}
+    If $M, N$ are sets, then $M \sim N$ if and only if there is a bijection 
+    $f : M \to  N$.
+\end{definition}
+
+It is easy to see that $\sim$ is an equivalence relation. 
+
+\begin{theorem}
+    $M \sim N$ if and only if $|M| = |N|$.
+\end{theorem}
+
+If $M_1 \subset M, N_1 \subset N$, it may or may not be possible to put 
+$M$ into 1-1 correspondence with $N_1$, or $N$ into 1-1 correspondence 
+with $M_1$. If $M \sim N_1$ for some $N_1 \subseteq N$, but $N \not\sim M_1$
+for all $M_1\subseteq M$, we have $|M| < |N|$. If 
+$M \sim N_1 \sbuset N$ and $N \sim M_1 \subset M$, we must have 
+$|M| = |N|$.
+
+\begin{theorem}
+    If $M simN_1 \subset N$, and $N \sim M_1 \subset M$, then 
+    $M \sim N$, and then $|M| = |N|$.
+\end{theorem}
+
+\begin{proof}
+    Complete, it is pretty. Page 22.
+\end{proof}
+
+\begin{theorem}
+    If $M \subseteq N$, then $|M| \leq |N|$.
+\end{theorem}
+
+
+\begin{definition}
+    The cardinal number of the set of natural numbers,
+    and hence of every enumerable set, is denoted 
+    $\aleph_0$.
+\end{definition}
+
+\begin{theorem}
+    Every infinite set $M$ has an enumerably infinite subset.
+\end{theorem}
+
+\begin{proof}
+    Let $a_0, a_1, a_2,\ldots \in M$ be distinct elements. Observe that 
+    any finite sequence of elements $a'_1,\ldots, a'_n \in M$
+    is such that $M - \left\{ a'_1,\ldots, a'_n \right\} $ is 
+    still infinite. But there is a one to one correspondence between 
+    $a_0, a_1, a_2,\ldots$ and $0, 1, 2, \ldots$. $\blacksquare$
+\end{proof}
+
+\begin{theorem}
+    If $M$ has infinite cardinality, $\aleph_0 \leq |M|$.
+\end{theorem}
+
+\begin{proof}
+    $M$ has an enumerably infinite subset $M_1$,
+    and $M_1 \subseteq M$ implies $|M_1| \leq |M|$.
+    But $|M_1| = \aleph_0$. Then $\aleph_0 \leq |M|$.
+\end{proof}
+
+\begin{theorem}
+    For any infinite set $M$, there is a subset $M_1 \subseteq M$ such that 
+    $M \sim M_1$.
+\end{theorem}
+
+\begin{proof}
+    Letting $P := M - \left\{ a_0, a_1, a_2,\ldots \right\} $ for distinct 
+    $a_0, a_1, a_2, \ldots \in M$, we note that 
+    $M = P + \left\{ a_0,a_1, a_2,\ldots \right\} $.
+    But then $M$ is equivalent to its proper subset 
+    $M - \left\{ a_0 \right\} = P + \left\{ a_1,a_2 a_3,\ldots \right\} $.
+\end{proof}
+
+This theorem is behind the apparent parodox (observed by Galileo)
+of the natural numbers being in perfect correspondence to some of 
+its subsets.
+
+\begin{theorem}
+    If $M$ is an infinite set, its cardinality is unchanged by the 
+    introduction or removal of a finite or enumerably infinite set of elements.
+\end{theorem}
+
+\begin{proof}
+    Complete and understand, page. 24
+\end{proof}
+
+\pagebreak 
+
+\section{Peano arithmetic}
+
+We axiomatize the following:
+
+\begin{itemize}
+    \item $0$ is a natural number.
+    \item If $n$ is a natural number, its successor $n'$ is a natural number.
+    \item The only natural numbers are those given by the previous clauses.
+\end{itemize}
+
+These three clauses ensure the distinctness of all natural numbers, which 
+can be separated into two propositions:
+
+\begin{itemize}
+    \item For any $n, m$ natural, $n = m$ if and only if $n' = m'$.
+    \item $n' \neq 0$ for all natural $n$.
+\end{itemize}
+
+These were the five axioms which Peano used to characterize natural numbers. 
+Observe that this inductive definition of natural numbers already determines 
+the usual order $<$, where $a < b$ if $a$ is generated before $b$ by successive 
+applications of the unary operator $'$ starting at zero.
+
+\begin{definition}
+    A system $S$ of objects is a non-empty set, class or domain $D$ of 
+    objects among which certain relationships are established.
+\end{definition}
+
+For example, the sequence $0, 1, 2, \ldots$ of natural numbers 
+constitutes a system of type $(D, 0, ')$ where $D$ is a set,
+$0$ a member of it, and $'$ a unary operation. A \textit{representation}
+(or model) of an abstract system further specifies what the 
+objects in the system are. For example, $D$ may be taken to 
+be the positive integers, in which case the interpretation of the 
+abstract $0$ is $1$, or the even natural numbers, in which case the 
+interpretation of $'$ is the $+2$ operation.
+
+\begin{definition}
+    Two systems $(D_1, 0_1, '_1), (D_2, 0_2, '_2)$ are (simply) isomorphic 
+    if there is a bijection $f : D_1 \to D_2$ that preserves the 
+    relationships.
+\end{definition}
+
+More precisely, if $f : D_1 \to 2$ is said bijection, we require $f(0_1) = 0_2$,
+and whenever $f(m_1) = m_2$, then $f(m_1'_1) = m_2'_2$.
+
+In a system $S = (D, 0, ')$, the symbols $', D, 0$ are called \textit{primitive}
+or \textit{undefined} notions, insofar as they are not defined prior to 
+the introduction of the axioms. The only information about them is their 
+type, i.e. we know $D$ is a set, $0$ a constant, and $'$ a unary operator.
+
+\pagebreak
+
+\section{Primitive recursive functions}
+
+A function $\varphi : \omega \to \omega$ is primitive recursive if it is built 
+using one of the following clauses: 
+
+\begin{itemize}
+    \item $\varphi(x) = x'$
+    \item $\varphi(\overrightarrow{x}) = q$, with $q \in \omega$.
+    \item $\varphi(\overrightarrow{x}) = x_i$
+    \item $\varphi(\overrightarrow{x}) = \psi \left( \chi_1(\overrightarrow{x}),\ldots, \chi_m (\overrightarrow{x}) \right) $ 
+    \item \begin{equation*}
+        \varphi(t, \overrightarrow{x}) = \begin{cases}
+            \psi(\overrightarrow{x}) & t = 0 \\ 
+            \chi(t - 1, \varphi(t-1, \overrightarrow{x}), \overrightarrow{x}) & t > 0
+        \end{cases}
+    \end{equation*}
+\end{itemize}
+
+where $\psi, \chi_1, \ldots, \chi_m, \chi$ are primitive recursive. Each of the 
+forms described by the bullet points above is called a \textit{schemata}.
+One could take the first three bullets to be axioms and the others to be 
+inference rules. If any of the first three forms is satisfied by $\varphi$,
+then $\varphi$ is called an \textit{initial function}. 
+
+If $\varphi$ is of the recursive form which involves $\psi, \chi$, or 
+$\chi_1,\ldots, \chi_m$, we say $\varphi$ is an \textit{immediate dependant}
+of these functions.
+
+\begin{definition}
+    A function $\varphi$ is primitive recursive if there is a finite sequence 
+    $\varphi_1,\ldots, \varphi_k$ of functions, which we call the primitive 
+    recursive description of $\varphi$, such that each $\varphi_i$ is 
+    either an initial function, or an immediate dependent of preceding 
+    functions of the sequence, and $\varphi_k = \varphi$.
+\end{definition}
+
+\begin{example}
+    Let $\varphi = \lambda x\left[ x + 2 \right] $. Clearly, 
+
+    \begin{equation*}
+        \varphi = Suc \left( Suc(x) \right) 
+    \end{equation*}
+
+    which entails $Suc, Suc, \varphi$ is the primitive recursive description
+    of $\varphi$.
+
+
+\end{example}
+
+\begin{example}
+    Consider 
+
+    \begin{equation*}
+        \varphi(x, z, y) = \zeta\left( x, \eta\left( y, \theta(x) \right), 2  \right) 
+    \end{equation*}
+
+    Then 
+
+    \begin{equation*}
+        \varphi = \lambda xzy \left[ \zeta \circ \left[ p_1^3 \right], \eta \circ \left[ p_3^3, \theta \circ \left[ p_1^3 \right]  \right], C_2^3   \right]  
+    \end{equation*}
+
+\end{example}
+
 
 
 

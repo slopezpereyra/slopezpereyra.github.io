@@ -19,7 +19,7 @@ $$\mathcal{A}_T = \left( S^\tau / \dashv\vdash , \textbf{s}, \textbf{i}, ^c, 0, 
 For any sentence $\varphi$, let $[\varphi]$ denote
 $\varphi / \dashv\vdash$. Evidently, from our assumption follows
 
-$$[\varphi] \neq 1, ~ ~ ~ [\neg \varphi_0] \neq 0$$
+$$[\varphi_0] \neq 1, ~ ~ ~ [\neg \varphi_0] \neq 0$$
 
 Let $\overrightarrow{\gamma}$ denote the infinituple containing all
 formulas with at most one free variable. In each
