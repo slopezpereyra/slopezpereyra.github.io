@@ -37,7 +37,7 @@ either refinements of his system or entirely equivalent to it, so it is safe to
 say Frege's formalization of what a proof was is still the one accepted by all
 mathematicians. 
 
-One of the most widely known models of proof  *natural deduction*, developed by
+One of the most widely known models of proof is *natural deduction*, developed by
 Gentzen[^1]. Natural deduction is a rigorous proof system, with rules so clear
 that a computer could verify. Given axioms $\varphi_1, \ldots, \varphi_n$,
 natural deduction systematizes the operations which our intuitive understanding
