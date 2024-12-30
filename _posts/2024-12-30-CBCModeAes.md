@@ -57,7 +57,7 @@ $$
 \overrightarrow{c_i} :=  \mathcal{E} \left(\overrightarrow{b_i} + \overrightarrow{c\_{i-1}}\right) 
 $$
 
-It is of course trivial to decrypt $\overrightarrow{c_i}$ using $\mathcal{E}$,
+It is trivial to decrypt $\overrightarrow{c_i}$ using $\mathcal{D}$,
 since from the definition above follows that $\mathcal{b_i} =
 \mathcal{D}(\overrightarrow{c_i}) + \overrightarrow{c_{i-1}}$ fir $i > 0$, and 
 $b_0 := \mathcal{D}(\overrightarrow{c_0}) + \overrightarrow{v}$.
