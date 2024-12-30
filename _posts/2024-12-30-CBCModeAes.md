@@ -50,7 +50,7 @@ $\vec{v}$ is the input vector, the algorithm computes, for $1 \leq i \leq k$,
 the following recursion:
 
 $$
-\overrightarrow{c_i} := \begin{cases} \mathcal{E} \left( \overrightarrow{b}_0 + \overrightarrow{v}\right) & i = 0 \\ \mathcal{E} \left(\overrightarrow{b_i} + \overrightarrow{c_{i-1}}\right) & i > 0  \end{cases}
+\overrightarrow{c_i} := \begin{cases} \mathcal{E} \left( \overrightarrow{b}_0 + \overrightarrow{v}\right) & i = 0 \\\\ \mathcal{E} \left(\overrightarrow{b_i} + \overrightarrow{c_\{i-1}}\right) & i > 0  \end{cases}
 $$
 
 It is of course trivial to decrypt $\overrightarrow{c_i}$ using $\mathcal{E}$,
