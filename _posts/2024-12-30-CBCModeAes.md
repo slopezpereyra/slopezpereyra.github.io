@@ -10,6 +10,10 @@ the number of bits in each of the underlying blocks of a message. Then ECB encry
 is achieved rather simply:
 
 ```go 
+package main 
+
+import "crypto/aes"
+
 func encryptAES128ECB(message []byte, key []byte) ([]byte, error){
 	block, err := aes.NewCipher(key)
 	if err != nil {
@@ -36,7 +40,7 @@ instance, `"santiago lopez p my secret name santiago lopez p"`
 contains three segments of 16 bytes (128 bits), with the
 first and third segments being equal. Its encryption with the algorithm above
 and the key `YELLOW SUBMARINE` gives `�?p{=�@Sk��1y�e?p{=�@S`, where we
-clearly see a repetition of `�?p{=�@S`. 
+clearly see the beginning and the end of the encryped message are very similar. 
 
 Cipher Block Chaining (CBC) encryption solves this issue. It consists of
 applying the block cipher not to each $16$-byte block independently, but to
@@ -65,7 +69,6 @@ package main
 
 import (
 	"crypto/aes"
-	"fmt"
 )
 
 func encryptAES128ECB(message []byte, key []byte) ([]byte, error){
@@ -158,8 +161,7 @@ func decryptAES128ECB(ciphertext []byte, key []byte) ([]byte, error) {
 }
 ```
 
-As an inspection of the code above, encryption and decryption with ECB are still used within 
-CBC encryption. The function which encrypts with CBC does the following:
+The function which encrypts with CBC does the following:
  
 - Split the input byte stream into segments of equal length, padding the last segment if needed. This is accomplished with the `message_blocks := splitIntoSymmetricBlocks(message, 16)` line. This function 
 is not given but it is trivial to write. 
