@@ -51,10 +51,10 @@ initialization vector.
 More formally, if $(\mathcal{G}, \mathcal{E}, \mathcal{D})$ is a (cipher block)
 encryption scheme, $\vec{b_0}, \ldots, \vec{b_k}$ are the 16-byte vectors, and
 $\vec{v}$ is the input vector, the algorithm computes, for $1 \leq i \leq k$,
-the following recursion:
+the following recursion. Firstly, $\overrightarrow{c_0} := \mathcal{E} \left( \overrightarrow{b}_0 + \overrightarrow{v}\right)$. Then, for $i > 0$,
 
 $$
-\overrightarrow{c_i} := \begin{cases} \mathcal{E} \left( \overrightarrow{b}_0 + \overrightarrow{v}\right) & i = 0 \\\\ \mathcal{E} \left(\overrightarrow{b_i} + \overrightarrow{c_\{i-1}}\right) & i > 0  \end{cases}
+\overrightarrow{c_i} :=  \mathcal{E} \left(\overrightarrow{b_i} + \overrightarrow{c\_{i-1}}\right) 
 $$
 
 It is of course trivial to decrypt $\overrightarrow{c_i}$ using $\mathcal{E}$,
