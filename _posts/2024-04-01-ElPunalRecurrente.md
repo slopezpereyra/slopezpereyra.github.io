@@ -33,7 +33,7 @@ pretendo describir.
 
 No tuve contacto con las fuerzas policiales. De haberlo tenido, acaso hubiera
 advertido que un orden secreto confabuló con el asesinato. Por lo general, sólo
-consulto con la policía una vez que ya he indagado por mí mismo los hechos y el
+consulto a la policía una vez que ya he indagado por mí mismo los hechos y el
 relato de los implicados. El reporte policial es una torpe suma de estos hechos
 y relatos, y no veo por qué recurrir a su síntesis —que es por lo general
 inepta— si puedo obtenerlos de manera directa. En lo que respecta a la nota
