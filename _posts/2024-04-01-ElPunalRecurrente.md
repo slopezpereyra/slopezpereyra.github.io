@@ -34,8 +34,8 @@ pretendo describir.
 No tuve contacto con las fuerzas policiales. De haberlo tenido, acaso hubiera
 advertido que un orden secreto confabuló con el asesinato. Por lo general, sólo
 consulto a la policía una vez que ya he indagado por mí mismo los hechos y el
-relato de los implicados. El reporte policial es una torpe suma de estos hechos
-y relatos, y no veo por qué recurrir a su síntesis —que es por lo general
+relato de los implicados. El reporte policial es una torpe suma de estos relatos,
+y no veo por qué recurrir a su síntesis —que es por lo general
 inepta— si puedo obtenerlos de manera directa. En lo que respecta a la nota
 encontrada en la escena del crimen, escrita por el asesino, no esperaba que la
 compartieran. Mi primer destino, entonces, no fue la comisaría, sino la vecina
