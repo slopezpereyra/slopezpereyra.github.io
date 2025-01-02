@@ -1,6 +1,6 @@
 ---
 title: Nadie mira
-categories: [ Literature ]
+categories: [ Poesía ]
 ---
 
 Nadie mira, nadie mira. <br>

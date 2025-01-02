@@ -1,6 +1,6 @@
 ---
 title: Soneto para mi muerte
-categories: [ Literature ]
+categories: [ Poesía ]
 ---
 
 > Though I walk through the valley of the shadow of death, I will fear no evil:

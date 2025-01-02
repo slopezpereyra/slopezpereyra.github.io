@@ -1,6 +1,6 @@
 ---
 title: Sólo el amor aguarda 
-categories: [ Literature ]
+categories: [ Poesía ]
 ---
 
 

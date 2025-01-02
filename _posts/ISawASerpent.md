@@ -1,6 +1,6 @@
 ---
 title: I saw a serpent in my garden
-categories: [ Literature ]
+categories: [ Poesía ]
 ---
 
 

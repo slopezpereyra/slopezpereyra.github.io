@@ -1,6 +1,6 @@
 ---
 title: El volumen
-categories: [ Literature ]
+categories: [ Poesía ]
 ---
 
 Solos entre volúmenes y escritos,<br>

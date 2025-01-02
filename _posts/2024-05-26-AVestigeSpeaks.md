@@ -1,6 +1,6 @@
 ---
 title: Portrait
-categories: [ Literature ]
+categories: [ Poesía ]
 ---
 
 I'm but the ruins of an ancient world<br>

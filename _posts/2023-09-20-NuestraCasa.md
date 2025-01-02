@@ -1,6 +1,6 @@
 ---
 title: Nuestra casa
-categories: [ Literature ]
+categories: [ Poesía ]
 ---
 
 Casas, casas como pueblos<br>

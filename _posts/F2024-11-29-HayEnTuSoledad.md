@@ -1,6 +1,6 @@
 ---
 title: Oración
-categories: [ Literature ]
+categories: [ Poesía ]
 ---
 
 mi joven corazón es una umbría<br>

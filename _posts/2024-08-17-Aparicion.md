@@ -1,6 +1,6 @@
 ---
 title: Aparición 
-categories: [ Literature ]
+categories: [ Poesía ]
 ---
 
 En el antiguo patio se han urdido<br>

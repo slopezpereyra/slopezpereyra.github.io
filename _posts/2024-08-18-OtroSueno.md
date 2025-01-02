@@ -1,6 +1,6 @@
 ---
 title: Otro sueño 
-categories: [ Literature ]
+categories: [ Poesía ]
 ---
 
 soñé a una amante muerta: un guepardo <br>

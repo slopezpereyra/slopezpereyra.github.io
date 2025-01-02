@@ -1,6 +1,6 @@
 ---
 title: Carta al lector
-categories: [ Literature ]
+categories: [ Poesía ]
 ---
 
 

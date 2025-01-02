@@ -1,6 +1,6 @@
 ---
 title: Tres sonetos
-categories: [ Literature ]
+categories: [ Poesía ]
 ---
 
 ### Primer soneto

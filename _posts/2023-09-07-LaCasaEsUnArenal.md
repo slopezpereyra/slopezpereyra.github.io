@@ -1,6 +1,6 @@
 ---
 title: La casa es un arenal
-categories: [ Literature ]
+categories: [ Poesía ]
 ---
 
 

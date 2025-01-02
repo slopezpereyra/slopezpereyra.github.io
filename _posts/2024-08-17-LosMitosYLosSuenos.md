@@ -1,6 +1,6 @@
 ---
 title: Los mitos y los sueños 
-categories: [ Literature ]
+categories: [ Poesía ]
 ---
 
 Los mitos y los sueños son escritos <br>

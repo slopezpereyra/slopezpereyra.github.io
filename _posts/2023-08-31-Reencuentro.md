@@ -1,6 +1,6 @@
 ---
 title: Reencuentro
-categories: [ Literature ]
+categories: [ Poesía ]
 ---
 
 Bajo una luna de cobre<br>

@@ -1,6 +1,6 @@
 ---
-title: El puñal recurrente (Un cuento corto)
-categories: [ Literature ]
+title: El puñal recurrente 
+categories: [ Cuentos ]
 ---
 
 Esta nota no es una confesión. Si el papel que me fue dado jugar en los hechos

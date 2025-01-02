@@ -1,6 +1,6 @@
 ---
 title: Génesis (3)
-categories: [ Literature ]
+categories: [ Poesía ]
 ---
 
 La luz avariciosa, incluso en esta<br>

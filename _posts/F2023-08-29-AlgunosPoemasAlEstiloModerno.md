@@ -1,6 +1,6 @@
 ---
 title: Algunos poemas al estilo moderno
-categories: [ Literature ]
+categories: [ Poesía ]
 ---
 
 ### I 

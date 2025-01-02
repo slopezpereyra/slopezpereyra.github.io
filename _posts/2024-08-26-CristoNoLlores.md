@@ -1,6 +1,6 @@
 ---
 title: Cristo, no llores
-categories: [ Literature ]
+categories: [ Poesía ]
 ---
 
 cristo no llores<br>

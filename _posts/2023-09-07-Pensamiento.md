@@ -1,6 +1,6 @@
 ---
 title: Pensamiento
-categories: [ Literature ]
+categories: [ Poesía ]
 ---
 
 Carne que desaparece<br>

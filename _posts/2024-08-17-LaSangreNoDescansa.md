@@ -1,6 +1,6 @@
 ---
 title: La sangre no descansa 
-categories: [ Literature ]
+categories: [ Poesía ]
 ---
 
 

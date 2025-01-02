@@ -1,6 +1,6 @@
 ---
 title: Una esmeralda negra 
-categories: [ Literature ]
+categories: [ Poesía ]
 ---
 
 era obsidiana antigua lo que formaba tu alma?<br>

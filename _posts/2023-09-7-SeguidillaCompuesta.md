@@ -1,6 +1,6 @@
 ---
 title: Una seguidilla compuesta
-categories: [ Literature ]
+categories: [ Poesía ]
 ---
 
 En la luna oprobiosa<br>

@@ -1,6 +1,6 @@
 ---
 title: Malos ánimos
-categories: [ Literature ]
+categories: [ Poesía ]
 ---
 
 

@@ -1,6 +1,6 @@
 ---
 title: Un árbol era mi sueño 
-categories: [ Literature ]
+categories: [ Poesía ]
 ---
 
 Un árbol era mi sueño<br>

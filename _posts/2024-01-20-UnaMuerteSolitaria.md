@@ -1,6 +1,6 @@
 ---
 title: Una muerte solitaria
-categories: [ Literature ]
+categories: [ Poesía ]
 ---
 
 y ahora que mis padres están muertos<br>

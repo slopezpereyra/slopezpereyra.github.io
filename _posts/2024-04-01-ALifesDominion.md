@@ -1,6 +1,6 @@
 ---
-title: A life's dominion (Un cuento corto)
-categories: [ Literature ]
+title: A life's dominion 
+categories: [ Cuentos ]
 ---
 
 

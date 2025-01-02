@@ -1,6 +1,6 @@
 ---
 title: Volver al agua 
-categories: [ Literature ]
+categories: [ Poesía ]
 ---
 
 soñé con todas las almas<br>

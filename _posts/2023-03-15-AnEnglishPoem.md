@@ -1,6 +1,6 @@
 ---
 title: An English poem
-categories: [ Literature ]
+categories: [ Poesía ]
 ---
 
 > To the memory of one I loved and lives no more.

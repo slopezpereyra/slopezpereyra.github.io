@@ -1,6 +1,6 @@
 ---
 title: Dos poemas 
-categories: [ Literature ]
+categories: [ Poesía ]
 ---
 
 ### Un sueño cualquiera

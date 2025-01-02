@@ -1,6 +1,6 @@
 ---
 title: El tonto del pueblo (Un cuento corto)
-categories: [ Literature ]
+categories: [ Cuentos ]
 ---
 
 En uno de nuestros viajes, en Rajastán, mi padre y yo visitamos un humilde

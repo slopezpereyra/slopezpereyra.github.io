@@ -1,6 +1,6 @@
 ---
 title: De tiempo todo está lleno
-categories: [ Literature ]
+categories: [ Poesía ]
 ---
 
 De tiempo todo está lleno,<br>

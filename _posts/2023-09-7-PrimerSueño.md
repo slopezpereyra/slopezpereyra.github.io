@@ -1,6 +1,6 @@
 ---
 title: Primer sueño
-categories: [ Literature ]
+categories: [ Poesía ]
 ---
 
 En el jardín oscuro de los sueños<br>

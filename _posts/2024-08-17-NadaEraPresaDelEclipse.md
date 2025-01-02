@@ -1,6 +1,6 @@
 ---
 title: Nada era presa del eclipse
-categories: [ Literature ]
+categories: [ Poesía ]
 ---
 
 nada era presa del eclipse <br>

@@ -1,6 +1,6 @@
 ---
 title: Desprecio
-categories: [ Literature ]
+categories: [ Poesía ]
 ---
 
 en la fangosa carne de las cosas<br>

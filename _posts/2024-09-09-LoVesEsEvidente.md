@@ -1,6 +1,6 @@
 ---
 title: ¿Lo ves? Es evidente...
-categories: [ Literature ]
+categories: [ Poesía ]
 ---
 
 ¿escuchas el patético suspiro<br>

@@ -1,6 +1,6 @@
 ---
 title: Cuento del mar y la luna 
-categories: [ Literature ]
+categories: [ Poesía ]
 ---
 
 — *Nunca te voy a olvidar*,<br>
