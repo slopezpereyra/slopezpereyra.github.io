@@ -1,5 +1,5 @@
 ---
-title: El tonto del pueblo (Un cuento corto)
+title: El tonto del pueblo 
 categories: [ Cuentos ]
 ---
 
