@@ -1,6 +1,6 @@
 ---
 title: Escala el conflicto en Ucrania
-categories: [Politics]
+categories: [Política]
 ---
 
 Un considerable número de [tropas norcoreanas](https://www.aljazeera.com/news/2024/11/13/what-do-we-know-about-the-north-korean-troops-joining-russias-war)

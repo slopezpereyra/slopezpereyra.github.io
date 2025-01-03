@@ -1,6 +1,6 @@
 ---
 title: 45 activistas pro-democracia condenados en Hong-Kong
-categories: [Politics]
+categories: [Política]
 ---
 
 Tras varios años detenidos, cuarenta y cinco activistas pro-democracia fueron [condenados](https://www.theguardian.com/commentisfree/2024/nov/19/the-guardian-view-on-a-showtrial-in-hong-kong-a-new-authoritarian-low)

@@ -1,6 +1,6 @@
 ---
 title: Amnistía Internacional determina que Israel es culpable de genocidio 
-categories: [Politics]
+categories: [Política]
 ---
 
 En un [detallado

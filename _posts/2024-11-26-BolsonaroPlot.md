@@ -1,6 +1,6 @@
 ---
 title: Bolsonaro conspiró para dar un golpe de Estado 
-categories: [ Politics ]
+categories: [ Política ]
 ---
 
 Un reporte de más de 800 páginas fue presentado por la Policía Federal

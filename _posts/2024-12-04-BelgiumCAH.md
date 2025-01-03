@@ -1,6 +1,6 @@
 ---
 title: Bélgica declarada culpable de crímenes de lesa humanidad
-categories: [Politics]
+categories: [Política]
 ---
 
 Tras el brutal reinado de Leopoldo II, el estado belga continuó la ocupación y

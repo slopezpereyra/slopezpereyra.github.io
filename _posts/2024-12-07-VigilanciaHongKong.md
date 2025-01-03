@@ -1,6 +1,6 @@
 ---
 title: Reconocimiento facial en Hong Kong.
-categories: [Politics]
+categories: [Política]
 ---
 
 La vigilancia en Hong Kong aumenta cada vez más a medida que China, vía la así

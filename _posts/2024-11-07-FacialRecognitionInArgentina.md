@@ -1,6 +1,6 @@
 ---
 title: Reconocimiento facial en Argentina
-categories: [ Politics ]
+categories: [ Política ]
 ---
 
 > Toda información cuya fuente no se provea inmediatamente está en alguna de las fuentes 

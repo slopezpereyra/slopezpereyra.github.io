@@ -1,6 +1,6 @@
 ---
 title: Amnistía Israel se distancia de Amnistía Internacional en su postura sobre genocidio en Gaza
-categories: [Politics]
+categories: [Política]
 ---
 
 De acuerdo con un [artículo](https://www.timesofisrael.com/predetermined-conclusions-amnesty-israel-workers-slam-parent-groups-genocide-charge/) del *Times of Israel*,

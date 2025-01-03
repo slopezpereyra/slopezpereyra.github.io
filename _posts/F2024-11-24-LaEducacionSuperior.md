@@ -1,6 +1,6 @@
 ---
 title: La educación superior debería ser un derecho
-categories: [Politics]
+categories: [Política]
 ---
 
 La educación pública argentina [está siendo avasallada](https://www.infobae.com/educacion/2024/10/17/la-inversion-educativa-nacional-se-redujo-40-en-2024-es-la-caida-mas-grande-desde-1992/). Al igual que la amenaza

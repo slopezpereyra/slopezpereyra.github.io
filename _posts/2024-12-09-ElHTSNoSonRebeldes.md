@@ -1,6 +1,6 @@
 ---
 title: El HTS no son rebeldes
-categories: [Politics]
+categories: [Política]
 ---
 
 El lenguaje importa y deberíamos aspirar a ser precisos. Los medios de

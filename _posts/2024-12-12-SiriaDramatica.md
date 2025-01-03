@@ -1,6 +1,6 @@
 ---
 title: La situación en Siria
-categories: [Politics]
+categories: [Política]
 ---
 
 Israel [bombardea](https://www.reuters.com/world/middle-east/israeli-incursion-into-syria-reaches-25-km-southwest-damascus-security-sources-2024-12-10/) objetivos 

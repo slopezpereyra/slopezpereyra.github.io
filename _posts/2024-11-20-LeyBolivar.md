@@ -1,6 +1,6 @@
 ---
 title: Ley Bolívar 
-categories: [Politics]
+categories: [Política]
 ---
 
 Dos días atrás, la cámara de representantes de los Estados Unidos pasó la Ley

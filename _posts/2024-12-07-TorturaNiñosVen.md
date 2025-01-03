@@ -1,6 +1,6 @@
 ---
 title: Casi 200 niños detenidos arbitrariamente y torturados en Venezuela
-categories: [Politics]
+categories: [Política]
 ---
 
 De acuerdo con un

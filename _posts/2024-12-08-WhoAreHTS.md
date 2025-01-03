@@ -1,6 +1,6 @@
 ---
 title: El historial del HTS en Siria 
-categories: [Politics]
+categories: [Política]
 ---
 
 Hayat Tahrir al-Sham (HTS) es un grupo armado suní operando en Siria y [conformado por diversas
