@@ -1,4 +1,3 @@
-\contentsline {subsection}{Prefacio}{5}{}%
 \contentsline {subsection}{Quisiera ser un hombre simple}{6}{}%
 \contentsline {subsection}{A Paulina}{7}{}%
 \contentsline {subsection}{Carta de un suicidio no consumado}{8}{}%
@@ -10,9 +9,9 @@
 \contentsline {subsection}{Una esmeralda negra}{14}{}%
 \contentsline {subsection}{Pasará}{15}{}%
 \contentsline {subsection}{Debe pagarse el sueño de los muertos}{16}{}%
-\contentsline {subsection}{Nocturno}{17}{}%
+\contentsline {subsection}{De tiempo todo está lleno}{17}{}%
 \contentsline {subsection}{Hastío}{18}{}%
-\contentsline {subsection}{Octubre 2023}{19}{}%
+\contentsline {subsection}{Soñé con todas las almas}{19}{}%
 \contentsline {subsection}{Selene}{20}{}%
 \contentsline {subsection}{Los mitos y los sueños}{22}{}%
 \contentsline {subsection}{Nacimiento}{23}{}%
@@ -38,5 +37,5 @@
 \contentsline {subsection}{Cuento infantil}{43}{}%
 \contentsline {subsection}{Todas las rosas son la de tu huerta}{45}{}%
 \contentsline {subsection}{Paraná}{46}{}%
-\contentsline {subsection}{EN CASA DE MI PADRE}{47}{}%
+\contentsline {subsection}{En casa de mi padre}{47}{}%
 \contentsline {subsection}{No love goes to waste}{48}{}%
