@@ -34,8 +34,9 @@
 \contentsline {subsection}{Mi casa}{40}{}%
 \contentsline {subsection}{Es tu última tormenta}{41}{}%
 \contentsline {subsection}{What if they see me}{42}{}%
-\contentsline {subsection}{Cuento infantil}{43}{}%
-\contentsline {subsection}{Todas las rosas son la de tu huerta}{45}{}%
-\contentsline {subsection}{Paraná}{46}{}%
-\contentsline {subsection}{En casa de mi padre}{47}{}%
-\contentsline {subsection}{No love goes to waste}{48}{}%
+\contentsline {subsection}{A un ídolo de piedra}{43}{}%
+\contentsline {subsection}{Cuento infantil}{44}{}%
+\contentsline {subsection}{Todas las rosas son la de tu huerta}{46}{}%
+\contentsline {subsection}{Paraná}{47}{}%
+\contentsline {subsection}{En casa de mi padre}{48}{}%
+\contentsline {subsection}{No love goes to waste}{49}{}%
