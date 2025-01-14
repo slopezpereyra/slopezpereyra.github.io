@@ -29,9 +29,9 @@
 \contentsline {subsection}{Cementerio}{35}{}%
 \contentsline {subsection}{Rajastán}{36}{}%
 \contentsline {subsection}{Promesa}{37}{}%
-\contentsline {subsection}{Ecos}{38}{}%
-\contentsline {subsection}{Fue un trece de junio}{39}{}%
-\contentsline {subsection}{Romance de las casas}{40}{}%
+\contentsline {subsection}{A una muerta}{38}{}%
+\contentsline {subsection}{NATALICIO}{39}{}%
+\contentsline {subsection}{Mi casa}{40}{}%
 \contentsline {subsection}{Es tu última tormenta}{41}{}%
 \contentsline {subsection}{What if they see me}{42}{}%
 \contentsline {subsection}{Cuento infantil}{43}{}%
