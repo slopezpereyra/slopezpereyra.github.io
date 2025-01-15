@@ -30,13 +30,15 @@
 \contentsline {subsection}{Rajastán}{36}{}%
 \contentsline {subsection}{Promesa}{37}{}%
 \contentsline {subsection}{A una muerta}{38}{}%
-\contentsline {subsection}{NATALICIO}{39}{}%
+\contentsline {subsection}{Natalicio}{39}{}%
 \contentsline {subsection}{Mi casa}{40}{}%
-\contentsline {subsection}{Es tu última tormenta}{41}{}%
-\contentsline {subsection}{What if they see me}{42}{}%
-\contentsline {subsection}{A un ídolo de piedra}{43}{}%
-\contentsline {subsection}{Cuento infantil}{44}{}%
-\contentsline {subsection}{Todas las rosas son la de tu huerta}{46}{}%
-\contentsline {subsection}{Paraná}{47}{}%
-\contentsline {subsection}{En casa de mi padre}{48}{}%
-\contentsline {subsection}{No love goes to waste}{49}{}%
+\contentsline {subsection}{A mi casa}{41}{}%
+\contentsline {subsection}{Es tu última tormenta}{42}{}%
+\contentsline {subsection}{What if they see me}{43}{}%
+\contentsline {subsection}{A un ídolo de piedra}{44}{}%
+\contentsline {subsection}{Sólo el amor aguarda}{45}{}%
+\contentsline {subsection}{Cuento infantil}{46}{}%
+\contentsline {subsection}{Todas las rosas son la de tu huerta}{48}{}%
+\contentsline {subsection}{Paraná}{49}{}%
+\contentsline {subsection}{En casa de mi padre}{50}{}%
+\contentsline {subsection}{No love goes to waste}{51}{}%
