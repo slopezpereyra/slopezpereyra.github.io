@@ -32,7 +32,7 @@
 \contentsline {subsection}{A una muerta}{38}{}%
 \contentsline {subsection}{Natalicio}{39}{}%
 \contentsline {subsection}{Mi casa}{40}{}%
-\contentsline {subsection}{A mi casa}{41}{}%
+\contentsline {subsection}{A una vieja casa}{41}{}%
 \contentsline {subsection}{Es tu última tormenta}{42}{}%
 \contentsline {subsection}{What if they see me}{43}{}%
 \contentsline {subsection}{A un ídolo de piedra}{44}{}%
@@ -41,4 +41,5 @@
 \contentsline {subsection}{Todas las rosas son la de tu huerta}{48}{}%
 \contentsline {subsection}{Paraná}{49}{}%
 \contentsline {subsection}{En casa de mi padre}{50}{}%
-\contentsline {subsection}{No love goes to waste}{51}{}%
+\contentsline {subsection}{Algo}{51}{}%
+\contentsline {subsection}{No love goes to waste}{52}{}%
