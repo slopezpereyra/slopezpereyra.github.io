@@ -6,7 +6,7 @@
 \contentsline {subsection}{Un árbol era mi sueño}{11}{}%
 \contentsline {subsection}{A mí mismo}{12}{}%
 \contentsline {subsection}{Éramos libres}{13}{}%
-\contentsline {subsection}{Un arrorró}{14}{}%
+\contentsline {subsection}{Desde lejos}{14}{}%
 \contentsline {subsection}{Una esmeralda negra}{15}{}%
 \contentsline {subsection}{Pasará}{16}{}%
 \contentsline {subsection}{Debe pagarse el sueño de los muertos}{17}{}%
