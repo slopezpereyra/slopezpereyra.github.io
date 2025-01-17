@@ -6,40 +6,41 @@
 \contentsline {subsection}{Un árbol era mi sueño}{11}{}%
 \contentsline {subsection}{A mí mismo}{12}{}%
 \contentsline {subsection}{Éramos libres}{13}{}%
-\contentsline {subsection}{Una esmeralda negra}{14}{}%
-\contentsline {subsection}{Pasará}{15}{}%
-\contentsline {subsection}{Debe pagarse el sueño de los muertos}{16}{}%
-\contentsline {subsection}{De tiempo todo está lleno}{17}{}%
-\contentsline {subsection}{Hastío}{18}{}%
-\contentsline {subsection}{Soñé con todas las almas}{19}{}%
-\contentsline {subsection}{Selene}{20}{}%
-\contentsline {subsection}{Los mitos y los sueños}{22}{}%
-\contentsline {subsection}{Nacimiento}{23}{}%
-\contentsline {subsection}{La sangre no descansa}{24}{}%
-\contentsline {subsection}{Génesis}{25}{}%
-\contentsline {subsection}{El mal remedio}{26}{}%
-\contentsline {subsection}{Here as we timeless lay}{27}{}%
-\contentsline {subsection}{Eras como la aurora}{28}{}%
-\contentsline {subsection}{Visión}{29}{}%
-\contentsline {subsection}{A portrait of the artist}{30}{}%
-\contentsline {subsection}{Primer sueño}{31}{}%
-\contentsline {subsection}{Despedida}{32}{}%
-\contentsline {subsection}{Historia de un abandono}{33}{}%
-\contentsline {subsection}{Un poema español}{34}{}%
-\contentsline {subsection}{Cementerio}{35}{}%
-\contentsline {subsection}{Rajastán}{36}{}%
-\contentsline {subsection}{Promesa}{37}{}%
-\contentsline {subsection}{A una muerta}{38}{}%
-\contentsline {subsection}{Natalicio}{39}{}%
-\contentsline {subsection}{Mi casa}{40}{}%
-\contentsline {subsection}{Al hogar familiar}{41}{}%
-\contentsline {subsection}{Es tu última tormenta}{42}{}%
-\contentsline {subsection}{What if they see me}{43}{}%
-\contentsline {subsection}{A un ídolo de piedra}{44}{}%
-\contentsline {subsection}{Sólo el amor aguarda}{45}{}%
-\contentsline {subsection}{Cuento infantil}{46}{}%
-\contentsline {subsection}{Todas las rosas son la de tu huerta}{48}{}%
-\contentsline {subsection}{Paraná}{49}{}%
-\contentsline {subsection}{En casa de mi padre}{50}{}%
-\contentsline {subsection}{Algo}{51}{}%
-\contentsline {subsection}{No love goes to waste}{52}{}%
+\contentsline {subsection}{Un arrorró}{14}{}%
+\contentsline {subsection}{Una esmeralda negra}{15}{}%
+\contentsline {subsection}{Pasará}{16}{}%
+\contentsline {subsection}{Debe pagarse el sueño de los muertos}{17}{}%
+\contentsline {subsection}{De tiempo todo está lleno}{18}{}%
+\contentsline {subsection}{Hastío}{19}{}%
+\contentsline {subsection}{Soñé con todas las almas}{20}{}%
+\contentsline {subsection}{Selene}{21}{}%
+\contentsline {subsection}{Los mitos y los sueños}{23}{}%
+\contentsline {subsection}{Nacimiento}{24}{}%
+\contentsline {subsection}{La sangre no descansa}{25}{}%
+\contentsline {subsection}{Génesis}{26}{}%
+\contentsline {subsection}{El mal remedio}{27}{}%
+\contentsline {subsection}{Here as we timeless lay}{28}{}%
+\contentsline {subsection}{Eras como la aurora}{29}{}%
+\contentsline {subsection}{Visión}{30}{}%
+\contentsline {subsection}{A portrait of the artist}{31}{}%
+\contentsline {subsection}{Primer sueño}{32}{}%
+\contentsline {subsection}{Despedida}{33}{}%
+\contentsline {subsection}{Historia de un abandono}{34}{}%
+\contentsline {subsection}{Un poema español}{35}{}%
+\contentsline {subsection}{Cementerio}{36}{}%
+\contentsline {subsection}{Rajastán}{37}{}%
+\contentsline {subsection}{Promesa}{38}{}%
+\contentsline {subsection}{A una muerta}{39}{}%
+\contentsline {subsection}{Natalicio}{40}{}%
+\contentsline {subsection}{Mi casa}{41}{}%
+\contentsline {subsection}{Al hogar familiar}{42}{}%
+\contentsline {subsection}{Es tu última tormenta}{43}{}%
+\contentsline {subsection}{What if they see me}{44}{}%
+\contentsline {subsection}{A un ídolo de piedra}{45}{}%
+\contentsline {subsection}{Sólo el amor aguarda}{46}{}%
+\contentsline {subsection}{Cuento infantil}{47}{}%
+\contentsline {subsection}{Todas las rosas son la de tu huerta}{49}{}%
+\contentsline {subsection}{Paraná}{50}{}%
+\contentsline {subsection}{En casa de mi padre}{51}{}%
+\contentsline {subsection}{Algo}{52}{}%
+\contentsline {subsection}{No love goes to waste}{53}{}%
