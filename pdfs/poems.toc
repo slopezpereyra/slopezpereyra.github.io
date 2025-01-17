@@ -32,7 +32,7 @@
 \contentsline {subsection}{A una muerta}{38}{}%
 \contentsline {subsection}{Natalicio}{39}{}%
 \contentsline {subsection}{Mi casa}{40}{}%
-\contentsline {subsection}{A una vieja casa}{41}{}%
+\contentsline {subsection}{Al hogar familiar}{41}{}%
 \contentsline {subsection}{Es tu última tormenta}{42}{}%
 \contentsline {subsection}{What if they see me}{43}{}%
 \contentsline {subsection}{A un ídolo de piedra}{44}{}%
