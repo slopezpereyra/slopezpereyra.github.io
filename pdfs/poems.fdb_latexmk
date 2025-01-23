@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1737433453 "poems.tex" "poems.pdf" "poems" 1737433454 2
+["pdflatex"] 1737470769 "poems.tex" "poems.pdf" "poems" 1737470770 2
   "/etc/texmf/web2c/texmf.cnf" 1695394668 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1640468671 2914 8283dfc24eaf1964346f843d7605c2b0 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -66,9 +66,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1695394817 4623455 fa0568a71dd9a288d6c226ee477506c6 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1695394844 7879794 eff26094dbe002b6e482c026ea4c81e2 ""
-  "poems.aux" 1737433454 4420 599425d0a34e4e7d39821efe94d92be4 "pdflatex"
-  "poems.tex" 1737433452 31692 d111daf9744ca1b4d213396723667289 ""
-  "poems.toc" 1737433454 2460 c51485ba107c3d01a63af548749a40b3 "pdflatex"
+  "poems.aux" 1737470770 4420 599425d0a34e4e7d39821efe94d92be4 "pdflatex"
+  "poems.tex" 1737470769 31694 fa865227c1fa881c13f6e3ba8ffe8a70 ""
+  "poems.toc" 1737470770 2460 c51485ba107c3d01a63af548749a40b3 "pdflatex"
   (generated)
   "poems.aux"
   "poems.log"
