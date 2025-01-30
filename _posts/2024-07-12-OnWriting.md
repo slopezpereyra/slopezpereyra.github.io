@@ -56,8 +56,6 @@ Like Quevedo, who said
 I converse with them in my mind and, rather often, in my dreams. I have
 dreamt myself discussing poems with Miguel Hernández, walking Borges
 across a sublime library, or drinking a cold beer with Bertrand Russell.
-On each occasion, our conversations were rich and I could recollect them
-after waking up.
 
 In everything I seek love, and in almost everything I find it. The
 pursuit of knowledge is, to me, romantic—as much as the pursuit of
