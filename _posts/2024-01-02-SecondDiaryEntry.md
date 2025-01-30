@@ -1,6 +1,6 @@
 ---
 title: aef115542cfb11aac2c4fc307d41d18d
-categories: [Secret diary]
+categories: [Diario secreto]
 ---
 
 
