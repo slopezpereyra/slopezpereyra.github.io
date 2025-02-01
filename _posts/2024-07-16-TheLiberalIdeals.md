@@ -53,7 +53,7 @@ educated enough so as to be capable of independence, and powerful enough so as
 to be capable of influence. That selling or renting oneself is degrading, as it
 is degrading that work is so alien to a man's inclinations that he must be
 bribed or coerced to do it by fear of inanition. That any form of authority
-which cannot justify itself ought to be dismantled--- a principle which
+which cannot justify itself ought to be dismantled—a principle which
 liberals such as Diderot sophisticated and which saw its natural continuation
 in the likes of William Godwin. And a long etc.
 
