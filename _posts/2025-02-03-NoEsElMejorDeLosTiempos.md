@@ -21,7 +21,7 @@ propagada, es que vivimos en el mejor de los tiempos. Esto se debería al
 desarrollo material impulsado por el capitalismo, gracias al cual un pobre
 moderno goza del tren de vida de un Calígula o un Trajano. Desde el punto de
 vista de las condiciones materiales de vida de los individuos, esta opinión no
-es controversial. Pero existen diversos sentidos en los cuales es absolutamente
+es controversial. Pero existen diversos sentidos bajo los cuales es absolutamente
 ridícula.
 
 Es cierto que la existencia de un hombre hace veinte mil años era, en muchos
