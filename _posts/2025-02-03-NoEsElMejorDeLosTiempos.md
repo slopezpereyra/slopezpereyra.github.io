@@ -28,8 +28,8 @@ Es cierto que la existencia de un hombre hace veinte mil años era, en muchos
 sentidos, más incierta y dura que la de un hombre contemporáneo. La existencia
 de la especie, sin embargo, estaba garantizada. Hoy, por primera vez en la
 historia, la continuidad del curioso experimento humano, al menos de manera
-organizada y sostenible, está en juego. La amenaza nuclear y el cambio
-climático, aunque no son únicos, son suficientes para establecer que la
+organizada y sostenible, está en peligro. La amenaza nuclear y el cambio
+climático son factores suficientes (aunque no únicos) para establecer que la
 humanidad está en el punto más vulnerable de su historia.
 
 Además, la calidad en las condiciones materiales de vida, aunque desde luego
