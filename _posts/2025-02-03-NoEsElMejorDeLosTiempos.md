@@ -45,8 +45,6 @@ todavía peor por ser inescrutable e inmune a toda influencia significativa por
 parte de la población. El exacerbado desarrollo de la inteligencia artificial,
 guiado (como es de esperarse) por los intereses del poder concentrado, solo ha
 complicado más la situación. 
-curioso de cuán poco le concierne al progreso tecnológico el mejoramiento de la
-calidad de vida. 
 
 La humanidad, como colectivo, jamás ha estado bajo tanto riesgo, ni tan
 sometida a mecanismos de propaganda, vigilancia y control como hoy en día. El
