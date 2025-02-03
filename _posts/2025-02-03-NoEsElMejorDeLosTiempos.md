@@ -21,8 +21,8 @@ propagada, es que vivimos en el mejor de los tiempos. Esto se debería al
 desarrollo material impulsado por el capitalismo, gracias al cual un pobre
 moderno goza del tren de vida de un Calígula o un Trajano. Desde el punto de
 vista de las condiciones materiales de vida de los individuos, esta opinión no
-es controversial. Pero existen diversos sentidos bajo los cuales es absolutamente
-ridícula.
+es controversial. Pero existen diversos sentidos bajo los cuales es
+absolutamente ridícula.
 
 Es cierto que la existencia de un hombre hace veinte mil años era, en muchos
 sentidos, más incierta y dura que la de un hombre contemporáneo. La existencia
@@ -32,19 +32,35 @@ organizada y sostenible, está en peligro. La amenaza nuclear y el cambio
 climático son factores suficientes (aunque no únicos) para establecer que la
 humanidad está en el punto más vulnerable de su historia.
 
-Además, la calidad en las condiciones materiales de vida, aunque desde luego
-importante, no es el único índice bajo el cual deba medirse el progreso. El
-liberalismo clásico, y sus continuadores en la tradición anarquista,
-considerarían pertinente preguntar si hemos además reducido la tiranía. Desde
+Además, las condiciones materiales de vida no son el único índice relevante.
+Una pregunta acaso igual de importante es si se ha reducido la tiranía. Desde
 este punto de vista, estamos por lo menos tan mal como hace dos mil años, y
-concebiblemente peor. La larga mano del estado y sus aparatos represores, con
-la previamente inconcebible sofisticación de los mecanismos de control y
-vigilancia, alcanza a todas las personas y es prácticamente ineludible. Lo
-mismo aplica al control y vigilancia realizados por el capital privado, que es
-todavía peor por ser inescrutable e inmune a toda influencia significativa por
-parte de la población. El exacerbado desarrollo de la inteligencia artificial,
-guiado (como es de esperarse) por los intereses del poder concentrado, solo ha
-complicado más la situación. 
+concebiblemente peor. Los mecanismos de control y vigilancia del Estado así
+como del capital privado, sea el reconocimiento facial o la masiva propaganda
+de los medios de comunicación, se han vuelto a la vez más sofisticados y de más
+largo alcance que nunca antes en la historia. El caso de las concentraciones
+privadas de poder es todavía peor, en la medida en que son inescrutables e
+inmunes a toda influencia significativa por parte de la población. 
+
+El grado de control y vigilancia que sufre el individuo contemporáneo escapa a
+todo lo que hubiera sido practicable (y concebible) sólo unos años atrás.
+Richard Stallman señaló, a mi juicio de manera correcta, que treinta años atrás
+nadie hubiera concebido llevar en el bolsillo, de manera voluntaria, un
+dispositivo capaz de grabar y transmitir nuestras conversaciones. Hoy no sólo
+es raro encontrar personas que dimensionen el peligro que esto conlleva, sino
+que aquellas que lo hacen no cuentan con una alternativa práctica para llevar
+adelante una vida integrada con la sociedad. 
+
+El desarrollo tecnológico siempre será utilizado por las concentraciones de
+poder, sean estatales o privadas, para controlar a la población de manera más o
+menos directa. En sociedades donde no rige el bastón se debe recurrir a
+mecanismos más sutiles de control, como la persuasión y la propaganda. Dos
+consecuencias de esto es que, en dichas sociedades, las personas no terminan de
+concebir que están siendo sometidas, ni caen en la cuenta de extremo peligro
+que  constituyen dichos mecanismos si las circunstancias políticas cambiaran.
+Un ejemplo burdo es la pasiva aceptación del reconocimiento facial: es
+detestable pero más o menos tolerable bajo el estado de derecho, pero sería
+terrible en una dictadura.
 
 La humanidad, como colectivo, jamás ha estado bajo tanto riesgo, ni tan
 sometida a mecanismos de propaganda, vigilancia y control como hoy en día. El
