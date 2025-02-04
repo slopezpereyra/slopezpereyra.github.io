@@ -38,17 +38,17 @@ este punto de vista, estamos por lo menos tan mal como hace dos mil años, y
 concebiblemente peor. Los mecanismos de control y vigilancia del Estado así
 como del capital privado, sea el reconocimiento facial o la masiva propaganda
 de los medios de comunicación, se han vuelto a la vez más sofisticados y de más
-largo alcance que nunca antes en la historia. El caso de las concentraciones
-privadas de poder es todavía peor, en la medida en que son inescrutables e
-inmunes a toda influencia significativa por parte de la población. 
+largo alcance. Esto es particularmente malo en el caso del capital privado,
+en la medida en que es inescrutable e inmune a toda influencia significativa
+por parte de la población. 
 
 El grado de control y vigilancia que sufre el individuo contemporáneo escapa a
 todo lo que hubiera sido practicable (y concebible) sólo unos años atrás.
-Richard Stallman señaló, a mi juicio de manera correcta, que treinta años atrás
+Richard Stallman señaló, a mi juicio de manera correcta, que hace treinta años
 nadie hubiera concebido llevar en el bolsillo, de manera voluntaria, un
 dispositivo capaz de grabar y transmitir nuestras conversaciones. Hoy no sólo
-es raro encontrar personas que dimensionen el peligro que esto conlleva, sino
-que aquellas que lo hacen no cuentan con una alternativa práctica para llevar
+es raro encontrar personas que no acepten esto como un hecho natural, sino que
+aquellas que no lo hacen no cuentan con una alternativa práctica para llevar
 adelante una vida integrada con la sociedad. 
 
 El desarrollo tecnológico siempre será utilizado por las concentraciones de
@@ -56,8 +56,8 @@ poder, sean estatales o privadas, para controlar a la población de manera más 
 menos directa. En sociedades donde no rige el bastón se debe recurrir a
 mecanismos más sutiles de control, como la persuasión y la propaganda. Dos
 consecuencias de esto es que, en dichas sociedades, las personas no terminan de
-concebir que están siendo sometidas, ni caen en la cuenta de extremo peligro
-que  constituyen dichos mecanismos si las circunstancias políticas cambiaran.
+concebir que están siendo sometidas, ni caen en la cuenta del extremo peligro
+que constituyen dichos mecanismos si las circunstancias políticas cambiaran.
 Un ejemplo burdo es la pasiva aceptación del reconocimiento facial: es
 detestable pero más o menos tolerable bajo el estado de derecho, pero sería
 terrible en una dictadura.
@@ -67,6 +67,17 @@ sometida a mecanismos de propaganda, vigilancia y control como hoy en día. El
 progreso en las condiciones materiales de vida de los individuos es real, pero
 no significa nada si los mismos no pueden aprovechar dichas condiciones para
 alcanzar la independencia y la libertad, y todavía menos si no quedan
-individuos en el mundo para gozar del progreso.
+individuos en el mundo para gozar de los frutos del progreso.
+
+
+
+
+
+
+
+
+
+
+
 
 
