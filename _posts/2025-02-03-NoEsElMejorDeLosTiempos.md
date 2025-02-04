@@ -57,7 +57,7 @@ menos directa. En sociedades donde no rige el bastón se debe recurrir a
 mecanismos más sutiles de control, como la persuasión y la propaganda. Dos
 consecuencias de esto es que, en dichas sociedades, las personas no terminan de
 concebir que están siendo sometidas, ni caen en la cuenta del extremo peligro
-que constituyen dichos mecanismos si las circunstancias políticas cambiaran.
+que representarían dichos mecanismos si las circunstancias políticas cambiaran.
 Un ejemplo burdo es la pasiva aceptación del reconocimiento facial: es
 detestable pero más o menos tolerable bajo el estado de derecho, pero sería
 terrible en una dictadura.
