@@ -62,12 +62,11 @@ Un ejemplo burdo es la pasiva aceptación del reconocimiento facial: es
 detestable pero más o menos tolerable bajo el estado de derecho, pero sería
 terrible en una dictadura.
 
-La humanidad, como colectivo, jamás ha estado bajo tanto riesgo, ni tan
-sometida a mecanismos de propaganda, vigilancia y control como hoy en día. El
-progreso en las condiciones materiales de vida de los individuos es real, pero
-no significa nada si los mismos no pueden aprovechar dichas condiciones para
-alcanzar la independencia y la libertad, y todavía menos si no quedan
-individuos en el mundo para gozar de los frutos del progreso.
+La humanidad, como colectivo, jamás ha estado bajo tanto riesgo. El progreso en
+las condiciones materiales de vida de los individuos es real, pero no significa
+nada si los mismos no pueden aprovechar dichas condiciones para alcanzar la
+independencia y la libertad, y todavía menos si no quedan individuos en el
+mundo para gozar de los frutos del progreso.
 
 
 
