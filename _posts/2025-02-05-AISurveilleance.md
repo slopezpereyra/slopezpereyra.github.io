@@ -1,5 +1,5 @@
 ---
-title: .
+title: La inteligencia artificial amenaza la democracia
 categories: [Política]
 ---
 
