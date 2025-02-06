@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  4 FEB 2025 02:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.9.22)  6 FEB 2025 08:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -377,48 +377,56 @@ LaTeX Font Info:    ... okay on input line 19.
 \c@mv@boldtabular=\count287
 LaTeX Info: Command `\dddot' is already robust on input line 19.
 LaTeX Info: Command `\ddddot' is already robust on input line 19.
-LaTeX Font Info:    Trying to load font information for OT1+minntx on input line 21.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 17.28pt on input line 21.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 17.28pt on input line 21.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 14.4pt on input line 23.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 14.4pt on input line 23.
+LaTeX Font Info:    Trying to load font information for OT1+minntx on input line 25.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1minntx.fd
 File: ot1minntx.fd 2022/01/20 v1.0 font definition file for OT1/minntx
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 21.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 25.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 21.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 25.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 21.
+LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 25.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxmia.fd
 File: untxmia.fd 2018/04/14 Fontinst v1.933 font definitions for U/ntxmia.
 )
-LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 21.
+LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 25.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsym.fd
 File: untxsym.fd 2015/03/20 Fontinst v1.933 font definitions for U/ntxsym.
 )
-LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 21.
+LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 25.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 12.0pt on input line 32.
+(Font)              scaled to size 12.0pt on input line 36.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./Characters.aux) ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./Characters.aux) ) 
 Here is how much of TeX's memory you used:
- 5497 strings out of 476091
- 75076 string characters out of 5794081
+ 5502 strings out of 476091
+ 75165 string characters out of 5794081
  1856330 words of memory out of 5000000
- 25815 multiletter control sequences out of 15000+600000
- 532837 words of font info for 68 fonts, out of 8000000 for 9000
+ 25819 multiletter control sequences out of 15000+600000
+ 544057 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,5n,76p,331b,111s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on Characters.pdf (1 page, 66854 bytes).
+ 71i,5n,76p,331b,113s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
+Output written on Characters.pdf (2 pages, 97389 bytes).
 PDF statistics:
- 24 PDF objects out of 1000 (max. 8388607)
- 14 compressed objects within 1 object stream
+ 32 PDF objects out of 1000 (max. 8388607)
+ 19 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

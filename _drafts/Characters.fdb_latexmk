@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1738646544 "Characters.tex" "Characters.pdf" "Characters" 1738646545 2
+["pdflatex"] 1738841164 "Characters.tex" "Characters.pdf" "Characters" 1738841165 2
   "/etc/texmf/web2c/texmf.cnf" 1695394668 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1640468671 2914 8283dfc24eaf1964346f843d7605c2b0 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -10,6 +10,7 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1246382020 940 228d6584342e91276bf566bcf9716b83 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1136768653 1288 655e228510b4c2a1abe905c368440826 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/NewTXMI.tfm" 1572128992 1408 ef71a9098da4d5a1a85b5920860b6731 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntx-Bold-tlf-t1.tfm" 1640468671 11304 f2348f846c9496e73c2ffa3ee3e37703 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntx-Italic-tlf-t1.tfm" 1640468671 11264 513b3833c56ba193e1ac9fe3b3c77d6a ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-ot1.tfm" 1600636029 3008 ca0c83ca288d9f1c5d2fca0e8e268f10 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-t1.tfm" 1640468671 11328 1877dd5dc191d4c03dc6042f510dbccf ""
@@ -24,6 +25,7 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntxsym.tfm" 1589834365 1572 ee1610f2b8e0679b918f57086595f5a6 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/stxscr.tfm" 1569879884 1836 3af1bb0996e7f6070b70151de6395c2c ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb" 1572128992 32409 1452fa0ce4fabfb48acd5d077e296f6d ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb" 1640468671 239149 b459cdf3364a26072e94167b64f425b2 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb" 1640468671 269694 aaa4ec66041f739d25146321feddb50c ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb" 1640468671 230451 72745fed20f6a7d3da4ddd8a9b788e85 ""
   "/usr/share/texlive/texmf-dist/fonts/vf/public/newtx/ntxmi.vf" 1622581641 2612 4fd3785b7e98639f68f908a08c642071 ""
@@ -73,8 +75,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1695394817 4623455 fa0568a71dd9a288d6c226ee477506c6 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1695394844 7879794 eff26094dbe002b6e482c026ea4c81e2 ""
-  "Characters.aux" 1738646545 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "Characters.tex" 1738646544 3018 b96d8f672dc960d6764d96295f41312a ""
+  "Characters.aux" 1738841165 307 8ddd0f302d6f9bb5c9febe867cfce7fb "pdflatex"
+  "Characters.tex" 1738841164 4368 908bb0f15fa2a51239918ef882444fab ""
   (generated)
   "Characters.aux"
   "Characters.log"
