@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1739471596 "freelove.tex" "freelove.pdf" "freelove" 1739471597 2
+["pdflatex"] 1739506885 "freelove.tex" "freelove.pdf" "freelove" 1739506886 2
   "/etc/texmf/web2c/texmf.cnf" 1695394668 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1640468671 2914 8283dfc24eaf1964346f843d7605c2b0 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -51,8 +51,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1695394817 4623455 fa0568a71dd9a288d6c226ee477506c6 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1695394844 7879794 eff26094dbe002b6e482c026ea4c81e2 ""
-  "freelove.aux" 1739471597 1598 ecd3e7d75bddcb93b16d9594d0ab824e "pdflatex"
-  "freelove.tex" 1739471595 33863 05d2e1e03c27d6c9be4e7100f1371d4c ""
+  "freelove.aux" 1739506886 1489 4dc17c3c2e8bff4ae8d2f82596c86480 "pdflatex"
+  "freelove.tex" 1739506884 37051 7a15bca17e00074791fef0f73920e90e ""
   (generated)
   "freelove.aux"
   "freelove.log"
