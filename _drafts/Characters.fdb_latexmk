@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1738988921 "Characters.tex" "Characters.pdf" "Characters" 1738988922 2
+["pdflatex"] 1739918759 "Characters.tex" "Characters.pdf" "Characters" 1739918760 2
   "/etc/texmf/web2c/texmf.cnf" 1695394668 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1640468671 2914 8283dfc24eaf1964346f843d7605c2b0 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -75,8 +75,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1676468108 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1695394817 4623455 fa0568a71dd9a288d6c226ee477506c6 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1695394844 7879794 eff26094dbe002b6e482c026ea4c81e2 ""
-  "Characters.aux" 1738988922 400 778556edc9f43fca3ba13c58d8bbcbf4 "pdflatex"
-  "Characters.tex" 1738988921 7323 e2cfb2d099dc577795f859e22ce490a8 ""
+  "Characters.aux" 1739918760 400 778556edc9f43fca3ba13c58d8bbcbf4 "pdflatex"
+  "Characters.tex" 1739918758 7190 530b68c7740506665a51f759b043b89e ""
   (generated)
   "Characters.aux"
   "Characters.log"
