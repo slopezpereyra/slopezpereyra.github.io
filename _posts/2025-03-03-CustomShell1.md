@@ -1,5 +1,5 @@
 ---
-title: Aprendiendo Linux programando un intérprete
+title: A simple shell from scratch in C
 categories: [Science]
 ---
 
