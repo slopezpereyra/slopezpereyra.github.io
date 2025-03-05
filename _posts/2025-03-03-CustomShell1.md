@@ -1,15 +1,17 @@
 ---
-title: A simple shell from scratch in C
+title: Writing a shell in C from scratch 
 categories: [Science]
 ---
 
 # Introduction
 
-I wrote a simple shell in C. These entry is simply a more elaborated version of
-my own notes while writing the code, accompanied by the code itself. It could
-assist people trying to learn about syscalls and low-level programming,
-particularly those interested in shell development and the manner in which the
-`pipe` and `fork` calls can be handled in recursive schemes (binary trees).
+Writing a shell is an excellent way to learn about syscalls, standard
+input/output streams, and recursive parsing of bytestreams. The shell explained
+in this entry provides limited functionality. It is capable of program
+execution, sequenced command execution, and piping. The most interesting aspect
+of the shell is the handling of the `pipe` and `fork` syscalls within a
+recursive scheme (binary trees).
+
 
 # Basics
 
@@ -26,7 +28,7 @@ void shell(){
   char* cmd;
   printf("MyBash : ");
   while (1){
-    cmd = read_stdin();
+    cmd = read_stdin(); // This function waits for stdin
     if ( cmd  == NULL ) {
       printf("Error reading cmd");
       break;
@@ -68,8 +70,8 @@ function will iteslf `malloc` the necessary memory.
 
 The `tree_parse()` function used in `shell()` is a bit more complex and we will
 discuss it later. For the moment, suffice it to say it is in charge of
-interpreting the input buffer as a bianry tree and deciding what and how to
-execute the user's instructions.
+interpreting the input buffer as a binary tree and deciding what and how to
+execute.
 
 
 ### Command types
@@ -115,14 +117,14 @@ arguments. For instance,
                                   /         \
                                  /           \
                                 /             \
-                              cmd_1           cmd_3
+                              cmd_1           cmd_2
 ``` 
 
 Execution can then be recursively computed from the leafs (the simple commands)
-upwards. Of course, the parent of each pair of nodes specifies the rule which is
-to be followed in the execution of the nodes. When  two nodes are parented by a
-pipeline command, the output of the first must serve as input for the second,
-and correspondingly when the parent is a `;`-separated command.
+upwards, with precedence of light-hand branches before right-hand ones. Of course, the parent of each pair of nodes specifies the rule which is
+to be followed in the execution of the nodes. For instance, when two nodes are
+parented by a pipeline command, the output of the first must serve as input for
+the second, and correspondingly when the parent is a `;`-separated command.
 
 To make such tree representation effective, we will specify the following
 abstract data types.
@@ -160,20 +162,22 @@ cmd_type parse_abstract_cmd(char* buff);
 ```
 
 Here, `execcmd`s represent the simplest type of command: a program name
-(`argv[0]`) plus flags `argv[1], argv[2], ...`. `pipecmd`s, on another hand, are
-a pair of executable commands piped in such a way that the output of the first
-acts as the input of the second. Since the execution of commands separated by a
-semi-colon ';' is as simple as executing them in linear order, we don't really
-need to specify an abstract representation of them: we'll parse them linearly
-from the `stdin` stream.
+(`argv[0]`) plus flags `argv[1], argv[2], ...`. `pipecmd`s, on another hand,
+contain an executable command to the left and simply a bytestream to the right.
 
-Let us define parsing functions specific to each of this `cmd` types; i.e.
-functions which can read a parent node of the tree
+
+> In the parsing of any pipe, the left side is always a program whose output must
+serve as input to the right-hand program, but the right hand program itself
+could be a simple command or could be another pipe (e.g. `cmd_1 | cmd_2 | cmd_3`). For that reason, the `right` field of a `pipecmd` is not predefined as any type of command: it is a bytestream that must be parsed and dealt with according to its content.
+
+Since the execution of commands separated by a
+semi-colon `;` is as simple as executing them in linear order, we don't really
+need to specify an abstract representation of them: we'll parse them linearly
+from the `stdin` stream. However, we *could* in principle program a new `cmd`
+type with `left` and `right` fields corresponding to `;`-separated commands.
+
 
 # 1: Execution, forking and the `pipe` function
-
-Let us assume we can parse a byte stream and detect what kind of command it
-holds: a piped command or a simple execution command.
 
 I assume the reader is familiarized with the fundamental `fork()` syscall, one
 of the strangest and prettiest of its lot. Thus, I will provide the function
@@ -222,25 +226,25 @@ child is a `char *` bytestream. This allows us to decompose chained pipes like
                                   /         \
                                  /           \
                                 /             \
-                      cmd_1 (as execcmd)   "cmd_2 |cmd_3" (byte stream)
-                                                    / \
-                                                   /   \
-                                                  /     \
-                                                 /       \
-                                                /         \
-                                               /           \
-                                              /             \
-                                            cmd_2 (as execcmd)  cmd_3 (as execcmd)
+                      cmd_1 (execcmd)   "cmd_2 |cmd_3" (bytestream)
+                                                 / \
+                                                /   \
+                                               /     \
+                                              /       \
+                                             /         \
+                                            /           \
+                                           /             \
+                                     cmd_2 (execcmd)  cmd_3 (execcmd)
 ``` 
 
 The representation above gives an example of what the execution of a `pipecmd`
 looks like. First, the left-hand `execcmd` is executed and its result is written
-on standard input via the `pipe()` command. Then, the right-hand byte stream
+on standard input via the `pipe()` syscall. Then, the right-hand byte stream
 is parsed into a `pipecmd` itself, which once again produces a call to execute
 its left-hand side as an `execcmd`. The result of this execution is once again
 written on `stdin`. Lastly, since the right-hand leaf contains no piping
-operator, it is also interpreted as an `execcmd` and executed, with its output
-not being redirected.  
+operator, it is interpreted as an `execcmd` and executed, with its output not
+being redirected.  
 
 The code for this recursive execution is as follows:
 
@@ -300,9 +304,27 @@ int execute_pipeline(struct pipecmd *pipe_cmd){
 }
 ```
 
+Importantly, before calling this function, we will need to save the original
+file descriptor for standard input: since this stream will be redirected to the
+read end of the `pipe()` during the function's execution, we'll need to restore
+it afterwards. So a call to this function should look like this:
+
+```c 
+int original_stdin = dup(STDIN_FILENO);  // dup stdin to lowest available file descriptor
+execute_pipeline(execution_cmd);
+dup2(original_stdin, STDIN_FILENO);  // restore stdin to original
+close(original_stdin);  
+```
+
+Thus, given `execcmd` or `pipecmd` struct pointers, we already have functions
+capable of executing the instructions associated to these data types. All that's
+left is to write the *parsing* end of the shell, i.e. the procedures that will
+read standard input, determine what kind of commands are there, initialize the
+`execcmd` or `pipecmd` structs accordingly in a binary tree representation, and
+recursively call their execution.
 
 
-# 1: Parsing 
+# 2: Parsing 
 
 We will define a few simple functions here. This functions are rather
 straightforward and should be easy to comprehend with a careful read assisted by
@@ -409,13 +431,15 @@ void tree_parse(char *buff){
   // Detect the type of the command in the stream.
   cmd_type t = parse_abstract_cmd(buff);
 
+  // Recursive case 1:
   if (t == YUX){
     // Calls tree_parse recursively on each node:
     // this is a recursive call!
     parse_yux_cmd(buff);
     return;
   }
-
+  
+  // Recursive case 2:
   // If the stream is a pipe, execute it using the recursive tree representation of 
   // pipe commands. This effectively expands the tree for the case of pipes.
   if (t == PIPE){
@@ -428,8 +452,8 @@ void tree_parse(char *buff){
     return;
   }
 
-  // If the stream is a simple command, simply execute it. This is the 
-  // base case of the recursive call.
+  // Base case:
+  // If the stream is a simple command, simply execute it.
   struct execcmd *execution_cmd =  parse_exec_cmd(buff);
   execute_cmd(execution_cmd);
 //  struct pipecmd *execution_cmd =  parse_pipe_cmd(buff);
@@ -439,7 +463,7 @@ void tree_parse(char *buff){
 ```
 ## Testing the shell 
 
-This is the result of running ``
+This is the result of running `ls; ls | wc -l; ls | wc -l | factor`.
 
 ```
 My Bash: ls; ls | wc -l; ls | wc -l | factor
