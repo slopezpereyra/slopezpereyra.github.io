@@ -690,9 +690,17 @@ table tr td :last-child {
 
 /* --- Code blocks --- */
 
+
+code {
+  font-size: 15px; /* Adjust as needed */
+  background-color: #f5f5f5; /* Optional: Light background for readability */
+  padding: 2px 4px; /* Optional: Small padding */
+  border-radius: 4px; /* Optional: Rounded corners */
+}
+
 pre {
-  font-size: 15px;
-  line-height: 1.0;
+  font-size: 14px;
+  line-height: 1.2;
 }
 pre code {
   white-space: pre;
