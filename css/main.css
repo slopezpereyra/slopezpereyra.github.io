@@ -692,7 +692,7 @@ table tr td :last-child {
 
 
 code {
-  font-size: 15px; /* Adjust as needed */
+  font-size: 5px; /* Adjust as needed */
   background-color: #f5f5f5; /* Optional: Light background for readability */
   padding: 2px 4px; /* Optional: Small padding */
   border-radius: 4px; /* Optional: Rounded corners */
