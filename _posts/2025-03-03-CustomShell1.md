@@ -63,10 +63,10 @@ char* read_stdin(void) {
 
 
 The `ssize_t getline(char **restrict lineptr, size_t *restrict n,
-FILE *restrict stream)` function reads entire lines from `stream` and stores it
-in `lineptr`. In our case, it will read from `stdin` and allocate in `buffer`.
-Since `buffer` is set to `NULL` before the call to `getline`, the latter
-function will iteslf `malloc` the necessary memory.
+FILE *restrict stream)` function reads entire lines from `stream` and stores
+them in `lineptr`. In our case, it will read from `stdin` and allocate in
+`buffer`. Since `buffer` is set to `NULL` before the call to `getline`, the
+latter function will iteslf `malloc` the necessary memory.
 
 The `tree_parse()` function used in `shell()` is a bit more complex and we will
 discuss it later. For the moment, suffice it to say it is in charge of
@@ -95,10 +95,8 @@ simple_command_1 | simple_command_2 ; simple_command_3
 ```
 
 must first deal with the execution of `simple_command_1 | simple_command 2` and
-then execute `simple_command_3`.
-
-This should be sufficient to suggest a tree representation of the command line
-arguments. For instance,
+then execute `simple_command_3`. This should be sufficient to suggest a tree
+representation of the command line arguments. For instance,
 
 ``` 
                                   cmd_1 | cmd_2 ; cmd_3
@@ -120,9 +118,10 @@ arguments. For instance,
                               cmd_1           cmd_2
 ``` 
 
-Execution can then be recursively computed from the leafs (the simple commands)
-upwards, with precedence of light-hand branches before right-hand ones. Of course, the parent of each pair of nodes specifies the rule which is
-to be followed in the execution of the nodes. For instance, when two nodes are
+Execution can then be recursively computed from the leaves (the simple commands)
+upwards, with precedence of left-hand branches before right-hand ones. Of
+course, the parent of each pair of nodes specifies the rule which is to be
+followed in the execution of the nodes. For instance, when two nodes are
 parented by a pipeline command, the output of the first must serve as input for
 the second, and correspondingly when the parent is a `;`-separated command.
 
@@ -167,8 +166,11 @@ contain an executable command to the left and simply a bytestream to the right.
 
 
 > In the parsing of any pipe, the left side is always a program whose output must
-serve as input to the right-hand program, but the right hand program itself
-could be a simple command or could be another pipe (e.g. `cmd_1 | cmd_2 | cmd_3`). For that reason, the `right` field of a `pipecmd` is not predefined as any type of command: it is a bytestream that must be parsed and dealt with according to its content.
+serve as input to the right-hand program, but the right-hand program itself
+could be a simple command or could be another pipe (e.g. `cmd_1 | cmd_2 |
+cmd_3`). For that reason, the `right` field of a `pipecmd` is not predefined as
+any type of command: it is a bytestream that must be parsed and dealt with
+according to its content.
 
 Since the execution of commands separated by a
 semi-colon `;` is as simple as executing them in linear order, we don't really
@@ -177,7 +179,7 @@ from the `stdin` stream. However, we *could* in principle program a new `cmd`
 type with `left` and `right` fields corresponding to `;`-separated commands.
 
 
-# 1: Execution, forking and the `pipe` function
+# 1: Execution, forking and the *pipe* syscall
 
 I assume the reader is familiarized with the fundamental `fork()` syscall, one
 of the strangest and prettiest of its lot. Thus, I will provide the function
@@ -212,8 +214,8 @@ int execute_cmd(struct execcmd *cmd){
 }
 ```
 
-More interesting is the recursive execution of piped commands. As you may have
-observed, the left child side of a `pipecmd` node is an `execcmd`, but the right
+More interesting is the recursive execution of piped commands. As pointed out
+earlier, the left child of a `pipecmd` node is an `execcmd`, but the right
 child is a `char *` bytestream. This allows us to decompose chained pipes like 
 `cmd1 | cmd2 | cmd3 | cmd4 | ...` recursively. 
 
@@ -235,7 +237,7 @@ child is a `char *` bytestream. This allows us to decompose chained pipes like
                                             /           \
                                            /             \
                                      cmd_2 (execcmd)  cmd_3 (execcmd)
-``` 
+```
 
 The representation above gives an example of what the execution of a `pipecmd`
 looks like. First, the left-hand `execcmd` is executed and its result is written
@@ -246,7 +248,26 @@ written on `stdin`. Lastly, since the right-hand leaf contains no piping
 operator, it is interpreted as an `execcmd` and executed, with its output not
 being redirected.  
 
-The code for this recursive execution is as follows:
+The code for this recursive execution must use the `pipe()` syscall. The
+`pipe()` syscall is quite interesting: it stores in an `int pipefds[2]` array
+the file descriptors of the read (`pipefds[0]`) and write (`pipefds[1]`) ends of
+a kernel-level buffer. This buffer, termed which is the `pipe` in question,
+serves as a unidirectional communication channel between two processes, where
+process $B$ can read what process $A$ has written on it. 
+
+The basic logic of piping two commands `cmd_1 | cmd_2` is this: create a
+`pipe()` and `fork()` the process, call some `exec` syscall for `cmd_1` in the
+child process reading from standard input and redirecting its output to the
+write end of the pipe. Thus, the kernel buffer referred to by the pipe will
+contain the result of `cmd_1`. Once the child process terminates, `fork()` again
+to `exec` the `cmd_2` command, but redirect `stdin` to the read end of the pipe.
+Thus, `cmd_2` will receive its input from the output of `cmd_1`.
+
+The logic above is simple but I made some abstractions. Firstly, one must make
+sure to `close()` the read/write ends of the pipe once their use is done.
+Secondly, since `stdin` is redirected, one must restore it to its original value
+once the process above is completed. The code that makes use of this logic in
+our recursive scheme is below.
 
 ```c 
 int execute_pipeline(struct pipecmd *pipe_cmd){
@@ -254,6 +275,7 @@ int execute_pipeline(struct pipecmd *pipe_cmd){
   int pipefds[2];
   int pipe_code = pipe(pipefds);
   int status;
+  int original_stdin = dup(STDIN_FILENO);  // dup stdin to lowest available file descriptor
 
   char* left_pipe_program = ( pipe_cmd -> left ) -> argv[0];
   char* right_pipe_buffer = pipe_cmd -> right;
@@ -291,6 +313,7 @@ int execute_pipeline(struct pipecmd *pipe_cmd){
     // Base case of recursion
     if (right_pipe_type == EXEC){
       struct execcmd *right_cmd = parse_exec_cmd(right_pipe_buffer);
+      // The second `fork()` call is done within `execute_cmd()`.
       execute_cmd(right_cmd);
     }
     // Recursive case
@@ -300,6 +323,8 @@ int execute_pipeline(struct pipecmd *pipe_cmd){
     }
 
   }
+  dup2(original_stdin, STDIN_FILENO);  // restore stdin to original
+  close(original_stdin);  
   return 1;
 }
 ```
@@ -308,13 +333,6 @@ Importantly, before calling this function, we will need to save the original
 file descriptor for standard input: since this stream will be redirected to the
 read end of the `pipe()` during the function's execution, we'll need to restore
 it afterwards. So a call to this function should look like this:
-
-```c 
-int original_stdin = dup(STDIN_FILENO);  // dup stdin to lowest available file descriptor
-execute_pipeline(execution_cmd);
-dup2(original_stdin, STDIN_FILENO);  // restore stdin to original
-close(original_stdin);  
-```
 
 Thus, given `execcmd` or `pipecmd` struct pointers, we already have functions
 capable of executing the instructions associated to these data types. All that's
@@ -444,10 +462,7 @@ void tree_parse(char *buff){
   // pipe commands. This effectively expands the tree for the case of pipes.
   if (t == PIPE){
     struct pipecmd *execution_cmd =  parse_pipe_cmd(buff);
-    int original_stdin = dup(STDIN_FILENO);  // Save original stdin
     execute_pipeline(execution_cmd);
-    dup2(original_stdin, STDIN_FILENO);  // Restore stdin to original
-    close(original_stdin);  
     printf("My Bash: ");
     return;
   }
