@@ -329,11 +329,6 @@ int execute_pipeline(struct pipecmd *pipe_cmd){
 }
 ```
 
-Importantly, before calling this function, we will need to save the original
-file descriptor for standard input: since this stream will be redirected to the
-read end of the `pipe()` during the function's execution, we'll need to restore
-it afterwards. So a call to this function should look like this:
-
 Thus, given `execcmd` or `pipecmd` struct pointers, we already have functions
 capable of executing the instructions associated to these data types. All that's
 left is to write the *parsing* end of the shell, i.e. the procedures that will
