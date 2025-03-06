@@ -251,7 +251,7 @@ being redirected.
 The code for this recursive execution must use the `pipe()` syscall. The
 `pipe()` syscall is quite interesting: it stores in an `int pipefds[2]` array
 the file descriptors of the read (`pipefds[0]`) and write (`pipefds[1]`) ends of
-a kernel-level buffer. This buffer, termed which is the `pipe` in question,
+a kernel-level buffer. This buffer, which is the `pipe` in question,
 serves as a unidirectional communication channel between two processes, where
 process $B$ can read what process $A$ has written on it. 
 
