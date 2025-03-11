@@ -11,7 +11,7 @@ categories: Personal
 > learnt from the poor exercise of a craft as from examples of its mastery.
 
 
-#### Tier 0: Why do people read this guys?
+#### Tier 0: Why do people read these guys?
 
 - *Charles Bukowski*: The only appeal of this writer is the entirely adolescent
 idea that there is something transgressive in using bad words and writing about
