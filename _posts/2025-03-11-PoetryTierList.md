@@ -75,8 +75,8 @@ namely *Platero y yo*. Some of his poems are quite decent.
 forgettable ones.
 
 - *Ezequiel Martínez Estrada*: This is an interesting one. He is not known
-outside of Argentina; in a formal sense, he used uncommon resources---e.g. wide
-use of dodecasyllable verses and original rhythms---. From a semantic
+outside of Argentina. In a formal sense, he used uncommon resources---e.g. wide
+use of dodecasyllable verses and original rhythms---; from a semantic
 perspective, he has some *really* memorable poems. For instance, the ending of a
 poem dedicated to nature ends with the following exquisite stanza:
 
