@@ -74,7 +74,7 @@ namely *Platero y yo*. Some of his poems are quite decent.
 - *William Longfellow*: This author has some very good poems and many
 forgettable ones.
 
-- *Ezequiel Martínez Estrada*: This one is an interesting one. He is not known
+- *Ezequiel Martínez Estrada*: This is an interesting one. He is not known
 outside of Argentina; in a formal sense, he used uncommon resources---e.g. wide
 use of dodecasyllable verses and original rhythms---. From a semantic
 perspective, he has some *really* memorable poems. For instance, the ending of a
