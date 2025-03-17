@@ -1,6 +1,6 @@
 ---
 title: A tier list of poets in the Spanish and English languages
-categories: Personal
+categories: [ Random ]
 ---
 
 > This is not necessarily a serious entry: I created it for a friend who became
