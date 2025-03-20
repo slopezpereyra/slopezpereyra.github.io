@@ -56,7 +56,7 @@ The fundamental issue with epistemological relativism, as well as with
 scepticism, is that it is strictly academic. Everybody acts as if some things
 were certainly true and some things were certainly false. The most radical
 relativist has rather strict notions of true and false, as well as of right and
-wrong, when he takes his char to the mechanic or goes to the hospital to mend a
+wrong, when he takes his car to the mechanic or goes to the hospital to mend a
 wound or treat an illness. Furthermore, the relativist or the sceptic do not
 fail to act as if their believes were true due to hypocrisy or lack of
 consequence: they fail to act in accordance to their philosophies because doing
