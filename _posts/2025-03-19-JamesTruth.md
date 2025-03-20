@@ -42,11 +42,10 @@ believing $lambda$"? If we follow James' theory, such question could only be
 resolved through reference to $B$'s believes, actions and experiences, and the
 sentence *does not imply* "$A$ is wrong in believing $\lambda$". This seems to
 entail the phrases "$\lambda$ is false" and $\lambda$ is true" lack any meaning,
-insofar as they lack reference to a subject. This, however, is not correct for
-all ideas: a good number of them can be independently false due to lacking
-internal coherence, or independently true due to their *general* practical
-bearing or fruitfulness. Ironically enough, epistemological relativism is an
-example of a belief which is *independently* false.
+insofar as they lack reference to a subject. This issue is only solved when
+$\lambda$ is an idea which cannot, under any circumstance, be fruitful,
+productive or coherent. Though there aren't many such ideas, epistemological
+relativism is one. 
 
 The fundamental issue with epistemological relativism, as well as with
 scepticism, is that it is strictly academic. Everybody acts as if some things
@@ -64,9 +63,18 @@ what kind of existence can endure without action? And what is belief but rule
 for action?
 
 But I digress. We must accept *at least* that we act as if things were true, and
-thus land again on questions arising from James' theory. ...
+thus land again on questions arising from James' theory. Any theory of truth
+which does not lead from "$A$ is right in believing $\lambda$" to "$B$ is wrong
+in not believing $\lambda$" is problematic. The fact that a subset of ideas is
+saved does not reduce the problem. Could one say Galileo and Bruno were wrong in
+their beliefs? Such beliefs were $(a)$ certainly inconsistent with facts as
+recognized in their times (this was accurately pointed out in Feyerabend's
+*Against method*) and $(b)$ pernicious to their life. Are the flames which
+extinguished Bruno's life a refutation of his theses? 
 
-
+Many examples such as these one come to mind. James' theory of truth is
+unsatisfactory. Necessary reference to both a subject and a certain (rather
+undefined) kind of utility makes reasonable debate almost impossible.
 
 
 
