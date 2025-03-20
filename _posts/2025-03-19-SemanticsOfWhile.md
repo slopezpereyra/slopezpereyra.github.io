@@ -4,7 +4,7 @@ categories: [Science, Personal]
 ---
 
 Intuitively speaking, the semantics of a `while` statement should satisfy an
-equation of the following form:
+equation of the following form: 
 
 ``` 
 [[while b do c]]σ = if [[b]]σ then ([[while b do c]])([[c]]σ) else σ
