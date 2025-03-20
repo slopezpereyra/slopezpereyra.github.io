@@ -74,7 +74,7 @@ in not believing $\lambda$" is problematic. The fact that a subset of ideas is
 saved does not reduce the problem. Could one say Galileo and Bruno were wrong in
 their beliefs? Such beliefs were $(a)$ certainly inconsistent with facts as
 recognized in their times (this was accurately pointed out in Feyerabend's
-*Against method*) and $(b)$ pernicious to their life. Are the flames which
+*Against method*) and $(b)$ pernicious to their lives. Are the flames which
 extinguished Bruno's life a refutation of his theses? 
 
 Many examples such as these one come to mind. James' theory of truth is
