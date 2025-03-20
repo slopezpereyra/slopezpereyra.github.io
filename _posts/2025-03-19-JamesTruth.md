@@ -77,7 +77,7 @@ recognized in their times (this was accurately pointed out in Feyerabend's
 *Against method*) and $(b)$ pernicious to their lives. Are the flames which
 extinguished Bruno's life a refutation of his theses? 
 
-Many examples such as these one come to mind. James' theory of truth is
+Many examples such as these ones come to mind. James' theory of truth is
 unsatisfactory. Necessary reference to both a subject and a certain (rather
 undefined) kind of utility makes reasonable debate almost impossible.
 
