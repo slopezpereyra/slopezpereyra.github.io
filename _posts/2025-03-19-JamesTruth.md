@@ -35,17 +35,22 @@ pre-existing collection of ideas the individual has and the demands which
 experience imposes upon them.) So far nothing problematic exists: in logics, for
 instance, $(a)$ different sets of axioms or $(b)$ different models may associate
 to a given formula $\varphi$ a different value, and the semantic of $\varphi$ is
-undefined except with regards to any such set or model. 
+undefined except with regards to any such set or model. However, the statement 
+"$\varphi$ is true under model $X$ but false under model $Y$" is true
+independently of all models, i.e. it is a meta-logical truth, and in fact the
+whole first order theory of types would make little sense if one could not make
+such a claim. 
 
-How could we determine the truth value of a sentence such as "$B$ is wrong in
-believing $lambda$"? If we follow James' theory, such question could only be
-resolved through reference to $B$'s believes, actions and experiences, and the
-sentence *does not imply* "$A$ is wrong in believing $\lambda$". This seems to
-entail the phrases "$\lambda$ is false" and $\lambda$ is true" lack any meaning,
-insofar as they lack reference to a subject. This issue is only solved when
-$\lambda$ is an idea which cannot, under any circumstance, be fruitful,
-productive or coherent. Though there aren't many such ideas, epistemological
-relativism is one. 
+Does James' notion of truth allow for, so to speak, meta-subjective evaluations
+of truth? If we assume his theory is correct, could we determine the truth value
+of a sentence such as "$B$ is wrong in believing $lambda$"? If he is right, such
+question could only be resolved through reference to $B$'s believes, actions and
+experiences, and the sentence *does not imply* "$A$ is wrong in believing
+$\lambda$". This seems to entail the phrases "$\lambda$ is false" and $\lambda$
+is true" lack any meaning, insofar as they lack reference to a subject. This
+issue is only solved when $\lambda$ is an idea which cannot, under any
+circumstance, be fruitful, productive or coherent. Though there aren't many such
+ideas, epistemological relativism is one. 
 
 The fundamental issue with epistemological relativism, as well as with
 scepticism, is that it is strictly academic. Everybody acts as if some things
