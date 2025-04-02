@@ -101,7 +101,7 @@ with
 $$
   F ~ f ~ \sigma = \begin{cases}
     f_{\bot}\Big([ x := x - 1, y:= y + x ]\sigma \Big) & 
-     \sigma x \neq 0 \\
+     \sigma x \neq 0 \\\\
     \sigma  & c.c.
   \end{cases}
 $$
@@ -115,9 +115,9 @@ $$
     \bot  & \sigma ~ x \neq 0
   \end{cases}, \\\\
     F(F \bot ) &= \sigma \mapsto \begin{cases}
-    \left[ \sigma \mid x := 0 \mid y := \sigma ~ y + 1 \right] & \sigma ~ x = 1\\\\ 
+    [ \sigma \mid x := 0 \mid y := \sigma ~ y + 1 ] & \sigma ~ x = 1\\\\ 
     \sigma & \sigma ~ x = 0 \\\\ 
-    \bot  & \sigma ~ x \not\in \left\{ 0, 1 \right\} 
+    \bot  & \sigma ~ x \not\in \\{ 0, 1 \\} 
   \end{cases}
 \end{align*}
 $$
@@ -182,7 +182,7 @@ $$
   \bigsqcup_{k \in \mathbb{N}} F^k ~ \bot  = \sigma \mapsto 
   \begin{cases}
     \left[ \sigma \mid x:=0 \mid y := \sigma ~ y + \sum_{i=0}^{\sigma ~ x} i
-    \right] & \sigma ~ x \geq 0 \\ 
+    \right] & \sigma ~ x \geq 0 \\\\ 
     \bot & c.c.
   \end{cases}
 \end{equation*}
