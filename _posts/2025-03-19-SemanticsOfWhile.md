@@ -15,7 +15,9 @@ Intuitively speaking, the semantics of a **while** statement should satisfy an
 equation of the following form: 
 
 $$
-[\textbf{while } b \textbf{ do } c] \sigma = \textbf{if } [b]\sigma \textbf{then } [\textbf{while } b \textbf{ do } c]([c]σ) \textbf{ else } σ
+[\textbf{while } b \textbf{ do } c] \sigma = \begin{cases} \textbf{while } b \textbf{ do } c]([c]σ) & [b]\sigma \\\\
+\sigma & \text{otherwise}
+\end{cases}
 $$
 
 where $[\cdot]: \Sigma \to \Sigma$ is the semantic function and $\sigma \in \Sigma$
@@ -47,7 +49,9 @@ from $D$ to $D$ into their least fixed-points.
 Since
 
 $$
-[\textbf{while } b \textbf{ do } c] \sigma = \textbf{if } [b]\sigma \textbf{then } [\textbf{while } b \textbf{ do } c]([c]σ) \textbf{ else } σ
+[\textbf{while } b \textbf{ do } c] \sigma = \begin{cases} \textbf{while } b \textbf{ do } c]([c]σ) & [b]\sigma \\\\
+\sigma & \text{otherwise}
+\end{cases}
 $$
 
 is a recursive definition, $\textbf{while } b \textbf{ do } c$ is a fixed point
