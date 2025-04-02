@@ -15,8 +15,7 @@ Intuitively speaking, the semantics of a **while** statement should satisfy an
 equation of the following form: 
 
 $$
-[\textbf{while } b \textbf{ do } c] \sigma = \textbf{if } [b]\sigma \textbf{
-then } [\textbf{while } b \textbf{ do } c]([c]σ) \textbf{ else } σ
+[\textbf{while } b \textbf{ do } c] \sigma = \textbf{if } [b]\sigma \textbf{then } [\textbf{while } b \textbf{ do } c]([c]σ) \textbf{ else } σ
 $$
 
 where $[\cdot]: \Sigma \to \Sigma$ is the semantic function and $\sigma \in \Sigma$
@@ -48,8 +47,7 @@ from $D$ to $D$ into their least fixed-points.
 Since
 
 $$
-[\textbf{while } b \textbf{ do } c] \sigma = \textbf{if } [b]\sigma \textbf{
-then } [\textbf{while } b \textbf{ do } c]([c]σ) \textbf{ else } σ
+[\textbf{while } b \textbf{ do } c] \sigma = \textbf{if } [b]\sigma \textbf{then } [\textbf{while } b \textbf{ do } c]([c]σ) \textbf{ else } σ
 $$
 
 is a recursive definition, $\textbf{while } b \textbf{ do } c$ is a fixed point
@@ -95,14 +93,14 @@ $$
 Using the least fixed-point theorem:
 
 $$
-  \llbracket \mathcal{W} \rrbracket = \bigsqcup_{i \in \mathbb{N}} F^i ~ \bot_{\Sigma \mapsto \Sigma_\bot }
+  [ \mathcal{W} ] = \bigsqcup_{i \in \mathbb{N}} F^i ~ \bot_{\Sigma \mapsto \Sigma_\bot }
 $$
 
 with 
 
 $$
   F ~ f ~ \sigma = \begin{cases}
-    f_{\bot}\Big(\llbracket x := x - 1, y:= y + x \rrbracket\sigma \Big) & 
+    f_{\bot}\Big([ x := x - 1, y:= y + x ]\sigma \Big) & 
      \sigma x \neq 0 \\
     \sigma  & c.c.
   \end{cases}
@@ -117,8 +115,7 @@ $$
     \bot  & \sigma ~ x \neq 0
   \end{cases}, \\\\
     F(F \bot ) &= \sigma \mapsto \begin{cases}
-    \left[ \sigma \mid x := 0 \mid y := \sigma ~ y + 1 \right] & \sigma ~ x = 1
-    \\\\ 
+    \left[ \sigma \mid x := 0 \mid y := \sigma ~ y + 1 \right] & \sigma ~ x = 1\\\\ 
     \sigma & \sigma ~ x = 0 \\\\ 
     \bot  & \sigma ~ x \not\in \left\{ 0, 1 \right\} 
   \end{cases}
@@ -132,8 +129,7 @@ $$
 \begin{equation*}
   F^k(\bot ) = \sigma \mapsto 
   \begin{cases}
-    \left[ \sigma \mid x:=0 \mid y := \sigma ~ y + \sum_{i=0}^{\sigma ~ x} i \right] & 0
-    \leq \sigma ~ x < k \\ 
+    \left[ \sigma \mid x:=0 \mid y := \sigma ~ y + \sum_{i=0}^{\sigma ~ x} i \right] & 0 \leq \sigma ~ x < k \\\\
     \bot  & c.c.
   \end{cases}
 \end{equation*}
@@ -148,31 +144,31 @@ $$
 \begin{align*}
   F^{k+1} ~ \bot 
   &= \sigma \mapsto \begin{cases}
-    F^k ~ \widetilde{ \sigma }  & \sigma ~ x \neq 0 \\ 
+    F^k ~ \widetilde{ \sigma }  & \sigma ~ x \neq 0 \\\\ 
     \sigma & \sigma ~ x = 0
-  \end{cases} \\
+  \end{cases} \\\\
   &= \sigma \mapsto \begin{cases}
     \left[ \widetilde{ \sigma } \mid x := 0 \mid y := \widetilde{ \sigma } ~ y +
     \sum_{i=0}^{\widetilde{ \sigma } ~x }\right] & \sigma ~ x \neq 0 \land 0
-    \leq \widetilde{ \sigma } ~ x < k \\ 
-    \bot  & \sigma ~ x \neq 0 \land \neg(0 \leq \widetilde{ \sigma } ~ x < k) \\ 
+    \leq \widetilde{ \sigma } ~ x < k \\\\ 
+    \bot  & \sigma ~ x \neq 0 \land \neg(0 \leq \widetilde{ \sigma } ~ x < k) \\\\ 
     \sigma & \sigma ~ x = 0
-  \end{cases} \\
+  \end{cases} \\\\
   &= \sigma \mapsto \begin{cases}
   \left[ \sigma \mid x := 0 \mid y := (\sigma ~ y + \sigma ~ x) + \sum_{i = 0}^{\sigma ~ x - 1}  \right] & \sigma ~ x \neq 0 \land 1 \leq
-\sigma ~ x < k + 1 \\ 
-  \bot & \sigma ~ x \neq 0 \land \neg (1 \leq \sigma ~ x < k + 1) \\ 
+\sigma ~ x < k + 1 \\\\ 
+  \bot & \sigma ~ x \neq 0 \land \neg (1 \leq \sigma ~ x < k + 1) \\\\ 
   \sigma & \sigma ~ x = 0 
-\end{cases}  \\ 
+\end{cases}  \\\\ 
   &=\sigma \mapsto \begin{cases}
   \left[ \sigma \mid x :=0 \mid y := \sigma ~ y + \sum_{i=0}^{\sigma ~ x}
-  i\right] & 1 \leq \sigma ~ x < k + 1  \\ 
-  \sigma & \sigma ~ x = 0 \\ 
+  i\right] & 1 \leq \sigma ~ x < k + 1  \\\\ 
+  \sigma & \sigma ~ x = 0 \\\\ 
   \bot & \sigma ~ x < 0 \lor  \sigma ~ x \geq k + 1
-\end{cases} \\ 
+\end{cases} \\\\ 
   &=\sigma \mapsto \begin{cases}
   \left[ \sigma \mid x :=0 \mid y := \sigma ~ y + \sum_{i=0}^{\sigma ~ x}
-  i\right] & 0 \leq \sigma ~ x < k + 1  \\ 
+  i\right] & 0 \leq \sigma ~ x < k + 1  \\\\ 
   \bot & ~ c.c.
 \end{cases}
 \end{align*}
