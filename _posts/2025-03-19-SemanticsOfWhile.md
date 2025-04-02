@@ -189,7 +189,7 @@ $$
 $$
 
 which exactly corresponds to the interpretation of the loop we gave in Python, 
-and in fact of any loop which adds to variable all numbers from $1$ to $x$.
+and in fact of any loop which adds to a variable $y$ all numbers from $1$ to anoterh variable $x$.
 
 
 
