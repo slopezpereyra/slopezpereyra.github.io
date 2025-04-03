@@ -15,7 +15,8 @@ Intuitively speaking, the semantics of a **while** statement should satisfy an
 equation of the following form: 
 
 $$
-[\textbf{while } b \textbf{ do } c] \sigma = \begin{cases} \textbf{while } b \textbf{ do } c([c]σ) & [b]\sigma \\\\
+[\textbf{while } b \textbf{ do } c] \sigma = \begin{cases} 
+\textbf{while } [b] \textbf{ do } [c]([c]σ) & [b]\sigma \\\\
 \sigma & \text{otherwise}
 \end{cases}
 $$
@@ -49,7 +50,8 @@ from $D$ to $D$ into their least fixed-points.
 Since
 
 $$
-[\textbf{while } b \textbf{ do } c] \sigma = \begin{cases} [\textbf{while } b \textbf{ do } c]([c]σ) & [b]\sigma \\\\
+[\textbf{while } b \textbf{ do } c] \sigma = \begin{cases} 
+\textbf{while } [b] \textbf{ do } [c]([c]σ) & [b]\sigma \\\\
 \sigma & \text{otherwise}
 \end{cases}
 $$
