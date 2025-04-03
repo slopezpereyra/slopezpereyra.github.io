@@ -8,7 +8,7 @@ categories: [Science, Personal]
 > processes. In particular, I show in this entry how (and why) we can use Monte
 > Carlo simulations  to approximate the value of $\pi$.
 
-We all know $\pi$ is the ration between a circumference's radius $r$ and length
+We all know $\pi$ is the ratio between a circumference's radius $r$ and length
 $l$. But $\pi$ is also the area within a unitary circle, i.e.
 
 $$
@@ -17,9 +17,7 @@ $$
 \end{equation*}
 $$
 
-where $\chi_S$ is the characteristic function of $S$. 
-
-If we let $X, Y$ be i.i.d. uniform in $(-1, 1)$ with density 
+where $\chi_S$ is the characteristic function of $S$. If we let $X, Y$ be i.i.d. uniform in $(-1, 1)$ with density 
 
 $$
 \begin{equation*}
@@ -110,7 +108,7 @@ red those which did not.
 ---
 
 <p align="center">
-    <img src="../Images/points_in_and_out.png" width="100%">
+    <img src="../Images/points_in_and_out.png" width="70%">
 </p>
 
 
@@ -123,7 +121,7 @@ estimating $\pi$:
 ---
 
 <p align="center">
-    <img src="../Images/montecarlo.gif" width="100%">
+    <img src="../Images/montecarlo.gif" width="70%">
 </p>
 
 
