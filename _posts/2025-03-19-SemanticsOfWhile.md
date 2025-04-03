@@ -21,7 +21,7 @@ $$
 \end{cases}
 $$
 
-where $[\cdot]: \Sigma \to \Sigma$ is the semantic function and $\sigma \in \Sigma$
+where $[\cdot]: \mathcal{L} \to \Sigma \to \Sigma$ is the semantic function and $\sigma \in \Sigma$
 is a state.
 
 
@@ -38,7 +38,14 @@ $$
 x = \bigsqcup_{n=0}^\infty f^n ( \bot )
 $$
 
-is the least fixed-point of $f$. The theorem is not hard to prove. If we define 
+is the least fixed-point of $f$. In other words, 
+
+$$
+f ~ \bot, f ~ (f ~ \bot), f ~ (f ~ (f ~ \bot)), \ldots
+$$
+
+is a chain in $D$ whose supremum is the least fixed-point of $f$. The theorem is
+surprisingly easy to prove. If we define 
 
 $$
 \Psi_D (f) = \sup_{n=0}^\infty f^n (\bot)
@@ -61,25 +68,33 @@ of $F : (\Sigma \to
 \Sigma_\bot) \to (\Sigma \to \Sigma_{\bot})$ defined as:
 
 $$
-F\Big(f(\sigma)\Big) = \textbf{if } [b] \sigma \textbf{ then }
-f_{\bot}( [c] \sigma) \textbf{ else } \sigma
+F ~ f ~ \sigma = \begin{cases}
+    f_{\bot} ~ [c] σ & [b] \\\\ 
+    \sigma & \text{otherwise}
+\end{cases}
 $$
 
+In other words, 
+
 where $f_{\bot}$ is the extension of $f$ (i.e. $f_\bot(x) = x$ if $x \neq \bot$,
-and $f(\bot)=\bot$). It can be proven that $F$ is continuous. The least fixed-point theorem ensures
-that the least-fixed point of $F$ exists and is $\Psi_{\Sigma \to \Sigma_{\bot}}(F)$,
-and then 
+and $f(\bot)=\bot$). It can be proven that $F$ is continuous. The least
+fixed-point theorem ensures that the least-fixed point of $F$ exists and is
+$\Psi_{\Sigma \to \Sigma_{\bot}}(F)$. One would intuitively expect that the
+least-fixed point would correspond to our intuitive understanding of the $\textbf{while}$
+statement, and this can in fact be proven when $b, c \in \mathcal{L}$ are given.
+
+In other words, whenever $b, c$ take particular values, one can show
 
 $$
 [\textbf{while } b \textbf{ do } c ] = \Psi_{\Sigma \to
 \Sigma_{\bot}} F
 $$
 
-Thus, given $b, c$,  $\textbf{while } b \textbf{ do } c$ has a well-defined mathematical semantic. As a trivial
-example, when $b$ is $\textbf{true}$ and $c$ is $\textbf{skip}$, $F$ is the
-identity function on $\Sigma \to \Sigma_\bot$, whose least fixed-point is the
-function mapping every state into $\bot$. But mapping every state into $\bot$ is
-precisely the expected meaning of $\textbf{while true do skip}$.
+As a trivial example, when $b$ is $\textbf{true}$ and $c$ is $\textbf{skip}$,
+$F$ is the identity function on $\Sigma \to \Sigma_\bot$, whose least
+fixed-point is the function mapping every state into $\bot$. But mapping every
+state into $\bot$ is precisely the expected meaning of $\textbf{while true do
+skip}$.
 
 A less trivial example is the summation to a variable $y$ of all numbers from $1$ t o a given $x$. In Python, this would look like this:
 
