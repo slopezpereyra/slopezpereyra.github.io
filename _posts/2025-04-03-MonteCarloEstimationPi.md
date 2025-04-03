@@ -3,7 +3,7 @@ title: Estimating π using Monte Carlo simulations
 categories: [Science, Personal]
 ---
 
-> Monte Carlo simulations are an interesting a peculiar thing, insofar as they
+> Monte Carlo simulations are an interesting and peculiar thing, insofar as they
 > allow us to approximate deterministic values through non-deterministic random
 > processes. In particular, I show in this entry how (and why) we can use Monte
 > Carlo simulations  to approximate the value of $\pi$.
