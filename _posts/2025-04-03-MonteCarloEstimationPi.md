@@ -1,11 +1,15 @@
 ---
-title: Estimating pi using Monte Carlo simulations
+title: Estimating π using Monte Carlo simulations
 categories: [Science, Personal]
 ---
 
+> Monte Carlo simulations are an interesting a peculiar thing, insofar as they
+> allow us to approximate deterministic values through non-deterministic random
+> processes. In particular, I show in this entry how (and why) we can use Monte
+> Carlo simulations  to approximate the value of $\pi$.
 
-Recall that the area of a circle with radius $r$ is $\pi r^2$. If we take $r =
-1$, then by this definition we have 
+We all know $\pi$ is the ration between a circumference's radius $r$ and length
+$l$. But $\pi$ is also the area within a unitary circle, i.e.
 
 $$
 \begin{equation*}
@@ -13,7 +17,7 @@ $$
 \end{equation*}
 $$
 
-where $\chi_S$ is the characteristic function of $S$.
+where $\chi_S$ is the characteristic function of $S$. 
 
 If we let $X, Y$ be i.i.d. uniform in $(-1, 1)$ with density 
 
@@ -42,7 +46,7 @@ $$
 \end{equation*}
 $$
 
-In consequence, 
+This entails that
 
 $$
 \begin{equation*}
@@ -51,7 +55,7 @@ $$
 \end{equation*}
 $$
 
-In consequence, we can generate $N$ pairs $(X_i, Y_i)$ with $X_i, Y_i \sim
+Thus, we can generate $N$ pairs $(X_i, Y_i)$ with $X_i, Y_i \sim
 \mathcal{U}(-1, 1)$ and estimate $\pi$ as 
 
 $$
@@ -61,9 +65,7 @@ $$
 $$
 
 In other words, $\pi$ is estimated by the proportion of pairs $(X, Y)$ which
-fall within the circle of radius $1$, multiplied by $4$. 
-
-In Julia,
+fall within the circle of radius $1$, multiplied by $4$. In Julia,
 
 ```julia
 function π_estimation(n_simulations::Integer)
@@ -103,14 +105,7 @@ scatter!(x, y, label="Points", xlabel="x", ylabel="y", title="Uniform points in 
 
 Here, `π_approximation` equaled $3.1288$, and the plot produced simply shows in
 blue the uniformly generated points which fell within the unit circle, and in
-red those which did not. Thus, one can have a visual intuition of the proportion
-of the number of blue dots with respect to the number of red dots, where
-(according to the theoretical result):
-
-$$
-\frac{4\cdot\#\text{blue dots}}{\#\text{red dots} + \#\text{blue dots}} \simeq \pi
-$$
-
+red those which did not. 
 
 ---
 
@@ -118,3 +113,18 @@ $$
     <img src="../Images/points_in_and_out.png" width="100%">
 </p>
 
+
+--- 
+
+I also produced an animation of the random process through which we are
+estimating $\pi$:
+
+
+---
+
+<p align="center">
+    <img src="../Images/montecarlo.gif" width="100%">
+</p>
+
+
+--- 
