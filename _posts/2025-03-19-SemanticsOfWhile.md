@@ -16,7 +16,7 @@ equation of the following form:
 
 $$
 [\textbf{while } b \textbf{ do } c] \sigma = \begin{cases} 
-\textbf{while } [b] \textbf{ do } [c] ([c]σ) & [b]\sigma \\\\
+\textbf{while } b \textbf{ do } c ([c]σ) & [b]\sigma \\\\
 \sigma & \text{otherwise}
 \end{cases}
 $$
