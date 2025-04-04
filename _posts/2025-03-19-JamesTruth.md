@@ -92,7 +92,7 @@ impossible.
 
 --- 
 
-[^1] Feyerabend's *Against method* provides a rich and interesting description
+[^1]: Feyerabend's *Against method* provides a rich and interesting description
 of how inconsistent the ideas of the scientific revolution truly were, and the
 manner in which some of these inconsistencies persevered through the centuries.
 
