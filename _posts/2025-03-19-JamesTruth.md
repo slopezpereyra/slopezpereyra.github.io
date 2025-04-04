@@ -36,7 +36,7 @@ experience imposes upon them.) So far nothing problematic exists: in logics, for
 instance, $(a)$ different sets of axioms or $(b)$ different models may associate
 to a given formula $\varphi$ a different value, and the semantic of $\varphi$ is
 undefined except with regards to any such set or model. However, the statement 
-"$\varphi$ is true under model $X$ but false under model $Y$" is true
+"$\varphi$ is true under model $X$ but false under model $Y$" is true (or false)
 independently of all models, i.e. it is a meta-logical truth, and in fact the
 whole first order theory of types would make little sense if one could not make
 such a claim. 
