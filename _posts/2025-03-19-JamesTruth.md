@@ -43,47 +43,58 @@ such a claim.
 
 Does James' notion of truth allow for, so to speak, meta-subjective evaluations
 of truth? If we assume his theory is correct, could we determine the truth value
-of a sentence such as "$B$ is wrong in believing $lambda$"? If he is right, such
+of a sentence such as "$B$ is wrong in believing $\lambda$"? If James is right, such
 question could only be resolved through reference to $B$'s believes, actions and
 experiences, and the sentence *does not imply* "$A$ is wrong in believing
 $\lambda$". This seems to entail the phrases "$\lambda$ is false" and $\lambda$
 is true" lack any meaning, insofar as they lack reference to a subject. This
 issue is only solved when $\lambda$ is an idea which cannot, under any
-circumstance, be fruitful, productive or coherent. Though there aren't many such
-ideas, epistemological relativism is one. 
+circumstance, be fruitful, productive or coherent. Such ideas are not many, but
+they do exist. We may take as an example epistemological relativism, only
+because this example emphasizes that interpreting James's theory as a form of
+that doctrine is wrong.
 
 The fundamental issue with epistemological relativism, as well as with
-scepticism, is that it is strictly academic. Everybody acts as if some things
-were certainly true and some things were certainly false. The most radical
-relativist has rather strict notions of true and false, as well as of right and
-wrong, when he takes his car to the mechanic or goes to the hospital to mend a
-wound or treat an illness. Furthermore, the relativist or the sceptic do not
-fail to act as if their believes were true due to hypocrisy or lack of
-consequence: they fail to act in accordance to their philosophies because doing
-so is contrary to life itself. If any given species, at some point in natural
-history, was not hard-wired to act as if certain things were *facts*; if a
-predetermined universe of truths was not embedded in their brains and expanded
-through experience, Darwinian evolution has surely erased every trace of it. For
-what kind of existence can endure without action? And what is belief but rule
-for action?
+scepticism, is that it is strictly academic. The pragmatist claim is simple:
+everybody acts as if some things were certainly true and some things were
+certainly false. The most radical relativist has rather strict notions of true
+and false, as well as of right and wrong, when he takes his car to the mechanic
+or goes to the hospital to mend a wound or treat an illness. Furthermore, the
+relativist or the sceptic do not fail to act as if their believes were true due
+to hypocrisy or lack of consequence: they fail to act in accordance to their
+philosophies because doing so is contrary to life itself. If any given species,
+at some point in natural history, was not hard-wired to act as if certain things
+were *facts*; if a predetermined universe of truths was not embedded in their
+brains, along with the capacity to expand this aprioristic universe through
+experience, Darwinian evolution has surely erased every trace of it. For what
+kind of existence can endure without action? And what is belief but rule for
+action?
 
 But I digress. We must accept *at least* that we act as if things were true, and
 thus land again on questions arising from James' theory. Any theory of truth
 which does not lead from "$A$ is right in believing $\lambda$" to "$B$ is wrong
-in not believing $\lambda$" is problematic. The fact that a subset of ideas is
-saved does not reduce the problem. Could one say Galileo and Bruno were wrong in
-their beliefs? Such beliefs were $(a)$ certainly inconsistent with facts as
-recognized in their times (this was accurately pointed out in Feyerabend's
-*Against method*) and $(b)$ pernicious to their lives. Are the flames which
-extinguished Bruno's life a refutation of his theses? 
+in not believing $\lambda$" is problematic. The fact that a subset of all ideas
+escapes this problem does not reduce it. Could one say Galileo and Bruno were
+wrong in their beliefs? Such beliefs were $(a)$ certainly inconsistent with
+facts as recognized in their times[^1] and $(b)$ pernicious to their lives. Are the
+flames which extinguished Bruno's life a refutation of his theses? 
 
 Many examples such as these ones come to mind. James' theory of truth is
-unsatisfactory. Necessary reference to both a subject and a certain (rather
-undefined) kind of utility makes reasonable debate almost impossible.
+unsatisfactory. Formal logics can allow itself to provide (boolean) semantics
+only via reference to a first order model. For instance, it is perfectly natural
+that a sentence $\varphi$ may hold within Euclid's axioms and not hold in a
+non-Euclidean system. In the world of *facts*, however, which is messier than
+the abstract world of mathematics, necessary reference to both a subject and a
+(though rather undefined) notion of utility makes reasonable debate almost
+impossible.
 
 
 
+--- 
 
+[^1] Feyerabend's *Against method* provides a rich and interesting description
+of how inconsistent the ideas of the scientific revolution truly were, and the
+manner in which some of these inconsistencies persevered through the centuries.
 
 
 
