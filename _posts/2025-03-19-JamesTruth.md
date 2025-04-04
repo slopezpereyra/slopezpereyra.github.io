@@ -25,7 +25,7 @@ for *truth*. Something is true if it "fits every part of life best and combines
 with the collectivity of experience's demands (...)".
 
 There is a special kind of relativism here, one which is not only different
-from traditional epistemological relativism (truth does not truly exist
+from traditional epistemological relativism (truth does not exist
 independently from a subject's perspective) but which in fact contradicts it
 entirely. It is of course conceivable that an idea $\lambda$ may be consistent
 and fruitful within the 'system' of person $A$ while being inconsistent or
