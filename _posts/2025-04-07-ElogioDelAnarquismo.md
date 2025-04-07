@@ -1,29 +1,12 @@
-\documentclass[a4paper, 12pt]{article}
-
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{textcomp}
-\usepackage{amssymb}
-\usepackage{newtxtext} \usepackage{newtxmath}
-\usepackage{amsmath, amssymb}
-\newtheorem{problem}{Problem}
-\newtheorem{example}{Example}
-\newtheorem{lemma}{Lemma}
-\newtheorem{theorem}{Theorem}
-\newtheorem{problem}{Problem}
-\newtheorem{example}{Example} \newtheorem{definition}{Definition}
-\newtheorem{lemma}{Lemma}
-\newtheorem{theorem}{Theorem}
-
-
-\begin{document}
+---
+title: Elogio del anarquismo 
+categories: [Personal, Política]
+---
 
 Hace pocos días, el gobierno de Milei echó por tierra un monumento a Osvaldo
 Bayer en Santa Cruz. Bayer, un socialista libertario, documentó los eventos de
 la Patagonia Trágica; eventos que, irónicamente, se vuelven a recordar ahora
 por la profanación del monumento. 
-
-~
 
 La indignación es la respuesta inmediata, pero no es necesariamente la más
 inteligente. La Patagonia Trágica evidencia no sólo la violencia con que se
@@ -32,8 +15,6 @@ tuvo aquel ideal tan sólo un siglo atrás. En vez de estancarnos en la bronca,
 podemos hacer de todo esto una oportunidad para recordar el singular valor del
 anarquismo, el mismo valor que Bayer admiró toda su vida.
 
-~
-
 El anarquismo, por su riqueza y su naturaleza anti-dogmática, es imposible de
 definir. Comprende una variada y amplia tradición intelectual que retrocede a la
 ilustración y al liberalismo clásico. Comprende diversos movimientos obreros y
@@ -41,12 +22,9 @@ sindicales nunca idénticos entre sí, como el extinto movimiento anarquista
 argentino, el socialismo libertario en España, y el anarco-sindicalismo
 norteamericano. Comprende una filosofía de vida, una postura clara, pero no
 dogmática, respecto de qué constituye una vida digna y qué valores son
-fundamentales para la felicidad del género humano. La frase \textit{soy
-anarquista} implica una inmensa variedad de cosas, pero no es del todo ninguna
+fundamentales para la felicidad del género humano. La frase *soy
+anarquista* implica una inmensa variedad de cosas, pero no es del todo ninguna
 de ellas.
-
-
-~ 
 
 Si a principios del siglo veinte los anarquistas eran (correctamente)
 considerados un peligro, y el movimiento anarquista era temido y perseguido, los
@@ -55,84 +33,69 @@ desestimados como sectarios e impotentes. Por lo menos, esto es así en
 Argentina, donde la historia del movimiento obrero anterior a 1946 fue borrada
 por el peronismo a fuerza de sangre, censura y propaganda.
 
-~
-
-Sin embargo, considero que el \textit{core} del pensamiento anarquista es
+Sin embargo, considero que el *core* del pensamiento anarquista es
 extremadamente valioso, que ser anarquista no implica ser incapaz de
 pragmatismo, y que todos debiéramos ser (e incluso somos) un poco más
 anarquistas de lo que pensamos. Sobran ejemplos de anarquistas de principios del
 siglo pasado cuyas vidas son la antítesis de la impotencia, y tampoco faltan
-ejemplos en el mundo contemporáneo. Considérese, \textit{v.g.}, a Chomsky, cuya
+ejemplos en el mundo contemporáneo. Considérese, *v.g.*, a Chomsky, cuya
 actividad política fue vasta, intensa, y guiada por un espíritu pragmático y
 serio. En verdad, la idea de que esta o aquella forma de socialismo carecen
 inherentemente de pragmatismo es simple propaganda. Si el socialismo, en
 cualquiera de sus formas, no fuese capaz de organizarse, ¿por qué fue (y sigue
 siendo) necesario destinar tantos recursos a evitar que lo haga?
 
-~
-
-Una buena síntesis de lo que el anarquismo \textit{no} es la encontramos en uno
+Una buena síntesis de lo que el anarquismo *no* es la encontramos en uno
 de sus mejores exponentes, Rudolf Rocker:
 
+>Anarchism is no patent solution for all human problems,
+>no Utopia of a perfect social order, as it has so often been
+>called, since on principle it rejects all absolute schemes
+>and concepts. It does not believe in any absolute
+>truth, or in definite final goals for human development
+>
+>[El anarquismo no es una solución patente a todos los problemas humanos, 
+>ni la utopía de un orden social perfecto, como frecuentemente se lo ha llamado, 
+>pues rechaza en principio todos los esquemas y conceptos absolutos. No cree en
+>ninguna verdad absoluta, ni en objetivos definitivos para el desarrollo humano.]
 
-\begin{quote}
-
-Anarchism is no patent solution for all human problems,
-no Utopia of a perfect social order, as it has so often been
-called, since on principle it rejects all absolute schemes
-and concepts. It does not believe in any absolute
-truth, or in definite final goals for human development
-
-[El anarquismo no es una solución patente a todos los problemas humanos, 
-ni la utopía de un orden social perfecto, como frecuentemente se lo ha llamado, 
-pues rechaza en principio todos los esquemas y conceptos absolutos. No cree en
-ninguna verdad absoluta, ni en objetivos definitivos para el desarrollo humano.]
-
-\end{quote}
-
-Al rechazar \textit{en principio} todo esquema absoluto, necesariamente debe
+Al rechazar *en principio* todo esquema absoluto, necesariamente debe
 considerarse opuesto al personalismo que tan lamentablemente contamina el
 pensamiento político argentino. Debe abstenerse de dar una receta universal
 respecto a cómo resolver los problemas políticos, y considerar cada evento de la
 historia de manera relativa:
 
-\begin{quote}
-Anarchism recognizes only the relative significance of
-ideas, institutions, and social forms. It is, therefore,
-not a fixed, self-enclosed social system, but rather a
-definite trend in the historic development of mankind,
-which, in contrast with the intellectual guardianship of
-all clerical and governmental institutions, strives for the
-free unhindered unfolding of all the individual and social
-forces in life. 
-
-[El anarquismo reconoce sólo la significancia relativa de las ideas,
-instituciones, y formas sociales. Es, por lo tanto, no un sistema social 
-cerrado, sino más bien una corriente definida en el desarrollo histórico de 
-la humanidad que, en contraste con la tutela intelectual de todas las
-instituciones clericales y gubernamentales, lucha por el desenvolvimiento 
-libre e inobstaculizado de las fuerzas sociales e individuales de la vida.]
-\end{quote}
+>Anarchism recognizes only the relative significance of
+>ideas, institutions, and social forms. It is, therefore,
+>not a fixed, self-enclosed social system, but rather a
+>definite trend in the historic development of mankind,
+>which, in contrast with the intellectual guardianship of
+>all clerical and governmental institutions, strives for the
+>free unhindered unfolding of all the individual and social
+>forces in life. 
+>
+>[El anarquismo reconoce sólo la significancia relativa de las ideas,
+>instituciones, y formas sociales. Es, por lo tanto, no un sistema social 
+>cerrado, sino más bien una corriente definida en el desarrollo histórico de 
+>la humanidad que, en contraste con la tutela intelectual de todas las
+>instituciones clericales y gubernamentales, lucha por el desenvolvimiento 
+>libre e inobstaculizado de las fuerzas sociales e individuales de la vida.]
 
 En este sentido, el anarquismo es una expresión pura de dos inclinaciones
 intelectuales que considero fundamentales: el pragmatismo y el anti-dogmatismo.
 Para un anarquista, es imposible adorar a un líder, un dogma, o abrazar un
-determinismo puro. La pregunta fundamental es \textit{cuáles son los hechos};
+determinismo puro. La pregunta fundamental es *cuáles son los hechos*;
 sólo a partir de un análisis lo más objetivo posible de ellos puede desprenderse
 toda praxis. En consecuencia, un anarquista consecuente siempre está dispuesto a
 cambiar de opinión y no entretiene certezas absolutas.
 
-~ 
-
 En lo que concierne a cuestiones de principio, es inevitable establecer algunos
 de manera axiomática. Entre ellos, que la libertad individual y colectiva son el
-máximo valor; que toda autoridad carga con el \textit{onus probandi} de
+máximo valor; que toda autoridad carga con el *onus probandi* de
 justificarse, y debe ser desmantelada si no puede hacerlo; que el uso razonable
 de las fuerzas productivas y tecnológicas es el mejoramiento del estado
-\textit{general} de las cosas, y en consecuencia deben ser puestas al servicio
+*general* de las cosas, y en consecuencia deben ser puestas al servicio
 del bien común.
-
-~
 
 En la medida en que el anarquismo comprenda un amor irrestricto por la libertad,
 individual y colectiva, un anarquista consecuente no puede ni debe negociar con
@@ -143,8 +106,6 @@ al liberalismo clásico, es un principio general. No puede ni debe restringirse
 sólo a una u otra forma de concentración. En otras palabras, oponerse al Estado
 y doblegarse anter el capital privado es una inconsistencia; oponerse al capital
 privado sin cuestionar al Estado también. 
-
-~
 
 Lo antedicho es trivial, pero en los tiempos que corren es importante aclararlo.
 En Argentina abunda una mutación aberrante y fraudulenta del "amor a la
@@ -158,36 +119,25 @@ menos un mínimo grado de influencia sobre él. El capital privado, por el
 contrario, opera de manera arbitraria e inescrutable para el público, y pretende
 ser impermeable a todo tipo de influencia por parte de la población.
 
-~
-
 Considero, y esta ha sido la postura tradicional, que un anarquismo consecuente
 no puede ser individualista. Bertrand Russell, en su último mensaje público
 antes de morir, dio un argumento razonable para oponerse a toda forma de
 agresión y expansionismo. El argumento es simplemente que
 
-
-\small
-\begin{quote}
-
-every expansion is an experiment to discover how much more aggression the world
-will tolerate.
-
-[toda expansión es un experimento para descubrir cuánta agresión más el mundo 
-está dispuesto a tolerar.]
-
-\end{quote}
-\normalsize
+>every expansion is an experiment to discover how much more aggression the world
+>will tolerate.
+>
+>[toda expansión es un experimento para descubrir cuánta agresión más el mundo 
+>está dispuesto a tolerar.]
 
 Debería resultarnos obvio, como lo era para Russell, que la admisión de una
 injusticia incentiva la proliferación de otras. Análogamente, si una sola
 persona no es libre, la libertad de todas es más insegura. Por esta razón,
-además de las cuestiones de principio, es deseable \textit{en la práctica} que
+además de las cuestiones de principio, es deseable *en la práctica* que
 todos gocemos de la misma libertad. Aunque en un marco de tiempo limitado
 parezca que un privilegiado, gozando de libertades derivadas de la privación de
 otros, se beneficia, en el largo plazo las mismas condiciones que lo privilegian
 vuelven su libertad insegura e inestable.
-
-~ 
 
 En lo que respecta al uso político de la violencia, el anarquismo es variado.
 Las corrientes clásicas han sido revolucionarias a la vez que se opusieron al
@@ -198,18 +148,16 @@ tuvieron un innegable tinte terrorista como consecuencia del error, de la
 naturaleza torpe y cruel que es inherente a la violencia. Por ejemplo, Osvaldo
 Bayer dice del famoso atentado de Di Giovanni al consulado italiano:
 
-\begin{quote}
-  ¿Y si la bomba de Di Giovanni hubiera explotado en el escritorio del cónsul
-  Cappani matando al carnicero de Florencia y al embajador de Mussolini, nada
-  más? ¿Era distinta entonces la violencia? (...)
-
-  El problema era la violencia en sí. Una vez que se ha optado por ella no se
-  sabe jamás si se pueden hacer acciones limpias y sucias. Por supuesto que hay
-  diferencias. No es lo mismo ir a matar un verdugo a su guarida que arrojar una
-  bomba indiscriminadamente en un mercado o en un café o en una estación de
-  ferrocarril atestada de público. ¿Pero acaso el consulado facista era un lugar
-  inocente?
-\end{quote}
+>  ¿Y si la bomba de Di Giovanni hubiera explotado en el escritorio del cónsul
+>  Cappani matando al carnicero de Florencia y al embajador de Mussolini, nada
+>  más? ¿Era distinta entonces la violencia? (...)
+>
+>  El problema era la violencia en sí. Una vez que se ha optado por ella no se
+>  sabe jamás si se pueden hacer acciones limpias y sucias. Por supuesto que hay
+>  diferencias. No es lo mismo ir a matar un verdugo a su guarida que arrojar una
+>  bomba indiscriminadamente en un mercado o en un café o en una estación de
+>  ferrocarril atestada de público. ¿Pero acaso el consulado facista era un lugar
+>  inocente?
 
 Por otra parte, López Arango y Abad de Santillán, los dos voceros del anarquismo
 argentino, tacharon los actos de Di Giovanni como propios de la "mentalidad
@@ -217,8 +165,6 @@ inclinada a la violencia extrema y bestial" que el fascismo había traído,
 reclamando que el anarquismo oponía al fascismo "una mentalidad
 ética superadora" y buscaba "resistir el contagio del fascismo con el arma
 invencible de una más elevada concepción de la vida".
-
-~
 
 Su naturaleza indomable, aleatoria y trágica (con todo el peso griego de la
 palabra), su inherente hamartía (ἁμαρτία), es un argumento sólido para oponerse
@@ -233,29 +179,21 @@ resistencia pacífica y organizada, y el mejoramiento del sistema por vías
 institucionales, aunque lento y dificultoso, tienen más probabilidades de
 victoria.[^1]
 
-~
-
-
-~ 
-
 En lo que toca a nuestra vida individual, considerada al menos de manera
 heurística como separada de los demás, el anarquismo también ofrece una
 perspectiva enriquecedora. La desarrollé con algo de detalle en mi entrada
-\textit{On individuality}, y más someramente en \textit{On free love}. Prefiero
-no repetirme: allí está dicho lo poco que sé decir al respecto. Aquí, prefiero
-referir el precioso resumen de Bakunin:
+[*On individuality*](https://slopezpereyra.github.io/2024-01-24-OnIndividuality/), 
+y más someramente en [*On free love and sexual freedom*](https://slopezpereyra.github.io/2025-02-11-FreeLove/). Prefiero
+no repetirme: allí está dicho lo poco que sé decir al respecto. Aquí, me limito
+a repetir el precioso resumen de Bakunin:
 
-\begin{quote}
-  La libertad del hombre consiste sólo en esto: que ha de obedecer leyes
-  naturales porque él mismo las ha reconocido como tales, y no porque han sido
-  impuestas por alguna voluntad externa, humana o divina, colectiva o
-  individual.
-\end{quote}
+>  La libertad del hombre consiste sólo en esto: que ha de obedecer leyes
+>  naturales porque él mismo las ha reconocido como tales, y no porque han sido
+>  impuestas por alguna voluntad externa, humana o divina, colectiva o
+>  individual.
 
-El párrafo no es un \textit{slogan}: invita a una reflexión seria que puede, y
-me atrevo decir \textit{debe} llevarnos a cuestionarlo todo.
-
-~ 
+El párrafo no es un slogan: invita a una reflexión seria que puede, y
+me atrevo decir *debe* llevarnos a cuestionarlo todo.
 
 Desearía que el anarquismo sea para todos lo que ha sido para mí: una (tal vez
 la única) definición que no limita, sino enriquece; una promesa de
@@ -264,6 +202,8 @@ combatir todas las fuerzas que constantemente invitan a la inautenticidad y la
 apatía. Ante todo, es una postura política que, sin impedirnos operar con
 flexibilidad y pragmatismo en la realidad que nos toca, tampoco renuncia a un
 compromiso fundamental con los valores más elementales para la dignidad humana.
+
+---
 
 
 [^1]: Las razones dadas no son de principio. En el plano de los ideales no
@@ -274,13 +214,6 @@ tenido éxito, no lo consideraría un mal. (Si estos asesinatos resolvieron o
 hubieran resulto una cuestión de fondo es una pregunta completamente distinta.)
 Pero un argumento práctico es a mi juicio superior a uno de principio, y por lo
 tanto debe saldarse la cuestión.
-
-
-
-
-
-
-\end{document}
 
 
 

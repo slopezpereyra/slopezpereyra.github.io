@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  3 APR 2025 22:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  7 APR 2025 18:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -426,31 +426,217 @@ LaTeX Font Info:    ... okay on input line 19.
 LaTeX Info: Command `\dddot' is already robust on input line 19.
 LaTeX Info: Command `\ddddot' is already robust on input line 19.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 12.0pt on input line 21.
+(Font)              scaled to size 12.0pt on input line 45.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}]
-LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 12.0pt on input line 129.
- [2] [3] (./Anarchism.aux)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}] [2]
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 10.95pt on input line 169.
+ [3]
+
+./Anarchism.tex:224: LaTeX Error: Unicode character ἁ (U+1F01)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.224 palabra), su inherente hamartía (ἁ
+                                           μαρτία), es un argumento s�...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./Anarchism.tex:224: LaTeX Error: Unicode character μ (U+03BC)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.224 palabra), su inherente hamartía (ἁμ
+                                             αρτία), es un argumento s�...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./Anarchism.tex:224: LaTeX Error: Unicode character α (U+03B1)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.224 palabra), su inherente hamartía (ἁμα
+                                               ρτία), es un argumento s�...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./Anarchism.tex:224: LaTeX Error: Unicode character ρ (U+03C1)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.224 palabra), su inherente hamartía (ἁμαρ
+                                                 τία), es un argumento s�...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./Anarchism.tex:224: LaTeX Error: Unicode character τ (U+03C4)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.224 ...bra), su inherente hamartía (ἁμαρτ
+                                                  ία), es un argumento só...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./Anarchism.tex:224: LaTeX Error: Unicode character ί (U+03AF)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.224 ...a), su inherente hamartía (ἁμαρτί
+                                                  α), es un argumento sóli...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./Anarchism.tex:224: LaTeX Error: Unicode character α (U+03B1)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.224 ..., su inherente hamartía (ἁμαρτία
+                                                  ), es un argumento sólido...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+./Anarchism.tex:234: Missing $ inserted.
+<inserted text> 
+                $
+l.234 victoria.[^
+                 1]
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+LaTeX Font Info:    Trying to load font information for OT1+minntx on input line 234.
+(/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1minntx.fd
+File: ot1minntx.fd 2023/09/09 v1.1 font definition file for OT1/minntx
+)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 234.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 234.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 234.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxmia.fd
+File: untxmia.fd 2018/04/14 Fontinst v1.933 font definitions for U/ntxmia.
+)
+LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 234.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsym.fd
+File: untxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/ntxsym.
+)
+LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 234.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsyc.fd
+File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
+)
+./Anarchism.tex:235: Missing $ inserted.
+<inserted text> 
+                $
+l.235 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+[4]
+./Anarchism.tex:269: Missing $ inserted.
+<inserted text> 
+                $
+l.269 [^
+        1]: Las razones dadas no son de principio. En el plano de los ideale...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 271.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 271.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 272.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 273.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 273.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 274.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 275.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 276.
+
+./Anarchism.tex:277: Missing $ inserted.
+<inserted text> 
+                $
+l.277 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no � in font ntx-Regular-tlf-ot1!
+Missing character: There is no � in font ntx-Regular-tlf-ot1!
+Missing character: There is no � in font ntx-Regular-tlf-ot1!
+Missing character: There is no � in font ntx-Regular-tlf-ot1!
+Missing character: There is no � in font ntx-Regular-tlf-ot1!
+Missing character: There is no � in font ntx-Regular-tlf-ot1!
+Missing character: There is no � in font ntx-Regular-tlf-ot1!
+Missing character: There is no � in font ntx-Regular-tlf-ot1!
+
+Overfull \hbox (2338.23822pt too wide) in paragraph at lines 269--277
+[]\T1/ntxtlf/m/n/12 [$[]\LMS/ntxsy/m/n/12 � \OT1/minntx/m/n/12 : \OML/ntxmi/m/it/12 Lasrazonesdadasnosondeprincipio:Enelplanodelosidealesnoconsideroquetodaformadeviolenciaseainjustificada:Porejemplo; elajusticiamientodelGeneralFalcnporSimnRadowitzkyfue; amijuicio; correcto\OT1/minntx/m/n/12 ; \OML/ntxmi/m/it/12 siunodelosmltiplesintentosdeasesinatocontraMussolinihubieratenidoxito; noloconsideraraunmal:\LMS/ntxsy/m/n/12 �\OML/ntxmi/m/it/12 Siestosasesinatosresolvieronohubieranresultounacuestindefondoesunapreguntacompletamentedistinta:\LMS/ntxsy/m/n/12 �\OML/ntxmi/m/it/12 Perounargumentoprcticoesamijuiciosuperioraunodeprincipio; yporlotantodebesaldarselacuestin:$ 
+ []
+
+[5{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}] (./Anarchism.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 6545 strings out of 474222
- 88486 string characters out of 5748733
- 1930975 words of memory out of 5000000
- 28741 multiletter control sequences out of 15000+600000
- 567736 words of font info for 41 fonts, out of 8000000 for 9000
+ 6700 strings out of 474222
+ 91173 string characters out of 5748733
+ 1931975 words of memory out of 5000000
+ 28856 multiletter control sequences out of 15000+600000
+ 584542 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,5n,93p,330b,179s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on Anarchism.pdf (3 pages, 102885 bytes).
+ 80i,5n,93p,330b,114s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
+Output written on Anarchism.pdf (5 pages, 102919 bytes).
 PDF statistics:
- 30 PDF objects out of 1000 (max. 8388607)
- 18 compressed objects within 1 object stream
+ 45 PDF objects out of 1000 (max. 8388607)
+ 28 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
