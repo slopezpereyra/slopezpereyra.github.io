@@ -9,7 +9,7 @@ la Patagonia Trágica; eventos que, irónicamente, se vuelven a recordar ahora
 por la profanación del monumento. 
 
 <p align="center">
-    <img src="../Images/bayer.jpg" width="85%" style="border: 3px solid #231709;">
+    <img src="../Images/bayer.jpg" width="55%" style="border: 1px solid #231709;">
 </p>
 
 
@@ -165,7 +165,7 @@ Bayer dice del famoso atentado de Di Giovanni al consulado italiano:
 >  inocente?
 
 <figure style="text-align: center;">
-    <img src="../Images/severinocorte.jpg" width="85%" style="border: 3px solid #231709;">
+    <img src="../Images/severinocorte.jpg" width="55%" style="border: 1px solid #231709;">
     <figcaption>Severino Di Giovanni en la corte</figcaption>
 </figure>
 
