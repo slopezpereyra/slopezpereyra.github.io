@@ -110,7 +110,7 @@ privado sin cuestionar al Estado también.
 Lo antedicho es trivial, pero en los tiempos que corren es importante aclararlo.
 En Argentina abunda una mutación aberrante y fraudulenta del "amor a la
 libertad". Se entiende por esto una ira patética contra el Estado, y además no
-contra sus aspectos opresivos ---que, por el contrario, quieren robustecerse--- sino
+contra sus aspectos opresivos —que, por el contrario, quieren robustecerse— sino
 contra su contingente rol de redistribuidor de la riqueza. Las jubilaciones, las
 universidades y los hospitales deben deben ser escuálidos e invisibles; la SIDE,
 la policía y el ejército, presentes y mórbidamente orondos. El Estado puede ser,
