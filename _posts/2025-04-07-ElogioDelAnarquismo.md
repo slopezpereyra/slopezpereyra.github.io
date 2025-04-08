@@ -102,11 +102,14 @@ de las fuerzas productivas y tecnológicas es el mejoramiento del estado
 *general* de las cosas, y en consecuencia deben ser puestas al servicio
 del bien común.
 
-En efecto, pese a ser un lugar común, es imposible no observar la absurda
-irracionalidad del sistema productivo. Esta tendencia ya estaba marcada en el
-siglo $\text{XIX}$, como señaló Kropotkin en *La conquista del pan*:
+El carácter anti-capitalista del anarquismo se desprende de todos estos
+principios, pero el último merece un comentario adicional por dirigir nuestra
+atención a la forma *concreta* que toma la organización de la economía. En
+efecto, la absurda irracionalidad del sistema productivo es un lugar común en el
+socialismo, y un hecho patente ante la más mínima observación. En *La conquista
+del pan*, Kropotkin nos dice:
 
-> Es imposible dimensionar en figuras cuánta riqueza es restringida
+> Es imposible dimensionar en cifras cuánta riqueza es restringida
 > indirectamente, cuánta energía es desperdiciada, que hubiera podido servir
 > para producir, y sobre todo para preparar la maquinaria necesaria para la
 > producción. (...) Pero por sobre todas las cosas debemos considerar todo el
@@ -122,24 +125,25 @@ siglo $\text{XIX}$, como señaló Kropotkin en *La conquista del pan*:
 > falta a dos tercios de la población.
 
 
-Esta tendencia no ha cambiado en absoluto. El caso más ejemplar en nuestro
-tiempo es el desarrollo de la inteligencia artificial, donde la inmensa
-proporción de los recursos son destinados o bien a tecnologías relativamente
-inútiles, o bien a la automatización de los sitemas de vigilancia y control. Si
-uno acepta que el uso y la distribución racional de los recursos se corresponde
-con el mejoramiento, en la mayor medida posible, de la calidad de vida de la
-mayor cantidad posible de individuos, la descabellada irracionalidad del sistema
+Esta tendencia no ha cambiado en absoluto. Un caso paradigmático en nuestro
+tiempo es el desarrollo de la inteligencia artificial, cuyo desarrollo es
+patentemente dirigido por los intereses del poder concentrado. Los recursos de
+este rubro son destinados o bien a productos inútiles para el bien común o
+directamente perniciosos, como el reconocimiento facial. Si uno acepta que el
+uso y la distribución racional de los recursos se corresponde con el
+mejoramiento, en la mayor medida posible, de la calidad de vida de la mayor
+cantidad posible de individuos, la descabellada irracionalidad del sistema
 productivo actual se vuelve desesperante. 
 
-En la medida en que el anarquismo comprenda un amor irrestricto por la libertad,
-individual y colectiva, un anarquista consecuente no puede ni debe negociar con
-ninguna forma de tiranía. Esto es una terquedad justificada: o bien la política
-puede hacerse sin recurrir a la tiranía, o no debe hacerse en absoluto. Es
-importante notar que la oposición al poder concentrado, un ideal que retrocede
-al liberalismo clásico, es un principio general. No puede ni debe restringirse
-sólo a una u otra forma de concentración. En otras palabras, oponerse al Estado
-y doblegarse anter el capital privado es una inconsistencia; oponerse al capital
-privado sin cuestionar al Estado también. 
+Pero el anti-capitalismo no se deduce sólamente de este principio, sino además
+de un valor que retrocede a la ilustración y es esencial al anarquismo: la
+oposición radical a toda forma de poder concentrado. Un anarquista consecuente
+no puede ni debe negociar con ninguna forma de tiranía. Esto es una terquedad
+justificada: o bien la política puede hacerse sin recurrir a la tiranía, o no
+debe hacerse en absoluto. Y es importante notar que este principio es *general*,
+no puede ni debe restringirse a una u otra forma de concentración de poder. En
+otras palabras, oponerse al Estado y doblegarse anter el capital privado es una
+inconsistencia; oponerse al capital privado sin cuestionar al Estado también. 
 
 Lo antedicho es trivial, pero en los tiempos que corren es importante aclararlo.
 En Argentina abunda una mutación aberrante y fraudulenta del "amor a la
