@@ -9,14 +9,14 @@ la Patagonia Trágica; eventos que, irónicamente, se vuelven a recordar ahora
 por la profanación del monumento. 
 
 <p align="center">
-    <img src="../Images/bayer.jpg" width="55%" style="border: 1px solid #231709;">
+    <img src="../Images/bayer.jpg" width="35%" style="border: 1px solid #231709;">
 </p>
 
 
 La indignación es la respuesta inmediata, pero no es necesariamente la más
 inteligente. La Patagonia Trágica evidencia no sólo la violencia con que se
-exterminó al anarquismo argentino, sino también la vida exuberante y agitada que
-tuvo aquel ideal tan sólo un siglo atrás. En vez de estancarnos en la bronca,
+exterminó al anarquismo argentino, sino también la vida exuberante y agitada de
+aquel ideal tan sólo un siglo atrás. En vez de estancarnos en la bronca,
 podemos hacer de todo esto una oportunidad para recordar el singular valor del
 anarquismo, el mismo valor que Bayer admiró toda su vida.
 
@@ -101,6 +101,35 @@ justificarse, y debe ser desmantelada si no puede hacerlo; que el uso razonable
 de las fuerzas productivas y tecnológicas es el mejoramiento del estado
 *general* de las cosas, y en consecuencia deben ser puestas al servicio
 del bien común.
+
+En efecto, pese a ser un lugar común, es imposible no observar la absurda
+irracionalidad del sistema productivo. Esta tendencia ya estaba marcada en el
+siglo $\text{XIX}$, como señaló Kropotkin en *La conquista del pan*:
+
+> Es imposible dimensionar en figuras cuánta riqueza es restringida
+> indirectamente, cuánta energía es desperdiciada, que hubiera podido servir
+> para producir, y sobre todo para preparar la maquinaria necesaria para la
+> producción. (...) Pero por sobre todas las cosas debemos considerar todo el
+> trabajo que se gasta en puro desperdicio, en mantener los establos, las
+> perreras y la servidumbre doméstica de los ricos, por ejemplo; en consentir los
+> caprichos de la sociedad y los gustos depravados de mafiosos elegantes;
+> forzando al consumidor por un lado a comprar lo que no necesita, o
+> imponiéndole un artículo inferior por vías del bombo publicitario, y
+> produciendo por otro lado bienes que son perniciosos para él, pero redituables
+> para el productor. Cuanto es desperdiciado de este modo sería suficiente para
+> duplicar nuestra riqueza real, o llenar los molinos y las industrias con
+> tantas máquinas que pronto rebosarían los bazares con todo lo que le hace
+> falta a dos tercios de la población.
+
+
+Esta tendencia no ha cambiado en absoluto. El caso más ejemplar en nuestro
+tiempo es el desarrollo de la inteligencia artificial, donde la inmensa
+proporción de los recursos son destinados o bien a tecnologías relativamente
+inútiles, o bien a la automatización de los sitemas de vigilancia y control. Si
+uno acepta que el uso y la distribución racional de los recursos se corresponde
+con el mejoramiento, en la mayor medida posible, de la calidad de vida de la
+mayor cantidad posible de individuos, la descabellada irracionalidad del sistema
+productivo actual se vuelve desesperante. 
 
 En la medida en que el anarquismo comprenda un amor irrestricto por la libertad,
 individual y colectiva, un anarquista consecuente no puede ni debe negociar con
