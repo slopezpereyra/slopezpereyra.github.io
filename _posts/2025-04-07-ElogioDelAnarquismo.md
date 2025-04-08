@@ -203,10 +203,10 @@ a repetir el precioso resumen de Bakunin:
 >  impuestas por alguna voluntad externa, humana o divina, colectiva o
 >  individual.
 
-El párrafo no es un slogan: invita a una reflexión seria que puede, y
+La cita no es un slogan: invita a una reflexión seria que puede, y
 me atrevo decir *debe* llevarnos a cuestionarlo todo.
 
-Desearía que el anarquismo sea para todos lo que ha sido para mí: una (tal vez
+Desearía que el anarquismo fuera para todos lo que ha sido para mí: una (tal vez
 la única) definición que no limita, sino enriquece; una promesa de
 abandonar, hasta donde sea posible, la frivolidad y el egoísmo; un arma para
 combatir todas las fuerzas que constantemente invitan a la inautenticidad y la
