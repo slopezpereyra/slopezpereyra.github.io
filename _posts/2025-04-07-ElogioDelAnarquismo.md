@@ -126,9 +126,9 @@ del pan*, Kropotkin nos dice:
 
 
 Esta tendencia no ha cambiado en absoluto. Un caso paradigmático en nuestro
-tiempo es el desarrollo de la inteligencia artificial, cuyo desarrollo es
-patentemente dirigido por los intereses del poder concentrado. Los recursos de
-este rubro son destinados o bien a productos inútiles para el bien común o
+tiempo es el desarrollo de la inteligencia artificial, cuyo avance es
+patentemente dirigido por los intereses del poder concentrado. Los recursos
+se destinan o bien a productos relativamente inútiles para el bien común o
 directamente perniciosos, como el reconocimiento facial. Si uno acepta que el
 uso y la distribución racional de los recursos se corresponde con el
 mejoramiento, en la mayor medida posible, de la calidad de vida de la mayor
