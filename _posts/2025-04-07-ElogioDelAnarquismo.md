@@ -178,13 +178,15 @@ otros, se beneficia, en el largo plazo las mismas condiciones que lo privilegian
 vuelven su libertad insegura e inestable.
 
 En lo que respecta al uso político de la violencia, el anarquismo es variado.
-Las corrientes clásicas han sido revolucionarias a la vez que se opusieron al
-uso del terrorismo. El mismo Severino Di Giovanni, que fue considerado incluso
-por el anarquismo de su tiempo un radical desmedido, pretendió siempre atentar
+Las corrientes clásicas han sido revolucionarias a la vez que contrarias al uso
+del terrorismo. El mismo Severino Di Giovanni, que fue considerado incluso por
+ciertos anarquistas de su tiempo un radical desmedido, pretendió siempre atentar
 contra instituciones o miembros oficiales del gobierno fascista, y sus actos
 tuvieron un innegable tinte terrorista como consecuencia del error, de la
 naturaleza torpe y cruel que es inherente a la violencia. Por ejemplo, Osvaldo
-Bayer dice del famoso atentado de Di Giovanni al consulado italiano:
+Bayer dice del famoso atentado de Di Giovanni al consulado italiano, que aunque
+buscaba atentar contar la vida del funcionario fascista Cappani, terminó por error
+llevándose a civiles inocentes:
 
 >  ¿Y si la bomba de Di Giovanni hubiera explotado en el escritorio del cónsul
 >  Cappani matando al carnicero de Florencia y al embajador de Mussolini, nada
@@ -206,30 +208,29 @@ Bayer dice del famoso atentado de Di Giovanni al consulado italiano:
 Por otra parte, López Arango y Abad de Santillán, los dos voceros del anarquismo
 argentino, tacharon los actos de Di Giovanni como propios de la "mentalidad
 inclinada a la violencia extrema y bestial" que el fascismo había traído,
-reclamando que el anarquismo oponía al fascismo "una mentalidad
-ética superadora" y buscaba "resistir el contagio del fascismo con el arma
-invencible de una más elevada concepción de la vida".
+reclamando que el verdadero anarquismo oponía al fascismo "una mentalidad ética
+superadora" y buscaba "resistir el contagio del fascismo con el arma invencible
+de una más elevada concepción de la vida".
 
-Su naturaleza indomable, aleatoria y trágica (con todo el peso griego de la
-palabra), su inherente hamartía (ἁμαρτία), es un argumento sólido para oponerse
-a la violencia. Pero existe un argumento igualmente práctico y todavía más
-rotundo para desestimar el uso político de la violencia: a saber, que la
+Su naturaleza indomable, aleatoria y trágica, su inherente hamartía (ἁμαρτία),
+es un argumento sólido para oponerse a la violencia. Pero existe un argumento
+igualmente práctico y todavía más rotundo para desestimarla: a saber, que la
 probabilidad de victoria es aproximadamente nula. El poder concentrado, estatal
 o privado, monopoliza los medios para ejercer la violencia y se reserva además
 el derecho. El Estado es dueño armas, soldados y policías, y el capital privado,
 además de tener sus activos propios, suele ser dueño del Estado. La resistencia
-armada era difícil en el siglo pasado: en este, me parece imposible. La
-resistencia pacífica y organizada, y el mejoramiento del sistema por vías
-institucionales, aunque lento y dificultoso, tienen más probabilidades de
-victoria.[^1]
+violenta es combatir en el territorio preferido del enemigo, y si era difícil en
+el siglo pasado, en este me parece imposible. La resistencia pacífica y
+organizada, y el mejoramiento del sistema por vías institucionales, aunque lento
+y dificultoso, tienen más probabilidades de victoria.[^1]
 
-En lo que toca a nuestra vida individual, considerada al menos de manera
-heurística como separada de los demás, el anarquismo también ofrece una
-perspectiva enriquecedora. La desarrollé con algo de detalle en mi entrada
-[*On individuality*](https://slopezpereyra.github.io/2024-01-24-OnIndividuality/), 
-y más someramente en [*On free love and sexual freedom*](https://slopezpereyra.github.io/2025-02-11-FreeLove/). Prefiero
-no repetirme: allí está dicho lo poco que sé decir al respecto. Aquí, me limito
-a repetir el precioso resumen de Bakunin:
+En lo que toca a nuestra vida individual, el anarquismo también ofrece una
+perspectiva enriquecedora. La desarrollé con algo de detalle en mi entrada [*On
+individuality*](https://slopezpereyra.github.io/2024-01-24-OnIndividuality/), y
+más someramente en [*On free love and sexual
+freedom*](https://slopezpereyra.github.io/2025-02-11-FreeLove/). Prefiero no
+repetirme: allí está dicho lo poco que sé decir al respecto. Aquí, me limito a
+referir el precioso resumen de Bakunin:
 
 >  La libertad del hombre consiste sólo en esto: que ha de obedecer leyes
 >  naturales porque él mismo las ha reconocido como tales, y no porque han sido
@@ -239,13 +240,13 @@ a repetir el precioso resumen de Bakunin:
 La cita no es un slogan: invita a una reflexión seria que puede, y
 me atrevo decir *debe* llevarnos a cuestionarlo todo.
 
-Desearía que el anarquismo fuera para todos lo que ha sido para mí: una (tal vez
-la única) definición que no limita, sino enriquece; una promesa de
-abandonar, hasta donde sea posible, la frivolidad y el egoísmo; un arma para
-combatir todas las fuerzas que constantemente invitan a la inautenticidad y la
-apatía. Ante todo, es una postura política que, sin impedirnos operar con
-flexibilidad y pragmatismo en la realidad que nos toca, tampoco renuncia a un
-compromiso fundamental con los valores más elementales para la dignidad humana.
+En conclusión, el anarquismo ha sido para mí una (tal vez la única) definición
+que no limita, sino enriquece; una promesa de abandonar, hasta donde sea
+posible, la frivolidad y el egoísmo; un arma para combatir todas las fuerzas que
+constantemente invitan a la inautenticidad y la apatía. Ante todo, es una
+postura política plural y abierta que, sin impedirnos operar con flexibilidad y
+pragmatismo en la realidad que nos toca, tampoco renuncia a un compromiso
+fundamental con los valores más elementales para la dignidad humana.
 
 ---
 
