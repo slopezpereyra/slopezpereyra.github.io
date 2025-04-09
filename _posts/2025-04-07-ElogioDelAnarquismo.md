@@ -46,8 +46,8 @@ inherentemente de pragmatismo es simple propaganda. Si el socialismo, en
 cualquiera de sus formas, no fuese capaz de organizarse, ¿por qué fue 
 necesario destinar tantos recursos a evitar que lo haga?
 
-Una buena síntesis de lo que el anarquismo *no* es la encontramos en uno
-de sus mejores exponentes, Rudolf Rocker:
+Si bien es difícil decir qué es el anarquismo, es bueno despejar equívocos
+comunes y dejar en claro lo que *no* es. Rudolf Rocker lo expuso de este modo:
 
 >Anarchism is no patent solution for all human problems,
 >no Utopia of a perfect social order, as it has so often been
