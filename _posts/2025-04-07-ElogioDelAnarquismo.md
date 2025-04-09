@@ -43,8 +43,8 @@ ejemplos en el mundo contemporáneo. Considérese, *v.g.*, a Chomsky, cuya
 actividad política fue vasta, intensa, y guiada por un espíritu pragmático y
 serio. En verdad, la idea de que esta o aquella forma de socialismo carecen
 inherentemente de pragmatismo es simple propaganda. Si el socialismo, en
-cualquiera de sus formas, no fuese capaz de organizarse, ¿por qué fue (y sigue
-siendo) necesario destinar tantos recursos a evitar que lo haga?
+cualquiera de sus formas, no fuese capaz de organizarse, ¿por qué fue 
+necesario destinar tantos recursos a evitar que lo haga?
 
 Una buena síntesis de lo que el anarquismo *no* es la encontramos en uno
 de sus mejores exponentes, Rudolf Rocker:
