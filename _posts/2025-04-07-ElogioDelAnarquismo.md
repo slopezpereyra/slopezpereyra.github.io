@@ -209,11 +209,11 @@ igualmente práctico y todavía más rotundo para desestimarla: a saber, que la
 probabilidad de victoria es aproximadamente nula. El poder concentrado, estatal
 o privado, monopoliza los medios para ejercer la violencia y se reserva además
 el derecho. El Estado es dueño armas, soldados y policías, y el capital privado,
-además de tener sus activos propios, suele ser dueño del Estado. La resistencia
-violenta es combatir en el territorio preferido del enemigo, y si era difícil en
-el siglo pasado, en este me parece imposible. La resistencia pacífica y
-organizada, y el mejoramiento del sistema por vías institucionales, aunque lento
-y dificultoso, tienen más probabilidades de victoria.[^1]
+además de tener sus activos propios, suele ser dueño del Estado. Accionar
+violentamente es combatir en territorio enemigo, y si era difícil en el siglo
+pasado, en este me parece imposible. La resistencia pacífica y organizada, y el
+mejoramiento del sistema por vías institucionales, aunque lento y dificultoso,
+tienen más probabilidades de victoria.[^1]
 
 En lo que toca a nuestra vida individual, el anarquismo también ofrece una
 perspectiva enriquecedora. La desarrollé con algo de detalle en mi entrada [*On
