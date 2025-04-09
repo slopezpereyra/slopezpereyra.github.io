@@ -98,7 +98,7 @@ de las fuerzas productivas y tecnológicas es el mejoramiento del estado
 *general* de las cosas, y en consecuencia deben ser puestas al servicio
 del bien común.
 
-El carácter anti-capitalista del anarquismo se desprende de todos estos
+El carácter anticapitalista del anarquismo se desprende de todos estos
 principios, pero el último merece un comentario adicional por dirigir nuestra
 atención a la forma *concreta* que toma la organización de la economía. En
 efecto, la absurda irracionalidad del sistema productivo es un lugar común en el
@@ -131,7 +131,7 @@ mejoramiento, en la mayor medida posible, de la calidad de vida de la mayor
 cantidad posible de individuos, la descabellada irracionalidad del sistema
 productivo actual se vuelve desesperante. 
 
-Pero el anti-capitalismo no se deduce sólamente de este principio, sino además
+Pero el anticapitalismo no se deduce sólamente de este principio, sino además
 de un valor que retrocede a la ilustración y es esencial al anarquismo: la
 oposición radical a toda forma de poder concentrado. Un anarquista consecuente
 no puede ni debe negociar con ninguna forma de tiranía. Esto es una terquedad
