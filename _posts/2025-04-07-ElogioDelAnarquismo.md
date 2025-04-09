@@ -179,10 +179,10 @@ del terrorismo. El mismo Severino Di Giovanni, que fue considerado incluso por
 ciertos anarquistas de su tiempo un radical desmedido, pretendió siempre atentar
 contra instituciones o miembros oficiales del gobierno fascista, y sus actos
 tuvieron un innegable tinte terrorista como consecuencia del error, de la
-naturaleza torpe y cruel que es inherente a la violencia. Por ejemplo, Osvaldo
-Bayer dice del famoso atentado de Di Giovanni al consulado italiano, que aunque
-buscaba atentar contar la vida del funcionario fascista Cappani, terminó por error
-llevándose a civiles inocentes:
+naturaleza torpe y cruel que es inherente a la violencia. Hablando del famoso
+atentado de Di Giovanni Giovanni al consulado italiano, que buscando atentar
+contra la vida del funcionario fascista Cappani terminó, por obra del azar y el
+error, matando civiles inocentes, Osvaldo Bayer escribe:
 
 >  ¿Y si la bomba de Di Giovanni hubiera explotado en el escritorio del cónsul
 >  Cappani matando al carnicero de Florencia y al embajador de Mussolini, nada
