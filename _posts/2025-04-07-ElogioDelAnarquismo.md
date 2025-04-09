@@ -8,10 +8,6 @@ Bayer en Santa Cruz. Bayer, un socialista libertario, documentó los eventos de
 la Patagonia Trágica; eventos que, irónicamente, se vuelven a recordar ahora
 por la profanación del monumento. 
 
-<p align="center">
-    <img src="../Images/bayer.jpg" width="35%" style="border: 1px solid #231709;">
-</p>
-
 
 La indignación es la respuesta inmediata, pero no es necesariamente la más
 inteligente. La Patagonia Trágica evidencia no sólo la violencia con que se
@@ -198,11 +194,6 @@ llevándose a civiles inocentes:
 >  bomba indiscriminadamente en un mercado o en un café o en una estación de
 >  ferrocarril atestada de público. ¿Pero acaso el consulado facista era un lugar
 >  inocente?
-
-<figure style="text-align: center;">
-    <img src="../Images/severinocorte.jpg" width="55%" style="border: 1px solid #231709;">
-    <figcaption>Severino Di Giovanni en la corte</figcaption>
-</figure>
 
 
 Por otra parte, López Arango y Abad de Santillán, los dos voceros del anarquismo
