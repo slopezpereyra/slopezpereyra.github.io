@@ -102,8 +102,8 @@ El carácter anti-capitalista del anarquismo se desprende de todos estos
 principios, pero el último merece un comentario adicional por dirigir nuestra
 atención a la forma *concreta* que toma la organización de la economía. En
 efecto, la absurda irracionalidad del sistema productivo es un lugar común en el
-socialismo, y un hecho patente ante la más mínima observación. En *La conquista
-del pan*, Kropotkin nos dice:
+socialismo, y un hecho patente ante la más mínima observación. Por ejemplo, en *La conquista
+del pan*, Kropotkin escribe:
 
 > Es imposible dimensionar en cifras cuánta riqueza es restringida
 > indirectamente, cuánta energía es desperdiciada, que hubiera podido servir
