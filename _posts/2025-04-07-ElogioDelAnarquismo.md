@@ -72,11 +72,13 @@ Elisée Reclus lo puso en términos similares:
 > forma, la cual, incidentalmente, será siempre cambiante, como todos los
 > fenómenos de la vida.]
 
-Al rechazar *en principio* todo esquema absoluto, necesariamente debe
-considerarse opuesto al personalismo que tan lamentablemente contamina el
-pensamiento político argentino. Debe abstenerse de dar una receta universal
-respecto a cómo resolver los problemas políticos, y considerar cada evento de la
-historia de manera relativa:
+Al rechazar *en principio* todo esquema absoluto, se abstiene de dar una receta
+universal respecto a cómo resolver los problemas políticos o cuál es *la* forma
+de organizar la sociedad. Toma lo que en verdad me parece la única postura
+razonable: que sólo la práctica, la experiencia, la prueba y error, y la
+consideración relativa de los hechos y la realidad son el límite de todo esquema
+que pueda darse. En efecto, considera los hechos y los eventos de la historia de
+manera relativa:
 
 >Anarchism recognizes only the relative significance of
 >ideas, institutions, and social forms. It is, therefore,
