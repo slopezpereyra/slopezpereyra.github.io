@@ -60,6 +60,18 @@ comunes y dejar en claro lo que *no* es. Rudolf Rocker lo expuso de este modo:
 >pues rechaza en principio todos los esquemas y conceptos absolutos. No cree en
 >ninguna verdad absoluta, ni en objetivos definitivos para el desarrollo humano.]
 
+Elisée Reclus lo puso en términos similares:
+
+> We do not have to draw a picture of the future society in advance: It is up to
+> the spontaneous action of all the free men to create it and give it its form,
+> which will, incidentally, be constantly changing, like all the phenomena of
+> life. 
+>
+> [No tenemos que esbozar de antemano una imagen de la sociedad futura: le
+> corresponde a la acción espontánea de los hombres libres crearla y darle
+> forma, la cual, incidentalmente, será siempre cambiante, como todos los
+> fenómenos de la vida.]
+
 Al rechazar *en principio* todo esquema absoluto, necesariamente debe
 considerarse opuesto al personalismo que tan lamentablemente contamina el
 pensamiento político argentino. Debe abstenerse de dar una receta universal
@@ -221,23 +233,44 @@ individuality*](https://slopezpereyra.github.io/2024-01-24-OnIndividuality/), y
 más someramente en [*On free love and sexual
 freedom*](https://slopezpereyra.github.io/2025-02-11-FreeLove/). Prefiero no
 repetirme: allí está dicho lo poco que sé decir al respecto. Aquí, me limito a
-referir el precioso resumen de Bakunin:
+referir el precioso resumen de Bakunin,
 
 >  La libertad del hombre consiste sólo en esto: que ha de obedecer leyes
 >  naturales porque él mismo las ha reconocido como tales, y no porque han sido
 >  impuestas por alguna voluntad externa, humana o divina, colectiva o
->  individual.
+>  individual 
 
-La cita no es un slogan: invita a una reflexión seria que puede, y
-me atrevo decir *debe* llevarnos a cuestionarlo todo.
+o el de Elisée Reclus:
 
-En conclusión, el anarquismo ha sido para mí una (tal vez la única) definición
-que no limita, sino enriquece; una promesa de abandonar, hasta donde sea
-posible, la frivolidad y el egoísmo; un arma para combatir todas las fuerzas que
-constantemente invitan a la inautenticidad y la apatía. Ante todo, es una
-postura política plural y abierta que, sin impedirnos operar con flexibilidad y
-pragmatismo en la realidad que nos toca, tampoco renuncia a un compromiso
-fundamental con los valores más elementales para la dignidad humana.
+> By definition, the anarchist is the free man, the one who has no master. The
+> ideas that he professes are indeed his own through reasoning. His will,
+> springing from the understanding of things, focuses on a clearly defined aim;
+> his acts are the direct realization of his individual intent. Alongside those
+> who devoutly repeat the words of others or the traditional saying, who make
+> their being bend and conform to the caprice of a powerful individual, or, what
+> is still more grave, to the oscillations of the crowd, he alone is a man, he
+> alone is conscious of his value in the face of all these spineless and
+> inconsistent things that dare not live their own lives. 
+>
+> [Por definición, el anarquista es el hombre libre, el que no tiene maestro. 
+Las ideas que profesa son suyas a través de su razonamiento. Su voluntad,
+desprendiéndose de la comprensión de las cosas, se enfoca en una meta claramente
+definida; sus actos son la realización directa de su intención individual. Junto
+a aquellos que devotamente repiten las palabras de otros o de la tradición, que
+conforman y doblan su ser a la conformidad del capricho de algún individuo
+poderoso, o, lo que es aún más grave, a las oscilaciones de la multitud, él solo
+es un hombre, él solo es consciente de su valor ante todas estas débiles e
+inconsistentes cosas que no se atreven a vivir sus propias vidas.]
+
+
+En conclusión, quisiera que el anarquismo fuera para todos lo que ha sido para
+mí: una (tal vez la única) definición que no limita, sino enriquece; una promesa
+de abandonar, hasta donde sea posible, la frivolidad y el egoísmo; un arma para
+combatir todas las fuerzas que constantemente invitan a la inautenticidad y la
+apatía. Ante todo, una postura política plural y abierta que, sin impedirnos
+operar con flexibilidad y pragmatismo en la realidad que nos toca, tampoco
+renuncia a un compromiso fundamental con los valores más elementales para la
+dignidad humana.
 
 ---
 
