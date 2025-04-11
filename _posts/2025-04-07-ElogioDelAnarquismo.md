@@ -189,14 +189,17 @@ vuelven su libertad insegura e inestable.
 
 En lo que respecta al uso político de la violencia, el anarquismo es variado.
 Las corrientes clásicas han sido revolucionarias a la vez que contrarias al uso
-del terrorismo. El mismo Severino Di Giovanni, que fue considerado incluso por
-ciertos anarquistas de su tiempo un radical desmedido, pretendió siempre atentar
-contra instituciones o miembros oficiales del gobierno fascista, y sus actos
-tuvieron un innegable tinte terrorista como consecuencia del error, de la
-naturaleza torpe y cruel que es inherente a la violencia. Hablando del famoso
-atentado de Di Giovanni Giovanni al consulado italiano, que buscando atentar
-contra la vida del funcionario fascista Cappani terminó, por obra del azar y el
-error, matando civiles inocentes, Osvaldo Bayer escribe:
+del terrorismo. El mismo Severino Di Giovanni, que la opinión oficial consideró
+el anarquista más peligroso y desmedido de su tiempo, pretendió utilizar la
+violencia de manera dirigida y no discriminada. Entre otras cosas, liberó a José
+Domingo Romano, un anarquista injustamente apresado; atentó contra la vida de
+Juan Velar, jefe de Orden Social en Rosario, torturador y represor desmedido; y
+pretendió (con trágico destino) poner una bomba en la oficina del cónsul
+fascista Italo Cappani y el embajador de Mussolini en Argentina. Este atentado
+falló y terminó matando a civiles inocentes, dejando intacto a los funcionarios
+del fascismo. Osvaldo Bayer, ponderando cómo debiera juzgarse el error de los
+anarquistas, escribió:
+
 
 >  ¿Y si la bomba de Di Giovanni hubiera explotado en el escritorio del cónsul
 >  Cappani matando al carnicero de Florencia y al embajador de Mussolini, nada
@@ -210,24 +213,26 @@ error, matando civiles inocentes, Osvaldo Bayer escribe:
 >  inocente?
 
 
-Por otra parte, López Arango y Abad de Santillán, los dos voceros del anarquismo
-argentino, tacharon los actos de Di Giovanni como propios de la "mentalidad
-inclinada a la violencia extrema y bestial" que el fascismo había traído,
-reclamando que el verdadero anarquismo oponía al fascismo "una mentalidad ética
-superadora" y buscaba "resistir el contagio del fascismo con el arma invencible
-de una más elevada concepción de la vida".
+López Arango y Abad de Santillán, los dos voceros del anarquismo argentino y
+redactores en *La protesta*, tacharon los actos de Di Giovanni como propios de
+la "mentalidad inclinada a la violencia extrema y bestial" que el fascismo había
+traído, reclamando que el verdadero anarquismo oponía al fascismo "una
+mentalidad ética superadora" y buscaba "resistir el contagio del fascismo con el
+arma invencible de una más elevada concepción de la vida". Ni el anarquismo
+argentino ni el internacional acompañarían la dura posición de *La protesta*, y
+la reacción del anarquismo en general fue diversa.
 
 Su naturaleza indomable, aleatoria y trágica, su inherente hamartía (ἁμαρτία),
 es un argumento sólido para oponerse a la violencia. Pero existe un argumento
-igualmente práctico y todavía más rotundo para desestimarla: a saber, que la
-probabilidad de victoria es aproximadamente nula. El poder concentrado, estatal
-o privado, monopoliza los medios para ejercer la violencia y se reserva además
-el derecho. El Estado es dueño armas, soldados y policías, y el capital privado,
-además de tener sus activos propios, suele ser dueño del Estado. Accionar
-violentamente es combatir en territorio enemigo, y si era difícil en el siglo
-pasado, en este me parece imposible. La resistencia pacífica y organizada, y el
-mejoramiento del sistema por vías institucionales, aunque lento y dificultoso,
-tienen más probabilidades de victoria.[^1]
+todavía más definitivo para desestimarla: a saber, que la probabilidad de
+victoria es aproximadamente nula. El poder concentrado, estatal o privado,
+monopoliza los medios para ejercer la violencia y se reserva además el derecho.
+El Estado es dueño armas, soldados y policías, y el capital privado, además de
+tener sus activos propios, suele ser dueño del Estado. Accionar violentamente es
+combatir en territorio enemigo, y si era difícil en el siglo pasado, en este me
+parece imposible. La resistencia pacífica y organizada, y el mejoramiento del
+sistema por vías institucionales, aunque lento y dificultoso, tienen más
+probabilidades de victoria.[^1] 
 
 En lo que toca a nuestra vida individual, el anarquismo también ofrece una
 perspectiva enriquecedora. La desarrollé con algo de detalle en mi entrada [*On
