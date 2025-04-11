@@ -193,11 +193,11 @@ del terrorismo. El mismo Severino Di Giovanni, que la opinión oficial consider�
 el anarquista más peligroso y desmedido de su tiempo, pretendió utilizar la
 violencia de manera dirigida y no discriminada. Entre otras cosas, liberó a José
 Domingo Romano, un anarquista injustamente apresado; atentó contra la vida de
-Juan Velar, jefe de Orden Social en Rosario, torturador y represor desmedido; y
+Juan Velar, jefe de Orden Social en Rosario y torturador desmedido, y
 pretendió (con trágico destino) poner una bomba en la oficina del cónsul
 fascista Italo Cappani y el embajador de Mussolini en Argentina. Este atentado
 falló y terminó matando a civiles inocentes, dejando intacto a los funcionarios
-del fascismo. Osvaldo Bayer, ponderando cómo debiera juzgarse el error de los
+fascistas. Osvaldo Bayer, ponderando cómo debiera juzgarse el error de los
 anarquistas, escribió:
 
 
