@@ -21,10 +21,13 @@ attempted *coup d'état* failed. Cato the Younger sought death in similar
 fashion: defeated by Caesar, he plunged his sword into his chest and tore his
 bowels with his hands. Seneca died a slow and bureaucratic death by command of
 Nero. The Bolivian agent who executed Che Guevara reported his last words to
-be: *Serénese y apunte bien: va a matar a un hombre*. Socrates, out of respect
-to a ruling which he knew unfair, declined to be saved by his friends; when the
-time came, he drank the hemlock calmly, and his farewell thought was of a debt
-he didn't want to leave unpaid. 
+be: *Serénese y apunte bien: va a matar a un hombre*. Severino Di Giovanni,
+facing execution, said to his defender: "I am aware of my situation and I do not
+intend to shy away from any kind of responsibility. I played, I lost. As a good
+loser, I pay with my life."[^1] Socrates, out of respect to a ruling which he
+knew unfair, declined to be saved by his friends; when the time came, he drank
+the hemlock calmly, and his farewell thought was of a debt he didn't want to
+leave unpaid. 
 
 At the core of the Christian *ethos* is the willingness to die. God himself
 became incarnate so as to suffer earthly death. Origen of Alexandria endured
@@ -42,7 +45,7 @@ was pretended by many wealthy and powerful men. Inspired by the idea that no
 marriage was better for her than one with God, he fervourously prayed for her
 death. Curiously enough, she died, and he rejoiced in her passing. His wife,
 who also found bliss in her daughter's union with God, asked him to pray for
-her death as well. And soon after she died a death of mutual satisfaction.[^1]
+her death as well. And soon after she died a death of mutual satisfaction.[^2]
 
 Though we feel certain inclination to regard voluntary death as unnatural, it
 is in fact surprising how decisively a person can rid itself of the will to
@@ -70,8 +73,10 @@ day.
 
 
 
-
-[^1]: This story is refered by Montaigne.
+[^1]: "Soy consciente de mi situación y no pienso rehuir
+    responsabilidades de ninguna clase. Jugué, perdí. Como buen perdedor, pago
+con la vida"
+[^2]: This story is refered by Montaigne.
 
 
 
