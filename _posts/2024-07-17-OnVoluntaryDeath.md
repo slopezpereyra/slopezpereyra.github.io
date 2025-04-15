@@ -22,9 +22,9 @@ fashion: defeated by Caesar, he plunged his sword into his chest and tore his
 bowels with his hands. Seneca died a slow and bureaucratic death by command of
 Nero. The Bolivian agent who executed Che Guevara reported his last words to
 be: *Serénese y apunte bien: va a matar a un hombre*. Severino Di Giovanni,
-facing execution, said to his defender: "I am aware of my situation and I do not
+facing execution, said to his defender: "*I am aware of my situation and I do not
 intend to shy away from any kind of responsibility. I played, I lost. As a good
-loser, I pay with my life."[^1] Socrates, out of respect to a ruling which he
+loser, I pay with my life.*"[^1] Socrates, out of respect to a ruling which he
 knew unfair, declined to be saved by his friends; when the time came, he drank
 the hemlock calmly, and his farewell thought was of a debt he didn't want to
 leave unpaid. 
