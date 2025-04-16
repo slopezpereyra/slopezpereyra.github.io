@@ -1,0 +1,34 @@
+\contentsline {section}{\numberline {1}Grafos}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Info de la materia}{3}{}%
+\contentsline {subsection}{\numberline {1.2}Grafos}{3}{}%
+\contentsline {subsection}{\numberline {1.3}Repaso de BFS y DFS}{6}{}%
+\contentsline {subsection}{\numberline {1.4}Los grafos $K_n$ y $C_n$}{6}{}%
+\contentsline {subsection}{\numberline {1.5}Coloreo de grafos}{6}{}%
+\contentsline {subsection}{\numberline {1.6}Un algoritmo greedy de coloreo}{7}{}%
+\contentsline {subsection}{\numberline {1.7}Acotando $\chi $}{7}{}%
+\contentsline {subsection}{\numberline {1.8}¿Para qué acotar $\chi $? Para encontar $\chi $!}{10}{}%
+\contentsline {subsection}{\numberline {1.9}Limitaciones de $\mathslscr {G}$}{11}{}%
+\contentsline {subsection}{\numberline {1.10}Hill clmbing}{11}{}%
+\contentsline {section}{\numberline {2}Redes y flujos}{13}{}%
+\contentsline {subsection}{\numberline {2.1}Algoritmo $\mathslscr {G}$ para flujo}{15}{}%
+\contentsline {subsection}{\numberline {2.2}Algoritmo Ford-Fulkerson}{16}{}%
+\contentsline {subsection}{\numberline {2.3}Análisis de Ford-Fulkerson}{17}{}%
+\contentsline {subsection}{\numberline {2.4}Edmonds-Karp: Una mejora sobre Ford-Fulkerson}{20}{}%
+\contentsline {subsection}{\numberline {2.5}Algoritmo de Dinitz}{23}{}%
+\contentsline {subsection}{\numberline {2.6}Algoritmo wave de Tarjan}{29}{}%
+\contentsline {section}{\numberline {3}Matchings}{31}{}%
+\contentsline {subsection}{\numberline {3.1}Matchings en grafos bipartitos}{32}{}%
+\contentsline {subsection}{\numberline {3.2}Minimizar el máximo}{33}{}%
+\contentsline {subsection}{\numberline {3.3}Minimizar la suma}{37}{}%
+\contentsline {subsection}{\numberline {3.4}Complejidades}{40}{}%
+\contentsline {section}{\numberline {4}Códigos de corrección de errores}{43}{}%
+\contentsline {subsection}{\numberline {4.1}Códigos lineales}{49}{}%
+\contentsline {subsection}{\numberline {4.2}Códigos cíclicos}{53}{}%
+\contentsline {subsection}{\numberline {4.3}Códigos de Reed-Solomon}{57}{}%
+\contentsline {section}{\numberline {5}P-NP}{66}{}%
+\contentsline {section}{\numberline {6}Prácticos}{68}{}%
+\contentsline {subsection}{\numberline {6.1}Práctico 1}{68}{}%
+\contentsline {subsection}{\numberline {6.2}Practico 2}{75}{}%
+\contentsline {subsection}{\numberline {6.3}Practico 4 (Dinitz)}{78}{}%
+\contentsline {subsection}{\numberline {6.4}Practico codigos}{79}{}%
+\contentsline {subsection}{\numberline {6.5}Tips practicos: Codigos}{81}{}%

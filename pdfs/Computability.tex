@@ -14,6 +14,8 @@
 \newtheorem{example}{Example} \newtheorem{definition}{Definition}
 \newtheorem{lemma}{Lemma}
 \newtheorem{theorem}{Theorem}
+\usepackage[pdftex]{graphicx}
+\DeclareGraphicsExtensions{.pdf,.jpeg,.png,.jpg}
 
 \newenvironment{rcases}
   {\left.\begin{aligned}}
@@ -33,7 +35,7 @@
             
        \vspace{1.5cm}
        \footnotesize
-       \textbf{SLP}
+       \textbf{Severino Di Giovanni}
        \normalsize
 
        \vfill
@@ -43,14 +45,45 @@
    \end{center}
 \end{titlepage}
 
+ \begin{figure}[h!]
+ \centering
+  \includegraphics[width=0.5\textwidth]{../Images/SeverinoDiGiovanni.jpg}
+ \caption{Severino Di Giovanni, el autor de este apunte. Un anarquista
+   libertario, murió luchando por la libertad. Como él, otros miles han muerto
+   para que nosotros gocemos de los derechos que tenemos. No te dejes engañar
+   por los tristes pregoneros del egoísmo. Amá a tu prójimo y no olvides que si
+   sus derechos se vulneran, los tuyos también. Ayudá a tu compañero de estudio,
+ defendé tu universidad. }
+ \end{figure}
+
+\pagebreak
 
 \tableofcontents
 \newpage
 
-\section{Introduction}
+\section{Read me}
 
-These are my notes on computability theory. The only definitions that ought to
-be known first-hand are the following.
+
+
+
+\subsection{¿Por qué está en inglés?}
+
+Estas notas fueron tomadas en un setup de NeoVim + LaTex a medida que los
+apuntes originales de la materia eran estudiados. Los \textit{keybindings} de
+NeoVim son incómodos si el teclado está en castellano. Las opciones eran $(a)$
+castellano sin tildes o $(b)$ inglés. Pero $(a)$ es una aberración. $\therefore
+$ $(b)$
+
+\subsection{¿Qué hay en estas notas? ¿Debo confiar en ellas?}
+
+These are my notes on computability theory. They may contain errors and are
+should in no case substitute the text provided by professors. It has, however,
+two advantages: it is very brief and to the point, and it contains solutions to
+a lot of problems in each section.
+
+\subsection{Definiciones preliminares}
+
+The only definitions that ought to be known first-hand are the following.
 
 Let $\Sigma$ denote an arbitrary language, $\omega := \mathbb{N} + \{
 0\}$, and $n, m \geq 0$ fixed elements in $\omega$. Then: 
@@ -3802,7 +3835,7 @@ $\mathcal{P}$ halts when inputted to itself.
 
 \pagebreak
 
-\section{Problems from final exams and the feared Tómbola}
+\section{Problems from final exams and the Tómbola}
 
 \begin{problem}
     If $\leq$ is an order over $\Sigma$ and $|\Sigma| = n \geq 1$, then 
