@@ -1117,6 +1117,8 @@ def sim_7(iterations):
 
 nos devuelve siempre aproximadamente $e$.
 
+\end{quote}
+
 \pagebreak 
 
 $\textbf{(8)}$ Sea  
@@ -1131,7 +1133,8 @@ para $0 \leq n \leq 6$.
 ~
 
 \textbf{Solución.} Estimar con simulaciones es aburrido y fácil. Más vale pensemos en el problema y
-tratemos de dar $p_N$, la función de probabilidad de masa de $N$.
+tratemos de dar $p_N$, la función de probabilidad de masa de $N$, y con ella
+$\mathbb{E}\left[ N \right] $ de manera analítica.
 
 Claramente, 
 
@@ -1140,7 +1143,7 @@ Claramente,
   &= P \left( \prod_{i=1}^{n-1} U_i \geq e^{-3} \cap U_n \cdot \prod_{i=1}^{n-1}
   U_i < e^{-3}\right) \\ 
   &= P \left( \prod_{i=1}^{n-1} U_i \geq e^{-3} \cap U_n  <
-    \frac{e^{-3}}{\prod_{i=1}^{n-1}U_i < e^{-3}}\right) 
+    \frac{e^{-3}}{\prod_{i=1}^{n-1}U_i }\right) 
 \end{align*}
 
 Para simplificar la notación, hagamos $X(n) := \prod_{i=1}^n U_i$ y $\varphi(n,
@@ -1181,8 +1184,8 @@ Como $x / z \leq 1$ para $z \in [x, 1]$ y $x / z > 1$ para $z \in [0, x)$,
   &= x - x \ln x
 \end{align*}
 
-La forma dada antes, usando la ley de probabilidad total, es más complicada para
-este caso particular, pero más útil para el caso general.
+Esta forma es más simple en este caso particular, pero la que usamos antes
+es más útil para el caso general.
 \end{myframe}
 
 Generalizando, llegamos a
@@ -1215,25 +1218,23 @@ Entonces, usando el hecho de que conocemos $\varphi(2, x)$, tenemos
   &=x - x \ln x + \frac{x \ln^2 x}{2} - \frac{x \ln^3 x}{6}
 \end{align*}
 
-Visto estos resultados, notamos (aunque no demostramos formalmente) que:
+Vistos estos resultados, notamos (aunque no demostramos formalmente) que:
 
 \begin{equation*}
   \varphi(n, x) = \sum_{k=0}^{n-1} \left( -1 \right)^{k} \frac{x \ln^k x}{k!}
 \end{equation*}
 
-Por lo tanto, la función de probabilidad de masa del producto de $n$ uniformes
-aleatorias es 
+Por lo tanto, la función de probabilidad de masa $\psi(n, x)$ del producto de $n$ uniformes
+aleatorias es $\frac{d}{dx}\varphi(n, x)$, que es
+
 
 \begin{align*}
-  \psi(n, x) 
-  &= \frac{d}{dx} \varphi(n, x) \\
-  &= \sum_{k=0}^{n-1}(-1)^{k} 
-  \frac{\ln^k x + k \ln^{k-1} x}{k!}  \\ 
-  &=1 - (\ln x + 1) + \left(\ln x + \frac{ \ln^2 x }{2}\right) -
+  &\sum_{k=0}^{n-1}(-1)^{k} 
+  \frac{\ln^k x + k \ln^{k-1} x}{k!} \\
+  =&1 - (\ln x + 1) + \left(\ln x + \frac{ \ln^2 x }{2}\right) -
   \left( \frac{\ln^3 x}{6} + \frac{1}{2}\ln^2 x \right)  + \ldots \\ 
-  &= (-1)^{n-1} \frac{\ln^{n-1} x}{(n-1)!}  &\left\{ \text{Suma telescópica} \right\} \\ 
+  =& (-1)^{n-1} \frac{\ln^{n-1} x}{(n-1)!}  &\left\{ \text{Suma telescópica} \right\} \\ 
 \end{align*}
-
 Luego 
 
 
