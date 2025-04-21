@@ -1,0 +1,34 @@
+from statistics import mean, variance
+
+def random_permutation(l):
+  N = len(l)
+  for j in range(N-1, 0, -1):
+    i = int( (j+1)*random() )
+    l[j], l[i] = l[i], l[j]
+
+  return l
+
+
+def count_fixed_points(permutation):
+  count = 0
+  for i in range(len(permutation)):
+    if permutation[i] == i:
+      count +=1
+
+  return count
+
+def sim1(n_iterations):
+
+  L = [i for i in range(100)]
+  results = []
+
+  for _ in range(n_iterations):
+    permutation = random_permutation(L)
+    fixed_points = count_fixed_points(permutation)
+    results.append(fixed_points)
+
+  return mean(results), variance(results)
+
+# Example
+x, y = sim1(1000)
+print(f"E(X) = {x}, V(X) = {y}")
