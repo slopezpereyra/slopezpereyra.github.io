@@ -15,7 +15,7 @@ que algunas lecturas en el campo son estimulantes.
 Otro concepto que se suele confundir es el de heredabilidad. La heredabilidad es
 un concepto *relativo* y *proporcional*: denota el *ratio* entre variación
 fenotípica y variación genotípica en una población específica. Si toda la
-variación en un rasgo fenotípico es consequence de variación genética, entonces
+variación en un rasgo fenotípico es consecuencia de la variación genética, entonces
 el rasgo es completamente explicado por la heredabilidad.
 
 Más aún, la heredabilidad no es un concepto ni trascendental ni biológicamente
@@ -24,12 +24,12 @@ poblaciones. Es decir, cuando se dice que un rasgo es heredable, dicha
 heredabilidad debe considerarse más o menos contingente. Lo que es más, la
 heredabilidad es informativa sólo en relación a la variabilidad del rasgo en la
 población. Por ejemplo, la heredabilidad de rasgos como "tener dos ojos" o
-"tener una boca" virtualmente cero, dado que la variación genotípica y
+"tener una boca" es virtualmente cero, dado que la variación genotípica y
 fenotípica para dichos rasgos es aproximadamente nula. Estos ejemplos deberían
 ilustrar a todas luces que la ausencia de heredabilidad *no* quiere decir que un
-rasgo no sea heredable (puede suceder todo lo contrario). En cierto sentido, la
-heredabilidad satisface el criterio de Shannon, según el cual los eventos
-inesperados son los informativos. 
+rasgo no sea transmisible de padres a hijos (puede suceder todo lo contrario).
+En cierto sentido, la heredabilidad satisface el criterio de Shannon, según el
+cual los eventos inesperados son los informativos. 
 
 Por último, los mecanismos en virtud de los cuales la variación genética
 ocasiona variaciones en el comportamiento son oscuros. Los genes codifican
