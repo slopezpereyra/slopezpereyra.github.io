@@ -56,14 +56,14 @@ Si preguntamos cuál es el uso característico del lenguaje, la cosa se pone
 interesante: la abrumadora mayoría de nuestro *uso* del lenguaje es interna, no
 verbal. Más aún, de la ínfima parte que sí es verbal, una porción importante no
 es transmisión de información. Por lo tanto, la explicación original, que a
-simple viste es satisfactoria, explica la totalidad del lenguaje en función de
+simple vista es satisfactoria, explica la totalidad del lenguaje en función de
 una parte extraordinariamente minúscula de su funcionamiento. De acuerdo con
 estas observaciones, tiene más sentido explicar el lenguaje como una interfaz
 del pensamiento y considerar su utilidad comunicativa como un subproducto
 conveniente.
 
-Con el ejemplo anterior no quise decir que la evolución del lenguaje haya sido
-dirigida por el pensamiento, que es discutible. Más bien, quise ilustrar al
+Con el ejemplo anterior no quise establecer categóricamente que la evolución del
+lenguaje haya sido dirigida por el pensamiento. Más bien, quise ilustrar al
 mismo tiempo la facilidad con que se pueden inventar explicaciones que, desde
 una perspectiva darwiniana, aparentan ser satisfactorias, y la verdadera
 complejidad del problema cuando empiezan a hacerse las preguntas relevantes.
