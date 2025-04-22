@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1745194339.86496 "LyC.tex" "LyC.pdf" "LyC" 1745194340.7188 2
+["pdflatex"] 1745269250.30937 "LyC.tex" "LyC.pdf" "LyC" 1745269251.19834 2
   "../Images/SeverinoDiGiovanni.jpg" 1744842595.91572 661859 e319bf24ec55c5c8c8839fa5ed43bde8 ""
   "../Images/UPA.jpg" 1744981714.42689 213483 fb1880580fde6988c39365b1d057c921 ""
   "/etc/texmf/web2c/texmf.cnf" 1740662799.63242 475 c0e671620eb5563b2130f56340a5fde8 ""
@@ -130,9 +130,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1740670969.59643 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1740670991 8214096 2cc5ed7d441cd7dd7f6cf9e30d4bb5a5 ""
-  "LyC.aux" 1745194340.62009 699 bb336000d6dc0fd02c8a678e63c85dec "pdflatex"
-  "LyC.tex" 1745194339.17509 19198 71c4df5ecaee70aadc83ed3368fbdcbc ""
-  "LyC.toc" 1745194340.62009 86 9a8f26dc75ab3af030f5cf54a2ee2d74 "pdflatex"
+  "LyC.aux" 1745269251.08987 699 c2fcc114a97b92ba943e69f51efba248 "pdflatex"
+  "LyC.tex" 1745269249.85054 25678 7943a64d3fe1096b6ac82dc24a619f04 ""
+  "LyC.toc" 1745269251.08987 86 9a8f26dc75ab3af030f5cf54a2ee2d74 "pdflatex"
   (generated)
   "LyC.aux"
   "LyC.log"

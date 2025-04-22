@@ -605,6 +605,179 @@ entonces $\llbracket b \rrbracket \sigma' \equiv
 Ahora bien, si el ciclo no termina (es decir, si devuelve $\bot$), es trivial
 demostrar que la equivalencia también se cumple.
 
+\pagebreak 
+
+\begin{myframe}
+  \textbf{(8)} Considerar las siguientes definiciones como syntactic sugar del
+  comando $$\textbf{for } v := e_0 \textbf{ to } e_1 \textbf{ do } c$$
+
+  $(a)$ $v := e_0; \textbf{while } v \leq e_1 \textbf{ do } c; v := v + 1$
+
+  $(b)$ $\textbf{newvar } v := e_0 \textbf{ in } \textbf{while } v \leq e_1
+  \textbf{ do } c; v := v+1$
+
+  $(c)$ $\textbf{newvar } w := e_1 \textbf{ in newvar } v := e_0 \textbf{ in
+  while } v \leq w \textbf{ do } c; v := v+1$
+
+  ¿Es alguna satisfactoria? Justificar.
+\end{myframe}
+
+Recordemos que, al menos de acuerdo con Reynolds,
+
+\begin{align*}
+  &\textbf{for } v := e_0 \textbf{ to } e_1 \textbf{ do } c \\ 
+  := ~ &\textbf{newvar } w := e_1 \textbf{ in newvar } v:= e_0 \textbf{ in while
+  } v \leq w \textbf{ do } (c; v := v+1)
+\end{align*}
+
+que es la expresión $(c)$. Para no ser tramposos, igual justificaremos por qué
+dicha definición es satisfactoria, llegado el momento.
+
+~ 
+
+$(a)$ La definición es satisfactoria en el sentido de que, si se la llama en un
+estado $\sigma$, ejecutará el comando
+$c$ en los sucesivos estados 
+
+\begin{align*}
+  &[\sigma \mid v : \llbracket e_0 \rrbracket\sigma]\\ 
+  &[\sigma \mid v : \llbracket e_0 \rrbracket\sigma + 1]\\
+  &\vdots\\
+  &[\sigma \mid v : \llbracket e_1 \rrbracket\sigma]
+\end{align*}
+
+Sin embargo, debemos notar que no se restaura el valor de $v$, i.e. $v$ no es
+local al ciclo.
+
+~
+
+$(b)$ Esta definición es funcional y restaura el valor de $v$. Sin embargo, es
+ineficiente, porque en cada llamada del while debe volver a computarse el valor
+de $e_1$ bajo el estado dado. Es concebible que $e_1$ sea una expresión
+compleja, e.g. una productoria de $k > 10.000$ variables, o cualquier locura que
+se nos ocurra. Por lo tanto, lo ideal sería computar la cota superior $e_1$ una
+sola vez y alocar dicho valor en otra variable.
+
+~
+
+$(c)$ La definición $(c)$ resuelve el problema de la $(b)$, porque aloca en la
+variable local $w$ el valor de la cota superior, que por lo tanto se computa una
+única vez. Una vez dicho valor es asignado a $w$, procede igual que en la def.
+$(b)$: asigna a una variable local $v$ el valor de $e_0$ e itera adecuadamente.
+
+\pagebreak 
+
+\begin{myframe}
+  \textbf{(10)} Enunciar el teorema de coincidencia  y demostra el caso $\textbf{while}$.
+\end{myframe}
+
+\begin{helpframe}
+  \textbf{Teorema de coincidencia.} 
+
+  $(a)$ Sean $\sigma, \sigma'$ estados tales
+  que $\sigma ~ w = \sigma' ~ w$ para toda $w \in FV(c)$. Entonces o bien 
+  $\llbracket c \rrbracket\sigma = \llbracket c \rrbracket\sigma' = \bot $ o
+  bien 
+  $\llbracket c \rrbracket\sigma ~ w = \llbracket c \rrbracket\sigma' ~ w$ para
+  toda $w \in FV(c)$.
+
+  ~
+
+  $(b)$ Si $\llbracket c \rrbracket\sigma \neq \bot $, entonces $\llbracket c
+  \rrbracket\sigma ~ w = \sigma ~ w$ para toda $w \in FA(c)$.
+\end{helpframe}
+
+
+$(a)$ Sean $\sigma_1, \sigma_2$ tales que $\sigma_1 ~ w = \sigma_2 ~ w$ para
+todo $w \in FV(c)$, donde 
+
+\begin{equation*} c := \textbf{while } b \textbf{ do } d \end{equation*}
+
+Por def. de $FV$, tenemos que $\sigma_1 ~ w = \sigma_2 ~ w$ para toda $w \in
+FV(b) \cup FV(d)$. Asumamos como hipótesis inductiva que el teorema vale para $b$ y $d$, y definamos
+
+
+\begin{align*}
+  \gamma_1 := \llbracket d \rrbracket\sigma_1, \qquad \gamma_{i+1} := \llbracket d
+  \rrbracket\gamma_i\\
+  \beta_1 := \llbracket d \rrbracket\sigma_2, \qquad \beta_{i+1} := \llbracket d
+  \rrbracket\beta_i
+\end{align*}
+
+Es decir, $\left\{ \gamma_i \right\} $ y $\left\{ \beta_i \right\} $ son los
+estados correspondientes a las sucesivas iteraciones del \textbf{while}.
+Observemos que por HI resulta que $\gamma_1 = \llbracket d \rrbracket\sigma_1,
+\beta_1 = \llbracket d \rrbracket\sigma_2$ coinciden en las variables libres de
+$d$. Es fácil ver por inducción que entonces $\gamma_i, \beta_i$ coinciden en
+las variables libres de $d$ para toda $i$.
+
+~ 
+
+Observemos que $b$ no tiene variables ligadas y por lo tanto, o bien es
+constante, o bien posee sólo variables libres. Si $b$ es constante el problema
+es trivial porque o bien el while se ejecuta indefinidamente desde cualquier
+estado, o no se ejecuta desde ningún estado. Así que veamos el caso en que $b$
+tiene al menos una variable libre.
+
+~ 
+
+Observemos que si $b$ y $d$ no tienen variables libres en común, entonces las
+sucesivas ejecuciones de $d$ no afectarán el valor de $b$ y, por lo tanto, o
+bien el \textbf{while} se ejecuta sin terminar desde ambos estados, o no se
+ejecuta desde ninguno de los estados. Así que en este caso el problema es
+trivial. Por lo tanto, veamos el caso $FV(b) \cap FV(d) \neq \emptyset$.
+
+
+~
+
+Demostremos que $(\star) ~  \llbracket b \rrbracket\gamma_i = \llbracket b
+\rrbracket\beta_i$. Claramente, una ejecución de $d$ sólo afecta la semántica de
+$b$ a través de modificaciones de las variables en $FV(b) \cap FV(d) \subseteq
+FV(d)$. Pero ya establecimos que $\gamma_i ~ w = \beta_i ~ w$ para toda
+$w \in FV(d)$, y entonces esto es verdadero para el caso particular $w \in FV(b)
+\cap FV(d)$. Por lo tanto, $\gamma_i, \beta_i$ coinciden en los valores de las
+variables libres de $b$ que también son variables libres de $d$. Respecto a las
+variables libres de $b$ que no son variables libres de $d$, las mismas no son
+modificadas por las sucesivas ejecuciones de $d$. Por lo tanto tienen el mismo
+valor que en $\sigma_1$ y $\sigma_2$, respectivamente. Pero $\sigma_1, \sigma_2$
+coinciden en las variables libres de $b$. Por lo tanto, coinciden también en
+estas variables.
+
+~
+
+Asuma que $\llbracket c \rrbracket\sigma_1 =\bot $. Entonces, para toda $i$ se
+cumple que $\llbracket b \rrbracket\gamma_i \equiv \textbf{True}$ (de otro modo
+el \textbf{while} terminaría). Por $(\star)$ se sigue que $\llbracket b
+\rrbracket\beta_i \equiv \textbf{True}$. Como esto vale para toda $i$, las
+sucesivas iteraciones de $\left\{ \beta_i \right\} $ nunca hacen la guarda
+falsa. Por lo tanto, el \textbf{while} nunca termina partiendo desde $\sigma_2$.
+$\therefore \llbracket c \rrbracket\sigma_2 = \bot $
+
+~ 
+
+Asuma que $\llbracket c \rrbracket\sigma_1 \neq \bot$. Un razonamiento idéntico
+al anterior nos da que $\llbracket c \rrbracket\sigma_2 \neq \bot $, y no sólo
+eso sino que se da la misma cantidad $k$ de iteraciones en ambos casos. Es decir
+que los estados finales de ambos casos son $\gamma_k, \beta_k$, respectivamente.
+Ya observamos antes que $\gamma_k, \beta_k$ coinciden en las variables libres de
+$d$ y de $b$, lo cual concluye la prueba.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
