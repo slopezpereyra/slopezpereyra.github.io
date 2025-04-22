@@ -1,1 +1,2 @@
-\contentsline {section}{\numberline {1}Práctico 4: Lenguaje imperativo simple}{3}{}%
+\contentsline {section}{\numberline {1}Práctico 3: Recursión, predominios y dominios, etc.}{3}{}%
+\contentsline {section}{\numberline {2}Práctico 4: Lenguaje imperativo simple}{16}{}%

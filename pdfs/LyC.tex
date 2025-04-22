@@ -84,6 +84,731 @@
 \tableofcontents
 \newpage
 
+
+\section{Práctico 3: Recursión, predominios y dominios, etc.}
+
+
+\begin{myframe}
+\textbf{(1)} Decidir si los siguientes órdenes parciales son predominios o
+dominios.
+
+$(a)$ <intexp> con el orden discreto
+
+$(b)$ $\text{<intexp>} \mapsto
+\mathbb{B}_{\bot}$
+
+$(c)$ $\mathbb{B}_\bot \mapsto \text{<intexp>}$.
+\end{myframe}
+
+$(a)$ En el orden discreto, ningún par de elementos es comparable y por lo tanto
+toda cadena es no interesante. $\therefore $ Toda cadena tiene un supremo. Pero
+$<\text{intexp}>$ bajo dicho orden carece de mínimo. $\therefore $ Es
+predominio y no es dominio.
+
+~
+
+
+$(b)$ $\mathbb{B}_\bot = \left\{ 0,1, \bot  \right\} $ es llano y por lo tanto
+es predominio, porque toda cadena es no interesante. Tiene mínimo $\bot$ y por
+ende estambién dominio.
+
+~
+
+$(c)$ Puesto que $\text{<intexp>}$ es predominio,
+$\mathbb{B}_\bot \mapsto \text{<intexp>}$ es predominio.
+
+
+\pagebreak 
+
+\begin{myframe}
+\textbf{(4)} Calcular el supremo de los siguientes conjuntos.
+\end{myframe}
+
+~ 
+
+$(a)$ $\mathcal{A} := \left\{ n \in \mathbb{N} : n \text{ is even} \right\}
+\subseteq \mathbb{N}_{\bot} $
+
+
+\small
+\begin{quote}
+
+  El conjunto ni siquiera tiene cota superior. 
+
+\end{quote}
+\normalsize
+
+$(b)$ $\mathcal{A} := \left\{ n \in \mathbb{N} : n \text{ is even} \right\}
+\subseteq \mathbb{N}_{\infty} $
+
+
+\small
+\begin{quote}
+
+$\infty $ es la única cota superior de $\mathcal{A}$. $\therefore \infty$ es
+supremo de $\mathcal{A}$.
+
+\end{quote}
+\normalsize
+
+
+$(c)$ $\mathcal{A} := \left\{ n \in \mathbb{N} : n \text{ is prime} \right\}
+\subseteq \mathbb{N}^\infty$
+
+
+\small
+\begin{quote}
+
+Mismo razonamiento que $(b)$.
+
+\end{quote}
+\normalsize
+
+
+$(d)$ $\mathcal{A} := \left\{ V, F \right\} \subseteq \mathbb{B}_\bot$
+
+
+\small
+\begin{quote}
+
+El conjunto no tiene cota superior porque $\mathbb{B}_\bot $ es el orden llano.
+
+\end{quote}
+\normalsize
+
+
+$(e)$ $\mathcal{F} := \left\{ f_n : n \in \mathbb{N} \right\} \subseteq
+\left( \mathbb{N} \mapsto \mathbb{N}_\bot  \right) $ where 
+
+\begin{equation*}
+  f_n(x) = \begin{cases}
+    1 & x \mid n \\ 
+    \bot & \text{otherwise}
+  \end{cases}
+\end{equation*}
+
+
+\small
+\begin{quote}
+
+Para todo $k\in \mathbb{N}$ $f_k(n) \leq 1$. Por lo tanto la función que es
+constantemente $1$, $C_1$, es cota superior de $\mathcal{F}$. Sea 
+$g \in \mathbb{N} \mapsto \mathbb{N}_\bot$ otra cota superior de $\mathcal{F}$.
+Como $1$ es el menor natural, $g \leq C_1 \iff g = \bot $. Pero esto
+contradiría que $g$ es cota superior. 
+
+$\therefore $ $C_1$ es la menor cota superior (el supremo).
+
+
+\end{quote}
+\normalsize
+
+
+$(f*)$ $\mathcal{F} = \left\{ f_n : n \in \mathbb{N} \right\} \subseteq
+\left( \mathbb{N} \mapsto \mathbb{N}_\bot  \right) $ where 
+
+\begin{equation*}
+  f_n(x) = \begin{cases}
+    x & |x - 10| < \ln \left( n + 1 \right) \\ 
+    \bot  & \text{otherwise}
+  \end{cases}
+\end{equation*}
+
+
+\small
+\begin{quote}
+
+  Dado $x_0 \in \mathbb{N}$, como $\ln(n+1) \to \infty$ cuando $n \to \infty$,
+  siempre podremos encontrar un $n_0$ tal que 
+
+  \begin{equation*}
+    f_{n_0}(x_0) = x_0 \neq \bot 
+  \end{equation*}
+
+En otras palabras, para todo $x_0$, existe algún índice en que la función
+evaluada en $x_0$ no es $\bot $. Por ende, es razonable proponer
+
+\begin{equation*}
+  \bigsqcup_{n \in \mathbb{N}} f_n(x) = I_{\mathbb{N} \mapsto \mathbb{N}_\bot }
+\end{equation*}
+
+donde $I_S$ es la función identidad del conjunto $S$.
+
+Es fácil demostrar por casos que $f_i \leq I$. Tomemos $g \in \mathbb{N} \to
+\mathbb{N}_\bot $ una cota superior de $\mathcal{F}$ y probemos que
+$I_{\mathbb{N} \to \mathbb{N}_\bot } \leq g$.
+
+Sea $x_0 \in \mathbb{N}$ fijo. Observemos que
+
+
+\begin{equation*}
+  \left| x_0 - 10 \right| < \ln(n+1) \iff e^{\left| x_0 - 10 \right| } < n
+\end{equation*}
+
+Tomemos $k_0 := e^{\left| x_0 - 10 \right| }
+$ y veamos que
+
+\begin{equation*}
+  \left| x_0 - 10 \right|  < \ln\left( e^{\left| x_0 - 10 \right|  } + 1
+  \right) \iff e^{\left| x_0 - 10 \right| } < e^{\left| x_0 - 10 \right| } + 1
+\end{equation*}
+
+Entonces, como $\left| x_0 - 10 \right| < \ln(k_0 + 1) <
+\ln(\left\lceil k_0 \right\rceil + 1) $, y $\left\lceil k_0 \right\rceil \in
+\mathbb{N}$, tenemos garantizado que 
+
+\begin{equation*}
+  f_{\left\lceil k_0 \right\rceil }(x_0) = x_0
+\end{equation*}
+
+Pero entonces, por ser $g$ cota superior de la cadena, 
+
+$$f_{\left\lceil k_0 \right\rceil } \leq g(x_0) \leq I_{\mathbb{N}\mapsto \mathbb{N}_0}(x_0)$$ 
+
+Pero entonces tenemos $x_0 \leq g(x_0) \leq x_0$.
+
+$\therefore $ $g = I_{\mathbb{N} \mapsto \mathbb{N}_0}$.
+
+$\therefore $ $\bigsqcup_{i \in \mathbb{N}} \mathcal{F} = I_{\mathbb{N}
+\mapsto \mathbb{N}_0}$.
+
+\end{quote}
+\normalsize
+
+\pagebreak 
+
+
+\textbf{(6)} Caracterizar todas las funciones continuas en los siguientes
+conjuntos.
+
+~ 
+
+$(a)$ $\mathbb{B}_\bot \mapsto \mathbb{B}_\bot $.
+
+
+\small
+\begin{quote}
+
+Toda función continua debe ser monótona, así que podemos empezar preguntando qué
+funciones son monótonas.
+
+\textbf{Proposición.} Si $f(\bot) = \bot$, entonces $f$ es monótona.
+
+\textbf{Demostración.} Dados $a, b \in \mathbb{B}\bot $, $a \leq b$ si y solo si $a = \bot$. Por lo tanto, si $f(\bot) = \bot $, entonces $f(\bot) \leq b$ para todo $b \in \mathbb{B}\bot$. En particular, $f(\bot ) \leq f(b)$ para todo $b \in \mathbb{B}_\bot $.
+
+\textbf{Proposición}. Si $f(\bot) \neq \bot $, entonces $f$ es monótona si y solo si $f$ es constante.
+
+\textbf{Demostración.} Supongamos que $f(\bot ) \neq \bot $ y que $f$ es
+monótona. Sea $b \in \left\{ 0, 1 \right\} $ fijo pero arbitrario. Dado que $\bot
+\leq b$, se requiere $f(\bot) \leq f(b) \Rightarrow f(\bot ) = f(b)$. Ahora sea
+$b^c$ el complemento de $b$, es decir, $b^c = 1$ si $b = 0$ y $b^c = 0$ si $b =
+1$. El mismo razonamiento que dimos para $b$ demuestra que se requiere $f(\bot )
+= f(b^c)$. $\therefore $ $f(\bot ) = f(b) = f(b^c)$.
+
+Dado que $\left\{ f : f(\bot) = \bot \right\} \cup \left\{ f : f(\bot ) \neq
+\bot \right\} $ es una partición de $\mathbb{B}\bot \mapsto \mathbb{B}\bot $, y
+$\left\{ f : f(\bot ) \neq \bot \right\} $ puede dividirse en funciones constantes y no constantes,
+
+\begin{align*} \mathbb{B} \to \mathbb{B}_\bot = &\left\{ f : f(\bot ) = \bot
+\right\} \\ \cup &\left\{ C_k : k \neq \bot \right\}\\ \cup &\left\{ f : f \text{
+no constante}, f(\bot ) \neq \bot \right\} \end{align*}
+
+y el conjunto de estos conjuntos es una partición del espacio de funciones que
+estudiamos. En particular, los dos primeros conjuntos son las funciones monótonas.
+
+Preguntamos: ¿cuáles de estas son continuas? Pero ya hemos afirmado que, dado que $\mathbb{B}_\bot $ es finito, todas sus cadenas son poco interesantes. Y dado que las funciones monótonas preservan cadenas, toda función monótona es continua.
+
+$\therefore $ Las funciones continuas de $\mathbb{B}\bot \mapsto \mathbb{B}\bot $ son todas las funciones que envían $\bot$ a $\bot $ y todas las funciones constantes.
+
+Vayamos aún más lejos y contemos el número de funciones monótonas (continuas). Sabemos que $|A \to B| = |B|^{|A|}$, lo cual significa que $|\mathbb{B}\bot \mapsto \mathbb{B}\bot| = 3^3 = 27$.
+
+Obviamente hay dos funciones en $\left{ C_k : k \neq \bot \right} $. En $\left{ f : f(\bot ) = \bot \right} $ tenemos $3^2 = 9$ funciones. En resumen, hay $9 + 2 = 11$ funciones continuas y $27 - 11 = 16$ funciones no continuas.
+
+
+\end{quote}
+\normalsize
+
+\pagebreak 
+
+$(b)$ $\mathbb{N} \mapsto \mathbb{N}_\bot $
+
+
+\small
+\begin{quote}
+
+Los argumentos dados en el caso anterior todavía aplican.
+
+Sea $f_0(\bot) := m_0 \neq \bot$. Probaremos que $f_0$ monotónica si y solo si $f_0$
+constante. 
+
+Que constante $\Rightarrow$ monotónica es trivial, así que veamos el otro caso.
+Asuma que $f_0$ es monotónica y que existe un $k_0 \in \mathbb{N}$ tal que 
+$f_0(k_0) \neq f_0(\bot)$. Como $\bot  \leq k_0$ y $f_0$ monotónica, tenemos $f_0(\bot) \leq f(k_0)$. Si
+$f(k_0) = \bot$, entonces tenemos $m_0 \leq \bot $, lo cual es claramente
+absurdo porque $m_0 \neq \bot$. Si $f(k_0) := m_1 \neq \bot $, entonces tenemos $m_0 \leq m_1$ con ambos siendo
+números naturales. Pero esto es absurdo, porque en $\mathbb{N}_\bot$ ningún par
+de naturales es comparable. La contradicción viene de asumir que $f_0(k_0) \neq f_0(\bot )$. Luego $f_0(k) =
+f(\bot )$ para todo $k$, y $f_0$ es constante.
+
+Ahora probaremos que si $f(\bot ) = \bot $ entonces $f$ es monotónica. Si 
+$f(\bot ) = \bot $, al tomar cualquier par $a, b$ que satisfaga $a \leq b$,
+tenemos necesariamente $a = \bot $.  Por lo tanto $f(a) \leq f(b)$ si y solo si
+$f(\bot ) \leq f(b)$ si y solo si $\bot \leq f(b)$ lo cual es verdadero.
+
+Por lo tanto, vale lo mismo que antes:
+
+
+\begin{align*}
+  \mathbb{B}_\bot  \to \mathbb{B}\bot = &\left\{ f : f(\bot ) = \bot  \right\}  \\ \cup
+                                  &\left\{ C_k : k \neq \bot  \right\} \\\cup &\left\{ f : f \text{ not constant},
+  f(\bot ) \neq f(\bot )  \right\} 
+\end{align*}
+
+y los primeros dos conjuntos son las funciones monótonas. Como no hay cadenas
+interesantes, éstas son a su vez las funciones continuas.
+
+
+\end{quote}
+\normalsize
+
+\pagebreak
+
+$(c) ~ \mathbb{N}^\infty \mapsto \mathbb{N}_\bot $
+
+
+\small
+\begin{quote}
+
+Sea $f$ continua en $\mathbb{N}^\infty \mapsto \mathbb{N}_\bot$.
+
+\textbf{Proposition.} Si $f(\bot ) = \bot $ entonces $f = C_\bot $, donde $C_k
+=\lambda n . k$ con dominio $\mathbb{N}^\infty$.
+
+\textbf{Proof.} Como $f$ es continua, $a \leq b$ implica $f(a) \leq f(b)$ para
+todo $a, b \in \mathbb{N}^\infty$. En particular, para todo $n \in
+\mathbb{N}^\infty$, $n \leq \infty$. Por lo tanto, $f(n) \leq \bot$. 
+
+$\therefore $ For all $n \in \mathbb{N}^\infty$, $f(n) = \bot $.
+
+\textbf{Proposition.} Si $f(\bot) \neq \bot$, entonces $f = C_k$ para algún $k
+\in \mathbb{N}_\bot$.
+
+\textbf{Proof.} Considere la siguiente cadena interesante
+
+\begin{equation*}
+  1 \leq 2 \leq \ldots
+\end{equation*}
+
+cuyo supremo es $\infty$. Como $f$ es continua, 
+
+\begin{equation*}
+  f(1) \leq f(2) \leq \ldots
+\end{equation*}
+
+es una cadena con supremo $f(\infty )$. Pero claramente $f(n_0), f(n_1)$ ocurren
+en la cadena. Si asumimos, sin pérdida de generalidad, que $f(n_0)$ aparece
+antes que $f(n_1)$, tenemos $f(n_0) \leq f(n_1)$. Pero $f(n_0), f(n_1) \in
+\mathbb{N}_\bot $ y por lo tanto o bien $f(n_0) = \bot $ o bien $f(n_0) =
+f(n_1)$. Si $f(n_0) = \bot$, como $n_0$ es un natural arbitrario, esto vale para
+todo $n \in \mathbb{N}$ y $f(n) = \bot $. Luego $f = C_\bot $. Si $f(n_0) =
+f(n_1) \neq \bot $, entonces $f = C_{f(n_0)}$.
+
+$\therefore $ $f$ es constante.
+
+
+\end{quote}
+\normalsize
+
+
+
+\pagebreak 
+
+$(d)$ $\mathbb{N}^\infty \mapsto \mathbb{N}^\infty$
+
+~
+
+Si $f$ es continua, entonces necesariamente $f(1) \leq f(2) \leq \ldots$. Pero
+$f(k) \in \mathbb{N}^\infty$ para todo $k \in \mathbb{N}^\infty$. Por lo tanto
+se dan uno de dos casos.
+
+~ 
+
+Si no existe ningún natural $n_0$ tal que $f(n_0) = \infty$, entonces el hecho
+de que 
+
+\begin{equation*}
+  f(1) \leq f(2) \leq \ldots
+\end{equation*}
+
+sea una cadena solo implica dos cosas: ($a$) que $f(\infty) = \infty$, $(b)$ que 
+$f(k)$ sea mayor a $f(k-1)$. Por lo tanto, $f$ es definida por todas las
+funciones que son solución de la siguiente ecuación funcional:
+
+\begin{equation*}
+  F ~ f ~ n = \begin{cases}
+    \infty & n = \infty\\ 
+    f ~ (n-1) + k_n & n \neq \infty
+  \end{cases}
+\end{equation*}
+
+
+~ 
+
+Si existe un $n_0 \in \mathbb{N}$ tal que $f(n_0) = \infty$, entonces la cadena
+es de la forma 
+
+\begin{equation*}
+  f(1) \leq f(2) \leq \ldots \leq f(n_0) \leq \ldots
+\end{equation*}
+
+Por lo tanto, se requiere que $f(n) = \infty$ para todo $n \geq n_0$ y todas las
+funciones continuas son solución de la ecuación 
+
+\begin{equation*}
+  F ~ f ~ n = \begin{cases}
+    \infty & n = \infty \lor  n \geq n_0\\ 
+    f ~ (n-1) + k_n & c.c.
+  \end{cases}
+\end{equation*}
+
+En síntesis, las funciones continuas son todas las funciones crecientes que
+mapean $\infty \mapsto \infty$.
+
+
+\pagebreak
+
+\textbf{(8)} Caracterizar los puntos fijos y determinar si existe uno menor
+para:
+
+~
+
+$(a)$ $f : \mathbb{N} \mapsto \mathbb{N}$ tal que $f(n) = n$.
+
+
+\small
+\begin{quote}
+
+Todo valor $n \in \mathbb{N}$ es un punto fijo porque $f$ es identidad. Existe
+uno menor, naturalmente: el cero.
+
+\end{quote}
+\normalsize
+
+$(b)$ $f : \mathbb{N}^\infty\mapsto \mathbb{N}^\infty$ tal que $f(n) = n + 1$.
+
+
+
+\small
+\begin{quote}
+
+$\infty + n$ no está definido para ningún natural $n$. Claramente ningún natural
+es punto fijo.
+
+\end{quote}
+\normalsize
+
+$(c) ~ g : \text{<intexp>} \mapsto \text{<intexp>}$  defined as $g(e) = e$.
+
+
+\small
+\begin{quote}
+
+Esta es la identidad en $\text{<intexp>} \mapsto \text{<intexp>}$,
+por lo cual todo valor es un punto fijo. Sin embargo, $\text{<intexp>}$ no es un
+conjunto ordenado y por ende no tiene sentido hablar de un punto
+fijo mínimo.
+
+\end{quote}
+\normalsize
+
+$(d)$ $f : \mathbb{N}^\infty \mapsto \mathbb{N}^\infty$ defined as 
+
+\begin{equation*}
+  f(n) = \begin{cases}
+    n + 1 & n < 8 \\ 
+    n & \text{otherwise}
+  \end{cases}
+\end{equation*}
+
+
+\small
+\begin{quote}
+
+Si $n \geq 9$ (excepto por $\infty$), entonces $n$ es punto fijo. Si $n < 8$, no lo es.
+
+\end{quote}
+\normalsize
+
+\pagebreak 
+
+\begin{myframe}
+\textbf{(9)} Determine si las siguientes funciones en 
+$( \mathbb{N} \mapsto\mathbb{N}_{\bot }) \mapsto ( \mathbb{N} \mapsto\mathbb{N}_{\bot })$
+
+son continuas y calcule la
+$i$-ésima aplicación de ellas sobre el argumento 
+$\bot_{\mathbb{N} \mapsto \mathbb{N}_{\bot }}$ para $i = 0, 1, 2$.
+\end{myframe}
+~
+
+$(a)$ $F$ definida como 
+
+\begin{equation*}
+  F(f) = \begin{cases}
+    f & \f \text{ es total} \\ 
+    \bot_{\mathbb{N}\to \mathbb{N}_\bot } \text{ c. c.}
+  \end{cases}
+\end{equation*}
+
+
+\textbf{Solución.} Sean $\varphi, \psi \in \mathbb{N} \mapsto \mathbb{N}_\bot $
+tales que $\varphi \leq \psi$. Es fácil ver que si $\varphi$ es total entonces
+$\psi$ es total, de lo cual sale fácilmente por casos que $F(\varphi) \leq
+F(\psi)$.
+
+~
+
+Para probar que $F$ no es continua, daremos una cadena interesante cuyo supremo
+no es preservado por $F$. Sea
+
+\begin{equation*}
+  \varphi_i(n) = \begin{cases}
+    n & i \leq n \\ 
+    \bot & \text{c.c.}
+  \end{cases}
+\end{equation*}
+
+y considere la cadena 
+
+$$\bot_{\mathbb{N}\to \mathbb{N}_\bot } < \varphi_1 \leq \varphi_2 \leq
+\varphi_3 \leq \ldots$$. 
+
+\textbf{Proposición}. Toda cota superior de $\left\{ \varphi_i \right\}_{i \in
+\mathbb{N}}$ es una función total.
+
+
+\small
+\begin{quote}
+
+
+\textbf{Prueba.} Para todo $n \in \mathbb{N}$ puede darse un $i
+\in \mathbb{N}$ tal que $\varphi_i(n)$ está definido. Si $g$ es cota superior,
+como $\varphi_i \leq g$, tenemos que si $\varphi_i(n)$ está definido también lo
+está $g(n)$. Es decir, para todo $n \in \mathbb{N}$, $g(n)$ está definido.
+$\therefore $ $g$ es total.
+
+\end{quote}
+\normalsize
+
+\textbf{Proposición.} $F\left( \bigsqcup_{i \in \mathbb{N}} \varphi_i \right) =
+\bigsqcup_{i \in \mathbb{N}} \varphi_i \neq \bot_{\mathbb{N}\to \mathbb{N}_\bot }$.
+
+
+\small
+\begin{quote}
+
+\textbf{Prueba.} Como toda cota superior es total, en particular el supremo es
+total, de lo cual la primera identidad se sigue por def. de $F$. Que el supremo
+no es bottom se sigue de que bottom es menor estricto a cada $\varphi_i$.
+
+\end{quote}
+\normalsize
+
+\textbf{Proposición.} $\bigsqcup_{i \in \mathbb{N}} F ~ \varphi_i =
+\bot_{\mathbb{N} \to \mathbb{N}_\bot }$.
+
+
+\small
+\begin{quote}
+
+\textbf{Prueba.} Como cada $\varphi_i$ es no-total, $F(\varphi_i) = \bot_{\mathbb{N}\to
+\mathbb{N}_\bot }$. Por lo tanto, la cadena $F(\varphi_1), F(\varphi_2), \ldots$
+es simplemente la cadena $\bot_{\mathbb{N}\mapsto\mathbb{N}_\bot } \leq$
+$\bot_{\mathbb{N}\mapsto\mathbb{N}_\bot } \leq \ldots$ que tiene supremo $\bot_{\mathbb{N}\mapsto\mathbb{N}_\bot }$. 
+
+\end{quote}
+\normalsize
+
+\begin{equation*}
+  \therefore  ~ F\left( \bigsqcup_{i \in \mathbb{N}} \varphi_i \right) \neq \bigsqcup_{i \in
+  \mathbb{N}} F(\varphi_i)
+\end{equation*}
+
+\pagebreak
+
+$(c)$ $F$ definida como 
+
+\begin{equation*}
+  F\left( f\left( n \right)  \right) = \begin{cases}
+    0 & n = 0 \\ 
+    f(n-2) & \text{c.c}
+  \end{cases}
+\end{equation*}
+
+\textbf{Solución.} Es claro que toda $f$ en el dominio de $F$ debe estar
+definida \textit{al menos} en todos los pares, pues $F~ f~ n$ se define en los
+valores $0, 2, 4, \ldots$. Más aún, es claro que la imagen de $F$ es una única
+función: la constante $0$ definida \textit{únicamente} en todos los pares. 
+
+Sean $\varphi, \psi \in \mathcal{D}(F)$ tales que $\varphi \leq \psi$. Como
+$\varphi, \psi$ están definidas en los pares, es claro que $F(\varphi) \leq
+F(\psi) \iff 0 \leq 0$. 
+
+Sea $\varphi_1 \leq \varphi_2 \leq \ldots$ una cadena interesante de funciones
+en el dominio de $F$. Es claro que $F(\varphi_i)$ es la constante cero definida
+en los pares, con lo cual $F$ preserva el supremo y etc.
+
+
+\pagebreak 
+
+\textbf{(10)} Calcular la menor $f \in \mathbb{Z} \mapsto \mathbb{Z}_\bot$ que
+satisface 
+
+\begin{equation*}
+  f(n) = \begin{cases}
+    1 & n = 0 \\ 
+    n \cdot f(n-1) & n \neq 0
+  \end{cases}
+\end{equation*}
+
+notando que $n$ corre sobre todo $\mathbb{Z}$.
+
+~
+
+\textbf{Solución.} Sea $F \in \left( \mathbb{Z} \mapsto \mathbb{Z}_\bot  \right)
+\mapsto (\mathbb{Z} \mapsto \mathbb{Z}_\bot )$ definida como
+
+\begin{equation*}
+  F(g) = n \mapsto \begin{cases}
+    1 & n = 0 \\ 
+    n \cdot g(n - 1) & n \neq 0
+  \end{cases}
+\end{equation*}
+
+Considere la cadena 
+
+$$F^1(\bot_{\left( \mathbb{Z} \mapsto \mathbb{Z}_\bot  \right)}), F^2\left(
+\bot_{\left( \mathbb{Z} \mapsto \mathbb{Z}_\bot  \right)} \right), \ldots $$
+
+algunos de cuyos valores son: 
+
+\begin{align*}
+  g_1 := F^1\left( \bot_{\left( \mathbb{Z} \mapsto \mathbb{Z}_\bot  \right)} \right)  
+  &=
+  n \mapsto \begin{cases}
+    1 & n = 0 \\ 
+    n \cdot \bot_{\left( \mathbb{Z} \mapsto \mathbb{Z}_\bot  \right)}(n-1) & n
+    \neq 0
+  \end{cases} \\ 
+  &= n\mapsto \begin{cases}
+    1 & n = 0 \\ 
+    n \cdot \bot_{\mathbb{Z}_\bot } & n \neq 0
+  \end{cases} \\
+  &= n\mapsto \begin{cases}
+    1 & n = 0 \\ 
+    \bot_{\mathbb{Z}_\bot } & n \neq 0
+  \end{cases} 
+\end{align*}
+
+\begin{align*}
+  g_2 := F^2\left( g_1 \right)  
+  &=
+  n \mapsto \begin{cases}
+    1 & n = 0 \\ 
+    n \cdot g_1(n - 1) & n \neq 0
+  \end{cases} \\ 
+  &= n\mapsto \begin{cases}
+    1 & n = 0 \\ 
+    n \cdot 1 & n - 1 = 0 \\ 
+    n \cdot \bot_{\mathbb{Z}_\bot } & n - 1 \neq 0
+  \end{cases} \\
+  &= n\mapsto \begin{cases}
+    1 & n = 0 \\ 
+    n & n = 1 \\ 
+    \bot_{\mathbb{Z}_\bot } & n > 1
+  \end{cases} 
+\end{align*}
+
+
+\begin{align*}
+  g_3 := F^2\left( g_1 \right)  
+  &=
+  n \mapsto \begin{cases}
+    1 & n = 0 \\ 
+    n \cdot g_2(n - 1) & n \neq 0
+  \end{cases} \\ 
+  &= n\mapsto \begin{cases}
+    1 & n = 0 \\ 
+    n \cdot 1 & n - 1 = 0 \\ 
+    n \cdot (n-1) & n - 1 = 1 \\ 
+    \bot_{\mathbb{Z}_\bot } & n - 1 > 1
+  \end{cases} \\
+  &= n\mapsto \begin{cases}
+    1 & n = 0 \\ 
+    n & n = 1 \\ 
+    n(n-1) & n = 2 \\ 
+    \bot_{\mathbb{Z}_\bot } & n > 2
+  \end{cases} 
+\end{align*}
+
+Proponemos que la forma general de $F^k$ es 
+
+\begin{equation*}
+  F^k(\left( \mathbb{Z} \mapsto \mathbb{Z}_\bot  \right)) = n \mapsto \begin{cases}
+    1 & n \leq 1 \\ 
+    n(n-1)\ldots 2 \cdot 1 & 2 \leq n \leq k \\ 
+    \bot_{\mathbb{Z}_\bot } & k < n
+  \end{cases}
+\end{equation*}
+
+Ya hemos dado caso base, así asumamos que la fórmula vale para un $k$ arbitrario
+y veamos el caso $k + 1$. Tenemos que 
+
+\begin{align*}
+  F^{k+1}\left( \left( \mathbb{Z} \mapsto \mathbb{Z}_\bot  \right) \right)  
+  &= F \left( F^k(\left( \mathbb{Z} \mapsto \mathbb{Z}_\bot  \right)) \right)
+  \\ 
+  &= n \mapsto \begin{cases}
+    1 &  n = 0 \\ 
+    n \cdot F^k(\left( \mathbb{Z} \mapsto \mathbb{Z}_\bot  \right))(n-1) & n \neq 0
+  \end{cases} \\ 
+  &= n\mapsto \begin{cases}
+    1 & n = 0 \\ 
+    n \cdot 1 & n-1 \leq 1 \\ 
+    n \cdot \Big( (n-1)(( n-1 )-1)\ldots \cdot 2 \cdot 1  \right) & 2 \leq n -1
+    \leq k \\ 
+    n\cdot \bot_{\mathbb{Z}_\bot} & k < n-1
+  \end{cases} \\ 
+  &= n \mapsto  \begin{cases}
+    1 & n \leq 1 \\ 
+    2 & n = 2 \\ 
+    n(n-1)(n-2)\ldots \cdot 2 \cdot 1 & 3 \leq n \leq k + 1 \\ 
+    \bot_{\mathbb{Z}_\bot } & k + 1 < n
+  \end{cases}
+\end{align*}
+
+Los dos primeros casos se contienen, porque si $n = 2$ aplicando la tercer
+clausual resulta $2 \cdot 1 = 2$. Es decir, tenemos
+
+\begin{equation*}
+  F^{k+1}(\left( \mathbb{Z} \mapsto \mathbb{Z}_\bot  \right)) 
+  &= n \mapsto  \begin{cases}
+    1 & n \leq 1 \\ 
+    n(n-1)(n-2)\ldots \cdot 2 \cdot 1 & 2 \leq n \leq k + 1 \\ 
+    \bot_{\mathbb{Z}_\bot } & k + 1 < n
+  \end{cases} 
+\end{equation*}
+
+que es lo que queríamos probar. Es conclusión, 
+
+\begin{equation*}
+  F^k(\left( \mathbb{Z} \mapsto \mathbb{Z}_\bot  \right))&= n \mapsto  \begin{cases}
+    n! & 0 \leq n \leq k\\
+    \bot_{\mathbb{Z}_\bot } & k < n
+  \end{cases}
+\end{equation*}
+
+\pagebreak
 \section{Práctico 4: Lenguaje imperativo simple}
 
 \begin{myframe}
@@ -466,6 +1191,7 @@ Entonces
   la indefinición no desaparece: siempre que $\sigma ~ y \neq 0$, se da $\bot $.
 \end{helpframe}
 
+\normalsize
 \pagebreak 
 
 \begin{myframe}
@@ -668,7 +1394,7 @@ $(b)$: asigna a una variable local $v$ el valor de $e_0$ e itera adecuadamente.
 \pagebreak 
 
 \begin{myframe}
-  \textbf{(10)} Enunciar el teorema de coincidencia  y demostra el caso $\textbf{while}$.
+  \textbf{(9)} Enunciar el teorema de coincidencia  y demostra el caso $\textbf{while}$.
 \end{myframe}
 
 \begin{helpframe}
@@ -684,7 +1410,7 @@ $(b)$: asigna a una variable local $v$ el valor de $e_0$ e itera adecuadamente.
   ~
 
   $(b)$ Si $\llbracket c \rrbracket\sigma \neq \bot $, entonces $\llbracket c
-  \rrbracket\sigma ~ w = \sigma ~ w$ para toda $w \in FA(c)$.
+  \rrbracket\sigma ~ w = \sigma ~ w$ para toda $w \not\in  FA(c)$.
 \end{helpframe}
 
 
@@ -694,7 +1420,8 @@ todo $w \in FV(c)$, donde
 \begin{equation*} c := \textbf{while } b \textbf{ do } d \end{equation*}
 
 Por def. de $FV$, tenemos que $\sigma_1 ~ w = \sigma_2 ~ w$ para toda $w \in
-FV(b) \cup FV(d)$. Asumamos como hipótesis inductiva que el teorema vale para $b$ y $d$, y definamos
+FV(b) \cup FV(d)$. Asumamos como hipótesis inductiva que el teorema vale para
+$b$ y $d$, y definamos
 
 
 \begin{align*}
@@ -711,39 +1438,47 @@ Observemos que por HI resulta que $\gamma_1 = \llbracket d \rrbracket\sigma_1,
 $d$. Es fácil ver por inducción que entonces $\gamma_i, \beta_i$ coinciden en
 las variables libres de $d$ para toda $i$.
 
-~ 
+~
 
-Observemos que $b$ no tiene variables ligadas y por lo tanto, o bien es
-constante, o bien posee sólo variables libres. Si $b$ es constante el problema
-es trivial porque o bien el while se ejecuta indefinidamente desde cualquier
-estado, o no se ejecuta desde ningún estado. Así que veamos el caso en que $b$
-tiene al menos una variable libre.
+Hagamos una subdemostración de $(\star) ~  \llbracket b \rrbracket\gamma_i = \llbracket b
+\rrbracket\beta_i$. 
 
-~ 
 
-Observemos que si $b$ y $d$ no tienen variables libres en común, entonces las
-sucesivas ejecuciones de $d$ no afectarán el valor de $b$ y, por lo tanto, o
-bien el \textbf{while} se ejecuta sin terminar desde ambos estados, o no se
-ejecuta desde ninguno de los estados. Así que en este caso el problema es
-trivial. Por lo tanto, veamos el caso $FV(b) \cap FV(d) \neq \emptyset$.
+\small
+\begin{quote}
 
+$(\star)$ Una ejecución de $d$ sólo afecta la semántica de $b$ a través de modificaciones
+de las variables en $FV(b) \cap FV(d) \subseteq FV(d)$. Pues $\gamma_k ~ w =
+\beta_k ~ w$ para toda $w \in FV(d)$, esto vale en particular para toda $w \in
+FV(d) \cap FV(b)$.
 
 ~
 
-Demostremos que $(\star) ~  \llbracket b \rrbracket\gamma_i = \llbracket b
-\rrbracket\beta_i$. Claramente, una ejecución de $d$ sólo afecta la semántica de
-$b$ a través de modificaciones de las variables en $FV(b) \cap FV(d) \subseteq
-FV(d)$. Pero ya establecimos que $\gamma_i ~ w = \beta_i ~ w$ para toda
-$w \in FV(d)$, y entonces esto es verdadero para el caso particular $w \in FV(b)
-\cap FV(d)$. Por lo tanto, $\gamma_i, \beta_i$ coinciden en los valores de las
-variables libres de $b$ que también son variables libres de $d$. Respecto a las
-variables libres de $b$ que no son variables libres de $d$, las mismas no son
-modificadas por las sucesivas ejecuciones de $d$. Por lo tanto tienen el mismo
-valor que en $\sigma_1$ y $\sigma_2$, respectivamente. Pero $\sigma_1, \sigma_2$
-coinciden en las variables libres de $b$. Por lo tanto, coinciden también en
-estas variables.
+$\therefore $ Si $w \in FV(b) \cap FV(d)$, entonces $\gamma_k ~ w = \beta_k ~
+w$.
 
 ~
+
+Si $w \in FV(b) - FV(d)$, entonces ninguna ejecución de $d$ afecta el valor de
+$w$.
+
+~ 
+
+$\therefore $  Si $w \in FV(b) - FV(d)$, entonces $\gamma_k ~ w = \sigma_1 ~ w,
+\beta_k ~ w = \sigma_2 ~ w$, y por hipótesis $\sigma_1 ~ w = \sigma_2 ~ w$.
+
+~
+
+$\therefore $ ~ $\forall w \in FV(b), k \in \mathbb{N} : \gamma_k ~ w = \beta_k
+~ w$.
+
+Como la semántica de $b$ depende únicamente de el valor de sus variables libres,
+se sigue que $\llbracket b \rrbracket\gamma_k = \llbracket b \rrbracket\beta_k$
+para todo $k \in \mathbb{N}$.
+
+\end{quote}
+\normalsize
+
 
 Asuma que $\llbracket c \rrbracket\sigma_1 =\bot $. Entonces, para toda $i$ se
 cumple que $\llbracket b \rrbracket\gamma_i \equiv \textbf{True}$ (de otro modo
@@ -762,21 +1497,199 @@ que los estados finales de ambos casos son $\gamma_k, \beta_k$, respectivamente.
 Ya observamos antes que $\gamma_k, \beta_k$ coinciden en las variables libres de
 $d$ y de $b$, lo cual concluye la prueba.
 
+~
+
+\textbf{Demostración alternativa.} Sean $\sigma_1, \sigma_2$ definidos como
+antes y valga la misma hipótesis inductiva. Vamos por casos.
+
+~
+
+(Caso $\llbracket \textbf{while } b \textbf{ do } c\rrbracket \sigma_1 \neq \bot
+$). Sea $\pi := \llbracket \textbf{while } b \textbf{ do } c\rrbracket$.
+Por el ejercicio \textbf{(6)}, sabemos que 
+
+\begin{itemize}
+  \item Existe $k \geq 0$ tal que $F^k ~ \bot
+~ \sigma_1 \neq \bot $, 
+  \item $\neg\llbracket b \rrbracket(\pi ~ \sigma_1)$
+\end{itemize}
+
+Sabemos que $\pi = \bigsqcup_{i \in \mathbb{N}} F^i ~ \bot \neq \bot $. Sea 
+
+\begin{equation*}
+  k_0 := \min_{k} \left\{ F^k ~ \bot : F^k ~ \bot ~ \sigma_1 \neq \bot  \right\} 
+\end{equation*}
+
+Entonces $\pi ~ \sigma_1 = \llbracket c \rrbracket^{k_0-1} ~ \sigma_1$. Probemos
+que $\pi ~ \sigma_1 ~ w = \pi ~ \sigma_2 ~ w$ para toda $w \in FV(b) \cup
+FV(c)$. 
+~
+\pagebreak 
+
+\begin{myframe}
+\textbf{(10)} Usando el Teorema de coincidencia para comandos, probar que para
+todo par de comandos $c_0, c_1$, si 
+
+\begin{equation*}
+  FV(c_0) \cap FA(c_1) = FV(c_1) \cap FA(c_0) = \emptyset
+\end{equation*}
+
+entonces $\llbracket c_0;c_1 \rrbracket = \llbracket c_1;c_0 \rrbracket$
+\end{myframe}
 
 
+Veamos el caso $\llbracket c_0;c_1\rrbracket\neq \bot $, pues el caso en que el
+comando da $\bot $ es t rivial.
+
+~ 
+
+Asuma que $FV(c_0) \cap FA(c_1) = FV(c_1) \cap FA(c_0) = \emptyset$. Es decir, a
+ninguna variable libre de $c_0$ se le asigna un valor en $c_1$, y a ninguna
+variable libre de $c_1$ se le asigna un valor en $c_0$. Entonces, por inciso
+$(b)$ del teorema de coincidencia,
+
+\begin{equation*}
+  \forall  w \in FV(c_1) : \llbracket c_0 \rrbracket ~ \sigma ~ w = \sigma ~ w
+\end{equation*}
+
+Luego, por inciso $(a)$ del teorema de coincidencia,
+
+\begin{equation*}
+  \forall  w \in FV(c_1) : \llbracket c_1 \rrbracket\left( \llbracket c_0 \rrbracket ~ \sigma\right)   ~ w
+  = \llbracket c_1 \rrbracket ~ \sigma ~ w
+\end{equation*}
+
+~
+
+$\therefore ~ \forall w \in FV(c_1) : \llbracket c_0;c_1 \rrbracket ~ \sigma ~  w =
+\llbracket c_1 \rrbracket \sigma ~ w$.
+
+~
+
+De acuerdo con el mismo razonamiento, aplicando inciso $(b)$ y luego inciso
+$(a)$ del teorema de coincidencia pero ahora para el caso $w \in FV(c_0)$,
+obtenemos:
+
+~
+
+$\therefore  ~ \forall  w \in FV(c_0) : \llbracket c_1;c_0 \rrbracket ~ \sigma ~
+w = \llbracket c_0 \rrbracket\sigma ~ w$.
+
+~
+
+Ahora consideremos $w \not\in FV(c_1)$. Es claro entonces que $w \not\in
+FA(c_1)$ y por lo tanto $\llbracket c_1 \rrbracket \gamma ~ w$ para todo
+$\gamma$. Por lo tanto, 
+
+\begin{equation*}
+  \llbracket c_1 \rrbracket \left( \llbracket c_0 \rrbracket\sigma \right) ~ w =
+  \llbracket c_0 \rrbracket\sigma ~ w
+\end{equation*}
+
+~
+
+$\therefore ~ \forall  w \not\in FV(c_1) : \llbracket c_0;c_1 \rrbracket\sigma =
+\llbracket c_0 \rrbracket\sigma ~ w$.
 
 
+~
+
+De acuerdo con el mismo razonamiento,
+
+~
+~
+
+$\therefore ~ \forall  w \not\in FV(c_0) : \llbracket c_1;c_0 \rrbracket\sigma =
+\llbracket c_1 \rrbracket\sigma ~ w$.
+
+~
+
+Reunamos entonces todo lo que hemos concluido:
+
+\begin{align*}
+ &~ \forall w \in FV(c_1) : \llbracket c_0;c_1 \rrbracket ~ \sigma ~  w =
+\llbracket c_1 \rrbracket \sigma ~ w.\\
+ &~ \forall  w \not\in FV(c_1) : \llbracket c_0;c_1 \rrbracket\sigma =
+\llbracket c_0 \rrbracket\sigma ~ w.\\
+ & ~ \forall  w \in FV(c_0) : \llbracket c_1;c_0 \rrbracket ~ \sigma ~
+w = \llbracket c_0 \rrbracket\sigma ~ w.\\
+ &~ \forall  w \not\in FV(c_0) : \llbracket c_1;c_0 \rrbracket\sigma =
+\llbracket c_1 \rrbracket\sigma ~ w.
+\end{align*}
+~
+
+Sea $w_0 \in FV(c_1) \cup FV(c_0)$. De las proposiciones arriba se sigue
+
+\begin{equation*}
+  \llbracket c_0;c_1 \rrbracket ~ \sigma ~ w_0 = \begin{cases}
+    \llbracket c_0 \rrbracket\sigma ~ w_0 & w_0 \not\in FV(c_1) \\ 
+    \llbracket c_1 \rrbracket \sigma ~ w_0 & w_0 \in FV(c_1)
+  \end{cases}
+\end{equation*}
+
+\begin{equation*}
+  \llbracket c_1;c_0 \rrbracket ~ \sigma ~ w_0 = \begin{cases}
+    \llbracket c_1 \rrbracket\sigma ~ w_0 & w_0 \not\in FV(c_0) \\ 
+    \llbracket c_0 \rrbracket \sigma ~ w_0 & w_0 \in FV(c_0)
+  \end{cases}
+\end{equation*}
+
+Pero como para $w_0 \in FV(c_1) \cup FV(c_0)$ tenemos que 
+$w_0 \not\in FV(c_1) \iff w_0 \in FV(c_0)$, y lo inverso también, entonces
+la segunda ecuación es:
 
 
+\begin{equation*}
+  \llbracket c_1;c_0 \rrbracket ~ \sigma ~ w_0 = \begin{cases}
+    \llbracket c_1 \rrbracket\sigma ~ w_0 & w_0 \in FV(c_1) \\ 
+    \llbracket c_0 \rrbracket \sigma ~ w_0 & w_0 \not\in FV(c_1)
+  \end{cases} = \llbracket c_0;c_1 \rrbracket \sigma ~ w_0
+\end{equation*}
+
+Como esto vale para toda variable $w_0 \in FV(c_1) \cup FV(c_0)$ y para
+todo $\sigma$, 
+
+\begin{equation*}
+  \llbracket c_0;c_1 \rrbracket = \llbracket c_1;c_0 \rrbracket
+\end{equation*}
+
+\pagebreak 
+
+\begin{myframe}
+  \textbf{(12)} Considere 
+
+  \begin{equation*}
+    f_i ~ \sigma = \begin{cases}
+      \sigma & \sigma ~ x \leq \sigma ~ y \\ 
+      \bot  & c.c.
+    \end{cases}
+  \end{equation*}
+
+  Decida si existe un programa $\mathcal{P}$ tal que $\mathcal{P} = \bigsqcup_{i
+  \in \mathbb{N}} f_i$.
+\end{myframe}
 
 
+Para todo $k \in \mathbb{N}$, tenemos $f_k = f_{k+1}$ y por lo
+tanto la cadena $f_1, f_2, \ldots$ es no interesante. 
+
+~
 
 
+\begin{equation*}
+  \therefore \bigsqcup_{i \in \mathbb{N}} f_i = \lambda \sigma . \begin{cases}
+    \sigma & \sigma ~ x \leq \sigma ~ y \\ 
+    \bot  & c.c.
+  \end{cases}
+\end{equation*}
 
+Existen infinitos programas cuya semántica equivale a la función dada arriba,
+e.g.
 
-
-
-
+\begin{equation*}
+  \textbf{if } x \leq y \textbf{ then } \textbf{skip} \textbf{ else }
+  \textbf{while true do skip} 
+\end{equation*}
 
 
 

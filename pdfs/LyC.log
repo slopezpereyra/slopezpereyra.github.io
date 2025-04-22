@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  21 APR 2025 18:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  22 APR 2025 14:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -610,39 +610,194 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 \openout3 = `LyC.toc'.
 
  [2]
-LaTeX Font Info:    Trying to load font information for OT1+minntx on input line 92.
+LaTeX Font Info:    Trying to load font information for OT1+minntx on input line 95.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1minntx.fd
 File: ot1minntx.fd 2023/09/09 v1.1 font definition file for OT1/minntx
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 92.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 95.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 92.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 95.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 92.
+LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 95.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxmia.fd
 File: untxmia.fd 2018/04/14 Fontinst v1.933 font definitions for U/ntxmia.
 )
-LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 92.
+LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 95.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsym.fd
 File: untxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/ntxsym.
 )
-LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 92.
+LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 95.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.8pt on input line 92.
+(Font)              scaled to size 8.8pt on input line 97.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.6pt on input line 92.
+(Font)              scaled to size 6.6pt on input line 97.
  [3{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}]
-Package mdframed Info: Not enough space on this page on input line 173.
+Package mdframed Info: Not enough space on this page on input line 125.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 10.95pt on input line 133.
+ [4] [5]
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 10.95pt on input line 295.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 8.0pt on input line 314.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 6.1pt on input line 314.
 
-./LyC.tex:230: Misplaced alignment tab character &.
-l.230   &
+./LyC.tex:325: Missing delimiter (. inserted).
+<to be read again> 
+                   {
+l.325 Obviamente hay dos funciones en $\left{
+                                              C_k : k \neq \bot \right} $. E...
+I was expecting to see something like `(' or `\{' or
+`\}' here. If you typed, e.g., `{' instead of `\{', you
+should probably delete the `{' by typing `1' now, so that
+braces don't get unbalanced. Otherwise just proceed.
+Acceptable delimiters are characters whose \delcode is
+nonnegative, or you can use `\delimiter <delimiter code>'.
+
+./LyC.tex:325: Missing } inserted.
+<inserted text> 
+                }
+l.325 ...iones en $\left{ C_k : k \neq \bot \right
+                                                  } $. En $\left{ f : f(\bot...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./LyC.tex:325: Missing delimiter (. inserted).
+<to be read again> 
+                   }
+l.325 ...ones en $\left{ C_k : k \neq \bot \right}
+                                                   $. En $\left{ f : f(\bot ...
+I was expecting to see something like `(' or `\{' or
+`\}' here. If you typed, e.g., `{' instead of `\{', you
+should probably delete the `{' by typing `1' now, so that
+braces don't get unbalanced. Otherwise just proceed.
+Acceptable delimiters are characters whose \delcode is
+nonnegative, or you can use `\delimiter <delimiter code>'.
+
+./LyC.tex:325: Extra }, or forgotten $.
+<recently read> }
+                 
+l.325 ...ones en $\left{ C_k : k \neq \bot \right}
+                                                   $. En $\left{ f : f(\bot ...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./LyC.tex:325: Missing delimiter (. inserted).
+<to be read again> 
+                   {
+l.325 ...{ C_k : k \neq \bot \right} $. En $\left{
+                                                   f : f(\bot ) = \bot \righ...
+I was expecting to see something like `(' or `\{' or
+`\}' here. If you typed, e.g., `{' instead of `\{', you
+should probably delete the `{' by typing `1' now, so that
+braces don't get unbalanced. Otherwise just proceed.
+Acceptable delimiters are characters whose \delcode is
+nonnegative, or you can use `\delimiter <delimiter code>'.
+
+./LyC.tex:325: Missing } inserted.
+<inserted text> 
+                }
+l.325 ... $. En $\left{ f : f(\bot ) = \bot \right
+                                                  } $ tenemos $3^2 = 9$ func...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./LyC.tex:325: Missing delimiter (. inserted).
+<to be read again> 
+                   }
+l.325 ...$. En $\left{ f : f(\bot ) = \bot \right}
+                                                   $ tenemos $3^2 = 9$ funci...
+I was expecting to see something like `(' or `\{' or
+`\}' here. If you typed, e.g., `{' instead of `\{', you
+should probably delete the `{' by typing `1' now, so that
+braces don't get unbalanced. Otherwise just proceed.
+Acceptable delimiters are characters whose \delcode is
+nonnegative, or you can use `\delimiter <delimiter code>'.
+
+./LyC.tex:325: Extra }, or forgotten $.
+<recently read> }
+                 
+l.325 ...$. En $\left{ f : f(\bot ) = \bot \right}
+                                                   $ tenemos $3^2 = 9$ funci...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+[6] [7] [8] [9] [10]
+Package mdframed Info: Not enough space on this page on input line 551.
+
+./LyC.tex:558: Undefined control sequence.
+l.558     f & \f
+                 \text{ es total} \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[11]
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
+(Font)              scaled to size 12.0pt on input line 649.
+ [12] [13]
+./LyC.tex:788: Extra \right.
+<argument> ... )-1)\ldots \cdot 2 \cdot 1 \right )
+                                                   & 2 \leq n -1 \leq k \\ n...
+l.788 \end{align*}
+                  
+I'm ignoring a \right that had no matching \left.
+
+./LyC.tex:788: Extra \right.
+<argument> ... )-1)\ldots \cdot 2 \cdot 1 \right )
+                                                   & 2 \leq n -1 \leq k \\ n...
+l.788 \end{align*}
+                  
+I'm ignoring a \right that had no matching \left.
+
+./LyC.tex:795: Misplaced alignment tab character &.
+l.795   &
+         = n \mapsto  \begin{cases}
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+[14]
+./LyC.tex:805: Misplaced alignment tab character &.
+l.805 ...hbb{Z} \mapsto \mathbb{Z}_\bot  \right))&
+                                                  = n \mapsto  \begin{cases}
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+[15] [16]
+Package mdframed Info: Not enough space on this page on input line 898.
+
+./LyC.tex:955: Misplaced alignment tab character &.
+l.955   &
          =\begin{cases}
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -651,51 +806,66 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[4] [5]
-Package mdframed Info: Not enough space on this page on input line 319.
- [6] [7]
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 12.0pt on input line 448.
+[17] [18]
+Package mdframed Info: Not enough space on this page on input line 1044.
+ [19] [20]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 458.
+(Font)              scaled to size 10.0pt on input line 1183.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 10.0pt on input line 460.
- [8]
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 7.3pt on input line 472.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 5.5pt on input line 472.
-Package mdframed Info: Not enough space on this page on input line 477.
+(Font)              scaled to size 10.0pt on input line 1185.
 
-Overfull \hbox (3.00919pt too wide) in paragraph at lines 511--514
-[]$\LMS/ntxsy/m/n/10 ¹\OML/ntxmi/m/it/10 b\LMS/ntxsy/m/n/10 º$ \T1/ntxtlf/m/n/10 Dado que la semán-tica de $[]\OML/ntxmi/m/it/10 b[]c$ \T1/ntxtlf/m/n/10 es un punto fijo de $\OML/ntxmi/m/it/10 F$\T1/ntxtlf/m/n/10 , si us-amos $\OML/ntxmi/m/it/10 ' \OT1/minntx/m/n/10 :\U/ntxmia/m/it/10 = \LMS/ntxsy/m/n/10 É[]\OML/ntxmi/m/it/10 b[]c\LMS/ntxsy/m/n/10 Ê$\T1/ntxtlf/m/n/10 ,
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <5.5> not available
+(Font)              size <5> substituted on input line 1185.
+
+[21]
+Package mdframed Info: Not enough space on this page on input line 1203.
+ [22]
+Package mdframed Info: Not enough space on this page on input line 1283.
+
+Overfull \hbox (2.18146pt too wide) detected at line 1295
+\OML/ntxmi/m/it/12 w[] \OT1/minntx/m/n/12 :\U/ntxmia/m/it/12 = []\OML/ntxmi/m/it/12 x \LMS/ntxsy/m/n/12 ^^T \OT1/minntx/m/n/12 0[]\OML/ntxmi/m/it/12 x \OT1/minntx/m/n/12 :\U/ntxmia/m/it/12 = \OML/ntxmi/m/it/12 x \LMS/ntxsy/m/n/12 Ï \OT1/minntx/m/n/12 1\OML/ntxmi/m/it/12 ;  w[] \OT1/minntx/m/n/12 :\U/ntxmia/m/it/12 = []\OML/ntxmi/m/it/12 x \LMS/ntxsy/m/n/12 ^^T \OT1/minntx/m/n/12 0[]\LMS/ntxsy/m/n/12 ¹\OML/ntxmi/m/it/12 x \OT1/minntx/m/n/12 :\U/ntxmia/m/it/12 = \OML/ntxmi/m/it/12 x \LMS/ntxsy/m/n/12 Ï \OT1/minntx/m/n/12 1\LMS/ntxsy/m/n/12 º\OT1/minntx/m/n/12 ; \LMS/ntxsy/m/n/12 ¹\OML/ntxmi/m/it/12 x \OT1/minntx/m/n/12 :\U/ntxmia/m/it/12 = \OML/ntxmi/m/it/12 x \LMS/ntxsy/m/n/12 Ï \OT1/minntx/m/n/12 1\LMS/ntxsy/m/n/12 º
  []
 
-[9]
-Package mdframed Info: Not enough space on this page on input line 557.
- [10]
-Package mdframed Info: Not enough space on this page on input line 623.
- [11]
-Package mdframed Info: Not enough space on this page on input line 672.
- [12] [13] (./LyC.aux)
+[23]
+Package mdframed Info: Not enough space on this page on input line 1349.
+ [24]
+Package mdframed Info: Not enough space on this page on input line 1398.
+ [25]
+LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input line 1512.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
+File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
+)
+LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 1512.
+ [26{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc}]
+Package mdframed Info: Not enough space on this page on input line 1538.
+ [27] [28]
+Package mdframed Info: Not enough space on this page on input line 1670.
+ [29] (./LyC.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
+
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 0.5pt have occurred.
+
  ) 
 Here is how much of TeX's memory you used:
- 8551 strings out of 474222
- 126954 string characters out of 5748733
+ 8649 strings out of 474222
+ 128515 string characters out of 5748733
  1939975 words of memory out of 5000000
- 30602 multiletter control sequences out of 15000+600000
- 651737 words of font info for 148 fonts, out of 8000000 for 9000
+ 30676 multiletter control sequences out of 15000+600000
+ 673429 words of font info for 200 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,16n,93p,535b,397s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on LyC.pdf (15 pages, 1056216 bytes).
+ 84i,18n,93p,535b,397s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
+Output written on LyC.pdf (31 pages, 1105051 bytes).
 PDF statistics:
- 110 PDF objects out of 1000 (max. 8388607)
- 69 compressed objects within 1 object stream
+ 173 PDF objects out of 1000 (max. 8388607)
+ 111 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
