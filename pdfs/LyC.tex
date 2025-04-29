@@ -1,5 +1,6 @@
 \documentclass[a4paper, 12pt]{article}
 
+\usepackage{forest}
 \usepackage{xcolor}
 \usepackage{mdframed}
 \definecolor{shadecolor}{rgb}{0.1,0.1,0.1}
@@ -9,6 +10,9 @@
 \usepackage{amssymb}
 \usepackage{amsmath, amssymb}
 \usepackage{newtxtext} \usepackage{newtxmath}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric}
+\usepackage{tikz-cd}
 \newtheorem{problem}{Problem}
 \newtheorem{example}{Example}
 \newtheorem{lemma}{Lemma}
@@ -19,6 +23,8 @@
 \newtheorem{theorem}{Theorem}
 \DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
 \usepackage[pdftex]{graphicx}
+\newcommand\doubleplus{+\kern-1.3ex+\kern0.8ex}
+\newcommand\mdoubleplus{\ensuremath{\mathbin{+\mkern-10mu+}}}
 \DeclareGraphicsExtensions{.pdf,.jpeg,.png,.jpg}
 \newmdenv[backgroundcolor=orange!25,
             leftline=false,
@@ -84,7 +90,122 @@
 \tableofcontents
 \newpage
 
+\section{Práctico 1}
 
+\begin{myframe}
+  Considere la gramática 
+
+  \begin{equation*}
+    \text{<bin>} ::= 0 \mid 1 \mid 0\text{<bin>} \mid 1\text{<bin>}
+  \end{equation*}
+
+  $(a)$ Sea $\llbracket  \rrbracket_s : \text{<bin>} \to \mathbb{N}$ definida
+  como 
+
+  \begin{equation*}
+    \llbracket \alpha_0\ldots\alpha_{n-1} \rrbracket_{s} = \sum_{i=1}^n
+    \alpha_{i-1}2^{n-1}
+  \end{equation*}
+
+  ¿Es dirigida por sintaxis? ¿Es composicional? 
+
+  $(b)$ Considere 
+
+  \begin{equation*}
+    \llbracket \alpha_0 \alpha_1 \ldots. \alpha_{n-1} \rrbracket_i =
+    \alpha_{0} 2^{n-1} + \llbracket \alpha_1 \ldots \alpha_{n-1} \rrbracket_i
+  \end{equation*}
+
+  ¿Es dirigida por sintaxis? 
+
+  $(c)$ ¿Puede dar una semántica mediante un conjunto de ecuaciones dirigido por
+  sintaxis?
+\end{myframe}
+
+$(a)$ Una semántica $\mathcal{F}$ sobre un lenguaje $\mathcal{L}$ es
+composicional si y solo si, para toda $\ell \in \mathcal{L}$, $\mathcal{F}(\ell)$
+no depende de ninguna propiedad de $\ell$ excepto el valor de $\mathcal{F}$ en
+las sub-frases de $\ell$. Debería ser claro que $\llbracket
+\alpha_0\ldots\alpha_{n-1} \rrbracket_s$ no
+depende en absoluto del significado de las sub-frases $\alpha_0, \ldots,
+a_{n-1}$. Por lo tanto, no es composicional. Como la dirección por sintaxis
+garantiza composicionalidad, tampoco puede ser dirigido por sintaxis (esto
+debería además ser obvio, pues no hay una ecuación por cada regla de formación
+de la gramática).
+
+~
+
+$(b)$ Dos argumentos distintos para establecer que no es dirigida por sintaxis.
+$(1)$ Si lo fuera, sería composicional, pero el significado de una frase depende
+de propiedades externas a la semántica de sus subfrases. Por ejemplo, depende de
+la cantidad $n$ de subfrases. $(2)$ No hay una ecuación por cada regla de
+producción.
+
+~ 
+
+$(c)$ Es inmediato hacer $\llbracket 0 \rrbracket = 0, \llbracket 1 \rrbracket =
+1$. Estudiemos cómo se relaciona el valor de una palabra con el valor de su
+sub-frase inmediata. Imaginemos que empezamos con $01$, que tiene el valor $1$.
+Entonces podemos producir palabras de las siguientes manera:
+
+\begin{forest}
+for tree={
+  grow'=south,
+  child anchor=north,
+  parent anchor=south,
+  edge={->, thick},
+  align=center,
+  l sep+=10pt,
+  s sep+=10pt,
+  anchor=center,
+  font=\ttfamily,
+}
+[01\\(1)
+  [010\\(2)
+    [0100\\(4)
+      [01000\\(8)]
+      [01001\\(9)]
+    ]
+    [0101\\(5)
+      [01010\\(10)]
+      [01011\\(11)]
+    ]
+  ]
+  [011\\(3)
+    [0110\\(6)
+      [01100\\(12)]
+      [01101\\(13)]
+    ]
+    [0111\\(7)
+      [01110\\(14)]
+      [01111\\(15)]
+    ]
+  ]
+]
+\end{forest}
+
+~
+
+Debería ser claro que, cada vez que tenemos una palabra binaria $b$ cuya
+interpretación (informal) es el número $k$, la interpretación (informal) de 
+$b0$ es $2k$ y la de $b1$ es $2k+1$. Así, por ejemplo, $0101$ es interpetado
+como $5$, $01010$ como $10$, y $01011$ como $11$. Por lo tanto, planteamos la
+siguiente semántica dirigida por sintaxis:
+
+\begin{align*}
+  \llbracket 0 \rrbracket &= 0 \\ 
+  \llbracket 1 \rrbracket &= 1 \\ 
+  \llbracket b0 \rrbracket &= 2 \cdot \llbracket b \rrbracket\\
+  \llbracket b0 \rrbracket &= 2 \cdot \llbracket b \rrbracket + 1\\
+\end{align*}
+
+Debería ser claro que el significado de una palabra no depende de ninguna
+propiedad de sus sub-frases excepto la semántica de las mismas. Y existe una
+ecuación por cada regla de producción. Por lo tanto, la semántica dada es
+dirigida por sintaxis.
+
+
+\pagebreak
 \section{Práctico 3: Recursión, predominios y dominios, etc.}
 
 
@@ -1690,6 +1811,827 @@ e.g.
   \textbf{if } x \leq y \textbf{ then } \textbf{skip} \textbf{ else }
   \textbf{while true do skip} 
 \end{equation*}
+
+\pagebreak 
+
+\section{Práctico 5: Fallas}
+
+\begin{myframe}
+  Dado $\mathcal{P}$ definido como
+
+  \begin{align*}
+    &\textbf{newvar } x := y + x \textbf{ in } \\ 
+    &\qquad\textbf{while } x > 0 \textbf{ do } \textbf{if } x > 0 \textbf{ then
+    } \textbf{skip} \textbf{ else } \textbf{fail}
+  \end{align*}
+Caracterizar (sin necesariamente calcular) los estados $\sigma \in \Sigma$ en
+que $\mathcal{P}\sigma \equiv \textbf{skip}$.
+\end{myframe}
+
+En el contexto del $\textbf{while}$, dado un estado inicial $\sigma$, la
+variable $x$ toma el valor $\sigma ~ x + \sigma ~ y$. Si $\sigma ~ x + \sigma ~
+y > 0$ se ejecuta el \textbf{while}, y se ejecuta indefinidamente
+$\textbf{skip}$. Si $\sigma ~ x + \sigma ~ y \leq 0$ el programa falla.
+
+~
+
+$\therefore $ $\left\{ \sigma \in \Sigma : \mathcal{P}~ \sigma \equiv
+\textbf{skip} \right\} = \emptyset$
+
+\pagebreak 
+
+\begin{myframe}
+  Demostrar o refutar las siguientes equivalencias formalmente.
+
+  $(a)$  $c;\textbf{while } \textbf{true} \textbf{ do } \textbf{skip} \equiv
+  \textbf{while } \textbf{true} \textbf{ do } \textbf{skip}$
+
+  $(b)$ $c;\textbf{fail} \equiv \textbf{fail}$
+
+  $(c)$ $\textbf{newvar } v := e \textbf{ in } v := v+1;\textbf{fail} \equiv
+  \textbf{newvar } w:=e \textbf{ in } w := w+ 1; \textbf{fail}$
+
+  $(d)$ $\textbf{while } b \textbf{ do } \textbf{fail} \equiv \textbf{if } b
+  \textbf{ then } \textbf{fail} \textbf{ else } \textbf{skip}$
+
+  $(e)$ $x:=0;\textbf{catch } x := 1 \textbf{ in } \textbf{while } x<1 \textbf{
+  do } \textbf{fail} \equiv x:=0 ; \textbf{while } x < 1 \textbf{ do catch } x :=
+  1 \textbf{ in fail}$
+\end{myframe}
+
+$(a)$ Es fácil probar que 
+$\llbracket \textbf{while } \textbf{true} \textbf{ do }\textbf{skip}
+\rrbracket = \bot $ (creo que incluso es ejercicio de un práctico anterior). De
+esto se sigue fácilmente el resultado.
+
+~
+
+$(b)$ Esta equivalencia es falsa porque, al llamar \textbf{fail} después de $c$,
+puede suceder que el programa falle dentro de $c$, o sea indefinido, sin
+alcanzar el \textbf{fail} final. Más formalmente,
+
+\begin{align*}
+  \llbracket c;\textbf{fail} \rrbracket\sigma
+  &= \llbracket \textbf{fail} \rrbracket_{*}\left( \llbracket c \rrbracket\sigma
+  \right) \\ 
+  &=\begin{cases}
+    \left<\textbf{fail}, \llbracket c \rrbracket\sigma \right> & \llbracket c
+    \rrbracket\sigma \in \Sigma \\ 
+    \left<\textbf{fail},\sigma' \right> & \llbracket c \rrbracket\sigma =
+    \left<\textbf{fail}, \sigma' \right>\\
+    \bot & \llbracket c \rrbracket\sigma = \bot 
+  \end{cases}
+\end{align*}
+
+Mientras que 
+
+\begin{equation*}
+  \llbracket \textbf{fail} \rrbracket\sigma = \left<\textbf{fail}, \sigma\right>
+\end{equation*}
+
+$(c)$ Sean
+
+\begin{align*}
+  &\mathcal{P} := \textbf{newvar } v := e \textbf{ in } v := v+1
+  \\
+  &\mathcal{Q} := \textbf{newvar } w := e \textbf{ in } w := w+1
+\end{align*}
+
+Debería ser claro que la semántica de $\mathcal{P}$ y $\mathcal{Q}$ son la
+misma. Para demostrarlo rigurosamente, basta observar que 
+
+\begin{equation*}
+  \mathcal{Q} = \textbf{newvar } w := e \textbf{ in } (v := v + 1 / v \to w)
+\end{equation*}
+
+donde $w \not\in FV(\mathcal{P}) - \left\{ v \right\} $. Luego, por teorema de
+renombre, 
+
+\begin{equation*}
+  \llbracket \mathcal{P} \rrbracket = \llbracket \mathcal{Q} \rrbracket
+\end{equation*}
+
+$\therefore $ $\llbracket \mathcal{P};\textbf{fail} \rrbracket = \llbracket
+\textbf{fail} \rrbracket_* \left( \llbracket \mathcal{P} \rrbracket\sigma
+\right) = \llbracket \textbf{fail} \rrbracket_* \left( \llbracket \mathcal{Q}
+\rrbracket\sigma \right) = \llbracket \mathcal{Q};\textbf{fail} \rrbracket$.
+
+~
+
+Es decir, la equivalencia es verdadera.
+
+
+~ 
+
+$(d)$ Sabemos que la semántica de $\textbf{while } b \textbf{ do }
+\textbf{fail}$ satisface la ecuación 
+
+\begin{align*}
+  F ~ f ~ \sigma 
+  &= \begin{cases}
+    \sigma & \neg \llbracket b \rrbracket\sigma \\ 
+    f_*\left( \llbracket \textbf{fail} \rrbracket\sigma \right) &c.c.
+  \end{cases} \\ 
+  &=\begin{cases}
+    \sigma & \neg \llbracket b \rrbracket\sigma \\ 
+    f_* \left( \left<\textbf{abort}, \sigma \right> \right) & c.c.
+  \end{cases}
+\end{align*}
+
+y que es dada por $\bigsqcup_{i \in \mathbb{N}} F^i ~ \bot $. Claramente, 
+
+\begin{equation*}
+  F ~ \bot = \lambda \sigma . \begin{cases}
+    \sigma & \neg\llbracket b \rrbracket\sigma \\ 
+    \bot &c.c.
+  \end{cases}
+\end{equation*}
+
+\begin{align*}
+  F^2 ~ \bot ~ \sigma
+  &= \begin{cases}
+    \sigma & \neg \llbracket b \rrbracket\sigma \\ 
+    (F ~ \bot )_* \left( \left<\textbf{abort}, \sigma \right> \right) &c.c.
+  \end{cases} \\ 
+  &=\begin{cases}
+    \sigma & \neg \llbracket  b \rrbracket\sigma \\ 
+    \left<\textbf{abort}, \sigma \right> &c.c.
+  \end{cases}
+\end{align*}
+
+donde $(F ~ \bot )_*\left( \left<\textbf{abort},\sigma \right> \right) =
+\left<\textbf{abort}, \sigma \right>$ por la definición de la extensión $f_*$
+para una función $f$. Debería ser claro entonces que $F^1 ~ \bot  = F^2 ~ \bot =
+\ldots$, es decir que la cadena $\left\{ F^i ~ \bot  \right\} $ es no
+interesante con supremo 
+
+\begin{equation*}
+  \bigsqcup_{i \in \mathbb{N}} F^i ~ \bot = \lambda \sigma . \begin{cases}
+    \sigma & \neg \llbracket b \rrbracket\sigma \\ 
+    \left<\textbf{abort}, \sigma \right> &c.c.
+  \end{cases} 
+\end{equation*}
+
+Por def. esta es la semántica de $\llbracket \textbf{if } b \textbf{ then } \textbf{fail} \textbf{
+  else } \textbf{skip} \rrbracket$. Por lo tanto, la equivalencia es verdadera.
+
+
+  ~
+
+
+$(e)$ Sean
+
+\begin{align*}
+  &\mathcal{P} := \textbf{catch } x := 1 \textbf{ in } \textbf{while } x < 1
+  \textbf{ do } \textbf{fail}\\ 
+  &\mathcal{Q} := \textbf{while } x < 1 \textbf{ do } \textbf{catch } x:= 1
+  \textbf{ in fail}
+\end{align*}
+
+Deseamos estudiar si
+
+\begin{equation*}
+  x := 0; \mathcal{P} \equiv x:=0;\mathcal{Q}
+\end{equation*}
+
+Intuitivamente, la equivalencia debería ser cierta, porque ambos programas,
+partiendo de un estado $\sigma$,
+terminan en un estado $[\sigma \mid x : 1]$. Veámoslo formalmente.
+
+\begin{align*}
+  \llbracket x:=0;\mathcal{P} \rrbracket \sigma
+  &=\llbracket \mathcal{P} \rrbracket[\sigma \mid x : 0] \\ 
+  &=\llbracket x := 1 \rrbracket_{+} \left( \llbracket \textbf{while } x < 1
+  \textbf{ do } \textbf{fail} \rrbracket [\sigma \mid x : 0] \right) 
+\end{align*}
+
+Ahora bien, en $(d)$ ya vimos que 
+
+\begin{equation*}
+  \llbracket \textbf{while } b \textbf{ do } \textbf{fail} \rrbracket =
+  \lambda\sigma. \begin{cases}
+    \sigma & \neg \llbracket b \rrbracket\sigma \\ 
+    \left<\textbf{abort}, \sigma \right> & c.c.
+  \end{cases}
+\end{equation*}
+
+Se sigue entonces que 
+
+\begin{align*}
+  \llbracket x := 1 \rrbracket_{+}\left( \llbracket \textbf{while } x < 1
+  \textbf{ do }  \textbf{fail} \rrbracket[\sigma \mid x : 0] \right) 
+  &= \llbracket x := 1 \rrbracket_+ \left<\textbf{abort}, \sigma \right> \\ 
+  &= \llbracket x := 1 \rrbracket\sigma \\ 
+  &=[\sigma \mid x : 1]
+\end{align*}
+
+Por otra parte, 
+
+\begin{align*}
+  \llbracket x:=0;\mathcal{Q} \rrbracket\sigma  
+  &= \llbracket \textbf{while } x < 1 \textbf{ do } \textbf{catch } x := 1
+  \textbf{ in fail} \rrbracket[\sigma \mid x : 0]
+\end{align*}
+
+Veamos que 
+
+\begin{align*}
+  F ~ f ~ \sigma 
+  &= \begin{cases}
+    \sigma & \sigma ~ x \geq 1 \\ 
+    f_{\Bot}(\llbracket \textbf{catch } x:= 1 \textbf{ in fail}\rrbracket
+    \sigma) & c.c.
+  \end{cases} \\
+  &=\begin{cases}
+    \sigma & \sigma ~ x \geq 1 \\ 
+    f_{\Bot}( \llbracket x := 1 \rrbracket_+ \left( \llbracket \textbf{fail}
+  \rrbracket\sigma \right)  ) & c.c.
+  \end{cases} \\ 
+  &=\begin{cases}
+    \sigma & \sigma ~ x \geq 1 \\ 
+    f_{\Bot}( \llbracket x := 1 \rrbracket_+  \left<\textbf{abort}, \sigma \right>  ) & c.c.
+  \end{cases}\\
+  &=\begin{cases}
+    \sigma & \sigma ~ x \geq 1 \\ 
+    f_{\Bot} \left( \llbracket x:= 1 \rrbracket \sigma \right)  & c.c.
+  \end{cases}\\ 
+  &=\begin{cases}
+    \sigma & \sigma ~ x \geq 1 \\ 
+    f[\sigma \mid x : 1]  & c.c.
+  \end{cases}
+\end{align*}
+
+Por ende 
+
+\begin{align*}
+  F ~ \bot ~ \sigma = \begin{cases}
+    \sigma & \sigma ~ x \geq 1 \\ 
+    \bot & c.c.
+  \end{cases}
+\end{align*}
+
+\begin{align*}
+  F^2 ~ \bot  ~ \sigma
+  &=\begin{cases}
+    \sigma & \sigma ~ x \geq 1 \\ 
+    F ~ \bot ~ [\sigma \mid x : 1]
+  \end{cases} \\ 
+  &=\begin{cases}
+    \sigma & \sigma ~ x \geq 1 \\ 
+    [\sigma \mid x : 1] & \sigma ~ x < 1 \land [\sigma \mid x : 1] ~ x \leq 1 \\ 
+    \bot & \sigma ~ x < 1 \land [\sigma \mid x : 1] ~ x > 1
+  \end{cases} \\ 
+  &=\begin{cases}
+    \sigma & \sigma ~ x \geq 1 \\ 
+    [\sigma \mid x : 1] & \sigma ~ x < 1 \land 1 \leq 1 \\ 
+    \bot & \sigma ~ x < 1 \land 1 > 1
+  \end{cases}\\
+  &=\begin{cases}
+    \sigma & \sigma ~ x \geq 1 \\ 
+    [\sigma \mid x : 1] & \sigma ~ x < 1 \land \textbf{True} \\ 
+    \bot & \textbf{False}
+  \end{cases}\\ 
+  &=\begin{cases}
+    \sigma & \sigma ~ x \geq 1 \\ 
+    [\sigma \mid x : 1] & \sigma ~ x < 1 
+  \end{cases}
+\end{align*} 
+
+Es fácil notar que la cadena $\left\{ F^i ~ \bot \right\}_{i \in \mathbb{N}} $
+será no interesante con supremo 
+
+\begin{equation*}
+  \llbracket \textbf{while } x < 1 \textbf{ do } \textbf{catch } x :=1 \textbf{
+  in fail} \rrbracket = \bigsqcup_{i \in \mathbb{N}} F^i ~ \bot  =
+  \lambda\sigma.\begin{cases}
+    \sigma & \sigma ~ x \geq 1 \\ 
+    [\sigma \mid x : 1] & \sigma ~ x < 1
+  \end{cases}
+\end{equation*}
+
+Por lo tanto, 
+
+\begin{align*}
+  \llbracket x:=0;\mathcal{Q} \rrbracket\sigma  
+  &= \llbracket \textbf{while } x < 1 \textbf{ do } \textbf{catch } x := 1
+  \textbf{ in fail} \rrbracket[\sigma \mid x : 0] \\ 
+  &=\left( \lambda\sigma.\begin{cases}
+      \sigma & \sigma ~ x \geq 1 \\ 
+      [\sigma \mid x : 1] &\sigma~ x < 1
+  \end{cases} \right) [\sigma \mid x : 0] \\ 
+  &=[\sigma \mid x : 1]
+\end{align*}
+
+que es lo que esperábamos.
+
+\begin{equation*}
+  \therefore  ~ \llbracket x:=0;\mathcal{P} \rrbracket = \llbracket
+  x:=0;\mathcal{Q} \rrbracket
+\end{equation*}
+
+\pagebreak 
+
+\section{Práctico 6}
+
+\subsection{Notas teóricas}
+
+El nivel de misticismo alcanzado en este punto de la materia nos fuerza a
+realizar algunas notas. Con algo de suerte, encontraremos el desarrollo
+habitual: lo que parece místico era sólo complejo, lo que parece complejo era
+al final sencillo, y lo que nos parecía sencillo será precisamente lo que no
+entendimos.
+
+\subsubsection{Extensión de outputs}
+
+Sea $f : \Sigma \mapsto \Omega$ una función de estados en outputs. La extensión
+de $f$ definida como $f_* : \Omega \mapsto \Omega$ se define como
+
+\begin{equation*}
+  f_* ~ \omega = \begin{cases}
+    \left<n_0, \ldots, n_{k-1} \right> \doubleplus f ~ \sigma & \omega =
+    \left<n_0, \ldots, n_{k-1}, \sigma \right> \\ 
+    \omega & c.c.
+  \end{cases}
+\end{equation*}
+
+Es decir que $f_*$ es inefectiva (es la función identidad) para todo $\omega \in
+\Omega$ que no tiene un estado final $\sigma$. Esto incluye los outputs infinitos, los
+outputs finitos sin estado final, y los outputs que terminan en
+$\left<\textbf{abort}, \sigma \right>$.
+
+Esta función nos permite definir la concatenación de comandos:
+
+\begin{equation*}
+  \llbracket c_0;c_1 \rrbracket \sigma = \left( \llbracket c_1 \rrbracket
+  \right)_* \left( \llbracket c_0 \rrbracket \sigma \right) 
+\end{equation*}
+
+\textbf{Ejemplo.} Si $\llbracket c_0 \rrbracket \sigma$ termine en $\left<1, 2,
+\sigma'\right>$ y $\llbracket c_1 \rrbracket\sigma'$ termina en $\left<3, 4
+, \gamma\right>$, $\llbracket c_0;c_1 \rrbracket\sigma = \left<1, 2, 3, 4
+, \gamma\right>$.
+
+También nos permite definir el \textbf{while} de manera que el estado final es
+inyectado a una secuencia, con $\llbracket \textbf{while } b \textbf{ do } c
+\rrbracket\sigma = \bigsqcup_{i \in \mathbb{N}} F^i ~ \bot $ y
+
+\begin{equation*}
+  F ~ f ~ \sigma = \begin{cases}
+    \left<\sigma \right> & \neg\llbracket b \rrbracket\sigma \\ 
+    f_* (\llbracket c \rrbracket \sigma) & c.c.
+  \end{cases}
+\end{equation*}
+
+Notemos que al usar $f_*$, el output de cada iteración del \textbf{while} será
+concatenado al output de la iteración anterior.
+
+\subsubsection{Transformación de estados finales}
+
+Si $f \in \Sigma \to  \Sigma$, $f_\dagger : \Omega\to \Omega$ se define como 
+
+\begin{equation*}
+  f_\dagger ~ \omega = \begin{cases}
+    \left<n_0, \ldots, n_{k-1}, \left<\textbf{abort}, f ~ \sigma \right> \right>
+    & \omega = \left<n_0,\ldots, n_{k-1}, \left<\textbf{abort}, \sigma \right>
+    \right> \\ 
+    \left<n_0, \ldots, n_{k-1}, f ~ \sigma \right> & \omega = \left< n_0,
+    \ldots, n_{k-1}, \sigma\right> \\ 
+    \omega & c.c.
+  \end{cases}
+\end{equation*}
+
+Es decir, $f_\dagger ~ \omega$ aplica $f$ al estado final de $\omega$, incluso
+si dicho estado final es el estado en que se produjo una falla. Esto nos permite
+definir 
+
+\begin{equation*}
+  \llbracket \textbf{newvar } v := e \textbf{ in } c\rrbracket\sigma = \mathcal{R}_\dagger \left( \llbracket c \rrbracket[\sigma \mid v :
+  \llbracket e \rrbracket \sigma] \right) 
+\end{equation*}
+
+donde $\mathcal{R}$ es la restauración:
+
+\begin{equation*}
+  \mathcal{R} := \lambda \sigma' \in \Sigma . \llbracket \sigma' \mid v : \sigma
+  ~ v\rrbracket
+\end{equation*}
+
+\subsubsection{Inyecciones sobre $\Omega$}
+
+Ahora nos proponemos expresar la extensión $f_*$ de $f$ en función de cuatro
+inyeciones disjuntas. Dichas inyecciones son:
+
+\begin{align*}
+  &(1) ~ ~ ~ \iota_\bot \in \left\{ \left< \right> \right\} \to \Omega \qquad \text{ definida como
+  } \qquad \iota_\bot () = \left< \right> = \bot_\Omega\\
+  &(2) ~ ~  ~\iota_{\text{term}} \in \Sigma \to \Omega \qquad \text{ definida como
+  } \qquad \iota_{\text{term}}(\sigma) = \left<\sigma \right>\\
+  &(3) ~ ~ ~ \iota_{\text{abort}} \in \Sigma \to \Omega \qquad \text{ definida como
+  } \qquad \iota_{\text{abort}} (\sigma) = \left<\left<\textbf{abort}, \sigma \right> \right>\\
+  &(4)~ ~ ~ \iota_{\text{out}} \in \mathbb{Z} \times \Omega \to \Omega \qquad \text{ definida como
+  } \qquad \iota_{\text{out}}(n, \omega) = \left<n \right> \doubleplus \omega
+\end{align*}
+
+\begin{align*}
+  f_* ~ \bot &= \bot  \\ 
+  f_*(\iota_\text{term} ~ \sigma) &= f ~ \sigma \\ 
+  f_*(\iota_{\text{abort}} \sigma) &= \iota_{\text{abort}} ~ \sigma \\ 
+  f_*(\iota_{\text{out}}(n, \omega)) &= \iota_{\text{out}}(n, f_* \omega)
+\end{align*}
+
+Un primer punto interesante es que ahora la definición de $f_*$ para el caso de un
+output $\left<n_0, \ldots, n_{k-1}, \ldots\right>$ es recursiva. También es
+importante notar que las funciones $\iota$ son inyectivas y tienen rangos
+disjuntos, y que cualquier $\omega \in \Omega$ finito puede formarse a través de
+sucesivas aplicaciones de estas funciones. Es decir, podemos pensar que estas
+funciones son constructores de una sintaxis abstracta cuyas frases son las
+secuencias finitas de $\Omega$.
+
+Análogamente, se puede definir 
+
+\begin{align*}
+  f_\dagger\left< \right> &= \left< \right> \\ 
+  f_\dagger \left<\sigma \right> &= \left<f ~ \sigma \right> \\ 
+  f_\dagger \left<\left<\textbf{abort}, \sigma \right> \right> &=
+  \left<\left<\textbf{abort}, f ~\sigma \right> \right> \\ 
+  f_\dagger \left( \left<n \right> \doubleplus \omega \right) &= \left<n \right>
+  \doubleplus f_\dagger ~ \omega
+\end{align*}
+
+\subsubsection{Isomorfismos sobre $\Omega$}
+
+El dominio $\Omega$ tiene el siguiente orden:
+
+~
+\begin{figure}[!h]
+\centering
+\begin{tikzpicture}
+  % Nodo de abajo
+  \node (bot) at (0,-2) {$\bot = \left< \right>$};
+
+  % Nodos de arriba (colocados manualmente con xshift)
+  \node[above=1.5cm of bot, xshift=-3cm] (sigma1) {$\left<\sigma_1 \right>$};
+  \node[above=2.5cm of bot, xshift=-2cm] (sigma2) {$\left<\sigma_2 \right>$};
+  \node[above=3.5cm of bot, xshift=-1cm] (dots1) {$\ldots$};
+  \node[diamond, draw, above=4.5cm of bot, xshift=0cm] (Omega1) {$\Omega_1$};
+  \node[diamond, draw,above=5.5cm of bot, xshift=1.5cm] (Omega2) {$\Omega_2$};
+  \node[above=6.5cm of bot, xshift=2.5cm] (dots2) {$\ldots$};
+
+  % Conexiones
+  \draw (bot) -- (sigma1);
+  \draw (bot) -- (sigma2);
+  \draw (bot) -- (dots1);
+  \draw (bot) -- (Omega1);
+  \draw (bot) -- (Omega2);
+  \draw (bot) -- (dots2);
+\end{tikzpicture}
+\end{figure} 
+ 
+
+
+donde $\left<\sigma_i \right>$ son secuencias con un único estado o un único par
+$\left<\textbf{abort}, \sigma \right>$, y el diamante con $\Omega_k$ es el conjunto de
+secuencias que empiezan con el entero $k$.
+
+~
+
+\textbf{Autosimilitud de $\Omega$}. Considere lo siguiente: para cada $\omega \in \Omega_k$, existe una única
+secuencia $\omega'\in \Omega$ tal que $\omega = k \doubleplus \omega'$. Es
+decir, existe una correspondencia uno a uno entre todos elementos de $\Omega_k$ y
+todos los elementos de $\Omega$, y es fácil ver que dicha correspondencia es
+invertible. $\therefore $ $\Omega_k$ es isomórfico a $\Omega$.
+
+\begin{quote}
+$(\star)$ Informalmente, podemos pensar que ciertos elementos de $\Omega$ se parecen a
+$\Omega$, o que $\Omega$ tiene subconjuntos que difieren muy poco del mismo
+$\Omega$.
+\end{quote}
+~ 
+
+\textbf{Naturaleza recursiva de $\Omega$}. Considere $\mathbb{Z} \times \Omega$ con $\mathbb{Z}$ bajo el orden discreto.
+Claramente, para cada $k \in \mathbb{Z}$, existe $(k, \omega)$ para cada $\omega
+\in \Omega$. Es decir, se asocia una "copia" de $\Omega$ a cada entero. El orden
+punto a punto resulta 
+
+\begin{equation*}
+  \left<n, \omega \right> \sqsubseteq \left<n', \omega' \right> 
+\iff n = n' \text{ y } \omega
+  \sqsubseteq_\Omega \omega'
+\end{equation*}
+
+Es decir, cada "copia" tiene el mismo order que en $\Omega$, y los miembros de
+copias diferentes son incomparables. Por lo tanto, cada $\left<n,
+\omega\right>$ se corresponde con un único $\omega' \in \Omega_k$, y tenemos que 
+
+\begin{equation*}
+  \bigcup_{k \in \mathbb{Z}} \Omega_k \simeq \mathbb{Z} \times \Omega
+\end{equation*}
+
+Por lo tanto, combinando que la unión de los $\Omega_k$ es isomórfica a $\mathbb{Z} \times
+\Omega$ con el orden de $\Omega$ dado en el primer diagrama, tenemos
+
+\begin{figure}
+\centering
+\begin{tikzpicture}
+  % Nodo de abajo
+  \node (bot) at (0,-1) {$\bot$};
+
+  % Nodos de arriba (colocados manualmente con xshift)
+  \node[box, draw, above=1.5cm of bot, xshift=-2cm] (Sigma) {$\hat{\Sigma}$};
+  \node[box, draw, above=2.5cm of bot, xshift=2cm] (ZOm) {$\mathbb{Z} \times \Omega$};
+  % Conexiones
+  \draw (bot) -- (Sigma);
+  \draw (bot) -- (ZOm);
+\end{tikzpicture}
+\end{figure} 
+
+~
+
+~ 
+
+~ 
+
+
+~ 
+
+En conclusión,
+
+\begin{equation*}
+  \Omega \simeq \left( \hat{\Sigma} + \mathbb{Z} \times \Omega \right) 
+\end{equation*}
+
+Por lo tanto, existen funciones continuas $\varphi, \psi$
+
+\begin{equation*}
+  \Omega 
+\underset{\psi}{\overset{\phi}{\rightleftarrows}} 
+\left( \hat{\Sigma} + \mathbb{Z} \times \Omega \right)_{\perp}
+\end{equation*}
+
+tales que $\varphi \circ \psi, \psi \circ \varphi$ son funciones identidad.
+
+\begin{quote}
+  Esto revela la naturaleza recursiva de $\Omega$ porque nos dice que todo
+  elemento de $\Omega$ es o bien una secuencia con un único estado (tal vez
+  abortivo), o bien $\bot$, o bien (caso recursivo) un entero pareado con otro
+  elemento de $\Omega$.
+\end{quote}
+
+En particular, parear cada elemento de $\hat{\Sigma}$ con $0$ y cada elemento de
+$\mathbb{Z} \times \Omega$ no cambia ninguno de los resultados anteriores. Por
+lo tanto,
+
+\[
+\begin{tikzcd}[row sep=large, column sep=huge]
+\Sigma \arrow[dr, "\iota_{\text{norm}}"'] & \\
+\Sigma \arrow[r, "\iota_{\text{abnorm}}"'] & \hat{\Sigma} \arrow[r, "\iota_0"] &
+\hat{\Sigma}+ \mathbb{Z} \times \Omega \arrow[r, "\iota_{\uparrow}"] & (\hat{\Sigma} + \mathbb{Z} \times \Omega)_{\perp} \arrow[r, "\psi"] & \Omega \\
+& & \mathbb{Z} \times \Omega \arrow[u, "\iota_1"']
+\end{tikzcd}
+\]
+Acá, $\iota_{\text{norm}}, \iota_{\text{abnorm}}$ inyectan estados en
+$\hat{\Sigma}$, mapeando $\sigma \mapsto \sigma$ y $\sigma \mapsto
+\left<\textbf{abort}, \sigma \right>$, respectivamente. Las funciones $\iota_0,
+\iota_1$ son la unión disjunta y $\iota_\uparrow$ es simplemente el lifting.
+Tenemos entonces:
+
+\begin{align*}
+  \iota_{\text{term}} &= \psi \circ l_{\uparrow} \circ \iota_0 \circ
+  \iota_\text{norm} \in \Sigma \to \Omega \\ 
+  \iota_{\text{abort}} &= \psi \circ l_{\uparrow} \circ \iota_0 \circ
+  \iota_\text{abnorm} \in \Sigma \to \Omega\\
+  \iota_{\text{out}} &= \psi \circ l_{\uparrow} \circ \iota_1 \in (\mathbb{Z}
+  \times \Omega) \to \Omega
+\end{align*}
+
+Dar las inyecciones en términos de la relación entre estos conjuntos, y no en
+términos de la semántica de los mismos, nos permite librarnos del requisito de
+que el dominio $\Omega$ sea una secuencia de enteros y estados. Cualquier grupo
+de conjuntos donde las $\iota$ sean inyecciones con rangos disjuntos satisface
+las propiedades requeridas.
+
+\subsubsection{Input}
+
+Si agregamos $\text{<comm>} ::= ?\text{<var>}$ al lenguaje, que hace que una
+variable tome un valor dado por input, debemos extender la semántica todavía
+más. Recordemos que, sin input, con $\Omega \simeq (\hat{\Sigma} + \mathbb{Z}
+\times \Omega)_\bot $, habían cuatro posibilidades para un programa
+$\mathcal{P}$:
+
+\begin{itemize}
+  \item $\mathcal{P}$ no se detiene y $\omega = \bot $.
+  \item $\mathcal{P}$ termina en $\sigma$, y $\omega = \iota_{\text{term}} ~
+    \sigma$. 
+  \item $\mathcal{P}$ aborta en $\sigma$ y $\omega = \iota_{\text{abort}} ~
+    \sigma$. 
+  \item $\mathcal{P}$ escribe un $k \in \mathbb{Z}$ y luego se comporta según
+    $\omega'$, es decir $\omega = \iota_{\text{out}}(k, \omega')$.
+\end{itemize}
+
+Para describir input, introducimos una posibilidad nueva, donde el input es
+mapeado por una función $g$ en un miembro de $\Omega$:
+
+\begin{itemize}
+  \item $\mathcal{P}$ lee un entero $k$ y su comportamiento es determinado por
+    $g ~ k$. En este caso decimos $\omega = \iota_{\text{in}} ~ g$ con $g \in
+    \mathbb{Z} \to \Omega$.
+\end{itemize}
+
+Habiendo añadido esta posibilidad, tenemos que tomar $\Omega$ como una solución
+de 
+
+\begin{equation*}
+  \Omega \simeq \left( \hat{\Sigma} + \left( \mathbb{Z} \times \Omega \right) +
+  \left( \mathbb{Z} \mapsto \Omega \right) \right)_\bot 
+\end{equation*}
+
+Las ocurrencias de $\Omega$ que están en $\mathbb{Z} \to \Omega$ son llamadas
+\textit{resumptions}, porque refieren comportamientos que se dan cuando el
+proceso se resume después de input o output. Se define 
+
+\begin{equation*}
+  \iota_{\text{in}} = \psi \circ l_{\uparrow} \circ \iota_2 \in \left(
+  \mathbb{Z} \to \Omega \right) \to \Omega
+\end{equation*}
+
+\pagebreak
+
+\subsection{Problemas}
+\begin{myframe}
+  \textbf{(3)} Demostrar o refutar:
+
+  ~
+
+  $(a) ~ ?x; ?y \equiv ?y; ?x$
+
+  $(b)$ $?x;z := x \equiv ? z$ 
+
+  $(c)$ $\textbf{newvar } x := e \textbf{ in } (?x; z := x) \equiv ?z$
+\end{myframe}
+
+~
+
+$(a)$ Recordemos que 
+
+\begin{equation}
+  \llbracket ?v \rrbracket \sigma = \iota_{\text{in}}\left( \lambda k \in
+  \mathbb{Z} ~.~ \iota_{\text{term}} [\sigma \mid v : k] \right) 
+\end{equation}
+
+También recordemos que 
+
+\begin{equation*}
+  \iota_{\text{in}} = \psi \circ \iota_\uparrow \circ \iota_2 \in (\mathbb{Z}
+  \to \Omega) \to \Omega
+\end{equation*}
+
+Finalmente, recordemos que 
+
+\begin{equation}
+  f_*(\iota_{\text{in}} ~ g) = \iota_{\text{in}} \left( \lambda k \in \mathbb{Z}
+  ~ . ~ f_* ~ g ~ k\right) 
+\end{equation}
+
+Entonces
+
+\begin{align*}
+  \llbracket ?x;?y \rrbracket\sigma 
+  &= \llbracket ?y \rrbracket_* \left( \llbracket ?x \rrbracket \sigma \right)
+  \\ 
+  &=\llbracket ?y \rrbracket_* \left( \iota_{\text{in}}\left( \lambda k \in
+\mathbb{Z} ~.~ \iota_{\text{term}}[\sigma \mid x : k] \right)  \right) &\left\{
+\text{Por (3)}\right\}  \\ 
+  &=\iota_{\text{in}} \left( \lambda ~ k \in \mathbb{Z} ~.~ \llbracket ?y
+\rrbracket_*\left( \iota_{\text{term}} [\sigma \mid x : k] \right) \right)
+  &\left\{ \text{Por (4)} \right\} \\ 
+  &=\iota_{\text{in}} \left( \lambda ~ k \in \mathbb{Z} ~.~ \llbracket ?y
+\rrbracket_* \left( \left< [\sigma \mid x : k] \right> \right) \right) &\left\{
+\iota_{\text{term}}\gamma = \left<\gamma \right>\right\} \\ 
+  &=\iota_{\text{in}} \left( \lambda ~ k \in \mathbb{Z}. 
+\left<\llbracket ?y \rrbracket[\sigma \mid x : k] \right>\right) &\left\{
+\text{Def. de } f_* \right\}  \\ 
+&=\iota_{\text{in}} \left( \lambda ~ k \in \mathbb{Z} ~.~ 
+  \left< \iota_{\text{in}} \left(\lambda n \in
+\mathbb{Z} ~.~ [[\sigma \mid x : k] \mid y : n] \right)\right> \right) \\ 
+&=\iota_{\text{in}} \left( \lambda ~ k \in \mathbb{Z} ~.~ 
+\left< \iota_\text{in} \left( \lambda ~ n \in \mathbb{Z} ~.~ [\sigma \mid x : k,
+y : n] \right)  \right>\right) 
+\end{align*}
+
+Ahora bien, el mismo razonamiento nos da
+
+\begin{align*}
+  \llbracket ?y;?x \rrbracket\sigma 
+  &= \llbracket ?x \rrbracket_* \left( \llbracket ?y \rrbracket \sigma \right)
+  \\ 
+  &=\llbracket ?x \rrbracket_* \left( \iota_{\text{in}}\left( \lambda k \in
+\mathbb{Z} ~.~ \iota_{\text{term}}[\sigma \mid y : k] \right)  \right) &\left\{
+\text{Por (3)}\right\}  \\ 
+  &=\iota_{\text{in}} \left( \lambda ~ k \in \mathbb{Z} ~.~ \llbracket ?x
+\rrbracket_*\left( \iota_{\text{term}} [\sigma \mid y : k] \right) \right)
+  &\left\{ \text{Por (4)} \right\} \\ 
+  &=\iota_{\text{in}} \left( \lambda ~ k \in \mathbb{Z} ~.~ \llbracket ?x
+\rrbracket_* \left( \left< [\sigma \mid y : k] \right> \right) \right) &\left\{
+\iota_{\text{term}}\gamma = \left<\gamma \right>\right\} \\ 
+  &=\iota_{\text{in}} \left( \lambda ~ k \in \mathbb{Z}. 
+\left<\llbracket ?x \rrbracket[\sigma \mid y : k] \right>\right) &\left\{
+\text{Def. de } f_* \right\}  \\ 
+&=\iota_{\text{in}} \left( \lambda ~ k \in \mathbb{Z} ~.~ 
+  \left< \iota_{\text{in}} \left(\lambda n \in
+\mathbb{Z} ~.~ [[\sigma \mid y : k] \mid x : n] \right)\right> \right) \\ 
+&=\iota_{\texn{in}} \left( \lambda ~ k \in \mathbb{Z} ~.~ 
+\left< \iota_\text{in} \left( \lambda ~ n \in \mathbb{Z} ~.~ [\sigma \mid y : k,
+x : n] \right)  \right>\right) 
+\end{align*}
+
+Claramente, ambas funciones son iguales.
+
+~ 
+
+
+$(b)$ Ahora abreviaremos un poco el desarrollo y notaremos simplemente que
+
+\begin{align*}
+  \llbracket ?x; z := x \rrbracket 
+  &= \llbracket z := x \rrbracket_*\left( \iota_{\text{in}} \left( \lambda ~ k
+  \in \mathbb{Z} . \left< [\sigma \mid x : k] \right> \right)  \right) \\ 
+  &=\iota_{\text{in}} \left( \lambda k \in \mathbb{Z} ~.~ \left< \llbracket z :=
+  x\rrbracket[\sigma \mid x : k] \right> \right)  \\ 
+  &=\iota_{\text{in}} \left( \lambda ~k \in \mathbb{Z} ~.~ \left< [\sigma \mid x
+  :k, z : k] \right> \right)  \\
+  &\neq \iota_{\text{in}} \left( \lambda ~ k \in \mathbb{Z} ~.~ \left<[\sigma
+  \mid z : k] \right> \right)  \\ 
+  &= \llbracket ?z \rrbracket\sigma
+\end{align*}
+
+
+Por lo tanto, la equivalencia es falsa.
+
+~
+
+$(c)$ Veamos que 
+
+\begin{align*}
+  \llbracket \textbf{newvar } x := e \textbf{ in } (?x;z :=x)\rrbracket\sigma 
+  &= \mathcal{R}_\dagger \left( \llbracket ?x; z:=x \rrbracket [\sigma \mid x :
+  \llbracket e \rrbracket\sigma] \right)  \\ 
+  &=\mathcal{R}_\dagger \Bigg( \iota_{\text{in}}\Big( \lambda ~ k \in \mathbb{Z}
+~.~ \left< \sigma \mid x : k, z : k \right>\Big) \Bigg) &\left\{ \text{Por
+inciso } (b) \right\} \\ 
+&=\iota_{\text{in}} \left( \lambda ~ k \in \mathbb{Z} ~.~ \mathcal{R}~\Big<
+\sigma \mid x :k, z : k \Big> \right)  \\ 
+&=\iota_{\text{in}} \left( \lambda ~ k \in \mathbb{Z} . \big< \sigma \mid z :
+k\big> \right)  \\ 
+&=\llbracket ?z \rrbracket\sigma
+\end{align*}
+
+donde 
+
+\begin{equation*}
+  \mathcal{R} := \lambda \sigma' \in \Sigma ~.~ \left( [\sigma' \mid x : \sigma
+  ~ x] \right) 
+\end{equation*}
+
+es la función de restauración respecto al $\sigma$ pasado como argumento.
+Tenemos entonces que la equivalencia es verdadera.
+
+\pagebreak 
+
+\begin{myframe}
+  \textbf{(4)} Sea $\mathcal{P}$ un programa que no incluye fallas, outputs, ni
+  inputs. Asuma que $\left\{ x, y \right\} \cap FV(c) = \emptyset$. Determine la
+  validez de 
+
+  \begin{equation*}
+    ?x; c; !x \equiv ?y ; c; !y
+  \end{equation*}
+\end{myframe}
+
+Dado que $\mathcal{P}$ no incluye fallas, outputs, ni inputs, el teorema
+coincidencia para comandos aplica. Dado que $x, y \not\in FV(c)$, para todo
+$\sigma \in \Sigma$, tenemos $\sigma ~ x = \llbracket c \rrbracket \sigma ~ x$,
+$\sigma ~ y = \llbracket c \rrbracket \sigma ~ y$. Por lo tanto, 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  20 APR 2025 00:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  25 APR 2025 13:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -605,34 +605,35 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
  (./ModelosYSim.toc
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 12.0pt on input line 1.
-LaTeX Font Info:    Trying to load font information for OT1+minntx on input line 4.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1minntx.fd
-File: ot1minntx.fd 2023/09/09 v1.1 font definition file for OT1/minntx
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 4.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxmia.fd
-File: untxmia.fd 2018/04/14 Fontinst v1.933 font definitions for U/ntxmia.
-)
-LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 4.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsym.fd
-File: untxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/ntxsym.
-)
-LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 4.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsyc.fd
-File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
-))
 \tf@toc=\write3
 \openout3 = `ModelosYSim.toc'.
 
- [2] [3{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}]
+ [2]
+LaTeX Font Info:    Trying to load font information for OT1+minntx on input line 97.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1minntx.fd
+File: ot1minntx.fd 2023/09/09 v1.1 font definition file for OT1/minntx
+)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 97.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 97.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 97.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxmia.fd
+File: untxmia.fd 2018/04/14 Fontinst v1.933 font definitions for U/ntxmia.
+)
+LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 97.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsym.fd
+File: untxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/ntxsym.
+)
+LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 97.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsyc.fd
+File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
+) [3{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}]
 Package mdframed Info: Not enough space on this page on input line 121.
  [4] [5]
 Package mdframed Info: Not enough space on this page on input line 174.
@@ -731,38 +732,65 @@ Overfull \hbox (4.3995pt too wide) in paragraph at lines 955--959
 Package mdframed Info: Not enough space on this page on input line 1055.
  [28] [29] [30] [31] [32]
 Package mdframed Info: Not enough space on this page on input line 1240.
- [33] [34] [35]
-Package mdframed Info: Not enough space on this page on input line 1351.
+ [33] [34]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 12.0pt on input line 1370.
- [36] [37]
+(Font)              scaled to size 12.0pt on input line 1346.
+ [35] [36]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 10.95pt on input line 1425.
+ [37]
+LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
 (Font)              scaled to size 10.95pt on input line 1449.
  [38]
-LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
-(Font)              scaled to size 10.95pt on input line 1473.
+Package mdframed Info: Not enough space on this page on input line 1505.
  [39]
-Package mdframed Info: Not enough space on this page on input line 1529.
- [40]
-Package mdframed Info: Not enough space on this page on input line 1588.
- [41] [42]
-Package mdframed Info: Not enough space on this page on input line 1672.
- [43]
+Package mdframed Info: Not enough space on this page on input line 1564.
+ [40] [41]
+Package mdframed Info: Not enough space on this page on input line 1648.
+ [42]
+Package mdframed Info: Not enough space on this page on input line 1683.
 
-./ModelosYSim.tex:1702: LaTeX Error: Unicode character ∗ (U+2217)
-               not set up for use with LaTeX.
+Overfull \hbox (25.7992pt too wide) in paragraph at lines 1709--1709
+[]  \T1/ntxtt/m/n/12 p = [0.11, 0.14, 0.09, 0.08, 0.12, 0.10, 0.09, 0.07, 0.11, 0.09][] 
+ []
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1702 ...cada valor i está en exactamente pi ∗
-                                                   100 posiciones. El métod...
-You may provide a definition with
-\DeclareUnicodeCharacter 
+[43]
+Overfull \hbox (25.7992pt too wide) in paragraph at lines 1756--1756
+[]  \T1/ntxtt/m/n/12 p = [0.11, 0.14, 0.09, 0.08, 0.12, 0.10, 0.09, 0.07, 0.11, 0.09][] 
+ []
 
-Package mdframed Info: Not enough space on this page on input line 1706.
-[44] [45] [46] (./ModelosYSim.aux)
+
+Overfull \hbox (76.1991pt too wide) in paragraph at lines 1756--1756
+[]  \T1/ntxtt/m/n/12 ordering = [1, 4, 0, 5, 2, 6, 9, 4, 7]                            # := o[] 
+ []
+
+
+Overfull \hbox (82.49908pt too wide) in paragraph at lines 1756--1756
+[]  \T1/ntxtt/m/n/12 ordered_probabilities = [p[i] for i in ordering]                  # := op[] 
+ []
+
+[44]
+Overfull \hbox (25.7992pt too wide) in paragraph at lines 1791--1791
+[]  \T1/ntxtt/m/n/12 p = [0.11, 0.14, 0.09, 0.08, 0.12, 0.10, 0.09, 0.07, 0.11, 0.09][] 
+ []
+
+
+Overfull \hbox (76.1991pt too wide) in paragraph at lines 1791--1791
+[]  \T1/ntxtt/m/n/12 A = [ [i+1] * times_it_occurs[i] for i in range(len(p))] # list of lists[] 
+ []
+
+
+Overfull \hbox (233.69879pt too wide) in paragraph at lines 1791--1791
+[]  \T1/ntxtt/m/n/12 A = sum(A, []) # Python trick, simple but inefficient: joins the list of lists into a single list[] 
+ []
+
+[45]
+Package mdframed Info: Not enough space on this page on input line 1799.
+ [46] [47]
+Package mdframed Info: Not enough space on this page on input line 1922.
+ [48] [49] [50]
+Package mdframed Info: Not enough space on this page on input line 2021.
+ [51] [52] (./ModelosYSim.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
@@ -774,18 +802,18 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 8684 strings out of 474222
- 129451 string characters out of 5748733
+ 8687 strings out of 474222
+ 129565 string characters out of 5748733
  1941975 words of memory out of 5000000
- 30719 multiletter control sequences out of 15000+600000
+ 30722 multiletter control sequences out of 15000+600000
  658126 words of font info for 195 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,14n,93p,543b,397s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on ModelosYSim.pdf (48 pages, 1146045 bytes).
+Output written on ModelosYSim.pdf (54 pages, 1163582 bytes).
 PDF statistics:
- 228 PDF objects out of 1000 (max. 8388607)
- 149 compressed objects within 2 object streams
+ 247 PDF objects out of 1000 (max. 8388607)
+ 162 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

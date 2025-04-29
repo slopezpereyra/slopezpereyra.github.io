@@ -1798,52 +1798,35 @@ def sim4_urna():
   éxito $p$.
 \end{myframe}
 
-$(a)$ Lo primero es encontrar una fórmula recursiva para para la probabilidad de una
-binomial. Así, cada iteración podrá calcularse a partir de la anterior. Pero si
-probamos $P(X \leq k)$ para $k = 0, 1, 2,\ldots$, un patrón se hace evidente y
-es fácil demostrar por inducción que
+Puesto que 
 
-\begin{equation*}
-  P(X = k) = \begin{cases}
-    (1-p)^n & k = 0 \\
-    \frac{n-(k-1)}{k} \frac{p}{1-p} F_B(k-1) & k > 0
-  \end{cases}
-\end{equation*}
+$$F_B(k) = \sum_{i=0}^k \binom{n}{k} p^i (1-p)^{n-i}$$
 
-Por lo tanto, podemos hacer:
+observamos que $F_B(0) = (1-p)^n$ y 
 
-\begin{verbatim}
-def sim5_binomial(p, n):
+\begin{align*}
+  F_B(1) = np(1-p)^{n-1} = np\frac{F_B(0)}{(1-p)} 
+\end{align*}
 
-  cdf = (1-p)**n           # Probabilidad acumulada en k = 0
-  u = random()
-  k = 0
-  constant = p/(1-p)       # Calculemos esto una sola vez
-  while True:
-    if u < cdf:
-      return k 
-    k += 1
-    # El producto a la derecha es la probabilidad P(X = k), 
-    # lo sumamos a cdf y tenemos la acumulada P(X <= k).
-    cdf += cdf * ( ( n-k+1 )/k ) * constant
 
-  return k
-\end{verbatim}
+\begin{align*}
+  F_B(2) &= \binom{n}{2} p^{2}(1-p)^{n-2} \\
+         &= \frac{(n)(n-1)}{2} p^2(1-p)^{n-2} \\ 
+         &= \frac{n-1}{2} \frac{p}{(1-p)} F_B(1)
+\end{align*}
 
-~ 
+\begin{align*}
+  F_B(3) &= \frac{n(n-1)(n-2)}{3!}p^3 (1-p)^{n - 3}  \\ 
+         &= \frac{n-2}{3} \frac{p}{1-p} F_B(2)
+\end{align*}
 
-$(b)$ Con Bernoullis es mucho más fácil:
 
-\begin{verbatim}
-def sim5_bernoullis(p, n):
 
-  count = 0 
-  for _ in range(n):
-    if random() <= p:
-      count +=1
 
-  return count
-\end{verbatim}
+
+
+
+
 
 
 
@@ -1997,104 +1980,7 @@ Now, the question is:
   P(\text{Two one-labelled vertices are connected} \mid L\geq 2)
 \end{equation*}
 
-The probability that any pair of vertices of different levels is connected 
-
-\pagebreak 
-
-\begin{myframe}
-  Sea $X$ aleatoria discreta, $Im(X) = \left\{ 0, 1, 2, 3, 4 \right\} $, y 
-
-  \begin{equation*}
-    p_0 = 0.15, \quad p_1 = 0.20, \quad p_2 = 0.10, \quad p_3 = 0.35, \quad p_4
-    = 0.20
-  \end{equation*}
-
-  $(a)$ Describir mediante un pseudo-código un algoritmo que simule $X$
-  utilizando el método de la transformada inversa, minimzando el número esperado
-  de búsquedas. 
-
-  $(b)$ Describir mediante un pseudo-código un algoritmo que simule $X$
-  utilizando el método de aceptación y rechazo con una variable suporte $Y \sim
-  \mathcal{B}(4, 0.45)$.
-
-  $(c)$ Compare la eficiencia con $n = 10.000$ simulaciones.
-\end{myframe}
-
-$(a)$ 
-
-\begin{align*}
-  &p_n := \left\{ 0.15, 0.20, 0.10, 0.35, 0.20 \right\} \\
-  &i_n := \left\{ 3, 1, 4, 0, 2 \right\} \\ 
-  &U \sim \mathcal{U}(0, 1)\\
-  &\textbf{for } j := 0 \textbf{ to } j := 3 \textbf{ do } \\ 
-  &\qquad \textbf{if } U < p_X(i_j) \textbf{ then } \textbf{return }
-  i_j\textbf{ else } \textbf{skip}\\
-  &\textbf{od}
-\end{align*}
-
-$(b)$ Asumamos que tenemos una función $\textbf{genBin}(n, p)$ que simula
-una binomial $B \sim \mathcal{B}(n, p)$. Notemos además que con $n = 4,
-p = 0.45$, 
-
-\begin{align*}
-  p_B(k) &= \begin{cases}
-    0.091& k = 0\\ 
-    0.299& k = 1\\ 
-    0.367& k = 2\\ 
-    0.200& k = 3\\ 
-    0.041& k = 4\\
-  \end{cases}
-\end{align*}
-
-Queremos encontrar $c$ tal que $\forall x \in Im(X) : p_X(x) / p_B(x) \leq c$.
-Claramente, si definimos 
-
-\begin{equation*}
-  c := \max \left\{ \frac{p_X(x)}{p_B(x)} : x \in Im(X) \right\} 
-\end{equation*}
-
-habremos satisfecho la condición. Es fácil calcular computacionalmente este $c$,
-y dicho proceso se incluye en el algoritmo. 
-
-
-\begin{align*}
-  &ImX := [0, 1, 2, 3, 4]\\
-  &p_X := [0.15, 0.20. 0.10, 0.35, 0.20]\\
-  &p_B := [0.091, 0.299, 0.367, 0.200, 0.041]\\
-  &c := -1\\
-  &\textbf{for } j \in Im(X) \textbf{ do }\\
-  &\qquad \textbf{if } \frac{p_X[j]}{p_B[j]} > c \textbf{ then }  \textbf{ else
-  } \textbf{skip}\\ 
-  &\textbf{od} \\ 
-  &\textbf{while true do} \\ 
-  &\qquad x := \textbf{randint}(0, 4)\\ 
-  &\qquad u := \textbf{random}() \\ 
-  &\qquad \textbf{if } u < \frac{p_X[x]}{c * p_B[x]} \textbf{ then } \\ 
-  &\qquad \qquad \textbf{return } x \\ 
-  & \qquad\textbf{fi} \\ 
-  &\textbf{od}
-\end{align*}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+The probability that any pair of vertices of different levels is connected
 
 
 

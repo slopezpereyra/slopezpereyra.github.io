@@ -1,2 +1,12 @@
-\contentsline {section}{\numberline {1}Práctico 3: Recursión, predominios y dominios, etc.}{3}{}%
-\contentsline {section}{\numberline {2}Práctico 4: Lenguaje imperativo simple}{16}{}%
+\contentsline {section}{\numberline {1}Práctico 1}{3}{}%
+\contentsline {section}{\numberline {2}Práctico 3: Recursión, predominios y dominios, etc.}{5}{}%
+\contentsline {section}{\numberline {3}Práctico 4: Lenguaje imperativo simple}{18}{}%
+\contentsline {section}{\numberline {4}Práctico 5: Fallas}{32}{}%
+\contentsline {section}{\numberline {5}Práctico 6}{37}{}%
+\contentsline {subsection}{\numberline {5.1}Notas teóricas}{37}{}%
+\contentsline {subsubsection}{\numberline {5.1.1}Extensión de outputs}{37}{}%
+\contentsline {subsubsection}{\numberline {5.1.2}Transformación de estados finales}{37}{}%
+\contentsline {subsubsection}{\numberline {5.1.3}Inyecciones sobre $\Omega $}{38}{}%
+\contentsline {subsubsection}{\numberline {5.1.4}Isomorfismos sobre $\Omega $}{39}{}%
+\contentsline {subsubsection}{\numberline {5.1.5}Input}{41}{}%
+\contentsline {subsection}{\numberline {5.2}Problemas}{42}{}%
