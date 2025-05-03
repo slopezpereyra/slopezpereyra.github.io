@@ -1,5 +1,13 @@
 \documentclass[a4paper, 12pt]{article}
-
+\usepackage[
+  a4paper,
+  top=3cm,
+  bottom=3cm,
+  left=2cm,
+  right=2cm
+]{geometry}
+\setlength{\parskip}{1em}      % Espacio entre párrafos
+\setlength{\parindent}{1.5em}    % Sangría al inicio de párrafo
 \usepackage{forest}
 \usepackage{xcolor}
 \usepackage{mdframed}
@@ -7,12 +15,14 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
-\usepackage{amssymb}
 \usepackage{amsmath, amssymb}
-\usepackage{newtxtext} \usepackage{newtxmath}
+\usepackage{stmaryrd}
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric}
 \usepackage{tikz-cd}
+\usetikzlibrary{positioning}
+\usepackage[cal=boondoxo, bb=ams]{mathalfa}
+\usepackage{mlmodern}
 \newtheorem{problem}{Problem}
 \newtheorem{example}{Example}
 \newtheorem{lemma}{Lemma}
@@ -21,7 +31,6 @@
 \newtheorem{example}{Example} \newtheorem{definition}{Definition}
 \newtheorem{lemma}{Lemma}
 \newtheorem{theorem}{Theorem}
-\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
 \usepackage[pdftex]{graphicx}
 \newcommand\doubleplus{+\kern-1.3ex+\kern0.8ex}
 \newcommand\mdoubleplus{\ensuremath{\mathbin{+\mkern-10mu+}}}
@@ -89,6 +98,803 @@
 \pagebreak
 \tableofcontents
 \newpage
+
+\section{Teoría}
+
+\subsection{Órdenes parciales y dominios}
+
+\subsubsection{Órdenes discretos y llanos}
+
+Al orden parcial dado por la relación $a \preceq b \iff a = b$ lo llamamos el
+orden discreto. Ningún elemento es comparable con otro. Además, dados dos
+conjuntos $X$ e $Y$, definimos el
+siguiente orden sobre $X \to Y$:
+
+\begin{equation*}
+  f \leq g \iff x \in \mathcal{D}_f \Rightarrow x \in \mathcal{D}_g \land
+  f(x) \leq_Y f(y)
+\end{equation*}
+
+Es fácil demostrar que este orden es parcial. 
+
+~ 
+
+Además, dado un conjunto $X$, definimos $X_\bot $ como la operación de
+\textit{lifting} tal que 
+
+\begin{equation*}
+  X_\bot = \Big( X \cup \left\{ \bot  \right\}, \preceq  \Big)
+\end{equation*}
+
+con $\preceq$ idéntico al orden discreto, excepto que $\bot$ es menor (y por
+ende comparable) a todos los elementos de $X$. Es fácil probar que $X_\bot $ es
+un orden parcial. Al orden $\preceq$ dado por la operación de lifting se le
+llama el \textbf{orden llano}. Si $X$ es un poset que posee un mínimo, usamos
+$\bot $ para denotar dicho mínimo.
+
+~ 
+
+Si $X$ es un conjunto, definimos también 
+
+\begin{equation*}
+  X^\infty = \Big( X \cup \left\{ \infty \right\}, \preceq \Big)
+\end{equation*}
+
+donde $\preceq$ es el orden usual sobre $X$, excepto que $\infty$ es un máximo.
+
+
+\begin{figure}[!h]
+\centering
+\begin{tikzpicture}
+  % Nodo de abajo
+  \node (bot) at (0,-2) {$\bot$};
+
+  % Nodos de arriba (colocados manualmente con xshift)
+  \node[above=1cm of bot, xshift=-3cm] (dots2) {$\ldots$};
+  \node[above=1cm of bot, xshift=-2cm] (sigma1) {$-2$};
+  \node[above=1cm of bot, xshift=-1cm] (sigma2) {$-1$};
+  \node[above=1cm of bot, xshift=0cm] (dots1) {$0$};
+  \node[above=1cm of bot, xshift=1cm] (Omega1) {$1$};
+  \node[above=1cm of bot, xshift=2cm] (Omega2) {$2$};
+  \node[above=1cm of bot, xshift=3cm] (dots2) {$\ldots$};
+
+  % Conexiones
+  \draw (bot) -- (sigma1);
+  \draw (bot) -- (sigma2);
+  \draw (bot) -- (dots1);
+  \draw (bot) -- (Omega1);
+  \draw (bot) -- (Omega2);
+\end{tikzpicture}
+\caption{Diagrama de Hasse de $\mathbb{Z}_\bot $}
+\end{figure} 
+
+
+\begin{figure}[!h]
+\centering
+\begin{tikzpicture}
+  % Nodo de abajo
+  \node (bot) at (0,-2) {$\bot = 0$};
+  % Nodos de arriba (colocados manualmente con xshift)
+  \node[above=1cm of bot] (one) {$1$};
+  \node[above=1cm of one] (two) {$2$};
+  \node[above=1cm of two] (ldots) {$\vdots$};
+  \node[above=1cm of ldots] (inf) {$\infty$};
+
+  % Conexiones
+  \draw (bot) -- (one);
+  \draw (one) -- (two);
+  \draw (two) -- (ldots);
+  \draw (ldots) -- (inf);
+\end{tikzpicture}
+\caption{Diagrama de Hasse de $\mathbb{N}$}
+\end{figure} 
+
+\subsubsection{Cadenas}
+
+Una cadena $C$ de un poset $\mathcal{P}$ es una secuencia infinita $\left\{ p_i
+\right\}_{i \in \mathbb{N}} $ tal que $p_0 \leq p_1 \leq \ldots$, donde $\leq$
+es el orden asociado a $\mathcal{P}$. Si el conjunto $\left\{ p : p = p_i \text{
+para algún } i \in \mathbb{N} \right\} $ es finito, decimos que la cadena es
+no-interesante. Si es infinito, decimos que la cadena es interesante. Notemos
+que el caso finito solo puede darse si, a partir de cierto $k \in \mathbb{N}$,
+$p_k = p_{k+1} = p_{k+2} = \ldots$. Es fácil notar que los órdenes discretos y
+llanos sólo tienen cadenas no-interesantes.
+
+~
+
+Si todas las cadenas de un orden parcial tienen supremo, decimos que dicho orden
+es un \textbf{predominio}. En general, si $Y$ es un predominio, $X \to Y$ es un
+predominio.
+
+
+
+\small
+\begin{quote}
+
+\textbf{Prueba.} Asuma que $\left( Y, \leq_Y \right) $ es predominio. Entonces,
+en particular, es un orden parcial. $\therefore $ Dado un conjunto $X$, tenemos
+el orden parcial asociado a $X \to Y$ dado por 
+
+\begin{equation*}
+  f \leq g \iff \forall x \in X : x \in \mathcal{D}_f \Rightarrow x \in \mathcal{D}_g \land f(x)
+  \leq_Y g(x)
+\end{equation*}
+
+Sea $f_1 \leq f_2 \leq \ldots$ una cadena arbitraria de $X \to Y$. Si dicha
+cadena es no-interesante, necesariamente tiene supremo, así que estudiemos el
+caso en que la cadena es interesante. Dado $x_0 \in \mathcal{D}_{f_1}$ arbitrario, la cadena
+$f_1 \leq f_2 \leq \ldots$ induce una cadena en $Y$ dada por 
+
+\begin{equation*}
+  f_1(x_0) \leq f_2(x_0) \leq \ldots
+\end{equation*}
+
+Por hipótesis, dicha cadena tiene un supremo $\bigsqcup_{i \in \mathbb{N}}
+f_i(x_0)$. Si definimos 
+
+$$\mathcal{F}(x_0) = \bigsqcup_{i \in \mathbb{N}} f_i(x_0)$$
+
+tenemos que $\mathcal{F} \in (X \to Y)$, que $x_0 \in \mathcal{D}_{f_i}
+\Rightarrow x_0\in \mathcal{D}_{\mathcal{F}}$, y que para todo $i$ se cumple
+$f_i(x_0) \leq \mathcal{F}(x_0)$. $\therefore $ $\mathcal{F}$ es cota superior
+de $f_1 \leq f_2 \leq \ldots$ Que es supremo se sigue fácilmente de que 
+$\bigsqcup_{i \in \mathbb{N}} f_i(x_0)$ es supremo de $f_1(x_0) \leq f_2(x_0)
+\leq \ldots$
+
+
+\end{quote}
+\normalsize
+
+Un predominio que tiene un elemento mínimo se denomina \textbf{dominio}. Aquí
+otra vez se cumple que si $D$ es dominio, $X \to D$ es dominio.
+
+\small
+\begin{quote}
+
+\textbf{Prueba.} Asuma que $D$ es dominio. Entonces es predominio y por lo tanto
+$X \to D$ es predominio. Sea $\psi \in X \to D$ definida como la función
+constante $\psi = \bot_D$. Entonces es claro que $\psi \leq f$ para toda $f \in
+X \to D$. Luego $\psi$ es mínimo de $X \to D$.
+
+
+\end{quote}
+\normalsize
+
+\subsection{Morfismos y funciones continuas}
+
+Sean $X, Y$ posets. Si $f \in X \to Y$ preserva el orden parcial, se dice
+monótona. Si $f$ preserva además el supremo de cadenas, se dice continua. Si
+además preserva el mínimo, se dice estricta.
+
+Debería ser claro que si $x_1 \leq x_2 \leq \ldots$ es una cadena en $X$ y $f
+\in X \to Y$ es monótona, entonces $f(x_1) \leq f(x_2) \leq \ldots$ es una
+cadena en $Y$. Cabe también destacar que si $f$ es monótona, preserva el supremo
+de cadenas no-interesantes. Por lo tanto, podríamos definir la noción de
+continuidad como la preservación de supremos en cadenas interesantes.
+
+
+\small
+\begin{quote}
+
+  \textbf{Ejemplo.} Considere $f \in \mathbb{N}^\infty \to \left\{ \top, \bot
+  \right\} $. Asuma que $f(n) = \bot $ para todo $n \in \mathbb{N}$ y que
+  $f(\infty) = \top$. Claramente, $f$ es monótona, pero no preserva el supremo
+  de $1 \leq 2 \leq 3\ldots$ Aplicar $f$ dicha cadena da $\bot  \leq \bot  \leq
+  \ldots$ con supremo $\bot \neq f(\infty)$.
+
+\end{quote}
+\normalsize
+
+Aunque la monotonía no implica continuidad, una función monótona en $X \to Y$ nos da una cota
+superior para el supremo de las cadenas de $Y$.
+
+\begin{theorem}
+  Si $P, Q$ son predominios y $f \in P \to Q$ es monótona, 
+
+  \begin{equation*}
+    \bigsqcup_{i \in \mathbb{N}} f(p_i) \leq f \left( \bigsqcup_{i \in
+    \mathbb{N}} p_i \right) 
+  \end{equation*}
+\end{theorem}
+
+
+
+\small
+\begin{quote}
+
+\textbf{Prueba.} Sea $f : P \mapsto Q$ monótona y $p_0 \leq_P p_1 \leq_P \ldots$
+una cadena interesante de $P$.  
+
+Para todo $j$ se cumple $p_j \leq \bigsqcup_{i \in \mathbb{N}} p_i$. Como $f$ es
+monótona, $f(p_j) \leq f\left( \bigsqcup_{i \in \mathbb{N}} p_i \right) $. 
+
+$\therefore $ $f\left( \bigsqcup_{i \in \mathbb{N}} p_i \right) $ es cota
+superior de $\left\{ f(p_i) \right\}_{i \in \mathbb{N}} $.
+
+Como $Q$ es predominio, la cadena $\left\{ f(p_i) \right\}_{i \in \mathbb{}} $
+tiene supremo. Como por def. dicho supremo es la menor cota superior,
+
+\begin{equation*}
+  \bigsqcup_{i \in \mathbb{N}} f(p_i) \leq f \left( \bigsqcup_{i \in \mathbb{N}}
+  p_i\right) \qquad \blacksquare
+\end{equation*}
+
+
+
+\end{quote}
+\normalsize
+
+Es fácil demostrar que si $f$ es monótona entonces es continua. De este hecho y
+del teorema anterior se sigue que $f$ es continua si y solo si 
+
+\begin{equation*}
+  f\left( \bigsqcup_{i \in \mathbb{N}} p_i \right) = \bigsqcup_{i \in
+  \mathbb{N}} f(p_i)
+\end{equation*}
+
+
+\subsection{Extensión de funciones para lenguajes con fallas}
+
+Un estado abortivo, o estado con falla, es un par $\left<\textbf{abort}, \sigma
+\right>$, donde $\textbf{abort}$ es una nueva palabra del lenguaje y $\sigma$
+es un estado. Definimos
+
+\begin{equation*}
+  \hat{ \Sigma }  := \Sigma \cup \left\{ \left<\textbf{abort}, \sigma \mid
+  \sigma \in \Sigma\right> \right\} = \Sigma \cup  \left\{ \textbf{abort}
+  \right\}  \times \Sigma
+\end{equation*}
+
+y
+
+\begin{equation*}
+  \llbracket \textbf{fail} \rrbracket ~ \sigma := \left<\textbf{abort}, \sigma \right>
+\end{equation*}
+
+Ahora damos la siguiente extensión. Si $f \in \Sigma \mapsto \widetilde{
+\Sigma_\bot  } $, definimos $f_* :
+\widetilde{ \Sigma_\bot  } \mapsto \widetilde{ \Sigma_\bot  }$ como
+
+\begin{equation*}
+  f_*(\omega) = \begin{cases}
+    \bot  & \omega = \bot  \\ 
+    f ~ \omega & \omega \in \Sigma \\ 
+    \left<\textbf{abort}, \sigma \right> & \omega = \left<\textbf{abort}, \sigma \right>
+  \end{cases}
+\end{equation*}
+
+Entonces se tiene
+
+\begin{equation*}
+  \llbracket c_0;c_1 \rrbracket ~ \sigma = \left( \llbracket c_1 \rrbracket
+  \right)_{*} ~ \left( \llbracket c_0 \rrbracket ~ \sigma\right) 
+\end{equation*}
+
+Análogamente,
+
+\begin{align*}
+  \llbracket \textbf{while } b \textbf{ do } c \rrbracket &= \bigsqcup_{i \in
+  \mathbb{N}} F^i ~ \bot  \\ 
+    \text{ where } F ~ f ~ \sigma &= \begin{cases}
+    f_{*}(\llbracket c \rrbracket ~ \sigma) & \llbracket b \rrbracket \\ 
+    \sigma & \text{otherwise}
+  \end{cases}
+\end{align*}
+
+
+Si $f \in \Sigma \mapsto \Sigma$, definimos $f_\dagger \in \widetilde{
+\Sigma_\bot  } \mapsto \widetilde{ \Sigma_\bot  } $ como:
+
+\begin{equation*}
+  f_\dagger ~ \omega = \begin{cases}
+    \bot  & \omega = \bot  \\ 
+    f ~ \sigma & \sigma \in \Sigma \\ 
+    \left<\textbf{abort}, f ~ \sigma \right> & \omega = \left<\textbf{abort}, \sigma \right>
+  \end{cases}
+\end{equation*}
+
+Entonces
+
+\begin{align*}
+  &\llbracket \textbf{newvar } v := e \textbf{ in } c\rrbracket ~ \sigma \\ 
+  &\qquad = \left( \lambda \sigma' \in \Sigma . [\sigma' \mid v : \sigma ~ v]
+  \right)_{\dagger} \left( \llbracket c \rrbracket [\sigma \mid v : \llbracket e
+  \rrbracket] ~ \sigma \right) 
+\end{align*}
+
+\pagebreak
+\subsection{Output}
+
+
+Una vez incorporado el output a nuestro lenguaje, hay tres maneras en que un
+programa se puede comportar:
+
+\begin{itemize}
+  \item El programa produce una secuencia finita y luego se ejecuta indefinidamente sin generar más salida.
+  \item El programa produce una secuencia finita y luego termina normalmente o de forma abortiva.
+  \item El programa produce una secuencia infinita.
+\end{itemize}
+
+Definimos $\Omega$ como el dominio de salida y determinamos que $\Omega$ está ordenado como sigue:
+
+\begin{equation*}
+  \omega \sqsubseteq \psi \iff \omega \text{ es subsecuencia inicial de } \psi
+\end{equation*}
+
+Ahora consideremos una cadena $\left\{ \omega_i \right\}_{i \in \mathbb{N}}$. Si $\left\{\omega_i\right\}_{i \in \mathbb{N}}$ no es interesante, su supremo será una secuencia finita de enteros o una secuencia finita con enteros y un último elemento que es un estado. Si $\left\{\omega_i\right\}_{i \in \mathbb{N}}$ es interesante, entonces cada $\omega_i$ es la "instantánea" de una computación infinita en los tiempos $i = 1, 2, \ldots$. Por ejemplo, en la computación de los dígitos de $\pi$, tendríamos:
+
+\begin{equation*}
+  \left< \right> \sqsubseteq \left< 3 \right> \left<3, 1 \right> \left<3,1,4 \right> \sqsubseteq \left<3, 1, 4, 1 \right> \sqsubseteq  \left<3, 1, 4, 1, 5 \right> \sqsubseteq  \left<3, 1, 4, 1, 5, 9 \right> \sqsubseteq  \ldots
+\end{equation*}
+
+Entonces el límite de la cadena es el elemento del dominio que describe la
+salida total de la computación. No es difícil notar que $\Omega$ es un dominio.
+
+\small
+\begin{quote}
+
+\textbf{Prueba.} Los casos finitos son triviales. Sea $\{ \omega_i \}_{i \in \mathbb{N}}$ una secuencia infinita con $\omega_i \in \Omega$.
+
+Dado que $\omega_i \sqsubseteq \omega_{i+1}$ y estas secuencias son distintas y finitas, $\omega_{i+1}$ tiene más elementos que $\omega_i$. Además, si $\omega_i$ tiene un elemento $j$-ésimo, entonces $\omega_{i+1}$ también lo tiene, y estos coinciden. Por lo tanto, cualquier cota superior de la cadena es una secuencia infinita.
+
+Además, si $\mu$ es una cota superior de la cadena, el $i$-ésimo elemento de $\mu$ debe ser idéntico al $i$-ésimo elemento de todas las secuencias de la cadena cuya longitud sea al menos $i$. En otras palabras, para todo $i \in \mathbb{N}$, el $i$-ésimo elemento de $\mu$ está determinado de manera única. $\therefore$ $\mu$ es único.
+
+Dado que cualquier cota superior de la cadena está determinada de manera única, la cadena tiene una sola cota superior, y por lo tanto debe ser la menor cota superior.
+
+$\therefore$ $\Omega$ es un predominio.
+
+Es trivial observar que la secuencia vacía $\left< \right> \in \Omega$, que es la salida de un programa que se ejecuta indefinidamente sin realizar ninguna operación de escritura, es el mínimo.
+
+$\therefore$ $\Omega$ es un dominio.
+
+\end{quote}
+\normalsize
+
+\pagebreak 
+\subsection{Extensión de outputs}
+
+Sea $f : \Sigma \mapsto \Omega$ una función de estados en outputs. La extensión
+de $f$ definida como $f_* : \Omega \mapsto \Omega$ se define como
+
+\begin{equation*}
+  f_* ~ \omega = \begin{cases}
+    \left<n_0, \ldots, n_{k-1} \right> \doubleplus f ~ \sigma & \omega =
+    \left<n_0, \ldots, n_{k-1}, \sigma \right> \\ 
+    \omega & c.c.
+  \end{cases}
+\end{equation*}
+
+Es decir que $f_*$ es inefectiva (es la función identidad) para todo $\omega \in
+\Omega$ que no tiene un estado final $\sigma$. Esto incluye los outputs infinitos, los
+outputs finitos sin estado final, y los outputs que terminan en
+$\left<\textbf{abort}, \sigma \right>$.
+
+Esta función nos permite definir la concatenación de comandos:
+
+\begin{equation*}
+  \llbracket c_0;c_1 \rrbracket \sigma = \left( \llbracket c_1 \rrbracket
+  \right)_* \left( \llbracket c_0 \rrbracket \sigma \right) 
+\end{equation*}
+
+\textbf{Ejemplo.} Si $\llbracket c_0 \rrbracket \sigma$ termine en $\left<1, 2,
+\sigma'\right>$ y $\llbracket c_1 \rrbracket\sigma'$ termina en $\left<3, 4
+, \gamma\right>$, $\llbracket c_0;c_1 \rrbracket\sigma = \left<1, 2, 3, 4
+, \gamma\right>$.
+
+También nos permite definir el \textbf{while} de manera que el estado final es
+inyectado a una secuencia, con $\llbracket \textbf{while } b \textbf{ do } c
+\rrbracket\sigma = \bigsqcup_{i \in \mathbb{N}} F^i ~ \bot $ y
+
+\begin{equation*}
+  F ~ f ~ \sigma = \begin{cases}
+    \left<\sigma \right> & \neg\llbracket b \rrbracket\sigma \\ 
+    f_* (\llbracket c \rrbracket \sigma) & c.c.
+  \end{cases}
+\end{equation*}
+
+Notemos que al usar $f_*$, el output de cada iteración del \textbf{while} será
+concatenado al output de la iteración anterior.
+
+\subsubsection{Transformación de estados finales}
+
+Si $f \in \Sigma \to  \Sigma$, $f_\dagger : \Omega\to \Omega$ se define como 
+
+\begin{equation*}
+  f_\dagger ~ \omega = \begin{cases}
+    \left<n_0, \ldots, n_{k-1}, \left<\textbf{abort}, f ~ \sigma \right> \right>
+    & \omega = \left<n_0,\ldots, n_{k-1}, \left<\textbf{abort}, \sigma \right>
+    \right> \\ 
+    \left<n_0, \ldots, n_{k-1}, f ~ \sigma \right> & \omega = \left< n_0,
+    \ldots, n_{k-1}, \sigma\right> \\ 
+    \omega & c.c.
+  \end{cases}
+\end{equation*}
+
+Es decir, $f_\dagger ~ \omega$ aplica $f$ al estado final de $\omega$, incluso
+si dicho estado final es el estado en que se produjo una falla. Esto nos permite
+definir 
+
+\begin{equation*}
+  \llbracket \textbf{newvar } v := e \textbf{ in } c\rrbracket\sigma = \mathcal{R}_\dagger \left( \llbracket c \rrbracket[\sigma \mid v :
+  \llbracket e \rrbracket \sigma] \right) 
+\end{equation*}
+
+donde $\mathcal{R}$ es la restauración:
+
+\begin{equation*}
+  \mathcal{R} := \lambda \sigma' \in \Sigma . \llbracket \sigma' \mid v : \sigma
+  ~ v\rrbracket
+\end{equation*}
+
+\subsection{Abstrayendo $\Omega$}
+
+Ahora nos proponemos expresar la extensión $f_*$ de $f$ en función de cuatro
+inyeciones disjuntas. Dichas inyecciones son:
+
+\begin{align*}
+  &(1) ~ ~ ~ \iota_\bot \in \left\{ \left< \right> \right\} \to \Omega \qquad \text{ definida como
+  } \qquad \iota_\bot () = \left< \right> = \bot_\Omega\\
+  &(2) ~ ~  ~\iota_{\text{term}} \in \Sigma \to \Omega \qquad \text{ definida como
+  } \qquad \iota_{\text{term}}(\sigma) = \left<\sigma \right>\\
+  &(3) ~ ~ ~ \iota_{\text{abort}} \in \Sigma \to \Omega \qquad \text{ definida como
+  } \qquad \iota_{\text{abort}} (\sigma) = \left<\left<\textbf{abort}, \sigma \right> \right>\\
+  &(4)~ ~ ~ \iota_{\text{out}} \in \mathbb{Z} \times \Omega \to \Omega \qquad \text{ definida como
+  } \qquad \iota_{\text{out}}(n, \omega) = \left<n \right> \doubleplus \omega
+\end{align*}
+
+\begin{align*}
+  f_* ~ \bot &= \bot  \\ 
+  f_*(\iota_\text{term} ~ \sigma) &= f ~ \sigma \\ 
+  f_*(\iota_{\text{abort}} \sigma) &= \iota_{\text{abort}} ~ \sigma \\ 
+  f_*(\iota_{\text{out}}(n, \omega)) &= \iota_{\text{out}}(n, f_* \omega)
+\end{align*}
+
+Un primer punto interesante es que ahora la definición de $f_*$ para el caso de un
+output $\left<n_0, \ldots, n_{k-1}, \ldots\right>$ es recursiva. También es
+importante notar que las funciones $\iota$ son inyectivas y tienen rangos
+disjuntos, y que cualquier $\omega \in \Omega$ finito puede formarse a través de
+sucesivas aplicaciones de estas funciones. Es decir, podemos pensar que estas
+funciones son constructores de una sintaxis abstracta cuyas frases son las
+secuencias finitas de $\Omega$.
+
+Análogamente, se puede definir 
+
+\begin{align*}
+  f_\dagger\left< \right> &= \left< \right> \\ 
+  f_\dagger \left<\sigma \right> &= \left<f ~ \sigma \right> \\ 
+  f_\dagger \left<\left<\textbf{abort}, \sigma \right> \right> &=
+  \left<\left<\textbf{abort}, f ~\sigma \right> \right> \\ 
+  f_\dagger \left( \left<n \right> \doubleplus \omega \right) &= \left<n \right>
+  \doubleplus f_\dagger ~ \omega
+\end{align*}
+\pagebreak
+\subsubsection{Isomorfismos sobre $\Omega$}
+
+El dominio $\Omega$ tiene el siguiente orden:
+
+~
+\begin{figure}[!h]
+\centering
+\begin{tikzpicture}
+  % Nodo de abajo
+  \node (bot) at (0,-2) {$\bot = \left< \right>$};
+
+  % Nodos de arriba (colocados manualmente con xshift)
+  \node[above=1cm of bot, xshift=-3cm] (sigma1) {$\left<\sigma_1 \right>$};
+  \node[above=1cm of bot, xshift=-2cm] (sigma2) {$\left<\sigma_2 \right>$};
+  \node[above=1cm of bot, xshift=-1cm] (dots1) {$\ldots$};
+  \node[diamond, draw, above=1cm of bot, xshift=0cm] (Omega1) {$\Omega_1$};
+  \node[diamond, draw,above=1cm of bot, xshift=1.5cm] (Omega2) {$\Omega_2$};
+  \node[above=1cm of bot, xshift=2.5cm] (dots2) {$\ldots$};
+
+  % Conexiones
+  \draw (bot) -- (sigma1);
+  \draw (bot) -- (sigma2);
+  \draw (bot) -- (dots1);
+  \draw (bot) -- (Omega1);
+  \draw (bot) -- (Omega2);
+  \draw (bot) -- (dots2);
+\end{tikzpicture}
+\end{figure} 
+ 
+
+
+donde $\left<\sigma_i \right>$ son secuencias con un único estado o un único par
+$\left<\textbf{abort}, \sigma \right>$, y el diamante con $\Omega_k$ es el conjunto de
+secuencias que empiezan con el entero $k$.
+
+~
+
+\textbf{Autosimilitud de $\Omega$}. Considere lo siguiente: para cada $\omega \in \Omega_k$, existe una única
+secuencia $\omega'\in \Omega$ tal que $\omega = k \doubleplus \omega'$. Es
+decir, existe una correspondencia uno a uno entre todos elementos de $\Omega_k$ y
+todos los elementos de $\Omega$, y es fácil ver que dicha correspondencia es
+invertible. $\therefore $ $\Omega_k$ es isomórfico a $\Omega$.
+
+\begin{quote}
+$(\star)$ Informalmente, podemos pensar que ciertos elementos de $\Omega$ se parecen a
+$\Omega$, o que $\Omega$ tiene subconjuntos que difieren muy poco del mismo
+$\Omega$.
+\end{quote}
+~ 
+
+\textbf{Naturaleza recursiva de $\Omega$}. Considere $\mathbb{Z} \times \Omega$ con $\mathbb{Z}$ bajo el orden discreto.
+Claramente, para cada $k \in \mathbb{Z}$, existe $(k, \omega)$ para cada $\omega
+\in \Omega$. Es decir, se asocia una "copia" de $\Omega$ a cada entero. El orden
+punto a punto resulta 
+
+\begin{equation*}
+  \left<n, \omega \right> \sqsubseteq \left<n', \omega' \right> 
+\iff n = n' \text{ y } \omega
+  \sqsubseteq_\Omega \omega'
+\end{equation*}
+
+Es decir, cada "copia" tiene el mismo order que en $\Omega$, y los miembros de
+copias diferentes son incomparables. Por lo tanto, cada $\left<n,
+\omega\right>$ se corresponde con un único $\omega' \in \Omega_k$, y tenemos que 
+
+\begin{equation*}
+  \bigcup_{k \in \mathbb{Z}} \Omega_k \simeq \mathbb{Z} \times \Omega
+\end{equation*}
+
+Por lo tanto, combinando que la unión de los $\Omega_k$ es isomórfica a $\mathbb{Z} \times
+\Omega$ con el orden de $\Omega$ dado en el primer diagrama, tenemos
+
+\begin{figure}
+\centering
+\begin{tikzpicture}
+  % Nodo de abajo
+  \node (bot) at (0,-1) {$\bot$};
+
+  % Nodos de arriba (colocados manualmente con xshift)
+  \node[box, draw, above=1cm of bot, xshift=-2cm] (Sigma) {$\hat{\Sigma}$};
+  \node[box, draw, above=1cm of bot, xshift=2cm] (ZOm) {$\mathbb{Z} \times \Omega$};
+  % Conexiones
+  \draw (bot) -- (Sigma);
+  \draw (bot) -- (ZOm);
+\end{tikzpicture}
+\end{figure} 
+
+~
+
+~ 
+
+~ 
+
+
+~ 
+
+En conclusión,
+
+\begin{equation*}
+  \Omega \simeq \left( \hat{\Sigma} + \mathbb{Z} \times \Omega \right) 
+\end{equation*}
+
+Por lo tanto, existen funciones continuas $\varphi, \psi$
+
+\begin{equation*}
+  \Omega 
+\underset{\psi}{\overset{\phi}{\rightleftarrows}} 
+\left( \hat{\Sigma} + \mathbb{Z} \times \Omega \right)_{\perp}
+\end{equation*}
+
+tales que $\varphi \circ \psi, \psi \circ \varphi$ son funciones identidad.
+
+~
+
+\begin{helpframe}
+  Esto revela la naturaleza recursiva de $\Omega$ porque nos dice que todo
+  elemento de $\Omega$ es o bien una secuencia con un único estado (tal vez
+  abortivo), o bien $\bot$, o bien (caso recursivo) un entero pareado con otro
+  elemento de $\Omega$.
+\end{helpframe}
+
+~
+
+En particular, parear cada elemento de $\hat{\Sigma}$ con $0$ y cada elemento de
+$\mathbb{Z} \times \Omega$ con $1$ no cambia ninguno de los resultados
+anteriores. Por lo tanto, podemos descomponer $\Omega$ del siguiente modo:
+
+\[
+\begin{tikzcd}[row sep=large, column sep=huge]
+\Sigma \arrow[dr, "\iota_{\text{norm}}"'] & \\
+\Sigma \arrow[r, "\iota_{\text{abnorm}}"'] & \hat{\Sigma} \arrow[r, "\iota_0"] &
+\hat{\Sigma}+ \mathbb{Z} \times \Omega \arrow[r, "\iota_{\uparrow}"] & (\hat{\Sigma} + \mathbb{Z} \times \Omega)_{\perp} \arrow[r, "\psi"] & \Omega \\
+& & \mathbb{Z} \times \Omega \arrow[u, "\iota_1"']
+\end{tikzcd}
+\]
+Acá, $\iota_{\text{norm}}, \iota_{\text{abnorm}}$ inyectan estados en
+$\hat{\Sigma}$, mapeando $\sigma \mapsto \sigma$ y $\sigma \mapsto
+\left<\textbf{abort}, \sigma \right>$, respectivamente. Las funciones $\iota_0,
+\iota_1$ son la unión disjunta y $\iota_\uparrow$ es simplemente el lifting.
+Tenemos entonces:
+
+\begin{align*}
+  \iota_{\text{term}} &= \psi \circ l_{\uparrow} \circ \iota_0 \circ
+  \iota_\text{norm} \in \Sigma \to \Omega \\ 
+  \iota_{\text{abort}} &= \psi \circ l_{\uparrow} \circ \iota_0 \circ
+  \iota_\text{abnorm} \in \Sigma \to \Omega\\
+  \iota_{\text{out}} &= \psi \circ l_{\uparrow} \circ \iota_1 \in (\mathbb{Z}
+  \times \Omega) \to \Omega
+\end{align*}
+
+Dar las inyecciones en términos de la relación entre estos conjuntos, y no en
+términos de la semántica de los mismos, nos permite librarnos del requisito de
+que el dominio $\Omega$ sea una secuencia de enteros y estados. Cualquier grupo
+de conjuntos donde las $\iota$ sean inyecciones con rangos disjuntos satisface
+las propiedades requeridas.
+
+\subsection{Input y nueva extensión de $\Omega$}
+
+Si agregamos $\text{<comm>} ::= ?\text{<var>}$ al lenguaje, que hace que una
+variable tome un valor dado por input, debemos extender la semántica todavía
+más. Recordemos que, sin input, con $\Omega \simeq (\hat{\Sigma} + \mathbb{Z}
+\times \Omega)_\bot $, habían cuatro posibilidades para un programa
+$\mathcal{P}$:
+
+\begin{itemize}
+  \item $\mathcal{P}$ no se detiene y $\omega = \bot $.
+  \item $\mathcal{P}$ termina en $\sigma$, y $\omega = \iota_{\text{term}} ~
+    \sigma$. 
+  \item $\mathcal{P}$ aborta en $\sigma$ y $\omega = \iota_{\text{abort}} ~
+    \sigma$. 
+  \item $\mathcal{P}$ escribe un $k \in \mathbb{Z}$ y luego se comporta según
+    $\omega'$, es decir $\omega = \iota_{\text{out}}(k, \omega')$.
+\end{itemize}
+
+Para describir input, introducimos una posibilidad nueva, donde el input es
+representado por una función $g \in \mathbb{Z} \to \Omega$:
+
+\begin{itemize}
+  \item $\mathcal{P}$ lee un entero $k$ y su comportamiento es determinado por
+    $g ~ k$. En este caso decimos $\omega = \iota_{\text{in}} ~ g$ con $g \in
+    \mathbb{Z} \to \Omega$.
+\end{itemize}
+
+Habiendo añadido esta posibilidad, tenemos que tomar $\Omega$ como una solución
+de 
+
+\begin{equation*}
+  \Omega \simeq \left( \hat{\Sigma} + \left( \mathbb{Z} \times \Omega \right) +
+  \left( \mathbb{Z} \mapsto \Omega \right) \right)_\bot 
+\end{equation*}
+
+Las ocurrencias de $\Omega$ que están en $\mathbb{Z} \to \Omega$ son llamadas
+\textit{resumptions}, porque refieren comportamientos que se dan cuando el
+proceso se resume después de input o output. Se define 
+
+\begin{equation*}
+  \iota_{\text{in}} = \psi \circ l_{\uparrow} \circ \iota_2 \in \left(
+  \mathbb{Z} \to \Omega \right) \to \Omega
+\end{equation*}
+
+
+\subsection{El orden de $\Omega$}
+
+Recordemos que, con input, output y fallas, determinamos que
+
+  
+\begin{equation*}
+  \Omega \simeq \left( \hat{\Sigma} + \left( \mathbb{Z} \times \Omega \right) +
+  \left( \mathbb{Z} \mapsto \Omega \right) \right)_\bot, \qquad 
+  \Omega 
+\underset{\psi}{\overset{\phi}{\rightleftarrows}} 
+\left( \hat{\Sigma} + \mathbb{Z} \times \Omega \times \mathbb{Z} \to \Omega \right)_{\perp}
+\end{equation*}
+
+Una de las ventajas de pensar $\Omega$ como isomórfico al término derecho es que
+el mismo hace evidente algunos puntos esenciales:
+
+\begin{itemize}
+  \item Todo elemento de $\Omega$ se corresponde con o bien un elemento de $\hat{\Sigma}$, o bien
+    se define recursivamente como un entero asociado a un elemento de $\Omega$, 
+    o bien es una función en $\mathbb{Z} \to \Omega$. 
+  \item Todo $\omega \in \Omega$ finito es construido via
+    inyecciones $\iota$, lifting, y $\psi$ a partir de los conjuntos
+    $\hat{\Sigma}, \mathbb{Z} \times \Omega$ y $\mathbb{Z} \to \Omega$.
+\end{itemize}
+
+Notemos además que $\hat{\Sigma}$ y $\hat{\Omega}$ son predominios (carecen de
+mínimo), mientras que $\mathbb{Z} \to \Omega$ es un dominio con mínimo $\lambda
+n . \left< \right>$. El orden de $(\hat{\Sigma} + \mathbb{Z} \times \Omega +
+\mathbb{Z} \to \Omega)$ es:
+
+
+
+\tikzset{
+  box/.style={draw, rectangle, rounded corners, align=center, minimum height=2em, minimum width=4em},
+  every node/.style={font=\small},
+}
+
+\begin{figure}[!h]
+\centering
+\begin{tikzpicture}[node distance=1.5cm and 2cm]
+
+  % Bottom layer
+  \node (bot) {$\bot = \langle \rangle$};
+
+  % Layer 1
+  \node[box, above left=of bot] (sigmahat) {$\{ \iota_{\text{term}}(\sigma) : \sigma \in \hat{\Sigma} \}$};
+  \node[above=of bot] (pair_empty) {$\iota_{\text{out}}(k_1, \bot)$};
+  \node[above right=of bot] (botfunc) {$\iota_{\text{in}}(\bot_{\mathbb{Z} \to \Omega})$};
+
+  % Layer 2
+  \node[above left=of pair_empty] (pair_m1) {$\iota_{\text{out}}(k_1, \iota_{\text{out}}(k_2, \bot))$};
+  \node[above=of pair_empty] (pair_0) {$\iota_{\text{out}}(k_1, \iota_{\text{in}}~f)$};
+  \node[above right=of pair_empty] (pair_1) {$\iota_{\text{out}}(k_1, \iota_{\text{term}}~\sigma)$};
+
+  % Layer 3
+  \node[above=of botfunc, xshift=4cm] (lambda_empty) {$\iota_{\text{in}}(\lambda k.\iota_{\text{out}}(k, \bot))$};
+
+  % Layer 4
+  \node[above left=of lambda_empty, xshift=-4cm] (lambda_1) {$\iota_{\text{in}}(\lambda k.\iota_{\text{out}}(k_3, \iota_{\text{out}}(k, \bot)))$};
+  \node[above=of lambda_empty, xshift=-4cm] (lambda_2) {$\iota_{\text{in}}(\lambda k.\iota_{\text{out}}(k, \iota_{\text{in}}~f_2))$};
+  \node[above right=of lambda_empty, xshift=-4cm] (lambda_3) {$\iota_{\text{in}}(\lambda k.\iota_{\text{out}}(k, \iota_{\text{term}}~\sigma))$};
+
+  % Edges (solid)
+  \draw (bot) -- (sigmahat);
+  \draw (bot) -- (pair_empty);
+  \draw (bot) -- (botfunc);
+
+  \draw (pair_empty) -- (pair_m1);
+  \draw (pair_empty) -- (pair_0);
+  \draw (pair_empty) -- (pair_1);
+
+  \draw (botfunc) -- (lambda_empty);
+
+  \draw (lambda_empty) -- (lambda_1);
+  \draw (lambda_empty) -- (lambda_2);
+  \draw (lambda_empty) -- (lambda_3);
+
+  % Edges (dashed)
+  \draw[dashed] (pair_empty) -- (lambda_empty);
+  \draw[dashed] (pair_0) -- (lambda_2);
+  \draw[dashed] (pair_m1) -- (lambda_1);
+  \draw[dashed] (pair_1) -- (lambda_3);
+
+  % Caption
+  \node[below=1.2cm of bot] {\footnotesize Diagrama de Hasse de $\Omega \cong (\hat{\Sigma} + \mathbb{Z} \times \Omega + \mathbb{Z} \to \Omega)_\bot$};
+
+\end{tikzpicture}
+\caption{Diagrama de Hasse de \( \Omega \), indicando orden recursivo y punto a punto.}
+\end{figure}
+
+El diamante con $\hat{\Sigma}$ contiene todos los estados con y sin etiquetas de
+abort, cada uno de los cuales es incomparable con los demás. Por lo tanto, el
+diamante representa una cantidad infinita de átomos maximales. Cada nodo $(k, \omega)$
+representa un nodo para cada $k \in \mathbb{Z}$. Es decir, en realidad los
+nodos son $(1, \left< \right>)$ relacionado con $(1, \left< -1 \right>), (1,
+\left< 0 \right>), \ldots$, así como $(2, \left< \right>)$ relacionado con $(2,
+\left< -1 \right>), (2, \left< 0 \right>), \ldots$ etcétera. Por último, la
+menor función en $\mathbb{Z} \to \Omega$ es la que mapea a $\bot_\Omega$. Las
+que mapean a estados son maximales porque los estados son maximales en $\Omega$.
+Luego, cada función $\lambda k.\left( k, \left< n\right> \right) $ cubre a
+$\lambda k . (k, \left< \right>)$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\pagebreak
+
+
 
 \section{Práctico 1}
 
@@ -2133,328 +2939,6 @@ que es lo que esperábamos.
 
 \section{Práctico 6}
 
-\subsection{Notas teóricas}
-
-El nivel de misticismo alcanzado en este punto de la materia nos fuerza a
-realizar algunas notas. Con algo de suerte, encontraremos el desarrollo
-habitual: lo que parece místico era sólo complejo, lo que parece complejo era
-al final sencillo, y lo que nos parecía sencillo será precisamente lo que no
-entendimos.
-
-\subsubsection{Extensión de outputs}
-
-Sea $f : \Sigma \mapsto \Omega$ una función de estados en outputs. La extensión
-de $f$ definida como $f_* : \Omega \mapsto \Omega$ se define como
-
-\begin{equation*}
-  f_* ~ \omega = \begin{cases}
-    \left<n_0, \ldots, n_{k-1} \right> \doubleplus f ~ \sigma & \omega =
-    \left<n_0, \ldots, n_{k-1}, \sigma \right> \\ 
-    \omega & c.c.
-  \end{cases}
-\end{equation*}
-
-Es decir que $f_*$ es inefectiva (es la función identidad) para todo $\omega \in
-\Omega$ que no tiene un estado final $\sigma$. Esto incluye los outputs infinitos, los
-outputs finitos sin estado final, y los outputs que terminan en
-$\left<\textbf{abort}, \sigma \right>$.
-
-Esta función nos permite definir la concatenación de comandos:
-
-\begin{equation*}
-  \llbracket c_0;c_1 \rrbracket \sigma = \left( \llbracket c_1 \rrbracket
-  \right)_* \left( \llbracket c_0 \rrbracket \sigma \right) 
-\end{equation*}
-
-\textbf{Ejemplo.} Si $\llbracket c_0 \rrbracket \sigma$ termine en $\left<1, 2,
-\sigma'\right>$ y $\llbracket c_1 \rrbracket\sigma'$ termina en $\left<3, 4
-, \gamma\right>$, $\llbracket c_0;c_1 \rrbracket\sigma = \left<1, 2, 3, 4
-, \gamma\right>$.
-
-También nos permite definir el \textbf{while} de manera que el estado final es
-inyectado a una secuencia, con $\llbracket \textbf{while } b \textbf{ do } c
-\rrbracket\sigma = \bigsqcup_{i \in \mathbb{N}} F^i ~ \bot $ y
-
-\begin{equation*}
-  F ~ f ~ \sigma = \begin{cases}
-    \left<\sigma \right> & \neg\llbracket b \rrbracket\sigma \\ 
-    f_* (\llbracket c \rrbracket \sigma) & c.c.
-  \end{cases}
-\end{equation*}
-
-Notemos que al usar $f_*$, el output de cada iteración del \textbf{while} será
-concatenado al output de la iteración anterior.
-
-\subsubsection{Transformación de estados finales}
-
-Si $f \in \Sigma \to  \Sigma$, $f_\dagger : \Omega\to \Omega$ se define como 
-
-\begin{equation*}
-  f_\dagger ~ \omega = \begin{cases}
-    \left<n_0, \ldots, n_{k-1}, \left<\textbf{abort}, f ~ \sigma \right> \right>
-    & \omega = \left<n_0,\ldots, n_{k-1}, \left<\textbf{abort}, \sigma \right>
-    \right> \\ 
-    \left<n_0, \ldots, n_{k-1}, f ~ \sigma \right> & \omega = \left< n_0,
-    \ldots, n_{k-1}, \sigma\right> \\ 
-    \omega & c.c.
-  \end{cases}
-\end{equation*}
-
-Es decir, $f_\dagger ~ \omega$ aplica $f$ al estado final de $\omega$, incluso
-si dicho estado final es el estado en que se produjo una falla. Esto nos permite
-definir 
-
-\begin{equation*}
-  \llbracket \textbf{newvar } v := e \textbf{ in } c\rrbracket\sigma = \mathcal{R}_\dagger \left( \llbracket c \rrbracket[\sigma \mid v :
-  \llbracket e \rrbracket \sigma] \right) 
-\end{equation*}
-
-donde $\mathcal{R}$ es la restauración:
-
-\begin{equation*}
-  \mathcal{R} := \lambda \sigma' \in \Sigma . \llbracket \sigma' \mid v : \sigma
-  ~ v\rrbracket
-\end{equation*}
-
-\subsubsection{Inyecciones sobre $\Omega$}
-
-Ahora nos proponemos expresar la extensión $f_*$ de $f$ en función de cuatro
-inyeciones disjuntas. Dichas inyecciones son:
-
-\begin{align*}
-  &(1) ~ ~ ~ \iota_\bot \in \left\{ \left< \right> \right\} \to \Omega \qquad \text{ definida como
-  } \qquad \iota_\bot () = \left< \right> = \bot_\Omega\\
-  &(2) ~ ~  ~\iota_{\text{term}} \in \Sigma \to \Omega \qquad \text{ definida como
-  } \qquad \iota_{\text{term}}(\sigma) = \left<\sigma \right>\\
-  &(3) ~ ~ ~ \iota_{\text{abort}} \in \Sigma \to \Omega \qquad \text{ definida como
-  } \qquad \iota_{\text{abort}} (\sigma) = \left<\left<\textbf{abort}, \sigma \right> \right>\\
-  &(4)~ ~ ~ \iota_{\text{out}} \in \mathbb{Z} \times \Omega \to \Omega \qquad \text{ definida como
-  } \qquad \iota_{\text{out}}(n, \omega) = \left<n \right> \doubleplus \omega
-\end{align*}
-
-\begin{align*}
-  f_* ~ \bot &= \bot  \\ 
-  f_*(\iota_\text{term} ~ \sigma) &= f ~ \sigma \\ 
-  f_*(\iota_{\text{abort}} \sigma) &= \iota_{\text{abort}} ~ \sigma \\ 
-  f_*(\iota_{\text{out}}(n, \omega)) &= \iota_{\text{out}}(n, f_* \omega)
-\end{align*}
-
-Un primer punto interesante es que ahora la definición de $f_*$ para el caso de un
-output $\left<n_0, \ldots, n_{k-1}, \ldots\right>$ es recursiva. También es
-importante notar que las funciones $\iota$ son inyectivas y tienen rangos
-disjuntos, y que cualquier $\omega \in \Omega$ finito puede formarse a través de
-sucesivas aplicaciones de estas funciones. Es decir, podemos pensar que estas
-funciones son constructores de una sintaxis abstracta cuyas frases son las
-secuencias finitas de $\Omega$.
-
-Análogamente, se puede definir 
-
-\begin{align*}
-  f_\dagger\left< \right> &= \left< \right> \\ 
-  f_\dagger \left<\sigma \right> &= \left<f ~ \sigma \right> \\ 
-  f_\dagger \left<\left<\textbf{abort}, \sigma \right> \right> &=
-  \left<\left<\textbf{abort}, f ~\sigma \right> \right> \\ 
-  f_\dagger \left( \left<n \right> \doubleplus \omega \right) &= \left<n \right>
-  \doubleplus f_\dagger ~ \omega
-\end{align*}
-
-\subsubsection{Isomorfismos sobre $\Omega$}
-
-El dominio $\Omega$ tiene el siguiente orden:
-
-~
-\begin{figure}[!h]
-\centering
-\begin{tikzpicture}
-  % Nodo de abajo
-  \node (bot) at (0,-2) {$\bot = \left< \right>$};
-
-  % Nodos de arriba (colocados manualmente con xshift)
-  \node[above=1.5cm of bot, xshift=-3cm] (sigma1) {$\left<\sigma_1 \right>$};
-  \node[above=2.5cm of bot, xshift=-2cm] (sigma2) {$\left<\sigma_2 \right>$};
-  \node[above=3.5cm of bot, xshift=-1cm] (dots1) {$\ldots$};
-  \node[diamond, draw, above=4.5cm of bot, xshift=0cm] (Omega1) {$\Omega_1$};
-  \node[diamond, draw,above=5.5cm of bot, xshift=1.5cm] (Omega2) {$\Omega_2$};
-  \node[above=6.5cm of bot, xshift=2.5cm] (dots2) {$\ldots$};
-
-  % Conexiones
-  \draw (bot) -- (sigma1);
-  \draw (bot) -- (sigma2);
-  \draw (bot) -- (dots1);
-  \draw (bot) -- (Omega1);
-  \draw (bot) -- (Omega2);
-  \draw (bot) -- (dots2);
-\end{tikzpicture}
-\end{figure} 
- 
-
-
-donde $\left<\sigma_i \right>$ son secuencias con un único estado o un único par
-$\left<\textbf{abort}, \sigma \right>$, y el diamante con $\Omega_k$ es el conjunto de
-secuencias que empiezan con el entero $k$.
-
-~
-
-\textbf{Autosimilitud de $\Omega$}. Considere lo siguiente: para cada $\omega \in \Omega_k$, existe una única
-secuencia $\omega'\in \Omega$ tal que $\omega = k \doubleplus \omega'$. Es
-decir, existe una correspondencia uno a uno entre todos elementos de $\Omega_k$ y
-todos los elementos de $\Omega$, y es fácil ver que dicha correspondencia es
-invertible. $\therefore $ $\Omega_k$ es isomórfico a $\Omega$.
-
-\begin{quote}
-$(\star)$ Informalmente, podemos pensar que ciertos elementos de $\Omega$ se parecen a
-$\Omega$, o que $\Omega$ tiene subconjuntos que difieren muy poco del mismo
-$\Omega$.
-\end{quote}
-~ 
-
-\textbf{Naturaleza recursiva de $\Omega$}. Considere $\mathbb{Z} \times \Omega$ con $\mathbb{Z}$ bajo el orden discreto.
-Claramente, para cada $k \in \mathbb{Z}$, existe $(k, \omega)$ para cada $\omega
-\in \Omega$. Es decir, se asocia una "copia" de $\Omega$ a cada entero. El orden
-punto a punto resulta 
-
-\begin{equation*}
-  \left<n, \omega \right> \sqsubseteq \left<n', \omega' \right> 
-\iff n = n' \text{ y } \omega
-  \sqsubseteq_\Omega \omega'
-\end{equation*}
-
-Es decir, cada "copia" tiene el mismo order que en $\Omega$, y los miembros de
-copias diferentes son incomparables. Por lo tanto, cada $\left<n,
-\omega\right>$ se corresponde con un único $\omega' \in \Omega_k$, y tenemos que 
-
-\begin{equation*}
-  \bigcup_{k \in \mathbb{Z}} \Omega_k \simeq \mathbb{Z} \times \Omega
-\end{equation*}
-
-Por lo tanto, combinando que la unión de los $\Omega_k$ es isomórfica a $\mathbb{Z} \times
-\Omega$ con el orden de $\Omega$ dado en el primer diagrama, tenemos
-
-\begin{figure}
-\centering
-\begin{tikzpicture}
-  % Nodo de abajo
-  \node (bot) at (0,-1) {$\bot$};
-
-  % Nodos de arriba (colocados manualmente con xshift)
-  \node[box, draw, above=1.5cm of bot, xshift=-2cm] (Sigma) {$\hat{\Sigma}$};
-  \node[box, draw, above=2.5cm of bot, xshift=2cm] (ZOm) {$\mathbb{Z} \times \Omega$};
-  % Conexiones
-  \draw (bot) -- (Sigma);
-  \draw (bot) -- (ZOm);
-\end{tikzpicture}
-\end{figure} 
-
-~
-
-~ 
-
-~ 
-
-
-~ 
-
-En conclusión,
-
-\begin{equation*}
-  \Omega \simeq \left( \hat{\Sigma} + \mathbb{Z} \times \Omega \right) 
-\end{equation*}
-
-Por lo tanto, existen funciones continuas $\varphi, \psi$
-
-\begin{equation*}
-  \Omega 
-\underset{\psi}{\overset{\phi}{\rightleftarrows}} 
-\left( \hat{\Sigma} + \mathbb{Z} \times \Omega \right)_{\perp}
-\end{equation*}
-
-tales que $\varphi \circ \psi, \psi \circ \varphi$ son funciones identidad.
-
-\begin{quote}
-  Esto revela la naturaleza recursiva de $\Omega$ porque nos dice que todo
-  elemento de $\Omega$ es o bien una secuencia con un único estado (tal vez
-  abortivo), o bien $\bot$, o bien (caso recursivo) un entero pareado con otro
-  elemento de $\Omega$.
-\end{quote}
-
-En particular, parear cada elemento de $\hat{\Sigma}$ con $0$ y cada elemento de
-$\mathbb{Z} \times \Omega$ no cambia ninguno de los resultados anteriores. Por
-lo tanto,
-
-\[
-\begin{tikzcd}[row sep=large, column sep=huge]
-\Sigma \arrow[dr, "\iota_{\text{norm}}"'] & \\
-\Sigma \arrow[r, "\iota_{\text{abnorm}}"'] & \hat{\Sigma} \arrow[r, "\iota_0"] &
-\hat{\Sigma}+ \mathbb{Z} \times \Omega \arrow[r, "\iota_{\uparrow}"] & (\hat{\Sigma} + \mathbb{Z} \times \Omega)_{\perp} \arrow[r, "\psi"] & \Omega \\
-& & \mathbb{Z} \times \Omega \arrow[u, "\iota_1"']
-\end{tikzcd}
-\]
-Acá, $\iota_{\text{norm}}, \iota_{\text{abnorm}}$ inyectan estados en
-$\hat{\Sigma}$, mapeando $\sigma \mapsto \sigma$ y $\sigma \mapsto
-\left<\textbf{abort}, \sigma \right>$, respectivamente. Las funciones $\iota_0,
-\iota_1$ son la unión disjunta y $\iota_\uparrow$ es simplemente el lifting.
-Tenemos entonces:
-
-\begin{align*}
-  \iota_{\text{term}} &= \psi \circ l_{\uparrow} \circ \iota_0 \circ
-  \iota_\text{norm} \in \Sigma \to \Omega \\ 
-  \iota_{\text{abort}} &= \psi \circ l_{\uparrow} \circ \iota_0 \circ
-  \iota_\text{abnorm} \in \Sigma \to \Omega\\
-  \iota_{\text{out}} &= \psi \circ l_{\uparrow} \circ \iota_1 \in (\mathbb{Z}
-  \times \Omega) \to \Omega
-\end{align*}
-
-Dar las inyecciones en términos de la relación entre estos conjuntos, y no en
-términos de la semántica de los mismos, nos permite librarnos del requisito de
-que el dominio $\Omega$ sea una secuencia de enteros y estados. Cualquier grupo
-de conjuntos donde las $\iota$ sean inyecciones con rangos disjuntos satisface
-las propiedades requeridas.
-
-\subsubsection{Input}
-
-Si agregamos $\text{<comm>} ::= ?\text{<var>}$ al lenguaje, que hace que una
-variable tome un valor dado por input, debemos extender la semántica todavía
-más. Recordemos que, sin input, con $\Omega \simeq (\hat{\Sigma} + \mathbb{Z}
-\times \Omega)_\bot $, habían cuatro posibilidades para un programa
-$\mathcal{P}$:
-
-\begin{itemize}
-  \item $\mathcal{P}$ no se detiene y $\omega = \bot $.
-  \item $\mathcal{P}$ termina en $\sigma$, y $\omega = \iota_{\text{term}} ~
-    \sigma$. 
-  \item $\mathcal{P}$ aborta en $\sigma$ y $\omega = \iota_{\text{abort}} ~
-    \sigma$. 
-  \item $\mathcal{P}$ escribe un $k \in \mathbb{Z}$ y luego se comporta según
-    $\omega'$, es decir $\omega = \iota_{\text{out}}(k, \omega')$.
-\end{itemize}
-
-Para describir input, introducimos una posibilidad nueva, donde el input es
-mapeado por una función $g$ en un miembro de $\Omega$:
-
-\begin{itemize}
-  \item $\mathcal{P}$ lee un entero $k$ y su comportamiento es determinado por
-    $g ~ k$. En este caso decimos $\omega = \iota_{\text{in}} ~ g$ con $g \in
-    \mathbb{Z} \to \Omega$.
-\end{itemize}
-
-Habiendo añadido esta posibilidad, tenemos que tomar $\Omega$ como una solución
-de 
-
-\begin{equation*}
-  \Omega \simeq \left( \hat{\Sigma} + \left( \mathbb{Z} \times \Omega \right) +
-  \left( \mathbb{Z} \mapsto \Omega \right) \right)_\bot 
-\end{equation*}
-
-Las ocurrencias de $\Omega$ que están en $\mathbb{Z} \to \Omega$ son llamadas
-\textit{resumptions}, porque refieren comportamientos que se dan cuando el
-proceso se resume después de input o output. Se define 
-
-\begin{equation*}
-  \iota_{\text{in}} = \psi \circ l_{\uparrow} \circ \iota_2 \in \left(
-  \mathbb{Z} \to \Omega \right) \to \Omega
-\end{equation*}
-
-\pagebreak
 
 \subsection{Problemas}
 \begin{myframe}
@@ -2603,37 +3087,240 @@ Tenemos entonces que la equivalencia es verdadera.
   validez de 
 
   \begin{equation*}
-    ?x; c; !x \equiv ?y ; c; !y
+    ?x; \mathcal{P}; !x \equiv ?y ; \mathcal{P}; !y
   \end{equation*}
 \end{myframe}
 
 Dado que $\mathcal{P}$ no incluye fallas, outputs, ni inputs, el teorema
-coincidencia para comandos aplica. Dado que $x, y \not\in FV(c)$, para todo
-$\sigma \in \Sigma$, tenemos $\sigma ~ x = \llbracket c \rrbracket \sigma ~ x$,
-$\sigma ~ y = \llbracket c \rrbracket \sigma ~ y$. Por lo tanto, 
+coincidencia para comandos aplica para $\mathcal{P}$. Por lo tanto, 
+
+\begin{equation*}
+  \llbracket \mathcal{P} \rrbracket ~ \sigma ~ x = \sigma ~x, \qquad
+  \llbracket \mathcal{P} \rrbracket\sigma ~ y = \sigma ~ y
+\end{equation*}
+
+para todo $\sigma \in \Sigma$. En particular, 
+
+\begin{align*}
+  \llbracket ?x ; \mathcal{P} \rrbracket\sigma 
+  &= \llbracket \mathcal{P} \rrbracket_* \left( \llbracket ?x \rrbracket \sigma
+  \right)  \\ 
+  &=\llbracket \mathcal{P} \rrbracket_* \Big( \iota_{\text{in}} \left(\lambda ~
+      k ~.~ \iota_{\text{term}}[\sigma \mid x :
+  k] \right) \Big) \\ 
+  &=\iota_{\text{in}} \Big( \lambda k ~. ~ \llbracket \mathcal{P} \rrbracket_*
+  \left< [\sigma \mid x : k] \right> \Big) \\ 
+  &=\iota_{\text{in}} \Big( \lambda k ~ . ~ \Big< \llbracket \mathcal{P} \rrbracket[\sigma \mid x : k]\Big> \Big)
+\end{align*}
+
+Por lo tanto, 
+
+\begin{align*}
+  \llbracket ?x ; \mathcal{P}; !x \rrbracket\sigma 
+  &= \llbracket !x \rrbracket_* \Big( \iota_{\text{in}}\left( \lambda ~ k \Big<
+  \llbracket \mathcal{P} \rrbracket[\sigma \mid x : k]\Big> \right)  \Big)  \\ 
+  &=\iota_{\text{in}} \Big( \lambda k ~. ~ \Big< \llbracket x! \rrbracket\left(
+  \llbracket \mathcal{P} \rrbracket[\sigma \mid x : k]\right)  \Big> \Big) \\ 
+  &= \iota_{\text{in}} \Big( \lambda ~ k \left< \llbracket \mathcal{P} \rrbracket[\sigma
+  \mid x  : k ] ~ x, \llbracket \mathcal{P} \rrbracket[\sigma\mid x : k] \right>
+\Big) \\ 
+  &=\iota_{\text{in}} \left( \lambda ~ k .~\left< [\sigma \mid x : k] ~ x,
+  \llbracket \mathcal{P} \rrbracket[\sigma \mid x : k] \right> \right) \\
+  &=\iota_{\text{in}} \left( \lambda ~ k .~\left< k,
+  \llbracket \mathcal{P} \rrbracket[\sigma \mid x : k] \right> \right) 
+\end{align*} 
+
+El mismo desarrollo nos hace ver que 
+
+\begin{equation*}
+  \llbracket ?y ; \mathcal{P}; !y \rrbracket\sigma = \iota_{\text{in}}\left(
+  \lambda ~ k ~ . ~ \left< k, \llbracket \mathcal{P} \rrbracket[\sigma \mid y : k] \right> \right) 
+\end{equation*}
+
+Entonces es claro que la equivalencia es falsa. El primer programa transforma
+$x$ en algún $k$ vía input y escribe $k$, el segundo transforma $y$ en algún $k$
+y escribe $k$. Aunque ambos escriben el $k$ dado via input, cambian variables
+distintas.
+
+\pagebreak 
+
+\begin{myframe}
+  
+$\textbf{(5)}$ Considere: 
+
+\begin{align*}
+  &\omega_1 := \iota_\text{in}\left( \lambda n . \iota_{\text{out}}(n, \bot ) \right)  \\ 
+  &\omega_2 := \iota_{\text{out}}(0, \bot ) \\ 
+  &\omega_3 := \iota_{\text{in}}(\lambda n. \bot ) \\ 
+  &\omega_4 := \iota_{\text{in}} ~ f \text{  con  } f ~ n = \begin{cases}
+    \bot  & n < 0 \\ 
+    \iota_{\text{out}}(n, \bot ) &\text{c.c.}
+  \end{cases}
+\end{align*}
+
+Describa mediante un diagrama de Hasse las relaciones de orden que se establecen
+entre los elementos antedichos de $\Omega$.
+
+\end{myframe}
+
+Estudiemos uno por uno los elementos dados de 
+$\Omega $. La estrategia
+será mirarlos como elementos de $\left( \hat{\Sigma}+ \mathbb{Z} \times \Omega +
+\mathbb{Z} \to \Omega\right)_\bot$, no como elementos de $\Omega$. Para ello
+recordemos que el isomorfismo entre ambos dominios es dado por
+
+
+\begin{equation*}
+  \Omega 
+\underset{\psi}{\overset{\phi}{\rightleftarrows}} 
+\left( \hat{\Sigma} + \mathbb{Z} \times \Omega + \mathbb{Z} \to \Omega\right)_{\perp}
+\end{equation*}
+
+
+Lo primero que debemos observar es que $\omega_2$ será incomparable
+con los demás elementos, porque $\iota_{\text{out}}, \iota_{\text{in}}$ tienen
+rangos disjuntos. Más específicamente, $\phi ( \omega_2 ) \in \mathbb{Z} \times \Omega$,
+mientras que $\phi(\omega_i) \in \mathbb{Z} \to \Omega$ para $i = 1, 3, 4$.
+
+Ahora bien, veamos que 
+
+\begin{align*}
+  \phi(\omega_1) &= \lambda ~ n . \iota_{\text{out}}(n, \bot ) = \lambda n .
+  \left<n \right>\\ 
+  \phi(\omega_3) &= \lambda n.\bot  = \bot_{\mathbb{Z}\to \Omega}\\ 
+  \phi(\omega_4) &= \lambda n .\begin{cases}
+    \bot & n < 0 \\ 
+    \iota_{\text{out}}(n, \bot ) & c.c.
+  \end{cases}
+\end{align*}
+
+Claramente, $\phi(\omega_3)$ es el mínimo entre estos tres elementos (es el
+bottom del espacio de funciones $\mathbb{Z} \to \Omega$). Por otro lado, para
+todo $n \in \mathbb{Z}$ se cumple que $\phi(\omega_4)(n) \sqsubseteq_{\Omega}
+\phi(\omega_1)(n)$, porque si $n < 0$ tenemos $\bot  \sqsubseteq_\Omega \left<n \right>$ y si $n \geq
+0$ tenemos $\left<n \right> \sqsubseteq_\Omega \left<n \right>$. 
+
+Los isomorfismos preservan el orden y
+$\psi(\phi(\omega_i)) = \omega_i$. Por lo tanto, vistos como elementos de
+$\Omega$, se sigue de lo anterior que $\omega_3$ es el mínimo de $\left\{
+\omega_1, \omega_3, \omega_4 \right\} $, y que $\omega_4 \sqsubseteq_\Omega
+\omega_1$. Por lo tanto, el diagrama de Hasse del predominio 
+
+\begin{equation*}
+  \left( \left\{ \omega_1, \omega_2, \omega_3, \omega_4 \right\}, \sqsubseteq_\Omega  \right) 
+\end{equation*}
+
+es
 
 
 
+\begin{figure}[!h]
+\centering
+\begin{tikzpicture}
+  % Nodo de abajo
+  \node (bot) at (0,-2) {$\omega_3 = \bot_{\mathbb{Z} \to \Omega}$};
+
+  % Nodos de arriba (colocados manualmente con xshift)
+  \node[above=1cm of bot, xshift=-0cm] (dots2) {$\omega_4$};
+  \node[above=1cm of dots2, xshift=-0cm] (sigma1) {$\omega_1 $};
+  \node (sigma2) at (2, -2) {$\omega_2 $};
+
+  % Conexiones
+  \draw (bot) -- (dots2);
+  \draw (dots2) -- (sigma1);
+\end{tikzpicture}
+\caption{Diagrama de Hasse del ejercicio \textbf{(5)}}
+\end{figure} 
 
 
 
+\pagebreak 
+
+\begin{myframe}
+  \textbf{(6)} Dé un programa cuya semántica sea el supremo de la cadena 
+
+  \begin{equation*}
+    w_0 = \bot , \qquad w_{i+1} = \iota_{\text{in}} \big( \lambda n.
+    \iota_{\text{out}} \left( n, w_i \right)  \big)
+  \end{equation*}
+\end{myframe}
 
 
+Veamos que 
+
+\begin{align*}
+  w_0 ~ n ~ \omega&= \bot  \\ 
+  w_1 ~ n ~ \omega&= \iota_{\text{in}} \left( \lambda n.\iota_\text{out}(n, \bot ) \right) =
+  \iota_{\text{in}} (\lambda n . \left<n \right>) = \iota_{\text{in}} \mathcal{o}\\ 
+  w_2 &= \iota_{\text{in}}\left( \lambda n. (\left<n \right>  \doubleplus
+  \omega_1)\right) \\
+      &= \iota_{\text{in}}\Big( \lambda n.\big(\left<n \right>
+  \doubleplus \iota_{\text{in}}(\lambda m . \left<m \right>)\big) \Big) 
+\end{align*}
+
+Detengámonos acá y pensemos lo que tenemos. $w_0$ no hace nada. $w_1$ escribe un
+$n$ dado via input y se cuelga. $w_2$, por otro lado, concatena un $n$ dado via
+input a la secuencia $\left< m \right>$, donde $m$ es dado via input, tras lo
+cual se cuelga. Evidentemente, cada elemento de la cadena se corresponde
+semánticamente con la escritura de un nuevo entero dado via input. Por lo tanto,
+el supremo de la cadena se corresponde con la semántica de 
+
+\begin{equation*}
+  c := \textbf{while } \textbf{true} \textbf{ do } ?x;!x
+\end{equation*}
+
+\pagebreak 
+
+\begin{myframe}
+  \textbf{(7)} Considere los programas de la forma $\textbf{while true do } (?x;c)$. La
+  cadena $F^i ~ \bot ~\sigma$ de la semántica de dicho \textbf{while}, ¿será
+  siempre interesante en $\Omega$? Justifique.
+\end{myframe}
+
+Veamos que 
+
+\begin{align*}
+  \llbracket ?x;c \rrbracket \sigma
+  &= \llbracket c \rrbracket_* \big( \llbracket ?x \rrbracket\sigma \big) \\ 
+  &= \llbracket c \rrbracket_* \big( \iota_{\text{in}}\left( \lambda
+  ~k~.~[\sigma \mid x : k] \right)  \big) \\ 
+  &= \iota_{\text{in}} \left( \lambda ~ k . ~ \big( \llbracket c
+  \rrbracket_*[\sigma \mid x : k] \big) \right) \\
+  &= \iota_{\text{in}} \left( \lambda ~ k . ~ \big( \llbracket c
+  \rrbracket[\sigma \mid x : k] \big) \right) 
+\end{align*}
+
+Por lo tanto, la $F$ en cuestión es
+
+\begin{align*}
+  F ~ f ~ \sigma 
+  &= f_* \left( \iota_{\text{in}} \big( \lambda ~k~.~\left(
+  \llbracket c \rrbracket[\sigma \mid x : k] \right)  \big) \right) \\ 
+  &=\iota_{\text{in}}\Big( \lambda ~ k ~ . ~ f_* \left( \llbracket c
+  \rrbracket[\sigma \mid x : k] \right)  \Big)
+\end{align*}
+
+Claramente, $F ~ \bot ~ \sigma = \iota_{\text{in}}(\lambda ~ k . \bot_\Omega ) 
+$ y se corresponde con pedir un input seguido de la no terminación.
+
+Ahora bien,
 
 
+\begin{align*}
+  F^2 ~ \bot ~ \sigma 
+  &= \iota_{\text{in}}\left( \lambda ~ k ~ . (F~\bot)_*(\llbracket c
+  \rrbracket[\sigma \mid x : k]) \right)  \\ 
+  &= \iota_{\text{in}} \left( \lambda k . \iota_{\text{in}}(\lambda ~k.\bot_\Omega)\right)
+\end{align*}
 
+se corresponde con pedir un input, pedir otro input, y no terminar. En
+particular, 
 
-
-
-
-
-
-
-
-
-
-
-
+\begin{equation*}
+  \lambda k.\bot_\Omega = \bot_{\mathbb{Z} \to \Omega}
+  \sqsubseteq_{\mathbb{Z}\to \Omega} \lambda ~k.(\iota_{\text{in}}
+  \bot_{\mathbb{Z}\to \Omega})
+\end{equation*}
 
 
 

@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1744843615.47653 "Computability.tex" "Computability.pdf" "Computability" 1744843617.02623 2
+["pdflatex"] 1746208000.49411 "Computability.tex" "Computability.pdf" "Computability" 1746208002.5744 2
   "../Images/SeverinoDiGiovanni.jpg" 1744842595.91572 661859 e319bf24ec55c5c8c8839fa5ed43bde8 ""
   "/etc/texmf/web2c/texmf.cnf" 1740662799.63242 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1698694482 2914 fdbc4a54b9bc76f4551b5303f2737d33 ""
@@ -133,9 +133,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1740670969.59643 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1740670991 8214096 2cc5ed7d441cd7dd7f6cf9e30d4bb5a5 ""
-  "Computability.aux" 1744843616.86529 8597 1f2f3d64ef03a27fbd10235a8bbbcb72 "pdflatex"
-  "Computability.tex" 1744843614.14128 259358 43e7ad27da117a1b13f169374521cb36 ""
-  "Computability.toc" 1744843616.86729 5226 b0c9decd63d64c7fe1c7188337d60dda "pdflatex"
+  "Computability.aux" 1746208002.35037 8597 1f2f3d64ef03a27fbd10235a8bbbcb72 "pdflatex"
+  "Computability.tex" 1744994636.5177 259404 9db1e2a436c559fbb0c5b864f9b9e375 ""
+  "Computability.toc" 1746208002.35237 5226 b0c9decd63d64c7fe1c7188337d60dda "pdflatex"
   (generated)
   "Computability.aux"
   "Computability.log"
