@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  25 APR 2025 13:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  13 MAY 2025 09:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -262,175 +262,45 @@ LaTeX Info: Redefining \Relbar on input line 971.
 \mathdisplay@stack=\toks25
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
-) (/usr/share/texlive/texmf-dist/tex/latex/newtx/newtxtext.sty
-Package: newtxtext 2024/01/11 v1.737(Michael Sharpe) latex and unicode latex support for TeXGyreTermesX
- `newtxtext' v1.737, 2024/01/11 Text macros taking advantage of TeXGyre Termes and its extensions (msharpe) (/usr/share/texlive/texmf-dist/tex/latex/xpatch/xpatch.sty
-Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
-) (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
- (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks26
-\XKV@tempa@toks=\toks27
-)
-\XKV@depth=\count282
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-)) (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
-\xs_counta=\count283
-\xs_countb=\count284
-)
-Package: xstring 2023/08/22 v1.86 String manipulations (CT)
-) (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
-) (/usr/share/texlive/texmf-dist/tex/latex/carlisle/scalefnt.sty)
-LaTeX Font Info:    Setting ntxLF sub-encoding to TS1/0 on input line 24.
-LaTeX Font Info:    Setting ntxTLF sub-encoding to TS1/0 on input line 24.
-LaTeX Font Info:    Setting ntxOsF sub-encoding to TS1/0 on input line 24.
-LaTeX Font Info:    Setting ntxTOsF sub-encoding to TS1/0 on input line 24.
- (/usr/share/texlive/texmf-dist/tex/generic/kastrup/binhex.tex)
-\ntx@tmpcnta=\count285
-\ntx@cnt=\count286
- (/usr/share/texlive/texmf-dist/tex/latex/fontaxes/fontaxes.sty
-Package: fontaxes 2020/07/21 v1.0e Font selection axes
-LaTeX Info: Redefining \upshape on input line 29.
-LaTeX Info: Redefining \itshape on input line 31.
-LaTeX Info: Redefining \slshape on input line 33.
-LaTeX Info: Redefining \swshape on input line 35.
-LaTeX Info: Redefining \scshape on input line 37.
-LaTeX Info: Redefining \sscshape on input line 39.
-LaTeX Info: Redefining \ulcshape on input line 41.
-LaTeX Info: Redefining \textsw on input line 47.
-LaTeX Info: Redefining \textssc on input line 48.
-LaTeX Info: Redefining \textulc on input line 49.
-)
-\tx@sixem=\dimen150
-\tx@y=\dimen151
-\tx@x=\dimen152
-\tx@tmpdima=\dimen153
-\tx@tmpdimb=\dimen154
-\tx@tmpdimc=\dimen155
-\tx@tmpdimd=\dimen156
-\tx@tmpdime=\dimen157
-\tx@tmpdimf=\dimen158
-\tx@dimA=\dimen159
-\tx@dimAA=\dimen160
-\tx@dimB=\dimen161
-\tx@dimBB=\dimen162
-\tx@dimC=\dimen163
-LaTeX Info: Redefining \oldstylenums on input line 893.
-) (/usr/share/texlive/texmf-dist/tex/latex/newtx/newtxmath.sty
-Package: newtxmath 2023/11/05 v1.732
- `newtxmath' v1.732, 2023/11/05 Math macros based originally on txfonts (msharpe) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/centernot.sty
-Package: centernot 2016/05/16 v1.4 Centers the not symbol horizontally (HO)
-)
-\tx@cntz=\count287
- (/usr/share/texlive/texmf-dist/tex/generic/kastrup/binhex.tex)
-\tx@Isdigit=\count288
-\tx@IsAlNum=\count289
-\tx@tA=\toks28
-\tx@tB=\toks29
-\tx@su=\read2
-
-amsthm NOT loaded
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 390.
+) (/usr/share/texlive/texmf-dist/tex/latex/mlmodern/mlmodern.sty
+Package: mlmodern 2021/01/12 v1.1 Modified Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/minntx/m/n on input line 390.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/minntx/m/n on input line 390.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/minntx/m/n --> OT1/minntx/b/n on input line 391.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 397.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/qhv/m/n on input line 397.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/qhv/m/n on input line 397.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 398.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/minntx/m/it on input line 398.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/minntx/m/it on input line 398.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 399.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> T1/ntxtt/m/n on input line 399.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> T1/ntxtt/m/n on input line 399.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 401.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/minntx/b/n on input line 401.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/minntx/b/n on input line 401.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/minntx/m/it --> OT1/minntx/b/it on input line 402.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/qhv/m/n --> T1/qhv/b/n on input line 403.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/ntxtt/m/n --> T1/ntxtt/b/n on input line 404.
-LaTeX Font Info:    Redeclaring symbol font `letters' on input line 506.
+(Font)                  OT1/cmr/m/n --> OT1/mlmr/m/n on input line 27.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
-(Font)                  OML/cmm/m/it --> OML/ntxmi/m/it on input line 506.
-LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
-(Font)                  OML/cmm/b/it --> OML/ntxmi/m/it on input line 506.
-LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
-(Font)                  OML/ntxmi/m/it --> OML/ntxmi/b/it on input line 507.
-\symlettersA=\mathgroup6
-LaTeX Font Info:    Overwriting symbol font `lettersA' in version `bold'
-(Font)                  U/ntxmia/m/it --> U/ntxmia/b/it on input line 562.
-LaTeX Font Info:    Redeclaring math alphabet \mathfrak on input line 564.
-Now handling font encoding LMS ...
-... no UTF-8 mapping file for font encoding LMS
-LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 583.
-LaTeX Font Info:    Encoding `OMS' has changed to `LMS' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 583.
+(Font)                  OML/cmm/m/it --> OML/mlmm/m/it on input line 28.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/cmsy/m/n --> LMS/ntxsy/m/n on input line 583.
-LaTeX Font Info:    Encoding `OMS' has changed to `LMS' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 583.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/cmsy/b/n --> LMS/ntxsy/m/n on input line 583.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  LMS/ntxsy/m/n --> LMS/ntxsy/b/n on input line 584.
-\symAMSm=\mathgroup7
-LaTeX Font Info:    Overwriting symbol font `AMSm' in version `bold'
-(Font)                  U/ntxsym/m/n --> U/ntxsym/b/n on input line 609.
-\symsymbolsC=\mathgroup8
-LaTeX Font Info:    Overwriting symbol font `symbolsC' in version `bold'
-(Font)                  U/ntxsyc/m/n --> U/ntxsyc/b/n on input line 630.
-Now handling font encoding LMX ...
-... no UTF-8 mapping file for font encoding LMX
-LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 643.
-LaTeX Font Info:    Encoding `OMX' has changed to `LMX' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 643.
+(Font)                  OMS/cmsy/m/n --> OMS/mlmsy/m/n on input line 29.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/cmex/m/n --> LMX/ntxexx/m/n on input line 643.
-LaTeX Font Info:    Encoding `OMX' has changed to `LMX' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 643.
+(Font)                  OMX/cmex/m/n --> OMX/mlmex/m/n on input line 30.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/mlmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/mlmm/b/it on input line 32.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/mlmsy/b/n on input line 33.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/cmex/m/n --> LMX/ntxexx/m/n on input line 643.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  LMX/ntxexx/m/n --> LMX/ntxexx/b/n on input line 644.
-\symlargesymbolsTXA=\mathgroup9
-LaTeX Font Info:    Overwriting symbol font `largesymbolsTXA' in version `bold'
-(Font)                  U/ntxexa/m/n --> U/ntxexa/b/n on input line 658.
-\tx@sbptoks=\toks30
-LaTeX Font Info:    Redeclaring math delimiter \lfloor on input line 881.
-LaTeX Font Info:    Redeclaring math delimiter \rfloor on input line 882.
-LaTeX Font Info:    Redeclaring math delimiter \lceil on input line 883.
-LaTeX Font Info:    Redeclaring math delimiter \rceil on input line 884.
-LaTeX Font Info:    Redeclaring math delimiter \lbrace on input line 889.
-LaTeX Font Info:    Redeclaring math delimiter \rbrace on input line 890.
-LaTeX Font Info:    Redeclaring math delimiter \langle on input line 892.
-LaTeX Font Info:    Redeclaring math delimiter \rangle on input line 894.
-LaTeX Font Info:    Redeclaring math delimiter \arrowvert on input line 898.
-LaTeX Font Info:    Redeclaring math delimiter \vert on input line 899.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 970.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 971.
-LaTeX Font Info:    Redeclaring math accent \vec on input line 2044.
-LaTeX Info: Redefining \Bbbk on input line 2834.
-LaTeX Info: Redefining \not on input line 2982.
+(Font)                  OMX/cmex/m/n --> OMX/mlmex/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/mlmr/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/mlmss/m/n on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/mlmr/m/it on input line 38.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/mlmtt/m/n on input line 39.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/mlmr/bx/n on input line 40.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/mlmss/bx/n on input line 41.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/mlmr/bx/it on input line 42.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/mlmtt/m/n on input line 43.
 )
-\c@problem=\count290
-\c@example=\count291
-\c@lemma=\count292
-\c@theorem=\count293
+\c@problem=\count282
+\c@example=\count283
+\c@lemma=\count284
+\c@theorem=\count285
 
 
 ./ModelosYSim.tex:17: LaTeX Error: Command \problem already defined.
@@ -460,7 +330,7 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-\c@definition=\count294
+\c@definition=\count286
 
 ./ModelosYSim.tex:19: LaTeX Error: Command \lemma already defined.
                Or name \end... illegal, see p.192 of the manual.
@@ -501,23 +371,16 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 107.
 )
-\Gin@req@height=\dimen164
-\Gin@req@width=\dimen165
+\Gin@req@height=\dimen150
+\Gin@req@width=\dimen151
 )
-LaTeX Font Info:    Trying to load font information for T1+ntxtlf on input line 36.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/t1ntxtlf.fd
-File: t1ntxtlf.fd 2021/05/24 v1.1 font definition file for T1/ntx/tlf
-)
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 36.
- (./ModelosYSim.aux)
+LaTeX Font Info:    Trying to load font information for T1+mlmr on input line 36.
+ (/usr/share/texlive/texmf-dist/tex/latex/mlmodern/t1mlmr.fd
+File: t1mlmr.fd 2021/01/11 v1.0 Font defs for mlmodern
+) (./ModelosYSim.aux)
 \openout1 = `ModelosYSim.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 36.
-LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 36.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/omlntxmi.fd
-File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
-)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
 LaTeX Font Info:    ... okay on input line 36.
 LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
 LaTeX Font Info:    ... okay on input line 36.
@@ -529,37 +392,21 @@ LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
 LaTeX Font Info:    ... okay on input line 36.
 LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
 LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 36.
-LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 36.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxexa.fd
-File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
-)
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 36.
-LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 36.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/lmsntxsy.fd
-File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
-)
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 36.
-LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line 36.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/lmxntxexx.fd
-File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
-)
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
 LaTeX Font Info:    ... okay on input line 36.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count295
-\scratchdimen=\dimen166
+\scratchcounter=\count287
+\scratchdimen=\dimen152
 \scratchbox=\box59
-\nofMPsegments=\count296
-\nofMParguments=\count297
-\everyMPshowfont=\toks31
-\MPscratchCnt=\count298
-\MPscratchDim=\dimen167
-\MPnumerator=\count299
-\makeMPintoPDFobject=\count300
-\everyMPtoPDFconversion=\toks32
+\nofMPsegments=\count288
+\nofMParguments=\count289
+\everyMPshowfont=\toks26
+\MPscratchCnt=\count290
+\MPscratchDim=\dimen153
+\MPnumerator=\count291
+\makeMPintoPDFobject=\count292
+\everyMPtoPDFconversion=\toks27
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
  (/usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty
@@ -572,48 +419,54 @@ Package grfext Info: Graphics extension search list:
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-LaTeX Info: Command `\dddot' is already robust on input line 36.
-LaTeX Info: Command `\ddddot' is already robust on input line 36.
-\c@mv@tabular=\count301
-\c@mv@boldtabular=\count302
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 24.88pt on input line 43.
-LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 24.88pt on input line 44.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 14.4pt on input line 50.
-LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 14.4pt on input line 51.
 <../Images/UPA.jpg, id=1, 602.25pt x 770.88pt>
 File: ../Images/UPA.jpg Graphic file (type jpg)
 <use ../Images/UPA.jpg>
 Package pdftex.def Info: ../Images/UPA.jpg  used on input line 58.
 (pdftex.def)             Requested size: 195.0pt x 249.60378pt.
- [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc} <../Images/UPA.jpg>] [1]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}] [1]
 <../Images/SeverinoDiGiovanni.jpg, id=12, 174.02809pt x 249.44026pt>
 File: ../Images/SeverinoDiGiovanni.jpg Graphic file (type jpg)
 <use ../Images/SeverinoDiGiovanni.jpg>
 Package pdftex.def Info: ../Images/SeverinoDiGiovanni.jpg  used on input line 73.
 (pdftex.def)             Requested size: 195.0pt x 279.51582pt.
- [1 <../Images/SeverinoDiGiovanni.jpg>]
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 17.28pt on input line 83.
-LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 17.28pt on input line 83.
- (./ModelosYSim.toc
-LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 12.0pt on input line 1.
-)
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+(./ModelosYSim.toc)
 \tf@toc=\write3
 \openout3 = `ModelosYSim.toc'.
 
- [2]
-LaTeX Font Info:    Trying to load font information for OT1+minntx on input line 97.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1minntx.fd
-File: ot1minntx.fd 2023/09/09 v1.1 font definition file for OT1/minntx
+ [1 <../Images/UPA.jpg>]
+LaTeX Font Info:    Trying to load font information for OT1+mlmr on input line 97.
+ (/usr/share/texlive/texmf-dist/tex/latex/mlmodern/ot1mlmr.fd
+File: ot1mlmr.fd 2021/01/11 v1.0 Font defs for mlmodern
 )
+LaTeX Font Info:    Trying to load font information for OML+mlmm on input line 97.
+ (/usr/share/texlive/texmf-dist/tex/latex/mlmodern/omlmlmm.fd
+File: omlmlmm.fd 2021/01/11 v1.0 Font defs for mlmodern
+)
+LaTeX Font Info:    Trying to load font information for OMS+mlmsy on input line 97.
+ (/usr/share/texlive/texmf-dist/tex/latex/mlmodern/omsmlmsy.fd
+File: omsmlmsy.fd 2021/01/11 v1.0 Font defs for mlmodern
+)
+LaTeX Font Info:    Trying to load font information for OMX+mlmex on input line 97.
+ (/usr/share/texlive/texmf-dist/tex/latex/mlmodern/omxmlmex.fd
+File: omxmlmex.fd 2021/01/11 v1.0 Font defs for mlmodern
+)
+LaTeX Font Info:    External font `mlmex10' loaded for size
+(Font)              <12> on input line 97.
+LaTeX Font Info:    External font `mlmex10' loaded for size
+(Font)              <8> on input line 97.
+LaTeX Font Info:    External font `mlmex10' loaded for size
+(Font)              <6> on input line 97.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 97.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -621,36 +474,38 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 97.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 97.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxmia.fd
-File: untxmia.fd 2018/04/14 Fontinst v1.933 font definitions for U/ntxmia.
-)
-LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 97.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsym.fd
-File: untxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/ntxsym.
-)
-LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 97.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsyc.fd
-File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
-) [3{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}]
+) [2{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc} <../Images/SeverinoDiGiovanni.jpg>] [3]
 Package mdframed Info: Not enough space on this page on input line 121.
- [4] [5]
+ [4]
 Package mdframed Info: Not enough space on this page on input line 174.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.8pt on input line 199.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.6pt on input line 199.
- [6] [7]
-Package mdframed Info: Not enough space on this page on input line 246.
 
-Overfull \hbox (58.7774pt too wide) detected at line 266
+Overfull \hbox (15.68483pt too wide) detected at line 199
 []
  []
 
-[8] [9]
-Package mdframed Info: Not enough space on this page on input line 329.
 
+Overfull \hbox (5.10927pt too wide) in paragraph at lines 201--204
+[]\T1/mlmr/m/n/12 El úl-timo paso se jus-ti-fica porque $\OMS/cmsy/m/n/12 I[]\OT1/mlmr/m/n/12 (\OML/mlmm/m/it/12 t \OMS/mlmsy/m/n/12 ^^@ \OML/mlmm/m/it/12 x\OT1/mlmr/m/n/12 )\OMS/cmsy/m/n/12 I[]\OT1/mlmr/m/n/12 (\OML/mlmm/m/it/12 x\OT1/mlmr/m/n/12 ) = \OMS/cmsy/m/n/12 I[]\OT1/mlmr/m/n/12 (\OML/mlmm/m/it/12 x\OT1/mlmr/m/n/12 )\OMS/cmsy/m/n/12 I[]\OT1/mlmr/m/n/12 (\OML/mlmm/m/it/12 t\OT1/mlmr/m/n/12 )$\T1/mlmr/m/n/12 .
+ []
+
+
+Overfull \hbox (2.08572pt too wide) detected at line 218
+[]
+ []
+
+[5] [6]
+Package mdframed Info: Not enough space on this page on input line 246.
+
+Overfull \hbox (80.71332pt too wide) detected at line 266
+[]
+ []
+
+[7] [8]
+Overfull \hbox (9.69757pt too wide) in paragraph at lines 326--329
+[]\T1/mlmr/bx/n/12 (5) \T1/mlmr/m/n/12 Sean $\OML/mlmm/m/it/12 X; Y$ \T1/mlmr/m/n/12 in-de-pen-di-entes con dis-tribu-ciones de Pois-son parametrizadas
+ []
+
+Package mdframed Info: Not enough space on this page on input line 329.
 ./ModelosYSim.tex:353: Misplaced alignment tab character &.
 l.353   &
          \therefore \frac{\eta}{z!} \sum_{k\in \mathbb{N}} \lambda^k \mu^{z-k}
@@ -661,27 +516,36 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[10] [11]
-LaTeX Font Info:    Trying to load font information for T1+ntxtt on input line 461.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/t1ntxtt.fd
-File: t1ntxtt.fd 2012/04/20 v3.1
-)
-LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
-(Font)              scaled to size 12.0pt on input line 461.
- [12] [13]
-LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input line 489.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
-File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
-)
-LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 489.
-Package mdframed Info: Not enough space on this page on input line 498.
-
-Overfull \hbox (19.46121pt too wide) detected at line 542
+[9]
+Overfull \hbox (20.30719pt too wide) detected at line 394
 []
  []
 
-[14{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc}] [15] [16]
+
+Overfull \hbox (30.40594pt too wide) detected at line 438
+[]
+ []
+
+[10]
+Overfull \hbox (21.47728pt too wide) detected at line 444
+\OT1/mlmr/m/n/12 (\OML/mlmm/m/it/12 ?\OT1/mlmr/m/n/12 ) \OML/mlmm/m/it/12 P\OT1/mlmr/m/n/12 (\OML/mlmm/m/it/12 X[] \OT1/mlmr/m/n/12 + \OML/mlmm/m/it/12 X[] \OMS/mlmsy/m/n/12 ^^U \OT1/mlmr/m/n/12 1 \OMS/mlmsy/m/n/12 ^^@ \OML/mlmm/m/it/12 z\OT1/mlmr/m/n/12 ) = 1 \OMS/mlmsy/m/n/12 ^^@ \OML/mlmm/m/it/12 P\OT1/mlmr/m/n/12 (\OML/mlmm/m/it/12 X[] \OT1/mlmr/m/n/12 + \OML/mlmm/m/it/12 X[] \OMS/mlmsy/m/n/12 ^^T \OT1/mlmr/m/n/12 1 \OMS/mlmsy/m/n/12 ^^@ \OML/mlmm/m/it/12 z\OT1/mlmr/m/n/12 ) = 1 \OMS/mlmsy/m/n/12 ^^@ [][] \OML/mlmm/m/it/12 x dx \OT1/mlmr/m/n/12 = 1 \OMS/mlmsy/m/n/12 ^^@ []
+ []
+
+LaTeX Font Info:    Trying to load font information for T1+mlmtt on input line 461.
+(/usr/share/texlive/texmf-dist/tex/latex/mlmodern/t1mlmtt.fd
+File: t1mlmtt.fd 2021/01/11 v1.0 Font defs for mlmodern
+) [11] [12]
+LaTeX Font Info:    Trying to load font information for TS1+mlmr on input line 489.
+ (/usr/share/texlive/texmf-dist/tex/latex/mlmodern/ts1mlmr.fd
+File: ts1mlmr.fd 2021/01/11 v1.0 Font defs for mlmodern
+)
+Package mdframed Info: Not enough space on this page on input line 498.
+
+Overfull \hbox (18.43263pt too wide) detected at line 542
+[]
+ []
+
+[13{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}] [14] [15]
 Package mdframed Info: Not enough space on this page on input line 603.
 
 ./ModelosYSim.tex:647: Misplaced alignment tab character &.
@@ -694,18 +558,18 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[17] [18]
+[16] [17]
 Package mdframed Info: Not enough space on this page on input line 687.
- [19]
+ [18]
 Package mdframed Info: Not enough space on this page on input line 725.
 
-Overfull \hbox (25.7992pt too wide) in paragraph at lines 751--751
-[]  \T1/ntxtt/m/n/12 return 1/n * sum( [ (2 + u)/((2+u)**2 - 1) for u in uniforms ] )[] 
+Overfull \hbox (17.5502pt too wide) in paragraph at lines 751--751
+[]  \T1/mlmtt/m/n/12 return 1/n * sum( [ (2 + u)/((2+u)**2 - 1) for u in uniforms ] )[] 
  []
 
-[20]
+[19]
 Package mdframed Info: Not enough space on this page on input line 759.
- [21]
+ [20]
 Package mdframed Info: Not enough space on this page on input line 811.
 
 ./ModelosYSim.tex:834: Missing \right. inserted.
@@ -719,101 +583,150 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-[22] [23]
+[21] [22]
 Package mdframed Info: Not enough space on this page on input line 884.
- [24]
+ [23]
 Package mdframed Info: Not enough space on this page on input line 944.
-
-Overfull \hbox (4.3995pt too wide) in paragraph at lines 955--959
-[]\T1/ntxtlf/m/n/12 Sea $\OML/ntxmi/m/it/12 X\LMS/ntxsy/m/n/12 ¹\OML/ntxmi/m/it/12 n\LMS/ntxsy/m/n/12 º \U/ntxmia/m/it/12 = [][] \OML/ntxmi/m/it/12 U[]$ \T1/ntxtlf/m/n/12 y, para sim-pli-ficar la no-tación, use-mos $\OML/ntxmi/m/it/12 '\LMS/ntxsy/m/n/12 ¹\OML/ntxmi/m/it/12 n; x\LMS/ntxsy/m/n/12 º \OT1/minntx/m/n/12 :\U/ntxmia/m/it/12 = \OML/ntxmi/m/it/12 P\LMS/ntxsy/m/n/12 ¹\OML/ntxmi/m/it/12 X\LMS/ntxsy/m/n/12 ¹\OML/ntxmi/m/it/12 n\LMS/ntxsy/m/n/12 º ^^T
+ [24] [25] [26]
+Package mdframed Info: Not enough space on this page on input line 1055.
+ [27]
+Package mdframed Info: Not enough space on this page on input line 1112.
+ [28]
+Overfull \hbox (18.6743pt too wide) detected at line 1160
+[]
  []
 
-[25] [26] [27]
-Package mdframed Info: Not enough space on this page on input line 1055.
- [28] [29] [30] [31] [32]
+[29] [30] [31]
 Package mdframed Info: Not enough space on this page on input line 1240.
- [33] [34]
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 12.0pt on input line 1346.
- [35] [36]
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 1425.
- [37]
-LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
-(Font)              scaled to size 10.95pt on input line 1449.
- [38]
+
+Overfull \hbox (11.96877pt too wide) detected at line 1252
+[]
+ []
+
+[32] [33] [34] [35]
+LaTeX Font Info:    External font `mlmex10' loaded for size
+(Font)              <10.95> on input line 1426.
+ [36] [37]
 Package mdframed Info: Not enough space on this page on input line 1505.
- [39]
+ [38]
 Package mdframed Info: Not enough space on this page on input line 1564.
- [40] [41]
+ [39] [40]
 Package mdframed Info: Not enough space on this page on input line 1648.
- [42]
+ [41]
 Package mdframed Info: Not enough space on this page on input line 1683.
 
-Overfull \hbox (25.7992pt too wide) in paragraph at lines 1709--1709
-[]  \T1/ntxtt/m/n/12 p = [0.11, 0.14, 0.09, 0.08, 0.12, 0.10, 0.09, 0.07, 0.11, 0.09][] 
+Overfull \hbox (17.52919pt too wide) in paragraph at lines 1709--1709
+[]  \T1/mlmtt/m/n/12 p = [0.11, 0.14, 0.09, 0.08, 0.12, 0.10, 0.09, 0.07, 0.11, 0.09][] 
+ []
+
+[42]
+Overfull \hbox (17.52919pt too wide) in paragraph at lines 1756--1756
+[]  \T1/mlmtt/m/n/12 p = [0.11, 0.14, 0.09, 0.08, 0.12, 0.10, 0.09, 0.07, 0.11, 0.09][] 
+ []
+
+
+Overfull \hbox (66.93622pt too wide) in paragraph at lines 1756--1756
+[]  \T1/mlmtt/m/n/12 ordering = [1, 4, 0, 5, 2, 6, 9, 4, 7]                            # := o[] 
+ []
+
+
+Overfull \hbox (73.12523pt too wide) in paragraph at lines 1756--1756
+[]  \T1/mlmtt/m/n/12 ordered_probabilities = [p[i] for i in ordering]                  # := op[] 
  []
 
 [43]
-Overfull \hbox (25.7992pt too wide) in paragraph at lines 1756--1756
-[]  \T1/ntxtt/m/n/12 p = [0.11, 0.14, 0.09, 0.08, 0.12, 0.10, 0.09, 0.07, 0.11, 0.09][] 
+Overfull \hbox (17.52919pt too wide) in paragraph at lines 1791--1791
+[]  \T1/mlmtt/m/n/12 p = [0.11, 0.14, 0.09, 0.08, 0.12, 0.10, 0.09, 0.07, 0.11, 0.09][] 
  []
 
 
-Overfull \hbox (76.1991pt too wide) in paragraph at lines 1756--1756
-[]  \T1/ntxtt/m/n/12 ordering = [1, 4, 0, 5, 2, 6, 9, 4, 7]                            # := o[] 
+Overfull \hbox (66.95023pt too wide) in paragraph at lines 1791--1791
+[]  \T1/mlmtt/m/n/12 A = [ [i+1] * times_it_occurs[i] for i in range(len(p))] # list of lists[] 
  []
 
 
-Overfull \hbox (82.49908pt too wide) in paragraph at lines 1756--1756
-[]  \T1/ntxtt/m/n/12 ordered_probabilities = [p[i] for i in ordering]                  # := op[] 
+Overfull \hbox (221.3253pt too wide) in paragraph at lines 1791--1791
+[]  \T1/mlmtt/m/n/12 A = sum(A, []) # Python trick, simple but inefficient: joins the list of lists into a single list[] 
  []
 
 [44]
-Overfull \hbox (25.7992pt too wide) in paragraph at lines 1791--1791
-[]  \T1/ntxtt/m/n/12 p = [0.11, 0.14, 0.09, 0.08, 0.12, 0.10, 0.09, 0.07, 0.11, 0.09][] 
- []
-
-
-Overfull \hbox (76.1991pt too wide) in paragraph at lines 1791--1791
-[]  \T1/ntxtt/m/n/12 A = [ [i+1] * times_it_occurs[i] for i in range(len(p))] # list of lists[] 
- []
-
-
-Overfull \hbox (233.69879pt too wide) in paragraph at lines 1791--1791
-[]  \T1/ntxtt/m/n/12 A = sum(A, []) # Python trick, simple but inefficient: joins the list of lists into a single list[] 
- []
-
-[45]
 Package mdframed Info: Not enough space on this page on input line 1799.
- [46] [47]
-Package mdframed Info: Not enough space on this page on input line 1922.
- [48] [49] [50]
-Package mdframed Info: Not enough space on this page on input line 2021.
- [51] [52] (./ModelosYSim.aux)
+ [45]
+Package mdframed Info: Not enough space on this page on input line 1863.
+
+Overfull \hbox (19.49881pt too wide) in paragraph at lines 1899--1899
+[]  \T1/mlmtt/m/n/10 den = sum( [ (lamda**j / factorial(j)) * exp(-lamda) for j in range(k+1) ] )[] 
+ []
+
+
+Overfull \hbox (19.49881pt too wide) in paragraph at lines 1927--1927
+[]  \T1/mlmtt/m/n/10 den = sum( [ (lamda**j / factorial(j)) * exp(-lamda) for j in range(k+1) ] )[] 
+ []
+
+[46]
+Overfull \hbox (24.7488pt too wide) in paragraph at lines 1927--1927
+[]    \T1/mlmtt/m/n/10 num = exp(-lamda) * ((lamda**y)/factorial(y)) # Numerator of density of X=y[] 
+ []
+
+[47]
+Package mdframed Info: Not enough space on this page on input line 1958.
+ [48] [49]
+Package mdframed Info: Not enough space on this page on input line 2065.
+ [50]
+Overfull \hbox (14.24883pt too wide) in paragraph at lines 2141--2141
+[]  \T1/mlmtt/m/n/10 return sum( [exponential(1/mu) for _ in range(k)] ) # 1 / mu como parametro[] 
+ []
+
+./ModelosYSim.tex:2171: Undefined control sequence.
+l.2171 \pagebreal
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Package mdframed Info: Not enough space on this page on input line 2183.
+[51]
+Package mdframed Info: Not enough space on this page on input line 2183.
+ [52]
+Package mdframed Info: Not enough space on this page on input line 2221.
+
+./ModelosYSim.tex:2240: Misplaced alignment tab character &.
+l.2240   \iff&
+              x^y = u \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+[53] [54]
+Package mdframed Info: Not enough space on this page on input line 2329.
+ [55] [56] [57]
+Package mdframed Info: Not enough space on this page on input line 2428.
+ [58] [59]
+Package mdframed Info: Not enough space on this page on input line 2493.
+ [60] (./ModelosYSim.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
-L3 programming layer <2020/03/25>
+L3 programming layer <2024-01-22>
  ***********
-
-
-LaTeX Font Warning: Size substitutions with differences
-(Font)              up to 1.36998pt have occurred.
-
  ) 
 Here is how much of TeX's memory you used:
- 8687 strings out of 474222
- 129565 string characters out of 5748733
- 1941975 words of memory out of 5000000
- 30722 multiletter control sequences out of 15000+600000
- 658126 words of font info for 195 fonts, out of 8000000 for 9000
+ 5479 strings out of 474222
+ 88231 string characters out of 5748733
+ 1940975 words of memory out of 5000000
+ 27593 multiletter control sequences out of 15000+600000
+ 627987 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,14n,93p,543b,397s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on ModelosYSim.pdf (54 pages, 1163582 bytes).
+ 84i,16n,93p,543b,382s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmri12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on ModelosYSim.pdf (62 pages, 1272198 bytes).
 PDF statistics:
- 247 PDF objects out of 1000 (max. 8388607)
- 162 compressed objects within 2 object streams
+ 323 PDF objects out of 1000 (max. 8388607)
+ 211 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

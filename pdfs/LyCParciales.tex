@@ -1,0 +1,1135 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[
+  a4paper,
+  top=3cm,
+  bottom=3cm,
+  left=2cm,
+  right=2cm
+]{geometry}
+\setlength{\parskip}{1em}      % Espacio entre párrafos
+\setlength{\parindent}{1.5em}    % Sangría al inicio de párrafo
+\usepackage{forest}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\definecolor{shadecolor}{rgb}{0.1,0.1,0.1}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amsmath, amssymb}
+\usepackage{stmaryrd}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric}
+\usepackage{tikz-cd}
+\usetikzlibrary{positioning}
+\usepackage[cal=boondoxo, bb=ams]{mathalfa}
+\usepackage{mlmodern}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example} \newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\usepackage[pdftex]{graphicx}
+\newcommand\doubleplus{+\kern-1.3ex+\kern0.8ex}
+\newcommand\mdoubleplus{\ensuremath{\mathbin{+\mkern-10mu+}}}
+\DeclareGraphicsExtensions{.pdf,.jpeg,.png,.jpg}
+\newmdenv[backgroundcolor=orange!25,
+            leftline=false,
+            rightline=false,
+            bottomline=true,
+            linewidth=2pt,
+            linecolor=black]{myframe}
+\newmdenv[backgroundcolor=blue!35,
+            leftline=false,
+            rightline=false,
+            bottomline=true,
+            linewidth=2pt,
+            linecolor=black]{helpframe}
+
+
+\begin{document}
+
+  
+\section{Parcial 1: 13/04/2022}
+
+\begin{myframe}
+  \textbf{(1)} Determinar si las siguientes son verdaderas o falsas,
+  justificando acabadamente. 
+
+  $(a)$ Sea 
+
+  $$p := \forall x . \left( 1 < x \lor \exists y. z = y + 1 \right) \land
+  \exists y. \left( \left( \forall z. z+x =y \right)\Rightarrow z > y  \right)  $$
+
+  y sea $\delta = [z \to z + 1, y \to x, x \to x + y]$. Entonces al hacer $p /
+  \delta$, en todos los cuantificadores $\forall  v.p$ se puede tomar $v =
+  v_{new}$.
+
+  $(b)$ Para toda $g$, la cadena $f_0, f_1, \ldots$ es interesante, donde $f_i
+\in \mathbb{Z} \to \mathbb{Z}_\bot $ se define mediante $$f_i ~ n = \begin{cases}
+  g ~ n & -i \leq n \leq i \\ \bot  &c.c.
+\end{cases}$$
+
+$(c)$ Si $c_w = \textbf{while true} \textbf{ do } c$, entonces el lenguaje
+imperativo con fallas satisface $\llbracket c_w \rrbracket = \llbracket c;c_w
+\rrbracket$. 
+
+$(d)$ Si $\mathbb{Z}$ tiene el orden discreto, entonces $\mathbb{Z} \to
+\mathbb{Z}_\bot $ tiene infinitos elementos maximales.
+\end{myframe}
+
+$(a)$ El enunciado es verdadero. La sustitución de v
+
+~
+
+$(b)$ Sea $g$ la función constantemente bottom. Se sigue que para todo $n$, $f_i
+~ n = \bot $. Por lo tanto, $f_i = g = \bot_{\mathbb{Z}\to \mathbb{Z}_\bot }$.
+Luego, la cadena $f_0, f_1, \ldots$ es no interesante. $\therefore $ El
+enunciado es falso.
+
+~ 
+
+$(c)$ El enunciado es falso. Observemos que $\llbracket c_w \rrbracket\sigma
+= \bigsqcup_{i \in \mathbb{N}} F^i ~ \bot $ con 
+
+\begin{align*}
+  F ~ f ~ \sigma = f_* (\llbracket c \rrbracket \sigma)
+\end{align*}
+
+Claramente, $F \bot \sigma = \bot $, y $F^2 \bot  \sigma = \bot $, etc. Es
+decir, $\left\{ F^i ~ \bot  \right\} $ es no interesante con supremo $\bot $.
+$\therefore \llbracket c_w \rrbracket\sigma = \bot $.
+
+Sin embargo, tome por ejemplo $c = \textbf{fail}$. Entonces 
+
+\begin{align*}
+  \llbracket c;c_w \rrbracket\sigma 
+  &= \llbracket c_w \rrbracket_*\left( \llbracket \textbf{fail} \rrbracket\sigma
+  \right)  \\ 
+  &= \llbracket c_w \rrbracket_*\left( \left<\textbf{abort}, \sigma \right>
+  \right)  \\ 
+  &= \left<\textbf{abort}, \sigma \right> \\ 
+  &\neq \bot 
+\end{align*}
+
+$(d)$ Como $\mathbb{Z}$ tiene el orden discreto, $\mathbb{Z}_\bot $ es el orden
+llano, que es un dominio. Entonces $\mathbb{Z} \to \mathbb{Z}_\bot$ es un
+dominio y su mínimo es la función constantemente $\bot $.
+
+Sea $z_0 \in \mathbb{Z}_\bot$ un elemento distinto de $\bot$. Por ser
+$\mathbb{Z}_\bot $ llano, se sigue que $z_0$ es maximal. Sea $f(x) = z_0$ una
+función constante. Necesariamente, $f$ es maximal, porque si existiere alguna $g
+\neq f$ tal que $f \leq g$ deberíamos tener $f(x) \leq g(x) \equiv z_0 \leq
+g(x)$ para todo $x$ en que ambas funciones estén definidas. Pero esto no es
+posible a menos que $g(x) = z_0$ para toda $x$, lo cual por hipótesis es falso.
+
+Como el $z_0$ elegido es arbitrario, esto se cumple para cualquier $z \in
+\mathbb{Z}$. Por lo tanto, toda función constante en $\mathbb{Z} \to
+\mathbb{Z}_\bot$ es maximal. $\therefore $ Existen infinitos maximales.
+
+\pagebreak 
+
+\begin{myframe}
+  Sea $h \in \mathbb{Z} \to \mathbb{Z}_\bot $. Considere:
+
+  \begin{equation*}
+    f ~ n = \begin{cases}
+      h ~ n & n \leq 0 \lor  n \text{ impar} \\ 
+      f(n - 2) & n > 0 \land  n \text{ par}
+    \end{cases}
+  \end{equation*}
+
+  Sea $F_h$ la función asociada a la ecuación recursiva, cuyo menor punto fijo
+  es la solución. $(a)$ Escriba la definición explícita de $F_h$. $(b)$ Defina
+  $h_0, h_1 \in \mathbb{Z} \to \mathbb{Z}_\bot $ tales que 
+
+  \begin{equation*}
+    F_{h_0} ~ h_0 = h_0, \qquad F_{h_1} ~ h_1 \neq h_1
+  \end{equation*}
+
+  $(c)$ Calcule $F_h^3 \bot_{\mathbb{Z}\to \mathbb{Z}_\bot }$. 
+
+  $(d)$ Sin necesidad de calcularla, proponga una expresión para la función 
+  $\bigsqcup_{i \in \mathbb{N}} F^i_h ~ \bot $. Describa informalmente qué
+  denota este supremo en términos de $h$. 
+
+  $(e)$ En el cálculo de $(d)$, ¿es el único punto fijo o hay más?
+\end{myframe}
+
+$(a)$ La definición explícita de $F$ es 
+
+\begin{equation*}
+  F ~ f  = n \mapsto  \begin{cases}
+    h ~ n & n \leq 0 \lor  n \text{ impar} \\ 
+    f(n-2) & n > 0 \land n \text{ par}
+  \end{cases}
+\end{equation*}
+
+$(b)$ Observemos qué hace $f ~ n$, o bien qué tipo de funciones solucionan la
+ecuación definida por $F$. Dado $n \leq 0$ e impar, se deriva el control a una
+función $h$ sin una llamada recursiva. Si $n$ es positivo y par, se ejecuta
+$f(n-2) = f(n-4)= \ldots= f(0) = h(0)$. Podemos interpretar $f$ como una función
+definida recursivamente sobre los pares positivos, con caso base $h ~ 0$
+extendido sobre el resto del dominio. En general, toda función en la cual $h(0)$
+coincida con el valor dado a los pares positivos satisface la ecuación.
+
+Por ejemplo, la siguiente ecuación es punto fijo:
+
+\begin{equation*}
+  h_0 ~ n = \begin{cases}
+    n & n \leq 0 \lor n \text{ impar} \\ 
+    0 & c.c.
+  \end{cases}
+\end{equation*}
+
+Esto puede verse:
+
+\begin{align*}
+  F ~ h_0 ~ n &= \begin{cases}
+    h_0 ~ n & n\leq \lor  n \text{ impar} \\ 
+    h_0(n-2) & n \in \left\{ 2, 4, 6,\ldots \right\} 
+  \end{cases} \\ 
+  &=\begin{cases}
+    n & n \leq 0 \lor  n \text{ impar} \\ 
+    h_0(2-2) & n = 2 \\ 
+    h_0(n) & n \in \left\{ 4, 6, 8,\ldots \right\} 
+  \end{cases}\\
+  &= \begin{cases}
+    n & n \leq 0 \lor n \text{ impar}\\ 
+    0 & n = 2 \\ 
+    0 & n \in \left\{ 4, 6, 8, \ldots \right\} 
+  \end{cases} \\ 
+  &=\begin{cases}
+    n & n \leq 0 \lor  n \text{ impar} \\ 
+    0 & c.c.
+  \end{cases}\\
+  &= h_0(n)
+\end{align*}
+
+Una función que no es punto fijo es, por ejemplo, $h_1(n) = n + 1$. Es fácil ver
+que esto resulta en 
+
+\begin{equation*}
+  F ~ h_1 ~ n = \begin{cases}
+    n + 1 & n \leq 0 \lor  n \text{ impar} \\ 
+    n - 1 & c.c.
+  \end{cases} \quad\neq h_1(n)
+\end{equation*}
+
+$(c)$ Calculemos 
+
+\begin{align*}
+  F \bot 
+  &=n \mapsto \begin{cases}
+    h ~ n & n \leq 0 \lor  n \text{ impar} \\ 
+    \bot & c.c.
+  \end{cases}  \\ 
+  F^2 ~ \bot 
+  &= n \mapsto \begin{cases}
+    h ~ n & n \leq 0 \lor  n \text{ impar} \\ 
+    (F ~ \bot )(n-2) & n \in \left\{ 2, 4, 6,\ldots \right\} 
+  \end{cases} \\ 
+  &=n\mapsto \begin{cases}
+    h ~ n & n \leq 0 \lor  n \text{ impar} \\ 
+    h(n-2) & n \in \left\{ 2, 4, 6,\ldots \right\} \land  \Big(
+      (n-2) \leq 0\
+      \lor (n-2) \text{ impar} \Big)\\ 
+    \bot & (n-2) \in \left\{ 2, 4, 6,\ldots \right\} \land \Big( n -2 > 0 \land
+    n -2 \text{ par}\Big)
+  \end{cases} \\ 
+  &=n\mapsto \begin{cases}
+    h ~ n & n \leq 0 \lor  n \text{ impar} \\ 
+    h(n-2) & n = 2\\
+      \bot  & n \in \left\{ 4, 6, \ldots \right\}   
+  \end{cases}\\
+  &=n\mapsto \begin{cases}
+    h ~ n & n \leq 0 \lor  n \text{ impar} \\ 
+    h(0) & n = 2 
+    \\ 
+      \bot & n \in \left\{ 4, 6, \ldots \right\}
+  \end{cases}
+\end{align*}
+
+Por último,
+
+\begin{align*}
+  F^3 ~ \bot 
+  &= n\mapsto \begin{cases}
+    h(n) & n \leq 0 \lor  n \text{ impar} \\ 
+    h(n-2) & (n > 0 \land  n \text{ par}) \land (n-2 \leq 0 \lor  n- 2
+    \text{ impar}) \\ 
+    h(0) & (n>0 \land n \text{ par}) \land n -2 = 2 \\ 
+    \bot & n-2 \in \left\{ 4, 6, \ldots \right\} 
+  \end{cases} \\ 
+  &=n\mapsto \begin{cases}
+    h(n) & n \leq 0 \lor  n \text{ impar} \\ 
+    h(n-2) & n = 2 \\ 
+    h(0) & n = 4 \\ 
+    \bot & n \in \left\{ 6, 8, \ldots \right\} 
+  \end{cases} \\ 
+  &=n\mapsto \begin{cases}
+    h(n) & n \leq 0 \lor n \text{ impar}\\ 
+    h(0) & n \in \left\{ 2, 4 \right\}  \\ 
+    \bot & n \in \left\{ 6, 8, \ldots \right\} 
+  \end{cases}
+\end{align*}
+
+$(d)$ Proponemos 
+
+\begin{equation*}
+  \bigsqcup_{i \in \mathbb{N}} F^i ~ \bot = n \mapsto \begin{cases}
+    h(n) & n \leq 0 \lor  n \text{ impar} \\ 
+    h(0) & n > 0 \land n \text{ par}
+  \end{cases}
+\end{equation*}
+
+Dicho supremo denota la \textit{menor} función que satisface la ecuación
+inducida por $F$, donde \textit{menor} se entiende por "la que provee la menor
+cantidad posible de información".
+
+$(c)$ No es el único punto fijo, de hecho en $a$ dimos $h_0$ otro posible punto
+fijo. Pero sí es el \textit{menor} punto fijo.
+
+\pagebreak 
+
+\begin{myframe}
+  \textbf{(3)} Analice la equivalencia del comando $\textbf{skip}$ con el
+  comando 
+
+  \begin{equation*}
+    c := \textbf{newvar } x:= 0 \textbf{ in catchin } (\textbf{while } x = 0 \textbf{
+    do } \textbf{fail}) \textbf{ with skip}
+  \end{equation*}
+\end{myframe}
+
+Primero, pensemos qué hace $c$. Inicializa $x$ localmente en cero, ejecuta un
+\textbf{while} cuya guarda necesariamente será verdadera, dentro del cual se
+ejecuta $\textbf{fail}$, y esta falla es "catcheada" con \textbf{skip}. Con lo
+cual, intuitivamente, la equivalencia será verdadera. Demostrémoslo. Denotemos
+con $\mathcal{R}$ la función de restauración asociada a $x$ y el estado $\sigma$
+utilizado abajo:
+
+\begin{align*}
+  &\llbracket \textbf{newvar } x:= 0 \textbf{ in catchin } (\textbf{while } x = 0
+  \textbf{ do } \textbf{fail}) \textbf{ with skip}\rrbracket \sigma \\ 
+  =&\mathcal{R}_{\dagger}\left( \llbracket \textbf{catchin } (\textbf{while } x
+  = 0\textbf{ do fail} ) \textbf{with skip} \rrbracket[\sigma \mid x : 0]
+\right)  \\ 
+   &= \mathcal{R}_\dagger \left( \llbracket \textbf{skip} \rrbracket_{+} \left(
+   \llbracket \textbf{while } x = 0 \textbf{ do fail}  \rrbracket [\sigma \mid x
+: 0]\right)  \right)  \\ 
+   &= \mathcal{R}_\dagger\left( \llbracket \textbf{skip} \rrbracket_+\left(
+\left<\textbf{abort}, [\sigma \mid x : 0] \right> \right)  \right) &(\star) \\ 
+&=\mathcal{R}_\dagger \left( \llbracket \textbf{skip} \rrbracket
+[\sigma \mid x : 0 ]\right)  \\ 
+&=\mathcal{R}_\dagger\left( \sigma \mid x : 0 \right)  \\ 
+&= \sigma \\ 
+&= \llbracket \textbf{skip} \rrbracket\sigma
+\end{align*}
+
+El paso $(\star)$ está justificado porque definiendo
+
+\begin{align*}
+ F ~ f ~ \sigma 
+  = \begin{cases}
+    \sigma & \sigma ~ x \neq 0 \\ 
+    f*(\llbracket \textbf{fail} \rrbracket \sigma) & c.c.
+  \end{cases}
+\end{align*}
+
+tenemos que 
+
+\begin{equation*}
+  \llbracket \textbf{while } x = 0\textbf{ do } \textbf{fail} \rrbracket =
+  \bigsqcup_{i \in \mathbb{N}} F^i ~ \bot  = \sigma \mapsto \begin{cases}
+    \sigma & \sigma ~ x \neq 0 \\ 
+    \left<\textbf{abort}, \sigma \right> & c.c.
+  \end{cases}
+\end{equation*}
+
+Y en la línea marcada por $\star$, la semántica del \textbf{while} está de
+hecho recibiendo un estado donde la variable $x$ vale $0$.
+
+\pagebreak 
+
+\begin{myframe}
+  Enunciar el teorema de coincidencia para LIS con fallas.
+\end{myframe}
+
+$(1)$ Sea $c$ un comando y sean $\sigma, \sigma'$ estados tales que $\sigma ~ w =
+\sigma' ~ w$ para toda $w \in FV(c)$. Entonces, o bien $\llbracket c \rrbracket
+\sigma = \llbracket c \rrbracket\sigma' = \bot $, o bien $\llbracket c
+\rrbracket\sigma ~ w = \llbracket c \rrbracket\sigma' ~ w$ para toda $w \in
+FV(c)$.
+
+$(2)$ Sea $c$ un comando. Entonces, para toda $w \not\in FV(c)$, se cumple que
+para todo $\sigma \in \Sigma$, $\llbracket c \rrbracket\sigma ~ w = \sigma ~ w$,
+siempre que $\llbracket c \rrbracket\sigma \neq \bot $.
+
+\pagebreak 
+
+\section{Parcial 1: 12/06/2024}
+
+
+\begin{enumerate}
+    \item Sea $\mathbb{B}^{\top}_{\bot}$ el siguiente reticulado:
+
+    \begin{center}
+        \begin{picture}(60,80)
+            \put(30,70){\makebox(0,0){$\top$}}
+            \put(10,50){\makebox(0,0){$V$}}
+            \put(50,50){\makebox(0,0){$F$}}
+            \put(30,30){\makebox(0,0){$\bot$}}
+            \put(30,65){\line(-1,-1){15}}
+            \put(30,65){\line(1,-1){15}}
+            \put(15,45){\line(1,-1){15}}
+            \put(45,45){\line(-1,-1){15}}
+        \end{picture}
+    \end{center}
+
+    \begin{enumerate}
+        \item[(a)] Determine la validez de la siguiente afirmación: ``Toda función monótona en $\mathbb{B}^{\top}_{\bot} \rightarrow \mathbb{B}^{\top}_{\bot}$ tiene un punto fijo''.
+        
+        \item[(b)] Determine la validez de la siguiente afirmación: ``Existe una función no monótona (y por lo tanto no continua) en $\mathbb{B}^{\top}_{\bot} \rightarrow \mathbb{B}^{\top}_{\bot}$ que tiene un punto fijo''.
+        
+        \item[(c)] Proponga una función $F \colon (\mathbb{Z} \rightarrow \mathbb{B}^{\top}) \rightarrow (\mathbb{Z} \rightarrow \mathbb{B}^{\top})$ que NO sea NI constante NI la identidad y que SÍ sea continua. Dé su menor punto fijo.
+    \end{enumerate}
+
+    \item Considere el lenguaje imperativo simple con fallas. Sea $c$ el programa siguiente
+    \[
+    \text{while } x \neq 0 \text{ do } \text{if } x < 0 \text{ then } d := 1 + d \,;\, x := x + 3 \text{ else fail}
+    \]
+
+    \begin{enumerate}
+        \item[(a)] Escriba de la forma más sencilla posible la ecuación para $F(f)(\sigma)$ donde $F$ es el funcional asociado al ciclo de ese programa.
+
+        \item[(b)] Proponga un valor negativo para $x$ en $\sigma$ para que $[[c]]\sigma = \langle \text{abort}, [\sigma \mid d : 3][x : 2] \rangle$? Justificá tu respuesta calculando la semántica de $c$, también tendrás que elegir un valor para $d$ en $\sigma$.
+    \end{enumerate}
+
+\end{enumerate}
+
+\pagebreak 
+
+$(1)$ $(a)$ Como el reticulado es finito, toda cadena es no-interesante y toda función
+monótona es continua. Por lo tanto, 
+
+\begin{equation*}
+  x_0 = \bot, x_1 = f(\bot ), x_2 = f(f(\bot )), x_3 = f(f(f(\bot ))), \ldots
+\end{equation*}
+
+es una cadena no interesante. Como es no interesante, la cadena $x_0, x_1,
+\ldots$ tiene un elemento $x_n$ que se repite indefinidamente. Es decir, existe
+un $n$ tal que $x_{n+1} = x_n$. Pero $x_{n+1} = f(x_n)$, con lo cual tenemos
+$f(x_n) = x_n$. Luego existe un punto fijo.
+
+$(b)$ Definamos 
+
+\begin{equation*}
+  f(x) = \begin{cases}
+    \bot & x = \top \\ 
+    \top & x = \bot \\ 
+    V & x = V \\ 
+    F & x = F
+  \end{cases}
+\end{equation*}
+
+Claramente, no es monótona porque $\bot \leq \top$, mientras que $f(\bot) \leq
+f(\top) \equiv \top \leq \bot \equiv \textbf{False}$. Sin embargo, tiene puntos
+fijos.
+
+$(c)$ Una tal función continua es la que mapea $V \mapsto F, F\mapsto V$, y deja
+lo demás intacto. Probemos que es continua. 
+
+Claramente, $\bot \leq a$ y $f(\bot) = \bot \leq f(a)$ para todo $a$. $V \leq
+\top, F \leq \top$ implican inmediatamente que $f(V) \leq f(\top) = \top, f(F) \leq
+f(\top) = \top$. Obviamente $f(\top) = \top \leq \top$. Su menor punto fijo,
+trivialmente, es $\bot $.
+
+\pagebreak 
+
+\begin{myframe}
+  
+    \textbf{(2)} Considere la siguiente ecuación recursiva.
+    \[
+    g(x) = 
+    \begin{cases}
+        1 & \text{si } 0 \leq x \leq 3 \\
+        1 + g(x - 4) & \text{si } x < 0 \lor 3 < x
+    \end{cases}
+    \]
+
+    Calcule la menor solución para esa ecuación en $\mathbb{Z} \rightarrow \mathbb{Z}_{\bot}$.
+
+\end{myframe}
+
+De acuerdo con el teorema del menor punto fijo, definimos 
+
+\begin{equation*}
+  F ~ f ~ x = \begin{cases}
+    1 & 0 \leq x \leq 3 \\ 
+    1 + f(x - 4) & x < 0 \lor 3 < x
+  \end{cases}
+\end{equation*}
+
+Encontremos el menor punto fijo de $F$. Claramente, 
+
+\begin{equation*}
+  F ~ \bot = x \mapsto \begin{cases}
+    1 & 0 \leq x \leq 3 \\ 
+    \bot & x <0 \lor  3 < x
+  \end{cases}
+\end{equation*}
+
+Entonces 
+
+\begin{align*}
+  F^2 ~ \bot 
+  &= x\mapsto \begin{cases}
+    1 & 0 \leq x \leq 3 \\ 
+    1 + (F~\bot)(x-4) & c.c. \\ 
+  \end{cases}\\
+&=x\mapsto \begin{cases}
+  1 & 0\leq x \leq 3 \\ 
+  1 + 1 & (x < 0 \lor  3 < x) \land  (0 \leq x - 4 \leq 3) \\ 
+  \bot & (x < 0 \lor 3 < x) \land (x-4 < 0 \lor 3 < x - 4)
+\end{cases} \\ 
+&=\begin{cases}
+  1 & 0 \leq x \leq 3 \\ 
+  2 & (x < 0 \lor  3 < x) \land  (4 \leq x \leq 7) \\ 
+  \bot & (x < 0 \lor  3 < x) \land (x<4 \lor 7 < x)
+\end{cases}\\
+&=\begin{cases}
+  1 & 0 \leq x \leq 3 \\ 
+  2 & (4 \leq x \leq 7) \\ 
+  \bot & (x < 0 \lor  3 < x) \land (x<4 \lor 7 < x)
+\end{cases}
+\end{align*}
+
+Además, 
+
+\begin{align*}
+  F^3 ~ \bot 
+  &=x\mapsto 
+  \begin{cases}
+    1 & 0 \leq x \leq 3 \\ 
+    1 + (F^2 ~ \bot ) (x-4) & x < 0 \lor  3 < x
+  \end{cases} \\ 
+  &x\mapsto =\begin{cases}
+    1 & 0 \leq x \leq 3 \\ 
+    1 + 1 & (x < 0 \lor 3 < x) \land (0 \leq x -4 \leq 3) \\ 
+    1 + 2 & (x < 0 \lor  3 < x) \land (4 \leq x - 4 \leq 7) \\ 
+    \bot & (x < 0 \lor 3 < x) \land (x - 4 < 0 \lor  3 < x - 4) \land  (x - 4 <
+    4 \lor  7 < x - 4)
+  \end{cases} \\ 
+  &=x\mapsto \begin{cases}
+    1 & 0 \leq x \leq 3 \\ 
+    2 & 4 \leq x \leq 7 \\ 
+    3 & 8 \leq x \leq 11 \\ 
+    \bot & c.c.
+  \end{cases}
+\end{align*}
+
+Asumamos como HI que
+
+\begin{align*}
+  F^{k} \bot = x\mapsto \begin{cases}
+    1 & 0 \leq x \leq 3 \\ 
+    2 & 4 \leq x \leq 7 \\ 
+    \vdots \\ 
+    k & 4(k-1) \leq x \leq 4k - 1 \\ 
+    \bot & c.c.
+  \end{cases}
+\end{align*}
+
+Veamos entonces que 
+
+\begin{align*}
+  F^{k+1} ~ \bot  
+  &=x\mapsto \begin{cases}
+    1 & 0 \leq x \leq 3 \\ 
+    1 + (F^k ~ \bot )(x -4) & c.c.
+  \end{cases} \\ 
+  &=x\mapsto \begin{cases}
+    1 & 0 \leq x \leq 3 \\ 
+    1 + 1 & (x < 0 \lor  3 < x) \land 0 \leq x-4 \leq 3\\
+    1 + 2 & (x < 0 \lor  3 < x) \land 4 \leq x-4 \leq 7\\
+    \vdots \\ 
+    1 + k & (x < 0 \lor 3 < x) \land 4(k-1) \leq x - 4\leq 4k -1 \\
+    \bot &c.c.
+  \end{cases} \\ 
+  &=x\mapsto \begin{cases}
+    1 & 0 \leq x \leq 3 \\ 
+    2 & 4 \leq x \leq 7 \\ 
+    3 & 8 \leq x \leq 11 \\ 
+    \vdots \\ 
+    1+k & 4k \leq x \leq 4(k+1) - 1 \\ 
+    \bot & c.c.
+  \end{cases}
+\end{align*}
+
+Que es lo que se quería demostrar. Es evidente entonces que 
+
+\begin{equation*}
+  \bigsqcup_{i \in \mathbb{N}} F^i ~ \bot = x \mapsto x / 4
+\end{equation*}
+
+donde $\cdot / \cdot$ es la divisón entera.
+
+\pagebreak 
+
+\begin{myframe}
+   \textbf{(3)} Considerá LIS con fallas. Sea 
+
+   \begin{equation*}
+     c := \textbf{while } x \neq 0 \textbf{ do } \textbf{if } x < 0 \textbf{
+     then } d := 1 + d ; x := x + 3 \textbf{ else } \textbf{fail}
+   \end{equation*}
+
+
+  $(a)$ Escribí de la forma más sencilla la ecuación para $F ~ f ~ \sigma$. 
+
+  $(b)$ Proponé un valor negativo para $x$ en $\sigma$ para que 
+
+  \begin{equation*}
+    \llbracket c \rrbracket\sigma = \left<\textbf{abort}, [\sigma \mid d : 3
+    \mid x : 2] \right>
+  \end{equation*} 
+
+  Justificá calculando la semántica de $c$.
+\end{myframe}
+
+La ecuación para $F ~ f ~ \sigma$ toma la forma 
+
+\begin{equation*}
+  F ~ f ~ \sigma = \begin{cases}
+    \sigma & x = 0 \\ 
+    f_* \big( \llbracket \textbf{if } x < 0 \textbf{ then } d := 1 + d; x := x +
+  3\textbf{ else } \textbf{fail} \rrbracket\sigma \big) & c.c.
+  \end{cases}
+\end{equation*}
+
+y para simplificarla debemos simplificar la semántica del \textbf{if}. Pero
+claramente 
+
+\begin{equation*}
+  \llbracket \textbf{if } x < 0 \textbf{ then } d := d + 1; x := x+3 \textbf{
+  else } \textbf{fail} \rrbracket\sigma = \begin{cases}
+    [\sigma \mid d : \sigma ~ d +1 \mid x : \simga ~ x + 3] & x < 0 \\ 
+    \textbf{fail} & x \geq 0
+  \end{cases}
+\end{equation*}
+
+con lo cual  la forma más simplificada es
+
+\begin{equation*}
+  F ~ f ~ \sigma = \begin{cases}
+    \sigma & x = 0 \\ 
+    f\left( [\sigma \mid d : \sigma ~ d + 1 \mid x : \sigma ~ x + 3] \right) & x
+    < 0 \\ 
+    \left<\textbf{abort}, [\sigma \mid d : \sigma ~ d + 1 \mid x : \sigma ~ x +
+    3] \right> & x > 0
+  \end{cases}
+\end{equation*}
+
+
+Claramente, si $\sigma ~ x = -1, \sigma ~ x = -2$, el while se ejecutará una vez
+poniendo $\sigma'~ x = 2, \sigma'~d = 3$, y abortando en dicho estado.
+
+\pagebreak
+
+
+\begin{myframe}
+    \textbf{(4)} Propone un ejemplo de un programa que satisfaga:
+    \[
+      \llbracket \text{while } b \text{ do } c \rrbracket = F^{3} ~ {\bot_{\Sigma
+      \to \Sigma_\bot }}
+    \]
+\end{myframe}
+
+
+Proponemos
+
+\begin{equation*}
+  \textbf{while } x < 2 \textbf{ do } \textbf{if } x < 0 \textbf{ then } x := 1
+  \textbf{ else } x := x + 1
+\end{equation*}
+
+En el peor caso, este while se ejecuta dos veces, con lo cual la cadena $F^i ~
+\bot $ es no interesante y su supremo es $F^3 ~ \bot $, correspondiendo a la
+segunda iteración.
+
+
+
+
+\pagebreak
+\begin{myframe}
+  
+\textbf{(5)} ¿Puede haber un programa de la forma \texttt{while b do c} tal que
+para cualquier $\sigma$, $\llbracket \text{while b do c} \rrbracket \sigma =
+\iota_{\text{in}} (g)$, donde $g \; n = [\sigma \mid v : 2\mid x : n]$?
+
+\end{myframe}
+
+Formulemos la pregunta en términos intuitivos. ¿Existe un while que pida un
+input y cuyo resultado siempre sea dejar la variable $v$ en $2$ y la variable
+$x$ en el input? La respuesta es no. La razón es que \textit{primero} debemos
+pedir el input con el comando $?x$.
+
+Si pusiéramos el comando $?x$ dentro del cuerpo de $c$, ¿qué guarda utilizamos
+para marcar el ingreso al while? Si usamos la guarda $v \neq 2$, dejarmos sin
+alterar los estados en que $v = 2$, y por ende no pedimos ningún input.
+
+\begin{align*}
+  \textbf{while } v \neq 2 \textbf{ do } c
+\end{align*}
+
+\pagebreak 
+
+\section{Parcial 1: 21/06/2023}
+
+\begin{myframe}
+  \textbf{(2)} Decidí V o F. 
+
+  $(a)$ Si $D$ es dominio sin cadenas interesantes, entonces $D \to D$ tampoco tiene
+  cadenas interesantes.
+
+  $(b)$ Sea $f : P \to P'$ una función monótona entre predominios. Entonces,
+  para cualquier cadena $\left\{ x_i \right\}_{i \in \mathbb{N}}$ vale 
+
+  \begin{equation*}
+    \bigsqcup_{i \in \mathbb{N}} \left( f ~ x_i \right)  \leq f \left(
+    \bigsqcup_{i \in \mathbb{N}} x_i \right) 
+  \end{equation*}
+
+\end{myframe}
+
+$(a)$ La afirmación es falsa. Tomemos como contraejemplo $D =
+\mathbb{N}_\bot $ el orden llano. Sabemos que no tiene cadenas interesantes. Sin
+embargo, considere 
+
+\begin{equation*}
+  f_i ~ n = \begin{cases}
+    n & n \leq i \\ 
+    \bot &c.c.
+  \end{cases}
+\end{equation*}
+
+Sabemos que $f_1 \leq f_2 \leq \ldots$ es cadena interesante cuyo supremo es la
+función identidad de $\mathbb{N}_\bot \to \mathbb{N}_\bot $.
+
+\begin{equation*}
+  f_1 \leq f_2 \leq \ldots
+\end{equation*}
+
+$(b)$ La afirmación es verdadera. 
+
+Sea $x_1, x_2, \ldots$ una cadena en $P$.
+Entonces $f(x_1) \leq f(x_2) \leq \ldots$ es cadena en $P'$. Ahora bien, 
+$x_j \leq \bigsqcup_{i \in \mathbb{N}} x_i$, y por lo tanto, por ser $f$
+monótona, $f(x_j) \leq f(\bigsqcup_{i \in \mathbb{N}} x_i)$. Por lo tanto, $f\left(
+\bigsqcup_{i \in \mathbb{N}} x_i\right) $ es cota superior de $f(x_1), f(x_2),
+\ldots$ Como el supremo de dicha cadena es la menor de las cotas superiores, 
+
+\begin{equation*}
+  \bigsqcup_{i \in \mathbb{N}} f(x_i) \leq f\left( \bigsqcup_{i \in \mathbb{N}}
+  x_i\right) 
+\end{equation*}
+
+que es lo que dice la afirmación.
+
+\pagebreak 
+
+\begin{myframe}
+  \textbf{(4)} $(a)$ Proponé un programa que divida $x$ por $y$ si y solo si $y \neq
+  0$. En caso que $y = 0$ debe generar un error.  
+
+  $(b)$ Hacé otro programa $c'$ que use $c$ para dividr $x$ por $y$, pero que si
+  $c$ falla solo cambie $v$ por $-1$. En $c'$ no podés usar condicionales ni
+  ciclos, pero está bien usar $c$ incluso si $c$ tiene condicionales o ciclos.
+\end{myframe}
+
+$(a)$ Proponemos 
+
+\begin{equation*}
+  c := \textbf{if } y \neq 0 \textbf{ then } x / y \textbf{ else } \textbf{fail}
+\end{equation*}
+
+$(b)$ El programa propuesto es 
+
+\begin{equation*}
+  \textbf{catchin } c \textbf{ with } v := -1
+\end{equation*}
+
+\pagebreak 
+
+\section{Parcial 1 : 26/04/2024}
+
+\begin{myframe}
+  \textbf{(1)} Sea $\mathbb{N}_\star$ el poset $(\mathbb{N}, \preceq)$ con $\preceq$
+  el orden tal que $a \preceq b \iff b \leq a$. $(a)$ ¿Es un predominio? $(b)$ Considerá $f = x \mapsto x$
+  visto como función en $\mathbb{N}_\star \to \mathbb{N}^\infty$. ¿Es monótona? 
+  $(c)$ Definí una función monótona no constante en el espacio de funciones
+  mencionado en $(b)$. $(d)$ ¿Hay funciones monótonas que no sean continuas en
+  dicho espacio?
+\end{myframe}
+
+$(a)$ Un predominio es un domino con un elemento mínimo. Observemos que toda
+cadena en $\mathbb{N}_\star$ es no-interesante y por ende se trata de un
+predominio. Sin embargo, no existe elemento mínimo. Por ende, no es un dominio.
+
+
+
+$(b)$ Sean $x, y \in \mathbb{N}_\star$ tales que $x \preceq y$. Si sigue por
+def. de $\preceq$ que $f(x)
+\leq f(y)$, donde $\leq$ es el orden usual que rige $\mathbb{N}^\infty$. Por lo
+tanto, $f$ no es monótona.
+
+$(c)$ Sea 
+
+\begin{equation*}
+  f ~ n := \begin{cases}
+    \infty & n = 0 \\ 
+    0 & c.c.
+  \end{cases}
+\end{equation*}
+
+Claramente no es constante. Probemos que es monótona. Para ello, tomemos $a, b
+\in \mathbb{N}$ tales que $a \preceq b$. Si ambos son distintos de cero,
+obtenemos $f(a) \leq f(b) \equiv 0 \leq 0 \equiv \textbf{True}$. Si ambos son
+cero, es fácil ver que el orden se preserva. Si $a = 0$ necesariamente se tiene
+$b = 0$, porque $0$ es elemento máximo, con lo cual este caso está contemplado
+en el anterior. Si $a \neq 0, b = 0$, se tiene $f(a) \leq f(b) \equiv 0 \leq
+\infty \equiv \textbf{True}$. Esto basta para probar la monotonía de $f$.
+
+$(d)$ Sea $f \in \mathbb{N}_\star\to \mathbb{N}^\infty$ monótona. Como
+$\mathbb{N}_\star$ no tiene cadenas interesantes, toda cadena $f(x_1) \leq
+f(x_2) \leq \ldots$ derivada de una cadena $x_1 \preceq  x_2 \preceq \ldots$ es
+no interesante. Y en particular, si $x_k$ es el elemento que se repite en la
+cadena original, $f(x_k)$ será el elemento que se repita en la cada derivada por
+$f$. Es decir que toda cadena $x_1 \leq x_2 \leq \ldots$ con supremo $x_k$ tiene
+una cadena asociada $f(x_1) \leq f(x_2) \leq \ldots$ con supremo $f(x_k)$.
+$\therefore $ La función $f$ es continua. 
+
+Por lo tanto, toda $f$ monótona es continua en el espacio dado.
+
+
+\pagebreak 
+
+\begin{myframe}
+  Considerá el lenguaje imperativo con IO y la siguiente ecuación para $g \in
+  \Sigma \to \Omega$:
+
+  \begin{equation*}
+    g ~ \sigma = \iota_{\text{in}} \left( \lambda ~ k \in \mathbb{Z} . \begin{cases}
+        \iota_{\text{term}}[\sigma \mid v : 0] &k = 0 \\ 
+        \iota_{\text{out}}~\left<1, g \big[ \sigma \mid p : \sigma ~ p + 1 \mid
+        v : k\big] \right> & k > 0\\ 
+        \iota_{\text{out}} \left< -1, g \big[ \sigma \mid n : \sigma ~ n + 1
+      \mid v : k  \big]  \right>& k < 0
+    \end{cases} \right) 
+  \end{equation*}
+
+  $(a)$ ¿Hay algún elemento mayor a la menor solución de $g$? 
+
+  $(b)$ ¿Puede un programa de la forma $?w;c'$ tener como semántica la menor
+  solución de $g$? 
+
+  $(c)$ Proponé un programa cuya semántica coincide con la menor solución de
+  $g$, justificando.
+\end{myframe}
+
+Primero, describamos qué hace el programa recursivo asociado a $g$. Claramente,
+toma un input y opera en función de si dicho input es igual, menor o mayor a
+cero. Si es igual a cero, la recursión termina y se devuelve $\sigma$
+transformado con $v = 0$. Si es menor a cero, se imprime $1$ y se hace una
+llamada recursiva sobre el estado donde a $p$ se le ha sumado $1$ y a $v$ se le
+ha asignado el input. Si es mayor a cero, se imprime $-1$ y se hace una llamada
+recursiva sobre el estado en que a $n$ se le ha sumado $1$ y a $v$ se le ha
+asignado el input.
+
+Podemos pensar que la función iterativamente cuenta cuántos inputs negativos se
+dieron (con la variable $p$), cuántos positivos (con la variable $n$), y termina
+cuando se da como input $0$.
+
+$(a)$ Como la definición de $g$ está definida para todos los casos posibles del
+input $k$, y para todos los estados posibles, no existe una función que sea
+equivalente pero provea más información. Por lo tanto, la menor solución de $g$ es maximal.
+
+$(b)$ No, porque el programa cuya semántica es la menor solución de $g$ cambia
+el valor de $v$ en cada iteración (no el de $w$).
+
+$(c)$ El programa sería:
+
+\begin{align*}
+  &?v;\textbf{while } y \neq 0 \textbf{ do } \\ 
+  &\qquad \textbf{if } y > 0 \textbf{ then } !1; p := p+1 \\
+  &\qquad\textbf{else } !(-1); n := n + 1; \\ 
+  &\qquad?v
+\end{align*}
+
+\pagebreak 
+
+\begin{myframe}
+  \textbf{(4)} Probar o refutar. 
+
+  $(a)$ Sean $x, e$ tales que $x \not\in FV(e)$. Entonces $x := e \equiv x := e; x := e$. 
+
+  $(b)$ $\textbf{while } b \textbf{ do } ( c;\textbf{fail} ) \equiv \textbf{fail}$
+
+  $(c)$ $\textbf{while } b \textbf{ do } c \equiv \textbf{while } b \textbf{ do
+  } c; \textbf{while } b \textbf{ do } c$.
+\end{myframe}
+
+$(a)$ Es verdadero. Como $x$ no es variable libre de $e$, cambiar el valor de
+$x$ no modifica el valor de $e$. Es decir, 
+
+\begin{equation*}
+  \llbracket e \rrbracket\left( \llbracket x := e \rrbracket\sigma \right) =
+  \llbracket e \rrbracket\sigma
+\end{equation*}
+
+Entonces 
+
+\begin{align*}
+  \llbracket x := e ; x :=e \rrbracket 
+  &= \llbracket x := e \rrbracket_* \left( \llbracket x:=e \rrbracket\sigma
+  \right)  \\ 
+  &=\llbracket x:=e \rrbracket_* \left( [\sigma \mid x : \llbracket e
+  \rrbracket\sigma] \right)  \\ 
+  &=\left[ [\sigma \mid x : \llbracket e \rrbracket \sigma] \mid x : \llbracket
+  e\rrbracket([\sigma \mid x : \llbracket e \rrbracket\sigma])\right]  \\ 
+  &= \left[ \sigma \mid x : \llbracket e \rrbracket\sigma \right]  \\ 
+  &= \llbracket x := e \rrbracket\sigma
+\end{align*}
+
+$(b)$ Falso porque en la primera iteración del \textbf{while} podría suceder que
+$c = \bot$, con lo cual $\llbracket c;\textbf{fail} \rrbracket = \bot $, con lo
+cual el \textbf{while} completo daría $\bot \neq \llbracket \textbf{fail} \rrbracket$.
+
+$(c)$ Estoy cansado señores.
+
+\pagebreak 
+
+\section{Más práctica con los prácticos}
+
+\begin{myframe}
+  \textbf{(1)} Decida si $H : (\Sigma \to \Sigma'_\bot ) \to (\Sigma \to
+  \Sigma'_\bot )$ es monótona y si es continua. 
+
+  \begin{equation*}
+    H ~ f ~ \sigma = \begin{cases}
+      \sigma & f = \bot  \\ 
+      \bot & c.c.
+    \end{cases}
+  \end{equation*}
+\end{myframe}
+
+Sea $\psi$ una función arbitraria in $\Sigma \to \Sigma'_\bot $ distinta de
+$\bot$. Claramente, $H ~ \psi ~ \sigma = \bot $ y $H ~ \bot ~ \sigma = \sigma$.
+Sin embargo, $\bot \leq \psi$ y $\bot  \leq \sigma$. Es decir, no se preserva el
+orden. La función no es monótona. Por lo tanto no es continua.
+
+
+
+\pagebreak 
+
+\begin{myframe}
+  Calcule la semántica de $\textbf{while } x > 0 \textbf{ do } !x; c$ en los
+  casos:
+
+  $(a) ~ c \equiv \textbf{if } x > 0\textbf{ then } skip \textbf{ else }
+  \textbf{fail}$ 
+
+  $(b)$ $c \equiv \textbf{if } x > 0\textbf{ then fail else skip}  $
+\end{myframe}
+
+$(a)$ En este caso, 
+
+\begin{equation*}
+  \llbracket \textbf{while } x > 0 \textbf{ do } !x;c \rrbracket\sigma  
+  &= \llbracket c \rrbracket_*\Big( \llbracket \textbf{while } x > 0 \textbf{ do
+  } !x \rrbracket\sigma \Big) 
+\end{equation*}
+
+Veamos que 
+
+\begin{equation*}
+  F ~ f ~ \sigma = \begin{cases}
+    \sigma & \sigma ~ x \leq 0 \\ 
+    f_* \big( \llbracket !x \rrbracket\sigma \big) & \sigma ~ x > 0
+  \end{cases}
+\end{equation*}
+
+tiene 
+
+\begin{equation*}
+  F ~ \bot ~ \sigma = \begin{cases}
+    \sigma & \sigma ~ x \leq 0 \\ 
+    \bot & \sigma ~ x > 0
+  \end{cases}
+\end{equation*}
+
+y 
+
+\begin{align*}
+  F^2 ~ \bot ~ \sigma 
+  &= \begin{cases}
+    \sigma & \sigma ~ x \leq 0 \\ 
+    (F ~ \bot )\big( \llbracket !x \rrbracket\sigma \big) & \sigma ~ x > 0 
+  \end{cases} \\ 
+  &= \begin{cases}
+    \sigma & \sigma ~ x \leq 0 \\ 
+    \llbracket !x \rrbracket\sigma & x > 0 \land \llbracket !x \rrbracket\sigma
+    ~ x
+    \leq 0 \\ 
+    \bot &c.c.
+  \end{cases} \\ 
+  &= \begin{cases}
+    \sigma & x \leq 0 \\ 
+    \iota_{\text{out}}(\sigma ~ x, \iota_{\text{term}} ~ \sigma) & \sigma ~ x > 0 \land
+    \iota_{\text{out}}(\sigma ~ x, \iota_{\text{term}} ~ \sigma) ~ x \leq 0 \\ 
+    \bot & c.c.
+  \end{cases} \\ 
+  &= \begin{cases}
+    \sigma & \sigma ~ x \leq 0 \\ 
+    \left<\sigma ~ x, \sigma \right> & x > 0 \land \sigma ~ x \leq 0 \\ 
+    \bot & c.c.
+  \end{cases} \\ 
+  &= \begin{cases}
+    \sigma & \sigma ~ x \leq 0 \\ 
+    \bot  & c.c.
+  \end{cases}
+\end{align*}
+
+Se aprecia lo que intuitivamente esperamos: es una cadena no interesante y por
+ende el supremo es el resultado antedicho. Por lo tanto, obtenemos 
+
+\begin{align*}
+  \llbracket \textbf{while } x > 0 \textbf{ do } !x;c \rrbracket\sigma  
+  &= \llbracket c \rrbracket_*\Big( \llbracket \textbf{while } x > 0 \textbf{ do
+  } !x \rrbracket\sigma \Big)  \\ 
+  &=\begin{cases}
+    \llbracket c \rrbracket_* \big( \sigma \big) & \sigma ~ x \leq 0 \\ 
+    \llbracket c \rrbracket_* \bot & \sigma ~ x > 0
+  \end{cases} \\ 
+  &=\begin{cases}
+    \llbracket c \rrbracket \sigma & \sigma ~ x \leq 0 \\ 
+    \bot  & c.c.
+  \end{cases} \\ 
+  &=\begin{cases}
+    \llbracket \textbf{if } x < 0 \textbf{ then } \textbf{skip} \textbf{ else }
+    \textbf{fail} \rrbracket \sigma & \sigma ~ x \leq 0 \\ 
+    \bot  & c.c.
+  \end{cases} \\ 
+  &=\begin{cases}
+    \llbracket \textbf{skip} \rrbracket\sigma ~ \sigma & \sigma ~ x < 0 \\ 
+    \llbracket \textbf{fail} \rrbracket\sigma & \sigma ~ x = 0 \\ 
+    \bot & c.c.
+  \end{cases}  \\ 
+  &=\begin{cases}
+    \sigma & \sigma ~ x < 0\\ 
+    \left<\textbf{abort}, \sigma \right> & \sigma ~ x = 0 \\ 
+    \bot  & c.c.
+  \end{cases}
+\end{align*}
+
+\pagebreak 
+
+\begin{myframe}
+  Demostrar o refutar. 
+
+  $(a)$ $?x;?y \equiv ?y;?x$.
+
+  $(b)$ $?x;z := x \equiv ?z$.
+
+  $(c)$ $\textbf{newvar } x := e \textbf{ in } (?x; z := x) \equiv ?z$.
+
+\end{myframe}
+
+$(a)$ Veamos que 
+
+\begin{align*}
+  \llbracket ?x;?y \rrbracket\sigma 
+  &= \llbracket ?y \rrbracket_* \big( \llbracket ?x \rrbracket\sigma \big) \\ 
+  &=\llbracket ?y \rrbracket_*\Big( \iota_{\text{in}}\big( \lambda ~ k \in
+  \mathbb{Z} . \iota_{\text{term}}\left( [\sigma \mid x : k] \right)  \big)
+\Big) \\ 
+  &= \iota_{\text{in}}\Big( \lambda ~ k \in \mathbb{Z}. \llbracket ?y
+  \rrbracket_*\big( \iota_{\text{term}}([\sigma \mid x : k]) \big) \Big) \\ 
+  &= \iota_{\text{in}} \Big( \lambda ~ k \in \mathbb{Z}. \Big( \iota_{\text{in}}
+  \left( \lambda n \in \mathbb{Z}. \left( \iota_{\text{term}}([\sigma \mid x : k
+\mid y : n]) \right)  \right) \Big) \Big)
+\end{align*}
+
+El mismo desarrollo nos da 
+
+\begin{equation*}
+  \llbracket ?y;?x \rrbracket\sigma = 
+  \iota_{\text{in}} \Big( \lambda ~ k \in \mathbb{Z}. \Big( \iota_{\text{in}}
+  \left( \lambda n \in \mathbb{Z}. \left( \iota_{\text{term}}([\sigma \mid y : k
+\mid x : n]) \right)  \right) \Big) \Big)
+\end{equation*}
+
+No son la misma función.
+
+$(c)$ Veamos que 
+
+\begin{align*}
+  \llbracket \textbf{newvar } x:= e \textbf{ in } (?x;z := x) \rrbracket\sigma 
+  &=\mathcal{R}_\dagger^{\sigma, x} \Big( \llbracket ?x; z := x
+  \rrbracket[\sigma \mid x : \llbracket e \rrbracket\sigma] \Big) \\ 
+  &=\mathcal{R}_\dagger^{\sigma, x}\Big( \llbracket z := x \rrbracket_*\big(
+  \llbracket ?x \rrbracket[\sigma\mid x : \llbracket e \rrbracket\sigma] \big)
+\Big) \\ 
+  &=\mathcal{R}_\dagger^{\sigma, x}\Big( \llbracket z := x \rrbracket_* \Big(
+  \iota_{\text{in}} \big( \lambda ~ k \in \mathbb{Z}.\iota_{\text{term}}[[\sigma
+\mid x : \llbracket e \rrbracket\sigma] \mid x : k] \big) \Big) \Big) \\ 
+  &=\mathcal{R}_\dagger^{\sigma, x}\Big( \llbracket z := x \rrbracket_*\Big(
+  \iota_{\text{in}} \big( \lambda ~ k \in \mathbb{Z}. \iota_{\text{term}}[\sigma
+\mid x : k] \big) \Big) \Big) \\ 
+  &=\mathcal{R}_\dagger^{\sigma, x}\Big( \iota_{\text{in}}\Big( \lambda ~ k \in
+  \mathbb{Z}. \llbracket z := x \rrbracket_*\iota_{\text{term}}[\sigma \mid x :
+k]\Big) \Big) \\ 
+  &=\mathcal{R}_\dagger^{\sigma, x} \Big( \iota_{\text{in}} \Big( \lambda k \in
+  \mathbb{Z}. \iota_{\text{term}}[\sigma \mid x : k \mid z : k]\Big) \Big) \\ 
+  &=\iota_{\text{in}} \Big( \lambda k \in \mathbb{Z}.
+  \mathcal{R}_\dagger^{\sigma, x}\iota_{\text{term}}[\sigma \mid x : k \mid z : k]
+\Big) \\ 
+  &= \iota_{\text{in}} \Big( \lambda k \in \mathbb{Z}.
+  \iota_{\text{term}}[\sigma \mid z : k] \Big) \\ 
+  &= \llbracket ?z \rrbracket\sigma
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  1 MAY 2025 17:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  9 MAY 2025 09:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -23,34 +23,12 @@ File: size12.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip48
 \belowcaptionskip=\skip49
 \bibindent=\dimen140
-) (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
-Package: geometry 2020/01/02 v5.9 Page Geometry
- (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
-\KV@toks@=\toks17
-) (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
-Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
- (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
-Package: iftex 2022/02/03 v1.0f TeX engine tests
-))
-\Gm@cnth=\count195
-\Gm@cntv=\count196
-\c@Gm@tempcnt=\count197
-\Gm@bindingoffset=\dimen141
-\Gm@wd@mp=\dimen142
-\Gm@odd@mp=\dimen143
-\Gm@even@mp=\dimen144
-\Gm@layoutwidth=\dimen145
-\Gm@layoutheight=\dimen146
-\Gm@layouthoffset=\dimen147
-\Gm@layoutvoffset=\dimen148
-\Gm@dimlist=\toks18
 ) (/usr/share/texlive/texmf-dist/tex/latex/forest/forest.sty
 Package: forest 2017/07/14 v2.1.5 Drawing (linguistic) trees
  (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks19
-\pgfutil@tempdima=\dimen149
-\pgfutil@tempdimb=\dimen150
+\pgfutil@everybye=\toks17
+\pgfutil@tempdima=\dimen141
+\pgfutil@tempdimb=\dimen142
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
 \pgfutil@abb=\box51
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)
@@ -59,7 +37,10 @@ Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
 Package: pgf 2023-01-15 v3.1.10 (3.1.10)
  (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
- (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks18
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
  (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
@@ -70,36 +51,36 @@ Package graphics Info: Driver file: pdftex.def on input line 107.
  (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen151
-\Gin@req@width=\dimen152
+\Gin@req@height=\dimen143
+\Gin@req@width=\dimen144
 ) (/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks20
-\pgfkeys@temptoks=\toks21
+\pgfkeys@pathtoks=\toks19
+\pgfkeys@temptoks=\toks20
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
-\pgfkeys@tmptoks=\toks22
+\pgfkeys@tmptoks=\toks21
 ))
-\pgf@x=\dimen153
-\pgf@y=\dimen154
-\pgf@xa=\dimen155
-\pgf@ya=\dimen156
-\pgf@xb=\dimen157
-\pgf@yb=\dimen158
-\pgf@xc=\dimen159
-\pgf@yc=\dimen160
-\pgf@xd=\dimen161
-\pgf@yd=\dimen162
+\pgf@x=\dimen145
+\pgf@y=\dimen146
+\pgf@xa=\dimen147
+\pgf@ya=\dimen148
+\pgf@xb=\dimen149
+\pgf@yb=\dimen150
+\pgf@xc=\dimen151
+\pgf@yc=\dimen152
+\pgf@xd=\dimen153
+\pgf@yd=\dimen154
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count198
-\c@pgf@countb=\count199
-\c@pgf@countc=\count266
-\c@pgf@countd=\count267
-\t@pgf@toka=\toks23
-\t@pgf@tokb=\toks24
-\t@pgf@tokc=\toks25
-\pgf@sys@id@count=\count268
+\c@pgf@counta=\count195
+\c@pgf@countb=\count196
+\c@pgf@countc=\count197
+\c@pgf@countd=\count198
+\t@pgf@toka=\toks22
+\t@pgf@tokb=\toks23
+\t@pgf@tokc=\toks24
+\pgf@sys@id@count=\count199
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
 )
@@ -110,12 +91,11 @@ File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
 File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
 ))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfsyssoftpath@smallbuffer@items=\count269
-\pgfsyssoftpath@bigbuffer@items=\count270
+\pgfsyssoftpath@smallbuffer@items=\count266
+\pgfsyssoftpath@bigbuffer@items=\count267
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))
-(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+)) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
  (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
@@ -131,70 +111,71 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen163
-\pgfmath@count=\count271
+\pgfmath@dimen=\dimen155
+\pgfmath@count=\count268
 \pgfmath@box=\box52
-\pgfmath@toks=\toks26
-\pgfmath@stack@operand=\toks27
-\pgfmath@stack@operation=\toks28
+\pgfmath@toks=\toks25
+\pgfmath@stack@operand=\toks26
+\pgfmath@stack@operation=\toks27
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count272
+\c@pgfmathroundto@lastzeros=\count269
 )) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@picminx=\dimen164
-\pgf@picmaxx=\dimen165
-\pgf@picminy=\dimen166
-\pgf@picmaxy=\dimen167
-\pgf@pathminx=\dimen168
-\pgf@pathmaxx=\dimen169
-\pgf@pathminy=\dimen170
-\pgf@pathmaxy=\dimen171
-\pgf@xx=\dimen172
-\pgf@xy=\dimen173
-\pgf@yx=\dimen174
-\pgf@yy=\dimen175
-\pgf@zx=\dimen176
-\pgf@zy=\dimen177
+\pgf@picminx=\dimen156
+\pgf@picmaxx=\dimen157
+\pgf@picminy=\dimen158
+\pgf@picmaxy=\dimen159
+\pgf@pathminx=\dimen160
+\pgf@pathmaxx=\dimen161
+\pgf@pathminy=\dimen162
+\pgf@pathmaxy=\dimen163
+\pgf@xx=\dimen164
+\pgf@xy=\dimen165
+\pgf@yx=\dimen166
+\pgf@yy=\dimen167
+\pgf@zx=\dimen168
+\pgf@zy=\dimen169
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@path@lastx=\dimen178
-\pgf@path@lasty=\dimen179
+\pgf@path@lastx=\dimen170
+\pgf@path@lasty=\dimen171
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@shorten@end@additional=\dimen180
-\pgf@shorten@start@additional=\dimen181
+\pgf@shorten@end@additional=\dimen172
+\pgf@shorten@start@additional=\dimen173
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfpic=\box53
 \pgf@hbox=\box54
 \pgf@layerbox@main=\box55
-\pgf@picture@serial@count=\count273
+\pgf@picture@serial@count=\count270
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgflinewidth=\dimen182
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+\pgflinewidth=\dimen174
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@pt@x=\dimen183
-\pgf@pt@y=\dimen184
-\pgf@pt@temp=\dimen185
+\pgf@pt@x=\dimen175
+\pgf@pt@y=\dimen176
+\pgf@pt@temp=\dimen177
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
 File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
 File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowsep=\dimen186
+\pgfarrowsep=\dimen178
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@max=\dimen187
-\pgf@sys@shading@range@num=\count274
-\pgf@shadingcount=\count275
+\pgf@max=\dimen179
+\pgf@sys@shading@range@num=\count271
+\pgf@shadingcount=\count272
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
@@ -215,52 +196,52 @@ File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
-\pgf@nodesepstart=\dimen188
-\pgf@nodesepend=\dimen189
+\pgf@nodesepstart=\dimen180
+\pgf@nodesepend=\dimen181
 ) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
 )) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
-\pgffor@iter=\dimen190
-\pgffor@skip=\dimen191
-\pgffor@stack=\toks29
-\pgffor@toks=\toks30
+\pgffor@iter=\dimen182
+\pgffor@skip=\dimen183
+\pgffor@stack=\toks28
+\pgffor@toks=\toks29
 )) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2023-01-15 v3.1.10 (3.1.10)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@plot@mark@count=\count276
-\pgfplotmarksize=\dimen192
+\pgf@plot@mark@count=\count273
+\pgfplotmarksize=\dimen184
 )
-\tikz@lastx=\dimen193
-\tikz@lasty=\dimen194
-\tikz@lastxsaved=\dimen195
-\tikz@lastysaved=\dimen196
-\tikz@lastmovetox=\dimen197
-\tikz@lastmovetoy=\dimen198
-\tikzleveldistance=\dimen199
-\tikzsiblingdistance=\dimen256
+\tikz@lastx=\dimen185
+\tikz@lasty=\dimen186
+\tikz@lastxsaved=\dimen187
+\tikz@lastysaved=\dimen188
+\tikz@lastmovetox=\dimen189
+\tikz@lastmovetoy=\dimen190
+\tikzleveldistance=\dimen191
+\tikzsiblingdistance=\dimen192
 \tikz@figbox=\box58
 \tikz@figbox@bg=\box59
 \tikz@tempbox=\box60
 \tikz@tempbox@bg=\box61
-\tikztreelevel=\count277
-\tikznumberofchildren=\count278
-\tikznumberofcurrentchild=\count279
-\tikz@fig@count=\count280
-
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+\tikztreelevel=\count274
+\tikznumberofchildren=\count275
+\tikznumberofcurrentchild=\count276
+\tikz@fig@count=\count277
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfmatrixcurrentrow=\count281
-\pgfmatrixcurrentcolumn=\count282
-\pgf@matrix@numberofcolumns=\count283
+\pgfmatrixcurrentrow=\count278
+\pgfmatrixcurrentcolumn=\count279
+\pgf@matrix@numberofcolumns=\count280
 )
-\tikz@expandcount=\count284
+\tikz@expandcount=\count281
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.code.tex
 File: tikzlibraryshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
- (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
 File: tikzlibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex
 File: pgflibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
@@ -305,15 +286,14 @@ File: tikzlibraryfit.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryintersections.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)
-\pgf@intersect@solutions=\count285
+\pgf@intersect@solutions=\count282
 ) (/usr/share/texlive/texmf-dist/tex/latex/pgfopts/pgfopts.sty
 Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
-\pgfopts@list@add@a@toks=\toks31
-\pgfopts@list@add@b@toks=\toks32
-)
-(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+\pgfopts@list@add@a@toks=\toks30
+\pgfopts@list@add@b@toks=\toks31
+) (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count286
+\etb@tempcnta=\count283
 ) (/usr/share/texlive/texmf-dist/tex/latex/elocalloc/elocalloc.sty
 Package: elocalloc 2016/12/15 v0.03 local allocation for LaTeX 2015+ (DPC)
 ) (/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
@@ -321,66 +301,67 @@ Package: environ 2014/05/04 v0.3 A new way to define environments
  (/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 )
-\@envbody=\toks33
-) (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+\@envbody=\toks32
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2024-01-22 L3 programming layer (loader) 
  (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count287
+\l__color_backend_stack_int=\count284
 \l__pdf_internal_box=\box82
 ))
 Package: xparse 2023-10-10 L3 Experimental document command parser
 ) (/usr/share/texlive/texmf-dist/tex/latex/inlinedef/inlinedef.sty
 Package: inlinedef 2008/07/10 v1.0 Inlined expansions within definitions
-\ID@toks=\toks34
-\ID@count=\count288
+\ID@toks=\toks33
+\ID@count=\count285
 )
-\ID@usercommands=\toks35
-\safeloop@depth=\count289
-\safeRKloop@depth=\count290
-\forest@temp@dimen=\dimen257
-\forest@temp@count=\count291
-\forest@n=\count292
-\forest@temp@global@count=\count293
-\forest@temp@toks=\toks36
-\forest@temparray@M=\count294
-\forest@temparray@N=\count295
-\forest@global@temparray@M=\count296
-\forest@global@temparray@N=\count297
-\forest@isnum@count=\count298
-\forest@isdim@nonintpart=\count299
-\forest@isdim@dimen=\dimen258
-\forest@sort@m=\count300
-\forest@sort@k=\count301
-\forest@sort@p=\count302
-\bracket@content=\toks37
-\bracket@afterthought=\toks38
-\forest@node@maxid=\count303
-\forest@process@left@M=\count304
-\forest@process@left@N=\count305
-\forest@process@right@M=\count306
-\forest@process@right@N=\count307
-\forest@process@saved@M=\count308
-\forest@process@saved@N=\count309
-\forest@process@result@M=\count310
-\forest@process@result@N=\count311
-\forest@process@n=\count312
-\forest@nodewalk@branch@toks=\toks39
-\forest@nodewalk@shortsteps@resolution=\toks40
-\forest@do@dynamics=\toks41
+\ID@usercommands=\toks34
+\safeloop@depth=\count286
+\safeRKloop@depth=\count287
+\forest@temp@dimen=\dimen193
+\forest@temp@count=\count288
+\forest@n=\count289
+\forest@temp@global@count=\count290
+\forest@temp@toks=\toks35
+\forest@temparray@M=\count291
+\forest@temparray@N=\count292
+\forest@global@temparray@M=\count293
+\forest@global@temparray@N=\count294
+\forest@isnum@count=\count295
+\forest@isdim@nonintpart=\count296
+\forest@isdim@dimen=\dimen194
+\forest@sort@m=\count297
+\forest@sort@k=\count298
+\forest@sort@p=\count299
+\bracket@content=\toks36
+\bracket@afterthought=\toks37
+\forest@node@maxid=\count300
+\forest@process@left@M=\count301
+\forest@process@left@N=\count302
+\forest@process@right@M=\count303
+\forest@process@right@N=\count304
+\forest@process@saved@M=\count305
+\forest@process@saved@N=\count306
+\forest@process@result@M=\count307
+\forest@process@result@N=\count308
+\forest@process@n=\count309
+\forest@nodewalk@branch@toks=\toks38
+\forest@nodewalk@shortsteps@resolution=\toks39
+\forest@do@dynamics=\toks40
 \forest@box=\box83
-\forest@xg=\dimen259
-\forest@yg=\dimen260
-\forest@xs=\dimen261
-\forest@ys=\dimen262
-\forest@pi@toks=\toks42
-\forest@segment@toks=\toks43
-\forest@PIi@toks=\toks44
-\forest@PIii@toks=\toks45
+\forest@xg=\dimen195
+\forest@yg=\dimen196
+\forest@xs=\dimen197
+\forest@ys=\dimen198
+\forest@pi@toks=\toks41
+\forest@segment@toks=\toks42
+\forest@PIi@toks=\toks43
+\forest@PIii@toks=\toks44
 \forest@copy@in=\read3
 \forest@copy@out=\write4
-\forest@externalize@max@outer@n=\count313
-\forest@externalize@inner@n=\count314
+\forest@externalize@max@outer@n=\count310
+\forest@externalize@inner@n=\count311
 ) (/usr/share/texlive/texmf-dist/tex/latex/mdframed/mdframed.sty
 Package: mdframed 2013/07/01 1.9b: mdframed
  (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
@@ -399,6 +380,9 @@ Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
@@ -411,13 +395,13 @@ Package zref Info: New property list: main on input line 767.
 Package zref Info: New property: default on input line 768.
 Package zref Info: New property: page on input line 769.
 )
-\c@abspage=\count315
+\c@abspage=\count312
 Package zref Info: New property: abspage on input line 67.
 ) (/usr/share/texlive/texmf-dist/tex/latex/needspace/needspace.sty
 Package: needspace 2010/09/12 v1.3d reserve vertical space
 )
 \mdf@templength=\skip50
-\c@mdf@globalstyle@cnt=\count316
+\c@mdf@globalstyle@cnt=\count313
 \mdf@skipabove@length=\skip51
 \mdf@skipbelow@length=\skip52
 \mdf@leftmargin@length=\skip53
@@ -492,21 +476,21 @@ File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 \mdf@horizontalspaceofbox=\skip114
 \mdfsubtitleheight=\skip115
 \mdfsubsubtitleheight=\skip116
-\c@mdfcountframes=\count317
+\c@mdfcountframes=\count314
 
 ****** mdframed patching \endmdf@trivlist
 
 ****** -- success******
 
-\mdf@envdepth=\count318
-\c@mdf@env@i=\count319
-\c@mdf@env@ii=\count320
-\c@mdf@zref@counter=\count321
+\mdf@envdepth=\count315
+\c@mdf@env@i=\count316
+\c@mdf@env@ii=\count317
+\c@mdf@zref@counter=\count318
 Package zref Info: New property: mdf@pagevalue on input line 895.
 ) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
-\inpenc@prehook=\toks46
-\inpenc@posthook=\toks47
+\inpenc@prehook=\toks45
+\inpenc@posthook=\toks46
 ) (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 ) (/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
@@ -520,22 +504,22 @@ For additional information on amsmath, use the `?' option.
 Package: amstext 2021/08/26 v2.01 AMS text
  (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks48
-\ex@=\dimen263
+\@emptytoks=\toks47
+\ex@=\dimen199
 )) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen264
+\pmbraise@=\dimen256
 ) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count322
+\inf@bad=\count319
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count323
-\leftroot@=\count324
+\uproot@=\count320
+\leftroot@=\count321
 LaTeX Info: Redefining \overline on input line 399.
 LaTeX Info: Redefining \colon on input line 410.
-\classnum@=\count325
-\DOTSCASE@=\count326
+\classnum@=\count322
+\DOTSCASE@=\count323
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
@@ -545,34 +529,34 @@ LaTeX Info: Redefining \big on input line 722.
 LaTeX Info: Redefining \Big on input line 723.
 LaTeX Info: Redefining \bigg on input line 724.
 LaTeX Info: Redefining \Bigg on input line 725.
-\big@size=\dimen265
+\big@size=\dimen257
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count327
+\macc@depth=\count324
 LaTeX Info: Redefining \bmod on input line 905.
 LaTeX Info: Redefining \pmod on input line 910.
 LaTeX Info: Redefining \smash on input line 940.
 LaTeX Info: Redefining \relbar on input line 970.
 LaTeX Info: Redefining \Relbar on input line 971.
-\c@MaxMatrixCols=\count328
+\c@MaxMatrixCols=\count325
 \dotsspace@=\muskip16
-\c@parentequation=\count329
-\dspbrk@lvl=\count330
-\tag@help=\toks49
-\row@=\count331
-\column@=\count332
-\maxfields@=\count333
-\andhelp@=\toks50
-\eqnshift@=\dimen266
-\alignsep@=\dimen267
-\tagshift@=\dimen268
-\tagwidth@=\dimen269
-\totwidth@=\dimen270
-\lineht@=\dimen271
-\@envbody=\toks51
+\c@parentequation=\count326
+\dspbrk@lvl=\count327
+\tag@help=\toks48
+\row@=\count328
+\column@=\count329
+\maxfields@=\count330
+\andhelp@=\toks49
+\eqnshift@=\dimen258
+\alignsep@=\dimen259
+\tagshift@=\dimen260
+\tagwidth@=\dimen261
+\totwidth@=\dimen262
+\lineht@=\dimen263
+\@envbody=\toks50
 \multlinegap=\skip118
 \multlinetaggap=\skip119
-\mathdisplay@stack=\toks52
+\mathdisplay@stack=\toks51
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
 ) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
@@ -597,10 +581,10 @@ File: tikzlibrarymatrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: tikzlibraryquotes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
 File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowinset=\dimen272
-\pgfarrowlength=\dimen273
-\pgfarrowwidth=\dimen274
-\pgfarrowlinewidth=\dimen275
+\pgfarrowinset=\dimen264
+\pgfarrowlength=\dimen265
+\pgfarrowwidth=\dimen266
+\pgfarrowlinewidth=\dimen267
 ))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/share/texlive/texmf-dist/tex/latex/mathalpha/mathalfa.sty) (/usr/share/texlive/texmf-dist/tex/latex/mathalpha/mathalpha.sty
@@ -608,10 +592,10 @@ Package: mathalpha 2021/11/18 - 1.143mathalpha (License LPPL) Michael Sharpe
  `mathalpha' v1.143, 2021/11/18, a renaming of mathalfa (msharpe) (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
  (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks53
-\XKV@tempa@toks=\toks54
+\XKV@toks=\toks52
+\XKV@tempa@toks=\toks53
 )
-\XKV@depth=\count334
+\XKV@depth=\count331
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 LaTeX Font Info:    Redeclaring math alphabet \mathcal on input line 554.
@@ -652,76 +636,76 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/mlmtt/m/n on input line 43.
 )
-\c@problem=\count335
-\c@example=\count336
-\c@lemma=\count337
-\c@theorem=\count338
+\c@problem=\count332
+\c@example=\count333
+\c@lemma=\count334
+\c@theorem=\count335
 
 
-./LyC.tex:31: LaTeX Error: Command \problem already defined.
+./LyC.tex:24: LaTeX Error: Command \problem already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.31 \newtheorem
+l.24 \newtheorem
                 {example}{Example} \newtheorem{definition}{Definition}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./LyC.tex:31: LaTeX Error: Command \example already defined.
+./LyC.tex:24: LaTeX Error: Command \example already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.31 \newtheorem{example}{Example} \newtheorem
+l.24 \newtheorem{example}{Example} \newtheorem
                                               {definition}{Definition}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-\c@definition=\count339
+\c@definition=\count336
 
-./LyC.tex:33: LaTeX Error: Command \lemma already defined.
+./LyC.tex:26: LaTeX Error: Command \lemma already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.33 \newtheorem
+l.26 \newtheorem
                 {theorem}{Theorem}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./LyC.tex:34: LaTeX Error: Command \theorem already defined.
+./LyC.tex:27: LaTeX Error: Command \theorem already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.34 \usepackage
+l.27 \usepackage
                 [pdftex]{graphicx}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./LyC.tex:35: LaTeX Error: Option clash for package graphicx.
+./LyC.tex:28: LaTeX Error: Option clash for package graphicx.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.35 \newcommand
+l.28 \newcommand
                 \doubleplus{+\kern-1.3ex+\kern0.8ex}
 The package graphicx has already been loaded with options:
   []
@@ -732,74 +716,44 @@ Adding the global options:
 to your \documentclass declaration may fix this.
 Try typing  <return>  to proceed.
 
-LaTeX Font Info:    Trying to load font information for T1+mlmr on input line 52.
+LaTeX Font Info:    Trying to load font information for T1+mlmr on input line 45.
 (/usr/share/texlive/texmf-dist/tex/latex/mlmodern/t1mlmr.fd
 File: t1mlmr.fd 2021/01/11 v1.0 Font defs for mlmodern
-) (./LyC.aux)
+)
+
+LaTeX Warning: Unused global option(s):
+    [article].
+
+(./LyC.aux)
 \openout1 = `LyC.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-
-*geometry* driver: auto-detecting
-*geometry* detected driver: pdftex
-*geometry* verbose mode - [ preamble ] result:
-* driver: pdftex
-* paper: a4paper
-* layout: <same size as paper>
-* layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: 
-* h-part:(L,W,R)=(56.9055pt, 483.69687pt, 56.9055pt)
-* v-part:(T,H,B)=(85.35826pt, 674.33032pt, 85.35826pt)
-* \paperwidth=597.50787pt
-* \paperheight=845.04684pt
-* \textwidth=483.69687pt
-* \textheight=674.33032pt
-* \oddsidemargin=-15.36449pt
-* \evensidemargin=-15.36449pt
-* \topmargin=-23.91173pt
-* \headheight=12.0pt
-* \headsep=25.0pt
-* \topskip=12.0pt
-* \footskip=30.0pt
-* \marginparwidth=35.0pt
-* \marginparsep=10.0pt
-* \columnsep=10.0pt
-* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
-* \hoffset=0.0pt
-* \voffset=0.0pt
-* \mag=1000
-* \@twocolumnfalse
-* \@twosidefalse
-* \@mparswitchfalse
-* \@reversemarginfalse
-* (1in=72.27pt=25.4mm, 1cm=28.453pt)
-
-(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+ (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count340
-\scratchdimen=\dimen276
+\scratchcounter=\count337
+\scratchdimen=\dimen268
 \scratchbox=\box91
-\nofMPsegments=\count341
-\nofMParguments=\count342
-\everyMPshowfont=\toks55
-\MPscratchCnt=\count343
-\MPscratchDim=\dimen277
-\MPnumerator=\count344
-\makeMPintoPDFobject=\count345
-\everyMPtoPDFconversion=\toks56
+\nofMPsegments=\count338
+\nofMParguments=\count339
+\everyMPshowfont=\toks54
+\MPscratchCnt=\count340
+\MPscratchDim=\dimen269
+\MPnumerator=\count341
+\makeMPintoPDFobject=\count342
+\everyMPtoPDFconversion=\toks55
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -809,17 +763,25 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 <../Images/UPA.jpg, id=4, 602.25pt x 770.88pt>
 File: ../Images/UPA.jpg Graphic file (type jpg)
 <use ../Images/UPA.jpg>
-Package pdftex.def Info: ../Images/UPA.jpg  used on input line 74.
-(pdftex.def)             Requested size: 241.84843pt x 309.56985pt.
- [1
+Package pdftex.def Info: ../Images/UPA.jpg  used on input line 67.
+(pdftex.def)             Requested size: 195.0pt x 249.60378pt.
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc} <../Images/UPA.jpg>] [1]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}] [1]
 <../Images/SeverinoDiGiovanni.jpg, id=15, 174.02809pt x 249.44026pt>
 File: ../Images/SeverinoDiGiovanni.jpg Graphic file (type jpg)
 <use ../Images/SeverinoDiGiovanni.jpg>
-Package pdftex.def Info: ../Images/SeverinoDiGiovanni.jpg  used on input line 89.
-(pdftex.def)             Requested size: 241.84843pt x 346.67148pt.
- [1 <../Images/SeverinoDiGiovanni.jpg>] (./LyC.toc
+Package pdftex.def Info: ../Images/SeverinoDiGiovanni.jpg  used on input line 82.
+(pdftex.def)             Requested size: 195.0pt x 279.51582pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+(./LyC.toc
 LaTeX Font Info:    Trying to load font information for OT1+mlmr on input line 2.
  (/usr/share/texlive/texmf-dist/tex/latex/mlmodern/ot1mlmr.fd
 File: ot1mlmr.fd 2021/01/11 v1.0 Font defs for mlmodern
@@ -853,60 +815,61 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 6.0pt on input line 2.
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 2.
- (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd))
+ (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd) [1 <../Images/UPA.jpg>] [2{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc} <../Images/SeverinoDiGiovanni.jpg>])
 \tf@toc=\write5
 \openout5 = `LyC.toc'.
 
- [2{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}]
+ [3]
 LaTeX Font Info:    Font shape `U/BOONDOX-calo/m/n' will be
-(Font)              scaled to size 12.0pt on input line 114.
+(Font)              scaled to size 12.0pt on input line 107.
 LaTeX Font Info:    Font shape `U/BOONDOX-calo/m/n' will be
-(Font)              scaled to size 8.0pt on input line 114.
+(Font)              scaled to size 8.0pt on input line 107.
 LaTeX Font Info:    Font shape `U/BOONDOX-calo/m/n' will be
-(Font)              scaled to size 6.0pt on input line 114.
+(Font)              scaled to size 6.0pt on input line 107.
+ [4{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}]
+Overfull \hbox (49.04294pt too wide) in paragraph at lines 187--195
+\OML/mlmm/m/it/12 p[] \OMS/mlmsy/m/n/12 ^^T []$\T1/mlmr/m/n/12 , donde $\OMS/mlmsy/m/n/12 ^^T$ \T1/mlmr/m/n/12 es el or-den aso-ci-ado a $\U/BOONDOX-calo/m/n/12 P$\T1/mlmr/m/n/12 . Si el con-junto $[]$
+ []
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[3{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}]
+[5]
 LaTeX Font Info:    External font `mlmex10' loaded for size
-(Font)              <10.95> on input line 214.
+(Font)              <10.95> on input line 207.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.95pt on input line 214.
+(Font)              scaled to size 10.95pt on input line 207.
 LaTeX Font Info:    Font shape `U/BOONDOX-calo/m/n' will be
-(Font)              scaled to size 10.95pt on input line 214.
- [4] [5] [6] [7]
-LaTeX Font Info:    Trying to load font information for TS1+mlmr on input line 413.
+(Font)              scaled to size 10.95pt on input line 207.
+ [6] [7] [8] [9]
+LaTeX Font Info:    Trying to load font information for TS1+mlmr on input line 406.
  (/usr/share/texlive/texmf-dist/tex/latex/mlmodern/ts1mlmr.fd
 File: ts1mlmr.fd 2021/01/11 v1.0 Font defs for mlmodern
-) [8{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}] [9]
+) [10{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}] [11] [12]
 LaTeX Font Info:    External font `mlmex10' loaded for size
-(Font)              <14.4> on input line 529.
+(Font)              <14.4> on input line 522.
 LaTeX Font Info:    External font `mlmex10' loaded for size
-(Font)              <10> on input line 529.
+(Font)              <10> on input line 522.
 LaTeX Font Info:    External font `mlmex10' loaded for size
-(Font)              <7> on input line 529.
+(Font)              <7> on input line 522.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 14.4pt on input line 529.
+(Font)              scaled to size 14.4pt on input line 522.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.0pt on input line 529.
+(Font)              scaled to size 10.0pt on input line 522.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.0pt on input line 529.
+(Font)              scaled to size 7.0pt on input line 522.
 LaTeX Font Info:    Font shape `U/BOONDOX-calo/m/n' will be
-(Font)              scaled to size 14.4pt on input line 529.
+(Font)              scaled to size 14.4pt on input line 522.
 LaTeX Font Info:    Font shape `U/BOONDOX-calo/m/n' will be
-(Font)              scaled to size 10.0pt on input line 529.
+(Font)              scaled to size 10.0pt on input line 522.
 LaTeX Font Info:    Font shape `U/BOONDOX-calo/m/n' will be
-(Font)              scaled to size 7.0pt on input line 529.
- [10]
+(Font)              scaled to size 7.0pt on input line 522.
+ [13] [14] [15]
 
-./LyC.tex:650: Package pgfkeys Error: I do not know the key '/tikz/box' and I am going to ignore it. Perhaps you misspelled it.
+./LyC.tex:643: Package pgfkeys Error: I do not know the key '/tikz/box' and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.650 ...box, draw, above=1cm of bot, xshift=-2cm]
+l.643 ...box, draw, above=1cm of bot, xshift=-2cm]
                                                    (Sigma) {$\hat{\Sigma}$};
 This error message was generated by an \errmessage
 command, so I can't give any explicit help.
@@ -914,43 +877,47 @@ Pretend that you're Hercule Poirot: Examine all clues,
 and deduce the truth by order and method.
 
 
-./LyC.tex:651: Package pgfkeys Error: I do not know the key '/tikz/box' and I am going to ignore it. Perhaps you misspelled it.
+./LyC.tex:644: Package pgfkeys Error: I do not know the key '/tikz/box' and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.651 ...[box, draw, above=1cm of bot, xshift=2cm]
+l.644 ...[box, draw, above=1cm of bot, xshift=2cm]
                                                    (ZOm) {$\mathbb{Z} \times...
 (That was another \errmessage.)
 
-[11] [12] [13]
-LaTeX Font Info:    External font `mlmex10' loaded for size
-(Font)              <5> on input line 856.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.0pt on input line 856.
-LaTeX Font Info:    Font shape `U/BOONDOX-calo/m/n' will be
-(Font)              scaled to size 5.0pt on input line 856.
-
-Overfull \hbox (17.55576pt too wide) in paragraph at lines 858--859
- [][] 
+[16]
+Overfull \hbox (37.19302pt too wide) detected at line 698
+[]
  []
 
-[14] [15]
-LaTeX Font Info:    Trying to load font information for T1+mlmtt on input line 991.
+[17] [18]
+./LyC.tex:785: Undefined control sequence.
+l.785   \lambda x . (\lambda y. xyx)x = \lambdax
+                                                .(\lambda y.(xy)x)x
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[19] [20]
+LaTeX Font Info:    Trying to load font information for T1+mlmtt on input line 891.
  (/usr/share/texlive/texmf-dist/tex/latex/mlmodern/t1mlmtt.fd
 File: t1mlmtt.fd 2021/01/11 v1.0 Font defs for mlmodern
-) [16] [17] [18]
-Package mdframed Info: Not enough space on this page on input line 1052.
- [19] [20]
-Overfull \hbox (4.41554pt too wide) in paragraph at lines 1235--1238
-[]\T1/mlmr/m/n/10.95 Dado que $[] \OMS/mlmsy/m/n/10.95 [ []$ \T1/mlmr/m/n/10.95 es una par-ti-ción de $\U/msb/m/n/10.95 B\OMS/mlmsy/m/n/10.95 ? 7! \U/msb/m/n/10.95 B\OMS/mlmsy/m/n/10.95 ?$\T1/mlmr/m/n/10.95 , y $[]$
+)
+Overfull \hbox (64.91052pt too wide) in paragraph at lines 891--892
+[][] 
  []
 
-./LyC.tex:1252: Missing delimiter (. inserted).
+[21] [22] [23]
+Package mdframed Info: Not enough space on this page on input line 952.
+ [24] [25] [26] [27]
+./LyC.tex:1152: Missing delimiter (. inserted).
 <to be read again> 
                    {
-l.1252 Obviamente hay dos funciones en $\left{
+l.1152 Obviamente hay dos funciones en $\left{
                                                C_k : k \neq \bot \right} $. ...
 I was expecting to see something like `(' or `\{' or
 `\}' here. If you typed, e.g., `{' instead of `\{', you
@@ -959,10 +926,10 @@ braces don't get unbalanced. Otherwise just proceed.
 Acceptable delimiters are characters whose \delcode is
 nonnegative, or you can use `\delimiter <delimiter code>'.
 
-./LyC.tex:1252: Missing } inserted.
+./LyC.tex:1152: Missing } inserted.
 <inserted text> 
                 }
-l.1252 ...ones en $\left{ C_k : k \neq \bot \right
+l.1152 ...ones en $\left{ C_k : k \neq \bot \right
                                                   } $. En $\left{ f : f(\bot...
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -970,10 +937,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./LyC.tex:1252: Missing delimiter (. inserted).
+./LyC.tex:1152: Missing delimiter (. inserted).
 <to be read again> 
                    }
-l.1252 ...nes en $\left{ C_k : k \neq \bot \right}
+l.1152 ...nes en $\left{ C_k : k \neq \bot \right}
                                                    $. En $\left{ f : f(\bot ...
 I was expecting to see something like `(' or `\{' or
 `\}' here. If you typed, e.g., `{' instead of `\{', you
@@ -982,10 +949,10 @@ braces don't get unbalanced. Otherwise just proceed.
 Acceptable delimiters are characters whose \delcode is
 nonnegative, or you can use `\delimiter <delimiter code>'.
 
-./LyC.tex:1252: Extra }, or forgotten $.
+./LyC.tex:1152: Extra }, or forgotten $.
 <recently read> }
                  
-l.1252 ...nes en $\left{ C_k : k \neq \bot \right}
+l.1152 ...nes en $\left{ C_k : k \neq \bot \right}
                                                    $. En $\left{ f : f(\bot ...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -993,10 +960,10 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-./LyC.tex:1252: Missing delimiter (. inserted).
+./LyC.tex:1152: Missing delimiter (. inserted).
 <to be read again> 
                    {
-l.1252 ... C_k : k \neq \bot \right} $. En $\left{
+l.1152 ... C_k : k \neq \bot \right} $. En $\left{
                                                    f : f(\bot ) = \bot \righ...
 I was expecting to see something like `(' or `\{' or
 `\}' here. If you typed, e.g., `{' instead of `\{', you
@@ -1005,10 +972,10 @@ braces don't get unbalanced. Otherwise just proceed.
 Acceptable delimiters are characters whose \delcode is
 nonnegative, or you can use `\delimiter <delimiter code>'.
 
-./LyC.tex:1252: Missing } inserted.
+./LyC.tex:1152: Missing } inserted.
 <inserted text> 
                 }
-l.1252 ...$. En $\left{ f : f(\bot ) = \bot \right
+l.1152 ...$. En $\left{ f : f(\bot ) = \bot \right
                                                   } $ tenemos $3^2 = 9$ func...
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1016,10 +983,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./LyC.tex:1252: Missing delimiter (. inserted).
+./LyC.tex:1152: Missing delimiter (. inserted).
 <to be read again> 
                    }
-l.1252 .... En $\left{ f : f(\bot ) = \bot \right}
+l.1152 .... En $\left{ f : f(\bot ) = \bot \right}
                                                    $ tenemos $3^2 = 9$ funci...
 I was expecting to see something like `(' or `\{' or
 `\}' here. If you typed, e.g., `{' instead of `\{', you
@@ -1028,10 +995,10 @@ braces don't get unbalanced. Otherwise just proceed.
 Acceptable delimiters are characters whose \delcode is
 nonnegative, or you can use `\delimiter <delimiter code>'.
 
-./LyC.tex:1252: Extra }, or forgotten $.
+./LyC.tex:1152: Extra }, or forgotten $.
 <recently read> }
                  
-l.1252 .... En $\left{ f : f(\bot ) = \bot \right}
+l.1152 .... En $\left{ f : f(\bot ) = \bot \right}
                                                    $ tenemos $3^2 = 9$ funci...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1039,11 +1006,11 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-[21] [22] [23] [24] [25]
-Package mdframed Info: Not enough space on this page on input line 1478.
+[28] [29] [30] [31] [32]
+Package mdframed Info: Not enough space on this page on input line 1378.
 
-./LyC.tex:1485: Undefined control sequence.
-l.1485     f & \f
+./LyC.tex:1385: Undefined control sequence.
+l.1385     f & \f
                   \text{ es total} \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1051,28 +1018,34 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-
-Overfull \hbox (18.5584pt too wide) in paragraph at lines 1551--1555
-[]\T1/mlmr/bx/n/10.95 Prueba. \T1/mlmr/m/n/10.95 Como cada $\OML/mlmm/m/it/10.95 '[]$ \T1/mlmr/m/n/10.95 es no-total, $\OML/mlmm/m/it/10.95 F\OT1/mlmr/m/n/10.95 (\OML/mlmm/m/it/10.95 '[]\OT1/mlmr/m/n/10.95 ) = \OMS/mlmsy/m/n/10.95 ?[]$\T1/mlmr/m/n/10.95 . Por lo tanto, la ca-dena $\OML/mlmm/m/it/10.95 F\OT1/mlmr/m/n/10.95 (\OML/mlmm/m/it/10.95 '[]\OT1/mlmr/m/n/10.95 )\OML/mlmm/m/it/10.95 ; F\OT1/mlmr/m/n/10.95 (\OML/mlmm/m/it/10.95 '[]\OT1/mlmr/m/n/10.95 )\OML/mlmm/m/it/10.95 ; []$
+[33]
+Overfull \hbox (2.86736pt too wide) in paragraph at lines 1451--1455
+\T1/mlmr/m/n/10.95 ca-dena $\OML/mlmm/m/it/10.95 F\OT1/mlmr/m/n/10.95 (\OML/mlmm/m/it/10.95 '[]\OT1/mlmr/m/n/10.95 )\OML/mlmm/m/it/10.95 ; F\OT1/mlmr/m/n/10.95 (\OML/mlmm/m/it/10.95 '[]\OT1/mlmr/m/n/10.95 )\OML/mlmm/m/it/10.95 ; []$ \T1/mlmr/m/n/10.95 es sim-ple-mente la ca-dena $\OMS/mlmsy/m/n/10.95 ?[] ^^T$ $?[] ^^T
  []
 
-[26] [27] [28] [29]
-./LyC.tex:1715: Extra \right.
+[34] [35] [36]
+./LyC.tex:1615: Extra \right.
 <argument> ... )-1)\ldots \cdot 2 \cdot 1 \right )
                                                    & 2 \leq n -1 \leq k \\ n...
-l.1715 \end{align*}
+l.1615 \end{align*}
                    
 I'm ignoring a \right that had no matching \left.
 
-./LyC.tex:1715: Extra \right.
+./LyC.tex:1615: Extra \right.
 <argument> ... )-1)\ldots \cdot 2 \cdot 1 \right )
                                                    & 2 \leq n -1 \leq k \\ n...
-l.1715 \end{align*}
+l.1615 \end{align*}
                    
 I'm ignoring a \right that had no matching \left.
 
-./LyC.tex:1722: Misplaced alignment tab character &.
-l.1722   &
+
+Overfull \hbox (3.5466pt too wide) detected at line 1615
+[]
+ []
+
+[37]
+./LyC.tex:1622: Misplaced alignment tab character &.
+l.1622   &
           = n \mapsto  \begin{cases}
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1081,9 +1054,8 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[30]
-./LyC.tex:1732: Misplaced alignment tab character &.
-l.1732 ...bb{Z} \mapsto \mathbb{Z}_\bot  \right))&
+./LyC.tex:1632: Misplaced alignment tab character &.
+l.1632 ...bb{Z} \mapsto \mathbb{Z}_\bot  \right))&
                                                   = n \mapsto  \begin{cases}
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1092,11 +1064,11 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[31]
-./LyC.tex:1778: Undefined control sequence.
+[38]
+./LyC.tex:1678: Undefined control sequence.
 <argument> ...&= \llbracket c_2 \rrbracket _{\Bot 
                                                   }\left ( \llbracket p \rrb...
-l.1778 \end{align*}
+l.1678 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1104,10 +1076,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:1778: Undefined control sequence.
+./LyC.tex:1678: Undefined control sequence.
 <argument> ...s} \llbracket c_2 \rrbracket _{\Bot 
                                                   } \left (\llbracket c_0 \r...
-l.1778 \end{align*}
+l.1678 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1115,10 +1087,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:1778: Undefined control sequence.
+./LyC.tex:1678: Undefined control sequence.
 <argument> ...\\ \llbracket c_2 \rrbracket _{\Bot 
                                                   } \left (\llbracket c_1 \r...
-l.1778 \end{align*}
+l.1678 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1126,10 +1098,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:1778: Undefined control sequence.
+./LyC.tex:1678: Undefined control sequence.
 <argument> ...&= \llbracket c_2 \rrbracket _{\Bot 
                                                   }\left ( \llbracket p \rrb...
-l.1778 \end{align*}
+l.1678 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1137,10 +1109,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:1778: Undefined control sequence.
+./LyC.tex:1678: Undefined control sequence.
 <argument> ...s} \llbracket c_2 \rrbracket _{\Bot 
                                                   } \left (\llbracket c_0 \r...
-l.1778 \end{align*}
+l.1678 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1148,10 +1120,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:1778: Undefined control sequence.
+./LyC.tex:1678: Undefined control sequence.
 <argument> ...\\ \llbracket c_2 \rrbracket _{\Bot 
                                                   } \left (\llbracket c_1 \r...
-l.1778 \end{align*}
+l.1678 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1159,10 +1131,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:1818: Undefined control sequence.
+./LyC.tex:1718: Undefined control sequence.
 <argument> ...xtbf { else } c_1 \rrbracket _{\Bot 
                                                   } \left ( \llbracket c_2 \...
-l.1818 \end{align*}
+l.1718 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1170,10 +1142,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:1818: Undefined control sequence.
+./LyC.tex:1718: Undefined control sequence.
 <argument> ...xtbf { else } c_1 \rrbracket _{\Bot 
                                                   } \left ( \llbracket c_2 \...
-l.1818 \end{align*}
+l.1718 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1181,11 +1153,14 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[32]
-Package mdframed Info: Not enough space on this page on input line 1825.
+[39] [40]
+Overfull \hbox (16.77545pt too wide) in paragraph at lines 1723--1725
+[]\T1/mlmr/bx/n/12 (5) $\OT1/mlmr/m/n/12 (\OML/mlmm/m/it/12 a\OT1/mlmr/m/n/12 )$ \T1/mlmr/m/n/12 Dar la semán-tica de $[]\OML/mlmm/m/it/12 x < \OT1/mlmr/m/n/12 2[][]\OML/mlmm/m/it/12 x < \OT1/mlmr/m/n/12 0[]\OML/mlmm/m/it/12 x \OT1/mlmr/m/n/12 := 0[]\OML/mlmm/m/it/12 x \OT1/mlmr/m/n/12 :=
+ []
 
-./LyC.tex:1862: Undefined control sequence.
-l.1862     f_{\Bot
+Package mdframed Info: Not enough space on this page on input line 1725.
+./LyC.tex:1762: Undefined control sequence.
+l.1762     f_{\Bot
                   } ~ \llbracket p \rrbracket ~ \sigma & \sigma ~ x < 2
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1193,8 +1168,9 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:1882: Misplaced alignment tab character &.
-l.1882   &
+[41]
+./LyC.tex:1782: Misplaced alignment tab character &.
+l.1782   &
           =\begin{cases}
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1203,11 +1179,16 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[33] [34]
-Package mdframed Info: Not enough space on this page on input line 1971.
+[42]
+Overfull \hbox (13.80974pt too wide) detected at line 1861
+\U/msa/m/n/12 )  [] \OML/mlmm/m/it/12 F[] \OMS/mlmsy/m/n/12 ? \OT1/mlmr/m/n/12 = \OML/mlmm/m/it/12 ^^U^^[: [] \OT1/mlmr/m/n/12 = \U/stmry/m/n/12 J[]\OML/mlmm/m/it/12 ^^[ x \OMS/mlmsy/m/n/12 ^^U \OT1/mlmr/m/n/12 2[][][]\OML/mlmm/m/it/12 ^^[ x \OT1/mlmr/m/n/12 := 2\U/stmry/m/n/12 K
+ []
 
-./LyC.tex:1982: Undefined control sequence.
-l.1982     f_{\Bot
+[43]
+Package mdframed Info: Not enough space on this page on input line 1871.
+
+./LyC.tex:1882: Undefined control sequence.
+l.1882     f_{\Bot
                   } \left( ~ \llbracket p \rrbracket \sigma\right) & \sigma ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1215,8 +1196,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:1991: Undefined control sequence.
-l.1991     f_{\Bot
+./LyC.tex:1891: Undefined control sequence.
+l.1891     f_{\Bot
                   } \left( [\sigma \mid x : \sigma ~ x + 1] \right)  & \sigm...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1224,8 +1205,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:1993: Undefined control sequence.
-l.1993     f_{\Bot
+./LyC.tex:1893: Undefined control sequence.
+l.1893     f_{\Bot
                   } \sigma  & \sigma ~ x < 2 \land \sigma ~ y \neq 0
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1233,10 +1214,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2029: Undefined control sequence.
+./LyC.tex:1929: Undefined control sequence.
 <argument> ...gma ~ x \geq 2 \\ (F ~ \bot )_{\Bot 
                                                   } \left ( [\sigma \mid x :...
-l.2029 \end{align*}
+l.1929 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1244,10 +1225,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2029: Undefined control sequence.
+./LyC.tex:1929: Undefined control sequence.
 <argument> ...\sigma ~ y = 0 \\ (F ~ \bot )_{\Bot 
                                                   } \sigma & \sigma ~ x < 2 ...
-l.2029 \end{align*}
+l.1929 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1255,10 +1236,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2029: Undefined control sequence.
+./LyC.tex:1929: Undefined control sequence.
 <argument> ...gma ~ x \geq 2 \\ (F ~ \bot )_{\Bot 
                                                   } \left ( [\sigma \mid x :...
-l.2029 \end{align*}
+l.1929 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1266,10 +1247,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2029: Undefined control sequence.
+./LyC.tex:1929: Undefined control sequence.
 <argument> ...\sigma ~ y = 0 \\ (F ~ \bot )_{\Bot 
                                                   } \sigma & \sigma ~ x < 2 ...
-l.2029 \end{align*}
+l.1929 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1277,10 +1258,11 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2047: Undefined control sequence.
+[44]
+./LyC.tex:1947: Undefined control sequence.
 <argument> ...a ~ x \geq 2 \\ (F ~ \bot )^2_{\Bot 
                                                   } \left ( [\sigma \mid x :...
-l.2047 \end{align*}
+l.1947 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1288,10 +1270,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2047: Undefined control sequence.
+./LyC.tex:1947: Undefined control sequence.
 <argument> ...igma ~ y = 0 \\ (F ~ \bot )^2_{\Bot 
                                                   } \sigma & \sigma ~ x < 2 ...
-l.2047 \end{align*}
+l.1947 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1299,10 +1281,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2047: Undefined control sequence.
+./LyC.tex:1947: Undefined control sequence.
 <argument> ...a ~ x \geq 2 \\ (F ~ \bot )^2_{\Bot 
                                                   } \left ( [\sigma \mid x :...
-l.2047 \end{align*}
+l.1947 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1310,10 +1292,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2047: Undefined control sequence.
+./LyC.tex:1947: Undefined control sequence.
 <argument> ...igma ~ y = 0 \\ (F ~ \bot )^2_{\Bot 
                                                   } \sigma & \sigma ~ x < 2 ...
-l.2047 \end{align*}
+l.1947 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1321,11 +1303,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[35]
-./LyC.tex:2098: Undefined control sequence.
+./LyC.tex:1998: Undefined control sequence.
 <argument> ...a ~ x \geq 2 \\ (F ~ \bot )^k_{\Bot 
                                                   } \left ( [\sigma \mid x :...
-l.2098 \end{align*}
+l.1998 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1333,10 +1314,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2098: Undefined control sequence.
+./LyC.tex:1998: Undefined control sequence.
 <argument> ...igma ~ y = 0 \\ (F ~ \bot )^k_{\Bot 
                                                   } \sigma & \sigma ~ x < 2 ...
-l.2098 \end{align*}
+l.1998 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1344,10 +1325,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2098: Undefined control sequence.
+./LyC.tex:1998: Undefined control sequence.
 <argument> ...a ~ x \geq 2 \\ (F ~ \bot )^k_{\Bot 
                                                   } \left ( [\sigma \mid x :...
-l.2098 \end{align*}
+l.1998 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1355,10 +1336,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2098: Undefined control sequence.
+./LyC.tex:1998: Undefined control sequence.
 <argument> ...igma ~ y = 0 \\ (F ~ \bot )^k_{\Bot 
                                                   } \sigma & \sigma ~ x < 2 ...
-l.2098 \end{align*}
+l.1998 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1366,11 +1347,18 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[36] [37]
-Package mdframed Info: Not enough space on this page on input line 2130.
+[45]
+LaTeX Font Info:    External font `mlmex10' loaded for size
+(Font)              <5> on input line 2012.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 5.0pt on input line 2012.
+LaTeX Font Info:    Font shape `U/BOONDOX-calo/m/n' will be
+(Font)              scaled to size 5.0pt on input line 2012.
+ [46] [47]
+Package mdframed Info: Not enough space on this page on input line 2030.
 
-./LyC.tex:2144: Undefined control sequence.
-l.2144     f_{\Bot
+./LyC.tex:2044: Undefined control sequence.
+l.2044     f_{\Bot
                   }\llbracket c \rrbracket\sigma & c.c.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1378,13 +1366,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-
-Overfull \hbox (19.4578pt too wide) in paragraph at lines 2164--2167
-[]$\OT1/mlmr/m/n/12 (\OML/mlmm/m/it/12 b\OT1/mlmr/m/n/12 )$ \T1/mlmr/m/n/12 Dado que la semán-tica de $[]\OML/mlmm/m/it/12 b[]c$ \T1/mlmr/m/n/12 es un punto fijo de $\OML/mlmm/m/it/12 F$\T1/mlmr/m/n/12 , si us-amos $\OML/mlmm/m/it/12 ' \OT1/mlmr/m/n/12 := \U/stmry/m/n/12 J[]\OML/mlmm/m/it/12 b[]c\U/stmry/m/n/12 K$\T1/mlmr/m/n/12 ,
- []
-
-./LyC.tex:2179: Undefined control sequence.
-l.2179   \varphi ~ \sigma = \varphi_{\Bot
+./LyC.tex:2079: Undefined control sequence.
+l.2079   \varphi ~ \sigma = \varphi_{\Bot
                                          }\left( \varphi_{\Bot} \ldots \left(
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1392,8 +1375,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2179: Undefined control sequence.
-l.2179 ...gma = \varphi_{\Bot}\left( \varphi_{\Bot
+./LyC.tex:2079: Undefined control sequence.
+l.2079 ...gma = \varphi_{\Bot}\left( \varphi_{\Bot
                                                   } \ldots \left(
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1401,8 +1384,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2180: Undefined control sequence.
-l.2180   \varphi_{\Bot
+./LyC.tex:2080: Undefined control sequence.
+l.2080   \varphi_{\Bot
                       }\llbracket c \rrbracket \sigma \right)  \right) =
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1410,8 +1393,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2181: Undefined control sequence.
-l.2181   \varphi_{\Bot
+./LyC.tex:2081: Undefined control sequence.
+l.2081   \varphi_{\Bot
                       }^k \llbracket c \rrbracket\sigma
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1419,8 +1402,9 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2189: Undefined control sequence.
-l.2189 ...\llbracket b \rrbracket( \varphi^k_{\Bot
+[48]
+./LyC.tex:2089: Undefined control sequence.
+l.2089 ...\llbracket b \rrbracket( \varphi^k_{\Bot
                                                   }\llbracket c \rrbracket\s...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1428,23 +1412,32 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[38] [39]
-Package mdframed Info: Not enough space on this page on input line 2210.
- [40]
-Package mdframed Info: Not enough space on this page on input line 2276.
- [41] [42]
-Package mdframed Info: Not enough space on this page on input line 2325.
- [43] [44]
-Package mdframed Info: Not enough space on this page on input line 2465.
- [45] [46]
-Package mdframed Info: Not enough space on this page on input line 2597.
- [47] [48]
-Package mdframed Info: Not enough space on this page on input line 2666.
- [49] [50]
-./LyC.tex:2868: Undefined control sequence.
+[49]
+Package mdframed Info: Not enough space on this page on input line 2110.
+
+Overfull \hbox (43.47908pt too wide) detected at line 2122
+\OML/mlmm/m/it/12 w[] \OT1/mlmr/m/n/12 := []\OML/mlmm/m/it/12 x \OMS/mlmsy/m/n/12 ^^T \OT1/mlmr/m/n/12 0[]\OML/mlmm/m/it/12 x \OT1/mlmr/m/n/12 := \OML/mlmm/m/it/12 x \OT1/mlmr/m/n/12 + 1\OML/mlmm/m/it/12 ;  w[] \OT1/mlmr/m/n/12 := []\OML/mlmm/m/it/12 x \OMS/mlmsy/m/n/12 ^^T \OT1/mlmr/m/n/12 0[](\OML/mlmm/m/it/12 x \OT1/mlmr/m/n/12 := \OML/mlmm/m/it/12 x \OT1/mlmr/m/n/12 + 1); (\OML/mlmm/m/it/12 x \OT1/mlmr/m/n/12 := \OML/mlmm/m/it/12 x \OT1/mlmr/m/n/12 + 1)
+ []
+
+[50] [51]
+Package mdframed Info: Not enough space on this page on input line 2176.
+ [52] [53]
+Package mdframed Info: Not enough space on this page on input line 2225.
+ [54] [55] [56]
+Package mdframed Info: Not enough space on this page on input line 2365.
+ [57] [58] [59]
+Package mdframed Info: Not enough space on this page on input line 2497.
+ [60] [61]
+Overfull \hbox (1.6644pt too wide) in paragraph at lines 2563--2566
+[]$\OT1/mlmr/m/n/12 (\OML/mlmm/m/it/12 e\OT1/mlmr/m/n/12 )$ $\OML/mlmm/m/it/12 x \OT1/mlmr/m/n/12 := 0; []\OML/mlmm/m/it/12 x \OT1/mlmr/m/n/12 := 1[][]\OML/mlmm/m/it/12 x < \OT1/mlmr/m/n/12 1[][] \OMS/mlmsy/m/n/12 ^^Q \OML/mlmm/m/it/12 x \OT1/mlmr/m/n/12 := 0; []\OML/mlmm/m/it/12 x <
+ []
+
+Package mdframed Info: Not enough space on this page on input line 2566.
+[62] [63] [64]
+./LyC.tex:2768: Undefined control sequence.
 <argument> ...igma & \sigma ~ x \geq 1 \\ f_{\Bot 
                                                   }(\llbracket \textbf {catc...
-l.2868 \end{align*}
+l.2768 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1452,10 +1445,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2868: Undefined control sequence.
+./LyC.tex:2768: Undefined control sequence.
 <argument> ...igma & \sigma ~ x \geq 1 \\ f_{\Bot 
                                                   }( \llbracket x := 1 \rrbr...
-l.2868 \end{align*}
+l.2768 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1463,10 +1456,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2868: Undefined control sequence.
+./LyC.tex:2768: Undefined control sequence.
 <argument> ...igma & \sigma ~ x \geq 1 \\ f_{\Bot 
                                                   }( \llbracket x := 1 \rrbr...
-l.2868 \end{align*}
+l.2768 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1474,10 +1467,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2868: Undefined control sequence.
+./LyC.tex:2768: Undefined control sequence.
 <argument> ...igma & \sigma ~ x \geq 1 \\ f_{\Bot 
                                                   } \left ( \llbracket x:= 1...
-l.2868 \end{align*}
+l.2768 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1485,10 +1478,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2868: Undefined control sequence.
+./LyC.tex:2768: Undefined control sequence.
 <argument> ...igma & \sigma ~ x \geq 1 \\ f_{\Bot 
                                                   }(\llbracket \textbf {catc...
-l.2868 \end{align*}
+l.2768 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1496,10 +1489,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2868: Undefined control sequence.
+./LyC.tex:2768: Undefined control sequence.
 <argument> ...igma & \sigma ~ x \geq 1 \\ f_{\Bot 
                                                   }( \llbracket x := 1 \rrbr...
-l.2868 \end{align*}
+l.2768 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1507,10 +1500,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2868: Undefined control sequence.
+./LyC.tex:2768: Undefined control sequence.
 <argument> ...igma & \sigma ~ x \geq 1 \\ f_{\Bot 
                                                   }( \llbracket x := 1 \rrbr...
-l.2868 \end{align*}
+l.2768 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1518,10 +1511,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2868: Undefined control sequence.
+./LyC.tex:2768: Undefined control sequence.
 <argument> ...igma & \sigma ~ x \geq 1 \\ f_{\Bot 
                                                   } \left ( \llbracket x:= 1...
-l.2868 \end{align*}
+l.2768 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1529,11 +1522,16 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[51] [52] [53]
-./LyC.tex:3029: Undefined control sequence.
+[65] [66]
+Overfull \hbox (10.8858pt too wide) detected at line 2816
+\U/stmry/m/n/12 J[]\OML/mlmm/m/it/12 x < \OT1/mlmr/m/n/12 1[][]\OML/mlmm/m/it/12 x \OT1/mlmr/m/n/12 := 1[]\U/stmry/m/n/12 K \OT1/mlmr/m/n/12 = [] \OML/mlmm/m/it/12 F[] \OMS/mlmsy/m/n/12 ? \OT1/mlmr/m/n/12 = \OML/mlmm/m/it/12 ^^U^^[: []
+ []
+
+[67] [68] [69]
+./LyC.tex:2929: Undefined control sequence.
 <argument> ...right > \right ) \\ &=\iota _{\texn 
                                                   {in}} \left ( \lambda ~ k ...
-l.3029 \end{align*}
+l.2929 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1541,10 +1539,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:3029: Undefined control sequence.
+./LyC.tex:2929: Undefined control sequence.
 <argument> ...right > \right ) \\ &=\iota _{\texn 
                                                   {in}} \left ( \lambda ~ k ...
-l.3029 \end{align*}
+l.2929 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1552,33 +1550,38 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[54] [55] [56]
-Package mdframed Info: Not enough space on this page on input line 3092.
- [57]
-Package mdframed Info: Not enough space on this page on input line 3164.
- [58] [59]
-Package mdframed Info: Not enough space on this page on input line 3246.
- [60]
-Package mdframed Info: Not enough space on this page on input line 3278.
- [61] (./LyC.aux)
+[70]
+Overfull \hbox (80.89796pt too wide) detected at line 2970
+[]
+ []
+
+[71]
+Package mdframed Info: Not enough space on this page on input line 2992.
+ [72] [73]
+Package mdframed Info: Not enough space on this page on input line 3064.
+ [74] [75]
+Package mdframed Info: Not enough space on this page on input line 3146.
+ [76]
+Package mdframed Info: Not enough space on this page on input line 3178.
+ [77] [78] (./LyC.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 29377 strings out of 474222
- 678726 string characters out of 5748733
- 1942975 words of memory out of 5000000
- 51156 multiletter control sequences out of 15000+600000
+ 28818 strings out of 474222
+ 669897 string characters out of 5748733
+ 1943975 words of memory out of 5000000
+ 50604 multiletter control sequences out of 15000+600000
  649414 words of font info for 120 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 130i,18n,124p,1598b,2065s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmri12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/boondox/zxxrw8a.pfb>
-Output written on LyC.pdf (63 pages, 1301762 bytes).
+ 130i,18n,124p,1598b,2071s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmri12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/boondox/zxxrw8a.pfb>
+Output written on LyC.pdf (80 pages, 1299314 bytes).
 PDF statistics:
- 355 PDF objects out of 1000 (max. 8388607)
- 232 compressed objects within 3 object streams
+ 405 PDF objects out of 1000 (max. 8388607)
+ 267 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 

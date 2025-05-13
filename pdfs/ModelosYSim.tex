@@ -8,7 +8,7 @@
 \usepackage{textcomp}
 \usepackage{amssymb}
 \usepackage{amsmath, amssymb}
-\usepackage{newtxtext} \usepackage{newtxmath}
+\usepackage{mlmodern}
 \newtheorem{problem}{Problem}
 \newtheorem{example}{Example}
 \newtheorem{lemma}{Lemma}
@@ -1850,6 +1850,413 @@ def sim5_bernoullis(p, n):
 
 
 
+\begin{myframe}
+  $\textbf{(8)}$ $(a)$ Simule usando transformada inversa y aceptación y rechazo la variable
+  $X$ con distribución:
+
+  \begin{equation*}
+    P(X = i) = \frac{ \frac{\lambda^i}{i!} e^{-\lambda} }{\sum_{j=0}^k
+    \frac{\lambda^j}{j!}e^{-\lambda}}, \qquad i = 0, \ldots, k
+  \end{equation*}
+
+  $(b)$ Hágalo en el caso en que $\lambda =0.7, k = 10$.
+\end{myframe}
+
+$(a)$ Notemos que 
+
+\begin{equation*}
+  P(X = i) = \frac{f_Y(i)}{F_Y(k)}
+\end{equation*}
+
+donde $Y \sim \mathcal{P}(\lambda)$. El denominador es simplemente una constante
+$C$,
+y por lo tanto puede guardarse en una variable \texttt{den}. Para el numerador,
+podemos usar simplemente la recurrencia de la distribución de Poisson. Es decir,
+
+\begin{equation*}
+  P(X = 0) = \frac{e^{-\lambda}}{C}, P(X=1) =
+  \frac{e^{-\lambda}(\frac{\lambda}{1})}{C}, P(X=2) =
+  \frac{e^{-\lambda}\frac{\lambda}{1} \frac{\lambda}{2}}{C}, \ldots
+\end{equation*}
+
+Entonces, usando el método de la transformada inversa,
+
+\footnotesize
+\begin{verbatim}
+def sim8(k, lamda):
+  den = sum( [ (lamda**j / factorial(j)) * exp(-lamda) for j in range(k+1) ] )
+  i = 0 
+  p = exp(-lamda)/den
+  F = p 
+  U = random()
+
+  while True:
+    if U < F:
+      return i 
+    i += 1 
+    p = p * (lamda/i) 
+    F += p
+\end{verbatim}
+\normalsize
+
+Usando el método de aceptación y rechazo, tomamos $Y \sim \mathcal{U}\left\{
+0,\ldots, k \right\} $. Claramente, $f_Y(x_j) = 1 / (k+1)$ para todo $j$, con lo
+cual buscamos el máximo $f_X(x_j)$. Pero $f_X$ tiene un denominador constante y
+un numerador que es la densidad de Poisson, cuyo máximo es $\left\lfloor \lambda
+\right\rfloor$. Por lo tanto, tomamos 
+
+\begin{equation*}
+  c := \frac{\left\lceil \lambda \right\rceil}{\frac{1}{k+1}} =
+  (k+1)\left\lceil \lambda \right\rceil
+\end{equation*}
+
+Por lo tanto,
+
+\footnotesize
+\begin{verbatim}
+def sim8_aceptacionyrechazo(k, lamda):
+  den = sum( [ (lamda**j / factorial(j)) * exp(-lamda) for j in range(k+1) ] )
+  c = ceil(lamda) * ( k+1 )
+  while True:
+    y = randint(0, k) 
+    num = exp(-lamda) * ((lamda**y)/factorial(y)) # Numerator of density of X=y
+    px = num/den # P(X = y)
+    u = random()
+    if u < px/(c /(k+1)):
+      return y 
+\end{verbatim}
+\normalsize
+~
+
+$(b)$ El valor exacto es 
+
+\begin{align*}
+  P(X > 2) 
+  &= 1 - P(X \leq 2) \\ 
+  &=1 - \left( \frac{e^{-\lambda}}{C} + \frac{e^{-\lambda}\lambda}{C} +
+  \frac{e^{-\lambda}\frac{\lambda}{1}\frac{\lambda}{2}}{C}\right)
+  \\ 
+  &=1 - \frac{1}{C}(e^{-\lambda} + \lambda e^{-\lambda} +
+  \frac{\lambda^2}{2}e^{-\lambda}) \\ 
+  &= 1 - \frac{0.965}{0.999} \\ 
+  &= 0.034
+\end{align*}
+
+Simular \texttt{sim8(10, 0.7)} $n = 1000$ veces y contar las veces que da un
+valor mayor a $2$ me dio $0.032$. Hacerlo con el método de aceptación y rechazo
+me dio 0.036.
+
+\pagebreak 
+
+\begin{myframe}
+  \textbf{(9)} Implemente dos métodos para generar una variable geométrica. 
+
+  $(a)$ Usando transformada inversa aplicando la fórmula recursiva para $P(X =
+  i)$.
+
+  $(b)$ Simulando ensayos con probabilidad de éxito $p$ hasta obtener un éxito.
+\end{myframe}
+
+La variable geométrica cuenta la cantidad de ensayos hasta tener un éxito. Si 
+$X$ es geométrica con probabilidad $p$, entonces $P(X = 1) = p, P(X = 2) =
+(1-p)p, P(X = 3) = (1-p)^2p, \ldots$ En general, para $k \geq 2$,
+
+\begin{equation*}
+  P(X = k) = (1-p) \cdot P(X = k - 1)
+\end{equation*}
+
+De aquí se sigue fácilmente cómo aplicar el método de aceptación y rechazo:
+
+\footnotesize 
+\begin{verbatim}
+def sim9_geometrica_transformada_inversa(p):
+  k = 1 
+  prob = p
+  F = prob
+  u = random()
+  
+  while True:
+    if u < F:
+      return k 
+    k += 1 
+    prob *= (1 - p)
+    F += prob
+
+def sim9_geometrica_alobestia(p):
+
+  k = 1
+  while True:
+    u = random()
+    if u <= p:
+      return k 
+    k += 1
+\end{verbatim}
+\normalsize
+
+\pagebreak 
+
+\section{P5}
+
+\begin{myframe}
+  \textbf{(1)} De métodos para generar variables con distribución:
+
+  \begin{align*}
+    &(a) \qquad f(x) = \begin{cases}
+      \frac{x-2}{2} & 2 \leq x \leq 3 \\ 
+      \frac{2 - x /3}{2} & 3 \leq x \leq 6 \\ 
+      0 & c.c.
+    \end{cases} \\ 
+    &(b) \qquad f(x) = \begin{cases}
+      \frac{6(x-3)}{35} & 0 \leq x \leq 1 \\ 
+      \frac{6x^2}{35} & 1 \leq x \leq 2 \\ 
+      0 & c.c.
+    \end{cases} \\ 
+    &(c)\qquad f(x) = \begin{cases}
+      \frac{e^{4x}}{4} & - \infty < x \leq 0 \\ 
+      \frac{1}{4} & 0 \leq x \leq \frac{15}{4} \\ 
+      0 & c.c.
+    \end{cases}
+  \end{align*}
+
+\end{myframe}
+
+$(a)$ Determinemos la función de densidad acumulada de cada una. 
+
+\begin{align*}
+  &(x \in [2, 3]) \qquad F(X) = \int_2^x \frac{t-2}{2} ~ dt = \frac{(x-2)^2}{4}\\
+  &(x \in [2, 3]) \qquad F(X) = \int_3^x \frac{2-\frac{x}{3}}{2} ~ dt = \frac{(x-2)^2}{4}
+\end{align*}
+
+
+
+donde estamos fijando la constante de integración $C$ en cero. Observemos que 
+
+\begin{equation*}
+  x - \frac{x^2}{12} + \frac{x^2}{4} - x = \frac{3x^2}{12}- \frac{x^2}{12} =
+  \frac{x^2}{6}
+\end{equation*}
+
+Entonces
+
+\begin{equation*}
+  F(x) = \begin{cases}
+    0 & x < 2 \\
+    \frac{x^2}{4} - x & 2 \leq x \leq 3 \\ 
+    \frac{x^2}{6} & 3 \leq x \leq 6 \\ 
+    1 & c.c.
+  \end{cases}
+\end{equation*}
+
+Observemos que $F(3) = \frac{9}{6}$
+
+\pagebreak
+
+\begin{myframe}
+  \textbf{(2)} $(a)$ Genere 
+
+  \begin{align*}
+    &(i) ~ f(x) = ax^{-(a+1)} \qquad 1 \leq x < \infty, a > 0 \\ 
+    &(ii) ~ f(x) = \frac{ x^{k-1}\exp(-x / \mu) }{(k-1)!\mu^k} \qquad 0 \leq x <
+    \infty, \mu > 0 \\ 
+    &(iii) ~ f(x) = \frac{\beta}{\gamma}(\frac{x}{\lambda})^{\beta - 1}\exp\left(
+    -\left( \frac{x}{\lambda} \right)^\beta \right), 0\leq x, \lambda > 0, \beta
+    > 0
+  \end{align*}
+\end{myframe}
+
+$(a)$ $(i)$ Sea $f(x) = ax^{-(a + 1)}$ con $1 \leq x < \infty, a > 0$. Entonces
+
+\begin{equation*}
+  F(x) = \int_1^x f(z) ~ dz 
+  =1 - x^{-a}
+\end{equation*}
+
+Sea $u \in (0, 1)$. Luego
+
+\begin{align*}
+  F(x) = u 
+  \iff &1- x^{-a} = u \\ 
+  \iff&x^{-a} = 1 - u \\ 
+  \iff&x^a = \frac{1}{1-u} \\ 
+  \iff& x = \frac{1}{\sqrt[a]{1-u} }
+\end{align*}
+
+Por lo tanto, el método de la transformada inversa nos da
+
+\footnotesize
+\begin{verbatim}
+def pareto(a):
+  u = random()
+  den = (1-u)**(1/a)
+  return 1/den
+
+# Las dist. de U y 1 - U son la misma, así que podríamos haber hecho:
+def pareto(a):
+  u = random()
+  den = u**(1/a)
+  return 1/den
+\end{verbatim}
+
+\normalsize
+
+$(ii)$ Sea 
+
+\begin{equation*}
+  f(x; k, \mu) =  \frac{ x^{k-1}\exp\left( -\frac{x}{\mu} \right)  }{\left( k-1
+  \right)!\mu^k }, \qquad 0 \leq x < \infty, \mu > 0
+\end{equation*}
+
+La distribución Erlang, cuya densidad es $f$, corresponde a la suma de $k$
+exponentiales independientes con media $\mu$. Como la media de la exponencial es
+$\frac{1}{\lambda}$, que tenga media $\mu$ significa que $\frac{1}{\lambda} =
+\mu \Rightarrow \lambda = \frac{1}{\mu}$. Es decir, debemos ser cuidadosos y
+asegurarnos de tomar $1 / \mu$ como el parámetro de las exponenciales simuladas.
+
+Veamos que si $u \in (0, 1)$ y $Y \sim \mathcal{E}(\lambda)$
+
+\begin{align*}
+  F_Y(x) = u 
+  \iff& 1 -e^{-\lambda x} = u\\ 
+  \iff&1-u = e^{-\lambda x} \\ 
+  \iff& \ln(1-u) = -\lambda x \\ 
+  \iff&-\frac{\ln(1-u)}{\lambda} = x
+\end{align*}
+
+Por lo tanto, una única exponencial se simula como sigue:
+\footnotesize
+\begin{verbatim}
+def exponential(lamda):
+  U = random()
+  num = log(1 - U)
+  den = - lamda 
+  return num/den
+\end{verbatim}
+\normalsize
+Por lo tanto, la variable Erlang se simula como sigue:
+
+\footnotesize
+\begin{verbatim}
+def erlang(k, mu):
+  return sum( [exponential(1/mu) for _ in range(k)] ) # 1 / mu como parametro
+\end{verbatim}
+\normalsize
+
+$(iii)$ Sea
+
+\begin{equation*}
+    f(x) = \frac{\beta}{\gamma}\left(\frac{x}{\lambda}\right)^{\beta - 1}\exp\left(
+    -\left( \frac{x}{\lambda} \right)^\beta \right), 0\leq x < \infty, \lambda > 0, \beta
+    > 0
+\end{equation*}
+
+Veamos que 
+
+\begin{align*}
+  F(x) 
+  &=\int_0^x f(z) ~ dz \\ 
+  &=\frac{\beta}{\gamma\lambda^{\beta-1}}\int_0^x z^{\beta - 1} \exp\left(
+  -\left( \frac{z}{\lambda} \right)^{\beta}  \right)  ~ dz \\ 
+  &=\frac{\beta}{\gamma\lambda^{\beta-1}}\left( \lambda^{\beta - 1} \right) \int_0^{-(\frac{x}{\lambda})^\beta} 
+  u^{\frac{\beta}{\beta-1}} \exp u ~  \frac{\beta z^{\beta-1}}{\lambda^\beta}
+  du &\left\{ u := -\left(\frac{z}{\lambda}\right)^\beta \right\}  \\ 
+     &=\frac{\beta}{\gamma}\cdot \frac{\beta}{\lambda^\beta}\int_0^{(-\frac{x}{\lambda})^\beta}
+     u^{\frac{\beta}{\beta - 1}} \exp u \left( -\lambda^{\beta-1}
+     u^{^\frac{\beta}{\beta - 1}} \right) ~ du \\ 
+     &=-\frac{\beta^2\lambda^{\beta - 1}}{\gamma \lambda^\beta}\int_0^{-(
+     \frac{x}{\lambda} )^\beta} u^{\frac{2\beta}{\beta - 1}} \exp u ~ du
+\end{align*}
+
+Acá nos quedamos...
+
+\pagebreal 
+
+\begin{myframe}
+  \textbf{(3)} $(a)$ Suponga que se pueden generar $n$ variables aleatorias a
+  partir de sus distribuciones de probabialidad $F_i, i=1, \ldots, n$.
+  Implemente un método para generar una aleatoria cuya distribución es 
+
+  \begin{equation*}
+    F(x) = \sum_{i=1}^n p_iF_i(x)
+  \end{equation*}
+
+  con $p_i$ positivos y tales que $\sum p_i = 1$.
+\end{myframe}
+
+Sea $\left\{ p_i \right\} $ una secuencia de $n$ valores positivos cuya suma es
+1. 
+
+~
+
+Hay $n$ variables $X_1, \ldots, X_n$ que sabemos generar. 
+
+\begin{enumerate}
+  \item Generar $Y$ una variable tal que $P(Y = i) = p_i$.
+  \item Generá un valor de $X_Y$.
+  \item Devolvé ese valor.
+\end{enumerate}
+
+\begin{verbatim}
+  def generation():
+    funciones_generadoras = [gen1, gen2, ..., genn]
+    Y = generar_Y_con_metedo_de_la_urna()
+    funcion_generadora = funciones_generadoras[Y]
+    return funcion_generadora()
+\end{verbatim}
+
+\pagebreak 
+
+\begin{myframe}
+  \textbf{(4)} Desarrolle un método para generar la variable aleatoria con
+  distribución 
+
+  \begin{equation*}
+    F(x) = \int_0^\infty x^ye^{-y} ~ dy, \qquad 0\leq x \leq 1
+  \end{equation*}
+
+  suponiendo que 
+
+  \begin{equation*}
+    P(X \leq x \mid Y = y) = x^y, \qquad 0 \leq x \leq 1
+  \end{equation*}
+\end{myframe}
+
+Notemos que $f(y) = e^{-y}$ es la densidad de una exponencial con parámetro
+$\lambda = 1$. Por ende, según el supuesto dado, lo que tenemos es
+
+\begin{align*}
+  F(x) 
+  &= \int_0^\infty \left( P(X \leq x) \mid Y = y \right)  e^{-y} ~ dy \\ 
+  &= \int_0^\infty P(X \leq x \mid Y = y) P(Y = y) ~ dy
+\end{align*}
+
+donde $Y \sim \mathcal{E}(1)$. Es decir, la fórmula de $F(x)$ se deriva de
+aplicar la ley de probabilidad total a $X$ condicionada sobre el soporte de $Y$.
+
+Como, dado un valor $y$ de $Y$, tenemos $F(x) = x^y$, obtenemos que si $u \in
+\mathcal{U}(0, 1)$:
+
+\begin{equation*}
+  F(x;y) = u 
+  \iff&x^y = u \\ 
+  \iff x = \sqrt[y]{u} 
+\end{equation*}
+
+
+\begin{enumerate}
+  \item Generar un valor de $y$ de $Y$. Sabemos hacerlo porque $Y \sim
+    \mathcal{E}(1)$.
+    \begin{enumerate}
+      \item Notar que esto condiciona $P(X \leq x) = x^y$.
+    \end{enumerate}
+  \item Generar $U \sim \mathcal{U}(0, 1)$.
+  \item Devolver $\sqrt[y]{u}$.
+\end{enumerate}
+
+Dado un valor de $Y$, la probabilidad de que $X$ esté en $[0, 0.5]$ es $0.5^y$,
+y la probabilidad de que esté en $(0.5, 1)$ es $1 - 0.5^y$.
+
+\pagebreak 
+
 
 
 
@@ -2077,25 +2484,30 @@ y dicho proceso se incluye en el algoritmo.
 
 
 
+\pagebreak 
 
+\begin{myframe}
+  \textbf{(7)} Sea $Y \sim \mathcal{P}\left( 10 \right) $. Estime $P(Y > 2)$ con $n = 1000$
+  repeticiones usando el método de la transformada inversa y el método de la
+  transformada inversa mejorado.
+\end{myframe}
 
+Recordemos la fórmula recurrente de la Poisson:
 
+\begin{equation*}
+  P(Y = k) = \frac{\lambda}{k} \cdot P(X = k-1)
+\end{equation*}
 
+donde sabemos que $P(k = 0) = e^{-\lambda}$. Por lo tanto, el método de la
+transformada inversa puede darse del siguiente modo:
 
+\begin{enumerate}
+  \item Se simula una uniforme $U$ y se calcula $P(k = 0)$.
+  \item Si $U \in (0, P(k = 0))$ se devuelve $0$. 
+  \item Se calcula $P(k = 1)$.
+\end{enumerate}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+\pagebreak 
 
 
 

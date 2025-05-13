@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1746245319.58681 "FixedPoints.tex" "FixedPoints.pdf" "FixedPoints" 1746245320.45615 2
+["pdflatex"] 1746283492.41408 "FixedPoints.tex" "FixedPoints.pdf" "FixedPoints" 1746283493.33384 2
   "/etc/texmf/web2c/texmf.cnf" 1740662799.63242 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1200.tfm" 1136768653 3584 f80ddd985bd00e29e9a6047ebd9d4781 ""
@@ -22,6 +22,7 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/mlmodern/ec-mlmr6.tfm" 1610486596 12048 043275d86a50647afa6c6011bada002a ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/mlmodern/ec-mlmr7.tfm" 1610486596 12064 4c675b7ccbf3b057ea7e28cc732689fb ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/mlmodern/ec-mlmr8.tfm" 1610486596 12064 cb3ac2db00543600e39d765d3966dd15 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/mlmodern/ec-mlmri10.tfm" 1610486596 17148 c83b037b684c9ee98d28fc49edc9dd3e ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/mlmodern/ec-mlmri12.tfm" 1610486596 17144 9afc5bef51110e967090a176977751ba ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/mlmodern/mlmex10.tfm" 1610486596 992 b6f8dab4649e5281bd3869b3daf88982 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/mlmodern/mlmmi10.tfm" 1610486596 1528 6d36b2385e0ca062a654de6ac59cb34f ""
@@ -58,6 +59,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr6.pfb" 1611007856 107927 5bf590577e78b1d1dfc8b2a1d699dc34 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr7.pfb" 1611007856 106309 680f8a7872e0be2ca28b969985773548 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr8.pfb" 1611007856 106758 9574f3796dbe48eb661966173cfeb728 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmri10.pfb" 1611007856 109120 07498f6bd0125d43c3eba377249d094c ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmri12.pfb" 1611007856 106997 a0bb54e3a23850a654ba9ae28c64a35b ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmsy10.pfb" 1611007856 33568 1229f51de832265c06b3cbc7c344e81f ""
   "/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
@@ -172,8 +174,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1740670969.59643 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1740670991 8214096 2cc5ed7d441cd7dd7f6cf9e30d4bb5a5 ""
-  "FixedPoints.aux" 1746245320.35315 724 f2d1a75042b7c2f1fad7f25b64aa03c9 "pdflatex"
-  "FixedPoints.tex" 1746245319.11113 13937 95edf9fdda30aa36f8798e149d9a7a1d ""
+  "FixedPoints.aux" 1746283493.21769 724 711ba7296729ee22691ba93936019f4e "pdflatex"
+  "FixedPoints.tex" 1746283491.34267 12590 11dfa4de74edf4c7979603bd6aa449a8 ""
   (generated)
   "FixedPoints.aux"
   "FixedPoints.log"

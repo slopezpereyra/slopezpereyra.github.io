@@ -21,70 +21,13 @@
 
 \begin{document}
 
-
-Sea PA la aritmética de Peano. Dada una fórmula $\psi$, usamos $\left<\psi
-\right>$ para denotar su número de Gödel.
-
-~
-
-El lema del punto fijo de Gödel establece que si $\varphi(x)$ es una fórmula con
-una variable libre, entonces existe una sentencia $\psi$ tal que 
-
-\begin{equation*}
-  \text{PA} \vdash \psi \leftrightarrow \varphi( \left< \psi \right> )
-\end{equation*}
-
-Es decir, $\psi$ es una sentencia que dice "$\varphi$ es verdadera para el
-número de Gödel de $\psi$". Es decir, $\psi$ es auto-referencial.
-
-~ 
-
-Que existe auto-referencialidad es un quilombo bárbaro porque nos permite
-construir sentencias extrañas. Por ejemplo, si $\varphi(x)$ fuera el predicado 
-"$x$ es el número de Gödel de un axioma de PA", entonces
-
-\begin{equation*}
-  \psi = \text{"$\psi$ es un axioma de PA"}
-\end{equation*}
-
-Si queremos hacer la auto-referencialidad más obvia, podemos pensar que $\psi$
-dice "soy un axioma de PA". Esta sentencia es falsa, pero pueden construirse
-sentencias auto-referenciales verdaderas. Por ejemplo, 
-
-\begin{equation*}
-  \varphi(x) := \exists \phi \in \mathcal{S} . \left< \phi \right> \neq x
-\end{equation*}
-
-con $\mathcal{S}$ el conjunto de sentencias, tiene la sentencia asociada 
-
-\begin{equation*}
-  \psi \leftrightarrow \varphi(\left< \psi \right>)
-\end{equation*}
-
-que equivale a "existe una sentencia cuyo número de Gödel es distinto al mío".
-
-~ 
-
-El verdadero horror surge cuando tomamos una teoría consistente $T$ que es o
-bien PA o bien una extensión de PA, y cuyos axiomas son recursivamente
-enumerables. Sea $\mathcal{P}_T(x)$ la fórmula "$x$ es el número de Gödel de una
-sentencia deducible en $T$". Por la aritmetización de la sintaxis,
-$\mathcal{P}_T(x)$ es expresable en el lenguaje de la aritmética. Entonces, por
-el teorema del punto fijo de Gödel,
-
-\begin{equation*}
-  \text{PA} \vdash \psi \leftrightarrow \neg\mathcal{P}_T\big( \left< \psi \right> \big)
-\end{equation*}
-
-Es decir, $\psi$ dice de sí misma que es no deducible de $T$. Si $\psi$ fuera
-falsa, tendríamos que $\psi$ es deducible de $T$, con lo cual el teorema de
-corrección nos dice que $\psi$ es verdadera. Esto contradice la hipótesis de que
-$T$ es consistente. Por lo tanto, $T \vDash \psi$. 
-
-$\therefore $ (\textbf{Teorema de incompletitud.}) Existen
-sentencias verdaderas que no son demostrables en $T$.
-
-\pagebreak 
+\begin{abstract}
+  Este trabajo describe teórica y prácticamente los \textit{quines}, definidos
+  como programas sin input cuyo output es su propio código. Se demuestran los
+  teoremas $S_n^m$ y de recursión de Kleene, que garantizan la existencia de
+  \textit{quines} en todo lenguaje Turing completo. Luego se dan ejemplos
+  concretos de \textit{quines} en lenguajes de programación conocidos.
+\end{abstract}
 
 \section{Introducción}
 
@@ -92,21 +35,32 @@ Informalmente, un \textit{quine} es un programa sin input cuyo output es su
 propio código. Se trata de un caso particular de una clase más general de
 fenómenos caracterizados por la \textit{auto-referencialidad indirecta}. Decimos
 que existe auto-referencialidad indirecta cuando una sentencia se denota a sí
-misma de manera no-explícita a través de un código u otra forma adecuada de
-representación. 
+misma de manera implícita a través de un código u otra forma adecuada de
+representación. En lenguaje natural, la diferencia entre auto-referencialidad
+directa e indirecta puede ilustrarse con las denotaciones "\textit{yo}" y
+"\textit{la persona cuyo DNI es $x$}", donde $x$ es mi número de DNI. En
+sistemas formales, la auto-referencialidad directa es volátil en el sentido de
+que induce recursiones infinitas. (Piénsese, por ejemplo, en la definición de
+GNU.) La auto-referencialidad indirecta, por otra parte, puede eludir este
+problema: una sentencia lógica puede enunciar algo acerca de su propio número de
+Gödel, por ejemplo, sin inducir una recursión infinita.
 
+~
 ~ 
 
 Los \textit{quines} tienen algunas aplicaciones prácticas, por ejemplo en
 producción de virus, pero en rigor su valor difícilmente exceda el de una
-curiosidad teórica. A pesar de esto, a nuestro juicio tienen un valor
-ilustrativo para nada despreciable: ejemplifican de manera concreta una
+curiosidad teórica. A pesar de esto, entendemos que tienen al menos un valor
+ilustrativo: ejemplifican de manera concreta una
 aplicación del teorema de la recursión de Kleene. Dicho teorema no es
 insignificante: como veremos más adelante, guarda una relación directa con la
 currificación funcional y con la posibilidad de transformar programas
-sintácticamente sin alterar su semántica. En la medida en que los
-\textit{quines}, en su inútil excentricidad, sirvan para ilustrar
-el teorema de la recursión de Kleene, merecen nuestra apreciación.
+sintácticamente sin alterar su semántica.
+
+~
+
+
+
 
 \section{Auto-referencialidad directa e indirecta}
 
@@ -195,8 +149,8 @@ Un resultado significativo dado por Kleene es que la currificación de una
 función computable es computable. Informalmente, esto significa que existe un
 programa tal que, dado otro programa de $n$ variables, devuelve un programa de $1
 \leq m < n$ variables que es funcionalmente equivalente al programa original
-con el valor de las primeras $n - m$ variables fijas. Usualmente, este resultado
-es conocido como el teorema $S_n^m$.
+con el valor de las primeras (o últimas) $n - m$ variables fijas. Usualmente,
+este resultado es conocido como el teorema $S_n^m$.
 
 ~
 
@@ -347,10 +301,22 @@ para garantizar la existencia de \textit{quines} en todo modelo de computación
 equivalente al de Turing. 
 
 \begin{theorem}[Existencia de \textit{quines}]
-  Si $\mathcal{Q}(e)$ es un programa que imprime $e$, por el teoremea de la
-  recursión de Kleene existe $e$ tal que $\mathcal{Q}(e) = e$. Por lo tanto, $e$
-  es un programa cuyo output es sí mismo.
+  En todo lenguaje Turing completo, existe un quine.
 \end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Prueba.} Puede darse un programa $\mathcal{Q}(x)$ cuyo output es $x$. Por
+el teorema de la recursión de Kleene, existe un programa $e$ tal que
+$\mathcal{Q}(e) = e$. Por lo tanto, $e$ es un programa cuyo output es $e$.
+
+$\therefore $ $e$ es un \textit{quine}.
+
+\end{quote}
+\normalsize
+
 
 
 

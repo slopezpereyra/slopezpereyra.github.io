@@ -1,11 +1,4 @@
-\documentclass[a4paper, 12pt]{article}
-\usepackage[
-  a4paper,
-  top=3cm,
-  bottom=3cm,
-  left=2cm,
-  right=2cm
-]{geometry}
+\documentclass[article, 12pt]{article}
 \setlength{\parskip}{1em}      % Espacio entre párrafos
 \setlength{\parindent}{1.5em}    % Sangría al inicio de párrafo
 \usepackage{forest}
@@ -768,119 +761,29 @@ proceso se resume después de input o output. Se define
   \mathbb{Z} \to \Omega \right) \to \Omega
 \end{equation*}
 
+\newpage
+\section{Semántica operacional}
 
-\subsection{El orden de $\Omega$}
+Completar. 
 
-Recordemos que, con input, output y fallas, determinamos que
+\section{Cálculo lambda}
 
-  
+Surge con el trabajo de Church motivados por fundamentar la matemática. Como
+notación, se usa para  generar una expresión que denota una función sin
+necesidad de nombrarla. Todas las funciones recursivas son definibles en el
+cálculo lambda. Su sintaxis abstracta es 
+
+\begin{align*}
+  \text{<expr>} ::= &\mid \text{<var>} \\ 
+                    &\mid \text{<expr><expr>} \\ 
+                    &\mid \lambda \text{<var>}.\text{<expr>}
+\end{align*}
+
+La aplicación asocia a izquierda. Por ejemplo, 
+
 \begin{equation*}
-  \Omega \simeq \left( \hat{\Sigma} + \left( \mathbb{Z} \times \Omega \right) +
-  \left( \mathbb{Z} \mapsto \Omega \right) \right)_\bot, \qquad 
-  \Omega 
-\underset{\psi}{\overset{\phi}{\rightleftarrows}} 
-\left( \hat{\Sigma} + \mathbb{Z} \times \Omega \times \mathbb{Z} \to \Omega \right)_{\perp}
+  \lambda x . (\lambda y. xyx)x = \lambdax.(\lambda y.(xy)x)x
 \end{equation*}
-
-Una de las ventajas de pensar $\Omega$ como isomórfico al término derecho es que
-el mismo hace evidente algunos puntos esenciales:
-
-\begin{itemize}
-  \item Todo elemento de $\Omega$ se corresponde con o bien un elemento de $\hat{\Sigma}$, o bien
-    se define recursivamente como un entero asociado a un elemento de $\Omega$, 
-    o bien es una función en $\mathbb{Z} \to \Omega$. 
-  \item Todo $\omega \in \Omega$ finito es construido via
-    inyecciones $\iota$, lifting, y $\psi$ a partir de los conjuntos
-    $\hat{\Sigma}, \mathbb{Z} \times \Omega$ y $\mathbb{Z} \to \Omega$.
-\end{itemize}
-
-Notemos además que $\hat{\Sigma}$ y $\hat{\Omega}$ son predominios (carecen de
-mínimo), mientras que $\mathbb{Z} \to \Omega$ es un dominio con mínimo $\lambda
-n . \left< \right>$. El orden de $(\hat{\Sigma} + \mathbb{Z} \times \Omega +
-\mathbb{Z} \to \Omega)$ es:
-
-
-
-\tikzset{
-  box/.style={draw, rectangle, rounded corners, align=center, minimum height=2em, minimum width=4em},
-  every node/.style={font=\small},
-}
-
-\begin{figure}[!h]
-\centering
-\begin{tikzpicture}[node distance=1.5cm and 2cm]
-
-  % Bottom layer
-  \node (bot) {$\bot = \langle \rangle$};
-
-  % Layer 1
-  \node[box, above left=of bot] (sigmahat) {$\{ \iota_{\text{term}}(\sigma) : \sigma \in \hat{\Sigma} \}$};
-  \node[above=of bot] (pair_empty) {$\iota_{\text{out}}(k_1, \bot)$};
-  \node[above right=of bot] (botfunc) {$\iota_{\text{in}}(\bot_{\mathbb{Z} \to \Omega})$};
-
-  % Layer 2
-  \node[above left=of pair_empty] (pair_m1) {$\iota_{\text{out}}(k_1, \iota_{\text{out}}(k_2, \bot))$};
-  \node[above=of pair_empty] (pair_0) {$\iota_{\text{out}}(k_1, \iota_{\text{in}}~f)$};
-  \node[above right=of pair_empty] (pair_1) {$\iota_{\text{out}}(k_1, \iota_{\text{term}}~\sigma)$};
-
-  % Layer 3
-  \node[above=of botfunc, xshift=4cm] (lambda_empty) {$\iota_{\text{in}}(\lambda k.\iota_{\text{out}}(k, \bot))$};
-
-  % Layer 4
-  \node[above left=of lambda_empty, xshift=-4cm] (lambda_1) {$\iota_{\text{in}}(\lambda k.\iota_{\text{out}}(k_3, \iota_{\text{out}}(k, \bot)))$};
-  \node[above=of lambda_empty, xshift=-4cm] (lambda_2) {$\iota_{\text{in}}(\lambda k.\iota_{\text{out}}(k, \iota_{\text{in}}~f_2))$};
-  \node[above right=of lambda_empty, xshift=-4cm] (lambda_3) {$\iota_{\text{in}}(\lambda k.\iota_{\text{out}}(k, \iota_{\text{term}}~\sigma))$};
-
-  % Edges (solid)
-  \draw (bot) -- (sigmahat);
-  \draw (bot) -- (pair_empty);
-  \draw (bot) -- (botfunc);
-
-  \draw (pair_empty) -- (pair_m1);
-  \draw (pair_empty) -- (pair_0);
-  \draw (pair_empty) -- (pair_1);
-
-  \draw (botfunc) -- (lambda_empty);
-
-  \draw (lambda_empty) -- (lambda_1);
-  \draw (lambda_empty) -- (lambda_2);
-  \draw (lambda_empty) -- (lambda_3);
-
-  % Edges (dashed)
-  \draw[dashed] (pair_empty) -- (lambda_empty);
-  \draw[dashed] (pair_0) -- (lambda_2);
-  \draw[dashed] (pair_m1) -- (lambda_1);
-  \draw[dashed] (pair_1) -- (lambda_3);
-
-  % Caption
-  \node[below=1.2cm of bot] {\footnotesize Diagrama de Hasse de $\Omega \cong (\hat{\Sigma} + \mathbb{Z} \times \Omega + \mathbb{Z} \to \Omega)_\bot$};
-
-\end{tikzpicture}
-\caption{Diagrama de Hasse de \( \Omega \), indicando orden recursivo y punto a punto.}
-\end{figure}
-
-El diamante con $\hat{\Sigma}$ contiene todos los estados con y sin etiquetas de
-abort, cada uno de los cuales es incomparable con los demás. Por lo tanto, el
-diamante representa una cantidad infinita de átomos maximales. Cada nodo $(k, \omega)$
-representa un nodo para cada $k \in \mathbb{Z}$. Es decir, en realidad los
-nodos son $(1, \left< \right>)$ relacionado con $(1, \left< -1 \right>), (1,
-\left< 0 \right>), \ldots$, así como $(2, \left< \right>)$ relacionado con $(2,
-\left< -1 \right>), (2, \left< 0 \right>), \ldots$ etcétera. Por último, la
-menor función en $\mathbb{Z} \to \Omega$ es la que mapea a $\bot_\Omega$. Las
-que mapean a estados son maximales porque los estados son maximales en $\Omega$.
-Luego, cada función $\lambda k.\left( k, \left< n\right> \right) $ cubre a
-$\lambda k . (k, \left< \right>)$.
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -893,9 +796,6 @@ $\lambda k . (k, \left< \right>)$.
 
 
 \pagebreak
-
-
-
 \section{Práctico 1}
 
 \begin{myframe}
@@ -3323,7 +3223,12 @@ particular,
 \end{equation*}
 
 
+\pagebreak 
 
+\begin{equation*}
+  \llbracket ?x \rrbracket = \iota_{\text{in}} \Big( \lambda k \in
+  \mathbb{Z}.[\sigma \mid x : k] \Big)
+\end{equation*}
 
 
 \end{document}

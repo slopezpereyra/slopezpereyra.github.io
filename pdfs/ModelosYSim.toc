@@ -1,5 +1,6 @@
-\contentsline {section}{\numberline {1}P1}{3}{}%
-\contentsline {section}{\numberline {2}P3}{11}{}%
-\contentsline {section}{\numberline {3}P4}{35}{}%
-\contentsline {section}{\numberline {4}Apéndice teórico}{47}{}%
-\contentsline {section}{\numberline {5}Bonus problems}{49}{}%
+\contentsline {section}{\numberline {1}P1}{2}{}%
+\contentsline {section}{\numberline {2}P3}{10}{}%
+\contentsline {section}{\numberline {3}P4}{34}{}%
+\contentsline {section}{\numberline {4}P5}{49}{}%
+\contentsline {section}{\numberline {5}Apéndice teórico}{54}{}%
+\contentsline {section}{\numberline {6}Bonus problems}{56}{}%
