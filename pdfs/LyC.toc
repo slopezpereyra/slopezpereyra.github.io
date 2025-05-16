@@ -12,9 +12,10 @@
 \contentsline {subsection}{\numberline {1.7}Input y nueva extensión de $\Omega $}{18}{}%
 \contentsline {section}{\numberline {2}Semántica operacional}{19}{}%
 \contentsline {section}{\numberline {3}Cálculo lambda}{19}{}%
-\contentsline {section}{\numberline {4}Práctico 1}{20}{}%
-\contentsline {section}{\numberline {5}Práctico 3: Recursión, predominios y dominios, etc.}{23}{}%
-\contentsline {section}{\numberline {6}Práctico 4: Lenguaje imperativo simple}{39}{}%
-\contentsline {section}{\numberline {7}Práctico 5: Fallas}{61}{}%
-\contentsline {section}{\numberline {8}Práctico 6}{69}{}%
-\contentsline {subsection}{\numberline {8.1}Problemas}{69}{}%
+\contentsline {subsection}{\numberline {3.1}$\beta $-reduction}{20}{}%
+\contentsline {section}{\numberline {4}Práctico 1}{22}{}%
+\contentsline {section}{\numberline {5}Práctico 3: Recursión, predominios y dominios, etc.}{25}{}%
+\contentsline {section}{\numberline {6}Práctico 4: Lenguaje imperativo simple}{41}{}%
+\contentsline {section}{\numberline {7}Práctico 5: Fallas}{63}{}%
+\contentsline {section}{\numberline {8}Práctico 6}{71}{}%
+\contentsline {subsection}{\numberline {8.1}Problemas}{71}{}%

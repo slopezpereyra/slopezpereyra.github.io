@@ -7494,15 +7494,47 @@ Por lo tanto, usando $(6)$ y $(7)$, $\Phi_{\#}^{n, m}\left( \vec{x}, \vec{\alpha
 
 \pagebreak 
 
+Sea $P := \lambda t \alpha \beta [\alpha^t = \beta]$. Definís correctamente el
+dominio 
 
+\begin{equation*}
+  \mathcal{D}_{M(P)} = \left\{ (\alpha, \beta) \in \Sigma^{*2} : \left( \exists
+  t \in  \omega\right)\left( \alpha^t = \beta \right)   \right\} 
+\end{equation*}
 
+Tomemos $(\alpha, \beta) \in \mathcal{D}_{M(P)}$. Entonces existe un $t$ tal que
+$\alpha^t = \beta$. Pero dicho $t$ tiene que ser único (convencete fuertemente
+de esto). En particular, si $\beta$ no es más que $\alpha$ repetida $t$ veces, 
+la longitud de $\beta$ es $t$ veces la longitud de $\alpha$. Es decir, 
 
+\begin{equation*}
+  |\beta| = t|\alpha|
+\end{equation*}
 
+Pero entonces 
 
+\begin{equation*}
+  t = \frac{|\beta|}{|\alpha|}
+\end{equation*}
 
+$\therefore ~ M(P)(\alpha, \beta) = |\beta| / |\alpha|$.
 
+~
 
+El único cuidado es el caso en que $\alpha = \beta = \epsilon$, porque no se
+puede dividir por cero. En este caso, $\alpha^t = \beta$ para todo $t \in
+\omega$ (creo que la materia define $\alpha^0 = \epsilon$ para todo $\alpha$, no
+estoy seguro). Entonces obviamente el mínimo $t$ en este caso es $0$. No
+recuerdo bien pero creo que podes definir por casos:
 
+\begin{equation*}
+  M(P)(\alpha, \beta) = \begin{cases}
+    0 & \alpha = \beta = \varepsilon  \\ 
+    \frac{|\beta|}{|\alpha|} & c.c.
+  \end{cases}
+\end{equation*}
+
+o algo por el estilo.
 
 
 

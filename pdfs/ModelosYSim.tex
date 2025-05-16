@@ -2258,6 +2258,274 @@ y la probabilidad de que esté en $(0.5, 1)$ es $1 - 0.5^y$.
 \pagebreak 
 
 
+\begin{myframe}
+  \textbf{(7)} $(a)$ Desarrolle dos métodos para generar $X$ con densidad 
+
+  \begin{equation*}
+    f_X(x) = \begin{cases}
+      \frac{1}{x} & 1 \leq x \leq e \\ 
+      0 & c.c.
+    \end{cases}
+  \end{equation*}
+
+  uno aplicando transformada inversa y el otro con aceptación y rechazo.
+
+  $(c)$ Estime $P(X \leq 2)$ y compare con el algoritmo.
+\end{myframe}
+
+($a$: Con transformada inversa) Veamos que 
+
+\begin{align*}
+  F(x) &= \int_1^x \frac{1}{t} ~ dt, \qquad x \leq e \\ 
+       &=\left[ \ln \left| t \right|  \right]_1^x \\ 
+       &= \ln x - \ln 1 \\ 
+       &= \ln x
+\end{align*}
+
+Si $u \in (0, 1)$,
+
+\begin{align*}
+  F(x) = u 
+  \iff& \ln x = u \\ 
+  \iff& x = e^u
+\end{align*}
+
+Por lo tanto, \texttt{return exp(random())} hace lo que queremos.
+
+($b$: Con aceptación y rechazo) Sea $U \sim \mathcal{U}(1, e)$. Queremos
+encontrar $c \in \mathbb{R}$ tal que 
+
+\begin{equation*}
+  \frac{ f_X(x) }{f_U(x)} \leq c \iff \frac{f_X(x)}{\frac{1}{e-1}} \leq c \iff
+  (e-1)f_X(x) \leq c
+\end{equation*}
+
+Veamos que, para $x \in [1, e]$,
+
+\begin{equation*}
+  \frac{d}{dx}f = -\frac{1}{x^2}
+\end{equation*}
+
+Por lo  tanto, $f$ es monótona decreciente en dicho intervalo y tiene máximo
+dado por $x = 1$. Por lo tanto, elegimos
+
+\begin{equation*}
+c:= e-1 \cdot f_X(1) = e-1
+\end{equation*}
+
+El algoritmo queda así:
+
+\footnotesize 
+\begin{verbatim}
+  c = e - 1 
+  while True:
+    y = random(1, e)
+    u = random() 
+  
+    if u <= (1/y) / (c * 1/(e-1)):
+      return y
+\end{verbatim}
+
+Si notamos que $\frac{c}{e - 1} = 1$ en realidad podríamos escribir solamente
+\texttt{1/y}, pero por didáctica prefiero dejarlo explícito.
+
+$(c)$ Sabemos que $P(X \leq 2) = F(2) = \ln 2$.
+
+
+\pagebreak 
+
+\begin{myframe}
+  \textbf{(8)} Sean $U, V$ dos uniformes independientes en $(0, 1)$. Probar que
+  $X = U + V$ tiene densidad triangular y desarrolle tres algoritmos que simulen
+  $X$.
+\end{myframe}
+
+Estudiemos $P(U + V = z)$. Veamos que si $z \in [0, 1]$, entonces
+
+\begin{equation*}
+  P(U + V = z) = \int_0^z f_{U}(x)f_{V}(z-x) ~ dx = \int_0^z 1 ~ dx 
+  =z
+\end{equation*}
+
+Si $z \in (1, 2]$, entonces hacemos variar $U$ entre $[z-1, 1]$ y requerimos
+$V = z - U$:
+
+\begin{equation*}
+  P(U + V = z) 
+  = \int_{z-1}^{1} f_{U}(x) f_{V}(z - x) ~  dx = 2 -z
+\end{equation*}
+
+\begin{equation*}
+  \therefore ~ f_{U + V}(x) = \begin{cases}
+    x & 0 \leq x \leq 1 \\ 
+    2 - x & 1 < x \leq 2 \\ 
+    0 & c.c.
+  \end{cases}
+\end{equation*}
+
+El primer algoritmo es una tontería: hacés \texttt{random() + random()}. Con
+transformada inversa, vemos lo siguiente:
+
+\begin{equation*}
+  F_X(x) = \begin{cases}
+    0 & x < 0\\
+    \int_0^x t ~ dt & 0 \leq x \leq 1 \\ 
+    \int_1^x 2 - t ~ dt & 1 \leq x \leq 2  \\ 
+    1 & c.c.
+  \end{cases} = \begin{cases}
+    0 & x < 0 \\ 
+    \frac{x^2}{2} & 0 \leq x \leq 1 \\ 
+    -\frac{x}{2} + 2x - \frac{3}{2} & 1 \leq x \leq 2 \\ 
+    1 & c.c.
+  \end{cases}
+\end{equation*}
+
+Veamos que para $x \in [0, 1]$,  $u \in (0, 1)$,
+
+\begin{equation*}
+  \frac{x^2}{2} = u \iff x = \sqrt{2u} 
+\end{equation*}
+
+Para $x \in [1, 2]$,
+
+\begin{align*}
+  -\frac{x}{2} + 2x - \frac{3}{2} = u 
+  \iff& -\frac{x}{2} + 2x - \left(\frac{3}{2}
+    - u\right) \\ 
+    \iff& x = 2\pm \sqrt{1 - 2u} 
+\end{align*}
+
+Claramente, $2 + \sqrt{1 - 2u} > 2 $ y por lo tanto $x$ no puede tomar dicho
+valor. Por otra parte, $2 - \sqrt{1 - 2u} $
+
+\textbf{PAUSA.}
+
+~
+
+Con método de aceptación y rechazo, tomamos $U \sim (0, 2)$, de manera tal que
+$Im(X) \subset Im(U)$. Tenemos encontrar $c$ tal que 
+
+\begin{equation*}
+  \forall x \in (0, 2) : \frac{ f_X(x) }{f_U(x)} \leq c \equiv \forall x \in (0,
+  2) : 2\cdot f_X(x) \leq c
+\end{equation*}
+
+No es difícil ver que $\max_x \left\{ f_X(x) \right\} = 1 $. Por lo tanto,
+definimos 
+
+\begin{equation*}
+  c := 2 \cdot 1  = 2
+\end{equation*}
+
+\footnotesize 
+
+\begin{verbatim}
+while True:
+  U = random()
+  Y = uniform(0, 2)
+  c = 2
+
+  def densidad_de_x(x):
+    if x <= 1: 
+      return x 
+    if x <= 2:
+      return 2 - x
+
+  if U <= densidad_de_x(Y)/(c*1/2):
+    return Y
+\end{verbatim}
+
+\pagebreak 
+
+\begin{myframe}
+  \textbf{(10)} Sea $X$ una variable con distribución de Cauchy con parámetro
+  $\lambda$, i.e. 
+
+  \begin{equation*}
+    f_X(x) = \frac{1}{\lambda \pi \left( 1 + \left( \frac{x}{\lambda} \right)^2
+    \right) }, \qquad x \in \mathbb{R}
+  \end{equation*}
+
+  $(a)$ Implemente método de razón entre uniformes par asimular $X$ con
+  $\lambda = 1$.
+\end{myframe}
+
+Describamos el método de razón entre uniformes. Adapto el teorema de Wikipedia
+al caso de una variable unidimensional (i.e. $X \in \mathbb{R}^1$). 
+
+\begin{helpframe}
+Sea $r > 0$ un parámetro arbitrario, $X$ una variable aleatoria con densidad
+$f_X$. Sea 
+
+\begin{equation*} A = \left\{ (u, v) \in \mathbb{R}^{2} : 0 \leq u \leq
+f_X\left( \frac{v}{u^r} \right)^{\frac{1}{2r}}  \right\} \end{equation*}
+
+Sea $(U, V)$ una muestra aleatoria uniforme de $A$. Entonces $\frac{V}{U^r}$ es
+una variable aleatoria con distribución idéntica a la de $X$.
+\end{helpframe}
+
+Ahora observemos que, para $\lambda = 1$, la densidad de $X$ es 
+
+\begin{equation*}
+  f_X(x) = \frac{1}{\pi\left( 1 + x^2 \right) } \in (0, 1]
+\end{equation*}
+
+Por lo tanto, si fijamos $r = 1$,
+
+\begin{align*}
+  0 \leq u \leq f_X\left( \frac{v}{u^r} \right)^{\frac{1}{2}}  
+  \iff &0 \leq u \leq
+  \frac{1}{\sqrt{\pi\left( 1 + \left( \frac{v}{u} \right)^2 \right)}  } \\ 
+  \iff&0 \leq u^2 \leq \frac{1}{\pi + \pi\left( \frac{v}{u} \right)^2 } \\ 
+  \iff&0 \leq u^2 \left( \pi + \pi\left( \frac{v}{u} \right)^2  \right) \leq 1
+  \\ 
+  \iff&0 \leq \pi + \pi\left( \frac{v}{u} \right)^2 \leq \frac{1}{u^2} \\ 
+  \iff&0 \leq \pi \left( \frac{v}{u} \right)^2 \leq \frac{1}{u^2} - \pi \\ 
+  \iff&0 \leq \frac{v^2}{u^2} \leq \frac{1}{\pi u^2} - 1 \\ 
+  \iff &0 \leq v^2 \leq \frac{1}{\pi} - u^2 \\ 
+  \iff&0 \leq v \leq \sqrt{\frac{1}{\pi} - u^2} 
+\end{align*}
+
+Como ya vimos que $f_X$ es a lo sumo $1$, podemos generar $U \sim \mathcal{U}(0,
+1)$ para garantizar que tenemos $0 \leq U \leq f_X\left( \frac{v}{u}
+\right)^{\frac{1}{1 + 2r}} $ para todo $v$. Luego, tomamos 
+
+\begin{equation*}
+  V \sim \mathcal{U} \left( 0, \sqrt{\frac{1}{\pi} - U^2}  \right) 
+\end{equation*}
+
+para garantizar que $V$ pertenece al intervalo requerido. Se sigue que $(U, V)$
+será una muestra uniforme de $A$. Por lo tanto, en pseudo-código, obtenemos el
+siguiente algoritmo:
+
+\begin{verbatim}
+  U = random()
+  V = uniform(0, sqrt( 1/pi - U**2 )  )
+  return V/U
+\end{verbatim}
+
+donde el método garantiza que \texttt{V/U} es aleatoria con la misma
+distribución que $X$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \pagebreak
@@ -2508,6 +2776,440 @@ transformada inversa puede darse del siguiente modo:
 \end{enumerate}
 
 \pagebreak 
+
+
+\section{Parciales}
+
+\subsection{Parcial 2: 2024-05-16}
+
+\begin{myframe}
+  \textbf{(1)} $(a)$ Dar la función de probabilidad de masa de la variable $X$. 
+
+  $(b)$ Dar un algoritmo basado en aceptación y rechazo para generar valores de
+  $X$.
+\end{myframe}
+
+Simplemente debemos observar con qué probabilidad se da cada valor. Tomemos el
+caso en que $U < 0.9$, que tiene probabilidad $0.9$ obviamente (U es uniforme).
+
+En ese caso, se elige aleatoria y uniformemenete un elemento de $A$. Pero en $A$
+tenemos $9$ elementos, algunos de los cuales se repiten, y la probabilidad de
+obtener alguno de ellos es:
+
+\begin{equation*}
+  f_A(x) = P(X = x \mid U < 0.9) = \begin{cases}
+    \frac{1}{9} & x = 0 \\ 
+    \frac{2}{9} & x = 1 \\ 
+    \frac{3}{9} & x =2 \\ 
+    \frac{3}{9} & x = 3 \\ 
+    0 & c.c.
+  \end{cases}
+\end{equation*}
+
+Ahora, observemos siguiendo la misma lógica: 
+
+\begin{equation*}
+  f_B(x) = P(X = x \mid U \geq 0.9) = \begin{cases}
+    \frac{3}{10} & x = 0 \\ 
+    \frac{2}{10} & x =1 \\ 
+    \frac{5}{10} & x=2 \\ 
+    0 & c.c.
+  \end{cases}
+\end{equation*}
+
+Ahora veamos que, por ley de probabilidad total,
+
+\begin{align*}
+  f_X(x) = P(X = x) &= P(X = x \mid U < 0.9)P(U < 0.9) + P(X = x \mid U \geq 0.9)P(U \geq
+  0.9) \\ 
+           &= f_A(x) \cdot 0.9 + f_B(x) \cdot 0.1
+\end{align*}
+
+Por lo tanto, 
+
+
+\begin{equation*}
+  f_X(x) = \begin{cases}
+    0.13 & x = 0 \\ 
+    0.22 & x = 1 \\ 
+    0.35 & x = 2 \\ 
+    0.3 & x = 3 \\ 
+    0 & c.c.
+  \end{cases} 
+\end{equation*}
+
+
+$(b)$ Sea $U \sim \mathcal{U}\left\{ 0, \ldots, 3 \right\} $. El máximo de
+$f_X(x)$ es $f_X(2) = 0.35$. Por lo tanto, tomamos 
+
+\begin{equation*}
+  c := \frac{0.35}{1 / 4} = 1.4
+\end{equation*}
+
+Ahora simplemente hacemos 
+
+\begin{verbatim}
+while True:
+  U = random()
+  c = 1.4
+  pX = [0.13, 0.22, 0.35, 0.3] 
+  Y = random.randint(0, 4)
+  if U < pX[Y]/(0.25*c): 
+    return Y 
+\end{verbatim}
+
+\pagebreak 
+
+\begin{myframe}
+  \textbf{(2)} Considerar $X$ con densidad 
+
+  \begin{equation*}
+    f_X(x) = \begin{cases}
+      \sqrt{x}  & 0 \leq x < 1 \\ 
+      1 / 3 & 1 \leq x \leq 2 \\ 
+      0 & c.c.
+    \end{cases}
+  \end{equation*}
+
+  $(a)$ Explicar cómo se aplica la transformada inversa para simular valores de $X$.
+  Considerar $U \sim \mathcal{U}(0, 1)$. Calcular explícitamente el valor que
+  devuelve el algoritmo para $U = 0.2, U = 0.5, U = 0.8$. 
+
+  $(b)$ Simularlo en Python y estime $P(X > 4)$.
+\end{myframe}
+
+Para el método de la transformada inversa, considerando $U \sim \mathcal{U}(0,
+1)$, realizamos lo siguiente:
+
+\begin{enumerate}
+  \item Calculamos $F(x)$, la función de prob. acumulada de $X$. 
+  \item
+    Calculamos $a := F(1), b := F(2)$, el valor de la prob. acumulada en los
+    puntos de corte de las regiones que definen $f_X(x)$.
+  \item Calculamos $F^{-1}(x)$ la inversa de $F$, y notamos que será divida por
+    casos en las regiones $[0, 1), [1, 2]$.
+  \item Generamos $U \sim \mathcal{U}(0, 1)$.  
+  \item Si $U \leq a$, se devuelve $F^{-1}(U)$ según la definición de la región
+    $[0, 1)$; si $a < U \leq b$, se devuelve
+    $F^{-1}(U)$ según la definición de la región $[1, 2]$.
+\end{enumerate}
+
+En particular, para $x \in [0, 1]$
+
+\begin{equation*}
+  F(x) = \int_0^x \sqrt{t} ~ dt = \left[ \frac{2}{3} t^{\frac{3}{2}} \right]_0^x =
+\frac{2x^{\frac{3}{2}}}{3}
+\end{equation*}
+
+y para $x \in [1, 2]$,
+
+\begin{equation*}
+  F(x) = F(1) + \frac{1}{3}\int_1^x ~ dt = \frac{2}{3} + \frac{1}{3}(x-1)
+\end{equation*}
+
+Ahora bien, 
+
+\begin{equation*}
+  \frac{2x^{\frac{3}{2}}}{3} = u \iff x = \left( \frac{3}{2}u \right)^{\frac{2}{3}}
+\end{equation*}
+
+y 
+
+\begin{equation*}
+  \frac{2}{3} + \frac{1}{3}(x-1) = u \iff x = 3u - 1
+\end{equation*}
+
+Observemos que $F(1) = \frac{2}{3}$, $F(2) = 1$, y por lo
+tanto el algoritmo hace esto:
+
+\begin{enumerate}
+  \item Genera una $U$. 
+  \item Si $U \leq 2 / 3$, devuelve $\sqrt[3]{\left( \frac{3U}{2} \right)^2 }$. 
+  \item Si $U> 2 /3$, de vuelve $3U - 1$.
+\end{enumerate}
+
+De esto, es fácil calcular, qué devuelve para $U = 0.2, U = 0.5, U = 0.8$. 
+
+\pagebreak 
+
+\begin{myframe}
+  \textbf{(3)} Considerar un proceso de Poisson no homogéneo con 
+
+  \begin{equation*}
+    \lambda(t) = \begin{cases}
+      5 + 5t & 0 \leq t < 3 \\ 
+      20 &  3 \leq t \leq 5 \\ 
+      30 - 2t & 5 < t \leq 9
+    \end{cases}
+  \end{equation*}
+
+  $(a)$ Suponer que se aplica el método de adelgazamiento para simular los
+  tiempos de arribo en un proceso de Poisson homogéneo con tasa $\lambda = 20$.
+  ¿Con qué probabilidad se contará un evento del proceso homogéneo en $t =4$?
+  ¿Y en $t = 7$? 
+
+  $(b)$ Aplicar en Python el método de adelgazamiento mejorado. El programa debe
+  devolver un arreglo con todos los tiempos de arribo hasta el tiempo $T$, con
+  $0 \leq T \leq 9$. Para esto, particionar $[0, 9]$ en subintervalos con
+  extremos $0, 1, 2, 6, 8, 9$. Con esto, estimar el número esperado de arribos
+  en $[0, 9]$.
+\end{myframe}
+
+$(a)$ Si $M(t)$ es homogéneo con intensidad $\lambda$, y $N(t)$ cuenta los
+eventos de $M(t)$ con probabilidad 
+
+\begin{equation*}
+  \frac{\lambda(t)}{\lambda}
+\end{equation*}
+
+entonces $N(t)$ es no homogéneo con intensidad $\lambda(t)$. El método de
+adelgazamiento hace precisamente esto: simula $M(t)$ y, cada vez que hay un
+evento, decide si contarlo o no con prob. $\lambda(t) / \lambda$.
+
+Por lo  tanto, si se da un evento en $t = 4$, la probabilidad de contarlo es:
+
+\begin{equation*}
+  \frac{\lambda(4)}{20} = \frac{20}{20} = 1
+\end{equation*}
+
+Para $t = 7$, la probabilidad de contarlo es 
+
+\begin{equation*}
+  \frac{30 - 2\cdot 7}{20} = \frac{16}{20} = \frac{4}{5}
+\end{equation*}
+
+$(b)$ Dividamos $[0, 9]$ en 
+
+\begin{equation*}
+  I_1 := [0, 1], I_2 := (1, 2], I_3 := (2, 6], I_4 := (6, 8], I_5 := (8, 9]
+\end{equation*}
+
+Notemos que 
+
+\begin{align*}
+  t \in I_1 &\Rightarrow \lambda(t) \leq 10 \\ 
+  t \in I_2 &\Rightarrow \lambda(t) \leq 15 \\ 
+  t \in I_3 &\Rightarrow \lambda(t) \leq 20 \\ 
+  t \in I_4 &\Rightarrow\lambda(t) \leq 18\\
+  t \in I_5 & \Rightarrow \lambda(t) \leq 14
+\end{align*}
+
+Por lo tanto, elegimos $\lambda_1 = 10, \lambda_2 = 15, \lambda_3 = 20,
+\lambda_4 = 18, \lambda_5 = 14$. 
+
+La simulación entonces es:
+
+\pagebreak 
+
+\begin{verbatim}
+def poisson_adelgazamiento_mejorado(T, intervals, lambdas, upper_lambda):
+    j = 0  # interval index
+    t = -log(1 - random()) / upper_lambda
+    NT = 0
+    events = []
+
+    while t <= T:
+        if j < len(intervals) and t <= intervals[j]:
+            V = random()
+            if V < lambdas[j] / upper_lambda:
+                NT += 1
+                events.append(t)
+            t += -log(1 - random()) / upper_lambda
+        else:
+            # t exceeded current interval: move to next interval and reuse time
+            if j + 1 >= len(lambdas):  # No more intervals
+                break
+            leftover = t - intervals[j]
+            scale = lambdas[j] / lambdas[j + 1]
+            t = intervals[j] + leftover * scale
+            j += 1
+    return NT, events
+
+def estimate_expected_n_of_events()
+  poissons = [] 
+  for _ in range(10000):
+    n, _ = poisson_adelgazamiento_mejorado(
+          9, 
+          [1, 2, 6, 8, 9], 
+          [10, 15, 20, 18, 14],
+          20
+          )
+    poissons.append(n)
+  
+  return( mean(poissons) )
+
+\end{verbatim}
+
+
+\pagebreak 
+
+\subsection{Parcial 2: 2022-05-24}
+
+\begin{myframe}
+  $(a)$ Dar la dist. de $X$. 
+
+  $(b)$ Explicar e implementar método de la urna para esta variable.
+\end{myframe}
+
+Claramente, $Im(X) = \left\{ 0, 1, 2, 3 \right\} $. El valor $0$ se da si y solo
+si $U < 0.4$ y $V < 0.8$ y por ende tiene probabilidad $0.4 \cdot 0.8 = 0.32$. 
+El valor $1$ se da si y solo si $0.4 < U < 0.75$ y $V < 0.6$ y tiene probabilidad
+$0.35 \cdot 0.6 = 0.21$. El valor $2$ se da en dos casos:
+
+\begin{enumerate}
+  \item Si $U < 0.4$ pero $V \geq 0.8$, con prob. $0.4 \cdot 0.2 = 0.08$.
+  \item Si $U \geq 0.75$ con prob. $0.25$.
+\end{enumerate}
+
+Por lo tanto, tiene probabilidad $0.08 + 0.25 = 0.33$ . El valor $3$ se da si y
+solo si $0.4 \leq U < 0.75$ y $V \geq 0.6$ con probabilidad $0.35 \cdot 0.4 =
+0.14$.
+
+Verificamos que $0.32 + 0.21 + 0.33 + 0.21 = 1$. La distribución entonces es 
+
+\begin{equation*}
+  p_X(x) = \begin{cases}
+    0.32 & x = 0 \\ 
+    0.21 & x = 1 \\ 
+    0.33 & x = 2 \\ 
+    0.14 & x = 3
+  \end{cases}
+\end{equation*}
+
+$(b)$ El método de la urna consiste en generar un arreglo $A$ tales que
+exactamente el $\%32$ de sus elementos sean $0$, $21\%$ sean $1$, $33\%$ sean
+$2$, $14\%$ sean $3$. La forma más simple es hacer $A$ de $100$ elementos con 
+$32$ veces $0$, $21$ veces $1$, etc. Luego, tomar una elección uniforme (con
+prob. $1 / 100$) de un elemento de $A$ simulará $X$. Hacerlo en Python es
+trivial.
+
+\pagebreak 
+
+\begin{myframe}
+  \textbf{(4)} En un experimento, se arroja sucesivamente una moneda con
+  probabilidad de obtener cara $p$. Se lo hace hasta obtener dos tiradas
+  distintas. Si $p = \frac{1}{3}$ y $X$ es la cantidad de tiradas hasta un
+  éxito,
+
+  \begin{equation*}
+    P(X = n) = \frac{2^{n-1} + 2}{3^n}, \qquad n \geq 2
+  \end{equation*}
+
+  $(a)$ Simule en Python el experimento y estime $P(X = 4)$. 
+
+  $(b)$ Describa aceptación y rechazo para generar valores de $X$, rechazando
+  con $Y \sim \text{Geom}(\frac{1}{3})$. Dar el número esperado de iteraciones
+  que realiza el algoritmo para generar un valor de $X$.
+
+  $(c)$ Implemente $(b)$ en Python y estime $P(X = 4)$.
+\end{myframe}
+
+$(a)$
+
+\begin{verbatim}
+def tirar_monedas():
+
+  k = 2
+  tirada_anterior = random.random() < 1/3
+  while True:
+    tirada = random.random() < 1/3
+    if tirada != tirada_anterior:
+      return k
+    k += 1
+    tirada_anterior = tirada
+
+
+def estimar_p4(n):
+  es4 = 0 
+  for _ in range(n):
+    k = tirar_monedas()
+    if k == 4:
+      es4 += 1
+
+  return es4/n
+\end{verbatim}
+
+$(b)$ Sea $Y \sim \text{Geom}(1/3)$, de manera tal que 
+
+\begin{equation*}
+  p_Y(y) = \left( 2 / 3 \right)^{y-1}1 /3
+\end{equation*}
+
+Considere 
+
+\begin{align*}
+  \frac{p_X(n)}{p_Y(n)} 
+  &= \frac{2^{n-1}+2}{3^n (2 / 3)^{n-1}1 / 3} \\ 
+  &= \frac{2^{n-1}+2}{3^n 2^{n-1} \cdot \frac{1}{3^{n-1}}1 / 3}  \\ 
+  &= \frac{2^{n-1}}{3^n 2^{n-1} \cdot \frac{1}{3^{n-1}}1 / 3}  + \frac{2}{3^n 2^{n-1} \cdot \frac{1}{3^{n-1}}1 / 3}\\ 
+  &= \frac{1}{\frac{3^n}{3^{n-1}}\cdot \frac{1}{3}} +
+  \frac{2}{\frac{3^n}{3^{n-1}}\cdot \frac{2^{n-1}}{3}} \\ 
+  &= 1 + \frac{2}{2^{n-1}} \\ 
+  &= 1 + \frac{1}{2^{n-2}}
+\end{align*}
+
+Claramente, esta expresión decrece cuando $n \to \infty$ y por lo tanto tiene
+máximo en $n = 2$, donde equivale a $1 + 1 / (2^0) = 1 + 1 = 2$. Por lo tanto,
+elegimios este valor para $c$ y así garantizamos que $c$ es cota de la expresión
+para todo $n$.
+
+Entonces, el método de aceptación y rechazo hará lo siguiente: 
+
+\begin{enumerate}
+  \item Fijar $c := 2$. 
+  \item Simular $Y \sim \text{Geom}(1 / 3)$. 
+  \item Simular $U \sim \mathcal{U}(0, 1)$.
+  \item Si $U < \frac{p_X(Y)}{p_Y(Y)c}$, devolver $Y$ y terminar. 
+  \item Volver a (2).
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

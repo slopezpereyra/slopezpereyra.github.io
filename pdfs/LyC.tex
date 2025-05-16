@@ -4,6 +4,7 @@
 \usepackage{forest}
 \usepackage{xcolor}
 \usepackage{mdframed}
+\usepackage{mathpartir}
 \definecolor{shadecolor}{rgb}{0.1,0.1,0.1}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -768,10 +769,8 @@ Completar.
 
 \section{Cálculo lambda}
 
-Surge con el trabajo de Church motivados por fundamentar la matemática. Como
-notación, se usa para  generar una expresión que denota una función sin
-necesidad de nombrarla. Todas las funciones recursivas son definibles en el
-cálculo lambda. Su sintaxis abstracta es 
+La sintaxis del cálculo lambda, si tenemos en cuenta que el mismo es Turing
+completo, es absurdamente simple: 
 
 \begin{align*}
   \text{<expr>} ::= &\mid \text{<var>} \\ 
@@ -782,8 +781,101 @@ cálculo lambda. Su sintaxis abstracta es
 La aplicación asocia a izquierda. Por ejemplo, 
 
 \begin{equation*}
-  \lambda x . (\lambda y. xyx)x = \lambdax.(\lambda y.(xy)x)x
+  \lambda x . (\lambda y. xyx)x = \lambda x.(\lambda y.(xy)x)x
 \end{equation*}
+
+Las expresiones de la forma $\text{<exp><exp>}$ son llamadas
+\textit{aplicaciones}, y las expresiones de la forma
+$\lambda\text{<var>}.\text{<exp>}$ son llamadas \textit{abstracciones}. Las
+variables libres se definen tal como es de esperarse. La sustitución no es
+compleja excepto para las abstracciones, donde definimos:
+
+\begin{equation*}
+  \left( \lambda v.e \right) / \delta = \lambda v_{\text{new}} \big( e / [\delta
+  \mid v : v_{\text{new}}] \big), \qquad v_{\text{new}} \not\in
+  \bigcup_{\substack{w \in FV(e)\\w \neq v}} FV\left( \delta w \right) 
+\end{equation*}
+
+
+\small
+\begin{quote}
+
+\textbf{Ejemplo.} Considere $e = \lambda x.\lambda y.xyzw$. Sea $\delta \in
+\Delta$ tal que $\delta z = y$ y deja lo demás igual. Aplicar la
+sustitución directamente daría $\lambda x.\lambda y. xyyw$, lo cual no es una
+expresión equivalente porque la $y$ que sustituye a $z$ está ligada, mientras
+que $z$ era libre. El problema es que no hemos sustituido $y$ por
+$y_{\text{new}}$. De acuerdo a lo antedicho, $y_{\text{new}}$ debe ser tal que
+
+\begin{equation*}
+  y_{\text{new}} \not\in \bigcup_{w \in FV(e) - \left\{ y \right\} } FV(\delta
+  w)
+\end{equation*}
+
+Claramente, $FV\left( e  \right) - \left\{ y \right\}  = FV(e) = \left\{ w, z
+\right\} $ y por lo tanto el conjunto de arriba es $\left\{ \delta ~ z, \delta ~
+z \right\} = \left\{ y, z \right\} $. Por lo tanto, $y_{\text{new}}$ no puede
+ser ni $y$ ni $z$. Una aplicación correcta de la sustitución podría ser
+
+\begin{equation*}
+  \lambda x.\lambda u. xuyw
+\end{equation*}
+
+\end{quote}
+\normalsize
+
+El ejemplo anterior es tedioso, pero \textit{many a soul has perished} por
+errores al sustituir.
+
+Algunos resultados esperados:
+
+\begin{enumerate}
+  \item Si $\delta w = \delta' w$ para cada $w \in FV(e)$, $e / \delta = e /
+    \delta '$. 
+  \item $e / I_{\text{<var>}} = e$. 
+  \item (c) $FV(e / \delta) = \bigcup_{ \limits{w \in FV(e)} } FV(\delta w)$.
+\end{enumerate}
+
+\subsection{$\beta$-reduction}
+
+La $\beta$-\textit{reduction} es la semántica operacional del cálculo lambda.
+Una transición en dicha semántica se llama \textit{contracción}, una secuencia
+de mútilples contracciones es una \textit{redución}, y una ejecución se denomina
+una \textit{secuencia de reducciones}.
+
+\begin{definition}
+  Una expresión de la forma $(\lambda v. e)e'$ se denomina redex.
+\end{definition}
+
+Intuitivamente, un \textit{redex} es la aplicación de una función (una
+abstracción) a un argumento.
+
+\textsc{Regla de transición:} $\beta$\textit{-reduction}
+\[
+\inferrule* [right=] {}{(\lambda v.\ e)e' \to (e[v \mapsto e'])}
+\]
+
+\textsc{Regla de transición:} Renombre
+\[
+\inferrule* [right=] {e_0 \to e_1 \quad e_1 \equiv e_1'}{e_0 \to e_1'}
+\]
+
+\textsc{Regla de transición:} Clausura contextual
+\[
+\inferrule* [right=] {e_0 \to e_1}{e_0' \to e_1'}
+\]
+donde $e_1'$ se obtiene de $e_0'$ reemplazando una ocurrencia de $e_0$ por
+$e_1$.
+
+\begin{definition}
+  Se dice que una expresión sin ningún \textit{redex} está en \textbf{forma
+  normal}.
+\end{definition}
+
+
+
+
+
 
 
 

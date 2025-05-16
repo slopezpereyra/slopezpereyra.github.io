@@ -1,0 +1,241 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{newtxtext} \usepackage{newtxmath}
+\usepackage{amsmath, amssymb}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example} \newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
+
+\begin{document}
+
+
+\begin{problem}
+  Sea $Y \sim \text{Geom}(0.6)$ y $X$ con distribución 
+
+  \begin{equation*}
+    P(X = i) = P(Y = i \mid Y \leq 20)
+  \end{equation*}
+\end{problem}
+
+Veamos que 
+
+\begin{align*}
+  P(Y = i \mid Y \leq 20) 
+  &= \frac{P( Y = i \cap  Y \leq 20 )}{P(Y \leq 20)} \\
+  &= \frac{P(Y =
+  i)}{\sum_{k=0}^{20} (1-p)^k p} \\ 
+  &= \frac{(1-p)^{i-1}p}{\sum_{k=1}^{21} (1-p)^{k-1} p} \\ 
+\end{align*}
+
+Notemos que $Im(X) = \left\{ 1,\ldots, 20 \right\} $. Sea $U \sim \mathcal{U}\left\{ 1, \ldots, 20
+\right\} $. Buscamos $c$ tal que 
+
+\begin{equation*}
+  \frac{P(X=x)}{P(U = x)} \leq c \iff 20\cdot P(X = x) \leq c
+\end{equation*}
+
+Claramente, $P(X = x)$ es decreciente y por lo tanto su máximo está en $x = 1$.
+Por lo tanto, tomamos $c = 20$. Entonces el método de aceptación y rechazo nos
+queda:
+
+\begin{enumerate}
+  \item Generar $Z \sim \mathcal{U}\left\{ 1, \ldots, 20 \right\} $. 
+  \item Generar $U \sim \mathcal{U}(0, 1)$
+  \item Si $U \leq P(X = Z)$ devovler $Y$, de otro modo volver a $1$.
+\end{enumerate}
+
+\begin{verbatim}
+  
+def pX(x):
+    den = sum( [ 0.4**(k)*0.6 for k in range(21) ]
+    num = ( (0.4)**(x-1) ) * 0.6
+    return num/den
+while True:
+  Z = randint(1, 20)
+  U = random()
+  c = 21
+
+  if U <= pX(Z): # dividido 1/20 * c = 1/20 * 20 = 1
+    return Z
+
+
+
+\end{verbatim}
+
+\pagebreak 
+
+Una compañía tiene 1000 clientes, cada uno de los cuales puede presentar un
+reclamo en forma independiente en el próximo mes con probabilidad $p=0.05$. Se
+asume que los montos de los reclamos son variables aleatorias con dist.
+exponencial con media $800$.
+
+$(a)$ Diseñar una simulación.
+
+Sean $X_1, \ldots, X_{1000}$ Bernoullis con $p = 0.05$ representando la
+realización/no-realización de un reclamo por parte de un cliente. La simulación
+hará lo siguiente:
+
+\begin{enumerate}
+  \item Generar un diccionario vacío \texttt{reclamos}.
+  \item Desde $i=1$ hasta $i = 1000$:
+    \begin{enumerate}
+      \item Simular la Bernoulli $X_i$. Si dicha Bernoulli es un fallo, pasar a
+        la siguiente iteración salteando los pasos siguientes.
+      \item Simular una exponencial $\texttt{reclamo}$ con distribución
+        $\mathcal{E}(\frac{1}{800})$, que tiene media $800$.
+      \item Setear \texttt{reclamos[i] = reclamo}.
+      \item Pasar a la siguiente iteración.
+    \end{enumerate}
+  \item Devolver \texttt{reclamos}
+\end{enumerate}
+
+De este modo, al terminar, se tiene en \texttt{reclamos} información de qué
+cliente reclamó y cuál es el monto de su reclamo. Claramente, se usan variables
+Bernoulli y exponenciales.
+
+\pagebreak 
+
+\textbf{(1)} Juan tiene diez cartas numeradas del $1$ al $10$ mezcladas
+aleatoriamente y apiladas boca abajo. Sucesivamente intentará adivinar el valor
+de la carta superior de la pila y luego la coloca dada vuelta en otra pila. Si
+acerita termina el juego, si no acierta repite. 
+
+Juan tiene buena memoria, por lo cual si la primera carta resultó un 5 y la
+segunda un 3, ,sabe que ninguna de las siguientes puede ser 5 o 3. Además en
+cada oportunidad elige un valor aleatorio entre los posibles. 
+
+$(a)$ Calcular la probabilidad de que haya dado vuelta exactamente 6 cartas
+hasta acertar. 
+
+$(b)$ Escribir una expresión que permita calcular el valro esperado del número
+de cartas que dará vuelta hasta acertar. 
+
+$(c)$ Simular con $10000$ simulaciones para estimar el valor de $b$.
+
+~
+
+
+Sea $X_i$ la carta predicha por Juan en la $i$-écima vuelta. $Y$ la carta que
+verdaderamente está en la parte superior del mazo. Juan gana si $X = Y$. Como
+$Y$ es fija (el mazo ya está mezclado), tenemos 
+
+\begin{equation*}
+  P(X_1 = Y) = \frac{1}{10}, P(X_2 = Y) = \frac{1}{9}, \ldots
+\end{equation*}
+
+o generalmente 
+
+\begin{equation*}
+  P(X_i = Y) = \frac{1}{11-i}
+\end{equation*}
+
+Sea $p_i$ la probabilidad de que $X_i = Y$. Si $Z$ es la cantidad de
+predicciones hasta tener un éxito,
+
+\begin{equation*}
+  P(Z = k) = p_k \prod_{i=1}^{k-1} (1 - p_i) 
+\end{equation*}
+
+Por lo tanto, 
+
+\begin{equation*}
+  (Z = 6) = \frac{1}{5} \left( \frac{9}{10} \cdot \frac{8}{9} \cdot \frac{7}{8}
+  \cdot \frac{6}{7} \cdot \frac{5}{6}\right) 
+\end{equation*}
+
+$(b)$ Es el valor esperado de $Z$:
+
+\begin{align*}
+  \sum_{k=1}^{10} kP(Z = k) 
+  &= \sum_{k=1}^{10} k \left( p_k\prod_{i=1}^{k-1}(1 -
+  p_i) \right)   \\ 
+  &=\sum_{k=1}^{10} k \left( \frac{1}{11 - k} \prod_{i=1}^{k-1}(1 -
+  \frac{11}{i}) \right)  \\ 
+  &=\sum_{k=1}^{10} k \left( \frac{1}{11 - k} \prod_{i=1}^{k-1}(1 -
+  \frac{11}{i}) \right)  
+\end{align*}
+
+\pagebreak 
+
+Sea $X$ con densidad 
+
+\begin{equation*}
+  f(x) = \begin{cases}
+    1.2 \cdot e^{-x} + 2.1 e^{-3x} & x \geq 0 \\ 
+    0 & c.c.
+  \end{cases}
+\end{equation*}
+
+$(a)$ Indicar cómo puede generarse valores con método de composición. 
+
+$(b)$ Decidir para qué valores de $\lambda$, con $\lambda > 0$, se puede usar
+método de aceptación y rechazo para generar valores de $Y \sim
+\mathcal{E}(\lambda)$.
+
+$(c)$ Implementar el algoritmo dado en $a$ para simular $X$ y usarlo para
+estimar $\mathbb{E}\left[ X \right] $.
+
+~ 
+
+Notemos que $X$ es una combinación lineal de distribuciones exponenciales, con 
+$E_1 \sim \mathcal{E}(1), E_2 \sim \mathcal{E}(3)$. En particular, para $x \geq
+0$,
+
+\begin{equation*}
+  f(x) = 1.2f_{E_1}(x) + 2.1 f_{E_2}(x)
+\end{equation*}
+
+El problema es que $1.2 + 2.1 \neq 1$.
+
+\pagebreak 
+
+Claramente, la imagen pertenece a $(0, -3)$.
+
+\begin{align*}
+  x = -3  \sqrt{1 - u}  
+  \iff &\frac{x^2}{9} = 1 - u \\ 
+  \iff&1 - \frac{x^2}{9}  = u
+\end{align*}
+
+Es decir, $F(x) = 1 - x^2 / 9$. Por lo tanto, 
+
+\begin{equation*}
+  f_X(x) = -\frac{2}{9}x
+\end{equation*}
+
+Veamos, 
+
+\begin{equation*}
+  
+\end{equation*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+

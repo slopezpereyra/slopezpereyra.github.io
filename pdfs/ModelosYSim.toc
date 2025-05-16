@@ -2,5 +2,8 @@
 \contentsline {section}{\numberline {2}P3}{10}{}%
 \contentsline {section}{\numberline {3}P4}{34}{}%
 \contentsline {section}{\numberline {4}P5}{49}{}%
-\contentsline {section}{\numberline {5}Apéndice teórico}{54}{}%
-\contentsline {section}{\numberline {6}Bonus problems}{56}{}%
+\contentsline {section}{\numberline {5}Apéndice teórico}{60}{}%
+\contentsline {section}{\numberline {6}Bonus problems}{62}{}%
+\contentsline {section}{\numberline {7}Parciales}{67}{}%
+\contentsline {subsection}{\numberline {7.1}Parcial 2: 2024-05-16}{67}{}%
+\contentsline {subsection}{\numberline {7.2}Parcial 2: 2022-05-24}{72}{}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  13 MAY 2025 09:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  14 MAY 2025 16:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -440,41 +440,41 @@ Package pdftex.def Info: ../Images/SeverinoDiGiovanni.jpg  used on input line 73
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-(./ModelosYSim.toc)
-\tf@toc=\write3
-\openout3 = `ModelosYSim.toc'.
-
- [1 <../Images/UPA.jpg>]
-LaTeX Font Info:    Trying to load font information for OT1+mlmr on input line 97.
+(./ModelosYSim.toc
+LaTeX Font Info:    Trying to load font information for OT1+mlmr on input line 8.
  (/usr/share/texlive/texmf-dist/tex/latex/mlmodern/ot1mlmr.fd
 File: ot1mlmr.fd 2021/01/11 v1.0 Font defs for mlmodern
 )
-LaTeX Font Info:    Trying to load font information for OML+mlmm on input line 97.
+LaTeX Font Info:    Trying to load font information for OML+mlmm on input line 8.
  (/usr/share/texlive/texmf-dist/tex/latex/mlmodern/omlmlmm.fd
 File: omlmlmm.fd 2021/01/11 v1.0 Font defs for mlmodern
 )
-LaTeX Font Info:    Trying to load font information for OMS+mlmsy on input line 97.
+LaTeX Font Info:    Trying to load font information for OMS+mlmsy on input line 8.
  (/usr/share/texlive/texmf-dist/tex/latex/mlmodern/omsmlmsy.fd
 File: omsmlmsy.fd 2021/01/11 v1.0 Font defs for mlmodern
 )
-LaTeX Font Info:    Trying to load font information for OMX+mlmex on input line 97.
+LaTeX Font Info:    Trying to load font information for OMX+mlmex on input line 8.
  (/usr/share/texlive/texmf-dist/tex/latex/mlmodern/omxmlmex.fd
 File: omxmlmex.fd 2021/01/11 v1.0 Font defs for mlmodern
 )
 LaTeX Font Info:    External font `mlmex10' loaded for size
-(Font)              <12> on input line 97.
+(Font)              <12> on input line 8.
 LaTeX Font Info:    External font `mlmex10' loaded for size
-(Font)              <8> on input line 97.
+(Font)              <8> on input line 8.
 LaTeX Font Info:    External font `mlmex10' loaded for size
-(Font)              <6> on input line 97.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 97.
+(Font)              <6> on input line 8.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 8.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 97.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 8.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [2{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc} <../Images/SeverinoDiGiovanni.jpg>] [3]
+))
+\tf@toc=\write3
+\openout3 = `ModelosYSim.toc'.
+
+ [1 <../Images/UPA.jpg>] [2{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc} <../Images/SeverinoDiGiovanni.jpg>] [3]
 Package mdframed Info: Not enough space on this page on input line 121.
  [4]
 Package mdframed Info: Not enough space on this page on input line 174.
@@ -702,31 +702,55 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[53] [54]
-Package mdframed Info: Not enough space on this page on input line 2329.
- [55] [56] [57]
-Package mdframed Info: Not enough space on this page on input line 2428.
- [58] [59]
-Package mdframed Info: Not enough space on this page on input line 2493.
- [60] (./ModelosYSim.aux)
+[53]
+Package mdframed Info: Not enough space on this page on input line 2274.
+ [54]
+LaTeX Font Info:    External font `mlmex10' loaded for size
+(Font)              <10> on input line 2329.
+LaTeX Font Info:    External font `mlmex10' loaded for size
+(Font)              <7> on input line 2329.
+LaTeX Font Info:    External font `mlmex10' loaded for size
+(Font)              <5> on input line 2329.
+ [55]
+Package mdframed Info: Not enough space on this page on input line 2341.
+ [56] [57]
+Package mdframed Info: Not enough space on this page on input line 2451.
+ [58] [59] [60]
+Package mdframed Info: Not enough space on this page on input line 2597.
+ [61] [62] [63]
+Package mdframed Info: Not enough space on this page on input line 2696.
+ [64] [65]
+Package mdframed Info: Not enough space on this page on input line 2761.
+ [66] [67] [68]
+Package mdframed Info: Not enough space on this page on input line 2879.
+ [69]
+Package mdframed Info: Not enough space on this page on input line 2956.
+ [70]
+Overfull \hbox (24.7488pt too wide) in paragraph at lines 3041--3041
+[]            \T1/mlmtt/m/n/10 # t exceeded current interval: move to next interval and reuse time[] 
+ []
+
+[71] [72]
+Package mdframed Info: Not enough space on this page on input line 3105.
+ [73] [74] (./ModelosYSim.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 5479 strings out of 474222
- 88231 string characters out of 5748733
+ 5506 strings out of 474222
+ 88557 string characters out of 5748733
  1940975 words of memory out of 5000000
- 27593 multiletter control sequences out of 15000+600000
- 627987 words of font info for 87 fonts, out of 8000000 for 9000
+ 27611 multiletter control sequences out of 15000+600000
+ 655229 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,16n,93p,543b,382s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmri12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on ModelosYSim.pdf (62 pages, 1272198 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmri10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmri12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on ModelosYSim.pdf (76 pages, 1414432 bytes).
 PDF statistics:
- 323 PDF objects out of 1000 (max. 8388607)
- 211 compressed objects within 3 object streams
+ 408 PDF objects out of 1000 (max. 8388607)
+ 266 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

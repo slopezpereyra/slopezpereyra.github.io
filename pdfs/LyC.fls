@@ -214,6 +214,8 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/mdframed/md-frame-0.mdf
 INPUT /usr/share/texlive/texmf-dist/tex/latex/mdframed/md-frame-0.mdf
 INPUT /usr/share/texlive/texmf-dist/tex/latex/mdframed/md-frame-0.mdf
+INPUT /usr/share/texlive/texmf-dist/tex/latex/mathpartir/mathpartir.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/mathpartir/mathpartir.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
@@ -338,11 +340,11 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/stmaryrd/stmary8.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/stmaryrd/stmary6.tfm
 INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc
 OUTPUT LyC.toc
+INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/boondox/BOONDOX-r-calo.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/boondox/BOONDOX-r-calo.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/boondox/BOONDOX-r-calo.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mlmodern/ec-mlmri12.tfm
-INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/boondox/BOONDOX-r-calo.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/boondox/zxxrow7z.tfm
@@ -393,6 +395,9 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/stmaryrd/stmary7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/boondox/BOONDOX-r-calo.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/boondox/BOONDOX-r-calo.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/boondox/BOONDOX-r-calo.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mlmodern/ec-mlmcsc10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mlmodern/ec-mlmcsc10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mlmodern/ec-mlmbxi10.tfm
 INPUT /usr/share/texlive/texmf-dist/tex/latex/mlmodern/t1mlmtt.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/mlmodern/t1mlmtt.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/mlmodern/t1mlmtt.fd
@@ -409,6 +414,8 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/boondox/BOONDOX-r-calo.tfm
 INPUT LyC.aux
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmbx10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmbx12.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmbxi10.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmcsc10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmex10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi12.pfb
