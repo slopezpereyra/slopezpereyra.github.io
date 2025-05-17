@@ -3322,6 +3322,85 @@ particular,
   \mathbb{Z}.[\sigma \mid x : k] \Big)
 \end{equation*}
 
+\pagebreak 
+
+\section{P7}
+
+\begin{myframe}
+  \textbf{(1)} Reducir a su forma normal e indicar la primer forma canónica de
+  cada una de las siguientes expresiones.
+
+  $(a)$ $\left( \lambda f. \lambda x. f ( fx ) \right)\left( \lambda z. \lambda x.
+  \lambda y. zyx \right) \left( \lambda z. \lambda w. z \right)   $
+
+  $(b)$ $\left( \lambda z . zz \right) \left( \lambda f.\lambda x. f(fx) \right) $ 
+\end{myframe}
+
+\begin{align*}
+  (a) ~ &\left( \lambda f. \lambda x. f (fx)  \right) \left( \lambda z. \lambda x.
+   \lambda y. zyx\right) \left( \lambda z. \lambda w. z \right)   \\ 
+  \to &\left( \lambda x. \left( \lambda z. \lambda x. \lambda y.
+  zyx\right) \left( \lambda z. \lambda x. \lambda y. zyx \right) x   \right)
+  \left( \lambda z. \lambda w. z \right) \\ 
+      \to&\left( \lambda z. \lambda x. \lambda y. zyx \right) \Big(\left( \lambda z.
+  \lambda x. \lambda y. zyx \right) \left( \lambda z. \lambda w. z \right) \Big)
+\\ \to & \left( \lambda x. \lambda  y. \Big( \left( \lambda z.\lambda x. \lambda
+y. zyx\right)\left( \lambda z. \lambda w. z \right)   \Big) yx \right) &
+\left\{ \text{F.C.} \right\} \\ 
+\to &\lambda x. \lambda y. \big( \lambda x. \lambda y. \left( \lambda z. \lambda
+w. z\right)yx  \big)yx \\ 
+    \to &\lambda x. \lambda y. \Big( \lambda y'.\big( \lambda z. \lambda w. z
+    \big)y' y \Big) x \\ 
+        \to &\lambda x. \lambda y. \left( ( \lambda z. \lambda w. z )xy \right)
+        \\ 
+\to & \lambda x. \lambda y. (\lambda w. x)y \\ 
+\to & \lambda x. \lambda y. x &\left\{ \text{F.N.} \right\} 
+\end{align*}
+
+\begin{align*}
+  (b) ~ ~ 
+&\left( \lambda z. zz \right) \left( \lambda f. \lambda x. f(fx)
+  \right)  \\ 
+\to &\left( \lambda f. \lambda x. f(fx) \right) \left( \lambda f. \lambda x.
+f(fx) \right) \\ 
+\to & \left( \lambda x. \Big( \lambda f. \lambda x. f(fx) \Big)\Big( \left(
+\lambda f. \lambda x. f(fx) \right)x  \Big) \right) &\left\{ \text{F.C.}
+\right\} \\ 
+  \to & ~ \vdots
+\end{align*}
+
+Es fácil ver que no hay forma normal si usamos la evaluación normal. Usando
+\textit{eager evaluation} a partir de la primer forma canónica: 
+
+\begin{align*}
+&\left( \lambda x. \Big( \lambda f. \lambda x. f(fx) \Big)\Big( \left(
+\lambda f. \lambda x. f(fx) \right)x  \Big) \right) &\left\{ \text{F.C.}
+\right\} \\ 
+\to & \lambda x_1. \Big( \lambda f. \lambda x. f(fx) \Big)\Big( \lambda x_2. x_1
+(x_1 x_2)\Big) \\
+  \to &\lambda x_1. \Big( \lambda x.(\lambda x_2. x_1(x_1 x_2)) \left( \lambda
+  x_2. x_1 (x_1 x_2) x \right)  \Big)\\ 
+      \to & \lambda x_1 . \Big( \lambda x. \big( \lambda x_2. x_1(x_1 x_2) \big)
+      \big( x_1(x_1 x) \big)\Big) \\ 
+\to & \lambda x_1. \Big( \lambda x. \big(  x_1 (x_1(x_1(x_1 x))) \big) \Big) \\ 
+\equiv ~&\lambda x_1.\lambda x_2. x_1(x_1(x_1(x_1 x_2))) &\left\{ \text{F.N.}
+\right\}  \\ 
+  \equiv ~&\lambda f x. f(f(f( f ~ x))) \\ 
+  \equiv~& \overline{4}
+\end{align*}
+
+Tiene sentido que el resultado normal sea (en términos intuitivos) $\lambda fx.f^4(x)$,
+porque $(\lambda .zz)(\lambda f. \lambda x. f(fx))$ se puede leer como: hacer
+dado $f$ y $x$, hacer dos veces $f(f ~ x)$, es decir hacer dos veces $f^2 ~ x$.
+
+
+
+
+
+
+
+
+
 
 \end{document}
 

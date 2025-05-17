@@ -19,3 +19,4 @@
 \contentsline {section}{\numberline {7}Práctico 5: Fallas}{63}{}%
 \contentsline {section}{\numberline {8}Práctico 6}{71}{}%
 \contentsline {subsection}{\numberline {8.1}Problemas}{71}{}%
+\contentsline {section}{\numberline {9}P7}{81}{}%
