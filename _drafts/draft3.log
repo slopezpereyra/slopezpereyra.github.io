@@ -1,33 +1,34 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.6.2)  7 JUL 2023 00:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  18 MAY 2025 22:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **draft3.tex
 (./draft3.tex
-LaTeX2e <2022-11-01> patch level 1
-L3 programming layer <2023-01-16> (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
+File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count185
-\c@section=\count186
-\c@subsection=\count187
-\c@subsubsection=\count188
-\c@paragraph=\count189
-\c@subparagraph=\count190
-\c@figure=\count191
-\c@table=\count192
+\c@part=\count187
+\c@section=\count188
+\c@subsection=\count189
+\c@subsubsection=\count190
+\c@paragraph=\count191
+\c@subparagraph=\count192
+\c@figure=\count193
+\c@table=\count194
 \abovecaptionskip=\skip48
 \belowcaptionskip=\skip49
 \bibindent=\dimen140
 ) (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count193
+\etb@tempcnta=\count195
 ) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count194
+File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count196
 \l__pdf_internal_box=\box51
 ) (./draft3.aux)
 \openout1 = `draft3.aux'.
@@ -47,10 +48,10 @@ LaTeX Font Info:    ... okay on input line 7.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
 LaTeX Font Info:    ... okay on input line 7.
 
-./draft3.tex:48: Undefined control sequence.
+./draft3.tex:46: Undefined control sequence.
 \__hook_toplevel env/quote/begin ...singlespacing 
                                                   \small 
-l.48 \begin{quote}
+l.46 \begin{quote}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -59,15 +60,15 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 54.
+(Font)              <9> on input line 52.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 54.
+(Font)              <6> on input line 52.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 54.
-./draft3.tex:60: Undefined control sequence.
+(Font)              <5> on input line 52.
+./draft3.tex:58: Undefined control sequence.
 \__hook_toplevel env/quote/begin ...singlespacing 
                                                   \small 
-l.60 \begin{quote}
+l.58 \begin{quote}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -77,17 +78,22 @@ and I'll forget about whatever was undefined.
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./draft3.aux) ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./draft3.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+ ***********
+ ) 
 Here is how much of TeX's memory you used:
- 775 strings out of 476091
- 12557 string characters out of 5794082
- 1860330 words of memory out of 5000000
- 21228 multiletter control sequences out of 15000+600000
- 514456 words of font info for 39 fonts, out of 8000000 for 9000
+ 777 strings out of 474222
+ 12574 string characters out of 5748733
+ 1933975 words of memory out of 5000000
+ 23101 multiletter control sequences out of 15000+600000
+ 560238 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,5n,38p,152b,159s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 35i,5n,50p,152b,159s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on draft3.pdf (2 pages, 67319 bytes).
+Output written on draft3.pdf (2 pages, 67331 bytes).
 PDF statistics:
  31 PDF objects out of 1000 (max. 8388607)
  18 compressed objects within 1 object stream
