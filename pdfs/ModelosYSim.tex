@@ -8,7 +8,8 @@
 \usepackage{textcomp}
 \usepackage{amssymb}
 \usepackage{amsmath, amssymb}
-\usepackage{mlmodern}
+\usepackage{newtxmath}
+\usepackage{newtxtext}
 \newtheorem{problem}{Problem}
 \newtheorem{example}{Example}
 \newtheorem{lemma}{Lemma}
@@ -2509,673 +2510,834 @@ distribución que $X$.
 
 
 
+\pagebreak
+\section{P6}
+
+\begin{myframe}
+    \textbf{(2)} Monte-carlo estimation:
+
+    \begin{equation*}
+        \int_0^1 \frac{e^x}{\sqrt{2x} } ~ dx, \qquad \int_{-\infty}^\infty
+        x^2\exp(-x^2) ~ dx
+    \end{equation*}
+
+    Generate $n = 100, 101, 102, \ldots$ samples and stop only when the standard
+    error of the estimator (its standard deviation) is $< 0.01$.
+\end{myframe}
+
+Sea $f_U$ la densidad de $U \sim \mathcal{U}(0, 1)$. Observemos que 
+
+\begin{equation*}
+    \theta := \int_0^1 \psi(x) ~ dx = \int_0^1 \psi(x) f_U(x) ~ dx =
+    \mathbb{E}\left[ \psi(U) \right] 
+\end{equation*}
+
+para toda $\psi(x)$ integrable en $[0, 1]$. Por ende, by the law of large
+numbers,
+
+\begin{equation*}
+    \theta \simeq \frac{1}{N} \sum_{1}^N \psi(u_i)
+\end{equation*}
+
+for sufficiently large $N$ and $u_1, \ldots, u_N$ being $N$ samples of $U$.
+Notemos que acá el estimador es 
+
+\begin{equation*}
+    \frac{1}{N} \sum_{1}^N \psi(u_i)
+\end{equation*}
+
+la media muestral de $N$ muestras de $\psi(U)$. La desviación estándar de la
+media muestral es $\frac{\sigma}{\sqrt{N} }$, y por ende la desviación estándar
+muestral del estimador es $\frac{s}{\sqrt{N} }$ con $s$ la desviación estándar
+muestral. Por ende el algoritmo no hace más que esto:
+
+\begin{enumerate}
+    \item Seteá $n = 100$.
+    \item Generá $\psi(u_1), \psi(u_2), \ldots, \psi(u_{100})$ y calculá la
+        media muestral $\overline{\psi}$ y la desviación estándar muestral $s$ de dicha muestra de
+        manera recursiva. 
+    \item Si $\frac{s}{\sqrt{n} }$ es menor a $0.01$ terminá y devolvé
+        $\overline{\psi}$.
+    \item Generá $\psi(u)$ y actualizá la media y la desviación estándar tras
+        añadir este elemento. Seteá $n = n + 1$. Volvé a $(3)$.
+\end{enumerate}
+
+Para la segunda integral, tenemos 
+
+\begin{equation*}
+    \int_{-\infty}^\infty \psi(x) ~ dx = 2\int_0^1 \frac{\psi\left( \frac{1}{u} -
+    1\right) }{u^2} ~ du
+\end{equation*}
+
+con $u = \frac{1}{x+1}, x = \frac{1}{u} - 1, du = -u^2$. En nuestro caso
+particular, 
+
+\begin{equation*}
+    \psi\left( \frac{1}{u} - 1 \right) = \left( \frac{1}{u} - 1 \right)^2
+    \exp\left( - \left( \frac{1}{u} -1 \right) ^2 \right) 
+\end{equation*}
+
+y por ende
+
+\begin{equation*}
+    \theta = 2 \int_0^1 \frac{\left( \frac{1}{u} -1 \right)^2 \exp\left( -
+    \left( \frac{1}{u} -1 \right)^2  \right)  }{u^2} ~ du
+\end{equation*}
+
+Demás está decir que lo más inteligente es hacer un único algoritmo que, dada
+una función $\psi$, una cantidad mínima de muestras $n_{\text{min}}$, y una 
+cota superior para el error de estmación $\epsilon$, estima la integral
+$\int_0^1 \psi(x) ~ dx$ recursivamente.
+
+
+\begin{verbatim}
+def mean_recursive(old_mean, new_sample, n):
+    new_mu = old_mean + ( (new_sample - old_mean) / ( n+1 ) )
+    return new_mu
+
+def var_recursive(old_var, new_sample, old_mean, new_mean, n):
+    return old_var + ((new_sample - old_mean) * (new_sample - new_mean) - old_var) / (n + 1)
+
+def montecarlo_min_error(f, bound, min_sample_size):
+  n, mean, sd = 0, 0, 0
+  while n < min_sample_size or sd/sqrt(n) >= bound:
+    e = f(random())
+    new_mean = mean_recursive(mean, e, n)
+    sd = sqrt( var_recursive(sd**2, e, mean, new_mean, n) )
+    mean = new_mean 
+    n += 1
+
+  return mean
+\end{verbatim}
+
+Luego basta pasarle a ese algoritmo las expresiones que corresponden a las
+integrales en $[0, 1]$. Para este ejercicio particular, la solución es dada por: 
+
+\begin{verbatim}
+def f1(x): 
+  return exp(x)/(sqrt(2*x))
+
+def f2(u): 
+  return 2* ( ( (1/u - 1)**2 * exp( -(1/u - 1)**2 ) ) / (u**2) )
+
+print(montecarlo_min_error(f1, 0.01, 100))
+print(montecarlo_min_error(f2, 0.01, 100))
+
+\end{verbatim}
+
+\pagebreak 
+
+\begin{myframe}
+    \textbf{(3)} $(a)$ Obtenga mediante simulación el valor deteniendo cuando el semi-ancho
+    del intervalo de confianza del $95\%$ sea justo inferior a $0.001$.
+
+    $(b)$ Indique cuál es el número de simulaciones necesarias en la simulación
+    realizadap ara lograr la condición pedida.
+
+    \begin{equation*}
+        \textbf{(i)} ~ \int_{\pi}^{2\pi} \frac{\sin x}{x} ~ dx, \qquad
+        \textbf{(ii)} ~ \int_0^\infty \frac{3}{3+x^4} ~  dx
+    \end{equation*}
+\end{myframe}
+
+En método de Monte Carlo, el estimador es una media muestral 
+
+$$\hat{\theta} = \frac{1}{N} \sum_{i=1}^N g(u_i)$$
+
+Sabemos que cuando $N \to \infty$, 
+
+\begin{equation*}
+    \frac{ \hat{\theta} -  \theta }{\frac{\sigma}{\sqrt{n} }} \simeq
+    \mathcal{N}(0, 1)
+\end{equation*}
+
+Por lo tanto, 
+
+\begin{equation*}
+    P\left( -z_{\alpha / 2} \leq \sqrt{n} \frac{\hat{\theta} - \theta}{\sigma}
+    \leq z_{\alpha / 2}\right)  = 1-\alpha
+\end{equation*}
+
+de lo cual se sigue
+
+\begin{equation*}
+    P\left( \hat{\theta} - z_{\alpha / 2} \frac{\sigma}{\sqrt{n} }  \leq \theta \leq
+        \hat{\theta} + z_{\alpha /
+        2}
+    \frac{\sigma}{\sqrt{n} }  \right)  = 1 - \alpha
+\end{equation*}
+
+Lo que esto nos dice es que el intervalo de confianza para una estimación de
+Monte Carlo y un nivel de significancia $\alpha$ es dado por
+
+\begin{equation*}
+    \hat{\theta} \pm z_{\alpha / 2} \frac{\sigma}{\sqrt{n} }
+\end{equation*}
+
+Para $95\%$ de confianza, debemos tomar $z_{0.05 / 2} = z_{0.025} = 1.96$. Más generalmente, la longitud del intervalo de confianza siempre es $2 \cdot
+z_{\alpha /  2} \frac{\sigma}{\sqrt{n} }$, es decir que depende de una sóla
+variable $(n)$. Se sigue que el semi-ancho del intervalo no es más que
+$z_{\alpha / 2} \frac{\sigma}{\sqrt{n} }$. Por lo tanto, sólo queremos simular
+hasta que 
+
+\begin{equation*}
+    1.96 \frac{S}{\sqrt{n} } < 0.001
+\end{equation*}
+
+Ahora simplifiquemos las integrales. Como
+
+\begin{equation*}
+    u = \frac{ x - \pi }{\pi} = \frac{x}{\pi} - 1, \qquad du = \frac{ dx }{\pi},
+    \qquad x = \pi(u + 1)
+\end{equation*}
+
+tenemos 
+
+\begin{equation*}
+    \int_{\pi}^{2\pi} \frac{\sin x}{x} ~ dx = \pi\int_0^1 \frac{\sin
+    (\pi(u+1))}{\pi(u + 1)} ~ du \approx \frac{\pi}{N} \sum_{i=1}^N \psi(u_i)
+\end{equation*}
+
+con $\psi(u)$ la función siendo integrada. Respecto a $\textbf{(i i)}$, hagamos
+
+\begin{equation*}
+    u = \frac{1}{x+1}, \qquad du = - \frac{dx}{(x+1)^2}, \qquad x = \frac{1}{u}
+    - 1
+\end{equation*}
+
+Por ende,
+
+\begin{equation*}
+    \int_0^\infty \frac{3}{3+x^4} dx = \int_0^1 \frac{3\left( \frac{1}{u}\right) ^2}{3 +
+    (\frac{1}{u} - 1)^4} ~ du = \int_0^1 \frac{3}{u^2(3 + \left( 1 / u - 1
+\right)^4 )} du
+\end{equation*}
 
 
 
 
+$(b)$ Ya dijimos que queremos $1.96 \frac{\sigma}{\sqrt{n} } < 0.001$, lo cual se
+cumple si y solo si $3841.6 \cdot \sigma^2 < n$
+
+\pagebreak 
+
+\begin{myframe}
+    $(\textbf{7})$: Sean $X_1,...,X_n$ variables aleatorias i.i.d., con media
+    desconocida $\mu$. Para constantes $a < b$, se quiere estimar 
+    $p = P(a < \Sigma_{i=1}^n X_i/n - \mu < b)$. Estimar $p$ if $n = 10$ y los
+    valores de $X_i$ son 
+    
+    $$56,~~ 101,~~ 78,~~ 67,~~    93,~~ 87,~~ 64,~~ 72,~~ 80,~ ~ 69$$
+
+    Tomar $a = -5, b = 5.$
+\end{myframe}
+
+El promedio es 76.7. Con $a = 5, b = 5$:
+
+\begin{align*}
+    p &= P(-5 - 76.7 < -\mu < 5 - 76.7) \\
+    &= P(76.7-5 < \mu < 76.7 + 5)\\ 
+    &=P(71.7 < \mu < 81.7)
+\end{align*}
 
 
+\pagebreak 
+
+\begin{myframe}
+    $X_1, \ldots, X_n$ i.i.d. con $\sigma^2$ desconcoida. Usando como estiamdor:
+
+    \begin{equation*}
+        S^2 = \sum_{i=1}^n(X_i - \overline{X})^2 / (n-1)
+    \end{equation*}
+
+    $(a)$ Estimar via bootstrap con $n=2, X_1 = 1, X_2 = 3$. 
+
+    $(b)$ Si $n = 15$ con   
+
+       $5,~~ 4,~~ 9,~~ 6,~~ 21,~~ 17,~~ 11,~~ 20,~~ 7,~~ 10,~~ 21,~~ 15,~~ 13,~~ 16,~~ 8$
 
 
-
-
-
-
-
-
-
+\end{myframe}
 
 
 
 
 \pagebreak
-\section{Apéndice teórico}
+
+\section{P7}
 
 \begin{myframe}
-  \textbf{Método de la transformada inversa.} Si $X : \Omega \mapsto \left\{
-  x_1, \ldots, x_n, \ldots \right\} $ es variable aleatoria
-  discreta, con $x_i < x_{i+1}$ y $p_X(x_i) = p_i$, la FPA $F_X$ satisface
-  $F_X(x) = \sum_{i=1}^{i-1} p_i$ para todo $x \in [x_{i-1}, x_i)$.
-
-  Informalmente, entre dos valores contiguos $[x_{i-1}, x_i)$ de $X$, se ha acumulado
-  la probabilidad de $x_{i-1}, x_{i-2}, \ldots, x_1$.
-
-  $\therefore $ Existe una biyección que asocia cada $x_i$ con el intervalo 
-  $$I_i = [p_0 + \ldots + p_{i-1}, p_0 + \ldots + p_i)$$
-
-  Claramente, $\left\{ I_1, I_2, \ldots \right\} $ es una partición de $[0, 1)$ 
-  y la longitud de $I_i$ es $p_i$. 
-
-  $\therefore ~ P(U \in I_i) = p_j$ con $U \sim \mathcal{U}(0, 1)$.
-
-  $\therefore $ Se pueden generar $k$ valores de $X$ generando $k$ veces una
-  uniforme $U$ en $(0, 1)$ y produciendo $x_0$ si $U \in I_0$, $x_1$ si $U \in
-  I_1$, etc.
+    \textbf{(1)} De acuerdo con la teoría genética de Mendel, cierta planta de
+    guisantes debe producir flores blancas, rosas o rojas con probabilidad 1/4,
+    1/2 y 1/4, respectivamente. Para verificar experimentalmente la teoría, se
+    estudió una muestra de 564 guisantes, donde se encontró que 141 produjeron
+    flores blancas, 291 flores rosas y 132 flores rojas. Aproximar el p-valor de
+    esta muestra: a) utilizando la prueba de Pearson con aproximación
+    chi-cuadrada, b) realizando una simulación.
 \end{myframe}
 
-\pagebreak 
+$(a)$ Por ser el primer problema, iremos lento. Nuestra hipótesis nula es que la
+hipótesis de Mendel se sostiene, la hipótesis alternativa es que la distribución
+de los guisantes viola las leyes de la herencia.
 
 
-\begin{myframe}
-\textbf{Método de aceptación y rechazo.} Sean $X, Y$ variables aleatorias y asuma que $Im(Y)
-\subseteq Im(X)$. Asuma además que existe $c > 0$ tal que
-
-\begin{equation*}
-  \frac{ f_X(x_j) }{f_Y(x_j)} \leq c
-\end{equation*}
-
-Es decir, que la probabilidad de $x_j$ en $X$ es a lo sumo $c$ veces la
-probabilidad de $x_j$ en $Y$. Entonces 
+Sea $N_i$ la frecuencia observada de guisantes del color $i$. Sea $N = 564$ el
+tamaño de la muestra. Las proporciones esperadas son
 
 \begin{equation*}
-  \sum_{x \in Im(X)} f_X(x) \leq c \sum_{x \in Im(X)} f_Y(x) \leq c
+    np_i = \begin{cases}
+        564 \cdot \frac{1}{4} = 141 & i = \text{blancas}\\
+        564 \cdot \frac{1}{2} = 282 & i = \text{rosas}\\
+        564 \cdot \frac{1}{4} = 141 & i = \text{rojas}\\
+    \end{cases}
 \end{equation*}
 
-Como la primera sumatoria es $1$ se sigue que $c \geq 1$. Si $c = 1$ claramente
-$X, Y$ siguen la misma distribución, así que asumamos que $c > 1$ (es decir que 
-$1 / c < 1$).
+El estadístico de prueba será en nuestra muestra de
+tamaño $N = 564$ será 
 
-Entonces, 
-tenemos un algoritmo para generar valores de $X$ usando valores de $Y$:
+\begin{align*}
+    T 
+    &= \sum_{i=1}^3 \frac{(N_i - np_i)^2}{np_i} = \frac{(141 -141 )^2}{141} +
+    \frac{(291-282)^2}{282} + \frac{(132-141)^2}{141} \\ 
+    &=\frac{81}{282} + \frac{81}{141} \\ 
+    &=0.861
+\end{align*}
 
-\begin{enumerate}
-  \item Generar $y \in Im(Y)$.
-  \item Generar $U \sim \mathcal{U}(0, 1)$
-  \item Si $U < \frac{f_X(y)}{c \cdot f_Y(y)}$, devolver $y$ y terminar.
-  \item Volver a (1)
-\end{enumerate}
-
-Notemos que 
+Tenemos $2$ grados de libertad y por lo tanto sabemos que $T \sim \chi^2_2$. El
+$p$-valor es la probabilidad de obtener un valor del estadístico tan extremo
+como el observado o mayor:
 
 \begin{equation*}
-  \frac{f_X(y)}{f_Y(y)} \leq c \Rightarrow  \frac{f_X(y)}{c \cdot f_Y(y)} \leq 1
+    P(\chi_2^2 \geq 0.861) = 1 - P(\chi_2^2 \leq 0.861) = 1 - 0.34982 = 0.65018
 \end{equation*}
 
-Es decir, la utilidad de asumir una $c$ que satisfaga la primera desigualdad es
-que nos permite "comprimir" o normalizar el \textit{ratio} entre las
-probabilidades de arriba entre 0 y 1. 
-\end{myframe}
+Bajo ningún nivel de significancia mentalmente sano rechazaremos la hipótesis
+nula.
 
 ~
-\pagebreak 
 
-
-
-
-
-
-\pagebreak 
-
-\section{Bonus problems}
-
-\begin{myframe}
-\textbf{(1)} For a fixed $p$, independently label the nodes of an infinite
-complete binary tree $0$ with probability $p$, and 1 otherwise. For what $p$ is
-there exactly a $1/2$ probability that there exists an infinite path down the tree
-that sums to at most 1 (that is, all nodes visited, with the possible exception
-of one, will be labeled 0). Find this value of $p$ accurate to $10$ decimal places.`
-\end{myframe}
-
-Let $\mathcal{P}$ be the set of all paths in the tree and let $\ell(v)$ be the
-label of vertex $v$. We know $\ell(v) \sim \text{Bernoulli}(p)$. We are
-interested in the probability that a path
-$p \in \mathcal{P}$, with vertices $v_1, v_2, \ldots$, satisfies 
-
-\begin{equation*}
-  \sum_{i=1}^\infty \ell(v_i) \leq 1
-\end{equation*}
-
-Let $p = v_0, \ldots, v_{n-1}$ be a path from level zero to level $n-1$, with
-$v_0$ the root node. Clearly, $\sum_{i=0}^{n-1} \ell(v_i)$ is a sum of Bernoulli
-independent random variables. $\therefore ~ \sum_{i=0}^{n-1} \ell(v_i) \sim
-\mathcal{B}(n, p)$.
-
-\begin{equation*}
-  \therefore ~ P\left( \sum_{i = 0}^{n-1} \ell(v_i) \leq 1 \right) =
-  \sum_{k=0}^1 \binom{n}{k}p^k(1-p)^{n-k} = (1-p)^{n} + np(1-p)^{n-1}
-\end{equation*}
-
-Let $\mathcal{P}_n$ be the set of all paths with $n$ vertices, i.e. the set of
-paths from the root vertex to a vertex in level $n - 1$.
-
-~ 
-
-The event of a path containing at least two vertices with label $1$ is
-equivalent to the event of two vertices in different levels being $1$ and these
-vertices being connected. If we consider only vertices up to level $n-1$, then
-per each level we have $1, 2, 4, 16, \ldots, 2^{n-1}$ vertices. 
-
-Thus, the vertices in the $k$th level may be considered a binomial experiment
-with parameters $n = 2^{k}, p$. Furthermore, each level itself may be considered
-a binomial experiment, where success is "at least one label 1 in the vertices of
-the level exists".
-
-\begin{align*}
-  &P(\text{At least one label in the vertices of level $k$ exists}) 
-  \\=~& 1 - P(\text{Zero vertices with label one exist in level $k$}) \\ 
-  \\=~& 1 - P(\text{All vertices in label $k$ have label 0}) \\ 
-  = ~ &1- p^{2^k}
-\end{align*}
-
-So, the binomial experiment of the levels $L$ follows $L \sim \mathcal{B}(n, 1 - p^{2^k})$,
-and if we let $\widetilde{ p } = p^{2^k} $ we have
-
-\begin{align*}
-  P(L \geq 2) 
-  &= 1 - P(L \leq 1) = 1 - \left( (1-\widetilde{ p } )^n +
-  n\widetilde{ p }(1 - \widetilde{ p } )^{n-1}  \right) 
-\end{align*}
-
-Now, the question is:
-
-\begin{equation*}
-  P(\text{Two one-labelled vertices are connected} \mid L\geq 2)
-\end{equation*}
-
-The probability that any pair of vertices of different levels is connected 
-
-\pagebreak 
-
-\begin{myframe}
-  Sea $X$ aleatoria discreta, $Im(X) = \left\{ 0, 1, 2, 3, 4 \right\} $, y 
-
-  \begin{equation*}
-    p_0 = 0.15, \quad p_1 = 0.20, \quad p_2 = 0.10, \quad p_3 = 0.35, \quad p_4
-    = 0.20
-  \end{equation*}
-
-  $(a)$ Describir mediante un pseudo-código un algoritmo que simule $X$
-  utilizando el método de la transformada inversa, minimzando el número esperado
-  de búsquedas. 
-
-  $(b)$ Describir mediante un pseudo-código un algoritmo que simule $X$
-  utilizando el método de aceptación y rechazo con una variable suporte $Y \sim
-  \mathcal{B}(4, 0.45)$.
-
-  $(c)$ Compare la eficiencia con $n = 10.000$ simulaciones.
-\end{myframe}
-
-$(a)$ 
-
-\begin{align*}
-  &p_n := \left\{ 0.15, 0.20, 0.10, 0.35, 0.20 \right\} \\
-  &i_n := \left\{ 3, 1, 4, 0, 2 \right\} \\ 
-  &U \sim \mathcal{U}(0, 1)\\
-  &\textbf{for } j := 0 \textbf{ to } j := 3 \textbf{ do } \\ 
-  &\qquad \textbf{if } U < p_X(i_j) \textbf{ then } \textbf{return }
-  i_j\textbf{ else } \textbf{skip}\\
-  &\textbf{od}
-\end{align*}
-
-$(b)$ Asumamos que tenemos una función $\textbf{genBin}(n, p)$ que simula
-una binomial $B \sim \mathcal{B}(n, p)$. Notemos además que con $n = 4,
-p = 0.45$, 
-
-\begin{align*}
-  p_B(k) &= \begin{cases}
-    0.091& k = 0\\ 
-    0.299& k = 1\\ 
-    0.367& k = 2\\ 
-    0.200& k = 3\\ 
-    0.041& k = 4\\
-  \end{cases}
-\end{align*}
-
-Queremos encontrar $c$ tal que $\forall x \in Im(X) : p_X(x) / p_B(x) \leq c$.
-Claramente, si definimos 
-
-\begin{equation*}
-  c := \max \left\{ \frac{p_X(x)}{p_B(x)} : x \in Im(X) \right\} 
-\end{equation*}
-
-habremos satisfecho la condición. Es fácil calcular computacionalmente este $c$,
-y dicho proceso se incluye en el algoritmo. 
-
-
-\begin{align*}
-  &ImX := [0, 1, 2, 3, 4]\\
-  &p_X := [0.15, 0.20. 0.10, 0.35, 0.20]\\
-  &p_B := [0.091, 0.299, 0.367, 0.200, 0.041]\\
-  &c := -1\\
-  &\textbf{for } j \in Im(X) \textbf{ do }\\
-  &\qquad \textbf{if } \frac{p_X[j]}{p_B[j]} > c \textbf{ then }  \textbf{ else
-  } \textbf{skip}\\ 
-  &\textbf{od} \\ 
-  &\textbf{while true do} \\ 
-  &\qquad x := \textbf{randint}(0, 4)\\ 
-  &\qquad u := \textbf{random}() \\ 
-  &\qquad \textbf{if } u < \frac{p_X[x]}{c * p_B[x]} \textbf{ then } \\ 
-  &\qquad \qquad \textbf{return } x \\ 
-  & \qquad\textbf{fi} \\ 
-  &\textbf{od}
-\end{align*}
-
-
-
-\pagebreak 
-
-\begin{myframe}
-  \textbf{(7)} Sea $Y \sim \mathcal{P}\left( 10 \right) $. Estime $P(Y > 2)$ con $n = 1000$
-  repeticiones usando el método de la transformada inversa y el método de la
-  transformada inversa mejorado.
-\end{myframe}
-
-Recordemos la fórmula recurrente de la Poisson:
-
-\begin{equation*}
-  P(Y = k) = \frac{\lambda}{k} \cdot P(X = k-1)
-\end{equation*}
-
-donde sabemos que $P(k = 0) = e^{-\lambda}$. Por lo tanto, el método de la
-transformada inversa puede darse del siguiente modo:
-
-\begin{enumerate}
-  \item Se simula una uniforme $U$ y se calcula $P(k = 0)$.
-  \item Si $U \in (0, P(k = 0))$ se devuelve $0$. 
-  \item Se calcula $P(k = 1)$.
-\end{enumerate}
-
-\pagebreak 
-
-
-\section{Parciales}
-
-\subsection{Parcial 2: 2024-05-16}
-
-\begin{myframe}
-  \textbf{(1)} $(a)$ Dar la función de probabilidad de masa de la variable $X$. 
-
-  $(b)$ Dar un algoritmo basado en aceptación y rechazo para generar valores de
-  $X$.
-\end{myframe}
-
-Simplemente debemos observar con qué probabilidad se da cada valor. Tomemos el
-caso en que $U < 0.9$, que tiene probabilidad $0.9$ obviamente (U es uniforme).
-
-En ese caso, se elige aleatoria y uniformemenete un elemento de $A$. Pero en $A$
-tenemos $9$ elementos, algunos de los cuales se repiten, y la probabilidad de
-obtener alguno de ellos es:
-
-\begin{equation*}
-  f_A(x) = P(X = x \mid U < 0.9) = \begin{cases}
-    \frac{1}{9} & x = 0 \\ 
-    \frac{2}{9} & x = 1 \\ 
-    \frac{3}{9} & x =2 \\ 
-    \frac{3}{9} & x = 3 \\ 
-    0 & c.c.
-  \end{cases}
-\end{equation*}
-
-Ahora, observemos siguiendo la misma lógica: 
-
-\begin{equation*}
-  f_B(x) = P(X = x \mid U \geq 0.9) = \begin{cases}
-    \frac{3}{10} & x = 0 \\ 
-    \frac{2}{10} & x =1 \\ 
-    \frac{5}{10} & x=2 \\ 
-    0 & c.c.
-  \end{cases}
-\end{equation*}
-
-Ahora veamos que, por ley de probabilidad total,
-
-\begin{align*}
-  f_X(x) = P(X = x) &= P(X = x \mid U < 0.9)P(U < 0.9) + P(X = x \mid U \geq 0.9)P(U \geq
-  0.9) \\ 
-           &= f_A(x) \cdot 0.9 + f_B(x) \cdot 0.1
-\end{align*}
-
-Por lo tanto, 
-
-
-\begin{equation*}
-  f_X(x) = \begin{cases}
-    0.13 & x = 0 \\ 
-    0.22 & x = 1 \\ 
-    0.35 & x = 2 \\ 
-    0.3 & x = 3 \\ 
-    0 & c.c.
-  \end{cases} 
-\end{equation*}
-
-
-$(b)$ Sea $U \sim \mathcal{U}\left\{ 0, \ldots, 3 \right\} $. El máximo de
-$f_X(x)$ es $f_X(2) = 0.35$. Por lo tanto, tomamos 
-
-\begin{equation*}
-  c := \frac{0.35}{1 / 4} = 1.4
-\end{equation*}
-
-Ahora simplemente hacemos 
+$(b)$  Usando bootstrap, simulamos $N$ veces el experimento y calculamos cuántas
+veces el estadístico experimental es tan o más extremo que el estadístico que
+hemos observado:
 
 \begin{verbatim}
-while True:
-  U = random()
-  c = 1.4
-  pX = [0.13, 0.22, 0.35, 0.3] 
-  Y = random.randint(0, 4)
-  if U < pX[Y]/(0.25*c): 
-    return Y 
-\end{verbatim}
+def sim1(n_simulations):
 
-\pagebreak 
+  probs = [1/4, 1/2, 1/4]
+  N = 564 
 
-\begin{myframe}
-  \textbf{(2)} Considerar $X$ con densidad 
+  # X: Valores observados
+  X = np.array([141, 291, 132])
+  # E_X: Valores esperados
+  E_X = np.array([141, 282, 141])
+  # T: Estadístico
+  T = np.sum( (X - E_X)**2 / E_X)
 
-  \begin{equation*}
-    f_X(x) = \begin{cases}
-      \sqrt{x}  & 0 \leq x < 1 \\ 
-      1 / 3 & 1 \leq x \leq 2 \\ 
-      0 & c.c.
-    \end{cases}
-  \end{equation*}
-
-  $(a)$ Explicar cómo se aplica la transformada inversa para simular valores de $X$.
-  Considerar $U \sim \mathcal{U}(0, 1)$. Calcular explícitamente el valor que
-  devuelve el algoritmo para $U = 0.2, U = 0.5, U = 0.8$. 
-
-  $(b)$ Simularlo en Python y estime $P(X > 4)$.
-\end{myframe}
-
-Para el método de la transformada inversa, considerando $U \sim \mathcal{U}(0,
-1)$, realizamos lo siguiente:
-
-\begin{enumerate}
-  \item Calculamos $F(x)$, la función de prob. acumulada de $X$. 
-  \item
-    Calculamos $a := F(1), b := F(2)$, el valor de la prob. acumulada en los
-    puntos de corte de las regiones que definen $f_X(x)$.
-  \item Calculamos $F^{-1}(x)$ la inversa de $F$, y notamos que será divida por
-    casos en las regiones $[0, 1), [1, 2]$.
-  \item Generamos $U \sim \mathcal{U}(0, 1)$.  
-  \item Si $U \leq a$, se devuelve $F^{-1}(U)$ según la definición de la región
-    $[0, 1)$; si $a < U \leq b$, se devuelve
-    $F^{-1}(U)$ según la definición de la región $[1, 2]$.
-\end{enumerate}
-
-En particular, para $x \in [0, 1]$
-
-\begin{equation*}
-  F(x) = \int_0^x \sqrt{t} ~ dt = \left[ \frac{2}{3} t^{\frac{3}{2}} \right]_0^x =
-\frac{2x^{\frac{3}{2}}}{3}
-\end{equation*}
-
-y para $x \in [1, 2]$,
-
-\begin{equation*}
-  F(x) = F(1) + \frac{1}{3}\int_1^x ~ dt = \frac{2}{3} + \frac{1}{3}(x-1)
-\end{equation*}
-
-Ahora bien, 
-
-\begin{equation*}
-  \frac{2x^{\frac{3}{2}}}{3} = u \iff x = \left( \frac{3}{2}u \right)^{\frac{2}{3}}
-\end{equation*}
-
-y 
-
-\begin{equation*}
-  \frac{2}{3} + \frac{1}{3}(x-1) = u \iff x = 3u - 1
-\end{equation*}
-
-Observemos que $F(1) = \frac{2}{3}$, $F(2) = 1$, y por lo
-tanto el algoritmo hace esto:
-
-\begin{enumerate}
-  \item Genera una $U$. 
-  \item Si $U \leq 2 / 3$, devuelve $\sqrt[3]{\left( \frac{3U}{2} \right)^2 }$. 
-  \item Si $U> 2 /3$, de vuelve $3U - 1$.
-\end{enumerate}
-
-De esto, es fácil calcular, qué devuelve para $U = 0.2, U = 0.5, U = 0.8$. 
-
-\pagebreak 
-
-\begin{myframe}
-  \textbf{(3)} Considerar un proceso de Poisson no homogéneo con 
-
-  \begin{equation*}
-    \lambda(t) = \begin{cases}
-      5 + 5t & 0 \leq t < 3 \\ 
-      20 &  3 \leq t \leq 5 \\ 
-      30 - 2t & 5 < t \leq 9
-    \end{cases}
-  \end{equation*}
-
-  $(a)$ Suponer que se aplica el método de adelgazamiento para simular los
-  tiempos de arribo en un proceso de Poisson homogéneo con tasa $\lambda = 20$.
-  ¿Con qué probabilidad se contará un evento del proceso homogéneo en $t =4$?
-  ¿Y en $t = 7$? 
-
-  $(b)$ Aplicar en Python el método de adelgazamiento mejorado. El programa debe
-  devolver un arreglo con todos los tiempos de arribo hasta el tiempo $T$, con
-  $0 \leq T \leq 9$. Para esto, particionar $[0, 9]$ en subintervalos con
-  extremos $0, 1, 2, 6, 8, 9$. Con esto, estimar el número esperado de arribos
-  en $[0, 9]$.
-\end{myframe}
-
-$(a)$ Si $M(t)$ es homogéneo con intensidad $\lambda$, y $N(t)$ cuenta los
-eventos de $M(t)$ con probabilidad 
-
-\begin{equation*}
-  \frac{\lambda(t)}{\lambda}
-\end{equation*}
-
-entonces $N(t)$ es no homogéneo con intensidad $\lambda(t)$. El método de
-adelgazamiento hace precisamente esto: simula $M(t)$ y, cada vez que hay un
-evento, decide si contarlo o no con prob. $\lambda(t) / \lambda$.
-
-Por lo  tanto, si se da un evento en $t = 4$, la probabilidad de contarlo es:
-
-\begin{equation*}
-  \frac{\lambda(4)}{20} = \frac{20}{20} = 1
-\end{equation*}
-
-Para $t = 7$, la probabilidad de contarlo es 
-
-\begin{equation*}
-  \frac{30 - 2\cdot 7}{20} = \frac{16}{20} = \frac{4}{5}
-\end{equation*}
-
-$(b)$ Dividamos $[0, 9]$ en 
-
-\begin{equation*}
-  I_1 := [0, 1], I_2 := (1, 2], I_3 := (2, 6], I_4 := (6, 8], I_5 := (8, 9]
-\end{equation*}
-
-Notemos que 
-
-\begin{align*}
-  t \in I_1 &\Rightarrow \lambda(t) \leq 10 \\ 
-  t \in I_2 &\Rightarrow \lambda(t) \leq 15 \\ 
-  t \in I_3 &\Rightarrow \lambda(t) \leq 20 \\ 
-  t \in I_4 &\Rightarrow\lambda(t) \leq 18\\
-  t \in I_5 & \Rightarrow \lambda(t) \leq 14
-\end{align*}
-
-Por lo tanto, elegimos $\lambda_1 = 10, \lambda_2 = 15, \lambda_3 = 20,
-\lambda_4 = 18, \lambda_5 = 14$. 
-
-La simulación entonces es:
-
-\pagebreak 
-
-\begin{verbatim}
-def poisson_adelgazamiento_mejorado(T, intervals, lambdas, upper_lambda):
-    j = 0  # interval index
-    t = -log(1 - random()) / upper_lambda
-    NT = 0
-    events = []
-
-    while t <= T:
-        if j < len(intervals) and t <= intervals[j]:
-            V = random()
-            if V < lambdas[j] / upper_lambda:
-                NT += 1
-                events.append(t)
-            t += -log(1 - random()) / upper_lambda
-        else:
-            # t exceeded current interval: move to next interval and reuse time
-            if j + 1 >= len(lambdas):  # No more intervals
-                break
-            leftover = t - intervals[j]
-            scale = lambdas[j] / lambdas[j + 1]
-            t = intervals[j] + leftover * scale
-            j += 1
-    return NT, events
-
-def estimate_expected_n_of_events()
-  poissons = [] 
-  for _ in range(10000):
-    n, _ = poisson_adelgazamiento_mejorado(
-          9, 
-          [1, 2, 6, 8, 9], 
-          [10, 15, 20, 18, 14],
-          20
-          )
-    poissons.append(n)
+  K = 0 
   
-  return( mean(poissons) )
+  for i in range(n_simulations):
 
+    # Generamos una sample eligiendo aleatoriamente entre [0, 1, 2]
+    sample = np.random.choice([0,1,2], size=N, p=probs)
+    # Cuántas veces aparece cada valor posible
+    frequencies = np.array( [np.sum(sample == i) for i in range(3)] )
+    chi_sim = np.sum((frequencies - E_X)**2 / E_X)
+    if chi_sim >= T:
+        K += 1
+
+  p = K/n_simulations
+  return p
 \end{verbatim}
 
-
-\pagebreak 
-
-\subsection{Parcial 2: 2022-05-24}
-
-\begin{myframe}
-  $(a)$ Dar la dist. de $X$. 
-
-  $(b)$ Explicar e implementar método de la urna para esta variable.
-\end{myframe}
-
-Claramente, $Im(X) = \left\{ 0, 1, 2, 3 \right\} $. El valor $0$ se da si y solo
-si $U < 0.4$ y $V < 0.8$ y por ende tiene probabilidad $0.4 \cdot 0.8 = 0.32$. 
-El valor $1$ se da si y solo si $0.4 < U < 0.75$ y $V < 0.6$ y tiene probabilidad
-$0.35 \cdot 0.6 = 0.21$. El valor $2$ se da en dos casos:
-
-\begin{enumerate}
-  \item Si $U < 0.4$ pero $V \geq 0.8$, con prob. $0.4 \cdot 0.2 = 0.08$.
-  \item Si $U \geq 0.75$ con prob. $0.25$.
-\end{enumerate}
-
-Por lo tanto, tiene probabilidad $0.08 + 0.25 = 0.33$ . El valor $3$ se da si y
-solo si $0.4 \leq U < 0.75$ y $V \geq 0.6$ con probabilidad $0.35 \cdot 0.4 =
-0.14$.
-
-Verificamos que $0.32 + 0.21 + 0.33 + 0.21 = 1$. La distribución entonces es 
-
-\begin{equation*}
-  p_X(x) = \begin{cases}
-    0.32 & x = 0 \\ 
-    0.21 & x = 1 \\ 
-    0.33 & x = 2 \\ 
-    0.14 & x = 3
-  \end{cases}
-\end{equation*}
-
-$(b)$ El método de la urna consiste en generar un arreglo $A$ tales que
-exactamente el $\%32$ de sus elementos sean $0$, $21\%$ sean $1$, $33\%$ sean
-$2$, $14\%$ sean $3$. La forma más simple es hacer $A$ de $100$ elementos con 
-$32$ veces $0$, $21$ veces $1$, etc. Luego, tomar una elección uniforme (con
-prob. $1 / 100$) de un elemento de $A$ simulará $X$. Hacerlo en Python es
-trivial.
+El resultado con $10000$ simulaciones fue $0.654$.
 
 \pagebreak 
 
 \begin{myframe}
-  \textbf{(4)} En un experimento, se arroja sucesivamente una moneda con
-  probabilidad de obtener cara $p$. Se lo hace hasta obtener dos tiradas
-  distintas. Si $p = \frac{1}{3}$ y $X$ es la cantidad de tiradas hasta un
-  éxito,
-
-  \begin{equation*}
-    P(X = n) = \frac{2^{n-1} + 2}{3^n}, \qquad n \geq 2
-  \end{equation*}
-
-  $(a)$ Simule en Python el experimento y estime $P(X = 4)$. 
-
-  $(b)$ Describa aceptación y rechazo para generar valores de $X$, rechazando
-  con $Y \sim \text{Geom}(\frac{1}{3})$. Dar el número esperado de iteraciones
-  que realiza el algoritmo para generar un valor de $X$.
-
-  $(c)$ Implemente $(b)$ en Python y estime $P(X = 4)$.
+    \textbf{(a)} Para verificar que cierto dado no estaba trucado, se
+    registraron 1000 lanzamientos, resultando que el número de veces que el dado
+    arrojó el valor $i$ ($i = 1,2,3,4,5,6$) fue, respectivamente, 158, 172, 164,
+    181, 160, 165. Aproximar el $p$−valor de la prueba: “el dado es honesto” a)
+    utilizando la prueba de Pearson con aproximación chi-cuadrada, b) realizando
+    una simulación.
 \end{myframe}
 
-$(a)$
-
-\begin{verbatim}
-def tirar_monedas():
-
-  k = 2
-  tirada_anterior = random.random() < 1/3
-  while True:
-    tirada = random.random() < 1/3
-    if tirada != tirada_anterior:
-      return k
-    k += 1
-    tirada_anterior = tirada
-
-
-def estimar_p4(n):
-  es4 = 0 
-  for _ in range(n):
-    k = tirar_monedas()
-    if k == 4:
-      es4 += 1
-
-  return es4/n
-\end{verbatim}
-
-$(b)$ Sea $Y \sim \text{Geom}(1/3)$, de manera tal que 
-
-\begin{equation*}
-  p_Y(y) = \left( 2 / 3 \right)^{y-1}1 /3
-\end{equation*}
-
-Considere 
+Tomemos como hipótesis nula que el dado es honesto---i.e. que la distribución de
+las posibles caras es uniforme con probabilidad $\frac{1}{6}$. Bajo la hipótesis
+nula, en 1000 lanzamientos se espera que cada cara salga $1000 \cdot 1 / 6 =
+166.666$ veces. Por ende, el estadístico de prueba de Pearson con aproximación
+$\chi^2_5$ es 
 
 \begin{align*}
-  \frac{p_X(n)}{p_Y(n)} 
-  &= \frac{2^{n-1}+2}{3^n (2 / 3)^{n-1}1 / 3} \\ 
-  &= \frac{2^{n-1}+2}{3^n 2^{n-1} \cdot \frac{1}{3^{n-1}}1 / 3}  \\ 
-  &= \frac{2^{n-1}}{3^n 2^{n-1} \cdot \frac{1}{3^{n-1}}1 / 3}  + \frac{2}{3^n 2^{n-1} \cdot \frac{1}{3^{n-1}}1 / 3}\\ 
-  &= \frac{1}{\frac{3^n}{3^{n-1}}\cdot \frac{1}{3}} +
-  \frac{2}{\frac{3^n}{3^{n-1}}\cdot \frac{2^{n-1}}{3}} \\ 
-  &= 1 + \frac{2}{2^{n-1}} \\ 
-  &= 1 + \frac{1}{2^{n-2}}
+    T = \frac{1}{166.666}\sum_{i=1}^6 &(158 - 166.666)^2 \\ 
+    + &(172 - 166.666)^2 \\ 
+    + &(164 - 166.666)^2 \\ 
+    + &(181 - 166.666)^2  \\ 
+    + &(160 - 166.666)^2 \\ 
+    +  &(165 - 166.666)^2
 \end{align*}
 
-Claramente, esta expresión decrece cuando $n \to \infty$ y por lo tanto tiene
-máximo en $n = 2$, donde equivale a $1 + 1 / (2^0) = 1 + 1 = 2$. Por lo tanto,
-elegimios este valor para $c$ y así garantizamos que $c$ es cota de la expresión
-para todo $n$.
+lo cual da $\approx 2.18$. Usando Python, computamos $p\text{-value} = P(\chi_5^2 \geq 2.18) =
+0.8237$. El dado es honesto.
 
-Entonces, el método de aceptación y rechazo hará lo siguiente: 
+~
 
-\begin{enumerate}
-  \item Fijar $c := 2$. 
-  \item Simular $Y \sim \text{Geom}(1 / 3)$. 
-  \item Simular $U \sim \mathcal{U}(0, 1)$.
-  \item Si $U < \frac{p_X(Y)}{p_Y(Y)c}$, devolver $Y$ y terminar. 
-  \item Volver a (2).
-\end{enumerate}
+$(b)$ La simulación via bootstrapping me dio 0.8177:
 
+\begin{verbatim}
+def sim2(n_simulations):
 
+  probs = [1/6 for _ in range(6)]
+  T = 2.18
+  k = 0
+  N = 1000
+  E_X = 166.666
 
+  for _ in range(n_simulations):
+    
+    sample = np.random.choice([0,1,2,3,4,5], size=N, p=probs)
+    frequencies = np.array([np.sum(sample == i) for i in range(6)])
+    sample_t = np.sum( ( frequencies - E_X )**2 / E_X )
 
-
-
-
-
-
-
-
-
+    if sample_t >= T:
+      k += 1
 
 
+  return k/n_simulations
+\end{verbatim}
+
+\pagebreak 
+
+\begin{myframe}
+\textbf{(3)} Calcular una aproximación del $p$−valor de la hipótesis: “Los siguientes 10 números son
+aleatorios”:
+
+$$0.12, ~ ~ 0.18, ~ ~ 0.06, ~ ~ 0.33, ~ ~ 0.72, ~ ~ 0.83, ~ ~ 0.36, ~ ~ 0.27, ~ ~ 0.77, ~ ~ 0.74$$
+\end{myframe}
+
+Queremos testear si los datos provienen de una uniforme $\mathcal{U}(0, 1)$.
+Tenemos dos maneras, y vamos a hacer ambas para practicar. 
+
+~
+
+$(a)$ Discretizamos $[0, 1]$ en $[0, 0.1), [0.1, 0.2), \ldots, [0.9, 1]$ donde,
+asumiendo que los datos provienen de $\mathcal{U}(0,1)$, tenemos $P(u_i) \in I_j
+= 1 / 10$. Claramente, esperamos que de 10 datos, 1 caiga en cada intervalo. Es
+decir, el estadístico es 
+
+\begin{equation*}
+    T = \sum_{j=1}^{10} \frac{( \# j - 1 )^2}{1} = \sum_{j=1}^{10} (\#j - 1)^2
+    \sim \chi_9^2
+\end{equation*}
+
+donde $\# j$ es la cantidad de valores que cayeron en el intervalo $j$-ésimo.
+Claramente, 
+
+\begin{align*}
+    T &= (1-1)^2 + (2-1)^2 + (1-1)^2 + (2-1)^2 + (0-1)^2 + (0-1)^2 + (0-1)^2 +
+    (3-1)^2 + (1-1)^2 + (0-1)^2 \\ 
+      &= 1 + 1 + 1 + 1 + 1 + 2^2 + 1 \\ 
+      &= 10
+\end{align*}
+
+El $p$-valor de este estadístico es $\approx 0.35$ y no se rechaza la hipótesis
+de que los datos son aleatorios y uniformes en $[0, 1]$.
+
+$(b)$ Usamos el test de Kolmogorov-Smirnov para ver si los datos vienen de una
+uniforme $\mathcal{U}(0, 1)$. Usamos $F$ para denotar la FPA de dicha
+distribución.  El primer paso es ordenar los valores: 
+
+\begin{equation*}
+    0.06,~~0.12,~~0.18,~~0.27,~~0.33,~~0.36,~~0.72,~~0.74,~~0.77,~~0.83
+\end{equation*}
+
+Usaremos $y_j$ para denotar el $j$-écimo elemento del ordenamiento. El
+estadístico de prueba es 
+
+\begin{align*}
+    D &= \max_{1 \leq j \leq n} \left\{ \frac{j}{n} - F(y_j), F(y_j) -
+    \frac{j-1}{n} \right\}  \\ 
+      &=\max_{1 \leq j \leq n}\left\{ \frac{j}{10} - y_j, y_j - \frac{j-1}{10} \right\} 
+\end{align*}
+
+Es una tontera calcular esto en Python y $D = 0.24$ para nuestro conjunto de
+datos:
+
+\begin{verbatim}
+def ks_statistic(F, sample):
+
+  sample = sorted(sample)
+  n = len(sample)
+  
+  D = 0 
+  for j in range(1, n+1):
+    y = sample[j-1]
+    d1 = j/n - F(y) 
+    d2 = F(y) - (j-1)/n
+    d = max(d1, d2)
+    D = max(D, d)
+
+  return(D)
+
+
+sample = [0.06, 0.12, 0.18, 0.27, 0.33, 0.36, 0.72, 0.74, 0.77, 0.83]
+def uniform_cdf(x):
+  if x > 1 or x < 0:
+    raise ValueError 
+  return x
+
+ks_statistic(uniform_cdf, sample)
+\end{verbatim}
+
+Pero continuemos. Debemos calcular el $p$-valor de dicho estadístico vía
+simulaciones. Actualicemos el código para ello:
+
+\begin{verbatim}
+def ks_statistic(F, sample):
+
+  sample = sorted(sample)
+  n = len(sample)
+  
+  D = 0 
+  for j in range(1, n+1):
+    y = sample[j-1]
+    d1 = j/n - F(y) 
+    d2 = F(y) - (j-1)/n
+    d = max(d1, d2)
+    D = max(D, d)
+
+  return D
+
+
+def ks(F, sample, sim_sample_size=10, n_sims=1000):
+
+  D = ks_statistic(F, sample)
+  print(D)
+  k = 0
+
+  for _ in range(n_sims):
+    sim_sample = np.random.uniform(0, 1, size=sim_sample_size)
+    sim_D = ks_statistic(F, sim_sample)
+    if sim_D >= D:
+      k += 1
+
+  return k/n_sims
+
+
+
+
+sample = [0.06, 0.12, 0.18, 0.27, 0.33, 0.36, 0.72, 0.74, 0.77, 0.83]
+def uniform_cdf(x):
+  if x > 1 or x < 0:
+    raise ValueError 
+  return x
+
+p_value = ks(uniform_cdf, sample)
+\end{verbatim}
+
+El $p$-valor simulado fue 0.541 con lo cual no se rechaza la hipótesis nula.
+(Nuestros resultados coinciden con los de la librería scipy).
+
+\pagebreak 
+
+\begin{myframe}
+\textbf{(4)} Calcular una aproximación del $p$−valor de la hipótesis: “Los
+siguientes 13 valores provienen de una distribución exponencial con media 50”:
+
+$$86.0,~~ 133.0,~~ 75.0,~~ 22.0,~~ 11.0,~~ 144.0,~~ 78.0,~~ 122.0,~~ 8.0,~~ 146.0,~~ 33.0,~~ 41.0,~~ 99.0$$
+\end{myframe}
+
+Podemos generalizar nuestra función $\textbf{ks}$ del ejercicio $\textbf{(3)}$
+para que sirva para cualquier distribución.
+
+\footnotesize
+\begin{verbatim}
+def ks(F, sample, sampler, sim_sample_size=None, n_sims=1000):
+    """
+    Compute the empirical p-value of the KS statistic by simulating samples from
+    the null distribution.
+
+    Parameters:
+        F: Callable
+            CDF of the null hypothesis distribution.
+        sample: list or array
+            The observed data.
+        sampler: Callable
+            A function that generates samples from the null distribution. 
+            Should take a single `size` argument.
+        sim_sample_size: int, optional
+            Size of the simulated samples. If None, use len(sample).
+        n_sims: int
+            Number of simulations to perform.
+
+    Returns:
+        float
+            Empirical p-value.
+    """
+    if sim_sample_size is None:
+        sim_sample_size = len(sample)
+
+    D = ks_statistic(F, sample)
+    print("D-statistic: ", D)
+
+    k = 0
+    for _ in range(n_sims):
+        sim_sample = sampler(sim_sample_size)
+        sim_D = ks_statistic(F, sim_sample)
+        if sim_D >= D:
+            k += 1
+
+    return k / n_sims
+\end{verbatim}
+
+\normalsize
+Ahora ya tenemos nuestro código para calcular el test de Kolmogorov-Smirnov con
+cualquier distribución. Solo basta notar que la prob. acumulada de una
+exponencial con media $50$ es 
+
+\begin{equation*}
+    F_X(x) = 1 - e^{-x / 50}
+\end{equation*}
+
+Por lo tanto, hacemos:
+\footnotesize
+\begin{verbatim}
+def exponential_cdf(x, mean):
+  if x < 0:
+    raise ValueError 
+
+  return 1 - exp(-x/mean)
+
+def exponential_mean_50(x):
+  return exponential_cdf(x, 50)
+
+def exponential_sampler(size):
+    return np.random.exponential(scale=50, size=size)
+
+
+sample = [86.0, 133.0, 75.0, 22.0, 11.0, 144.0, 78.0, 122.0, 8.0, 146.0, 33.0,
+          41.0, 99.0]
+p_value = ks(exponential_mean_50, sample, exponential_sampler)
+\end{verbatim}
+
+\normalsize 
+
+El resultado es un $p$-valor de $0.023$ y un estadístico $D \approx 0.392$. Se
+rechaza la hipótesis nula ($\alpha = 0.05$).
+
+\pagebreak 
+
+\begin{myframe}
+    \textbf{(5)} Calcular una aproximación del $p$-valor de la prueba de que los
+    siguientes datos corresponden a una distribución binomial con parámetros ($n
+    = 8$, $p$), donde $p$ no se conoce: 
+
+    $$6,~~ 7,~~ 3,~~ 4,~~ 7,~~ 3,~~ 7,~~ 2,~~ 6,~~ 3,~~ 7,~~ 8,~~ 2,~~ 1,~~ 3,~~ 5,~~ 8,~~ 7$$
+\end{myframe}
+
+Un estimador insesgado y consistente de $p$ es 
+
+\begin{equation*}
+    \frac{\# \text{éxitos}}{\# \text{experimentos}}
+\end{equation*}
+
+y se puede estimar a través de las distintas muestras si consideramos la suma de
+los experimentos binomiales. (Suma de binomiales sigue una binomial). Por ende,
+veamos que tenemos $6 + 7 + 3 + 4 + \ldots + 8 + 7 = 89$ éxitos de un total de
+$8 \cdot 18 = 144$ experimentos, lo cual da 
+
+\begin{equation*}
+    p \approx \frac{89}{144} = 0.618
+\end{equation*}
+
+Por lo tanto, haremos la prueba de hipótesis usando el test de Pearson con
+aproximación $\chi^2$ (pues los datos son discretos). Ahora haremos un código
+general que permite hacerlo:
+
+\pagebreak
+
+\tiny 
+\begin{verbatim}
+def pearson_chi(pmf, sample, imX, simulate_p_value=False, n_simulations=1000):
+    """
+    Bondad de ajuste: Pearson chi-cuadrado.
+    
+        pmf: callable
+            Función de prob. de masa bajo H₀
+        sample: list or array
+            Datos observados (frecuencia absoluta).
+        imX: list
+            Soporte de la distribución (su imagen).
+        simulate_p_value: bool
+            Simular o usar la CDF de χ²?
+        n_simulations: int
+            Si se simula el p-valor, cuántas simulaciones?
+            
+    Returns:
+        T: float
+           El estadístico T 
+        p: float
+            El p-valor
+    """
+    N = len(sample)
+    counts = Counter(sample)
+    observedFreq = np.array([counts.get(x, 0) for x in imX])
+    probs = np.array([pmf(x) for x in imX])
+    expectedFreq = probs * N
+
+    # Usamos el `with` para cuidarnos de la división por cero
+    with np.errstate(divide='ignore', invalid='ignore'):
+        T = np.sum((observedFreq - expectedFreq)**2 / expectedFreq)
+
+    if simulate_p_value:
+        K = 0
+        for _ in range(n_simulations):
+            simulated_sample = np.random.choice(imX, size=N, p=probs)
+            sim_counts = Counter(simulated_sample)
+            sim_observedFreq = np.array([sim_counts.get(x, 0) for x in imX])
+            chi_sim = np.sum((sim_observedFreq - expectedFreq)**2 / expectedFreq)
+            if chi_sim >= T:
+                K += 1
+        p = K / n_simulations
+        return T, p
+    else:
+        df = len(counts) - 1  # grados de libertad
+        print("DF ", df)
+        p = 1 - chi2.cdf(T, df)
+        return T, p
+
+\end{verbatim}
+
+\normalsize
+
+Ahora solo hacemos:
+
+\footnotesize 
+\begin{verbatim}
+p = 0.618
+n = 8
+sample = [6, 7, 3, 4, 7, 3, 7, 2, 6, 3, 7, 8, 2, 1, 3, 5, 8, 7]
+t, p_value = pearson_chi(
+  lambda x: binom.pmf(x, n, p), # de scipy.stats
+  sample,
+  [0, 1, 2, 3, 4, 5, 6, 7, 8],
+  simulate_p_value=True,
+  n_simulations=10000
+                         )
+
+print(t)
+print(p_value)
+\end{verbatim}
+
+\normalsize
+El resultado es: $T$: 31.49620198292496, $p$-valor: 0.0137
+
+
+\pagebreak 
+
+\begin{myframe}
+    \textbf{(6)} Un escribano debe validar un juego en cierto programa de
+    televisión. El mismo consiste en hacer girar una rueda y obtener un premio
+    según el sector de la rueda que coincida con una aguja. Hay 10 premios
+    posibles, y las áreas de la rueda para los distintos premios, numerados del
+    1 al 10, son respectivamente:
+
+    $$31\%,~~ 22\%,~~ 12\%,~~ 10\%,~~ 8\%,~~ 6\%,~~ 4\%,~~ 4\%,~~ 2\%,~~ 1\%$$
+
+    Los premios con número alto (e.j. un auto 0Km) son mejores que los premios
+    con número bajo (e.j. 2x1 para entradas en el cine). El escribano hace girar
+    la rueda hasta que se cansa, y anota cuántas veces sale cada sector. Los
+    resultados, para los premios del 1 al 10, respectivamente, son: 
+
+    $$188,~~ 138,~~ 87,~~ 65,~~ 48,~~ 32,~~ 30,~~ 34,~~ 13,~~ 2$$
+    
+    a) Construya una tabla con los datos disponibles
+
+    b) Diseñe una prueba de hipótesis para determinar si la rueda es justa
+
+    c) Defina el p-valor a partir de la hipótesis nula
+
+    d) Calcule el p-valor bajo la hipótesis de que la rueda es justa, usando la aproximación chi cuadrado
+
+    e) Calcule el p-valor bajo la hipótesis de que la rueda es justa, usando una simulación.
+\end{myframe}
+
+$(a)$ Hagamos una tabla con las probabilidades de cada valor, su frecuencia
+esperada, su frecuencia observada. Veamos que
+
+\begin{equation*}
+    188+ 138+ 87+ 65+ 48+ 32+ 30+ 34+ 13+ 2 = 637
+\end{equation*}
+
+Es decir, hubieron $N = 637$ muestras.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+$X$ & $P(X)$ & \textbf{Frec. esperada} ($N \cdot P(X)$) & \textbf{Frec.
+observada} \\
+\hline
+1 &$0.31$  &197.4 & 188 \\
+2 &$0.22$ &140.14 & 138 \\
+3 &$0.12$ &76.44 & 87 \\
+4 &$0.1$ &63.7 & 65 \\
+5 &$0.08$ &50.96 & 48 \\
+6 &$0.06$ &38.22 & 32 \\
+7 &$0.04$ &25.48 & 30 \\
+8 &$0.04$ &25.48 & 34 \\
+9 &$0.02$ &12.74 & 13 \\
+10 &$0.01$& 6.37 & 2 \\
+\hline
+\end{tabular}
+\label{tab:freq-table}
+\end{table}
+
+$(b, c, d)$ La hipótesis nula es que la rueda es que la rueda es justa y tiene la
+distribución dada en el ejercicio. Solo hay que computar:
+
+\begin{equation*}
+    T = \sum_{i=1}^{10} \frac{ (i_{\text{Frec obs.}} - i_\text{Frec. esperada})^2
+    }{i_{\text{Frec. esperada}}} \simeq \chi_9^2
+\end{equation*}
+
+El $p$-valor bajo la hipótesis nula es $P(\chi_9^2 \geq T)$. El código es una
+tontera, sigue la misma estructura de siempre:
+
+\footnotesize 
+
+\begin{verbatim}
+    
+def sim6(n_sim=10000):
+  obs = np.array([188, 138, 87, 65, 48, 32, 30, 34, 13, 2])
+  esp = np.array([197.4, 140.14, 76.44, 63.7, 50.96, 38.22, 25.48, 25.48, 12.74,
+                  6.37])
+  N = 637
+
+  T = np.sum ( (obs - esp)**2 / esp )
+  df = 9
+  p_value = 1 - chi2.cdf(T, df)
+
+  probs = [0.31, 0.22, 0.12, 0.1, 0.08, 0.06, 0.04, 0.04, 0.02, 0.01]
+  k = 0
+
+  for _ in range(n_sim):
+    sample = np.random.choice([0,1,2,3,4,5, 6, 7, 8, 9], size=N, p=probs)
+    frequencies = np.array([np.sum(sample == i) for i in range(10)])
+    sample_t = np.sum( ( frequencies - esp )**2 / esp )
+
+    if sample_t >= T:
+      k += 1
+
+  sim_p_value = k/n_sim
+
+  print(f"T = {T}; p = {p_value}; sim_p = {sim_p_value}")
+
+\end{verbatim}
+\normalsize
+
+El resultado: \texttt{T = 9.803840445269017; p = 0.36659773905255266; sim\_p =
+0.3689}. No rechazamos la hipótesis de que la rueda es justa.
 
 
 
@@ -3184,29 +3346,158 @@ Entonces, el método de aceptación y rechazo hará lo siguiente:
 
 
 
+\pagebreak 
+
+\section{P8}
+
+\begin{myframe}
+    \textbf{(1)} La Figura 1 muestra el diagrama de transición de una cadena de
+    Markov. Dar la matriz de transición, y determinar:
+
+a) $P(X_4 = 2 | X_3 = 1) y P(X_3 = 1 | X_2 = 1)$.
+
+b) $P(X_4 = 2 | X_1 = 1) y P(X_4 = 2 | X_0 = 1)$.
+
+c) Si se sabe que $P(X_0 = 0) = 1/3$
+, dar $P(X_0 = 0, X_1 = 1)$ y $P(X_0 = 0,X_1 = 1,_X_2 = 2)$
+\end{myframe}
+
+La matriz de transición es 
+
+\begin{equation*}
+    Q = \begin{pmatrix}
+        0.25 & 0.5 & 0.25 \\ 
+        0.5 & 0 & 0.5 \\ 
+        0.5 & 0 & 0.5
+    \end{pmatrix} 
+\end{equation*}
+
+~
+
+$(a)$ $P(X_4 = 2 \mid X_3 = 1) = p_{21} = 0$. $P(X_3 = 1 \mid X_2 = 1) = p_{11}
+= 0$.
+
+~
+
+$(b)$ Consideremos $P(X_4 = 2 \mid X_1 = 1)$. Se quiere la posibilidad de llegar
+desde el estado $2$ al estado $1$ en $3$ transiciones. Recordemos que 
+
+\begin{equation*}
+    AB_{ij} = \sum_{k=1}^n a_{ik}b_{kj}
+\end{equation*}
+
+En nuestro caso, para  $Q^2$:
+
+\begin{align*}
+    p^{2}_{00} &= 0.25^2 + 0.5^2 + 0.25 * 0.5 = 0.4375\\
+    p^{2}_{10} &= 0.5 * 0.25 + 0 * 0.5^2 = 0.375\\
+    p^{2}_{20} &= 0.5*0.25 + 0.5^2  = 0.375 \\ 
+               &~ \\ 
+    p_{01} &= 0.5 * 0.25 = 0.125\\ 
+    p_{11} &= 0.5^2 = 0.25 \\ 
+    p_{21} &= 0.5^2 = 0.25\\ 
+           &~ \\ 
+    p_{02} &= 0.25^2 + 0.5^2 + 0.5*0.25 = 0.4375\\ 
+    p_{12} &= 0.5*0.25 + 0.5^2 = 0.375 \\ 
+    p_{22} &= 0.5*0.25 + 0.5^2 = 0.375
+\end{align*}
+
+\begin{equation*}
+    Q^2 = \begin{pmatrix}
+        0.4375 & 0.125 & 0.4375 \\ 
+        0.375 & 0.25 & 0.375 \\ 
+        0.375 & 0.25 & 0.375
+    \end{pmatrix} 
+\end{equation*}
 
 
+Como no quiero ser infeliz, a partir de ahora computo las matrices con Python.
+Según numpy, 
 
+\begin{equation*}
+    Q^3 = \begin{pmatrix}
+0.390625 &0.21875  &0.390625\\ 
+ 0.40625  &0.1875   &0.40625\\ 
+ 0.40625  &0.1875   &0.40625
+    \end{pmatrix} 
+\end{equation*}
 
+Con esta matriz, ya sabemos que pasar del estado $2$ al $1$ en $3$ transiciones
+es $p_{21}^{(3)} = 0.1875$.
 
+$(c)$ Digamos que $P(X_0 = 0) = 1 / 3$. Entonces 
 
+\begin{equation*}
+    P(X_0 = 0, X_1 = 1) = \frac{1}{3} \cdot p_{01} = 1 / 3 \cdot 0.5 \approx
+    0.1666 
+\end{equation*}
 
+\begin{equation*}
+    P(X_0 = 0, X_1 = 1, X_2 = 2) = 1 / 3 \cdot 0.5 \cdot 0.5 \approx 0.0833
+\end{equation*}
 
+\pagebreak 
 
+\begin{myframe}
+    Considere la cadena de Markov con 
 
+    \begin{equation*}
+        Q = \begin{bmatrix} 
+            0.5 & 0.5 & 0.5 \\ 
+            0.5 & 1 / 3 & 2 / 3 \\ 
+            0.5 & 0.5 & 2 / 3
+        \end{bmatrix} 
+    \end{equation*}
 
+    $(a)$ Calcule la probabilidad de alcanzar el estado $j$ dado que $X_0 = 0$,
+    $j = 0, 1, 2$.
+\end{myframe}
 
+$(a)$ Calculemos el vector de probabilidades de alcance $h^{\left\{ 0 \right\} }$. Sabemos que
+dicho vector es definido por la menor solución no negativa de:
 
+\begin{equation*}
+    h_i^{\left\{ 0 \right\} } = \begin{cases}
+        1 & i = 0 \\ 
+        \sum_{j \in S} p_{ij} h_j^{\left\{ 0 \right\} } & i \neq 0
+    \end{cases}
+\end{equation*}
 
+Sabemos entonces que $h_0^{\left\{ 0 \right\} } = 1$. Veamos que 
 
+\begin{align*}
+    &\begin{cases}
+        h_1^0 &= p_{1 0} h_{0}^{0} + p_{11}h_{1}^0 + p_{12} h_2^0\\
+        h_2^0 &= p_{2 0} h_{0}^{0} + p_{21}h_{1}^0 + p_{22} h_2^0
+    \end{cases} \\ 
+    \to &\begin{cases}
+        h_1^0 &= \frac{1}{2}(1) + \frac{1}{3}h_1^0 + \frac{2}{3}h_2^0\\
+        h_2^0 &= \frac{1}{2}(1) + \frac{1}{2}h_{1}^0 + \frac{2}{3} h_2^0
+    \end{cases}\\
+    \to &\begin{cases}
+        h_1^0 &= \frac{1}{2} + \frac{1}{3}h_1^0 + \frac{2}{3}h_2^0\\
+        h_2^0 &= \frac{1}{2} + \frac{1}{2}h_{1}^0 + \frac{2}{3} h_2^0
+    \end{cases}
+\end{align*}
 
+Ahora bien, la ecuación $(1)$ nos da
 
+\begin{align*}
+    &\frac{2}{3}h_1^0 = \frac{1}{2} + \frac{2}{3}h_2^0  \\ 
+    \iff & h_1^0 = \frac{3}{4} + h_2^0
+\end{align*}
 
+Sustituyendo en $(2)$, 
 
-
-
-
-
+\begin{align*}
+    &h_2^0 = \frac{1}{2} + \frac{1}{2}\left( \frac{3}{4} + h_2^0 \right)  +
+    \frac{2}{3}h_2^0 \\ 
+    \iff& h_2^0 = \frac{1}{2} + \frac{3}{8} + \left( \frac{1}{2} + \frac{2}{3}
+    \right) h_2^0 \\ 
+        \iff& h_2^0 = \frac{7}{8} + \frac{5}{6}h_2^0 \\ 
+        \iff& \frac{1}{6} h_2^0 = \frac{7}{8} \\ 
+        \iff& h_2^0 = \frac{42}{8} = \frac{21}{4}
+\end{align*}
 
 
 

@@ -1,6 +1,7 @@
 \documentclass[article, 12pt]{article}
 \setlength{\parskip}{1em}      % Espacio entre párrafos
 \setlength{\parindent}{1.5em}    % Sangría al inicio de párrafo
+\newcommand{\ind}{\perp\!\!\!\perp} 
 \usepackage{forest}
 \usepackage{xcolor}
 \usepackage{mdframed}
@@ -8,9 +9,11 @@
 \definecolor{shadecolor}{rgb}{0.1,0.1,0.1}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{bussproofs}
 \usepackage{textcomp}
 \usepackage{amsmath, amssymb}
 \usepackage{stmaryrd}
+\usepackage{enumerate}
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric}
 \usepackage{tikz-cd}
@@ -21,6 +24,7 @@
 \newtheorem{example}{Example}
 \newtheorem{lemma}{Lemma}
 \newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
 \newtheorem{problem}{Problem}
 \newtheorem{example}{Example} \newtheorem{definition}{Definition}
 \newtheorem{lemma}{Lemma}
@@ -871,6 +875,465 @@ $e_1$.
   Se dice que una expresión sin ningún \textit{redex} está en \textbf{forma
   normal}.
 \end{definition}
+
+\begin{theorem}[Church-Rosser]
+  Si $e \to^* e_0$ y $e \to^* e_1$, entonces hay una expresión $e'$ tal que 
+  $e_0\to^* e'$ y $e_1 \to e'$.
+\end{theorem}
+
+El teorema de Church-Rosser debe entenderse como un teorema de convergencia.
+Establece que aunque la reducción de $e$ diverja y conduzca a dos expresiones
+distintas, eventualmente ambas expresiones pueden reducirse a una expresión
+común. 
+
+\begin{proposition}
+  Cocientada sobre el renombre, toda expresión tiene a lo sumo una forma normal.
+\end{proposition}
+
+\begin{proposition}[Estandarización]
+  Si existe una secuencia de reducciones de $e$ que termina, la reducción en
+  orden normal de $e$ termina.
+\end{proposition}
+
+Una regla simple es la $\eta$-reducción:
+
+\begin{equation*}
+\inferrule* [right=] {v \not\in FV(e)}{\lambda v. ev \to v}
+\end{equation*}
+
+\begin{definition}
+  Una expresión está en forma canónica si es una abstracción.
+\end{definition}
+
+\subsection{Evaluación}
+
+Hasta ahora, la $\beta$-reducción y la relación $\to $ permiten computar cosas,
+pero no se corresponden con el modo en que los lenguajes de programación evalúan
+cosas. La evaluación tiene otras características:
+
+\begin{itemize}
+  \item Sólo se evalúan fórmulas cerradas 
+  \item Es determinística 
+  \item No busca formas normales sino formas canónicas
+\end{itemize}
+
+Hay dos formas principales: normal (e.g. Haskell) y eager (e.g. ML). La
+evaluación busca formas canónicas, y por ende las mismas vienen a ser el "valor"
+de una expresión. Cada evaluación tiene su propia definición de lo que es una
+forma canónica, pero en el caso del cálculo lambda éstas coinciden.
+
+\subsection{Evaluación en orden normal}
+
+Una expresión cerrada es una que no contiene variables libres. En particular,
+como la reducción nunca introduce ocurrencias de variables libres, la reducción
+de una expresión cerrada es otra expresión cerrada. Más aún, una expresión
+cerrada no puede ser una variable, con lo cual es o bien una abstracción o bien
+una aplicación.
+
+\begin{proposition}
+  Una aplicación cerrada no puede ser una forma normal.
+\end{proposition}
+
+
+\small
+\begin{quote}
+
+\textbf{Prueba.} Sea $e e'$ una aplicación cerrada. Reduzca $e$ hasta que ya no
+sea una aplicación. Por ser cerrado, la reducción de $e$ debe ser una
+abstracción. Por ser una abstracción que funciona como operador en una
+aplicación, obtenemos un \textit{redex}. Por lo tanto, $e e'$ no es una forma
+normal.
+
+\end{quote}
+\normalsize
+
+Se sigue que una forma cerrada \textit{normal}, que no puede ser variable o
+aplicación, debe ser una abstracción y por ende estar en forma canónica. Por
+otro lado, no toda forma cerrada canónica es normal. Por lo tanto, si $e$ es
+cerrada, tiene tres opciones:
+
+\begin{itemize}
+  \item La reducción normal termina en una forma normal. Como dicha forma normal
+    es canónica, la secuencia de reducción debe contener una primera forma
+    canónica $z$ tal que $e \Rightarrow z$.
+
+  \item La reducción normal no termina, pero tiene una primer forma canónica $z$
+    tal que $e \Rightarrow z$.
+
+  \item La reducción normal no termina y no tiene forma canónica alguna, en cuyo
+    caso decimos que diverge (i.e. $e \uparrow$). Tal es el caso de $\Delta
+    \Delta$.
+\end{itemize}
+
+La evaluación puede hacerse por medio de una semántica "big-step" con las
+siguientes reglas de inferencia:
+
+\textbf{EV RULE:} Canonical Forms
+\[
+\inferrule{ }{ \lambda v.\; e \Rightarrow \lambda v.\; e }
+\]
+
+\textbf{EV RULE:} Application ($\beta$-evaluation)
+\[
+\inferrule
+  { e \Rightarrow \lambda v.\; \hat{e} \quad (\hat{e}/ v \mapsto e') \Rightarrow z }
+  { ee' \Rightarrow z }
+\]
+\subsection{Semántica denotacional}
+
+Si uno da una semántica ingenua del cálculo de lambda, se obtienen paradojas del
+estilo de la paradoja de Russell. El problema es la auto-aplicación y la
+naturaleza no tipada del lenguaje. La forma de resolver este problema es dar una
+semántica cuyo dominio semántico sean funciones continuas de un dominio a sí
+mismo. Todas estas funciones poseen un punto fijo. 
+
+Para esto, se construye un dominio $D_\infty$ que sea una solución no trivial al
+isomorfismo
+
+\begin{equation*}
+  D_{\infty} \underset{\psi}{\overset{\phi}{\rightleftarrows}} D_\infty \to
+  D_\infty
+\end{equation*}
+
+La construcción de $D_\infty$ nos excede. Pero como el valor de una expresión
+depende del valor de sus variables libres, el significado de una expresión debe
+ser una función de $D_\infty^{\text{<var>}}$ en $D_\infty$:
+
+\begin{equation*}
+  \llbracket - \rrbracket \in \text{<exp>} \to \big( D_\infty^{\text{<var>}} \to
+  D_\infty \big)
+\end{equation*}
+
+Los elementos de $D_\infty^{\text{<var>}}$ se llaman \textit{entornos}, no
+estados, y se usa la variable $\eta$ para denotarlos. Se tienen entonces las
+siguientes expresiones semánticas:
+
+\begin{align*}
+  \llbracket v \rrbracket \eta &= \eta v \\ 
+  \llbracket e_0 e_1 \rrbracket\eta &= \phi\big( \llbracket e_0 \rrbracket\eta \big)
+  \big( \llbracket e_1 \rrbracket\eta \big) \\ 
+  \llbracket \lambda v. e \rrbracket\eta &= \psi \big( \lambda x \in D_{\infty}
+  ~.~ \llbracket e \rrbracket[\eta \mid v : x] \big)
+\end{align*}
+
+Se tienen los resultados esperados:
+
+\textbf{Coincidencia}: Si $\eta w = \eta' w$ para toda $w \in FV(e)$, entonces 
+$\llbracket e \rrbracket\eta = \llbracket e \rrbracket\eta'$.
+
+\textbf{Sustitución}: Si $\llbracket \delta w \rrbracket \eta' = \eta w$ para
+toda $w \in FV(e)$, entonces $\llbracket e / \delta \rrbracket\eta ' =
+\llbracket e \rrbracket \eta$. 
+
+\textbf{Consistencia del renombre} Si $v_{new} \not\in FV(e) - \left\{ v
+\right\} $,
+ entonces 
+
+ \begin{equation*}
+   \llbracket \lambda v_{new} . (e / v \to v_{new}) \rrbracket = \llbracket
+   \lambda v.e \rrbracket
+ \end{equation*}
+
+Otras propiedades son más específicas. 
+
+\begin{theorem}[Consistencia de la contracción]
+  $\llbracket (\lambda v.e)e' \rrbracket = \llbracket e / v \to e' \rrbracket$
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Demostración.} Sea $\eta$ un entorno arbitrario. Entonces 
+
+\begin{align*}
+  \llbracket (\lambda v.e)e' \rrbracket\eta 
+  &= \phi\big( \llbracket \lambda v.e \rrbracket\eta \big)(\llbracket e'
+  \rrbracket\eta) \\ 
+  &=\phi\Big( \psi \left( \lambda x. \in D_\infty . \llbracket e \rrbracket[\eta
+  \mid v : x] \right)  \Big) (\llbracket e' \rrbracket \eta) \\ 
+  &= \llbracket e \rrbracket[ \eta \mid v : \llbracket e' \rrbracket\eta] \\ 
+  &=\llbracket e / v \to  e' \rrbracket\eta
+\end{align*}
+
+El último paso se debe al teorema de sustitución. Los pasos anteriores son por
+definición de la función semántica.
+
+\end{quote}
+\normalsize
+
+\subsection{Normal-evaluation semantics}
+
+La semántica dada hasata acá permite interpretar la reducción a forma normal en
+el cálculo de lambda puro. Pero ya vimos que esto no se corresponde con la
+evaluación ni eager ni normal. Por ejemplo, $\Delta \Delta$ diverge y tiene
+semántica $\bot$, y la forma canónica $\lambda y.\Delta \Delta y$ (que evalúa a
+sí misma) también tiene semántica $\bot $.
+
+Para obtener un modelo denotacional de la evaluación de orden normal, debemos
+distinguir el menor elemento de $D$, correspondiente a una computación
+divergente en la evaluación, de los elementos en $D \to D$, que corresponden a
+formas canónicas. Queremos:
+
+\begin{equation*}
+  D = V_\bot \text{ con } $V \simeq D \to D$
+\end{equation*}
+
+donde $V$ son denotaciones de formas canónicas, y $\bot  \in V_\bot $ es la
+denotación de las expresiones divergentes. Es decir, tomamos como dominio
+semántico el conjunto de denotaciones de formas canónicas, y las llamaremos
+valores. Requerimos como antes que $V$ sea solución de $V \simeq D \to D$, es
+decir que $V \simeq V_\bot \to V_\bot $. 
+
+Si $\phi, \psi$ conectan $V, D \to D$, entonces tomamos $\phi_{\ind},
+\iota_{\uparrow}$ como los isomorfismos que conectan $V_\bot = D$ y $D\to D$.
+Al reemplazar $D_\infty$  con el nuevo $D$, $\phi$ con $\phi_{\ind}$, y $\psi$
+con $\iota_{\uparrow} \circ \psi$, las ecuaciones semánticas corresponden al
+orden normal. Por ejemplo, 
+
+\begin{equation*}
+  \llbracket \lambda y. \Delta \Delta \rrbracket\eta = (\iota_{\uparrow} \circ
+  \psi)(\lambda x \in D.\bot ) \neq \bot 
+\end{equation*}
+
+Esto es perfecto, porque $\lambda y. \Delta \Delta$ es una forma canónica y por
+lo tanto es un valor bien definido. Todavía vale que $\phi_{\ind}
+\circ(\iota_{\uparrow} \circ \psi) = I_{D \to D}$. Ya no se preserva
+$\beta$-contracción.
+
+\subsection{Denotational semantics of eager evaluation}
+
+Operacionalmente, la diferencia de eager con normal es que los operandos son
+evaluados antes de realizar la sustitución sobre el operador. Esto significa que
+los operadores sólo reciben formas canónicas. Denotacionalmente, esto se
+corresponde con limitar los argumentos de las funciones y los elementos de los
+entornos a valores (denotaciones de formas canónicas), excluyendo la posibilidad
+de que tomen $\bot $. Por lo tanto, $D$ debe satisfacer:
+
+\begin{equation*}
+  D = V_\bot \text{ donde } V \simeq V \to D
+\end{equation*}
+
+y la función semántica pertenece a $\text{<exp>} \to (\text{Env} \to D)$ 
+
+Ahora las ecuaciones semánticas cambian un poco más:
+
+\begin{align*}
+  \llbracket v \rrbracket\eta &= \iota_\bot(\eta v)\\ 
+  \llbracket e_0 e_1 \rrbracket\eta &= (\phi_{\ind} \llbracket e_0 \rrbracket
+  \eta)_{\ind} (\llbracket e_1 \rrbracket\eta) \\ 
+  \llbracket \lambda x.e \rrbracket\eta = (\iota_\bot \circ \psi)(\lambda z \in
+  V. \llbracket e \rrbracket[\eta \mid v : z])
+\end{align*}
+
+
+\pagebreak 
+
+\section{Lenguajes aplicativos}
+
+Se extiende el cálculo lambda con constante naturales, booleanes, y sus
+operaciones básicas (suma, resta, comparación, conjunción, etc.). Se incluye if
+<expr> then <expr> else <expr> y dos constructores especiales: error y
+typeerror. 
+
+Las formas canónicas son o bien numerales, o bien constantes booleanes, o bien
+abstracciones de lambda. Las expresiones que dan error se consideran
+divergentes. 
+
+La regla básica es que una forma canónica $z$ evalúa a sí misma: $z \Rightarrow
+z$.
+Para la aplicación, se usa la regla de aplicación \textit{eager}. Además: 
+
+\begin{itemize}
+  \item $-e \Rightarrow [-i]$ siempre que $e \Rightarrow [i]$ 
+  \item $\neg e \Rightarrow [\neg b]$ siempre que $e \Rightarrow [b]$. 
+  \item $e \circ e' \Rightarrow [i \circ i']$ siempre que $e \Rightarrow [i], e
+    \Rightarrow [i']$, excepto para la división donde también debe cumplirse $i'
+    \neq 0$. 
+  \item Si $e \Rightarrow \text{true}$ y $e' \Rightarrow z$, if $e$ then $e'$
+    else $e''$ va a $z$. Similar para caso falso.
+\end{itemize}
+
+\subsection{Evaluación normal}
+
+Sólo cambia la regla de aplicación, que ahora se corresponde a la normal (no se
+simplifica el operando). Todos los conectores lógicos se pueden implementar con
+if then else. Por ejemplo, 
+
+\begin{align*}
+  e \land  e' &= \textbf{if } e \textbf{ then } e' \textbf{ else }
+  \textbf{false} &\text{Def. lazy}\\
+\end{align*}
+
+\subsection{Semántica denotacoinal eager}
+
+Recordemos que teníamos $D = V_\bot $ con $V \simeq V \to  D$. Ahora se agregan
+a $D$ denotaciones para error y typeerror, que llamaremos $error$ y $typeerror$,
+para no confundir lenguaje y metalenguaje:
+
+\begin{equation*}
+  D = (V \oplus \left\{ error, typeerror \right\} )_\bot 
+\end{equation*}
+
+Definimos:
+
+\begin{align*}
+  \iota_\text{norm} &= \iota_\bot  \circ \iota_0 &\in V \to D \\
+  \text{err} &= \iota_\bot  ( \iota_1 error ) &\in D \\
+  \text{tyerr} &= \iota_\bot  ( \iota_1 typeerror ) &\in D \\
+\end{align*}
+
+Una vez más, usamos $f_*$ para extender $f$ y hacer que lidie con el mal
+comportamiento:
+
+\begin{align*}
+  f_*(\iota_{\text{norm}} ~ z) &= f ~ z\\
+  f_*~ err &= err \\ 
+  f_* ~tyerr &= tyerr \\ 
+  f_* ~ \bot &= \bot 
+\end{align*}
+
+Si recordamos, en el cálculo lambda puro eager teníamos $V \simeq V \to D$.
+Ahora a $V$ hay que agregarle las nuevas formas canónicas: 
+
+\begin{equation*}
+  V \simeq \mathbb{Z} + \mathbb{B} + (V \to D)
+\end{equation*}
+
+que suele escribirse 
+
+\begin{equation*}
+  V \simeq V_{\text{int}} + V_{\text{bool}} + V_{\text{fun}}
+\end{equation*}
+
+lo cual hace más claro que $V$ tiene formas canónicas de enteros, booleanos y
+funciones. Como siempre, $\psi$ nos lleva del espacio complejo a simplemente
+$V$, y $\phi$ de simplemente $V$ al espacio complejo. Convenimos además:
+
+\begin{align*}
+  \iota_{\text{int}} &= \psi \circ \iota_0 \in V_{\text{int}} \to V\\
+  \iota_{\text{bool}} &= \psi \circ \iota_1 \in V_{\text{bool}} \to V\\
+  \iota_{\text{fun}} &= \psi \circ \iota_2 \in V_{\text{fun}} \to V\\
+\end{align*}
+
+Para $\ell \in \left\{ \text{int}, \text{bool}, \text{fun} \right\} $, dada $f
+\in V_\ell \to D$, se denota por $f_\ell$ la extensión tal que 
+
+\begin{equation*}
+  f_\ell(\iota_{ \ell' } ~ z) = \begin{cases}
+    f ~ z & \ell = \ell' \\ 
+    tyerr & c.c.
+  \end{cases}
+\end{equation*}
+
+Esto sirve para hacer chequeo dinámico de titpos. Observemos que si tenemos una 
+$f \in V_\ell \to D$ se puede extender como $f_\ell$ y luego como $(f_\ell)_*$.
+
+Como estamos en eager, el entorno mapea variables a valores: $Env = \text{<Var>}
+\to V$. Luego $\llbracket _ \rrbracket \in \text{<expr>} \to Env \to D$. La
+semántica de las constantes es trivial, con el cuidado de que deben ser
+inyectadas en $D$. Por ejemplo, 
+
+\begin{equation*}
+  \llbracket 0 \rrbracket\eta = \iota_\text{norm}(\iota_{\text{int}} ~ 0), \qquad
+  \llbracket \text{true} \rrbracket\eta =
+  \iota_{\text{norm}}(\iota_{\text{bool}} ~ V)
+\end{equation*}
+
+Seguimos:
+
+\begin{equation*}
+  \llbracket -e \rrbracket\eta = \big( \lambda i \in V_{\text{int}}.
+  \iota_{\text{norm}} (\iota_{\text{int}} - i) \big)_{\text{int} ~ *}
+  (\llbracket e \rrbracket \eta)
+\end{equation*}
+
+Es decir, para hacer $\llbracket -e \rrbracket\eta$, tomamos la función que toma
+un $V_{\text{int}}$, lo convierte a $-i$ y lo inyecta en $D$. Se tiene cuidado
+de que si $\llbracket e \rrbracket$ falla, se propaga el error, y además se hace
+un chequeo de tipos para verificar que $\llbracket e \rrbracket\eta \in
+V_{\text{int}}$. 
+
+Los operadores binarios son similares. Por ejemplo: 
+
+\begin{equation*}
+  \llbracket e_0 + e_1 \rrbracket\eta = \Big( \lambda i \in V_{\text{int}}.
+  \big( \lambda j \in V_{\text{int}}.\iota_{\text{norm}}(\iota_{\text{int}} ~ i
++ j) \big) \Big)_{\text{int *}} \big( \llbracket e_1 \rrbracket\eta
+\big)_{\text{int*}} \big( \llbracket e_0 \rrbracket\eta \big)
+\end{equation*}
+
+\begin{equation*}
+  \llbracket e_0 < e_1 \rrbracket\eta = \Big( \lambda i \in V_{\text{int}}.
+  \big( \lambda j \in V_{\text{int}}. \iota_{\text{norm}}(\iota_{\text{bool}} ~
+i < j) \big) \Big)_{\text{int}*} \big( \llbracket e_1 \rrbracket\eta
+\big)_{\text{int}*} \big( \llbracket e_0 \rrbracket\eta \big)
+\end{equation*}
+
+\begin{equation*}
+  \llbracket e_0 / e_1 \rrbracket\eta = \left( \lambda i \in V_{\text{int}}.
+  \left( \lambda_j \in V_{\text{int}}. \begin{cases}
+      err & j = 0 \\ 
+      \iota_{\text{norm}}(\iota_{\text{int}}~ i/j) & c.c.
+\end{cases} \right)  \right)_{\text{int}*} \left( \llbracket e_1 \rrbracket\eta
+\right)_{\text{int}*} \left( \llbracket e_0 \rrbracket\eta \right) 
+\end{equation*}
+
+El if-else es similar. Los casos del cálculo lambda se adaptan:
+
+\begin{align*}
+  \llbracket v \rrbracket\eta &= \iota_{\text{norm}}(\eta ~ v) \\ 
+  \llbracket e_0 e_1 \rrbracket\eta &= (\lambda f \in V_{\text{fun}}.(\lambda z
+  \in V . f ~ z)_*(\llbracket e_1 \rrbracket)\eta)_{\text{fun}*}(\llbracket e_0
+  \rrbracket\eta)\\ 
+&= (\lambda f \in V_{\text{fun}}.f_*(\llbracket
+e_1\rrbracket\eta))_{\text{fun*}}(\llbracket e_0 \rrbracket)\eta
+\end{align*}
+
+
+
+\subsection{Semántica denotacional normal}
+
+La única diferencia con la eager está en $V_{\text{fun}}$: 
+
+\begin{equation*}
+  V_{\text{fun}} = D \to D
+\end{equation*}
+
+Ahora los entornos mapean variables a $D$ y 
+
+\begin{equation*}
+  \llbracket _ \rrbracket \in \text{<expr>} \to Env \to D
+\end{equation*}
+
+Por ende, las únicas ecuaciones que cambian son las del cálculo lambda:
+
+\begin{align*}
+  \llbracket v \rrbracket\eta &= \eta ~ v \\ 
+  \llbracket e_0 e_1 \rrbracket\eta &= (\lambda f \in V_{\text{fun}}.
+  f(\llbracket e_1 \rrbracket\eta))_{\text{fun}*}(\llbracket e_0 \rrbracket\eta)
+  \\ 
+  \llbracket \lambda x.e \rrbracket\eta &=
+  \iota_{\text{norm}}(\iota_{\text{fun}}(\lambda d \in D. \llbracket e
+  \rrbracket[\eta \mid v : d]))
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3392,12 +3855,1358 @@ Es fácil ver que no hay forma normal si usamos la evaluación normal. Usando
 Tiene sentido que el resultado normal sea (en términos intuitivos) $\lambda fx.f^4(x)$,
 porque $(\lambda .zz)(\lambda f. \lambda x. f(fx))$ se puede leer como: hacer
 dado $f$ y $x$, hacer dos veces $f(f ~ x)$, es decir hacer dos veces $f^2 ~ x$.
+\pagebreak 
+
+\begin{myframe}
+
+  \textbf{(2)} Sean 
+
+  \begin{equation*}
+    NOT := \lambda b. \lambda x. \lambda y. byx, \qquad TRUE = \lambda x.
+    \lambda y. x
+  \end{equation*}
+  \begin{equation*}
+    IF := \lambda b. \lambda x. \lambda y. bxy, \qquad AND := \lambda b. \lambda
+    c. \lambda x. \lambda y. b(cxy)y
+  \end{equation*}
+
+  $(a)$ $NOT ~ TRUE \to^* FALSE$
+
+  $(b) IF ~ TRUE ~ e_0 ~ e_1 \to^* e_0$
+
+  $(c) ~ AND ~ TRUE ~ TRUE \to^* TRUE$
+
+\end{myframe}
+
+\begin{align*}
+  (a) ~ NOT ~ TRUE 
+  &\equiv (\lambda b. \lambda x. \lambda y. byx) (\lambda x. \lambda
+  y. x) \\ 
+  &\to \lambda x. \lambda y. (\lambda u. \lambda. v. u)yx \\ 
+  &\to \lambda x. \lambda y. (\lambda v.y) x \\ 
+  &\to \lambda x. \lambda y. y \\ 
+  &\equiv  FALSE \qquad \blacksquare
+\end{align*}
+
+\begin{align*}
+  (b) ~ IF TRUE ~ e_0 ~ e_1 
+  &\equiv (\lambda b. \lambda x. \lambda y. bxy) (\lambda x. \lambda y. x)e_0
+  e_1 \\ 
+  &\to \lambda x. \lambda y. (\lambda v. \lambda w. v)e_0 e_1 \\ 
+  &\to \lambda x. \lambda y.(\lambda w. e_0)e_1 \\ 
+  &\to \lambda x. \lambda y. e_0 \\ 
+  &\to e_0 \qquad \blacksquare
+\end{align*}
+
+\begin{align*}
+  (c) ~ AND ~ TRUE ~ TRUE ~ 
+  &\equiv (\lambda b. \lambda c. \lambda x. \lambda y. b(cxy)y)(\lambda x.
+  \lambda y. x)(\lambda x. \lambda y. x) \\ 
+  &\to \Big( \lambda c. \lambda x. \lambda y.(\lambda u. \lambda v. u)(cxy)y
+  \Big)(\lambda x. \lambda y. x) \\ 
+  &\to \lambda x. \lambda y. (\lambda u. \lambda v. u)\big( (\lambda u. \lambda
+  v. u)xy \big)y \\ 
+  &\to \lambda x. \lambda y. (\lambda v.(\lambda u. \lambda v. u)xy) y \\ 
+  &\to \lambda x. \lambda y. (\lambda u. \lambda v. u)xy \\ 
+  &\to \lambda x. \lambda y. (\lambda v. x) y \\ 
+  &\to  \lambda x. \lambda y. x \\ 
+  &\equiv TRUE
+\end{align*}
+
+
+\pagebreak
+
+\begin{myframe}
+  \textbf{(3)} ¿Cuáles afirmaciones son verdaderas y cuáles falsas? Justificar.
+
+  (a) Toda expresión lambda cerrada tiene forma normal.
+
+  (b) Toda expresión lambda cerrada tiene forma canónica.
+
+  (c) Toda forma canónica cerrada es forma normal.
+
+  (d) Toda forma normal cerrada es forma canónica.
+\end{myframe}
+
+
+$(a)$ Falso. $\Delta \Delta$ es cerrada y no tiene forma normal ni canónica. 
+
+$(b)$ Falso. De nuevo, $\Delta \Delta$. 
+
+$(c)$ Falso. Una forma canónica es una abstracción, una forma normal es una
+expresión sin rédices. Pero existen abstracciones con rédices: e.g. $\lambda
+xy.(\lambda w.w)xy$, cuya forma normal es $\lambda xy.xy$.
+
+$(d)$ Verdadero. Toda forma cerrada es o bien una abstracción, o bien una
+aplicación. Si es una aplicación no es una forma normal, y por lo tanto toda
+forma cerrada normal es una abstracción. Por lo tanto, toda forma normal cerrada
+es forma canónica.
+
+\pagebreak 
+
+\begin{myframe}
+  \textbf{(4)} Demostrar que una aplicación cerrada no puede ser una forma normal.
+\end{myframe}
+
+
+Sea $e_0e_1$ una aplicación cerrada. Notemos que $e_0$ es cerrado y por lo tanto
+el terminal de su reducción $e_0'$ es cerrada y no contiene redices, i.e. es una
+abstracción en forma normal. Por lo tanto, $e_1$ es el argumento de la
+abstracción $e_0'$ y por lo tanto es reducible. $\therefore $ $e_0 e_1$ no es
+normal.
+
+\pagebreak 
+
+\begin{myframe}
+  \textbf{(5)} Para las siguientes expresiones $e$, evaluar en orden normal 
+  $e \Rightarrow_N e_1$ e eager $e \Rightarrow_E e_1$.
+
+  $(a)$ $\left( \lambda f. \lambda x. f ( fx ) \right)\left( \lambda z. \lambda x.
+  \lambda y. zyx \right) \left( \lambda z. \lambda w. z \right)   $
+
+  $(b)$ $\left( \lambda z . zz \right) \left( \lambda f.\lambda x. f(fx) \right) $ 
+\end{myframe}
+
+\begin{align*}
+  (a) ~ 
+  &\Big( (\lambda fx.f(fx)) (\lambda zxy.zyx) \Big) \Big( \lambda zw. z \Big) \\ 
+  &\qquad (\lambda fx.f(fx)) (\lambda zxy.zyx) \\ 
+  &\qquad \qquad \lambda fx. f(fx) \Rightarrow \lambda fx. f(fx)\\
+  &\qquad \qquad \lambda x.(\lambda zxy.zyx)\big( (\lambda zxy.zyx)x \big)
+  \Rightarrow \lambda x.(\lambda  zxy . zyx)\big( (\lambda zxy . zyx)x \big)\\ 
+  &\qquad (\lambda zxy.zyx)\big( (\lambda zxy.zyx)(\lambda zw.z) \big)\\
+  &\qquad \qquad  (\lambda zxy.zyx) \Rightarrow \lambda zxy. zyx \\ 
+  & \qquad \qquad \lambda xy.\Big( (\lambda zxy. zyx)(\lambda zw.z) \Big)yx
+  \Rightarrow \text{Itself} \\ 
+  & \qquad \lambda xy.\Big( (\lambda zxy. zyx)(\lambda zw.z) \Big)yx \\
+  & \lambda xy.\Big( (\lambda zxy. zyx)(\lambda zw.z) \Big)yx 
+\end{align*}
+
+Sea $g = \lambda fx.f(fx)$. Entonces
+
+\begin{align*}
+  (b) ~ 
+  &(\lambda z. zz)(\lambda fx. f(fx)) \\ 
+  \equiv& (\lambda z.zz) g \\ 
+&\qquad_1[\lambda z. zz \Rightarrow \lambda z. zz]_1 \\ 
+&\qquad _2[g g \\ 
+&\qquad \qquad _3[ g \Rightarrow g ]_3 \\ 
+&\qquad \qquad  _4[\lambda x. g(gx) \Rightarrow \lambda x. g(gx)]_4 \\ 
+&\qquad \lambda x. g(gx) ]_2 \\ 
+&\lambda x. g(gx)
+\end{align*}
+
+Ahora en eager. Recordemos que la reducción eager obedece la siguiente regla:
+
+
+\begin{equation*}
+\inferrule* [right=] {~}{(\lambda v.\ e)z \to (e[v \mapsto z]) \qquad \qquad
+\text{ donde } z \text{ es forma canónica}}
+\end{equation*}
+
+Es decir, cuando tengamos una aplicación, reduciremos el argumento de la misma a
+su forma canónica antes de reducir sustituir.
+
+
+\begin{align*}
+  (a) ~ ~ 
+  &_0[\left( \lambda f. \lambda x. f ( fx ) \right)\left( \lambda z. \lambda x.
+  \lambda y. zyx \right) \left( \lambda z. \lambda w. z \right)  \\ 
+  &\qquad _1[ ( \lambda fx. f(fx) ) (\lambda zxy. zyx)  \\ 
+  &\qquad\qquad_2[ \lambda fx. f(fx) \Rightarrow \lambda fx.f(fx)]_2 \\ 
+  &\qquad\qquad_3[\lambda zxy. zyx \to \lambda zxy.zyx]_3 \\ 
+  &\qquad \qquad _4[\lambda x.(\lambda zxy.zyx)((\lambda zxy.zyx) x) \Rightarrow
+  \lambda x.(\lambda zxy.zyx)((\lambda zxy.zyx) x)]_4 \\ 
+  \Rightarrow & \qquad\lambda x.(\lambda zxy.zyx)(( \lambda zxy.zyx ) x)]_1\\
+  &\qquad_2[\lambda zw. z \Rightarrow \lambda zw. z]_2 \\ 
+  &\qquad_3[(\lambda zxy. zyx)(( \lambda zxy.zyx )(\lambda zw.w)) \\ 
+  &\qquad \qquad  _4[\lambda zxy.zyx \Rightarrow \lambda zxy. zyx ]_4 \\ 
+  & \qquad \qquad _5[( \lambda zxy.zyx )(\lambda zw. w)\\
+  &\qquad \qquad \qquad _6[\lambda zw.  w \Rightarrow \lambda zw. w]_6 \\ 
+  &\qquad\qquad\qquad _7[\lambda zxy. zyx \Rightarrow \lambda zxy. zyx]_7 \\ 
+  &\qquad \qquad \qquad _8[\lambda xy.(\lambda zw. w)yx \Rightarrow\lambda
+  xy.(\lambda zw. w)yx ]_8 \\ 
+  \Rightarrow & \qquad \qquad \lambda xy.(\lambda zw. w)yx ]_5 \\ 
+  &\qquad \qquad _{10}[\lambda xy.(\lambda xy.(\lambda zw.w)yx)yx \Rightarrow
+  xy.(\lambda xy.(\lambda zw.w)yx)yx]_{10} \\ 
+  \Rightarrow &\qquad \lambda xy.(\lambda xy.(\lambda zw.w)yx)yx ]_{3} \\ 
+  \Rightarrow& \lambda xy. (\lambda xy.(\lambda zw.w)yx)yx]_0
+\end{align*}
+\pagebreak 
+
+\begin{align*}
+(b) ~ ~ 
+& _0[(\lambda z. zz)(\lambda fx. f(fx)) \\ 
+&\qquad _1[\lambda fx. f(fx) \Rightarrow \lambda fx. f(fx)] \\ 
+&\qquad _2[\lambda z. zz \Rightarrow \lambda z. zz] \\ 
+&\qquad _3[(\lambda fx. f(fx))(\lambda fx. f(fx)) \\ 
+&\qquad \qquad _4[ \lambda fx. f(fx) \Rightarrow \lambda fx.f(fx)]_4 \\ 
+&\qquad\qquad _5[\lambda fx. f(fx) \Rightarrow \lambda fx.f(fx)]_5 \\ 
+&\qquad\qquad _6[\lambda x.(\lambda fx. f(fx))\big((\lambda fx. f(fx)) x\big)\Rightarrow
+\lambda x.(\lambda fx. f(fx))\big((\lambda fx. f(fx)) x\big) ]_6 \\ 
+  \Rightarrow&\qquad  \lambda x.(\lambda fx. f(fx))\big((\lambda fx. f(fx))
+  x\big)]_3\\
+\Rightarrow& \lambda x.(\lambda fx. f(fx))\big((\lambda fx. f(fx))
+  x\big)]_0
+\end{align*}
+
+\pagebreak 
+
+\begin{myframe}
+  \textbf{(6)} $(a)$ Para ambos órdenes, pruebe que $e \Rightarrow e'$ implica que $e
+  \to^* e'$.
+
+  $(b)$ Decida si es cierto: Si $e \Rightarrow_N e_1, e \Rightarrow_N e_2$,
+  entonces existe un $e'$ tal que $e_1 \to^* e', e_2 \to^* e'$.
+\end{myframe}
+
+$(a)$ Asuma que $e \Rightarrow e'$. Hagamos la prueba por casos para el orden
+normal.
+
+$(1)$ Si $e$ es una abstracción, $e \Rightarrow e$ y por lo tanto $e \equiv e'$.
+A su vez, $e \to e'$. La propiedad se cumple trivialmente.
+
+$(b)$ Asuma que $e$ es una aplicación de la forma $e_1 e_2$. Como $e \Rightarrow
+e'$, se sigue que: 
+
+\begin{enumerate}[I]
+  \item. $e_1 \Rightarrow \lambda v. \hat{e}$ 
+  \item. $( \hat{e} / v \to  e_2 ) \Rightarrow e'$.
+\end{enumerate}
+
+Tomemos como hipótesis inductiva que (I) implica $e_1 \to^* \lambda v.\hat{e}$, y
+lo análogo para (II). De esto se sigue que
+
+\begin{equation*}
+  e_1 e_2 \to^* (\lambda v. \hat{e})e_2 \to  ( \hat{e} / v\to e_2 ) \to^* e'
+  \qquad \blacksquare
+\end{equation*}
+
+Ahora hagamos la prueba para el orden eager. Si $e$ es abstracción el caso es
+trivial. Tomemos el ecaso en que $e \equiv e_1 e_2$. Como $e \Rightarrow e'$,
+tenemos: 
+
+\begin{enumerate}[I]
+  \item $e_1 \Rightarrow_E \lambda v.\hat{e}$ 
+  \item $e_2 \Rightarrow_E z$  
+  \item $( \hat{e} / v \to z) \Rightarrow e' $.
+\end{enumerate}
+
+Si tomamos (I), (II), (III) como hipótesis inductiva para la implicación, la
+pruba se sigue fácilmente: 
+
+\begin{equation*}
+  e_1e_2 \to^* (\lambda v.\hat{e})e_2 \to^* (\lambda v. \hat{e})z \to (\hat{e} /
+  v \to  z) \to^* e' \qquad \blacksquare
+\end{equation*}
+
+$(b)$ Asuma que $e \Rightarrow_N e_1, e \Rightarrow_N e_2$. Por $(a)$, se sigue
+que $e \to^* e_1, e \to^* e_2$. Entonces, por el Teorema de Church-Rosser,
+existe un $e'$ tal que $e_1 \to^* e', e_2 \to^* e'$. $\blacksquare$
+
+\pagebreak
+
+\begin{myframe}
+  \textbf{(7)} Explique por qué no es cierto que $NOT ~ TRUE \Rightarrow FALSE$ en
+  ambos órdenes.
+\end{myframe}
+
+Recordemos que 
+
+\begin{equation*}
+  NOT := \lambda bxy. byx, \qquad TRUE := \lambda xy. x, \qquad FALSE
+  := \lambda xy.y
+\end{equation*}
+
+En orden normal, 
+
+\begin{align*}
+&_0[(\lambda bxy.byx)(\lambda xy.x) \\ 
+&\qquad_1[\lambda bxy.byx \Rightarrow \lambda bxy.byx]_1 \\ 
+&\qquad_2[\lambda xy.x \Rightarrow \lambda xy.x]_2 \\ 
+&\qquad _3[\lambda xy.(\lambda xy.x)yx \Rightarrow \lambda xy.(\lambda
+xy.x)yx]_3 \\ 
+\Rightarrow&\lambda xy.(\lambda xy.x)yx]_0
+\end{align*}
+
+Una vez se llega a dicha forma canónica, la evaluación se detiene. Claramente
+dicha forma no se corresponde con false. En eager sucede lo mismo.
+
+\pagebreak 
+
+\begin{myframe}
+  \textbf{(8)} Sean $e_0, e_1$ formas canónicas. Construya los árboles para 
+  $$(a)~ NOT ~ TRUE ~ e_0 e_1 \Rightarrow_E e_1$$ y para 
+   $$(b) ~ AND ~ FALSE (\Delta \Delta) e_0 e_1 \Rightarrow_N e_1$$.
+\end{myframe}
+
+$(a)$ Sean $e_0 = \lambda v.\hat{e}_0, \lambda w.\hat{e}_1$, con $v, w$
+arbitrarias. Entonces:
+
+\begin{align*}
+&_0[(\lambda bxy.byx)(\lambda xy.x)(\lambda v. \hat{e}_0)(\lambda v.\hat{e}_0) \\ 
+&\qquad_1[(\lambda bxy.byx)(\lambda xy.x) \\ 
+&\qquad \qquad _2[\lambda bxy.byx \Rightarrow \lambda bxy.byx]_2 \\ 
+&\qquad \qquad _3[\lambda xy.x \Rightarrow \lambda xy.x] \\ 
+&\qquad \qquad _4[\lambda xy.(\lambda xy.x)yx \Rightarrow \lambda xy.(\lambda
+xy.x)yx] \\ 
+\Rightarrow
+&\qquad \lambda xy.(\lambda xy.x)yx]_1 \\ 
+&\qquad_2[(\lambda xy.(\lambda xy.x.)yx)(\lambda v. \hat{e}_0) \\ 
+&
+\end{align*}
 
 
 
 
 
+\pagebreak 
 
+\section{P8}
+
+\begin{myframe}
+  \textbf{(1)} Calcular la semántica de  
+
+  \begin{equation*}
+    (a) M = \lambda fx. f(fx), \qquad (b) N = \lambda zy.z, \qquad (c) MN
+  \end{equation*}
+\end{myframe}
+
+$(a)$ Veamos que 
+
+\begin{align*}
+\llbracket \lambda fx. f(fx) \rrbracket\eta 
+&= \psi \big( \lambda d \in D_\infty. \llbracket \lambda x.f(fx)
+\rrbracket[\eta\mid f : d] \big) \\ 
+&= \psi \Big( \lambda d \in D_\infty. \psi\Big( \lambda d' \in D_\infty.
+\llbracket f(fx) \rrbracket[\eta \mid f : d, x : d'] \Big) \Big)
+\end{align*}
+
+Veamos que 
+
+\begin{align*}
+\llbracket f (fx) \rrbracket[\eta \mid f: d, x : d'] 
+&=\phi_{\ind } \Big( \llbracket f \rrbracket[\eta \mid f : d, x : d'] \Big)\Big( \llbracket fx
+\rrbracket[\eta \mid f : d, x : d'] \Big) \\ 
+&=\phi_{\ind}\Big( ([\eta \mid f: d, x : d']) ~ f \Big)\Big( \phi_{\ind}\Big(\llbracket f
+\rrbracket[\eta \mid f : d, x : d'] \Big)\Big( \llbracket x \rrbracket[\eta \mid
+f : d, x : d'] \Big)\Big( \llbracket x \rrbracket[\eta \mid f : d, x : d'] \Big)\Big) \\ 
+&= \phi_{\ind} ~ d ~ \big( \phi_{\ind} ~ d ~ d'  \big) 
+\end{align*}
+
+Por lo tanto, 
+
+\begin{equation*}
+  \llbracket \lambda fx.f(fx) \rrbracket\eta = \psi \Big( \lambda d \in
+  D_\infty.\psi \Big( \lambda d' \in D_\infty. \big( \phi ~ d ( \phi ~ d ~ d') \big) \Big) \Big)
+\end{equation*}
+
+\pagebreak 
+
+$(b)$ 
+
+\begin{align*}
+  \llbracket \lambda zy.z \rrbracket\eta 
+  &= (\iota_{\uparrow} \circ \psi)\big(
+  \lambda d \in D_\infty. \llbracket \lambda y.z \rrbracket[\eta \mid z : d] \big) \\ 
+  &=(\iota_{\uparrow} \circ \psi) \Big( \lambda d \in D_\infty. (\iota_{\uparrow}
+    \circ \psi)\big( \lambda
+      d' \in D_\infty.
+  z\llbracket \eta \mid z : d, y : d' \rrbracket \big) \Big) \\ 
+  &=(\iota_{\uparrow} \circ \psi) \Big( \lambda d \in D_\infty.(\iota_{\uparrow}
+  \circ \psi) \big( \lambda d' \in D_\infty. d \big) \Big)
+\end{align*}
+
+$(c)$
+
+\begin{align*}
+  \llbracket MN \rrbracketet 
+  &=\phi_{\ind} ( \llbracket M \rrbracket\eta ) (\llbracket N \rrbracket \eta)
+  \\ 
+  &=\phi_{\ind}\Big( \psi\big( \lambda d \in  D_\infty.
+  \psi \left(\lambda d' \in D_\infty. \phi ~ d (\phi ~ d ~ d') \right) \big) \Big)\Big( \psi \big(
+\lambda d \in D_\infty.\psi (\lambda d' \in D_\infty.d) \big) \Big)
+\end{align*}
+
+Sea $f = \lambda d \in  D_\infty.\psi (\lambda d' \in D_\infty. \phi ~ d ~ (\phi ~
+d ~ d'))$. Sabemos que $\phi (\psi (f)) = f \in  D_\infty \to D_\infty$. Por
+ende, la fórmula de arriba se reduce a
+
+\begin{equation*}
+  f \Big( \psi \big( \lambda d \in D_\infty. \psi(\lambda d' \in D_\infty. d)
+  \big) \Big) = f ~ u
+\end{equation*}
+
+con $u \in D_\infty$ el argumento de $f$ en la ecuación. Por def. de $f$, el
+resultado de esto es
+
+\begin{align*}
+  &\psi \Big( \lambda d' \in D_\infty. \phi ~ u (\phi ~ u ~ d') \Big)
+\end{align*}
+
+Pero 
+
+\begin{equation*}
+  \phi ~ u = \phi ~ \Big( \psi \big( \lambda d \in  D_\infty.\psi(\lambda d' \in
+  D_\infty.d) \big) \Big) = \lambda d \in D_\infty.\psi(\lambda d' \in
+  D_\infty.d) =: g
+\end{equation*}
+
+Por lo tanto, la expresión resultante es
+
+\begin{equation*}
+  \psi \Big(  \lambda d' \in D_\infty. g (g d') \Big)
+\end{equation*}
+
+
+Claramente, $g ~ d' = \psi(\lambda d'' \in D_\infty.d') =: y$, con lo cual
+tenemos 
+
+\begin{equation*}
+  \psi\Big( \lambda d' \in D_\infty. g(y) \Big)
+\end{equation*}
+
+La mismsa lógica nos da $g(y) = \psi(\lambda d'' \in D_\infty.y)$ y por ende
+tenemos 
+
+\begin{align*}
+  &\psi\Big( \lambda d' \in D_\infty.\psi\big( \lambda d'' \in D_\infty.y \big)
+  \Big)\\
+  =&\psi\Big( \lambda d' \in D_\infty.\psi\big( \lambda d'' \in
+  D_\infty.\psi(\lambda d''' \in D_\infty.d') \big) \Big)
+\end{align*}
+
+A partir de acá, no puede simplificarse más.
+
+\pagebreak 
+
+\begin{myframe}
+ \textbf{(2)} Demostrar el teorema de renombre, de coincidencia, corrección de
+ la regla $\beta$, y corrección de la regla $\eta$.
+\end{myframe}
+
+(Renombre) El teorema establece que si $w \not\in FV(e) - \left\{ v \right\} $, entonces 
+
+\begin{equation*}
+  \llbracket \lambda w.(e / v \to w) \rrbracket = \llbracket \lambda v.e \rrbracket
+\end{equation*}
+
+Por def. de la función semántica,
+
+\begin{align}
+  \llbracket \lambda w.(e / v \to  w) \rrbracket \eta &= \psi(\lambda d \in
+  D_\infty.\llbracket (e/v\to w) \rrbracket[\eta\mid w : d])\\
+  \llbracket \lambda v.e \rrbracket\eta &= \psi\left( \lambda d \in
+  D_\infty.\llbracket e \rrbracket[\eta\mid v : d] \right) 
+\end{align}
+
+
+Asuma que $v = w$. Se sigue que $(e / v \to w) = (e / v \to v) = e$,
+trivialmente. Por ende, la ecuación (5) se convierte en la ecuación (6), en
+cualquier lado de la igualdad que se tome.
+
+Asuma que $v \neq w$. Deseamos ver que 
+
+\begin{equation*}
+  \llbracket (e / v \to  w) \rrbracket[\eta \mid w : d] = \llbracket e
+  \rrbracket[\eta \mid v : d]
+\end{equation*}
+
+donde $w \not\in FV(e) - \left\{ v \right\} $. Sea $\delta$ la sustitución
+denotada por $v \to w$. Sea $u \in FV(e)$. Claramente, $u \neq w$, y por ende 
+
+\begin{equation*}
+  \llbracket \delta ~ u \rrbracket[\eta \mid w : d] = \llbracket \delta ~ u \rrbracket \eta =
+  \eta u
+\end{equation*}
+
+A su vez, pues $u \neq v$, es claro que $[\eta \mid v : d] u =  \eta u$.
+
+$\therefore $ Para toda $u \in FV(e)$,  $\delta ~ u$ toma en $[\eta \mid w : d]$
+el mismo valor que $u$ en $[\eta \mid v : d]$.
+
+Por lo tanto, el teorema de sustitución aplica y obtenemos 
+
+\begin{equation*}
+  \llbracket e / \delta \rrbracket[\eta \mid w : d] = \llbracket e
+  \rrbracket[\eta \mid v : d] \qquad \blacksquare
+\end{equation*}
+
+Aplicando esto en la ecuación (5) se obtiene lo deseado.
+
+(Teorema de coincidencia) Sean $\eta_1, \eta_2$ estados tales que para toda $w
+\in FV(e)$, $\eta_1 w = \eta_2 w$. Probemos que $\llbracket e \rrbracket\eta_1
+= \llbracket e \rrbracket\eta_2$ por inducción estructural. El caso base en que
+$e$ es una variable es trivial. Asumamos que se cumple para $e$ tomando como HI:
+
+\begin{equation*}
+  \forall \eta, \eta' \in \text{Entornos} : \llbracket e \rrbracket\eta =
+  \llbracket e \rrbracket\eta' \text{ siempre que } \eta w = \eta' w, ~ \forall
+  w \in FV(e)
+\end{equation*}
+
+Por def.
+
+\begin{align*}
+  \llbracket \lambda v. e \rrbracket \eta_1
+  &=\psi\left( \lambda d \in D_\infty.\llbracket e \rrbracket[\eta_1 \mid v : d]  \right)  \\ 
+  \llbracket \lambda v. e \rrbracket \eta_2
+  &=\psi\left( \lambda d \in D_\infty.\llbracket e \rrbracket[\eta_2 \mid v : d]
+\end{align*}
+
+Probemos que $[\eta_1 \mid v : d] w = [\eta_2 \mid v : d] w$ para toda $w \in
+FV(e)$ y $d$ fijo. Esto es fácil: ambos entornos son idénticos a $\eta_1, \eta_2$
+respectivamente, incluidoo en el valor que asignan a $v$. Luego coinciden en
+todas sus variables libres. Luego, por hipótesis inductiva, 
+
+\begin{equation*}
+  \llbracket e \rrbracket[\eta_1 \mid v : d] = \llbracket e \rrbracket[\eta_2
+  \mid v : d], \qquad d \in D_\infty
+\end{equation*}
+
+y por lo tanto 
+
+\begin{equation*}
+  \psi\left( \lambda d \in D_\infty.\llbracket e \rrbracket[\eta_1 \mid v : d]
+  \right)  =
+  \psi\left( \lambda d \in D_\infty.\llbracket e \rrbracket[\eta_2 \mid v : d]  \right) 
+\end{equation*}
+
+que es lo que queríamos probar.
+
+(Teorema de sustitución) Sea $\delta \in
+\Delta$ y $\eta_1,\eta_2$ entornos. Deseamos probar que si $\llbracket \delta u
+\rrbracket\eta_1 = \eta_2 u$ para toda $u \in FV(e)$, entonces 
+$\llbracket e / \delta \rrbracket\eta_1 = \llbracket e \rrbracket\eta_2$.
+Lo haremos por inducción en $e$ salteando el caso inductivo.
+
+Tomemos como HI:
+
+\begin{align*}
+  \forall \eta, \eta' : (\forall u \in FV(e).\llbracket \delta u \rrbracket\eta =
+  \eta' u) \Rightarrow \llbracket e / \delta \rrbracket\eta = \llbracket e
+  \rrbracket\eta'
+\end{align*}
+
+Consideremos $\lambda v.e$, cuyas variables libres son $FV(e) - \left\{ v
+\right\} $. Asuma que para toda $w \in FV(\lambda v.e)$ se tiene 
+
+\begin{equation}
+\llbracket
+\delta u \rrbracket\eta_1 = u\eta_2
+\end{equation}
+
+Veamos que 
+
+\begin{equation*}
+  \llbracket ( \lambda v.e ) / \delta \rrbracket\eta_1 
+  &= \llbracket \lambda v_{\text{new}}. (e / [ \delta \mid v : v_{\text{new}} ]) \rrbracket\eta_1
+\end{equation*}
+
+con 
+
+\begin{equation}
+  v_{\text{new}} \not\in \bigcup_{w \in FV(e) - \left\{ v \right\} } FV(\delta w)
+\end{equation}
+
+Ahora bien, 
+
+\begin{align*}
+  \llbracket \lambda v_{\text{new}}. e/[ \delta \mid v : v_{\text{new}}] \rrbracket\eta_1 
+  &= \psi \Big( \lambda d \in D_\infty. \llbracket e / [ \delta \mid v :
+    v_{\text{new}} ] \rrbracket[\eta_1
+  \mid v_{\text{new}} : d] \Big)
+\end{align*}
+
+Deseamos ver que 
+
+\begin{equation}
+  \llbracket e / [ \delta \mid v : v_{\text{new}} ] \rrbracket[\eta_1 \mid v_{\text{new}} : d] = \llbracket
+  e\rrbracket[\eta_2 \mid v : d]
+\end{equation}
+
+para $d \in D_\infty$ arbitrario. Las variables libres de $e$ pueden o no
+contener a $v$. Hagamos por casos.
+
+(Caso $v \not\in FV(e)$) Deseamos ver que $\forall w \in FV(e)$ se cumple
+\begin{equation}
+  \llbracket [ \delta \mid v: v_{\text{new}} ] w \rrbracket[\eta_1 \mid v_{\text{new}} : d] = [\eta_2 \mid v
+: d] w
+\end{equation}
+
+La ecuación $(7)$ garantiza que 
+
+\begin{equation*}
+  \llbracket \delta w \rrbracket\eta_1 = \eta_2 w
+\end{equation*}
+
+Si $w \neq v_{\text{new}}$, entonces $(7)$ implica $(10)$ trivialmente. Si
+
+\pagebreak 
+
+\begin{myframe}
+  \textbf{(3)} Dar un término cerrado $M$ cuya denotación en la semántica normal sea: 
+
+  $(a)$ distinta a $\bot$ pero que para todos $N, \eta$, $\llbracket M ~ N
+  \rrbracket\eta = \bot $.
+
+  $(b)$ Distinto a $\bot $ y $\llbracket M(\Delta \Delta) \rrbracket\eta \neq
+  \bot $.
+\end{myframe}
+
+$(b)$ Una distinción importante en la semántica normal es la siguiente: pese a que $\Delta
+\Delta$ es semánticamente $\bot $, pues no termina ante ningún argumento, la
+función $\lambda x. \Delta \Delta$ que devuelve constantemente \textit{la
+función} $\Delta \Delta$ no es bottom. Siempre devuelve un valor fijo: a saber,
+la función $\Delta \Delta$. Esto sugiere que el término deseado es
+
+$$M := \lambda x.\Delta \Delta$$
+
+Para empezar,
+
+\begin{align*}
+  \llbracket \lambda x.\Delta \Delta \rrbracket\eta 
+  &= (\iota_\uparrow \circ \psi)\psi \big( \lambda d \in D_\infty.\llbracket \Delta \Delta \rrbracket[\eta
+  \mid x : d] \big) \\ 
+  &= (\iota_\uparrow \circ \psi) \big( \lambda d \in D_\infty.\bot \big) \\ 
+  &\neq \bot 
+\end{align*}
+
+Ahora bien, dado $N$ arbitrario, 
+
+\begin{align*}
+  \llbracket M N \rrbracket \eta 
+  &= \phi_{\ind} \llbracket M \rrbracket\eta \llbracket N \rrbracket\eta \\ 
+  &= \phi_{\ind} \Big( (\iota_{\uparrow} \circ \psi)(\lambda d \in D_\infty.
+  \bot ) \Big) ~ \left(  \llbracket N \rrbracket\eta \right)  \\ 
+  &= (\lambda d \in D_\infty.\bot )(\llbracket N \rrbracket\eta) \\ 
+  &= \bot 
+\end{align*}
+
+$(b)$ Necesitamos un término cerrado definido (distinto a $\bot $) que, aplicado
+a $\Delta\Delta$, no dé $\bot$. Si definimos (por ahora) $M$ de manera
+abstracta como $M := \lambda x_1x_2\ldots x_k.e$, vemos que
+
+\begin{align*}
+  \llbracket M(\Delta \Delta) \rrbracket\eta 
+  &=\phi_{\ind} (\llbracket M \rrbracket\eta) \left( \llbracket \Delta \Delta
+  \rrbracket\eta \right)  \\ 
+  &= \phi_{\ind} \Big((\iota_{\uparrow} \circ \psi)(\lambda d_1 \in
+  D_\infty.\llbracket \lambda x_2 x_3 \ldots x_k.e \rrbracket[\eta \mid x_1 : d_1 ]) \Big) ~ \bot  \\ 
+  &= (\lambda d_1 \in D_\infty.\llbracket \lambda x_2\ldots x_k.e \rrbracket[\eta \mid x_1 : d_1 ]) \bot 
+\end{align*}
+
+Tomemos $M :=  \lambda xy.xy$. Entonces
+
+\begin{equation}
+  \llbracket M(\Delta \Delta) \rrbracket\eta 
+  = (\lambda d_1 \in
+  D_\infty.\llbracket \lambda y.xy \rrbracket[\eta \mid x : d_1]) \bot
+\end{equation}
+
+Ahora bien, 
+
+\begin{align*}
+  \llbracket \lambda y.xy \rrbracket[\eta \mid x : d_1] 
+  &=(\iota_{\uparrow} \circ \psi) (\lambda d_2 \in D_\infty.\llbracket xy
+  \rrbracket[\eta \mid x : d_1 \mid y : d_2]) \\ 
+  &(\iota_{\uparrow} \circ \psi)(\lambda d_2 \in D_\infty.\phi_{\ind} ~ d_1 ~ d_2)
+\end{align*}
+
+Por lo tanto, por $(11)$, 
+
+\begin{align*}
+  \llbracket M(\Delta) \rrbracket\eta 
+  &=(\lambda d_1 \in D_\infty.(\iota_{\uparrow} \circ \psi)(\lambda d_2 \in
+  D_\infty.\phi_{\ind} ~ d_1 ~ d_2) ) ~ \bot  \\ 
+  &=(\iota_{\uparrow} \circ \psi) (\lambda d_2 \in D_\infty.\phi_{\ind} ~ \bot
+  ~ d_2) \\ 
+  &=(\iota_{\uparrow} \circ \psi)(\lambda d_2 \in D_\infty. \bot ) \\ 
+  &\neq \bot 
+\end{align*}
+
+\pagebreak 
+
+\begin{myframe}
+  \textbf{(5)} ¿Cuáles de las propiedades bellas del lenguaje (sustitución,
+  coincidencia, etc.) deja de valer en la semántica denotacional normal?
+\end{myframe}
+
+Sólo la correctitude de la regla $\eta$ no vale. La regla $\eta$ establecía que
+$\lambda v.ev \to e$ siempre que $v \not\in FV(e)$. Semánticamente, su
+correctitud establecía en dicho caso $\llbracket \lambda v.ev \rrbracket
+=\llbracket e \rrbracket$.
+
+Tomemos como contra-ejemplo $\lambda v.\Delta \Delta v $, con $v \not\in
+FV(\Delta)$. Claramente,
+
+\begin{equation}
+  \llbracket \lambda v.\Delta \Delta v \rrbracket \eta  
+  &=(\iota_{\uparrow} \circ \psi) (\lambda d \in D_\infty.\llbracket \Delta
+  \Delta v \rrbracket[\eta \mid v : d])
+\end{equation}
+
+No es difícil ver que $\llbracket \Delta \Delta v \rrbracket[\eta \mid v : d] =
+\phi_{\ind} \bot ~ d = \bot $. Por lo tanto, $(12)$ se convierte en 
+
+\begin{equation}
+  \llbracket \lambda v.\Delta \Delta v \rrbracket\eta =(\iota_{\uparrow} \circ
+  \psi)(\lambda d \in D_\infty.\bot ) \neq \bot 
+\end{equation}
+
+Por lo tanto, $\llbracket \lambda v.\Delta \Delta v \rrbracket\eta \neq
+\llbracket \Delta \Delta \rrbracket$.
+
+\pagebreak 
+
+\pagebreak
+
+\section{P9}
+
+\begin{myframe}
+  \textbf{(3)} Extienda la semántica de la evaluación para incorporar errores.
+  Incorpore \textbf{error, typeerror} como resultados posibles de una
+  evaluación, al mismo nivel que las formas canónicas.  Por ejemplo, 
+  si $e \Rightarrow \left\lfloor i \right\rfloor, e' \Rightarrow \left\lfloor 0
+  \right\rfloor$, $e / e' \Rightarrow \textbf{error}$.
+\end{myframe}
+
+Lidiemos primero con errores de tipos. Sea $\circ$ un operador binario
+aritmético (i.e. $\circ \in \left\{ +, -, \div, * \right\} $). Si $\circ \neq
+\div$, definimos:
+
+
+\begin{equation*}
+\inferrule* [right=] {e_1 \Rightarrow z_1 \qquad e_2 \Rightarrow z_2}{e_1 \circ
+e_2 \Rightarrow \textbf{typeerror}} \qquad z_i \not\in \text{<intcmf>}, i = 1, 2
+\end{equation*}
+
+Etc. la verdad no es difícil. Lo importante es notar que otra forma de hacer
+esto sería lazy: 
+
+\pagebreak 
+
+\begin{myframe}
+  \textbf{(5)} Evalúe modo eager y normal: $(a) : \left<\textbf{True} + 0, \Delta \Delta
+  \right>$ y $(b) : \left<\Delta \Delta, \textbf{True} + 0 \right>$.
+\end{myframe}
+
+En evaluación normal, todas las tuplas se consideran una forma canónica, incluso
+si sus elementos no lo están. Por lo tanto, ambas tuplas evalúan a sí mismas. 
+
+En evaluación eager, los elementos de la tupla deben llevarse a forma normal.
+Sin embargo, 
+
+\begin{align*}
+  &_{0}[\textbf{True} + 0 \\ 
+  &\qquad _{01}[\textbf{True} \Rightarrow \textbf{True}]_{01}\\
+  &\qquad _{02}[0 \Rightarrow 0]_{02} \\ 
+  \Rightarrow &\textbf{True + 0} \Rightarrow typeerror]_0
+\end{align*}
+
+Por ende, la tupla no puede evaluarse en ager. En la segunda, $\Delta \Delta$
+no se puede evaluar porque diverge. Por ende, ninguna tupla puede evaluarse en
+modo eager.
+
+\pagebreak 
+
+\begin{myframe}
+  \textbf{(6)} En lenguaje aplicativo normal, reescsribir utilizando patrones y
+  \textbf{rec}: 
+
+  \begin{align*}
+    \textbf{letrec} \qquad par &\equiv \lambda x. 
+    \textbf{if } x = 0 \textbf{ then true}
+    \textbf{ else }impar(x-1) \\ 
+                          impar &\equiv\lambda x.\textbf{if } x = 0 \textbf{ then false}
+                          \textbf{ else } par(x-1) \\ 
+                          \textbf{in } e
+  \end{align*}
+\end{myframe}
+
+Recordemos que 
+
+\begin{equation*}
+  \textbf{letrec } f \equiv \lambda x.c \textbf{ in } e =_{\text{def}}
+  \textbf{let }f
+  \equiv \textbf{rec}(\lambda f. \lambda x. e_0) \textbf{ in } e
+\end{equation*}
+
+Por ende, la expresión arriba es
+
+\begin{align*}
+  \textbf{let ~ } 
+  par &\equiv \textbf{rec}(\lambda f.\lambda x. 
+    \textbf{if } x = 0 \textbf{ then true}
+    \textbf{ else }impar(x-1)
+  )\\
+  impar &\equiv \textbf{rec}(\lambda f.\lambda x. 
+    \textbf{if } x = 0 \textbf{ then false}
+    \textbf{ else }par(x-1)
+  ) \\ 
+  \textbf{in } e
+\end{align*}
+
+
+\pagebreak 
+
+\begin{align*}
+&\textbf{letrec } f = \lambda x. \textbf{if } b \textbf{ then } 1 \textbf{
+    else } f ~ x \textbf{ in } f~0 \\ 
+&\qquad (\lambda x. \textbf{letrec } f = \lambda x. \textbf{if } b \textbf{ then } 1 \textbf{ else } f ~ x
+\textbf{ in } \textbf{if } b \textbf{ then } 1 \textbf{ else } f ~ x) ~ 0 \\ 
+&\qquad \qquad \textbf{letrec } f = \lambda x. \textbf{if } b \textbf{ then } 1
+\textbf{ else } f ~ x \textbf{ in }  \textbf{if } b \textbf{ then } 1 \textbf{
+else } f ~ 0 \\ 
+&\qquad \qquad \qquad 
+\textbf{if } b \textbf{ then } 1 \textbf{ else } 
+(\lambda x. \textbf{letrec } f = \lambda x.\textbf{if } b \textbf{then } 1 \textbf{ else } f ~ x \textbf{ in } \textbf{if } b \textbf{ then } 1 \textbf{ else } f ~ x) ~ 0
+\end{align*}
+
+Si $b$ es falso, esto continúa 
+
+\begin{align*}
+&b \Rightarrow \textbf{False} \\ 
+& 
+(\lambda x. \textbf{letrec } f = \lambda x.\textbf{if } b \textbf{then } 1
+\textbf{ else } f ~ x \textbf{ in } \textbf{if } b \textbf{ then } 1 \textbf{
+else } f ~ x) ~ 0 \\ 
+&\qquad 0 \Rightarrow 0 \\ 
+&\qquad \lambda x. \ldots \Rightarrow \lambda x. \ldots \\
+&\qquad\textbf{letrec } f = \lambda x.\textbf{if } b \textbf{ then } 1
+\textbf{ else } f ~ x \textbf{ in } \textbf{if } b \textbf{ then } 1 \textbf{
+else } f ~ 0 \\ 
+\end{align*}
+
+Acá volvemos a una expresión anterior, y vemos que la recursión no termina. Si
+$b$ es verdadero, se continúa
+
+\begin{align*}
+&b \Rightarrow \textbf{True} \\ 
+&1 \Rightarrow 1 
+\end{align*}
+
+lo cual es totalmente esperable: si $b \equiv \textbf{True}$, se devuelve $1$
+sin siquiera llamar a la recursión.
+
+\pagebreak 
+
+En normal, la evaluación es similar (ahora la hacemos más paso a paso):
+
+\footnotesize
+
+\begin{align*}
+&_0[\textbf{letrec } f = \lambda x. 
+\textbf{if } b \textbf{ then } 1 \textbf{    else } f ~ x \textbf{ in } f~0 \\ 
+&\qquad _{01}[(\lambda x. \textbf{letrec } f = \lambda x.\textbf{if } b \textbf{
+then } 1 \textbf{    else } f ~ x \textbf{ in }\textbf{if } b \textbf{ then } 1
+\textbf{    else } f ~ x ) ~ 0 \\ 
+&\qquad \qquad_{011}[\lambda x. \ldots \Rightarrow \lambda x. \ldots]_{011} \\ 
+&\qquad \qquad _{012}[\textbf{letrec } f = \lambda x.\textbf{if } b \textbf{
+then } 1 \textbf{    else } f ~ x \textbf{ in } \textbf{if } b \textbf{ then } 1
+\textbf{    else } f ~ 0 \\ 
+&\qquad\qquad\qquad _{0121}[
+\textbf{if } b \textbf{ then } 1 \textbf{    else } (\lambda x.\textbf{letrec } f \equiv\textbf{if } b \textbf{ then } 1 \textbf{ else } f ~ x \textbf{ in } \textbf{if } b \textbf{ then } 1 \textbf{    else } f
+~ x)(0) \\ 
+&\qquad\qquad\qquad\qquad _{01210}[b \Rightarrow \textbf{True}]\\
+&\qquad\qquad\qquad\qquad \Rightarrow  1]_{0121} \\ 
+&\qquad \qquad \qquad \Rightarrow 1 ]_{012} \\ 
+&\qquad\qquad \Rightarrow 1]_{01} \\ 
+&\Rightarrow 1]_0
+\end{align*}
+
+Si $b \equiv \textbf{False}$,
+
+\begin{align*}
+&_0[\textbf{letrec } f = \lambda x. 
+\textbf{if } b \textbf{ then } 1 \textbf{    else } f ~ x \textbf{ in } f~0 \\ 
+&\qquad _{01}[(\lambda x. \textbf{letrec } f = \lambda x.\textbf{if } b \textbf{
+then } 1 \textbf{    else } f ~ x \textbf{ in }\textbf{if } b \textbf{ then } 1
+\textbf{    else } f ~ x ) ~ 0 \\ 
+&\qquad \qquad_{011}[\lambda x. \ldots \Rightarrow \lambda x. \ldots]_{011} \\ 
+&\qquad \qquad _{012}[\textbf{letrec } f = \lambda x.\textbf{if } b \textbf{
+then } 1 \textbf{    else } f ~ x \textbf{ in } \textbf{if } b \textbf{ then } 1
+\textbf{    else } f ~ 0 \\ 
+&\qquad\qquad\qquad _{0121}[
+\textbf{if } b \textbf{ then } 1 \textbf{    else } 
+(\lambda x.\textbf{letrec } f \equiv \lambda x.\textbf{if } b \textbf{ then } 1 \textbf{ else } f ~ x \textbf{ in } \textbf{if } b \textbf{ then } 1 \textbf{    else } f
+~ x)(0) \\ 
+&\qquad\qquad\qquad\qquad _{01210}[b \Rightarrow \textbf{False}]\\
+&\qquad\qquad\qquad\qquad _{01211}[(\lambda x.\textbf{letrec } f \equiv \lambda
+x.\textbf{if } b
+\textbf{ then } 1 \textbf{ else } f ~ x \textbf{ in } \textbf{if } b \textbf{
+then } 1 \textbf{    else } f ~ x) (0)\\ 
+&\qquad\qquad\qquad\qquad\qquad _{012110}[\lambda x. \ldots \Rightarrow \lambda
+x. \ldots]_{012110}\\
+&\qquad\qquad\qquad\qquad\qquad _{012111}[\textbf{letrec } f \equiv \lambda x.\textbf{if } b
+\textbf{ then } 1 \textbf{ else } f ~ x \textbf{ in } \textbf{if } b \textbf{
+then } 1 \textbf{    else } f ~ 0
+\end{align*}
+
+Ahora vemos que la rama $012111$ es igual a la rama $012$. La llamada no
+termina.
+
+
+\pagebreak 
+
+\section{P10}
+
+\begin{myframe}
+    \textbf{(1)} Dé la semántica normal y eager de $\textbf{True} \lor 0$ y $\textbf{True}
+    \lor \Delta\Delta$
+\end{myframe}
+
+Semántica normal:
+
+\begin{align*}
+\llbracket T \lor 0 \rrbracket\eta 
+&=(\lambda b_1 \in V_{\text{bool}}. \textbf{if } b_1 \textbf{ then } T \textbf{
+else } \llbracket 0 \rrbracket\eta )_{\text{bool}*} \llbracket T \rrbracket \eta
+\\ 
+&=(\lambda b_1 \in V_{\text{bool}}. \textbf{if } b_1 \textbf{ then } T \textbf{
+else } \llbracket 0 \rrbracket\eta )_{\text{bool}*} \iota_{\text{bool}}(T) \\ 
+&=\textbf{if } T \textbf{ then } T \textbf{ else } \llbracket 0 \rrbracket\eta
+\\ 
+&=\iota_{\text{bool}} T
+\end{align*}
+
+Alternativamente, pero más horrible:
+
+\begin{align*}
+\llbracket T \lor 0 \rrbracket\eta 
+&=\left(\lambda b_1 \in V_{\text{bool}}. \begin{cases}
+    \iota_{\text{bool}} T & b_1 \\ 
+    \llbracket 0 \rrbracket\eta & c.c.
+\end{cases}\right)_{\text{bool}*} \llbracket T \rrbracket \eta
+\\ 
+&= \begin{cases}
+        \iota_{\text{bool}} ~ T & T  \\ 
+        \llbracket 0 \rrbracket\eta & c.c.
+\end{cases}  \\
+&=\iota_{\text{bool}} T
+\end{align*}
+
+La evaluación normal de $\textbf{True} \lor  \Delta \Delta$  da
+$\iota_{\text{bool}} T$ y no es distinta de la anterior en esencia. Pasemos a
+eager donde se dan cosas más interesantes.
+
+
+\begin{align*}
+\llbracket T \lor 0 \rrbracket\eta
+&= \Big(\lambda b_1 \in V_{\text{bool}}.\big( \lambda b_2 \in V_{\text{bool}}. b_1 \lor
+b_2 \big)_{\text{bool}*}(\llbracket 0 \rrbracket\eta)
+\Big)_{\text{bool}*}\llbracket T \rrbracket\eta \\ 
+&= \Big(\lambda b_1 \in V_{\text{bool}}.\big( \lambda b_2 \in V_{\text{bool}}. b_1 \lor
+    b_2 \big)_{\text{bool}*}(\iota_{\text{int}} 0)
+\Big)_{\text{bool}*} \iota_{\text{bool}} T \\ 
+&= \big( \lambda b_2 \in V_{\text{bool}}. T \lor
+    b_2 \big)_{\text{bool}*}(\iota_{\text{int}} 0) \\ 
+&= \text{tyerr}
+\end{align*}
+
+Similarment,
+
+\begin{align*}
+\llbracket T \lor \Delta\Delta \rrbracket\eta
+&= \Big(\lambda b_1 \in V_{\text{bool}}.\big( \lambda b_2 \in V_{\text{bool}}. b_1 \lor
+b_2 \big)_{\text{bool}*}(\llbracket \Delta\Delta \rrbracket\eta)
+\Big)_{\text{bool}*}\llbracket T \rrbracket\eta \\ 
+&= \Big(\lambda b_1 \in V_{\text{bool}}.\big( \lambda b_2 \in V_{\text{bool}}. b_1 \lor
+    b_2 \big)_{\text{bool}*}(\bot )
+\Big)_{\text{bool}*} \iota_{\text{bool}} T \\ 
+&= \big( \lambda b_2 \in V_{\text{bool}}. T \lor
+    b_2 \big)_{\text{bool}*}(\bot ) \\ 
+&= \bot 
+\end{align*}
+
+\pagebreak 
+
+
+\begin{myframe}
+    Encuentre ecuaciones semánticas sencillas para las siguientes expresiones,
+    considerando los casos eager y normal. 
+
+    $(a)$ $\llbracket (\lambda x. e)e' \rrbracket\eta$
+
+    $(b)$ $\llbracket we \rrbracket[\eta \mid w : \iota_{\text{fun}} f]$
+\end{myframe}
+
+
+$(a)$ Empecemos con normal. Deseamos una semántica que "reemplace" las ocurrencias
+de $x$ en $e$ por $e'$. Y si bien $e'$ es una expresión con una semántica
+propia, no deseamos evaluar dicha semántica hasata después del reemplazo. Por lo
+tanto, proponemos:
+
+\begin{equation*}
+    \llbracket (\lambda x.e)e' \rrbracket = \llbracket e / (x \to e)
+    \rrbracket\eta
+\end{equation*}
+
+Veamos que esto satisface algunas propiedades deseadas. Por ejemplo, 
+
+\begin{equation*}
+   \llbracket (\lambda x.\textbf{True})( \Delta\Delta ) \rrbracket\eta =
+   \llbracket \textbf{True} / (x \to \Delta\Delta) \rrbracket\eta = \llbracket
+   \textbf{True} \rrbracket\eta = \iota_{\text{bool}} \textbf{True}
+\end{equation*}
+
+Una semántica eager podría ser:
+
+\begin{equation*}
+    \llbracket (\lambda x.e)e' \rrbracket\eta = (\lambda v \in V. \llbracket e
+    \rrbracket[\eta \mid x : v] )_{*}\llbracket e
+    \rrbracket\eta
+\end{equation*}
+
+Veamos por ejemplo que en este caso
+
+\begin{align*}
+\llbracket (\lambda x.T)(\Delta \Delta) \rrbracket\eta 
+&=(\lambda v \in V. \llbracket T \rrbracket[\eta \mid x : v])_* \llbracket e
+\rrbracket\eta \\ 
+&=(\lambda v \in V. \llbracket T \rrbracket[\eta \mid x : v])_* \bot  \\ 
+&=\bot 
+\end{align*}
+
+$(b)$ Empecemos con la normal otra vez. Deseamos, por ejemplo, que si $f$ es
+constante, $\llbracket we \rrbracket[\eta \mid w : \iota_{\text{fun}} f]$
+devuelva el valor constante incluso si la semántica de $e$ es bottom. Para ello, 
+hacemos 
+
+\begin{equation*}
+    \llbracket we \rrbracket[\eta \mid w : \iota_{\text{fun}} f] =
+    f_*(\llbracket e \rrbracket\eta)
+\end{equation*}
+
+\pagebreak 
+
+\begin{myframe}
+    \textbf{(3)} Calcular la semántica eager y normal de $\left<\textbf{True +
+    0}, \Delta \Delta\right>$ y $\left<\Delta \Delta, \textbf{True} + 0 \right>$.
+\end{myframe}
+
+Eager:
+
+\begin{align*}
+ &\llbracket \left<T + 0, \Delta \Delta \right> \rrbracket\eta  \\ 
+=&\Big( \lambda v_1 \in V. \big( \lambda v_2 \in V. \iota_{\text{norm}}(
+\iota_{\text{tuple}}( \left<v_1, v_2 ) ) \right> \big)_{*} \llbracket \Delta
+\Delta\rrbracket\eta \Big)_{*} \llbracket T + 0 \rrbracket\eta\\
+=&\Big( \lambda v_1 \in V. \big( \lambda v_2 \in V. \iota_{\text{norm}}(
+\iota_{\text{tuple}}( \left<v_1, v_2 ) ) \right> \big)_{*} \llbracket \Delta
+\Delta\rrbracket\eta \Big)_{*} \\ 
+ &\Big((\lambda x_1 \in V_{\text{int}}.\left(  \lambda
+    x_2\in V_{\text{int}}.
+\iota_{\text{int}}(v_1 + v_2)  \right)_{\text{int}*}\llbracket 0 \rrbracket\eta
+)\llbracket T \rrbracket\eta\Big) \\ 
+=&\Big( \lambda v_1 \in V. \big( \lambda v_2 \in V. \iota_{\text{norm}}(
+\iota_{\text{tuple}}( \left<v_1, v_2 ) ) \right> \big)_{*} \llbracket \Delta
+\Delta\rrbracket\eta \Big)_{*} \\ 
+ &\Big((\lambda x_1 \in V_{\text{int}}.\left(  \lambda
+    x_2\in V_{\text{int}}.
+\iota_{\text{int}}(v_1 + v_2)  \right)_{\text{int}*}\llbracket 0 \rrbracket\eta
+) \iota_{\text{bool}} T\Big)\\ 
+=&\Big( \lambda v_1 \in V. \big( \lambda v_2 \in V. \iota_{\text{norm}}(
+\iota_{\text{tuple}}( \left<v_1, v_2 ) ) \right> \big)_{*} \llbracket \Delta
+\Delta\rrbracket\eta \Big)_{*} (tyerr) \\ 
+ &= tyerr
+\end{align*}
+
+Notas para recordar: 
+
+\begin{itemize}
+    \item Cuando lidiamos con semántica de tuplas, como una tupla
+$\left<\text{expr}, \text{expr} \right>$ puede tener distintos tipos (e.g.
+$\left<0, True \right>$), tiramos $\lambda v_1 \in V. \lambda v_2 \in V.$, etc.
+Porque los elementos de la tupla están en $V$, pero no sabemos si en
+$V_{\text{bool}}$, $V_{\text{int}}$, etc.
+
+\item Por lo dicho anteriormente, $\left< v_1, v_2 \right>$ (en la primera
+    igualdad) tiene elementos de $V$. Pero nuestra semántica debe dar elementos
+    de $D = V_\bot$. Por eso se tiene que liftear la tupla, y para liftear
+    primero la vemos como algo del espacio $V_{\text{tuple}}$ y luego como algo
+    de $D$: $\iota_{\text{norm}}(\iota_{\text{tuple}}\left<v_1,v_2 \right>)$.
+\end{itemize}
+
+En normal, la forma canónica de una tupla
+$\left<v_1, v_2 \right>$ es la tupla $\left<z_1, z_2 \right>$, con $v_1
+\Rightarrow_N z_2, v_2 \Rightarrow z_2$. Es decir, es la tupla de las formas
+canónicas. Si recordamos esto, vamos a poder reconstruir: la semántica normal de
+una tupla es la tupla de las semánticas normales:
+
+\begin{align*}
+ &\llbracket \left<T + 0, \Delta\Delta \right> \rrbracket\eta \\ 
+=&\left< \llbracket T +0 \rrbracket\eta, \llbracket \Delta\Delta
+\rrbracket\eta\right> \\ 
+=&\left<tyerr, \bot  \right>
+\end{align*}
+
+Ahora, en eager:
+
+\begin{align*}
+ &\llbracket \left<\Delta \Delta, T + 0 \right> \rrbracket\\
+=&\Big( \lambda v_1 \in V.\big( \lambda v_2 \in V. (\iota_{\text{norm}}
+    \circ \iota_{\text{tuple}}) \left< v_1, v_2 \right> \big)_*\llbracket T + 0
+\rrbracket\eta \Big)_*\llbracket \Delta\Delta \rrbracket\eta\\
+=&\Big( \lambda v_1 \in V.\big( \lambda v_2 \in V. (\iota_{\text{norm}}
+    \circ \iota_{\text{tuple}}) \left< v_1, v_2 \right> \big)_*\llbracket T + 0
+\rrbracket\eta \Big)_* \bot \\
+=&\bot 
+\end{align*}
+
+En normal, por la misma lógica que antes, obtendremos $\left< \bot , tyerr
+\right>$. Pero seamos escarabajos y calculemos:
+
+\begin{align*}
+ &\llbracket \left<\Delta \Delta, T + 0 \right> \rrbracket\\ 
+=& \left<\llbracket \Delta\Delta \rrbracket\eta, \llbracket T + 0 \rrbracket\eta
+\right> \\ 
+ &=\left<\bot, \Big(\lambda x \in V_{\text{int}}.\big(\lambda y \in V_{\text{int}}.
+     \iota_{\text{norm}} \circ \iota_{\text{int}})(x + y) \big)_{\text{int}*}\llbracket 0
+\rrbracket\eta \Big)_{\text{int}*}\llbracket T \rrbracket\eta \right>\\
+ &=\left<\bot, \Big(\lambda x \in V_{\text{int}}.\big(\lambda y \in V_{\text{int}}.
+     \iota_{\text{norm}} \circ \iota_{\text{int}})(x + y) \big)_{\text{int}*}\llbracket 0
+ \rrbracket\eta \Big)_{\text{int}*} \iota_{\text{norm}}(\iota_{\text{bool}}(T))
+ \right> 
+ &=\left<\bot, \Big(\lambda x \in V_{\text{int}}.\big(\lambda y \in V_{\text{int}}.
+     \iota_{\text{norm}} \circ \iota_{\text{int}})(x + y) \big)_{\text{int}*}\llbracket 0
+ \rrbracket\eta \Big)_{\text{int}*} \iota_{\text{norm}}(\iota_{\text{bool}}(T))
+ \right> 
+\end{align*}
+
+Acá me surge una pregunta y es que está mal definido todooo
+
+\pagebreak 
+
+\begin{myframe}
+    Dé la semántica denotacional normal de las expresiones que dio en el
+    ejercicio 7 del práctico 9, o sea de $e := \textbf{rec}(\lambda w \left<0, w
+    \right>)$.
+\end{myframe}
+
+\pagebreak 
+
+Se nos pide hallar
+
+\begin{align*}
+&\llbracket \textbf{letrec } f \equiv \lambda x. 
+\textbf{if } e \textbf{ then } 1\textbf{ else } f ~ 0 \textbf{ in } f ~ 0\rrbracket\eta 
+\end{align*}
+
+donde $c$ (de cuerpo) el cuerpo de la abstracción lambda. Sabemos que por def.
+
+\begin{equation*}
+    \llbracket \textbf{letrec } f \equiv \lambda x.c 
+    \textbf{ in } f ~ 0  \rrbracket\eta = \llbracket f 0 \rrbracket\left[ \eta \mid f :
+    \iota_{\text{fun}} h\right] 
+\end{equation*}
+
+donde $h \in V_{\text{fun}}$. (El iota es necesario, porque los entornos mapean
+variables a valores es $V$.) Aquí, $h =
+\textbf{Y}_{\text{fun}*}^{V_{\text{fun}}} F$, con 
+
+\begin{equation*}
+    F ~ g ~ z = \llbracket c \rrbracket[\eta \mid f : \iota_{\text{fun}} g \mid
+    x : z]
+\end{equation*}
+
+Sea $\eta' = [\eta \mid f : \iota_{\text{fun}} ~ g \mid x : z]$. Notemos que $g
+\in V \to D$, o sea $g \in V_{\text{fun}}$. Veamos que 
+
+\begin{align*}
+    \llbracket c \rrbracket\eta' 
+&= \llbracket\textbf{if } e \textbf{ then }
+1\textbf{ else } f ~ 0 \rrbracket\eta' \\ 
+&= \left(\lambda b \in V_{\text{bool}}. \begin{cases}
+    \iota_{\text{norm}} \circ \iota_{\text{int}} 1 &  b \\ 
+    \llbracket f 0 \rrbracket \eta' & c.c.
+\end{cases}\right)_{\text{bool}*} \llbracket e \rrbracket\eta'
+\end{align*}
+
+Veamos que 
+
+\begin{align*}
+    \llbracket f0 \rrbracket\eta' 
+    &= (\lambda \pi \in V_{\text{fun}}.
+    \pi_*(\llbracket 0 \rrbracket\eta'))_{\text{fun}*} (\llbracket f
+    \rrbracket\eta') \\ 
+    &=(\lambda \pi \in V_{\text{fun}}.\pi_*(\iota_{\text{norm}} \circ
+    \iota_{\text{int}} ~ 0))_{\text{fun}*} (\iota_{\text{fun}} ~ g) \\ 
+    &=g_*(\iota_{\text{norm}} ~ \iota_{\text{int}} ~ 0) 
+\end{align*}
+
+Además, como $e$ es cerrada, $\llbracket e \rrbracket\eta' = \llbracket e
+\rrbracket\eta$. Por ende,
+
+\begin{equation*}
+    F ~ g ~ z = \llbracket c \rrbracket\eta' = \left( \lambda b \in V_{\text{bool}}.\begin{cases}
+            \iota_{\text{norm}} \iota_{\text{int}} ~ 1 & b \\ 
+            g_*(\iota_{\text{norm}} ~ \iota_{\text{int}} 0) & c.c.
+    \end{cases} \right)_{\text{bool}*} \llbracket e \rrbracket\eta \\ 
+\end{equation*}
+
+Como $g_* \in D \to D$ evaluada en $\iota_{\text{norm}} \iota_{\text{int}} 0$
+da lo mismo que $g \in V\to D$ evaluada en $\iota_{\text{int}} 0$, usamos esto
+de ahora en adelante.
+
+Para encontrar la función $h$ que da la semántica a nuestra recursión, debemos
+encontrar el menor punto fijo de este funcional. El valor de dicho punto fijo
+depende del valor de $\llbracket e \rrbracket$. Hagamos por casos. 
+
+(Caso 1: $\llbracket e \rrbracket\eta$ es \textbf{True}) 
+
+\begin{align*}
+    F ~ g ~ z 
+    &= \left( \lambda b \in V_{\text{bool}}. \begin{cases}
+            \iota_{\text{norm}} \iota_{\text{int}} ~ 1 & b \\ 
+            g(\iota_{\text{int}}0) & c.c.
+    \end{cases} \right)_{\text{bool}*} (\iota_{\text{norm}} \circ
+    \iota_{\text{bool}}) \textbf{True}\\
+    &= \begin{cases}
+            \iota_{\text{norm}} \iota_{\text{int}} ~ 1 & \textbf{True} \\ 
+            g(\iota_{\text{int}}0) & c.c.
+    \end{cases} \right)\\ 
+    &= \iota_{\text{norm}} \iota_{\text{int}} ~ 1
+\end{align*}
+
+Es decir, $F ~ g = (d\in V \mapsto 1)\in V \to D$. Por lo tanto, 
+\begin{equation*}
+    F ~ \bot  = (d\in V \mapsto 1), F^2 \bot  = (d\in V \mapsto 1), \ldots
+\end{equation*}
+
+es cadena no interesante y $\textbf{Y} ~ F = (d\in V \mapsto  1)$.
+
+(Caso 2: $\llbracket e \rrbracket \eta$ es \textbf{False}) La misma lógica nos
+da $F ~ g ~ z = g(\iota_{\text{int}}0)$. Por ende,  
+
+\begin{equation*}
+    F ~ \bot  = (d\in V \to \bot_{V_{\text{fun}}} (\iota_{\text{int}} 0)) = d
+   \in V \to \bot = \bot_{V_{\text{fun}}}
+\end{equation*}
+
+Por ende, $F^2 \bot = (d \to \bot_{V_{\text{fun}}}(\iota_{\text{int}} 0)) = (d
+\to \bot ) = F ~ \bot $. La cadena no es interesante y  $\textbf{Y} F = (d\in V
+\mapsto \bot )$.
+
+(Caso 3: $\llbracket e \rrbracket\eta$ ni siquiera es int.) Fácilmente se ve que
+$F ~ g ~ z = tyerr$ y por ende $F ~ g = (d \mapsto tyerr)$ para toda $g \in
+V_{\text{fun}}$. Por lo tanto, $\textbf{Y} F = d\in V \mapsto tyerr$.
+
+De estos tres casos, se sigue que la semántica que buscábamos es 
+
+\begin{align*}
+    \llbracket \textbf{letrec } f \equiv \lambda x.c \textbf{ in } f 0
+    \rrbracket\eta 
+    &= \begin{cases}
+        \llbracket f0 \rrbracket[\eta \mid f : \iota_{\text{fun}} (d \in V \mapsto
+        \iota_{\text{norm}} \iota_{\text{int}} 1)] &\llbracket e \rrbracket\eta
+        = \iota_{\text{bool}} T\\ 
+        \llbracket f 0 \rrbracket[\eta \mid f :\iota_{\text{fun}} (d \in V
+        \mapsto \bot ) ] &  \llbracket e \rrbracket\eta = \iota_{\text{bool}} F \\ 
+        \llbracket f 0 \rrbracket[\eta \mid f : \iota_{\text{fun}} (d \in V
+        \mapsto tyerr)] & \llbracket e \rrbracket\eta = \iota_\theta k, \theta
+        \neq \text{bool}
+    \end{cases}\\
+    &=\begin{cases}
+        1 &\llbracket e \rrbracket\eta
+        = \iota_{\text{bool}} T\\ 
+        \bot  &  \llbracket e \rrbracket\eta = \iota_{\text{bool}} F \\ 
+        tyerr & \llbracket e \rrbracket\eta = \iota_\theta k, \theta
+        \neq \text{bool}
+    \end{cases}
+\end{align*}
+
+\pagebreak 
+
+Queremos hallar la semántica de:
+
+
+\begin{align*}
+    (\textbf{rec } \lambda f x.\textbf{if } e \textbf{ then } 1 \textbf{ else }
+    f x  ) 0
+\end{align*}
+
+Veamos que 
+
+\begin{align*}
+    &\llbracket \textbf{rec }\lambda fx.\textbf{if } e \textbf{ then } 1 \textbf{
+    else } f ~  x \rrbracket\eta \\
+    = &(\lambda f \in V_{\text{fun}}. \textbf{Y} ~
+    f)_{\text{fun}*}(\llbracket \lambda fx.\textbf{if } e \textbf{ then } 1 \textbf{ else } f
+    ~  x \rrbracket\eta)
+\end{align*}
+
+Ahora bien, 
+
+\begin{align*}
+    &\llbracket \lambda fx.\textbf{if } e \textbf{ then } 1 \textbf{ else } f
+    ~  x \rrbracket\eta \\
+    =&\iota_{\text{funsub}} \Big( \lambda d \in D. \llbracket \lambda x.
+    \textbf{if } e \textbf{ then } 1 \textbf{ else } f ~  x\rrbracket[\eta \mid
+f : d] \Big) \\ 
+=&\iota_{\text{funsub}} \Big(  \lambda d \in D. \iota_{\text{funsub}}\Big( \lambda d' \in D.
+     \llbracket \textbf{if } e \textbf{ then } 1 \textbf{ else } f ~
+x\rrbracket[\eta \mid f : d \mid x : d'] \Big) \Big) 
+\end{align*}
+
+Denotemos con $\eta'$ el entorno involucrado en la última ecuación.
+
+\begin{align*}
+    &\llbracket \textbf{if } e \textbf{ then } 1 \textbf{ else } f ~
+    x\rrbracket\eta' \\ 
+    =&\left( \lambda b \in V_{\text{bool}}.\begin{cases}
+            \iota_{\text{intsub}} ~ 1  & b \\ 
+            \llbracket f ~ x \rrbracket\eta' & c.c.
+    \end{cases} \right)_{\text{bool}*} \llbracket e \rrbracket\eta' \\ 
+    =&\left( \lambda b \in V_{\text{bool}}.\begin{cases}
+            \iota_{\text{intsub}} ~ 1  & b \\ 
+            (\lambda h \in V_{\text{fun}}. h(d'))_{\text{fun}*} \llbracket d
+            \rrbracket\eta' & c.c.
+    \end{cases} \right)_{\text{bool}*} \llbracket e \rrbracket\eta' \\ 
+    =&\left( \lambda b \in V_{\text{bool}}.\begin{cases}
+            \iota_{\text{intsub}} ~ 1  & b \\ 
+            (\lambda h \in V_{\text{fun}}. h(d'))_{\text{fun}*} \llbracket d
+            \rrbracket\eta' & c.c.
+    \end{cases} \right)_{\text{bool}*} \llbracket e \rrbracket\eta' \\ 
+\end{align*}
+
+Acá hay que dividir por casos. Si $\llbracket e \rrbracket\eta'$ es true se ve
+que tendremos solo $1$. No es interesante. Veamos el caso en que $\llbracket e
+\rrbracket \eta$ es falso (y booleano). Como $\llbracket e \rrbracket$ es falso, 
+la semántica del if en $\eta'$ nos da 
+
+\begin{equation*}
+    \llbracket \textbf{if } e \textbf{ then } 1 \textbf{ else } f ~
+    x\rrbracket\eta' = (\lambda h \in
+    V_{\text{fun}}.h(d'))_{\text{fun}*}\llbracket d \rrbracket\eta'
+\end{equation*}
+
+Acá otra vez tenemos casos. Vamos a asumir sanidad mental y suponer que
+$\llbracket d \rrbracket\eta' = d$ es una función. En ese caso, esto resulta en 
+
+\begin{equation*}
+    \llbracket \textbf{if } e \textbf{ then } 1 \textbf{ else } f ~
+    x\rrbracket\eta' =d(d')
+\end{equation*}
+
+Por ende, si $\llbracket e \rrbracket$ es true $d$ es una función, 
+
+\begin{align*}
+    &\llbracket \lambda fx.\textbf{if } e \textbf{ then } 1 \textbf{ else } f
+    ~  x \rrbracket\eta \\
+    =&\iota_{\text{funsub}} \Big( \lambda d \in D. \llbracket \lambda x.
+    \textbf{if } e \textbf{ then } 1 \textbf{ else } f ~  x\rrbracket[\eta \mid
+f : d] \Big) \\ 
+=&\iota_{\text{funsub}} \Big(  \lambda d \in D. \iota_{\text{funsub}}\Big( \lambda d' \in D.
+     \llbracket \textbf{if } e \textbf{ then } 1 \textbf{ else } f ~
+x\rrbracket[\eta \mid f : d \mid x : d'] \Big) \Big)  \\ 
+        =&\iota_{\ldots}(\lambda d \in D. \iota_{\ldots} (\lambda d' \in D. d(d')))
+\end{align*}
+
+y la semántica será el menor punto fijo de dicha función. Pero claramente, si
+llamamos a dicha función $\pi$, $\pi(\bot ) = \lambda d' \in
+D.\bot_{V_{\text{fun}}} d = \bot $. Tendremos una cadena no interesante. Su
+supremo es el $\bot$ de $V_{\text{fun}}$.
 
 
 
