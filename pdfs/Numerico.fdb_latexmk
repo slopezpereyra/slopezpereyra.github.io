@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1750080369.09128 "Numerico.tex" "Numerico.pdf" "Numerico" 1750080369.74293 2
+["pdflatex"] 1750086618.68708 "Numerico.tex" "Numerico.pdf" "Numerico" 1750086619.34246 2
   "/etc/texmf/web2c/texmf.cnf" 1740662799.63242 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -44,6 +44,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr8.pfb" 1611007856 106758 9574f3796dbe48eb661966173cfeb728 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmri12.pfb" 1611007856 106997 a0bb54e3a23850a654ba9ae28c64a35b ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmsy10.pfb" 1611007856 33568 1229f51de832265c06b3cbc7c344e81f ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmsy6.pfb" 1611007856 33822 306a2480bd9ed34f6be5319f3b7b1ef2 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmsy8.pfb" 1611007856 33461 d002e2fb4fa522af5dd785c29b95f36d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmtt10.pfb" 1611007856 86850 5376a42476681653272b921770a39100 ""
   "/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
@@ -213,8 +214,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1740670969.59643 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1740670991 8214096 2cc5ed7d441cd7dd7f6cf9e30d4bb5a5 ""
-  "Numerico.aux" 1750080369.67398 793 9d179bdd0f8a14c045c74a4432bd0624 "pdflatex"
-  "Numerico.tex" 1750080367.32799 13521 eb7df48641c5f4906f8a791a7405753a ""
+  "Numerico.aux" 1750086619.27341 667 1f23d103b09109cdfa215b688cfe5756 "pdflatex"
+  "Numerico.tex" 1750086617.06439 17742 47ab417bdb9065ae1ae1261077d8054b ""
   (generated)
   "Numerico.aux"
   "Numerico.log"

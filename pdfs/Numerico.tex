@@ -35,6 +35,7 @@
 \newtheorem{reg}{Rule}
 \newtheorem{exer}{Exercise}
 \newtheorem{note}{Note}
+\newtheorem{theorem}{Theorem}
 \begin{document}
 \setcounter{section}{8}
 \title{Chapter 9 Review Notes}
@@ -412,7 +413,17 @@ $\therefore r = \lim_{n \to \infty} a_n = \lim_{n \to \infty} b_n$ is a root.
     Esto es \textbf{recontra} útil porque nos dice cuánto se diferencia $f(r)$
     de nuestra aproximación $f(x)$ (pues expresa $f(r)$ como $f(x)$ más algo).
 
-    Usualmente $r, h$ son desconocidos pero $h$ puede acotarse.
+    Usualmente $r, h$ son desconocidos pero $h$ puede acotarse. 
+
+    El resto $R_n$ del teorema puede expresarse como sigue:
+
+    \begin{equation*}
+        f(r) = f(x+h) = f(x) + f'(x)h + \frac{f''(x)}{2!}h^2 + \ldots +
+        \frac{f^{(n)}(x) }{n!}h^n + \frac{ f^{(n+1)}(\zeta) }{(k+1)!}h^{n+1}
+    \end{equation*}
+
+    para algún $\zeta \in (x, h)$. Esta forma de expresar el error de
+    aproximación con el polinomio de Taylor se usará mucho.
 \end{shaded}
 
 Assume $r \in \mathcal{R}_f$ and $r = x + h$, with $x$ an approximation of $r$
@@ -476,25 +487,114 @@ The predicate $\left| x_1 - x_0 \right| < \delta$ checks whether our algorithm
 is adjusting $x$ in a negligible degree. If that is the case, we
 should stop. 
 
-\subsubsection{Error in Newton's method}
+\begin{theorem}
+    If $f''$ continuous around $r \in \mathcal{R}_f$ and $f'(r) \neq 0$, then
+    there is some $\delta > 0$ s.t. if $\left| r - x_0 \right| \leq \delta $,
+    then: 
+
+    \begin{itemize}
+        \item $\left| r - x_n \right| \leq \delta $ for all $n \geq 1$. 
+        \item $\left\{ x_n \right\} $ converges to $r$  
+        \item The convergence is quadratic, i.e. there is a constant $c(\delta)$
+            and a natural $N$ s.t. $\left| r - x_{n+1} \right| \leq c\left| r -
+            x_n\right|^2  $ for all $n \geq N$.
+    \end{itemize}
+
+\end{theorem}
 
 
 
+\small
+\begin{quote}
 
+\textbf{Proof.} Let $e_n = r - x_n$ be the error in the $n$th approximation. Assume $f''$ is
+continuous and $f(r) = 0$, $f'(r) \neq 0$. Then 
 
+\begin{align}
+    e_{n+1} &= r-  x_{n+1}  \nonumber \\ 
+&= r - \left( x_n - \frac{f(x_n)}{f'(x_n)} \right) \nonumber \\ 
+&= r - x_n  + \frac{f(x_n)}{f'(x_n)} \\
+&=\frac{e_n f'(x_n) + f(x_n)}{f'(x_n)}
+\end{align}
 
+Thus, the error at any given iteration is a function of the error at the
+previous iteration. Now consider the expression of $f(r)$ as 
 
+\begin{equation}
+    f(r) = f(x_n - e_n) = f(x_n) + e_nf'(x_n) + \frac{e_n^2f''(\zeta_n)}{2}
+\end{equation}
 
+for $\zeta_n$ between $x_n$ and $r$. This equation gives 
 
+\begin{equation}
+    e_n f'(x_n) + f(x_n) = -\frac{1}{2} f''(\zeta_n)e_n^2
+\end{equation}
 
+The expression in $(10)$ is the numerator in $(8)$, whereby we obtain via
+substitution: 
 
+\begin{equation}
+    e_{n+1} =  -\frac{1}{2}\frac{f''(\zeta_n)e^2_n}{f'(x_n)} 
+\end{equation}
 
+Equation $(11)$ ensures that the error scales quadratically. Now we wish to
+bound the error expression in $(11)$.
 
+The continuity of $f', f''$ ensures that these functions reach their extreme
+values in a closed and bounded interval around $r$. Take $\delta > 0$ to define
+a neighbourhood of length $\delta$ around $r$. Define 
 
+\begin{equation*}
+    c(\delta) = \frac{1}{2} \frac{ \max_{\left| x - r \right| \leq \delta }
+    \left| f''(x) \right|  }{\min_{\left| x-r \right| \leq \delta \left| f'(x) \right|  }}
+\end{equation*}
 
+Here, $c(\delta)$ is the maximum value which $e_{n+1}$ can take if $\zeta_n,
+x_n$ are assumed to belong to the neighbourhood, according to equation $(11)$.
+Now we make two assumptions: 
 
+\begin{enumerate}
+    \item $x_0$ belongs to the neighbourhood, i.e. $\left| x_0 - r \right| \leq
+        \delta$ 
+    \item $\delta$ is sufficiently small so that $\varrho := \delta c(\delta) < 1$.
+\end{enumerate}
 
+Note that, since $\zeta_0$ is between $x_0$ and $r$, assumption (1) ensures that
+$\zeta_0$ is also in the neighbourhood, i.e. $\left| r - \zeta_0 \right| \leq
+\delta$. Then we have:
 
+\begin{equation}
+    \frac{1}{2} \left| f''(\zeta_0) / f'(x_0) \right| \leq c(\delta)
+\end{equation}
+
+Therefore, using the recurrent definition of $e_{n+1}$ in $(11)$, 
+
+\begin{align*}
+    \left| x_1 - r \right|  
+    &= \left| e_1 \right|  \\ 
+    &= \left| \frac{1}{2} f''(\zeta_0) / f'(x_0) e_0^2 \right|  \\ 
+    &\leq |e_0^2| c(\delta) \\ 
+    &\leq |e_0| \varrho &\left\{ \left| e_0 \right| \leq \delta
+    \right\}  \\ 
+    &< \left| e_0 \right|  &\left\{ \varrho < 1 \right\}  \\ 
+    &\leq \delta
+\end{align*}
+
+$\therefore $ $\left| e_1 \right| < \left| e_0 \right| \leq \delta$, which means
+the error decreases. This argument may be repeated inductively, giving:
+ 
+\begin{align*}
+    &\left| e_1 \right|  \leq \varrho \left| e_0 \right|  \\ 
+    &\left| e_2 \right|  \leq \varrho \left| e_1 \right| \leq \varrho^2 \left| e_0 \right|   \\ 
+    &\left| e_3 \right|  \leq \varrho \left| e_2 \right| \leq \varrho^3 \left| e_0 \right|   \\ 
+    &\vdots
+\end{align*}
+
+In general, $\left| e_{n} \right| \leq \varrho^n \left| e_0 \right|
+$. And since $0 \leq \varrho < 1$, we have $\varrho^n \to 0$ when $n \to \infty$,
+entailing that $\left| e_n \right| \to 0$ when $n \to \infty$.
+\end{quote}
+\normalsize
 
 
 
