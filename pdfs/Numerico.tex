@@ -1,6 +1,9 @@
 \documentclass[a4paper, 12pt]{article}
 
 \documentclass[11pt]{article}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18} % Or adjust depending on your TeX distribution
 \usepackage[utf8]{inputenc}	% Para caracteres en español
 \usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
 \usepackage{multirow,booktabs}
@@ -829,10 +832,241 @@ which is a constant. In conclusion, if the derivatives of $g$ are null in $p$ up
 to the order $m-1$, the method as an order of convergence of at least $m$. Three
 results follow from this fact. 
 
-\section{Excercises}
+\pagebreak 
 
 
+\section{P2}
 
+\begin{shaded}
+    \textbf{(1)} Let $f(x) = (x+2)(x+1)^2 x(x-1)^3(x-2)$. To which root does
+    the biscection method converge on the following intervals? 
+
+    \begin{equation*}
+        [-1.5, 2.5], \qquad [-0.5, 2.4], \qquad [-0.5, 3], \qquad [-3, -0.5]
+    \end{equation*}
+\end{shaded}
+
+$(a)$ The midpoint of $I_0 = [-1.5, 2.5]$ is $c_0 := (2.5 - 1.5) / 2 = 1/2$. Since
+$f(a)f(c) < 0$, we have $I_1 = [-1.5, 0.5]$. The midpoint of $I_1$ is $c_1 = -
+0.5$, so $I_2$ will be $[-0.5, 0.5]$. The only root in this interval is $r = 0$,
+so the algorithm converges to it.
+
+$(b)$ The midpoint of $I_0 = [-0.5, 2.4]$ is $c := (2.4 - 0.5) / 2 = 0.95$. Then
+$I_1 = [-1.5, 0.95]$. Same logic gives $c_1 = -0.725$ and then $I_2 = [-0.725,
+0.95]$. The only root here is zero again. 
+
+$(c, d)$ Same.
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(2)} We wish to find a root of $f$ in $[a, b]$ using bisection
+    method and ensuring that the error is not greater than $\epsilon \in
+    \mathbb{R}^+$. 
+
+    $(a)$ Estimate the number of iterations sufficient to meet the criterion. 
+
+    $(b)$ What is the number of iterations for $a = 0, b = 1, \epsilon =
+    10^{-5}$? 
+\end{shaded}
+
+With $e_n = x_n - r$,
+
+\begin{equation*}
+    \left| e_n \right| \leq \frac{b_n - a_n}{2}
+\end{equation*}
+
+So we require 
+
+\begin{equation*}
+    \frac{b_n - a_n}{2} \leq \epsilon
+\end{equation*}
+
+We also know the length of $I_1$ is half the length of $I_0$, that of $I_2$ is
+half that of $I_1$, etc. In other words, 
+
+\begin{equation*}
+    \left| e_0 \right|  \leq \frac{b-a}{2}, \qquad \left| e_1 \right|  \leq
+    \frac{b-a}{2^2}, \qquad \left| e_2 \right|  \leq
+    \frac{b-a}{2^3}, \ldots
+\end{equation*}
+
+In general, 
+
+\begin{equation*}
+    \left| e_n \right|  \leq \frac{b-a}{2^{n+1}}
+\end{equation*}
+
+Imposing
+
+\begin{equation*}
+    \left| e_n \right|  \leq \frac{b-a}{2^{n+1}} \leq \epsilon
+\end{equation*}
+
+we satisfy our criterion, but we wish to express this bound in terms of $n$.
+Now, clearly, 
+
+\begin{align*}
+&\frac{b-a}{2^{n+1}} \leq \epsilon  \\
+\iff&\frac{ b-a }{\epsilon} \leq  2^{n+1} \\ 
+\iff& \log_2\left( \frac{ b-a }{\epsilon} \right)  - 1 \leq n  
+\end{align*}
+
+Since we wish  to bound $n$, we might as well take 
+
+\begin{equation*}
+    \log_2\left( \frac{b-a}{\epsilon} \right)  \leq n
+\end{equation*}
+
+which gives our final result. If we want to convert this to logarithms of $e$,
+it gives:
+
+\begin{equation*}
+    \frac{ \ln \left( \frac{b-a}{\epsilon} \right)  }{\ln 2} \leq n
+\end{equation*}
+
+$(b)$ For $a = 0, b = 1, \epsilon = 10^{-5}$, we need 
+
+\begin{equation*}
+    n \geq \frac{\ln \left( \frac{1}{10^{-5}} \right) }{\ln 2} \approx 16.609
+\end{equation*}
+
+so $n = 17$ would suffice.
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(3)} Determine  graphically some root of $f(x) = 4\sin x + 1 - x$
+    and perform three iterations of the bisection method to approximate. How
+    many steps are needed to ensure an error less than $10^{-3}$?
+\end{shaded}
+
+Let us unveil the full power of LaTex:
+
+\begin{center}
+\begin{tikzpicture}
+  \begin{axis}[
+      axis lines=middle,
+      xlabel={$x$},
+      ylabel={$f(x)$},
+      samples=200,
+      domain=-2*pi:2*pi,
+      grid=both,
+      enlargelimits=true,
+      legend pos=south east,
+    ]
+    \addplot[blue, thick] {4*sin(deg(x)) + 1 - x};
+    \addlegendentry{$f(x) = 4\sin(x) + 1 - x$}
+  \end{axis}
+\end{tikzpicture}
+\end{center}
+
+I'm too lazy to perform the steps of the algorithm. The number of steps needed
+again are given by 
+
+\begin{equation*}
+    n \geq \frac{\ln \left( \frac{4-2}{10^{-3}} \right) }{\ln 2} \approx 10.96
+\end{equation*}
+
+so taking $n = 11$ suffices.
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(4)} Let $a > 0$. Computing $\sqrt{a} $ is equivalent to finding the
+    root of $f(x) = x^2 -  a$. 
+
+    $(a)$ Show that Newton's sequence for this case is 
+
+    \begin{equation*}
+        x_{n+1} = \frac{1}{2}\left( x_n + \frac{a}{x_n} \right)  
+    \end{equation*}
+
+    $(b)$ Prove that f or any $x_0 > 0$, the approximations $\left\{ x_n
+    \right\} $ satisfy $x_n \geq \sqrt{a} $ for $n \geq 1$. 
+
+    $(c)$ Prove $\left\{ x_n \right\} $ is sdecreasing. 
+
+    $(d)$ Conclude that the sequence converges to $\sqrt{a} $
+\end{shaded}
+
+$(a)$ In Newton's algorithm, 
+
+\begin{equation*}
+    x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
+\end{equation*}
+
+Clearly, 
+
+\begin{equation*}
+    f'(x) = \frac{d}{dx} (x^2 - a) = 2x
+\end{equation*}
+
+Therefore, 
+
+\begin{align*}
+    x_{n+1} 
+    &= x_n - \frac{x_n^2 - a}{2x_n} \\ 
+    &= x_n - \frac{1}{2}\left( x_n - \frac{a}{x_n} \right)  \\ 
+    &= \frac{1}{2}x_n + \frac{1}{2} \frac{a}{x_n} \\ 
+    &=\frac{1}{2}\left( x_n + \frac{1}{x_n} \right) \qquad \blacksquare
+\end{align*}
+
+$(b)$ Let $x_0 > 0$. Since $x_0$ is positive and $x_{n+1} = \frac{1}{2}\left(
+x_n + \frac{1}{x_n} \right) $, every element in $\left\{ x_n \right\} $ is
+positive. Now consider that 
+
+Recall that, among all Pythagorean means, the arithmetic mean is the greatest.
+In particular, it is greater or equal to the geometric mean:
+
+\begin{equation*}
+    \frac{1}{N}\sum_{i=1}^n y_i \geq \sqrt[n]{\prod y_i} 
+\end{equation*}
+
+for any set of points $y_1, \ldots, y_n$. In particular, 
+
+\begin{equation*}
+    x_{n+1} = \frac{1}{2}\left( x_n + \frac{a}{x_n} \right) \geq \sqrt{x_n \frac{a}{x_n}}
+    = \sqrt{a} \qquad \blacksquare
+\end{equation*}
+
+$(c)$ Since 
+
+\begin{equation*}
+    x_{n+1} = \frac{1}{2}\left( x_n + \frac{a}{x_n} \right) 
+\end{equation*}
+
+we must simply observe  that 
+
+\begin{align*}
+&\frac{1}{2}\left( x_n + \frac{a}{x_n} \right) \leq x_n \\ 
+\iff& x_n + \frac{a}{x_n} \leq 2x_n\\
+\iff &\frac{a}{x_n} \leq x_n\\
+\iff& a \leq x_n^2 \\ 
+\iff& \sqrt{a} \leq x_n
+\end{align*}
+
+which is true due to point $(b)$.
+
+
+$(d)$ Let $e_n = x_n - \sqrt{a} $. We have shown $\left\{ x_n \right\} $ to be
+decreasing and bounded below by $\sqrt{a} $. Therefore, it converges to a limit
+$L$ and said limit is the infimum
+of $\left\{ x_n \right\} $. Then 
+
+\begin{equation*}
+    \lim_{n \to \infty} x_{n} = \frac{1}{2}\lim_{n \to \infty} \left( x_{n-1} +
+    \frac{a}{x_{n-1}}\right) = \frac{1}{2}L + \frac{a}{2L}
+\end{equation*}
+
+This induces the equation 
+
+\begin{align*}
+    L = \frac{L}{2} + \frac{a}{2L} 
+    &\iff \frac{L}{2} = \frac{a}{2L} \\ 
+    &\iff L^2 = a\\
+    &\iff L = \sqrt{a}  \qquad \blacksquare
+\end{align*}
 
 
 
