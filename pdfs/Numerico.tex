@@ -7,7 +7,8 @@
 \usepackage[table]{xcolor}
 \usepackage{fullpage}
 \usepackage{lastpage}
-\usepackage{mlmodern}
+\usepackage{newtxtext}
+\usepackage{newtxmath}
 \usepackage{enumitem}
 \usepackage{fancyhdr}
 \usepackage{mathrsfs}
@@ -38,7 +39,10 @@
 \newtheorem{theorem}{Theorem}
 \begin{document}
 \setcounter{section}{8}
-\title{Chapter 9 Review Notes}
+\usepackage{chngcntr}
+
+\counterwithin*{equation}{section}
+\counterwithin*{equation}{subsection}
 
 \begin{document}
 
@@ -513,12 +517,12 @@ continuous and $f(r) = 0$, $f'(r) \neq 0$. Then
 \begin{align}
     e_{n+1} &= r-  x_{n+1}  \nonumber \\ 
 &= r - \left( x_n - \frac{f(x_n)}{f'(x_n)} \right) \nonumber \\ 
-&= r - x_n  + \frac{f(x_n)}{f'(x_n)} \\
+&= r - x_n  + \frac{f(x_n)}{f'(x_n)}\nonumber \\
 &=\frac{e_n f'(x_n) + f(x_n)}{f'(x_n)}
 \end{align}
 
 Thus, the error at any given iteration is a function of the error at the
-previous iteration. Now consider the expression of $f(r)$ as 
+previous iteration. Now consider the expansion of $f(r)$ as 
 
 \begin{equation}
     f(r) = f(x_n - e_n) = f(x_n) + e_nf'(x_n) + \frac{e_n^2f''(\zeta_n)}{2}
@@ -530,28 +534,27 @@ for $\zeta_n$ between $x_n$ and $r$. This equation gives
     e_n f'(x_n) + f(x_n) = -\frac{1}{2} f''(\zeta_n)e_n^2
 \end{equation}
 
-The expression in $(10)$ is the numerator in $(8)$, whereby we obtain via
+The expression in $(9)$ is the numerator in $(7)$, whereby we obtain via
 substitution: 
 
 \begin{equation}
     e_{n+1} =  -\frac{1}{2}\frac{f''(\zeta_n)e^2_n}{f'(x_n)} 
 \end{equation}
 
-Equation $(11)$ ensures that the error scales quadratically. Now we wish to
-bound the error expression in $(11)$.
-
-The continuity of $f', f''$ ensures that these functions reach their extreme
-values in a closed and bounded interval around $r$. Take $\delta > 0$ to define
-a neighbourhood of length $\delta$ around $r$. Define 
+Equation $(10)$ ensures that the error scales quadratically. Now we wish to
+bound the error expression in $(10)$. To bound $e_{n+1}$, we define we take
+$\delta > 0$ to define a neighbourhood of length $\delta$ around $r$. For any
+$x$ in this neighbourhood, $(10)$ reaches its maximum when the numerator is
+maximized and the denominator is minimized:
 
 \begin{equation*}
     c(\delta) = \frac{1}{2} \frac{ \max_{\left| x - r \right| \leq \delta }
     \left| f''(x) \right|  }{\min_{\left| x-r \right| \leq \delta \left| f'(x) \right|  }}
 \end{equation*}
 
-Here, $c(\delta)$ is the maximum value which $e_{n+1}$ can take if $\zeta_n,
-x_n$ are assumed to belong to the neighbourhood, according to equation $(11)$.
-Now we make two assumptions: 
+In other words, $c(\delta)$ is the maximum value which $e_{n+1}$ can take if
+$\zeta_n, x_n$ are assumed to belong to the neighbourhood. Now we make two
+assumptions: 
 
 \begin{enumerate}
     \item $x_0$ belongs to the neighbourhood, i.e. $\left| x_0 - r \right| \leq
@@ -563,19 +566,20 @@ Note that, since $\zeta_0$ is between $x_0$ and $r$, assumption (1) ensures that
 $\zeta_0$ is also in the neighbourhood, i.e. $\left| r - \zeta_0 \right| \leq
 \delta$. Then we have:
 
-\begin{equation}
-    \frac{1}{2} \left| f''(\zeta_0) / f'(x_0) \right| \leq c(\delta)
-\end{equation}
+\begin{equation*}
+    \left| e_0 \right| = \frac{1}{2} \left| f''(\zeta_0) / f'(x_0) \right| \leq c(\delta)
+\end{equation*}
 
-Therefore, using the recurrent definition of $e_{n+1}$ in $(11)$, 
+Then:
 
 \begin{align*}
     \left| x_1 - r \right|  
     &= \left| e_1 \right|  \\ 
-    &= \left| \frac{1}{2} f''(\zeta_0) / f'(x_0) e_0^2 \right|  \\ 
-    &\leq |e_0^2| c(\delta) \\ 
-    &\leq |e_0| \varrho &\left\{ \left| e_0 \right| \leq \delta
+    &= \left| e_0^2 \cdot \frac{1}{2} f''(\zeta_0) / f'(x_0)  \right|  \\ 
+    &\leq |e_0^2| c(\delta) &\left\{ \frac{1}{2}f''(\zeta_0) / f'(x_0) \leq c(\delta) \right\}  \\ 
+    &\leq |e_0| \delta c(\delta) &\left\{ \left| e_0 \right| \leq \delta
     \right\}  \\ 
+    &=\left| e_0 \right| \varrho &\left\{ \varrho = \delta c(\delta) \right\} \\
     &< \left| e_0 \right|  &\left\{ \varrho < 1 \right\}  \\ 
     &\leq \delta
 \end{align*}
@@ -595,6 +599,105 @@ $. And since $0 \leq \varrho < 1$, we have $\varrho^n \to 0$ when $n \to \infty$
 entailing that $\left| e_n \right| \to 0$ when $n \to \infty$.
 \end{quote}
 \normalsize
+
+\begin{theorem}
+    If $f''$ is continuous in $\mathbb{R}$, and if $f$ is increasing, convex,
+    and has a root, then said root is unique and Newton's method converges to it
+    from any starting point.
+\end{theorem}
+
+\begin{shaded}
+    Recall that $f$ is convex if $f''(x) > 0$ for all $x$. Graphically, it is
+    convex if the line connecting two arbitrary points of $f$ lies above the
+    curve of $f$ between those two points.
+\end{shaded}
+
+
+\subsection{Secant method}
+
+In Netwon's method, 
+
+\begin{equation*}
+    x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
+\end{equation*}
+
+The function of interest is $f$. We cannot escape computing $f(x_n)$, but it
+would be desirable to avoid the computation of $f'(x_n)$, which may potentially
+be expensive. Since
+
+\begin{equation*}
+    f'(x) = \lim_{h \to x}  \frac{f(x) - f(h)}{x-h}
+\end{equation*}
+
+it is natural to suggest 
+
+\begin{equation}
+    f'(x_n) \approx \frac{f(x_n) - f(x_{n-1})}{x_n - x_{n-1}}
+\end{equation}
+
+Graphically, this means we are not using the line tangent to the point $(x_n,
+f(x_n))$ but the line secant to the points $(x_n, f(x_n)$ and $(x_{n-1},
+f(x_{n-1}))$. The point $x_{n+1}$ is then the value of $x$ where this secant
+line has a root.
+
+\subsection{Fixed point iteration}
+
+The key observation is  this: if $r \in \mathcal{R}_f$, then $g(x) = x - kf(x)$
+has $r$ as fixed point, for any $k \in \mathbb{R}$. Inversely, if $g$ has a
+fixed point in $r$, then $r \in \mathcal{R}_f$. 
+
+\begin{theorem}
+    (1) Let $g \in C[a, b]$ and assume $g(x) \in [a, b]$ for all $x \in [a, b]$.
+    Then there is a  fixed point of $g$ in $[a, b]$.
+
+    (2) If, on top of previous conditions, $g$ is differentiable in $(a, b)$ and
+    there is some $k < 1$ s.t. $\left| g'(x) \right| \leq k$ for all $x \in
+    (a,b)$, then the fixed point referred in (1) is unique.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Proof.} (1) If $a$ or $b$ are fixed points the proof is done so assume
+otherwise. Since $g(x) \in [a, b]$,  we have $g(a) > a$ and $g(b) < b$.
+
+
+Take $\varphi(x) = g(x) - x$, which is continuous and defined in $[a,
+b]$. Then 
+
+\begin{equation*}
+    \varphi(a) = g(a) - a > 0, \qquad \varphi(b) = g(b) - b < 0
+\end{equation*}
+
+Then $\varphi(a)\varphi(b) < 0$. Then, by the intermediate value theorem,
+$\varphi$ has a root in $(a, b)$. In otherwords, there is at least one $p$ s.t. 
+
+\begin{equation*}
+    \varphi(p) = g(p) - p = 0
+\end{equation*}
+
+$\therefore $ $g(p) = p$ is a fixed point of $g$.
+
+
+\end{quote}
+\normalsize
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
