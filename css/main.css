@@ -26,10 +26,12 @@ layout: null
 
 
 /*font-family: "EB Garamond", serif; */
+/* font-weight: 450;*/
+/* font-size: 20px;*/
 
 body {
   font-family: "Artful Dodger W00 Regular", serif;
-  font-weight: 450;
+  font-weight: 350;
   font-size: 20px;
   text-align: justify;
   letter-spacing: normal; 

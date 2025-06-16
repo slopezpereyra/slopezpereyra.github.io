@@ -771,8 +771,18 @@ point, since:
 with $\zeta_n \in (a, b)$. More succintly, with $e_n := p_n - p$,
 
 \begin{equation*}
-    |e_n| \leq k \left| e_{n-1} \right| 
+    |e_n| \leq k \left| e_{n-1} \right| \leq k \left| e_{n-2} \right| \leq
+    \ldots \leq k \left| e_0 \right| 
 \end{equation*}
+
+By recurrence,
+
+\begin{equation}
+    \left| e_n \right| \leq k^n\left| e_0 \right| 
+\end{equation}
+
+Since $0 < k < 1$, $k^n \to 0$ when $n \to \infty$, which entails $\left| e_n
+\right| \to 0$ whene $n \to \infty$.
 
 \end{quote}
 \normalsize
