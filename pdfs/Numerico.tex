@@ -777,45 +777,59 @@ with $\zeta_n \in (a, b)$. More succintly, with $e_n := p_n - p$,
 
 By recurrence,
 
-\begin{equation}
+\begin{equation*}
     \left| e_n \right| \leq k^n\left| e_0 \right| 
-\end{equation}
+\end{equation*}
 
 Since $0 < k < 1$, $k^n \to 0$ when $n \to \infty$, which entails $\left| e_n
-\right| \to 0$ whene $n \to \infty$.
+\right| \to 0$ when $n \to \infty$. It follows that $\left\{ p_n \right\} \to
+p$ when $n \to \infty$.
 
 \end{quote}
 \normalsize
 
+Now let us consider the error of this method. Take $p_n = p + e_n$ and consider
+the Taylor expanssion of $g$ around $p$ evaluated at $p_n = p+e_n$:
 
+\begin{equation}
+    g(p_n) = g(p + e_n) = \sum_{i=1}^{m-1} \frac{ g^{(i)}(p) }{i!} e_n^{i} +
+    \frac{f^{(m)}(\zeta_n)}{(n+1)!} e_{n}^{m}
+\end{equation}
 
+See that in $(2)$, $n$ corresponds to the iteration we are dealing with, and
+thus $\zeta_n$ and $e_n$ depend on it. On the contrary, $m$ is the degree to
+which we expand the series of $g$ around $p$ evaluated at $p_n$. We also assume
+that $\zeta_n$ lies between $p_n$ and $p$.
 
+By definition, $g(p_n) = p_{n+1}$ so $(2)$ is nothing but an expression for this
+value. Assume $g^{(k)}(p) = 0$ for $k = 1, 2, \ldots, m-1$, but $g^{(m)}(p) \neq
+0$. Then 
 
+\begin{align*}
+    e_{n+1} 
+    &= p_{n+1} - p\\ 
+    &=g(p_n) - g(p) \\ 
+    &=\frac{ g^{(m)}\left( \zeta_n \right)  }{m!}e_n^m 
+\end{align*}
 
+More succintly,
 
+\begin{equation*}
+    e_{n+1} = \frac{ g^{(m)}\left( \zeta_n \right)  }{m!}e_n^m 
+\end{equation*}
 
+Then 
 
+\begin{equation*}
+    \lim_{n \to \infty} \left| \frac{e_{n+1}}{e_n^m} \right|  = 
+    \frac{\left| g^m(p) \right| }{m!}
+\end{equation*}
 
+which is a constant. In conclusion, if the derivatives of $g$ are null in $p$ up
+to the order $m-1$, the method as an order of convergence of at least $m$. Three
+results follow from this fact. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\section{Excercises}
 
 
 
