@@ -542,7 +542,7 @@ substitution:
 \end{equation}
 
 Equation $(6)$ ensures that the error scales quadratically. Now we wish to
-bound the error expression in $(6)$. To bound $e_{n+1}$, we define we take
+bound the error expression in $(6)$. To bound $e_{n+1}$, we take
 $\delta > 0$ to define a neighbourhood of length $\delta$ around $r$. For any
 $x$ in this neighbourhood, $(6)$ reaches its maximum when the numerator is
 maximized and the denominator is minimized:
@@ -655,6 +655,20 @@ fixed point in $r$, then $r \in \mathcal{R}_f$.
     (a,b)$, then the fixed point referred in (1) is unique.
 \end{theorem}
 
+\begin{shaded}
+    \begin{theorem}[Mean value theorem]
+        Let $f : [a, b] \to \mathbb{R}$ continuous and differentiable on $(a,
+        b)$ with $a < b$. Then there is some $c \in (a, b)$  s.t. 
+
+        \begin{equation*}
+            f'(c) = \frac{ f(b) - f(a) }{b - a}
+        \end{equation*}
+    \end{theorem}
+
+    The interpretation is simple: consider the line secant to $f$ on $a, b$. The
+    theorem ensures that there is some point $c$ s.t. the line tangent to $c$ is
+    parallelt to said secant (equal slopes).
+\end{shaded}
 
 \small
 \begin{quote}
@@ -679,9 +693,116 @@ $\varphi$ has a root in $(a, b)$. In otherwords, there is at least one $p$ s.t.
 
 $\therefore $ $g(p) = p$ is a fixed point of $g$.
 
+(2) Assume two distinct fixed points $p, q$ exist in $[a, b]$. The mean value
+theorem ensures the existence of some $\zeta$ between $p, q$ (and thus in $[a,
+b]$) s.t.t 
+
+\begin{equation}
+    g'(\zeta) = \frac{g(a) - g(b)}{a - b} \iff g'(\zeta)(a-b) = g(a) - g(b)
+\end{equation}
+
+By hypothesis, $\left| g'(x) \right| \leq k < 1$. Since $p, q$ are assumed to
+be fixed points, equation $(1)$ gives: 
+
+\begin{align*}
+    \left| p - q \right| 
+    &= \left| g(p) - g(q) \right| \\ 
+    &= \left| g'(\zeta) \right| \left| p - q \right|  \\ 
+    &\leq k \left| p-q \right|  < \left| p - q \right| 
+\end{align*}
+
+But this is absurd. The contradiction arises from assuming $p, q$ to be
+distinct. Therefore, the fixed point is unique.
+
 
 \end{quote}
 \normalsize
+
+The fixed point algorithm begins with an approximation $p_0$. Then, 
+
+\begin{equation*}
+    p_n = g(p_{n-1})
+\end{equation*}
+
+If $g$ continuous and the sequence converges, then it converges to a fixed
+point, since: 
+
+\begin{equation*}
+    p := \lim_{n \to \infty} p_n = \lim_{n \to \infty} g(p_{n-1}) = g\left(
+    \lim_{n \to \infty} p_{n-1} \right) = g(p)
+\end{equation*}
+
+\begin{align*}
+&\textbf{Input: } p, M, \delta \\ 
+&p_{\text{previous}} = p\\
+&\textbf{for } i = 1 \textbf{ to } i = M \textbf{ do } \\ 
+&\qquad p \leftarrow g(p) \\ 
+&\qquad \textbf{if } \left| p - p_{\text{previous}} \right| < \delta \textbf{ then } \\ 
+&\qquad\qquad \textbf{return } p \\ 
+&\qquad\textbf{fi}\\ 
+&\qquad p_{\text{previous}} = p\\ 
+&\textbf{od}\\ 
+&\textbf{return }p
+\end{align*}
+
+
+\begin{theorem}
+    Let $g \in C[a, b]$ be a self-map of $[a, b]$ differentiable in $(a, b)$.
+    Assume there is a constant $0 < k < 1$ s.t. $\left| g'(x) \right| \leq k$
+    for all $x \in (a, b)$.
+
+    For all $p_0 \in [a, b]$, the sequence $p_n = g(p_{n-1})$ converges to the
+    unique f ixed point $p$ in $(a, b)$.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Proof.} The mean value theorem ensures that 
+
+\begin{align*}
+    \left| p_n - p \right| 
+    &= \left| g(p_{n-1}) - g(p) \right| \\ 
+    &= |g'(\zeta_n)||(p_{n-1} - p)| \\ 
+    &\leq k \left| p_{n-1} - p \right| 
+\end{align*}
+
+with $\zeta_n \in (a, b)$. More succintly, with $e_n := p_n - p$,
+
+\begin{equation*}
+    |e_n| \leq k \left| e_{n-1} \right| 
+\end{equation*}
+
+\end{quote}
+\normalsize
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
