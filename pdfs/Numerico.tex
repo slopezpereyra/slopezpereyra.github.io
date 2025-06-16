@@ -1,0 +1,510 @@
+\documentclass[a4paper, 12pt]{article}
+
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}	% Para caracteres en español
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{multirow,booktabs}
+\usepackage[table]{xcolor}
+\usepackage{fullpage}
+\usepackage{lastpage}
+\usepackage{mlmodern}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{wrapfig}
+\usepackage{setspace}
+\usepackage{calc}
+\usepackage{multicol}
+\usepackage{cancel}
+\usepackage[retainorgcmds]{IEEEtrantools}
+\usepackage[margin=3cm]{geometry}
+\usepackage{amsmath}
+\newlength{\tabcont}
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+\usepackage{empheq}
+\usepackage{framed}
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+\colorlet{shadecolor}{orange!15}
+\parindent 0in
+\parskip 12pt
+\geometry{margin=1in, headsep=0.25in}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{reg}{Rule}
+\newtheorem{exer}{Exercise}
+\newtheorem{note}{Note}
+\begin{document}
+\setcounter{section}{8}
+\title{Chapter 9 Review Notes}
+
+\begin{document}
+
+
+\begin{document}
+
+\section{Alg. de Horner: Polynomial evaluation} 
+
+Consider 
+
+\begin{equation*}
+    p(x) = \sum_{i=0}^n a_ix^i
+\end{equation*}
+
+We wish to compute $p(k)$ for a given $k \in \mathbb{R}$ minimizing the number
+of operations. Directly computing $a_0 + a_1k_1 + \ldots$ leads to $n$ sums. The
+$i$th term requires computing $k^i$, which means $i$ product operations, for a
+totall of $\sum_{i=1}^n i = \frac{n(n+1)}{2}$ products.  The total number of
+operations is then 
+
+\begin{equation*}
+    \Theta = n + n(n+1) / 2
+\end{equation*}
+
+The associated complexity is $\mathcal{O}(n^2)$. 
+
+Horner's method consists of re-writing $p(x)$ so that the number of products is
+reduced. One writes 
+
+\begin{equation*}
+    p(x) = a_0 + x b_0
+\end{equation*}
+
+where $b_{n-1} = a_n$ and for $0 \leq i < n - 1$:
+
+\begin{equation*}
+    b_{i-1} = a_{i} + xb_{i}
+\end{equation*}
+
+\begin{shaded}
+    \begin{example}
+        \normalfont
+        Let $p(x) = 3 + 5x -4x^2 + 0x^3 + 6x^4$, giving $n = 4$. Then 
+        $b_{3} = 6$ and 
+
+        \begin{align*}
+            &b_2 = a_3 + xb_3 = 6x,  &b_1 = a_2 + xb_2 = -4 + x(6x),\\
+            &b_0 = a_1 + xb_1 = 5 + x(-4+x(6x)) 
+        \end{align*}
+
+        This finally gives
+
+        \begin{equation*}
+            p(x) = 3 + xb_0 = 3+x(5 +
+            x(-4+x(6x)))
+        \end{equation*}
+    \end{example}
+\end{shaded}
+
+Here, one must perform $n$ sums again but only $n$ products. Thus, there are
+$\Theta = n + n = 2n$ operations, giving a complexity of $\mathcal{O}(n)$ (in
+the operation space). See the algorithm below:
+
+\begin{align*}
+&\textbf{input } n; a_i, i = 0, \ldots, n; x \\ 
+& b_{n-1} \leftarrow a_n \\ 
+& \textbf{for } i = n - 2 \textbf{ to } i = 0 \\ 
+&\qquad b_{i} = a_{i+1} + x * b_{i+1} \\ 
+&\textbf{od}\\
+&y \leftarrow a_0 + x*b_0 \\ 
+&\textbf{return } y
+\end{align*}
+
+It is easy to see in this code that the $\textbf{for}$ loop performs $n-1$
+iterations, in each of which a single sum and a single product are computed. The
+$n$th sum and $n$th product are performed in the computation of $y$, the final
+result. 
+
+A more polished version includes the last computatoin (the one in the assignment
+of $y$) within the loop and makes no use of indexes:
+
+
+\begin{align*}
+&\textbf{input } n; a_i, i = 0, \ldots, n; x \\ 
+& b \leftarrow a_n \\ 
+& \textbf{for } i = n - 2 \textbf{ to } i = -1 \\ 
+&\qquad b = a_{i+1} + x * b \\ 
+&\textbf{od}\\
+&\textbf{return } b
+\end{align*}
+ 
+In Python,
+
+
+\small
+\begin{quote}
+
+
+\begin{verbatim}
+def horner(coefs, x):
+  n = len(coefs)-1
+  b = coefs[n]
+
+  for i in reversed(range(-1, n-1)):
+    b = coefs[i+1] + x*b
+
+  return b
+
+\end{verbatim}
+
+\end{quote}
+\normalsize
+
+
+It is trivial to adapt the code so that it returns the coefficients $b_0,
+\ldots, b_{n-1}$ and not the final result, if needed.
+
+\pagebreak 
+
+\section{Error}
+
+Let $r, \overline{r}$ be two real numbers s.t. the latter is an approximation of
+the first. We define the \textbf{error} of the approximation to be $r -
+\hat{r}$, and 
+
+\begin{align*}
+    \Delta r = \left| r - \overline{r} \right|, \qquad \delta r = \frac{\Delta
+    r}{\left| r \right| }
+\end{align*}
+
+With $r$ unknown the strategy is to work with a known bound of $r$.
+
+\pagebreak 
+
+\section{Non-linear equations}
+
+The general problem is to find members of the set $\mathcal{R}_f$ of roots of $f
+\in \mathbb{R} \to \mathbb{R}$. The numerical strategy is to iteratively
+approximate some $r \in \mathcal{R}_f$ until some pre-established threshold in
+the error of approximation is met. 
+
+More formally, the numerical strategy produces a sequence $\left\{ x_k
+\right\}_{k\in \mathbb{N}}
+$ which satisfies 
+
+\begin{itemize}
+    \item $\lim_{k\to \infty} \left\{ x_k \right\} = r$  for some $r \in
+        \mathcal{R}_f$ 
+    \item Either $e(x_k) < e(x_{k-1})$ or, more strongly, $\lim_{k\to \infty}
+        e(x_k) = 0$, where $e(x_k)$ is some appropriate measure of the error of
+        approximation.
+\end{itemize}
+
+\subsection{Bisection}
+
+A very simple procedure: if a root exists in $[a, b]$, it iteratively shrinks
+$[a,b]$ in halves (keeping the halves which contain the root) until the interval
+is of sufficiently small length.
+
+\begin{theorem}[Intermediate value]
+    If $f$ is continuous in $[a, b]$ and $f(a)f(b) < 0$, then $\exists r \in
+    \mathcal{R}_f$ s.t. $r \in [a, b]$.
+\end{theorem}
+
+Assume $f$ is continuous. A root exists in $[a, b]$ if $f(a)f(b) < 0$
+(\textbf{Theorem 1}). If that is the case, the midpoint $(a+b) / 2$ is taken as
+the approximation $x_0$. It is also trivial to observe that $x_0$ is \textit{at
+most} at a distance of $(b-a) / 2$ from the real root, so $e_0 = |x_0 - r| \leq
+(b-a) / 2$. 
+
+If $f(x_0) = 0$ the procedure must end because a root was found. Otherwise,
+sufficies to find which half of the interval contains a root computing
+$f(a)f(c)$ and, if needed, $f(c)f(b)$.
+
+The iterations may stop after reaching a maximum number of steps, when $|f(c)|$
+is sufficiently close to zero, or when the error bound $|e_k| \leq (b_k - a_k) /
+2$ (where $[a_k, b_k]$ is the interval of this iteration) is sufficiently small.
+
+\begin{shaded}
+    \textbf{(!)} The algorithm not always converges. Take $f(x) = 1 / x$. Clearly, it has no
+    root. Yet setting $a = -1, b=1$ in the initial iteration falsely passes the
+    test. (The problem obviously is that $f$ is not continuous in $[-1, 1]$.) If
+    one sets
+\end{shaded}
+
+\pagebreak 
+
+\begin{align*}
+&\textbf{Input}: a, b, \delta, M, f\\  
+&\textbf{Output}: \text{Tupla de la forma: } (r, \text{cota de error})\\
+&f_a \leftarrow  f(a) \\ 
+&f_b \leftarrow f(b) \\ 
+&\qquad\\
+&\textbf{if } f_a*f_b > 0 \\ 
+&\qquad \textbf{return } ?\\ 
+&\textbf{fi}\\
+&\qquad\\
+&\textbf{for } i = 1 \textbf{ to } i = M \textbf{ do } \\ 
+&\qquad c \leftarrow a + (b-a) / 2 \\ 
+&\qquad f_c \leftarrow f(c) \\ 
+&\qquad \textbf{if } f_c = 0 \textbf{ then } \\ 
+&\qquad\qquad \textbf{ return } (c, 0) \\ 
+&\qquad\textbf{fi}\\
+&\qquad \epsilon = \frac{b - a}{2}\\
+&\qquad \textbf{if } \epsilon < \delta \textbf{ then } \\ 
+& \qquad\qquad \textbf{break}\\
+&\qquad\textbf{fi}\\
+&\qquad \textbf{if } f_a*f_c < 0 \textbf{ then } \\ 
+&\qquad \qquad b \leftarrow c \\ 
+&\qquad\qquad f_b = f(b)\\
+&\qquad\textbf{else } \\ 
+&\qquad\qquad a \leftarrow c \\ 
+&\qquad\qquad f_a = f(a)\\
+&\qquad\textbf{fi} \\ 
+&\textbf{od}\\
+&\textbf{return } (c, \epsilon)
+\end{align*}
+
+\pagebreak 
+
+
+\small
+\begin{quote}
+
+\begin{verbatim}
+def bisection(f : callable, a : float, b : float, delta : float, M : int):
+
+  s, e = f(a), f(b) # function values at (s)tart, (e)nd of interval
+
+  if s*e > 0:
+    raise ValueError("Interval [a, b] contains no root.")
+
+  for i in range(M):
+
+    c = a + (b-a)/2 
+    m = f(c) # value of f at (m)idpoint
+
+    if m == 0:
+      return c, 0
+
+    e = (b-a)/2
+    if e < delta:
+      return c, e
+
+    if s*m < 0:
+      b = c 
+      e = f(b)
+    else:
+      a = c 
+      s = f(a)
+    
+  return c, e
+
+\end{verbatim}
+
+\end{quote}
+\normalsize
+
+\pagebreak
+
+\begin{theorem}
+    If $\left\{ [a_i, b_i] \right\}_{i=0}^\infty $ are the intervals generated
+    by the bisection method on iterations $i = 0, 1, \ldots$, then:
+
+    \begin{enumerate}
+        \item $\lim_{n\to
+    \infty} a_n = \lim_{n \to \infty} b_n$ is a member of $\mathcal{R}_f$.
+     \item If $c_n = \frac{1}{2}(a_n + b_n), r = \lim_{n \to \infty} c_n $, then 
+         $|r - c_n| \leq \frac{1}{2^{n+1}}(b_0 - a_0)$
+    \end{enumerate}
+
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Proof.} \textbf{(1)} It is clear that $a_i \leq a_{i+1}$ and $b_i \geq b_{i+1}$,
+since the interval on each iteration shrinks in one direction. 
+
+$\therefore a_n, b_n$ are monotonous. 
+
+But clearly $a_n$ is bounded by $b_0$ and $b_n$ is bounded by $a_0$. 
+
+$\therefore $ $a_n, b_n$ are monotonous and bounded. 
+
+$\therefore $ Their limits exist.
+
+It is also clear that the interval shrinks to half its size on each iteration: 
+
+\begin{equation}
+    b_n - a_n = \frac{1}{2} (b_{n-1} - a_{n-1}), \qquad n \geq 1
+\end{equation}
+
+By recurrence on $(1)$,
+
+\begin{equation}
+    b_n - a_n = \frac{1}{2^n}(b_0 - a_0), \qquad n \geq 0
+\end{equation}
+
+Then 
+
+\begin{equation}
+   \lim_{n \to \infty} a_n - \lim_{n \to \infty} b_n = \lim_{n \to \infty} (a_n - b_n) 
+    = \lim_{n \to \infty}  \frac{1}{2^n}(b_0 - a_0) = 0
+\end{equation}
+
+$\therefore ~ \lim_{n \to \infty} a_n = \lim_{n \to \infty} b_n$.
+
+
+Since the limit of $a_n, b_n$ exists and $f$ is by assumption continuous, the
+composition limit theorem applies and:
+
+\begin{align}
+    &\lim_{n \to \infty} \left( f(a_n) \cdot f(b_n) \right) \nonumber
+\\
+    =& \lim_{n \to \infty}    f(a_n) \cdot \lim_{n \to \infty} f(b_n) &\left\{ \text{Product of limits} \right\}  \nonumber \\ 
+    =& f\left( \lim_{n \to \infty} a_n
+\right) \cdot f\left( \lim_{n \to \infty} b_n \right)  &\left\{
+\text{Composition limit theorem} \right\} \nonumber \\ 
+    =& \left[ f(r) \right]^2 &\left\{ r = \lim_{n \to \infty} a_n \right\} 
+\end{align}
+
+The invariant of the algorithm is $f(a_n)f(b_n) < 0$. But due to the last
+result,
+
+\begin{equation*}
+    \lim_{n \to \infty} f(a_n)f(b_n) \leq 0 \iff [f(r)]^2 \leq 0 \iff f(r) = 0
+\end{equation*}
+
+$\therefore r = \lim_{n \to \infty} a_n = \lim_{n \to \infty} b_n$ is a root.
+
+\textbf{(2)} Follows directly from result $(2)$
+
+\begin{align*}
+    \left| r - c_n \right|  &= \left| r - \frac{1}{2}(b_n - a_n) \right| \\ 
+                            &\leq
+    \left| \frac{1}{2}(b_n - a_n) \right| \\ 
+&=\left| \frac{1}{2^{n+1}}(b_0 - a_0) \right| &\left\{ \text{Result }(2)
+\right\} 
+\end{align*}
+
+
+
+\end{quote}
+\normalsize
+
+\pagebreak 
+
+\subsection{Newton's method}
+
+\begin{shaded}
+    \textbf{Taylor: repasito.} El desarrollo de una $f$ suficientemente
+    diferenciable alrededor de un punto $r$ espa
+
+    \begin{equation*}
+        f(x) = f(r) + f'(r)(x-r) + \frac{f''(r)}{2!}(x-r)^2 + \ldots +
+        \frac{f^{(n)}(r)}{n!}(x-r)^n + R_n(x)
+    \end{equation*}
+
+    donde $R_n(x)$ es el resto.
+
+    Usualmente, queremos tomar $r = x + h$ , donde $x$ es una aproximación de
+    $r$ y $h$ el error de aproximación. Entonces es provechoso expandir 
+    $f(r)$ alreededor de su estimación $x$:
+
+    \begin{equation*}
+        f(r) = f(x+h) = f(x) + f'(x)h + \frac{f''(x)}{2!}h^2 + \ldots +
+        \frac{f^{(n)}(x) }{n!}h^n + R_n(h)
+    \end{equation*}
+
+    Esto es \textbf{recontra} útil porque nos dice cuánto se diferencia $f(r)$
+    de nuestra aproximación $f(x)$ (pues expresa $f(r)$ como $f(x)$ más algo).
+
+    Usualmente $r, h$ son desconocidos pero $h$ puede acotarse.
+\end{shaded}
+
+Assume $r \in \mathcal{R}_f$ and $r = x + h$, with $x$ an approximation of $r$
+and $h$ its error. Assume $f''$ exists and is continuous in some $I$ around $x$
+s.t. $r \in I$. What we explained on Taylor expansions around a point gives:
+
+\begin{equation*}
+    0 = f(r) = f(x + h) = f(x) + f'(x)h + \mathcal{O}(h^2)
+\end{equation*}
+
+If $x$ is sufficiently close to $r$, $h$ is small and $h^2$ even smaller, so
+that $\mathcal{O}(h^2)$ is unconsiderable:
+
+\begin{equation*}
+    0 \approx f(x) + hf'(x)
+\end{equation*}
+
+Therefore, 
+
+\begin{equation}
+    h \approx - \frac{f(x)}{f'(x)}
+\end{equation}
+
+From this follows that $r = x + h$ is approximated by 
+
+\begin{equation*}
+    r \approx x - \frac{f(x)}{f'(x)}
+\end{equation*}
+
+Since the approximation in $(5)$ truncated the terms of $\mathcal{O}(h^2)$
+complexity, this new approximation is closer to $r$ than $x$ originally was. In
+other words, $x - f(x) / f'(x)$ is a better approximation to $r$ than $x$
+itself. 
+
+Thus, if $x_0$ is an original approximation, we can define 
+
+\begin{equation}
+    x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
+\end{equation}
+
+to produce a sequence of approximations. This is the fundamental idea of
+Newton's method.
+
+\begin{align*}
+&\textbf{Input: } x_0, M, \delta, \epsilon; \\ 
+&v \leftarrow f(x_0) \\ 
+&\textbf{if } |v| < \epsilon \textbf{ then return }  x_0 \textbf{ fi }\\ 
+&\textbf{for } k = 1 \textbf{ to } k = M \textbf{ do } \\ 
+&\qquad x_1 \leftarrow x_0 - \frac{v}{f'(x_0)} \\
+&\qquad v \leftarrow f(x_1) \\ 
+&\qquad \textbf{if } \left| x_1 - x_0 \right| < \delta \lor v < \epsilon
+\textbf{ then } \\ 
+&\qquad\qquad \textbf{return } x_1 \\ 
+&\qquad\textbf{fi} \\ 
+&\qquad x_0 \leftarrow x_1 \\ 
+&\textbf{od} \\ 
+&\textbf{return } x_0
+\end{align*}
+
+The predicate $\left| x_1 - x_0 \right| < \delta$ checks whether our algorithm
+is adjusting $x$ in a negligible degree. If that is the case, we
+should stop. 
+
+\subsubsection{Error in Newton's method}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
