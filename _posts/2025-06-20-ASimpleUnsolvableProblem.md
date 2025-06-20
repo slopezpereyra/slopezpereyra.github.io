@@ -1,6 +1,5 @@
 ---
-title: A simple unsolvable problem leading to the unsolvability of the Halting
-problem
+title: A brief note on two unsolvable problems
 categories: [Science, Philosophy]
 ---
 
@@ -51,10 +50,6 @@ would be computable. This would entail $f = \varphi_k$ for some (and in fact
 infinitely many) $k \in \mathbb{N}$. But then $f(k) = \varphi_k(k)$, which
 entails $\varphi_k(k) + 1 = \varphi_k(k)$ which is absurd. $\therefore $ $K$ is
 not computable.
-
---- 
-
-$W_e = dom(\varphi_e)$
 
 This problem relates to a more general undecidable problem. Consider the set of
 tuples $(x, y)$ such that $y$ halts on input $x$. In other words, consider 
