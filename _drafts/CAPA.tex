@@ -1,0 +1,98 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{newtxtext} \usepackage{newtxmath}
+\usepackage{amsmath, amssymb}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example} \newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
+
+\begin{document}
+
+\begin{quote}
+    This writing is entirely based on the work of Fischer et al (2021).
+\end{quote}
+
+Let $\textbf{x} = (x_1, \ldots, x_n)$ be some real-valued data sampled from some
+typical distribution with parameter $\theta_0$. We say $\textbf{x}$ follows a
+parametric epidemic changepoint model if there is some function 
+
+\begin{equation*}
+    \theta(t) = \begin{cases}
+        \theta_1 & s_1 < t \leq e_1 \\ 
+        \vdots \\ 
+        \theta_K & s_K < t \leq e_K \\ 
+        \theta_0 & c.c.
+    \end{cases}
+\end{equation*}
+
+s.t. $x_t$ has PDF $f(x_t, \theta(t))$. (Informally, there are $K$ anomalous
+segments during which the data deviates from the typical distribution).
+
+\subsection{Inferring $K$ and the segments}
+
+Let $\mathcal{C}(x, \theta)$ be some appropriate cost function, $\beta$ a
+penalty. Typically, we let $\beta := C \log n$ with $C$ some appropriate
+constant. $\mathcal{C}$ might be the negative log-likelihood of $x$ under the
+parametric model using $\theta$. 
+
+Our goal then is to choose $\widetilde{ K }, (\widetilde{ s_i },
+\widetilde{ e_i }  ) $ (with $1 \leq i \leq \widetilde{ K } $), and $\widetilde{
+\theta_0} $ so as to minimize: 
+
+\begin{equation}
+    \sum_{t \not\in \mathcal{A}} \mathcal{C}(x_t, \widetilde{ \theta_0 } ) +
+    \sum_{j=1}^{\widetilde{ K } } \left[ \min_{\widetilde{ \theta }_j } \left(
+    \sum_{t \in \mathcal{A}_j} \mathcal{C}(x_t,
+\widetilde{ \theta }_j ) \right) + \beta \right] 
+\end{equation}
+
+with 
+
+\begin{equation*}
+\mathcal{A}_j= [\widetilde{ s_j } + 1, \widetilde{ e_j }], \qquad \mathcal{A} :=
+\bigcup_{j=1}^{ \widetilde{ K } } \mathcal{A}_j
+\end{equation*}
+
+For instance, using negative log-likelihood as cost function and the normal
+distribution as the typical distribution, the expression which is to be
+minimized is:
+
+
+\begin{align*}
+&\sum_{t \not\in \mathcal{A}} 
+\left[ \log(\sigma_0^2) + \left( \frac{x_t - \mu_0}{\sigma_0} \right)^2 \right] 
+ \\ 
++&\sum_{j=1}^{\tilde{K}} \left[ (\tilde{e}_j - \tilde{s}_j) 
+\left( \log \left( \frac{ \sum_{t = \tilde{s}_j + 1}^{\tilde{e}_j} (x_t - \bar{x}_{(\tilde{s}_j + 1):\tilde{e}_j})^2 }{(\tilde{e}_j - \tilde{s}_j)} \right) + 1 \right) + \beta \right],
+\end{align*}
+
+To consider the possibility of including 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
