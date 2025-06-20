@@ -1,5 +1,5 @@
 ---
-title: A brief note on two unsolvable problems
+title: A brief note on unsolvable problems
 categories: [Science, Philosophy]
 ---
 
@@ -66,7 +66,79 @@ contradicts our previous result.
 $\therefore$ The halting problem (the problem of computably deciding whether an
 arbitrary program halts on arbitrary input) is undecidable.
 
-This is one of most famous results in computability theory.
+Informally, we have shown something rather obvious: the problem of deciding
+whether an arbitrary program halts on some arbitrary input requires being able
+to solve the problem of deciding whether a program halts with itself as input.
+It is easy to comprehend that the first is a sub-problem of the latter. This is
+formally termed *many-one reduction*, where we would say the set $K$ is
+*many-one reducible* to the set $K_0$, or $K \leq_m K_0$.
+
+> We say $A$ is many-one reducable to $B$ iff there is a computable function $f$
+> s.t. $x \in A$ iff $f(x) \in B$. Alternatively, $f(A) \subseteq B$
+> and $f(\overline{A}) \subseteq \overline{B}$. We write $A \leq_m B$. 
+> We say $A$ is one-reducible if $f$ is $1:1$.
+
+This relationship is a transitive relation which induces a partial ordering of
+interesting sets, where one can prove that a given set is undecidable by showing
+that a preceeding set is undecidable. For instance, consider the set 
+
+$$
+\mathcal{T} = \\{ x : \varphi_x \text{ is total} \\}
+$$
+
+To decide if a function is total, one must decide whether it converges on
+arbitrary input. In particular, one must decide whether it converges with itself
+as input, which leads us back to our original problem. In particular, it is
+intuitively clear that $K \leq_m \mathcal{T}$. To provide a formal proof of
+this, we may simply define 
+
+$$
+\psi(x, y) = \begin{cases} 1 & x \in K \\\\ \bot &\text{otherwise} \end{cases}
+$$
+
+The function reads: if $\varphi_x(x)$ converges, then for any $y$ simply output
+$1$. It is clearly computable. The $S_n^m$ theorem guarantees that there is a
+one-to-one computable function $f$ s.t. $\varphi_{f(x)}(y) = \psi(x, y)$.
+
+Clearly, if $x \in K$ then $\varphi_{f(x)}(y) = 1$ for all $y$ and hence the
+function is total, i.e. $\varphi_{f(x)}(y) \in \mathcal{T}$. Conversely, if $x
+\notin K$ we have $\varphi_{f(x)}(y) = \bot \notin \mathcal{T}$. This suffices
+to show $K \leq_1 \mathcal{T}$.
+
+Therefore, the undecidability of $K$ entails the undecidability of
+$\mathcal{T}$. The set of *total* computable functions is not decidable.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
