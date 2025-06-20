@@ -1,6 +1,4 @@
-\documentclass[a4paper, 12pt]{article}
-
-\documentclass[11pt]{article}
+\documentclass[12pt]{article}
 
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18} % Or adjust depending on your TeX distribution
@@ -41,7 +39,7 @@
 \newtheorem{note}{Note}
 \newtheorem{theorem}{Theorem}
 \begin{document}
-\setcounter{section}{8}
+\setcounter{section}{0}
 \usepackage{chngcntr}
 
 \counterwithin*{equation}{section}
@@ -49,9 +47,77 @@
 
 \begin{document}
 
+\section{Taylor}
 
-\begin{document}
+Let $f \in C^n[a, b]$ and assume $f^{(n+1)}$ exists in $(a, b)$. Then 
+for any $c, x \in [a, b]$ there is some $\zeta$ between $c$ and $x$ s.t. 
 
+\begin{equation}
+    f(x) = \sum_{k=0}^{n} \frac{f^{(k)(c)(x-c)^k}}{k!} + E_n(x)
+\end{equation}
+
+where 
+
+\begin{equation*}
+    E_n(x) = \frac{f^{(n+1)}(\zeta)(x-c)^{n+1}}{(n+1)!}
+\end{equation*}
+
+Equation $(1)$ is called the Taylor expansion of $f$ around $c$. 
+
+\begin{shaded}
+    \textbf{Observation.} The famous \textit{mean value theorem} is simply the
+    case $n = 1$ of Taylor's expansion: if $f \in C[a, b]$ and $f'$ exists on
+    $(a, b)$, then for $x, c \in [a, b]$
+
+    \begin{equation*}
+        f(x) = f(c) + f'(\zeta)(x-c)
+    \end{equation*}
+
+    where $\zeta$ is between $c$ and $x$. Take $x=b, c = a$ and the theorem
+    appears:
+
+    \begin{equation*}
+        f(b) - f(a) = f'(\zeta)(b-a)
+    \end{equation*}
+\end{shaded}
+
+\pagebreak
+
+\begin{shaded}
+    \textbf{Taylor:} El desarrollo de una $f$ suficientemente
+    diferenciable alrededor de un punto $r$ espa
+
+    \begin{equation*}
+        f(x) = f(r) + f'(r)(x-r) + \frac{f''(r)}{2!}(x-r)^2 + \ldots +
+        \frac{f^{(n)}(r)}{n!}(x-r)^n + R_n(x)
+    \end{equation*}
+
+    donde $R_n(x)$ es el resto.
+
+    Usualmente, queremos tomar $r = x + h$ , donde $x$ es una aproximación de
+    $r$ y $h$ el error de aproximación. Entonces es provechoso expandir 
+    $f(r)$ alreededor de su estimación $x$:
+
+    \begin{equation*}
+        f(r) = f(x+h) = f(x) + f'(x)h + \frac{f''(x)}{2!}h^2 + \ldots +
+        \frac{f^{(n)}(x) }{n!}h^n + R_n(h)
+    \end{equation*}
+
+    Esto es \textbf{recontra} útil porque nos dice cuánto se diferencia $f(r)$
+    de nuestra aproximación $f(x)$ (pues expresa $f(r)$ como $f(x)$ más algo).
+
+    Usualmente $r, h$ son desconocidos pero $h$ puede acotarse. 
+
+    El resto $R_n$ del teorema puede expresarse como sigue:
+
+    \begin{equation*}
+        f(r) = f(x+h) = f(x) + f'(x)h + \frac{f''(x)}{2!}h^2 + \ldots +
+        \frac{f^{(n)}(x) }{n!}h^n + \frac{ f^{(n+1)}(\zeta) }{(k+1)!}h^{n+1}
+    \end{equation*}
+
+    para algún $\zeta \in (x, h)$. Esta forma de expresar el error de
+    aproximación con el polinomio de Taylor se usará mucho.
+\end{shaded}
 \section{Alg. de Horner: Polynomial evaluation} 
 
 Consider 
@@ -203,7 +269,7 @@ $ which satisfies
 
 A very simple procedure: if a root exists in $[a, b]$, it iteratively shrinks
 $[a,b]$ in halves (keeping the halves which contain the root) until the interval
-is of sufficiently small length.
+is of sufficiently small length or the root is found.
 
 \begin{theorem}[Intermediate value]
     If $f$ is continuous in $[a, b]$ and $f(a)f(b) < 0$, then $\exists r \in
@@ -397,41 +463,6 @@ $\therefore r = \lim_{n \to \infty} a_n = \lim_{n \to \infty} b_n$ is a root.
 
 \subsection{Newton's method}
 
-\begin{shaded}
-    \textbf{Taylor: repasito.} El desarrollo de una $f$ suficientemente
-    diferenciable alrededor de un punto $r$ espa
-
-    \begin{equation*}
-        f(x) = f(r) + f'(r)(x-r) + \frac{f''(r)}{2!}(x-r)^2 + \ldots +
-        \frac{f^{(n)}(r)}{n!}(x-r)^n + R_n(x)
-    \end{equation*}
-
-    donde $R_n(x)$ es el resto.
-
-    Usualmente, queremos tomar $r = x + h$ , donde $x$ es una aproximación de
-    $r$ y $h$ el error de aproximación. Entonces es provechoso expandir 
-    $f(r)$ alreededor de su estimación $x$:
-
-    \begin{equation*}
-        f(r) = f(x+h) = f(x) + f'(x)h + \frac{f''(x)}{2!}h^2 + \ldots +
-        \frac{f^{(n)}(x) }{n!}h^n + R_n(h)
-    \end{equation*}
-
-    Esto es \textbf{recontra} útil porque nos dice cuánto se diferencia $f(r)$
-    de nuestra aproximación $f(x)$ (pues expresa $f(r)$ como $f(x)$ más algo).
-
-    Usualmente $r, h$ son desconocidos pero $h$ puede acotarse. 
-
-    El resto $R_n$ del teorema puede expresarse como sigue:
-
-    \begin{equation*}
-        f(r) = f(x+h) = f(x) + f'(x)h + \frac{f''(x)}{2!}h^2 + \ldots +
-        \frac{f^{(n)}(x) }{n!}h^n + \frac{ f^{(n+1)}(\zeta) }{(k+1)!}h^{n+1}
-    \end{equation*}
-
-    para algún $\zeta \in (x, h)$. Esta forma de expresar el error de
-    aproximación con el polinomio de Taylor se usará mucho.
-\end{shaded}
 
 Assume $r \in \mathcal{R}_f$ and $r = x + h$, with $x$ an approximation of $r$
 and $h$ its error. Assume $f''$ exists and is continuous in some $I$ around $x$
@@ -870,20 +901,9 @@ $(c, d)$ Same.
     10^{-5}$? 
 \end{shaded}
 
-With $e_n = x_n - r$,
-
-\begin{equation*}
-    \left| e_n \right| \leq \frac{b_n - a_n}{2}
-\end{equation*}
-
-So we require 
-
-\begin{equation*}
-    \frac{b_n - a_n}{2} \leq \epsilon
-\end{equation*}
-
-We also know the length of $I_1$ is half the length of $I_0$, that of $I_2$ is
-half that of $I_1$, etc. In other words, 
+Let $e_n = x_n - r$. It is trivial to note that $\left| e_n \right| \leq
+\frac{b_n - a_n}{2}$. Furthermore, the length of $I_1$ is half the length of
+$I_0$, that of $I_2$ is half that of $I_1$, etc. In other words, 
 
 \begin{equation*}
     \left| e_0 \right|  \leq \frac{b-a}{2}, \qquad \left| e_1 \right|  \leq
@@ -909,21 +929,12 @@ Now, clearly,
 \begin{align*}
 &\frac{b-a}{2^{n+1}} \leq \epsilon  \\
 \iff&\frac{ b-a }{\epsilon} \leq  2^{n+1} \\ 
-\iff& \log_2\left( \frac{ b-a }{\epsilon} \right)  - 1 \leq n  
+\iff& \log_2\left( \frac{ b-a }{\epsilon} \right)  - 1 \leq n  \\
+\impliedby& \log_2\left( \frac{b-a}{\epsilon} \right)  \leq n\\ 
+\iff&\frac{ \ln \left( \frac{b-a}{\epsilon} \right)  }{\ln 2} \leq n
 \end{align*}
 
-Since we wish  to bound $n$, we might as well take 
-
-\begin{equation*}
-    \log_2\left( \frac{b-a}{\epsilon} \right)  \leq n
-\end{equation*}
-
-which gives our final result. If we want to convert this to logarithms of $e$,
-it gives:
-
-\begin{equation*}
-    \frac{ \ln \left( \frac{b-a}{\epsilon} \right)  }{\ln 2} \leq n
-\end{equation*}
+which is our final answer. 
 
 $(b)$ For $a = 0, b = 1, \epsilon = 10^{-5}$, we need 
 
@@ -1012,31 +1023,22 @@ Therefore,
     &=\frac{1}{2}\left( x_n + \frac{1}{x_n} \right) \qquad \blacksquare
 \end{align*}
 
-$(b)$ Let $x_0 > 0$. Since $x_0$ is positive and $x_{n+1} = \frac{1}{2}\left(
-x_n + \frac{1}{x_n} \right) $, every element in $\left\{ x_n \right\} $ is
-positive. Now consider that 
-
-Recall that, among all Pythagorean means, the arithmetic mean is the greatest.
-In particular, it is greater or equal to the geometric mean:
+$(b)$ Let $x_0 > 0$. Recall that, among all Pythagorean means, the arithmetic
+mean is the greatest, asuming positively-valued vectors. In particular, it is
+greater or equal to the geometric mean:
 
 \begin{equation*}
-    \frac{1}{N}\sum_{i=1}^n y_i \geq \sqrt[n]{\prod y_i} 
+    \frac{1}{N}\sum_{i=1}^n y_i \geq \sqrt[n]{\prod_{i=1}^n y_i} 
 \end{equation*}
 
-for any set of points $y_1, \ldots, y_n$. In particular, 
+for any set of points $y_1, \ldots, y_n$ all positive. In particular, 
 
 \begin{equation*}
     x_{n+1} = \frac{1}{2}\left( x_n + \frac{a}{x_n} \right) \geq \sqrt{x_n \frac{a}{x_n}}
     = \sqrt{a} \qquad \blacksquare
 \end{equation*}
 
-$(c)$ Since 
-
-\begin{equation*}
-    x_{n+1} = \frac{1}{2}\left( x_n + \frac{a}{x_n} \right) 
-\end{equation*}
-
-we must simply observe  that 
+$(c)$  
 
 \begin{align*}
 &\frac{1}{2}\left( x_n + \frac{a}{x_n} \right) \leq x_n \\ 
@@ -1051,8 +1053,7 @@ which is true due to point $(b)$.
 
 $(d)$ Let $e_n = x_n - \sqrt{a} $. We have shown $\left\{ x_n \right\} $ to be
 decreasing and bounded below by $\sqrt{a} $. Therefore, it converges to a limit
-$L$ and said limit is the infimum
-of $\left\{ x_n \right\} $. Then 
+$L$ (with $L$ the infimum of $\left\{ x_n \right\} $). Then 
 
 \begin{equation*}
     \lim_{n \to \infty} x_{n} = \frac{1}{2}\lim_{n \to \infty} \left( x_{n-1} +
