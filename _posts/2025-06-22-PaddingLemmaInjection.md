@@ -50,11 +50,11 @@ injective computable function $g$ such that $\varphi_{g(x)}(y) =
 that is semantically equivalent to the one encoded by $x$, while also being
 injective in $x$.
 
-This result has a more general form. Suppose that $\\{ psi_x \\}_{x \in \omega}$
-is any sequence of partial computable functoins, and $g$ is a computable
-function such that $\varphi_x = \psi_{g(x)}$. Then there is an injective
-computable function $g'(x)$ such that $\varphi_x = psi_{g'(x)}$. Using this
-with the canonical sequence $\varphi_1, \varphi_2, \ldots$, where $g(x) = Id$ is
+This result has a more general form. Suppose that $\psi_0, \psi_1, \ldots$ is
+any sequence of partial computable functions, and $g$ is a computable function
+such that $\varphi_x = \psi_{g(x)}$. Then there is an injective computable
+function $g'(x)$ such that $\varphi_x = psi_{g'(x)}$. Using this with the
+canonical sequence $\varphi_1, \varphi_2, \ldots$, where $g(x) = Id$ is
 computable and s.t. $\varphi_x = \varphi_{g(x)}$, ensures the existence of some
 injective $g'$ s.t. $\varphi_x = \varphi_{g'(x)}$.
 
