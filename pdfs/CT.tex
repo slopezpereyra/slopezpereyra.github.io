@@ -1,0 +1,298 @@
+\documentclass[12pt]{article}
+
+\usepackage[cal=boondoxo]{mathalfa}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18} % Or adjust depending on your TeX distribution
+\usepackage[utf8]{inputenc}	% Para caracteres en español
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{multirow,booktabs}
+\usepackage[table]{xcolor}
+\usepackage{fullpage}
+\usepackage{lastpage}
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{wrapfig}
+\usepackage{setspace}
+\usepackage{calc}
+\usepackage{multicol}
+\usepackage{cancel}
+\usepackage[retainorgcmds]{IEEEtrantools}
+\usepackage[margin=3cm]{geometry}
+\usepackage{amsmath}
+\newlength{\tabcont}
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+\usepackage{empheq}
+\usepackage{framed}
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+\colorlet{shadecolor}{orange!15}
+\parindent 0in
+\parskip 12pt
+\geometry{margin=1in, headsep=0.25in}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{reg}{Rule}
+\newtheorem{exer}{Exercise}
+\newtheorem{note}{Note}
+\newtheorem{theorem}{Theorem}
+\begin{document}
+\setcounter{section}{0}
+\usepackage{chngcntr}
+
+\counterwithin*{equation}{section}
+\counterwithin*{equation}{subsection}
+
+
+\begin{document}
+
+\section{Dovetailling enumeration and the $\pi$ function}
+
+Let $(x)_i$ denothe the power of the $i$th prime factor in the decomposition of
+$x \in \omega$. Let $\varphi_e$ an arbitrary partial computable function
+computed by program $P_e$. The Turing program $P_e$ runs on discrete steps, and
+so we can conceive the following procedure:
+
+\begin{enumerate}
+    \item Fix $ n \leftarrow (x)_1, t \leftarrow (x)_2$. 
+    \item If $P_e$ halts in $t$ steps from input $n$, halt and return
+        $1$. 
+    \item Otherwise, set $x \leftarrow x + 1$ and go back to step $(1)$.
+\end{enumerate}
+
+This program halts if and only if $P_e$ halts on some input, since eventually
+all possible inputs are considered. We use $\pi(x)$ to denote the partial
+computable function that performs the procedure above on program $x$. We observe
+that if $W_x \neq \emptyset$ then $\pi(x)$ always halts, meaning that
+$W_{\pi(x)} = \mathbb{N}$. On the contrary, if $W_x = \emptyset$ then $\pi(x)$
+is undefined and $W_{\pi(x)} = \emptyset$.
+
+\begin{theorem}
+    There is a partial computable function $\pi^{c}_k(x)$ that takes $k$
+    arguments and halts with output $c$ (independently of the arguments) if and
+    only if $W_x \neq \emptyset$. Furthermore, if $W_x \neq \emptyset$, then
+    $W_{\pi_k^c(x)} = \mathbb{N}$, and if $W_x = \emptyset$  then
+    $W_{\pi_k^c(x)} = \emptyset$.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Proof.} Trivial to derive from all of the above.
+
+\end{quote}
+\normalsize
+
+In general, if we use $\pi(x)$ to denote $\pi_1^1(x)$.
+
+\section{Index set theorems}    
+
+\begin{shaded}
+    \textbf{Notation.} Let $\mathcal{F}$ be the set of partial computable
+    functions. We use $\bot_F$ to denote the partial computable function which
+    is undefined on all input.
+\end{shaded}
+
+A set $A \subseteq \omega$ is an index set if for all $x, y \in \omega$, 
+
+\begin{equation*}
+    x \in A \land \varphi_x = \varphi_y \Rightarrow y \in A
+\end{equation*}
+
+In other words, a set is an index set if all elements in the set index the same
+partial computable function.
+
+\begin{shaded}
+    Would it not be better to set $\varphi_x \simeq \varphi_y$? Think about
+    this.
+\end{shaded}
+
+Trivially, $\omega$ and $\emptyset$ are index sets. 
+
+\begin{theorem}[Index set theorem]
+    If $A$ is a non-trivial index set, then either $K\leq_1 A$ or $K \leq_1
+    \overline{A}$. Furthermore, if $\bot_\mathcal{F} \in \overline{A}$ then 
+    $K \leq_1 A$, and vice-versa.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+    \textbf{Proof.} Assume the index of $\bot_\mathcal{F}$ is in $A$ and take $y
+    \in \overline{A}$. Define
+
+    \begin{equation*}
+        \phi(u, v) = \begin{cases}
+            \varphi_y(v) & u \in K \\ 
+            \bot  & c.c.
+        \end{cases}
+    \end{equation*}
+
+    The function above is computable. The $S_n^m$ theorem ensures there is a
+    total, one-to-one function $f$ s.t. $\varphi_{f(u)}(v) = \phi(u, v)$.
+
+    If $u \in K$, then $\varphi_{f(u)} = \varphi_y$, meaning that $f(u) \in
+    \overline{A}$. If $u \not\in K$, then $f(u)$ is the index of
+    $\bot_\mathcal{F}$, which is in $A$.
+
+    $\therefore $ $K \leq_1 \overline{A}$.
+
+\end{quote}
+\normalsize
+
+\begin{theorem}[Rice's theorem]
+    Let $\mathcal{C}$ any class of partial computable functions. Then 
+    $A = \left\{ n : \varphi_n \in \mathcal{C} \right\} $ is not computable
+    except in the trivial cases. 
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Proof.} Assume the class $\mathcal{C}$ is non-trivial, meaning that $A =
+\left\{ n : \varphi_n \in \mathcal{C} \right\} $ is neither $\omega$ nor
+$\emptyset$. Then $K \leq_1 A$ or $K \leq_1 \overline{A}$ by virtue of the index
+set theorem. Either case, $A$ is not decidable. $\blacksquare$
+
+\end{quote}
+\normalsize
+
+\subsection{Some interesting sets}
+
+The set of programs which halt with themselves as input ($K$), and the set of
+pairs $(x, y)$ such that $P_x$ halts on input $y$ ($K_0$), are not index sets.
+Index sets of interest are: 
+
+\begin{enumerate}
+    \item $K_1$, the set of programs that halt on some input:
+
+        \begin{equation*}
+            K_1 := \left\{ x : W_x \neq \emptyset \right\}  = \left\{ x : \varphi_x
+            = \bot_\mathcal{F}\right\} 
+        \end{equation*}
+
+    \item \textit{Fin}, the set of programs that halt for a finite number of
+        inputs.
+
+        \begin{equation*}
+            \textit{Fin} := \left\{ x : W_x \text{ is finite} \right\} 
+        \end{equation*}
+
+    \item The complement of \textit{Fin}, termed \textit{Inf}.
+
+    \item $\mathcal{T}$, the set of total computable functions. 
+
+    \item $\textit{Con} \subseteq \mathcal{T}$, the set of constant and total
+        functions. 
+
+    \item \textit{Cof}, the set of programs that halt on a cofinite number of
+        input. 
+
+    \item \textit{Rec}, the set of computable (recursive) programs. 
+
+    \item \textit{Ext}, the set of programs that can be extended to total
+        computable functions.
+\end{enumerate}
+
+An interesting factt is that $K \equiv_1 K_0 \equiv_1 K_1$. We already know that
+$K \leq_1 K_1$, because $K_1$ is a non-trivial index set, so let us observe the
+remaining relations. 
+
+\begin{shaded}
+    $(1: K_1 \leq K)$ This is intuitively clear, since deciding whether a
+    program halts with itself as input would suffice to decide whether it halts
+    at all. 
+    
+    Recall that 
+
+    \begin{equation*}
+        W_{\mathcal{d}(x)} = \begin{cases}
+            \mathbb{N} & x \in K_1 \\ 
+            \emptyset & x \not\in K_1
+        \end{cases}
+    \end{equation*}
+
+    This entails that if $x \in K_1$, then $\pi(x) \in W_{\pi(x)}$, which means
+    that $\pi(x) \in K$. If $x \not\in K_1$, clearly $\pi(x) \not\in
+    W_{\pi(x)}$, since said domain is the empty set, and $\pi(x) \not\in K$.
+    $\blacksquare$
+
+
+
+
+\end{shaded}
+
+
+The question becomes
+whether $K_1 \leq K$. This is intuitively clear, because deciding whether a
+function halts with itself as input would already decide whether it halts at all
+under some input.
+
+Prove that $x \in K_1$ iff $f(x) \in K$ for some $f$.
+
+Consider 
+
+\begin{equation*}
+    \phi(x, y) = \begin{cases}
+        1 & x \in K_1 \\ 
+        \bot & c.c.
+    \end{cases} = \varphi_{f(x)}(y)
+\end{equation*}
+
+with $f$ one-to-one and total. If $x \in K_1$, then $\varphi_{f(x)}(y) = 1$ for
+all $y$. In particular, $\varphi_{f(x)}(x) = 1 \neq \bot $ for all input, and in
+particular $\varphi_{f(x)}(f(x)) = 1$. In other words, $f(x) \in K$.
+
+If $x \not\in K_1$, then $\phi(x, y)$ fails to converge and in particular
+$\varphi_{f(x)}(y) = \bot $ for all $y$. This means $f(x) \not\in K$.
+
+$\therefore $ $K_1 \leq_1 K$.
+
+
+
+
+\begin{definition}
+    A computably enumerable set $A$ is $1$-complete if $W_e \leq_1 A$ for every
+    computably enumerable set $W_e$.
+\end{definition}
+
+
+\begin{shaded}
+    \textbf{Problem: Is $K_0$ $1$-complete?} The answer is yes. Take $W_e$
+    arbitrary and c.e. Then $x \in W_e$ if and only if $(x, e) \in K_0$.
+    Thus suffices to show $W_e \leq_1 K_0$. 
+
+    \textbf{Problem}. Assume $A \leq_m B$ and $A$ is $1$-complete.
+\end{shaded}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
