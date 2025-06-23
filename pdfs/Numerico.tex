@@ -53,7 +53,7 @@ Let $f \in C^n[a, b]$ and assume $f^{(n+1)}$ exists in $(a, b)$. Then
 for any $c, x \in [a, b]$ there is some $\zeta$ between $c$ and $x$ s.t. 
 
 \begin{equation}
-    f(x) = \sum_{k=0}^{n} \frac{f^{(k)(c)(x-c)^k}}{k!} + E_n(x)
+f(x) = \sum_{k=0}^{n} \frac{f^{(k)}(c)(x-c)^k}{k!} + E_n(x)
 \end{equation}
 
 where 
@@ -66,7 +66,7 @@ Equation $(1)$ is called the Taylor expansion of $f$ around $c$.
 
 \begin{shaded}
     \textbf{Observation.} The famous \textit{mean value theorem} is simply the
-    case $n = 1$ of Taylor's expansion: if $f \in C[a, b]$ and $f'$ exists on
+    case $n = 0$ of Taylor's expansion: if $f \in C[a, b]$ and $f'$ exists on
     $(a, b)$, then for $x, c \in [a, b]$
 
     \begin{equation*}
@@ -81,43 +81,21 @@ Equation $(1)$ is called the Taylor expansion of $f$ around $c$.
     \end{equation*}
 \end{shaded}
 
+We typically extend the Taylor approximation of $f$ around a point $r$, where
+$r = x + h$ is an approximation some value of interest $x$. This is useful
+because said approximation gives 
+
+\begin{equation*}
+    f(r) = f(x+h) = f(x) + f'(x)h + \frac{ f^{''}(x) }{2}h^2 + \ldots + 
+    \frac{ f^{(n)}(x) }{n!}h^n + E_n(h)
+\end{equation*}
+
+In other words, this strategy allows us to extend $f(r)$ in terms of $x$ and
+$h$, the approximation and its error. Usually, $r, h$ are unknown but $h$ can be
+bounded.
+
 \pagebreak
 
-\begin{shaded}
-    \textbf{Taylor:} El desarrollo de una $f$ suficientemente
-    diferenciable alrededor de un punto $r$ espa
-
-    \begin{equation*}
-        f(x) = f(r) + f'(r)(x-r) + \frac{f''(r)}{2!}(x-r)^2 + \ldots +
-        \frac{f^{(n)}(r)}{n!}(x-r)^n + R_n(x)
-    \end{equation*}
-
-    donde $R_n(x)$ es el resto.
-
-    Usualmente, queremos tomar $r = x + h$ , donde $x$ es una aproximación de
-    $r$ y $h$ el error de aproximación. Entonces es provechoso expandir 
-    $f(r)$ alreededor de su estimación $x$:
-
-    \begin{equation*}
-        f(r) = f(x+h) = f(x) + f'(x)h + \frac{f''(x)}{2!}h^2 + \ldots +
-        \frac{f^{(n)}(x) }{n!}h^n + R_n(h)
-    \end{equation*}
-
-    Esto es \textbf{recontra} útil porque nos dice cuánto se diferencia $f(r)$
-    de nuestra aproximación $f(x)$ (pues expresa $f(r)$ como $f(x)$ más algo).
-
-    Usualmente $r, h$ son desconocidos pero $h$ puede acotarse. 
-
-    El resto $R_n$ del teorema puede expresarse como sigue:
-
-    \begin{equation*}
-        f(r) = f(x+h) = f(x) + f'(x)h + \frac{f''(x)}{2!}h^2 + \ldots +
-        \frac{f^{(n)}(x) }{n!}h^n + \frac{ f^{(n+1)}(\zeta) }{(k+1)!}h^{n+1}
-    \end{equation*}
-
-    para algún $\zeta \in (x, h)$. Esta forma de expresar el error de
-    aproximación con el polinomio de Taylor se usará mucho.
-\end{shaded}
 \section{Alg. de Horner: Polynomial evaluation} 
 
 Consider 
