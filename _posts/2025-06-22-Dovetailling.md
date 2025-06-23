@@ -4,8 +4,10 @@ categories: Science
 ---
 
 It is undecidable whether a program halts or not on arbitrary input. However, we
-can produce a program $A$ that takes another $B$ and, if $B$ halts on some
-input, then $A$ will eventually halt.
+can produce a program $x$ that takes another program $y$ and, if $y$ halts on some
+input, then $x$ will eventually halt. This can be done through a technique
+called dovetailing and some encoding of natural numbers, the most typical of
+which is Gödel's prime-based encoding. 
 
 Let $(x)_i$ denothe the power of the $i$th prime factor in the decomposition of
 $x \in \omega$. Let $\varphi_e$ an arbitrary partial computable function
@@ -14,11 +16,11 @@ we can conceive the following procedure:
 
 - (1) Fix $x \leftarrow 1$, $ n \leftarrow (x)_1, t \leftarrow (x)_2$. 
 - (2) If $P_e$ halts in $t$ steps from input $n$, halt and return $1$. 
-- (3) Otherwise, set $x \leftarrow x + 1$ and go back to step $(1)$.
+- (3) Otherwise, set $x \leftarrow x + 1$ and go back to step $(2)$.
 
 Producing $((x)_1, (x)_2)$ for $x = 1, 2, \ldots$ effectively produces all
-tuples $(a, b) \in \omega^2$, so any possible combination of inpu $\times$
-number of steps will eventually be produced. This technique is called
+tuples $(a, b) \in \omega^2$, so any possible combination of (input $\times$
+number of steps) will eventually be produced. This technique is called
 *dovetailing*, where we explore the input space of a program in breadth rather
 than in depth, sequencing by computation steps.
 
@@ -30,10 +32,10 @@ in the enumeration.
 
 The formal expression of the fact we have discussed may go as follows:
 
-> There is a partial computable function $\pi^{c}_k(x)$ that takes $k$
+> There is a partial computable function $\pi_k^{c}(x)$ that takes $k$
 > arguments and halts with output $c$ (independently of the arguments) if and
 > only if $W_x \neq \emptyset$. Furthermore, if $W_x \neq \emptyset$, then
-> $W_{\pi_k^c(x)} = \mathbb{N}$, and if $W_x = \emptyset$  then
+> $W_{\pi_k^c(x)} = \mathbb{N}$, and if $W_x = \emptyset$ then
 > $W_{\pi_k^c(x)} = \emptyset$.
 
 Here, $\pi^1_0$ would correspond to the procedure we gave before. Clearly, if
