@@ -212,7 +212,7 @@ remaining relations.
     Recall that 
 
     \begin{equation*}
-        W_{\mathcal{d}(x)} = \begin{cases}
+        W_{\pi(x)} = \begin{cases}
             \mathbb{N} & x \in K_1 \\ 
             \emptyset & x \not\in K_1
         \end{cases}
@@ -223,38 +223,33 @@ remaining relations.
     W_{\pi(x)}$, since said domain is the empty set, and $\pi(x) \not\in K$.
     $\blacksquare$
 
+    $(2: K_0 \leq K)$ Observe that $x \in K \iff (x, x) \in K_0$. Define
+
+    \begin{equation*}
+        \psi(x, y, z) = \begin{cases}
+            \varphi_{y}(x) & (x, y) \in K_0 \\ 
+            \bot & c.c.
+        \end{cases}
+    \end{equation*}
+
+    It is computable and therefore there is an index $e$ s.t. 
+    $\psi(x, y, z) = \varphi_e(x, y, z)$. By virtue of the $S_n^m$ theorem,
+    there is a computable and one-to-one function $f$ s.t. $\varphi_{f(e, x,
+    y)}(z) = \varphi_e(x, y, z)$. Fix $e$ and let $g(x, y) = f(e, x, y)$.
+
+    Assume $(x, y) \in K_0$. Then $\varphi_{g(x, y)}(z)$ halts for all $z$.
+    In particular, it halts for 
+    $\varphi_{g(x, y)}(g(x, y))$. This entails $g(x, y) \in K$.
+
+    Similarly, assume $(x, y) \not\in K_0$. Then $\varphi_{g(x, y)}(z)$ halts
+    for no input at all, i.e. $W_{g(x, y)} = \emptyset$. In particular, 
+    $g(x, y) \not\in W_{g(x, y)}$, which means $g(x, y ) \not\in K$.
+
+    $\therefore ~ K_0 \leq K$. 
 
 
-
+    All of this suffices to show $K_0 \equiv_1 K_1 \equiv_1 K$.
 \end{shaded}
-
-
-The question becomes
-whether $K_1 \leq K$. This is intuitively clear, because deciding whether a
-function halts with itself as input would already decide whether it halts at all
-under some input.
-
-Prove that $x \in K_1$ iff $f(x) \in K$ for some $f$.
-
-Consider 
-
-\begin{equation*}
-    \phi(x, y) = \begin{cases}
-        1 & x \in K_1 \\ 
-        \bot & c.c.
-    \end{cases} = \varphi_{f(x)}(y)
-\end{equation*}
-
-with $f$ one-to-one and total. If $x \in K_1$, then $\varphi_{f(x)}(y) = 1$ for
-all $y$. In particular, $\varphi_{f(x)}(x) = 1 \neq \bot $ for all input, and in
-particular $\varphi_{f(x)}(f(x)) = 1$. In other words, $f(x) \in K$.
-
-If $x \not\in K_1$, then $\phi(x, y)$ fails to converge and in particular
-$\varphi_{f(x)}(y) = \bot $ for all $y$. This means $f(x) \not\in K$.
-
-$\therefore $ $K_1 \leq_1 K$.
-
-
 
 
 \begin{definition}
@@ -265,11 +260,35 @@ $\therefore $ $K_1 \leq_1 K$.
 
 \begin{shaded}
     \textbf{Problem: Is $K_0$ $1$-complete?} The answer is yes. Take $W_e$
-    arbitrary and c.e. Then $x \in W_e$ if and only if $(x, e) \in K_0$.
-    Thus suffices to show $W_e \leq_1 K_0$. 
-
-    \textbf{Problem}. Assume $A \leq_m B$ and $A$ is $1$-complete.
+    arbitrary and c.e. Then $x \in W_e$ if and only if $(x, e) \in K_0$. Thus
+    suffices to show $W_e \leq_1 K_0$. 
 \end{shaded}
+
+\subsection{Computable approximations to computations}
+
+We write $\varphi_{e, s}(x) = y$ if $x, y, e < s$ and $y$ is the output of
+$\varphi_e(x)$ in less than $s$ steps of program $P_e$. If such a $y$ exists we
+say $\varphi_{e, s}(x)$ converges. We define $W_{e, s} := \text{dom}(\varphi_{e,
+s})$.
+
+Note that by def. fif $x \in W_{e, s}$ then $x, e < s$. Furthermore, 
+
+\begin{equation*}
+    \varphi_e(x) = y \iff \exists s . \varphi_{e, s}(x) = y
+\end{equation*}
+
+\begin{theorem}
+    The set $\left\{ (e, x, s) : \varphi_{e, s}(x) \downarrow \right\} $ is
+    computable, as is the set $W_{e, s}$.
+\end{theorem}
+
+
+
+
+
+
+
+
 
 
 
