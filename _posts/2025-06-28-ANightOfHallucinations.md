@@ -39,7 +39,7 @@ eventually I wake up.
 
 Now, an insensible reader might dismiss these images as fantasies. Yet, he must
 recall that the individual hallucinating perceives his vision as truly, as
-concretely, as undeniable as he is perceiving this screen, that sheet of paper,
+concretely, as undeniably as he is perceiving this screen, that sheet of paper,
 the light and color of the table or sit he occupies, the subtle sensation of his
 shirt pressed against his sin or the inexplicable whiteness of the moon. There
 is nothing vague in a vision, at least not *during* the vision, and whatever
@@ -47,8 +47,21 @@ vagueness it has is distinguished only afterwards by the examination of the sane
 mind—just like during a dream the rarest of things are totally natural, and only
 the vigil's mind deems them fantastic—.
 
-
-
+The fact that I was unable to oppose my character to the terrors is not,
+however, the only remarkable thing about last night's episodes. For the first
+time, and perhaps due to the many number of episodes and their severe intensity,
+I was haunted by a strange sense of irreality during the first hours of the
+waking day. An important fact may have contributed to this. Repeatedly during
+the night, as I tried to sleep again, I was not immediately captured by sleep
+paralysis. Usually, because I would go to sleep dreading the following attack, I
+would briefly dream that the day had begun, that I got out of bed and brushed my
+teeth or whatever. I felt such relief during these dreams, feeling that the
+night was over! But then paralysis ensued and everything began again. How could
+I have not felt then, after actually awakening, that I should be assaulted once
+more, that the concrete matter which surrounded was of the fabric of dreams?
+This was truly a powerful and intense sensation which only goes to show the
+fragile state of mind I was left with after so many paralyses and strange
+hallucinations.
 
 
 
