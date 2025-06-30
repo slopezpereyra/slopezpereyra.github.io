@@ -1326,6 +1326,108 @@ $\therefore $ There is a unique fixed point of $f$ in $[0, \pi / 4]$ and the
 fixed point iteration algorithm converges to it when starting from said interval
 with $f$ as iteration function.
 
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(10)} Let $x_{n+1} = 2^{x_n - 1}$ the formula used to solve $2x =
+    2^x$. What interval should be chosen to ensure $\left\{ x_n \right\} $ is
+    convergent? Calculate its limit.
+\end{shaded}
+
+The fixed-point algorithm uses the formula $p_n = g(p_{n-1})$ where $g$ is a
+function s.t. the fixed points of $g$ are roots of some original function of
+interest $f$. In this case, clearly $g(x) = 2^{x-1}$. To ensure convergence, we
+must find an interval $I$ s.t. $g$ is a self-map of $I$ and $g'$ lies within a
+unit neighbourhood of $0$.
+
+Now, clearly the equation $2x = 2^x$ has solutions $x = 1, x = 2$, and no other.
+So whatever self-map $I$ we build must contain either $1$ or $2$. So take $I =
+[0, 1] $.
+
+Clearly, if $x \in I$, then $-1 \leq x - 1 \leq 0$. This means 
+$2^{x-1}$ has exponent at least $-1$, when $g(0) = 2^{-1} = \frac{1}{2}$.
+Furthermore, $2^{x-1}$ has exponent at most $0$, when $g(1) = 2^{0} = 1$. This
+suffices to show that $g(x) \in I$ for all $x \in I$.
+
+Now, 
+
+\begin{equation*}
+    \frac{d}{dx}2^{x-1} = \frac{d}{du} 2^u \times \frac{d}{dx}(x-1) = 2^u \ln u
+\end{equation*}
+
+In short, $g'(x) = 2^{x-1} \ln(2)$. For $x \in [0, 1]$, we have already
+established that $0 \leq 2^{x-1} \leq 1$. Therefore, $0 \leq g'(x) \leq \ln(2) <
+0$ for all $x \in [0,1]$. In other words, $g'$ lies within a unit-distance of
+zero when its domain is restricted to $I$.
+
+$\therefore $ The algorithm converges to the unique solution of $2x = 2^{x}$ in
+$[0, 1]$ (which is $1$) when starting from said interval with iteration function
+$g$.
+
+\pagebreak
+
+\begin{shaded}
+    \textbf{(11)} Suppose $\left\{ x_n \right\} $ converges to $r$ and that $x_{n+1} = g
+    (x_n)$ where $|g(y) - g(x)| \leq \lambda|y - x|$ for all $x, y$ with
+    $\lambda \in (0, 1)$. Determine the error bound on each iteration as a
+    function of the difference between the last two iteration values. In other
+    words, find $C$ s.t. 
+
+    \begin{equation*}
+        \left| x_{n+1} - r \right| \leq C \left| x_{n+1} - x_n \right| 
+    \end{equation*}
+\end{shaded}
+
+Recall that $x_{n+1} = g(x_n)$. This means 
+
+\begin{equation*}
+    \left| x_{n+1} - r \right| = \left| g(x_n) - r \right| 
+\end{equation*}
+
+But $r$ is a fixed-point of $g$, i.e. $r = g(r)$. Then 
+
+\begin{equation*}
+    \left| g(x_n) - r \right| = \left| g(x_n) - g(r) \right| 
+\end{equation*}
+
+By assumption, then, 
+
+\begin{align*}
+    \left| x_{n+1} - r \right| 
+    &= \left| g(x_n) - g(r) \right| \\ 
+    &\leq \lambda\left| x_n - r \right| 
+\end{align*}
+
+Recall that $\left| e_n \right| = \left| x_n - r \right| \leq k^n\left| e_{n-1}
+\right|  $ for some $k \in (0, 1)$. Since the property above holds for any
+$\lambda \in (0, 1)$, it holds for said $k$. 
+
+Since $\left| x_n - r \right| \leq k^n \left| e_{n-1} \right| $, and $k^n \in
+(0, 1)$ entails $k^n \left| e_{n-1} \right| < \left| e_{n-1} \right| $, we have 
+$\left| x_n - r \right| < \left| x_{n-1} - r \right|  $. In other words,
+successive approximations in the sequence become increasingly closer to $r$.
+This means
+
+\begin{align*}
+    \left| x_{n+1} - r \right| \leq k \left| x_n - r \right| 
+\end{align*}
+
+But we also have 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \end{document}
