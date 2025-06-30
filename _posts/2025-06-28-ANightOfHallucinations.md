@@ -31,11 +31,14 @@ As I try to fall sleep, the episode ensues. There is a rapid, frantic clatter of
 claws on the floor—like a swarm of dogs prowling close by. Every sinew of my
 being is oppressed by the unbearable feeling of being observed by something. My
 mind speaks: «The devil came». The clattering becomes more loud but now it is
-not the sound of claws but duller and more muffled sound, like steps taken by
-the naked feet of many people walking franticly. Then the parade comes: Naked
+not the sound of claws but a duller, more muffled sound, like steps taken by
+the naked feet of invisible people walking franticly. Then the parade comes: Naked
 men and women walk like dogs: quadruped, four-footed, insane. I cannot see their
-faces. Absolute horror takes possession of me. It feels like an eternity but
-eventually I wake up.
+faces. Some climb to my bed and move around it, pressing on my legs, abdomen and
+chest. Though their bodies are anatomically identical to a human's, there is
+something inhumane about them that goes well beyond the fact that they walk
+quadrupedally. A spiritual property. They are devilish and it is clear they came
+from hell. It feels like an eternity but eventually I wake up.
 
 Now, an insensible reader might dismiss these images as fantasies. Yet, he must
 recall that the individual hallucinating perceives his vision as truly, as
@@ -51,17 +54,20 @@ The fact that I was unable to oppose my character to the terrors is not,
 however, the only remarkable thing about last night's episodes. For the first
 time, and perhaps due to the many number of episodes and their severe intensity,
 I was haunted by a strange sense of irreality during the first hours of the
-waking day. An important fact may have contributed to this. Repeatedly during
-the night, as I tried to sleep again, I was not immediately captured by sleep
-paralysis. Usually, because I would go to sleep dreading the following attack, I
-would briefly dream that the day had begun, that I got out of bed and brushed my
-teeth or whatever. I felt such relief during these dreams, feeling that the
-night was over! But then paralysis ensued and everything began again. How could
-I have not felt then, after actually awakening, that I should be assaulted once
-more, that the concrete matter which surrounded was of the fabric of dreams?
+waking day. This feeling probably gained its strength from the  fact that,
+repeatedly during the night, as I tried to sleep again, I was not immediately
+captured by sleep paralysis. Usually, because I would go to sleep dreading the
+following attack, I would briefly dream before an episode ensued that the day
+had begun, that I got out of bed and brushed my teeth or made coffee. I felt
+such relief during these dreams, feeling that the night was over... Only then
+paralysis came and everything began again. How could I have not felt then, after
+actually awakening, that I should be assaulted once more, that the concrete
+matter which surrounded me was of the fabric of dreams? 
+
 This was truly a powerful and intense sensation which only goes to show the
 fragile state of mind I was left with after so many paralyses and strange
-hallucinations.
+hallucinations. It made me think of how hard it must be for people who suffer
+from hallucinations due to psychiatric illness. 
 
 
 

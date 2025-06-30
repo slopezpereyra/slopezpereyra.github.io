@@ -40,11 +40,13 @@
 \newtheorem{theorem}{Theorem}
 \setcounter{section}{0}
 \usepackage{chngcntr}
-
+\usepackage{hyperref}
 \counterwithin*{equation}{section}
 \counterwithin*{equation}{subsection}
 
 \begin{document}
+
+\url{https://famaf.aulavirtual.unc.edu.ar/course/view.php?id=254}
 
 \section{Taylor}
 
@@ -1191,7 +1193,7 @@ easy to generalize.
     functions, whose least positive root we wish to find:
 
     \begin{equation*}
-        \phi(x) = x^3 - x - 1,\qquad \psi(x) = 2x - tan x, \qquad \varphi(x) = \exp(-x) -
+        \phi(x) = x^3 - x - 1,\qquad \psi(x) = 2x - \tan x, \qquad \varphi(x) = \exp(-x) -
         \cos x
     \end{equation*}
 
@@ -1199,35 +1201,130 @@ easy to generalize.
     convergence.
 \end{shaded}
 
-$(\phi)$ Let $f(x) = x - \phi(x)$. Since $\phi$ is continuous in $\mathbb{R}$
-(polynomial), $f$ is continuous in $\mathbb{R}$. We wish to find an interval
-$[0, c]$ s.t. $f(x) \in [0, c]$ for all $x \in [0, c]$. In this case, it is
-quite clear that $r = 1$ is a root of $\phi(x)$ and that there cannot be any
-other root in $[0, 1]$. So we choose $c = 1$ and observe that 
+$(\phi)$ Let us analyize $\phi$ in order to
+ascertain where its roots are. 
+
+Consider that $\phi'(x) = 3x^2 - 1$, which means $\phi'$ has roots wherever
+$3x^2 = 1$, which holds if and only if $x^2 = \frac{1}{3}$, or equivalently $x =
+\pm \frac{\sqrt{3} }{3} $. Furthermore, $\phi'(x) < 0$ in the region $(-\sqrt{3}
+/ 3, \sqrt{3}/3)  $ and $\phi'(x) > 0$ elsewhere. In conclusion, $\phi$ is
+decreasing in $(-\sqrt{3} / 3, \sqrt{3} / 3)  $ and increasing everywhere else.
+
+Now, observe that $\phi\left( \sqrt{3}/3  \right) < 0$. Combined with the fact
+that $\phi$ is increasing in $(\sqrt{3} / 3, \infty)$, this means there is a
+root of $\phi$ in this interval. (Note that $\phi$ is a polynomial without
+asymptotic behavior.) Furthermore, $\phi \left( -\sqrt{3} / 3 \right)  < 0$. Again, this means there
+is no root in $(\infty, \sqrt{3}  /3) $. 
+
+$\therefore $ $\phi$ has one and only one root and it belongs to $(\sqrt{3} / 3,
+\infty) $.
+
+Now, suffices to note that $f(1.3)i < 0, f(1.4) > 0$, and the intermediate value
+theorem ensures that there is a root in $(1.3, 1.4)$. $\therefore $ The only
+root of $\phi$ lies within $(1.3, 1.4)$.
+
+Now, we need only propose a function $f$ s.t. $r$ is a fixed-point of $f$ and 
+$f(x) \in (1.3, 1.4)$ for all $x \in (1.3, 1.4)$. Consider that 
+
+\begin{equation}
+    \phi(x) = 0 \iff x^3 = x + 1 \iff x = \sqrt[3]{x+1} 
+\end{equation}
+
+So letting $f(x) := \sqrt[3]{x+1} $ ensures that the fixed point of $f$ is the
+root of $\phi$. Furthermore, $f(1.3) \approx 1.32, f(1.4) \approx 1.33$. Now, 
 
 \begin{equation*}
-    f(0) = -1, f(1) = 0
+    f'(x) = \frac{1}{\sqrt[3]{(x+1)^2} }
 \end{equation*}
 
+Since $f'(x) > 0$ (as is simple to note), we know $f$ is increasing, which means
+all $f(x) \in (1.32, 1.33)$ for $x \in [1.3, 1.4]$. Furthermore, 
+$f'(x) \in (0, 1)$ and $f'(x)$ is clearly decreasing. This means that in $[1.3,
+1.4]$, $f'$ has its maximum at $f'(1.4) \approx 0.573$. In other words, if we
+let $k = 0.573$, we know $|g'(x)| = g'(x) < k$ for all $x \in [1.3, 1.4]$.
+
+$\therefore $ $f$ is a self-map of $[1.3, 1.4]$, differentiable in $(1.3, 1.4)$,
+and there is a constant $k \in (0, 1)$ s.t. $|g'(x)| < k$ for all $x \in (1.3,
+1.4)$---where incidentally this constant is $g'(1.3)$. ]
+
+$\therefore $ By virtue of \textbf{Theorem 7}, the fixed-point algorithm will
+converge to the unique root $r \in (1.3, 1.4)$ if using the iteration function
+$f(x) = \sqrt[3]{x+1} $ and the interval $[1.3, 1.4]$.
+
+\pagebreak 
+
+$(\psi)$ Let $\psi(x) = 2x - \tan x$. A root exists for $\psi(x)$ whenever 
+
+\begin{equation*}
+    x = \frac{\tan x}{2} = \frac{2 \sin x}{\cos x}
+\end{equation*}
+
+So we may define $g(x) := \tan x / 2$ guarantying that any fixed point of $g$ is
+a root of $\psi$. Now, $\tan 0 = 0$ entails that $g(0) = 0$. 
+Furthermore, $g(\pi / 4) = 1  /2$. Since $g'(x) = \sec^2(x) / 2$ is strictly
+positive, $g$ is strictly increasing and this means for $x \in [0,
+\frac{\pi}{4}]$ we have $g(x) \in [0, 1 / 2] \subseteq [0, \frac{\pi}{4}]$.
+
+$\therefore $ $g$ is a self-map in $[0, \pi / 4]$.
+
+$\therefore $ There is a fixed-point of $g$ in $[0, \pi / 4]$.
+
+Consider now $g'(x) = \frac{1}{2}\sec^2(x)  = \frac{1}{2\cos^2 x}$. This is
+clearly bounded in $(0, 1]$. To be more precise, it is geometrically obvious
+that, for all $x \in [0, \pi / 4]$, $\sqrt{2} / 2 \leq \cos x \leq 1$, which
+means $1/2 \leq \cos^2 x \leq 1$. In particular, $g'(x)$ reaches its maximum
+when $\cos^2 x$ reaches its minimum, so $g'(x)$ reaches its maximum at $x =
+\frac{\pi}{4}$: 
+
+\begin{equation*}
+    g'(\pi / 4) = \frac{1}{2\cos^2 \frac{\pi}{4}} = \frac{1}{2 \cdot 1 / 2} = 1
+\end{equation*}
+
+It follows that there is some constant $k \in (0, 1)$ such that $|g'(x)| \leq k$
+for all $x \in (0, \pi / 4)$.
+
+$\therefore $ There is a unique fixed point of $g$ in $[0, \pi / 4]$.
+
+$\therefore $ There is a unique root of $\psi(x)$ in $[0, \pi / 4]$ and the
+iteration method converges to it using this interval and the iteration function
+$g$.
 
 
+\pagebreak 
 
+$(\varphi)$ Consider $\varphi(x) = \exp(-x) - \cos x$. This function is zero if
+and only if $e^{-x} = \cos x$, which may be expressed as $x = -\ln \left( \cos x
+\right) $. In other words, the roots of $\varphi$ correspond to the fixed points
+of $f(x) = - \ln(\cos x)$. 
 
+Now, $-1 \leq \cos x \leq 1$ but $\ln$ is defined only in $\mathbb{R}^+$. From
+this follows that $f$ is defined only when $\cos x > 0$, i.e. in the right-hand
+half of the unite circle. This corresponds to values of $x$ in $[0, \pi / 2)$ or 
+$(3\pi / 2, 2\pi]$ (extended by any factor $2\pi k$, $k \in \mathbb{Z}$).
 
+Take $I := [0, \pi /4] \subseteq \text{Dom}(f)$. See that $f(0) = -\ln(1) = 0$
+and $f(\pi / 4) = -\ln(\sqrt{2} / 2 ) \approx 0.346 < \pi /4$. Furthermore, with
+$u = \cos x$,
 
+\begin{align*}
+    \frac{df}{dx} = -\frac{d}{du} \ln(u) \times \frac{d}{dx} \cos x =
+    \frac{\sin x}{\cos x} = \tan x
+\end{align*}
 
+which is strictly positive in $[0, \pi / 4]$. This suffices to prove that $f(x)
+\in [0, \pi / 4]$ for all $x \in  [0, \pi / 4]$. 
 
+$\therefore $ $f$ is a self-map of $[0, \pi / 4]$.
 
+$\therefore $ There is a fixed point of $f$ in $[0, \pi / 4]$.
 
+Now, $\tan x$ is increasing in $[0, \pi / 4]$ and, in particular, $\tan 0 = 0,
+\tan \frac{\pi}{4} = 1$. This suffices to show that $|g'(x)| < 1$ for all $x \in
+(0, \pi / 4)$. 
 
-
-
-
-
-
-
-
-
+$\therefore $ There is a unique fixed point of $f$ in $[0, \pi / 4]$ and the
+fixed point iteration algorithm converges to it when starting from said interval
+with $f$ as iteration function.
 
 
 
