@@ -8,19 +8,19 @@ dream's effect on my conscience, which at the time was already weakened by
 personal circumstances, was so potent and strange, that a genuine and intense
 fear lasted for days after it came to me. Fear of what, I do not know: But fear
 I felt—A fear of something I could not elude nor escape from—A fear of a fiend
-which seemed to exist within myself. But before proceeding to record it, and to
+which seemed to exist within me. But before proceeding to record it, and to
 expose its very content, I deem appropriate to describe the peculiar state of
 mind under which I dreamed it. The dream is so dependent on that state, so
-reflexive of the sorrows and worries of that time, and of the events that
+reflective of the sorrows and worries of that time, and of the events that
 preceded it, that narrating it without providing this additional information
-would surely fail to convey its intensity, and make it seem simply curious or
-trivial. 
+would surely fail to convey its intensity, making it seem simply curious or
+anecdotal. 
 
 Three times I have visited India, each visit lasting something around
 thirty days. A single passage to this land is sufficient to effect a permanent
 revolution on the organization of the constituent aspects of our personality,
 and to draw an indelible scar, that of a wound taken with joy, in the deepest
-region of our conscience. Why this is so, I will not attempt to tell: I have
+region of our consciences. Why this is so, I will not attempt to tell: I have
 kept a policy of not discussing my trips to India in any way with anyone, for
 people hold so superficial prejudices about what that nation is—if one could
 even say *it*, as a whole, is something at all—and its impact is so dependent on
@@ -31,7 +31,7 @@ and (above all) to excite one's curiosity and affection for humankind to the
 utmost degree, one can only imagine what three of these trips may accomplish;
 especially when, so I attest, the beauty of the nation is not lessened by
 repetition, but remains fresh at every instance, like a fruit that never rots
-and hides a never tiring flavor!  
+and hides a never tiring flavor.
 
 At the beginning of my first trip to India,
 nonetheless, I was drowning in deep sorrow. The days that preceded the trip
@@ -61,7 +61,7 @@ would be to confront *A.....* and ask him about the situation. And though I will
 not disclose what was said in the many conversations we had on the matter, I can
 attest that, eventually, after I insisted on a set of inconsistencies that were
 evident in his account of the facts, he gave an answer that amounted, for all
-practical purposes, to a confession. With great pain indeed, for I held him in
+practical purposes, to a confession. With great pain, for I held him in
 the greatest esteem, and was truly shocked to find that he had actually
 perpetrated an act of such perverse nature, I decided I would not be his friend
 anymore. But this decision, I thought, was one I should communicate to him face
@@ -98,12 +98,12 @@ exaggerated, and the calamities he foresaw were indeed plausible: That he should
 have to move to another city, that he would have to abandon his studies, that he
 would lose all of his friends, that he would not be able to walk the streets
 without despise in the look of those he met. The reader should know that the
-city he lived at, the place I was born, is rather small—or rather, that
+city he lived at, the place where I was born, is rather small—or rather, that
 middle-class circles are of no great extent. (Furthermore, even when the victim,
 a young and lovely girl who happened to be my friend in primary school,
 explicitly declared that she did not want any actions to be taken against
-*A.....*, nor for the abuse to be made public, two women I know, and who I can
-with confidence attest are bitter and malicious and lack any moral standard,
+*A.....*, nor for the abuse to be made public, two women I know, 
+who are bitter and malicious and lack any moral standard,
 took it upon themselves to make the matter public in social media, and denounced
 *A....* practically before the whole town, without any regard for the victim's
 wishes.) And even though the content of *A.....*'s words were true, and the fear
@@ -136,12 +136,12 @@ commitment with respect to anything. The objects upon which this flaw exerted
 its influence were, up to that point, relatively minor, which rendered his
 behavior somewhat venial—although a few times the consequences of his attitude
 had already proven severe to me. As an example, I can provide the following
-anecdote, which I am saddened remembering. 
+anecdote.
 
 During my whole adolescence, I lived in the outsides of the city, twenty
 kilometers from its center, in a beautiful house fronted by a lagoon, and amidst
 the purest beauty of nature. I lived there only with my father, as I had decided
-when I was twelve, a few years after he had divorced my mother; whereas my
+when I was twelve, a few years after he had divorced my mother, whereas my
 siblings continued to live with her. At the time of the event which I am
 narrating now, perhaps five years prior to the dream I pretend to record, the
 relationship with my siblings and my mother was rough and difficult, and I was
@@ -162,7 +162,7 @@ to put it elegantly, I was rapidly invited to leave. It was the first, and in
 fact the only time, that my mother was the one to kick me out—a deed more often
 carried out, imperiously and even happily, by my eldest brother. (My sister
 contented herself to bitter remarks; for example, I recall one occasion when I
-was having lunch them, and I dropped some soda on the table while pouring my
+was having lunch with them, and I dropped some soda on the table while pouring my
 glass, inspiring my sister to say: *This is not even your house and look what
 you do!*) But although it was the only time my mother did this, it was also the
 one that had the most serious consequence. My friend did not return to his home
@@ -218,7 +218,7 @@ of his whereabouts, I decidedly went in look of him, abandoning the meeting I
 was at, which was taking place in my very home, and all this with the most
 violent of intentions. I scarcely even accounted for the fact that I was leaving
 many guests alone at my own place, nor communicated to any of them where I was
-going nor when I would be back: My anger was so great indeed that I immediately
+going nor when I would be back: My anger was so great that I immediately
 stormed through the front door before their startled eyes, without me knowing
 who I was, nor them guessing what I had in mind. But because they overheard my
 insults to *T.....*, and thus were witnesses of the obscure passion which
@@ -319,7 +319,7 @@ and walls are made of white tiles, most of which are broken; I think it looks
 like an abandoned hospital. The room is illuminated by a glimmering light bar.
 At this point I see a thing which terrifies me, and breeds anguish and anxiety
 within me: An anthropomorphic, though not entirely human shadow is traversing
-the walls—There is no body which projects it, nor has any source outside itself,
+the walls. There is no body which projects it, nor it has any source outside itself,
 but is an independent entity living the bi-dimensional existence of an outline,
 a silhouette, a contour, an umbra. It is dark, like all shadows, but its
 darkness stands out in a manner unknown to mundane shadows, and which I cannot
@@ -342,7 +342,7 @@ may find it too brief to amount for the significance I attribute to it, but I
 should not suppose my reader to be insensible. Dreams can have, and in fact *do*
 have, at least on counted occasions in a man's life, a paramount effect on his
 psyche. In my case, I have found suggestive dreams to be concomitant with a
-development of personality, or at a minimum to serve such development by
+development of personality, or at least to serve such development by
 coinciding with it. With respect to dream interpretation, the appropriate
 stance, so I believe, is a pragmatist one. The matter, to my eyes, can be summed
 as follows: Dreams either have or don't have an interpretable meaning. If we
@@ -357,11 +357,11 @@ selves, can do nothing but serve as a medium, and in fact an excuse as well, to
 confront and learn about ourselves in a more or less playful manner. Most people
 live their lives entirely unaware of the fact that they are but a mystery to
 themselves, and would surely benefit from *any* excuse or reason to make
-themselves the object of an inquiry. It is true that, under this purely
+themselves an object of inquiry. It is true that, under this purely
 heuristic light, nothing entails that what can be learned through the
 interpretation of a dream could not be learned simply via, say, honest
-self-examination—or in other words, if dreams have no meaning on their own, then
-whatever we can learn in interpreting them as if they did, should not be unique
+self-examination. In other words, if dreams have no meaning on their own, then
+whatever we can learn in interpreting them as if they did should not be unique
 nor peculiar to our dream life. Dreams would not be, as psychoanalysis wanted,
 an oyster with a hidden a pearl. This much I concede; but yet it seems to me
 that, because dreams are often so loaded with emotional tension, and so imbued
@@ -504,7 +504,7 @@ who has seriously attempted it to understand. As I continued to travel in India,
 along the diary entries that pertained to my impressions of this exuberant
 nation, there appeared notes where I recorded whatever I felt which was primal
 and foul. I proceeded to exclude nothing, and if so much as a hint of wickedness
-appeared before me inner eye, I recorded it with haste and crudity. This process
+appeared before my inner eye, I recorded it with haste and crudity. This process
 continued to the point that I began to scare myself. Now I deem it natural that
 a person undergoing such process would tend to identify with the new material
 which appears before their mind, but at that moment this identification
@@ -516,7 +516,7 @@ end of the dream, I was faced with my reflection—which showed me as Ted Bundy.
 At that point I would wake up screaming. It was not, of course, that I thought I
 was as evil as a serial killer—although entertaining a comparison would be
 literary amusing, I couldn't really compete with such peerless
-perversity—rather, it was that I was so much less pure than my adolescent mind
+perversity. Rather, it was that I was so much less pure than my adolescent mind
 would have wanted to guess. It is a mythical commonplace, however, that some
 part of the nemesis exists within the hero, be it by virtue of a common origin
 or a common essence; and from this point of view, my discovery was simple and
@@ -590,13 +590,13 @@ not. I suppose, though I have no way to know, that it is a normal development of
 late adolescence. The conflict was, however, positively resolved: New threads of
 life were spanned from and within myself. I felt an inner expansion, as if my
 personality was a realm that had acquired new and vast territories; and in such
-a way that not only these new regions were embelleced by the acquisition, but
-their riches gave activity to the old provinces. I will not trouble myself to go
-any further than this, for I believe this account is as complete as any sense of
-modesty allows for. These were the things that came about by virtue of the dream
-of the shadow, which lies in between a descent to obscurity and violence, on one
-end, and an ascent to a relative peace with greater knowledge, on the other.
-That this dream was prelusive to the conquest of such peace, I would not have
-guessed at the time I dreamed it. But it seems a positive numen may operate
-through the forces of fear and anguish.
+a way that not only these new regions were embellished by the acquisition, but
+their riches gave activity to the old, pre-existing provinces. I will not trouble myself to go
+any further than this, for I believe this account is as complete as it can be.
+These were the things that came about by virtue of the dream of the shadow,
+which lies in-between a descent to obscurity and violence, on one end, and an
+ascent to a relative peace with greater knowledge, on the other. That this dream
+was prelusive to the conquest of such peace, I would not have guessed at the
+time I dreamed it. But it seems a positive numen may operate through the forces
+of fear and anguish.
 
