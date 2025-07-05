@@ -845,7 +845,7 @@ results follow from this fact.
 \pagebreak 
 
 
-\section{P2}
+\subsection{Excercises}
 
 \begin{shaded}
     \textbf{(1)} Let $f(x) = (x+2)(x+1)^2 x(x-1)^3(x-2)$. To which root does
@@ -1412,12 +1412,1189 @@ This means
     \left| x_{n+1} - r \right| \leq k \left| x_n - r \right| 
 \end{align*}
 
-But we also have 
+Wtf now? 
+
+\pagebreak 
+
+\section{Polynomial interpolation}
+
+\begin{shaded}
+    \textbf{Teorema fundamental del álgebra.}  Every non-zero, single-variable,
+    degree $n$ polynomial with complex coefficients has, counted with
+    multiplicity, exactly $n$ complex roots.
+\end{shaded}
+
+\begin{theorem}
+    Given $x_0, \ldots, x_n$, $y_0, \ldots, y_n$, there is a unique polynomial
+    $p_n$ of degree $\text{gr}(p_n) \leq n$ s.t. $p_n(x_i) = y_i$ for all $i$.
+\end{theorem}
 
 
+\small
+\begin{quote}
+
+\textbf{Proof.} (Existence) If $n = 0$ simple $p_0(x) = y_0$ which is trivial. So take as
+inductive hypothesis the existence of $p_{k-1}$, of degree $\leq k - 1$, s.t. 
+$p_{k-1}(x_i) = y_i$ for $i = 0, \ldots, k-1$. We will construct a polynomial
+$p_k$ of degree $\leq k$ s.t. $p_k(x_i) = y_i$ for $0 \leq i \leq k$. 
+
+Consider 
+
+\begin{equation*}
+    p_k(x) = p_{k-1}(x) + c(x - x_0)(x-x_1)\ldots(x-x_{k-1})
+\end{equation*}
+
+with $c$ yet to be determined. Its degree is $\leq k$ and it obviously
+interpolates the points $(x_0, y_0), \ldots, (x_{k-1}, y_{k-1})$. 
+Now consider the equation: 
+
+\begin{equation*}
+    p_k(x_k) = y_k
+\end{equation*}
+
+or equivalently 
+
+\begin{equation*}
+    p_{k-1}(x_k) + c(x_k - x_0)(x_k - x_1) \ldots (x_k - x_{k-1})
+\end{equation*}
+
+Solving for $c$, we find 
+
+\begin{equation*}
+    c = \frac{y_k - p_{k-1}(x_k)}{(x_k - x_0)\ldots(x_k - x_{k-1})}
+\end{equation*}
+
+Notice that $c$ is well defined because each $x_0, \ldots, x_n$ is distinct and
+therefore the denominator is never zero. This proves the polynomial exists. 
+
+(Uniqueness) Assume two interpolating polynomoials $p_n, q_n$ exist. Let $h =
+p_n - q_n$. Clearly, its degree is $\leq n$ and $h(x_i) = 0$ for each $0 \leq i
+\leq n$. But this means $h$ has $n+1$ real roots. Then, for the fundamental
+theorem of algebra, $h(x) = 0$ for all $x$ and then $p_n = q_n$.
 
 
+\end{quote}
+\normalsize
 
+\subsection{Newton's form}
+
+Given $x_0, \ldots, x_n$ we define Newton's basis polynomials:
+
+
+\begin{equation*}
+    \eta_i(x) = \prod_{j=0}^{i-1}(x - x_j), \qquad 0 \leq i \leq n
+\end{equation*}
+
+where $\eta_0(x) := 1$. Applying the construction seen in the last proof
+recurrently, we obtain: 
+
+\begin{equation*}
+    p_k(x) = \sum_{i=0}^k c_i \eta_i(x) = \sum_{i=0}^k c_i \prod_{j=0}^{i-1}(x - x_j) 
+\end{equation*}
+
+Here, each $c_i$ is obtained as in the last proof.
+
+\begin{shaded}
+    \textbf{Example.} Consider the points $(1, 2), (2, 5), (3, 3)$. We begin
+    with $p_0(x) = 2$, the first interpolation which interpolates $(1, 2)$.
+
+    Now, 
+
+    \begin{align*}
+        p_1(x) 
+        &= p_0(x) + c_0(x - x_0)\\ 
+        &=2 + c_0(x - 1)
+    \end{align*}
+
+    Now, we pose the equation: 
+
+    \begin{align*}
+        p_1(x_1) 
+        \iff& y_1  \equiv p_1(2) = 5 \\ 
+        \iff&2 + c_0(2 - 1) = 5 \\ 
+        \iff&c_0 = 3
+    \end{align*}
+
+    Then $p_1(x) = 2 + 3(x-1) = 3x - 1$. Now we repeat: 
+
+    \begin{align*}
+        p_2(x) 
+        &= p_1(x) + c_1(x - x_0)(x-x_1)\\ 
+        &= (3x - 1) + c_1(x - 1)(x - 2)
+    \end{align*}
+
+    We pose the equation: 
+
+    \begin{align*}
+        &(3 \cdot 3 - 1) + c_1(3 - 1)(3 - 2) = 3 \\ 
+        \iff& 8 + 2c_1 = 3 \\ 
+        \iff&2c_1 = -5 \\ 
+        \iff&c_1 = -\frac{5}{2}
+    \end{align*}
+
+    from which we have 
+
+    \begin{equation*}
+        p_2(x) = ( 3x - 1 ) -\frac{5}{2}(x - 1)(x-2)
+    \end{equation*}
+
+    In Newton's form, 
+
+    \begin{align*}
+        p_2(x) 
+        &= 2 + 3(x-1) - \frac{5}{2}(x-1)(x-2) \\ 
+        &= \sum_{i=0}^2 c_i \eta_i(x)
+    \end{align*}
+
+    with $c_0 = 2, c_1 = 3, c_2 = -\frac{5}{2}$.
+
+\end{shaded}
+
+\subsection{Lagrange's form}
+
+Given $(x_0, y_0), \ldots, (x_n, y_n)$, we define Lagrange's basic polynyomials:
+
+\begin{equation*}
+    \ell_i(x) = \prod_{\substack{j=0\\j\neq i}}^n \frac{(x-x_j)}{(x_i - x_j)},
+    \qquad i = 0, \ldots, n
+\end{equation*}
+
+Note that $\text{gr}(\ell_i) = n$ for all $i$ and $\ell_i(x_j) = \delta_{ij}$
+for all $i, j$. In other words, $\ell_i(x)$ is nothing but a polynomial that
+becomes null at each $x_j$ except at $x_i$, where it is one. 
+
+The Lagrange form of the interpolating polynomial es 
+
+\begin{equation*}
+    p_n(x) = \sum_{i=0}^n y_i \ell_i(x)
+\end{equation*}
+
+\begin{shaded}
+    \textbf{Prove that $\sum_{i=0}^n \ell_i(x) = 1$}. 
+
+    Observe that the polynomial $\sum_{i=0}^n \ell_i(x)$ has roots $x_0$
+
+    Let $\gamma(x) = \sum_{i=0}^n \ell_i(x) - 1$. Any root of this polynomial is
+    a value where the sum of each $\ell_i(x)$ is $1$. Since $\ell_i(x_j) =
+    \delta_{ij}$, it is the case that each $x_j$ is a root of $\gamma$. 
+    Therefore, $\gamma$ has at least $n+1$ roots, but its degree is $n$. 
+    By the fundamental theorem of algebra, $\gamma(x) = 0$. But then
+    $\sum_{i=0}^n \ell_i(x) = 1$ necessarily. $\blacksquare$
+\end{shaded}
+
+It should be clear from the fact that $\ell_i(x_j) = \delta_{ij}$ that
+Lagrange's form is a valid interpolation. We don't really care what its value is
+beyond the arguments $x_0, \ldots, x_n$.
+
+\subsection{Error of interpolation}
+
+\begin{theorem}[Error of interpolation]
+    Let $f \in C^{n+1}[a, b]$ and $p$ a polynomial of degree $\leq n$ which
+    interpolates $f$ on $n+1$ distinct points within $[a, b]$. Then for each 
+    $x \in [a, b]$, there is a number $\zeta = \zeta_x \in (a, b)$ s.t. 
+
+    \begin{equation*}
+        f(x) - p(x) = \frac{f^{(n+1)}(\zeta)}{(n+1)!}\eta_{n+1}(x)
+    \end{equation*}
+
+    or equivalently
+
+    \begin{equation*}
+        f(x) - p(x) = \frac{f^{(n+1)}(\zeta)}{(n+1)!}\prod_{j=0}^n(x-x_i)
+    \end{equation*}
+\end{theorem}
+
+\subsection{Divided differences}
+
+In Newton's form, we use $f[x_0, \ldots, x_k]$ to denote $c_k$. In other words,
+we re-write 
+
+\begin{align*}
+    p_k(x) 
+    &= \sum_{i=0}^k f[x_0, \ldots, x_i] \eta_i(x) \\
+    &= f[x_0] + f[x_0, x_1](x
+    - x_0) + f[x_0, x_1, x_2](x-x_1)(x-x_2) + \ldots 
+\end{align*}
+
+If $k = 0$, $f[x_0] = f(x_0)$; if $k = 1$, 
+
+\begin{equation*}
+    f[x_0, x_1] = \frac{f(x_1)-f(x_0)}{x_1 - x_0}
+\end{equation*}
+
+where $f$ is the function being interpolated. 
+
+\begin{theorem}
+    Given $x_0, \ldots, x_n$, 
+
+    \begin{equation*}
+        f[x_0,\ldots, x_n] = \frac{f[x_1, \ldots, x_n] - f[x_0, \ldots,
+        x_{n-1}]}{x_n - x_0}
+    \end{equation*}
+\end{theorem}
+
+This allows us to construct a table for the so called divided differences. For
+instance, with $n = 3$:
+
+\begin{equation*}
+    \begin{array}{c|c|c|c|c}
+x_0 & f[x_0] & f[x_0,x_1] & f[x_0,x_1,x_2] & f[x_0,x_1,x_2,x_3] \\
+x_1 & f[x_1] & f[x_1,x_2] & f[x_1,x_2,x_3] & \\
+x_2 & f[x_2] & f[x_2,x_3] & & \\
+x_3 & f[x_3] & & & \\
+\end{array}
+\end{equation*}
+
+\begin{shaded}
+    \textbf{Example.} Assume $f(3) = 1, f(1) = -3, f(5) = 2, f(6) = 4$ where
+    these arguments are $x_0, \ldots, x_3$. We begin the  table thus:
+
+
+    \begin{equation*}
+        \begin{array}{c|c|c|c|c}
+    3 & 1 & f[x_0,x_1] & f[x_0,x_1,x_2] & f[x_0,x_1,x_2,x_3] \\
+    1 & -3 & f[x_1,x_2] & f[x_1,x_2,x_3] & \\
+    5 & 2 & f[x_2,x_3] & & \\
+    6 & 4 & & & \\
+    \end{array}
+    \end{equation*}
+
+    This is information sufficient to compute $f[x_2, x_3]$, which is 
+
+    \begin{equation*}
+        f[x_2, x_3] = \frac{f(x_2) - f(x_3)}{x_2 - x_3} = \frac{2 - 4}{5 - 6} =
+        2
+    \end{equation*}
+
+    giving 
+
+
+    \begin{equation*}
+        \begin{array}{c|c|c|c|c}
+    3 & 1 & f[x_0,x_1] & f[x_0,x_1,x_2] & f[x_0,x_1,x_2,x_3] \\
+    1 & -3 & f[x_1,x_2] & f[x_1,x_2,x_3] & \\
+    5 & 2 & 2 & & \\
+    6 & 4 & & & \\
+    \end{array}
+    \end{equation*}
+
+    Same logic gives $f[x_1, x_2] = 5 / 4$ and $f[x_0, x_1] = 2$:
+
+
+    \begin{equation*}
+        \begin{array}{c|c|c|c|c}
+    3 & 1 & 2 & f[x_0,x_1,x_2] & f[x_0,x_1,x_2,x_3] \\
+    1 & -3 & 5 / 4 & f[x_1,x_2,x_3] & \\
+    5 & 2 & 2 & & \\
+    6 & 4 & & & \\
+    \end{array}
+    \end{equation*}
+
+    Now, $f[x_0, x_1, x_2] = ( f[x_1, x_2] - f[x_0, x_1] ) / ( x_2 - x_0 )$.
+    Using the table, this gives $(5 / 4 - 2) / (2) = -3 / 8$. Similarly, 
+    $f[x_1, x_2, x_3] = ( f[x_2, x_3] - f[x_1, x_2] ) / (x_3 - x_1) = (2 -
+    5 / 4) / \left(5  \right) = 3 / 20$.
+
+
+    \begin{equation*}
+        \begin{array}{c|c|c|c|c}
+    3 & 1 & 2 & - 3 / 8 & f[x_0,x_1,x_2,x_3] \\
+    1 & -3 & 5 / 4 & 3 / 20 & \\
+    5 & 2 & 2 & & \\
+    6 & 4 & & & \\
+    \end{array}
+    \end{equation*}
+
+    The last value is computed in similar fashion.
+
+\end{shaded}
+
+\begin{theorem}[Error of interpolation with divided differences]
+    Let $p$ with degree $\leq n$ an interpolator of $f$ on nodes $x_0, \ldots,
+    x_n$. If $t \neq x_i$ for all $i$ is a real number, then 
+
+    \begin{equation*}
+        f(t) - p(t) = f[x_0, \ldots, x_n, t] \prod_{j=0}^n(t - x_j)
+    \end{equation*}
+\end{theorem}
+
+\begin{shaded}
+    ($\star$) \textbf{Observation}. Assume $p(x)$ is of degree $1$ (linear).
+    Then $f(x) - p(x) = \frac{ f^{(2)}(\zeta_x) }{2!}(x-x_0)(x-x_1)$ for some
+    $\zeta_x$ in $[x_0, x_1]$, in
+    accordance with the \textbf{Error of interpolation} theorem.
+    See that $\varphi(x) = (x - x_0)(x- x_1)$ is a quadratic expression with
+    roots $x_0, x_1$ and minimum at $x_m = (x_0 + x_1) / 2$. And since
+    $\varphi(x_m)$ is negative, $\varphi(x) \geq \varphi(x_m) \Rightarrow
+    \left| \varphi(x) \right| \leq |\varphi(x_m)|$. In consequence,
+
+    \begin{equation*}
+        |\varphi(x)| \leq \left| (x-x_0)(x-x_1) \right| = 
+        \frac{\left| x_1 - x_0\right|^2 }{4}
+    \end{equation*}
+
+    In consequence, 
+
+    \begin{equation*}
+        \left| f(x) - p(x) \right| \leq \frac{ f^{(2)}(\zeta_x) }{8}\left| x_1 -
+        x_0\right|^2
+    \end{equation*}
+
+    If we choose $M$ the maximum of $f^{(2)}(x)$ in $[x_0, x_1]$, then we
+    have
+
+    \begin{equation*}
+        \left| f(x) - p(x) \right| \leq \frac{ f^{(2)}(\zeta_x) }{8}\left| x_1 -
+        x_0\right|^2  \leq
+        \frac{M}{8}\left| x_1 - x_0 \right|^2
+    \end{equation*}
+
+    In consequence, 
+
+    \begin{equation*}
+        \left| f(x) - p(x) \right| \leq \frac{\max_x f^{(2)}_{\mid [x_0,
+        x_1]}(x)}{8} \left| x_1 - x_0 \right|^2
+    \end{equation*}
+\end{shaded}
+
+
+\subsection{Hermite interpolation}
+
+Hermite interpolation consists of interpolating a function $f$ \textit{and its
+derivative} in certain nodes $x_0, \ldots, x_{n}$. For instance, if two points
+are given, we wish 
+
+\begin{equation*}
+    p(x_i) = f(x_i), \qquad p'(x_i) = f'(x_i), \qquad \text{ for } i = 0, 1
+\end{equation*}
+
+See that this gives four conditions, which means it is reasonable to seek a
+solution in $\Pi_{3}$ the space of all polynomials of degree $\leq 3$. (An
+element in $\Pi_3$ has four coefficients.) But instead of writing $p(x)$ in
+terms of the coefficients for $1, x, x^2, x^3$, we shall write 
+
+\begin{equation*}
+    p(x) = a + b(x - x_0) + c(x - x_0)^2 + d(x-x_0)^2(x - x_1)
+\end{equation*}
+
+which gives 
+
+\begin{equation*}
+    p'(x) = b + 2c(x-x_0) + 2d(x - x_0)(x-x_1) + d(x-x_0)^2
+\end{equation*}
+
+Writing the polynomial  this way allows us to express the four conditions as
+follows: 
+
+\begin{align*}
+    a = f(x_0) \\ 
+    b = f'(x_0)\\ 
+    f(x_1) = a + bh + ch^2 \\ 
+    f'(x_1) = b + 2ch + dh^2
+\end{align*}
+
+where $h = x_1 - x_0$. This approach readily gives $a$ and $b$, $c$ can be
+determined from the third equation, and $d$ from the fourth equation.
+
+Now, observe that from the third equation,
+
+\begin{align*}
+    c = \frac{ f(x_1) - a - bh }{h^2} 
+    &= \frac{f(x_1) - f(x_0)}{h^2} -
+    \frac{f'(x_0)h}{h^2}\\ 
+    &=\frac{f(x_1) - f(x_0)}{(x_1-x_0)^2} - \frac{f'(x_0)}{(x_1 - x_0)}
+\end{align*}
+
+\subsection{Splines}
+
+A spline is an interval-based polynomial approximation. We say $S(x)$ defined on
+$[x_0, x_n]$ is a spline of degree $k$ if
+
+\begin{enumerate}
+    \item $S$ is polynomial of degree $\leq k$ on each sub-interval $[x_i,
+        x_{i+1})$ para $i = 0, \ldots, n-1$; 
+    \item The derivaitves of $S^{(i)}$ are continuous $[x_0, x_n]$ for $i = 0,
+        \ldots, k-1$.
+\end{enumerate}
+
+A linear spline is a spline of the form:
+
+\begin{equation*}
+    S(x) = \begin{cases}
+        S_2(x) = a_0x + b_0 & x \in [x_0, x_1)\\
+        S_1(x) = a_1x + b_1 & x \in [x_1, x_2)\\
+        \vdots \\
+        S_{n-1}(x) = a_{n-1}x + b_{n-1} & x \in [x_{n-1}, x_n)\\
+    \end{cases}
+\end{equation*}
+
+where each $a_i, b_i$ is to be determined. This gives $2n$ conditions. Clearly,
+for a fixed $i$,
+
+\begin{align*}
+    &a_i x_i + b_i = S_i(x_i) = f(x_i) \\ 
+    &a_i x_{i+1} + b_i = \lim_{x \to x_{i+1}} S_i(x) = S_{i+1}(x_{i+1}) =
+    f(x_{i+1})
+\end{align*}
+
+Subtracting the first equation in the second one,
+
+\begin{equation*}
+    a_i = \frac{f(x_{i+1}) - f(x_i)}{x_{i+1} - x_i}, \qquad b_i = f(x_i) -
+    a_ix_i
+\end{equation*}
+
+The error of approximation in a linear spline can be determined if we assume
+each $x_0, \ldots, x_n$ to be equidistant. In other words, assume $f$ is two
+times continuously differentiable in $[a, b]$ and $x_k = a + kh$ for $h = (b-a)
+/ n$ the length of each sub-interval. Then on each interval we have a degree $1$
+polynomial, which means the error of interpolation for each $x \in [a, b]$
+satisfies 
+
+\begin{equation*}
+    \left| e(x) \right|  < \frac{M}{8}h^2
+\end{equation*}
+
+where $\left| f''(x) \right| \leq M$ for all $x \in [x_0, x_n]$. (See
+\textbf{Observation} marked with $\star$.)
+
+\subsubsection{Cubic splines}
+
+\pagebreak 
+
+\subsection{Excercises}
+
+\begin{shaded}
+    \textbf{(1)} Construct the Lagrange and Newton interpolating polynomials 
+    for $f(x) = 1 / x$ taking $x_0 = 2, x_1 = 2.5, x_2 = 4$. Compare them and
+    give their degrees. Graph them. Analize the results (?).
+\end{shaded}
+
+(Newton) Newton's interpolating polynomial has the form 
+
+\begin{equation*}
+    \varphi(x) = \sum_{i=0}^n a_i \eta_i(x)
+\end{equation*}
+
+where each $a_i$ is to be determined and $\eta_i = \prod_{j=0}^{i-1} (x-x_j)$.
+We first do a brute construction, then a construction using divided differences.
+
+(Newton, brute) Take $\varphi_0(x) = \frac{1}{2}$, a polynomial interpolating $f$ at $x_0$. Now
+let $\varphi_1(x) = \varphi_0(x) + c(x-x_0)$ and solve $\varphi_1(x_1) =
+f(x_1)$:
+
+\begin{align*}
+    &\frac{1}{2} + c(2.5 - 2) = f(2.5)\\ 
+    \iff&c = 2\times \left( \frac{2}{5} - \frac{1}{2} \right) \\ 
+    \iff&c = \frac{4}{5} - \frac{5}{5} \\ 
+    \iff&c = -\frac{1}{5}
+\end{align*}
+
+$\therefore $ $\varphi_1(x) = \frac{1}{2} - \frac{1}{5}(x - 2)$.
+
+
+Now we let $\varphi_2(x) = \frac{1}{2} - \frac{1}{5}(x-2) + c(x-2)(x - 2.5)$ and solve
+for $c$ in $\varphi_2(4) = f(4)$:
+
+\begin{align*}
+    &\frac{1}{2} - \frac{1}{5}\times 2 + 2\times \frac{3}{2}c = \frac{1}{4} \\ 
+    \iff&\frac{1}{2} - \frac{2}{5} + 3c = \frac{1}{4} \\ 
+    \iff&c = \frac{1}{3}\left(\frac{10}{40} +  \frac{16}{40} - \frac{20}{40} \right) \\ 
+    \iff& c = \frac{1}{3}\left( \frac{3}{20} \right) \\ 
+    \iff&c=\frac{1}{20}
+\end{align*}
+
+So finally we have the following polynomial in Newton's form:
+
+\begin{equation*}
+    \varphi(x) = \frac{1}{2} - \frac{1}{5}(x-2) + \frac{1}{20}(x-2.5)(x-2)
+\end{equation*}
+
+which is of degree $2$. 
+
+(Newton, divided diffs.) The table of divided differences to interpolate $f$ on
+$x_0, x_1, x_2$ is 
+
+\begin{equation*}
+    \begin{array}{c|c|c|c}
+        x_0 & f[x_0] & f[x_0, x_1] & f[x_0, x_1, x_2] \\
+        x_1 & f[x_1] & f[x_1, x_2] \\
+        x_2 & f[x_2]  \\
+\end{array} \Rightarrow
+\begin{array}{c|c|c|c}
+        2 & 1 /2 & f[x_0, x_1] & f[x_0, x_1, x_2] \\
+        2.5 & 2 / 5 & f[x_1, x_2] \\
+        4 & 1 / 4  \\
+\end{array}
+\end{equation*} 
+
+Now, $f[x_1, x_2] = ( f[x_2] - f[x_1] ) / (x_2 - x_1) = ( 1 / 4 - 2 / 5 ) /
+(1.5) = -1 / 10$:
+
+\begin{equation*}
+\begin{array}{c|c|c|c}
+        2 & 1 /2 & f[x_0, x_1] & f[x_0, x_1, x_2] \\
+        2.5 & 2 / 5 & -1 / 10 \\
+        4 & 1 / 4  \\
+\end{array}
+\end{equation*}
+
+Now, same rule gives $f[x_0, x_1] = - 1 / 5$:
+
+
+\begin{equation*}
+\begin{array}{c|c|c|c}
+        2 & 1 /2 & - 1/5 & f[x_0, x_1, x_2] \\
+        2.5 & 2 / 5 & -1 / 10 \\
+        4 & 1 / 4  \\
+\end{array}
+\end{equation*}
+
+Lastly, $f[x_0, x_1, x_2] = (f[x_1, x_2] - f[x_0, x_1]) / (x_2 - x_0) = 1 / 20$:
+
+
+\begin{equation*}
+\begin{array}{c|c|c|c}
+        2 & 1 /2 & - 1/5 & 1 / 20 \\
+        2.5 & 2 / 5 & -1 / 10 \\
+        4 & 1 / 4  \\
+\end{array}
+\end{equation*}
+
+Then, 
+
+
+\begin{align*}
+\varphi(x) 
+&=f[x_0] + f[x_0, x_1](x - x_0) + f[x_0, x_1, x_2](x-x_0)(x-x_1) \\ 
+&=\frac{1}{2} - \frac{1}{5}(x-2) + \frac{1}{20}(x-2.5)(x-2)
+\end{align*}
+
+which is is what we had obtained before.
+
+(Lagrange) Lagrange's polynomial has the form 
+
+\begin{equation*}
+    \phi(x) = \sum_{i=0}^n y_i \ell_i(x)
+\end{equation*}
+
+where 
+
+\begin{equation*}
+    \ell_i(x) = \prod_{\substack{j=0\\j\neq i}}^n \frac{x-x_j}{x_i - x_j}
+\end{equation*}
+
+Then, 
+
+\begin{align*}
+    \ell_0(x) 
+    &= \left( \frac{x - 2.5}{2 - 2.5} \right) \left( \frac{x -    4}{2 - 4}
+    \right) \\ 
+    &=\left( -\frac{1}{2}(x - 2.5) \right) \left( -2 (x-4) \right) \\ 
+    &=(x-2.5)(x-4)
+\end{align*}
+
+\begin{align*}
+    \ell_1(x) 
+    &= \left( \frac{ x - 2 }{2.5 - 2} \right) \left( \frac{ x - 4 }{2.5
+    - 4} \right) \\ 
+    &=-\frac{3}{4}(x-2.5)(x-4)
+\end{align*}
+
+\begin{align*}
+    \ell_2(x) 
+    &= \left( \frac{x-2}{4-2} \right) \left( \frac{x-2.5}{4-2.5}
+    \right) \\ 
+    &=3(x-2)(x-4)
+\end{align*}
+
+Therefore,
+
+\begin{align*}
+    \phi(x) 
+    &= 
+    \frac{1}{2}\ell_0(x) + \frac{2}{5}\ell_1(x) + \frac{1}{4} \ell_2(x)\\ 
+    &=\frac{1}{2}(x-2.5)(x-4) - \frac{3}{10}(x-2.5)(x-4) + \frac{3}{4}(x-2)(x-4)
+\end{align*}
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(2)} Prove: If $f$ polynomial of degree $\leq n$ then the polynomial
+    of degree $\leq n$ that interpolates $f$ at $x_0, \ldots, x_n$ is $f$ itself.
+\end{shaded}
+
+It is a theorem that there exists a polynomial of degree $\leq n$ that
+interpolates $f$ in the points $x_0, \ldots, x_n$, and that this polynomial is
+unique. $f$ is a polynomial of degree $\leq n$ that interpolates $f$ at $x_0,
+\ldots, x_n$. This concludes the proof.
+
+\pagebreak
+
+\begin{shaded}
+    Given $x_0, \ldots, x_n$, prove the following properties of Lagrange's basic
+    polynomials $\ell_k(x)$:
+
+    \begin{enumerate}
+        \item Their sum is $1$.
+        \item Their linear combination with coefficients $x_0,\ldots, x_n$ is
+            $x$. 
+        \item Their linear combinations with coefficients $x_0^m, \ldots,
+            x_n^m$, with $m \leq n$, is $x^m$.
+    \end{enumerate}
+\end{shaded}
+
+(1) This was already proven in a previous section.
+
+(2) See  that
+
+\begin{equation}
+    \sum_{k=0}^n x_k \ell_k(x) = x \iff 
+    \sum_{k=0}^n x_k \ell_k(x) -x  =0
+\end{equation}
+
+Let $\phi(x) = \sum x_k\ell_k(x) - x$. Since $\ell_k(x_j) = \delta_{kj}$,
+$\varphi(x_j) = x_j - x_j = 0$, meaning that each $x_j$ is root of $\phi$. This
+means $\phi$ is a polynomial of degree $\leq n$ with $n+1$ roots. Then by virtue
+of the fundamental theorem of algebra, it is necessarily the case that $\phi(x)
+= 0$. Then the RHS of $(1)$ holds, which concludes the proof.
+
+(3) Assume $m \leq n$. See that:
+
+\begin{equation}
+    \sum_{k=0}^n x_k^m \ell_k(x) = x^m \iff \sum_{k=0}^n x_k^m \ell_k(x) - x^m =
+    0
+\end{equation}
+
+Let $\phi(x) = \sum x_k^m \ell_k(x) - x^m$. The polynomial has degree $\leq n$
+due to the fact that $m \leq n$. Once more, $\phi(x_j) = x^m_j - x^m_j = 0$.
+Etc.
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(6)} Let $f : [0, 5] \to \mathbb{R}, f(x) =2^x$. Let $P_n$ a
+    polynomial of degree at most $n$ that interpolates $f$ at $n+1$ distinct
+    points in $[0, 5]$. Prove that for any $x$ in said interval, 
+
+\begin{equation*}
+    \left| P(x) - f(x) \right| \leq \frac{32 \times 5^{n+1}}{(n+1)!}
+\end{equation*}
+\end{shaded}
+
+Recall that for $x \in [0, 5]$,
+
+\begin{equation*}
+P(x) - f(x) = \frac{f^{(n+1)}(\zeta_x)}{(n+1)!} \eta_{n+1}(x)
+\end{equation*}
+
+for some $\zeta_x \in [0, 5]$. Now, $\frac{d}{dx} 2^x = \ln 2 \times 2^x$, whose
+derivative is $\ln^2 2 \times 2^x$, whose derivative is $\ln^3 2 \times 2^x$,
+etc. $\therefore$ $f^{(n+1)}( x ) = \ln^{n+1} 2 \times  2^x = (n+1)\ln 2 \times
+2^x$.
+
+\begin{align*}
+    \therefore P(x) - f(x) 
+    &= \frac{\ln^{n+1} (2) \times 2^{\zeta_x}}{(n+1)!} 
+    \prod_{j=0}^n(x-x_j) \\ 
+    &= \frac{\ln^{n+1}(2) \times 2^{\zeta_x}}{n!}\prod_{j=0}^n(x-x_j)
+\end{align*}
+
+Since $0 < \ln(2) < 1$, we know $0 <\ln^{n+1}(2) < 1$, and therefore
+
+\begin{equation*}
+    \frac{\ln^{n+1}(2) \times 2^{\zeta_x}}{(n+1)!}\prod_{j=0}^n(x-x_j) <
+    \frac{2^{\zeta_x}}{(n+1)!}\prod_{j=0}^n(x-x_j)
+\end{equation*}
+
+Necessasrily, $2^{\zeta_x} \leq 5$ and
+
+\begin{equation*}
+    \prod_{j=0}^n(5 - x_j) \leq \prod_{j=0}^n 5 = 5^{n+1}
+\end{equation*}
+
+From this follows that 
+
+\begin{equation*}
+    P(x) - f(x) \leq \frac{2^5 \times 5^{n+1}}{(n+1)!} 
+\end{equation*}
+
+Since the RHS is positive, taking absolute value on both sides gives us the
+desired result.
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(7)} Prove that when interpolating $\cosh(x)$ with a polynomial $p(x)$ of degree
+    $\leq 22$ in $[-1, 1]$, the error is $\leq 5 \times 10^{-16}$.
+\end{shaded}
+
+A polynomial of degree $n = 22$ has 23 coefficients, corresponding to the need
+of determining $23$ nodes $x_0, \ldots, x_{23}$. So we let $n = 23$. It is known
+that $\frac{d}{dx} \cosh x = \sinh x$, whose derivative is once more $\cosh x$.
+So, $\cosh^{(n+1)} = \cosh^{(24)} = \cosh$. In consequence,
+
+\begin{equation*}
+    p(x) - \cosh(x) = \frac{ \cosh(\zeta_x) }{(n+1)!} \prod_{j=0}^n(x-x_j)
+\end{equation*}
+
+for some $\zeta_x \in (-1, 1)$. The graph of $\cos h$ is symmetric (the function
+is even). Therefore, it achieves its maximum (restricted to $[-1, 1]$) at
+$\cosh(1) = \cosh(-1) = (e^1 + e^{-1}) / 2 = (e^2 + 1)/2e$. So 
+
+\begin{equation*}
+    \left| \frac{ \cosh(\zeta_x) }{(n+1)!} \right| \left| \prod_{j=0}^n(x-x_j)
+    \right| \leq \frac{e^2 +1}{2e(n+1)!} \left| \prod_{j=0}^n(x-x_j) \right| 
+\end{equation*}
+
+Now, since $x \in [-1, 1]$, it is obvious that the maximum value which the
+factorial (and its absolute value) can take is $1$. So
+
+\begin{equation*}
+    \frac{e^2 +1}{2e(n+1)!} \left| \prod_{j=0}^n(x-x_j) \right| \leq \frac{e^2 +1}{2e(n+1)!}
+\end{equation*}
+
+Now, with a calculator one can see that $24! > 10^{16}$. Furthermore, $( e^2 + 1
+) / 2e <
+5$. So,
+
+\begin{equation*}
+    \frac{e^2 +1}{2e(n+1)!} < \frac{5}{10^{16}} = 5\times 10^{-16} \qquad \blacksquare
+\end{equation*}
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(8)} $(a)$ Let $a < b$, $m$ the midpoint between them, $p = m - h$ and 
+    $q = m + h$ for $0 \leq h \leq (b-a) / 2$. Prove that for all $x \in [a,
+    b]$,
+
+    \begin{equation*}
+        \left| (x-p)(x-q) \right|  \leq \frac{( b-a )^2}{4}
+    \end{equation*}
+
+    $(b)$ Let $x_i = a + i(\frac{b-a}{n})$ for $i = 0, \ldots, n$
+    equidistant points in $[a, b]$. Prove that for all $x \in [a, b]$, 
+
+    \begin{equation*}
+        \left| (x-x_0)\ldots(x-x_n) \right|  \leq \frac{(b-a)^{n+1}}{2^{n+1}}
+    \end{equation*}
+\end{shaded}
+
+$(a)$ See the graph below for reference. 
+
+\begin{center}
+\begin{tikzpicture}[xscale=1.5, yscale=1]
+  % Draw x-axis
+  \draw[->] (-1,0) -- (6,0) node[right] {$x$};
+
+  % Coordinates for a, b
+  \def\a{1}
+  \def\b{5}
+  \def\m{3}
+
+  % Mark points a, b, and midpoint
+  \filldraw (\a,0) circle (2pt) node[below] {$a$};
+  \filldraw (\b,0) circle (2pt) node[below] {$b$};
+  \filldraw (\m,0) circle (2pt) node[below] {$m = \frac{a + b}{2}$};
+
+  % Optional: Draw dashed line to show midpoint location
+  \draw[dashed] (\m,0.2) -- (\m,-0.2);
+\end{tikzpicture}
+\end{center}
+
+Define $f(x)$ as the quadratic function with roots $a, b$ and upward tails:
+$f(x) = (x-a)(x-b)$. We know that if $x_0 = p, x_1 = q$, then a linear interpolation of 
+$f$ at nodes $x_0, x_1$ on the interval $[a, b]$ satisfies: 
+
+\begin{equation*}
+    \left| f(x) - p(x) \right| = \left|\frac{ f''(\zeta_x) }{2!}\right|
+    |(x-x_0)(x-x_1)| \leq
+    \frac{M}{8}|x_1 - x_0|^2
+\end{equation*}
+
+with $M$ the maximum of $|f''(x)|$ in $[a, b]$ and some $\zeta_x \in (a, b)$. Now, 
+
+\begin{equation*}
+    \left| x_1 - x_0 \right|^2 = |(m+h)- (m-h)|^2 = 4h^2
+\end{equation*}
+
+Therefore, 
+
+\begin{align*}
+    &\left| \frac{ f''(\zeta_x) }{2} \right| \left| (x-p)(x-q) \right|  \leq \frac{4h^2\times M}{8}\\ 
+    \Rightarrow&\left| \frac{ f''(\zeta_x) }{2} \right| \left| (x-p)(x-q) \right|  \leq
+    \frac{M}{2}h^2\\
+    \Rightarrow &\left| f''(\zeta_x) \right|  \left| (x-p)(x-q) \right| \leq Mh^2
+\end{align*}
+
+Here's the trick: since $f$ is quadratic, $f''$ is constant and therefore
+$\left| f''(\zeta_x) \right| = |M|$. So dividing by $|M|$ on both sides we get
+
+\begin{align*}
+    \left| (x-p)(x-q) \right| \leq h^2
+\end{align*}
+
+Finally, we know $0 \leq h \leq (b-a) / 2$, so
+
+
+\begin{equation*}
+    \left| (x-p)(x-q) \right|  \leq h^2 \leq \left( \frac{b-a}{2} \right)^2 =
+    \frac{(b-a)^2}{4}
+\end{equation*}
+
+which is what we wanted to show.
+
+$(b)$ Let $x_0, \ldots, x_n$ s.t. $x_i = a + i\frac{(b-a)}{n}$ for $0 \leq i
+\leq n$. We wish to show that for all $x \in [a, b]$,
+
+\begin{equation*}
+    \left| \eta_{n+1}(x) \right| \leq \frac{(b-a)^{n+1}}{2^{n+1}}
+\end{equation*}
+
+Take $x_i, x_{i+1}$ and let $f$ be the quadratic function with roots $x_i,
+x_{i+1}$ and upward tails. Using the exact same reasoning of $(a)$, we know 
+
+\begin{equation}
+    \left| (x - x_i)(x - x_{i+1}) \right| \leq \frac{(x_{i+1} - x_{i})^2}{2^2}
+\end{equation}
+
+Since the points are equidistant, $x_{i+1} - x_{i} =  \frac{b-a}{n}$, as is easy to
+prove algebraically, so equation $(2)$ is equivalent to:
+
+\begin{equation}
+    \left| (x-x_i)(x-x_{i+1}) \right| \leq \left( \frac{b-a}{2n} \right)^2
+\end{equation}
+
+See that exercise $(a)$ satisfied this formula, where had nodes $x_0, x_1$ and
+therefore $n = 1$. In other words, exercise $(a)$ was the base case for an
+inductive proof and we can now assume that the statement holds for $n = k - 1$
+for some $k > 2$. Our inductive case consists of having points $x_0, \ldots, x_k$, where we wish to prove 
+
+\begin{equation*}
+    \left| (x - x_0)\ldots (x-x_{k-1}) \right| \leq \frac{ (b-a)^{k} }{2^{k}}
+    \Rightarrow \left| (x-x_0)\ldots(x-x_{k-1})(x-x_k) \right| \leq
+    \frac{(b-a)^{k+1}}{2^{k+1}}
+\end{equation*}
+
+So assume 
+
+\begin{equation*}
+    \left| \eta_{k}(x) \right| \leq \frac{(b-a)^k}{2^k}
+\end{equation*}
+
+Now take 
+
+
+\begin{equation*}
+    \left| \eta_{k}(x) \right| \left| (x-x_{k+1}) \right|  \leq
+    \frac{(b-a)^k}{2^k} \left| (x-x_{k+1}) \right| 
+\end{equation*}
+
+Since $x \in [a, b]$ and $x_{k+1} = b$ is the last node, $\left| x - x_{k+1}
+\right| \leq b-a $ (i.e. the maximum distance that $x$ can take from $b$ is when
+$x$ is exactly $a$). So 
+
+\begin{equation*}
+    \left| \eta_k(x) \right| \left| (x-x_{k+1}) \right| \leq \frac{(b-a)^k}{2^k}
+    \left| (x-x_{k+1}) \right|  \leq \frac{(b-a)^k}{2^k}(b-a)
+\end{equation*}
+
+Something's off. But should be along this lines.
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(9)} $(a)$ Let $f(x) = \cos x\pi$. Find a polynomial of degree $\leq 3$ that verifies: 
+
+    \begin{equation*}
+        p(-1) = f(-1), \qquad p(0) = f(0), \qquad p(1) = f(1), \qquad p'(1) =
+        f'(1)
+    \end{equation*}
+
+    $(b)$ Find a polynomial of degree $\leq 4$ that verifies previous conditions
+    and the added condition $p''(1) = f''(1)$.
+\end{shaded}
+
+$(a)$ Let $x_0 = -1, x_2 = 0, x_3 = 1$. To keep track of which nodes have double (or
+more) conditions, let $z_0 = x_0, z_1 = x_1, z_2 = x_2, z_3 = x_2$ (since $x_2$
+has two conditions, one for $p$ and one for $p'$.) Then, our table of divided
+differences is
+
+
+\begin{equation*}
+    \begin{array}{c|c|c|c|c}
+        z_0 & f[z_0] & f[z_0,z_1] & f[z_0,z_1,z_2]&f[z_0,z_1,z_2,z_3]  \\
+z_1 & f[z_1] & f[z_1,z_2] & f[z_1,z_2,z_3]  \\
+z_2 & f[z_2] & f[z_2,z_3]   \\
+z_3 & f[z_3] & & & \\
+\end{array}
+\end{equation*}
+
+So now we simply compute the first column.
+
+
+\begin{equation*}
+    \begin{array}{c|c|c|c|c}
+-1 & -1 & f[z_0,z_1] & f[z_0,z_1,z_2]&f[z_0,z_1,z_2,z_3]  \\
+0 & 1 & f[z_1,z_2] & f[z_1,z_2,z_3]  \\
+1 & -1 & f[z_2,z_3]   \\
+1 & -1 & & & \\
+\end{array}
+\end{equation*}
+
+Amazing. So now we compute $f[z_2, z_3] = f[x_2, x_2]$. Since this is a repeated
+node, by definition it corresponds to $f'(x_2) = f'(0)$. So, we see that 
+$f'\left( 0 \right) = - \sin(0\pi) \pi = 0$. Similarly, 
+
+\begin{equation*}
+    f[z_1, z_2] = \frac{f[z_2] - f[z_1]}{z_2 - z_1} = \frac{-2}{1} = -2
+\end{equation*}
+
+and 
+
+\begin{equation*}
+    f[z_0, z_1] = \frac{f[z_1] - f[z_0]}{z_1 - z_0} = 2
+\end{equation*}
+
+So,
+
+\begin{equation*}
+    \begin{array}{c|c|c|c|c}
+-1 & -1 & 2 & f[z_0,z_1,z_2]&f[z_0,z_1,z_2,z_3]  \\
+0 & 1 & -2 & f[z_1,z_2,z_3]  \\
+1 & -1 & 0   \\
+1 & -1 & & & \\
+\end{array}
+\end{equation*}
+
+Now, 
+
+\begin{equation*}
+    f[z_1, z_2, z_3] = \frac{ f[z_2, z_3] - f[z_1, z_2] }{z_3 - z_1} =
+    \frac{2}{1} = 2
+\end{equation*}
+
+\begin{equation*}
+    f[z_0, z_1, z_2] = \frac{ f[z_1, z_2] - f[z_0, z_1] }{z_2 - z_0} =
+    -\frac{2}{2} = -2
+\end{equation*}
+
+\begin{equation*}
+    \begin{array}{c|c|c|c|c}
+-1 & -1 & 2 & -2&f[z_0,z_1,z_2,z_3]  \\
+0 & 1 & -2 & 2  \\
+1 & -1 & 0   \\
+1 & -1 & & & \\
+\end{array}
+\end{equation*}
+
+At last, 
+
+\begin{equation*}
+    f[z_0, \ldots, z_3] = \frac{f[z_1, z_2, z_3] - f[z_0, z_1, z_2]}{z_3 - z_0}
+    = 2
+\end{equation*}
+
+The interpolating polynomial is built using Newton's form---remember that
+$f[x_0], f[x_0,x_1], \ldots$ etc are the coefficients $c_0, c_1, \ldots$ in
+Newton's form $\sum_{i=0}^n c_i \eta_i(x)$. So,
+
+\begin{equation*}
+    p(x) = f[z_0] + f[z_0, z_1](x-z_0) + f[z_{0}, z_1, z_2](x-z_0)(x-z_1) +
+    f[z_0,\ldots, z_3](x-z_0)(x-z_1)(x-z_2)
+\end{equation*}
+
+Simplifying,
+
+\begin{align*}
+    p(x) 
+    &= -1 +2(x+1) -2 (x+1)x + 2(x+1)x(x-1)
+\end{align*}
+
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=middle,
+    xlabel={$x$},
+    ylabel={$y$},
+    xmin=-1.5, xmax=1.5,
+    ymin=-1.5, ymax=1.5,
+    grid=both,
+    samples=200,
+    legend style={
+        at={(1.05,0.5)},
+        anchor=west,
+        font=\small
+    }
+]
+
+% Plot f(x) = cos(pi x)
+\addplot[blue, thick, domain=-1.2:1.2] {cos(deg(pi*x))};
+\addlegendentry{$f(x) = \cos(\pi x)$}
+
+% Plot p(x)
+\addplot[red, thick, domain=-1.2:1.2] {-1 +2*(x+1) -2*(x+1)*x + 2*(x+1)*x*(x-1)};
+\addlegendentry{$p(x)$ (Hermite)}
+
+% Add interpolation points
+\addplot[only marks, mark=*, black] coordinates {
+    (-1, -1)
+    (0, 1)
+    (1, -1)
+};
+\addlegendentry{Interpolating points}
+
+\end{axis}
+\end{tikzpicture}
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(10)} We wish to approximate $f(x) = \sqrt{x} $ with an error of at
+    most $5 \times 10^{-8}$ using a linear spline and quadratic interpolation
+    every three nodes. 
+
+    Determine the least number of nodes $n$ of the form $x_i = 1 + \frac{i}{n}$,
+    with $i = 0, \ldots, n$, and interval length $h$, so that the error bound is
+    met.
+\end{shaded}
+
+(Linear spline) See that the desired approximation falls within $[1, 2]$. For a
+linear spline, the error of approximation obeys 
+
+\begin{equation*}
+    \left| e(x) \right| < \frac{M}{8}h^2, \qquad x \in [1, 2] \text{ and } M =
+    \max |f''|
+\end{equation*}
+
+where we can think of $h$ as a function of $n$, i.e. $h(n) = \frac{1}{n}$ for
+$n \in \mathbb{N}$. 
+
+\begin{align*}
+    &\frac{M}{8}h(n)^2 \leq 5 \times 10^{-8} \\ 
+    \iff&\frac{M}{( n )^2} \leq 40 \times 10^{-8} \\ 
+    \iff& \frac{10^8M}{40} \leq n^2 \\ 
+    \iff&\sqrt{\frac{10^8 M}{40}} \leq n 
+\end{align*}
+
+Now, suffices to see that 
+
+\begin{equation*}
+    f'(x) = \frac{1}{2\sqrt{x} }, \qquad f''(x) = -\frac{1}{4 x^{3 / 2}}
+\end{equation*}
+
+Clearly then $|f''(x)|$ is decreasing and its maximum in $[1, 2]$ occurs at $x =
+1$ :
+
+\begin{equation*}
+M = |f''(1))| = \frac{1}{4}
+\end{equation*}
+
+So, we require 
+
+\begin{align*}
+    &\sqrt{\frac{10^8}{40 \times 4}}   \leq n \\ 
+    \iff& \frac{10^4}{\sqrt{160} }  \leq n \\ 
+    \iff& \frac{10.000}{\sqrt{16 \times 10} }  \leq n \\
+    \iff& \frac{10.000}{4\sqrt{10} }  \leq n \\
+    \iff& \frac{2500}{\sqrt{10} }  \leq n \\
+    \iff&790.569 \leq n
+\end{align*}
+
+So fixing $n = 791$ suffices.
+
+(Quadratic interpolation) Assume we group $x_0, \ldots, x_n$ into $x_0,x_1,x_2$,
+then $x_3,x_4,x_5$, etc. Let $\overrightarrow{x}_i$ denote the $i$th grouping of
+three nodes. We are of course assuming that there are $n+1 = 3k$ nodes with $k
+\in \mathbb{N}$. The function $h(n)$ which specifies the distance between nodes
+will be specified later.
+
+Assume each $\overrightarrow{x}_i$ is used to fit a quadratic polynomial $q_i(x)
+= a_ix^2 + b_ix + c_i$. The error of interpolation will then be specific to each
+interval. In other words, for any $x$ belonging to the interval specified by
+$\overrightarrow{x}_i$, 
+
+\begin{equation*}
+    \left| e(x) \right| = \left|\frac{ f^{(3)}(\zeta_x) }{3!}\prod_{\widetilde{ x }
+    \in \overrightarrow{x}_i } (x-\widetilde{ x } )\right|
+\end{equation*}
+
+for some $\zeta_x$ in the interval of interest. Taking $M = \max \left| f^{(3)}
+(x)\right| $, with $f^{(3)}(x) = \frac{3}{8x^{\frac{5}{}}}$, we obtain $M
+= 3 / 8$. Now the question becomes whether we can bound the factorial
+expression. See that 
+
+\begin{equation*}
+    \varphi(x) = (x-x_0)(x-x_1)(x-x_2)
+\end{equation*}
+
+is a cubic function with distinct roots. (We could have chosen any successive
+values for $x_0,x_1,x_2$.) Consider $\varphi$ as restricted to the interval
+$[x_0, x_2]$. We know that it will have three roots, a maximum $x_M$ in $[x_0, x_1]$
+and a minimum $x_m$ at $[x_1, x_2]$. Since the roots are equidistant (root
+symmetry), $\varphi$ is symmetric around the mid-root $x_1$ and $\varphi(x_m) =
+\varphi(x_M)$. But where is the critical point? 
+
+\begin{shaded}
+    $(\star)$ Let us consider a centered cubic polynomial, without loss of
+    generality. Let $\phi(x) = (x-a)x(x-b)$, with mid-root zero. Assuming root
+    symmetry, $a = -b$. So letting $r = b$ we have 
+
+    \begin{equation*}
+        \phi(x) = (x-r)x(x+r) = x^3 -xr^2
+    \end{equation*}
+
+    Its derivative $\phi'(x) = 3x^2 - r^2$ is zero if and only if $x = \pm
+    \frac{r}{\sqrt{3} }$. We have already established that these critical points
+    are equal in their absolute values. Now it only suffices to see that 
+
+    \begin{equation*}
+        \phi\left( \frac{r}{\sqrt{3} } \right)  = - \frac{2r^3}{3\sqrt{3} } =-
+        \frac{(c-a)^3}{12\sqrt{3} }
+    \end{equation*}
+
+    (because $r = (c-a) / 2$). Therefore,
+
+    \begin{equation*}
+        \max |\phi(x)| = \frac{(c-a)^3}{12 \sqrt{3} }
+    \end{equation*}
+
+
+\end{shaded}
+
+From $( \star )$ readily follows that 
+
+\begin{equation*}
+    \left| \prod_{\widetilde{ x } \in \overrightarrow{x}_i }(x-\widetilde{ x } )
+    \right| \leq \frac{ h^3 }{12\sqrt{3} }
+\end{equation*}
+
+where $h$ is the distance between the last node in a grouping and the first
+(i.e. $x_2 - x_0 = x_5 - x_3 = \ldots$ etc.) In consequence, 
+
+
+\begin{align*}
+    \left| e(x) \right| = \left|\frac{ f^{(3)}(\zeta_x) }{3!}\prod_{\widetilde{ x }
+    \in \overrightarrow{x}_i } (x-\widetilde{ x } )\right| \\ 
+    \Rightarrow \left| e(x) \right| \leq  3 / 8 \frac{h^3}{12\sqrt{3} }
+\end{align*}
+
+Here, $h$ is a function of $n$. If $n = 2$ (three points), then $h = 2/3$.
+If $n = 5$ (six points), then each sub-interval is of length $1 / 6$ and $h =
+2/6$. In general, if $n = 3k$, then $h = \frac{2}{n}$. So we have 
+
+\begin{equation*}
+    \left| e(x) \right|  \leq \frac{ 3 }{8\times \sqrt{3} } \frac{2}{n} =
+    \frac{3}{4\sqrt{3}n }
+\end{equation*}
+
+So now all that is needed is to bound the RHS expression to $5 \times 10^{-8}$:
+
+\begin{equation*}
+    \frac{3}{4\sqrt{3}n } \leq 5\times 10^{-8} \iff \ldots
+\end{equation*}
+
+bla bla. This is the simplest part of the problem so I skip it.
 
 
 
