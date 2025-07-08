@@ -845,7 +845,7 @@ results follow from this fact.
 \pagebreak 
 
 
-\subsection{Excercises}
+\subsection{Exercises}
 
 \begin{shaded}
     \textbf{(1)} Let $f(x) = (x+2)(x+1)^2 x(x-1)^3(x-2)$. To which root does
@@ -1064,7 +1064,7 @@ Error: $e_n = r - x_n$, quadratitc, i.e. $| r - x_{n+1}| \leq c |r - x_n|^2$.
 \sqrt{\varphi} $. We see that we can express the problem of finding the
 reciprocal of a root in terms of a simple root.
 
-We know from the previous excercise that the iteration formula for
+We know from the previous exercise that the iteration formula for
 $\sqrt{\varphi} $ is 
 
 \begin{equation*}
@@ -1862,7 +1862,7 @@ where $\left| f''(x) \right| \leq M$ for all $x \in [x_0, x_n]$. (See
 
 \pagebreak 
 
-\subsection{Excercises}
+\subsection{Exercises}
 
 \begin{shaded}
     \textbf{(1)} Construct the Lagrange and Newton interpolating polynomials 
@@ -2595,6 +2595,553 @@ So now all that is needed is to bound the RHS expression to $5 \times 10^{-8}$:
 \end{equation*}
 
 bla bla. This is the simplest part of the problem so I skip it.
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(10)} Let $f(x) = \cos x$. Determine the step-length $h$ and minimum
+    number of nodes $n+1$ needed to approximate $f(x)$ via linear spline in $[0,
+    2\pi]$ with an error less than or equal to $5 \times 10^{-7}$.
+\end{shaded}
+
+We know 
+
+\begin{equation*}
+    \left| e(x) \right| \leq \frac{M}{8}h(n)^2
+\end{equation*}
+
+where $h(n) = \frac{2\pi}{n}$ anda $M = \max \left| f''(x) \right| $. Since
+$f''(x) = -\cos x$, its maximum in $[0, 2\pi]$ is $1$. From this follows that 
+
+\begin{equation*}
+    \left| e(x) \right|  \leq \frac{4\pi^2}{8n^2} = \frac{1}{2}\left(
+    \frac{\pi}{n} \right)^2
+\end{equation*}
+
+and all that is left is bounding said expression to be less than or equal to $5
+\times 10^{-7}$. If one does the math, we obtain that said condition holds iff 
+$n = \geq \pi \times 10^3 \approx 3141.59$, which means letting $n = 3142$
+suffices. So the number of nodes needed is $n+1 = 3143$. The step length 
+$h$ results $\frac{2\pi}{3142} \approx 0.001999 \approx 0.002$.
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(12)} $(a)$ Determine $\alpha, \beta, \gamma$ such that 
+
+    \begin{equation*}
+        S(x) = \begin{cases}
+            \alpha x^3 + \gamma x & 0 \leq x \leq 1 \\ 
+            -\alpha x^3 + \beta x^2 - 5\alpha x + 1 & 1 \leq x \leq 2
+        \end{cases}
+    \end{equation*}
+
+    is a cubic spline.
+
+    $(b)$ With the determined values, decide if $S$ interpolates $f(x) = 2^x +
+    1 / 2 x^2 - 1 / 2 x - 1$ in $[0, 2]$  with nodes $\left\{ 0, 1, 2 \right\}
+    $. 
+
+    $(c)$ Graph $f$ and $S$ in $[0, 2]$.
+\end{shaded}
+
+$(a)$ $S(x)$ must satisfy the interpolation constraint and the continuity
+constraint. Note that $S(x)$ are polynomials with continuous first and second
+derivatives in $[0, 2]$. Furthermore, 
+
+\begin{equation*}
+    S'(x) = \begin{cases}
+        3\alpha x^2 + \gamma & 0 \leq x \leq 1 \\ 
+        -3\alpha x^2 + 2\beta x - 5\alpha & 1 \leq x \leq 2
+    \end{cases}, \qquad S''(x) = \begin{cases}
+        6\alpha x & 0 \leq x \leq 1 \\ 
+        -6\alpha x + 2 \beta & 1 \leq x \leq 2
+    \end{cases}
+\end{equation*}
+
+For all $f$ in $\left\{ S, S', S'' \right\} $ we wish that
+
+\begin{equation*}
+    \lim_{x \to 1 (\leftarrow)} f(x) = \lim_{x \to 1(\rightarrow)} f(x)
+\end{equation*}
+
+$(a.a)$ Beginning with $S''(x)$, we impose
+
+\begin{equation*}
+    6\alpha = -6\alpha + 2\beta \Rightarrow 12\alpha = 2 \beta \Rightarrow \beta
+    = 6\alpha
+\end{equation*}
+
+$(a.b)$ Now taking $S'(x)$, we impose 
+
+\begin{equation*}
+    3\alpha + \gamma = -3\alpha + 2\beta -5\alpha
+\end{equation*}
+
+Substituting with $\beta = 6\alpha$, we find 
+
+\begin{equation*}
+    \gamma = -6\alph\alpha + 2(6\alpha) -5\alpha \Rightarrow \gamma = \alpha
+\end{equation*}
+
+$(a.c)$ Now taking $S(x)$, we impose 
+
+\begin{equation*}
+    \alpha + \gamma = -\alpha + \beta - 5\alpha + 1
+\end{equation*}
+
+Substituting with $\gamma = \alpha, \beta = 6\alpha$, we find 
+
+\begin{equation*}
+    2\alpha = 1 \Rightarrow \alpha = \frac{1}{2}
+\end{equation*}
+
+So we finally obtain 
+
+\begin{equation*}
+    \alpha = \frac{1}{2}, \beta = 3, \gamma = \frac{1}{2}
+\end{equation*}
+
+$(b)$ It is simple to see that the spline does interpolate $f$ simply by
+evaluating $S$ and $f$ on $0, 1, 2$.
+
+$(c)$
+
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=middle,
+    xlabel={$x$},
+    ylabel={$y$},
+    xmin=-0.5, xmax=2.5,
+    ymin=-1.5, ymax=6.5,
+    grid=both,
+    samples=200,
+    legend style={
+        at={(1.05,0.5)},
+        anchor=west,
+        font=\small
+    }
+]
+
+% Plot f(x) = cos(pi x)
+\addplot[blue, thick, domain=-0.2:2.2] {2^x + 1/2 * x^2 - 1/2 * x - 1};
+\addlegendentry{$f(x)$}
+
+% Plot p(x)
+\addplot[red, thick, domain=0:1] {1/2 * x^3 + 1/2 * x};
+\addplot[red, thick, domain=1:2] {-1/2 * x^3 + 3 * x^2 - 5*(1/2)*x + 1};
+\addlegendentry{$S(x)$}
+
+\end{axis}
+\end{tikzpicture}
+
+
+\section{Function approximation}
+
+\subsection{Least squares method}
+
+Assume $(x_1, y_1), \ldots (x_m, y_m)$ are points from a function $f$ we wish to
+approximate. A reasonable approach is to find a linear function with
+coefficients $a_0, a_1$ that minimize
+
+\begin{equation*}
+    E = \sum_{i=1}^m \left( y_i - (a_1 x_i + a_0) \right)^2
+\end{equation*}
+
+Doing the standard things (take partial derivative, equate it to zero, etc.) we
+obtain the following normal equations to minimize $E$:
+
+\begin{equation*}
+    a_0 = \frac{\left( \sum x_i^2 \right)\left( \sum y_i \right) - \left( \sum
+    x_i y_i \right) \left( \sum x_i \right)    }{m\sum x_i^2 - \sum x_i}, \qquad
+    a_1 = \frac{m \sum x_i y_i - \left( \sum x_i \right)\left( \sum y_i \right)  }
+    {m \sum x_i^2 - \sum x_i}
+\end{equation*}
+
+where all sums range from $i = 1$ to $m$. 
+
+The general case is when $f$ is approximated with a polynomial of degree $\leq
+n$, with $n < m - 1$. Now, we need to determine the coefficients $a_0, \ldots,
+a_n$ that minimize 
+
+\begin{equation*}
+    \sum_{i=1}^m \left( y_i - p_n(x_i) \right)^2
+\end{equation*}
+
+Again, doing the standard procedure, the following system of equation emerges
+for variables $a_0, \ldots, a_n$: 
+
+\begin{equation*}
+    \begin{bmatrix} 
+        \sum x_i^0 & \sum x_i^1 & \sum x_i^2  & \ldots & \sum x_i^n  \\ 
+        \sum x_i^1 & \sum x_i^2 & \sum x_i^3 & \ldots & \sum x_i^{n+1} \\ 
+        \vdots & \vdots & \vdots & \ldots & \vdots \\ 
+        \sum x_i^2 & \sum x_i^{n+1} & \sum x_i^{n+2} & \ldots & \sum x_i^{2n}
+    \end{bmatrix} \begin{bmatrix} 
+            a_0 \\ a_1 \\ \vdots \\ a_n 
+    \end{bmatrix} = \begin{bmatrix} 
+            \sum y_ix_i^0 \\ 
+            \sum y_ix_i^1 \\ 
+            \vdots \\ 
+            \sum y_i x_i^n
+    \end{bmatrix} 
+\end{equation*}
+
+\subsection{Non-polynomial models}
+
+It is possible to propose a non-polynomial model for $f$, e.g. $\hat{f}(x) = b
+e^{ax}$ or whatever. This produces a non-linear system of equations which cannot
+be solved simply. However, taking the logarithm of the proposed model allows for
+a linear approximation. For example, if $\hat{f}(x) = be^{ax}$ then 
+
+\begin{equation*}
+    \ln \hat{f}(x) = \ln b + ax
+\end{equation*}
+
+which is a linear model that can be fitted using least squares. However, it is
+important to recall that the values $y_1, \ldots, y_m$ must be scaled with $\ln
+y_1, \ldots, \ln y_m$ to fit the logarithmic model.
+
+\subsection{Error of approximation}
+
+Assume $f \in C[a, b]$ and $P_n(x)$ of degree $\leq n$ an approximation via
+least squares. Then 
+
+\begin{equation*}
+    E = E(a_0, \ldots, a_n) = \int_a^b \left( f(x) - P_n(x) \right)^2 ~ dx =
+    \int_a^b \left[ f(x) \ sum_{k=0}^n a_k x^k \right]^2 ~ dx
+\end{equation*}
+
+In general, we wish to find $a_0, \ldots, a_n$ such that $E$ is minimal. In
+general, the partial derivative of $E$ with respect to $a_j$ is zero 
+if and only if 
+
+\begin{equation*}
+    \sum_{k=0}^n \left( a_k \int_a^b x^{k+j} ~ dx \right)  = \int_a^b x^j f(x) ~ dx, \qquad j =
+    0, \ldots, n
+\end{equation*}
+
+This readily provides a $(n+1) \times (n+1)$ system of equations which is to be solved to minimize
+the error:
+
+\begin{equation*}
+    \begin{bmatrix} 
+        \int_a^b ~ dx & \int_a^b x ~ dx & \ldots & \int_a^b x^{n} \\ 
+        \int_a^b x ~ dx & \int_a^b x^2 ~ dx & \ldots & \int_a^b x^{n+1} \\ 
+        \vdots & \vdots & \ldots & \vdots \\ 
+        \int_a^b x^n & \int_a^b x^{n+1} & \ldots & \int_a^b x^{2n}
+    \end{bmatrix} \begin{bmatrix} 
+            a_0 \\ a_1 \\ \vdots \\ a_n 
+    \end{bmatrix} = \begin{bmatrix} 
+            \int_a^b x^0 f(x) ~ dx \\  
+            \int_a^b x f(x) ~ dx \\ 
+            \vdots \\ 
+            \int_a^b x^n f(x) ~ dx
+    \end{bmatrix} 
+\end{equation*}
+
+Notice that, in LHS matrix, the coefficient $c_{jk}$ is 
+
+\begin{equation*}
+    \int_a^b x^{j+k} ~ dx = \frac{b^{j+k+1} - a^{j+k+1}}{j+k+1}
+\end{equation*}
+
+which allows for a more direct computation of the system. The LHS matrix is
+called \textbf{Hilbert matrix} and it is famously ill-conditioned---i.e. small
+changes in the coefficients greatly affect the final result. 
+
+\subsection{A few polynomial theorems}
+
+Recall that vectors $\phi_1, \ldots, \phi_n$ are linearly independent if
+$\sum_{i=0}^n c_i \phi_i = 0$ entails that $c_0 = \ldots = c_n = 0$. In
+particular, a function space $\mathcal{F}$ is a vector space 
+such that $\Pi = \bigcup_{i=0}^\infty \Pi_i \subseteq \mathcal{F}$. 
+
+\begin{theorem}[Polynomials of different degrees are linearly independent]
+    Let $\phi_0, \ldots, \phi_n$ such that $\phi_j \in \Pi_j$. Then $\left\{ \phi_i
+    \right\}_{i=0}^n $ is linearly independent in any interval 
+    $[a, b]$.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Proof.} Assume $c_0, \ldots, c_n$ are such that $P(x) = c_0\phi_0(x) + \ldots +
+c_n \phi_n(x) = 0$ for any $x \in [a, b]$.  Since $P(x)$ is null 
+for all $x$ in $[a, b]$, each exponentiation $x^k$ must be zero. 
+Since $c_n \phi_n(x)$ is the only term which includes $x^n$,
+we must have $c_n = 0$, which readily entails $P(x) = c_0 \phi_0(x) + \ldots +
+c_{n-1}\phi_{n-1}(x)$. By recurrence, $c_0 = \ldots = c_n = 0$. $\blacksquare$
+
+\end{quote}
+\normalsize
+
+The previous theorem is highly general, since any polynomial of degree $n$ is by
+definition a linear combination of $n+1$ polynomials of degree $0, 1, \ldots, n$.
+For instance, $1 + 3x + 2x^2$ can be considered a linear combination of the
+polynomials $1, x, x^2$ with coefficients $1, 3, 2$, or of the polynomials 
+$1, 3x, 4x^2$ with coefficients $1, 1, 1 / 2$, etc.
+
+\begin{theorem}
+    Let $\left\{ \phi_0, \ldots, \phi_n \right\} $ be a set of linearly
+    independent polynomials for any interval $[a, b]$, each of degree 
+    $\leq n$. Then any polynomial of degree $\leq n$ can be expressed as a
+    linear combination of $\left\{ \phi_0, \ldots, \phi_n \right\} $.
+\end{theorem}
+
+\subsection{Weighted function approximation: Diagonalizing Hilbert matrix}
+
+A weight function $\omega(x)$ on interval $I$ is a function such that:
+
+\begin{enumerate}
+    \item $\omega(x) > 0$ for all $x \in I$. 
+    \item $\omega(x) \neq 0$ for all $x$ in any arbitrary sub-interval of $I$.
+\end{enumerate}
+
+Condition $(2)$ means that $\omega$ cannot be constantly zero in any
+sub-interval, i.e. any zero mapping of $\omega$ must be a point.
+Weight function allow one to give more or less importance to approximations 
+in different regions of an interval of interest. 
+
+Now assume we have a linearly independent set of functions $\left\{ \phi_0,
+\ldots, \phi_n \right\} $ in $[a, b]$, a weight function $\omega$ defined on
+$[a, b]$, and $f$ continuous in $[a, b]$ which we wish to approximate. Then 
+there is a set of coefficients $a_0, \ldots, a_n$ of 
+
+\begin{equation*}
+    P(x) = \sum_{k=0}^n a_k \phi_k(x)
+\end{equation*}
+
+that minimize the following error function:
+
+\begin{equation*}
+    E = E(a_0, \ldots, a_n) = \int_a^b \omega(x)\left[ f(x) -P(x) \right]^2 ~ dx
+\end{equation*}
+
+This is the same as we did before: we are approximating $f$ via a polynomial by
+finding the coefficients that minimize the error of approximation. But now we
+are $(a)$ including a weight function and $(b)$ defining $P(x)$ as a linear
+combination of independent polynomials. 
+
+Once more, taking the derivative of $E$ with respect to an arbitrary $a_j$, we
+find that said derivative is zero if and only if 
+
+\begin{equation*}
+    \sum_{k=0}^n a_k \int_a^b \omega(x)\phi_k(x) \phi_j(x) ~ dx = \int_a^b
+    \omega(x) f(x)0 \phi_j(x) ~ dx, \qquad j = 0, \ldots, n
+\end{equation*}
+
+which readily provides a system of equations. The system is complex, but it can
+be greatly simplified if we could choose $\left\{ \phi_0, \ldots, \phi_n \right\} $
+such that 
+
+\begin{equation*}
+    \int_a^b \omega(x) \phi_k(x) \phi_j(x) ~ dx = \alpha_j \delta_{jk}
+\end{equation*}
+
+for some $\alpha_j > 0$. In that case, the equation would simplify to 
+
+\begin{equation*}
+    a_j \int_a^b \omega(x) \phi_j^2(x) ~ dx = \int_a^b \omega(x) f(x) \phi_j(x)
+    ~ dx, \qquad j = 0, \ldots, n
+\end{equation*}
+
+By assumption, this would yield
+
+\begin{equation*}
+    a_j \alpha_j = \int_a^b \omega(x) f(x) \phi_j(x)~ dx, \qquad j = 0, \ldots,
+    n
+\end{equation*}
+
+or equivalently 
+
+\begin{equation*}
+    a_j = \frac{1}{\alpha_j} \int_a^b \omega(x) f(x) \phi_j(x) ~ dx, \qquad j =
+    0, \ldots, n
+\end{equation*}
+
+In short, a relatively simple system of equations emerges if $\phi_0, \ldots,
+\phi_n$ are intelligently chosen. But how to choose them intelligently? 
+
+\begin{definition}[Ortogonal set]
+    A set $\left\{ \phi_0, \ldots, \phi_n \right\} $ of functoins defined in
+    $[a, b]$ is ortogonal with respect to a weight function $\omega$ iff 
+
+    \begin{equation*}
+        \int_a^b \omega(x) \phi_k(x) \phi_j(x) ~ dx = \alpha_j \delta_{jk},
+        \qquad j = 0, \ldots, n
+    \end{equation*}
+
+    for $\alpha_j > 0$. If $\alpha_j = 1$ for all $j = 0, \ldots, n$ then we say
+    the set is ortonormal.
+\end{definition}
+
+We can formalize what was said so far as follows:
+
+\begin{theorem}[Ortogonal polynomial approximation theorem]
+    If $\left\{ \phi_0, \ldots, \phi_k \right\} $ defined in $[a, b]$ is
+    ortogonal with respect to $\omega$ defined in $[a, b]$,
+    then the least squared approximation of $f$ weighted by $\omega$ is 
+
+    \begin{equation*}
+        P(x) = \sum_{k=0}^n a_k \phi_k(x)
+    \end{equation*}
+
+    with 
+
+    \begin{equation*}
+        a_k = \frac{1}{\alpha_k} \int_a^b \omega(x) f(x) \phi_k(x) ~ dx
+    \end{equation*}
+
+    where $\alpha_k = \int_a^b \omega(x) \phi_k^2(x) ~ dx$.
+\end{theorem}
+
+\begin{theorem}[Ortogonal set generation]
+    The following is an ortogonal set of functions defined in $[a, b]$ with 
+    respect to a weight function $\omega$: 
+
+    \begin{equation*}
+        \phi_0(x) = 1, \qquad \phi_1(x) = x-B_1, \qquad x \in [a, b]
+    \end{equation*}
+
+    where 
+
+    \begin{equation*}
+        B_1 = \frac{\int_a^b x \omega(x) \phi_0^2(x) ~ dx}{\int_a^b \omega(x)
+        \phi_0^2(x) ~ dx}
+    \end{equation*}
+
+    For $k \geq 2$, 
+
+    \begin{equation*}
+        \phi_k(x) = (x - B_k) \phi_{k-1}(x) - C_k \phi_{k-2}(x), \qquad x \in
+        [a, b]
+    \end{equation*}
+
+    with 
+
+    \begin{equation*}
+        B_k = \frac{\int_a^b x \omega(x) \phi^2_{k-1}(x) ~ dx}{\int_a^b
+        \omega(x) \phi^2_{k-1}(x)}, \qquad C_k = \frac{\int_a^b x \omega(x)
+    \phi_{k-1}(x) \phi_{k-2}(x) ~ dx}{\int_a^b \omega(x) \phi^2_{k-2}(x) ~ dx}
+    \end{equation*}
+\end{theorem}
+
+In general, we will use a few ortogonal sets which are already known, built
+recurrently from the previous theorem: 
+
+\begin{enumerate}
+    \item \textbf{Legendre polynomials}:
+
+        \begin{equation*}
+            \phi_0(x) = 1, \phi_1(x) = x, \phi_2(x) = x^2 - \frac{1}{3},
+            \phi_3(x) = x^3 - \frac{3}{5}x, \phi_4(x) = x^4 - \frac{6}{7}x^2 +
+            \frac{3}{25}, \ldots
+        \end{equation*}
+
+    \item More examples in the textbook.
+
+\end{enumerate}
+
+\pagebreak 
+
+\subsection{Exercises}
+
+\begin{shaded}
+    \textbf{(1)} Approximate $f(x)$ with a polynomial of degree $1$ and $g(x)$ with a
+    polynomial of degree two, where: 
+
+     \begin{equation*}
+    \begin{array}{c|c|c|c|c|c|c|c|c|c|c}
+        x & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\
+        \hat{f}(x) & -0.1 & 1.1 & 1.9 & 3.2 & 3.8 & 5.0 & 6.0 & 7.3 & 8.1 & 8.9
+     \end{array}
+     \end{equation*}
+
+     and 
+
+     \begin{equation*}
+    \begin{array}{c|c|c|c|c|c}
+        x & -1 & 0 & 1 & 3 & 6\\ 
+        \hat{g}(x) & 6.1 & 2.8 & 2.2 & 6 & 26.9
+     \end{array}
+     \end{equation*}
+
+\end{shaded}
+
+$(f)$ We know $p(x) = a_0 + a_1x + \ldots + a_nx^n$ is the least squared
+approximation of $f$ if and only if $a_0, \ldots, a_n$ are solutions to the
+following system of equations: 
+
+\begin{equation*}
+    \begin{bmatrix} 
+        \sum_{i=0}^m x_i^0 & \sum_{i=0}^m x_i^1 & \ldots & \sum_{i=0}^m x_i^m
+        \mid \sum_{i=0}^m x_i^0 y_i\\ 
+        \sum_{i=0}^m x_i^1 & \sum_{i=0}^m x_i^2 & \ldots & \sum_{i=0}^{m+1} x_i^m
+        \mid \sum_{i=0}^m x_i^1 y_i\\ 
+        \vdots & \vdots & \ldots & \vdots & \\
+
+        \sum_{i=0}^m x_i^m & \sum_{i=0}^m x_i^{m+1} & \ldots & \sum_{i=0}^m
+        x_i^{2m}
+        \mid \sum_{i=0}^m x_i^m y_i\\ 
+    \end{bmatrix} 
+\end{equation*}
+
+where $m$ is the number of points $(x_i, \hat{f}(x_i))$. Since we wish to
+approximate $f$ with a polynomial of degree $1$, this gives a $2\times 2$ matrix 
+with coefficients
+
+\begin{align*}
+    &c_{11} = \sum_{i=0}^9 (1) = 10, \qquad c_{11} = \sum_{i=0}^9 x = 45, \\
+    &c_{21} = \sum_{i=0}^9 x_i = 45, \qquad c_{22} = \sum_{i=0}^n x_i^2 = 285 
+\end{align*}
+
+The solution vector, on the other hand, is: 
+
+\begin{equation*}
+    w_{1} = \sum_{i=0}^9 y_i = 45.2, \qquad w_2 = \sum_{i=0}^9 x_i y_i = 286.7
+\end{equation*}
+
+So, suffices to solve the system 
+
+\begin{equation*}
+    \begin{bmatrix} 
+    10 & 45 & 45.2 \\ 
+    45 & 285 & 286.7
+    \end{bmatrix} \to \begin{bmatrix} 
+    1 & 4.5 & 4.52 \\ 
+    1 & 6.33 & 6.371 
+    \end{bmatrix} \to \begin{bmatrix} 
+    1 & 4.5 & 4.52\\
+    0 & 1.83 & 1.85 
+    \end{bmatrix} 
+\end{equation*}
+
+So $a_1 = \frac{1.85}{1.83} a_2 = 1.01 a_2$, bla bla. Linear system, cursillo de
+ingreso.
+
+$(g)$ Not that different from $(f)$: calculate the matrix, which will be
+$3\times 3$ now (degree two polynomial), solve the resulting system.
+Calculating the matrix is computing sums (stupid), solving the system is solving
+a linear system (stupid).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

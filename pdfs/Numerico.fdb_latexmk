@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1751748383.04335 "Numerico.tex" "Numerico.pdf" "Numerico" 1751748385.97808 2
+["pdflatex"] 1751934492.84796 "Numerico.tex" "Numerico.pdf" "Numerico" 1751934496.75424 2
   "/etc/texmf/web2c/texmf.cnf" 1740662799.63242 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc" 1422827479 2083 60e36f8eac802fcaf19eabe2633b406e ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -309,9 +309,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1740670969.59643 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1740670991 8214096 2cc5ed7d441cd7dd7f6cf9e30d4bb5a5 ""
-  "Numerico.aux" 1751748385.8152 2454 5102746dee1071d0f13a003444ff17cd "pdflatex"
-  "Numerico.out" 1751748385.8162 2426 06e26b541a8e906b17f336d082d0c167 "pdflatex"
-  "Numerico.tex" 1751748382.85516 79746 687c7232105dc1bc884290320b97cc61 ""
+  "Numerico.aux" 1751934496.58994 3377 527de10526e960d9238e49b23f86e875 "pdflatex"
+  "Numerico.out" 1751934496.59094 3750 f6f7fca962e19ea27fba8f580235d530 "pdflatex"
+  "Numerico.tex" 1751934492.36602 96955 a434944e1e3cfe7b96730788530b54ec ""
   (generated)
   "Numerico.aux"
   "Numerico.log"
