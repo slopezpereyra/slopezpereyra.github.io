@@ -8,7 +8,7 @@ desde el fondo del río: «*aquí se fue che rekové*». (Sentí en mi corazón 
 tristeza.) Y el agua dijo: «*Rohechaga'u, che mborayhumí: ani ñe ñaña y vení a
 zambullirte conmigo jeýna*». Me hundí en el agua lentamente, y cuanto más
 entraba en la negrura de la muerte más sentía su amor, como un haz de luz
-suspendido del otro lado de la vida. Bajo el agua sentí decir:
+suspendido al otro lado de la vida. Bajo el agua sentí decir:
 «*Rojhayjhueteiva*», y apreté los puños y los dientes. Entonces desperté. Y al
 despertar quise morirme.
 
