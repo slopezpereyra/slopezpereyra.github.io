@@ -3680,6 +3680,19 @@ with an error
 
 \subsection{Trapeze rule}
 
+\begin{shaded}
+    \textbf{Summary.} 
+
+    \begin{equation*}
+        \int_a^b f(x) ~ dx \approx \frac{h}{2}\left[ f(a) + f(b) \right], \qquad
+        E(x) = -\frac{h^3}{12} f''(\zeta)
+    \end{equation*}
+
+    for some $\zeta \in (a, b)$ and $h = b-a$.
+
+    \textbf{Observation}. If $f'' \equiv 0$ then the rule is exact.
+\end{shaded}
+
 Trapeze's rule is the name for the case $n = 1$ (linear integration). By
 convention, $x_0 = a, x_1 = b, h = b- a$. The interpolating polynomial es 
 
@@ -3724,20 +3737,207 @@ theorem, meaning that there is some $\zeta$ (independent of $x$) such that
 \begin{align*}
     \int_a^b (\zeta_x)(x-a)(x-b) ~ dx 
     &= f''(\zeta)\int_a^b(x-a)(x-b) ~ dx\\ 
-    &= f''(\zeta)\left[ \frac{x^3}{3} - \frac{a+b}{2} x^2 + abx \right]_a^b
+    &= f''(\zeta)\left[ \frac{x^3}{3} - \frac{a+b}{2} x^2 + abx \right]_a^b\\
+    &= f''(\zeta) \left( -\frac{h^3}{6} \right) 
 \end{align*}
 
+In summary, the error is:
+
+
+\begin{equation*}
+    E(x) = \frac{1}{2}f''(\zeta)\left( -\frac{h^3}{6} \right)  = -\frac{h^3}{12}
+    f''(\zeta)
+\end{equation*}
+
+with $h = b-a$ and for some $\zeta \in (a, b)$ independent of $x$.
+
+
+\subsection{Simpson's rule}
+
+Simpson's rule is the name for the case $n = 2$ with three
+equidistant nodes $a = x_0, x_1 = \frac{a+b}{2}, x_2 = b$. 
+We let 
+
+\begin{equation*}
+    h = \frac{b-a}{2}, \text{   which entails the nodes are   }  a, a +h, a + 2h
+\end{equation*}
+
+Three nodes allow us to construct an interpolating polynomoial of degree $2$.
+The rule is: 
+
+\begin{equation*}
+    \int_a^b f(x) ~ dx \approx \frac{h}{3}\left[ f(a) + 4f\left( a + h \right) +
+    f(a + 2h)\right] 
+\end{equation*}
+
+with 
+
+\begin{equation*}
+    E = -\frac{h^5}{90} f^{(4)}(\zeta)
+\end{equation*}
+
+for some $\zeta \in (a, b)$.
+
+\subsection{Rectangle's rule}
+
+Stupid: 
+
+\begin{equation*}
+    \int_a^b f(x) ~ dx \approx f(a)(b-a)
+\end{equation*}
+
+whicih is the area in the rectangle from $a, b$ with height $f(a)$, giving 
+
+\begin{equation*}
+    E = \frac{(b-a)^2}{2}f'(\zeta), \qquad \zeta\in (a, b)
+\end{equation*}
+
+One could take $x_0 = b$ and estimate via the rectangle from $a, b$ with height
+$f(b)$.
+
+
+\subsection{Midpoint rule}
+
+Stupid: Exactly the same as the rectangle rule, but the rectangle has height
+$f(m)$, where $m = (a+b) / 2$ is the midpoint of $[a, b]$: 
+
+\begin{equation*}
+    \int_a^b f(x) ~ dx = f\left( \frac{a+b}{2} \right) (b-a)
+\end{equation*}
+
+with error 
+
+\begin{equation*}
+    E = \frac{(b-a)^3}{24} f''(\zeta), \qquad \zeta \in (a, b)
+\end{equation*}
+
+Since the error has a derivative of order $2$, this method will integrate
+exactly all polynomials of degree 1.
+
+\subsection{Precision of estimation rules}
+
+The \textbf{precision} of a rule is the greatest non-negative integer $n$ s.t. 
+the formula is exact for $x^k$, for all $k = 0, \ldots, n$.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|>{\bfseries}c|c|c|c|c|}
+\hline
+Regla & Puntos & Fórmula & Error & Precisión \\
+\hline
+Rectángulo & 1 & $f(a)(b - a)$ & $\frac{(b - a)^2}{2} f'(\xi)$ & 0 \\
+\hline
+Punto medio & 1 & $f\left(\frac{a + b}{2}\right)(b - a)$ & $\frac{(b - a)^3}{24} f''(\xi)$ & 1 \\
+\hline
+Trapecio & 2 & $\frac{(b - a)}{2} [f(a) + f(b)]$ & $-\frac{(b - a)^3}{12} f''(\xi)$ & 1 \\
+\hline
+Simpson & 3 & $\frac{(b - a)/2}{3} \left[ f(a) + 4f\left(\frac{a + b}{2}\right) + f(b) \right]$ & $-\frac{((b - a)/2)^5}{90} f^{(4)}(\xi)$ & 3 \\
+\hline
+\end{tabular}
+\caption{Fórmulas de integración numérica y sus errores}
+\end{table}
+
+\subsection{Composite rules}
+
+\begin{shaded}
+    \textbf{Simpson's composite rule}. Let $f \in C^4[a, b], n$ a positive
+    integer, $h = (b-a) / 2n$ and $x_j = a + jH$ for $j = 0, \ldots, 2n$.
+    There is some $\mu \in (a, b)$ such that the composite rule of Simpson for
+    $n$ sub-intervals is given by 
+
+    \begin{equation*}
+        \int_a^b f(x) = \frac{h}{3}\left( f(x_0) + 2 \sum_{j=1}^n f(x_{2j}) + 4
+        \sum_{j=1}^n f(x_{2j - 1}) + f(x_n)\right) - \frac{b-a}{180}h^4
+        f^{(4)}(\mu)
+    \end{equation*}
+\end{shaded}
+
+To estimate large intervals, the interval is segmented into $k$ segments of
+equal length of relatively small size and the estimations within segment are
+summed. 
+
+In general, if $[a, b]$ is segmented in $n$ sub-intervals of equal length, we
+obtain $(2n+1)$ equally spaced points $x_j = a + jh$, with $j = 0, \ldots, 2n$
+and $h = (b-a) / 2n$. Then, 
+
+\begin{equation*}
+    \int_a^b f(x) ~ dx = \sum_{j=1}^n \int_{x_{2j-2}}^x_{2j} f(x) ~ dx
+\end{equation*}
+
+For Simpson's rule, this gives 
+
+\begin{equation*}
+    \int_a^b f(x) ~ dx \approx \sum_{j=1}^n \left( \frac{h}{3}\left[ f(x_{2j
+    -2}) + 4f(x_{2j - 1}) + f(x_{2j}) \right] - \frac{h^5}{90}f^{(4)}(\zeta_j)  \right) 
+\end{equation*}
+
+with $\zeta_j \in (x_{2j-2}, x_{2j}), j = 1, \ldots, n, f \in C^4[a, b]$.
+For $j = 1, \ldots, n$, the term $f(x_{2j})$ appears both in 
+$[x_{2j-2}, x_{2j}]$ and $[x_{2j}, x_{2j+2}]$, which allows us to simplify:
+
+
+\begin{equation*}
+    \int_a^b f(x) ~ dx \approx \frac{h}{3} \left( f(x_0) + 2 \sum_{j=1}^n
+    f(x_{2j}) + 4 \sum_{j=1}^n f(x_{2j - 1}) + f(x_{2n}) \right) -
+    \frac{h^5}{90}\sum_{j=1}^n f^{(4)} (\zeta_j)
+\end{equation*}
 
 
 
+Since $f^{(4)}$ is assumed to be continuous in $[a, b]$, the extreme value
+theorem for continuous functions ensures:
+
+\begin{itemize}
+    \item $f''(\zeta_j)$ is between the minimum and the maximum of $f^{(4)}$ 
+        in $[a, b]$.
+    \item $\sum_{i=1}^n f^{(4)} (\zeta_j)$ is between $n$ times the minimum and
+        $n$ times the maximum of $f^{(4)}$ in $[a, b]$.
+    \item Dividing in $(2)$ by $n$, we obtain 
+
+        \begin{equation*}
+            \min_{x \in [a, b]} f^{(4)}(x) \leq \frac{1}{n} f^{(4)}(\zeta_j)
+            \leq \max_{x \in [a,b]} f^{(4)}(x)
+        \end{equation*}
+\end{itemize}
+
+The intermediate value theorem ensures then that there is some $\mu \in (a, b)$ such that 
+
+\begin{equation*}
+    f^{(4)}(\mu) = \frac{1}{n} f^{(4)}(\zeta_j) \Rightarrow \sum_{j=1}^n
+    f^{(4)}(\zeta_j) = n f^{f(4)}(\zeta_j)
+\end{equation*}
+
+Using this, the error can be expressed independently of $\zeta_j$ as:
+
+\begin{equation*}
+    E(f) = -\frac{h^5}{90} \sum_{j=1}^n f^{(4)}(\zeta_j) = -\frac{h^5}{90}
+    nf^{(4)}(\mu)
+\end{equation*}
+
+\subsection{Other composite rules}
+
+No time. Memorize the formulas from apunte.
+
+\pagebreak 
+
+\subsection{Gaussian rules}
+
+\pagebreak 
+
+\subsection{Excercises}
+
+\begin{shaded}
+    \textbf{(1)} Deduce Simpson's rule for
+
+    \begin{equation*}
+        \int_a^b p_2(x) ~ dx
+    \end{equation*}
+
+    where $p_2$ is the polynomial interpolating $f$ in points 
+    $x_0 = a, x_1 = \frac{a+b}{2}, x_2 = b$.
 
 
-
-
-
-
-
-
+\end{shaded}
 
 
 
