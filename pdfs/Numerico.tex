@@ -3631,12 +3631,217 @@ P(x) = \frac{1}{2}(e - e^{-1}) + \frac{3}{e} \cdot x + \frac{15(2e^2 -
 
 
 
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(10)} Approximate $f(x) = e^{-3x}$ for $x \in (0, \infty)$
+    with a quadratic polynomial using least squares with weight function 
+    $\omega(x) = e^{-x}$, considering Laguerre polynomials defined as: 
+
+    \begin{equation*}
+        \phi_k(x) = \frac{e^x}{k!} \frac{d^k}{dx^k}(x^k e^{-x})
+    \end{equation*}
+
+    for all $x \in [0, \infty), k = 0, 1, 2, \ldots$. Help: For each $n \in
+    \mathbb{N}$, we know 
+
+    \begin{equation*}
+        \int_0^\infty x^n e^{-x} ~ dx = n!
+    \end{equation*}
+\end{shaded}
+
+We will need $\phi_0, \phi_1, \phi_2$ for a quadratic polynomial, so we might
+just as well begin by finding these polynomials. See the calculations below 
+for their derivation.
+
+\begin{shaded}
+    \textbf{Derivation of } $\phi_1, \phi_2, \phi_3$: See that
+\begin{align*}
+    \phi_0(x) 
+    &= e^x(x^0e^{-x}) \\ 
+    &=e^{x - x} \\ 
+    &= 1
+\end{align*}
+
+Furthermore,
+
+\begin{align*}
+    \phi_1(x) 
+    &= e^x\frac{d}{dx}\left( x e^{-x} \right) \\ 
+    &=e^{x} \left( e^{-x} - xe^{-x}  \right)  \\ 
+    &=1 - x
+\end{align*}
+
+Lastly, since
+
+\begin{equation*}
+    \frac{d}{dx}x^2 e^{-x} = 2xe^{-x} - x^2e^{-x}
+\end{equation*}
+
+then the second derivative of $x^2e^{-x}$ is:
+
+\begin{equation*}
+    2 \cdot \frac{d}{dx}(xe^{-x}) - \frac{d}{dx} x^2e^{-x} = 2\left( e^{-x} -
+    xe^{-x} \right) - (2x e^{-x} - x^2e^{-x})
+\end{equation*}
+
+Por lo  tanto,
+
+\begin{align*}
+    \phi_2(x) 
+    &= \frac{e^x}{2!} \frac{d^2}{dx^2}  \left( x^2e^{-x} \right) \\ 
+    &= \frac{e^x}{2} \left[ 2e^{-x} - 2xe^{-x} - 2xe^{-x} + x^2e^{-x} \right] \\ 
+    &= \frac{ 2 - 2x - 2x + x^2 }{2} \\ 
+    &= (x^2 -4x + 2) 1 / 2
+\end{align*}
+\end{shaded}
+
+In summary, 
+
+\begin{equation*}
+    \phi_1(x) = 1,\qquad \phi_2(x) = -x + 1, \qquad \phi_2(x) = (x^2 - 4x + 2) 1
+    / 2
+\end{equation*}
+
+We know these polynomials are orthogonal with respect to $\omega$, which simply
+means that the Hilbert matrix with coefficients
+
+\begin{equation*}
+    a_{ij} = \int_0^\infty \omega(x) \phi_i(x) \phi_j(x)
+\end{equation*}
+
+satisfies 
+
+\begin{equation*}
+    a_{ij} = \delta_{ij} \alpha_j, \qquad j =0, 1, 2
+\end{equation*}
+
+for some values $\alpha_0, \alpha_1, \alpha_2$ which we must determine.
+Expressed differently, the coefficients $a_0, a_1, a_2$ of the polynomial which
+approximates $f$ are given by 
+
+\begin{equation*}
+    a_j = \frac{1}{\alpha_j} \int_0^\infty \omega(x) f(x) \phi_j^2(x) ~ dx
+\end{equation*}
+
+So let us now compute $\alpha_0, \alpha_1, \alpha_2$.
+
+\begin{shaded}
+    \textbf{Computation of the $\alpha$ coefficients.} See that 
+
+    \begin{align*}
+        \alpha_0 = \int_0^\infty \omega(x) \phi_0^2(x) ~ dx 
+        &= \int_0^\infty x^0 e^{-x} ~ dx \\ 
+        &= 1
+    \end{align*}
+
+    \begin{align*}
+        \alpha_1 = \int_0^\infty \omega(x) \phi_1^2(x) ~ dx 
+        &= \int_0^\infty  e^{-x} (1 - x)^2 ~ dx \\ 
+        &=\int_0^\infty e^{-x}(1 - 2x + x^2) ~ dx \\ 
+        &= \int_0^\infty  e^{-x} ~ dx - 2\int_0^\infty xe^{-x} ~ dx +
+        \int_0^\infty x^2e^{-x} ~ dx \\ 
+        &= 0! - 2 \times 1! + 2! \\ 
+        &= 1 - 2 + 2 \\ 
+        &= 1
+    \end{align*}
+
+    For the last problem, see that the numerator of $\phi_2$ squared is:
+
+    \begin{align*}
+        (x^2 - 4x + 2)(x^2 - 4x + 2) 
+        &= (x^4 -4x^3 + 2x^2) + (-4x^3 +16x^2 -8x) + (2x^2 -8x + 4)\\ 
+        &= x^4 + (-4x^3 - 4x^3) + (2x^2 + 16x^2 + 2x^2) + (-8x - 8x) + 4 \\ 
+        &= x^4 -8x^3 + 20x^3 -16x + 4
+    \end{align*}
+
+    Then
+
+    \begin{align*}
+        \alpha_2 
+        &= \int_0^\infty \omega(x) \phi_2^2(x) ~ dx \\ 
+        &= \int_0^\infty e^{-x}\left( x^2 - 4x + 2 \right)^2 (1 / 4) ~ dx \\ 
+        &=\frac{1}{4} \int_0^\infty e^{-x} \left( x^4 - 8x^3 + 20x^2 - 16x + 4
+        \right)  ~ dx \\ 
+        &=\frac{1}{4} \left[ 4! - 8 \times 3! + 20 \times 2! - 16 \times 1! + 4
+        \times 0! \right] \\ 
+        &=\frac{1}{4}\left[  24 - 48 + 40 - 16 + 4 \right] \\ 
+        &=\frac{1}{4}\left[ 68 - 64 \right] \\ 
+        &=1
+    \end{align*}
+
+\end{shaded}
 
 
+So we have $\alpha_0 = \alpha_1 = \alpha_2 =1$. This means 
+
+\begin{equation*}
+    a_j = \int_0^\infty \omega(x) \phi_j(x) f(x) ~ dx
+\end{equation*}
+
+I don't know how to do the following fast without using the Gamma function:
+
+\begin{equation*}
+    \int_0^\infty x^n e^{-kx} ~ dx = \frac{n!}{k^{n+1}}
+\end{equation*}
+
+But we have:
+
+\begin{align*}
+    a_0 &= \int_0^\infty e^{-x} e^{-3x} ~ dx = \int_0^\infty e^{-4x} ~ dx =
+    \frac{1}{4} \\ 
+    a_1 &= \int_0^\infty e^{-x}(1-x) e^{-3x} ~ dx \\ 
+        &= \int_0^\infty e^{-4x}(1-x) ~ dx \\ 
+        &=\int_0^\infty e^{-4x} ~ dx- \int_0^\infty e^{-4x} x ~ dx \\ 
+        &= \frac{1}{4} - \frac{1}{4^2} \\ 
+    a_2 &= \frac{1}{2}\int_0^\infty e^{-x} (x^2 - 4x + 2)e^{-3x} ~ dx \\ 
+        &= \frac{1}{2} \int_0^\infty e^{-4x}(x^2 -4x + 2) ~ dx \\ 
+        &= \frac{1}{2}\left[ \int_0^\infty x^2 e^{-4x} ~ dx - 4 \int_0^\infty
+        xe^{-4x} ~ dx + 2 \int_0^\infty e^{-4x} ~ dx \right]  \\ 
+        &=\frac{1}{2}\left[ \frac{2!}{4^3} - 4 \frac{1!}{4^2} + 2 \frac{1}{4}
+        \right]  \\ 
+        &=\frac{1}{2}\left[ 1 / 4 - 1 / 4 + 1 / 2 \right]  \\
+        &= 1 / 4
+\end{align*}
+
+So the approximating polynomial is
+
+\begin{align*}
+    P(x) 
+    &= \sum_{i=0}^2 a_i \phi_i(x) \\
+    &= \frac{1}{4} + \frac{3}{16}(-x+1) + \frac{1}{4}\frac{x^2 -4x + 2}{2} \\ 
+    &=\frac{1}{4} - \frac{3}{16}x + \frac{3}{16} + \frac{1}{8}x^2 - \frac{1}{2}x
+    + \frac{1}{4} \\ 
+    &=\frac{1}{8}x^2 - \frac{11}{16}x + \frac{11}{16}
+\end{align*}
 
 
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=13cm,
+    height=8cm,
+    axis lines=middle,
+    grid=major,
+    xlabel={$x$},
+    ylabel={$y$},
+    xmin=0, xmax=1,
+    ymin=0, ymax=1,
+    legend style={at={(0.5,-0.2)}, anchor=north, legend columns=1},
+    domain=0:1,
+    samples=200
+]
+% f(x) = e^x
+\addplot [blue, thick] {exp(-3*x)};
+\addlegendentry{$f(x) = e^x$}
 
 
+% Quadratic approximation with phi_2 = x^2 - 1/3
+\addplot [red, thick, dashed] {1/8 * x^2 - 11/16 * x + 11/16};
+\addlegendentry{Quadratic approx.}
+\end{axis}
+\end{tikzpicture}
+\end{center}
 
 \pagebreak 
 
@@ -3922,22 +4127,1166 @@ No time. Memorize the formulas from apunte.
 
 \subsection{Gaussian rules}
 
+\begin{theorem}
+    Let $w$ a positive weight function in $[a, b]$ and $q \neq 0$ a polynomial 
+    of degree exactly $n+1$ ortogonal to all polynomials of degree $\leq n$
+    (with respect to $n$). In other words, assume 
+
+    \begin{equation*}
+        \int_a^b q(x) p(x) w(x) ~ dx = 0
+    \end{equation*}
+
+    Then if $x_0, x_1, \ldots, x_n$ are the $n+1$ roots of $q$, then 
+
+    \begin{equation*}
+        \int_a^b f(x) w(x) ~ dx \apprx \sum_{i=0}^n a_if(x_i)
+    \end{equation*}
+
+    with $a_i = \int_a^b w(x) \ell_i(x) ~ dx$ is exact for all polynomials $f$
+    of degree $\leq 2n + 1$.
+\end{theorem}
+
 \pagebreak 
 
 \subsection{Excercises}
 
 \begin{shaded}
-    \textbf{(1)} Deduce Simpson's rule for
+    \textbf{(2)} Define 
 
     \begin{equation*}
-        \int_a^b p_2(x) ~ dx
+        f(x) = \begin{cases}
+            x & 0 \leq x \leq 1 / 2 \\ 
+            1 - x & 1 / 2 \leq x \leq 1
+        \end{cases}
     \end{equation*}
 
-    where $p_2$ is the polynomial interpolating $f$ in points 
-    $x_0 = a, x_1 = \frac{a+b}{2}, x_2 = b$.
-
-
+    in $[0, 1]$. Estimate $\int_0^1 f(x) ~ dx$ using $(a)$ the trapeze rule in
+    $[0, 1]$, the trapez rule on a half-segmentation of $[0, 1]$, $(c)$
+    Simpson's rule on $[0, 1]$. $(d)$ What can you conclude?
 \end{shaded}
+
+Let us first observe that 
+
+\begin{align*}
+    \int_{0}^1 f(x) ~ dx 
+    &= \int_0^{\frac{1}{2}} x ~ dx + \int_{\frac{1}{2}}^1 1
+    - x ~ dx \\ 
+    &= \frac{1}{8} + \frac{1}{2} - (\frac{1}{2} - \frac{1}{8}) \\ 
+    &=1 / 4
+\end{align*}
+
+$(a)$ The trapeze rule was defined as 
+
+\begin{equation*}
+    \int_a^b f(x) ~ dx = \frac{h}{2}\left[ f(a) + f(b) \right] -
+    \frac{h^3}{12}f''(\zeta)
+\end{equation*}
+
+for some $\zeta \in (a, b)$. Here, $h = 1 - 0 = 1$, $f(0) = 0, f(1) = 0$. So its
+estimation gives $1 / 2 (0) = 0$, with an error of $0.25$.
+
+$(b)$ When using the rule on the two equal-split segments of the interval, we
+obtain 
+
+\begin{align*}
+    \int_0^1 f(x) ~ dx 
+    &\approx \frac{1 / 2}{2}\left[ f(0) + f(1 / 2) \right] +
+    \frac{1 / 2}{2}\left[ f( 1 / 2) + f(1) \right] \\ 
+    &= \frac{1}{4} \times \frac{1}{2} + \frac{1}{4} \times \frac{1}{2} \\ 
+    &= 1 / 4
+\end{align*}
+
+which is an exact approximation.
+
+$(c)$ Simpson's rule is defined for $n = 2$ (three points), so we select $1 / 2$
+as midpoint having $h = 1 / 2$. 
+
+\begin{align*}
+    \int_0^1 f(x) ~ dx 
+    &\approx \frac{h}{3} \left[ f(0) + 4f(1 / 2) + f(1) \right] \\ 
+    &=\frac{1}{6}\left[ 0 + 4 / 2 + 0 \right]  \\ 
+    &=\frac{1}{3}
+\end{align*}
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(4)} $(a)$ Build a rule of the form 
+
+    \begin{equation*}
+        \int_{-1}^1 f(x) ~ dx \approx \alpha f\left( -\frac{1}{2} \right) +
+        \beta f(0) + \gamma f\left( \frac{1}{2} \right) 
+    \end{equation*}
+
+    that is exact for all polynomials f degree $\leq 2$.
+
+    $(b)$ Determine the precision of the formula for 
+
+    \begin{equation*}
+        \int_{-1}^1 f(x) ~ dx \approx \frac{4}{3}f\left( -\frac{1}{2} \right)  -
+        \frac{2}{3} f(0) + \frac{4}{3}f\left( \frac{1}{2} \right) 
+    \end{equation*}
+\end{shaded}
+
+$(a)$ Let $p_0(x) = 1, p_1(x) = x, p_2(x) = x^2$. For the formula to be exact
+for polynomials of degree $\leq 2$, it must satisfy: 
+
+\begin{equation*}
+    \begin{bmatrix} 
+             
+    p_0\left( -\frac{1}{2} \right) & p_0\left( 0 \right) p_0\left( \frac{1}{2}
+    \right)  \\ 
+    p_1\left( -\frac{1}{2} \right) & p_1\left( 0 \right) p_1\left( \frac{1}{2}
+    \right)  \\ 
+    p_2\left( -\frac{1}{2} \right) & p_2\left( 0 \right) p_2\left( \frac{1}{2}
+    \right)  \\ 
+    \end{bmatrix} \begin{bmatrix} 
+            \alpha \\ \beta \\ \gamma 
+    \end{bmatrix} = \begin{bmatrix} 
+    \int_{-1}^1 p_0(x) ~ dx \\ 
+    \int_{-1}^1 p_1(x) ~ dx \\ 
+    \int_{-1}^1 p_2(x) ~ dx
+    \end{bmatrix} 
+\end{equation*}
+
+Let $\varphi_i = \int_{-1}^1 p_i(x) ~ dx$. Note that $\varphi_0 = 2, \varphi_1 =
+0, \varphi_2 = \frac{2}{3}$. Then, we can express the problem more succintly.
+$\alpha, \beta, \gamma$ are solutions to the following system of equations: 
+
+\begin{equation*}
+    \begin{bmatrix} 
+        1 & 1 & 1 &\mid 2 \\ 
+        -\frac{1}{2} & 0 & \frac{1}{2} & \mid 0\\ 
+        \frac{1}{4} & 0 & \frac{1}{4} &\mid \frac{2}{3}
+    \end{bmatrix} 
+\end{equation*}
+
+From the second row, we readily have $\alpha = \gamma$. Then, 
+the third row expresses that 
+
+\begin{equation*}
+    \frac{1}{2}\alpha = \frac{2}{3} \Rightarrow \alpha = \frac{4}{3}
+\end{equation*}
+
+Then, row one gives 
+
+\begin{equation*}
+    \beta = 2 - \frac{8}{3} = -\frac{2}{3}
+\end{equation*}
+
+The formula then is 
+
+\begin{equation*}
+    \int_{-1}^1 f(x) ~ dx \approx \frac{4}{3}f\left( -\frac{1}{2} \right) -
+    \frac{2}{3}f(0) + \frac{4}{3}f\left( \frac{1}{2} \right) 
+\end{equation*}
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(5)} $(a)$ Determine the number $n$ of sub-intervals needed in the
+    composite trapeze rule to approximate $\int_0^1 e^{-x^2} ~ dx$ with an error
+    $\leq \frac{1}{2} 10^{-6}$, assuming $e^{-x^2}$ can be computed precisely.
+    $(b)$ Repeat for Simpson's composite rule.
+\end{shaded}
+
+$(a)$ If $n$ sub-intervals are taken in $[0, 1]$, then each sub-interval is of
+length $h(n) = \frac{1}{n}$. Note as well that if $n$ sub-intervals are taken,
+then there are $n + 1$ points forming intervals $[x_1, x_2],  \ldots,
+[x_n, x_{n+1}]$. The composite approximation is
+
+\begin{equation*}
+    \int_0^1 f(x) ~ dx \approx 
+    \sum_{i=1}^{n} \left(\frac{h(n)}{2}\left[ f(x_i) +
+            f(x_{i+1})
+    \right]  - \frac{h^3}{12}f''(\zeta_i)\right)
+\end{equation*}
+
+where $\zeta_i \in (x_i, x_{i+1})$. We only care about the error here, which we
+can clear out, since 
+
+\begin{align*}
+    &\sum_{i=1}^{n} \left(\frac{h(n)}{2}\left[ f(x_i) +
+            f(x_{i+1})
+    \right]  - \frac{h^3(n)}{12}f''(\zeta_i)\right) \\ 
+    =&\sum_{i=1}^n \left( \frac{1}{2n}\left[ f(x_i) + f(x_{i+1}) \right]
+    \right) - \frac{1}{12n^3} \sum_{i=1}^n f''(\zeta_i)
+\end{align*}
+
+Now, observe that 
+
+\begin{equation*}
+    \frac{d}{dx} e^{-x^2} = \frac{d}{du} e^u \frac{d}{dx} (-x^2) = -2xe^{-x^2}
+\end{equation*}
+
+from which follows that the second derivative of $f$ is 
+
+\begin{equation*}
+    \frac{d}{dx} -2xe^{-x^2} = -2\left( e^{-x^2} + x(-2xe^{-x^2}) \right) =
+    -2e^{-x^2} + 4x^2e^{-x^2} = f''(x)
+\end{equation*}
+
+The derivative of this function is 
+
+\begin{equation*}
+    -2(4e^{-x^2}x^3 - 6e^{-x^2}x)
+\end{equation*}
+
+which is always negative in $(0, 1)$ (since $e^{-x^2}$ is always positive in
+$(0, 1)$). Therefore, $f''$ is a decreasing function and its maximum (in $(0,
+1)$) is bounded by $f''(0) = -2$. From this readily follows that the error term
+satisfies 
+
+\begin{equation*}
+    -\frac{1}{12n^3}\sum_{i=1}^n f''(\zeta_i) \leq -\frac{1}{12n^3}\sum_{i=1}^n
+    (-2) = \frac{2n}{12n^3} = \frac{1}{6n^2}
+\end{equation*}
+
+Using the fact that the error term is less than or equal to $1 / 6n^2$, we must
+simply bound 
+
+\begin{equation*}
+    \frac{1}{6n^2} \leq \frac{1}{2}10^{-6}
+\end{equation*}
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(7)} Estimate $\int_{-1}^{1} f(x) ~ dx$ through a rule of the form 
+
+    \begin{equation*}
+        \int_{-1}^1 f(x)~ dx = \alpha f(x_1) + \beta f(x_2) + \gamma f(x_3)
+    \end{equation*}
+
+    that is exact for polynomials of degree $\leq 5$. Use it to approximate 
+    $f(x) = \cos x$.
+\end{shaded}
+
+
+We know from previous problems that $\varphi_0 = 2, \varphi_1 = 0, \varphi_2 =
+\frac{2}{3}$, where $\varphi_i = \int_{-1}^1 x^i ~ dx$. 
+
+\begin{equation*}
+\int_{-1}^1 x^3 ~ dx = 0, \qquad \int_{-1}^1 x^4 ~ dx = \frac{2}{5}, \qquad
+\int_{-1}^1 x^5 ~ dx = 0
+\end{equation*}
+
+We will take $x_1 = -1, x_2 = 0, x_3 = 1$. Then, $\alpha, \beta, \gamma$ are the
+solutions of the following system of equations: 
+
+\begin{equation}
+    \begin{bmatrix} 
+        1 & 1 & 1 & 2 \\ 
+        -1 &0 & 1 & 0\\ 
+        1 & 0 & 1 & \frac{2}{3}\\ 
+        -1 & 0 & 1 & 0 \\ 
+        1 & 0 & 1 & \frac{2}{5}\\ 
+        -1 & 0 & 1 & 0
+    \end{bmatrix}
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\pagebreak
+\section{Systems of equations}
+
+The problem is finding the solution to $Ax = b$ with $A \in \mathbb{R}^{n \times
+n}$ and $b \in \mathbb{R}^n$.
+
+\textbf{Diagonal case.} Obviously, if $A$ is diagonal and its determinant is
+non-zero (i.e. $a_{ii} \neq 0$ for all $i = 1, \ldots, n$) then $Ax = b$
+(with $x, b \in \mathbb{R}^n$) has the single solution 
+$x_i = \frac{b_i}{a_{ii}}$. So an algorithm is simply: 
+
+\begin{align*}
+    &\textbf{input } n, A, b\\ 
+    &\textbf{for } i = 1, \ldots, n \textbf{ do } \\ 
+    &\qquad x_i \leftarrow b_i / a_{ii} \\ 
+    &\textbf{od}
+\end{align*}
+
+with a computational complexity $O(n)$ (exactly $n$ operations).
+
+\textbf{Triangular case.} A matrix is upper-triangular iff $a_{ij} = 0$ for $i <
+j$ (lower-triangular if this holds for $i > j$). Assume $A \in \mathbb{R}^n$ is
+lower-triangular. 
+
+Assume $A$ is lower-triangular and non-singular (i.e. invertible, i.e. non-zero
+determinant, ect.): 
+
+\begin{equation*}
+    A = \begin{bmatrix} 
+        a_{11}  & 0 & \ldots & 0 \\ 
+        a_{21} & a_{22} & \ldots & 0 \\ 
+        \vdots & \vdots & \ldots & 0 \\ 
+        a_{n1} & a_{n2} & \ldots & a_{nn}
+    \end{bmatrix} 
+\end{equation*}
+
+Then $Ax = b$ requires 
+
+\begin{equation*}
+    \begin{cases}
+        a_{11}x_1 &= b_1 \\ 
+        a_{21} x_1 + a_{22} x_2 &= b_2 \\ 
+        \vdots \\ 
+        a_{n1}x_1 + \ldots + a_{nn}x_n &= b_n
+    \end{cases} \Rightarrow 
+    \begin{cases}
+        x_1 &= b_1 / a_{11} \\ 
+        x_2 &= \frac{1}{a_{22}} (b_2 - a_{21}x_1  ) \\ 
+        \vdots \\ 
+        x_i &= \frac{1}{a_{ii}} \left(b_i \sum_{j=1}^{i-1} a_{ij}x_j\left) \\ 
+        \vdots \\ 
+        x_n &= \frac{1}{a_{nn}} \left( b_n - \sum_{j=1}^{n-1} a_{nj} x_j \right) 
+    \end{cases}
+\end{equation*}
+
+Therefore, an algorithm is simply setting for $i = 1, \ldots, n$ the value 
+
+\begin{equation*}
+    x_i \leftarrow \left( b_i - \sum_{j=1}^{i-1} a_{ij} x_j \right) / a_{ii}
+\end{equation*}
+
+Esto hace $\mathcal{O}(n^2)$ operaciones.
+
+\subsection{Gaussian elimination}
+
+Gaussian elimination consists of solving $Ax = b$ by finding $(n-1)$
+transformations of $A$ and $b$, 
+
+\begin{equation*}
+    A^{(1)}, \ldots, A^{(n-1)}, \qquad b^{(1)}, \ldots, b^{(n-1)}
+\end{equation*}
+
+satisfying that $U = A^{(n-1})$ is upper-triangular and therefore contains the
+solution to the system. Let us show the transitions in part before generalizing. 
+
+(Transition $A \to A^{(1)}$) Take $a_{11}$ as pivot. We want to convert all
+values under $a_{11}$ (first column except $a_{11}$) into zeros. So for each
+row, we compute the multiplicative factor 
+
+\begin{equation*}
+    m_i^{(1)} = \frac{ a_{i1} }{a_{11}}
+\end{equation*}
+
+Observe that this factor is such that $a_{i1} - m_i^{(1)} a_{11} = 0$, in other words
+it is the number such that the row operation
+
+\begin{equation}
+i\text{th row} - \text{first row } \times  m_i
+\end{equation}
+
+ensures $a_{i1} = 0$. We then perform precisely the operation specified in (1),
+which gives $A^{(1)}$ with coefficients 
+
+\begin{equation*}
+    a^{(1)}_{ij} = \begin{cases}
+        a_{11} & i = j = 1 \\ 
+        0 & 1 < i \leq n, j = 1 \\ 
+        a_{ij} - m^{(1)}_i a_{1j} & c.c.
+    \end{cases}, \qquad b^{(1)}_{i} = \begin{cases}
+        b_1 & i = 1 \\ 
+        b_i - m_i b_1 & 1 < i \leq n
+    \end{cases}
+\end{equation*}
+
+How many operations are involved? Well, we can ignore the direct assignments 
+and consider only the updating of non-zero values. In the matrix, there are $(n-1) \times (n-1)
+= (n-1)^2$ such computations to be made, each of which consists of substracting
+from an existing coefficient a product. Then $(n-1)$ such computations must be
+performed in vector $b$ as well. So the passing $A \to A^{(1)}$ requires 
+$(n-1)^2 + n-1$ products, $(n-1)^2 + (n-1)$ sums. 
+
+However, before the passing, we must also compute $m_2, \ldots, m_{n}$, which
+involves $n-1$ quotients. So we have in total: 
+
+\begin{equation}
+    \textbf{\#Products} = (n-1)^2 + 2(n-1) = n^2 -1, \qquad \textbf{\#Sums} =
+    (n-1)^2 + (n-1) = n^2 - n
+\end{equation}
+
+($A^{(1)} \to A^{(2)}$) We have all zeros in the first column (except for
+$a_{11}$), so now we want all zeros in the second column (except $a_{12},
+a_{22}$). This involves in doing exactly the same as we did before,
+but in the $(n-1)^2$ sub-matrix that has $a_{22}$ as pivot. So the same
+reasoning applies. 
+
+(General case: $A^{(k)} \to A^{(k+1)}$) The pivot is $a_{(k+1)(k+1)}$, the
+multiplicative factor is $m_i^{(k+1)} = \frac{a^{(k)}_{ik}}{a^{(k)}_{kk}}$, 
+and the operations are: 
+
+\begin{equation*}
+    a^{(k+1)}_{ij} = \begin{cases}
+        a^{(k)}_{ij} & 1 \leq i \leq k, 1 \leq j \leq n \\ 
+        0 & k+1 \leq i \leq n, j = k \\ 
+        a^{(k)}_{ij} - m_i^{(k+1)} a^{(k)}_{kj} & k \leq i \leq n, k+1 \leq j
+        \leq n
+    \end{cases}
+\end{equation*}
+
+The number of operations are the same, but instead of dealing with matrix $A$ of
+$n^2$ dimensions, we are dealing with matrix $A^k$ of $(n-k)$ dimensions. 
+
+
+\subsection{LU factorization}
+
+It is an excercise to show that the computational cost of Gaussian elimination
+is $\mathcal{O}\left( \frac{2}{3}n^3 \right) $. 
+
+Assume several equations $Ax = b_1, Ax = b_2$, etc. wish to be solved. Same
+matrix, different $b$ vectors. It'd be stupid to recompute the transformation of
+$A$.
+
+Idea: Factor $A = LU$ were $L$ is lower-triangular with $l_{ii} = 1$ and $U$ is
+upper-triangular. Thus, 
+
+\begin{equation*}
+    Ax = b \iff (LU)x = b \iff Ux = y \text{ and } Ly = b
+\end{equation*}
+
+Thus, once we know $LU$ which factorizes $A$, instead of solving $Ax = b$ we
+solve the two triangular systems $Ux = y, Ly = b$. $L, U$ are obtained via
+construction by posing:
+
+\begin{equation*}
+    \begin{bmatrix}
+1      & 0      & 0      & \cdots & 0 \\
+\ell_{21} & 1      & 0      & \cdots & 0 \\
+\ell_{31} & \ell_{32} & 1      & \cdots & 0 \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+\ell_{n1} & \ell_{n2} & \ell_{n3} & \cdots & 1
+\end{bmatrix}
+\begin{bmatrix}
+u_{11} & u_{12} & u_{13} & \cdots & u_{1n} \\
+0      & u_{22} & u_{23} & \cdots & u_{2n} \\
+0      & 0      & u_{33} & \cdots & u_{3n} \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+0      & 0      & 0      & \cdots & u_{nn}
+\end{bmatrix}
+=
+\begin{bmatrix}
+a_{11} & a_{12} & a_{13} & \cdots & a_{1n} \\
+a_{21} & a_{22} & a_{23} & \cdots & a_{2n} \\
+a_{31} & a_{32} & a_{33} & \cdots & a_{3n} \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & a_{n3} & \cdots & a_{nn}
+\end{bmatrix}.
+\end{equation*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Iterative methods}
+
+\begin{definition}[Vector norm] 
+    A vector norm in $\mathbb{R}^n$ is a function $\| \cdot \| : \mathbb{R}^n
+    \to \mathbb{R}^{>0}$ satisfying: 
+
+    \begin{enumerate}
+        \item $\|\textbf{x}\| > 0$ if $\textbf{x} \neq \overrightarrow{0}$, and
+            $\|\overrightarrow{0}\| = 0$. \item $\|\alpha \textbf{x}\| = |\alpha| \|\textbf{x}\|$
+        \item $\|\textbf{x} + \textbf{y}\| \leq \|\textbf{x}\| + \|\textbf{y}\|$
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}[Distance]
+    The distance between two vectors $\textbf{x}, \textbf{y} \in \mathbb{R}^n$
+    is $d(x, y) = \|\textbf{x} - \textbf{y}\|$.
+\end{definition}
+
+\begin{definition}[Matrix norm]
+    A matrix norm in $\mathbb{R}^{n\times n}$ is a function mapping each matrix
+    in the sapce to a non-negative real denoted $\|A\|$, such that for all $A, B
+    \in \mathbb{R}^{n\times n}$ and all $\alpha \in \mathbb{R}$:
+
+    \begin{enumerate}
+        \item Same 3 points as in vector norm. 
+        \item $\|AB\| \leq \|A\|\|B\|$.
+    \end{enumerate}
+\end{definition}
+
+If we have a vector norm $\|\cdot\|$ in $\mathbb{R}^n$, then we say 
+
+\begin{equation*}
+    \|A\| = \text{sup}_{x=0} \frac{\|A x\|}{\|x\|}
+\end{equation*}
+
+is the matrix norm induced by $\|\cdot\|$.  In general, if a matrix norm is
+induced by a vector norm, 
+
+\begin{itemize}
+    \item $\|A x\|\leq \|A\| \|x\|$ for all $x \in \mathbb{R}^n$
+    \item There is some $\widetilde{ x } $ with $\|\widetilde{ x } \| = 1$ such
+        that $\|A \widetilde{ x } \| = \|A\|$.
+\end{itemize}
+
+The point is to generate a sequence of vectors $\left\{ \textbf{x}^{(k)}
+\right\} $ that converge to a solution of $A\textbf{x} = \textbf{b}$ under
+certain hypothesis.
+
+Assume we expressed $A$ as $M - N$. Then 
+
+\begin{align*}
+    A\textbf{x} = \textbf{b} 
+    &\iff (M - N)\textbf{x} = \textbf{b} \\ 
+    &\iff M\textbf{x} = N\textbf{x} + b \\ 
+    &\iff \textbf{x} = M^{-1}(N\textbf{x} + b) \\ 
+    &\iff\textbf{x} = \left( M^{-1}N \right)\textbf{x} + M^{-1}\textbf{b}
+\end{align*}
+
+which is recursive because $\textbf{x}$ is defined in terms of $\textbf{x}$.
+Given $\textbf{x}^{(0)}$ an approximation, we can construct 
+
+\begin{equation}
+    \textbf{x}^{(k+1)} = \left( M^{-1}N \right) x^{(k)} + M^{(-1)}b, \qquad k
+    \geq 
+\end{equation}
+
+\begin{theorem}[Convergence of iterative methods]
+    Let $\textbf{b} \in \mathbb{R}^n, A = M - N \in \mathbb{R}^{n \times  n}$,
+    with $A, M$ non-singular. If $\|M^{-1} N\| < 1$ for some induced matrix
+    norm, then the sequence generated in equation $(1)$ converges to the
+    solution of $A\textbf{x} = b$ for any initial vector $\textbf{x}^{(0)}$.
+\end{theorem}
+
+
+\small
+\begin{quote}
+
+\textbf{Proof.} Take 
+
+\begin{equation}
+    \textbf{x}^{(k+1)} =  (M^{-1}N)x^{(k)} + M^{(-1)}b, \qquad k \geq 0
+\end{equation}
+
+Substracting this from $x_* = (M^{-1} N)x + M^{-1}b$, we obtain 
+
+\begin{equation}
+    x^{(k+1)} - x_* = (M^{-1} N)(x^{(k)} - x_*), \qquad k \geq 0
+\end{equation}
+
+Now, given an induced matricial norm, we obtain 
+
+\begin{equation}
+    \|x^{(k+1)} - x_*\| = \|M^{-1} N\| \|x^{(k)} - x_*\|, \qquad k \geq 0
+\end{equation}
+
+Repeating the last step,
+
+
+\begin{equation}
+    \|x^{(k+1)} - x_*\| = \|M^{-1} N\|^{k+1} \|x^{(0)} - x_*\|, \qquad k \geq 0
+\end{equation}
+
+Using the fact that $\|(M^{-1}N)\| < 1$, we t hen have
+
+\begin{equation}
+    \lim_{k \to \infty}  \|x^{(k)} - x_*\| = 0
+\end{equation}
+
+\end{quote}
+\normalsize
+\subsection{Jacobi}
+
+In Jacobi we use $M = D$ and therefore 
+
+\begin{equation*}
+    N = M - A = D - (L + D + U) = -(L + U)
+\end{equation*}
+
+which means $M$ is the diagonal matrix with the diagonal of $A$, and is a copy
+of $A$ but has zeros in the diagonal.
+
+\begin{definition}
+    A matrix $A$ is diagonally dominant if 
+
+    \begin{equation*}
+        \left| a_{ii} \right| > \sum_{j=1, j \neq i}^n \left| a_{ij} \right| 
+    \end{equation*}
+\end{definition}
+
+\begin{theorem}[Jacobi's convergence]
+    If $A$ is diagonally dominant, the sequence generated by Jacobi's method
+    converges to the solution of $Ax = b$ for any initial vector $x^{(0)} \in
+    \mathbb{R}^n$.
+\end{theorem}
+
+\small
+\begin{quote}
+
+\textbf{Proof.} In Jacobi's method, the matrix $M$ is the diagonal of $A$ and it
+must be invertible for the method to be well-defined, meaning that 
+$a_{ii} \neq 0$ for all $i = 1, \ldots, n$.  Then the iteration matrix is give
+nby 
+
+\begin{align*}
+    M^{-1}N &= -\begin{bmatrix} 
+        1 / a_{11} & 0 & \ldots & 0 \\ 
+        0 & 1 / a_{22} & \ldots & 0 \\ 
+        \vdots & \vdots & \ldots & \vdots \\ 
+        0 & 0 & \ldots & a_{nn}
+    \end{bmatrix} \begin{bmatrix} 
+        0 & a_{12}  & \ldots & a_{1 n} \\ 
+        a_{21} & 0 & \ldots & a_{2n} \\ 
+        \vdots & \vdots & \ldots & \vdots \\ 
+        a_{n1} & a_{n 2} & \ldots & 0
+    \end{bmatrix}  \\ 
+            &= -\begin{bmatrix} 
+                0 & a_{12} / a_{11} & \ldots & a_{1 n} / a_{11} \\ 
+                a_{21} / a_{22} & 0 & \ldots & a_{2n} / a_{22} \\ 
+                \vdots & \vdots & \ldots & \vdots \\ 
+                a_{n1} / a_{nn} & a_{n2} / a_{nn} & \ldots & 0
+            \end{bmatrix} 
+\end{align*}
+
+It follows that 
+
+\begin{equation*}
+    \|M^{-1} N\|_{\infty} = \max_{1 \leq i \leq n} \sum_{j=1}^n 
+    \frac{\left| a_{ij} \right| }{\left| a_{ii} \right| } < 1
+\end{equation*}
+
+since $A$ is diagonally dominant. Then the method converges by virtue of 
+\textbf{Theorem 1}.
+
+\end{quote}
+\normalsize
+
+
+
+
+\subsection{Gauss-Seidel method}
+
+Here, we take $N = M - a = L + D - (L + D + U) = -U$. In other words, we obtain 
+$M$ to be the lower-triangular conversion of $A$, including the diagonal, and
+$N$ to be the upper-triangular version of $A$, with zeros on the diagonal. It
+can be shown that 
+
+\begin{equation*}
+    x_i^{(k+1)} = \frac{1}{a_{ii}} \left( b_i - \sum_{j=1}^{i-1}
+    a_{ij}x_j^{(k+1)} - \sum_{j=i+1}^n a_{ij} x_j^{(k)}\right), \qquad i = 1,
+    \ldots, n
+\end{equation*}
+
+\begin{theorem}
+    If $A$ is diagonally dominant, then the sequence generated by the
+    Gauss-Seidel method converges to the solution of $Ax = b$, for any 
+    initial vector $x^{(0)} \in \mathbb{R}^n$.
+\end{theorem}
+
+Define with $\rho(A)$ the spectral radius of $A$, defined as 
+
+\begin{equation*}
+    \max \left\{ |\lambda| : \lambda \text{ is eigenvalue of } A \right\} 
+\end{equation*}
+
+\begin{theorem}
+    For any matrix $A \in \mathbb{R}^{n\times n}$, it holds that 
+    $\rho(A) = \text{inf}\left\{ \|A\| \right\} $ on all induced matrix norms, 
+\end{theorem}
+
+\begin{theorem}
+    A necessary and sufficient condition for the convergence of an iterative
+    method 
+
+    \begin{equation*}
+        x^{(k+1)} = (M^{-1}N)x^{(k)} + M^{-1}b, \qquad k \geq 0
+    \end{equation*}
+
+    for any initial vector $x^{(0)}$ is that $\rho\left( M^{-1}N \right) < 1$.
+\end{theorem}
+
+
+\pagebreak 
+
+\subsection{Excercises}
+
+\begin{shaded}
+    \textbf{(3)} Show that the operational cost of Gaussian elimination for
+    solving $Ax = b$, $A \in \mathbb{R}^{n \times n}$, is $\mathcal{O}\left(
+    \frac{2}{3}n^3 \right) $ flops. 
+
+    \textbf{Hint.} Recall that 
+
+    \begin{equation*}
+        \sum_{k=1}^n k = \frac{n(n+1)}{2}, \qquad \sum_{k=1}^n k^2 =
+        \frac{n(n+1)(2n+1)}{6}
+    \end{equation*}
+\end{shaded}
+
+The Gaussian elimination method performs the transitions 
+
+\begin{equation*}
+    A \to A^{(1)} \to A^{(2)} \to  \ldots \to A^{(n-1)} = U
+\end{equation*}
+
+for a total of $n$ transitions. We know
+
+\begin{equation*}
+    P(k) = (n-k)^2 - 1, \qquad S(k) = (n-k)^2 - (n-k)
+\end{equation*}
+
+are the number of products ($P$) and sums ($S$) on the $k$th to $k+1$
+transition. Obviously, as $k$ increases across $0, \ldots, n-1$,
+the coefficient $(n-k)$ ranges from $n, n-1, \ldots, 1$. So ultimately, 
+
+\begin{align*}
+    \sum_{k=0}^{n-1} P(k) + S(k)
+    &=\sum_{k=0}^{n-1} (n-k)^2 - 1 + (n-k)^2 - (n-k) \\ 
+    &= \sum_{k=1}^n  k^2 - 1 + k^2 - k \\ 
+    &= 2\times\frac{n(n+1)(2n+1)}{6} - n - \frac{n(n+1)}{2} \\ 
+    &= \frac{n(n+1)(2n+1)}{3} - n - \frac{n^2 + n}{2}\\
+    &=\frac{2n^3 + 3n^2 + n }{3} - n -\frac{n^2}{2} + \frac{n}{2} \\ 
+    &= \frac{2}{3}n^3 + n^2 + \frac{1}{3}n - \frac{1}{2}n^2 - \frac{1}{2}n  \\ 
+    &= \frac{2}{3}n^3 +\frac{1}{2} n^2 + \frac{1}{3}n - \frac{1}{2}n 
+\end{align*}
+
+Clearly, the dominant term in the number of flops is $\frac{2}{3}n^3$, which
+means the number of operations satisfies the complexity bound $\frac{2}{3}n^3 +
+\mathcal{O}(n^2)$. This suffices to show the number of flops is in the order 
+$\mathcal{O}\left( \frac{2}{3}n^3 \right) $.
+
+\pagebreak 
+
+
+\begin{shaded}
+    \textbf{(4)} Solve $Ax = b$ with 
+
+    \begin{equation*}
+        A = \begin{bmatrix} 
+            2 & -2 & 1 \\ 
+            1 & 1 & 3 \\ 
+            0  & 4 & 1
+        \end{bmatrix}, \qquad b = \begin{bmatrix} 
+                -1 \\ 6 \\ 9 
+        \end{bmatrix} 
+    \end{equation*}
+
+    $(a)$ First, solve via Gaussian elimination. $(b)$ Then via LU
+    decomposition.
+\end{shaded}
+
+$(a)$ Observe that 
+
+\begin{align*}
+        A = \begin{bmatrix} 
+            2 & -2 & 1 & -1 \\ 
+            1 & 1 & 3 & 6 \\ 
+            0  & 4 & 1 & 9
+        \end{bmatrix} 
+        &\to \begin{bmatrix} 
+            2 & -2 & 1 & -1 \\ 
+            0 & 2 & 2.5 & 6.5 \\ 
+            0  & 4 & 1 & 9
+        \end{bmatrix} & (m = 1 / 2) \\ 
+        &\to \begin{bmatrix} 
+            2 & -2 & 1 & -1 \\ 
+            0 & 2 & 2.5 & 6.5 \\ 
+            0  & 4 & 1 & 9
+        \end{bmatrix} & (m = 0)\\ 
+        &\to \begin{bmatrix} 
+            2 & -2 & 1 & -1 \\ 
+            0 & 2 & 2.5 & 6.5 \\ 
+            0  & 0 & -4 & -4
+        \end{bmatrix} & (m = 4 / 2 = 2)\\ 
+\end{align*}
+
+This concludes Gaussian elimination, and it readily provides the $U$ and $L$
+matrix for LU method:
+
+\begin{equation*}
+        U = \begin{bmatrix} 
+            2 & -2 & 1  \\ 
+            0 & 2 & 2.5  \\ 
+            0  & 0 & -4 
+        \end{bmatrix}, \qquad L = \begin{bmatrix} 
+            1 & 0 & 0 \\ 
+            \frac{1}{2} & 1 & 0 \\ 
+            0 & 2 & 1
+        \end{bmatrix} 
+\end{equation*}
+
+Solving via Gaussian elimination entails applying the upper-triangular
+algorithm to the system obtained via Gaussian elimination, which gives: 
+
+\begin{align*}
+    x_3 = 1, \qquad x_2 = ( 6.5 - 2.5 ) / 2 = 2, \qquad x_3 = (-1 + 2
+    \times 2 - 1 \times 1) / 2 = 1
+\end{align*}
+
+$(b)$ To solve using LU decomposition, we note that $Ax = b$ if and only if 
+$Ux = y$ and $Ly = b$. So, we begin solving $Ly = b$, which gives (according to
+matrix $L$)
+
+\begin{equation*}
+    \begin{bmatrix} 
+        1 & 0 & 0 & -1 \\ 
+        \frac{1}{2} & 1 & 0 & 6 \\ 
+        0 & 2 & 1 & 9
+    \end{bmatrix} 
+\end{equation*}
+
+\begin{equation*}
+    y_1 = -1, \qquad y_2 = 6.5, \qquad y_3 = -4
+\end{equation*}
+
+Then we solve $Ux = y$, i.e. the system 
+
+\begin{equation*}
+    \begin{bmatrix} 
+        2 & -2 & 1 & -1 \\ 
+        0 & 2 & 2.5 & 6.5 \\ 
+        0 & 0 & -4 & -4
+    \end{bmatrix} 
+\end{equation*}
+
+which is exactly the same system solved in $(a)$ and gives the same solutions.
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(8)} Consider the system 
+
+    \begin{equation*}
+        \begin{cases}
+            x - y = 0 \\ 
+            x + y = 0
+        \end{cases}
+    \end{equation*}
+
+    Obtain the eigenvalues and eigenvectors of the associated iteration matrix
+    (Gauss-Seidel) to decide if the method converges independently of the
+    initial vector $\overrightarrow{x}_0$. Predict the behavior of the sequence 
+    with $\overrightarrow{x}_0 \in  \left\{ (2, 0), (-0.03, 0.03), (0, 1)
+    \right\} $. Decide if Jacobi's method converges for these vectors.
+\end{shaded}
+
+The matrix associated to the system is simply 
+
+\begin{equation*}
+    \begin{bmatrix} 
+        1 & -1 \\ 
+        1 & 1
+    \end{bmatrix} 
+\end{equation*}
+
+Recall that Gauss-Seidel's method writes $A = (M-N)\overrightarrow{x} =
+\overrightarrow{b}$ with $M$ the lower-triangular of $A$ (including diagonal),
+and $N$ the (negative) upper-triangularo of $A$ (with zeros in the diagonal). So we take 
+
+\begin{equation*}
+    M = \begin{bmatrix} 
+        1 & 0 \\ 
+        1 & 1
+    \end{bmatrix}, \qquad N = \begin{bmatrix} 
+        0 & 1 \\ 
+        0 & 0
+    \end{bmatrix} 
+\end{equation*}
+
+Recall that the iteration is given by $\overrightarrow{x}^{(k+1)} = (M^{-1}
+N)\overrightarrow{x}^{(k)} + M^{-1}\overrightarrow{b}$, but since
+$\overrightarrow{b} = \overrightarrow{0}$ the second term disappears. Thus, all
+that is needed is to compute the iteration matrix $T = M^{-1}N$. It is
+straigthforward to see that the inverse of $M$ is 
+
+\begin{equation*}
+    M^{-1} = \begin{bmatrix} 
+        1 & 0 \\ 
+        -1 & 1
+    \end{bmatrix} 
+\end{equation*}
+
+which entails 
+
+\begin{equation*}
+    T = M^{-1}N = \begin{bmatrix} 
+        1 & 0 \\ 
+        -1 & 1
+    \end{bmatrix} \begin{bmatrix} 
+        0 & 1 \\ 
+        0 & 0
+    \end{bmatrix} = \begin{bmatrix} 
+        0 & 1 \\ 
+        0 & -1
+    \end{bmatrix} 
+\end{equation*}
+
+The eigenvalues are the solutions to the characteristic equation $\text{det}(T - \lambda
+I) = 0$. Clearly,
+
+\begin{equation*}
+    \text{det}(T - \lambda I) = \text{det}\begin{pmatrix}
+        - \lambda & 1 \\ 
+        0 & -1 - \lambda
+    \end{pmatrix} = -\lambda(-1 - \lambda)
+\end{equation*}
+
+with roots $\lambda = 0, \lambda = -1$. We know a necessary and sufficient
+condition for an iterative method to converge independently of the initial
+vector is $\rho(T) = \rho(M^{-1}T) < 1$, where $\rho$ is the spectral radius.
+However, 
+
+\begin{equation*}
+    \rho(T) = \max \left\{ | \lambda | : \lambda \text{ is eigenvalue of } T
+    \right\} = 1 \not< 1
+\end{equation*}
+
+$\therefore $ The matrix does not converge independently of the initial vector. 
+
+
+$(b)$ To determine of the matrix converges with the given initial vectors,
+we need to compute the eigenvectors of $T$. To do this, we solve $(T - \lambda
+I)\overrightarrow{v} = 0$ for each eigenvalue $\lambda$. Now, clearly 
+
+\begin{align*}
+    &(T - 0 \times I)\overrightarrow{v} = 0 \\ 
+    \iff &T\overrightarrow{v} = 0 \\ 
+    \iff& v_1(0, 0) + v_2(1, -1) = 0\\
+    \iff&(v_2, -v_2) = 0\\ 
+    \iff& v_2 = 0
+\end{align*}
+
+Then any multiple of the eigenvector $\overrightarrow{e}_1 =
+(1, 0)$ is an eigenvector. Similarly,
+
+
+\begin{align*}
+    &(T + I)\overrightarrow{v} = 0 \\ 
+    \iff&\begin{bmatrix} 
+        1 & 1 \\ 
+        0 & 0 
+    \end{bmatrix} \overrightarrow{v} = 0 \\ 
+        \iff& \overrightarrow{v} = (1, -1)^\top
+\end{align*}
+
+So the eigenvectors are $e_1 = (1, 0), e_2 = (1, -1)$. Then these vectors are a
+base and any $\overrightarrow{x}^{(0)}$ is a linear combination of them. In
+other words, 
+
+\begin{equation*}
+    \overrightarrow{x}^{(0)} = (x_1, x_2) = (a, 0) + (b, -b) = (a+b, -b)
+\end{equation*}
+
+for some $a, b \in \mathbb{R}$. We can then infer that $b = -x_2$ and $a = x_1 -
+b = x_1 + x_2$. In other words, given any vector $(x_1, x_2)$, we can write it
+in terms of the eigen-basis using coefficients $x_1 + x_2$ and $-x_2$. Then
+
+\begin{align*}
+    T \begin{bmatrix} 
+            x_1 \\ x_2
+    \end{bmatrix} 
+    &= T\left( ( x_1 + x_2 ) \begin{bmatrix} 
+            1 \\ 0 
+    \end{bmatrix} - x_2 \begin{bmatrix} 
+            1 \\ -1 
+    \end{bmatrix}  \right) \\ 
+    &= (x_1 + x_2) T\begin{bmatrix} 
+            1 \\ 0 
+    \end{bmatrix} - x_2 T\begin{bmatrix} 
+            1 \\ -1 
+    \end{bmatrix} \\ 
+    &= (x_1 + x_2) \cdot 0 \begin{bmatrix} 
+            1 \\ 0 
+    \end{bmatrix} - x_2 \cdot (-1)\begin{bmatrix} 
+            1 \\ -1 
+    \end{bmatrix} \\ 
+    &= (x_2, -x_2)
+\end{align*}
+
+Therefore, if $\overrightarrow{x}^{(k)} = (x, 0)$ for some $x \in \mathbb{R}$,
+immediately $\overrightarrow{x}^{(k+1)} = T\overrightarrow{x}^{(k)} = (0,0)$,
+which means the method converges in one step. If $\overrightarrow{x}^{(0)} = (x,
+y)$ with $y \neq 0$, then 
+
+\begin{equation*}
+    \overrightarrow{x}^{ (1) } = (y, -y), \qquad 
+    \overrightarrow{x}^{ (2) } = (-y, y), \qquad 
+    \overrightarrow{x}^{ (3) } = (y, -y), \ldots
+\end{equation*}
+
+and the method does not converge.
+
+
+
+
+
+
+
+
+
+
+
+
+
+\pagebreak
+
+\section{Linear programming}
+
+A problem suited for linear programming consists in finding the solution to a
+system of equations 
+
+\begin{equation*}
+    A\textbf{x} = \textbf{b}
+\end{equation*}
+
+which minimizes a cost function $f(\textbf{x})$ and which operates under certain
+constraints, among which we must impose $\textbf{x} > \overrightarrow{0}$. The
+cost can itself be written as a system in function of $\textbf{x}$:
+
+\begin{equation*}
+    \textbf{c}^\top \textbf{x}
+\end{equation*}
+
+where $c_i$ is the cost associated to each $x_i$. In general, it is very simple
+to translate a problem that does not fit the previous form into a problem that
+does. For instanace, if one of the constraitns is $2x_1 + 7x_2 - 3x_3 \leq 10$,
+we could write $2x_1 + 7x_2 -3x_3 + s_1 = 10$  with $s_1 \geq 0$.
+
+A few definitions. 
+
+\begin{definition}[Hyperplane, semi-space]
+    A hyperplane of $\mathbb{R}^n$ is a the set of solutions to an arbitrary
+    $n$-dimensional system: 
+
+    \begin{equation*}
+        \left\{ \textbf{x} \in \mathbb{R} \mid a_1x_1 + \ldots + a_nx_n = b \right\} 
+    \end{equation*}
+
+    A semi-space of $\mathbb{R}^n$ is 
+
+    \begin{equation*}
+        \left\{ \textbf{x} \in \mathbb{R}^n \mid a_1 x_1 + \ldots + a_n x_n \leq
+        b\right\} 
+    \end{equation*}
+\end{definition}
+
+\begin{definition}[Convex set]
+    A set $S$ of $\mathbb{R}^n$ is convex if for any $\textbf{x}, \textbf{y} \in
+    S$, the segment joingin these points is also within $S$. Formally, if 
+
+    \begin{equation*}
+        \alpha \textbf{x} + (1-\alpha)\textbf{y} \in S
+    \end{equation*}
+
+    for $\alpha \in [0, 1]$.
+\end{definition}
+
+Two facts: a finite intersection of convex sets is convex, and every semi-space
+is convex. A finite intersection of closed semi-spaces in $\mathbb{R}^n$ is
+called a \textbf{closed polyhedral region} of $\mathbb{R}^n$.
+
+It follows that every closed polyhedral region is a convex set. Furthermore, the
+set of restrictions in a linear problem given by 
+
+\begin{equation*}
+    \Omega = \left\{ x \in \mathbb{R}^n \mid Ax = b \land Rx \leq s \right\} 
+\end{equation*}
+
+is a closed polyhedral region. To characterize the polyhedral regions such as
+$\Omega$, we find the vertices, i.e. the intersection among the semi-spaces.
+Take the following linear problem: 
+
+\begin{equation*}
+    \begin{cases}
+        3x + 2y &\geq 3 \\ 
+        x + 3y &\geq 1.5\\ 
+        8x + 2y &\geq 4 \\ 
+        x & \geq 0 \\ 
+        y \geq 0
+    \end{cases}
+\end{equation*}
+
+The vertices among the lines are $P_1 = (0, 2), P_2 = \left( \frac{1}{5},
+\frac{5}{6} \right) , P_3 = \left( \frac{6}{7}, \frac{3}{14} \right), P_4 =
+\left\{ \frac{3}{2}, 0 \right\} $. For instance, $P_2$ is obtained from solving 
+
+\begin{equation*}
+    3x + 2y = 3, \qquad 8x + 2y = 4
+\end{equation*}
+
+which are the hyperplanes (lines) in the first and third restrictions. Note that
+$\left( 0, \frac{3}{2} \right) $ is a solution to $3x + 2y = 3, x = 0$ but it is
+not a vertix of $om$.
+
+\pagebreak 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

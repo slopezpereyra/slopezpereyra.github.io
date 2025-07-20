@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  14 JUL 2025 15:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  20 JUL 2025 14:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1296,53 +1296,236 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[63] [64] [65] [66] [67] [68] [69] [70] [71] [72] [73] [74] [75] [76] [77] [78]
-Overfull \vbox (2.71162pt too high) detected at line 3694
+[63] [64] [65] [66] [67] [68] [69] [70] [71] [72] [73] [74] [75] [76] [77] [78] [79] [80] [81] [82] [83]
+Overfull \vbox (2.71162pt too high) detected at line 3899
  []
 
-[79] [80] [81]
+[84] [85] [86]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[82]
-./Numerico.tex:3864: Double subscript.
-l.3864 ...) ~ dx = \sum_{j=1}^n \int_{x_{2j-2}}^x_
+[87]
+./Numerico.tex:4069: Double subscript.
+l.4069 ...) ~ dx = \sum_{j=1}^n \int_{x_{2j-2}}^x_
                                                   {2j} f(x) ~ dx
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-[83] [84] [85] 
+[88] [89]
+./Numerico.tex:4142: Undefined control sequence.
+l.4142         \int_a^b f(x) w(x) ~ dx \apprx
+                                              \sum_{i=0}^n a_if(x_i)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[90] [91] [92] [93] [94] [95] [96] [97]
+./Numerico.tex:4461: Missing \right. inserted.
+<inserted text> 
+                \right .
+l.4461 ...(b_i \sum_{j=1}^{i-1} a_{ij}x_j\left) \\
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./Numerico.tex:4461: Missing \right. inserted.
+<inserted text> 
+                \right .
+l.4461 ...(b_i \sum_{j=1}^{i-1} a_{ij}x_j\left) \\
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+[98] [99]
+
+./Numerico.tex:4617: LaTeX Error: Environment definition undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4617 \begin{definition}
+                         [Vector norm]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[100]
+
+./Numerico.tex:4626: LaTeX Error: \begin{document} ended by \end{definition}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4626 \end{definition}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./Numerico.tex:4628: LaTeX Error: Environment definition undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4628 \begin{definition}
+                         [Distance]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./Numerico.tex:4631: LaTeX Error: \begin{document} ended by \end{definition}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4631 \end{definition}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./Numerico.tex:4633: LaTeX Error: Environment definition undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4633 \begin{definition}
+                         [Matrix norm]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./Numerico.tex:4642: LaTeX Error: \begin{document} ended by \end{definition}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4642 \end{definition}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[101]
+
+./Numerico.tex:4736: LaTeX Error: Environment definition undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4736 \begin{definition}
+                         
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./Numerico.tex:4742: LaTeX Error: \begin{document} ended by \end{definition}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4742 \end{definition}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[102] [103] [104] [105] [106] [107] [108] [109] [110] [111]
+
+./Numerico.tex:5184: LaTeX Error: Environment definition undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5184 \begin{definition}
+                         [Hyperplane, semi-space]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./Numerico.tex:5198: LaTeX Error: \begin{document} ended by \end{definition}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5198 \end{definition}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./Numerico.tex:5200: LaTeX Error: Environment definition undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5200 \begin{definition}
+                         [Convex set]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./Numerico.tex:5209: LaTeX Error: \begin{document} ended by \end{definition}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5209 \end{definition}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[112] [113] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./Numerico.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `Numerico.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Numerico.out':
-(rerunfilecheck)             Before: 31A1EBBAC4CBA5A22BB5258B0EED62E6;4938
-(rerunfilecheck)             After:  17DD6BC4E89A7A193C81768BD2354C0A;5069.
+Package rerunfilecheck Info: File `Numerico.out' has not changed.
+(rerunfilecheck)             Checksum: FE32359BD94A1F6D30252B80F1E3246C;6264.
  ) 
 Here is how much of TeX's memory you used:
- 44358 strings out of 474222
- 1005771 string characters out of 5748733
- 1949975 words of memory out of 5000000
- 65649 multiletter control sequences out of 15000+600000
- 613067 words of font info for 162 fonts, out of 8000000 for 9000
+ 44450 strings out of 474222
+ 1006964 string characters out of 5748733
+ 1950975 words of memory out of 5000000
+ 65683 multiletter control sequences out of 15000+600000
+ 614715 words of font info for 165 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,22n,107p,776b,2228s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on Numerico.pdf (85 pages, 402184 bytes).
+Output written on Numerico.pdf (113 pages, 466697 bytes).
 PDF statistics:
- 691 PDF objects out of 1000 (max. 8388607)
- 552 compressed objects within 6 object streams
- 174 named destinations out of 1000 (max. 500000)
- 421 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 883 PDF objects out of 1000 (max. 8388607)
+ 714 compressed objects within 8 object streams
+ 231 named destinations out of 1000 (max. 500000)
+ 501 words of extra memory for PDF output out of 10000 (max. 10000000)
 
