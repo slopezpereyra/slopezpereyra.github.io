@@ -4832,6 +4832,50 @@ Define with $\rho(A)$ the spectral radius of $A$, defined as
     for any initial vector $x^{(0)}$ is that $\rho\left( M^{-1}N \right) < 1$.
 \end{theorem}
 
+\subsection{Eigenvalues, eigenvectors}
+
+
+In the iteration 
+\[
+\vec{x}^{(k+1)} = M^{-1}N \vec{x}^{(k)} + M^{-1}\vec{b},
+\]
+we define the iteration matrix \( T = M^{-1}N \). To analyze convergence of the method, we consider the behavior of powers of \( T \) applied to the initial vector. If \( \rho(T) < 1 \), convergence is guaranteed by Theorem 22. When \( \rho(T) \geq 1 \), however, a more refined analysis is needed.
+
+Assume $\overrightarrow{b} = 0$. Assume \( T \) is diagonalizable, so there
+exists a basis of eigenvectors \( \mathcal{E} = \{\vec{v}_1, \dots, \vec{v}_n\}
+\) with corresponding eigenvalues \( \lambda_1, \dots, \lambda_n \). Then any
+vector \( \vec{x}^{(k)} \in \mathbb{R}^n \) can be expressed as a linear
+combination:
+\[
+\vec{x}^{(k)} = \sum_{i=1}^n a_i^{(k)} \vec{v}_i.
+\]
+
+Applying the iteration:
+\[
+\vec{x}^{(k+1)} = T \vec{x}^{(k)} = \sum_{i=1}^n \lambda_i a_i^{(k)} \vec{v}_i,
+\]
+which implies:
+\[
+a_i^{(k+1)} = \lambda_i a_i^{(k)} \quad \Rightarrow \quad a_i^{(k)} =
+\lambda_i^k a_i^{(0)} 
+\]
+
+Thus,
+
+\begin{equation}
+\vec{x}^{(k)} = \sum_{i=1}^n \lambda_i^k a_i^{(0)} \vec{v}_i.
+= (\lambda_1^k a_1^{(0)}, \ldots, \lambda_{n}^{k}
+a_n^{(0)})_{\mathcal{E}}
+\end{equation}
+
+This means that finding the expression of $\overrightarrow{x}^{(0)}$ in the
+basis $\mathcal{E}$, with coefficients $a_1^{(0)}, \ldots, a_n^{(0)}$, is
+sufficient to compute $\overrightarrow{x}^{(k)}$ just in terms of these
+coefficients and powers of the eigenvalues.
+
+Incidentally, this is the reason why we need all eigenvalues to be $<1$ in
+absolute value to ensure convergence. Otherwise, the values $x^{(1)}, x^{(2)},
+\ldots$ diverge as seen from equation $(1)$.
 
 \pagebreak 
 

@@ -1,0 +1,256 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18} % Or adjust depending on your TeX distribution
+\usepackage[utf8]{inputenc}	% Para caracteres en español
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{multirow,booktabs}
+\usepackage[table]{xcolor}
+\usepackage{fullpage}
+\usepackage{lastpage}
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{wrapfig}
+\usepackage{setspace}
+\usepackage{calc}
+\usepackage{multicol}
+\usepackage{cancel}
+\usepackage[retainorgcmds]{IEEEtrantools}
+\usepackage[margin=3cm]{geometry}
+\usepackage{amsmath}
+\newlength{\tabcont}
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+\usepackage{empheq}
+\usepackage{framed}
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+\colorlet{shadecolor}{orange!15}
+\parindent 0in
+\parskip 12pt
+\geometry{margin=1in, headsep=0.25in}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{reg}{Rule}
+\newtheorem{exer}{Exercise}
+\newtheorem{note}{Note}
+\newtheorem{theorem}{Theorem}
+\setcounter{section}{0}
+\usepackage{chngcntr}
+\usepackage{hyperref}
+\counterwithin*{equation}{section}
+\counterwithin*{equation}{subsection}
+
+
+
+\begin{document}
+
+\section{Finance with certainty}
+
+A financial operation may be understood as a loan. A lender gives a borrower a
+certain amount of money, under the condition that the borrower shall return it
+with interest. We assume the interest is previously agreed upon, which means we
+are dealing with financial \textit{certainty}.
+
+The initial capital es the amount of money being borrowed. The final capital 
+is the amount that is returned. The \textit{plazo} (term) is the time the
+operation lasts. The interest is the difference between the initial and the
+final capital. In general, the interest is proportional to the initial capital.
+
+Since the interest depends on the initial capital, generally what is done is
+setting an \textit{interest rate}. The interest rate is the interest
+corresponding to each unit of capital per each unit of time. 
+
+\begin{shaded}
+    \textbf{Example.} For example, $5\%$ to 30 days, or $10\%$ monthly, or daily
+    $0.001$ ($0.1\%$), or annual $25\%$.
+
+    \textbf{Example.} An initial capital of $10.000$ with an interest rate of 
+    $5\%$ every $30$ days, we have an interest in $30$ days of $10.000 \times 0.05 = 500$. 
+
+    \textbf{Example.} If an interest of $4000$ is paid for a loan of 
+    $200.000$ for $45$ days, the interest rate is to 45 days is $2\%$:
+
+    \begin{equation*}
+        4000 / 200.000 = 0.02
+    \end{equation*}
+\end{shaded}
+
+If the interest rate is set to an amount of time $t$ less than the term of the loan, 
+we have different systems. 
+
+\begin{enumerate}
+    \item \textit{Simple capitalization system}: 
+In the simple capitalization system, the interest is directly proportional
+to the term: 
+
+        $$F = I (1 + i t)$$
+
+    where $F, I$ are the final and initial capitals, $i$ is the interest rate, 
+    and $t$ is the time expressed in the time unit of the interest.
+    \item \textit{Composite capitalization system}: Once we reach time $t$, we
+        operate as if we had removed the
+        money from the loan and re-inserted the amount obtained.
+
+        \begin{equation*}
+            F = C(1+i)^t, \qquad i = C\left( (1+i)^t - 1 \right) 
+        \end{equation*}
+
+        where $C$ is the capital we have at the moment (with accumulated
+        interests) and $t$ is the number of terms that passed. 
+\end{enumerate}
+
+
+\begin{shaded}
+    \textbf{Example of simple capitalization.} An interest rate of $5\%$ to 30
+    days and an initial capital of $10.000$ gives an interest of: $500$ in 30
+    days, $1000$ in 60 days, $1500$ in 90 days, etc. Notice that each time 30
+    days pass, we increment our money by $500 = 10.000 \times 0.05$.
+
+    Notice that after $30$ days we would have $10.500$, and after $60$ we would
+    have $11.000$. But there's a problem: $11.000$ is less than what would be 
+    obtained with an interest rate of $5\%$ over the $10.500$ we had after the
+    first $30$ days.
+
+    In other words, if the $5\%$ of $10.000$ is $500$, the $5\%$ of $10.500$ is
+    more than $500$. So we see that as time goes by, with the simple
+    capitalization system, the growth becomes less and less relative to 
+    the capital at hand.
+\end{shaded}
+
+\begin{shaded}
+    \textbf{Example of composite capitalization.} An interest rate of $5\%$
+    every 30 days with initial capital of 10.000. Then the cumulative interest
+    will be: 
+
+    \begin{enumerate}
+        \item $500$ in 30 days. 
+        \item $1025$ in 60 days ($500 + 0.05 \times 10.500$)
+        \item $1576$ in 90 days ($1025 + 0.05 \times 11.025$)
+    \end{enumerate}
+\end{shaded}
+
+
+\begin{shaded}
+    \textbf{Problem.} Fixed term to 35 days with $I = 100.000$. An automatic renovation is done in
+    the following two vencimientos. The interest on each term are $2.4\%, 2.4\%,
+    2.8\%$. Compute the final capital after $105$ days if: $(a)$ total
+    renovation is done, $(b)$ partial renovation is done. 
+
+    \textbf{Solution.} The first term goes from day $0$ to 35, the second from
+    day 35 to 70, and the third from day 70 to 105. The interest rate of each of
+    these terms was specified above.
+
+    With total renovation, this would work as follows. On day 35, after the
+    first term, we would have $100.000 \times 1.025$. On day 70 we would apply
+    the interest of the term to the total capital so far accrued, so we would
+    have $100.000(1.025)(1.024)$. Lastly, on day $105$, we would apply the
+    interest again to the total capital accrued, resulting in
+    $100.000(1.025)(1.024)(1.028) = 107898.88 = F$. with an interest of 
+    $F - I = 7898.88$.
+
+    With partial renovation, on day 35 we would again have $100.000 \times
+    1.025$. On day 70, we would add to our accrued capital the interest of the
+    term applied to the initial capital: $100.000(1.025 + 0.024)$. Then, on day
+    $105$, we would have $100.000(1.025 + 0.024 + 0.028)$. (If this is unclear,
+    apply the distributive law and it will be.)
+\end{shaded}
+
+\subsection{Nominal and effective rates}
+
+The TNA (Tasa Nominal Anual) is an annual rate that serves as reference to compute rates in different
+terms through direct proportionality. For instance, if to 30 days we have a TNA
+of $25\%$, this means the that the rate to 30 days is 
+
+\begin{equation*}
+    I_{\text{30 days}} = TNA \times \frac{\text{rate in days}}{365} = 0.25
+    \times \frac{30}{365} = 0.0205 = 2.05\%
+\end{equation*}
+
+Notice that $30 / 365$ is the ``how much are 30 days to a year``.
+
+The TEA (Tasa Efectiva Anual) is a rate equivalent to the effective rate being
+applied, but corresponding to an annual term. For instance, if for a fixed term
+to 30 days we have a rate of $2.05\%$, then the composite capitalization is 
+
+\begin{equation*}
+    1 \times (1.0205)^{\frac{365}{30}} = 1.2800
+\end{equation*}
+
+which means the TEA is $28\%$.
+
+\subsection{Continuous capitalization}
+
+If the TNA is $r$, the final capital in a year over an initial capital $C$, with
+continuous capitalization, is 
+
+\begin{equation*}
+    C \times \lim_{m \to \infty}\left( 1 + \frac{r}{m} \right)^m = C \times e^r
+\end{equation*}
+
+Then 
+
+\begin{equation*}
+    TEA = e^t - 1
+\end{equation*}
+
+meaning that the final capital es 
+
+\begin{equation*}
+    C(t) = C \times e^{rt}
+\end{equation*}
+
+When modeling, we need to take $r$ as $r(t)$, i.e. as a rate that may
+continuously vary in time, which adds extra complexity.
+
+\subsection{Discounted value}
+
+When comparing two quantities in different time instances, we determine the 
+\textit{discounted value} or \textit{actual value} of a capital. Let $C_1$ the
+capital at time $t_1$, $C_2$ the capital at time $t_2$, with $t_1 < t_2$.
+Then via composite capitalization with rate $i$ 
+
+\begin{equation*}
+    C_{1} = \frac{C_2}{(1+i)^{t_2 - t_1}}
+\end{equation*}
+
+is the discounted value from $C_2$ at time $t_1$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+

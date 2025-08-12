@@ -1,192 +1,411 @@
-\documentclass[a4paper, 12pt]{article}
+\documentclass[12pt]{article}
 
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{textcomp}
-\usepackage{amssymb}
-\usepackage{newtxtext} \usepackage{newtxmath}
-\usepackage{amsmath, amssymb}
-\newtheorem{problem}{Problem}
-\newtheorem{example}{Example}
-\newtheorem{lemma}{Lemma}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18} % Or adjust depending on your TeX distribution
+\usepackage[utf8]{inputenc}	% Para caracteres en español
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{multirow,booktabs}
+\usepackage[table]{xcolor}
+\usepackage{fullpage}
+\usepackage{lastpage}
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{wrapfig}
+\usepackage{setspace}
+\usepackage{calc}
+\usepackage{multicol}
+\usepackage{cancel}
+\usepackage[retainorgcmds]{IEEEtrantools}
+\usepackage[margin=3cm]{geometry}
+\usepackage{amsmath}
+\newlength{\tabcont}
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+\usepackage{empheq}
+\usepackage{framed}
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+\colorlet{shadecolor}{orange!15}
+\parindent 0in
+\parskip 12pt
+\geometry{margin=1in, headsep=0.25in}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{reg}{Rule}
+\newtheorem{exer}{Exercise}
+\newtheorem{note}{Note}
 \newtheorem{theorem}{Theorem}
-\newtheorem{problem}{Problem}
-\newtheorem{example}{Example} \newtheorem{definition}{Definition}
-\newtheorem{lemma}{Lemma}
-\newtheorem{theorem}{Theorem}
+\setcounter{section}{0}
+\usepackage{chngcntr}
+\usepackage{hyperref}
+\counterwithin*{equation}{section}
+\counterwithin*{equation}{subsection}
 
 
 \begin{document}
 
+\section{Info}
 
-Assuming a body $b$ at time $t$ is at one and only one place, and that 
-the movement of $b$ is continuous---i.e. moving from $a$ to $b$ entails 
-moving through all intermediate points---, then there exists 
-a mathematical function $x(t)$ which describes the movement of $b$.
+\begin{itemize}
+    \item karinachattah@unc.edu.ar
+\end{itemize}
 
-If a body moves \textbf{linearly} (i.e. with uniform rectilinear movement),
-suffices to measure two points $(t_1, x_1), (t_2, x_2)$ to describe 
-its moevement. In particular, if 
+\textbf{Temas:}
+
+\begin{itemize}
+    \item Cinemática y dinámica (mecánica)
+    \item Campos eléctricos y magnéticos
+    \item Circuitos 
+    \item Termodinámica
+\end{itemize}
+
+\section{Measurements and magnitudes}
+
+Measurements seek to compare a prediction with an observation, so as to test a
+hypothesis. A magnitude is a number accompanied by a unit. Some magnitudes are: 
+
+\begin{itemize}
+    \item Length, measured in meters $(m)$
+    \item Time, measured in seconds ($s$)
+    \item  Mass, measusred in kilograms (kg)
+    \item Current, measured in ampers ($A$)
+    \item Temperature, measured in kelvins ($k$)
+    \item Matter, measured in moles (mol)
+\end{itemize}
+
+We consider $10^3$ (e.g. kilometer) and $10^{-3}$ (e.g. milimiters) to be within
+human scale.  We call mass, seconds and kilograms the \textit{mechanical units}.
+We define the \textit{force unit}, or Newton, as
+
+\begin{equation*}
+    [F] = N = \text{kg} \frac{m}{s^2}
+\end{equation*}
+
+and the Pascal unit as 
+
+\begin{equation*}
+    [P] = \text{Pa} = \frac{N}{m^2}
+\end{equation*}
+
+We use scientific notation and terms which express quantities as powers of ten.
+For instance, $10^{12}$ is the tera, $10^{3}$ the giga, etc.
+
+The magnitudes hereby described are suited for algebraic manipulation. For
+instance, $m \times m = m^2$, and $s \times \frac{m}{s} = m$.
+
+\section{Vectors}
+
+Vectors are used to express position, displacement, velocity, force,
+acceleration, fields, etc. A vector $\overrightarrow{A}$ (or sometimes
+$\overrightarrow{a}$) in the general sense has a direction (line), an
+orientation, and a length (or magnitude). A vector also has an application
+point, which denotes the point of origin of the vector. When saying $\overrightarrow{a}
+= \overrightarrow{b}$, we mean that $\overrightarrow{a}$ and
+$\overrightarrow{b}$ coincide in direction, magnitude and orientation,
+irrespective of their application point. 
+
+The scalar product is defined as the usual mapping in the space $\mathbb{R}^n
+\times \mathbb{R} \mapsto \mathbb{R}^n$. Intuitively, the scalar product $\lambda
+\overrightarrow{a}$
+"streches" or "shrinks" a vector, depending on wheter $|\lambda| < 1$ or not,
+and the positivty or negativity of $\lambda$ determines whether the vector
+inverts its direction or not. In general, $\left| \lambda \overrightarrow{a}
+\right| = \left| \lambda \right| \left| \overrightarrow{a} \right| $.
+
+The sum of vectors, $\overrightarrow{a} + \overrightarrow{b}$, is a mapping
+$\mathbb{R}^n \times \mathbb{R}^n \mapsto \mathbb{R}^n$. As usual, and in a
+graphical sense, the sum corresponds to the application of the parallelogram
+rule. 
+
+\begin{shaded}
+    \textbf{Parallelogram rule}. Make $\overrightarrow{a}$ and
+    $\overrightarrow{b}$ coincide in their point of application. From the tip of 
+    $\overrightarrow{a}$, draw a copy of $\overrightarrow{b}$, and from the tip
+    of $\overrightarrow{b}$ a copy of $\overrightarrow{a}$. The corner of the
+    thus generated parallelogram is the tip of $\overrightarrow{a} +
+    \overrightarrow{b}$.
+
+    Alternatively, from the tip of $\overrightarrow{a}$ write
+    $\overrightarrow{b}$. Then $\overrightarrow{a} + \overrightarrow{b}$ is the
+    vector which goes from the point of application of $\overrightarrow{a}$ to
+    the tip of $\overrightarrow{b}$.
+\end{shaded}
+
+The sum of vectors is commutative, associative, and distributive with respect to
+scalar product.
+
+If $\overrightarrow{A}$ is a vector, we use $A_x$ and $A_y$ to denote the
+projection of the vector over the axis $x$ or $y$, respectively. Using $A_x$ and
+$A_y$ one forms a rectangular triangle with sides $A_x$, $A_y$ and a hypotenuse 
+of length $\left| \overrightarrow{A} \right| $. 
+
+Let $\theta$ be the angle formed
+by $\overrightarrow{A}$ with the $x$-axis. Then, using trigonometry,
+
+\begin{equation*}
+    \cos \theta = \frac{A_x}{\left| \overrightarrow{A} \right| }, \qquad \sin
+    \theta = \frac{A_y}{\left| \overrightarrow{A} \right| }
+\end{equation*}
+
+from which one can find $A_x, A_y$ assuming one knows $\theta$. From this
+follows that $\left| \overrightarrow{A} \right| $ and $\theta$ fully determine
+all the information about the vector, insofar as the allow us to determine $A_x,
+A_y$. Conversely, knowing $A_x$ and $A_y$ is also sufficient to determine
+$\overrightarrow{A}$, insofar as 
+
+\begin{equation*}
+    \left| \overrightarrow{A} \right|  = \sqrt{A_x^2 + A_y^2} , \qquad \frac{A_y}{A_x} =
+    \frac{\left| \overrightarrow{A} \right| \sin \theta}{\left|
+    \overrightarrow{A} \right|  \cos \theta} = \tan \theta \Rightarrow \theta =
+    \arctan \left( \frac{A_y}{A_x} \right) 
+\end{equation*}
+
+As convention, we use $\hat{i}$ to denote the versor (vector of length 1) with
+direction parallel to the $x$-axis, and $\hat{j}$ the versor with direction
+parallel to the $y$-axis.
+
+Notice that, for any vector $\overrightarrow{A}$, $A_x$ is $\hat{i}$ times
+$A_x$, and $A_y$ is $\hat{j}$ times $A_y$, which means 
+
+\begin{equation*}
+    \overrightarrow{A} = A_x \hat{i} + A_y \hat{j}
+\end{equation*}
+
+When writing $\overrightarrow{A}$ in this way, we say we write it in term of its
+components $x, y$. In terms of linear algebra, it's not hard to see that we are
+simply expressing that $\hat{i}, \hat{j}$  form a basis of $\mathbb{R}^2$. Thus,
+it is equivalent to write 
+
+\begin{equation*}
+    A_x = \left| \overrightarrow{A} \right|  \cos \theta, \qquad A_y = \left|
+    \overrightarrow{A} \right| \sin \theta
+\end{equation*}
+
+and 
+
+\begin{equation*}
+    \overrightarrow{A} = \left| \overrightarrow{A} \right| \left( \cos \theta
+    ~ \hat{i} + \sin \theta ~ \hat{j}\right) 
+\end{equation*}
+
+From this follows as well that 
 
 \begin{align*}
-    x(t) = at_1 + b ~ ~ ~ \text{ and measures } \begin{cases}
-        x_1 &= at_1 + b \\ 
-        x_2 &= at_2 + b
-    \end{cases}
+    \overrightarrow{A} + \overrightarrow{B} 
+    &= \left( A_x \hat{i} + A_y \hat{j} \right) + (B_x \hat{i} + B_y \hat{j}) \\ 
+    &= \hat{i}\left( A_x + B_x \right)  + \hat{j}\left( A_y + B_y \right) 
 \end{align*}
 
-we have 
+which means the sum of vectors has as components the sum of the components.
+
+The scalar product of two vectors, $\overrightarrow{A} \cdot
+\overrightarrow{B}$, is a scalar defined as 
 
 \begin{equation*}
-a = \frac{x_2 - x_1}{t_2 - t_1} ~ ; ~ b = \frac{t_2x_1 - t_{1}x_2}{t_2 - t_1}
+    \overrightarrow{A} \cdot \overrightarrow{B} = \left| \overrightarrow{A} \right| \left| \overrightarrow{B} \right| \cos \theta
 \end{equation*}
 
-If a body moves parabolically, knowing that three points are sufficient to 
-fully describe a parabole, we need only measure three instances 
-$(t_1, x_1), (t_2, x_2), (t_3, x_3)$
+where $\theta$ is the angle formed by the two vectors. The scalar product is
+positive if $\cos \theta$ is positive, which occurs for $0 < \theta \leq 90$. It
+is negative if $\cos \theta $ is negative, i.e. if $90 < \theta \leq 180$.
+Clearly, $\overrightarrow{A} \cdot \overrightarrow{B} = 0 \iff \theta = 90$.
 
-and with a bit of algebra we can find the parameters $a, b, c$ of $x(t) = ax^2 + bx + c$.
-
-\subsection{Distance and displacement}
-
-The \textbf{distance traveled} is the length of the path a body has traveled 
-in a given time frame. The \textbf{displacement} is the measure of how 
-much its position has modified respect to its initial position.
-
-If $x = x(t)$ is the movement, then in the time interval $[t_1, t_2]$
-its displacement is $\Delta x = x(t_2) - x(t_1) = x_2 - x_1$. 
-Its distance traveled is denoted with $d_{12}$.
-
-\subsection{Velocity and derivatives}
-
-The velocity $\overline{v}$ of a body is the quotient between its 
-displacement and the time frame of said displacement. If $x(t)$
-is the movement function and $x_1 = x(t_1), x_2 = x(t_2)$, then 
-the \textbf{median velocity} in $\Delta t = t_2 - t_1$ is 
+In general, from the definition follows that
 
 \begin{equation*}
-    \overline{v}(t_1, t_2) = \overline{v}(t_1, \Delta t) = \frac{x(t_2) - x(t_1)}{t_2 - t_1} = \frac{\Delta x}{\Delta t}
+    \overrightarrow{A} \cdot \overrightarrow{B} = A_x B_x + A_y B_y
 \end{equation*}
 
-The unity of said average velocity is given by the unity of distance $[\ell]$ and the unity 
-of time $[t]$:
+The vectorial product $\overrightarrow{A} \times \overrightarrow{B}$ is a vector
+perpendicular to the plane formed by $\overrightarrow{A}$ and
+$\overrightarrow{B}$. Its module is $\left| \overrightarrow{A} \right| \left|
+\overrightarrow{B} \right| \sin \theta $, and its direction is given by what's
+called the right-hand rule.
+
+\pagebreak 
+
+\subsection{Excercises}
+
+\begin{shaded}
+    \textbf{(2)} Sean los vectores $\overrightarrow{A} = 2\hat{i} + 3\hat{j}$
+    $\overrightarrow{B} = 4\hat{i} -2 \hat{j}$ y $\overrightarrow{C} = -\hat{i}
+    + \hat{j}$.
+    Determinar la magnitud y el ángulo (representación polar) de los vectores
+    resultantes $\overrightarrow{D} = \overrightarrow{A} + \overrightarrow{B} +
+    \overrightarrow{C}$ y $\overrightarrow{E} = \overrightarrow{A} +
+    \overrightarrow{B} - \overrightarrow{C}$. Resolver analítica y
+    gráficamente.
+\end{shaded}
+
+(Analytical solution.) We'll use $A_x, A_y$ to denote the components of the
+vector $\overrightarrow{A}$, and same for all other vectors. We know the
+components of $\overrightarrow{D}$ are 
 
 \begin{equation*}
-    \left[ V \right]  = \frac{\left[ \ell \right] }{\left[ t \right] }
+    D_x = A_x + B_x + C_x = 2 + 4 - 1 = 5, \qquad D_y = 3 - 2 + 1 = 2
 \end{equation*}
 
-For instance, $m / s$ or $km / h$, etc.
-
-
-\small
-\begin{quote}
-
-\textbf{Note.} If $x(t_1) = x(t_2)$ (the body returns at its initial point), then $\overline{v} = 0$.
-But the body has moved. This reflects that the \textbf{median velocity} is not the 
-average velocity, which is defined as $d / t$. The \textbf{median velocity} describes 
-how much the position of the object has changed with respect to time!
-
-\end{quote}
-\normalsize
-
-Consider that: 
-
-\begin{align*}
-    &x(t) = c &\Rightarrow &&\overline{v} = \frac{c - c}{t_2 - t_1} = 0 \\ 
-    &x(t) = at + b &\Rightarrow &&\overline{v} = \frac{a(t_2 - t_1)}{t_2 - t_1} = a \\ 
-    &x(t) = ax_2 + bx + c &\Rightarrow &&\overline{v} = (2t_1 + \Delta t) + b
-\end{align*}
-
-\subsection{Instantaneous velocity and acceleration}
-
-Given $\Delta t = t_2 - t_1$, the instantaneous velocity is
+from which readily follows that $\left| D \right| = \sqrt{5^2 + 2^2} = \sqrt{29}
+\approx 5.385$. Similarly, 
 
 \begin{equation*}
-    v(t) := \lim_{ \Delta t \to 0 } \frac{x(t+ \Delta t) - x(t) }{\Delta t} = \lim_{\Delta t \to  0} \frac{\Delta x}{\Delta t} = \frac{\partial x(t)}{\partial t}
+    E_x = 2 + 4 + 1 = 7, \qquad E_y = 3 - 2 -1 = 0
 \end{equation*}
 
-The \textbf{median acceleration} is
+from which follows that $\left| E \right| = \sqrt{7^2} = 7 $.
 
+Now, we must recall that 
 
 \begin{equation*}
-    \overline{a}(t_1, \Delta t) := \frac{v(t_2) - v(t_1)}{\Delta t} = \frac{\Delta v}{\Delta t}
+    \theta_{\overrightarrow{Z}} = \arctan \left( \frac{Z_y}{Z_x} \right) 
 \end{equation*}
 
-and the immediate acceleration is 
+for any $\overrightarrow{Z}$.
+
+
+We need not memorize this: it is trigonometrically clear that 
+$Z_x = \cos \theta_{\overrightarrow{Z}} \left| \overrightarrow{Z} \right| $ and 
+$Z_y = \sin \theta_{\overrightarrow{Z}} \left| \overrightarrow{Z} \right| $, and
+therefore 
 
 \begin{equation*}
-    a(t) := \lim_{\Delta t \to  0} \overline{a}(t, \Delta t) = \lim_{\Delta t \to  0} \frac{\Delta v}{\Delta t} = \frac{\partial v(t)}{\partial t}
+    \frac{Z_y}{Z_x} = \tan \theta
 \end{equation*}
 
-Using the definition of $v$ as the derivative of the movement function with 
-respect to time, we have 
- 
-\begin{equation*}
-    a = \frac{\partial v(t)}{\partial t} = \frac{\partial d}{\partial dt} \left( \frac{\partial x(t)}{\partial t} \right) = \frac{\partial^2 x(t)}{\partial t^2}
-\end{equation*}
-
-\subsection{Piecewise acceleration}
-
-The movement function $x(t)$ is continuous and has a continuous, differentiable 
-derivative $v(t)$. The velocity is continuous and differentiable, but its 
-derivative $a(t)$ is not necessarily continuous nor differentiable. 
-
-For instance, we could have 
+And $\arctan$ is the inverse of $\tan$. Anyhow, for $\overrightarrow{E}$ and
+$\overrightarrow{D}$ we have 
 
 \begin{equation*}
-    a(t) = \begin{cases}
-        1 \frac{m}{s^2} & t < 1s \\ 
-        2 \frac{m}{s^2} & t \geq 1s
-    \end{cases}
+    \theta_{\overrightarrow{E}} = \arctan\left( \frac{E_y}{E_x} \right) =
+    \arctan\left( 0 \right) = 0
 \end{equation*}
-
-Assuming we know $v(t = 0) = 1 \frac{m}{s}, x(t = 2 s) = 2m$,
-we can find the velocity 
 
 \begin{equation*}
-    v(t) = \int a(t) ~ dt = \begin{cases}
-        1 \frac{m}{s^2} t + C_1 & t < 1s \\ 
-        2 \frac{m}{s^2} t + C_2 & t \geq 1 s
-    \end{cases}
+    \theta_{\overrightarrow{D}} = \arctan\left( \frac{D_y}{D_x} \right) =
+    \arctan \left( \frac{2}{5} \right) \approx 0.38
 \end{equation*}
 
-Since $v(t = 0) = 1 \frac{m}{s}$, we have $C_1 = 1 \frac{m}{s}$.
-And since the velocity function is \textbf{continuous}, in particular 
-it is continuous for $t = 1 s$, and this means 
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(3)} Can two vectors of different magnitud be combined and yield zero? What about three?
+\end{shaded}
+
+The zero vector is the only vector with magnitude zero. Let $\overrightarrow{A},
+\overrightarrow{B}$ arbitrary vectors. Then 
 
 \begin{equation*}
-    \lim_{t \to 1^- s} v(t) v(t) = \lim_{t \to 1^+ s} v(t) = \lim_{t \to 1} v(t)
+    \left| \overrightarrow{A} + \overrightarrow{B} \right| = \sqrt{(A_x + B_x)^2
+    + (A_y + B_y)^2} 
 \end{equation*}
 
-Then 
+which is zero if and only if 
 
-\begin{align*}
-    \lim_{t \to 1^- s} v(t) = \lim_{t\to 1^+ s} &\iff 1 \frac{m}{s^2} 1 s + 1 \frac{m}{s} = 2 \frac{m}{s^2}1 s + C_2 \\ 
-                                                &\iff C_2 = 0
-\end{align*}
+\begin{equation*}
+    ( A_x + B_x )^2 + ( A_y + B_y )^2 = 0
+\end{equation*}
+
+This only holds if $A_x + B_x = A_y + B_y = 0$. But 
+
+\begin{equation*}
+    A_x + B_x = 0 \Rightarrow A_x = -B_x, \qquad A_y + B_y = 0 \Rightarrow A_y =
+    -B_y
+\end{equation*}
+
+But then 
+
+\begin{equation*}
+    \left| A \right| = \sqrt{A_x^2 + A_y^2} = \sqrt{(-B_x)^2 + (-B_y)^2} =
+    \sqrt{B_x^2 + B_y^2}  = \left| B \right| 
+\end{equation*} 
+
+$\therefore ~ \left| \overrightarrow{A} + \overrightarrow{B} \right| = 0 \iff
+\left| \overrightarrow{A} \right| = \left| \overrightarrow{B} \right| $.
+
+It is simple to see that three vectors of different magnitude can add to zero.
+
+\pagebreak 
+
+\begin{shaded}
+    Assume $A + B + C = 2\hat{i} + \hat{j}$ and $A = 6\hat{i}-3\hat{j}, B =
+    2\hat{i} + 5\hat{j}$. Find the components of $C$. Solve analytically and
+    graphically.
+\end{shaded}
+
+We know 
+
+\begin{equation*}
+    6 + 2 + C_x = 2, \qquad -3 + 5 + C_y = 1
+\end{equation*}
+
+from which follows that $C_x = -6, C_y = -1$.
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(5)} $A$ and $B$ have a magnitud of $3m, 4m$ respectively. The angle between them
+    is $\theta = 30$ degrees. Find their scalar product.
+\end{shaded}
+
+Their scalar product is 
+
+\begin{equation*}
+    ( \left| B \right|  \cos \theta ) \left| A \right| 
+\end{equation*}
+
+Recall that 
+
+\begin{equation*}
+    \text{Angle in degrees} = \text{Angle in radians} \cdot \frac{180}{\pi}
+\end{equation*}
+
+Thus, thirty degrees equates to $30 \frac{\pi}{180} \approx 0.523$ radians. Then
+the scalar product is 
+
+\begin{equation*}
+    4 \cos (0.523) \times 3 \approx 10.395
+\end{equation*}
 
 
-Having found the velocity, we could find the movement function by integrating the 
-velocity.
 
 
+\pagebreak 
 
+\begin{shaded}
+    \textbf{(6)} Find the angle between $A = 4 \hat{i} + 3 \hat{j}$ and 
+    $B = 6\hat{i} - 3 \hat{j}$.
+\end{shaded}
 
+Recall that 
 
+\begin{equation*}
+    A \cdot B = \left| A \right| \left| B \right| \cos \theta
+\end{equation*}
 
+where $\theta$ is the angle between the vectors. This readily entails that 
 
+\begin{equation*}
+    \frac{A \cdot B}{\left| A \right|\left| B \right|  } = \cos \theta
+\end{equation*}
 
+or equivalently that 
 
+\begin{equation*}
+    \theta = \arccos \left( \frac{A \cdot B}{\left| A \right|\left| B \right|  } \right)  
+\end{equation*}
 
+Now, $A \cdot B = 4 \times 6 + 3 \times -3 = 24 - 9 = 15$ and $\left| A \right|
+\left| B \right| = 5 \cdot 6.708 = 33.541 $.
 
+Therefore, 
 
-
-
-
-
-
-
-
+\begin{equation*}
+    \theta = \arccos \left( \frac{15}{33.541} \right) = \arccos \left( 0.447
+    \right) = 1.107
+\end{equation*}
 
 
 
