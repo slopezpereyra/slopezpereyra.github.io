@@ -10,8 +10,6 @@ Consider the following position.
 
 <div markdown="0">
 {% raw %}
-<iframe width="600" height="397" frameborder="0"
-        src="https://lichess.org/study/embed/WcKABhGP?theme=auto&bg=auto">
-</iframe>
+<iframe width="600" height="371" src="https://lichess.org/study/embed/a4oJDxx1/xiFQkMpB#0" frameborder=0></iframe>
 {% endraw %}
 </div>
