@@ -96,7 +96,7 @@ title-separator: "-"
 
 # Output options (more information on Jekyll's site)
 timezone: "GMT-3"
-# markdown: kramdown
+markdown: kramdown
 markdown: GFM
 highlighter: rouge
 permalink: /:year-:month-:day-:title/

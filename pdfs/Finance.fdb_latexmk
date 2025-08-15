@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1754938186.37439 "Finance.tex" "Finance.pdf" "Finance" 1754938188.02646 0
+["pdflatex"] 1755200858.76654 "Finance.tex" "Finance.pdf" "Finance" 1755200859.6486 0
   "/etc/texmf/web2c/texmf.cnf" 1740662799.63242 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc" 1422827479 2083 60e36f8eac802fcaf19eabe2633b406e ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -239,6 +239,7 @@
   "/usr/share/texlive/texmf-dist/tex/latex/newtx/omlntxmi.fd" 1476653768 1919 e9d8f2f584e8bea3fa98fd6a074cab36 ""
   "/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1minntx.fd" 1698694482 2498 5cbe11c7caf802a0127dc4515daf85ea ""
   "/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1ntxtlf.fd" 1641850547 2241 e9e29b034b8eb01c46f61e2fc5a445b2 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd" 1423006468 1219 06811c362a6c86c10e17f80577d8ceee ""
   "/usr/share/texlive/texmf-dist/tex/latex/newtx/untxexa.fd" 1376004569 558 91031960917530f42e0f8fc4d1db1550 ""
   "/usr/share/texlive/texmf-dist/tex/latex/newtx/untxmia.fd" 1596661975 3832 57dfbcfb6f19c9f63a28ca1bfda0abe2 ""
   "/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsyc.fd" 1376004569 558 e8967b9c8273bc0c05b993fe92a9b757 ""
@@ -290,12 +291,15 @@
   "/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty" 1655411236 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "/usr/share/texlive/texmf-dist/tex/latex/xpatch/xpatch.sty" 1585258158 8314 7803f78066c4f9d008405191a4b43073 ""
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
+  "/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc" 1529098226 3124 3813fd4c981d99822890a2861b0d274c ""
+  "/usr/share/texmf/fonts/tfm/public/tex-gyre/ts1-qtmr.tfm" 1480098718 1600 20cdf11dab97d5d39e847571f9314407 ""
+  "/usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb" 1480098745 133302 8dca243a80ecf4cfe00077d4bd995bd7 ""
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1740670969.59643 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1740670991 8214096 2cc5ed7d441cd7dd7f6cf9e30d4bb5a5 ""
-  "Finance.aux" 1754938187.88323 784 2a3ea39490ae2f520fa9051d8442f62a "pdflatex"
-  "Finance.out" 1754938187.88423 685 dcdb55e286f698e6399f49eb21a0db18 "pdflatex"
-  "Finance.tex" 1754938184.96132 8034 41242c9f6bdc253754b0c945438aa869 ""
+  "Finance.aux" 1755200859.57234 1136 4d563dfbe68fdc717140ad5ea2faa1b3 "pdflatex"
+  "Finance.out" 1755200859.57277 1030 2c4506634a6b331d0a0ebd1bfe741408 "pdflatex"
+  "Finance.tex" 1755200858.19844 15690 a9bd524b6e6cafe79292e73dafeacda0 ""
   (generated)
   "Finance.aux"
   "Finance.log"

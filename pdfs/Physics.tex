@@ -477,6 +477,193 @@ Since the vector product $\vec{u} \times \vec{v}$ is a vector orthogonal
 to both $\vec{u}$ and $\vec{v}$
 
 
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(12)} Un avión vuela 200 km hacia el NE en una dirección que forma
+    un ángulo de 30 hacia el este de la dirección norte. En ese punto cambia su
+    dirección de vuelo hacia el NO. En esta dirección vuela 60 km formando un
+    ángulo de 45 con la direccióon norte.
+
+    (a) Calcular la máxima distancia hacia el este del punto de partida a la que
+    llegó el avión. 
+
+(b) Calcular la máxima distancia hacia el norte del punto de partida a la que
+llegó el avión. 
+
+(c) Calcular la distancia a la que se encuentra el avión del punto de partida al
+cabo de su recorrido. 
+
+(d) Determinar vectorialmente el camino que debería hacer para volver al punto
+de partida. Resolver gráfica y analíticamente.
+\end{shaded}
+
+Sea $\vec{A}$ el vector que describe el primer recorrido, $\vec{B}$ el
+vector que describe el segundo recorrido. Al final del problema, el avión se
+encuentra en la posición indicada por $\vec{A} + \vec{B}$. 
+
+Como $\vec{A}$ describe un movimiento con un ángulo de $\theta = 60$ grados
+($90 - 30$) respecto al eje $y$ (norte), y una magnitud de 200km, podemos
+determinarlo recordando que
+
+\begin{equation*}
+     A_x = \left| \vec{A} \right| \cos \theta, \qquad A_y = \left| \vec{A}
+     \right| \sin \theta
+\end{equation*}
+
+En radianes, $\theta = \frac{\pi}{180} \times 60 = 1.047$
+
+\begin{equation*}
+    A_x = 200 \times \cos \left( 1.047 \right) = 100.034, \qquad A_y = 22 \times
+    \sin(1.047) = 173.185
+\end{equation*}
+
+En conclusión, $\vec{A} = 100.034 \hat{i} + 173.185 \hat{j}$. Mismo razonamiento
+nos da que el ángulo del segundo vector es de $130$ grados, lo cual en radianes
+nos da $\alpha = \pi / 180 \times 130 = 2.268$. Por ende, 
+
+\begin{equation*}
+    B_x = 60 \cos(2.268) = -38.524, \qquad B_y = 60  \sin(2.268) = 45.998
+\end{equation*}
+
+Es decir que $\vec{B} = -38.524 \hat{i} + 45.998 \hat{j}$. De esto se sigue 
+que $\vec{C} = \vec{A} + \vec{B} = (61.51, 219.183)$. 
+
+$(a)$ Claramente, es la coordenada $x$ del vector $\vec{A}$, $100.034$.
+
+$(b)$ Claramente, es la coordenada $y$ del vector $\vec{C}$: $218.183$. 
+
+$(c)$ Claramente, es la magnitud de $\vec{C}$, es decir $\|\vec{C}\| =
+\sqrt{61.51^2 + 219.183^2} = 227.65$.
+
+$(d)$ El camino para volver es dado por $\vec{C} \times (-1)$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\pagebreak
+
+\section{Cynematics}
+
+
+\subsection{Unidimensional movement}
+
+The study of movement requires two variables: position ($x$, in units of length)
+and time ($t$, in seconds). We begin our study with unidimensional movement,
+i.e. movement which occurs along a single axis. 
+
+Experimentally, a way to study unidimensional movement could consist in taking a
+sequence of photographs (from the same position and angle) of the moving object
+at times $t_1, \ldots, t_n$. Some coordinate system must be imposed upon the
+space along which the object moves, e.g. setting an axis with origin at the
+initial position of the object, the same direction as the movement of the
+object, and some appropriate units. The photographs would then provide a
+sequence of positions $x_1, \ldots, x_n$.
+
+Clearly, $\left\{ t_n \right\}, \left\{ x_n \right\}  $ could be understood as
+defining a discrete function $\varphi(n)$, which on its turn might be
+interpolated to obtain a continuous approximation $\phi(t)$. To the limit, the
+continuous approximation converges to what we call a movement function. 
+
+\begin{shaded}
+    \textbf{Movement function}. A movement function $x(t)$ is a continuous,
+    smooth function.
+
+    \textbf{Examples.} $x(t) = c$ (reposo), $x(t) = at + b$ (MRU), $x(t) = at^2
+    + bt  + c$ (MRUV).
+\end{shaded}
+
+\subsection{Coincidence, displacement, temporal intervals}
+
+If $A, B$ are objects with movement functions $x_A(t), x_B(t)$, we say $A, B$
+coincide (se encuentran) when $x_A(t) = x_B(t)$.
+
+We define displacement (desplazamiento) (relative to positions $x_1, x_2$) as
+$\Delta x = x_2 - x_1$. Notice that $\Delta x$ is not the same as distance: if
+one travels from $A$ to $B$ and then to $B$ from $A$, the distance traveled is
+to times the distance from $A$ to $B$, but $\Delta x = 0$.
+
+We also define a temporal interval, relative to two times $t_1, t_2$, as $\Delta
+t = t_2 - t_1$, where $t_2 > t_1$. 
+
+\subsection{Velocity}
+
+We define \textit{median velocity} (velocidad media) as 
+
+\begin{equation}
+    \overline{v} = \frac{\Delta x}{\Delta t} = \frac{x_2 - x_1}{t_2 - t_1}
+\end{equation}
+
+where $x_2 = x(t_2), x_1 = x(t_1)$. Clearly, $\overline{v}$ is the slope of the
+line which intersects $x(t)$ at points $t_1, t_2$. The sign of $\overline{v}$
+then determines the direction (sentido) of movement. The unit of $\overline{v}$
+is then $L / T$ (length over time), for instance kilometers per hour. Median
+velocity indicates the rate of change of distance in time.
+
+Clearly, an object in reposo has a median velocity of zero. An object with
+movement function $x(t) = at + b$ (MRU) has median velocity $a$. The case of
+interest is an object with a quadratic movement function (MRUV).
+
+If $x(t) = at^2 + b t + c$, let $m$ the midpoint of the quadratic expression and 
+take $t_1 = m - c, t_2 = m + c$ with $c > 0$. Clearly, the median velocity from 
+$t_1$ to $m$ is negative, that from $m$ to $t_1$ is positive, and that from 
+$t_1$ to $t_2$ is zero. This is sufficient to suggest that median velocity does
+not clearly express the nature of the movement. 
+
+For that reason, the length $\Delta$ of the interval $[t_1, t_2]$ might be
+reduced in the limit to zero, so that we get an accurate notion of the
+instantaneous (or close to instantaneous) change of direction. Needless to say, 
+the limit converges to the slope of the line  tangent to $(t_1, x(t_1))$, i.e.
+the derivative of $x(t)$ at $t_1$. Thus, we obtain the definition of
+instantaneous velocity, usually called simply velocity: 
+
+\begin{equation}
+    v(t) = \lim_{\Delta t \to 0} \frac{\Delta x}{\Delta t} = \frac{dx}{dt} =
+    v'(t)
+\end{equation}
+
+Again, $\left[ v(t) \right] = \frac{L}{T}$. Quite clearly, $v(t) = \overline{v}$
+for constant and linear functions, but for the quadratic function $x(t)$ we
+have 
+
+\begin{equation*}
+    x(t) = at^2 + b t + c, \qquad v(t) = 2at + b
+\end{equation*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

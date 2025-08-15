@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  12 AUG 2025 18:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  14 AUG 2025 11:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1199,7 +1199,7 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 (Font)              scaled to size 14.4pt on input line 230.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 (Font)              scaled to size 14.4pt on input line 230.
- [5] [6] [7] [8] [9] [10] [11] 
+ [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./Physics.aux)
  ***********
@@ -1207,21 +1207,21 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `Physics.out' has not changed.
-(rerunfilecheck)             Checksum: 3AE7961116D2666C5E79E0B95B6C38A4;432.
+(rerunfilecheck)             Checksum: 00D698C206ED906811E60FCBB0434A0C;1088.
  ) 
 Here is how much of TeX's memory you used:
- 43268 strings out of 474222
- 981677 string characters out of 5748733
+ 43282 strings out of 474222
+ 981845 string characters out of 5748733
  1945975 words of memory out of 5000000
- 64743 multiletter control sequences out of 15000+600000
- 586460 words of font info for 98 fonts, out of 8000000 for 9000
+ 64747 multiletter control sequences out of 15000+600000
+ 586668 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,20n,107p,775b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on Physics.pdf (11 pages, 171021 bytes).
+Output written on Physics.pdf (14 pages, 183422 bytes).
 PDF statistics:
- 170 PDF objects out of 1000 (max. 8388607)
- 113 compressed objects within 2 object streams
- 23 named destinations out of 1000 (max. 500000)
- 189 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 203 PDF objects out of 1000 (max. 8388607)
+ 143 compressed objects within 2 object streams
+ 32 named destinations out of 1000 (max. 500000)
+ 221 words of extra memory for PDF output out of 10000 (max. 10000000)
 
