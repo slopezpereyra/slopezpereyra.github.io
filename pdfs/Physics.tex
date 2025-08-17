@@ -643,42 +643,181 @@ have
     x(t) = at^2 + b t + c, \qquad v(t) = 2at + b
 \end{equation*}
 
+\pagebreak
+\subsection{Excercises}
+
+\begin{shaded}
+    \textbf{(1)} Consider 
+
+    \begin{equation*}
+        x(t) = 1 \left[ \frac{m}{s^2} \right] t^2 - 3 \left[ \frac{m}{s} \right]
+        t
+    \end{equation*}
+
+    the movement function of a body travelling in a straight line, with $x$ 
+    in meters and $t$ in seconds. 
+
+    $(a)$ Plot $x(t)$
+
+    $(b)$ Determine analytically the median velocity in $[-1, 5], [-1, 8], [-1,
+    0.9], [-1, 0.99], [ -1, 0.999]$.
+
+    $(c)$ Let $\Delta t_n = t_n - t_0$ with $\left\{ t_n \right\} = \left\{ -1,
+    5, 4, 1, -0.5, -0.8, -0.9, - 0.99, -0.999\right\}  $ all measured in
+    seconds. To what value does the median velocity of the object converge as
+    $t_n$ decreases in the interval $[-1, -1 + \Delta t_n]$? What is the
+    geometrical interpretation of this
+    result? 
+
+    $(d)$ Find the equation for the line tangent to $x(t)$ at $t = -1 s$.
+\end{shaded}
+
+$(a)$ Notice that since $t$ is in seconds, $\frac{mt^2}{s^2}$ correctly
+expresses a quantity in meters, and so does $\frac{mt}{s}$. So we will from now
+on write simply $x(t) = t^2 - 3t$, understanding that it is a mapping from time
+in seconds to meters.
+
+\begin{tikzpicture}
+  \begin{axis}[
+      axis lines = middle,
+      xlabel = {$t$ (s)},
+      ylabel = {$x(t) = t^2 - 3t$},
+      domain=-2:2,   % time range
+      samples=100,
+      grid=both,
+      thick
+    ]
+    % Plot x(t) = t^2 - 3t
+    \addplot[blue, thick] {x^2 - 3*x};
+    \node[above right] at (axis cs:3,0) ;
+  \end{axis}
+\end{tikzpicture}
 
 
+$(b)$ The median velocity of an object in the time interval $[t_a, t_b]$  was
+given by 
+
+\begin{equation}
+    \frac{\Delta x}{\Delta t} = \frac{ x(t_b) - x(t_a) }{t_b - t_a}
+\end{equation}
+
+So excercise $(b)$ is as simple as plugging in the corresponding values into
+equation $(1)$ and I skip  it. 
+
+$(c)$ Let $t$ be an arbitrary value. Then by definition of $\frac{dx}{dt}$,
+
+\begin{equation*}
+    \lim_{\Delta t \to 0 } \frac{x(t + \Delta t) - x(t)}{(t + \Delta t) -
+    t} =\lim_{\Delta t \to 0 } \frac{ x(t + \Delta t) - x(t) }{\Delta t} = \frac{dx}{dt}
+\end{equation*}
+
+the derivative of $x(t)$ at time $t$. In particular, the limit whose convergence
+we are asked to study is nothing but the limit above with $t = -1$:
+
+\begin{equation*}
+    \lim_{\Delta t \to 0 } \frac{x(-1 + \Delta t) - x(-1)}{\Delta t} = x'(-1)
+\end{equation*}
+
+So suffices to observe that $x'(t) = 2t - 3$ and $x'(-1) = -5$. In conclusion, 
+the object at time $t = -1$ travels at an instantaneous velocity of $-5$ meters
+per second.
+
+$(d)$ The line $\ell(t) = at + b$ tangent to $x(t)$ at $t = -1s$ has slope $a =
+-5$ and crosses through the point $(-1, 4)$. So we must have $-5(-1) + b = 4
+\iff b = 4 - 5 = -1$. So the line is $\ell(t) = -5t - 1$.
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(4)} Answer the questions.
+\end{shaded}
+
+$(a)$ Can an object have null velocity and yet possess acceleration?  
 
 
+\small
+\begin{quote}
+
+Let $x(t)$ the describe the movement of the object and $v(t) = x'(t)$ its
+velocity, both as a function of time. Assume for an arbitrary $t_0$ that 
+$v(t) = 0$. It is very much possible that $v'(t_0) \neq 0$.  
+
+Consider, for instance, that $v(t)$ is linear and non-constant, making $v'(t) =
+a$ a non-null constant. Then there exists a unique root $r$ s.t. $v(r) = 0$, but
+independently of this fact $v'(r) = a \neq 0$.
+
+Physically, it should be clear that if a non-moving object could not possess
+acceleration, then it would be impossible for it to pass from a still to a
+moving state. So, at least at the intutition level, this \textit{reductio ad
+absurdum} suffices.
+
+\end{quote}
+\normalsize
+
+$(b)$ Can a moving object have a null displacement in a given interval and yet
+non-null velocity?
 
 
+\small
+\begin{quote}
+
+Naturally. Take as example an object moving in circles at a constant, non-null
+velocity $v$, and assume it travels a full circle in $t$ seconds. Then all of
+the intervals in $\left\{ [t_0, t_0 + tk] : k \in \mathbb{N} \right\} $ are such
+that they give null displacements. Yet the object \textit{is} moving.
+
+\end{quote}
+\normalsize
+
+$(c)$ Can an object have an east-bound velocity of while its acceleration is
+west-bound?
 
 
+\small
+\begin{quote}
+
+Informally, this is quite clearly the case, insofar as any positively-moving
+object whose velocity decreases must have a negative acceleration.
+
+\end{quote}
+\normalsize
+
+$(d)$ Consider an object moving on a straight line, with the east being the positive
+direction, under a velocity of $v(t) = 20 \text{ms}^{-1} - 2 \text{ms}^{-2} t$.
+For $t = 0\text{s}, t = 1\text{s}$, what is the situation?
 
 
+\small
+\begin{quote}
+
+Its velocity is clearly positive in both cases (20 and 18), evidently
+decreasing, which points out the fact that its acceleration is negative (-2).
+
+\end{quote}
+\normalsize
+
+$(e)$ A ball is thrown vertically. What do the \textit{signs} of velocity and
+acceleration look like as the object ascends, and what does that mean? And
+when the object descends? What happens at the highest point?
 
 
+\small
+\begin{quote}
+
+Clearly, its velocity is positive during the ascending phase, and negative
+during the descending phase. At the highest point, the velocity will be exactly
+zero. 
+
+Conversely, acceleration is always negative due to the force excercised by
+gravity on the ball. 
+
+It is the fact that acceleration is constantly negative what causes the ball not
+only to lose velocity as it goes up until it begins to fall again, but to then
+fall more and more rapidly as time goes by.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\end{quote}
+\normalsize
 
 
 

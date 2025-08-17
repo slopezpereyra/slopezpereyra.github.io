@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1755183268.76517 "Physics.tex" "Physics.pdf" "Physics" 1755183270.47663 0
+["pdflatex"] 1755454331.58439 "Physics.tex" "Physics.pdf" "Physics" 1755454333.4552 2
   "/etc/texmf/web2c/texmf.cnf" 1740662799.63242 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc" 1422827479 2083 60e36f8eac802fcaf19eabe2633b406e ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -18,9 +18,11 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm" 1589834365 760 e8ec875a87aa119f1af7ea4be48da9e8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntxexx.tfm" 1699567298 1788 252bc928adbd02cba8c68f0fccd62f6c ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntxmi.tfm" 1622581641 4172 1526bfb9e9568e0f4fb805c4dd94c28d ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntxmi5.tfm" 1622753257 3308 d9d654d4f27ed240ea47773a02bead2a ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntxmi7.tfm" 1622753257 3332 a520b9aff96ee52c272945382939f67a ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntxmia.tfm" 1635022465 2596 96de89ea000bcede4330a93843ac124b ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntxsy.tfm" 1699567298 2028 52e8459eebf22a562b33a44afb65f348 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntxsy5.tfm" 1699567298 2024 0dab6936a8d786f55f0dc7a2278c035a ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntxsy7.tfm" 1699567298 1992 670a73c7d8c003bea90885f098740a17 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntxsyc.tfm" 1589834365 1028 2f6cbe812325cff65b38e4c0a517f4cb ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntxsym.tfm" 1693080977 1560 755acbe6da75f914298c79fa8bb324fd ""
@@ -32,6 +34,7 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/txmiaX.tfm" 1634244313 1716 a6b113dfe808a82f532d14b1f370053f ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/txsys.tfm" 1699567298 1660 d580b6f461bbd2ab53b1fd3851108c0e ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm" 1229303445 688 37338d6ab346c2f1466b29e195316aa4 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm" 1229303445 684 3a51bd4fd9600428d5264cf25f04bb9a ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs7.tfm" 1229303445 692 1b6510779f0f05e9cbf03e0f6c8361e6 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb" 1572128992 32409 1452fa0ce4fabfb48acd5d077e296f6d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb" 1621283831 33424 f912ebe54685d0a65d3c046e3d517e38 ""
@@ -48,6 +51,7 @@
   "/usr/share/texlive/texmf-dist/fonts/vf/public/newtx/ntxmi.vf" 1622581641 2612 4fd3785b7e98639f68f908a08c642071 ""
   "/usr/share/texlive/texmf-dist/fonts/vf/public/newtx/ntxmia.vf" 1635022465 2056 17a96727a1080b515c483edfb4650902 ""
   "/usr/share/texlive/texmf-dist/fonts/vf/public/newtx/ntxsy.vf" 1699567298 1804 0d5405efa3655e9ce85ebf4efa9b7f0b ""
+  "/usr/share/texlive/texmf-dist/fonts/vf/public/newtx/ntxsy7.vf" 1699567298 1932 eb3a33127536e5b93d4fbe6076112b0d ""
   "/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1575674566 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty" 1576625341 40635 c40361e206be584d448876bba8a64a3b ""
@@ -298,9 +302,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1740670969.59643 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1740670991 8214096 2cc5ed7d441cd7dd7f6cf9e30d4bb5a5 ""
-  "Physics.aux" 1755183270.32757 1227 ab89cc71dcc7fefefc0d00332ccc41ec "pdflatex"
-  "Physics.out" 1755183270.32857 1088 00d698c206ed906811e60fcbb0434a0c "pdflatex"
-  "Physics.tex" 1755183267.65779 21606 b8efc98aa2e246da2e38ea3f57a60009 ""
+  "Physics.aux" 1755454333.30094 1347 b1364e791622c64d4f03ecae96a7d71f "pdflatex"
+  "Physics.out" 1755454333.30094 1195 5e71ce70c34c59c529b5d33a65f4a68f "pdflatex"
+  "Physics.tex" 1755454310.08947 27079 8a051f467fbd5d0b12d8b8233b209591 ""
   (generated)
   "Physics.aux"
   "Physics.log"

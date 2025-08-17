@@ -62,8 +62,20 @@ b4.
 
 $(c)$ White's plan should consist of improving his knight via Ne1-Nd3 whereon
 the knight can reach c5 or f4. So the expected moves are Qe2 (keeping an eye on
-b5) Ne1-Nd3 followed perhaps by doubling rooks. Black's plans should consist of
-Rab8 to support Nb5-Nc3.
+b5) or Qd2, Ne1-Nd3 followed perhaps by doubling rooks. Black's plans should consist of
+getting his knight to c3 via Ne8-Nd6-Ne4, where White must either allow the
+knight in or commit to f3.
+
+--- 
+
+These positions come from this interesting game:
+
+<div markdown="0">
+{% raw %}
+<iframe src="https://lichess.org/embed/game/X6pQulnq?theme=auto&bg=auto"
+width=600 height=397 frameborder=0></iframe>
+{% endraw %}
+</div>
 
 
 

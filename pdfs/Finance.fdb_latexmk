@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1755200858.76654 "Finance.tex" "Finance.pdf" "Finance" 1755200859.6486 0
+["pdflatex"] 1755376732.03877 "Finance.tex" "Finance.pdf" "Finance" 1755376733.71991 0
   "/etc/texmf/web2c/texmf.cnf" 1740662799.63242 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc" 1422827479 2083 60e36f8eac802fcaf19eabe2633b406e ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -297,9 +297,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1740670969.59643 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1740670991 8214096 2cc5ed7d441cd7dd7f6cf9e30d4bb5a5 ""
-  "Finance.aux" 1755200859.57234 1136 4d563dfbe68fdc717140ad5ea2faa1b3 "pdflatex"
-  "Finance.out" 1755200859.57277 1030 2c4506634a6b331d0a0ebd1bfe741408 "pdflatex"
-  "Finance.tex" 1755200858.19844 15690 a9bd524b6e6cafe79292e73dafeacda0 ""
+  "Finance.aux" 1755376733.57092 1141 caad330c8a4d3b18377d117be09cfac3 "pdflatex"
+  "Finance.out" 1755376733.57092 1030 2c4506634a6b331d0a0ebd1bfe741408 "pdflatex"
+  "Finance.tex" 1755376730.9989 21544 1cd06339268b71750df0fb5a5e4e1735 ""
   (generated)
   "Finance.aux"
   "Finance.log"

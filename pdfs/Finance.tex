@@ -424,53 +424,148 @@ contract matures, the price $S(t_{\text{end}})$ is 1,29, then the investor will
 win since he will sell to a price higher than the market price. In particular,
 he will win $0.01 \times 100000 = 1000$.
 
+\pagebreak 
 
+\begin{shaded}
+    \textbf{Ejercicio 3}. Un inversor entra en una posición long en un contrato futuro
+    sobre algodón cuando el precio de futuros es de 3,50 dólares por
+    kilogramo. El contrato es para la entrega de 50000 kilogramos. ¿Cuánto gana
+    o pierde el comerciante si el precio del algodón al final del contrato es a)
+    4,82 dólares por kilogramo y b) 3,15 dólares por kilogramo? Interpretar el
+    resultado en el diagrama de payoff correspondiente.
+\end{shaded}
 
+$(a)$ En la posición long, el inversor se compromete a comprar 50.000kg de
+algodón a 3,50 la unidad. Claramente, si en la maduración del contrato el precio
+es $4.82$, el inversor estará comprando algodón a un precio menor al valor del
+mercado, lo cual significa que está ahorrando dinero. En particular, estará
+ahorrando $4,82 - 3,50 = 1,32$ dólares por unidad, es decir un total de 
+$1,32 \times 50.000 = 66.000$ dólares.
 
+$(b)$ Mismo razonamiento, pero en este caso pierde $(3,50 - 3,15)50.000 =
+17.500$ dólares.
 
+\pagebreak 
 
+\begin{shaded}
+    \textbf{Ejercicio 4}: El 1 de julio de 2024 una compañía entró en un contrato forward
+    para comprar 10 millones de yenes japoneses el 1 de enero de 2025. El 1 de
+    setiembre de 2024 entró en un contrato forward para vender 10 millones de
+    yenes japoneses el 1 de enero de 2025. Describir cuál es el payoff de esta
+    estrategia.
+\end{shaded}
 
+El primero de enero de 2025, la compañía deberá comprar 10 millones de yenes al
+valor del 1 de Julio de 2024, que denotamos como $p_1$, y vender 10 millones de
+yenes al valor del 1 de septiembre de 2024, que denotamos como $p_2$. Sea $p_3$ el
+valor del yen al 1 de enero de 2025.
 
+El payoff será claramente lo ganado/perdido en una operación más lo
+ganado/perdido en la otra, es decir la suma de los payoffs. Teniendo en cuenta
+que, por separado,
 
+\begin{equation*}
+    \mathcal{P}_{\text{long}} = (p_3 - p_1)k, \qquad \mathcal{P}_{\text{short}}
+    = (p_2 - p_3)k
+\end{equation*}
 
+son los payoffs de las dos operaciones,
 
+\begin{equation}
+    \mathcal{P} = \mathcal{P}_{\text{long}} + \mathcal{P}_{\text{short}}
+\end{equation}
 
+es el payoff final. La ecuación $(3)$ se simplifica a 
 
+\begin{equation}
+    \mathcal{P} = k \big( (p_3 - p_1) + (p_2 - p_3) \big) = k(p_2 - p_1)
+\end{equation}
 
+Es decir que el payoff es directamente proporcional a la diferencia del valor
+del yen en los dos momentos en que se firmaron los contratos, el 1 de julio y el
+1 de septiembre. Lo interesante es que el payoff se vuelve independiente del
+valor del yen al momento del vencimiento del contrato.
 
+\pagebreak 
 
+\begin{shaded}
+   \textbf{Ejercicio 5}. La empresa argentina ExportCo está actualmente
+   exportando mercadería a EE.UU. y sabe que dentro de 8 meses recibirá un pago
+   de 2 millones de dólares. ¿Cómo puede dicha empresa realizar una estrategia
+   de cobertura ante posibles fluctuaciones en el tipo de cambio con contratos
+   forward?
+\end{shaded}
 
+Puede entrar \textit{short} para vender 2 millones de dólares al precio de la
+fecha para dentro de 8 meses. De ese modo, incluso si el precio del dólar baja
+en los 8 meses que pasan, seguirá vendiéndolos al precio de ahora.
 
+\pagebreak 
 
+\begin{shaded}
+\textbf{Ejercicio 6}. Un comerciante ingresa en posición short en contratos
+futuros a julio sobre concentrado de jugo de naranja congelado. Cada contrato es
+para la entrega de 15.000 libras del producto subyacente. El precio de futuros
+actual es de 160 centavos por libra, el margen inicial es de 6000 por contrato
+y el margen de mantenimiento es de 4500 por contrato. ¿Qué cambio de precio
+daría lugar a una margin call? ¿En qué circunstancias se podrían retirar 2000
+de la cuenta?
+\end{shaded}
 
+$(a)$ Sea $m_0$ la cantidad inicial de dinero en la cuenta marginal \textit{en
+dólares}; i.e. $m_0 = 6000$. Sean $m_1, m_2, \ldots$ los subsiguientes valores
+en la cuenta marginal, ajustados de acuerdo con la lógica de este tipo de
+contratos. Sabemos que 
 
+\begin{equation}
+    m_{k+1} = m_k + (p_{k} - p_{k+1}) C
+\end{equation}
 
+donde $p_i$ es el precio del subyacente en el $i$-écimo momento y $C$ la
+cantidad de subyacente involucrado. Notemos que los precios están en
+\textit{centavos de dólar por libra}, mientras $m_{k+1}, m_k$ están en dólares.
 
+Dicho esto, es fácil ver que por recurrencia la ecuación $(5)$ se traduce en: 
 
+\begin{equation}
+    m_{k} = m_0 + (p_0 - p_k)C
+\end{equation}
 
+Se nos pregunta qué cambio de precio daría lugar a una margin call. Es decir, se
+nos pide la solución a la ecuación 
 
+\begin{equation*}
+    m_k \leq 4500
+\end{equation*}
 
+que por la recurrencia del $(6)$ resulta 
 
+\begin{align*}
+    m_0 + (p_0 - p_k)C \leq 4500\text{USD}
+    &\iff 600.000 + (160 - p_k)15.000 \leq 450.000
+\end{align*}
 
+donde ponemos 450.000 y 600.000 para hablar de todas las unidades en centavos de
+dólar. (Porque los precios $p_k$ están en centavos de dólar por libra.) Vemos
+que la inecuación se cumple si y solo si $p_k \geq 170$. Es decir que un aumento
+de $10$ centavos de dólar por libra es suficiente para conducir a una margin
+call. 
 
+$(b)$ Se retiran $2000$USD si y solo si al tiempo de finalizar el contrato el
+valor final en la cuenta marginal es $m_{\text{final}} \geq m_0 + 2000 \times 100
+\text{cents}$.  Pero $m_{\text{final}} = m_0 + (p_{0} -
+p_{\text{final}})15.000$, con lo cual necesitamos resolver la inecuación 
 
+\begin{align*}
+&m_0 + 2000 \times 100 \geq m_0 + (p_0 - p_{\text{final}})15.000 \\ 
+    \iff &\frac{ 200.000 }{15.000} \geq p_0 - p_{\text{final}} \\ 
+    \iff& p_{\text{final}} \geq p_0 - 13.33 \\ 
+    \iff&p_{\text{final}} \geq 146.67
+\end{align*}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Es decir que una ganancia de al menos 2000USD se consigue si y solo si el precio
+baja 13.33 centavos de dólar, o bien si al tiempo de maduración estamos vendiendo
+el subyacente a un valor 13.33 centavos por encima del valor en dicho tiempo.
 
 
 
