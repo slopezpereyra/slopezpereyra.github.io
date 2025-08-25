@@ -819,6 +819,511 @@ fall more and more rapidly as time goes by.
 \end{quote}
 \normalsize
 
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(5)} A particle moves through the $x$-axis with movement function 
+    $x(t) = 3 + 17t - 5t^2$, with $x$ in meters and $t$ in seconds. 
+
+    $(a)$ What is the position of the particle at times $\left\{ 1, 2, 3
+    \right\} $?
+
+    $(b)$ At what point in time does the particle return to the origin? 
+
+    $(c)$ Find $v(t)$ and determine the instantaneous velocity at times $\left\{
+    1, 2, 3\right\} $. When is the velocity null? What is the particles velocity
+    when it crosses the origin? 
+
+    $(d)$ Plot $x(t), v(t), a(t)$.
+\end{shaded}
+
+
+$(a)$ Trivial, simply compute $x(1), x(2), x(3)$.
+
+$(b)$ See that
+
+\begin{equation*}
+    x(t) = 0 \iff t = \frac{17}{10} \pm \frac{ \sqrt{17^2 + 4\times 3 \times 5}
+    }{10}
+\end{equation*}
+
+which gives approximate solutions $t_1 \approx -0.168, t_2 \approx 3.568$. It
+makes no sense to speak of negative time and we keep only the positive solution
+$t = 3.568$. Thus, the particle returns to the origin after approximately 3.568
+seconds.
+
+$(c)$ The first derivative of $x(t)$ is 
+
+\begin{equation*}
+    v(t) = -10t + 17
+\end{equation*}
+
+The instantaneous velocity at times 1, 2, 3 are $v(1) = 7, v(2) = -3, v(3) = -13$.
+
+\begin{equation*}
+    17 = 10t \iff t = \frac{17}{10} = 1.7
+\end{equation*}
+
+The particle crosses the origin at approximately time $3.568$ and its velocity
+is approximately $v(3.568) = -18.682$. 
+
+$(d)$ The acceleration is constant: $a(t) = -10$.
+
+\begin{tikzpicture}
+\begin{axis}[
+    width=8cm,
+    height=6cm,
+    axis lines=middle,
+    xlabel={$t$ (s)},
+    ylabel={$x(t)$ (m)},
+    domain=0:4,
+    samples=200,
+    grid=both,
+    title={Position $x(t)=3+17t-5t^2$}
+]
+\addplot[blue, thick] {3 + 17*x - 5*x^2};
+\end{axis}
+\end{tikzpicture}
+
+\vspace{1cm}
+
+% --- Velocity v(t) ---
+\begin{tikzpicture}
+\begin{axis}[
+    width=8cm,
+    height=6cm,
+    axis lines=middle,
+    xlabel={$t$ (s)},
+    ylabel={$v(t)$ (m/s)},
+    domain=0:4,
+    samples=200,
+    grid=both,
+    title={Velocity $v(t)=17-10t$}
+]
+\addplot[red, thick] {17 - 10*x};
+\end{axis}
+\end{tikzpicture}
+
+\vspace{1cm}
+
+% --- Acceleration a(t) ---
+\begin{tikzpicture}
+\begin{axis}[
+    width=8cm,
+    height=6cm,
+    axis lines=middle,
+    xlabel={$t$ (s)},
+    ylabel={$a(t)$ (m/s$^2$)},
+    domain=0:4,
+    samples=2,
+    grid=both,
+    title={Acceleration $a(t)=-10$},
+    ymin=-12, ymax=0
+]
+\addplot[green!70!black, thick] {-10};
+\end{axis}
+\end{tikzpicture}
+
+\pagebreak 
+
+\begin{shaded}
+    (\textbf{6}) $(a)$ Determine the instantaneous acceleration of the object
+    plotted in the exercise for $t = 3, t = 11$.
+
+    $(b)$ Compute the distanace traveled by the object in the time intervals
+    $[0, 5]$ and $[0, 9]$ and $[0, 15]$.
+
+    $(c)$ Knowing that $x(t = 6) = 0$, find the position of the object at $t =
+    0$. 
+
+    $(d)$ Give an expression for the objects position for all $t$. 
+
+    $(e)$ Plot $x(t), v(t), a(t)$.
+\end{shaded}
+
+The velocity of the object is constantly $20$m/s from time $t = 0$ to time $t =
+6$. Then it linearly increases until it reaches $44$m/s at $t=9$, from whereon
+it linearly decreases until it reaches $0$ms at time $t = 15$.
+
+The linear expression $\ell_1(t) = a_1t + b_1$ which satisfies $\ell(6)=20,
+\ell(9) = 44$ is such that 
+
+\begin{equation*}
+    6a_1 + b_1 = 20, \qquad 9a_1 + b_1 = 44
+\end{equation*}
+
+The associated system of equations yields that $b_1 = 20 - 6a_1$, from which
+follows that $9a_1 + (20 - 6a_1) = 44$, entailing 
+
+\begin{equation*}
+    a_1 = \frac{24}{3} = 8
+\end{equation*}
+
+From this readily follows that $b_1 = 20 - 6\times 8 = -28$. 
+
+Similarly, the linear expression $\ell_2(t) = a_2t + b_2$ which gives a line
+s.t. $\ell_2(9) = 44, \ell_2(15) = 0$ must satisfy 
+
+\begin{equation*}
+    9a_2 + b_2 = 44, \qquad 15a_2 + b_2 = 0
+\end{equation*}
+
+Then $b_2 = -15a_2$ and $9a_2 -15a_2 = 44$, entailing $a_2 = -\frac{22}{3}$.
+From this follows that $b_2 = 110$ via simple calculations. Thus, 
+
+
+\begin{equation*}
+    v(t) = \begin{cases}
+        20 & 0 \leq t \leq 6 \\ 
+        8t - 28 & 6 < t \leq 9 \\ 
+        -\frac{22}{3}t + 110 & 9 < t \leq 15
+    \end{cases}
+\end{equation*}
+
+It should be intuitive to graps that the distance travelled $d(a, b)$ in the interval
+$[a, b]$ is
+
+\begin{equation*}
+    d(a, b) = \int_a^b |v(t)| ~ dt
+\end{equation*}
+
+If $v(t)$ is in meters per second, and $t$ is in seconds, the total number of
+meters travelled in a time interval $[a, b]$ is the summation of the meters per
+second travelled in every instant! This will involve the anti-derivative of 
+$v(t)$, i.e. the movement function $x(t)$, which we might as well compute at
+once. 
+
+\begin{align*}
+    x(t) 
+    &= \int v(t) ~ dt \\ 
+    &= \begin{cases}
+        20t + C_1 & 0 \leq t \leq 6 \\ 
+        8\frac{t^2}{2} - 28t + C_2 & 6 < t \leq 9 \\ 
+        -\frac{22}{3} \frac{t^2}{2} + 110t + C_3 & 9 < t \leq 15
+    \end{cases} \\ 
+    &= \begin{cases}
+        20t + C_1 & 0 \leq t \leq 6 \\ 
+        4t^2 - 28t + C_2  & 6 < t \leq 9 \\ 
+        -\frac{22}{6} t^2 + 110t + C_3& 9 < t \leq 15
+    \end{cases}
+\end{align*}
+
+The constants $C_1, C_2, C_3$ must satisfy the restriction of continuity and of
+preserving the necessary values. In particular, we need $20(0) + C_1 = 20$.
+Since we know $x(6) = 0$, we need $120 + C_1 = 0$, i.e. $C_1 = -120$. We also
+need 
+
+\begin{equation*}
+    4(6^2) - 28(6) + C_2 = 0
+\end{equation*}
+
+to ensure continuity, so
+
+\begin{equation*}
+    C_2 = 24
+\end{equation*}
+
+Then we can know what $x(9)$ is and deduce $C_3$, which ends up being $-597$.
+
+\begin{equation*}
+    \therefore ~ x(t) = \begin{cases}
+        20t - 120 & 0 \leq t \leq 6 \\ 
+        4t^2 -28t + 24 & 6 < t \leq 9 \\ 
+        -\frac{22}{6}t^2 +100t - 597 & 9 < t \leq 15
+    \end{cases}
+\end{equation*}
+
+In any case, we could have computed the distance travelled without $x(t)$ (I
+computed $x(t)$ because it's part of the exercise):
+
+\begin{align*}
+    d(0,5) 
+    &= \int_0^5 v(t) ~ dt  \\ 
+    &= 20 \times t]_0^5 \\ 
+    &= 20 \times (5) \\ 
+    &= 100
+\end{align*}
+
+\begin{align*}
+    d(0, 9) 
+    &= \int_0^6 v(t) ~ dt + \int_6^9 v(t) ~ dt \\ 
+    &= 20 \times t\Big]_0^6 + (4t^2 - 28t)\Big]_6^9 \\ 
+    &=120 + \left[ (4 \times 81 - 28 \times 9) - (4 \times 38 - 28 \times 6)
+    \right]  \\ 
+    &= 120 + 96 \\ 
+    &= 216
+\end{align*}
+
+etc.
+
+
+
+
+\pagebreak
+\section{De adelante hacia atrás}
+
+Recordemos que si $x(t)$ es función de movimiento, $v(t) = \frac{dx}{dt}$ es la
+velocidad, y $a(t) = \frac{d^2 x}{dt^2}$ es la aceleración. Naturalmente, esto
+significa que 
+
+\begin{equation*}
+    x(t) = \int v(t') dt' + D, \qquad v(t) = \int a(t') dt' + C
+\end{equation*}
+
+donde $D, C$ son constantes de movimiento que dependerán de las condiciones
+iniciales.
+
+\begin{shaded}
+
+\textbf{$( \dagger )$ Derivada y puntos de inflexión}
+Un punto de inflexión de $f$ continua y dos veces derivable en $[a, b]$ es un
+valor $x_0 \in [a, b]$ t.q. $f^{(2)}(x_0) = 0$. Los puntos de inflexión
+representan un cambio de comportamiento en $f$, en particular transiciones de
+cóncava a convexa y viceversa.
+
+Intuitivamente, y  exceptuando casos límite (como $f''$ constante), si $f''(x_0) = 0$, entonces alrededor de $x_0$ hay un cambio de
+signo en $f''$, lo cual quiere decir que en el entorno alrededor de $x_0$ la
+función original pasa de crecer a decrecer, o de decrecer a crecer.
+
+\end{shaded}
+
+\pagebreak 
+
+\section{Movimiento bidimensional (cinemática 2D)}
+
+Se modela con una curva en el plano cartesiano. La curva (el dibujo del
+movimiento) se denomina trayectoria. La trayectoria \textit{no} es una función,
+obviamente (e.g. una circunferencia es una trayectoria posible).
+
+La descripción de la posición del objeto en cada instante de tiempo $t$ se
+descsribe con vectores. En el plano cartesiano, decimos que $\vec{r} = \hat{x}i
++ y \hat{j}$
+es un vector posición si la punta de $\vec{r}$ se corresponde con la posición
+del objeto (en un tiempo dado).
+
+Sea $\theta$ el ángulo formado por $\vec{r}$ y el eje $x$, de manera tal que $x
+= \left| \vec{r} \right| \cos \theta, y = \left| \vec{r} \right| \sin \theta$.
+Es decir, $\vec{r} = \left| \vec{r} \right| \cos \theta \hat{i} + \left|
+\vec{r}\right| \sin \theta \hat{j} $.
+
+Ahora pensemos el objeto en movimiento, y que registramos a lo largo del tiempo
+$t$ las posiciones $x(t), y(t)$. Claramente, $x(t), y(t)$ son funciones de
+movimiento unidimensionales. Por lo tanto, podemos definir el vector posición de
+manera general como 
+
+\begin{equation}
+    \vec{r}(t) = x(t)\hat{i} + y(t) \hat{j}
+\end{equation}
+
+Ahroa consideremos la trayectoria $T$ (conjunto de puntos en el eje cartesiano)
+del objeto. Sean $P_1, P_2 \in T$ dos puntos en el plano que pertenecen a la
+trayectoria. Definimos el desplazamiento del objeto como 
+
+\begin{equation}
+    \Delta \vec{r} = \vec{r_2} \vec{r_1}
+\end{equation}
+
+donde $\vec{r_1}, \vec{r_2}$ son los vectores con puntas en $P_1, P_2$. De esto
+se sigue que 
+
+
+\begin{equation}
+    \Delta \vec{r} = \vec{r}(t_2) - \vec{r}(t_1)
+\end{equation}
+
+
+para dos instantes de tiempo $t_1, t_2$. Además, es claro que $\Delta\vec{r}$ es
+el vector que conecta las dos puntas, desde $P_1$ hasta $P_2$, y que $\vec{r_2}
+= \vec{r_1} + \Delta \vec{r}$. 
+
+La velocidad media en el intervalo de tiempo $[t_1, t_2]$ se define entonces
+como 
+
+\begin{equation}
+    \overline{v}_{[t_1, t_2]} = \frac{\Delta \vec{r}}{\Delta t} = 
+    \frac{\vec{r}(t_2)-  \vec{r}(t_1)}{t_2 - t_1}
+\end{equation}
+
+lo cual es claramente un vector que contendrá las velocidades medias en las
+direcciones $x$ e $y$. El vector velocidad entonces se define como uno
+esperaría: 
+
+\begin{align}
+    \vec{v}(t) 
+    &= \lim_{\Delta t \to 0}  \frac{\Delta \vec{r}}{\Delta t}  \\
+    &= \lim_{\Delta t \to 0} \frac{\vec{r}(t_2)-  \vec{r}(t_1)}{t_2 - t_1}
+    \nonumber \\
+    &= \frac{d \vec{r}}{dt} \nonumber \\ 
+    &= \frac{d}{dx} \left( x(t)\hat{i} + y(t) \hat{j} \right) \nonumber\\ 
+    &= \frac{dx}{dt} \hat{i} + \frac{dy}{dt} \hat{j} \nonumber
+\end{align}
+
+Por lo tanto, 
+
+\begin{equation}
+    \vec{v}(t) = v_x(t) \hat{i} + v_y(t) \hat{j}
+\end{equation}
+
+con $v_x, v_y$ las velocidades correspondientes a las funciones de movimiento $x(t), y(t)$.
+
+\begin{shaded}
+
+    $(\dagger)  \textbf{ Interpretación gráfica de $\vec{v}$}$. Gráficamente, el
+    vector velocidad $\vec{v}(t)$ se representa como sigue. Imagine la
+    trayectoria $T$ y un vector posición $\vec{r}$ que conecta con $P \in T$.
+    Entonces $\vec{t}$ será paralelo a la recta tangente a la trayectoria $T$ en
+    el punto $P$. Esto \textit{no} es una derivada, porque la trayectoria $T$ no
+    es una función. En otras palabras, el vector velocidad es tangente a la
+    trayectoria.
+\end{shaded}
+
+Definimos entonces el versor 
+
+\begin{equation}
+    \hat{v} = \frac{\vec{v}}{\left| \vec{v} \right| }
+\end{equation}
+
+que nos da la dirección tangencial de la velocidad. 
+
+Así como tenemos un vector velocidad, tenemos el vector aceleración 
+
+\begin{equation}
+    \vec{a}(t) = \frac{d^2 x}{dt^2} \hat{i} + \frac{d^2 y}{dt^2} \hat{j}
+\end{equation}
+
+de acuerdo al mismo razonamiento límite que nos dio el resultado $(6)$. El
+vector aceleración también puede descomponerse en sus direcciones tangencial y
+normal (respecto a la trayectoria). La aceleración tangencial será la dirección
+de la velocidad: 
+
+\begin{equation}
+    \text{aceleración tangencial} \to  \hat{v} = \frac{\hat{v}}{\left| \vec{v}
+    \right| }, \qquad \text{aceleración normal} \to \hat{n} = (\bot  \vec{v})
+\end{equation}
+
+donde $\bot \hat{v}$ es el vector tal que $\bot  \hat{v} \cdot \hat{v} = 0$
+(perpendicular). 
+
+\begin{shaded}
+    $(\dagger)$ \textbf{ Algunas observaciones}. Hablemos en un intervalo de
+    tiempo $[t, t + \Delta t]$.
+
+    $(a)$ Cuando $\vec{v}$ cambia de módulo y de sentido, pero no de dirección,
+    la aceleración es puramente tangencial, es decir está en la dirección de la
+    velocidad. (Son paralelos.) 
+
+    $(b)$ Cuando $\vec{v}$ cambia de dirección y de sentido, pero no de módulo
+    (i.e. el vector apunta hacia otro lado pero tiene el mismo largo), se cumple
+    que la aceleración es perpendicular a la velocidad. Es decir, es puramente
+    normal.
+
+    $(c)$ Si $\vec{v}$ cambia de módulo, de sentido y de dirección, el vector 
+    $\vec{a}$ tendrá una componente tangencial y normal.
+
+    La aceleración puramente  tangencial resulta en un movimiento
+    unidimensional, una línea recta. El caso $(b)$ corresponde a un movimiento
+    bidimensional.
+\end{shaded}
+
+\subsection{Tiro de proyectil}
+
+El tiro de proyectil es un movimiento bidimensional bajo la acción única de la
+gravedad. Si imaginamos la parábola de un proyectil, surgen preguntas cómo cuál
+es su altura máxima, su destino final, etc. Asumamos que se ha impuesto un
+sistema de coordenadas.
+
+Observemos que el objeto \textit{no} tiene aceleración en el eje $x$, sólo
+velocidad. En el eje $y$ el proyectil es afectado por la gravedad.
+Por ende, 
+
+\begin{equation*}
+\vec{a} = o \hat{i} - 9.8 \frac{m}{s^2} \hat{j}
+\end{equation*}
+
+Luego, en $t = 0$, 
+
+\begin{align*}
+    \vec{v_0} = v_{0x} \hat{ i} + v_{0y} \hat{j} = \vec{v}(t = 0)
+\end{align*}
+
+Asumamos que por convención, $\vec{r}(t = 0) = 0$. Por ende, 
+
+\begin{equation*}
+    \vec{r}(t = 0) = x_0 \hat{i} + y_0 \hat{j} 
+\end{equation*}
+
+Entonces, 
+
+\begin{align*}
+    \vec{v}(t) = v_{0x} \hat{i} - ( 9.8 \frac{m}{s^2}t + v_{0y} ) \hat{j}
+\end{align*}
+
+Integrando una vez más, 
+
+\begin{equation*}
+    \vec{r}(t) 
+    = ( v_{0x}t + x_0 ) \hat{i} + \left( - 9.8 \frac{m}{s^2}
+    \frac{t^2}{2} + v_{0y}t + y_0 \right)  \hat{j}\\ 
+\end{equation*}
+
+Pero $\vec{r}(t) = x(t) \hat{i} + y(t) \hat{j}$. Por ende, 
+
+\begin{equation*}
+    x(t) = v_{0x} t + x_0, \qquad y(t) = - 9.8 \frac{m}{s^2} \frac{t^2}{2} +
+    v_{0y}t + y_0
+\end{equation*}
+
+Vemos entonces que $x(t)$ es lineal, y su pendiente es la velocidad inicial (en
+$x$) dada por $v_{0x}$. $y(t)$, por otro lado, es cuadrática con máximo. Dicho
+máximo se corresponde con el punto más alto. Es decir, el punto más alto ocurre
+en el tiempo $t_m$ tal que
+
+\begin{equation*}
+    v_y(t_m) = 0 \implies t_m = \frac{v_{0y}}{9.8 \frac{m}{s^2}}
+\end{equation*}
+
+El tiempo de vuelo está dado por el tiempo en que la altura se hace cero, es
+decir el $t_{\text{vuelo}}$ tal que $y(t_{\text{vuelo}}) = 0$. Es la raíz máxima
+de
+$y(t)$. La trayectoria será despejando $t$ de $x$: 
+
+\begin{equation*}
+    t = \frac{x - x_0}{v_{0x}}
+\end{equation*}
+
+La trayectoria también será una parábola, en este caso particular. Y como en
+cada punto la aceleración es la aceleración negativa de la gravedad, los
+vectores aceleración a lo largo del tiempo serán siempre "flechas rectas hacia
+abajo".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

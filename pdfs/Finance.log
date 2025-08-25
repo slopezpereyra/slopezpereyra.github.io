@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  16 AUG 2025 17:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  18 AUG 2025 15:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1200,7 +1200,7 @@ File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
 )
 LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
 (Font)              scaled to size 12.0pt on input line 331.
- [7{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc}] [8] [9] [10] [11] [12] [13] [14] 
+ [7{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc}] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./Finance.aux)
  ***********
@@ -1208,21 +1208,21 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `Finance.out' has not changed.
-(rerunfilecheck)             Checksum: 2C4506634A6B331D0A0EBD1BFE741408;1030.
+(rerunfilecheck)             Checksum: 6C04211CA5BAAB84A7FD5057D2BD9ECE;2191.
  ) 
 Here is how much of TeX's memory you used:
- 43286 strings out of 474222
- 981924 string characters out of 5748733
+ 43309 strings out of 474222
+ 982235 string characters out of 5748733
  1937975 words of memory out of 5000000
- 64748 multiletter control sequences out of 15000+600000
+ 64758 multiletter control sequences out of 15000+600000
  587607 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,11n,107p,775b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,17n,107p,775b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on Finance.pdf (14 pages, 171308 bytes).
+Output written on Finance.pdf (17 pages, 181363 bytes).
 PDF statistics:
- 197 PDF objects out of 1000 (max. 8388607)
- 139 compressed objects within 2 object streams
- 34 named destinations out of 1000 (max. 500000)
- 213 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 253 PDF objects out of 1000 (max. 8388607)
+ 192 compressed objects within 2 object streams
+ 47 named destinations out of 1000 (max. 500000)
+ 293 words of extra memory for PDF output out of 10000 (max. 10000000)
 

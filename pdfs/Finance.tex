@@ -567,6 +567,165 @@ Es decir que una ganancia de al menos 2000USD se consigue si y solo si el precio
 baja 13.33 centavos de dólar, o bien si al tiempo de maduración estamos vendiendo
 el subyacente a un valor 13.33 centavos por encima del valor en dicho tiempo.
 
+\pagebreak 
+
+\section{Opciones}
+
+Una opción es un contrato que da derecho a una de sus partes a comprar o vender
+el subyacente a la otra parte, a un precio (strike) determinado en un tiempo futuro. 
+
+En general, la parte que adquiere el derecho le paga a la otra parte una
+\textit{prima}, una cantidad pequeña (en relación al strike) de dinero.
+
+Quien está en posición de comprar una opción, está en \textit{long}; quien está
+en posición de vender una opción, en \textit{short}.
+
+Decimos que el \textit{valor} del contrato (de opción) es el \textit{payoff} en
+el tiempo de madurez.
+
+\subsection{Option call}
+
+La \textit{opcion call} da derecho a $A$ a comprar a $B$ una
+determinada acción a $100$USD dentro de un mes. La cantidad $K = 100$USD se
+denomina \textit{strike}, y el tiempo $T = 1$ mes se denomina \textit{madurez}.
+
+Si, digamos, en un mes el precio de mercado de la acción es 120USD, el inversor
+A termina comprando la acción a un precio menor del precio de mercado,
+resultando en una ganancia. Y viceversa.
+
+Como $A$ tiene el derecho de ejercer o no la compra, $A$ está en posición de
+ganar pero no de perder. Pero $B$ está sólo en posición de perder.
+
+La \textit{call} europea es una call que sólo se puede ejercer en el tiempo de
+madurez. La \textit{call} americana puede ejercerce en cualquier tiempo menor o
+igual a la madurez.
+
+\subsection{Option put}
+
+La option put da derecho a $A$ a vender a $B$ una determinada acción a un precio
+determinado en un tiempo futuro. La terminología es la misma que en la
+\textit{option call}; otra vez, $A$ está en posición ventajosa respecto a $B$.
+
+Misma distinción europea vs. americana que antes.
+
+
+\subsection{Primas}
+
+Una opción tiene un precio inicial o \textit{prima}, pagado por quien adquiere
+el derecho a comprar o a vender a la otra parte. En el mercado se compran y
+venden opciones, y se cotiza la prima de la opción.
+
+Veamos un ejemplo. Asumamos que hay un subyacente $S$ y hay dos calls que nos
+permiten comprar en 3 meses, una por 100 y una por 116. Claramente, la opción
+que nos permite comprar más barato debe ser más cara que la otra. En términos
+generales, \textit{ceteris paribus} (madurez, etc), a mayor \textit{strike}
+menor prima.
+
+Obviamente, en put se da lo contrario: cuanto más caro nos permita vender (mayor
+strike), mayor será el precio (la prima).
+
+\subsection{Opciones exóticas}
+
+Algunas opciones, usualmente negociadas en mercados OTC, se diferencian de las
+anteriores por las condiciones para el ejercicio de la opción. Entre ellas,
+están las opcoines lookback, asiáticas, barrera, binarias, etc.
+
+\subsection{Europea y americana}
+
+En una call, uno siempre gasta $K$ en el subyacente: ni más, ni menos. Por lo
+tanto, ¿bajo qué condiciones uno ejercería su derecho de compra antes del tiempo
+de maduración? En particular teniendo en cuenta que $K$ puede darse en préstamo
+con intereses. Es decir, en una call americana nunca conviene ejercer el derecho
+antes de $T$. En una put es distinto: sí puede convenir ejercer el derecho de
+venta antes.
+
+Esto significa que las put americanas son más caras (en su \textit{prima}) que
+las put europeas.
+
+
+\subsection{Payoff}
+
+Sea $S(t)$ el valor del subyacente $S$ en el tiempo de maduración $t$, y $T$ el
+tiempo de maduración. Entonces, una call con strike $K$ es
+
+\begin{align*}
+    \text{Payoff}_{\text{call}} &= \begin{cases}
+        S(T) - K & S(T) > K \\ 
+        0 & \text{c.c.}
+    \end{cases} \\ 
+                  &= \max \left( S(T) - K, 0 \right) 
+\end{align*}
+
+Claramente, en una put con strike $K$,
+
+
+\begin{align*}
+    \text{Payoff}_{\text{put}} &= \begin{cases}
+        K - S(T) & K > S(T) \\ 
+        0 & \text{c.c.}
+    \end{cases} \\ 
+                  &= \max \left( K - S(T), 0 \right) 
+\end{align*}
+
+El payoff en posición short es el opuesto al de la posición long: 
+
+\begin{equation*}
+    \text{Payoff} = - \max \left( S(T) - K, 0 \right) 
+\end{equation*}
+
+\subsection{Valor intrínseco}
+
+El valor intrínseco en un tiempo $t$ es el payoff que tendría la opción si el
+precio del subyacente en el tiempo de madurez $T$ fuera $S(t)$. 
+
+En las cotizaciones de las opciones, se suele indicar si se está \textit{in the
+money}, \textit{at the money}, o \textit{out the money}. 
+
+\textit{In the money}
+significa que el valro intrínseco es mayor que cero, es decir si $S(t) > K$ en
+call o $S(t) < K$ en put. 
+
+\textit{At the money} significa que $S(t)$ es cercano o igual a $K$.
+
+\textit{Out of the money} significa que $S(t) < K$ en la call, $S(t) > K$ en la
+put (casos desfavorables).
+
+\subsection{Ganancia}
+
+El payoff no es una ganancia neta, porque se paga (o recibe) la prima. 
+
+En una call, en long se tuvo que pagar una prima, y en short se recibió el pago
+de una prima. Es decir que en long hay que restar del payoff el valor de la
+prima, y en short sumarlo.
+
+Ahora bien, en una put, en long se tuvo que pagar una prima y en short se
+recibió el pago de una prima. Mismo razonamiento que antes.
+
+\subsection{Call cubierta}
+
+Una call cubierta es una estrategia en la que un inversor que posee un
+subyacente a su vez vende una opción call sobre el mismo subyacente. 
+
+Digamos que el inversor entra en posición long en la call.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

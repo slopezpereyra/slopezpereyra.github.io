@@ -1,15 +1,9 @@
 ---
-title: Positional ideas 
+title: Sicilian Defense, Chekhover variation
 categories: [Chess]
 ---
 
-> This post is based on the *Grandmaster preparation* writings by Agaard.
 
-Positional analysis consists in the answering of three questions: $(a)$ what are
-the weaknesses of each side, actual or potential; $(b)$ what is the worst piece
-of each side, and $(c)$ what does our opponent intend. 
-
-Consider the following position:
 
 
 <div markdown="0">
@@ -20,27 +14,6 @@ Consider the following position:
 
 Positional analysis might go as follows:
 
-$(a)$ White's only weaknesses are the queenside darksquares, particularly c3.
-The e4 square is also weak, at least insofar as f3 is illegal now and probably
-undesirable anyway. Black's weaknesses are the e6, a3 and b5 pawns, the latter
-of which will remain a weakness if pushed to b4 (though strengthening a3).
-Another weaknesses for Black are the e5 and c5 squares, and in general all dark
-squares.
-
-$(b)$ White's worst piece is the light-squared bishop at g2, which does not
-contribute to the positional dispute around Black's weak dark squares, with the 
-a1 rook following. Black's worst piece is the c8 bishop.
-
-$(c)$ Black would like to play Ne4 and b4, with the idea of Nc3 and Ba6, in
-which case he will be probably better. White would like to play Bg5 to prevent
-Ne4, but it's Black to move so that's out of the question and Nd4 is a reality.
-So White's plan should therefore consist of Bd2, overprotecting c3, followed by
-Rfc1. (Better Rfc1 than Rac1 since after Black's inevitable plan of b4-Ba6, the
-e-pawn would be pinned.)
-
-Now assume that after a few moves, the position has transformed into the one
-below.
-
 
 <div markdown="0">
 {% raw %}
@@ -48,27 +21,6 @@ below.
 {% endraw %}
 </div>
 
-Apparently, Black missed the opportunity of playing Ne4 and allowed Bg5 followed
-by Bxf6. He has succeeded however in trading his LSB by one of White's knights. 
-
-$(a)$ White still has weak queenside dark squares, particularly a weak c3
-square, which is in the potential reach of the knight. The a2 pawn is a
-potential weakness. Black still has a weak e6 pawn. The e5 weakness is gone but
-now the f6 pawn is weak. c5 is weak.
-
-$(b)$ White's worse piece is now the f3 knight, which has no good squares to go
-to. Black's worst piece is d6 bishop, whose only passive role is the defense of
-b4. 
-
-$(c)$ White's plan should consist of improving his knight via Ne1-Nd3 whereon
-the knight can reach c5 or f4. So the expected moves are Qe2 (keeping an eye on
-b5) or Qd2, Ne1-Nd3 followed perhaps by doubling rooks. Black's plans should consist of
-getting his knight to c3 via Ne8-Nd6-Ne4, where White must either allow the
-knight in or commit to f3.
-
---- 
-
-These positions come from this interesting game:
 
 <div markdown="0">
 {% raw %}
@@ -78,10 +30,38 @@ width=600 height=397 frameborder=0></iframe>
 </div>
 
 
+### 8.Bg5 e5?! variation 
+
+The move 8...e5?! by Black, after 9.Qd3, leads to the following position.
 
 
 
+<div markdown="0">
+{% raw %}
+<iframe src="https://lichess.org/study/elvnNKMq/8gts5bRV#17"
+width=600 height=397 frameborder=0></iframe>
+{% endraw %}
+</div>
 
+I consider Black's eigth move dubious because it leads to very passive play and
+gives White a natural plan. Most games continue 9...Be7 10.Bxf6 Bxf6 11.O-O-O,
+leading to the following position.
+
+
+
+<div markdown="0">
+{% raw %}
+<iframe src="https://lichess.org/study/elvnNKMq/8gts5bRV#21"
+width=600 height=397 frameborder=0></iframe>
+{% endraw %}
+</div>
+
+This position merits a discussion, since finidng the correct idea for Black is
+not easy OTB. The d6 pawn is hanging and the natural response Be7 by Black leads
+to passivity. Instead, Black should play Qb6?! with pressure on f2. After Qe2 by
+White, the pawn is still hanging and Black must decide whether to play Qc5 or
+Be7. In both cases, White's plan is the typical Chekhover maneuver of Nd2
+followed by either Nb3 or Nc4, depending on what Black plays. 
 
 
 
