@@ -18,7 +18,8 @@ some sharp and interesting variations.
 
 <div markdown="0">
 {% raw %}
-<iframe width="600" height="371" src="https://lichess.org/study/embed/ViWuZKEs/ybqMrTgf#14" frameborder=0></iframe>
+<iframe width="600" height="371" src="https://lichess.org/study/embed/ViWuZKEs/ybqMrTgf#14" frameborder=0 
+    theme = "brown" pieceSet="merida"></iframe>
 {% endraw %}
 </div>
 
