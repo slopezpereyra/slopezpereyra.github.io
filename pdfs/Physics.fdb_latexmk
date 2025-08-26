@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1756160301.58983 "Physics.tex" "Physics.pdf" "Physics" 1756160303.97874 2
+["pdflatex"] 1756229245.15617 "Physics.tex" "Physics.pdf" "Physics" 1756229246.42062 2
   "/etc/texmf/web2c/texmf.cnf" 1740662799.63242 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc" 1422827479 2083 60e36f8eac802fcaf19eabe2633b406e ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -304,9 +304,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1740670969.59643 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1740670991 8214096 2cc5ed7d441cd7dd7f6cf9e30d4bb5a5 ""
-  "Physics.aux" 1756160303.81637 1740 9e85c466aba048cc93d22afe1e9e0a4d "pdflatex"
-  "Physics.out" 1756160303.81737 1777 7ad2275a022c8a5b3d4d155b12bfd304 "pdflatex"
-  "Physics.tex" 1756160301.12358 41754 1e8c906f9df16d33c0dd8fd51b84e34c ""
+  "Physics.aux" 1756229246.33999 1733 5e4d1f31820d26f227b7f4ac221784a7 "pdflatex"
+  "Physics.out" 1756229246.34017 1777 c9ebd5210b9eee4039d8e3ef6151f6d9 "pdflatex"
+  "Physics.tex" 1756229243.73374 49246 19990615bf4cbe5ec9cea5c23a4129c1 ""
   (generated)
   "Physics.aux"
   "Physics.log"

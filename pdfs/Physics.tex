@@ -643,7 +643,248 @@ have
     x(t) = at^2 + b t + c, \qquad v(t) = 2at + b
 \end{equation*}
 
+
+
+
+
 \pagebreak
+\section{De adelante hacia atrás}
+
+Recordemos que si $x(t)$ es función de movimiento, $v(t) = \frac{dx}{dt}$ es la
+velocidad, y $a(t) = \frac{d^2 x}{dt^2}$ es la aceleración. Naturalmente, esto
+significa que 
+
+\begin{equation*}
+    x(t) = \int v(t') dt' + D, \qquad v(t) = \int a(t') dt' + C
+\end{equation*}
+
+donde $D, C$ son constantes de movimiento que dependerán de las condiciones
+iniciales.
+
+\begin{shaded}
+
+\textbf{$( \dagger )$ Derivada y puntos de inflexión}
+Un punto de inflexión de $f$ continua y dos veces derivable en $[a, b]$ es un
+valor $x_0 \in [a, b]$ t.q. $f^{(2)}(x_0) = 0$. Los puntos de inflexión
+representan un cambio de comportamiento en $f$, en particular transiciones de
+cóncava a convexa y viceversa.
+
+Intuitivamente, y  exceptuando casos límite (como $f''$ constante), si $f''(x_0) = 0$, entonces alrededor de $x_0$ hay un cambio de
+signo en $f''$, lo cual quiere decir que en el entorno alrededor de $x_0$ la
+función original pasa de crecer a decrecer, o de decrecer a crecer.
+
+\end{shaded}
+
+\pagebreak 
+
+\section{Movimiento bidimensional (cinemática 2D)}
+
+Se modela con una curva en el plano cartesiano. La curva (el dibujo del
+movimiento) se denomina trayectoria. La trayectoria \textit{no} es una función,
+obviamente (e.g. una circunferencia es una trayectoria posible).
+
+La descripción de la posición del objeto en cada instante de tiempo $t$ se
+descsribe con vectores. En el plano cartesiano, decimos que $\vec{r} = \hat{x}i
++ y \hat{j}$
+es un vector posición si la punta de $\vec{r}$ se corresponde con la posición
+del objeto (en un tiempo dado).
+
+Sea $\theta$ el ángulo formado por $\vec{r}$ y el eje $x$, de manera tal que $x
+= \left| \vec{r} \right| \cos \theta, y = \left| \vec{r} \right| \sin \theta$.
+Es decir, $\vec{r} = \left| \vec{r} \right| \cos \theta \hat{i} + \left|
+\vec{r}\right| \sin \theta \hat{j} $.
+
+Ahora pensemos el objeto en movimiento, y que registramos a lo largo del tiempo
+$t$ las posiciones $x(t), y(t)$. Claramente, $x(t), y(t)$ son funciones de
+movimiento unidimensionales. Por lo tanto, podemos definir el vector posición de
+manera general como 
+
+\begin{equation}
+    \vec{r}(t) = x(t)\hat{i} + y(t) \hat{j}
+\end{equation}
+
+Ahroa consideremos la trayectoria $T$ (conjunto de puntos en el eje cartesiano)
+del objeto. Sean $P_1, P_2 \in T$ dos puntos en el plano que pertenecen a la
+trayectoria. Definimos el desplazamiento del objeto como 
+
+\begin{equation}
+    \Delta \vec{r} = \vec{r_2} \vec{r_1}
+\end{equation}
+
+donde $\vec{r_1}, \vec{r_2}$ son los vectores con puntas en $P_1, P_2$. De esto
+se sigue que 
+
+
+\begin{equation}
+    \Delta \vec{r} = \vec{r}(t_2) - \vec{r}(t_1)
+\end{equation}
+
+
+para dos instantes de tiempo $t_1, t_2$. Además, es claro que $\Delta\vec{r}$ es
+el vector que conecta las dos puntas, desde $P_1$ hasta $P_2$, y que $\vec{r_2}
+= \vec{r_1} + \Delta \vec{r}$. 
+
+La velocidad media en el intervalo de tiempo $[t_1, t_2]$ se define entonces
+como 
+
+\begin{equation}
+    \overline{v}_{[t_1, t_2]} = \frac{\Delta \vec{r}}{\Delta t} = 
+    \frac{\vec{r}(t_2)-  \vec{r}(t_1)}{t_2 - t_1}
+\end{equation}
+
+lo cual es claramente un vector que contendrá las velocidades medias en las
+direcciones $x$ e $y$. El vector velocidad entonces se define como uno
+esperaría: 
+
+\begin{align}
+    \vec{v}(t) 
+    &= \lim_{\Delta t \to 0}  \frac{\Delta \vec{r}}{\Delta t}  \\
+    &= \lim_{\Delta t \to 0} \frac{\vec{r}(t_2)-  \vec{r}(t_1)}{t_2 - t_1}
+    \nonumber \\
+    &= \frac{d \vec{r}}{dt} \nonumber \\ 
+    &= \frac{d}{dx} \left( x(t)\hat{i} + y(t) \hat{j} \right) \nonumber\\ 
+    &= \frac{dx}{dt} \hat{i} + \frac{dy}{dt} \hat{j} \nonumber
+\end{align}
+
+Por lo tanto, 
+
+\begin{equation}
+    \vec{v}(t) = v_x(t) \hat{i} + v_y(t) \hat{j}
+\end{equation}
+
+con $v_x, v_y$ las velocidades correspondientes a las funciones de movimiento $x(t), y(t)$.
+
+\begin{shaded}
+
+    $(\dagger)  \textbf{ Interpretación gráfica de $\vec{v}$}$. Gráficamente, el
+    vector velocidad $\vec{v}(t)$ se representa como sigue. Imagine la
+    trayectoria $T$ y un vector posición $\vec{r}$ que conecta con $P \in T$.
+    Entonces $\vec{t}$ será paralelo a la recta tangente a la trayectoria $T$ en
+    el punto $P$. Esto \textit{no} es una derivada, porque la trayectoria $T$ no
+    es una función. En otras palabras, el vector velocidad es tangente a la
+    trayectoria.
+\end{shaded}
+
+Definimos entonces el versor 
+
+\begin{equation}
+    \hat{v} = \frac{\vec{v}}{\left| \vec{v} \right| }
+\end{equation}
+
+que nos da la dirección tangencial de la velocidad. 
+
+Así como tenemos un vector velocidad, tenemos el vector aceleración 
+
+\begin{equation}
+    \vec{a}(t) = \frac{d^2 x}{dt^2} \hat{i} + \frac{d^2 y}{dt^2} \hat{j}
+\end{equation}
+
+de acuerdo al mismo razonamiento límite que nos dio el resultado $(6)$. El
+vector aceleración también puede descomponerse en sus direcciones tangencial y
+normal (respecto a la trayectoria). La aceleración tangencial será la dirección
+de la velocidad: 
+
+\begin{equation}
+    \text{aceleración tangencial} \to  \hat{v} = \frac{\hat{v}}{\left| \vec{v}
+    \right| }, \qquad \text{aceleración normal} \to \hat{n} = (\bot  \vec{v})
+\end{equation}
+
+donde $\bot \hat{v}$ es el vector tal que $\bot  \hat{v} \cdot \hat{v} = 0$
+(perpendicular). 
+
+\begin{shaded}
+    $(\dagger)$ \textbf{ Algunas observaciones}. Hablemos en un intervalo de
+    tiempo $[t, t + \Delta t]$.
+
+    $(a)$ Cuando $\vec{v}$ cambia de módulo y de sentido, pero no de dirección,
+    la aceleración es puramente tangencial, es decir está en la dirección de la
+    velocidad. (Son paralelos.) 
+
+    $(b)$ Cuando $\vec{v}$ cambia de dirección y de sentido, pero no de módulo
+    (i.e. el vector apunta hacia otro lado pero tiene el mismo largo), se cumple
+    que la aceleración es perpendicular a la velocidad. Es decir, es puramente
+    normal.
+
+    $(c)$ Si $\vec{v}$ cambia de módulo, de sentido y de dirección, el vector 
+    $\vec{a}$ tendrá una componente tangencial y normal.
+
+    La aceleración puramente  tangencial resulta en un movimiento
+    unidimensional, una línea recta. El caso $(b)$ corresponde a un movimiento
+    bidimensional.
+\end{shaded}
+
+\subsection{Tiro de proyectil}
+
+El tiro de proyectil es un movimiento bidimensional bajo la acción única de la
+gravedad. Si imaginamos la parábola de un proyectil, surgen preguntas cómo cuál
+es su altura máxima, su destino final, etc. Asumamos que se ha impuesto un
+sistema de coordenadas.
+
+Observemos que el objeto \textit{no} tiene aceleración en el eje $x$, sólo
+velocidad. En el eje $y$ el proyectil es afectado por la gravedad.
+Por ende, 
+
+\begin{equation*}
+\vec{a} = o \hat{i} - 9.8 \frac{m}{s^2} \hat{j}
+\end{equation*}
+
+Luego, en $t = 0$, 
+
+\begin{align*}
+    \vec{v_0} = v_{0x} \hat{ i} + v_{0y} \hat{j} = \vec{v}(t = 0)
+\end{align*}
+
+Asumamos que por convención, $\vec{r}(t = 0) = 0$. Por ende, 
+
+\begin{equation*}
+    \vec{r}(t = 0) = x_0 \hat{i} + y_0 \hat{j} 
+\end{equation*}
+
+Entonces, 
+
+\begin{align*}
+    \vec{v}(t) = v_{0x} \hat{i} - ( 9.8 \frac{m}{s^2}t + v_{0y} ) \hat{j}
+\end{align*}
+
+Integrando una vez más, 
+
+\begin{equation*}
+    \vec{r}(t) 
+    = ( v_{0x}t + x_0 ) \hat{i} + \left( - 9.8 \frac{m}{s^2}
+    \frac{t^2}{2} + v_{0y}t + y_0 \right)  \hat{j}\\ 
+\end{equation*}
+
+Pero $\vec{r}(t) = x(t) \hat{i} + y(t) \hat{j}$. Por ende, 
+
+\begin{equation*}
+    x(t) = v_{0x} t + x_0, \qquad y(t) = - 9.8 \frac{m}{s^2} \frac{t^2}{2} +
+    v_{0y}t + y_0
+\end{equation*}
+
+Vemos entonces que $x(t)$ es lineal, y su pendiente es la velocidad inicial (en
+$x$) dada por $v_{0x}$. $y(t)$, por otro lado, es cuadrática con máximo. Dicho
+máximo se corresponde con el punto más alto. Es decir, el punto más alto ocurre
+en el tiempo $t_m$ tal que
+
+\begin{equation*}
+    v_y(t_m) = 0 \implies t_m = \frac{v_{0y}}{9.8 \frac{m}{s^2}}
+\end{equation*}
+
+El tiempo de vuelo está dado por el tiempo en que la altura se hace cero, es
+decir el $t_{\text{vuelo}}$ tal que $y(t_{\text{vuelo}}) = 0$. Es la raíz máxima
+de
+$y(t)$. La trayectoria será despejando $t$ de $x$: 
+
+\begin{equation*}
+    t = \frac{x - x_0}{v_{0x}}
+\end{equation*}
+
+La trayectoria también será una parábola, en este caso particular. Y como en
+cada punto la aceleración es la aceleración negativa de la gravedad, los
+vectores aceleración a lo largo del tiempo serán siempre "flechas rectas hacia
+abajo".
+
+
 \subsection{Excercises}
 
 \begin{shaded}
@@ -1056,245 +1297,250 @@ computed $x(t)$ because it's part of the exercise):
 
 etc.
 
-
-
-
-\pagebreak
-\section{De adelante hacia atrás}
-
-Recordemos que si $x(t)$ es función de movimiento, $v(t) = \frac{dx}{dt}$ es la
-velocidad, y $a(t) = \frac{d^2 x}{dt^2}$ es la aceleración. Naturalmente, esto
-significa que 
-
-\begin{equation*}
-    x(t) = \int v(t') dt' + D, \qquad v(t) = \int a(t') dt' + C
-\end{equation*}
-
-donde $D, C$ son constantes de movimiento que dependerán de las condiciones
-iniciales.
+\pagebreak 
 
 \begin{shaded}
+    \textbf{(7)} A car and a truck leave at the same instant, the car initially
+    being a certain distance behind the truck. The latter has a constant
+    acceleration of $1.2 m / s^2$, while the car accelerates at $1.8 m / s^2$. 
+    The car reaches the truck when the latter has covered 45 meters. 
 
-\textbf{$( \dagger )$ Derivada y puntos de inflexión}
-Un punto de inflexión de $f$ continua y dos veces derivable en $[a, b]$ es un
-valor $x_0 \in [a, b]$ t.q. $f^{(2)}(x_0) = 0$. Los puntos de inflexión
-representan un cambio de comportamiento en $f$, en particular transiciones de
-cóncava a convexa y viceversa.
+    $(a)$ How much time does it take for the car to reach the truck?
 
-Intuitivamente, y  exceptuando casos límite (como $f''$ constante), si $f''(x_0) = 0$, entonces alrededor de $x_0$ hay un cambio de
-signo en $f''$, lo cual quiere decir que en el entorno alrededor de $x_0$ la
-función original pasa de crecer a decrecer, o de decrecer a crecer.
+    $(b)$ What is the initial distance between both vehicles?
 
+    $(c)$ What is the velocity of each in the moment the cross paths? 
+
+    $(d)$ Plot $x(t), v(t), a(t)$.
 \end{shaded}
+
+$(a)$ Since both vehicles have constant accelerations, they have linear
+velocities and therefore quadratic movement functions. They will meet 
+when the parabolas corresponding to these functions intersect. 
+
+Let $x_1(t)$ denote the movement function of the car, $x_2(t)$ that of the
+truck. We then wish to find the solutions to $x_1(t) = x_2(t)$. Now, 
+
+
+\begin{equation}
+    v_1(t) = \int a_1(t) = \int 1.8 ~ dt = 1.8 t + C_1
+\end{equation}
+
+\begin{equation}
+    v_2(t) = \int a_2(t) = \int 1.2 ~ dt = 1.2 t + C_2
+\end{equation}
+
+
+are the velocities of the car ($v_1$) and the truck $(v_2)$. Since at $t = 0$
+the velocities of both vehicles is zero (they start from rest), it is necessary
+that $C_1 = C_2 = 0$. 
+
+We know that the car reaches the truck when the latter has covered 45 meters, so
+the question is what is the time $t_0$ when the distance covered by the truck is
+that one? In other words, we need to find $t_0$ such that 
+
+\begin{align*}
+&\int_0^{t_0} v_2(t) ~ dt = 45 \\ 
+    \iff&\int_0^{t_0} 1.2t ~ dt = 45 \\ 
+    \iff&\left[ 0.6t^2  \right]_0^{t_0} = 45 \\ 
+    \iff&0.6 t_0^2  =45 \\ 
+    \iff & t_0 = \sqrt{75}  = \sqrt{25 \times 3}  = 5\sqrt{3} 
+\end{align*}
+
+Thus, the vehicles meet at time $t_0 = 5\sqrt{3}  $.
+
+$(b)$ The initial distance between both vehicles is given by $\left| x_1(0) -
+x_2(0) \right| $. From the velocities $v_1, v_2$ we can determine that 
+
+\begin{equation}
+    x_1(t) = 0.9t^2 + C_1', \qquad x_2(t) = 0.6t^2 + C_2'
+\end{equation}
+
+Let us fix our coordinate system so that the starting position of the truck
+corresponds to the origin. Then $C_2' = 0$. Knowing that both vehicles coincide
+at time $t_0 = 5\sqrt{3} $, we also know $X_1(t_0) = x_2(t_0)$, i.e.
+
+\begin{equation}
+    0.9(25 \times 3) + C_1' = 0.6(25 \times 3) 
+\end{equation}
+
+which entails $67.5 + C_1' = 45$, from which follows  that $C_1' = -22.5$. Thus,
+the original distance of both vehicles is $22.5$m.
+
+$(c)$ This consists simply of computing $v_1(t_0), v_2(t_0)$. Trivial.
+
+$(d)$ Meh. 
 
 \pagebreak 
 
-\section{Movimiento bidimensional (cinemática 2D)}
-
-Se modela con una curva en el plano cartesiano. La curva (el dibujo del
-movimiento) se denomina trayectoria. La trayectoria \textit{no} es una función,
-obviamente (e.g. una circunferencia es una trayectoria posible).
-
-La descripción de la posición del objeto en cada instante de tiempo $t$ se
-descsribe con vectores. En el plano cartesiano, decimos que $\vec{r} = \hat{x}i
-+ y \hat{j}$
-es un vector posición si la punta de $\vec{r}$ se corresponde con la posición
-del objeto (en un tiempo dado).
-
-Sea $\theta$ el ángulo formado por $\vec{r}$ y el eje $x$, de manera tal que $x
-= \left| \vec{r} \right| \cos \theta, y = \left| \vec{r} \right| \sin \theta$.
-Es decir, $\vec{r} = \left| \vec{r} \right| \cos \theta \hat{i} + \left|
-\vec{r}\right| \sin \theta \hat{j} $.
-
-Ahora pensemos el objeto en movimiento, y que registramos a lo largo del tiempo
-$t$ las posiciones $x(t), y(t)$. Claramente, $x(t), y(t)$ son funciones de
-movimiento unidimensionales. Por lo tanto, podemos definir el vector posición de
-manera general como 
-
-\begin{equation}
-    \vec{r}(t) = x(t)\hat{i} + y(t) \hat{j}
-\end{equation}
-
-Ahroa consideremos la trayectoria $T$ (conjunto de puntos en el eje cartesiano)
-del objeto. Sean $P_1, P_2 \in T$ dos puntos en el plano que pertenecen a la
-trayectoria. Definimos el desplazamiento del objeto como 
-
-\begin{equation}
-    \Delta \vec{r} = \vec{r_2} \vec{r_1}
-\end{equation}
-
-donde $\vec{r_1}, \vec{r_2}$ son los vectores con puntas en $P_1, P_2$. De esto
-se sigue que 
-
-
-\begin{equation}
-    \Delta \vec{r} = \vec{r}(t_2) - \vec{r}(t_1)
-\end{equation}
-
-
-para dos instantes de tiempo $t_1, t_2$. Además, es claro que $\Delta\vec{r}$ es
-el vector que conecta las dos puntas, desde $P_1$ hasta $P_2$, y que $\vec{r_2}
-= \vec{r_1} + \Delta \vec{r}$. 
-
-La velocidad media en el intervalo de tiempo $[t_1, t_2]$ se define entonces
-como 
-
-\begin{equation}
-    \overline{v}_{[t_1, t_2]} = \frac{\Delta \vec{r}}{\Delta t} = 
-    \frac{\vec{r}(t_2)-  \vec{r}(t_1)}{t_2 - t_1}
-\end{equation}
-
-lo cual es claramente un vector que contendrá las velocidades medias en las
-direcciones $x$ e $y$. El vector velocidad entonces se define como uno
-esperaría: 
-
-\begin{align}
-    \vec{v}(t) 
-    &= \lim_{\Delta t \to 0}  \frac{\Delta \vec{r}}{\Delta t}  \\
-    &= \lim_{\Delta t \to 0} \frac{\vec{r}(t_2)-  \vec{r}(t_1)}{t_2 - t_1}
-    \nonumber \\
-    &= \frac{d \vec{r}}{dt} \nonumber \\ 
-    &= \frac{d}{dx} \left( x(t)\hat{i} + y(t) \hat{j} \right) \nonumber\\ 
-    &= \frac{dx}{dt} \hat{i} + \frac{dy}{dt} \hat{j} \nonumber
-\end{align}
-
-Por lo tanto, 
-
-\begin{equation}
-    \vec{v}(t) = v_x(t) \hat{i} + v_y(t) \hat{j}
-\end{equation}
-
-con $v_x, v_y$ las velocidades correspondientes a las funciones de movimiento $x(t), y(t)$.
-
 \begin{shaded}
+    \textbf{(8)} A car travels parallel to a train rail. The car stops at a red
+    light in the exact instant when a train passes with a constant velocity of
+    12m/s. The car remains at halt for 6s and then continues with a constant
+    acceleration of $2m / s^2$.
 
-    $(\dagger)  \textbf{ Interpretación gráfica de $\vec{v}$}$. Gráficamente, el
-    vector velocidad $\vec{v}(t)$ se representa como sigue. Imagine la
-    trayectoria $T$ y un vector posición $\vec{r}$ que conecta con $P \in T$.
-    Entonces $\vec{t}$ será paralelo a la recta tangente a la trayectoria $T$ en
-    el punto $P$. Esto \textit{no} es una derivada, porque la trayectoria $T$ no
-    es una función. En otras palabras, el vector velocidad es tangente a la
-    trayectoria.
+    $(a)$ Determine the time it takes for the car to reach the train, with $t =
+    0$ being the instant in which the car halted. 
+
+    $(b)$ Determine the distance traveled by the car from the red light until it
+    reached the train. 
+
+    $(c)$ Determine the car's velocity at the instant it reaches the train.
 \end{shaded}
 
-Definimos entonces el versor 
+$(a)$ Let $a_1(t)$ be the acceleration of the car, defined as 
 
 \begin{equation}
-    \hat{v} = \frac{\vec{v}}{\left| \vec{v} \right| }
+    a_1(t) = \begin{cases}
+        0 & 0 \leq t < 6 \\ 
+        2 & t \geq 6
+    \end{cases}
 \end{equation}
 
-que nos da la dirección tangencial de la velocidad. 
+Let $v_2(t) = 12 m / s$ be the constant velocity of the train. Let the point of
+halt be the origin of our coordinate system, so that at time $t = 0$ (when the
+car halted) both the train and the car are at position zero. Observe then that
+it follows that $x_2(t) = 12t$ (in meters) via integration of $v_2(t)$ and the
+necessary condition of the constant of integration being zero.
 
-Así como tenemos un vector velocidad, tenemos el vector aceleración 
+Integration of equation $(6)$ gives
 
 \begin{equation}
-    \vec{a}(t) = \frac{d^2 x}{dt^2} \hat{i} + \frac{d^2 y}{dt^2} \hat{j}
+    v_1(t) = \begin{cases}
+        C_1 & 0 \leq t < 6 \\ 
+        2t + C_2 & t \geq 6
+    \end{cases} 
 \end{equation}
 
-de acuerdo al mismo razonamiento límite que nos dio el resultado $(6)$. El
-vector aceleración también puede descomponerse en sus direcciones tangencial y
-normal (respecto a la trayectoria). La aceleración tangencial será la dirección
-de la velocidad: 
+where the constants of integration must satisfy two constraints: $(a)$ $v_1(0) =
+0$ and $v_1$ must be continuous. From this follows that $C_1 = 0$ and that 
+$2(6) + C_2 = 0$, i.e. $C_2 = -12 $. Therefore, 
 
 \begin{equation}
-    \text{aceleración tangencial} \to  \hat{v} = \frac{\hat{v}}{\left| \vec{v}
-    \right| }, \qquad \text{aceleración normal} \to \hat{n} = (\bot  \vec{v})
+    v_1(t) = \begin{cases}
+        0 & 0 \leq t < 6 \\ 
+        2 t - 12 & t \geq 6
+    \end{cases}
 \end{equation}
 
-donde $\bot \hat{v}$ es el vector tal que $\bot  \hat{v} \cdot \hat{v} = 0$
-(perpendicular). 
+Via integration of $v_1$,
+
+\begin{equation}
+    x_1(t) = \begin{cases}
+        C_1' & 0 \leq t < 6 \\ 
+        t^2 -12 t + C_2' & t \geq 6
+    \end{cases}
+\end{equation}
+
+Again, $C_1'$ must of course be zero, and $x_1(6)$ must also be zero, meaning
+that $C_2 = -36 + 12(6) = 36$. Therefore,
+
+\begin{equation}
+    x_1(t) = \begin{cases}
+        0 & 0 \leq t < 6 \\ 
+        t^2 -12 t + 36 & t \geq 6
+    \end{cases}
+\end{equation}
+
+The car reaches the train at the time $t_0 > 6$ which satisfies $x_1(t_0) =
+x_2(t_0)$, so we solve
+
+\begin{equation*}
+    t^2 - 12t + 36 = 12t \iff t^2 - 24t + 36 = 0
+\end{equation*}
+
+which has solutions
+
+\begin{equation*}
+    \frac{24}{2} \pm \frac{\sqrt{24^2 - 4 \times 36} }{2} = 12 \pm 
+    \frac{\sqrt{432} }{2} \approx 12 \pm 10.392
+\end{equation*}
+
+Keeping only the positive solution, we have that $t_0 \approx 22.392$. 
+
+
+$(b)$ The distance traveled by the car from the red light until it reached the
+train is the distance traveled from $t = 0$ to $t = t_0$, i.e. 
+
+\begin{equation*}
+    \int_0^{t_0} v_1(t) ~ dt = |x_1(t_0) - x_1(t_0)| = x_1(t_0) \approx 268.697
+\end{equation*}
+
+where the equality above holds only because velocity is always positive (i.e.
+the car moves only in one direction).
+
+$(c)$ Simply computing $v_1(t_0)$ gives the answer.
+
+\pagebreak 
 
 \begin{shaded}
-    $(\dagger)$ \textbf{ Algunas observaciones}. Hablemos en un intervalo de
-    tiempo $[t, t + \Delta t]$.
-
-    $(a)$ Cuando $\vec{v}$ cambia de módulo y de sentido, pero no de dirección,
-    la aceleración es puramente tangencial, es decir está en la dirección de la
-    velocidad. (Son paralelos.) 
-
-    $(b)$ Cuando $\vec{v}$ cambia de dirección y de sentido, pero no de módulo
-    (i.e. el vector apunta hacia otro lado pero tiene el mismo largo), se cumple
-    que la aceleración es perpendicular a la velocidad. Es decir, es puramente
-    normal.
-
-    $(c)$ Si $\vec{v}$ cambia de módulo, de sentido y de dirección, el vector 
-    $\vec{a}$ tendrá una componente tangencial y normal.
-
-    La aceleración puramente  tangencial resulta en un movimiento
-    unidimensional, una línea recta. El caso $(b)$ corresponde a un movimiento
-    bidimensional.
+    \textbf{(9)} A ball is thrown vertically and upwards from the floor with
+    initial velocity $v_0$. Write the equations for the movement of the ball and
+    plot graphically the vectors $\vec{y}(t), \vec{v}(t), \vec{a}(t)$. Identify
+    the conditions for the instant of maximum height and the instant it reaches
+    the floor.
 \end{shaded}
 
-\subsection{Tiro de proyectil}
-
-El tiro de proyectil es un movimiento bidimensional bajo la acción única de la
-gravedad. Si imaginamos la parábola de un proyectil, surgen preguntas cómo cuál
-es su altura máxima, su destino final, etc. Asumamos que se ha impuesto un
-sistema de coordenadas.
-
-Observemos que el objeto \textit{no} tiene aceleración en el eje $x$, sólo
-velocidad. En el eje $y$ el proyectil es afectado por la gravedad.
-Por ende, 
+The move is strictly vertical, so $\vec{r}(t) = 0\hat{i} + y(t)\hat{j}$ and we
+need only determine the unidimensional vertical movement function $y(t)$.
+Now, the ball is affected only by gravitiy, i.e. it is subjected to a constant
+acceleration of $\vec{a}(t) = 0\hat{i} -9.8 \frac{m}{s^2}\hat{j}$. From this we
+can derive the vertical velocity: 
 
 \begin{equation*}
-\vec{a} = o \hat{i} - 9.8 \frac{m}{s^2} \hat{j}
+    v_y(t) = -9.8 \int ~ dt = -9.8t + C
 \end{equation*}
 
-Luego, en $t = 0$, 
-
-\begin{align*}
-    \vec{v_0} = v_{0x} \hat{ i} + v_{0y} \hat{j} = \vec{v}(t = 0)
-\end{align*}
-
-Asumamos que por convención, $\vec{r}(t = 0) = 0$. Por ende, 
+The constant of integration must satisfy the initial velocity being $v_0$, so we
+must have  
 
 \begin{equation*}
-    \vec{r}(t = 0) = x_0 \hat{i} + y_0 \hat{j} 
+    v_y(t) = v_0 - 9.8t
 \end{equation*}
 
-Entonces, 
-
-\begin{align*}
-    \vec{v}(t) = v_{0x} \hat{i} - ( 9.8 \frac{m}{s^2}t + v_{0y} ) \hat{j}
-\end{align*}
-
-Integrando una vez más, 
+From this follows that 
 
 \begin{equation*}
-    \vec{r}(t) 
-    = ( v_{0x}t + x_0 ) \hat{i} + \left( - 9.8 \frac{m}{s^2}
-    \frac{t^2}{2} + v_{0y}t + y_0 \right)  \hat{j}\\ 
+    r_y(t) = \int v_0 - 9.8t ~ dt = v_0t - \frac{9.8}{2}t^2 + C'
 \end{equation*}
 
-Pero $\vec{r}(t) = x(t) \hat{i} + y(t) \hat{j}$. Por ende, 
+If we assume the position on the floor (vertically) is zero, we must have 
+$C' = 0$, and 
 
 \begin{equation*}
-    x(t) = v_{0x} t + x_0, \qquad y(t) = - 9.8 \frac{m}{s^2} \frac{t^2}{2} +
-    v_{0y}t + y_0
+    r_y(t) = v_0t - 4.9t^2
 \end{equation*}
 
-Vemos entonces que $x(t)$ es lineal, y su pendiente es la velocidad inicial (en
-$x$) dada por $v_{0x}$. $y(t)$, por otro lado, es cuadrática con máximo. Dicho
-máximo se corresponde con el punto más alto. Es decir, el punto más alto ocurre
-en el tiempo $t_m$ tal que
+In summary, 
 
 \begin{equation*}
-    v_y(t_m) = 0 \implies t_m = \frac{v_{0y}}{9.8 \frac{m}{s^2}}
+    \vec{r}(t) = 0\hat{i} - (v_0t - 4.9t^2)\hat{j}, \qquad \vec{v}(t) = 0\hat{i}
+    - 9.8t \hat{j}, \qquad \vec{a}(t) = 0 \hat{i} - 9.8 \hat{j}
 \end{equation*}
 
-El tiempo de vuelo está dado por el tiempo en que la altura se hace cero, es
-decir el $t_{\text{vuelo}}$ tal que $y(t_{\text{vuelo}}) = 0$. Es la raíz máxima
-de
-$y(t)$. La trayectoria será despejando $t$ de $x$: 
+Maximum hight will occur at time $t \neq 0$ when the vertical velocity of the
+ball is exactly zero. So, we solve 
 
 \begin{equation*}
-    t = \frac{x - x_0}{v_{0x}}
+    v_0 - 9.8t = 0 \iff \frac{v_0}{9.8} =t
 \end{equation*}
 
-La trayectoria también será una parábola, en este caso particular. Y como en
-cada punto la aceleración es la aceleración negativa de la gravedad, los
-vectores aceleración a lo largo del tiempo serán siempre "flechas rectas hacia
-abajo".
+It will reach the floor at time $t \neq 0$ when the vertical position of the
+ball is zero, so we solve 
+
+\begin{equation*}
+    v_0 t - 4.9t^2 = 0 \iff t(v_0 - 4.9t) = 0
+\end{equation*}
+
+The root $t = 0$ is not a solution that interests us, so we only care about the
+root that solves $v_0 - 4.9t = 0$, i.e. $t = \frac{v_0}{4.9}$.
+
+
+
+
+
+
+
 
 
 
