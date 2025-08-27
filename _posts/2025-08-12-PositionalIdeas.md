@@ -22,7 +22,7 @@ consider one early sidelines before delving into that. I mean the interesting
 
 <div markdown="0">
 {% raw %}
-<iframe width="600" height="371" src="https://lichess.org/study/ZiCdrPwo/4XwwWjeN" frameborder=0></iframe>
+<iframe width="600" height="371" src="https://lichess.org/study/embed/ZiCdrPwo/4XwwWjeN#9" frameborder=0></iframe>
 {% endraw %}
 </div>
 
