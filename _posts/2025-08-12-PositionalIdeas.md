@@ -189,6 +189,98 @@ with the usual Bg6 Nf5 Be7 and castling. Perhaps White can try 12.Qg4!? with the
 idea of h4-h5 and kingside aggression. The key is that Black must play a6 and,
 if White responds Ba4, play h5 himself! 
 
+--- 
+
+Having covered the curious Bg5 line, we may proceed with my personal favorite
+(for White, not for Black!), 8.c4!?.
+
+
+<div markdown="0">
+{% raw %}
+<iframe width="600" height="371" src="https://lichess.org/study/embed/ViWuZKEs/CnkUcLIK" frameborder=0></iframe>
+{% endraw %}
+</div>
+
+The move is clearly logical: it fights for the center, and since Black is
+lagging in development, the opening of lines should benefit White. Black must
+dready very carefully in order not to lose quickly. In the Lichess database,
+White wins 61% (!) of games after 8.c4.
+
+Of course, taking the pawn via 8...dxc4 makes little sense. Black should worry
+about getting his pieces out. After 9.Nd2 Nbc6 10.Nxc4 (aiming for the outpost
+on d6), White's position is already to be favored. The only move which prevents
+an explotation of the outpost is Nd5, where White can simply castle and enjoy a
+good game.
+
+So, the correct response is 8...Nbc6, continuing development. If takes Black's
+point of view (as we are doing), it is clear that we should strive for rapid
+simplification. Thus, slow moves like 9.Nc3 fall right into our hands and pose
+no problems: 9.c3 Nxd4 10.Bxd4 dxc4 11.Bxc4 Nc6 (or 11.Qa4+ Nc6 12.Rd1, a bit
+more agressive, but harmless after 12.Bd3! an idea which will apear again
+later.) It is in a similar fashion that Black responds to the equally slow
+9.O-O.
+
+Thus, after 8...Ncb6, White's only way to keep the initiative is the sharp
+9.Qa4, reaching the following very interesting position.
+
+
+
+<div markdown="0">
+{% raw %}
+<iframe width="600" height="371" src="https://lichess.org/study/embed/ViWuZKEs/CnkUcLIK#9" frameborder=0></iframe>
+{% endraw %}
+</div>
+
+The anti-positional response 9...Qd7 seems to work fine. However, the modern
+solution is the simple 9...a6, after which White has three options which must be
+seperately considered. 
+
+$(a)$ If White castles after 9...a6, Black should resolve central tension via
+10...cxd4. This exploits White's Qa4 move, since now Bxc4 is impossible for
+obvious reasons. If Black is allowed to play b5 he will consolidate, so White
+must reply with energy, its only move being 11.Rd1. 
+
+> 11.Bf3 merits consideration. But after 11...b5 12.Nxc6 bxa4 13.Nxd8 Rxd8,
+> Black should survive: the initiative is gone. See [Portych vs Nouveau, 2023](https://lichess.org/Yyh3Abka).
+
+After 11.Rd1 Black again has the resource 11...Bd3!. Black must continue to look
+for simplification: 12.Bxd3 cxd3 13.Rxd3 Qa5! and White has nothing better than
+trading queens. The normal play should ensue.
+
+We see then that 10.O-O poses no major issues. 
+
+$(b)$ So White might try 10.Nc3, the main move and the one leading to sharper
+play! Black will again explot the position of the queen with dxc4, only to see
+11.O-O-O!? with a very interesting position. Here Black *must* play 11...Qa5 and
+simplify that way: everything else fails.
+
+11...Bd3? now does not work: after trades occur and 13...Qa5, now White *can*
+decline the trade with Qb3, and the position is very tricky. For instance, it
+seems that White can play 14...Nxe5, but after 16.Rdd1 it is very hard to
+develop. 
+
+11...Qc8?! also fails due to 12.Nxf5 Nxf5 13.Bd6! and White will get the queen
+for a bishop and a rook. See the game [Fabiano Caruana vs. Sebastien
+Cossin](https://lichess.org/hiyIAWyf/black#30), which Caruana won nicely, for an
+example of this specific line.
+
+
+After 11...Qa5, White really has nothing better than simplification via Nxf5 and
+Qxa5, in whichever order. Avoiding the trade with 12.Nxf5 Nxf5 13.Qc2 allows
+13...Nxe3 and Black is much better. That said, though a very strong player will
+probably hold the position resulting from the trade of queens, it is clearly
+White who's pushing.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
