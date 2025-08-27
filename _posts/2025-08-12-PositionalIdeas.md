@@ -271,12 +271,108 @@ Qxa5, in whichever order. Avoiding the trade with 12.Nxf5 Nxf5 13.Qc2 allows
 probably hold the position resulting from the trade of queens, it is clearly
 White who's pushing.
 
+# Exchange Caro-Kann
+
+One of the advantages of the Caro-Kann over the French defense, from a
+psychological perspective, is the fact that the exchange variation, though less
+entertaining than others, is not *that* dull. (The French defense player knows
+of the somniferous effect of the exchange French.)
+
+We consider the following position, with White playing Bd3 and c3, as our
+starting one. Other attempts by White pose no problems.
+
+<div markdown="0">
+{% raw %}
+<iframe width="600" height="371" src="https://lichess.org/study/embed/NlmhpmzH/onVTc7KJ#10" frameborder=0></iframe>
+{% endraw %}
+</div>
+
+## Double pin variation
+
+However, before going into that, I would like to take a look at a variation I
+face frequently in Blitz, and which is very popular in Rapid as well. I
+denominate it the *double pin variation*, though it lacks an official
+denomination. See the starting position below.
+
+
+<div markdown="0">
+{% raw %}
+<iframe width="600" height="371" src="https://lichess.org/study/embed/NlmhpmzH/dQ7VZ6Wu#10" frameborder=0></iframe>
+{% endraw %}
+</div>
+
+### Double pin variation: Early castling
+
+#### The hyper-aggressive h3-g4-Ne5 line
+
+First, let's consider a few popular lines. By far, the most common move is
+6.O-O, so let us look at that variation first. 
+
+6.O-O is a harmless variation and Black should continue normally.The most common
+is  to see 6...e6 7.h3 Bh5, mantaining the pin.
+
+The weakening 8.g4 followed by 9.Ne5 is the second most common continuation, so
+we need to know it. The necessary reply is 9...Ne7, defending c6 and g6. If
+White over-extends with 10.f4 we simply reply a6, drive the bishop away, and we
+are fine. 
+
+If White attempts the artificial 10.Bg5, it loses a pawn by force after the
+natural-looking 10...f6.
+
+If White strikes with 10.c4, we take the opportunity to harass the bishop and
+the following exchanges favor us. (If White does not trade, the line 11.Ba4
+dxc4! wins immediately.)
+
+Lastly, 10.Nc3 gives nothing: 10...a6 and Black's fine.
+
+So, it seems like the hyper-aggressive approach of 7.h3 followed by 8.g4 and
+9.Ne5 is not good.
+
+
+<div markdown="0">
+{% raw %}
+<iframe width="600" height="371" src="https://lichess.org/study/embed/NlmhpmzH/jcuMRLjM#10" frameborder=0></iframe>
+{% endraw %}
+</div>
+
+
+#### Qd3
+
+The most common reply after 7.h3 Bh4 is 8.Qd3, unpinning the knight. But this
+poses no problems to Black after 8...Bd6. Again, White has options for its ninth
+move.
+
+9.Bg5!? f6 accomplishes very little. Black will play Ne7-Bf7 and the position is
+fine. It's not clear how White should exploit the e6 weakness., since it cannot
+be targeted by any of White's minor pieces. Black has won the battle for the
+center.
+
+9.Ne5 Ne7 is also fine for Black. Even after the pressing 10.c4! Black simply
+castles and it's a game. 
+
+Anyhow, in almost all variations, Black simply plays Ne7, short castle, and
+everything is okay.
 
 
 
+<div markdown="0">
+{% raw %}
+<iframe width="600" height="371" src="https://lichess.org/study/embed/NlmhpmzH/ogH05i3S#13" frameborder=0></iframe>
+{% endraw %}
+</div>
 
+#### Other lines 
 
+Other lines in the double pin variation where White castles early require no
+particular attention.
 
+### Double pin variation: immediate h3
+
+If White immediately replies 6.h3 to Bg4, we are happy to trade immedately.
+After White castles, it is best to immediately challeng the bishop with a6:
+whichever way White replies, this will hinder a c4. If White plays c3 we develop
+normally, since c4 would make less sense. There is little to say about this
+variation as a whole.
 
 
 
