@@ -78,7 +78,35 @@ Black should respond with the typical Nd7, which prevents Ne5, and it is
 possible to transpose to the main 6.h4 line within a few moves. This line is
 very drawish and deserves little comment.
 
+The last sideline we will consider is the move 6.Bc4!?, which after 7.N1e2 might
+be followed by $(a)$ castling, $(b)$ h4 or the mainline $(c)$ Nf4.
 
+
+<div markdown="0">
+{% raw %}
+<iframe width="600" height="371" src="https://lichess.org/study/embed/ZiCdrPwo/bmA6uz4b#11" frameborder=0></iframe>
+{% endraw %}
+</div>
+
+The idea of this setup is to play for the f5 break, which justifies Bc4 and
+N1e2. If White plays 8.O-O it is imperative to know the refutation, which
+consists of transfering the knight on b8 to b6 via d7, forcing a trade of LSBs
+(the bishop on b3 would be passive) and then playing g6 the crucial move g6.
+
+If in this setup White feels adventurous and attempts f5 anyway, gxf5 should
+give Black good play. The sacrifice Nxf5 complicates the position a lot, but
+does not work because Black can achieve a good defensive setting after Be7-Nfd5,
+even giving up the f7 pawn.
+
+I believe this Bc4 line is a good attacking weapon for White, since Black must
+play precisely in order to equalize. On the Lichess database, White won 62% (!)
+of games after 9.f4.
+
+The move 8.h4 makes little sense, since after 8...h6 Black's LSB has a retreat
+square already, making Nf4 a weaker idea. So more worthy of consideration is the
+immediate 8.Nf4. Of course, Black can never play h6 now, and the correct defense
+is to exert pressure on the knight quickly via Bd6 and Qc7. As seen in the line,
+this can lead to an early exchange of queens and a safe game for black.
 
 
 
