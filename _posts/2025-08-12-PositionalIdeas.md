@@ -11,7 +11,6 @@ The classical Caro-Kann has the following starting position.
 <div markdown="0">
 {% raw %}
 <iframe width="600" height="371" src="https://lichess.org/study/embed/ZiCdrPwo/2XyZ0XyW#8" frameborder=0></iframe>
-    theme = "brown" pieceSet="merida"></iframe>
 {% endraw %}
 </div>
 
@@ -23,8 +22,7 @@ consider one early sidelines before delving into that. I mean the interesting
 
 <div markdown="0">
 {% raw %}
-https://lichess.org/study/ZiCdrPwo/4XwwWjeN
-    theme = "brown" pieceSet="merida"></iframe>
+<iframe width="600" height="371" src="https://lichess.org/study/ZiCdrPwo/4XwwWjeN" frameborder=0></iframe>
 {% endraw %}
 </div>
 
@@ -49,7 +47,7 @@ The position after 6.f4 is seen below.
 
 <div markdown="0">
 {% raw %}
-<iframe width="600" height="371" src="https://lichess.org/study/embed/ZiCdrPwo/ScmsRUOz#11" frameborder=0></iframe>
+<iframe width="600" height="371" src="https://lichess.org/study/embed/ZiCdrPwo/ScmsRUOz#6" frameborder=0></iframe>
 {% endraw %}
 </div>
 
