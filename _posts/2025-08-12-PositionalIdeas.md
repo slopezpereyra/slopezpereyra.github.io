@@ -3,6 +3,87 @@ title: Caro-Kann defense
 categories: [Chess]
 ---
 
+# Classical Caro-Kann
+
+The classical Caro-Kann has the following starting position. 
+
+
+<div markdown="0">
+{% raw %}
+<iframe width="600" height="371" src="https://lichess.org/study/embed/ZiCdrPwo/2XyZ0XyW#8" frameborder=0></iframe>
+    theme = "brown" pieceSet="merida"></iframe>
+{% endraw %}
+</div>
+
+
+Though the "propperly" classical variation occurs after 5.Ng3 Bg6, we will
+consider one early sidelines before delving into that. I mean the interesting
+5..Nc5!?.
+
+
+<div markdown="0">
+{% raw %}
+https://lichess.org/study/ZiCdrPwo/4XwwWjeN
+    theme = "brown" pieceSet="merida"></iframe>
+{% endraw %}
+</div>
+
+The move is somewhat unprincipled but has been tested out by high-caliber
+players such as Carlsen, Ivanchuk, Radjabov, and Svidler. Superficially, the
+idea is the same as the more typical 5.Ng3: to move the knight to safety with
+tempo (the b7 pawn is hanging). However, Black can equalize relatively quickly
+with an early e5 break, exploiting the fact that the d-pawn is overloaded.
+
+After 5...e5!? 6.Nxb7 Qb6 7.Nc5 exd4 8.Nb3, the pressure on the d-pawn is
+released with 8...Bb4+ and Black faces essentially no problems, leading in
+development and central control.
+
+If White tries 8.Na4 instead of 8.Nb3, attacking the queen instead of the pawn,
+the simple 8...Qa5+ 9.c3 dxc3 10.Nxc3 Bb4 leads to standard play. 
+
+Having said that, we now turn to consider the typical setup occurring after
+5.Ng3 Bg6. Though White's main response here is 6.h4, seeking kingside
+expansion, a few sidelines are worth considering: 6.f4, 6.Nf3 and 6.Bc4.  
+
+The position after 6.f4 is seen below.
+
+<div markdown="0">
+{% raw %}
+<iframe width="600" height="371" src="https://lichess.org/study/embed/ZiCdrPwo/ScmsRUOz#11" frameborder=0></iframe>
+{% endraw %}
+</div>
+
+Of course, the idea is to get a strong grip of e5, playing for a bind *á la
+Maróczy*. Black should aim for solid play, typically has no rush to castle,
+and sets his pieces as seen below.
+
+
+<div markdown="0">
+{% raw %}
+<iframe width="600" height="371" src="https://lichess.org/study/embed/ZiCdrPwo/ScmsRUOz#20" frameborder=0></iframe>
+{% endraw %}
+</div>
+
+The knights on e7 and d7 support the bishop on g6, prevent potential f5 breaks,
+and support the c5 break. Black's position has no weaknesses. Black will
+eventually trade on d3 and get a pleasent game.
+
+The 6.Nf3 variation is equally timid.
+
+<div markdown="0">
+{% raw %}
+<iframe width="600" height="371" src="https://lichess.org/study/embed/ZiCdrPwo/nXZvrGdE#11" frameborder=0></iframe>
+{% endraw %}
+</div>
+
+Black should respond with the typical Nd7, which prevents Ne5, and it is
+possible to transpose to the main 6.h4 line within a few moves. This line is
+very drawish and deserves little comment.
+
+
+
+
+
 # Advanced Caro-Kann 
 
 ## Short variation
