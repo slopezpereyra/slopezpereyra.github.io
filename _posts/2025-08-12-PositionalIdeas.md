@@ -374,6 +374,118 @@ whichever way White replies, this will hinder a c4. If White plays c3 we develop
 normally, since c4 would make less sense. There is little to say about this
 variation as a whole.
 
+## Main line of the exchange variation 
+
+Recall the main position of the exchange variaiton, where White plays the setup 
+with an early Bd3 and c3, with Black responding with Nc6 and Qc7.
+
+
+<div markdown="0">
+{% raw %}
+<iframe width="600" height="371" src="https://lichess.org/study/embed/NlmhpmzH/onVTc7KJ#10" frameborder=0></iframe>
+{% endraw %}
+</div>
+
+
+### Main line: 6.f4 
+
+The least challenging setup for White might be the weaking 6.f4?!, which is
+rare. 
+
+<div markdown="0">
+{% raw %}
+<iframe width="600" height="371" src="https://lichess.org/study/embed/NlmhpmzH/ocd3dMfj#11" frameborder=0></iframe>
+{% endraw %}
+</div>
+
+The move 6.f4 allows for 6...Nh6 with a subsequent Bf5, solving all of Black's
+problems. White will place a knight on e5 eventually, trying to justify f4, the
+placement of the knight on h6 makes f6 possible, if push comes to shove. Nothing
+special really.
+
+### Main line: 6.Bg5 
+
+This is a weak attempt at preventing Black to develop comfortably with Nf6.
+However, that's precisely what Black should play, since 7.Bgf6 gx6 gives Black
+no problems. White will play e5 whatever White plays. Even if White pressures
+d5 and f6 via Qf3, e5! gives a lot of compensation for the sacrificed pawns.
+This line deserves little attention.
+
+
+<div markdown="0">
+{% raw %}
+<iframe width="600" height="371" src="https://lichess.org/study/embed/NlmhpmzH/kJBEHv2E#10" frameborder=0></iframe>
+{% endraw %}
+</div>
+
+### Main line: 6.h3 
+
+6.h3 is one of the most common moves, and the one which is coherent with White's
+Bd3 move. The idea is to complicate the development of Black's LSB. To me, the
+most pressing idea for Black is to go for a Nf6-g6-Bf5 setup, allowing for
+White to trade on f5 and double Black's pawns.
+
+
+<div markdown="0">
+{% raw %}
+<iframe width="600" height="371" src="https://lichess.org/study/embed/NlmhpmzH/lSTVbrsr#19" frameborder=0></iframe>
+{% endraw %}
+</div>
+
+The resulting lines of play will involve long castling, e6, Ne4, etc. Standard
+ideas. The open g-file favors Black. Whether Black's DSB belongs to g7 or d6
+merits considerationo, but it seems to me d6 is more active.
+
+### Main line: 6.Ne2
+
+The move 6.Ne2 is an attempt at getting Bf4 in. To my eyes, it is a logical
+attempt to exploit Black's early Qc7 move. However, it allows 6...Bg4, which
+solves Black's LSB problem (even if after f3 it seems like it doesn't).
+
+<div markdown="0">
+{% raw %}
+<iframe width="600" height="371" src="https://lichess.org/study/embed/NlmhpmzH/6sRZa61A#11" frameborder=0></iframe>
+{% endraw %}
+</div>
+
+The point is that after 6...Bg4, White cannot continue with 7.Bf4 due to
+7...Qxf4!, entering an equal queenless middlegame where Black is doing perfectly
+fine. It seems clear that after 7. Bf4 Qxf4 8. Nxf4 Bxd1 9. Kxd1 e6, Black
+should be able to comfortably carry out a minority attack on the queenside. This
+is particularly easy now that White's DSB does not control the h2-b8 diagonal,
+making Rb8 ideas possible. And without the queens, it will be difficult for
+White create counterplay on the kingside.
+
+It is for these reasons that 6.f3 is mandatory, entering a variation which leads
+Black into an interesting isolani position. After 
+7. f3 Bd7 (the only retreat which gives anything) White will continue with his
+   plan of 8.Bf4. However, here Black has the strong 8...e5! After 9. dxe5 Nxe5
+10. O-O Bd6 11. Nd4 Ne7 12. Na3 O-O, Black's position is excellent.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
