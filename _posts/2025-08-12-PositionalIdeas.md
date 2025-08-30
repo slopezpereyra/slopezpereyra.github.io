@@ -301,9 +301,9 @@ denomination. See the starting position below.
 {% endraw %}
 </div>
 
-### Double pin variation: Early castling
+## Double pin variation: Early castling
 
-#### The hyper-aggressive h3-g4-Ne5 line
+### The hyper-aggressive h3-g4-Ne5 line
 
 First, let's consider a few popular lines. By far, the most common move is
 6.O-O, so let us look at that variation first. 
@@ -336,7 +336,7 @@ So, it seems like the hyper-aggressive approach of 7.h3 followed by 8.g4 and
 </div>
 
 
-#### Qd3
+### Qd3
 
 The most common reply after 7.h3 Bh4 is 8.Qd3, unpinning the knight. But this
 poses no problems to Black after 8...Bd6. Again, White has options for its ninth
@@ -361,12 +361,12 @@ everything is okay.
 {% endraw %}
 </div>
 
-#### Other lines 
+### Other lines 
 
 Other lines in the double pin variation where White castles early require no
 particular attention.
 
-### Double pin variation: immediate h3
+## Double pin variation: immediate h3
 
 If White immediately replies 6.h3 to Bg4, we are happy to trade immedately.
 After White castles, it is best to immediately challeng the bishop with a6:
@@ -463,24 +463,88 @@ Black into an interesting isolani position. After
 10. O-O Bd6 11. Nd4 Ne7 12. Na3 O-O, Black's position is excellent.
 
 
+# Fantasy Variation 
+
+The starting position of the main line *Fantasy Variation*, with 3.fe, goes as
+follows.
+
+
+<div markdown="0">
+{% raw %}
+<iframe width="600" height="371" src="https://lichess.org/study/embed/ZI2Tj6tX/F4XVH8PU#16" frameborder=0></iframe>
+{% endraw %}
+</div>
+
+This is a sharp position with a centre in strong tension. Black correctly
+overprotects e5. White has a series of optoins now. We will first consider the
+agressive 9.Qb3
+
+## Fantasy Variation: 9.Qb3
 
 
 
+<div markdown="0">
+{% raw %}
+<iframe width="600" height="371" src="https://lichess.org/study/embed/ZI2Tj6tX/z9VW7u2z#16" frameborder=0></iframe>
+{% endraw %}
+</div>
+
+The move 9.Qb3 attacks b7 and f7 simultaneously. The correct reply is to simply
+castle.
+
+If White plays 10.Qxb7, there is a very interesting and forced line which
+exploits combinatorily three positional factors which make White's position
+vulnerable: $(a)$ the bad positioning of the queen, $(b)$ Black's lead in
+development, and $(c)$ the lack of defenders around the White king, itself a
+consequence of under development of the queenside pieces.
+
+This line is so pretty that I want to comment it separately. 
 
 
+<div markdown="0">
+{% raw %}
+<iframe width="600" height="371" src="https://lichess.org/study/embed/ZI2Tj6tX/dDozecxU#last" frameborder=0></iframe>
+{% endraw %}
+</div>
+
+The first moves involve removing the Kf3, defender of White's kingside, followed
+by exd4 with the idea of opening up our bishop's diagonal. On sees in the
+resulting position that the elemnts for a kingside attack are there. First let
+us discuss the line where White responds 12.gxf3 to 11...Bxf3.
+
+After 11.gxf3 exd4 12.cxd4, Black has a beautiful piece sacrifice: 12...Nxe5!.
+The idea is to give our queen some freedom of movement. After 13.fxe4 Qh4 the
+response 14.Rf2 is forced, since no other move prevents Qxh2 mate.
+
+The resulting position leads to a new sacrifice with 14...Nc5!, attacking
+White's queen. If the knight is accepted, mate is unstoppable after Bxc5. The
+only sensible move for White's queen is 15.Qxc6, where after 15...Nxe4 again we
+have a forced line: 
+
+16.Be3 (only move) Rc8! (with a skewer) 17.Qd5 (or Qb7) Nxf2! 19.Bxf2 Qxh2+
+19.Kf1 Rxc4! 20. Qxc4 Qh3+ 21.Ke1 (only move) Re8+ 22.Kd2 Qg2 getting back the
+piece. Black is totally winning and the line is forced.
+
+Now let us see what happens if White responds 11.Rxf3. Again, we open our
+bishop's diagonal with 11.exd4 12.cxd4 Ng4! 
+
+12...Ng4! comes naturally to mind if one understands that after 12...Nxe4 we are
+not threatening anything. h2 is falling with check and White should ignore it
+and develop with Nd2. However, the most common replies are all attempts at
+saving the pawn.
+
+13.e5 fails 13...Ndxe5! 14.dxe5 Bc5+ 15.Kh1 (only move) Qd1+ 16.Rf1 Nf2+ with
+forced mate. If 16.Bf1 is played 16...Qxc1 is sufficient to win.
+
+13.h3 fails to the same 13...Nc5! 14.Qxc6 Bh2+ followed by Qxd4 wherever White
+goes. 
+
+13.Bf4 fails to 13...Nc5! as well. After 14.Qxc6, Black trades bishops and
+throws in the deadly Qxd4+.
 
 
-
-
-
-
-
-
-
-
-
-
-
+As we can see, after 10.Qxb7 Bxf3! almost all lines are forcing and lead to a
+victory.
 
 
 
