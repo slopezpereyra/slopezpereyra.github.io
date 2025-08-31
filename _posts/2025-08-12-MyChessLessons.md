@@ -198,15 +198,37 @@ Black's bishop. But anyhow, this was not the course chosen by Marshall.
 
 
 
+### Lesson 2: Optimial piece positioning 
+
+Consider this position:
+
+<div markdown="0">
+{% raw %}
+<iframe width="600" height="371" src="https://lichess.org/study/embed/WYsco4KN/LKR1srER#30" frameborder=0></iframe>
+{% endraw %}
+</div>
+
+I think it is not hard to see where each piece belongs in this position.
+
+(1) The knight on c4, controlling e5 and d6, is optimally placed. 
+
+(2) The bishop on d6, from where it'd work in coordination with the c4 knight,
+exerts pressure on the kingside and fixes the e6-weakness.
+
+(3) The queen on h3, pressuring e6 and also pressuring the kingside.
+
+Five or six moves later, Capablanca reaches the following position:
 
 
+<div markdown="0">
+{% raw %}
+<iframe width="600" height="371" src="https://lichess.org/study/embed/WYsco4KN/LKR1srER#41" frameborder=0></iframe>
+{% endraw %}
+</div>
 
-
-
-
-
-
-
+This is very instructive. If one considers the first diagram, it should be clear
+that nothing but the *pawn structure* is the key to piece positioning.
+Everything follows from it.
 
 
 
