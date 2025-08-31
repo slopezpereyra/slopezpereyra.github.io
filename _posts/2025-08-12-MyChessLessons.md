@@ -233,6 +233,177 @@ Everything follows from it.
 
 
 
+# Capablanca - Bernstein, San Sebastian 1911
+
+### Don't rush.
+
+
+The following equal position was reached.
+
+<div markdown="0">
+{% raw %}
+<iframe width="600" height="371" src="https://lichess.org/study/embed/WYsco4KN/Bdef98xB#24" frameborder=0></iframe>
+{% endraw %}
+</div>
+
+Capablanca first improves the position via Qd3 and Rad1, which is normal. Qd3 is
+logical because it gives the queen the 3rd rank and also suggests ideas such as
+Qa6, pressuring the b7 and c6 weaknesses.
+
+
+### Piece coordination
+
+A few moves later:
+
+
+<div markdown="0">
+{% raw %}
+<iframe width="600" height="371" src="https://lichess.org/study/embed/WYsco4KN/Bdef98xB#32" frameborder=0></iframe>
+{% endraw %}
+</div>
+
+Here I suggested the immediate Nf5. It is not a bad move, but the two knights
+aren't coordinated. Once one sees Capablanca's move: 17.Nce2!, one immediately
+comprehends its superiority. Now both knights operate together and play an
+active role in the center.
+
+
+
+### More on build-up
+
+In the position below, it is not that simple to find a move for White. Both
+knights are excellently placed. The queen can hardly be improved (20.Qg3 is met
+by g6 and White has little.) The rooks are perfectly placed. 
+
+<div markdown="0">
+{% raw %}
+<iframe width="600" height="371" src="https://lichess.org/study/embed/WYsco4KN/Bdef98xB#38" frameborder=0></iframe>
+{% endraw %}
+</div>
+
+Capablanca improved via 20.g4! followed by the solid f3. The engine does not
+approve, but that means little in this case. 
+
+The engine's suggestion is also interesting. It gives 20.c3!?, threatening b4.
+The diagram above has the engine-recommended line, where White wins an exchange.
+
+
+### Piece activity 
+
+In the following position, again it is unclear how White is supposed to keep
+improving.
+
+<div markdown="0">
+{% raw %}
+<iframe width="600" height="371" src="https://lichess.org/study/embed/WYsco4KN/Bdef98xB#42" frameborder=0></iframe>
+{% endraw %}
+</div>
+
+Capablanca found the energetic plan of transfering the Nd4 to h5 via 22.Ne2. He
+gave up two pawns for the tempo needed to materialize this.
+
+
+# 
+
+### An excercise on visualization
+
+Consider the following position.
+
+<div markdown="0">
+{% raw %}
+<iframe width="600" height="371" src="https://lichess.org/study/embed/WYsco4KN/tRu0epDQ#28" frameborder=0></iframe>
+{% endraw %}
+</div>
+
+Nd5 begs to be played, but its consequences ought to be evaluated thoroughly
+before doing so. As an excercise, one might do so looking at the position as is
+now and understanding what follows. 
+
+(1) The knight cannot be allowed to remain there, due to the execssive pressure
+on Black's Nf6. 
+
+(2) So, the straight line is 15.Nd5 Bxd5 16.exd5 Nb8 (only knight retreat which
+makes sense).
+
+In this position: $(a)$ White's Qc2 and Nf3 exert direct pressure on Black's e5
+pawn. $(b)$ The Bc2's diagonal has been opened and h7 is now a potential
+vulnerability. $(c)$ Black's Nf6 remains pinned and White's d5 pawn is securely
+protected. $(d)$ Black's Bc5 is unprotected. $(e)$ Black's rooks are disconnected.
+
+In such a position, it is not easy to augment the pressure on the e5 pawn
+because Black is ready to respond Nbd7 to our threats. E.g. 17.Rfe1 Nbd7 and
+suddenly: $(a)$ the e5-pawn will not fall any time soon, $(b)$ Black's rooks are
+connected again, $(c)$ the Bc5 is defended. So we see how quickly Black would
+stabilize if we naively play a natural-looking Rfe1.
+
+However, one must see that in this position, the disconnection of the rooks
+inspires the strong 17.a4! Clearly, 17...bxa4 would lead to 18.Bxe4 Rd8 19.Qxe5
+and White wins a pawn. If Black responds 18...Nd7, blocking the bishops attack,
+White has *at least* 19.Bc6 (hitting the Ra8 and opening up the Ra1 attack on
+a6) followed by Rxa6 (if Black plays Ra7) or even Qxa6.
+
+Another alternative against 17...bxa4  18.Bxa4 Nd7 is to keep it positional and
+play 19.b4 Bd6 (solidifying e5) 20.Nd2!? with the idea of playing Ne4 and
+increment pressure on the pinned Nf6. Note that after 20.Nd2 the threat of Bc6
+remains, a6 is a permanent weakness. I can't see a solid response for Black. For
+example, 20...Qf8 unpins the Nf6, lessening the threat of Ne4, but then 21.Bxf6
+and Black cannot recapture with the Nd7 because it's pinned to the Re8 by
+White's Ba4. After 21...gxf6 White has 22.Qg4+ with a fork to the Nd7: 22...Qg7
+23.Qxg7+ Kxg7 24.Bxd7 and White is up a piece.
+
+Black could respond 20.Nd2!? e4, so as to occupy the e4 square himself. But then
+again 21.Bxf6! and Black has three choices: (a) recapture with the Nd7 giving up
+an exchange (White plays Bxe8); (b) play Qxf6 and hang the Nd7 entirely; (c)
+play gxf6, but then again White has Qg4+ picking up the knight. Of course, (a)
+is the lesser evil.
+
+Having analyzed this variations in my mind, let me now pass to examine what
+happens after 17.a4! b4 18.cxb4 Bxb4, which was played in the game. Here White's
+bishop remains on c2, the rooks remain disconnected for the moment, meaning that
+Black's Ra8 is undefended, and Black controls e1 with his Bb4. How should White
+proceed? Qe4 would be brutal if it could be played, since it would attack the h7
+pawn (threatening mate) and the undefended Bb4. So it seems the most
+straightforward path is 19.Bxf6 Qxf6 20.Qe4. After this, Black has: 
+
+(a) 20...Qg6, preventing mate, with the idea of 21.Qxb4 Qxc2. (Note that 21.Qc4,
+with a discovery on Black's Qg6 which still defends our Bc2, fails to 21...Qd6).
+However, White still has 22.Rfc1 Qg6 23.Rxc7 and White should be totally
+winning: Black's Nb8 cannot move and Qb7 is imminent, winning a rook.
+
+(b) 20...g6 to which White responds 21.Qxb4 and I don't think Black has anything
+better than just Nd7 and go on a piece down.
+
+(c) 20...Bd6, giving up the h7 pawn. Then 21.Qxh7+ Kf8 and I don't think we get
+anything from 22.Qh8+ Ke7. The clear problem seems to be that the e7 square is
+available for Black's king, so Nh4-Nf5 comes to mind (note  that the Bc2
+protects f5). So one may entertain 22.Nh4. I can imagine Black playing 22...g6,
+controlling f5, and also opening up his queen's control of h8, so this seems to
+remove all immediate threats. But perhaps he should worry sacrifices on g6?
+
+Yes: 22...g6 23.Bxg6! since now the bishop is untouchable: if 23...fxg6 then
+24.Nxg6+ and the disappearence of the f-pawn leaves the Black king without moves
+(White's queen controls the 7th rank). Black must give up his queen.  So 23.Bxg6
+must be met with something like Qg7.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
