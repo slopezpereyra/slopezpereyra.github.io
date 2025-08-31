@@ -6,6 +6,8 @@ categories: [Chess]
 > After studying a game, I ask myself: what have I learned from this game? Here
 > I annotate the answers to this questions.
 
+
+
 # Marshall - Capablanca, NY Match 1909, Game 6
 
 ### Lesson 1: Do not overestimate a threat, or on ghost imagination
@@ -137,6 +139,82 @@ considerations are almost the same: Black controls the d-file, has a queenside
 majority, etc. But the position is *concretely* different, because now White's
 bishop stands on e4, allowing Rd1+! In other words, in the position resulting
 now, Black's rook can activate and infiltrate into White's position!
+
+
+
+# Capablanca - Marhsall, Wilkes-Barre match (8), 1909
+
+### Lesson 1: Creation of weaknesses
+
+The following position was reached:
+
+
+<div markdown="0">
+{% raw %}
+<iframe width="600" height="371" src="https://lichess.org/study/embed/WYsco4KN/LKR1srER#26" frameborder=0></iframe>
+{% endraw %}
+</div>
+
+Several elements are to be pointed out. $(1)$ Black has queenside weaknesses,
+but it is hard to exploit them on their own. White needs to create more
+weaknesses. $(2)$ White's development is harmonious and active, while Black's
+rooks are out of play. The bishops being in front of the king inspires some
+tactical motifs. $(3)$ White must play actively without allowing consolidation. 
+
+
+The correct move is 14.Ng5!, looking to create a weaknesses on e6. To
+approeciate how fargile Black's positions is, imagine it was White to move again
+after Ng5. Then exd5 followed by either Rxe6 (an exchange sacrifice) or Nxe6
+gives White a winning advantage.
+
+Note as well that Black cannot take the e-pawn. If 14...dxe4 White has the very
+active 15.Qg3, with a discovered attack on the queen. Depending on where the
+Black queen goes, White can respond with natural looking moves. For instance, if
+Black's queen goes to c8 in order to recapture on e6 with the queen, White has
+Bd6 and Black has no satisfactory response. If Black's queen retreats to b6,
+then Nxe6 followed by Qxg7 is brutal.
+
+Black cannot ignore the central tension either, because White is ready to play
+exd5 himself. So the response d4 is essentially forced, with the following
+position resulting:
+
+
+
+<div markdown="0">
+{% raw %}
+<iframe width="600" height="371" src="https://lichess.org/study/embed/WYsco4KN/LKR1srER#30" frameborder=0></iframe>
+{% endraw %}
+</div>
+
+It is clear that Black must play e5 to stabilize, and that White should prevent
+this if possible. Black is in time to do so: after 16.Na4 he should reply with
+the  natural Nd7. This move defends c5 and prepares e5, so now 17.Qc4 is met
+with 17...e5 18.Bd2. Perhaps Marshall was worried about not being able to
+castle, since White's QC4 controls g8. However, it seems that Black can play
+Rf8-Rf7 followed by Kf8. White is clearly better, since he has no weaknesses and
+Black has at least 3 (a6, c5, e5). White also has the superior minor pieces:
+White's knight on c4 will outpower Black's, not to mention the passivity of
+Black's bishop. But anyhow, this was not the course chosen by Marshall.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
