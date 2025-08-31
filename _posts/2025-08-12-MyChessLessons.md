@@ -14,7 +14,7 @@ After White's 9th move Bg5, we have the following position.
 
 <div markdown="0">
 {% raw %}
-<iframe width="600" height="371" src="https://lichess.org/study/WYsco4KN/37hDO11q#17" frameborder=0></iframe>
+<iframe width="600" height="371" src="https://lichess.org/study/embed/WYsco4KN/37hDO11q#17" frameborder=0></iframe>
 {% endraw %}
 </div>
 
@@ -42,7 +42,7 @@ When facing the position below:
 
 <div markdown="0">
 {% raw %}
-<iframe width="600" height="371" src="https://lichess.org/study/WYsco4KN/37hDO11q#21" frameborder=0></iframe>
+<iframe width="600" height="371" src="https://lichess.org/study/embed/WYsco4KN/37hDO11q#21" frameborder=0></iframe>
 {% endraw %}
 </div>
 
@@ -72,7 +72,7 @@ In the following position
 
 <div markdown="0">
 {% raw %}
-<iframe width="600" height="371" src="https://lichess.org/study/WYsco4KN/37hDO11q#39" frameborder=0></iframe>
+<iframe width="600" height="371" src="https://lichess.org/study/embed/WYsco4KN/37hDO11q#39" frameborder=0></iframe>
 {% endraw %}
 </div>
 
@@ -96,7 +96,7 @@ Black to move in the following position.
 
 <div markdown="0">
 {% raw %}
-<iframe width="600" height="371" src="https://lichess.org/study/WYsco4KN/37hDO11q#45" frameborder=0></iframe>
+<iframe width="600" height="371" src="https://lichess.org/study/embed/WYsco4KN/37hDO11q#45" frameborder=0></iframe>
 {% endraw %}
 </div>
 
