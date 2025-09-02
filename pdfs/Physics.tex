@@ -1770,6 +1770,94 @@ velocity in $(t_1, t_2) = (\frac{1}{2}, 1)$ is
     = \frac{2.25}{0.5} = 4.5
 \end{equation*}
 
+\pagebreak 
+
+\begin{shaded}
+\textbf{(12)} A bullet is shot horizontally from a canon placed on a platform of
+height $44$m. Iis exit velocity is 25$m / s$. Assume the terrain is horizontal
+and perfectly plain. 
+
+$(a)$ Write the movement equations. 
+
+$(b)$ Draw the vectors $\vec{r}(t), \vec{v}(t), \vec{a}(t)$ at the highest point
+of the curve and when the ball reaches the ground. 
+
+$(c)$ How much time does the ball remain in the air before hitting the ground? 
+
+$(d)$ What is its reach, i.e. at what distance from the cannon does it hit the
+ground? 
+
+$(e)$ What is the magnitude of the vertical component of $\vec{v}$ when the
+bullet reaches the ground? 
+
+$(f)$ Repeate $(c)$ for the case when the ball is dropped in free fall from the
+platform. 
+
+$(g)$ Consider now that the exit velocit has vertical direction and posit the
+movement equations.
+\end{shaded}
+
+Recall that, when a projectile is shot, it has no horizontal acceleration, only
+horizontal velocity. Its vertical acceleration is given by gravity alone. Thus,
+it is always the case for a projectile that 
+
+\begin{equation*}
+    \vec{a} = 0\hat{i} - g \hat{j}
+\end{equation*}
+
+where $g$ is in $m / s^2$. From this readily follows: 
+
+\begin{equation*}
+    \vec{v}(t) = v_{0x} \hat{i} - (gt + v_{0y}) \hat{j}, \qquad \vec{r}(t) =
+    (v_{0x}t + x_0)\hat{i} + (-\frac{g}{2}t^2 + v_{0y}t + y_0)\hat{j}
+\end{equation*}
+
+Fix $x_0 = 0$. We know, from the conditions of the problem, that 
+$y_0 = 44, v_{0x} = 25$ (in meters per second) and $v_{0y} = 0$ (since the ball
+is shot horizontally, it has no vertical velocity at the start.) Thus, 
+
+\begin{equation*}
+    \vec{v}(t) = 25\hat{i} - gt \hat{j}, \qquad \vec{r}(t) = 25t \hat{i} +
+    \left( -\frac{g}{2}t^2 + 44 \right) \hat{j}
+\end{equation*}
+
+$(b)$ Observe that the $y$-coordinate of $\vec{r}(t)$, henceforth denoted
+$\vec{r}_y(t)$, is zero if and only if
+
+\begin{align*}
+    &\vec{r}_y(t) = 0 \\ 
+    \iff ~ ~ ~ &-\frac{g}{2}t^2 + 44 = 0 \\ 
+    \iff ~ ~ ~ & t^2 = \frac{2}{g}44\\
+    \iff ~ ~ ~ & t = \pm \sqrt{\frac{88}{g}}  \\ 
+    \iff ~ ~ ~ & t \approx \sqrt{\frac{88}{9.8}}  \\ 
+    \iff ~ ~ ~ & t \approx \sqrt{8.97}  \\ 
+    \iff ~ ~ ~ & t \approx \sqrt{8.97}  \\ 
+    \iff ~ ~ ~ & t \approx 2.996 
+\end{align*}
+
+where we kept only the positive solution because $t \geq 0$. So the object
+touches the aground after approximately three seconds. This means $\vec{r}_y(t)$
+is a quadratic function with roots $\pm 2.996$, whose midpoint is zero (i.e. the
+curve is symmetric around the $y$-axis). This is the formal way of saying
+something obvious: the ball reaches its maximum height at $t = 0$ (since then it
+falls). Then it is simple to see: 
+
+\begin{equation*}
+    \vec{r}(0) = (0, 44)^\top, \qquad \vec{v}(0) = (25, 0)^\top, \qquad
+    \vec{a}(0) = (0, -g)^\top
+\end{equation*}
+
+It is easy to imagine what these vectors look like when graphed.
+
+$(c)$ From our computation in $(b)$ we already know the ball remains in the air
+almost three seconds before hitting the ground.
+
+$(d)$ Let $t_0 = 2.996$ the time at which the bullet hits the ground. Observe
+that $\vec{r}_x(t_0) = 25(t_0) = 75.9$. So the projectile hits the ground at
+75.9 meters from its starting position in the $x$-axis.
+
+$(e)$ Note that $\vec{v}(t_0) = (25, gt_0)^\top \approx (25, -29.3608)^\top$. The
+magnitude of the vertical component is the second component of the vector given.
 
 
 
@@ -1791,13 +1879,289 @@ velocity in $(t_1, t_2) = (\frac{1}{2}, 1)$ is
 
 
 
+\pagebreak 
 
+\section{Dirección de fuerzas}
 
+\subsection{Fuerza de roce (o fricción)}
 
+Involucra contacto paralelo de un cuerpo con una superficie. Hay estático y
+dinámico. Trataremos el estático primero. 
 
+En el roce estático, el cuerpo no se mueve ($\vec{v} = 0$). Digamos que queremos
+empujar una mesa apoyada en el piso. Si al hacer fuerza empujando, la mesa aún
+no se mueve, es porque existe otra fuerza (la de rozamiento estático) que
+equilibra o supera la que estamos haciendo. 
 
+Sabemos, por las leyes de Newton, que la suma de las fuerzas es igual a la masa
+por aceleración: 
 
+\begin{align*}
+    \sum \vec{F} &= m \vec{a}  \\ 
+                 &= \vec{N} + \vec{P} + \vec{F}_{\text{ext}} +
+                 \vec{F}_{\text{roce estatico}}
+\end{align*}
 
+Aquí, la fuerza normal $\vec{N}$ equilibra $\vec{P}$, i.e. $\vec{N} + \vec{P} =
+0$. Como el objeto no se mueve, la aceleración es cero y por lo tanto $m\vec{a}
+= 0$. Entonces necesariamente la fuerza externa y la fuerza de roce estático
+también suman cero (se equilibran). 
+
+A su vez, hay un valor máximo que la fuerza de roce estático puede tomar: 
+
+\begin{equation*}
+    \left| \vec{F}_{\text{r.e.}}^{\text{max}} \right| = \mu_e \left|
+    \vec{N} \right| 
+\end{equation*}
+
+donde $\mathcal{M}_e$ se llama coeficiente de roce estático.
+
+Pasemos al caso dinámico, cuando el objeto empieza a moverse. Existe cuando
+$\vec{v} \neq 0$,  tiene una constante $\mathcal{M}_a < \mathcal{M}_e$ que lo
+acota.  Esta fuerza no necesita de otras fuerzas aplicadas paralelas a la
+superficie: se opone al movimiento y disminuye $\vec{v}$. Es la fricción que
+"frena" a un objeto que se mueve/desliza. Siempre se cumple 
+
+\begin{equation*}
+    \left| \vec{F}_{\text{r.d.}} \right| = \mu_a \left| \vec{N} \right| 
+\end{equation*} 
+
+\subsection{Movimiento oscilatorio armónico}
+
+Digamos que tenemos un resorte horizontal (e.g. contra la pared) de constante $k$ y longitud $\ell_0$ con una masa
+$m$ en el extremo. 
+
+\begin{shaded}
+    \textbf{Ley de Hooke}. La fuerza de un resorte de constante $k$ es 
+    $\vec{F}_k = -k \Delta \ell$ donde $\ell$ es la distancia entre el extremo 
+    y la posición de equilibrio del extremo.
+\end{shaded}
+
+Las fuerzas involucradas en un resorte que ha sido estirado o movido fuera de su
+equilibrio son: la fuerza normal $\vec{N}$, la fuerza $\vec{P}$, la fuerza del
+resorte $vec{F}_k$. Por ende, la segunda ley de Newton nos da 
+
+\begin{align*}
+    &\sum \vec{F} = m \vec{a}\\ 
+    \Rightarrow ~ ~ ~ & \vec{N} + \vec{P} + \vec{F_k} = m \vec{a}
+\end{align*}
+
+Pero la aceleración es una aceleración en $x$ (se mueve horizontalmente). Es
+decir, $\vec{a} = a_x \hat{i} + 0 \hat{j} = a_x \hat{i}$. Sabemos además que
+$\vec{N} + \vec{P} = 0$. Por lo tanto, 
+
+\begin{equation*}
+    \vec{F_k} = m\vec{a} = ma_x \hat{i} 
+\end{equation*}
+
+Pero $a_x = \frac{dv_x}{dt} = \frac{d^2 x}{dt^2}$. Por ende
+
+\begin{equation*}
+    \vec{F_k} = m \frac{d^2 x}{dt^2} \hat{i}
+\end{equation*}
+
+o bien, por la ley de Hooke, 
+
+\begin{equation*}
+    -k(x - x_0) = m \frac{d^2 x}{dt^2} \hat{i}
+\end{equation*}
+
+donde $x$ es la posición actual de la masa en el extremo del resorte y $x_0$ su
+posición original (de equilibrio). Sea $\widetilde{ m } = \frac{d^2 x}{dt^2}
+\hat{i}$.
+Entonces
+
+\begin{equation*}
+    a_x = \widetilde{ x }  + \frac{k}{m}(x - x_0) = 0
+\end{equation*}
+
+El problema es que la ecuación 
+
+\begin{equation*}
+    v = \int a_x = \int \widetilde{ x } + \frac{k}{m}(x(t) - x_0) ~ dt
+\end{equation*}
+
+no se puede resolver, porque $v(t)$ depende de $x(t)$. Si no sabemos $x(t)$ no
+podemos continuar.
+
+Sea $\mu = x - x_0$, tal que $\mu^{(1)} = x^{(1)}$ y $\mu^{(2)} = x^{(2)} =
+\widetilde{ x } $. Entonces 
+
+\begin{equation*}
+    \widetilde{ x }  + \frac{k}{m}(x - x_0) = 0
+\end{equation*}
+
+puede escribirse como 
+
+\begin{equation*}
+    \mu^{(2)} + \frac{k}{m}\mu = 0
+\end{equation*}
+
+de lo cual se sigue 
+
+\begin{equation}
+    \mu^{(2)} = -\frac{k}{m}\mu
+\end{equation}
+
+Es decir, necesitamos una función $u$ tal que su segunda derivada sea una
+constante por sí misma. Podemos ver que 
+
+\begin{equation*}
+    \mu(t) 
+    = A \sin\left( \omega  t + \phi \right), \qquad \mu(t) = A' \sin(\omega t) + B'
+(\cos \omega  t) \end{equation*}
+
+donde $\phi$ es un ángulo inicial (fase) satisfacen la ecuación $(1)$. Tomemos 
+
+\begin{equation*}
+    \mu(t) = x(t) - x_0 = A \sin(\omega t + \phi)
+\end{equation*}
+
+Entonces 
+
+\begin{equation*}
+    \mu^{(1)}(t) = \mu^{(1)}(t) = v(t) = \omega A \cos(\omega t + \phi)
+\end{equation*}
+
+y 
+
+\begin{align*}
+    \mu^{(2)}(t) 
+    &= a(t) \\
+    &= - \omega^2 A \sin(\omega t + \phi) \\ 
+    &= -\omega^2 \mu(t) \\ 
+    &= -\frac{k}{m}\mu(t)
+\end{align*}
+
+Es decir, 
+
+\begin{equation*}
+    \omega^2 =\sqrt{\frac{k}{m}}  
+\end{equation*}
+
+Decimos que $T= \frac{2\pi}{\omega}$ es el período. 
+
+Repasemos. Por la segunda ley de newton, teníamos 
+
+\begin{equation*}
+    \mu^{(2)}(t) + \frac{k}{m} \mu(t) = 0
+\end{equation*}
+
+La solución que hallamos es $\mu(t) = A \sin(\omega t + \phi)$, con $\omega =
+\sqrt{\frac{k}{m}} $. El período es $T = \frac{2\pi}{\omega}$. ¿Pero quién es
+$A$?  
+
+$A$ determina la amplitud del movimiento, en unidades de longitud, y se
+corresponde con el apartamiento máximo, i.e. la máxima distancia entre la masa y
+su punto de equilibrio $x_0$.  Ahora bien, como 
+
+\begin{equation*}
+    v(t) = A \omega \cos(\omega t + \phi)
+\end{equation*}
+
+tenemos que $v_{\max} = A \omega$ (cuando el coseno es uno). Además, 
+
+\begin{equation*}
+    \mu(0) = A \sin(\phi_0)
+\end{equation*}
+
+y a esto le denominamos fase inicial. Describe algo que sucede en el instante $t
+= 0$.
+
+Los puntos exxtrmeos del movimiento, con distanca A, son donde la velocidad es
+cero. El punto de equilibrio es el punto donde la velocidad es máxima.   
+
+\subsection{Energía}
+
+La energía es la capacidad de un sistema para realizar un proceso (cambio).
+Matemáticamente, es un escalar independiente del tiempo. Un sistema puede ser un
+sistema de partículas, una masa particular, entre otras cosas. La unidad de la
+energía es $\left[ E \right] = \left[ F \right]\left[ d \right]    $, fuerza por
+distancia, y se denomina Jule o simplemente $J$. Usaremos conceptos como
+\textit{trabajo} ($W$ de \textit{work}), energía potencial, energía cinemática,
+energía mecánica, calor, etc.
+
+\subsubsection{El trabajo (invertido/realizado) de una fuerza}
+
+Supongamos un sistema simple con un cuerpo puntual, un recorrido unidimensional,
+con desplazamiento bajo la acción de una fuerza. Sea $\vec{\Delta x} = \Delta x
+\hat{i} = (x_f - x)\hat{i}$, con $x_f$ la posición final. Sabemos que 
+
+\begin{equation*}
+    \vec{F} = F_x \hat{i} + F_y \hat{j} = F \cos \theta \hat{i} + F \sin \theta
+    \hat{j}
+\end{equation*}
+
+El \textbf{trabajo} invertido por la fuerza en mover el objeto es 
+
+\begin{equation}
+    W := F_x \vec{\Delta x}
+\end{equation}
+
+es decir, es fuerza por distancia. Claramente, 
+
+\begin{equation*}
+    W = F \cos \theta \vec{\Delta x} = \vec{F} \cdot \vec{\Delta x}
+\end{equation*}
+
+Es decir, $W$ es el component de la fuerza en la dirección del movimiento,
+producto por el deslpazamiento. (Notar que $\vec{F} \vec{\Delta x}$ es un
+producto escalar: $\vec{A} \cdot \vec{B} = \left| A \right|\left| B \right| \cos
+\theta$ con $\theta$ el ángulo entre ambos.)
+
+Las unidades del trabajo son unidades de fuerza por unidades de longitud: 
+$\left[ W \right] = \left[ F \right] \left[ \Delta x \right] $.
+
+Ahora bien, es posible que $\vec{F}$ varíe con la posición, i.e. que $\vec{F}$
+sea una función $x$. Entonces, podemos calcular diferenciales de trabajo, es
+decir el cambio en el trabajo de acuerdo a la posición:
+
+\begin{equation*}
+    \frac{dW}{dx} = \vec{F}(x)
+\end{equation*}
+
+o bien
+
+\begin{equation}
+    dw = \vec{F}(x) ~ d\vec{x}
+\end{equation}
+
+Integrando $(2)$ obtenemos 
+
+\begin{equation}
+    W = \int_{x_0}^{x_f} \vec{F}(x) ~ d\vec{x}
+\end{equation}
+
+Más complejo aún, ¿qué pasa si la trayectoria del objeto es 2D (curva)? También
+aquí la fuerza varía dependientemente de la trayectoria. Sea $d\vec{s}$ el
+vector que indica el cambio de posición instantáneo del objeto en su
+trayectoria. Se deduce: 
+
+\begin{equation}
+    W = \int_{s_0}^{s_f} \vec{F}(s) ~ d\vec{s}
+\end{equation}
+
+A la integral de $(4)$ se le llama \textit{integral de línea}.
+
+Si hay muchas fuerzas aplicadas, $\vec{F}_1, \vec{F}_2, \ldots$, el trabajo
+total será 
+
+\begin{equation*}
+    W_{\text{total}}= W_{F_1} + W F_2 + \ldots = \sum_{i} W_{F_i}
+\end{equation*}
+
+Respecto al signo del trabajo, recordemos que $W = \vec{F} \cdot \vec{\Delta
+x}$. Si $ 0 \leq \theta < \frac{\pi}{2}$, entonces la fuerza está "tironeando"
+del cuerpo, pues el ángulo está entre 0 y 45 grados. El trabajo será positivo, y
+diremos que la fuerza \textit{entrega} trabajo.
+
+Si $\frac{\pi}{2} < \theta \leq \pi$, el producto escalar será negativo y por
+ende lo será el trabajo. Este caso se corresponde por ejemplo con un cuerpo que
+se mueve hacia la derecha y una fuerza que lo "tira" hacia arriba a la
+izquierda, u directamente a la izquierda. Decimos entonces que la fuerza \textit{frena} al objeto.
+
+Si $\theta = \frac{\pi}{2}$, es decir el ángulo es de 90 grados, el producto
+escalar es cero, y el trabajo es cero. La fuerza normal es un ejemplo.
 
 
 
@@ -1838,6 +2202,5 @@ velocity in $(t_1, t_2) = (\frac{1}{2}, 1)$ is
 
 
 \end{document}
-
 
 
