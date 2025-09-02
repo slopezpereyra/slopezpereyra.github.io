@@ -1535,6 +1535,256 @@ ball is zero, so we solve
 The root $t = 0$ is not a solution that interests us, so we only care about the
 root that solves $v_0 - 4.9t = 0$, i.e. $t = \frac{v_0}{4.9}$.
 
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(10)} A rock is thrown vertically and upwards. On its path, it
+    crosses point $A$ with velocity $v$ and point $B$, which is $3$m higher than
+    $A$, at velocity $v / 2$. Determine $v$ an the maximum height reached by the
+    rock above point $B$.
+\end{shaded}
+
+Let $\Delta y = y_B - y_A = 3$m the distance between $A$ and $B$. We know the
+rock has a constant acceleration $-g$ due to gravity. This tells us that
+velocity is linear and movement is quadratic. In  general, 
+
+\begin{equation*}
+    a(t) = -g, \qquad v(t) = v_0 - gt, \qquad x(t) = y_0 + v_0 t - g\frac{t^2}{2}
+\end{equation*}
+
+Now, given an arbitrary velocity $v$ occurring when the object is at position
+$y$,
+
+\begin{equation*}
+    \frac{dy}{dt} = v, \qquad \frac{dv}{dt} = a
+\end{equation*}
+
+assuming a constant acceleration $a$. However, since the position $y$ is a
+function of time, the chain rule gives
+
+\begin{equation*}
+    \frac{dv}{dt} = \frac{dv}{dy} \frac{dy}{dt} = \frac{dv}{dy} v
+\end{equation*}
+
+From this follows $a = v \frac{dv}{dy}$ or equivalently $a ~ dy = v ~ dv$.
+Integrating from initial positions and velocities $y_0, v_0$;
+
+\begin{align*}
+    &\int_{y_0}^y a ~ dy = \int_{v_0}^v v ~ dv 
+    \\\Rightarrow ~ ~  &v^2 - v_0^2 = 2a(y -
+    y_0)
+\end{align*}
+
+In other words, for any given velocity $v$ occurring at position $y$, the
+relationship above holds. In particular, if we treat $A$ as our initial
+position,
+
+\begin{equation*}
+    \frac{v^2}{4} - v^2 = 2a(y_B - y_A)
+\end{equation*}
+
+Since $y_B - y_A = 3$m,
+
+
+\begin{equation*}
+    \frac{v^2}{4} - v^2 = 6a
+\end{equation*}
+
+Now, the acceleration in our problem is simply $-g$, and then the equation above
+gives solutions for $v$ given by
+
+\begin{align*}
+    &\frac{-3v^2}{4} = -6g \\ 
+    \iff &v^2 = 8g \\ 
+    \iff&v = \pm\sqrt{8g} 
+\end{align*}
+
+Now, since velocities can only be positive, we keep $v = \sqrt{8g} $ as the only
+solution.
+
+Now the question is, what is the maximum height? Well, in the path from $B$ to
+the top, velocity drops from $\frac{v}{2}$ to zero. So again, if we take as
+reference $B$, 
+
+\begin{equation*}
+    0 - \left( \frac{v}{2} \right) ^2 = 2a(y_{\text{top}} - y_B)
+\end{equation*}
+
+Let $h = y_{\text{top}} - y_B$. Then 
+
+\begin{equation*}
+    h = -\frac{v^2}{8a}
+\end{equation*}
+
+But $a = -g$ and $v = \sqrt{8g} $, giving 
+
+\begin{equation*}
+    h = \frac{8g}{8g} = 1
+\end{equation*}
+
+So the maximum height above $B$ is 1 meter.
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(11)} The movement in the plane of a particle is given by $x(t) =
+    at^2$, $y(t) = b t ^3$, with $a = 3\frac{m}{s^2}, b = 2\frac{m}{s^3}$.
+
+    $(a)$ Find the trajectory of the particle. Plot it. 
+
+    $(b)$ Compute the acceleration at $t = 12$s. 
+
+    $(c)$ What is the angle formed by the velocity vectors and the acceleration
+    at that instant? 
+
+    $(d)$ Determine the instant $t_1$ where acceleration is parallel to the line
+    $y = x$, and the instant $t_2$ in which velocity is parallel to said line. 
+
+    $(e)$ Determine the median velocity in the interval $(t_1, t_2)$.
+\end{shaded}
+
+$(a)$ 
+The trajectory of the particle is 
+
+\begin{align*}
+    S 
+&= \left\{ (x(t), y(t)) : t \in
+\mathbb{R} \right\}  \\ 
+&= \left\{ (3t^2, 2t^3) : t \in \mathbb{R} \right\} 
+\end{align*}
+
+Since $x = 3t^2, t^2 = \frac{x}{3}$. And since $y = 2t^3$, we have 
+$y^2 = 4t^6 = 4 (t^2)^3 = 4\left( \frac{x}{3} \right)^3 = \frac{4}{27}x^3 $. In
+summary, 
+
+\begin{equation*}
+    y^2 = \frac{4}{27}x^3
+\end{equation*}
+
+or equivalently 
+
+\begin{equation*}
+    y = \pm \frac{2}{3}\sqrt{x^3} 
+\end{equation*}
+
+This entirely defines $S$.
+
+
+\begin{tikzpicture}[scale=0.05]
+  \draw[->] (-5,0) -- (220,0) node[right] {$x$};
+  \draw[->] (0,-200) -- (0,200) node[above] {$y$};
+
+  % upper branch
+  \draw[domain=0:200,smooth,variable=\x,red,thick]
+    plot ({\x},{ sqrt(4/27*\x*\x*\x) });
+  % lower branch
+  \draw[domain=0:200,smooth,variable=\x,red,thick]
+    plot ({\x},{ -sqrt(4/27*\x*\x*\x) });
+\end{tikzpicture}
+
+
+$(b)$ Clearly, 
+
+\begin{equation*}
+    v_x(t) = 2at, \qquad v_y(t) = 3bt^2
+\end{equation*}
+
+meaning that 
+
+\begin{equation*}
+    a_x(t) = 2a, \qquad a_y(t) = 6bt
+\end{equation*}
+
+So the acceleration at time $12$ is 
+
+\begin{equation*}
+    \vec{a}(12) = 2a\hat{i} + 72b \hat{j} = 6\hat{i} + 144\hat{j}
+\end{equation*}
+
+$(c)$ Recall that the angle between two vectors $\vec{u}, \vec{w}$ is 
+
+\begin{equation*}
+    \theta = \arccos \left( \frac{ u \cdot w }{\left| u \right|\left| w \right|  } \right) 
+\end{equation*}
+
+because the dot product is $u \cdot w = \left| u \right| \left| w \right| \cos
+\theta $. Now, 
+
+\begin{equation*}
+    \vec{v}(12) = 72\hat{i} + 864\hat{j}
+\end{equation*}
+
+It is simple to compute: 
+
+\begin{equation*}
+    \left| \vec{v}(12) \right| = 866.994, \qquad \left| \vec{a}(12) \right|  =
+    144.125
+\end{equation*}
+
+and 
+
+\begin{equation*}
+    \vec{v}(12) \cdot \vec{a}(12) = 6 \cdot 72 + 144 \cdot 864 = 124848
+\end{equation*}
+
+Then 
+
+\begin{equation*}
+    \theta = \arccos \left( \frac{124848}{866.994 \times 144.125} \right) =
+    \arccos (0.999) = 0.044
+\end{equation*}
+
+In degrees, these are $0.044 \times \frac{180}{\pi} = 2.521\degree$.
+
+$(d)$ It is quite simple to reason and see that any vector parallel  to $y = x$
+is such that its $x$ and $y$ coordinates are the same. So the find $t_1$ s.t. 
+$\vec{v}(t_1)$ is parallel to $y = x$, we need only find $t_1$ s.t. 
+
+\begin{equation*}
+    \vec{v}_x(t_1) = \vec{v}_y(t_1)
+\end{equation*}
+
+But this holds if and only if 
+
+\begin{align*}
+    2at = 3bt^2 
+    \iff& 6t = 6t^2\\ 
+    \iff&t = t^2 \\ 
+    \iff&t \in \left\{ 0, 1 \right\} 
+\end{align*}
+
+But $0$ is a trivial solution, so we keep only $1$. Same goes for acceleration:
+
+\begin{align*}
+    a_x(t_2) = a_y(t_2) 
+    \iff& 6 = 12t_2 \\ 
+    \iff& \frac{1}{2} = t_2
+\end{align*}
+
+$(e)$ Median velocity was defined as $\Delta x / \Delta t$. So the median
+velocity in $(t_1, t_2) = (\frac{1}{2}, 1)$ is 
+
+\begin{equation*}
+    \frac{\Delta x}{\Delta t} 
+    = \frac{x\left( 1 \right) - x\left( \frac{1}{2} \right)  }{1 - \frac{1}{2}}
+    = \frac{2.25}{0.5} = 4.5
+\end{equation*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

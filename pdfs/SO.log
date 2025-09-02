@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  25 AUG 2025 16:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  1 SEP 2025 18:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1387,95 +1387,13 @@ LaTeX Font Warning: Font shape `OMS/ntxtt/m/n' undefined
 (Font)              for symbol `textbraceleft' on input line 1160.
 
 [27]
-./SO.tex:1254: Missing $ inserted.
-<inserted text> 
-                $
-l.1254 ... lo crea si no existe, \texttt{O_WRONLY}
-                                                   es \textit{write
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./SO.tex:1254: Extra }, or forgotten $.
-<recently read> \egroup 
-                        
-l.1254 ... lo crea si no existe, \texttt{O_WRONLY}
-                                                   es \textit{write
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-LaTeX Font Info:    Trying to load font information for OT1+txtt on input line 1255.
-(/usr/share/texlive/texmf-dist/tex/latex/txfonts/ot1txtt.fd
-File: ot1txtt.fd 2000/12/15 v3.1
-)
-LaTeX Font Info:    Font shape `OT1/ntxtt/m/it' in size <12> not available
-(Font)              Font shape `OT1/txtt/m/sl' tried instead on input line 1255.
-
-./SO.tex:1256: Missing $ inserted.
-<inserted text> 
-                $
-l.1256 
-       
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (193.24286pt too wide) in paragraph at lines 1253--1256
-[]\OT1/minntx/m/n/12 La funci[]on \OT1/ntxtt/m/n/12 open \OT1/minntx/m/n/12 abre el archivo \OT1/ntxtt/m/n/12 salida.txt\OT1/minntx/m/n/12 . La flag \OT1/ntxtt/m/n/12 O[]CREATE \OT1/minntx/m/n/12 lo crea si no ex-iste, \OT1/ntxtt/m/n/12 O$[]\OML/ntxmi/m/it/12 RONLYes[]; []nomequedaclaro:$ 
- []
-
-
-Overfull \hbox (27.94402pt too wide) in paragraph at lines 1257--1261
-[]\OT1/ntxtt/m/n/12 La funci[]on open devuelve (y asigna) al archivo abierto el menor file descriptor
- []
-
-
-Overfull \hbox (63.76396pt too wide) in paragraph at lines 1257--1261
-\OT1/ntxtt/m/n/12 disponible, que al haber cerrado 1 es 1. Por ende, ahora 1 (es decir, STDOUT[]FILENO)
- []
-
-LaTeX Font Info:    Font shape `OT1/ntxtt/m/n' will be
+LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 (Font)              scaled to size 10.95pt on input line 1263.
-LaTeX Font Info:    Font shape `OT1/ntxtt/b/n' will be
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 (Font)              scaled to size 10.95pt on input line 1266.
-
-Overfull \hbox (25.89812pt too wide) in paragraph at lines 1266--1269
-[]\OT1/ntxtt/b/n/10.95 Nota. \OT1/ntxtt/m/n/10.95 Con "asigna", quise decir: open crea una entrada en la tabla de open
- []
-
-
-Overfull \hbox (18.41603pt too wide) in paragraph at lines 1272--1278
-[]$\LMS/ntxsy/m/n/12 ¹\OT1/minntx/m/n/12 2\LMS/ntxsy/m/n/12 º$ \OT1/ntxtt/m/n/12 El segundo programa guarda en fd el file descriptor asignado al archivo de
- []
-
-
-Overfull \hbox (25.96404pt too wide) in paragraph at lines 1272--1278
-\OT1/ntxtt/m/n/12 salida, cierra STDOUT[]FILENO, y llama dup(fd). La funci[]on dup(fd) toma un file
- []
-
-
-Overfull \hbox (46.84398pt too wide) in paragraph at lines 1272--1278
-\OT1/ntxtt/m/n/12 descriptor abierto fd, y crea un nuevo file descriptor que apunta al mismo archivo
- []
-
-
-Overfull \hbox (88.96391pt too wide) in paragraph at lines 1272--1278
-\OT1/ntxtt/m/n/12 fd, pero es el menor n^^Sumero disponible. Por lo tanto, dup(fd) hace que 1 ==STDOUT[]FILENO
- []
-
-
-Overfull \hbox (101.56389pt too wide) in paragraph at lines 1279--1283
-[]\OT1/ntxtt/m/n/12 (Diferencias) En el segundo programa, fd y STDOUT[]FILENO pueden usarse intercambiablemente,
- []
-
-
-Overfull \hbox (2.74406pt too wide) in paragraph at lines 1279--1283
-\OT1/ntxtt/m/n/12 porque fd nunca se cierra. dup permite m[]as control porque uno puede elegir
- []
-
-[28] 
+LaTeX Font Info:    Font shape `OT1/ntxtt/m/n' will be
+(Font)              scaled to size 10.95pt on input line 1266.
+ [28] [29] [30] [31] [32] [33] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./SO.aux)
  ***********
@@ -1487,31 +1405,30 @@ L3 programming layer <2020/03/25>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
 Package rerunfilecheck Warning: File `SO.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `SO.out':
-(rerunfilecheck)             Before: 1DEE9FB97827B3F6E536DE35E0CFFC92;5943
-(rerunfilecheck)             After:  6FD2609B7FE1808786F04F5B665039B4;6115.
- )
-(\end occurred inside a group at level 1)
-
-### simple group (level 1) entered at line 1254 ({)
-### bottom level 
+(rerunfilecheck)             Before: FAD1807A57D6EB387758DC44B755D121;7572
+(rerunfilecheck)             After:  DC4D730204594D77710800DCF4857884;7680.
+ ) 
 Here is how much of TeX's memory you used:
- 44353 strings out of 474222
- 1004133 string characters out of 5748733
- 1938975 words of memory out of 5000000
- 65750 multiletter control sequences out of 15000+600000
- 590005 words of font info for 109 fonts, out of 8000000 for 9000
+ 44345 strings out of 474222
+ 1003895 string characters out of 5748733
+ 1958975 words of memory out of 5000000
+ 65728 multiletter control sequences out of 15000+600000
+ 592443 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,14n,107p,770b,1256s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txbtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on SO.pdf (28 pages, 253399 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txbtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
+Output written on SO.pdf (33 pages, 260458 bytes).
 PDF statistics:
- 401 PDF objects out of 1000 (max. 8388607)
- 317 compressed objects within 4 object streams
- 81 named destinations out of 1000 (max. 500000)
- 413 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 459 PDF objects out of 1000 (max. 8388607)
+ 372 compressed objects within 4 object streams
+ 96 named destinations out of 1000 (max. 500000)
+ 493 words of extra memory for PDF output out of 10000 (max. 10000000)
 

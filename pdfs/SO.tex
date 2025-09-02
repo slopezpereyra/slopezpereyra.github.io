@@ -1251,7 +1251,7 @@ después de lo cual \texttt{STDOUT\_FILENO} (que en realidad no es más que el
 entero \texttt{1}) no identifica ninguna file y puede ser reusado. 
 
 La función \texttt{open} abre el archivo \texttt{salida.txt}. La flag
-\texttt{O\_CREATE} lo crea si no existe, \texttt{O_WRONLY} es \textit{write
+\texttt{O\_CREATE} lo crea si no existe, \texttt{O\_WRONLY} es \textit{write
 only}, \texttt{S\_IRWXU} no me queda claro.
 
 La función \texttt{open} devuelve (y asigna) al archivo abierto el menor file
@@ -1280,6 +1280,279 @@ menor número disponible. Por lo tanto, \texttt{dup(fd)} hace que
 pueden usarse intercambiablemente, porque \texttt{fd} nunca se cierra.
 \texttt{dup} permite más control porque uno puede elegir qué file descriptors
 redirigir. 
+
+
+
+\pagebreak 
+
+\section{Abstracción del espacio de direcciones}
+
+El sistema deseado es que los procesos permanezcan en memoria incluso cuando
+switcheamos entre ellos. De este modo, time-sharing puede implementarse
+eficientemente. 
+
+\begin{shaded}
+
+    \textbf{Example.} Imaginemos un sistema con 512Kb de memoria en bloques de
+    64Kb. Cada programa tendría una pequeña parte de los 512Kb de memoria física
+    reservada únicamente para ellos. 
+
+    \footnotesize
+    \begin{verbatim}
+        Dirección   | Contenido                                |
+        ------------|------------------------------------------
+                    |                                          |
+        0KB         | Sistema operativo, código, data estática | 
+                    |                                          |
+        ------------|------------------------------------------
+                    |                                          |
+        64KB        | Espacio libre ...                        | 
+                    |                                          |
+        ------------|------------------------------------------
+                    |                                          |
+        128KB       | Proceso C (código, data, etc.)           | 
+                    |                                          |
+        ------------|------------------------------------------
+                    |                                          |
+        192KB       | Proceso B (código, data, etc.)           | 
+                    |                                          |
+        ------------|------------------------------------------
+                    |                                          |
+        256KB       | Espacio libre ...                        | 
+                    |                                          |
+        ------------|------------------------------------------
+                    |                                          |
+        320KB       | Proceso A (código, data, etc.)           | 
+                    |                                          |
+        ------------|------------------------------------------
+                    |                                          |
+        448KB       | Espacio libre ...                        | 
+                    |                                          |
+        ------------|------------------------------------------
+                    |                                          |
+        512KB       | Espacio libre ...                        | 
+                    |                                          |
+        -------------------------------------------------------
+
+    \end{verbatim}
+\end{shaded}
+
+\normalsize
+
+El SO debe crear una abstracción fácil de usar de la memoria física. Esta
+abstracción se llama \textbf{address space}, o espacio de memoria. Es la visión
+que tiene el programa de la memoria del sistema.
+
+El \textbf{address space} de un programa contiene toda la memoria relativa al
+estado del programa: su código (las instrucciones), el \textbf{stack}, el 
+\textbf{heap}, entre otras cosas.
+
+\begin{shaded}
+    
+\textbf{Example.} Ejemplo de un address space de 16Kb.
+
+\footnotesize
+\begin{verbatim}
+Dirección   | Contenido
+------------|------------------------------------------
+0KB         | Program Code
+            | (the code segment: where instructions live)
+------------|------------------------------------------
+1KB         | Heap
+            | (the heap segment: contains malloc'd data,
+            | dynamic data structures; it grows positively)
+------------|------------------------------------------
+2KB - 15KB  | Free Memory
+            | (space between heap and stack)
+------------|------------------------------------------
+15KB        | Stack
+            | (it grows negatively; contains local variables,
+            | arguments to routines, return values, etc.)
+------------|------------------------------------------
+16KB        | End of address space
+\end{verbatim}
+\end{shaded}
+
+Cuando describimos el \textbf{address space}, describimos la abstracción que el
+SO le provee al programa en ejecución. La memoria física es totalmente distinta.
+Las direcciones de memoria del address space se corresponden con direcciones
+diferentes de la memoria física. El problema entonces es: ¿cómo puede el SO
+hacer una abstracción privada del espacio de memoria para cada uno de múltiples
+procesos, los cuales comparten una única memoria física? Cuando el SO hace esto, decimos que \textbf{virtualiza} la memoria.
+
+Los objetivos de esta abstracción son: 
+
+\begin{itemize}
+    \item \textbf{Transparencia}. Los programas no deberían saber que la memoria
+        está virtualizada: deberían comportarse como si cada uno tuviera su
+        propia memoria física. 
+    \item \textbf{Eficiencia.} La virtualización debería ser eficiente en
+        términos de tiempo y espacio. 
+    \item \textbf{Protección}. El SO debería impedir que los procesos alteren la
+        memoria usada por otros, es decir cada proceso debería vivir en
+        \textbf{aislamiento}.
+\end{itemize}
+
+\section{API de memoria}
+
+\subsection{Tipos de memoria}
+
+Un programa en C tiene dos tipos de memoria allocadas. El \textbf{stack},
+también llamado memoria automática, porque el compilador lo maneja
+implícitamente. Cuando declaramos una variable como \texttt{int x;}, el
+compilador se encarga de hacer espacio en el \textbf{stack} para la misma.
+El stack es una estructura anidada.
+
+El otro tipo es el \textbf{heap}, que el programador maneja de manera explícita.
+Por ejemplo, al hacer \texttt{int * x = (int *) malloc(sizeof(int))}, estamos
+allocando en el stack. Más interesante aún: \texttt{x} se guarda en el stack
+como un puntero, pero el espacio al que apunta está en el heap.
+
+
+\subsection{La llamada \texttt{malloc()}}
+
+La llamada a \texttt{malloc} es simple: recibe un tamaño que especifica cuánta
+memoria asignar, y devuelve un puntero al espacio asignado (o falla y devuelve
+\texttt{NULL}).
+
+Usar \texttt{void *malloc(size\_t size)} de manera "cruda" se considera mala
+práctica. Generalmente, se castea el resultado (de tipo \texttt{void *}) a un
+puntero de tipo específico. Por ejemplo, \texttt{double *d = (double *)
+malloc(sizeof(double))}. El casteo no hace nada más que decirle al compilador y
+a otros programadores qué clase de valor está guardado en el espacio asignado.
+
+
+\section{Address translation}
+
+La técnica general que estudiaremos se llama \textbf{address translation}, o
+traducción de direcciones. En esta técnica, el hardware transforma los accesos a
+memoria (fetch, load, store) cambiando la dirección virtual que trae la
+instrucción a la dirección física donde la información deseada reside. En cada
+referencia de memoria, sucede una traducción. 
+
+Pero el hardware solo no puede virtualizar. El SO debe encargarse de que la
+traducción se haga correctamente, llevando registro de qué direcciones están
+libres y cuáles en uso. 
+
+
+\subsection{Supuestos}
+
+Para un modelo simple, supondremos que el espacio de memoria del usuario se
+ubica \textit{contiguamente} en memoria, y que no es muy grande. En particular,
+asumiremos que es más pequeño que el tamaño de la memoria física. También
+asumiremos que cada address space es del mismo tamaño. 
+
+\subsection{Dynamic (hardware-based) relocation}
+
+Dynamic relocation es la primera forma de adress translation.También es llamado
+\textbf{base and bounds}. Consiste en tener dos registros de CPU, el
+\textbf{base} y el \textbf{bounds}. Cada programa es escrito y compilado como si
+empezara en la dirección cero. Pero cuando un programa arranca, el SO decide
+dónde en la memoria física registrarlo, y guarda en \textbf{base} dicho valor.
+De este modo, 
+
+\begin{equation*}
+\texttt{dir física = dir virtual (0) + base}
+\end{equation*}
+
+Cada dir. de memoria referenciada por el programa estará en términos de la
+memoria virtual. Es decir, la dirección \texttt{128} será \texttt{base + 128}
+en la memoria fïsica.
+
+En el registro \textbf{bounds} se guarda el tamaño del address space, y sirve
+para chequear que el programa no esté haciendo referencia a una dirección fuera
+de su address space. (Notar el supuesto de contiguidad.) Puede que el bound
+contenga el tamaño del address space, o la dirección física del final del
+address space. Depende del diseño, pero ambos sirven. Siempre asumiremos el
+primero.
+
+La parte de la CPU que se encarga de hacer address translation se llama
+\textbf{Memory Management Unit} (MMU).
+
+\subsection{Hardware support}
+
+Entonces, vemos que el SO necesita apoyo del hardware para lograr la
+virtualización de la memoria. Necesita: 
+
+\begin{itemize}
+    \item Un \textbf{kernel mode} donde poder acceder a todos los lugares de
+        memoria. 
+    \item Registros \textbf{base} y \textbf{bound}.
+    \item  Instrucciones especiales para modificar los registros asntedichos.
+        Solo en kernel mode! 
+    \item \textbf{Excepciones} que levantar cuando hay referencias ilegales (out
+        of bounds) y un \textbf{exception handler} con instrucciones que correr
+        cuando hay excepciones.
+\end{itemize}
+
+\subsection{Temillas del SO}
+
+El SO, por otro lado, se encarga de: 
+
+\begin{itemize}
+    \item Cuando inicia un proceso, encontrar espacio disponible para su address
+        space. Generalmente lo hace buscando una estructura de datos llamada
+        \textbf{free list}, encontrando espacio para el nuevo address space y
+        marcándolo como \textbf{usado} luego. 
+    \item El SO debe liberar la memoria de un proceso que ha terminado, poniendo
+        esa memoria otra vez en la \textbf{free list} y limpiando lo que haga
+        falta. 
+    \item El SO debe ajustar los registros base y bound cuando ocurre un context
+        switch, asegurándose de que la traducción de direcciones se haga
+        correctamente. En particular, esto significa que el SO debe tener
+        guardados los valores de estos registros para cada proceso en memoria,
+        para poder restaurarlos cuando vuelvan a actitvarse en un context
+        switch. Estos se guardan en \textit{per-process structures} como el PCB
+        (process control block). 
+    \item El SO debe proveer \textbf{exception handlers}.
+\end{itemize}
+
+\section{Segmentación}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

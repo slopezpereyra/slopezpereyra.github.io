@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1756150439.5199 "SO.tex" "SO.pdf" "SO" 1756150441.46791 2
+["pdflatex"] 1756763560.22516 "SO.tex" "SO.pdf" "SO" 1756763561.25709 2
   "/etc/texmf/web2c/texmf.cnf" 1740662799.63242 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc" 1422827479 2083 60e36f8eac802fcaf19eabe2633b406e ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -36,7 +36,6 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs7.tfm" 1229303445 692 1b6510779f0f05e9cbf03e0f6c8361e6 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/txbtt.tfm" 1136768653 1240 767174f8d6cf46dc450d0bacf013a759 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/txtt.tfm" 1136768653 1200 1032be7d597a4dce33bcda3c08fc1be0 ""
-  "/usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/txttsl.tfm" 1136768653 1424 3c3cfcff65f1d942edd734b88e4bac32 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb" 1572128992 32409 1452fa0ce4fabfb48acd5d077e296f6d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb" 1621283831 33424 f912ebe54685d0a65d3c046e3d517e38 ""
@@ -297,7 +296,6 @@
   "/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty" 1686341992 32515 51caec75eda9c8890135f12f1a4eddc3 ""
   "/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty" 1700689882 7500 db31c3d04f8bc9010e47a5efbbace9ff ""
   "/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty" 1253232110 1380 971a51b00a14503ddf754cab24c3f209 ""
-  "/usr/share/texlive/texmf-dist/tex/latex/txfonts/ot1txtt.fd" 1137111002 1318 4f519eea77a36de881f47283e1201390 ""
   "/usr/share/texlive/texmf-dist/tex/latex/url/url.sty" 1388531844 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty" 1137111090 26220 3701aebf80ccdef248c0c20dd062fea9 ""
   "/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty" 1700082560 55487 80a65caedd3722f4c20a14a69e785d8f ""
@@ -310,9 +308,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1740670969.59643 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1740670991 8214096 2cc5ed7d441cd7dd7f6cf9e30d4bb5a5 ""
-  "SO.aux" 1756150441.28272 4804 71023044e40e71adf0b348ab53ea40af "pdflatex"
-  "SO.out" 1756150441.28372 6115 6fd2609b7fe1808786f04f5b665039b4 "pdflatex"
-  "SO.tex" 1756150439.30969 52130 de40dbb3caa8c63e1eec6d353d58f774 ""
+  "SO.aux" 1756763561.17134 6039 d79a84231a7ef7cfaacde8d1b41210dc "pdflatex"
+  "SO.out" 1756763561.17175 7680 dc4d730204594d77710800dcf4857884 "pdflatex"
+  "SO.tex" 1756763559.80065 62527 d415d628e11c0625c74d990742fd2110 ""
   (generated)
   "SO.aux"
   "SO.log"

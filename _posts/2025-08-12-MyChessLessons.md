@@ -386,12 +386,40 @@ Yes: 22...g6 23.Bxg6! since now the bishop is untouchable: if 23...fxg6 then
 must be met with something like Qg7.
 
 
+# Capablanca - Duz-Khotimirsky, Saint Petersburg 1913
+
+### Lesson 1: Irrespective control 
+
+This is a tactical and positional motif which works under the following
+operations. The opponent controls a square whose invasion by some piece of ours
+(e.g. our queen) would prove fatal. Then, if said piece can recapture another of
+our pieces which invades such square, our opponent's control of it proves
+entirely artifical. Consider the following position from the game.
 
 
+<div markdown="0">
+{% raw %}
+<iframe width="600" height="371" src="https://lichess.org/study/embed/WYsco4KN/8gyuzL5Y#54" frameborder=0></iframe>
+{% endraw %}
+</div>
+
+If the White queen could position itself on f5 with a free attack on h7, mate
+would be unavoidable. Thus, any other piece (other than the bishop, which is
+necessary to the mating threat) can hop into f7, since the White queen can
+recapture it with deadly effects. Thus, Black's control of f5 is illusory, and
+Capablanca played Nf5 disregarding the g6 pawn.
 
 
+### Lesson 2: Indirect pressure
 
+In the position above, one has to comprehend that White is exerting pressure on
+f7 (among ohter places). Due to the reasons given above, Nf5 and Nh5 are both
+possible moves. *Immediately* speaking, none of them threatens anything.
+However, from f5, the knight has a check on h6 which attacks f7. So Nf5 does
+attack f7 indirectly, and is thus preferred over Nh5 (which indeed does
+nothing). 
 
+https://lichess.org/study/WYsco4KN/8gyuzL5Y#48
 
 
 
