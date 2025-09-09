@@ -899,7 +899,7 @@ La MLFQ final usa las siguientes reglas:
 
 
 \pagebreak
-\section{Ejercicios: Virtualización de la CPU}
+\section{Ejercicios: Mecanismos}
 
 \begin{shaded}
     
@@ -1285,6 +1285,363 @@ redirigir.
 
 \pagebreak 
 
+\begin{shaded}
+    \textbf{(10)} Para el diagrama de transición de estados de un proceso,
+    describa cada uno de los cuatro escenarios posibles acerca de cómo funciona
+    (o no) el SO si se quita solo una de las cuatro fechas.
+\end{shaded}
+
+El diagrama es el siguiente.
+
+\begin{verbatim}
+               
+
+               +---------+   
+               |         |  Descheduled    +---------+
+               | Running | <------------>  |  Ready  |
+               |         |    Scheduled    +---------+
+               +---------+                       ^
+                   |                             |
+            I/O    |         +---------+         | I/O
+          starts   |-------> | Blocked | --------| ends
+                             +---------+
+\end{verbatim}
+
+Imaginemos que quitamos la transición de running a ready. ...
+
+
+\pagebreak
+
+\begin{shaded}
+    \textbf{(12)} Verdadero o falso.
+\end{shaded}
+
+$(a)$ Es posible que \texttt{user + sys < real}.
+
+
+\small
+\begin{quote}
+
+Recordemos que \texttt{user time} es el tiempo que la CPU ejecuta el programa en
+el \texttt{user space}, es decir fuera del kernel. \texttt{sys time} es lo
+opuesto: es el tiempo que el tiempo que la CPU ejecuta instrucciones del
+programa \textit{kernel mode} (privilegiado), por ejemplo tras hacer una llamada
+a sistema. 
+
+\texttt{real time} es el tiempo de reloj desde el inicio de la ejecución hasta
+su terminación. Incluye todo: tiempo que el programa está pausado esperando que
+otros procesos se ejecuten, los tiempos que toma cada context switch, etc.
+
+Es posible que \texttt{user + sys < real}. Por ejemplo, asuma un programa que
+debe esperar 10 segundos para que termine una I/O operation, pero que la
+ejecución de sus instrucciones (en kernel o user mode) dura solo 1 segundo.
+Entonces $\texttt{sys} \geq 11$s, pero $\text{user + sys = 1}$.
+
+\end{quote}
+\normalsize
+
+$(b)$ Dos procesos no pueden usar la misma dirección de memoria virtual. 
+
+
+\small
+\begin{quote}
+
+Falso. Siempre y cuando dicha dirección virtual sea traducida a disttintas
+direcciones de memoria física, todo bien. Es más, si se hace una \texttt{read}
+operation con esa dirección, hasta puede pasar que la dirección virtual se
+traduzca a la misma dirección física (i.e. dos programas leen el mismo archivo
+en momentos distintos, y justo sucede que la dirección virtualizada coincide en
+ambos), y en ese caso también está todo bien.
+
+\end{quote}
+\normalsize
+
+$(c)$ 
+Para guardar el estado de un proceso, es necesario salvar el valor de
+todos los registros del microprocesador.
+
+
+\small
+\begin{quote}
+
+Verdadero. Hay que poder restaurarlos después a todos.
+
+\end{quote}
+\normalsize
+
+$(d)$ Un proceso puede ejecutar cualquier instrucción de la ISA.
+
+
+\small
+\begin{quote}
+
+Falso. Muchas instrucciones no pueden ejecutarse directamente por un proceso.
+Debe solicitar un servicio al SO para que éste haga su magia en \textit{kernel
+mode}.
+
+\end{quote}
+\normalsize
+
+
+$(e)$ Puede haber traps por timer sin que esto implique cambiar de contexto.
+
+
+\small
+\begin{quote}
+
+Parece razonable que sí. Imaginemos el caso fantástico de un sistema en el que
+un único proceso se ejecuta. Las traps por timer seguirán ejecutándose, pero el
+contexto será el mismo. Lo mismo si un solo proceso está ready y running, y
+todos los demás están bloqueados.
+
+\end{quote}
+\normalsize
+
+$(f)$ \texttt{fork()} devuelve cero para el hijo porque ningún proceso tiene PID
+0.
+
+
+\small
+\begin{quote}
+
+Falso. Sí devuelve cero para el hijo, pero no tiene nada que ver con el hecho de
+que ningún proceso tiene PID cero. Simplemente \texttt{0} codifica el éxito en
+C, mientras \texttt{-1} o valores distintos a \texttt{0} codifican error.
+
+\end{quote}
+\normalsize
+
+$(g)$ Las syscall \texttt{fork()} y \texttt{execv()} están separadas para poder
+redireccionar los descriptores de archivo.
+
+
+\small
+\begin{quote}
+
+    (?) Redireccionar los descriptores de archivo es sin duda parte importante
+    de la ejecución con \texttt{fork} y \texttt{execv}. Pero no es la causa de
+    su separación. \texttt{fork()} y \texttt{execv} existen separadamente porque
+    \texttt{execv()} por sí solo no es suficiente para crear nuevos procesos
+    (siempre destruye/reemplaza al proceso llamador). De ahí la utilidad de
+    poder duplicar procesos con \texttt{fork()}. Ni hablar de que la separación
+    también permite que el \textit{calling process} supervise el estado del
+    proceso generado y actúe en consecuencia (e.g. esperar que termine).
+\end{quote}
+\normalsize
+
+$(h)$ Si un proceso padre llama a \texttt{exit()} el proceso hijo termina su
+ejecución inmediatamente. 
+
+
+\small
+\begin{quote}
+
+Falso. El proceso padre y el proceso hijo se independizan casi completamente. Su
+único vínculo es que el padre puede tener la PID del hijo.  No más que eso.
+
+\end{quote}
+\normalsize
+
+$(i)$ Es posible pasar información de padre a hijo a través de \texttt{argv},
+pero el hijo no puede comunicar información al padre ya que son espacios de
+memoria independientes. 
+
+
+\small
+\begin{quote}
+
+Falso. El padre no pasa información al hijo a través de \texttt{argv}. El padre
+crea al hijo con \texttt{fork()} sin pasarle nada. Es el hijo quien luego puede
+auto-transformarse en un proceso nuevo con \texttt{execv}, donde sí puede pasar
+información con \texttt{argv}. Pero es el hijo pasando información a la forma
+que tomará (a su mutación, digamos), no el padre pasando información al hijo. 
+
+\end{quote}
+\normalsize
+
+$(j)$ Nunca se ejecuta código que está después de \texttt{execv()}.
+
+
+\small
+\begin{quote}
+
+Verdadero. Una vez se llama \texttt{execv()} en un proceso, toda su imagen es
+reemplazada, y esto incluye su código.
+
+\end{quote}
+\normalsize
+
+$(k)$ Un proceso hijo que termina no se puede liberar de la tabla de procesos
+hasta que el padre no haya leído el exit status via \texttt{wait()}.
+
+
+\small
+\begin{quote}
+
+Verdadero. Cuando el hijo termina pasa al estado zombie conservando su exit
+status. Sólo cuando el padre lee ese estado, el sistema puede eliminar
+completamente al hijo de la tabla de procesos. Si fuera de otro modo, el padre
+no podría saber el exit status del hijo, porque apenas éste terminara
+desaparecería completamente.
+
+\end{quote}
+\normalsize
+
+
+
+\pagebreak
+
+\section{Ejercicios: Políticas}
+
+\begin{shaded}
+    \textbf{(13)} Dados tres procesos CPU-bound puros A, B, C con tiempo de
+    llegada cero y tiempo de CPU 30, 20 y 10 respectivamente. Dibujar la línea
+    de tiempo para las políticas de planificación FCFS y SJF. Calcular
+    el promedio de turnaround y response times.
+\end{shaded}
+
+$(a)$ En FCFS, podemos asumir que el orden de ejecución es A, B, C, pues llegan
+al mismo tiempo y un orden arbitrario debe tomarse (alfabético, en este caso).
+La línea de tiempo es: 
+
+\begin{verbatim}
+    0         10        20        30        40        50        60
+    |---------|---------|---------|---------|---------|---------|
+    AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                                  BBBBBBBBBBBBBBBBBBBB
+                                                       CCCCCCCCCC
+\end{verbatim}
+
+El turnnaround time es el tiempo total desde que el proceso llega hasta
+que termina su ejecución. En este caso, los response times son 30 (A), 50 (B) y
+60 (C), con un promedio de 46.67.
+
+El response time es el tiempo desde que el proceso llega hasta que empieza
+a ejecutarse. En este caso, 0 (A), 30 (B) y 50 (C). El promedio es 26.67.
+
+$(b)$ En SJF, se ejecutarán los procesos en el orden C, B, A. La línea de tiempo
+es:
+
+\begin{verbatim}
+    0         10        20        30        40        50        60
+    |---------|---------|---------|---------|---------|---------|
+    CCCCCCCCCC
+                BBBBBBBBBBBBBBBBBBBB
+                                    AAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+\end{verbatim}
+
+El turnaround promedio será 10 + 30 + 60 = 33.33, y el response time promedio
+será 0 + 10 + 30 = 13.33.
+
+\pagebreak 
+
+\begin{shaded}
+
+    \textbf{(14)} Completar la siguiente tabla para las políticas STCF y RR (quantum =
+    2). Asuma que los procesos son CPU-bound puros.
+
+    \footnotesize
+\begin{verbatim}
++---------+----------+------+-----------+-------------+-------------+-------------+
+| Proceso | Tarrival | TCPU | Tfirstrun | Tcompletion | Tturnaround | Tresponse   |
++---------+----------+------+-----------+-------------+-------------+-------------+
+|    A    |    2     |  4   |           |             |             |             |
+|    B    |    0     |  3   |           |             |             |             |
+|    C    |    4     |  1   |           |             |             |             |
++---------+----------+------+-----------+-------------+-------------+-------------+
+\end{verbatim}
+\normalsize
+\end{shaded}
+
+$(a)$ Veamos el caso STCF primero. Claramente, cuando llega $B$ (en el tiempo
+cero), se ejecuta inmediatamente. En el tiempo 2 llega A, con TCPU de 4. Como el
+TCPU restante de B es 1, B se sigue ejecutando hasta el tiempo 3, y entonces A
+se ejecuta. En el tiempo 4 llega C, con TCPU de 1. Como en ese momento A tiene
+un TCPU restante de 3, se ejecuta C hasta el tiempo 5, y termina. Luego A
+ejecuta sus tres
+segundos restantes, terminando en el tiempo 8. La línea de tiempo es la
+siguiente, con mayúsculas indicando tiempo de ejecución, y minúsculas tiempo en
+el sistema pero en espera.
+
+
+\begin{verbatim}
+    0         2         4         6         8        10         12
+    |----|----|----|----|----|----|----|----|----|----|----|----|
+    BBBBBBBBBBBBBBB
+              aaaaaAAAAAaaaaaaAAAAAAAAAAAAAAA
+                        CCCCCC
+\end{verbatim}
+
+Entonces:
+
+    \footnotesize
+\begin{verbatim}
++---------+----------+------+-----------+-------------+-------------+-------------+
+| Proceso | Tarrival | TCPU | Tfirstrun | Tcompletion | Tturnaround | Tresponse   |
++---------+----------+------+-----------+-------------+-------------+-------------+
+|    A    |    2     |  4   |     3      |     8      |     6     |     1    |
+|    B    |    0     |  3   |     0      |     3      |     3     |     0    |
+|    C    |    4     |  1   |     4      |     5      |     1     |     0    |
++---------+----------+------+-----------+-------------+-------------+-------------+
+\end{verbatim}
+\normalsize
+
+\pagebreak
+
+$(b)$ Ahora veamos RR con quantum 2. Para no escribir el razonamiento
+textualmente, hagamos la línea de tiempo directamente. Marcamos con \texttt{x}
+los instantes en los que ocurre un quantum, y debajo de estas \texttt{x} el
+estado de la cola. Recordemos que en cada quantum, si llega un proceso se lo
+encola inmediatamente, y solo después se encola el proceso que estaba en
+ejecución.
+
+\begin{verbatim}
+    0         2         4         6         8        10         12
+    |----|----|----|----|----|----|----|----|----|----|----|----|
+    BBBBBBBBBBxbbbbbbbbbxBBBBx
+              xAAAAAAAAAxaaaaxaaaaxAAAAAAAAAx
+                        xccccxCCCCx
+
+    B         A         B    C    A
+              B         C    A
+                        A
+\end{verbatim}
+
+Resulta entonces:
+\footnotesize
+\begin{verbatim}
++---------+----------+------+-----------+-------------+-------------+-------------+
+| Proceso | Tarrival | TCPU | Tfirstrun | Tcompletion | Tturnaround | Tresponse   |
++---------+----------+------+-----------+-------------+-------------+-------------+
+|    A    |    2     |  4   |     2      |     8      |     6     |     0    |
+|    B    |    0     |  3   |     0      |     5      |     5     |     0    |
+|    C    |    4     |  1   |     5      |     6      |     2     |     1    |
++---------+----------+------+-----------+-------------+-------------+-------------+
+\end{verbatim}
+\normalsize
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\pagebreak
+
+
+
 \section{Abstracción del espacio de direcciones}
 
 El sistema deseado es que los procesos permanezcan en memoria incluso cuando
@@ -1509,17 +1866,128 @@ El SO, por otro lado, se encarga de:
 
 \section{Segmentación}
 
+La idea de la segmentación es dividir el address space en segmentos y tener un
+par de registros \textbf{base} y \textbf{bound} por cada uno. Un segmento es una
+porción contigua del address space con una longitud particular. Asumiremos que
+un address space canónico tiene tres segmentos: código, heap y stack.  El punto
+clave es que cada uno de estos segmentos puede ubicarse en diferentes partes de
+la memoria física.  De este modo, sólo memoria memoria utilizada es alocada. 
+
+La MMU de la CPU tiene tres pares de registros \textbf{base} y \textbf{bound},
+uno por cada segmento. La pregunta es cómo saber a qué segmento pertenece una
+dirección virtual dada y cuál es el offset de dicho segmento. Hay dos formas de
+hacer esto. 
+
+La forma explícita es partir el address space en segmentos basados en los bits
+más altos de la virtual address. Por ejemplo, si el address space es de 16Kb, y
+cada segmento es de 4Kb, los dos bits más altos de la dirección virtual indican
+el segmento (00: código, 01: heap, 10: espacio libre, 11: stack), y los 12 bits
+restantes indican el offset dentro del segmento.
+
+\begin{shaded}
+$(\dagger)$ Si nuestro address space es de 16Kb, necesitamos 14 bits para
+representar todas las direcciones. Si cada segmento es de 4Kb, necesitamos 12
+bits para representar todas las direcciones dentro de un segmento. Por lo tanto,
+nos quedan 2 bits para identificar el segmento.
+
+\footnotesize
+\begin{verbatim}
+ 13  12  11  10  9   8   7   6   5   4   3   2   1   0
+[0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 ]
+\_____/ \______________________________________________/
+ Segment                      Offset
+\end{verbatim}
+\normalsize
+
+El código de la CPU podría verse así: 
+
+\footnotesize
+\begin{verbatim}
+// Get top 2 bits of 14-bit VA.
+Segment = (VirtualAddress & SEG_MASK) >> SEG_SHIFT 
+// Get offset within segment.
+Offset = VirtualAddress & OFFSET_MASK
+if (Offset >= Bounds[Segment]))
+    RaiseException(PROTECTION_FAULT)
+else 
+    PhysAddr = Base[Segment] + Offset 
+    Register = AccessMemory(PhysAddr)
+\end{verbatim}
+
+\normalsize
+\end{shaded}
+
+Un problema de este sistema es que cada segmento se limita a un tamaño máximo
+(4Kb en nuestro ejemplo). Si un programa necesita más espacio para el
+\textbf{stack} o el heap, no puede. 
+
+El approach implícito es más flexible. En este caso, el hardware determina el
+segmento viendo cómo está formada la dirección virtual. Por ejemplo, si el
+address fue generado con el program counter (fue un instrucción fetch), es del
+segmento de código. Si fue generado con el stack pointer, es del segmento de
+stack. Si fue generado con un puntero a heap, es del segmento de heap.
+
+\subsection{El stack}
+
+Para el stack, el hardware no solo necesita base and bounds sino también saber
+hacia dónde crece. El stack generalmente crece hacia direcciones más bajas. Los
+registros de segmento, por ende, se ven algo así: 
+
+\begin{verbatim}
+    Segment | Base  | Bound | Grows positive?
+    --------|-------|-------|-----------
+    Code    | 32K   | 2K    | 1
+    Heap    | 34K   | 3K    | 1
+    Stack   | 28K   | 2K    | 0
+\end{verbatim}
+
+La traducción de direcciones dependerá de hacia dónde crece el segmento.  
+Por ejemplo, si el stack crece hacia direcciones más bajas, la dirección
+física se calcula así:
+
+\footnotesize
+\begin{verbatim}
+if (GrowsPositive[Segment])
+    PhysAddr = Base[Segment] + Offset
+else 
+    // Restamos al offset el tamaño del segmento
+    NegOffset = Offset - Bound[Segment] 
+    PhysAddr = Base[Segment] + NegOffset
+\end{verbatim}
+\normalsize
+
+Notar que \texttt{NegOffset} será cero cuando el offset sea igual al bound, es
+decir igual al tamaño del segmento. En ese caso, la dirección física será igual
+a la base, es decir el stack pointer apunta a la base del segmento de stack.
+Inversamente, si el offset es cero, \texttt{NegOffset} será igual a el tamaño
+del segmento, y la dirección física será igual a \texttt{Base + Bound}, es decir
+el final del segmento de stack.
 
 
+\begin{verbatim}
+      Stack Segment (Base = 28K, Bound = 2K)
 
-
-
-
-
-
-
-
-
+      High addresses (Base + Bound = 30K)
+      +-------------------+  <-- Offset = 0
+      |                   |  
+      |   Unused space    |
+      |   (stack grows ↓) |
+      |                   |
+      +-------------------+
+      |      ...          |
+      |    (pushed data)  |
+      |      ...          |
+      +-------------------+
+      |      Top of       |
+      |      the stack    |  <-- Stack Pointer (SP)
+      +-------------------+
+      |                   |
+      |   (more pushes)   |
+      |   move SP down    |
+      +-------------------+
+      Low addresses (Base = 28K)
+      +-------------------+  <-- Offset = Bound = 2K
+\end{verbatim}
 
 
 

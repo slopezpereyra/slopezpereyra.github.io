@@ -1,5 +1,5 @@
 \documentclass[12pt]{article}
-
+\usepackage{siunitx}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18} % Or adjust depending on your TeX distribution
 \usepackage[utf8]{inputenc}	% Para caracteres en español
@@ -625,7 +625,7 @@ not clearly express the nature of the movement.
 
 For that reason, the length $\Delta$ of the interval $[t_1, t_2]$ might be
 reduced in the limit to zero, so that we get an accurate notion of the
-instantaneous (or close to instantaneous) change of direction. Needless to say, 
+instantaneous (or close to instantaneous) change of direction. Needless to say,
 the limit converges to the slope of the line  tangent to $(t_1, x(t_1))$, i.e.
 the derivative of $x(t)$ at $t_1$. Thus, we obtain the definition of
 instantaneous velocity, usually called simply velocity: 
@@ -883,6 +883,221 @@ La trayectoria también será una parábola, en este caso particular. Y como en
 cada punto la aceleración es la aceleración negativa de la gravedad, los
 vectores aceleración a lo largo del tiempo serán siempre "flechas rectas hacia
 abajo".
+
+\pagebreak
+\section{Descripción vectorial del movimiento}
+
+Usamos $\vec{r}(t)$ para denotar al vector posición, $\vec{v}(t)$ para denotar
+al vector velocidad, y $\vec{a}(t)$ para denotar al vector aceleración. Si
+$x(t), y(t)$ son las funciones de movimiento en los ejes $x, y$, entonces 
+
+\begin{equation}
+    \vec{r}(t) = x(t) \hat{i} + y(t) \hat{j}, \qquad \vec{v}(t) = \frac{dx}{dt}
+    \hat{i} + \frac{dy}{dt} \hat{j}, \qquad \vec{a}(t) = \frac{d^2 x}{dt^2}
+    \hat{i} + \frac{d^2 y}{dt^2} \hat{j}
+\end{equation}
+
+y \begin{equation}
+    \left| \vec{r} \right| = \sqrt{x^2 + y^2}
+\end{equation}
+
+Dados dos instantes $t_1 < t_2$, el desplazamiento del un objeto en movimiento
+con vector posición $\vec{r}(t)$ es el vector 
+
+\begin{equation*}
+    \Delta\vec{r} := \vec{r}(t_2) - \vec{r}(t_1)
+\end{equation*}
+
+Notar que este es el vector que "parte" de la punta de $\vec{r}(t_1)$ y llega a
+la punta de $\vec{r}(t_2)$. Es decir, marca desde dónde y hasta dónde se movió
+el cuerpo en el tiempo $[t_1, t_2]$.
+
+La velocidad media del cuerpo en el intervalo $[t_1, t_2]$ es el vector
+velocidad media: 
+
+\begin{equation*}
+    \overline{\vec{v}(t_1, t_2)} := \frac{\Delta \vec{r}}{\Delta t} = \frac{\vec{r}(t_2) -
+\vec{r}(t_1)}{t_2 - t_1}
+\end{equation*}
+
+o equivalentemente 
+
+\begin{equation}
+    \overline{\vec{v}(t, \Delta t)} := \frac{\vec{r}(t + \Delta t) - \vec{r}(t)}{\Delta t}
+\end{equation}
+
+Puesto que $\overline{\vec{v}}$ se obitene multiplicando $\Delta \vec{r} =
+\vec{r}(t_2) - \vec{r}(t_1)$ por un escalar positivo, ambos vectores tendrán
+misma dirección y sentido.  Es decir, la velocidad media es paralela y
+equidireccional al desplazamiento.
+
+Respecto al vector velocidad, en un punto dado de la trayectoria, no es difícil
+ver que "ocupa" un segmento de la recta tangente a la trayectoria en dicho
+punto. 
+
+With regards to the acceleration vector, we note that 
+
+\begin{equation*}
+    \vec{a} = \vec{a}_t + \vec{a}_n
+\end{equation*}
+
+where $\vec{a}_t$ is the \textit{tangential acceleration} and $\vec{a}_n$ the
+normal acceleration. The tangential acceleration operates along the directoin of
+the velocity, affecting the speed of the object. Normal acceleration is
+perpendicular to velocity, and it afects the direction of the object. Objects
+moving in a straight line have a null normal acceleration, since their direction
+doesn't change. Objects moving in curvilinear fashion always have non-null
+normal acceleration (and hence non-null acceleration). 
+
+If the velocity is constant, such as in uniform circular motion, $\vec{a}_t = 0$
+and therefore $\vec{a}$ is purely orthogonal to the velocity. If velocity is
+not constant but changing, then $\vec{a}$ has a component along the velocity and
+it is not perpendicular to it.
+
+\pagebreak
+
+\section{Dinámica Newtoniana}
+
+There in this world are four fundamental forces: gravitational, electromagnetic,
+strong nuclear, and weak nuclear. The first two are the ones we experience in
+our daily lives. The strong and weak nuclear forces operate at the atomic level,
+and are not relevant to our discussion. 
+
+The gravitational force is an attractive force which operates between any two
+masses. The electromagnetic force operates between any two charged particles,
+and can be attractive or repulsive. We will discuss now the gravitational force.
+
+Formally, we define $\vec{F} = F_x \hat{i} + F_y \hat{j} + F_z \hat{k}$ to be a
+force. The unit of force is the Newton ($N$), which is defined as the force
+required to accelerate a mass of $1 kg$ at a rate of $1 m/s^2$.  
+
+Newton discovered fundamental laws of motion, which we summarize here: 
+
+\begin{shaded}
+    \textbf{Newton's First Law (Law of Inertia).} An object at rest remains at
+    rest, and an object in motion continues in motion with constant velocity,
+    unless acted upon by a net external force. 
+
+    \begin{equation}
+        \vec{F}_T = 0 \Rightarrow \vec{v} = \text{constant}
+    \end{equation}
+
+    \textbf{Newton's Second Law.} The net force acting on an object is equal to
+    the time rate of change of its momentum. If the mass of the object is
+    constant, this is equivalent to saying that the net force acting on an
+    object is equal to the product of its mass and its acceleration:
+
+    \begin{equation}
+        \vec{F}_{\text{T}} = m \vec{a}
+    \end{equation}
+
+    \textbf{Newton's Third Law.} If object $A$ exerts a force $\vec{F}$ on
+    object $B$, then $B$ exerts a force $-\vec{F}$ on $A$. In other words,
+    forces always come in pairs, equal in magnitude and opposite in direction.
+    
+\end{shaded}
+
+We know 
+
+\begin{equation*}
+    \vec{v} = \int \vec{a}(t) ~ dt + \vec{C}, \qquad \vec{r} = \int \vec{v}(t) ~
+    dt
+\end{equation*}
+
+Now, note that 
+
+\begin{equation*}
+    \vec{F}_T = F_{Tx}\hat{i} + F_{Ty} \hat{j}
+\end{equation*}
+
+and since $\vec{F}_T = m \vec{a}$
+
+\begin{equation*}
+    \vec{a} = \frac{ \vec{F}_T }{m} =  \frac{F_{Tx}\hat{i} + F_{Ty} \hat{j}}{m}
+    = a_x \hat{i} + a_y \hat{j}
+\end{equation*}
+
+Then 
+
+\begin{equation}
+    \vec{a} =  \frac{ \vec{F} }{m} = \frac{d^2 \vec{r}}{dt^2}
+\end{equation}
+
+Furthermore, 
+
+\subsection{Tipos de fuerzas}
+
+There are many types of forces, but we will discuss only a few. The MRU
+(movimiento rectilíneo uniforme) is a movement with no forces acting on the
+object. The MRUV (movimiento rectilíneo uniformemente variado) is a movement
+with a constant force acting on the object. 
+
+\begin{equation*}
+    \sum \vec{F} = 0 \Rightarrow \vec{v} = \text{constant}, \vec{a} = 0 \qquad \text{(MRU)}
+\end{equation*}
+
+\begin{equation*}
+    \vec{F} = \text{constant} \Rightarrow \vec{a} = \text{constant} = \vec{F}/m
+\end{equation*}
+
+The gravitatory force is an example of a constant force producing MRUV. 
+
+Another force is denote by tension (tensión). It is the force exerted by a rope,
+string, cable, etc. It is always directed along the rope, and it can be
+attractive or repulsive. The cable is assumed to be massless and inextensible.
+It transmits the same force throughout its length.
+
+Another force is the contact force (fuerza de contacto). It is the force exerted
+by a surface on an object in contact with it. It is always perpendicular to the
+surface. It is sometimes called the normal force. It is a rule that 
+
+\begin{equation*}
+    \vec{a} = 0 \implies \vec{N} + \vec{P} = 0
+\end{equation*}
+
+Another force is the elastic force (fuerza elástica). It is the force
+exerted by a spring when it is stretched or compressed. It is given by Hooke's
+law: 
+
+\begin{equation*}
+    \vec{F}_e = - k \Delta \vec{x} = -k (x - \ell_0)\hat{i}
+\end{equation*}
+
+where $k$ is the spring constant, and $\Delta \vec{x}$ is the displacement
+vector of the spring from its equilibrium position. The negative sign indicates
+that the force exerted by the spring is in the opposite direction to the
+displacement. 
+
+Another force is the centripetal force (fuerza centrípeta). It is the force
+that keeps an object moving in a circular path. It is always directed towards
+the center of the circle. 
+
+Another force is the gravitational force (fuerza gravitatoria). 
+It is the force exerted between two masses without contact. It is given by
+Newton's law of universal gravitation: 
+
+\begin{equation*}
+    \vec{F}_g = - G \frac{m_1 m_2}{r^2} \hat{r}
+\end{equation*}
+
+where $G$ is the gravitational constant, $m_1, m_2$ are the masses of the two
+objects, $r$ is the distance between them, and $\hat{r}$ is the unit vector
+pointing from one mass to the other. The negative sign indicates that the force
+is attractive. The force exerted by both objects is equal in magnitude and
+opposite in direction, in accordance with Newton's third law.
+
+
+
+
+
+
+
+
+
+
+
+
+\pagebreak
 
 
 \subsection{Excercises}
@@ -1858,25 +2073,91 @@ that $\vec{r}_x(t_0) = 25(t_0) = 75.9$. So the projectile hits the ground at
 
 $(e)$ Note that $\vec{v}(t_0) = (25, gt_0)^\top \approx (25, -29.3608)^\top$. The
 magnitude of the vertical component is the second component of the vector given.
+\pagebreak 
 
+\section{Movimiento circular}
 
+Es un movimiento en el plano cuya trayectoria es una circunferencia, o parte de
+ella. Es decir, es un movimiento que satisface 
 
+\begin{equation}
+    \left[ x(t) - x_0 \right]^2 + \left[ y(t) - y_0 \right]^2 = R^2
+\end{equation}
 
+con $(x_0, y_0)$ el centro de la circunferencia y $R$ su radio. Si el sistema de
+coordinadas tiene origen en el centro de la circunferencia, $x_0 = 0, y_0 = 0$ y 
+se obtiene
 
+\begin{equation}
+    x^2(t) + y^2(t) = R^2
+\end{equation}
 
+Usaremos esta convención. El vector posición $\vec{r}(t) = x(t) \hat{i} + y(t)
+\hat{j}$ se puede expresar en función del
+radio, que es constante, y el ángulo $\theta(t)$ que el vector forma con el eje 
+$x$: 
 
+\begin{equation}
+    \vec{r}(t) = R \left[ ( \cos \circ ~ \theta )(t) \hat{i} + (\sin \circ
+    ~ \theta)(t) \hat{j} \right] 
+\end{equation}
 
+De esto se sigue que $\left| \vec{r}(t) \right| = R$ (lo cual es gráficamente
+obvio). Derivando, obtenemos 
 
+\begin{equation}
+    \vec{v}(t) = R \frac{d\theta}{dt} \left[ - \sin\left( \theta(t)
+    \right)\hat{i} + \cos \left( \theta(t) \right) \hat{j} \right] 
+\end{equation}
 
+La derivada $\frac{d\theta}{dt}$ se denomina \textit{velocidad angular}, y se
+denota 
 
+\begin{equation*}
+    \omega(t) = \frac{d\theta(t)}{dt}
+\end{equation*}
 
+So we may write: 
 
+\begin{equation}
+    \vec{v}(t) = R \omega(t) \left[ -\sin(\theta(t)) \hat{i} + \cos(\theta(t))
+    \hat{j} \right]
+\end{equation}
 
+from which follows 
 
+\begin{equation}
+    \left| \vec{v}(t) \right| = R \left| \omega(t) \right|
+\end{equation}
 
+Again, if we write $\gamma(t) = d\omega(t) / dt$, 
 
+\begin{equation}
+    \vec{a}(t) = R \left[ \gamma(t) \left( -\sin(\theta(t)) \hat{i} + \cos(\theta(t))
+    \hat{j} \right) - \omega^2(t) \left( \cos(\theta(t)) \hat{i} + \sin(\theta(t))
+    \hat{j} \right)  \right]
+\end{equation}
 
+It can be proven that $\vec{r}(t) \cdot \vec{v}(t) = 0$, i.e. the position and
+velocity vectors are always perpendicular. This makes graphical sense but still
+is quite beautiful. Furthermore, it is also true that  with 
 
+\begin{equation*}
+    \hat{r}(t) = \cos(\theta(t))\hat{i} + \sin(\theta(t))\hat{j}, \qquad
+    \hat{u}(t) = - \sin(\theta(t))\hat{i} + \cos(\theta(t))\hat{j}
+\end{equation*}
+
+we have 
+
+\begin{equation}
+    \hat{r}(t) \cdot \hat{u}(t) = 0, \qquad \left| \hat{r}(t) \right| = 1,
+    \qquad \left| \hat{u}(t) \right| = 1
+\end{equation}
+
+In other words, $\hat{r}(t)$ and $\hat{u}(t)$ are orthonormal unit vectors. If
+one notes that $\hat{r}(t)$ is simply a normalized version of $\vec{r}(t)$, and 
+that $\hat{u}(t)$ is a normalized version of $\vec{v}(t)$, then it is clear that
+the previous result is just a "normalized" version of the previous one. 
 
 
 \pagebreak 
@@ -2071,7 +2352,9 @@ y a esto le denominamos fase inicial. Describe algo que sucede en el instante $t
 Los puntos exxtrmeos del movimiento, con distanca A, son donde la velocidad es
 cero. El punto de equilibrio es el punto donde la velocidad es máxima.   
 
-\subsection{Energía}
+\section{Energía}
+
+(Cap 7 Serway)
 
 La energía es la capacidad de un sistema para realizar un proceso (cambio).
 Matemáticamente, es un escalar independiente del tiempo. Un sistema puede ser un
@@ -2163,42 +2446,537 @@ izquierda, u directamente a la izquierda. Decimos entonces que la fuerza \textit
 Si $\theta = \frac{\pi}{2}$, es decir el ángulo es de 90 grados, el producto
 escalar es cero, y el trabajo es cero. La fuerza normal es un ejemplo.
 
+\subsection{Trabajo y energía cinética}
+
+Imaginemos un cuerpo con movimiento unidimensional en un riel $x$ entre dos
+posiciones $x_0, x_f$. En particlar, es movido por una fuerza $\vec{F}$ que no
+es totalmente paralela al riel, sino que tiene cierto ángulo (e.g. 45 grados o
+$\pi / 4$). Asumamos que dicha fuerza es constante.
+
+Dado que $\vec{F} = = F_x \hat{i} + F_y \hat{j} = m \vec{a}$, y que $\vec{a} = a
+\hat{i}$ (pues el movimiento es solo horizontal), ¿cuáles son las ecuaciones de
+movmiento del objeto? Well, 
+
+\begin{equation*}
+    F_x = m a, \qquad F_y + N - mg = 0
+\end{equation*}
+
+And since the force is constant, so is the acceleration factor $a$. It follows
+that $v = at + v_0, x = \frac{a}{2}t^2 + v_0 t + x_0$. 
+
+Now, 
+
+\begin{equation*}
+    v_f = at_f + v_0 \implies t_f = \frac{v_f - v_0}{a} 
+\end{equation*}
+
+Furthermore, 
+
+\begin{equation*}
+    x_f = x(t_f) = \frac{a}{2} t_f^2 + v_0 t_f + x_0
+\end{equation*}
+
+from which follows via algebraic manipulation that 
+
+\begin{equation}
+    x_f - x_0 = \frac{1}{2a}(v_f^2 - v_0^2)
+\end{equation}
+
+Now, equation $(1)$ may be expanded so that 
+
+\begin{equation*}
+    \Delta x a = \frac{1}{2}v_f^2 - \frac{1}{2}v_0^2
+\end{equation*}
+
+where $\Delta x = x_f - x_0$. But we know $F_x = am$ or rather $a = F_x / m$. So 
+
+\begin{equation}
+    \Delta x F_x / m = \frac{1}{2}v^2_f - \frac{1}{2}v_0^2
+\end{equation}
+
+Multiplying both sides by $m$, 
+
+\begin{equation}
+    \Delta x F_x = \frac{m}{2}v_f^2 - \frac{m}{2}v_0^2
+\end{equation}
+
+But $\Delta x F_x$ is the work. Now, we define $K = T = E_c$ the kinetic energy
+as $\frac{1}{2}mv^2$, which is a factor relating mass and velocity. In
+particular, 
+
+\begin{equation*}
+    K_0 = \frac{1}{2}mv_0^2 ~ ~ \left( \text{Initial kinetic energy} \right), \qquad
+    K_f = \frac{1}{2}m v_f^2 ~ ~ (\text{Final k.e.})
+\end{equation*}
+
+So equation $(3)$ is nothing but 
+
+\begin{equation}
+    W = K_f - K_0 = \Delta K
+\end{equation}
+
+In conclusion, the work invested by the forces is nothing but the variation or
+difference between the kinetic energies. (Note that here $W$ denotes  the total
+work, i.e. the sum of all works from all forces.)
+
+\begin{shaded}
+    \textbf{Summary.} The work identities are:
+
+    \begin{equation*}
+        W = \vec{F} \vec{\Delta x}, \qquad W = \int_{t_0}^{t_f} \vec{F} ~ d\vec{s}, \qquad K = \frac{1}{2}m \left| \vec{v}
+        \right|^2, \qquad W = \Delta K
+    \end{equation*}
+\end{shaded}
+
+\subsection{Trabajo de la fuerza del resorte}
+
+Assume we have a resorte $R$ with a mass $m$ at its end.  Assume the mass is at
+$x_0$, it reaches $x_f$, and its equilibrium point is $x_e < x_0$. Fix the
+coordinate system so that in the $x$-axis, $x_e$ corresponds to zero. Assume the
+mass is moving positively (to the right of the equilibrium). We want to study
+$W_R$, the work invested by the resorte on the mass. But we know that the force
+of the resorte is not constant, but it depends on the distance from the mass to
+the origin. From one of the work identities (see summary above),
+
+\begin{equation*}
+    W_R = \int_{x_0}^{x_f} \vec{F}_R(x) ~ d\vec{x}
+\end{equation*}
+
+We know $\vec{F_R} = -k x \hat{i}$ (Hooke). Since the movement is horizontal, 
+$d \vec{x} = dx \hat{ i}$. So 
+
+\begin{equation*}
+    W_r = \int_{x_0}^{x_f}(- k x \hat{i}) (dx ~ \hat{i}) = \int_{x_0}^{x_f} (-k
+    x) ~ dx
+\end{equation*}
+
+This is nothing but 
+
+\begin{equation*}
+-k \left( \frac{1}{2}x^2 \right)\Big]_{x_0}^{x_f}
+\end{equation*}
+
+which gives 
+
+\begin{equation}
+    W_R = k \frac{x_0^2}{2} - k \frac{x_f^2}{2}
+\end{equation}
+
+We see then that the work of a resorte depends only of the initial and final
+positions. Furthermore, if $x_0 = x_f$ then $W_R = 0$.
+
+\subsection{Trabajo de un agente externo sobre el resorte}
+
+Imagine an external agent (e.g. a hand) slowly stretching the resorte in the
+positive direction. Then $\vec{F_{\text{ext}}} = - \vec{F_R}$ implies 
+
+\begin{equation*}
+    W_{\text{ext}} = - W_R
+\end{equation*}
+
+In other words, the external force must oppose that of the resorte. 
+
+\subsection{Masa unida a un resorte en movimiento oscilatorio armónico}
+
+Now, at $x_0$ the velocity is $v_0$, at $x_f$ it is $v_f$. Recalling that 
+$W_R = \Delta K$, and 
+
+\begin{equation*}
+    k \frac{x_0^2}{2} - k \frac{x_f^2}{2} = \overbrace{K_f - K_0}^{\Delta K} = \frac{1}{2} m v_f^2 -
+    \frac{1}{2}m v_0^2
+\end{equation*}
+
+We can order this equation so that 
+
+\begin{equation*}
+    \frac{k}{2} x_0^2 + \frac{1}{2}m v_0^2 = \frac{k}{2}x_f^2 + \frac{1}{2}m
+    v_f^2
+\end{equation*}
+
+In other words, at the initial and the final state some things are the same.
+There is a conservation. Recalling that $\frac{1}{2}m v_0^2 = K_0,
+\frac{1}{2}mv^2_f = K_f$, we can define the \textit{potential energy}
+
+\begin{equation*}
+    U = \frac{k}{2}x^2
+\end{equation*}
+
+the equation above states that 
+
+\begin{equation}
+    E_0 = U_0 + K_0 = U_f + K_f = E_f
+\end{equation}
+
+where $E = U+ K$ is the mechanical energy. Since $E_0 = E_f$, we know the energy
+is conserved and the variation in energy is zero: $\Delta E = 0$.
+
+\begin{shaded}
+    \textbf{Summary}. 
+
+    \begin{align}
+        W_R &= \frac{k}{2}x_0^2 - \frac{k}{2} x_f^2 = U_0 - U_f = \Delta U\\ 
+        U &= \frac{1}{2} k x^2 + C, \qquad C = 0 \\ 
+        E &= U + K
+    \end{align}
+\end{shaded}
+
+
+\section{Fuerza gravitatoria}
+
+Think of a projectile shot with upward (purely vertical) movement. The only
+force presente comes from the projectile's weight $\vec{P}$. Let $y_0$ be the
+height at $t_0$, $y_f$ the height at time $t_f$. We know $\vec{P} = -mg
+\hat{j}$. Now, if $d\vec{y}$ is the displacement differential (instantaneous
+direction differential), $d\vec{y} = dy \hat{j}$.
+
+Now, 
+
+\begin{align*}
+    W_P 
+    &= \int_{y_0}^{y_f} \vec{P} ~ d \vec{y} \\ 
+    &= \int_{y_0}^{y_f} -mg ~ dy \\ 
+    &= -mg \int_{y_0}^{y_f} dy \\ 
+    &= -mg ~ y\Big]_{y_0}^{y_f} \\ 
+    &= -mg \left( y_f - y_0 \right)  \\ 
+    &= mgy_0 - mgy_f \\ 
+    &= mg \Delta y
+\end{align*}
+
+So the work of the force $\vec{P}$ in a projectile traveling upwards depends
+only on the initial and final positions.
+
+It just so happens that in tiro de proyectil the same happens. In a cycle, i.e.
+in any projectile shot s.t. $y_0 = f_y$, $W = 0$. This agains suggests a
+conservation of energy. In particular, if we define the potential gravitatory
+energy $U_G = mg y + C$, where we can safely impose $C = 0$ (since we can choose
+any coordinate system we like), 
+
+\begin{equation*}
+    W_P = U_0 - U_f = -\Delta U
+\end{equation*}
+
+Note that $\left[ U \right] = $ energy. Now, we may recall that $W_P = \Delta
+K$, i.e. 
+
+\begin{align*}
+    W_P 
+    &= K_f - K_0  \\ 
+   \Rightarrow ~ ~ U_0 - U_F &= K_f - K_0 \\ 
+   \Rightarrow ~ ~ U_0 + K_0 &= U_f + K_f
+\end{align*}
+
+Since $U + K$ is the energy, we found 
+
+\begin{equation}
+    E_0 = E_f
+\end{equation}
+
+once more. So gravitational energy is also conservative. Also note that since $E
+= U + K$,
+
+\begin{equation}
+    E = mgy + \frac{1}{2}m \left| \vec{v} \right|^2
+\end{equation}
+
+\section{Fuerzas conservativas y no conservativas}
+
+If there are only conservative forces involved, 
+
+\begin{equation*}
+    W = - \Delta U
+\end{equation*}
+
+where $U$ is the potential energy. And since $W = \Delta K$ (which holds in
+every situation),
+
+\begin{equation*}
+    - \Delta U = \Delta K \iff \Delta K + \Delta U = 0
+\end{equation*}
+
+And since we define $E = U + K$, this entails 
+
+\begin{equation*}
+    \Delta E = 0
+\end{equation*}
+
+i.e. the variation in energy is null (energy is conserved).
+
+
+But what happens if we have non-conservative forces? Well, the work will be the
+sum of the work invested by conservative and non-conservative forces, 
+
+\begin{equation*}
+    W = W_{\text{con}} + W_{\text{non-con}} = \Delta K
+\end{equation*}
+
+And since $W_{\text{con}} = -\Delta U$, as stated above, 
+
+\begin{equation*}
+    W = -\Delta U + W_{\text{non-con}} = \Delta K
+\end{equation*}
+
+This means 
+
+\begin{equation*}
+    W_{\text{non-con}} = \Delta K + \Delta U = \Delta(K + U) = \Delta E
+\end{equation*}
+
+In summary, 
+
+\begin{equation}
+    W_{\text{non-con}} = \Delta E
+\end{equation}
+
+Note that from this follows that if $W_{\text{non-con}} = 0$, then $\Delta E =
+0$ which is what we already knew.
 
 
 
 
 
+\pagebreak 
+
+\section{Problems}
+
+\subsection{Guía 2}
+
+\begin{shaded}
+    \textbf{(1)} A mass $A$ of $100$kg lies on a surface with inclination of
+    $30\degree$ with respect to the horizontal. There is no friction between the
+    mass and the surface. A rope $AB$ connects the mass to a pulley at the top
+    of the incline, parallel to the surface, and from there to a hanging mass
+    $P$ of unknown weight. Furthermore, there is a second rope $AC$ which is 
+    horizontal and connects the mass to a pole $C$ lying on top of place where
+    the inclination begins (i.e. to the left of the mass) and from which an
+    object $Q$ of 10kg hangs.  
+
+    $(a)$ Find the weight of $P$ knowing that the system is in equilibrium.
+
+    $(b)$ Find the reaction of the plain over block $A$.
+\end{shaded}
+
+$(a)$ Let $\vec{D}$ be the force pulling $A$ down the slope, $\vec{U}$ the force pulling $A$
+up the slope. It should be clear that $\vec{D} = \vec{W} + \vec{Q}$, where
+$\vec{W}$ is the force exerted by the weight of $A$ down the slope and $\vec{Q}$
+is the force exerted by the rope tying $A$ to mass $Q$. Let us fist study
+$\vec{W}$.
+
+\textbf{Gravity and weight.} Firstly, observe that 
+
+\begin{equation}
+    \vec{W} = -m_A g \hat{j} = -100g \hat{j}
+\end{equation}
+
+The unit vector up the slope $\hat{u}$ is
+
+\begin{equation}
+    \hat{u} = (\cos \ang{30}, \sin \ang{30})
+\end{equation}
+
+Thus, the component of gravity down the slope is 
+
+\begin{equation}
+    W_{\parallel}:= \vec{W} \cdot \vec{u} = -100g\sin \ang{30}
+\end{equation}
+
+\textbf{Mass $Q$}. Clearly, 
+
+\begin{equation}
+    Q = \vec{Q} = -m_Q\hat{g}i = -10g \hat{i}
+\end{equation}
+
+Thus, the projection of $\vec{Q}$ onto the slope is 
+
+\begin{equation}
+    Q_{\parallel} = \vec{Q} \cdot \vec{u} = -10g\cos\ang{30}
+\end{equation}
+
+Thus, we obtain the total force being exerted down the slope:
+
+\begin{equation}
+    \therefore D_{\parallel} = -10g\cos \ang{30} - 100g \sin\ang{30} =
+    -5\sqrt{3}g - 50g = -g(5\sqrt{3} + 50 )
+\end{equation}
+
+Since the system as at equilibrium, the component of $\vec{U}$ up the slope must
+exactly counter-act the component of $\vec{D}$ down the slope. So we know 
+
+\begin{equation}
+    \vec{U}_{\parallel} = g\left( 5\sqrt{3} + 50  \right) 
+\end{equation}
+
+But $\vec{U}$ operates only in direction parallel to the slope, from which
+readily follows that 
+
+\begin{equation}
+    m_P g = g\left( 5\sqrt{3} + 50  \right) \iff m_P = 5\sqrt{3}  + 50 \approx
+    58.66
+\end{equation}
+
+Thus, we have deduced that the mass of $P$ is approximately $58.66$kg.
+
+$(b)$ Since friction plays no role in our ideal scenario, the reaction of the
+plain over block $A$ is given purely by the normal vector $\vec{N}$. Since the
+object lies in equilibrium at the surface, the forces acting perpendicularly to
+the surface counterbalance each other. This forces are $\vec{W}$, $\vec{Q}$ and
+$\vec{N}$. 
+
+The unit vector in the direction of the normal vector (i.e. perpendicular to the
+slope) is 
+
+\begin{equation}
+    \hat{p} = (\cos \ang{120}, \sin \ang{120}) = \left( -\frac{1}{2}, 
+    \frac{ \sqrt{3} }{2}  \right) 
+\end{equation}
+
+So the components of $\vec{W}$ and $\vec{Q}$ perpendicular to the surface are 
+
+\begin{equation}
+    W_{\perp} = \vec{W} \cdot \vec{p} = \left( -m_Ag \right) 
+    \left( \frac{ \sqrt{3} }{2}  \right) = -50g\sqrt{3} 
+\end{equation}
+
+\begin{equation}
+    Q_{\perp} = \vec{Q} \cdot \vec{p} = \left( -m_Q g \right) \left(
+    -\frac{1}{2} \right) = 5g
+\end{equation}
+
+And since the system is at equilibrium, 
+
+\begin{equation}
+    W_{\perp} + Q_\perp + N = 0
+\end{equation}
+
+with $N$ the magnitude of the normral vector, from which follows 
+
+\begin{equation}
+    N = -W_{\perp} - Q_\perp = 50g\sqrt{3}  - 5g = g(50\sqrt{3} - 5 ) \approx
+    81.60g 
+\end{equation}
+
+where $\left[ 81.60 \right] = \text{kg}$ and $\left[ g \right] = \frac{m}{s^2}$.
+In conclusion, 
+
+\begin{equation}
+    \therefore N \approx ( 81.60 \times 9.8 )N = 800N
+\end{equation}
+
+\pagebreak 
+
+\begin{shaded}
+\textbf{(2)} A body of mass $m = 10 \,\text{kg}$ rests on a horizontal surface without friction. A person pulls the block with a rope attached to it in the horizontal direction with a force of magnitude $|\vec{F}| = 20 \,\text{N}$. Calculate the acceleration of the block, assuming the mass of the rope is negligible.
+\end{shaded}
+
+Newton's second law states that the total force exerted on an object is equal to
+its mass times its acceleration, i.e. 
+
+\begin{equation*}
+    \vec{F} = m \vec{a}
+\end{equation*}
+
+From this readily follows that 
+
+\begin{align*}
+    &\left| \vec{F} \right| = m \left| \vec{a} \right|  \\ 
+    \Rightarrow ~ ~ ~ &20N = 10\text{kg} \left| \vec{a} \right| 
+\end{align*}
+
+Since the object moves only in the horizontal direction, the $y$-component of
+the acceleration is null, and $\vec{a} = a_x \hat{i}$, from which readily follows
+that $\left| \vec{a} \right| = a_x $.
+
+\begin{equation*}
+    \therefore ~ ~ 20N = 10\text{kg} a_x
+\end{equation*}
+
+\begin{equation*}
+    \therefore a_x = \frac{20N}{10\text{kg}} = 2\frac{m}{s^2}
+\end{equation*}
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(3)} Consider a block of mass $M$ being pulled with force $\vec{F}$
+    applied through a rope of mass $m$. Assume friction is negligible and that
+    the rope is non-extensible. $(a)$ Compute the acceleration of the block-rope
+    system. $(b)$ Consider the diagram which has only the rope and verify that 
+    $F_{BC}/F = M / (M+m)$. Consider the case $m < <  M$
+
+\begin{tikzpicture}[>=stealth,thick]
+
+% Block on surface
+\draw[fill=white] (0,0) rectangle (1,1) node[midway] {$M$};
+\draw[fill=gray!50] (-1,-0.3) rectangle (5,0); % surface
+
+% Rope and force
+\draw (1,0.5) -- (4,0.5);
+\draw[->] (4,0.5) -- (5,0.5) node[midway,above] {$\vec{F}$};
+\node[above] at (2.5,0.5) {$m$};
+
+% Second diagram (forces on rope)
+\draw (0,-2) -- (4,-2);
+\draw[->] (4,-2) -- (5,-2) node[midway,above] {$\vec{F}$};
+\draw[<-] (-1,-2) -- (0,-2) node[midway,above] {$\vec{F}_{BC}$};
+
+\end{tikzpicture}
+\end{shaded}
 
 
+$(a)$ We know $\vec{F}/m = \vec{a}$, so if we consider the block-rope system 
+with mass $\phi = M + m$, 
 
 
+\begin{equation}
+  \vec{a} = \frac{\vec{F}}{\phi} 
+\end{equation}
 
+which is all we can say.
 
+$(b)$ The rope of mass $m$ receives two forces: $\vec{F}$, which pulls it to the
+right, and from Newton's third law $\vec{F}_{BC}$, which is the force exerted by 
+the block on the rope, and which pulls it to the left. So 
 
+\begin{equation}
+    \vec{F} + \vec{F}_{BC} = m \vec{a}
+\end{equation}
 
+But we know
 
+\begin{equation}
+    a = \frac{F}{M + m}
+\end{equation}
 
+So 
 
+\begin{equation}
+    F + F_{BC} = m \frac{F}{M + m}
+\end{equation}
 
+from which follows that 
 
+\begin{equation}
+    F_{BC} = F - \frac{mF}{M + m}  = F\left(1 - \frac{m}{M + m} \right)
+\end{equation}
 
+But 
 
+\begin{equation}
+    1 - \frac{m}{M + m}  = \frac{M+m}{M + m} - \frac{m}{M + m}  = \frac{M}{M + m}
+\end{equation}
 
+So we have 
 
+\begin{equation}
+    F_{BC} = F\left( \frac{M}{M+m} \right) 
+\end{equation}
 
+from which follows that 
 
+\begin{equation}
+    F_{BC}/F = M / (M+m)
+\end{equation}
 
-
-
-
-
-
-
-
-
-
-
-
+\textit{QED}.
 
 
 \end{document}
