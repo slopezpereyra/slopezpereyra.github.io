@@ -43,7 +43,7 @@
 \usepackage{hyperref}
 \counterwithin*{equation}{section}
 \counterwithin*{equation}{subsection}
-
+\usetikzlibrary{angles,quotes,calc,positioning}
 
 \begin{document}
 
@@ -2977,6 +2977,806 @@ from which follows that
 \end{equation}
 
 \textit{QED}.
+
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(4)} An 8kg block $A$ lies on an incline of angle $\alpha =
+    \ang{37}$ without friction. It is joined through a rope and polley without
+    friction to a block $B$ of mass $m_B = 4$kg. Determine $\vec{a}$ the
+    acceleration of the masses and the tension of the ropes when the system is
+    left to evolve freely. Create a diagram of the isolated body.
+\end{shaded}
+
+The mass $A$ moves only up/down the surface. So if we let $\hat{u}$ be the unit
+vector parallel and equidirectional to the surface, 
+
+\begin{equation}
+    \sum \vec{F_A} = m_A \vec{a_A} = m_A a_A \hat{u}
+\end{equation}
+
+Similarly, 
+
+\begin{equation}
+    \sum \vec{F_B} = m_B \vec{a_B} = m_B a_B \hat{j}
+\end{equation}
+
+This entails that, in magnitude, 
+
+\begin{equation}
+    \left| \sum \vec{F_A} \right|  = m_A a_A, \qquad \left| \sum \vec{F_B}
+    \right| = m_B a_B
+\end{equation}
+
+But since the objects move under equal and opposite accelerations, $a_A = -a_B$.
+So if we define $a := a_A$ as the acceleration of $A$, equation $(25)$ becomes 
+
+\begin{equation}
+    \left| \sum \vec{F_A} \right|  = m_A a, \qquad \left| \sum \vec{F_B}
+    \right| = m_B (-a)
+\end{equation}
+
+Now, let $\theta$ be the angle between $\hat{u}$ and $\vec{W}$ the weight vector
+of $A$. Then the projection of $\vec{W}$ along the surface is $W_{\parallel} =
+-m_A g \cos \theta$. And since this and the tension of the rope are the only
+forces moving $A$ along the surface, we have 
+
+\begin{equation}
+    \left|\sum \vec{F_A} \right| = W_{\parallel} + T = -m_A g \cos \theta + T
+\end{equation}
+
+Similar reasoning gives that 
+
+\begin{equation}
+    \left|\sum \vec{F_B}  \right| = -m_B g + T
+\end{equation}
+
+So, combining these last two results with equation $(26)$,
+
+\begin{equation}
+    T - m_A g \cos \theta = m_A a, \qquad T - m_B g = m_B (-a)
+\end{equation}
+
+Solving $T$ in one of these equations and substituting it into the other, with
+$\theta = \ang{90} - \ang{37} = \ang{53}$, $m_A = 8\text{kg}, m_B = 4\text{kg}$,
+one readily obtains after a bit of algebra that 
+
+\begin{equation}
+    a \approx -0.665 \frac{m}{s^2}
+\end{equation}
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(5)} Dos bloques de masas $m_1$ y $m_2$ están en contacto sobre una mesa
+    sin rozamiento. Una fuerza horizontal $\vec{F}$ se aplica sobre el primer
+    bloque.
+
+(a) Encuentre la aceleración del sistema y la fuerza de contacto entre los dos
+bloques. Evaluar para el caso que $m_1 = 2\text{kg}, m_2 = 1\text{kg}$ y $\left|
+\vec{F} \right| = 3N $. 
+
+(b) Muestre que si la misma fuerza $\vec{F}$ se aplica en sentido contrario, es
+decir sobre $m_2$ en lugar de $m_1$, la fuerza de contacto será distinta.
+Explique realizando un diagrama de cuerpo aislado.
+\end{shaded}
+
+$(a)$ Considering the two blocks as a system, the mass of the system is $m_1 + m_2$,
+so 
+
+\begin{equation}
+    F = (m_1 + m_2)a \Rightarrow a = \frac{F}{m_1 + m_2}
+\end{equation}
+
+If $m_1 = 2\text{kg}, m_2 = 1\text{kg}$ and $\left| \vec{F}\right| = 3N$,we have 
+
+\begin{equation}
+    a = \frac{3N}{3\text{kg}} = 1\frac{m}{s^2}
+\end{equation}
+
+Consider the lone body diagram of $m_2$. The only force exerted on this body is
+the contact force $F_c$, so the magnitude of its acceleration is equal to the
+magnitude of this force. But its acceleration is equal to the acceleration of
+the system (would it make sense for the second block to accelerate at a
+different rate than the system?) In short,
+
+\begin{equation}
+    F_c = m_2 a = \frac{F m_2}{m_1 + m_2} 
+\end{equation}
+
+$(b)$ By the same reasoning as before, if the force were applied leftwards onto
+$m_B$, the contact force would be the only thing moving $m_A$, so that 
+
+\begin{equation}
+    F_C = m_1 a \neq m_2 a
+\end{equation}
+
+at least as long as $m_1 \neq m_2$.
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(6)} A ball of mass $m = 10\text{kg}$ hangs from a rope on the roof
+    of a car. The maximum tension which the rope can take without breaking is
+    $500N$. What is the maximal horizontal acceleration which the car can recah
+    without the rope breaking? Determine the angle between the rope and the
+    vertical for that maximal acceleration.
+\end{shaded}
+
+The forces operating on the ball are its weight, which pulls it downard (
+$\vec{W} = W \hat{j}$), and the tension of the rope. From Newton's second law, 
+
+\begin{align*}
+    \vec{W} + \vec{T} &= m \vec{a} \\ 
+    \Rightarrow \vec{T} &= m\vec{a} - \vec{W} \\ 
+                        &= ma
+    \hat{i} - W \hat{j}
+\end{align*}
+
+(since acceleration is strictly horizontal). Furtheremore, we know 
+
+\begin{equation*}
+    W = -g10 \text{kg} = -9.8 \frac{m}{s^2} \cdot 10\text{kg} = -98N
+\end{equation*}
+
+We are interested in the acceleration which breaks the rope, i.e. which causes a
+tension superior to 500$N$. The tension of the rope is 
+
+\begin{align*}
+    \left| \vec{T} \right| 
+    &= \sqrt{(ma)^2 + W^2} \\ 
+    &= \sqrt{100\text{kg}^2 a^2 + 98^2N^2} \\ 
+    &= \sqrt{100\text{kg}^2 a^2 + 9604N^2}
+\end{align*}
+
+So to find the acceleration which causes the tension to be $500N$, we solve
+
+\begin{align*}
+    &500N = \sqrt{100\text{kg}^2 a^2 + 9604N^2} \\ 
+    \iff &500^2 N^2 = 100\text{kg}^2 a^2 + 9604N^2 \\ 
+    \iff &a = 49.03 \frac{m}{s^2}
+\end{align*}
+
+as it is easy to see algebraically. So, the rope breaks if $a \geq 49.03$,
+meaning that the rope will not break if the acceleration lies in the open
+interval $a < 49.03$. This interval has $49.03$ as supremum, but has no maximum.
+
+$(b)$ The angle between the tension vector $\vec{T}$ and the horizontal is 
+
+\begin{equation*}
+    \arctan\left( \frac{T_y}{T_x} \right) 
+\end{equation*}
+
+We know $\vec{T} = ma \hat{i} - W \hat{j} = 10\text{kg} a - 98N \hat{j}$. Taking
+the maximal acceleration $a = 49.03 m / s^2$, we have $\vec{T} = 490.3N \hat{i}
+- 98N \hat{j}$. So the angle between the tension vector and the horizontal is 
+
+\begin{equation*}
+    \arctan\left( \frac{98N}{490.3N} \right) = 0.197\text{rad}
+\end{equation*}
+
+Now, the angle between $\vec{T}$ and the vertical will be $\ang{90} =
+\frac{\pi}{2}\text{rad}$ minus the angle between $\vec{T}$ and the horizontal.
+So the angle between $\vec{T}$ and the vertical is 
+
+\begin{equation}
+    \frac{\pi}{2}\text{rad} - 0.197\text{rad}= 1.37379633\text{rad}
+\end{equation}
+
+\pagebreak 
+
+
+\begin{shaded}
+\textbf{Problem 7.} Three blocks of masses $m_1$, $m_2$, and $m_3$ are connected by strings that sustain tensions $\vec{T}_1$ and $\vec{T}_2$ on a frictionless table. They are pulled by a string attached to $m_3$ with a tension $|\vec{T}_3| = 60~\mathrm{N}$. The strings are massless and inextensible.
+
+\begin{enumerate}
+    \item[(a)] Find $\vec{T}_1$ and $\vec{T}_2$ as functions of the block masses.
+    \item[(b)] Evaluate (a) for the particular case $m_1 = 20~\mathrm{kg}$, $m_2 = 20~\mathrm{kg}$, and $m_3 = 30~\mathrm{kg}$.
+    \item[(c)] Repeat (a) and (b) for the case of vertical motion.
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.0]
+    % Draw the table
+    \draw[thick, fill=gray!30] (-0.5,0) rectangle (8,0.3);
+
+    % Draw blocks
+    \draw[thick, fill=white] (0,0.3) rectangle (1,1.3) node[midway] {$m_1$};
+    \draw[thick, fill=white] (2,0.3) rectangle (3,1.3) node[midway] {$m_2$};
+    \draw[thick, fill=white] (4,0.3) rectangle (5,1.3) node[midway] {$m_3$};
+
+    % Draw strings and tensions
+    \draw[thick] (1,0.8) -- (2,0.8) node[midway, above] {$\vec{T}_1$};
+    \draw[thick] (3,0.8) -- (4,0.8) node[midway, above] {$\vec{T}_2$};
+    \draw[->, thick] (5,0.8) -- (6,0.8) node[midway, above] {$\vec{T}_3$};
+\end{tikzpicture}
+\end{center}
+
+
+\end{shaded}
+
+$(a)$ As always, let us ask: what are the forces at work on each body? The mass
+$m_1$ is affected only by $\vec{T_1}$, so
+
+\begin{equation}
+    \vec{T_1} = m_1a 
+\end{equation}
+
+The mass $m_2$ is affected by $\vec{T_2}$, which pulls it to the right, and
+$\vec{T_1}$, which pulls it to the left, so 
+
+\begin{equation}
+    \vec{T_2} - \vec{T_1} = m_2 a
+\end{equation}
+
+By the same logic, 
+
+\begin{equation}
+    \vec{T_3} - \vec{T_2} = m_3 a
+\end{equation}
+
+From $(38)$ we have 
+
+\begin{equation}
+    \vec{T_3} - m_3a = \vec{T_2} \iff 60N - m_3a = \vec{T_2}
+\end{equation}
+
+Substituting this into $(37)$, we have 
+
+\begin{equation}
+    60 N - m_3 a - \vec{T_1} =m_2 a \iff 60N - m_3a - m_2 a = \vec{T_1}
+\end{equation}
+
+Substituting into $(36)$,
+
+\begin{equation}
+    60N - m_3 a - m_2a = m_1 a \iff \frac{ 60N }{m_1 + m_2 + m_3} = a
+\end{equation}
+
+Now that we have determined the acceleration $a$ as a function of the masses, 
+we have 
+
+\begin{align*}
+    T_1 &= \frac{m_1 60N}{m_1 + m_2 + m_3} \\ 
+    T_2 &= m_2a + T_1 \\ 
+        &= \frac{60Nm_2}{m_1 + m_2 + m_3} + \frac{m_1 60N}{m_1 + m_2
+    + m_3} \\ 
+        &= 60N \frac{m_1 + m_2}{m_1 + m_2 + m_3}
+\end{align*}
+
+
+
+
+\pagebreak 
+
+\begin{shaded}
+\textbf{(9)} A block of mass $m$ slides on the floor while a force of magnitude
+$|\vec{F}| = 12~\mathrm{N}$ pulls it at an angle $\theta$ with the horizontal.
+The coefficient of kinetic friction is $0.4$. The angle $\theta$ can vary
+between $0^\circ$ and $90^\circ$, and the block always remains on the floor.
+What is the angle $\theta$ that gives the maximum acceleration?
+\end{shaded}
+
+The forces acting on the mass are the normal force, its weight (gravity),
+$\vec{F}$ and the dynamic friction $\vec{F}_{r.d.}$. Since the object moves only
+horizontally, $\vec{a} = a \hat{i}$. So by Newton's second law, 
+
+\begin{equation*}
+    \vec{W} + \vec{N} + \vec{F} + \vec{F}_{r.d.} = m a \hat{i}
+\end{equation*}
+
+from which follows 
+
+\begin{equation}
+    F_{\parallel} + F_{r.d.} = ma
+\end{equation}
+
+where $F_\parallel$ is the projection of $F$ parallel to the $x$-axis. We know
+$F_{r.d.} = \mu \left| \vec{N} \right| $ where $\mu$ is the dynamic frictoin
+coefficient. So we obtain
+
+\begin{equation}
+    \left| \vec{F} \right| \cos \theta + \mu_{r.d.} \left| \vec{N} \right| = ma
+\end{equation}
+
+Using the information of the exercise, this gives 
+
+\begin{equation}
+    12N \cos \theta + 0.4 \left| \vec{N} \right|  = ma
+\end{equation}
+
+We must know determine the magnitude of $\vec{N}$, the vertical forces at play.
+These are $(a)$ the force that opposes gravity, of magnitude equal to that of
+gravity, and the vertical component of $\vec{F}$, which we term $F_\parallel$.
+So 
+
+\begin{equation}
+    \left| \vec{N} \right| = N = gm_A + 12N \sin \theta
+\end{equation}
+
+In conclusion, 
+
+\begin{equation}
+    12N \cos \theta + \mu\left( g m_A + 12N \sin \theta \right)  = ma
+\end{equation}
+
+Rearranging, 
+
+\begin{equation}
+    a = \frac{12N(\cos \theta + \mu\sin \theta) + \mu gm_A}{m}
+\end{equation}
+
+This will of course be maximized when $\varphi(\theta) = \cos \theta +
+\mu \sin \theta$ is maximized, under the constraint $0 \leq \theta \leq
+\pi / 2$. The derivative of $\varphi$ is 
+
+\begin{equation}
+    \varphi'(\theta) = -\sin \theta + \mu \cos \theta
+\end{equation}
+
+and this derivative is zero if and only if $\sin \theta = \mu \cos
+\theta$, which holds if and only if $\frac{\sin \theta}{\cos \theta} = \mu$, or
+equivalently $\tan \theta = \mu$. But this holds if and only if 
+$\arctan \mu = \theta$. With $\mu = 0.4$, we obtain $\theta \approx 0.380$.
+
+$\therefore $ Acceleration is maximized if $\theta \approx 0.380 \text{rad}
+\approx \ang{21.77}$.
+
+
+\pagebreak 
+
+\begin{shaded}
+\textbf{10.} Two masses $m_A$ and $m_B$ slide down an inclined plane, connected
+by a massless rope, where $m_A$ pulls $m_B$. The inclination angle is $\alpha$.
+The coefficient of kinetic friction between $m_A$ and the plane is $\mu_A$, and
+between $m_B$ and the plane is $\mu_B$.  
+
+\begin{enumerate}
+    \item[(a)] Find an expression for the tension $\vec{T}$ in the rope that connects $m_A$ and $m_B$, expressed in terms of the problem variables.
+    \item[(b)] Find an expression for the acceleration $\vec{a}$ that both bodies have.
+    \item[(c)] How do the answers change if instead $m_B$ pulls $m_A$?
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+  % Inclined plane
+  \draw[thick] (0,0) -- (4,0);
+  \draw[thick] (0,0) -- (4,2);
+  \draw[thick] (4,0) -- (4,2);
+
+  % Blocks
+  \draw[fill=black!20] (1.6,0.8) rectangle (2.2,1.4) node[pos=.5] {A};
+  \draw[fill=black!20] (2.6,1.3) rectangle (3.2,1.9) node[pos=.5] {B};
+
+  % Rope
+  \draw[thick] (2.2,1.1) -- (2.6,1.6);
+
+  % Inclination angle
+  \draw (0.6,0) arc[start angle=0,end angle=26.565,radius=0.6];
+  \node at (0.9,0.2) {$\alpha$};
+\end{tikzpicture}
+\end{center}
+\end{shaded}
+
+Object $A$ is affected by gravity, the normal force, the tension of the
+rope, and friction:
+
+\begin{equation*}
+    \sum \vec{F_A} = \vec{T}_A + \vec{N}_A + \vec{W}_A + \vec{R}_A = m_A \vec{a}
+\end{equation*}
+
+Let us decompose these forces into components parallel and perpendicular to the
+slope. Let $\hat{x'}, \hat{j'}$ be the unit vectors parallel and perpendicular
+to the slope, with $\hat{x'}$ going up the slope and $\hat{j}$ with the same
+direction as $\vec{N}$.
+
+(Weight.) The angle between $\vec{W_A}$ and $\hat{x}'$ is $\frac{\pi}{2} -
+\alpha$, so we readily know that 
+
+\begin{equation}
+    W_{A \parallel } = -m_A g \sin \alpha, \qquad W_{A \perp} = -m_A g \cos \alpha
+\end{equation}
+
+(Normal.) The normal force will be strictly perpendicular to the incline and
+will counteract gravities force:
+
+\begin{equation}
+    N_{A \parallel } = 0, \qquad N_{A \perp} = m_A g \cos \alpha
+\end{equation}
+
+(Friction.) Friction is parallel to the slope and contrary to the direction of
+movement, so it will be directed up the slope. Thus, 
+
+\begin{equation}
+    R_{A \parallel} = \mu_A \left| \vec{N} \right| = \mu_A m_A g \cos \alpha,
+    \qquad R_\perp = 0
+\end{equation}
+
+(Tension.) The tension also has a null perpendicular component, acting only
+parallel to the surface. For object $A$, the tension of the rope acts up the
+slope and towards object $B$. And from our previous results, it follows  that 
+
+\begin{align}
+    &T_{\parallel } + N_{A \parallel } + W_{A \parallel } + R_{A \parallel } = m_A a\\ 
+    \iff ~ ~ ~ 
+    &T_{\parallel} - m_A g \sin \alpha + \mu_A m_A g \cos \alpha = m_A
+    a\nonumber\\
+    \iff ~ ~ ~& T_{\parallel } = m_A a + m_A g \sin \alpha - \mu_A m_A g \cos
+    \alpha\nonumber
+\end{align}
+
+Note that we do not write $T_{A \parallel}$ but simply $T_\parallel$, since the
+tension is equal in absolute value for $A$ and $B$, i.e. we may define
+$T_\parallel := T_{A \parallel}$ and then simply $T_{B \parallel} =
+-T_\parallel$.
+
+Now, the same results follow for object $B$, but of course with its own mass and
+friction coefficient. So
+
+\begin{align}
+    &-T_\parallel + N_{B \parallel} + W_{B \parallel} + R_{B \parallel} = m_B
+    a \\ 
+    \iff ~ ~ ~ 
+    &-T_\parallel - m_B g \sin \alpha + \mu_B m_B g \cos \alpha = m_B a
+    \nonumber
+\end{align}
+
+If we add $(52)$ and $(53)$, we see that $T$ disappears and we obtain an
+equation with only $a$ unknown: 
+
+\begin{align*}
+    &\text{Eq. (52)} + \text{Eq. (53)} \\ 
+    \Rightarrow~ ~ ~  
+    & ( N_{A\parallel} + W_{A \parallel} + R_{A \parallel} ) + (N_{B \parallel} +
+    W_{B \parallel} + R_{B \parallel} )= a(m_A + m_B) \\ 
+    \Rightarrow~ ~ ~ 
+    & \left( 
+        -m_A g \sin \alpha - m_B g \sin \alpha
+    \right) + 
+    \left( 
+        \mu_A m_A g \cos \alpha + \mu_B m_B g \cos \alpha
+    \right) = a(m_A + m_B) \\ 
+    \Rightarrow ~ ~ ~ 
+    &\left( -g\sin \alpha (m_A + m_B) \right) + 
+    \left( g \cos \alpha (m_A \mu_A + m_B \mu_B) \right) = a(m_A + m_B) \\ 
+    \Rightarrow ~ ~ ~ 
+    &-g \sin \alpha + g \cos \alpha ~ \frac{m_A \mu_A + m_B \mu_B}{m_A + m_B} = a
+\end{align*}
+
+Now that we know $a$, we may substitute it in the simplified form of equation
+$(52)$ to obtain an expression of $T_\parallel =: T$ in terms of the problem
+variables: 
+
+\begin{align*}
+    &T = m_A a + m_A g \sin \alpha - \mu_A m_A g \cos \alpha \\ 
+    \iff ~ ~ ~ 
+    &T = m_A \left( a + g \sin \alpha - \mu_A g \cos \alpha \right) \\ 
+    \iff ~ ~ ~ 
+    &T = m_A 
+    \left( 
+        -g \sin \alpha + \frac{m_A \mu_A + m_B \mu_B}{m_A + m_B}g \cos \alpha
+    + g \sin \alpha - \mu_A g \cos \alpha\right) \\ 
+    \iff ~ ~ ~ 
+    &T = m_A g \cos \alpha
+    \left( \frac{m_A \mu_A + m_B \mu_B}{m_A + m_B} - \mu_A \right) \\
+    \iff ~ ~ ~ 
+    &T = m_A g \cos \alpha
+    \left( \frac{m_A \mu_A + m_B \mu_B - \mu_A(m_A + m_B)}{m_A + m_B}
+    \right)\\
+    \iff ~ ~ ~ 
+    &T = m_A g \cos \alpha
+    \left( \frac{m_A \mu_A + m_B \mu_B - m_A \mu_A - m_B \mu_A}{m_A + m_B}
+    \right)\\ 
+    \iff ~ ~ ~ 
+    &T = m_A g \cos \alpha
+    \left( \frac{m_B(\mu_B - \mu_A)}{m_A + m_B}
+    \right)\\ 
+    \iff ~ ~ ~ 
+    &T =g \cos \alpha  ~ \frac{m_A m_B( \mu_B - \mu_A )}{m_A + m_B}
+\end{align*}
+
+\pagebreak 
+
+
+\begin{shaded}
+\textbf{11.} The spring of a laboratory dynamometer has been stretched 
+$11.7 \, \text{cm}$ at the maximum scale, which corresponds to $2 \, N$.
+
+\begin{enumerate}[label=(\alph*)]
+    \item What is the spring constant of the spring with which the dynamometer 
+    has been manufactured?
+    \item How much will it stretch when a force 
+    $\lvert \vec{F} \rvert = 0.4 \, N$ is applied to it?
+\end{enumerate}
+\end{shaded}
+
+Sea $k$ la constante del resorte. Sabemos que la fuerza del resorte es 
+
+\begin{equation}
+    \vec{F_k} = -k \Delta \ell
+\end{equation}
+
+donde $\ell$ es la distancia entre el extremo y la posición de equilibrio. Ahora
+bien, sabemos además que si $\delta \ell = 11.7$cm la fuerza se corresponde con 
+$2N$, es decir que bajo este supuesto
+
+\begin{equation}
+    N + W + F_k = 2N
+\end{equation}
+
+Pero asumimos que $\vec{N} + \vec{W} = 0$, con lo cual $F_k = 2N$, i.e. 
+
+\begin{equation}
+    k(11.7 \text{cm}) = 2N
+\end{equation}
+
+Por lo tanto, 
+
+\begin{align*}
+    k 
+    &= \frac{2N}{11.7\text{cm}} \\ 
+    &= \frac{2}{11.7} \frac{\text{kg} \cdot
+    ms^{-2}}{cm} \\ 
+    &=\frac{2}{0.117} \frac{N}{m}
+\end{align*}
+
+\pagebreak 
+
+\begin{shaded}
+\textbf{Problema 12.}  
+Dos resortes de longitudes naturales $L_0 = 0.5 \, \text{m}$ pero con diferentes constantes 
+elásticas, $K_1 = 50 \, \text{N/m}$ y $K_2 = 100 \, \text{N/m}$, se encuentran colgados del 
+techo. Un cuerpo de masa $m = 2.5 \, \text{kg}$ que inicialmente está suspendido de ellos es 
+estirado hacia abajo hasta que la longitud de los resortes se duplica. ¿Cuál es la aceleración 
+$\vec{a}$ que adquiere el cuerpo cuando se deja libre? \\[1em]
+
+% --- TikZ Diagram ---
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+
+% Ceiling
+\draw[fill=black!70] (-2,0) rectangle (2,0.3);
+
+% Springs
+\draw[decoration={coil,aspect=0.3,segment length=3mm,amplitude=2mm},decorate] (-1.2,0) -- (-1.2,-2);
+\draw[decoration={coil,aspect=0.3,segment length=3mm,amplitude=2mm},decorate] (1.2,0) -- (1.2,-2);
+
+% Labels for springs
+\node[left] at (-1.2,-1) {$K_1$};
+\node[right] at (1.2,-1) {$K_2$};
+
+% Mass block
+\draw[fill=black!30] (-1.5,-2) rectangle (1.5,-3.5);
+\node at (0,-2.75) {$m$};
+
+\end{tikzpicture}
+\end{center}
+\end{shaded}
+
+The acceleration of the body is strictly vertical, i.e. $\vec{a} = a \hat{j}$
+for some $a \in \mathbb{R}$. Both springs will exert a force on the object, and
+this force will also be strictly vertical. In particular, the forces acting on
+the body when it is at a distance $\Delta \ell$ from the point of equilibrium
+are 
+
+\begin{equation*}
+    \vec{F_1} = -K_1 \Delta \ell ~ \hat{j}, \qquad \vec{F_2} = -K_2 \Delta \ell
+    ~ \hat{j}, \qquad \vec{W} =
+    -gm ~ \hat{j}
+\end{equation*}
+
+It follows that 
+
+\begin{align*}
+    &-K_1 \Delta \ell - K_2 \Delta \ell - gm = ma \\ 
+    \Rightarrow 
+    &-\Delta \ell(K_1 + K_2) - gm = ma \\
+    \Rightarrow 
+    &-\Delta \ell(150 \text{N / m}) - gm = ma \\
+\end{align*}
+
+Since in the conditions described the length of the springs is doubled, going
+from $0.5\text{m}$ to $1\text{m}$, the mass will be at a distance of
+$-0.5\text{m}$ from its resting position. So we will have 
+
+\begin{align*}
+    &\frac{1}{2}\text{m} \left( 150 \text{N/m} \right)  - gm = ma \\ 
+    \Rightarrow ~ ~ ~
+    &75N - gm = ma \\ 
+    \Rightarrow ~ ~ ~ 
+    &\frac{75N}{2.5\text{kg}} - g = a \\ 
+    \Rightarrow ~ ~~ 
+    &30ms^{-2} - 9.8 ms^{-2} = a
+\end{align*}
+
+So $a = 20.2 ms^{-2}$.
+
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(13)} A spring with constant $k$ has an extreme fixed adn the other
+    coinciding with coordinate $x_0$ when there is nodeformation. A mass $m$
+    lies at this extreme, is displaced to position $x_1$, and let go from that
+    position. Assume $k = 8 \text{N/m}$, $m = 2\text{kg}, x_0 = 40\text{cm}, x_1
+    = 55\text{cm}$. 
+
+    $(a)$ Determine $x(t), v(t), a(t)$ and plot them. 
+
+    $(b)$ Determine the period, frequency, and extreme coordinates of the
+    movement, as well as the module of the velocity of $m$, at the point of
+    equilibrium.
+\end{shaded}
+
+Recordemos que
+
+\begin{equation*}
+    a(t) = -\omega^2 x(t), \qquad v(t) = \omega A \cos(\omega t + \phi), \qquad
+    x(t) = x_0 + A \sin(\omega t + \phi)
+\end{equation*}
+
+con $\omega = \sqrt{k / m}$ y con $x(t)$ el desplazamiento de la masa, en el
+tiempo $t$, respecto a la posición de equilibrio. Dado que $x(0) = x_1, v(0) =
+0$, tenemos 
+
+\begin{equation*}
+    \omega A \cos(\phi) = 0, \qquad A \sin(\phi) = x_1 - x_0
+\end{equation*}
+
+Como $x_1 \neq 0$, tenemos que $A \neq 0, \sin(\phi) \neq 0$, de lo cual se
+sigue que $\phi \neq 0$. Por ende, en la ecuación $\omega A \cos(\phi) = 0$,
+dado que $\omega \neq 0$, debe satisfacerse $\cos(\phi) = 0$, es decir $\phi =
+\frac{\pi}{2}$. Usando este resultado en la ecuación de la derecha, vemos que 
+
+\begin{equation*}
+    A \sin\left( \frac{\pi}{2} \right) = x_1 - x_0 \iff A = x_1 - x_0 =
+    15\text{cm}
+\end{equation*}
+
+Tomando 
+
+\begin{equation*}
+    \omega = \sqrt{\frac{k}{m}}  = \sqrt{\frac{8\text{N}}{2\text{kg m}}} =
+    2\frac{ms^{-1}}{m} = 2s^{-1}
+\end{equation*}
+
+obtenemos 
+
+\begin{equation*}
+    x(t) = 40\text{cm} + 15\text{cm}\sin\left( 2s^{-1} \cdot t + \frac{\pi}{2} \right) 
+\end{equation*}
+
+
+\begin{equation*}
+    a(t) = 2s^{-1} \cdot 15\text{cm} \cdot \cos \left( 2s^{-1} \cdot t +
+    \frac{\pi}{2} \right) 
+\end{equation*}
+
+etc. Simplificar unidades (e.g. $a(t)$ queda todo en cm sobre segundos, etc.)
+
+$(b)$ El periodo es $T = \frac{2\pi}{\omega} = \frac{2\pi}{2s^{-1}} =
+\pi\text{s}$. La frequencia es la inversa del periodo, i.e. $F =
+\frac{1}{\pi\text{s}} \frac{1}{\pi}\text{Hz}$.
+
+\pagebreak 
+
+\section{P3}
+
+
+\begin{shaded}
+\textbf{1.} Una masa pequeña se coloca en el extremo de una cuerda de largo 
+$L = 132 \, \text{cm}$ y se suelta desde el reposo, siendo $\theta_A = 5$ 
+(posición A). Sabiendo que $d = 66 \, \text{cm}$, determinar:
+
+\begin{enumerate}[label=(\alph*)]
+    \item El valor de la velocidad en el punto más bajo de la trayectoria 
+    (posición B).
+    \item El valor de $\theta_C$ para la máxima altura que alcanza la masa 
+    (posición C).
+    \item La tensión de la cuerda en la posición B.
+\end{enumerate}
+
+
+\end{shaded}
+
+En el sistema de coordenadas que elegí, 
+
+\begin{equation*}
+    A 
+    &= L \cos \theta ~ \hat{i} + L \sin \theta ~ \hat{j}, \qquad B = L \cos \theta
+    ~ \hat{i}
+\end{equation*}
+
+La distancia vertical en el espacio físico se corresponde con la distancia
+horizontal en mi sistema de coordenadas, y se obtiene que la distancia vertical
+(física) entre $A$ y $B$ es 
+
+\begin{equation}
+    \Delta h = B_x - A_x \approx 0.51\text{cm}
+\end{equation}
+
+Recordemos que la energía kinética (en un momento dado) y la energía potencial
+son:
+
+\begin{equation*}
+    K = \frac{1}{2} m v^2, \qquad U = mg\Delta h
+\end{equation*}
+
+donde $\Delta h$ es la altura del objeto y $E = U + K$. Por la preservación de
+la energía,
+
+\begin{equation*}
+    E_0 = E_f
+\end{equation*}
+
+Tomemos como momento inicial el instante en que el objeto se suelta desde el
+reposo, y como momento final el instante en que el objeto ocupa el punto $B$.
+Pues la velocidad en el instante cero es cero, 
+
+\begin{equation*}
+    E_0 = K_0 + U_0 = 0 + mg \Delta h = mg \Delta h
+\end{equation*}
+
+\begin{equation*}
+    E_f = K_f + U_f = \frac{1}{2} m v_f^2 + 0 = \frac{1}{2}mv_f^2
+\end{equation*}
+
+donde $v_f$ es la velocidad en el instante en que el cuerpo ocupa el punto $B$.
+De lo anterior se sigue: 
+
+\begin{equation}
+    mg \Delta h = \frac{1}{2}mv_f^2
+\end{equation}
+
+lo cual implica que $v_f = \sqrt{2g \Delta h} $. Aproximando $g \approx 9.8
+\frac{m}{s^2}$ y $\Delta h \approx 0.51\text{cm}$, obtenemos 
+
+\begin{align*}
+    v_f 
+    &= \sqrt{2 \cdot 9.8 \frac{\text{m}}{\text{s}^2} \cdot 0.0051 \text{m}}\\ 
+    &\approx 0.316 \text{m}/\text{s}
+\end{align*}
+
+$(b)$ En el punto $C$, la masa se detiene por un instante. Por la preservación
+de la energía, debe satisfacerse que la energía cinética que el objeto tenía en
+el punto $B$ se transformó
+ en energía potencial: 
+
+ \begin{equation}
+    K_B = U_C
+ \end{equation}
+
+Pero la energía kinética en $B$ era $\frac{1}{2} m v_f^2$, es decir 
+
+\begin{equation*}
+    U_C = \frac{1}{2}m
+\end{equation*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \end{document}
