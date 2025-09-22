@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  14 SEP 2025 17:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  20 SEP 2025 19:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1073,10 +1073,15 @@ File: tikzlibraryquotes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.code.tex
+File: tikzlibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex
+File: pgflibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
 Package translations Info: No language package found. I am going to use `english' as default language. on input line 48.
 LaTeX Font Info:    Trying to load font information for OT1+ntxtlf on input line 48.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1ntxtlf.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1ntxtlf.fd
 File: ot1ntxtlf.fd 2021/05/24 v1.0 font definition file for OT1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
@@ -1108,8 +1113,7 @@ File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 LaTeX Font Info:    ... okay on input line 48.
 LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 48.
 LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 48.
-
-(/usr/share/texlive/texmf-dist/tex/latex/newtx/lmsntxsy.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/lmsntxsy.fd
 File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
 )
 LaTeX Font Info:    ... okay on input line 48.
@@ -1893,13 +1897,13 @@ and I'll forget about whatever was undefined.
 [43] [44] [45] [46] [47] [48] [49] [50] [51]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 2367.
+(hyperref)                than one, level fixed on input line 2371.
 
 [52] [53] [54] [55] [56] [57] [58] [59] [60]
-./Physics.tex:2745: Undefined control sequence.
+./Physics.tex:2749: Undefined control sequence.
 \degree ->\ERROR 
                  
-l.2745     $30\degree
+l.2749     $30\degree
                      $ with respect to the horizontal. There is no friction ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1908,14 +1912,14 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 [61] [62] [63] [64] [65] [66] [67] [68] [69] [70] [71] [72] [73] [74] [75] [76] [77] [78] [79]
-Underfull \hbox (badness 10000) in paragraph at lines 3527--3533
+Underfull \hbox (badness 10000) in paragraph at lines 3531--3537
 
  []
 
 [80] [81] [82] [83]
-./Physics.tex:3687: Misplaced alignment tab character &.
-l.3687     &
-            = L \cos \theta ~ \hat{i} + L \sin \theta ~ \hat{j}, \qquad B = ...
+./Physics.tex:3691: Misplaced alignment tab character &.
+l.3691     &
+            = L \cos \theta ~ \hat{i} + L \sin \theta ~ \hat{j}, \qquad B =
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -1923,7 +1927,35 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[84] [85] 
+[84]
+./Physics.tex:3773: Misplaced alignment tab character &.
+l.3773     &
+            C_x = \cos \theta_C (L-d) + d \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+[85] [86] [87] [88] [89] [90] [91] [92] [93] [94] [95]
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
+(Font)              scaled to size 10.95pt on input line 4231.
+ [96] [97] [98] [99] [100] [101] [102] [103]
+
+./Physics.tex:4537: LaTeX Error: Unicode character θ (U+03B8)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4537 ...arrestarla es de esta misma magnitud. θ
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+[104] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./Physics.aux)
  ***********
@@ -1935,22 +1967,25 @@ L3 programming layer <2020/03/25>
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.36998pt have occurred.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `Physics.out' has not changed.
 (rerunfilecheck)             Checksum: 903A15C8F8DA96929CC8DB585783D428;5196.
  ) 
 Here is how much of TeX's memory you used:
- 48188 strings out of 474222
- 1126454 string characters out of 5748733
+ 48333 strings out of 474222
+ 1130491 string characters out of 5748733
  1945975 words of memory out of 5000000
- 69399 multiletter control sequences out of 15000+600000
- 627350 words of font info for 195 fonts, out of 8000000 for 9000
+ 69503 multiletter control sequences out of 15000+600000
+ 629999 words of font info for 200 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,20n,107p,775b,2102s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexas.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on Physics.pdf (85 pages, 363374 bytes).
+Output written on Physics.pdf (104 pages, 403339 bytes).
 PDF statistics:
- 762 PDF objects out of 1000 (max. 8388607)
- 622 compressed objects within 7 object streams
- 239 named destinations out of 1000 (max. 500000)
+ 859 PDF objects out of 1000 (max. 8388607)
+ 700 compressed objects within 7 object streams
+ 270 named destinations out of 1000 (max. 500000)
  397 words of extra memory for PDF output out of 10000 (max. 10000000)
 

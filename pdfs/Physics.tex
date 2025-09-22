@@ -44,7 +44,7 @@
 \counterwithin*{equation}{section}
 \counterwithin*{equation}{subsection}
 \usetikzlibrary{angles,quotes,calc,positioning}
-
+\usetikzlibrary{decorations.pathmorphing, patterns, calc}
 \begin{document}
 
 \section{Info}
@@ -2159,6 +2159,10 @@ one notes that $\hat{r}(t)$ is simply a normalized version of $\vec{r}(t)$, and
 that $\hat{u}(t)$ is a normalized version of $\vec{v}(t)$, then it is clear that
 the previous result is just a "normalized" version of the previous one. 
 
+Cuando descomponemos el vector $\vec{a}$ en aceleración tangencial y normal, 
+en un movimiento circular, siempre sucede que la aceleración normal tiene misma
+dirección y contrario sentido al vector posición.
+
 
 \pagebreak 
 
@@ -3684,8 +3688,8 @@ En el sistema de coordenadas que elegí,
 
 \begin{equation*}
     A 
-    &= L \cos \theta ~ \hat{i} + L \sin \theta ~ \hat{j}, \qquad B = L \cos \theta
-    ~ \hat{i}
+    &= L \cos \theta ~ \hat{i} + L \sin \theta ~ \hat{j}, \qquad B =
+    132\text{cm} ~ \hat{i}
 \end{equation*}
 
 La distancia vertical en el espacio físico se corresponde con la distancia
@@ -3703,12 +3707,7 @@ son:
     K = \frac{1}{2} m v^2, \qquad U = mg\Delta h
 \end{equation*}
 
-donde $\Delta h$ es la altura del objeto y $E = U + K$. Por la preservación de
-la energía,
-
-\begin{equation*}
-    E_0 = E_f
-\end{equation*}
+donde $\Delta h$ es la altura del objeto y $E = U + K$. 
 
 Tomemos como momento inicial el instante en que el objeto se suelta desde el
 reposo, y como momento final el instante en que el objeto ocupa el punto $B$.
@@ -3718,12 +3717,18 @@ Pues la velocidad en el instante cero es cero,
     E_0 = K_0 + U_0 = 0 + mg \Delta h = mg \Delta h
 \end{equation*}
 
+En otras palabras, en el instante cero, la energía se corresponde con la energía
+potencial, pues el objeto está en reposo con altura $\Delta h$. Ahora bien, de
+manera análoga,
+
 \begin{equation*}
     E_f = K_f + U_f = \frac{1}{2} m v_f^2 + 0 = \frac{1}{2}mv_f^2
 \end{equation*}
 
 donde $v_f$ es la velocidad en el instante en que el cuerpo ocupa el punto $B$.
-De lo anterior se sigue: 
+En otras palabras, en este caso, la energía se corresponde enteramente con la
+energía kinética. Por preservación de la energía, $E_f = E_0$, y por lo tanto
+obtenemos:
 
 \begin{equation}
     mg \Delta h = \frac{1}{2}mv_f^2
@@ -3738,20 +3743,846 @@ lo cual implica que $v_f = \sqrt{2g \Delta h} $. Aproximando $g \approx 9.8
     &\approx 0.316 \text{m}/\text{s}
 \end{align*}
 
-$(b)$ En el punto $C$, la masa se detiene por un instante. Por la preservación
-de la energía, debe satisfacerse que la energía cinética que el objeto tenía en
-el punto $B$ se transformó
- en energía potencial: 
+$(b)$ En el instante $t_C$ en que el péndulo se detiene alcanzando el punto $C$,
+toda la energía es potencial. Pero por preservación de la energía, $E_C = E_f$.
+Como $E_c = U_C$ (la energía es estrictamente potencial), y $E_f = K_f$ (la
+energía es estrictamente kinética), obtenemos $E_C = K_f$, es decir
 
- \begin{equation}
-    K_B = U_C
- \end{equation}
+\begin{equation}
+    mg \Delta h' = \frac{1}{2} mv_f^2
+\end{equation}
 
-Pero la energía kinética en $B$ era $\frac{1}{2} m v_f^2$, es decir 
+donde $\Delta h' = B_x - C_x$ es la distancia vertical (en el espacio físico) entre $C$ y
+$B$. Ahora bien, de la ecuación anterior se deduce 
+
+\begin{equation}
+    \Delta h' = \frac{1}{2g} v_f^2
+\end{equation}
+
+donde conocemos $v_f^2$ por el punto $(a)$. Ahora bien, notemos que en nuestro
+sistema de coordenadas, la posición en el eje $x$ del punto $C$ se corresponde
+con 
+
+\begin{equation}
+    C_x = \cos \theta_C \left| C \right| + d
+\end{equation}
+
+con $\left| C \right| = L - d$. Luego 
+
+\begin{equation}
+    &C_x = \cos \theta_C (L-d) + d \\
+\end{equation}
+
+Por lo tanto, combinando $(6)$ y $(4)$, obtenemos 
+
+\begin{align*}
+    &\frac{1}{2g}v^2_f = B_x - \cos \theta_C (L - d) - d\\ 
+    \Rightarrow ~ ~ ~ 
+    &-\frac{ \frac{1}{2g}v_f^2 - B_x + d }{L - d} = \cos \theta_C
+\end{align*}
+
+Es fácil ver que 
 
 \begin{equation*}
-    U_C = \frac{1}{2}m
+    \frac{1}{2g} v_f^2 \approx \frac{0.316^2}{19.6}
+    \frac{\frac{m^2}{s^2}}{\frac{m}{s^2}} = 0.005\text{m} =  0.5\text{cm}
 \end{equation*}
+
+y que $-B_x + d = (-132 + 66)\text{cm} = -66\text{cm}, L - d = 66\text{cm}$.
+Luego obtenemos 
+
+\begin{align*}
+    &- \frac{0.5\text{cm} - 66\text{cm}}{66\text{cm}} = \cos \theta_C\\ 
+    \Rightarrow ~ ~ ~ 
+    & \frac{65.5}{66}\text{cm} = \cos \theta_C \\ 
+    \Rightarrow ~ ~ ~ 
+    &0.992 \text{cm} = \cos \theta_C
+\end{align*}
+
+Como $\cos^{-1}(0.992) = 0.126\text{rad}$, obtenemos que $\theta_C =
+0.126\text{rad}$.
+
+$(c)$ Se nos pide la tensión de la cuerda. Recordemos que en un movimiento
+pendular como éste, la velocidad angular en el punto de equilibrio es cero.
+Recordemos que la aceleración centrípeta es 
+
+\begin{equation}
+    a_c = \frac{v^2}{L}
+\end{equation}
+
+y por ende la segunda ley de Newton nos dice
+
+\begin{equation}
+    T - W = ma_c
+\end{equation}
+
+donde $T$ es la tensión de la cuerda (vertical y positiva hacia arriba), $W$ es
+la gravedad (vertical y negativa hacia abajo). Por lo tanto, 
+
+\begin{equation}
+T - W = m \frac{v^2}{L} \iff T = m \frac{0.316^2 \text{m}^2/\text{s}^2}{L} + mg
+\end{equation}
+
+Como $L$ está en centímetros, $\frac{L}{100} \text{m}$ se corresponderá con la
+longitud de la soga en metros, y el término izquierdo quedará en metros sobre
+segundos cuadrados. Se obtiene entonces 
+
+\begin{equation}
+    T \approx m \frac{ 0.099 }{1.32} \frac{\text{m}}{s^2} + m 9.8 \frac{\text{m}}{s^2} = m\left(
+    9.875 \text{m}/\text{s}^2 \right) 
+\end{equation}
+
+\pagebreak 
+
+\begin{shaded}
+    
+\textbf{2.} Un bloque de $20 \, kg$ es empujado sobre una superficie horizontal, 
+por medio de una fuerza $\vec{F}$ que forma un ángulo $\theta$ con ésta 
+(ver figura). Durante el movimiento la fuerza aumenta de acuerdo con la 
+relación $|\vec{F}(x)| = 6x \, N$.
+
+\begin{enumerate}
+    \item[(a)] Calcule el trabajo realizado por esta fuerza mientras el cuerpo 
+    se desplazó en línea recta desde $x = 10 \, m$ hasta $x = 20 \, m$.
+    
+    \item[(b)] Calcule la energía cinética del cuerpo en la posición final, 
+    asumiendo que se parte del reposo. Considere dos casos: 
+    \begin{enumerate}
+        \item[(i)] $\mu_d = 0$
+        \item[(ii)] $\mu_d = 0.05$
+    \end{enumerate}
+\end{enumerate}
+
+\end{shaded}
+
+$(a)$ Recordemos que el trabajo realizado por una fuerza $\vec{F}$ al desplazar
+un cuerpo con un desplazamiento $\Delta \vec{r}$ es el producto punto de ambos
+vectores: 
+
+\begin{equation}
+    W = \left| F \right| \cdot \left| \Delta \vec{r} \right| \cdot \cos \theta
+\end{equation}
+
+con $\theta$ el ángulo entre ambos vectores. En el caso de un movimiento
+horizontal, como el problema, $\Delta \vec{r} = \Delta x \cdot \hat{i}$  y por
+lo tanto escribimos simplemente $W = F \cdot \Delta x \cdot \cos \theta$. Notar
+que si la fuerza y el desplazamiento tienen la misma dirección, $\cos \theta =
+1$ y $W = F \Delta x$, y si la fuerza y el desplazamiento tienen dirección
+opuesta, $\cos \theta = -1$ y $W = -F \Delta x$ (es decir, la fuerza hace un
+trabajo negativo).
+
+En nuestro problema, la magnitud $\vec{F}$ es variable respecto a la posición
+$x$. Por lo tanto, debemos integrar la expresión para la fuerza en cada una de
+las posiciones tomadas por el cuerpo:
+
+\begin{equation*}
+    W_F 
+    = \int_{x = 10\text{m}}^{x=20\text{m}} \left| \vec{F}(x) \right| \cos \theta ~ dx
+    = 6\text{N} \cos \theta \int_{x = 10\text{m}}^{x=20\text{m}} x ~ dx = 900
+    \cos \theta ~ \text{J}
+\end{equation*}
+
+(Notar, si esto no es claro, que $dx$ es un desplazamiento infinitesimalmente
+pequeño. Es decir que la expresión siendo integrada sigue siendo exactamente de
+la forma de la ecuación 11: magnitud de la fuerza por magnitud del
+desplazamiento por ángulo entre ambos, i.e. producto punto).
+
+\pagebreak 
+
+$(b)$ Recordemos que $W = \Delta K$. A su vez, $W = W_F + W_R$ con $W_F$ el
+trabajo de la fuerza $\vec{F}$ y $W_R$ el trabajo de la fuerza de rozamiento
+$\vec{R}$. En términos generales, asumiendo un coeficiente de rozamiento
+dinámico $\mu_d$ arbitrario,
+
+\begin{equation*}
+    W_R = \left| \vec{R} \right| \Delta x \cos \varphi = \mu_d \left| \vec{N} \right|
+    \Delta x \cdot \cos \varphi
+\end{equation*}
+
+donde $\varphi$ el ángulo entre la dirección del movimiento y la fuerza de
+rozamiento. Pero la fuerza de rozamiento se opone al movimiento, i.e. su ángulo
+es 180 grados y $\cos \varphi = \cos \ang{180} = -1$. La fuerza normal tiene
+magnitud equivalente a la magnitud de la gravedad. Luego 
+
+\begin{equation*}
+    W_R = -\mu_d mg \cdot \Delta x = -\mu_d 1960 \text{J}
+\end{equation*}
+
+Por ende, 
+
+\begin{equation*}
+    W = W_R + W_F = 900 \cos \theta \text{J} - \mu_d 1960\text{J}
+\end{equation*}
+
+Entonces 
+
+\begin{equation*}
+    \Delta K = 900 \cos \theta \text{ J} - \mu_d 1960 \text{ J}
+\end{equation*}
+
+Pero la velocidad inicial es cero, así que $\Delta K = K_f$ la energía kinética
+final. Con lo cual
+
+\begin{equation*}
+    K_f = ( 900\cos \theta - \mu_d 1960 ) \text{ J}
+\end{equation*}
+
+Sustituyendo con $\mu_d = 0, \mu_d = 0.05$ se obtienen las respuestas.
+
+
+\begin{shaded}
+    \textbf{(3)} A 1kg mass is left to slide down a plane with a $\theta =
+    \ang{30}$ angle with respect to the horizontal and from a height of 1m. 
+
+    $(a)$ Find the velocity of the block when it reaches the floor, assuming no
+    friction.
+
+    $(b)$ Same but assuming $\mu_d = 0.3$.
+
+    $(c)$ Compare the value of $(a)$ with the value obtained if the block is
+    dropped in free fall from the same height. 
+
+    $(d)$ For $(b)$, compute the loss of energy.
+\end{shaded}
+
+$(a)$ Recall that $K = \frac{1}{2}m v^2$ and that $W = \Delta K$. 
+Since the
+projection of the weight vector along the incline is $P_\parallel = mg \sin
+\theta$,
+
+\begin{equation}
+    W = P_{\parallel} \Delta x'
+\end{equation}
+
+where $\Delta x'$ is the change of position in terms parallel to the incline.
+The incline is the magnitude of a vector $\vec{h}$ with $y$-coordinate 1m and
+angle $\theta$, i.e. $\Delta x' = \left| \vec{h} \right| $. Here, we recall 
+
+\begin{equation*}
+    h_x = \left| \vec{h} \right| \cos \theta, \qquad h_y = \left| \vec{h}
+    \right|  \sin \theta
+\end{equation*}
+
+From the LHS and the fact that $h_y = 1\text{m}$,
+
+\begin{equation*}
+    \Delta x' = \left| h \right| = \frac{1\text{m}}{\sin \theta}
+\end{equation*}
+
+In short, substituting in $(13)$ with $(14)$,
+
+\begin{equation}
+    W = mg \sin \theta \cdot \frac{1\text{m}}{\sin \theta} = mg \text{m} =
+    1\text{kg} \cdot 9.8 \frac{\text{m}}{\text{s}^2} \cdot 1\text{m} =
+    9.8\text{N} \cdot 1 \text{m} = 9.8 \text{J}
+\end{equation}
+
+The velocity at the initial instant is zero, and at the final instant is
+unknown, but since $W = \Delta K$ we have 
+
+\begin{align*}
+    &W = K_f - K_0 \\ 
+    \iff ~ ~ ~
+    &9.8\text{J} = \frac{1}{2}m v_f^2 \\ 
+    \iff ~ ~ ~ 
+    &\frac{ 19.6\text{J} }{1\text{kg}} = v_f^2 \\ 
+    \iff ~ ~ ~ 
+    &19.6 \frac{\text{m}^2}{\text{s}^2} = v_f^2 \\ 
+    \iff ~ ~ ~ 
+    &\sqrt{19.6 \frac{\text{m}^2}{\text{s}^2}}  = v_f \\
+    \iff ~ ~ ~ 
+    &4.42718872424 \frac{\text{m}}{\text{s}}  = v_f 
+\end{align*}
+
+$(b)$ If we assume there is friction with $\mu_d = 0.3$, then $\vec{R}$ will
+oppose the sliding movement with magnitude $\mu_d \left| \vec{N} \right| $. The
+magnitude of the normal force balances the perpendicular component of the
+weight, i.e. $\left| \vec{N} \right| = P_\perp = mg \cos \theta$. So now the
+total work is 
+
+\begin{align*}
+    W &= ( P_\parallel - R)\Delta x' \\
+    &= \left( mg \sin \theta - \mu_d ~ mg \cos
+    \theta \right) \frac{1\text{m}}{\sin \theta}\\ 
+    &=mg ~ \text{1m} - \mu_d ~ mg \frac{\cos \theta}{\sin \theta} ~ \text{1m} \\ 
+    &= 1\text{m} ~ mg \left( 1 - \mu_d \cot \theta \right)  \\ 
+    &= 9.8\text{J}\left( 1 - 0.3 \cdot \sqrt{3}  \right)  \\ 
+    &= 9.8\text{J} \cdot 0.480384758 \\ 
+    &= 4.70777063\text{J}
+\end{align*}
+
+Having found the work, we again use that $W = K_f$ in this scenario to obtain 
+
+\begin{equation}
+    4.70777063\text{J} = \frac{1}{2}mv_f^2 \iff\sqrt{9.41554126
+    \frac{\text{m}^2}{s^2}} = v_f 
+\end{equation}
+
+which gives $v_f = 3.06847539668 \text{m/s}$.
+
+$(c)$ If the object is let to fall freely from one meter, we have 
+
+\begin{equation*}
+    W = mg ~ \text{1m}
+\end{equation*}
+
+which entails 
+
+\begin{equation*}
+    v_f = \sqrt{2 \cdot g ~ 1 \text{m}} = 4.42718872424 \frac{\text{m}}{\text{s}}
+\end{equation*}
+
+So interestingly, at the final instant, the velocity of the object if left to
+slide coincides with the velocity of the object is left to fall.
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(4)} A mass of 1kg compresses a spring of constant $k = 2
+    \text{N/m}$ over a horizontal surface without friction. The spring is
+    compressed 0.3m with respect to its equilibrium position. In a given moment,
+    it is released. The mass is not tied to the spring.
+
+    $(a)$ Explain what happens when the spring is released. 
+
+    $(b)$ Compute the work done by the spring. 
+
+    $(c)$ Compute the final velocity which the object raches after being
+    released. 
+
+    $(d)$ At the moment when the body is released, it makes contact with a
+    surface with friction and $\mu_d = 0.2$. Explain what happens, and the work
+    done by the force of friction when the mass reaches half the velocity which
+    it carried at the moment of release. 
+
+    $(c)$ Compute the distance the body travels before stopping.
+\end{shaded}
+
+
+\small
+\begin{quote}
+
+$(\dagger)$ I misunderstood the statement of the problem and used $y$ instead of
+$x$ coords. I'm lazy and will not change it. Just think of $y$ as $x$.
+
+\end{quote}
+\normalsize
+
+
+$(a)$ When the spring is released, the potential energy of the spring becomes
+kinetic energy, and there's a transfer of energy from the spring unto the mass.
+
+
+The mass is pushed away in horizontal and positive direction with the force
+transfered by the spring, becoming immediately affected by gravity.
+
+$(b)$ The work done by the spring will correspond to 
+
+\begin{equation*}
+    W_R = \int_{x_0}^{x_f} |\vec{R}(x)| ~ dx
+\end{equation*}
+
+where $y_0 = y_e - 0.3\text{m}$ and $y_f$ is the point at which the mass stops
+making contact with the spring. Theoretically, $y_f$ will correspond to the
+point at which the spring stops exerting force unto the mass, i.e. when $\left|
+\vec{R}\right| = 0$. Since, by virtue of Hooke's law, $\left| \vec{R} \right| =
+-k\Delta y$, it will be zero exactly at $y_e$.
+
+Since the movement of the spring is strictly vertical, $d\vec{y} = dy$. The
+magnitude of the force at an arbitrary point $y$ is $-k\Delta y$,
+and if we set the origin of our coordinate system precisely at the equilibrium
+$y_e$ then $\Delta y = y $. From this follows that 
+
+\begin{equation*}
+    W_R = \int_{y_0}^{y_f} \vec{R}(y) ~ dy = \int_{y_0}^{y_f} -k y ~
+    ~ dy 
+        = -k ~ \frac{y^2}{2}\Big]_{y_0}^{y_f} =
+    \frac{k}{2} (y_0^2 - y_f^2)
+\end{equation*}
+
+So, 
+
+\begin{equation}
+W_R = \frac{2\text{N}}{2\text{m}}\left( -0.3^2\text{m}^2 \right) = 0.09\text{Nm}
+= 0.09\text{J}
+\end{equation}
+
+$(c)$ We are asked to compute $v_f$ the final velocity reached by the mass after
+being released. Recall that 
+
+\begin{equation*}
+    W = \Delta K, \qquad K_f = \frac{1}{2}m v_f^2
+\end{equation*}
+
+Knowing that $K_0 = 0$, we obtain $W = K_f$, i.e. 
+
+\begin{equation*}
+    0.09\text{J} = \frac{1}{2} ~ \text{1kg} ~ v_f^2
+\end{equation*}
+
+from which follows 
+
+\begin{equation*}
+     \sqrt{\frac{ 2 \cdot 0.09\text{J}  }{\text{kg}}}   = v_f
+\end{equation*}
+
+Solving, $v_f = 0.42426406871 \frac{m}{s}$.
+
+$(d)$ Upon making contact with the frictioning surface, friction will exert a
+force contrary to the direction of movement, reducing the acceleration of the
+object. 
+
+Let $y_*$ be the point at which the object has lost half of its velocity, i.e.
+the point at which $v_* = \frac{1}{2} v_f$. (We still use $v_f$ as the velocity
+of the object when it loses contact with the spring.) The work of friction, like
+any other work, obeys
+
+\begin{align*}
+    W_F &= \Delta K \\ 
+    &= K_* - K_f\\ 
+    &= \frac{1}{2} m v_*^2 - \frac{1}{2}mv_f^2 \\ 
+    &= \frac{1}{2}m \left( \frac{1}{2} v_f \right)^2 - \frac{1}{2}m v_f^2 \\ 
+    &= \frac{1}{8}m v_f^2 - \frac{1}{2}m v_f^2 \\ 
+    &= mv_f^2\left( \frac{1}{8} - \frac{1}{2} \right) \\ 
+    &= mv_f^2 \left(  -\frac{3}{8} \right) \\ 
+    &= \text{1kg} \cdot 0.18 \frac{\text{m}^2}{\text{s}^2} \cdot -\frac{3}{8} \\ 
+    &= \left( 0.18 \cdot -\frac{3}{8} \right) \text{J} \\ 
+    &= -0.0675 \text{J}
+\end{align*}
+
+$(e)$ When the object stops, its velocity is zero. When the object leaves the
+spring, its velocity is $v_f$, as computed before. Therefore, $W = \Delta K =
+K_s - K_f = -K_f$, with $W$ the work of all the forces involved in moving the
+object across its path.
+
+That said, $W = \left| F \right|\Delta y $, with $F$ the magnitud of all forces
+involved in moving the object across its path. From this follows that $-K_f =
+\left| F \right| \Delta y$, i.e. $\Delta y = -\frac{K_f}{\left| F \right| }$. So
+we have obtained an expression for the distance travelled.
+
+Now, once the object leaves the spring, the only force which contributes to its
+movement is the friction of the surface, which acts to stop it. So in fact $F =
+R$ the magnitud of friction. We know this magnitud is $-\mu_D \left| \vec{N}
+\right| $, and here $\left| \vec{N} \right| = mg$, counteracting gravity.
+
+\begin{align*}
+    \Delta y 
+    &= - \frac{K_f}{\mu_D m g} \\ 
+    &= \frac{\frac{1}{2} m v_f^2}{(0.2) \cdot m \cdot 9.8 \text{m/s}^2} \\ 
+    &= \frac{5}{2} \cdot \frac{1}{9.8 \text{m/s}^2} \cdot 0.18( \text{m/s} )^2 \\ 
+    &= 0.04591836734 \cdot \frac{\text{m}^2}{\text{s}^2} \cdot
+    \frac{\text{s}^2}{\text{m}} \\ 
+    &= 0.04591836734 ~ \text{m} \\ 
+    &= 4.591836734~ \text{cm}
+\end{align*}
+
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(5)} A mass of $m = 5$kg is gently layed upon a spring of constant
+    $k = 2 \text{N/m}$, which is vertically placed over a horizontal surface. 
+
+    $(a)$ Describe what happens. 
+
+    $(b)$ Compute the work done by the spring when the body reaches equilibrium. 
+
+    $(c)$ Assume the body falls freely from a height of $h = 1\text{m}$ before
+    hitting the spring. Compute how much the spring compresses from its
+    equilibrium position.
+\end{shaded}
+
+$(a)$ When the mass is gently placed upon the object, the force of gravity acts
+downard pressing the spring. When the spring is displaced from equilibrium, it
+exerts an upward, contrary force which seeks to restore equilibrium. 
+
+$(b)$ The body will reachequilibrium when the magnitude of the forces acting
+upon it becomes zero. The two forces acting upon the object are gravity and 
+the spring's force. In other words, the body will reach equilibrium if and when 
+
+\begin{equation*}
+    -mg = k \Delta y \iff -\frac{5 \text{kg} \cdot 9.8 \text{m/s}^2}{2 \text{N/m}}
+    = \Delta y \iff \Delta y = -24.5 \text{m}
+\end{equation*}
+
+$\therefore $ The object reaches a state of equilibrium when displaced 24.5
+meters below the spring's resting point.
+
+The work exerted by the spring upon the objece is non-constant and therefore 
+
+\begin{align*}
+    W_R &= \int_{y=0}^{y=\Delta y} F_R(y) ~ dy \\ 
+        &= \int_{y=0}^{y = \Delta y} -ky ~ dy \\ 
+        &= -k ~ \frac{y^2}{2}\Big]_{0}^{\Delta y} \\ 
+        &= -k \left( \frac{( -24.5\text{m} )^2}{2}\right)  \\ 
+        &= -2 \frac{\text{N}}{\text{m}} (300.125\text{m}^2) \\ 
+        &= -600.25 \text{J}
+\end{align*}
+
+$(c)$ What is the energy of our system in the initial setting? The mass will
+begin to fall immediately, but at the initial instant it stands with zero
+velocity and only potential energy $U_m^2 = mg \Delta h$. Since the spring is at
+equilibrium, its energy is zero.
+
+
+\small
+\begin{quote}
+
+\textbf{Note.} Recall that the potential energy of a spring is $U_R =
+\frac{k}{2} x^2$ with $x$ its distance from equilibrium.
+
+\end{quote}
+\normalsize
+
+In short, 
+
+\begin{equation*}
+    E_0 = mg \Delta h
+\end{equation*}
+
+At the final state, the mass has compressed the spring to a maximum distance
+from equilibrium, standing still. Since it stands still, its velocity is zero
+and therefore so is its kinetic energy. Its potential energy will be 
+$U_m^f = mg \Delta h'$ with $\Delta h'$ its distance from equilibrium in the
+final state. On the other hand, the spring will now be compressed and still,
+thereby containing potential energy $U_R^f = \frac{k}{2}\Delta h'$. So 
+
+\begin{equation*}
+    E_f = mg\Delta h' + \frac{k}{2}( \Delta h' )^2
+\end{equation*}
+
+Due to preservation of energy, we have 
+
+\begin{equation*}
+    mg \Delta h = mg \Delta h' + \frac{k}{2}(\Delta h')^2
+\end{equation*}
+
+Now, if the origin of our system is at the equilibrium position, $\Delta h =
+\text{1}m$ and $\Delta h' := x$ is unknown, producing the equation 
+
+\begin{align*}
+    mg = mgx + \frac{k}{2}x^2 
+    \iff~ ~ ~ 
+    &\frac{k}{2}x^2 + mgx - mg = 0 \\ 
+    \iff ~ ~ ~  
+    &\frac{k}{2\phi}x^2 + x - 1 = 0
+\end{align*}
+
+with $\phi := mg = 49\text{N}$. So we found a quadratic equation with solutions
+
+\begin{equation*}
+    x = \frac{\phi}{k} \left( -1 \pm \sqrt{1 + \frac{2k}{\phi}}  \right) 
+\end{equation*}
+
+Now suffices to see that 
+
+\begin{equation*}
+    \frac{\phi}{k} = \frac{ 49 }{2} = 24.5 
+\end{equation*}
+
+from which follows that $2k / \phi = 2 \cdot \left(\frac{1}{24.5}
+\right) = 0.08163265306$. So we obtain 
+
+\begin{equation*}
+    x = 24.5 \left( -1 + \sqrt{1.08163265306}  \right) = 24.5 \left(
+    0.04001569846 \right) = 0.98038461227
+\end{equation*}
+
+Since $x$ is by definition in units of meters, we have found that  
+$x = \Delta h' \approx 0.98\text{m} $. So the spring is compressed approximately
+0.98 meters below its equilibrium point by the free falling mass.
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(6)} Un embalaje de masa $m = 250$kg está colgado de un cable de
+    largo $L = 10$m. Se lo mueve hacia un lado apartándolo de la vertical una
+    longitud $l = 1$m y se lo sostiene allí.
+
+    $(a)$ ¿Cuál es la fuerza necesaria para mantener el embalaje en esa
+    posición? 
+
+    $(b)$ ¿Se hace trabajo para sostenerlo allí? 
+
+    $(c)$ ¿Se hizo trabajo para moverlo de lado? ¿Cuánto? 
+
+    $(d)$ La tensión del cable, ¿efectúa algún trabajo?
+\end{shaded}
+
+$(a)$ Sea $F_l$ la fuerza necesaria para mantener el embalaje una longitud $l =
+1$m a la izquierda. El embalaje es afectado por la gravedad (en su componente
+angular) y la tensión del cable, que son fuerzas paralelas y opuestas en
+dirección.
+
+Notemos que al desplazar el objeto a la izquierda, su movimiento describe un
+arco y la soga termina formando un ángulo $\theta$ respecto a la vertical,
+satisfaciendo:
+
+\begin{equation*}
+    L  \sin \theta = l \iff \sin \theta = \frac{l}{L} \iff \theta =
+    \arcsin\left( \frac{1}{10} \right) 
+\end{equation*}
+
+La tensión del cable apunta hacia el origen del cable satisfaciendo 
+
+\begin{equation*}
+    T_x = T \sin \theta, \qquad T_y = T \cos \theta
+\end{equation*}
+
+Como el objeto está en equilibrio, el componente horizontal de la tensión debe
+contrarrestar el componente horizontal de la fuerza $F_l$, y el componente
+vertical debe contrarrestar la gravedad. Es decir, $T_x = F_l, T_y = mg$.  Pero 
+
+\begin{equation*}
+    T_y = mg \Rightarrow mg = T \cos \theta \Rightarrow T = \frac{mg}{\cos \theta}
+\end{equation*}
+
+de lo cual se sigue que 
+
+\begin{equation*}
+    F_l = T_x = T \sin \theta = \frac{mg}{\cos \theta} \sin \theta = mg \tan \theta
+\end{equation*}
+
+$\therefore $ La magnitud de la fuerza que mantiene al objeto en la posición es
+$mg \tan \theta$, y como dicha fuerza solo tiene un componente horizontal, esto
+la define completamente.
+
+
+$(b)$ No. El trabajo de cualquier fuerza involucrada será la magnitud de dicha
+fuerza por el desplazamiento del cuerpo. Pero estamos asumiendo que el cuerpo
+está sostenido en un punto fijo, i.e. su desplazamiento es cero.
+
+$(c)$ El trabajo realizado para moverlo es dado por $W = \Delta K = \Delta U$,
+puesto que en el momento inicial y final la energía kinética es cero. La energía
+potencial del objeto es dada por $mg \Delta h$ con $\Delta h$ la altura
+alcanzada por la masa (asumiendo que en el reposo la altura es cero).
+
+Del mismo modo que $L \sin \theta$ describe la distancia horizontal que recorre
+el objeto respecto al punto en que el cable está colgado, $L \cos \theta$
+describe la distanca vertical (respecto a dicho punto). Se sigue que 
+
+\begin{align*}
+    W 
+    &= \Delta U \\ 
+    &= U_f - U_0 \\ 
+    &= mg( L - L \cos \theta ) - 0 \\ 
+    &= mgL(1 - \cos \theta)\\ 
+    &= mgL (1 - \cos \left( \arcsin \frac{1}{10} \right) )\\ 
+    &= mg \cdot 0.0501256289\text{m}\\ 
+    &= 250\text{kg} \cdot 9.8 \text{m/s}^2 \cdot 0.0501256289 \text{m} \\ 
+    &= 122.807790805\text{J}
+\end{align*}
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(7)} Un carro de montaña rusa sin fricción comienza en un punto $A$
+    con velocidad $v_0$. Asuma que el carro puede ser considerado puntual y que
+    siempre se mantiene en la vía. 
+
+    $(a)$ Calcule la energía total inicial del sistema. 
+
+    $(b)$ ¿Con qué velocidades llegará a $B$ y a $C$?
+
+    $(c)$ Calcule la desaceleración cnostante que debe aplicarse en $D$ para que
+    se detenga en $E$.
+\end{shaded}
+
+$(a)$ Notemos que la única fuerza involucrada en el sistema es la gravedad
+$\vec{G}$. De esto se sigue que la energía del sistema es 
+
+\begin{equation*}
+    E 
+    = K + U 
+    = \frac{1}{2}mv_0^2 + mg h
+\end{equation*}
+
+$(b)$ El trabajo realizado por la gravedad en el intervalo $x \in [x_A, x_B]$ es 
+$mg \Delta y = mg(h - h) = 0$. Se sigue que $\Delta K = 0$, i.e. $K_A = K_B$.
+Pero entonces se sigue fácilmente que $v_A = v_B$. Es decir, la velocidad al
+llegar a $B$ será la misma velocidad con la que se empezó en $A$.
+
+Respectot a $C$, tenemos que el trabajo de la gravedad es $mg(h - h')$, con $h'$
+la altura del punto $C$. Se sigue que 
+
+\begin{align*}
+    &mg(h-h') = \frac{1}{2}mv_C^2 - \frac{1}{2}mv_A^2 \\ 
+    \iff ~ ~ ~ 
+    &g\Delta h + \frac{1}{2}v_A^2 = \frac{1}{2}v_C^2 \\ 
+    \iff ~ ~ ~ 
+    &\sqrt{2g\Delta h + v^2_A}  = v_C
+\end{align*}
+
+con $\Delta h = h - h'$.
+
+$(c)$ Asumamos que se detiene en $E$. Entonces la energía en $E$ es cero (no hay
+altura, i.e. no hay energía potencial gravitatoria; no hay movimiento, i.e. no
+hay energía cinética). La energía en $D$, según el mismo razonamiento, es
+estrictamente cinética: $E_D = K_D = \frac{1}{2}mv_D^2$.
+
+Como el objeto se detuvo, se aplicó una fuerza $F$ desaceleradora a partir de
+$D$, y el trabajo de dicha fuerza es $W_F = F \cdot L$ con $L$ el desplazamiento
+vertical entre $D$ y $E$. Pero por el teorema del trabajo y la energía,
+obtenemos entonces
+
+\begin{equation*}
+    F \cdot L = K_E - K_D = -K_D = -\frac{1}{2}m v_D^2
+\end{equation*}
+
+Por lo tanto, 
+
+\begin{equation*}
+    F = -\frac{mv_D^2}{2L}
+\end{equation*}
+
+Pero $F = ma$ la aceleración producida por $F$ (y lo que deseamos conocer). Por
+ende, 
+
+\begin{equation*}
+    ma = -\frac{mv^2_D}{2L} \iff a = -\frac{v_D^2}{2L}
+\end{equation*}
+
+Pero $v_D$ es desconocido. Sin embargo, podemos expresar $v_D^2$ en términos de
+$v_0$ si notamos que 
+
+\begin{equation*}
+    W = K_A - K_D \iff -mgh = \frac{1}{2}mv_0^2 - \frac{1}{2}mv_D^2 \iff v_D^2 =
+    2gh + v_0^2
+\end{equation*}
+
+Por lo tanto, 
+
+\begin{equation*}
+    a = -\frac{2gh + v_0^2}{2L} = -\frac{gh}{L} - \frac{v_0^2}{2L}
+\end{equation*}
+
+\pagebreak 
+
+\begin{shaded}
+    (\textbf{8})
+\end{shaded}
+
+
+\small
+\begin{quote}
+
+Sistema de coordenadas: origen en $B$, eje $x$ crece hacia la derecha, eje $y$
+crece hacia abajo.
+
+\end{quote}
+\normalsize
+
+
+$(a)$ La masa se mueve de $B$ a $C$ sin recibir fuerza alguna más que la
+fricción $\vec{R}$. Se satisface que $v_C = 0$. La energía del sistema una vez
+que el objeto alcanza la región horizontal del recorrido es dada por la energía
+kinética del movimiento y la energía del rozamiento. En particular, sabemos que 
+
+\begin{equation*}
+    W = K_C - K_B = -K_B = -\frac{1}{2}mv_B^2
+\end{equation*}
+
+Pero sabemos que la fricción hace el siguiente trabajo negativo:
+
+\begin{equation*}
+    W = -\left| \vec{R} \right| \cdot d
+\end{equation*}
+
+y $\left| \vec{R} \right| = \left| N \right| \mu_d =
+\mu_d mg$. Por ende, $W = -\mu_d mg ~ d$ y obtenemos 
+
+\begin{equation*}
+    -\mu_d mgd = -\frac{mv_B^2}{2} \iff \mu_d = \frac{v_B^2 }{2gd}
+\end{equation*}
+
+Tomando $v_B = 3.6\text{m/s}, g = 9.8\text{m/s}^2, d = 2.7\text{m}$, obtenemos 
+
+\begin{equation*}
+    \mu_d = 0.24489795918 \approx 0.245
+\end{equation*}
+
+$(b)$ El trabajo realizado por la gravedad contra la fricción es $W_G = \left|
+\vec{G} \right| \Delta y = mg y$, donde $y$ es la altura del punto $A$ en
+nuestro sistema de coordenadas. Como $A$ está a la altura del centro de la
+circunferencia, sabemos que $y = R = 1.5\text{m}$. Por lo tanto, el trabajo
+realizado por la gravedad es $mg \cdot 1.5 \text{m}$.
+
+El trabajo neto del sistema es 
+
+\begin{equation*}
+    W = W_R + W_G 
+\end{equation*}
+
+y $W = \Delta K = \frac{1}{2}mv_B^2$. Por ende, 
+
+\begin{equation*}
+    W_G = \frac{1}{2}mv_B^2 - W_R
+\end{equation*}
+
+Por lo tanto, 
+
+\begin{align*}
+    &\frac{1}{2}mv_B^2  = W_R + W_G \iff \\ 
+    \iff ~ ~ ~ 
+    &W_R = \frac{1}{2}mv_B^2 - W_G\\ 
+    \iff ~ ~ ~ 
+    &W_R = \frac{1}{2}mv_B^2 - mg \cdot 1.5\text{m} \\ 
+    \iff ~ ~ ~  
+    &W_R = \text{1kg}\left( 6.48 \frac{\text{m}^2}{\text{s}^2} - 14.7
+    \frac{\text{m}^2}{\text{s}^2} \right) \\ 
+    \iff &W_R = -8.22\text{J}
+\end{align*}
+
+Como el trabajo de la fricción es de $-8.22\text{J}$, el trabajo que se realiza
+para contrarrestarla es de esta misma magnitud. θ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

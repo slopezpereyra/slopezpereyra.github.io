@@ -111,7 +111,6 @@ INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 OUTPUT Poemas.pdf
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntx-Italic-tlf-t1.tfm
 INPUT /usr/share/texlive/texmf-dist/tex/latex/newtx/ot1minntx.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/newtx/ot1minntx.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/newtx/ot1minntx.fd
@@ -150,4 +149,3 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
 INPUT Poemas.aux
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb
-INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb

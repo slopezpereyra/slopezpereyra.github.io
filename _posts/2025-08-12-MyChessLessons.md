@@ -419,14 +419,6 @@ However, from f5, the knight has a check on h6 which attacks f7. So Nf5 does
 attack f7 indirectly, and is thus preferred over Nh5 (which indeed does
 nothing). 
 
-https://lichess.org/study/WYsco4KN/8gyuzL5Y#48
-
-
-
-
-
-
-
 
 
 
