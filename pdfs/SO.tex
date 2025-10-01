@@ -2491,16 +2491,179 @@ el tamaño de página por el PFN, y luego sumar el offset:
     6 \times 4096 + 2560 = 27136
 \end{equation*}
 
+$(\dagger: 43008)$ Como $43008 = 4096 \times 10 + 2048$, el VPN es 10 y el
+offset 2048. El VPN 10 se traduce al PFN 100 = 4. Entonces la dirección física es
+
+\begin{equation*}
+    4 \times 4096 + 2048 = 18432
+\end{equation*}
+
+Alternativamente, $2048 = 2^{11}$ y por lo tanto la dirección virtual es 
+
+\begin{equation*}
+    100 ~ 1000 ~ 0000 ~ 0000
+\end{equation*}
+
+lo cual da $2^{11} + 2^{14} = 18432$.
+
+El procedimiento es el mismo para las demás direcciones. 
+
+$(c)$ Ahora damos mapeos inversos. 
+
+$(\dagger : 16385)$ Notar que $16385 = 4096 \times 4 + 1$, lo cual significa que
+se trata de la PFN 4 con offset 1. La PFN 4 = 100 se corresponde con los VPNs 10
+y 4. Por lo tanto, 
+
+\begin{equation*}
+    10 \times 4096 + 1 = 40961, \qquad 4 \times 4096 + 1 = 16385
+\end{equation*}
+
+son las direcciones virtuales que mapean a la dirección física 16385.
 
 
+\pagebreak 
+
+\begin{shaded}
+\textbf{(14)} Dado el sistema de paginado de dos niveles del i386 direcciones
+virtuales de 32 bits, direcciones físicas de 32 bits, 10 bits de índice de
+\textit{page directory}, 10 bits de índice de \textit{table directory}, y 12
+bits de \textit{offset} dentro de la página, o sea un (10, 10, 12), indicar:
+
+\begin{enumerate}[(a)]
+    \item Tamaño de total ocupado por el directorio y las tablas de página para mapear 32~MiB al principio de la memoria virtual.
+
+    \item Tamaño total del directorio y tablas de páginas si están mapeados los 4~GiB de memoria.
+
+    \item Dado el ejercicio anterior ¿Ocuparía menos o más memoria si fuese una tabla de un solo nivel? Explicar.
+
+    \item Mostrar el directorio y las tablas de página para el siguiente mapeo de virtual a física:
+    
+    \begin{center}
+    \begin{tabular}{|c|c|}
+        \hline
+        Virtual & Física \\
+        \hline
+        $[0MiB, 4MiB)$ & $[0MiB, 4MiB)$ \\
+        \hline
+        $[8MiB, 8MiB + 32KiB)$ & $[128MiB, 128MiB + 32KiB)$ \\
+        \hline
+    \end{tabular}
+    \end{center}
+\end{enumerate}
+\end{shaded}
 
 
+$(1)$ Notar que:
 
+\begin{itemize}
+    \item Tamaño de page directory: $2^{10} \times \texttt{sizeof(PDE)} = 2^{10}
+        \times 4$
+    \item Tamaño de page table: $2^{10} \times \texttt{sizeof(PTE)} = 2^{10}
+        \times 4$
+    \item Tamaño de página: $2^{12}$ = 4KiB.
+\end{itemize}
 
+donde \texttt{sizeof(PDE) = sizeof(PTE) = 4bytes} porque las direcciones físicas
+y virtuales son de 32 bits. La memoria virtual está partida en páginas de tamaño
+4KB, y 32MiB es lo mismo que 
 
+\begin{equation*}
+    2^{25} = 2^{15} \times 2^{10} = 2^{15} \times 1\text{KiB} = 32768\text{KiB}
+\end{equation*}
 
+Por lo tanto, 32MiB ocupan $32768 / 4 = 8192$ páginas. 
 
+En cada page table hay $2^{10} = 1024$ entradas. Por lo tanto, para 8192
+páginas, necesitamos 8192/1024 = 8 page tables. Hay un único page directory por
+proceso.
 
+\textbf{Conclusión.} Los recursos necesarios para mapear 32MiB son 8 page tables
++ 1 page directory. Memoria necesaria:
+
+\texttt{}
+\begin{align*}
+    8 \times \texttt{size\_of(PT)} + 1 \times \texttt{size\_of(PD)} 
+    &= 8 \times ( 2^{10} \times 4 \text{bytes} ) + 1
+    \times (2^{10} \times 4\text{bytes}) \times
+     \\ 
+    &= 8 \times 2\text{KiB} + 4\text{KiB} \\ 
+    &= 32\text{KiB} + 4\text{KiB} \\ 
+    &= 36\text{KiB}
+\end{align*}
+
+$(b)$ 4GiB de memoria son $2^{32}$ bytes. Cada página es de $2^{12}$ bytes. Por
+lo tanto, se necesitan $2^{32} / 2^{12} = 2^{20}$ páginas. 
+
+Cada page table referencia $2^{10}$ páginas. Por lo tanto, se necesitan $2^{20}
+/ 2^{10} = 2^{10}$ page tables.
+
+Hay un único PD por proceso.
+
+$\therefore $ Se necesitan 
+
+\begin{align*}
+    2^{10} \times \text{sizeof(PT)} + \text{sizeof(PD)} 
+    &=2^{10} \times 2^{10} \times 4 + 2^{10} \times 4 \\ 
+    &= 2^{22} + 2^{12} \\ 
+    &=4\text{MiB} + 4\text{KiB}
+\end{align*}
+
+de memoria.
+
+$(c)$ Ocuparía un poco menos: la page table gigante pesaría lo mismo que todas
+las page tables pequeñas del esquema multi-nivel, pero nos ahorramos la memoria
+necesaria para la PD. 
+
+Para probarlo, veamos cómo queda un esquema de paginación de un solo nivel
+(lineal). Se sigue teniendo un offset de 12 bits, y ahora los 20 bits restantes
+son el VPN. Entonces:
+
+\begin{itemize}
+    \item Tamaño de página: $2^{12}$
+    \item Tamaño de la page table: $2^{20} \times \text{sizeof(PDE)} = 2^{20}
+        \times 4$bytes.
+\end{itemize}
+
+Por ende, usando todas las páginas, se necesitan $2^{20} \times 4 \text{bytes} =
+4\text{MiB}$.
+
+$(d)$ Sea \texttt{Block A} el bloque de 4MiB al principio del address space,
+\texttt{Block B} el bloque de 32KiB. Es fácil ver que: 
+
+\begin{itemize}
+    \item \texttt{Block A} necesita $2^{10}$ páginas, una sola page table. 
+
+    \item \texttt{Block B} necesita $2^3 = 8$ páginas, una sola page table.
+\end{itemize}
+
+¿Cómo se ve el diagrama? A la izquierda de todo, la PD con 1024 entradas. 
+
+La entrada PDE 0 apunta a PT A, la page table del proceso A. La entrada PDE 1
+apunta a PT B, la page table del proceso B. Todas las demás entradas son
+inválidas.
+
+PT A tiene 1024 entradas, y todas son válidas, y todas apunta a alguna dirección
+de la memoria física entre PFN1 y PFN 1024.
+
+PT B tiene 1024 entradas, sólo 8 de ellas son válidas, y esas 8 apuntan a
+direcciones de memoria entre PFN X y PFN Y, donde PFN X se corresponde con la
+dirección de memoria 8MiB, y PFN Y con la dirección 8MiB + 32KiB.
+
+\pagebreak 
+
+\begin{shaded}
+    Explique porque un i386 no puede mapear los 4 GiB completos de memoria virtual.
+¿Cuál es el máximo?
+\end{shaded}
+
+Ya vimos que para mapear 4GiB se necesitan 4MiB + 4KiB de espacio para las PTs y
+el PD. Por ende, sería imposible mapear los 4GiB, pues no quedaría ese espacio
+adicional para dichas estructuras.
+
+Obviamente, si alocamos la máxima cantidad de espacio posible, usamos todas las
+páginas. Y seguimos usando un sola PD. Por ende, la cantidad de espacio
+necesaria para las estructuras, en el caso en que alocamos la máxima memoria
+posible, es 4MiB + 4KiB. Por ende, el máximo es 4GiB - (4MiB + 4KiB).
 
 
 
