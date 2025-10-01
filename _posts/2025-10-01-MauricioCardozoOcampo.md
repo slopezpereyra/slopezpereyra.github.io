@@ -10,7 +10,7 @@ el conductor de sus interpretaciones clásicas.
 
 
 <p align="center">
-    <img src="../Images/MCO.jpg" width="100%" style="border: 6px solid #231709;">
+    <img src="../Images/MCO.jpg" width="50%" style="border: 6px solid #231709;">
 </p>
 
 Hay algo nostálgico y hondo en la guarania que es imposible de expresar.
