@@ -18,21 +18,21 @@ camino. De *esa* virtud estoy hablando, y no de un ideal abstracto.
 
 De acuerdo con algunas doctrinas, la virtud es un ideal aristocrático: la
 educación, la civilización y las formas son virtuosas; la ignorancia, la
-barbarie y la anarquía son vicios. Esta postura ha tenido adeptos tan distintos
+barbarie y la anarquía son viciosos. Esta postura ha tenido adeptos tan distintos
 como Platón y Sarmiento. Más feliz me parece la dichosa virtud que concibieron
 los epicúreos, Rousseau, Montaigne o Siddhartha. Además, mi experiencia personal
 desprueba la doctrina platónica. Una de las personas más virtuosas que he
 conocido, cuya vida pareciera transcurrir en incesante piedad, es una hermosa
 mujer que aprendió a leer en su edad adulta, llevó por mucho tiempo una vida
-campesina, y apenas recibió educación formal. Por otra parte, hay tan ruines y
-con tan exquisita educación, que sus lecturas y saberes sólo las vuelven más
-sutiles.
+campesina, y apenas recibió educación formal. Por otra parte, hay personas tan
+ruines y con tan exquisita educación, que sus lecturas y saberes sólo las
+vuelven más sutiles.
 
 En lo que a mí respecta, no hablo desde una falsa sensación de superioridad o
 sabiduría. Conozco pocas personas tan llenas de rasgos infelices como yo. Por
 cada virtud encuentro al menos una falencia, y en mi memoria atesoro ciertas
 cosas que me enorgullecen y otras tantas que me avergüenzan. Una de mis memorias
-más felices es un día en que salvé cientos de peces en una sequía, pero en mi
+más felices es un día de infancia en que salvé cientos de peces en una sequía, pero en mi
 adolescencia, por simple brutalidad, asesiné a una hermosa lechuza. Con muchas
 dificultades, salvé a un cachorro de morir de frío; a otro, que vi siendo
 maltratado por un bruto, lo olvidé. A mis amigos les he ofrecido un hombro para
