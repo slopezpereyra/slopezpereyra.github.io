@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  17 MAY 2025 14:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  30 SEP 2025 23:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -304,7 +304,7 @@ LaTeX Font Info:    ... okay on input line 19.
 \c@mv@boldtabular=\count292
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}] [2] [3] (./ElPerfeccionamiento.aux)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}] [2] (./ElPerfeccionamiento.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
@@ -319,10 +319,10 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  80i,5n,93p,512b,112s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
-Output written on ElPerfeccionamiento.pdf (3 pages, 50081 bytes).
+Output written on ElPerfeccionamiento.pdf (2 pages, 45480 bytes).
 PDF statistics:
- 20 PDF objects out of 1000 (max. 8388607)
- 12 compressed objects within 1 object stream
+ 17 PDF objects out of 1000 (max. 8388607)
+ 10 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

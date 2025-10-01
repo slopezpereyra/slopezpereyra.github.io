@@ -5,6 +5,8 @@
 \usepackage[utf8]{inputenc}	% Para caracteres en español
 \usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
 \usepackage{multirow,booktabs}
+
+\usepackage{mathabx}
 \usepackage[table]{xcolor}
 \usepackage{fullpage}
 \usepackage{lastpage}
@@ -671,23 +673,1046 @@ $(e)$ La velocidad media entre los dos instantes es
     2*(0.5^2)}{0.5} = \frac{(2.25, 1.75)}{0.5} = (4.5, 3.5)\text{m/s}
 \end{equation*}
 
+\pagebreak 
+
+\section{Guía 2}
+
+\begin{shaded}
+    \textbf{(1)} La siguiente figura muestra una masa $A$ de $100 \,\text{kg}$, apoyada sobre la superficie de un plano inclinado. 
+No existe rozamiento entre la masa $A$ y la superficie del plano inclinado. 
+La cuerda $AB$ es paralela al plano en que se apoya $A$, en tanto que la cuerda $AC$ está horizontal. 
+Calcular:
+\begin{enumerate}
+  \item el peso del bloque $P$ sabiendo que el sistema está en equilibrio,
+  \item la reacción del plano sobre el bloque $A$.
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+  % Plano inclinado
+  \draw[thick] (0,0) -- (5,0);
+  \draw[thick] (0,0) -- (5,2.89); % inclinación 30°
+  \draw[thick] (5,0) -- (5,2.89);
+  \node at (0.7,0.3) {$30^\circ$};
+
+  % Bloque A
+  \draw[fill=gray!30] (2.8,1.62) -- ++(0.8,0.46) -- ++(-0.3,0.52) -- ++(-0.8,-0.46) -- cycle;
+  \node at (3.1,2.2) {$A$};
+
+  % Polea B
+  \draw[thick] (5,2.89) -- (5.7,3.3);
+  \draw[thick] (5.7,3.3) circle (0.2);
+  \node at (5.9,3.55) {$B$};
+
+  % Polea C
+  \draw[thick] (-1.5,2.4) -- (-1.5,3.1);
+  \draw[thick] (-1.5,3.1) circle (0.2);
+  \node at (-1.7,3.35) {$C$};
+
+  % Cuerdas
+  \draw[thick] (3.6,2.08) -- (5.7,3.3); % A-B
+  \draw[thick] (3.2,1.85) -- (-1.5,3.1); % A-C
+  \draw[thick] (5.7,3.5) -- (5.7,1.5); % cuerda a P
+  \draw[thick] (-1.5,2.9) -- (-1.5,1.3); % cuerda a Q
+
+  % Bloques P y Q
+  \draw[fill=gray!30] (5.4,1.5) rectangle (6,0.6);
+  \node at (5.7,0.3) {$P$};
+
+  \draw[fill=gray!30] (-1.8,1.3) rectangle (-1.2,0.4);
+  \node at (-1.5,0.2) {$Q=10$ kg};
+\end{tikzpicture}
+\end{center}
+
+(El gráfico es sólo esquemático: la cuerda AB es horizontal!)
+\end{shaded}
+
+$(1)$ Definamos un nuevo sistema de coordenadas, con un vector unitario paralelo
+a la superficie y otro perpendicular a la superficie: 
+
+\begin{equation*}
+    \hat{p} = (\cos \theta, \sin \theta), \qquad \hat{n} = (-\sin \theta, \cos
+    \theta)
+\end{equation*}
+
+(por $\hat{p}$aralela y $\hat{n}$ormal). Recordemos que la proyección escalar de
+un vector $\vec{v}$ sobre un vector $\vec{w}$ se define como $\vec{v} \cdot
+\vec{w}$.
+
+El sistema está en equilibrio. Por ende, las fuerzas que mueven la masa $A$
+hacia arriba y hacia abajo de la superficie suman cero (se equilibran). Dichas
+fuerzas son 
+
+\begin{equation*}
+    \vec{G} = -m_A g \hat{j}, \qquad \vec{F_Q} = -m_Qg \hat{i}, \qquad \vec{F_P}
+    = m_P g \hat{p}
+\end{equation*}
+
+Por ende,
+
+\begin{equation}
+    G_{\parallel} + F_{Q ~ \parallel} + F_{P ~ \parallel} = 0
+\end{equation}
+
+donde el sufijo $\parallel$ indica "el componenete paralelo a la superficie" de
+la fuerza y $\vec{G}$ es la fuerza de la gravedad. Ya dijimos que dicho
+componente será el producto punto entre cada vector y $\hat{p}$. 
+
+
+\small
+\begin{quote}
+
+\textbf{Nota.} Si un vector ya es paralelo a cierto vector unidad, como
+$\vec{F_P}$ es paralelo a $\hat{p}$, la proyección de dicho vector sobre el
+unitario es simplemente la magnitud del vector. Es decir, $F_{P ~ \parallel} =
+\vec{F_P} \cdot \hat{p} = F_P$. (Ver nota al final para una demostración.) 
+\end{quote}
+\normalsize
+
+Obtenemos entonces que la ecuación $(1)$ resulta:
+
+
+\begin{equation}
+    -m_A g \sin \theta  + (-m_Q g)\cos\theta + m_P g = 0
+\end{equation}
+
+de lo cual se sigue que 
+
+\begin{equation*}
+    m_P = m_A \sin \theta + m_Q \cos \theta = 100\text{kg}\frac{1}{2} +
+    10\text{kg} \frac{\sqrt{3} }{2} = 58.6602540378\text{kg}
+\end{equation*}
 
 
 
+$(2)$ Como no hay fricción, la reacción del plano sobre el bloque es dada
+estrictamente por la fuerza normal. Dicha fuerza es paralela al vector unitario
+$\hat{n}$, i.e. es perpendicular a la superficie. Su magnitud debe
+contraarrestar la de todas las fuerzas que actúan en dirección perpendicular a
+la superficie. Dichas fuerzas son la gravedad y la fuerza de la polea estirada
+por $Q$, con componentes perpendiculares a la superficie dados por:
+
+\begin{align*}
+    &G_{\perp} = \vec{G} \cdot \vec{n} = -m_A g \cos \theta = - ( 100\text{kg}
+    \cdot
+    \sqrt{3}/2 \cdot
+    \cdot 9.8\text{m/s}^2) = -848.704895709\text{N}\\
+    &F_{Q \perp} = \vec{F_Q} \cdot \vec{n} = (-m_Q g)(- \sin \theta) =
+    10\text{kg} \cdot 1 / 2 \cdot 9.8\text{m/s}^2 =  49\text{N}
+\end{align*}
+
+La suma de ambas componentes nos da $-848.704895709\text{N} + 49\text{N} =
+-799.704895709$, lo cual quiere decir que $N \approx 800\text{N}$ es la reacción
+del plano.
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(2)} Un cuerpo de masa $m = 10$kg está apoyado en una superficie
+    horizontal sin rozamiento. Una persona tira del bloque con una soga fija al
+    bloque en dirección horizontal con una fuerza de 20N. Calcular la
+    aceleración del bloque suponiendo despreciable la masa de la soga.
+\end{shaded}
+
+Como el movimiento es horizontal, $\vec{a} = a \hat{i}$ y solo basta determinar
+$a$. Por la segunda ley de Newton, $F = ma$, de lo cual se sigue que 
+$20\text{N}/10\text{kg} = a$, es decir $a = 2\text{m/s}^2$.
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(4)} Un bloque $A$ de masa $m_A = 8$kg descansa sobre un plano
+    inclinado con ángulo $\alpha = \ang{37}$, unido con una cuerda y una polea
+    sin rozamiento a un bloque $B$ de masa $m_B = \text{4}$kg. Determina la
+    aceleración $\vec{a}$ de las masas y la tensión de la cuerda cuando se deja
+    al sistema evolucionar libremente. Realice un diagrama de cuerpo aislado.
+\end{shaded}
+
+Sean 
+
+\begin{equation*}
+    \hat{p} = (\cos \alpha, \sin \alpha),\qquad \hat{n} = (-\sin \alpha, \cos\alpha)
+\end{equation*}
+
+los vectores unitarios de un sistema de coordenadas con ejes paralelo
+($\hat{p}$) y perpendicular ($\hat{n}$) al plano inclinado.
+
+$A$ se mueve paralelo al plano. Luego $\vec{a_A} = a_A \hat{p}$ y solo queda
+determinar $a_A$. $B$ se mueve verticalmente. Luego $\vec{a_B} = a_B \hat{j}$ y
+solo queda determinar $a_2$. Por la segunda ley de Newton, 
+
+\begin{equation*}
+    m_A a_{A} = G_{A ~ \parallel} + T, \qquad m_B a_B = G_B + T 
+\end{equation*}
+
+con el sufijo $\parallel$ indicando el componente de una fuerza paralelo al
+plano inclinado. Es claro que $a_A = -a_B$. Además, de la segunda ecuación
+arriba podemos tomar $T = m_B a_B - G_B$. Sustituyendo en la primera expresión, 
+
+\begin{align*}
+    m_Aa_A 
+    &= G_A_{\parallel} + \left( m_B a_B - G_B \right)  \\ 
+    &= G_{A \parallel} - m_Ba_A - G_B \\ 
+\end{align*}
+
+con lo cual obtenemos una ecuación con única incógnita $a_A$. Resolviendo: 
+
+\begin{align*}
+    a_A 
+    &= \frac{ G_{A ~ \parallel}- G_B }{m_A + m_B}\\ 
+    &= \frac{( \vec{G_A} \cdot \hat{p} ) - (- m_Bg )}{12\text{kg}}\\
+    &= \frac{( -m_A g \sin \alpha) + m_Bg}{12\text{kg}}\\ 
+    &=\frac{-8\text{kg}\cdot 9.8 \text{m/s}^2\cdot 0.602) + 4\text{kg}\cdot 9.8
+    \text{m/s}^2}{12\text{kg}} \\ 
+    &=\frac{(-8\cdot 9.8 \text{m/s}^2\cdot 0.602) - 4\text{kg}\cdot 9.8
+    \text{m/s}^2}{12} \\ 
+    &= -0.6664 \text{m/s}^2
+\end{align*}
+
+Habiendo determinado la aceleración, podemos determinar $T$ recordando que $m_B
+a_B = G_B + T$, es decir 
+
+\begin{equation*}
+    T = 4\text{kg}\cdot0.6664 \text{m/s}^2 + \text{4kg}\cdot 9.8 \text{m/s}^2 =
+    41.856\text{N}
+\end{equation*}
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(5)} Dos bloques de masas $m_1, m_2$ están en contacto sobre una
+    mesa sin rozamiento. Una fuerza $\vec{F}$ se aplica sobre el primero. 
+
+    $(a)$ Encontrar la aceleración del sistema y la fuerza de contacto entre
+    los bloques. Evaluar para $m_1=2$kg, $m_2 = 1$kg, $F = 3$N.
+
+    $(b)$ Muestre que si la misma fuerza $\vec{F}$ se aplica en sentido
+    contrario, i.e. sobre $m_2$ en lugar de $m_1$, la fuerza de contacto será
+    distinta.
+\end{shaded}
+
+$(a)$ Si consideramos ambos bloques como un único sistema al que se le aplica
+una fuerza $\vec{F}$, 
+
+\begin{equation*}
+    F = (m_1 + m_2)a \iff a = \frac{F}{m_1 + m_2}
+\end{equation*}
+
+Para el caso particular que se nos pide, 
+
+\begin{equation*}
+    a = \frac{3\text{N}}{3\text{kg}} = 1 \frac{m}{s}^2
+\end{equation*}
+
+$(b)$ Considere el diagrama de cuerpo aislado de la segunda masa. La única
+fuerza que recibe es la fuerza de contacto $F_c$, que resultará siendo $F_c = a
+m_2$. Pero si la fuerza se aplicara en sentido contrario, en el diagrama de
+cuerpo aislado de la primera masa tendríamos $F_c = am_1$.
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(6)} Una bola de masa $m=\text{10}$kg cuelga atada al techo de un
+    auto. La tensión máxima que la soga soporta sin romperse es $500$N. ¿Cuál es
+    la máxima aceleración horizontal que puede alcanzar el auto sin que se corte
+    la cuerda? Determina el ángulo entre la cuerda y la vertical para esa
+    aceleración máxima.
+\end{shaded}
+
+Por la segunda ley de Newton,
+
+\begin{align*}
+    \vec{F} = m\vec{a} 
+    \iff 
+    &\vec{T} + \vec{G} = m \vec{a} \\
+    \iff &\vec{T} =
+    m\vec{a} + \vec{G}\\ 
+    \iff &\vec{T} = ma \hat{i} - mg \hat{j}\\ 
+    \Rightarrow &T = \sqrt{m^2a^2 + m^2g^2} 
+\end{align*}
+
+con $T$ la tensión de la soga (magnitud de $\vec{T}$). Asumamos que la tensión
+de la soga es 500N. Luego
+
+\begin{align*}
+    &500^2\text{N}^2 = m^2a^2 + m^2g^2\\ 
+    \iff ~ ~ ~ 
+    &a^2 = \frac{ -m^2g^2 + 500^2\text{N}^2 }{m^2}\\ 
+    \iff ~ ~ ~ 
+    &a = \sqrt{ \frac{ -( mg )^2 + ( 500\text{N} )^2 }{m^2} } \\ 
+    \iff ~ ~ ~ 
+    & a = \sqrt{ \frac{  -9604\text{N}^2 + 250000\text{N}^2  }{ (10\text{kg})^2
+    }}\\
+    \iff ~ ~ ~ 
+    &a = 49.0301947783\text{m/s}^2
+\end{align*}
+
+El ángulo entre la cuerda y la vertical se corresponde con el ángulo $\theta$
+entre la cuerda y el vector de gravedad. Y sabemos que 
+
+\begin{equation*}
+    \frac{\vec{T} \cdot \vec{G}}{|\vec{T}| |\vec{G}|} = \cos \theta
+\end{equation*}
+
+Si asumimos que la aceleración es la máxima, podemos usar que $\vec{T} = ma
+\hat{i} - mg \hat{j}$ para obtener que 
+
+\begin{equation*}
+    \vec{T} \cdot \vec{G} = (-mg)(-mg) = 9604\text{N}^2
+\end{equation*}
+
+y $\left| \vec{T} \right| \left| \vec{G} \right| = 500\text{N} \cdot 98\text{N}
+= 9800\text{N}$ para obtener que 
+
+\begin{equation*}
+    \cos \theta = \frac{9604\text{N}^2}{9800\text{N}}= 0.98\text{N} \iff \theta
+    = 1.37046148\text{rad}
+\end{equation*}
+\pagebreak 
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(9)} Un bloque de masa $m$ se desliza sobre el suelo mientras una
+    fuerza de magnitud $12$N tira del mismo formando un ángulo $\theta$ con la
+    horizontal. $\mu_d = 0.4$. $\theta \in [0, \pi / 2]$. El bloque siempre
+    permanece sobre el suelo. Hallar $\theta$  que maximiza la aceleración.
+\end{shaded}
 
 
+El problema establece que la aceleración es horizontal, i.e. $\vec{a} = a
+\hat{i}$ y basta maximizar $a$. Sabemos que 
+
+\begin{equation*}
+    F_{\parallel} + R = ma \end{equation*}
+
+con $\vec{R}$ la fuerza de rozamiento y $\vec{F_{\parallel}}$ la proyección de
+$\vec{F}$ en $\hat{i}$. Pero entonces la ecuación resulta
+
+\begin{equation*}
+    \left| \vec{F} \right| \cos \theta + \mu_d\left| \vec{N} \right|  = ma
+\end{equation*}
+
+La fuerza normal es el conjunto de fuerzas verticales, i.e. la fuerza que se
+opone a la gravedad más la componente
+perpendicular de $\vec{F}$:
 
 
+\begin{equation*}
+    \left| \vec{N} \right| = mg + \left| \vec{F} \right| \sin \theta
+\end{equation*}
+
+Resulta entonces 
+
+\begin{align*}
+    &12\text{N} \cos \theta + \mu_d \left( mg + 12\text{N} \sin \theta \right) =
+    ma \\ 
+    \iff ~ ~ ~ 
+    & a = \frac{ 12\text{N} \cos \theta + \mu_d mg + \mu_d12\text{N}\sin
+    \theta}{m}\\ 
+    \iff ~ ~ ~ 
+    &a = \frac{12\text{N}(\cos \theta + \mu_d \sin \theta) + \mu_d mg}{m}
+\end{align*}
+
+Es claro que maximizar $a$ respecto a $\theta$ se corresponde con maximizar
+
+\begin{equation*}
+    \varphi(\theta) := \cos \theta + \mu_d  \sin \theta
+\end{equation*}
+
+Ahora bien, $\varphi' = \frac{d\varphi}{d\theta} = - \sin \theta + \mu_d \cos
+\theta$ y
 
 
+\begin{align*}
+    \varphi'(\theta) = 0 
+    \iff ~ ~ ~ 
+    &\mu_d \cos \theta = \sin \theta \\ 
+    \iff ~ ~ ~ 
+    &\mu_d = \frac{\sin \theta}{\cos \theta} \\ 
+    \iff ~ ~ ~ 
+    &\mu_d = \tan \theta \\ 
+    \iff ~ ~ ~
+    &\theta = \arctan(0.4) 
+\end{align*}
+
+Entonces $\arctan(0.4)$ es el valor de $\theta$ que maximiza la aceleración.
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(10)} Un bloque de masa $m_A, m_B$ se deslizan por un plano
+    inclinado, unidos por una cuerda sin masa, donde $m_A$ arrastra a $m_B$. El
+    ángulo de inclinación es $\theta$, hay fricción con coeficiente $\mu_A$ para A
+    y $\mu_B$ para $B$. 
+
+    $(a)$ Encuentre una expresión para $\vec{T}$ la tensión de la cuerda. 
+
+    $(b)$ Encuentre una expresión para $\vec{a}$.
+\end{shaded}
+
+$(a)$ Tomaremos que hacia arriba de la pendiente es la dirección positiva, hacia
+abajo la negativa. La tensión actúa en dirección contraria para cada cuerpo,
+i.e. $T_A = -T_B$. Por segunda ley de Newton,
+
+\begin{equation*}
+    T_A + G_{A \parallel } + R_{A} = m_A a, \qquad -T_A + G_{B \parallel} + R_B = m_B a
+\end{equation*}
+
+donde 
+
+\begin{align*}
+&R_A = \left| \vec{N_A} \right|\mu_A = m_A g \mu_A, &R_B = m_B g
+\mu_B \\ 
+&G_{A \parallel} = -m_Ag \sin \theta,  &G_{B \parallel} = -m_B g \sin \theta
+\end{align*}
+
+Sumando ambas ecuaciones, obtenemos 
+
+\begin{align*}
+    &a(m_A + m_B) = G_{A \parallel} + G_{B \parallel} + R_A + R_B\\ 
+    \iff  ~ ~ ~ 
+    &a(m_A + m_B) = -m_A g \sin \theta - m_B g \sin \theta + m_A g \mu_A + m_B g
+    \mu_B \\ 
+    \iff ~ ~ ~ 
+    &a(m_A + m_B) = -g\sin \theta\left( m_A + m_B \right)  + g\left( m_A \mu_A +
+    m_B \mu_B\right) \\ 
+    \iff ~ ~ ~ 
+    &a = -g\sin \theta + \frac{g(m_A \mu_A + m_B \mu_B)}{m_A + m_B}
+\end{align*}
+
+Se sigue que con $T := T_A$, 
+
+\begin{align*}
+    &T = m_A a - G_{A \parallel} - R_A \\ 
+    \iff ~ ~ ~ 
+    &T = m_A \left( -g \sin \theta + \frac{g(m_A \mu_A + m_B \mu_B)}{m_A + m_B}
+    \right) + m_A g \sin \theta - m_A g \mu_A  \\ 
+    \iff ~ ~ ~ 
+    &T = m_A \left( -g \sin \theta + \frac{g(m_A \mu_A + m_B \mu_B)}{m_A + m_B}
+    + g \sin \theta - g\mu_A\right) \\ 
+    \iff ~ ~ ~ 
+    &T = m_Ag \left( -\sin \theta + \frac{m_A \mu_A + m_B \mu_B}{m_A + m_B}
+    + \sin \theta - \mu_A\right) \\ 
+    \iff ~ ~ ~ 
+    &T = m_Ag \left(\frac{m_A \mu_A + m_B \mu_B}{m_A + m_B}
+     - \mu_A\right) 
+\end{align*}
+
+Pero 
+
+\begin{align*}
+    \frac{m_A \mu_A + m_B\mu_B - \mu_A(m_A + m_B)}{m_A + m_B} 
+    = \frac{m_B \mu_B - m_B\mu_A}{m_A + m_B} = \frac{m_B(\mu_B - \mu_A)}{m_A +
+    m_B}
+\end{align*}
+
+con lo cual finalmente obtenemos 
+
+\begin{equation*}
+    T = m_A g \frac{m_B(\mu_B - \mu_A)}{m_A + m_B}
+\end{equation*}
+
+\pagebreak
+
+\begin{shaded}
+\textbf{Problema 12.}  
+Dos resortes de longitudes naturales $L_0 = 0.5 \, \text{m}$ pero con diferentes constantes 
+elásticas, $K_1 = 50 \, \text{N/m}$ y $K_2 = 100 \, \text{N/m}$, se encuentran colgados del 
+techo. Un cuerpo de masa $m = 2.5 \, \text{kg}$ que inicialmente está suspendido de ellos es 
+estirado hacia abajo hasta que la longitud de los resortes se duplica. ¿Cuál es la aceleración 
+$\vec{a}$ que adquiere el cuerpo cuando se deja libre? \\[1em]
+
+% --- TikZ Diagram ---
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+
+% Ceiling
+\draw[fill=black!70] (-2,0) rectangle (2,0.3);
+
+% Springs
+\draw[decoration={coil,aspect=0.3,segment length=3mm,amplitude=2mm},decorate] (-1.2,0) -- (-1.2,-2);
+\draw[decoration={coil,aspect=0.3,segment length=3mm,amplitude=2mm},decorate] (1.2,0) -- (1.2,-2);
+
+% Labels for springs
+\node[left] at (-1.2,-1) {$K_1$};
+\node[right] at (1.2,-1) {$K_2$};
+
+% Mass block
+\draw[fill=black!30] (-1.5,-2) rectangle (1.5,-3.5);
+\node at (0,-2.75) {$m$};
+
+\end{tikzpicture}
+\end{center}
+\end{shaded}
+
+La masa $m$ se mueve por la acción conjunta de los dos resortes. En particular,
+por la segunda ley de Newton, 
+
+\begin{equation*}
+    R_1 + R_2 + G = ma
+\end{equation*}
+
+donde $R_1 = -k_1 \Delta y R_2 = -k_2 \Delta y$ y $G = -mg$. La distancia
+$\Delta y$ es tal que la longitud de los resortes se duplica, i.e. la longitud
+es de 0.5m. Esto significa que $\Delta y = -1 / 2 \text{m}$. Por lo tanto obtenemos 
 
 
+\begin{align*}
+    a 
+    &= \frac{ -\left(-\frac{1}{2}\text{m}\right)50\text{N/m} - \left(
+        -\frac{1}{2}\text{m}\right)100\text{N/m} - 2.5\text{kg} \cdot 9.8\text{m/s}^2
+    }{2.5\text{kg}}\\ 
+    &= \frac{25\text{N} + 50\text{N} - 24.5\text{N}}{2.5\text{kg}}\\ 
+    &= \frac{50.5 \text{N}}{2.5\text{kg}} \\ 
+    &=20.2\text{m/s}^2
+\end{align*}
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(13)} Un resorte de constante elástica $k$ tiene un extremo fijo y
+    el otro coincide con el punto $x_0$ cuando no está deformado. A este extremo
+    se adhiere una masa $m$ que se desplaza hasta $x_1$, donde se la suelta. 
+    $k = 8\text{N/m}, m = 2\text{kg}, x_0 = 40\text{cm}, x_1=55\text{cm}$.
+
+    $(a)$ Determine las funciones de movimiento, velocidad y aceleración
+    respecto al tiempo. 
+
+    $(b)$ Determine el período, la frecuencia, las coordenadas extremas del
+    movimiento, y el módulo de la velocidad de la masa $m$ en el punto de
+    equilibrio.
+\end{shaded}
+
+$(a)$ Asumimos que no hay movimiento vertical. Sea $\omega = \sqrt{\frac{k}{m}}
+$. Sabemos que
+
+\begin{equation*}
+    a(t) = -\omega^2 x(t), \qquad v(t) = \omega A \cos(\omega t + \phi), \qquad
+    x(t) = x_0 + A \sin(\omega t + \phi)
+\end{equation*}
+
+con $x_0$ el punto de reposo. Las condiciones del problema establecen
+
+\begin{equation*}
+    x(t=0) = x_1 = 55\text{cm} = 0.55\text{m}, \qquad v(t=0) = 0
+\end{equation*}
+
+Sustituyendo $v(t = 0)$ por su evaluación, se tiene
+
+\begin{equation*}
+    \omega A \cos(\phi) = 0
+\end{equation*}
+
+Por def. sabemos que $\omega \neq 0$. Si $A$ fuera cero, entonces tendríamos
+$x(t=0) = x_0$, lo cual es absurdo porque $x_0\neq x_1$. Por ende $A \neq 0$.
+Pero entonces la ecuación anterior se satisface si y solo si $\cos(\phi) = 0$,
+es decir si $\phi \in \left\{ \frac{\pi}{2}, -\frac{\pi}{2} \right\} $. Pero
+restringimos $\phi$ a los reales positivos, obteniendo $\phi = \frac{\pi}{2}$.
+
+Ahora tomemos $x(t = 0) = x_1$, y evaluamos la expresión izquierda sustituyendo
+$\phi$ por $\frac{\pi}{2}$. Obtenemos
+
+\begin{equation*}
+    x_0 + A \sin(\phi) = x_1 \iff A = x_1 - x_0
+\end{equation*}
+
+Con esto lo hemos determinado todo. 
+
+$(b)$ El periodo del movimiento oscilatorio harmónico se define como
+$\frac{2\pi}{\omega}$. Pero 
+
+\begin{equation*}
+    \omega = \sqrt{\frac{k}{m}} = \sqrt{\frac{8\text{N/m}}{2\text{kg}}}  =
+    \sqrt{4 \frac{1}{\text{s}^2}} = \frac{2}{\text{s}}
+\end{equation*}
+
+Por lo tanto, el período es 
+
+\begin{equation*}
+    \frac{2\pi}{\omega} = \frac{2\pi}{\frac{2}{\text{s}}} = \pi\text{s}
+\end{equation*}
+
+La frecuencia se define como la inversa del período, i.e.
+$\frac{1}{\pi\text{s}} = \frac{1}{\pi}\text{Hz}$.
+
+Las coordenadas máximas y mínimas son 
+
+\begin{equation*}
+    x_{\text{max}} = x_0 + A, \qquad x_{\text{min}} = x_0 - A
+\end{equation*}
+
+(lso casos en que el seno es uno y menos uno). Estos valores se pueden calcular
+fácil. 
+
+Observemos ahora que $x(t) = x_0$ si y solo si $A \sin(\omega t + \phi) = 0$,
+i.e. si y solo si $\sin(\omega t + \phi) = 0$, i.e. si 
+y solo si $\omega t + \phi = \pi$, lo cual se comple si y solo si 
+$t = \frac{ \pi - \phi }{\omega}$
+
+Pero $\phi = \frac{\pi}{2}$ y por lo tanto $\pi - \phi = \phi$. Luego $x(t) =
+x_0$ si y solo si $t = \frac{\phi}{\omega}$. En dicho instante, la velocidad es 
+
+\begin{align*}
+    v\left(\frac{\phi}{\omega}\right) 
+    &= \omega A \cos\left(\omega \cdot \frac{\phi}{\omega} +
+    \phi\right)\\ 
+    &= \omega A \cos(2\phi)  \\ 
+    &=\omega A \cos(\pi) \\ 
+    &=-\omega A
+\end{align*}
+
+Por lo tanto, el módulo de la velocidad en dicho instante es $\omega A$.
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(14)}. Sobre una superficie horizontal se fija un extremo de un resorte que tiene una longitud
+natural de 0.5 m y cuya constante elástica es 400 N/m. Al otro extremo se une un
+cuerpo de 2 kg de masa que se mueve de forma tal que describe una trayectoria
+circular.
+(a) Si el radio de la circunferencia es de 1 m, ¿Cual sera la velocidad del cuerpo?
+(b) Si se duplica la velocidad, ¿Cual deberíaa ser el nuevo radio?
+\end{shaded}
 
 
+\begin{center}
+    
+\begin{tikzpicture}
+
+\def\rr{3cm}
+\def\nn{3}
+\draw[thick, black] (0,0) circle (\rr);
+\foreach \aa in {1,2,...,\nn}{
+\begin{scope}[rotate={\aa*360/\nn+15}]
+\draw [-latex, blue, ultra thick] (0:\rr) coordinate(dd\aa)--++(0,1.5cm)coordinate(aa\aa)node[right]{$\vv{v}$};
+\draw [-latex, red, ultra thick] (0:\rr) --++(-1cm,0) node[right]{$\vv{a}$};
+\draw [fill=black] (0:\rr) circle (0.1);
+\end{scope}
+\draw[ultra thick, gray,-latex] (-15:{\rr+0.5cm}) to [bend right=15] node[right]{$\omega$}(15:{\rr+0.5cm});
+}
+
+}
+
+\draw (0,0) --(aa3)coordinate[pos=2](ff) -- (ff);
+\draw (0,0) -- (dd3)coordinate[pos=2](ff) -- (ff);
 
 
+\end{tikzpicture}
+\end{center}
+
+$(a)$ Nuestro sistema de coordenadas tendrá $\hat{i}$ antiparalelo a la
+aceleración y $\hat{j}$ paralelo a la velocidad. Pues el movimiento es uniforme
+sabemos que la aceleración tiene solo una componente centrípeta, i.e. 
+$\vec{a} = a \hat{i}$ para algún $a < 0$. (Si $\hat{i}$ fuera paralelo en vez de
+antiparalelo a la aceleración, sería $a > 0$.)
+
+Por la segunda ley de Newton, la aceleración será la suma de las fuerzas
+centrípetas dividida por la masa. Pero la única fuerza centrípeta es la del
+resorte. Por lo tanto,
+
+\begin{equation*}
+    \vec{a} = \frac{\vec{R}}{m} \iff a = \frac{\left| \vec{R} \right| }{m} \iff
+    a = -\frac{k}{m} \cdot \frac{1}{2}\text{m}
+\end{equation*}
+
+dado que la distancia entre el resorte y su punto de reposo es medio metro. Sin
+embargo, el movimiento circular uniforme obedece la ley 
+
+\begin{equation*}
+    a = - \frac{v^2}{r}
+\end{equation*}
+
+(Si nuestro sistema de coordenadas tuviera $\hat{i}$ apuntanado hacia dentro,
+i.e. centrípeto, sería $a = v^2 / r$). De los dos resultados hasta ahora
+presentados, se sigue 
+
+\begin{align*}
+    \frac{v^2}{r} = \frac{k}{m} \cdot \frac{1}{2}\text{m}
+    \iff 
+    &\frac{v^2}{r} = \frac{400\text{N/m}}{2\text{kg}} \cdot \frac{1}{2}\text{m}\\ 
+    \iff ~ ~ ~ 
+    &\frac{v^2}{r} = 100 \text{m/s}^2
+\end{align*}
+
+Si $r = 1\text{m}$, entonces resulta 
+
+\begin{equation*}
+    v^2 = 100 (\text{m/s})^2 \iff v = 10\text{m/s}
+\end{equation*}
+
+lo cual resuelve el ejercicio.
+
+$(b)$ Asumamos que se duplica la velocidad, i.e. que $v = 20\text{m/s}$. Notar
+que ahora la tensión del resorte depende de un $r$ desconocido, y se obtiene
+
+\begin{equation*}
+    a = -\frac{k}{m} \cdot \Delta r
+\end{equation*}
+
+donde $\Delta r = r - \frac{1}{2}\text{m}$. Por ende,
+
+\begin{align*}
+    \frac{v^2}{r} = \frac{k\Delta r}{m}
+    \iff 
+    &\frac{400(\text{m/s})^2}{r} =  \Delta r \frac{400\text{N/m}}{2\text{kg}}\\
+    \iff ~ ~ ~ 
+    &\frac{1(\text{m/s})^2}{r} = \Delta r \frac{\text{N/m}}{2\text{kg}} \\ 
+    \iff ~ ~ ~ 
+    &\frac{1(\text{m/s})^2}{r} = \frac{ \Delta r }{2\text{s}^2}  \\ 
+    \iff ~ ~ ~ 
+    &\Delta r \cdot r = 2\text{m} \\ 
+    \iff ~ ~ ~ 
+    &r (r - \frac{1}{2}\text{m}) = 2\text{m} \\ 
+    \iff ~ ~ ~ 
+    &r^2 - \frac{r}{2}\text{m} - 2\text{m} = 0 
+\end{align*}
+
+Como $[r] = \text{m}$ las unidades son todas las mismas y simplemente nos
+enfocamos en la función cuadrática $\varphi(x) = x^2 - \frac{x}{2} - 2$, con
+raíces 
+
+\begin{align*}
+    x = \frac{0.5 \pm \sqrt{0.5^2 + 8}}{2} \iff x \in \left\{ 1.68614066163,
+    -1.18614066163 \right\} 
+\end{align*}
+
+Pero obviamente el radio debe ser positivo. Por ende, nos quedamos con la raíz
+positiva y concluimos $r \approx 1.686\text{m}$. 
+
+\pagebreak 
+
+\section{Guía 3}
+
+\begin{shaded}
+    \textbf{(1)} Considerá el diagrama siguiente: 
+    \begin{center}
+\begin{tikzpicture}[scale=1.2]
+
+% Define points
+\coordinate (T) at (0,0);          % top-right corner of square
+\coordinate (B) at (0,-3);         % bottom-right corner of square
+\coordinate (BL) at (-3,-3);       % bottom-left corner
+\coordinate (TL) at (-3,0);        % top-left corner
+
+% External points
+\coordinate (A) at (5.5,-3.5);
+\coordinate (C) at (-1.5,-5);
+\coordinate (Bpt) at (0,-6.5);
+
+% Draw square
+\fill[gray!60] (T) -- (TL) -- (BL) -- (B) -- cycle;
+\draw (T) -- (TL) -- (BL) -- (B) -- cycle;
+
+% Dimension arrow for d
+\draw[<->] (-3.4,0) -- (-3.4,-3) node[midway,left]{$d$};
+
+% Rope TA
+\draw (T) -- (A);
+\draw (B) -- (Bpt);
+\draw[dashed] (B) -- (C);
+
+% Mark lengths
+\path (T) -- (A) node[midway,above right]{$\ell$};
+
+% Dots
+\fill (T) circle (2pt) node[above right]{$T$};
+\fill (A) circle (2pt) node[below right]{$A$};
+\fill (Bpt) circle (2pt) node[below]{$B$};
+\fill (C) circle (2pt) node[below left]{$C$};
+
+% Angles
+\pic[draw,->,angle radius=2.5cm,"$\theta_A$"] {angle = B--T--A};
+\pic[draw,->,angle radius=2.5cm,"$\theta_C$"] {angle = C--B--Bpt};
+
+\end{tikzpicture}
+    \end{center}
+
+    Una masa pequeña se coloca al final de la cuerda de largo $\ell =
+    132\text{cm}$ y se suelte desde el reposo. Sabiendo que $\theta_A =
+    \ang{5}, d = 66\text{cm}$, determinar: 
+
+    $(a)$ La velocidad en el punto más bajo de la trayectoria. 
+
+    $(b)$ El valor de $\theta_C$ para la máxima altura que alcanza la masa
+    (punto C).
+
+    $(c)$ La tensión de la cuerda en la posición $B$.
+
+\end{shaded}
+
+$(a)$ El sistema posee energía kinética (por el movimiento de la masa) y
+potencial (por la gravedad, que es conservativa). Establezcamos nuestro sistema
+de coordenadas con origen en el punto de reposo $B$ y crecimiento hacia arriba y
+hacia la derecha. La energía potencial de la gravedad es $U = mg \Delta y$ con
+$\Delta y$ la distancia vertical entre la masa (en un instante dado) y el punto
+de reposo. Como el punto de reposo coincide con la coordenada $(0, 0)$, resulta
+$U = mgy$.
+
+Es fácil determina la altura de $A$ geométricamente. Si formamos un triángulo
+rectángulo con $T$ y $A$, como se ve abajo en la figura,
+
+    \begin{center}
+\begin{tikzpicture}[scale=1.2]
+
+% Define points
+\coordinate (T) at (0,0);          % top-right corner of square
+\coordinate (B) at (0,-3);         % bottom-right corner of square
+\coordinate (BL) at (-3,-3);       % bottom-left corner
+\coordinate (TL) at (-3,0);        % top-left corner
+
+% External points
+\coordinate (A) at (5.5,-3.5);
+\coordinate (C) at (-1.5,-5);
+\coordinate (Bpt) at (0,-6.5);
+\coordinate (X) at (0, -3.5);        % top-left corner
+
+% Rope TA
+\draw (T) -- node[text midway, above]{$\ell$} (A);
+\draw (T) -- node[text midway, left]{$\ell \cos \theta_A$} (X);
+\draw (X) -- node[text midway, below]{$\ell \sin \theta_A$} (A);
+
+\fill (X) circle (2pt) node[above right]{$X$};
+\fill (T) circle (2pt) node[above right]{$T$};
+\fill (A) circle (2pt) node[below right]{$A$};
+
+\pic[draw,->,angle radius=2.5cm,"$\theta_A$"] {angle = B--T--A};
+
+\end{tikzpicture}
+\end{center}
+
+obtenemos que la altura del punto $A$ es $\ell - \ell \cos \theta_A \approx
+0.502\text{cm}$. 
+
+Ahora bien, cuando la masa se encuentra en $A$ en el instante inicial, no hay
+movimiento y por ende la energía es estrictamente potencial. Cuando la masa
+cruza la posición de reposo, no hay energía potencial de la gravedad (pues la
+altura es cero), y la energía es estrictamente cinética. Pero por preservación
+de la energía, la energía en ambos instantes debe ser idéntica. Por lo tanto, 
+
+\begin{align*}
+    E_A = E_B \iff 
+    &K_A + U_A = K_B + U_E \\ 
+    \iff ~ ~ ~ 
+    &0 + mg \Delta y = \frac{1}{2}mv_B^2 + 0\\ 
+    \iff ~ ~ ~ 
+    &2(9.8\text{m/s}^2)\left( \ell - \ell \cos \theta_A \right) = v^2_B \\ 
+    \iff ~ ~ ~ 
+    &9.84507709704 \cdot (\text{m/s}^2)\text{cm} = v^2_B \\ 
+    \iff  ~ ~ ~
+    &9.84507709704 \cdot (\text{m/s}^2)\text{cm} = v^2_B \\ 
+    \iff  ~ ~ ~ 
+    &0.09845077097 (\text{m/s}^2)\text{m} = v_B^2 \\ 
+    \iff ~ ~ ~ 
+    &v_B = 0.31376865836 \text{m/s}
+\end{align*}
+
+$(b)$ Se nos dice que la altura máxima que alcanza la masa es la de $C$, con lo
+cual sabemos que en $C$ se detiene y la velocidad de la masa es cero ($v_C =
+0$). Mismo razonamiento que antes: en $C$ la energía es estrictamente potencial,
+pero en $B$ es estrictamente kinética. Por preservación de la energía,
+
+\begin{equation*}
+    E_B = E_C \iff 
+    &\frac{1}{2}mv_B^2 = mg \Delta y
+\end{equation*}
+
+con $\Delta y$ la altura alcanzada en $C$. Pero conocemos $v_B$. Tomando la
+aproximación $v_B \approx 0.314$, tenemos 
+
+\begin{equation*}
+    \Delta y = \frac{ \frac{1}{2}(0.314)^2(\text{m/s})^2 }{9.8\text{m/s}^2} =
+    0.00503040816 \text{m} \approx 0.503\text{cm}
+\end{equation*}
+
+Para expresar lo que sabemos en un gráfico, tenemos:
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+
+\coordinate (B) at (0,-3);         % bottom-right corner of square
+\coordinate (C) at (-2.5,-5);
+\coordinate (Bpt) at (0,-6.5);
+\coordinate (Cpt) at (-2.5,-6.5);
 
 
+% Rope TA
+\draw (B) -- node[text midway, right=5pt]{$\ell - d$}(Bpt);
+\draw[dashed] (B) -- node[text midway, left=5pt]{$\ell - d$} (C);
+\draw[dashed] (C) -- node[text midway, left=5pt]{$\Delta y$} (Cpt);
+\draw[dashed] (Cpt) -- node[text midway, below=5pt]{$\Delta x$} (Bpt);
+
+% Dots
+\fill (Bpt) circle (2pt) node[below=5pt]{$B$};
+\fill (B) circle (2pt) node[above=pt]{$T$};
+\fill (C) circle (2pt) node[below left=pt]{$C$};
+
+% Angles
+\pic[draw,->,angle radius=2.5cm,"$\theta_C$"] {angle = C--B--Bpt};
+
+\end{tikzpicture}
+\end{center}
+
+donde $\Delta y, \ell - d$ son conocidos y $\Delta x$ solo es ilustrativo (no
+nos importa.) Es claro que si formamos un triángulo rectángulo uniendo $C$ a la
+línea $BT$, dicho triángulo satisface
+
+
+\begin{center}
+\begin{tikzpicture}[scale=2.2]
+
+\coordinate (B) at (0,-3);         % bottom-right corner of square
+\coordinate (C) at (-2.5,-5);
+\coordinate (Cpt) at (-2.5,-6.5);
+\coordinate (X) at (0,-5);
+
+
+% Rope TA
+\draw (B) -- node[text midway, left=5pt]{$\ell - d$} (C);
+\draw (X) -- node[text midway, below=5pt]{$\Delta x = (\ell - d) \sin \theta_C$} (C);
+\draw (B) -- node[text midway, right=5pt]{$\ell - d - \Delta y = ( \ell - d ) \cos
+    \theta_C$} (X);
+
+% Dots
+\fill (X) circle (2pt) node[below=5pt]{$X$};
+\fill (B) circle (2pt) node[above=5pt]{$T$};
+\fill (C) circle (2pt) node[below=5pt left]{$C$};
+
+% Angles
+\pic[draw,->,angle radius=1.5cm,"$\theta_C$"] {angle = C--B--Bpt};
+
+\end{tikzpicture}
+\end{center}
+
+Pero 
+
+\begin{align*}
+    \ell - d - \Delta y = (\ell - d)\cos \theta_C 
+    \iff 
+    &\cos \theta_C = \frac{\ell - d - \Delta y}{\ell - d} \\ 
+    \iff ~ ~ ~ 
+    &\cos \theta_C = 1 - \frac{\Delta y}{\ell - d} \\ 
+    \iff  ~ ~ ~ 
+    &\cos \theta_C = 1 - \frac{0.503\text{cm}}{132\text{cm} - 66\text{cm}} \\ 
+    \iff ~ ~ ~ 
+    &\cos \theta_C = 0.99237878787 \\ 
+    \iff ~ ~ ~ 
+    &\theta = 0.123538758
+\end{align*}
+
+
+$(c)$ Se nos pide la tensión de la cuerda en la posición de reposo. Consideremos
+el movimiento del objeto como un movimiento circular. Las fuerzas en acción son
+la gravedad (contraria al centro) y la tensión de la cuerda (centrípeta):
+
+\begin{equation*}
+    T - W = a_c m
+\end{equation*}
+
+con $a_c$ el conjunto de fuerzas con componente centrípeto, de acuerdo con la
+segunda ley de Newton. Sin embargo, el movimiento circular siempre satisface
+$a_c = v^2 / r$ con $r$ el radio de la circunferencia descrita por el
+movimiento. Pero $r = \ell = 132\text{cm} = 1.32\text{m}$. Por lo tanto, 
+
+\begin{equation*}
+    T - W = \frac{v^2 m}{\ell}
+\end{equation*}
+
+La velocidad en el punto $B$ ya la conocemos. Sustituyendo y sumando $W = mg$ a
+ambos lados, con un poco de álgebra se obtiene
+
+\begin{equation*}
+    T  = m \left( \frac{0.314^2}{132} \text{m/s}^2 + 9.8 \text{m/s}^2  \right) =
+    m(9.80074693939 \text{m/s}^2)
+\end{equation*}
+
+Como $[m] = \text{kg}$, se tiene correctamente $[T] = \text{N}$.
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(2)} Un bloque de 20kg es empujado sobre una superficie horizontal
+    por medio de una fuerza $\vec{F}$ que forma un ángulo $\theta$ con la misma.
+    La magnitud de la fuerza cuando la masa está en la posición $x$ es 
+    $\left| \vec{F}(x) \right| = 6x \text{N}$. 
+
+    $(a)$ Calcular el trabajo realizado por la fuerza en el intervalo $x \in
+    [10\text{m}, 20 \text{m}]$.
+
+    $(b)$ Calcule la energía cinética del cuerpo en la posición final para
+    $\mu_d = 0, \mu_d = 0.05$, asumiendo que se parte del reposo.
+
+\end{shaded}
+
+$(a)$ Recordemos que por def. el trabajo realizado por una fuerza $\vec{F}$ al
+obrar un desplazamiento $\vec{\Delta r}$ es el producto punto entre ambos:
+
+\begin{equation*}
+    W_F = \vec{F} \cdot \vec{\Delta r} = F \Delta r \cdot \cos \theta
+\end{equation*}
+
+con $\theta$ el ángulo entre ambos. En nuestro caso, la magnitud de $\vec{F}$ es
+variable (no así el ángulo $\theta$), y por lo tanto 
+
+\begin{align*}
+    W_F 
+    &= \int_{10}^{20} \left| \vec{F}(x) \right| \cos \theta ~ dx\\ 
+    &= 6\text{N} \cos \theta \int_{10}^{20} x ~ dx\\ 
+    &= 6\text{N} \cos \theta \left[ \frac{x^2}{2} \right]_{10}^{20} \\ 
+    &=6\text{N}\cos\theta \left( 150\text{m} \right) \\ 
+    &=900 \cos \theta \text{Nm} \\ 
+    &= 900 \cos\theta \text{ J}
+\end{align*}
+
+$(b)$
+
+
+\small
+\begin{quote}
+
+Entiendo que el ejercicio pide desde $x = 0\text{m}$ hasta $x=20\text{m}$. De
+cualquier modo, el procedimeinto es esl mismo para un desplazamiento desde 
+$x = 10\text{m}$ hasta $x=20$m.
+
+\end{quote}
+\normalsize
+
+
+Recordemos que $W = \Delta K$. Pero la energía cinética en el instante
+cero es nula y por lo tanto resulta $W = K_f$. Es decir, la energía cinética en
+el instante final es el trabajo neto de las fuerzas a lo largo de todo el
+recorrido: 
+
+\begin{equation*}
+    W = W_F + W_R
+\end{equation*}
+
+con $W_R$ el trabajo realizado por la fuerza de rozamiento. El ángulo entre la
+fuerza de rozamiento y la dirección del movimiento es de 180 grados, pues se
+oponen, y por ende su coseno es $-1$. Es decir que la fuerza de rozamiento hace un trabajo
+negativo:
+
+\begin{align*}
+    W_R 
+    &= -\left| \vec{R} \right| \Delta x \\ 
+    &= - \mu\left| \vec{N} \right| 20\text{m} \\ 
+    &= - \mu mg 20\text{m} \\ 
+    &= - \mu (20 \cdot 9.8 \cdot 20) (\text{kg} \cdot \text{m/s}^2 \cdot
+    \text{m}) \\ 
+    &= -\mu 3920 \text{ J}
+\end{align*}
+
+Por el mismo razonamiento que antes, 
+
+\begin{equation*}
+    W_F = 6\text{N} \cos \theta\int_{0}^{20} x ~ dx = 1200 \cos \theta \text{ J}
+\end{equation*}
+
+Por lo tanto, 
+
+\begin{equation*}
+    W = 1200 \cos \theta \text{ J} - \mu 3920 \text{ J}
+\end{equation*}
 
 
 

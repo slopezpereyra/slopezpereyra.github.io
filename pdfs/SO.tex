@@ -46,6 +46,35 @@
 \counterwithin*{equation}{subsection}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta, positioning}
+\usetikzlibrary{positioning,arrows}
+
+
+
+
+\definecolor{mGreen}{rgb}{0,0.6,0}
+\definecolor{mGray}{rgb}{0.5,0.5,0.5}
+\definecolor{mPurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundColour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{CStyle}{
+    backgroundcolor=\color{backgroundColour},   
+    commentstyle=\color{mGreen},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{mGray},
+    stringstyle=\color{mPurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    language=C
+}
 
 \begin{document}
 
@@ -1989,70 +2018,478 @@ el final del segmento de stack.
       +-------------------+  <-- Offset = Bound = 2K
 \end{verbatim}
 
+\pagebreak 
 
+\section{Administración de la memoria libre}
 
+Si la memoria se parte en segmentos de tamaño fijo, es fácil manejar el espacio
+libre: pasás el primer segmento libre a quien quiera que lo pida y adiós. Lo
+complicado es si el tamaño de los segmentos utilizados varía (e.g. en el address
+space con malloc, que extiende el heap, o en la memoria física con segmentación
+implícita).
 
+\pagebreak 
 
+\section{Práctico 2}
 
 
+\begin{shaded}
+\textbf{(1)} Para cada una de las variables de este código indicar si están en el segmento de código, de pila o de montón (heap). 
+Si hay punteros indicar a qué segmento apuntan. \\
 
+\textbf{Extra:} ¿Dónde se ubica el arreglo global si lo declaramos inicializado a cero? 
+\verb|int a[N] = {0};|
 
+\small
+\begin{quote}
 
 
+\begin{lstlisting}[language=C]
+#include <stdlib.h>
+#define N 1024
 
+int a[N];
 
+int main(int argc, char **argv)
+{
+    int i;
+    register int s = 0;
+    int *b = calloc(N, sizeof(int));
+    for (i=0; i<N; ++i)
+        s += a[i] + b[i];
 
+    free(b);
+    return s;
+}
+\end{lstlisting}
 
+\end{quote}
+\normalsize
+\end{shaded}
 
+Notemos que \texttt{N} no es una variable sino una directiva del procesador
+(macro). Recordemos además que las variables globales y estáticas se guardan en
+\texttt{.data} o \texttt{.bss}, y no en el stack, el heap ni el code. Por lo
+tanto, el array estático \texttt{a} no está en ninguno de los segmentos del
+modelo se memoria que utilizamos.
 
+La variable \texttt{s} se define con la keyword \texttt{register}, y por lo
+tanto \textit{si es posible} el compilador la guarda en un registro de CPU. No
+sabemos si esto se logra o no, y por lo tanto puede que esté en un registro de
+CPU o en el stack.
 
+Todas las demás variables están en el stack, incluido el puntero \texttt{b}. Sin
+embargo, dicho puntero apunta al heap.
 
+\textbf{Extra.} Si \texttt{a[N]} no se inicializa, se guarda en \texttt{.bss};
+así como está inicializada, se guarda en \texttt{.data}. Una explicación de por
+qué existe esta diferencia en
+\href{https://stackoverflow.com/questions/9535250/why-is-the-bss-segment-required}{esta
+pregunta de StackOverflow}.
 
 
+\pagebreak 
 
+\begin{shaded}
+    \textbf{(3)} Dé V o F en los siguientes enunciados.
+\end{shaded}
 
+$(a)$ \texttt{malloc} es una syscall.
 
 
+\small
+\begin{quote}
 
+La función \texttt{malloc} \textbf{no} es una syscall, así como tampoco lo es
+\texttt{free}. El diseño UNIX es usar las syscalls \texttt{brk}, \texttt{sbrk} o
+\texttt{mmap} para expandir el segmento de datos (i.e. la parte de la memoria
+que incluye el heap más datos estáticos como las regiones \texttt{.bss} y
+\texttt{.data}). La función \texttt{malloc} no expande ni reduce el tamaño del
+heap, solo administra la memoria dentro del segmento, y esto no requiere
+interacción (directa) con el kernel. Si \texttt{malloc} necesita más memoria de
+la disponible, entonces llama \texttt{brk}, \texttt{sbrk} o \texttt{mmap}, pero
+si la memoria que hay disponible alcanza no se solicita servicio privilegiado
+alguno.
 
+\end{quote}
+\normalsize
 
+$(b)$ \texttt{malloc} siempre llama a una syscall. 
 
 
+\small
+\begin{quote}
 
+\textbf{Falso.} \texttt{malloc} llama \texttt{brk}, \texttt{sbrk} o
+\texttt{mmap} sólo si la memoria disponible en el heap no alcanza para el tamaño
+de la allocation que se quiere hacer.
 
+\end{quote}
+\normalsize
 
+$(c)$ \texttt{malloc} a veces llama a una syscall 
 
 
+\small
+\begin{quote}
 
+\textbf{True}, por lo dicho anteriormente.
 
+\end{quote}
+\normalsize
 
+$(e)$ Same para \texttt{free}.
 
 
+\small
+\begin{quote}
 
+\texttt{free} no es una syscall, y nunca llama a una syscall. Sin embargo, si se
+hace \texttt{free} sobre un puntero a un bloque de memoria grande y
+originalmente allocated con \texttt{mmap}, entonces se dispara una señal en el
+allocator (e.g. en \texttt{ptmalloc} de GLib) que verifica si debe llamarse
+\texttt{munmap} para remover la memoria del address space.
 
+\end{quote}
+\normalsize
 
+$(f)$ La complejidad de \texttt{malloc(x)} es proporcional a \texttt{x}.
 
 
+\small
+\begin{quote}
 
+Falso. Si ya existe memoria disponible en el heap para guardar los \texttt{x}
+bytes solicitados, el tiempo de \texttt{malloc} es casi constante. 
 
+Si se pide un bloque tan grande que debe llamarse \texttt{mmap}, \texttt{malloc}
+puede tardar un poco más, pero más o menos independientemente de \texttt{x}. 
 
+En general, $O(\text{malloc}) = O(1) \neq O(x)$.
 
+\end{quote}
+\normalsize
 
+\pagebreak 
 
+\begin{shaded}
+Ejercicio 4. Mostrar la secuencia de accesos a la memoria física que se produce
+al ejecutar este programa assembler x86\_32, donde el registro base=4096 y
+bounds=256.
 
+\begin{lstlisting}[language=assembler]
+0: movl $128,%ebx
+5: movl (%ebx),%eax
+8: shll $1, %ebx
+10: movl (%ebx),%eax
+13: retq
+\end{lstlisting}
+\end{shaded}
 
+La instrucción cero sólo guarda \texttt{128} en el registro de CPU
+\texttt{\%ebx}. No hay acceso a memoria. La instrucción 5 guarda en
+\texttt{\%eax} el contenido de la dirección de memoria \texttt{\%ebx}, es
+decir lo que está en la dirección virtual 128. Para leer lo que está en dicha
+dirección, se traduce: 
 
+\begin{equation*}
+    \text{PhysAddr} = 128 + \text{base} = 4224
+\end{equation*}
 
+La instrucción \texttt{movl} mueve una palabra (4 bytes), ypor ende se accederá
+a las direcciones de memoria 4224, 4225, 4226, 4227. Todas están dentro de
+[base, base + bounds]. Todo OK.
 
+La instrucción \texttt{shll \$1, \%ebx} significa hacer \texttt{\%ebx = \%ebx <<
+1}, con \texttt{<<} el long shift. Es decir que simplemente guarda en
+\texttt{\%ebx} el mismo contenido de \texttt{\%ebx}, shifteado un lugar a
+izquierda, que asumiendo que no hay overflow equivale a multiplicar el contenido
+del registro por 2. Pero sabemos que \texttt{\%ebx} contiene 128, es decir
+contiene 
 
+\begin{equation*}
+    128 = \texttt{0x00000080} = ( \text{0000 0000 0000 0000 0000 0000 1000 0000}
+    )_2
+\end{equation*}
 
+Por lo tanto, no habrá overflow, y el valor en \texttt{\%ebx} ahora será 
 
+\begin{equation*}
+    \text{256} = \text{0x00000100} = ( \text{0000 0000 0000 0000 0000 0001 0000
+    0000} )_2
+\end{equation*}
 
+La instrucción \texttt{10} entonces lo que hace es leer la dirección física 
 
+\begin{equation*}
+    256 + \text{base}
+\end{equation*}
 
+Pero esto excede el bound. Hay error.
 
+\pagebreak 
 
+\begin{shaded}
+    \textbf{(6)} Distinguir relocalización dinámica de relocalización estática.
+\end{shaded}
 
+La relocalización dinámica consiste en la utilización de hardware support, en
+particular de registros \textit{base} y \textit{bounds}, para implementar la
+virtualización de la memoria y efectuar address translations. Se le llama
+dinámica porque las traducciones occurren en \textit{run time}: cuando se
+ejecuta una instrucción de \textit{load} o \textit{store} con referencia a la
+memoria (e.g. \texttt{movl (\%ebx), \%eax}), la MMU realiza la traducción de la
+virtual address a la physical address, junto al chequeo de bounds.
+
+La relocalización estática consiste en la utilización de un programa
+(\texttt{loader}) que transforma las direcciones virtuales de memoria de un
+ejecutable en sus direcciones físicas, agregándoles un offset. No se hace en
+runtime, sino sobre todo el ejecutable a la vez, y no utiliza hardware support.
+Al no utilizar hardware support, no implementa ningún tipo de protección: si una
+dirección virtual está out of bounds, no se alzará excepción alguna, y es
+posible que el programa termina leyendo/escribiendo direcciones ajenas a su
+propio espacio.
+
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(8)} Una computadora proporciona a cada proceso 65536 bytes de
+    espacio de direcciones dividido en páginas de 4 KiB. Un programa específico
+    tiene el segmento código de 32768 bytes de longitud, el segmento montículo
+    de 16386 bytes de longitud, y un segmento pila de 15870 bytes. ¿Cabría el
+    programa en el espacio de direcciones? ¿Y si el tamaño de página fuera de
+    512 bytes? Recuerde que una página no puede contener segmentos de distintos
+    tipos así se pueden proteger cada uno de manera adecuada.
+\end{shaded}
+
+$(a : \text{Page size} = 4\text{Kb})$ El segmento código ocupa 8 páginas
+exactamente. El montículo ocupa casi exactamente 4 páginas, pero marginalmente
+más que eso. La pila ocupa 3.87 páginas. Es decir que deben ponerse el código en
+8 páginas, la pila en 4 páginas (con un poco de espacio extra), lo cual nos deja
+4 páginas libres para poner el heap. Pero ya dijimos que el heap ocupa un poco
+más de 4 páginas. Por poco, pero el programa \textit{no} entra en el address
+space.
+
+$(b: \text{Page size} = 512\text{b})$. Hay $65536 / 512 = 128$ páginas en el
+address space. Los segmentos ocupan: 
+
+\begin{align*}
+    &\text{Code} \mapsto  \frac{32768}{512} = 64 \text{ páginas}\\ 
+    &\text{Heap} \mapsto  \frac{16386}{512} = 32.00390625 \text{ páginas}\\ 
+    &\text{Stack} \mapsto  \frac{15870}{512} = 30.99609375 \text{ páginas}
+\end{align*}
+
+Es decir, necesitamos 33 páginas para el heap, 31 para el stack, en total = 64,
+más 64 páginas para el código nos da 128 páginas necesarias en total. Y es justo
+lo que tenemos.
+
+\pagebreak 
+
+
+\begin{shaded}
+\textbf{(9)} Suponga un sistema de memoria contiguo con la siguiente secuencia de tamaños de huecos:
+10 KiB, 4 KiB, 20 KiB, 18 KiB, 7 KiB, 9 KiB, 12 KiB, 15 KiB.
+
+Para la siguiente \textbf{secuencia de solicitudes} de segmentos de memoria:
+12 KiB, 10 KiB, 9 KiB.
+
+¿Cuáles huecos se toman para las distintas políticas?
+
+\begin{enumerate}[label=(\alph*)]
+\item Primer ajuste (\textit{first fit}).
+\item Mejor ajuste (\textit{best fit}).
+\item Peor ajuste (\textit{worst fit}).
+\item Siguiente ajuste (\textit{next fit}).
+\end{enumerate}
+
+\end{shaded}
+
+$(a)$ Se pide 12Kib y el primer ajuste es el de 20 Kib. La free list ahora es 
+
+\begin{equation*}
+    10 \to 4 \to 18 \to 7 \to 9 \to 12 \to 15
+\end{equation*}
+
+Se piden 10 y el primer ajuste es la cabeza de la lista.. Después se piden 9 y
+el primer ajuste es el nodo de 18.
+
+$(b)$ Se piden 12Kib. Los candidatos (nodos posibles) son 20, 18, 12, 15. El
+menor es el de 12.  Se lo entrega. Se piden 10. Misma lógica: se entrega el de 10. Se piden 9, se entrega el de 9.
+
+$(c)$ Se da el de 20. Luego se da el de 18. Luego se da el de 15.
+
+$(d)$ Se da el de 20. Luego se da el de 18. Luego se da el de 9.
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(10)}  La TLB de una computadora con una pagetable de un nivel tiene
+    una eficiencia del 95\%. Obtener un valor de la TLB toma 10ns. La memoria
+    principal tarda 120ns. ¿Cuál es el tiempo promedio para completar una
+    operación de memoria teniendo en cuenta que se usa tabla de páginas
+    lineal?
+\end{shaded}
+
+Tomamos el promedio ponderado:
+
+\begin{equation*}
+    \frac{1}{2}( 0.95 \times 10\text{ns} + 0.05 \times 120\text{ns} ) = 7.75\text{ns}
+\end{equation*}
+
+\pagebreak
+
+\begin{shaded}
+    \textbf{(11)} Considere el siguiente programa que ejecuta en un
+    microprocesador con soporte de paginación, páginas de 4KiB y una TLB de
+    64 entradas.
+
+\begin{lstlisting}[style=CStyle]
+int x[N];
+int step = M;
+for (int i=0; i<N; i+=step)
+    x[i] = x[i]+1;
+\end{lstlisting}
+
+(a) ¿Qué valores de N, M hacen que la TLB falle en cada iteración del ciclo?
+
+
+(b) ¿Cambia en algo si el ciclo ser repite muchas veces? Explique
+\end{shaded}
+
+$(a)$ Hay un caso trivial: si \texttt{M >= N}, ocurre una sola iteración y en
+dicha iteración hay un TLB miss. Asumamos entonces que \texttt{M < N}.
+
+Incluso en este supuesto, hay un caso trivial; a saber, si la array \texttt{x}
+no ocupa más de una página. Es obvio que entonces habrá una sola TLB miss, y
+todas las otras referencias a memoria son un hit. Obviemos también este caso. 
+
+Para garantizar que \texttt{x} ocupe al menos dos páginas, \texttt{x} debe
+ocupar más de 4KiB de memoria. Asumamos que cada entero ocupa 4 bytes = 32 bits,
+porque eso se hace en el libro. 
+
+Hay 4KiB por página y por ende 4KiB/4byte = (4096/4)bytes = 1024 bytes = 1KiB.
+Por lo tanto, una página se llena con exactamente \texttt{1024} enteros. Se
+necesita entonces \texttt{N > 1024} para que \texttt{x} ocupe más de una página.
+Definimos entonces \texttt{N > 1024, M < N} como el caso interesante.
+
+Para que cada iteración produzca un TLB miss, \texttt{a[i]} y \texttt{a[i+M]}
+deben estar en páginas distintas, para todo \texttt{i}. Esto se garantiza si la
+distancia entre sus direcciones de memoria es de \texttt{4KiB} (una página
+entera). Pero ya dijimos que una página consiste en 1024 enteros. Es decir,
+\texttt{M = 1024} garantiza que \texttt{a[i]} y \texttt{a[i+1]} estén a una
+página de distancia en memoria. Notemos que por supuesto \texttt{N > 1024} y por
+lo tanto estamos respetando \texttt{M < N}.
+
+\textbf{Conclusión}. Si \texttt{N > 1024} y \texttt{M = 1024} se garantiza que la
+TLB falla en cada iteración.
+
+
+\small
+\begin{quote}
+
+\textbf{Nota.} Si generalizamos y decimos que un entero ocupa \texttt{I} bits,
+que el address space es de \texttt{A} bits, y las páginas son de \texttt{P}
+bits, entonces \texttt{P / I} es el número de enteros por página. Se requiere
+entonces
+
+\begin{enumerate}
+    \item $N > P / I$
+    \item $M \equiv 0 \mod P / I$
+\end{enumerate}
+
+es el caso general que garantiza solo miss, donde debe cumplirse que \texttt{P}
+es divisible por \texttt{I}. Esto es casi dado por supuesto, dado que 
+tanto \texttt{I} como \texttt{P} son alguna potencia de dos, y no es concebible
+en términos prácticos que \texttt{I >= P}.
+
+\end{quote}
+\normalsize
+
+$(b)$ Si el ciclo se repite muchas veces, seguirán siendo todos misses la
+primera vez que se corra el ciclo. Las siguientes veces, depende del tamaño de
+la TLB y de la array. Si la array tiene 64 elementos o menos, todo seguirá en
+caché y cada referencia será un hit. Si no, habrán 64 hits (lo que quedó en
+caché) y todo lo demás será un miss.
+
+
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(12)} Dado un tamaño de página de 4KiB = $2^{12}$ bytes y la page
+    table dada abajo:
+
+    $(a)$ ¿Cuántos bits de direccionamiento hay para cada espacio? 
+
+    $(b)$ Determine las direcciones físicas a partir de las virtuales: 39424,
+    12416, 26112, 63008, 21760, 32512, 43008, 36096, 7424, 4032.
+
+    $(c)$ Determine el mapeo inverso, i.e. las direcciones virtuales a partir de
+    las físicas, para 16385, 4321.
+\end{shaded}
+
+
+    \begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+V & F   & ¿Válida? \\ \hline
+0  & 000 & 1 \\ \hline
+1  & 111 & 1 \\ \hline
+2  & 000 & 0 \\ \hline
+3  & 101 & 1 \\ \hline
+4  & 100 & 1 \\ \hline
+5  & 001 & 1 \\ \hline
+6  & 000 & 0 \\ \hline
+7  & 000 & 0 \\ \hline
+8  & 011 & 1 \\ \hline
+9  & 110 & 1 \\ \hline
+10 & 100 & 1 \\ \hline
+11 & 000 & 0 \\ \hline
+12 & 000 & 0 \\ \hline
+13 & 000 & 0 \\ \hline
+14 & 000 & 0 \\ \hline
+15 & 010 & 1 \\ \hline
+\end{tabular}
+\end{table}
+
+$(a)$ Se trata de una page table con 16 páginas, lo cual significa que se
+utilizan cuatro bits para el virtual page number (VPN). Los page frame numbers
+(número de página física) tienen tres bits, indicando $2^3 = 8$ páginas físicas
+en total. El tamaño de página es de 4KiB, dando 12 bits en total por cada
+virtual address.
+
+$(b)$
+
+$(\dagger: 39424)$ La forma larga es notar que, en binario, 39424 es 
+
+\begin{equation*}
+    \overbrace{1001}^{\text{VPN}}\overbrace{1010 ~ 0000 ~ 0000}^{\text{offset}}
+\end{equation*}
+
+lo cual da VPN = 9 y offset de $2^{11} + 2^{9} = 2560$. Una forma equivalente es
+hacer la divisiín entera del número decimal (dividendo) por el tamaño de página
+(divisor), de lo cual resulta 
+
+\begin{equation*}
+    39424 = 9 \times 4096 + 2560
+\end{equation*}
+ 
+Por lo tanto, $9$ es el número de página y 2560 el offset. En cualquier caso,
+sabiendo el VPN, en la tabla vemos que el VPN de 9 se corresponde con el PFN
+110 =6. Por lo tanto, la dirección final es 110 1010 0000 0000, o bien 
+
+\begin{equation*}
+    2^{14} + 2^{13} + 2^{11} + 2^{9} = 27136
+\end{equation*}
+
+También podríamos notar que, siendo el offset el mismo, podemos multiplicar
+el tamaño de página por el PFN, y luego sumar el offset:
+
+\begin{equation*}
+    6 \times 4096 + 2560 = 27136
+\end{equation*}
 
 
 

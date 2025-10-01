@@ -1,22 +1,7 @@
-\documentclass[a4paper, 12pt]{article}
-
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{textcomp}
-\usepackage{amssymb}
-\usepackage{amsmath, amssymb}
-\usepackage{newtxtext}
-\newtheorem{problem}{Problem}
-\newtheorem{example}{Example}
-\newtheorem{lemma}{Lemma}
-\newtheorem{theorem}{Theorem}
-\newtheorem{problem}{Problem}
-\newtheorem{example}{Example} \newtheorem{definition}{Definition}
-\newtheorem{lemma}{Lemma}
-\newtheorem{theorem}{Theorem}
-\usepackage{parskip}
-
-\begin{document}
+---
+title: Sobre el perfeccionamiento de uno mismo
+categories: [Personal]
+---
 
 Una cosa muy triste de la condición humana es que, cuando tratamos de lidiar
 con nuestros defectos, es muy difícil no incurrir en otros peores. Por un lado
@@ -116,10 +101,6 @@ no hacerlo en absoluto es el peor.
 
 
 
-
-
-
-\end{document}
 
 
 
