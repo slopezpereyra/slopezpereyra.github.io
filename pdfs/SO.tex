@@ -2666,6 +2666,151 @@ necesaria para las estructuras, en el caso en que alocamos la máxima memoria
 posible, es 4MiB + 4KiB. Por ende, el máximo es 4GiB - (4MiB + 4KiB).
 
 
+\pagebreak 
+
+
+\begin{shaded}
+    \textbf{($\star$ : Ej. de parcial)} Tenemos un esquema de paginación multinivel
+    de dos niveles, que mapea (10, 10, 12) a (20, 10), con tablas de página de
+    4KiB. El registro de paginación CR3 apunta al marco físico \texttt{0xFA110}.
+    Se tiene que en las direcciones \texttt{0xFA110, 0x0B0CA, 0x0CA5A}, existe
+    el siguiente contenido (indexado):
+
+
+\end{shaded}
+
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|c|c|c|}
+\hline
+\texttt{0x0CA5A} & \texttt{0x0B0CA} & \texttt{0xFA110} \\
+\hline
+\begin{tabular}[c]{@{}l@{}}
+\texttt{0x3FF: 0xFA110, SWP} \\
+\texttt{0x3FE: 0x00000, SR-} \\
+\vdots \\
+\texttt{0x004: 0x00000, SR-} \\
+\texttt{0x003: 0x00000, SR-} \\
+\texttt{0x002: 0x00CAB, SR-} \\
+\texttt{0x001: 0x7A11A, UWP} \\
+\texttt{0x000: 0x00CAB, UWP}
+\end{tabular}
+&
+\begin{tabular}[c]{@{}l@{}}
+\texttt{0x3FF: 0xFA110, SWP} \\
+\texttt{0x3FE: 0x00000, SR-} \\
+\vdots \\
+\texttt{0x004: 0x00000, SR-} \\
+\texttt{0x003: 0x00000, SR-} \\
+\texttt{0x002: 0x0B0CA, SR-} \\
+\texttt{0x001: 0x7A11A, UWP} \\
+\texttt{0x000: 0x0CA5A, UWP}
+\end{tabular}
+&
+\begin{tabular}[c]{@{}l@{}}
+\texttt{0x3FF: 0xFA110, SWP} \\
+\texttt{0x3FE: 0x00000, SR-} \\
+\vdots \\
+\texttt{0x004: 0x00000, SR-} \\
+\texttt{0x003: 0x00000, SR-} \\
+\texttt{0x002: 0x0B0CA, SR-} \\
+\texttt{0x001: 0x7A11A, UWP} \\
+\texttt{0x000: 0x0B0CA, UWP}
+\end{tabular}
+\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{shaded}
+    Traducir las direcciones virtuales:
+
+    \begin{enumerate}
+        \item \texttt{0x00000E5A}
+        \item \texttt{0x00800F00}
+        \item \texttt{0xFFFFFFFF}
+    \end{enumerate}
+\end{shaded}
+
+\textbf{Solución}. Notemos que cada marco de página va desde la dirección
+(interna) \texttt{0x000} hasta la dirección \texttt{0x3FF}, que es el número
+\texttt{1023}. Esto es correcto porque cada page table tiene $2^{10} = 1024$
+entradas. (Sanity check.)
+
+Notar que la tabla que nos dieron de la dirección \texttt{0xFA110} es el PD.
+
+$(1)$ Tomemos la dirección virtual \texttt{0x00000E5A}. Su offset son los
+últimos 12 bits, i.e. \texttt{E5A}. Claramente, su \texttt{PD} index es cero, y
+su PT index es 0. Es decir, esta dirección se traduce yendo: $(a)$ a la primer
+entrada del PD, que nos lleva a una page table; $(b)$ a la primera entrada de la
+page table, que nos lleva a una dirección de memoria física.
+
+La primer entrada del PD es \texttt{0x0B0CA}. La page table en esta dirección es
+dada en la tabla. Su primera entrada es \texttt{0x0CA5A}. La página con dicha
+dirección nos es dada, y agarramos el elemento de dicha página con el offset.
+
+Dirección final: \texttt{0x0CA5AE5A}.
+
+$(2)$ Notar que \texttt{0x00800F00} se traduce en bits como 
+
+
+
+\begin{equation*}
+ \texttt{0000 0000 1000 0000 0000 1111 0000 0000}   
+\end{equation*}
+
+que tiene como PD index \texttt{0000 0000 10} = 2, como PT index \texttt{0x0} y
+como offset \texttt{0xF00}. Es decir, hay que buscar la tercera entrada del PD
+(index 2), lo cual nos lleva a una page table; luego la cero-écima entrada de
+esa page  tble, lo cual nos da la dirección. Pero la tercera entrada del PD es
+\texttt{0x0B0CA}. La primera entrada de la PT correspondiente es
+\texttt{0x0CA5A}, igual que antes. 
+
+Dirección final: \texttt{0x0CA5AF00}.
+
+$(3)$ Obviamente, esto es "la última entrada del PD", luego "la última entrada
+de la PT correspondiente", y luego un offset de \texttt{FFF}. Pero la última
+entrada del PD es \texttt{0xFA110} (sí mismo, i.e. es un PD recursivo). Luego la
+última entrada de la "PT" correspondiente (que es el PD) es otra vez
+\texttt{0xFA110}. Agregándole el offset, obtenemos:
+
+Dirección final: \texttt{0xFA110FFF}.
+
+\begin{shaded}
+    \textbf{($\star$)} Ahora, para el mismo esquema, hacer el mapeo inverso de
+    la dirección \texttt{0xFA110505} a todas sus direcciones virtuales.
+\end{shaded}
+
+Ignoremos el offset \texttt{0x505} que no se  traduce. Podemos pensar en los
+"caminos" de una columna a otra de la tabla que nos llevan a la dirección física
+0xFA110. 
+
+(1) 0x3FF de PD index nos deja en la columna derecha. 0x3FF de PT index, 0x505 de offset. Dir: 0xFFFFF505.
+
+(2) \texttt{0} de PD index nos lleva a la columna del medio. \texttt{0x3FF}
+de PT index nos lleva a \texttt{0xFA110}. O sea, 
+
+\texttt{0000 0000 00 | 11 1111 1111 | offset   } = \texttt{0x003FF505}
+
+(3) 2 de PD index también nos lleva a la columna del medio, así que 
+
+\texttt{0000 0000 10 | 11 1111 1111 | offset = 0x00BFF505}.
+
+(4) 2 o 0 de PD index nos lleva a la columna del medio, luego un PT index de 0
+nos lleva a la columna izquierda.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
