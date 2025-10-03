@@ -59,7 +59,7 @@ intervención coral a modo de interludio (minuto $\approx$1:50).
 </div>
 
 Slichenko, además de un músico extraordinario, era étnicamente romaní, y se crio
-sumergido en la hermosa cultura gitana. Como se aprecia en su famosa versión de
+sumergido en la hermosa cultura gitana. Como se aprecia en su versión de
 *Dos guitarras* (Две гитары), llevó el sello gitano a su carrera músical:
 
 <div style="text-align: center;">

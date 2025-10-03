@@ -18,7 +18,7 @@ camino. De *esa* virtud estoy hablando, y no de un ideal abstracto.
 
 De acuerdo con algunas doctrinas, la virtud es un ideal aristocrático: la
 educación, la civilización y las formas son virtuosas; la ignorancia, la
-barbarie y la anarquía son viciosos. Esta postura ha tenido adeptos tan distintos
+barbarie y la anarquía son viciosas. Esta postura ha tenido adeptos tan distintos
 como Platón y Sarmiento. Más feliz me parece la dichosa virtud que concibieron
 los epicúreos, Rousseau, Montaigne o Siddhartha. Además, mi experiencia personal
 desprueba la doctrina platónica. Una de las personas más virtuosas que he
