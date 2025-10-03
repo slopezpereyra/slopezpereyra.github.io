@@ -3069,31 +3069,100 @@ El esquema resultanate es:
 }
 \end{table}
 
-$(a)$ (Dir. \texttt{0x0000}). Esto significa: $(a)$ dentro del PD, ir a la
-primera entrada, que nos da una PT. Dentro de esa PT, ir a la primera entrada,
-que nos da otra PT. Dentro de esa última PT, ir a la primera entrada, que nos da
-la traducción. El offset es cero. Entonces, vamos a \texttt{0x00000000FE0}, y la
-entrada cero rnos lleva a \texttt{0x000000000FEA}. 
+$(a)$ (Dir. \texttt{0x0000}). Esto significa.
 
-En \texttt{0x000000000FEA}, vamos a la primera entrada, que nos lleva a
-\texttt{0x000000AD0BE}. 
+\begin{itemize}
+    \item Usar los primeros nueve bits (todos cero) para obtener una dirección
+        en el nivel 2, que nos da la ubicación del nivel 1.
+\item Usar los siguientes nueve bits (todos cero) para obtener una dirección en
+    el nivel 1, obteniendo la ubicación del nivel 0. 
+\item Usar los siguientes nueve bits (todos cero) para obtener una dirección en
+    el nivel 0, que nos da la ubicación de la página física. 
+\item  Usar el offset (todos los bits son cero) para hallar la traducción en la
+    página física.
+\end{itemize}
 
-En \texttt{0x000000AD0BE} vamos a la primera entrada, que es
-\texttt{0x0000000ABAD}. 
+En el nivel más alto (\texttt{0x00000000FE0}), como los primeros nueve bits son
+cero, vamos a la primera entrada, que tiene el valor \texttt{0x0000000FEA}. Esa
+es la dirección del nivel 1.
 
-Conclusión: la dir. de memoria física es \texttt{0x0000000ABAD} + el offset,
-pero el offset es cero. Esa es la traducción.
+En el nivel 1 (\texttt{0x00000000FEA}), vamos a la primera entrada, que es
+\texttt{0x000000AD0BE}. Esa es la dirección del nivel cero. 
+
+En el nivel cero, vamos a la primera entrada, cuyo valor es
+\texttt{0x0000000ABAD}. Este es el PFN al que corresponde el VPN de la virtual
+address. Se nos dice que las direcciones físicas PFN tienen 44 bits = 11 bytes,
+así que la dirección final es, y los 12 bits (3 bytes) finales son el offset,
+que en este caso es cero. La traducción final, partida en PFN y offset, es
+
+\begin{itemize}
+    \item \texttt{0000000ABAD / 000}
+\end{itemize}
+
+$(b)$ (Dir \texttt{0x2000}). El offset (últimos tres bytes) siguen siendo cero.
+Escribamos la dirección virtual de 39 bits completa:
+
+\begin{verbatim}
+   0x2000 = 0 0000 0000 / 0 0000 0000 / 0 0000 0010 / 0000 0000 0000
+\end{verbatim}
+
+Se ve entonces que esto es: primer index 0, segundo index 0, tercer index 2,
+offset cero. Dirección física, con offset añadido:
+
+\begin{verbatim}
+    0x00000DECADA000
+\end{verbatim}
+
+$(b)$ (Dir \texttt{0x3000})
+
+Igual que antes: 
+
+\begin{verbatim}
+   0x3000 = 0 0000 0000 / 0 0000 0000 / 0 0000 0011 / 0000 0000 0000
+\end{verbatim}
+
+Los index de cada nivel son 0, 0 y 3 y  el offset es cero. Dir física:
+
+\begin{verbatim}
+    0x000001D1AB10
+\end{verbatim}
+
+etc.
 
 
-(\texttt{0x1000}) Esta dirección en total es . 
+$(b)$ Notemos que \texttt{0xDECADA980} se obtiene traduciendo el VPN
+(desconocido) al PFN \texttt{0xDECADA} más un offset de \texttt{0x980}. El PFN
+\texttt{0xDECADA} está contenido en la tercer entrada del tercer nivel. Al
+tercer nivel se llega de $3 \times 3$ maneras (es fácil ver por qué), y una vez
+en dicho nivel, a la tercer entrada se llega de una sola forma (con un tercer
+index de 2).
 
-\texttt{0x00000001000 = 0000 0000 0000 0000 0000 0000 0000 0001 0000 0000 0000 }
 
-Si agrupamos por segmento lógico, esto es un primer index de cero, un segundo
-index de cero, un tercer index de 1, y un offset de 0. Misma lógica de antes
-entonces nos lleva a a la dirección virtual \texttt{000CAFECAFE}.
+\small
+\begin{quote}
+
+\textbf{Observación.} Notar que en bits, el offset de \texttt{0x980} es
+\texttt{1001 1000 0000}.
+
+\end{quote}
+\normalsize
 
 
+Por ende, las direcciones virtuales que mapean a dicha dirección física son:
+
+
+
+\begin{itemize}
+    \item \texttt{000000000 / 000000000 / 000000010 / 1001 1000 0000}
+    \item \texttt{000000000 / 000000001 / 000000010 / 1001 1000 0000}
+    \item \texttt{000000000 / 000000010 / 000000010 / 1001 1000 0000}
+    \item \texttt{000000001 / 000000000 / 000000010 / 1001 1000 0000}
+    \item \texttt{000000001 / 000000001 / 000000010 / 1001 1000 0000}
+    \item \texttt{000000001 / 000000010 / 000000010 / 1001 1000 0000}
+    \item \texttt{000000010 / 000000000 / 000000010 / 1001 1000 0000}
+    \item \texttt{000000010 / 000000001 / 000000010 / 1001 1000 0000}
+    \item \texttt{000000010 / 000000010 / 000000010 / 1001 1000 0000}
+\end{itemize}
 
 
 

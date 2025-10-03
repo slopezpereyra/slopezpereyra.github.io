@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1759499690.07546 "SO.tex" "SO.pdf" "SO" 1759499691.25191 2
+["pdflatex"] 1759529490.72432 "SO.tex" "SO.pdf" "SO" 1759529492.97197 2
   "/etc/texmf/web2c/texmf.cnf" 1740662799.63242 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc" 1422827479 2083 60e36f8eac802fcaf19eabe2633b406e ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -326,9 +326,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1740670969.59643 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1740670991 8214096 2cc5ed7d441cd7dd7f6cf9e30d4bb5a5 ""
-  "SO.aux" 1759499691.15332 6647 ffb0967ce95fc72b2637f65fcd5477cb "pdflatex"
-  "SO.out" 1759499691.155 8358 0245703484c7213279599b1094775504 "pdflatex"
-  "SO.tex" 1759499689.01456 116859 706e1aec9811172852f261ade719a360 ""
+  "SO.aux" 1759529492.77888 6647 7d42657829a330e0ad8fc5653da4ff2c "pdflatex"
+  "SO.out" 1759529492.77967 8358 0245703484c7213279599b1094775504 "pdflatex"
+  "SO.tex" 1759529488.71767 119190 e237a0601f01055bc58c53f4ad49748f ""
   (generated)
   "SO.aux"
   "SO.log"
