@@ -2800,6 +2800,320 @@ de PT index nos lleva a \texttt{0xFA110}. O sea,
 (4) 2 o 0 de PD index nos lleva a la columna del medio, luego un PT index de 0
 nos lleva a la columna izquierda.
 
+\pagebreak 
+
+\section{Ejercicios de parciales}
+
+\begin{shaded}
+
+\textbf{($\star$)} El siguiente código de máquina y su desensamblado RISC-V \textbf{computa la suma prefijo en el mismo arreglo} 
+(\textit{in-place prefix sum}). El arreglo \texttt{a} está en el segmento ELF \texttt{.bss} y empieza en 
+\texttt{0x2FC0} y termina en \texttt{0x3080} exclusive. Como sus elementos son \texttt{unsigned long}, 
+cada uno ocupa 8 bytes y por lo tanto tiene 9 elementos.
+
+\begin{lstlisting}[style=riscv]
+0000000000000634 <main>:
+634: 0613       li a2,0x3080      # __BSS_END__ -> &a[9]
+636: b206       li a5,0x2FC8      # <a+0x8> &a[1]
+638: 6398       ld a4,0(a5)       # a4 = a[i]
+63a: ff87b683   ld a3,-8(a5)      # a3 = a[i-1]
+63e: 9736       add a4,a4,a3
+640: e398       sd a4,0(a5)       # a[i] = a4
+642: 07a1       addi a5,a5,8      # i++
+644: fec79ae3   bne a5,a2,0x638   # <main+0x10>, "i<9"
+648: 8082       ret
+\end{lstlisting}
+
+\vspace{0.5cm}
+
+Escribir la \textbf{traza de memoria} completa que genera la ejecución del proceso \textbf{incluyendo los instruction fetch}.
+\end{shaded}
+
+El arreglo de unsigned longs (8 bytes c/u) empieza en \texttt{0x2FC0} y por ende
+en dicha dirección está el primer elemento, en \texttt{0x2FC8} el segundo, etc.
+Las únicas instrucciones que hacen acceso a memoria para algo distinto a un
+fetch de instrucción son: 638, 63a, 640, que acceden a la dirección
+\texttt{(a5)}. 
+
+\vspace{0.5cm}
+
+\noindent
+\textbf{Inicialización} 
+
+La inicialización son las instruciones 634, 636. 
+
+La instrucción 634 hace un load
+\texttt{li} en el registro \texttt{a2} con el valor \texttt{0x3080}. Sólo se
+hace acceso a memoria para el fetch de \texttt{li}.
+
+La instrucción 636 guarda en \texttt{a5} el valor \texttt{0x2FC8} (la dirección
+del segundo elemento de la array). También solo se hace acceso a memoria para el
+fetch de \texttt{li}.
+
+\noindent
+\textbf{Vuelta 1} \\
+\rule{\textwidth}{0.4pt} 
+
+Instructions fetch para \texttt{ld, add, sd, addi, bne}. En la primera vuelta,
+el registro \texttt{a5} tiene el valor \texttt{0x2FC8}, y por ende en la
+instrucción 638 se hace un load desde esa dirección en \texttt{a4}. 63a hace un
+load en \texttt{a3} de la dirección \texttt{a5} shifteada -8, i.e. de
+\texttt{0x2FC0}, el primer elemento de la array. Same para 640 pero hace un
+store.
+
+
+Se dejan sin completar las vueltas siguientes porque si uno entiende cómo hacer
+la vuelta 1, entiende cómo hacer las demás.
+
+\pagebreak 
+
+\begin{shaded}
+\textbf{($\star$)} Supongamos que en \texttt{trampoline.S}, la rutina en
+ensamblador RISC-V que guarda los registros de espacio de usuario se comete un
+pequeño error por culpa del gato.  La parte que los restituye está perfecta.
+
+\begin{minipage}{0.45\textwidth}
+\begin{lstlisting}[style=riscv]
+sd a1, 120(a0)
+sd a2, 128(a0)
+sd a3, 136(a0)
+sd a4, 144(a0)
+sd a2, 152(a0)   # ERROR!
+sd a6, 160(a0)
+sd a7, 168(a0)
+\end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+\begin{lstlisting}[style=riscv]
+ld a1, 120(a0)
+ld a2, 128(a0)
+ld a3, 136(a0)
+ld a4, 144(a0)
+ld a5, 152(a0)
+ld a6, 160(a0)
+ld a7, 168(a0)
+\end{lstlisting}
+\end{minipage}
+
+
+Indicar en el código de máquina del ejercicio anterior a este, \textbf{ENTRE}
+qué líneas se puede producir un \textbf{TRAP} sin cambiar el funcionamiento del
+programa (poner \texttt{TRAP}) y entre qué líneas ese \textbf{TRAP resulta
+fatal} para la ejecución de nuestro código (poner \texttt{F}).  
+
+Recalcamos: poner \texttt{TRAP} o \texttt{F} entre cada una de las líneas de código indicando si se puede producir un 
+\textbf{TRAP} de manera inocua o no.
+
+\end{shaded}
+
+Primero entendamos el error inducido por el minino. La quinta línea debería
+haber sido \texttt{sd a5, 152(a0)}, pero fue \texttt{sd a2, 152(a0)}. Es decir,
+hay un error en el store: la dirección (152\texttt{a0}) debería tener el valor
+del registro \texttt{a5}, pero tiene el del registro \texttt{a2}.
+
+El registro \texttt{a5} es el que lleva \texttt{i}, la variable de iteración. El
+registro \texttt{a2} es el que tiene la dirección donde termina el array. El
+loop es tal que si \texttt{a5} no es igual a \texttt{a2} (si todavía en la
+iteración no llegamos al final del array), se vuelve a iterar. (Ver instrucción
+\texttt{bne}).
+
+La situación por ende es la siguiente: si hay un trap, la variable de iteración
+\texttt{i} tendrá cuando se regrese al programa el valor "límite" que hace que
+el ciclo termine.
+
+Obviamente, si hay un trap justo entre la primera y la segunda línea, no pasa
+nada, porque en la segunda línea se carga en \texttt{a5} el valor correcto. El
+programa, sin darse cuenta, "corregiría" el error del gato.
+
+Si hay un trap entre la segunda y la tercera línea, ya se rompe el
+funcionamiento del programa, porque la instrucción \texttt{ld a5, 0(a5)} se
+correspondería semánticamente con \texttt{ld a5, 0(a2)}. Lo mismo para todas las
+demás líneas del bucle, con \textbf{una excepción}.
+
+Entre la línea 642 y 644, si un trap se produce en cualquier iteración anterior
+a la última, la instrucción \texttt{bne} va a salir del loop antes de tiempo.
+Pero si justo se produce un trap en la última iteración, y no en ningnua
+anterior, el valor de \texttt{a5} ya coincide con el de \texttt{a2}, y el error
+del gato no cambiaría nada. Por ende, entre estas dos líneas una trap podría ser
+inocua o fatal, dependiendo de cuántas iteraciones van. 
+
+Entre la instrucción 644 y 648, asumiendo que se salió del loop, un trap resulta
+inocuo. 
+
+En conclusión:
+
+
+
+\medskip
+
+\vspace{0.8cm}
+
+\begin{lstlisting}[style=riscv]
+634: li   a2,0x3080
+      TRAP 
+636: li   a5,0x2FC8
+      F
+638: ld   a4,0(a5)
+      F
+63a: ld   a3,-8(a5)
+      F
+63e: add  a4,a4,a3
+      F
+640: sd   a4,0(a5)
+      F
+642: addi a5,a5,8
+      F o TRAP, dependiendo de la iteracion
+644: bne  a5,a2,0x638
+      TRAP
+648: ret
+\end{lstlisting}
+
+
+
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{($\star$)} Planificar con Round Robin $(Q = 2)$ para los siguientes
+    procesos que tienen mezcla entre cómputo CPU y espera IO. Ante situaciones
+    de simultaneidad, ordenar alfabéticamente, por ejemplo: ¿Cuál de los tres
+    procesos inicia en tiempo 0?: el ``A''. Hacerlo para las unidades de tiempo
+    $t = 0, 1, \ldots, 16$.
+\end{shaded}
+
+
+\begin{table}[h!]
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Proceso} & \textbf{Inicio} & \textbf{CPU} & \textbf{IO} & \textbf{CPU} \\ \hline
+A & 0 & 1 & 4 & 3 \\ \hline
+B & 0 & 1 & 1 & 1 \\ \hline
+C & 0 & 8 &   &   \\ \hline
+\end{tabular}
+\end{table}
+
+El proceso A usa la CPU el segundo 0, pasando a bloqueado luego por 4
+segundos (hasta el tiempo 5). Cuando pasa a bloqueado, se asigna la CPU a B, que
+usa la CPU por un segundo y se bloquea por un segundo, dando a C usa la CPU por al
+menos un segundo.
+
+Es decir, en los primeros tres segundos, usan un segundo cada uno en orden
+alfabético.
+
+En el tiempo 3, C corrió el primer segundo su quantum y B se acaba de
+desbloquear. C correrá el segundo segundo de su quantum, y cederá el control a
+B, que ya está ready. 
+
+En $t = 5$, A se acaba de desbloquear, y B acaba de correr el primer segundo de
+su quantum, y con eso termina. Como A y B están ready, se le da la CPU a A, 
+que corre dos segundos (todo su quantum). Ahora se le da la CPU a C, que corre
+dos segundos (todo su quantum). Ahora se le da a A, a la cual le queda un solo
+segundo. Lo corre, termina, y la CPU queda solo para C, que corre por 4 unidades
+de tiempo (2 quantums), porque es lo que el falta. \
+
+El esquema resultanate es:
+
+\begin{center}
+\begin{verbatim}
+     B blocked    B termina      A termina
+            |      |               |
+            |      |               |
+           /-\     |               |
+    0  1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16
+    |--|--|--|--|--|--|--|--|--|--|---|---|---|---|---|---|-
+     AA BB CC CC BB AA AA CC CC AA CC  CC  CC  CC
+       \__________/\_____________________________/
+        A blocked   Todos están ready (o terminan)
+\end{verbatim}
+\end{center}
+
+
+
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{($\star$)} Se tiene un esquema de paginación RISC-V con páginas de
+    4KiB de tres niveles con formato (9, 9, 9, 12) -> (44, 12). Supongaoms que
+    el registro de paginación apunta al marco físico
+    \texttt{satp=0x00000000FE0}, y se tiene el esquema de memoria dado en la
+    tabla de abajo. 
+
+    $(a)$ Traducir de virtual a física las direcciones \texttt{0x0000, 0x1000,
+    0x2000, 0x3000}.
+
+    $(b)$ Traducir de física a virtual \texttt{0xDECADA980}, incluyendo
+    \textbf{todas} las direcciones virtuales.
+\end{shaded}
+
+\begin{table}[h!]
+\centering
+\renewcommand{\arraystretch}{1.2}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|>{\ttfamily}l|>{\ttfamily}l|>{\ttfamily}l|}
+\hline
+0x00000000FE0 & 0x00000000FEA & 0x000000AD0BE \\
+\hline
+0x1FF: 0x000000000000, ---- & 0x1FF: 0x000000000000, ---- & 0x1FF: 0x000000000000, ---- \\
+\vdots & \vdots & \vdots \\
+0x004: 0x000000000000, ---- & 0x004: 0x000000000000, ---- & 0x004: 0x000000000000, ---- \\
+0x003: 0x000000000000, ---- & 0x003: 0x000000000000, ---- & 0x003: 0x000001D1AB10, XWR- \\
+0x002: 0x000000000FEA, XWRV & 0x002: 0x000000AD0BE, XWRV & 0x002: 0x00000DECADA, -WRV \\
+0x001: 0x000000000FEA, XWRV & 0x001: 0x000000AD0BE, XWRV & 0x001: 0x000CAFECAFE, ---- \\
+0x000: 0x000000000FEA, XWRV & 0x000: 0x000000AD0BE, XWRV & 0x000: 0x0000000ABAD, X--V \\
+\hline
+\end{tabular}%
+}
+\end{table}
+
+$(a)$ (Dir. \texttt{0x0000}). Esto significa: $(a)$ dentro del PD, ir a la
+primera entrada, que nos da una PT. Dentro de esa PT, ir a la primera entrada,
+que nos da otra PT. Dentro de esa última PT, ir a la primera entrada, que nos da
+la traducción. El offset es cero. Entonces, vamos a \texttt{0x00000000FE0}, y la
+entrada cero rnos lleva a \texttt{0x000000000FEA}. 
+
+En \texttt{0x000000000FEA}, vamos a la primera entrada, que nos lleva a
+\texttt{0x000000AD0BE}. 
+
+En \texttt{0x000000AD0BE} vamos a la primera entrada, que es
+\texttt{0x0000000ABAD}. 
+
+Conclusión: la dir. de memoria física es \texttt{0x0000000ABAD} + el offset,
+pero el offset es cero. Esa es la traducción.
+
+
+(\texttt{0x1000}) Esta dirección en total es . 
+
+\texttt{0x00000001000 = 0000 0000 0000 0000 0000 0000 0000 0001 0000 0000 0000 }
+
+Si agrupamos por segmento lógico, esto es un primer index de cero, un segundo
+index de cero, un tercer index de 1, y un offset de 0. Misma lógica de antes
+entonces nos lleva a a la dirección virtual \texttt{000CAFECAFE}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
