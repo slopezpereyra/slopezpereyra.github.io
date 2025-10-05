@@ -3,7 +3,7 @@ title: Kindness
 categories: [Personal]
 ---
 
-Years after a Raskolnivokian time, I have awoken as a man that looks upon the
+Years after a Raskolnikovian time, I have awoken as a man that looks upon the
 endless sky and thinks: *This is a perfect world*. Years after I wrote how
 longingly I wished to be a simple man, I have awoken as a man that stares in
 perfect silence at the ceilings and thinks: *I am a quiet soul*. I used to dream
