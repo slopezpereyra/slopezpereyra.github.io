@@ -19,10 +19,10 @@ very much against his will—by virtue of a mystical apple given to him by the
 lie», and the traditional commentary upon the ballad informs that the apple by
 virtue of which it is acquired is taken from the fatal tree of knowledge. Thus,
 when the ballad reads that *they came on to a garden green*, it means
-the garden of Eden.
+the Garden of Eden.
 
 «Why—thought I—does the forbidden fruit, whose flavour is the root of my very
-own guilt, endows not falsehood but a truthbound state?». The bible speaks of
+own guilt, endow not falsehood but a truthbound state?». The Bible speaks of
 the tree of knowledge of good and evil, 
 
 > But of the tree of the knowledge of good and evil, thou shalt not eat of it: for in the day that thou eatest thereof thou shalt surely die. —Genesis 2:9 (KJV)
@@ -36,7 +36,7 @@ devotion in my youth. Questions 15 and 40, which I transcribe below, were the
 ones which spoke about the matter most directly, yet not in any fashion which
 could elucidate it to my satisfaction. It reads:
 
-> 15. Why does (God) say, when He commands (Adam) to eat of every
+> (15) Why does (God) say, when He commands (Adam) to eat of every
 >tree which is in Paradise, ‘“‘Eat” in the singular number; but, when He forbids
 >eating of the tree which gives knowledge of good and evil, says, in the plural
 >number, ‘“‘Do not eat, for on the day when ye shall eat, ye shall die”?
@@ -55,9 +55,9 @@ could elucidate it to my satisfaction. It reads:
 >evil. But when good and evil are mixed, they have as their beginning a mixture
 >of death. 
 
-The he speaks thus of the discrimination brought upon by the forbidden fruit:
+Then he speaks thus of the discrimination brought upon by the forbidden fruit:
 
-> 40. What is the meaning of the words, “‘For they knew that they were naked”’? 
+> (40) What is the meaning of the words, “‘For they knew that they were naked”’? 
 > 
 > It was of this, that is, of their own nakedness, that they first received
 > knowledge by eating of the forbidden fruit. And this was opinion and the
@@ -93,11 +93,11 @@ wishes to «grow mature in knowledge, as the Gods who all things know».
 
 
 <p align="center">
-    <img src="../Images/BlakeEve.jpg" width="100%" style="border: 6px solid #231709;">
+    <img src="../Images/BlakeEve.jpg" width="75%" style="border: 6px solid #231709;">
 </p>
 
 Does Eve's *hubris* contain the secret meaning of the ballad? Is the knowledge
-which the fruit bestows so rich that equates to that of *the Gods who all things
+which the fruit bestows so rich that it equates to that of *the Gods who all things
 know*? And is this what Thomas was granted in his own incursion into the Garden
 of Eden?
 
@@ -107,27 +107,21 @@ incarnates at least some aspect of the divine essence. If Thomas cannot lie, it
 means one of two things: either he cannot speak what will not occur, or he can
 freely speak, thus mastering faith. Perhaps, then, the power of the fruit would
 be that of infusing into common language the creative power of the λόγος. To lie
-becomes a metaphysical impossibility, for language is no longer a representational
-but an ontological faculty. Adam and Eve's transgression would not be then that
+becomes a metaphysical impossibility, for language is no longer a representational faculty,
+but an ontological one. Adam and Eve's transgression would not be then that
 of acquiring knowledge, but that of stepping into the creative prerogative of
 the Word. 
 
-In *De Mendacio*, Saint Augustine comments on the following judgment:
+In support of this interpretation, we have Saint Augustine's words in *De
+Mendacio*, when he comments on the following judgment:
 
 > The son that receives the word is far from perdition; receiving it, he
 > receives it for himself and nothing false comes out of his mouth.
 
-and proceeds to identify truth with God himself. Perhaps the transgression does
-come, then, from a participation of the divine essence, which is the ultimate
-reason why Thomas could never lie. 
-
-In the Gnostic tradition, at least as presented in *The Secret Book of John*, it
-is Jesus himself who coaxes Eve to eat of the tree of knowledge. It is not
-conceivable that Jesus, the Son of God and God himself, would tempt Eve into a
-sin. He also calls the tree «Epinoia (ἐπίνοια) of light», which is very much in
-accordance with a depiction of the fruit as giving knowledge. Curiously enough,
-the legend of True Thomas is closer to a gnostic interpretation of the Fall than
-to the orthodox one. 
+and identifies truth with God himself. Also, in the Gnostic tradition, at least
+as presented in *The Secret Book of John*, it is Jesus himself who coaxes Eve to
+eat of the tree of knowledge, and he also calls the tree «Epinoia (ἐπίνοια) of
+light».
 
 
 
