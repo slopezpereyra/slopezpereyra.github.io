@@ -27,10 +27,9 @@ illumination. But why should it be the source of truthfulness?
 
 Classical commentary on the book of Genesis is not illuminating on this point.
 For instance, Philo of Alexandria, whose work *Quaestiones et solutiones in
-Genesim* I read with devotion in my early twentis, speaks thus on questions 15
-and 40:
+Genesim* I read with devotion in my early twenties, speaks thus on questions 15:
 
-> (15) Why does (God) say, when He commands (Adam) to eat of every
+> Why does (God) say, when He commands (Adam) to eat of every
 >tree which is in Paradise, ‘“‘Eat” in the singular number; but, when He forbids
 >eating of the tree which gives knowledge of good and evil, says, in the plural
 >number, ‘“‘Do not eat, for on the day when ye shall eat, ye shall die”?
@@ -49,9 +48,9 @@ and 40:
 >evil. But when good and evil are mixed, they have as their beginning a mixture
 >of death. 
 
-Then he speaks thus of the discrimination brought upon by the forbidden fruit:
+Then, in question 40, he speaks thus of the discrimination brought upon by the forbidden fruit:
 
-> (40) What is the meaning of the words, “‘For they knew that they were naked”’? 
+> What is the meaning of the words, “‘For they knew that they were naked”’? 
 > 
 > It was of this, that is, of their own nakedness, that they first received
 > knowledge by eating of the forbidden fruit. And this was opinion and the
@@ -67,9 +66,9 @@ speaks not once of the forbidden fruit nor of Eve's transgression.
 
 John Chrysostom, on his 16th homily on Genesis, speaks briefly in terms closer
 to our question when pointing out that Adam had already been granted the gift of
-prophecy, along with profund intelligence and knowledge. However, he concludes 
-from this that it is absurd that the fruit should bestow any form of
-illumination. Rather, he says:
+prophecy when he was created, along with absolute intelligence and knowledge.
+However, he concludes from this that it is absurd that the fruit should bestow
+any form of illumination. Rather, he says:
 
 > But behold, they say, it was Scripture that called it the tree of the
 > knowledge of good and evil. I know that, too: but if you are prepared to learn
@@ -87,7 +86,7 @@ I found this explanation unsatisfactory and dogmatic. Far more interesting is
 the interpretation of Gregory Nazianzen, in the 45th oration of his
 *Orationes*, when we writes:
 
-> [...] This latter was the Tree of Knowledge; not, however, because it was evil from
+> This latter was the Tree of Knowledge; not, however, because it was evil from
 > the beginning when planted; nor was it forbidden because God grudged it to men
 > — let not the enemies of God wag their tongues in that direction, or imitate
 > the serpent. But it would have been good if partaken of at the proper time;
@@ -97,12 +96,12 @@ the interpretation of Gregory Nazianzen, in the 45th oration of his
 > solid food good for those who are yet tender and have need of milk.
 
 To him the fruit does grant illumination, but one of which man must partake only
-at the proper time, lest it my corrupt him. Gregory of Nyssa partly agrees when
+at the proper time, lest it may corrupt him. Gregory of Nyssa partly agrees when
 he writes, in his work *On the making of man*:
 
-> It speaks [meaning the Scripture] of the fruit of the forbidden tree not as a
-> thing absolutely evil (because it is decked with good), nor as a thing purely
-> good (because evil is latent in it) [...].
+> It speaks of the fruit of the forbidden tree not as a thing absolutely evil
+> (because it is decked with good), nor as a thing purely good (because evil is
+> latent in it) ...
 
 However, the depiction closest to that of the ballad is that of Milton, 
 according to whom the Serpent spoke thus to Eve of the tree of science:
