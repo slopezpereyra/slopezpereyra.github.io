@@ -8,8 +8,7 @@
 \usepackage[table]{xcolor}
 \usepackage{fullpage}
 \usepackage{lastpage}
-\usepackage{newtxtext}
-\usepackage{newtxmath}
+\usepackage{mlmodern}
 \usepackage{enumitem}
 \usepackage{fancyhdr}
 \usepackage{mathrsfs}
@@ -4537,9 +4536,163 @@ Como el trabajo de la fricción es de $-8.22\text{J}$, el trabajo que se realiza
 para contrarrestarla es de esta misma magnitud. θ
 
 
+\pagebreak 
+
+\section{Campos eléctricos}
+
+Digamos que tenemos dos cargas $q_0$ y $q_1$, y queremos saber la fuerza sobre
+$q_1$.
+Ponemos $q_0$ como origen del sistema de coordenadas y denotamos $\vec{r}$ al
+vector que parte de $q_0$ a $q_1$. En particular, $\vec{r}$ es el vector unitario
+que apunta desde $q_0$ hacia $q_1$.
+
+Sabemos que 
+
+\begin{equation*}
+    \vec{F}_{q_1} = \frac{1}{4 \pi \varepsilon_0 } \frac{q_0 q_1}{r^2}\hat{r}
+\end{equation*}
+
+donde $r^2$ es la distancia (al cuadrado) entre las dos cargas.
+
+Notar que los signos de $q_0$ y $q_1$ determinan si la fuerza es atractiva o
+repulsiva. Mismo signo: repulsiva; distinto signo: atractiva. Por 3era ley de
+Newton, 
+
+\begin{equation*}
+    \vec{F_{ q_0 }} = -\vec{F_{q_1}}
+\end{equation*}
+
+\begin{shaded}
+    \textbf{($\star$)} Veamos un ejemplo. Tenemos $q_2$ negativa, $q_1$
+    positiva, $q_3$ positiva, formando un cuadrado con $q_2$ arriba y a la
+    izquierda, $q_3$ siendo el vértice superior derecho, $q_1$ el vértice
+    inferior izquierdo. La distancia entre $q_2, q_3$ es $a$, y así lo es 
+    la distancia entre $q_2, q_1$. 
+
+    Sabemos que $q_1 = q_3 = 5.0\mu c$, $q_2 = -2\mu c$, $a = 0.1\text{m}$.
+    Queremos saber la fuerza $\vec{F}$ que actúa sobre $q_3$.
+
+    Ponemos un sistema de coordenadas con origen en $q_1$ (vértice inferior
+    izquierdo del "cuadrado"). 
+
+    La fuerza sobre $q_3$ es la suma de las fuerzas (atractivas o repulsivas)
+    que hacen $q_2$ y $q_1$ sobre $q_3$.
+
+    \begin{align*}
+        \vec{F} = \vec{F_{23}} + \vec{F_{13}}
+    \end{align*}
+
+    Pero sabemos que 
+
+    \begin{align*}
+        \vec{F_{23}} 
+        &= \left| \vec{F_{23}} \right| (\hat{i}) \\ 
+        &= \frac{1}{4\pi \varepsilon_0} \frac{q_0q_1}{a^2}  \hat{i} \\ 
+        &= \frac{1}{4\pi \varepsilon 0} \frac{( 5 \times  2 ) (\mu c)^2 }{a^2}
+        \hat{i}
+    \end{align*}
+
+    Notar que $\vec{F_{23}}$ es atractiva porque $q_2$ es negativa y $q_3$
+    positiva.
+
+    Ahora bien, 
+
+    \begin{align*}
+        \vec{F_{13}} = F_{13} \cos(45) \hat{i} + F_{13} \sin(45) \hat{j}
+    \end{align*}
+
+    donde 
+
+    \begin{equation*}
+        F_{13} = \frac{1}{4\pi \varepsilon_0} (\left| q_1 \right|\left| q_2
+        \right|  ) / (2a^2) = 11\text{N}
+    \end{equation*}
+\end{shaded}
+
+Un campo eléctrico depende de una carga puntual, i.e. de un punto material que
+tiene masa y tiene carga. Un campo eléctrico $\vec{E}$ de una carga $q$ se
+define como 
+
+\begin{equation*}
+    \vec{E} = \frac{q}{4\pi \varepsilon_0 r^2} \hat{r}
+\end{equation*}
+
+Digamos que un campo eléctrico en torno a $q$ colocamos una carga $q_0$, la
+fuerza que dicha carga $q_0$ sufre es $\vec{F_{q_0}} = q_0 \vec{E}$. Si tenemos
+$n$ cargas $q_1, \ldots, q_n$, el campo es:
+
+\begin{equation*}
+    \vec{E} = \sum_{i=1}^n \frac{1}{4\pi \varepsilon_0} \frac{q_i}{r_i^2}
+    \hat{r_i}
+\end{equation*}
+
+Si tenemos infinitas cargas, distribuidas en un espacio finito, 
+
+\begin{equation*}
+    \vec{E} = \int \frac{1}{4\pi \varepsilon_0} \frac{dq}{r^2}\hat{r}
+\end{equation*}
+
+Si la distribución es uniforme, y en particular es lineal, definimos la carga en
+cada segmento diferencial como $\lambda = Q / L$ donde $L$ es la longitud del
+segmento en cuestión. Si es en una superficie, definimos $\sigma = Q / A$, donde
+$A$ es el área. Por último, se define la carga por volumen $\varrho = Q / V$.
 
 
+Digamos que un disco $Q$ distribuye carga uniformemente con $A = \pi R^2$. 
 
+\subsection{Flujo eléctrico y Ley de Gauss}
+
+La ley de Gauss es una de las leyes fundamentales de la electroestática.
+
+Un flujo eléctrico $\phi$ (o $\phi_E$) indica el número de líneas de $\vec{E}$
+que atraviesan una superficie $S$.
+
+\textbf{Superficie plana.} Asumamos que $\vec{E}$ es uniforme y $S$ es un plano de área $A$. Si
+$\vec{E} \perp S$, 
+
+\begin{equation*}
+    \phi_E = \left| \vec{E} \right| A
+\end{equation*}
+
+Si $\vec{E} \not\perp S$, entonces $\vec{E}$ forma un ángulo $\theta$ con el
+versor normal a la superficie $\hat{n}$, y
+
+\begin{equation*}
+    \phi_E = \left| \vec{E} \right| \cos \theta A = (E \cdot \hat{n}) A
+\end{equation*}
+
+Notar que se sigue de esto que con $\vec{A} = A \hat{n}$ se cumple $\phi_E =
+\vec{E} \cdot \vec{A}$.
+
+\textbf{Superficie y campo arbitrarios}. Si tenemos una superficie arbitraria,
+tomamos pequeños sectores diferenciales de superficie que son planos, y
+utilizamos en cada uno lo establecido para superficies planas. Llamamos
+$d\vec{A}$ al "pequeño sector" de área que estamos tomando. Se tiene entonces
+que si $E_i$ es un sector pequeño del campo magnético,
+
+\begin{equation*}
+    \phi_{E_i} = \vec{E_i} \cdot d\vec{A_i}
+\end{equation*}
+
+y el flujo eléctrico total es 
+
+\begin{equation*}
+    \phi_E = \sum_{i} \phi_{E_i} = \int_S \vec{E} \cdot d\vec{A}
+\end{equation*}
+
+Notar que se asume que el campo es uniforme en cada pequeño sector arbitrario
+(within), pero no necesariamente entre distintos sectores (between), i.e. a lo
+largo de toda la superficie.
+
+\textbf{Unidades.} Las unidades del campo son Newtons sobre Coulombs por metro
+cuadrado.
+
+Damos particular atención a las superficies cerradas (con un dentro y un fuera),
+que llamamos superficies Gaussianas, que denotamos 
+
+\begin{equation*}
+    \phi_E = \oint \vec{E} d\vec{A}
+\end{equation*}
 
 
 

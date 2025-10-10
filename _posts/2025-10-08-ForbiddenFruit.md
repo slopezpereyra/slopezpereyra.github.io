@@ -3,38 +3,32 @@ title: The forbidden fruit
 categories: [ Personal ]
 ---
 
-One of the finest acquisitions I have made is an edition, by the University of
-Michigan, of the extraordinary *Child Ballads*. I was first made aware of the
-existence of these ballads by the appearance of some of them in Louis
-Untermeyer's *Albatross Book of Verse*, which I found perchance in a second-hand
-library in Buenos Aires, at seventeen years of age, and which was my first
-awakening to the world of English poetry.  
 
-Child's anthology contains poems of great antiquity and beauty, among which
-*Thomas the Rhymer* fascinated me the most. The poem, in all its dreamlike
-strangeness, had one particular characteristic which I found intriguing. It
-tells that Thomas the Rhymer was forced upon the gift of prophecy—and this
-very much against his will—by virtue of a mystical apple given to him by the
-«Queen of Elfland». The gift of prophecy is but the «tongue that can never
-lie», and the traditional commentary upon the ballad informs that the apple by
-virtue of which it is acquired is taken from the fatal tree of knowledge. Thus,
-when the ballad reads that *they came on to a garden green*, it means
-the Garden of Eden.
+I first learned of the *Child Ballads* through Louis Untermeyer's *Albatross
+Book of Verse*, which was my introduction to English poetry. Child's anthology
+contains poems of great antiquity and beauty, among which *Thomas the Rhymer*
+fascinated me the most. The poem, in all its dreamlike strangeness, had one
+particular characteristic which I found intriguing. It tells that Thomas the
+Rhymer was forced upon the gift of prophecy—and this very much against his
+will—by virtue of a mystical apple given to him by the «Queen of Elfland». The
+gift of prophecy is but the «tongue that can never lie», and the traditional
+commentary upon the ballad informs that the apple by virtue of which it is
+acquired is taken from the fatal tree of knowledge. Thus, when the ballad reads
+that *they came on to a garden green*, it means the Garden of Eden.
 
-«Why—thought I—does the forbidden fruit, whose flavour is the root of my very
-own guilt, endow not falsehood but a truthbound state?». The Bible speaks of
-the tree of knowledge of good and evil, 
+«Why—thought I—does the forbidden fruit, whose flavour is the root of death,
+corruption and fallenness, endow not falsehood but a truthbound state?». The
+Bible speaks of the «tree of knowledge of good and evil»,
 
 > But of the tree of the knowledge of good and evil, thou shalt not eat of it: for in the day that thou eatest thereof thou shalt surely die. —Genesis 2:9 (KJV)
 
-and thus it is unsurprising that we should hear that the fruit of the tree is
-the source of true knowledge. But why should it be the source of truthfulness? 
+and thus it is unsurprising that its fruit should bestow some form of
+illumination. But why should it be the source of truthfulness? 
 
-Of course, I consulted the few works at my disposal. Philo of Alexandria was
-the first, whose work *Quaestiones et solutiones in Genesim* I had read with
-devotion in my youth. Questions 15 and 40, which I transcribe below, were the
-ones which spoke about the matter most directly, yet not in any fashion which
-could elucidate it to my satisfaction. It reads:
+Classical commentary on the book of Genesis is not illuminating on this point.
+For instance, Philo of Alexandria, whose work *Quaestiones et solutiones in
+Genesim* I read with devotion in my early twentis, speaks thus on questions 15
+and 40:
 
 > (15) Why does (God) say, when He commands (Adam) to eat of every
 >tree which is in Paradise, ‘“‘Eat” in the singular number; but, when He forbids
@@ -71,8 +65,48 @@ Origen of Alexandria, in his *Homilies on Genesis*, though extensively covering
 the image of the fruit of the land in his characteristic allegorical manner,
 speaks not once of the forbidden fruit nor of Eve's transgression.
 
-Closer to the ballad's depiction of the fruit's endowments is Milton, when
-writing that Satan spoke thus to Eve of the tree of science:
+John Chrysostom, on his 16th homily on Genesis, speaks briefly in terms closer
+to our question when pointing out that Adam had already been granted the gift of
+prophecy, along with profund intelligence and knowledge. However, he concludes 
+from this that it is absurd that the fruit should bestow any form of
+illumination. Rather, he says:
+
+> But behold, they say, it was Scripture that called it the tree of the
+> knowledge of good and evil. I know that, too: but if you are prepared to learn
+> the characteristics of Sacred Scripture, you will know why it gave this name
+> to the tree. You see, it wasn’t because it supplied knowledge that it is
+> called that, but because (133a) the transgression of the command happened to
+> concern the tree, and from that event knowledge of sin then entered the scene,
+> and shame as well—that was why the name was given. It is, after all, the way
+> with Sacred Scripture to name places from the things that happen, wherever it
+> is they happen. So on this basis Sacred Scripture also named the tree of the
+> knowledge of good and evil since transgression and observance of the command
+> concerned the tree.
+
+I found this explanation unsatisfactory and dogmatic. Far more interesting is
+the interpretation of Gregory Nazianzen, in the 45th oration of his
+*Orationes*, when we writes:
+
+> [...] This latter was the Tree of Knowledge; not, however, because it was evil from
+> the beginning when planted; nor was it forbidden because God grudged it to men
+> — let not the enemies of God wag their tongues in that direction, or imitate
+> the serpent. But it would have been good if partaken of at the proper time;
+> for the Tree was, according to my theory, Contemplation, which it is only safe
+> for those who have reached maturity of habit to enter upon; but which is not
+> good for those who are still somewhat simple and greedy; just as neither is
+> solid food good for those who are yet tender and have need of milk.
+
+To him the fruit does grant illumination, but one of which man must partake only
+at the proper time, lest it my corrupt him. Gregory of Nyssa partly agrees when
+he writes, in his work *On the making of man*:
+
+> It speaks [meaning the Scripture] of the fruit of the forbidden tree not as a
+> thing absolutely evil (because it is decked with good), nor as a thing purely
+> good (because evil is latent in it) [...].
+
+However, the depiction closest to that of the ballad is that of Milton, 
+according to whom the Serpent spoke thus to Eve of the tree of science:
+
 
 >O Sacred, Wise, and Wisdom-giving Plant,<br>
 Mother of Science, Now I feel thy Power<br>
@@ -93,7 +127,7 @@ wishes to «grow mature in knowledge, as the Gods who all things know».
 
 
 <p align="center">
-    <img src="../Images/BlakeEve.jpg" width="75%" style="border: 6px solid #231709;">
+    <img src="../Images/BlakeEve.jpg" width="55%" style="border: 6px solid #231709;">
 </p>
 
 Does Eve's *hubris* contain the secret meaning of the ballad? Is the knowledge
@@ -102,15 +136,15 @@ know*? And is this what Thomas was granted in his own incursion into the Garden
 of Eden?
 
 Another interpretation is possible, one more suited to explain the inability to
-lie. It is conceivable that the fruit does not so much bestow knowledge as it 
+lie. It is conceivable that the fruit does not so much bestow knowledge as it
 incarnates at least some aspect of the divine essence. If Thomas cannot lie, it
 means one of two things: either he cannot speak what will not occur, or he can
 freely speak, thus mastering faith. Perhaps, then, the power of the fruit would
 be that of infusing into common language the creative power of the λόγος. To lie
-becomes a metaphysical impossibility, for language is no longer a representational faculty,
-but an ontological one. Adam and Eve's transgression would not be then that
-of acquiring knowledge, but that of stepping into the creative prerogative of
-the Word. 
+becomes a metaphysical impossibility, for language is no longer a
+representational faculty, but an ontological one. Adam and Eve's transgression
+would not be then that of acquiring knowledge, but that of stepping into the
+creative prerogative of the Word. 
 
 In support of this interpretation, we have Saint Augustine's words in *De
 Mendacio*, when he comments on the following judgment:
