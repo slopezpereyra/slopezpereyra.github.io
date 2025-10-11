@@ -3,9 +3,9 @@ title: The forbidden fruit
 categories: [ Personal ]
 ---
 
-<figure align="center">
+<p align="center">
     <img src="../Images/adameve.png" width="55%" style="border: 6px solid #231709;">
-</figure>
+</p>
 
 One of the finest acquisitions I have made is an edition by the University of
 Michigan of the extraordinary *Ballads* collected by Francis James Child. I was
@@ -133,7 +133,6 @@ Meant mee, by ventring higher then my Lot.<br>
 Not much later, Eve declares that the fruit gives «elocution to the mute, and
 taught The Tongue not made for Speech to speak thy praise», and eating of it 
 wishes to «grow mature in knowledge, as the Gods who all things know».
-
 
 <p align="center">
     <img src="../Images/BlakeEve.jpg" width="55%" style="border: 6px solid #231709;">
