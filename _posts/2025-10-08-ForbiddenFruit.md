@@ -109,7 +109,7 @@ he writes, in his work *On the making of man*:
 > (because it is decked with good), nor as a thing purely good (because evil is
 > latent in it) ...
 
-However, the depiction closest to that of the ballad is that of Milton, 
+However, the depiction closest to that of the ballad is Milton's, 
 according to whom the Serpent spoke thus to Eve of the tree of science:
 
 
