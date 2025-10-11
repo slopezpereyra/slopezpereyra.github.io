@@ -5,7 +5,6 @@ categories: [ Personal ]
 
 <figure align="center">
     <img src="../Images/adameve.png" width="55%" style="border: 6px solid #231709;">
-    <figcaption style="font-style: italic; color: #444;">Adam and Eve according to Lucas Cranach</figcaption>
 </figure>
 
 One of the finest acquisitions I have made is an edition by the University of
@@ -138,7 +137,6 @@ wishes to «grow mature in knowledge, as the Gods who all things know».
 
 <p align="center">
     <img src="../Images/BlakeEve.jpg" width="55%" style="border: 6px solid #231709;">
-    <figcaption style="font-style: italic; color: #444;">Eve tasting the fruit according to Blake</figcaption>
 </p>
 
 Does Eve's *hubris* contain the secret meaning of the ballad? Is the knowledge
