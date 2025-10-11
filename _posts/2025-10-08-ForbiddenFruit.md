@@ -90,7 +90,7 @@ any form of illumination. Rather, he says:
 
 I found this explanation unsatisfactory and dogmatic. Far more interesting is
 the interpretation of Gregory Nazianzen, in the 45th oration of his
-*Orationes*, when we writes:
+*Orationes*, when he writes:
 
 > This latter was the Tree of Knowledge; not, however, because it was evil from
 > the beginning when planted; nor was it forbidden because God grudged it to men
