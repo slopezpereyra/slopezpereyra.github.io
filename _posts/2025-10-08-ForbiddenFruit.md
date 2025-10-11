@@ -3,10 +3,15 @@ title: The forbidden fruit
 categories: [ Personal ]
 ---
 
+One of the finest acquisitions I have made is an edition by the University of
+Michigan of the extraordinary *Ballads* collected by Francis James Child. I was
+first made aware of the existence of these ballads by the appearance of some of
+them in Louis Untermeyer's *Albatross Book of Verse*, which I found perchance in
+a second-hand library in Buenos Aires, at seventeen years of age, and which was
+my first awakening to the world of English poetry.
 
-I first learned of the *Child Ballads* through Louis Untermeyer's *Albatross
-Book of Verse*, which was my introduction to English poetry. Child's anthology
-contains poems of great antiquity and beauty, among which *Thomas the Rhymer*
+Child's anthology contains poems of great antiquity and beauty, among which
+[*Thomas the Rhymer*](https://en.wikipedia.org/wiki/Thomas_the_Rhymer)
 fascinated me the most. The poem, in all its dreamlike strangeness, had one
 particular characteristic which I found intriguing. It tells that Thomas the
 Rhymer was forced upon the gift of prophecy—and this very much against his
@@ -48,7 +53,8 @@ Genesim* I read with devotion in my early twenties, speaks thus on questions 15:
 >evil. But when good and evil are mixed, they have as their beginning a mixture
 >of death. 
 
-Then, in question 40, he speaks thus of the discrimination brought upon by the forbidden fruit:
+Then, in question 40, he speaks thus of the discrimination brought upon by the
+forbidden fruit:
 
 > What is the meaning of the words, “‘For they knew that they were naked”’? 
 > 
