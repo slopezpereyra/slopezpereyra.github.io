@@ -3,6 +3,10 @@ title: The forbidden fruit
 categories: [ Personal ]
 ---
 
+<p align="center">
+    <img src="../Images/adameve.png" width="55%" style="border: 6px solid #231709;">
+</p>
+
 One of the finest acquisitions I have made is an edition by the University of
 Michigan of the extraordinary *Ballads* collected by Francis James Child. I was
 first made aware of the existence of these ballads by the appearance of some of
