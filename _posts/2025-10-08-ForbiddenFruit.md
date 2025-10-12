@@ -35,8 +35,8 @@ and thus it is unsurprising that its fruit should bestow some form of
 illumination. But why should it be the source of truthfulness? 
 
 Classical commentary on the book of Genesis is not illuminating on this point.
-For instance, Philo of Alexandria, whose work *Quaestiones et solutiones in
-Genesim* I read with devotion in my early twenties, speaks thus on questions 15:
+For instance, Philo of Alexandria, in *Quaestiones et solutiones in
+Genesim*, speaks thus on question 20:
 
 > Why does (God) say, when He commands (Adam) to eat of every
 >tree which is in Paradise, ‘“‘Eat” in the singular number; but, when He forbids
@@ -57,8 +57,8 @@ Genesim* I read with devotion in my early twenties, speaks thus on questions 15:
 >evil. But when good and evil are mixed, they have as their beginning a mixture
 >of death. 
 
-Then, in question 40, he speaks thus of the discrimination brought upon by the
-forbidden fruit:
+Then, in question 40, he speaks of the discrimination brought upon by the
+forbidden fruit as follows:
 
 > What is the meaning of the words, “‘For they knew that they were naked”’? 
 > 
