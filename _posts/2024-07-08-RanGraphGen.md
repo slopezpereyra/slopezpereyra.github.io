@@ -43,7 +43,7 @@ higher. The procedure is as follows:
         2. $E_c := E_c - {v, w}$  (edge is a bridge)
 4. return $(V, E)$
 
-Generating a  K_n $ is $O(n^2)$. The **while** loop selects a random edge
+Generating a  $K_n$ is $O(n^2)$. The **while** loop selects a random edge
 from $E_c$ and attempts to prune it. There is only one case in which an edge
 is not removed; namely, when the sampled edge is a bridge. This happens at most
 once per bridge. There are at most $n - 1$ bridges in a graph. Hence, there
@@ -104,7 +104,7 @@ $$
 It follows that there is a bijection
 
 $$
-f\_{n,m} : \mathcal{E}\_{n,m} \to \mathcal{C}\_{n, m}, \quad f\_{n,m}(W) = (V, E(K_n) - W).
+f_{n,m} : \mathcal{E}_{n,m} \to \mathcal{C}_{n, m}, \quad f_{n,m}(W) = (V, E(K_n) - W).
 $$
 
 We now prove that:
@@ -122,9 +122,9 @@ The algorithm removes $k = \binom{n}{2} - m$ edges
 $$S = \\{ e_1, \ldots, e_k \\}$$
 
 The connectivity invariant is preserved at each successful removal, so  
+
 $$
-\\{ e_1 \\}, \\{ e_1, e_2 \\}, \ldots, \\{ e_1, \ldots, e_k \\} \subseteq
-\mathcal{E}\_{n, m}
+\\{ e_1 \\}, \\{ e_1, e_2 \\}, \ldots, \\{ e_1, \ldots, e_k \\} \subseteq \mathcal{E}_{n, m}
 $$
 
 By construction, the final graph has edges $E(K_n) - S$, i.e. the final graph
