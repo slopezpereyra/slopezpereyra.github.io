@@ -7,8 +7,8 @@ categories: [ Science ]
 
 The generation of connected random graphs is non-trivial and important to many
 applications. In general, given $n, m \in \mathbb{N}$, it is not difficult to
-sample a random graph from the space of all graphs of $n$ vertices, $m$
-edges. The problem becomes more difficult when we require  (a) that the randomly
+sample a random graph from the space of all graphs of $n$ vertices, $m$ edges.
+The problem becomes more difficult when we require  (a) that the randomly
 generated graph be *connected* and, if possible,  (b) that any possible such
 graph has the same probability of being generated (i.e., that we sample the
 connected graphs uniformly).
@@ -34,7 +34,7 @@ connectivity invariant. This algorithm is unbiased, but its complexity is
 higher. The procedure is as follows:
 
 1. $(V, E) := \mathbf{genKn}(n)$
-2. $E_c := [e_1, \ldots, e_{|E|}]$
+2. $E_c := [e_1, \ldots, e\_{|E|}]$
 3. while $|E| > m$ do
     1. ${v, w} := \mathbf{randSample}(E_c)$
     2. $E := E - {v, w}$
@@ -43,7 +43,7 @@ higher. The procedure is as follows:
         2. $E_c := E_c - {v, w}$  (edge is a bridge)
 4. return $(V, E)$
 
-Generating a  K_n $ is $ O(n^2)$. The **while** loop selects a random edge
+Generating a  K_n $ is $O(n^2)$. The **while** loop selects a random edge
 from $E_c$ and attempts to prune it. There is only one case in which an edge
 is not removed; namely, when the sampled edge is a bridge. This happens at most
 once per bridge. There are at most $n - 1$ bridges in a graph. Hence, there
@@ -55,8 +55,9 @@ $\frac{n(n-1)}{2} - m$ of them.
 Therefore: 
 
 $$
-O(n) + O\left(\frac{n(n-1)}{2} - m\right) = O(n^2 - m)
+O(n) + O\Big(\frac{n(n-1)}{2} - m\Big) = O(n^2 - m)
 $$
+
 iterations.
 
 The operations in each iteration are $O(1)$ except the connectivity check,
@@ -82,48 +83,59 @@ Below, I display a $K_{100}$ and the random tree generated from it.
 </p>
 
 
+# Correctness and uniformity
+
 To prove that the algorithm is unbiased we need a few definitions.
 
 Let $\mathcal{G}\_{n, m}$ denote the set of all graphs with $n$ vertices and $m$
 edges, and let $\mathcal{C}\_{n, m} \subset \mathcal{G}\_{n, m}$ denote the subset
 of *connected* graphs.
 
-Let $\mathcal{E}_{n,m}$ be the class of edge sets $ W \subseteq E(K_n) $ such
-that removing $W$ from $K_n$ produces a connected graph with $m$ edges.
+Let $\mathcal{E}_{n,m}$ be the class of edge sets $W \subseteq E(K_n)$ such that
+removing $W$ from $K_n$ produces a connected graph with $m$ edges.
 
-Each $G \in \mathcal{C}\_{n, m}$ corresponds uniquely to one such $W \in \mathcal{E}_{n,m}$, so
+Each $G \in \mathcal{C}\_{n, m}$ corresponds uniquely to one such $W \in
+\mathcal{E}_{n,m}$, so
+
 $$
-|\mathcal{E}_{n,m}| = |\mathcal{C}\_{n, m}|.
+|\mathcal{E}\_{n,m}| = |\mathcal{C}\_{n, m}|
 $$
+
 It follows that there is a bijection
+
 $$
-f_{n,m} : \mathcal{E}_{n,m} \to \mathcal{C}\_{n, m}, \quad f_{n,m}(W) = (V, E(K_n) - W).
+f\_{n,m} : \mathcal{E}\_{n,m} \to \mathcal{C}\_{n, m}, \quad f\_{n,m}(W) = (V, E(K_n) - W).
 $$
 
 We now prove that:
 
-1. The edges removed by the algorithm form a valid set $W \in \mathcal{E}_{n,m}$ and the resulting graph is $f_{n,m}(W)$.
-2. Each $W \in \mathcal{E}_{n,m}$ may be formed with equal probability.
+1. The edges removed by the algorithm form a valid set $W \in \mathcal{E}\_{n,m}$ 
+and the resulting graph is $f\_{n,m}(W)$.
+2. Each $W \in \mathcal{E}\_{n,m}$ may be formed with equal probability.
 
 ---
 
 ### (1) Correctness
 
 The algorithm removes $k = \binom{n}{2} - m$ edges  
-$S = \\{ e_1, \ldots, e_k \\}$.  
+
+$$S = \\{ e_1, \ldots, e_k \\}$$
+
 The connectivity invariant is preserved at each successful removal, so  
 $$
-\\{ e_1 \\}, \\{ e_1, e_2 \\}, \ldots, \\{ e_1, \ldots, e_k \\}
+\\{ e_1 \\}, \\{ e_1, e_2 \\}, \ldots, \\{ e_1, \ldots, e_k \\} \subseteq
+\mathcal{E}\_{n, m}
 $$
-are all members of $\mathcal{E}_{n,m}$.  
-By construction, the final graph has edges $E(K_n) - S$, i.e. the final graph equals $f_{n,m}(S)$.  
+
+By construction, the final graph has edges $E(K_n) - S$, i.e. the final graph
+equals $f\_{n,m}(S)$.  
 ∎
 
 ---
 
 ### (2) Unbiasedness (symmetry argument)
 
-The algorithm removes the edges of some $W \in \mathcal{E}_{n,m}$ and each
+The algorithm removes the edges of some $W \in \mathcal{E}\_{n,m}$ and each
 successful run corresponds to an ordered sequence $(e_1,\dots,e_k)$ which is a
 permutation of the elements of that $W$.
 
@@ -147,28 +159,40 @@ $$
 
 Since there are $k!$ ordered sequences (permutations) that yield the same
 unordered set $W$, the probability of producing $W$ equals:
+
 $$
-\Pr[\text{output } W] = k! \prod_{i=1}^k \frac{1}{a_i}.
+P[\text{output } W] = k! \prod_{i=1}^k \frac{1}{a_i}.
 $$
 
-The right-hand side does not depend on $W$ (only on $k$ and the sequence $a_i$), so every $W\in\mathcal{E}_{n,m}$ is produced with the same probability. Thus, the induced distribution on $\mathcal{C}\_{n, m}$ is uniform — the algorithm is unbiased.
+The right-hand side does not depend on $W$ (only on $k$ and the sequence $a_i$),
+so every $W\in\mathcal{E}_{n,m}$ is produced with the same probability. Thus,
+the induced distribution on $\mathcal{C}\_{n, m}$ is uniform — the algorithm is
+unbiased.
 
 ---
 
 ## As a Markov Chain
 
-Let $G_i$ denote the graph after $i$ successful iterations of the edge-pruning algorithm. Then the sequence $\\{G_i\\}_{i\ge 0}$ defines a discrete-time Markov chain (DTMC) on the state space $\mathcal{C}\_{n, m}$, the set of connected graphs with $n$ vertices and $m$ edges.
+Let $G_i$ denote the graph after $i$ successful iterations of the edge-pruning
+algorithm. Then the sequence $\\{G_i\\}_{i\ge 0}$ defines a discrete-time Markov
+chain (DTMC) on the state space $\mathcal{C}\_{n, m}$, the set of connected
+graphs with $n$ vertices and $m$ edges.
 
 ### Markov property
 
-The Markov property holds because the choice of edge to remove at step $i+1$ depends solely on the current graph $G_i$ and the remaining candidate edges $E_c$. Formally:
+The Markov property holds because the choice of edge to remove at step $i+1$
+depends solely on the current graph $G_i$ and the remaining candidate edges
+$E_c$. Formally:
+
 $$
-\Pr[G_{i+1} \mid G_i, G_{i-1}, \dots, G_0] = \Pr[G_{i+1} \mid G_i].
+P[G_{i+1} \mid G_i, G_{i-1}, \dots, G_0] = P[G_{i+1} \mid G_i].
 $$
 
 ### Transition probabilities
 
-Let $P(G_i \to G_{i+1})$ denote the one-step transition probability from graph $G_i$ to graph $G_{i+1}$, assuming $G_{i+1} \neq G_i$. Then:
+Let $P(G_i \to G_{i+1})$ denote the one-step transition probability from graph
+$G_i$ to graph $G_{i+1}$, assuming $G_{i+1} \neq G_i$. Then:
+
 $$
 P(G_i \to G_{i+1}) =
 \begin{cases}
@@ -177,38 +201,56 @@ P(G_i \to G_{i+1}) =
 \end{cases}
 $$
 
-If a sampled edge is a bridge, then the graph remains unchanged and $G_i = G_{i+1}$. The probability of this self-loop transition is:
+If a sampled edge is a bridge, then the graph remains unchanged and 
+$G_i =G_{i+1}$. The probability of this self-loop transition is:
+
 $$
 P(G_i \to G_i) = \frac{|B_i|}{m_i},
 $$
-where $B_i$ is the set of bridge edges at the current iteration and $m_i$ is the number of edges in $G_i$.
+
+where $B_i$ is the set of bridge edges at the current iteration and $m_i$ is the
+number of edges in $G_i$.
 
 Note that $B_i = \overline{E_i}$, which means:
+
 $$
 P(G \to G) = \frac{m_i - |E_i|}{m_i} = 1 - \frac{|E_i|}{m_i}.
 $$
 
-From this follows that the probability that an edge is successfully removed at iteration $i$ is $|E_i| / m_i$.
+From this follows that the probability that an edge is successfully removed at
+iteration $i$ is $|E_i| / m_i$.
 
-Note that there are at most $n-1$ bridges in a connected graph with $n$ vertices, and this bound remains constant across iterations, so:
+Note that there are at most $n-1$ bridges in a connected graph with $n$
+vertices, and this bound remains constant across iterations, so:
+
 $$
 P(\text{A bridge is chosen at iteration } i) \leq \frac{n-1}{m_i}.
 $$
 
-This bound is informative only when $m_i \gg n - 1$, since otherwise it approximates 1 and becomes trivial. Thus, it is informative for dense graphs and not for sparse ones.
+This bound is informative only when $m_i \gg n - 1$, since otherwise it
+approximates 1 and becomes trivial. Thus, it is informative for dense graphs and
+not for sparse ones.
 
 ### Stationary distribution
 
-Since the algorithm is unbiased, every connected graph $G \in \mathcal{C}\_{n, m}$ is equally likely to appear as the final output. This implies that the stationary distribution $\pi$ of the Markov chain is uniform over $\mathcal{C}\_{n, m}$:
+Since the algorithm is unbiased, every connected graph 
+$G \in \mathcal{C}\_{n,m}$ is equally likely to appear as the final output. 
+This implies that the stationary distribution $\pi$ of the Markov chain is uniform 
+over $\mathcal{C}\_{n, m}$:
+
 $$
 \pi(G) = \frac{1}{|\mathcal{C}\_{n, m}|}, \quad \forall G \in \mathcal{C}\_{n, m}.
 $$
 
 ### Irreducibility and aperiodicity
 
-The chain is **irreducible** in the sense that, starting from $K_n$, any connected graph with $m$ edges can eventually be reached by a sequence of valid edge removals.
+The chain is **irreducible** in the sense that, starting from $K_n$, any
+connected graph with $m$ edges can eventually be reached by a sequence of valid
+edge removals.
 
-The chain is **aperiodic** because there is a positive probability of staying in the same state (when a bridge is sampled):
+The chain is **aperiodic** because there is a positive probability of staying in
+the same state (when a bridge is sampled):
+
 $$
 P(G \to G) > 0 \quad \forall G \in \mathcal{C}\_{n, m}.
 $$
@@ -219,10 +261,16 @@ Hence, the Markov chain converges to the uniform stationary distribution.
 
 ## A potential improvement
 
-The probability that a chosen edge is a bridge increases as the graph becomes sparser, but is relatively negligible in the early stages of the algorithm. Since such probability is bounded at each iteration by $ (n-1)/m_i $, and both of these quantities are known to the algorithm, we can define a tolerance $ \epsilon $ such that if
+The probability that a chosen edge is a bridge increases as the graph becomes
+sparser, but is relatively negligible in the early stages of the algorithm.
+Since such probability is bounded at each iteration by $ (n-1)/m_i $, and both
+of these quantities are known to the algorithm, we can define a tolerance $
+\epsilon $ such that if
+
 $$
 \frac{n-1}{m_i} < \epsilon,
 $$
+
 we skip the connectivity check and automatically remove the sampled edge.
 
 ## Appendix 
