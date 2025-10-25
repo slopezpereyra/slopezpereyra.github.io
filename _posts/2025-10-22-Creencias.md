@@ -1,5 +1,5 @@
 ---
-title: On seeing people as they are
+title: On seeing people as they truly are
 categories: [Personal]
 ---
 
@@ -13,10 +13,10 @@ do we penetrate its essence nor take it as a lens through which to observe the
 deeper personality. If we could suspend judgment, the words and actions of
 others would be to us like strange kaleidoscopes. Individuals appear before us
 like a stream, some more tempestuous than others, but all flowing like water
-more transparent than we imagine. And if we could be not like the rock which
-resists and is circumvented by the water, but like a tadpole that follows its
-direction, not passive nor resisting, not being carried away, not swimming
-countercurrent either, who knows how rich and true the face of human condition
+more transparent than we imagine. And if we could be not like the rock, which
+equally resists the gentle flow of the stream and violent current of the
+tropical river, but like a ray that smoothly follows their direction, neither
+passive nor resisting, who knows how rich and true the face of human condition
 would appear before us?
 
 

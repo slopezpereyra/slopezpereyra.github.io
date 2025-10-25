@@ -10,7 +10,8 @@
 \usepackage[table]{xcolor}
 \usepackage{fullpage}
 \usepackage{lastpage}
-\usepackage{mlmodern}
+\usepackage{newtxmath}
+\usepackage{newtxtext}
 \usepackage{enumitem}
 \usepackage{fancyhdr}
 \usepackage{mathrsfs}
@@ -1714,18 +1715,180 @@ Por lo tanto,
     W = 1200 \cos \theta \text{ J} - \mu 3920 \text{ J}
 \end{equation*}
 
+\pagebreak 
 
+\section{P4}
 
+\begin{shaded}
+    \textbf{(1)} Determinar el campo eléctrico en un punto a 12cm de una carga
+    de $-4 \times 10^{-9}$C. ¿Cuál sería el vector fuerza $\vec{F}$ que
+    experimentaría un electrón situado en dicha posición?
+\end{shaded}
 
+$(a)$ Recordemos que el campo eléctrico no es más que la fuerza que experimentaría una
+carga positiva y unitaria a una distancia $d$ de una carga de referencia. Es
+decir, es la fuerza electroestática \textit{normalizada}. Más formalmente, dada
+una carga de referencia $Q$ y una carga $q$,
 
+\begin{equation}
+    \vec{E} = \frac{ \vec{F}_e }{q} = \frac{1}{4\pi \epsilon_0}
+    \frac{Q}{r^2} ~ \hat{r}
+\end{equation}
 
+con $\hat{r}$ un vector unitario de dirección (de $Q$ a $q$). En este caso, $r =
+12\text{cm} = 0.12\text{m}$. Tomando $\kappa = 1 / 4\pi\epsilon_0$:
 
+\begin{equation}
+    \vec{E} 
+    &= \kappa  \frac{-4 \times 10^{-9} C}{0.0144 \text{m}^2} ~ \hat{r}
+\end{equation}
 
+Con $\epsilon_0 = 8.854187817\times 10^{-12} \text{F/m}$, se obtiene la
+aproximación 
 
+\begin{equation}
+    \kappa \approx 8.99 \times 10^{9} \text{N} \cdot \frac{ \text{m}^2
+    }{\text{C}^2}
+\end{equation}
 
+Usaré 9 en vez de 8.99. La ecuación $(2)$, separando por un lado los factores
+numéricos y por otro los factores unidad, resulta entonces
 
+\begin{align*}
+    \vec{E} 
+    &= ( 8.99 \times 10^{9} ) \cdot \frac{-4 \times 10^{-9}}{0.0144} ~ \times 
+    \left( \text{N} \cdot \frac{\text{m}^2}{\text{C}^2} \right)\left(
+    \frac{\text{C}}{\text{m}^2} \right)  \times \hat{r} \\
+    &= \frac{9}{3.6} \times ( -10^{3} ) \text{N/C} ~ \hat{r}\\ 
+    &=-2497.222 \text{N/C} ~ \hat{r}
+\end{align*}
 
+$(b)$ La carga de un electrón es $-1.602 \times 10^{-19}\text{C}$. La fuerza que
+experimenta una carga $q$ en un campo magnético $\vec{E}$ es $\vec{F} =
+q\vec{E}$. Por lo tanto, el electrón experimenta la fuerza 
 
+\begin{align*}
+    \vec{F} 
+    &= \left( -1.602 \times 10^{-19} \text{C} \right) \times -2497.222
+    \text{N/C} ~ \vec{r} \\ 
+    &= 4000.549644 \times 10^{-19} \text{N} ~ \hat{r}
+\end{align*}
+
+Notemos que la fuerza es positiva, lo cual significa que el electrón es repelido
+por la carga de referencia que genera el campo magnético. Esto tiene sentido,
+porque tanto la carga del electrón como la carga de referencia $Q$ son negativas.
+
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(2)}
+\end{shaded}
+
+(a) Recordemos que al calcular una fuerza electroestática, la constanta $\kappa
+= 1 / 4\pi \epsilon_0$ tiene unidades N (m$^2$/C$^2$), y al multiplicarla por el
+producto de las cargas sobre la distancia al cuadrado, solo nos queda N:
+
+\begin{equation*}
+    \left[ \text{N} \frac{\text{m}^2}{\text{C}^2} \right] \left[
+    \frac{\text{C}^2}{\text{m}^2} \right] = \left[ \text{N} \right] 
+\end{equation*}
+
+Por lo tanto, nos ahorraremos este cálculo de unidades y de ahora en adelante
+escribiremos directamente la fuerza en Newton, obviando las otras unidades.
+Usando la aproximación $\kappa = 8.99 \times 10^9$, con $r^2 = 0.25$ (metros al
+cuadrado), 
+
+\begin{align*}
+    F_{12} &= 
+    \kappa \frac{ 2 \times 10^{-12}}{0.25} ~ \hat{r}  ~ \text{N} = 0.07192 ~ \text{N}& \left\{
+\text{Atractiva} \right\} \\ 
+    F_{13} &= \kappa \frac{3 \times 10^{-12} }{0.25} \text{N} = 0.10788  ~ \text{N}&\left\{ \text{Repulsiva} \right\} \\ 
+    F_{23} &= \kappa \frac{ 6 \times 10^{-12} }{0.25} \text{N} = 0.21576  ~ \text{N} &\left\{ \text{Atractiva} \right\} 
+\end{align*}
+
+Ahora bien, cada carga está en el campo eléctrico de las otras dos, i.e. es
+afectada por ambas. Por lo tanto, la fuerza que experimentada por cada carga es 
+
+\begin{align*}
+    F_1 &= F_{12}\hat{i} - \hat{i}F_{13} = \hat{i}(0.07192 -
+    0.10788)\text{N} = -0.03596\text{N} ~ \hat{i} \\ 
+    F_2 &= -\hat{i} F_{12} + \hat{i} F_{13} = \hat{i}(-0.07192 + 0.10788)\text{N}
+    = 0.03596\text{N} ~  \hat{i}\\ 
+    F_3 &= -\hat{i}F_{23} + \hat{i}F_{13} = \hat{i}(-0.21576 + 0.10788)\text{N}
+    = -0.10788\text{N} ~ \hat{i}
+\end{align*}
+
+$(c)$ 
+
+\begin{align*}
+    V_1 = \kappa \left( \frac{q_2}{0.5} + \frac{q_3}{1} \right)  \\ 
+    V_2 = \kappa \left( \frac{q_1}{0.5} + \frac{q_3}{1} \right)  \\ 
+    V_3 = \kappa \left( \frac{q_1}{1} + \frac{q_2}{0.5} \right)  
+\end{align*}
+
+\pagebreak 
+
+\textbf{(3)} Consideremos solo la bola derecha. Tenemos que 
+
+\begin{equation*}
+    \vec{T} + \vec{E} + \vec{P} = 0
+\end{equation*}
+
+Si notamos que $\vec{E}$ no tiene componente vertical y $\vec{P}$ no tiene
+componente horizontal, esto implica que
+
+\begin{align*}
+    (T_x + E)\hat{i} + (T_y + P) \hat{j} = 0
+\end{align*}
+
+o bien 
+
+\begin{equation}
+    \begin{cases}
+        T_x = -E \\ 
+        T_y = -P
+    \end{cases}
+\end{equation}
+
+Ahora bien, es fácil observar geométricamente que 
+
+\begin{equation}
+    \vec{T} = T_x \hat{i} + T_y \hat{j} = T \sin \theta \hat{i} + T \cos \theta
+    \hat{j}
+\end{equation}
+
+Expresado de una forma más bonita:
+
+\begin{equation}
+    \begin{cases}
+        T_x = T \sin \theta \\ 
+        T_y = T \cos \theta
+    \end{cases}
+\end{equation}
+
+Como $T_y = -P$ por (4), y $P = -mg$,
+
+$$T_y = mg = 30\text{g} \cdot 9.8 \frac{m}{s^2} = 0.1943 \text{N}$$
+
+La segunda ecuación del sistema $(6)$ nos da $T = T_y /\cos \theta$ y por lo
+tanto obtenemos 
+
+\begin{align*}
+    T &= \frac{0.1943 \text{N}}{\cos \ang{5}} = \frac{0.1943
+    \text{N}}{0.99619469809}  = 0.19504219443\text{N}
+\end{align*}
+
+Podemos usar esto para despejar $T_x$ en $(6)$: 
+
+\begin{equation*}
+    T_x = 0.19504219443\text{N} ~ \sin \theta = 0.01699904732
+\end{equation*}
+
+Por (4), sabemos que $T_x = -E$. Por lo tanto, 
+
+\begin{equation}
+    E = -0.01699904732\text{N}
+\end{equation}
 
 
 

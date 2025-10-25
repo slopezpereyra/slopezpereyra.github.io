@@ -8,7 +8,8 @@
 \usepackage[table]{xcolor}
 \usepackage{fullpage}
 \usepackage{lastpage}
-\usepackage{mlmodern}
+\usepackage{newtxmath}
+\usepackage{newtxtext}
 \usepackage{enumitem}
 \usepackage{fancyhdr}
 \usepackage{mathrsfs}
@@ -44,6 +45,7 @@
 \counterwithin*{equation}{subsection}
 \usetikzlibrary{angles,quotes,calc,positioning}
 \usetikzlibrary{decorations.pathmorphing, patterns, calc}
+\usepackage{mathtools} 
 \begin{document}
 
 \section{Info}
@@ -4538,186 +4540,326 @@ para contrarrestarla es de esta misma magnitud. θ
 
 \pagebreak 
 
-\section{Campos eléctricos}
 
-Digamos que tenemos dos cargas $q_0$ y $q_1$, y queremos saber la fuerza sobre
-$q_1$.
-Ponemos $q_0$ como origen del sistema de coordenadas y denotamos $\vec{r}$ al
-vector que parte de $q_0$ a $q_1$. En particular, $\vec{r}$ es el vector unitario
-que apunta desde $q_0$ hacia $q_1$.
+\section{Electroestática}
 
-Sabemos que 
+\subsection{Electric charges and Coulomb's law}
 
-\begin{equation*}
-    \vec{F}_{q_1} = \frac{1}{4 \pi \varepsilon_0 } \frac{q_0 q_1}{r^2}\hat{r}
-\end{equation*}
+The concept of electric force, very much like gravitational force, is rooted
+only in observation. It is the case in nature that certain objects interact with
+each other at a distance. Gravitational force describes one such kind of
+interaction—particularly one that is always attractive, conservational,
+proportional to the masses, etc. Electric force describes another such kind of
+interaction, one that is sometimes attractive and sometimes repulsive, that is
+independent of the masses involved. 
 
-donde $r^2$ es la distancia (al cuadrado) entre las dos cargas.
+We introduce the concept of \textit{charge} to account for two observed
+phenomena. Firstly, that electrostatic interactions can be repulsive or
+attractive, where we say that identical charges attract and opposite charges
+repel each other. Secondly, that the strength of electrostatic interactions
+varies depending on the interacting objects.
 
-Notar que los signos de $q_0$ y $q_1$ determinan si la fuerza es atractiva o
-repulsiva. Mismo signo: repulsiva; distinto signo: atractiva. Por 3era ley de
-Newton, 
+Coulomb's law describes the electric force between two charges:
 
-\begin{equation*}
-    \vec{F_{ q_0 }} = -\vec{F_{q_1}}
-\end{equation*}
+\begin{equation}\tag{Coloumb's law}
+    \vec{F_E} = \frac{1}{4\pi \epsilon_0} \frac{ q_1q_2 }{r^2} \hat{r}
+\end{equation}
 
-\begin{shaded}
-    \textbf{($\star$)} Veamos un ejemplo. Tenemos $q_2$ negativa, $q_1$
-    positiva, $q_3$ positiva, formando un cuadrado con $q_2$ arriba y a la
-    izquierda, $q_3$ siendo el vértice superior derecho, $q_1$ el vértice
-    inferior izquierdo. La distancia entre $q_2, q_3$ es $a$, y así lo es 
-    la distancia entre $q_2, q_1$. 
-
-    Sabemos que $q_1 = q_3 = 5.0\mu c$, $q_2 = -2\mu c$, $a = 0.1\text{m}$.
-    Queremos saber la fuerza $\vec{F}$ que actúa sobre $q_3$.
-
-    Ponemos un sistema de coordenadas con origen en $q_1$ (vértice inferior
-    izquierdo del "cuadrado"). 
-
-    La fuerza sobre $q_3$ es la suma de las fuerzas (atractivas o repulsivas)
-    que hacen $q_2$ y $q_1$ sobre $q_3$.
-
-    \begin{align*}
-        \vec{F} = \vec{F_{23}} + \vec{F_{13}}
-    \end{align*}
-
-    Pero sabemos que 
-
-    \begin{align*}
-        \vec{F_{23}} 
-        &= \left| \vec{F_{23}} \right| (\hat{i}) \\ 
-        &= \frac{1}{4\pi \varepsilon_0} \frac{q_0q_1}{a^2}  \hat{i} \\ 
-        &= \frac{1}{4\pi \varepsilon 0} \frac{( 5 \times  2 ) (\mu c)^2 }{a^2}
-        \hat{i}
-    \end{align*}
-
-    Notar que $\vec{F_{23}}$ es atractiva porque $q_2$ es negativa y $q_3$
-    positiva.
-
-    Ahora bien, 
-
-    \begin{align*}
-        \vec{F_{13}} = F_{13} \cos(45) \hat{i} + F_{13} \sin(45) \hat{j}
-    \end{align*}
-
-    donde 
-
-    \begin{equation*}
-        F_{13} = \frac{1}{4\pi \varepsilon_0} (\left| q_1 \right|\left| q_2
-        \right|  ) / (2a^2) = 11\text{N}
-    \end{equation*}
-\end{shaded}
-
-Un campo eléctrico depende de una carga puntual, i.e. de un punto material que
-tiene masa y tiene carga. Un campo eléctrico $\vec{E}$ de una carga $q$ se
-define como 
+where $r$ is the distance between the two charges, $\hat{r}$ is a unitary vector
+in the direction of the force, and $\epsilon_0$ is a constant termed the
+\textit{permittivity of free space} or \textit{electric constant}:
 
 \begin{equation*}
-    \vec{E} = \frac{q}{4\pi \varepsilon_0 r^2} \hat{r}
+\epsilon_0 = 8.854 187 817 \times 10^{−12} \tag{Permittivity of free space}
 \end{equation*}
 
-Digamos que un campo eléctrico en torno a $q$ colocamos una carga $q_0$, la
-fuerza que dicha carga $q_0$ sufre es $\vec{F_{q_0}} = q_0 \vec{E}$. Si tenemos
-$n$ cargas $q_1, \ldots, q_n$, el campo es:
+The force exerted by multiple charges on another charge is additive. To
+understand this, consider the diagram below, where a series of charges $q_0,
+\ldots, q_n$ are arranged in a line of distance $L$ and a charge $q$ is at a
+distance $a$ from the end of the line. We use $Q$ to denote the total charge 
+$\sum q_i$.
+
+
+\begin{center}
+    
+\begin{tikzpicture}[>=stealth]
+
+    % Styles
+    \tikzset{
+        charge/.style={circle, draw=black, fill=cyan!60, inner sep=2pt},
+        rod/.style={line width=3pt, cyan!60!blue, rounded corners=2pt}
+    }
+
+    % Coordinates
+    \coordinate (A) at (0,0);         % left end of rod
+    \coordinate (B) at (4,0);         % right end of rod  (represents length L)
+    \coordinate (C) at (6,0);         % point charge position (distance a from B)
+
+    % Rod
+    \draw[rod] (A) -- (B);
+
+    % Point charge
+    \node[charge] (q) at (C) {};
+
+    % Labels for the charges
+    \node[above] at ($(A)!0.5!(B)$) {$Q$};
+    \node[right] at (q.east) {$q$};
+
+    % Distance L
+    \draw[<->] (A) ++(0,-0.6) -- ++(4,0);
+    \node[below] at ($(A)!0.5!(B) + (0,-0.6)$) {$L$};
+
+    % Distance a
+    \draw[<->] (B) ++(0,-0.6) -- ++(2,0);
+    \node[below] at ($(B)!0.5!(C) + (0,-0.6)$) {$a$};
+
+\end{tikzpicture}
+\end{center}
+
+In such a situation, we use \textit{charge density} to denote $Q / L$. Let $x$
+be the distance from an arbitrary point in the segment and the charge $q$. Then
 
 \begin{equation*}
-    \vec{E} = \sum_{i=1}^n \frac{1}{4\pi \varepsilon_0} \frac{q_i}{r_i^2}
-    \hat{r_i}
+    dQ = \frac{Q}{L} ~ dx
 \end{equation*}
 
-Si tenemos infinitas cargas, distribuidas en un espacio finito, 
+is the amount of charge in a segment of the line charge of length $dx$. Since we
+can make $dx$ arbitrarily small, $dQ$ can be taken to represent a point charge,
+so that we may use Coloumb's law.
+
+\begin{center}
+\begin{tikzpicture}[>=stealth]
+
+    % Styles
+    \tikzset{
+        charge/.style={circle, draw=black, fill=cyan!60, inner sep=2pt},
+        rod/.style={line width=3pt, cyan!60!blue, rounded corners=2pt},
+        dq/.style={fill=black}
+    }
+
+    % Coordinates
+    \coordinate (A) at (0,0);         % left end of rod
+    \coordinate (B) at (4,0);         % right end of rod  (represents length L)
+    \coordinate (C) at (6,0);         % point charge position (distance a)
+    % Pick a point on the rod for the differential element dQ
+    \coordinate (D) at (2,0);
+
+    % Rod
+    \draw[rod] (A) -- (B);
+
+    % The differential charge element dQ
+    \fill[dq] (D) circle (2pt);
+    \node[below] at (D) {$dQ$};
+
+    % Vertical markers (just like the textbook style)
+    \draw (A) ++(0,0.35) -- ++(0,0.6);
+    \draw (B) ++(0,0.35) -- ++(0,0.6);
+    \draw (C) ++(0,0.35) -- ++(0,0.6);
+    \draw (D) ++(0,0.35) -- ++(0,0.6);
+
+    % Distance L
+    \draw[<->] (A) ++(0,-0.6) -- ++(4,0);
+    \node[below] at ($(A)!0.5!(B) + (0,-0.6)$) {$L$};
+
+    % Distance a
+    \draw[<->] (B) ++(0,-0.6) -- ++(2,0);
+    \node[below] at ($(B)!0.5!(C) + (0,-0.6)$) {$a$};
+
+    % Point charge q
+    \node[charge] (q) at (C) {};
+    \node[right] at (q.east) {$q$};
+
+    % Distance x (from dq to the point charge q)
+    \draw[<->] (D) ++(0,0.6) -- ++(4,0);
+
+
+\end{tikzpicture}
+\end{center}
+
+
 
 \begin{equation*}
-    \vec{E} = \int \frac{1}{4\pi \varepsilon_0} \frac{dq}{r^2}\hat{r}
+    d\vec{F} = \frac{1}{4\pi\epsilon_0} \frac{dQ \cdot q}{x^2} \hat{r}
 \end{equation*}
 
-Si la distribución es uniforme, y en particular es lineal, definimos la carga en
-cada segmento diferencial como $\lambda = Q / L$ donde $L$ es la longitud del
-segmento en cuestión. Si es en una superficie, definimos $\sigma = Q / A$, donde
-$A$ es el área. Por último, se define la carga por volumen $\varrho = Q / V$.
+Hence, since the force of multiple charges is additive, 
+
+\begin{align*}
+    \vec{F} = \int_{a}^{a+L} dF 
+    &= \int_a^{a+L}  \frac{1}{4\pi\epsilon_0} \frac{dQ \cdot q}{x^2} \hat{r}\\ 
+    & \frac{\hat{r}}{4\pi\epsilon_0} \int_{a}^{a+L} \frac{q \cdot Q /L }{x^2} ~ dx
+\end{align*}
+
+Note that $\hat{r}$ is constant: it always points either horizontally towards
+$q$ or horizontally "against" $q$ (depending on whether $Q$ and $q$ are
+identically charged or not). It is only for this reason that it can be factored
+out of the integral. Now, solving the integral, we obtain
+
+\begin{align*}
+    \vec{F} = \frac{\hat{r}}{4\pi\epsilon_0} \int_{a}^{a+L} \frac{q \cdot Q /L }{x^2} ~ dx
+    &= \frac{\hat{r} q \cdot Q}{L 4 \pi \epsilon_0} \int_{a}^{a+L} \frac{1}{x^2}
+    ~ dx \\
+    &= \hat{r} \cdot \frac{1}{4\pi \epsilon_0} \frac{qQ}{a(a+L)}
+\end{align*}
 
 
-Digamos que un disco $Q$ distribuye carga uniformemente con $A = \pi R^2$. 
 
-\subsection{Flujo eléctrico y Ley de Gauss}
 
-La ley de Gauss es una de las leyes fundamentales de la electroestática.
+\subsection{Electric fields}
 
-Un flujo eléctrico $\phi$ (o $\phi_E$) indica el número de líneas de $\vec{E}$
-que atraviesan una superficie $S$.
+Coloumb's law describes forces acting between two distant charges. However, we
+can model the situation differently. Since any charged object $Q$ will exert
+electrostatic force to other nearby charged objects, we can think of $Q$ as
+creating a \textit{field} around it. Nearby objects are within this field at a
+certain distance from $Q$, and the force in the field (due to Coloumb's law)
+will be inversely proportional to the square of said distance.
 
-\textbf{Superficie plana.} Asumamos que $\vec{E}$ es uniforme y $S$ es un plano de área $A$. Si
-$\vec{E} \perp S$, 
+Let $q$ by a charge nearby $Q$, or within the field of $Q$. Then
+
+\begin{equation}\tag{Electric field}
+    \vec{E} = \frac{\vec{F}}{q}
+\end{equation}
+
+Note that $\vec{E}$ is nothing but the \textit{normalized} force which $Q$
+exerts to $q$. We can think of this as: the force which $Q$ would exert on an
+object of charge $1+$. Note that the dimensions the electric field are newtons
+over coulombs.
+
+If we have multiple charges scattered in space, the electric field generated by
+all of them is the sum of their individual fields: 
 
 \begin{equation*}
-    \phi_E = \left| \vec{E} \right| A
+    \vec{E} = \frac{1}{4\pi \epsilon 0}\sum_{i} \frac{q_i}{r^2} \hat{r_i}
 \end{equation*}
 
-Si $\vec{E} \not\perp S$, entonces $\vec{E}$ forma un ángulo $\theta$ con el
-versor normal a la superficie $\hat{n}$, y
+Note that this is a vector sum. If the charges are smeared out in a continuous
+distribution, the summation evolves into an integral:
 
 \begin{equation*}
-    \phi_E = \left| \vec{E} \right| \cos \theta A = (E \cdot \hat{n}) A
+    \vec{E} = \frac{1}{4\pi \epsilon_0} \int \frac{dq}{r^2} \hat{r}
 \end{equation*}
 
-Notar que se sigue de esto que con $\vec{A} = A \hat{n}$ se cumple $\phi_E =
-\vec{E} \cdot \vec{A}$.
+with $r$ the distance between each $dq$ and the location of interest. If said
+distribution is uniform, and particularly linear, then the charge on each
+segment is $\lambda = Q / L$ with $L$ the length of the segment in question. If
+it is a surface, $\sigma = Q / A$ with $A$ the area is the charge on each point.
+If it is a 3D distribution, $\varrho = Q / V$ is the charge per volume. So: 
 
-\textbf{Superficie y campo arbitrarios}. Si tenemos una superficie arbitraria,
-tomamos pequeños sectores diferenciales de superficie que son planos, y
-utilizamos en cada uno lo establecido para superficies planas. Llamamos
-$d\vec{A}$ al "pequeño sector" de área que estamos tomando. Se tiene entonces
-que si $E_i$ es un sector pequeño del campo magnético,
+\begin{itemize}
+    \item For linear distributions of charge, $dq = \lambda ~ \text{dl}$
+    \item For surface distributions, $dq = \sigma \text{ ds}$
+    \item For volumetric distributions, $dq = \varrho \text{ dv}$
+\end{itemize}
 
-\begin{equation*}
-    \phi_{E_i} = \vec{E_i} \cdot d\vec{A_i}
-\end{equation*}
-
-y el flujo eléctrico total es 
-
-\begin{equation*}
-    \phi_E = \sum_{i} \phi_{E_i} = \int_S \vec{E} \cdot d\vec{A}
-\end{equation*}
-
-Notar que se asume que el campo es uniforme en cada pequeño sector arbitrario
-(within), pero no necesariamente entre distintos sectores (between), i.e. a lo
-largo de toda la superficie.
-
-\textbf{Unidades.} Las unidades del campo son Newtons sobre Coulombs por metro
-cuadrado.
-
-Damos particular atención a las superficies cerradas (con un dentro y un fuera),
-que llamamos superficies Gaussianas, que denotamos 
-
-\begin{equation*}
-    \phi_E = \oint \vec{E} d\vec{A}
-\end{equation*}
+where dl, ds and dv are the infinitesimal regions of a line, a surface or a
+volume, respectively.
 
 
+\begin{center}
+\begin{tikzpicture}[scale=1]
+  % Styles
+  \tikzset{
+    charge/.style={circle,draw=black,fill=white,inner sep=1.5pt,font=\bfseries},
+    fieldline/.style={->,>=Stealth,thick},
+    equip/.style={dashed,gray}
+  }
+
+  % Positive point charge at origin
+  \node[charge] (q) at (0,0) {+};
+
+  % Radial field lines (arrows pointing outward)
+  \foreach \a in {0,30,...,330}{
+    \draw[fieldline] ($(0,0)!0.18!(\a:2.5)$) -- (\a:2.5);
+  }
+
+  % A few long field lines to show they go to infinity
+  \foreach \a in {15,75,135,195,255,315}{
+    \draw[fieldline] ($(0,0)!0.18!(\a:4.0)$) -- (\a:4.0);
+  }
+
+  % Equipotential circles
+  \foreach \r in {0.8,1.6,2.4,3.2}{
+    \draw[equip] (0,0) circle (\r);
+  }
+
+  % Labels
+  \node[align=center, right] at (4.4,0) {Electric field lines\\point outward from $+q$};
+  \node[gray!60] at (0,3.6) {Equipotentials (dashed)};
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+  % Styles
+  \tikzset{
+    charge/.style={circle,draw=black,fill=white,inner sep=1.5pt,font=\bfseries},
+    fieldline/.style={->,>=Stealth,thick},
+    faint/.style={gray,font=\footnotesize}
+  }
+
+  % Charges positions
+  \coordinate (P) at (-1.2,0); % positive
+  \coordinate (N) at (1.2,0);  % negative
+
+  % Draw charges
+  \node[charge] at (P) {+};
+  \node[charge] at (N) {--};
+
+  % Field lines that start near + and end at - (a few representative ones)
+  % We'll draw symmetric sets above and below the axis.
+  \foreach \t/\outA/\inB in {
+    0/15/165, 1/30/150, 2/45/135, 3/75/105,
+    4/-15/-165, 5/-30/-150, 6/-45/-135, 7/-75/-105
+  }{
+    % start point near positive charge on a small circle
+    \pgfmathsetmacro{\angleA}{\outA}
+    \pgfmathsetmacro{\angleB}{\inB}
+    \draw[fieldline] ($(P)+(\angleA:0.28)$) to[out=\angleA,in=\angleB] ($(N)+(\angleB:0.28)$);
+  }
+
+  % Some lines that emanate outward from positive and go to infinity
+  \foreach \a in {10,350,80,280}{
+    \draw[fieldline] ($(P)+(\a:0.28)$) -- ($(P)+(\a:4.0)$);
+  }
+  % Some lines that come from infinity into negative
+  \foreach \a in {170,190,100,260}{
+    \draw[fieldline] ($(N)+(\a:4.0)$) -- ($(N)+(\a:0.28)$);
+  }
+
+  % Axis and labels
+  \draw[dashed,gray] (-3.5,0) -- (3.5,0);
+  \node[faint] at (0,-0.6) {Dipole axis};
+  \node[below left] at (P) {$+q$};
+  \node[below right] at (N) {$-q$};
+
+  % Field direction explanation
+  \node[align=left] at (4.3,1.4) {
+    Field lines start on $+$ and end on $-$;\\
+    lines between charges show attraction.
+  };
+\end{tikzpicture}
+\end{center}
 
 
+\subsection{Electric potential and electric potential energy}
 
+Electric potential energy is the negative of the work needed to move a charge
+\textit{against} an electric field and into some reference position. 
+Electric potential depends on the distance of the movement, the magnitude of the
+charge, and the strengt of the electric field: 
 
+\begin{itemize}
+    \item Weak electric field, long distance $\to $ medium electric potential 
+    \item Strong electric field, long distance $\to$ High electric potential 
+    \item Weak electric field, short distance $\to $ Low electric potential
+    \item Weak electric field, high distance $\to $ Medium electric potential
+\end{itemize}
 
+(Of course the items above are only schematic.) 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Electric potential, also called \textbf{voltage}, is the \textit{difference} in
+potential energy per unite charge between two locations in an electric field.
+Why per unit charge? Well, we have already established that 
 
 
 
