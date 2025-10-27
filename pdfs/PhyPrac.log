@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  24 OCT 2025 17:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  26 OCT 2025 22:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1384,72 +1384,220 @@ File: tikzlibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex
 File: pgflibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))
-Package translations Info: No language package found. I am going to use `english' as default language. on input line 51.
-LaTeX Font Info:    Trying to load font information for OT1+ntxtlf on input line 51.
-
-(/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1ntxtlf.fd
-File: ot1ntxtlf.fd 2021/05/24 v1.0 font definition file for OT1/ntx/tlf
+(/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-euclide.sty
+2024/02/04 5.06c tkz-euclide.sty
+Package: tkz-euclide  2024/02/04 5.06c for pure Euclidean Geometry 
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
+File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\arrowsize=\dimen383
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowinset=\dimen384
+\pgfarrowlength=\dimen385
+\pgfarrowwidth=\dimen386
+\pgfarrowlinewidth=\dimen387
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybackgrounds.code.tex
+File: tikzlibrarybackgrounds.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@layerbox@background=\box142
+\pgf@layerboxsaved@background=\box143
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.markings.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.markings.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.shapes.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.shapes.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.text.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.text.code.tex
+\pgf@lib@dec@text@box=\box144
 )
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 51.
+\tikz@lib@dec@te@box=\box145
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryintersections.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryintersections.code.tex
+\pgf@intersect@solutions=\count400
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarymath.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfpu.code.tex)
+\tikz@math@for@depth=\count401
+\tikz@math@dimen=\dimen388
+\tikz@math@toks=\toks65
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.misc.code.tex
+File: pgflibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarythrough.code.tex
+File: tikzlibrarythrough.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xfp/xfp.sty
+Package: xfp 2023-10-10 L3 Floating point unit
+)
+\tkzRadius=\dimen389
+\tkzLength=\dimen390
+\tkz@radi=\dimen391
+\tkz@ax=\dimen392
+\tkz@ay=\dimen393
+\tkz@bx=\dimen394
+\tkz@by=\dimen395
+\tkz@cx=\dimen396
+\tkz@cy=\dimen397
+\tkz@dx=\dimen398
+\tkz@dy=\dimen399
+\tkz@cntmk=\count402
+
+Local configuration file tkz-euclide.cfg found and used
+(/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-euclide.cfg
+2024/02/04 5.06c tkz-euclide.cfg
+) (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-tools-eu-base.tex
+2024/02/04 5.06c tkz-tools-eu-base.tex
+) (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-tools-eu-utilities.tex
+2024/02/04 5.06c tkz-tools-eu-utilities.tex
+) (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-tools-eu-BB.tex
+2024/02/04 5.06c tkz-obj-eu-BB.tex
+) (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-obj-eu-grids.tex
+2024/02/04 5.06c tkz-obj-eu-grids.tex
+) (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-lib-eu-marks.tex
+2024/02/04 5.06c tkz-lib-eu-marks.tex
+) (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-tools-eu-text.tex
+2024/02/04 5.06c tkz-tools-eu-text.tex
+) (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-lib-eu-shape.tex
+2024/02/04 5.06c tkz-lib-eu-shape.tex
+) (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-obj-eu-axesmin.tex
+2024/02/04 5.06c tkz-obj-eu-axesmin
+) (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-tools-eu-colors.tex
+2024/02/04 5.06c tkz-tools-eu-colors
+) (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-obj-eu-points.tex
+2024/02/04 5.06c tkz-obj-eu-points.tex
+) (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-draw-eu-points.tex
+2024/02/04 5.06c tkz-draw-eu-points.tex
+) (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-obj-eu-points.tex
+2024/02/04 5.06c tkz-obj-eu-points.tex
+) (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-obj-eu-points-by.tex
+2024/02/04 5.06c tkz-tools-eu-points-by.tex
+) (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-tools-eu-math.tex
+2024/02/04 5.06c tkz-tools-eu-math.tex
+) (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-tools-eu-intersections.tex
+2024/02/04 5.06c tkz-tools-eu-intersections.tex
+) (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-obj-eu-points-with.tex
+2024/02/04 5.06c tkz-obj-eu-points-with.tex
+) (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-obj-eu-points-spc.tex
+2024/02/04 5.06c tkz-obj-el-points.tex
+) (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-tools-eu-angles.tex
+2024/02/04 5.06c tkz-tools-eu-angles.tex
+) (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-obj-eu-circles.tex
+2024/02/04 5.06c tkz-obj-eu-circles.tex
+) (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-obj-eu-circles-by.tex
+2024/02/04 5.06c tkz-obj-eu-circles.tex
+) (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-obj-eu-points-rnd.tex
+2024/02/04 5.06c tkz-obj-eu-points-rnd.tex
+) (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-obj-eu-lines.tex
+2024/02/04 5.06c tkz-obj-eu-lines.tex
+) (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-obj-eu-polygons.tex
+2024/02/04 5.06c tkz-obj-eu-polygons.tex
+) (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-obj-eu-triangles.tex
+2024/02/04 5.06c tkz-obj-eu-triangles.tex
+) (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-draw-eu-lines.tex
+2024/02/04 5.06c tkz-obj-eu-draw-lines.tex
+) (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-draw-eu-circles.tex
+2024/02/04 5.06c tkz-obj-eu-draw-circles.tex
+) (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-draw-eu-ellipses.tex
+2024/02/04 5.06c tkz-obj-eu-draw-ellipses.tex
+) (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-draw-eu-polygons.tex
+2024/02/04 5.06c tkz-obj-eu-polygons.tex
+) (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-draw-eu-angles.tex
+2024/02/04 5.06c tkz-tool-eu-angles.tex
+) (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-draw-eu-sectors.tex
+2024/02/04 5.06c tkz-obj-eu-sectors.tex
+) (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-draw-eu-compass.tex
+2024/02/04 5.06c tkz-obj-eu-compass.tex
+) (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-draw-eu-show.tex
+2024/02/04 5.06c tkz-obj-eu-show.tex
+) (/usr/share/texlive/texmf-dist/tex/latex/tkz-euclide/tkz-draw-eu-protractor.tex
+2024/02/04 5.06c tkz-obj-eu-protractor.tex
+))
+./PhyPrac.tex:51: Undefined control sequence.
+<recently read> \usetkzobj 
+                           
+l.51 \usetkzobj
+               {all}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./PhyPrac.tex:51: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.51 \usetkzobj{a
+                 ll}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+minntx on input line 112.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/t1minntx.fd
+File: t1minntx.fd 2023/09/09 v1.1 font definition file for T1/minntx
+)) (/usr/share/texlive/texmf-dist/tex/latex/schulschriften/wesa.sty)
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 55.
+LaTeX Font Info:    Trying to load font information for T1+ntxtlf on input line 55.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/t1ntxtlf.fd
+File: t1ntxtlf.fd 2021/05/24 v1.1 font definition file for T1/ntx/tlf
+)
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 55.
  (./PhyPrac.aux)
 \openout1 = `PhyPrac.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 51.
-LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 51.
+LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 55.
+LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 55.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/omlntxmi.fd
 File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
 )
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 51.
-LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 51.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 55.
+LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 55.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxexa.fd
 File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 )
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 51.
-LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 51.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 55.
+LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 55.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/lmsntxsy.fd
 File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
 )
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 51.
-LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line 51.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 55.
+LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line 55.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/lmxntxexx.fd
 File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
 )
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
  (/usr/share/texlive/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 51.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 55.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count400
-\scratchdimen=\dimen383
-\scratchbox=\box142
-\nofMPsegments=\count401
-\nofMParguments=\count402
-\everyMPshowfont=\toks65
-\MPscratchCnt=\count403
-\MPscratchDim=\dimen384
-\MPnumerator=\count404
-\makeMPintoPDFobject=\count405
-\everyMPtoPDFconversion=\toks66
+\scratchcounter=\count403
+\scratchdimen=\dimen400
+\scratchbox=\box146
+\nofMPsegments=\count404
+\nofMParguments=\count405
+\everyMPshowfont=\toks66
+\MPscratchCnt=\count406
+\MPscratchDim=\dimen401
+\MPnumerator=\count407
+\makeMPintoPDFobject=\count408
+\everyMPtoPDFconversion=\toks67
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -1458,10 +1606,10 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
-LaTeX Info: Command `\dddot' is already robust on input line 51.
-LaTeX Info: Command `\ddddot' is already robust on input line 51.
-\c@mv@tabular=\count406
-\c@mv@boldtabular=\count407
+LaTeX Info: Command `\dddot' is already robust on input line 55.
+LaTeX Info: Command `\ddddot' is already robust on input line 55.
+\c@mv@tabular=\count409
+\c@mv@boldtabular=\count410
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1496,51 +1644,68 @@ LaTeX Info: Command `\ddddot' is already robust on input line 51.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count408
-Package hyperref Info: Link coloring OFF on input line 51.
+\c@lstlisting=\count411
+Package hyperref Info: Link coloring OFF on input line 55.
 (./PhyPrac.out) (./PhyPrac.out)
 \@outlinefile=\write4
 \openout4 = `PhyPrac.out'.
 
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 17.28pt on input line 53.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 17.28pt on input line 53.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 12.0pt on input line 56.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 57.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+
+
+./PhyPrac.tex:58: LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.58 \begin{document}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 17.28pt on input line 60.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 17.28pt on input line 60.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 12.0pt on input line 63.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 64.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 57.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 64.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 57.
+LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 64.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxmia.fd
 File: untxmia.fd 2018/04/14 Fontinst v1.933 font definitions for U/ntxmia.
 )
-LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 57.
+LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 64.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsym.fd
 File: untxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/ntxsym.
 )
-LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 57.
+LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 64.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 57.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 64.
  (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.8pt on input line 100.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.6pt on input line 100.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 8.8pt on input line 107.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 6.6pt on input line 107.
+
+Overfull \vbox (171.8647pt too high) has occurred while \output is active []
+
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}] [2] [3] [4] [5]
-./PhyPrac.tex:305: Misplaced alignment tab character &.
-l.305     &
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}] [2] [3] [4]
+./PhyPrac.tex:312: Misplaced alignment tab character &.
+l.312     &
            = x(b) - x(a)
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1549,86 +1714,86 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[6] [7]
-./PhyPrac.tex:424: Missing { inserted.
+[5] [6]
+./PhyPrac.tex:431: Missing { inserted.
 <to be read again> 
                    _
-l.424 \end{align*}
+l.431 \end{align*}
                   
 A left brace was mandatory here, so I've put one in.
 You might want to delete and/or insert some corrections
 so that I will find a matching right brace soon.
 (If you're confused by all this, try typing `I}' now.)
 
-./PhyPrac.tex:424: Missing } inserted.
+./PhyPrac.tex:431: Missing } inserted.
 <inserted text> 
                 }
-l.424 \end{align*}
+l.431 \end{align*}
                   
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
 
-./PhyPrac.tex:424: Missing { inserted.
+./PhyPrac.tex:431: Missing { inserted.
 <to be read again> 
                    _
-l.424 \end{align*}
+l.431 \end{align*}
                   
 A left brace was mandatory here, so I've put one in.
 You might want to delete and/or insert some corrections
 so that I will find a matching right brace soon.
 (If you're confused by all this, try typing `I}' now.)
 
-./PhyPrac.tex:424: Missing } inserted.
+./PhyPrac.tex:431: Missing } inserted.
 <inserted text> 
                 }
-l.424 \end{align*}
+l.431 \end{align*}
                   
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
 
-[8] [9]
+[7] [8]
 
-./PhyPrac.tex:443: Package enumitem Error: (a) undefined.
+./PhyPrac.tex:450: Package enumitem Error: (a) undefined.
 
 See the enumitem package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.443 \begin{enumerate}[(a)]
+l.450 \begin{enumerate}[(a)]
                             
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-[10] [11] [12] [13] [14] [15]
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 763.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 10.95pt on input line 766.
- [16] [17]
-./PhyPrac.tex:857: Double subscript.
+[9] [10] [11] [12] [13] [14]
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 10.95pt on input line 770.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 10.95pt on input line 773.
+ [15] [16]
+./PhyPrac.tex:864: Double subscript.
 <argument>  m_Aa_A &= G_A_
                           {\parallel } + \left ( m_B a_B - G_B \right ) \\ &...
-l.857 \end{align*}
+l.864 \end{align*}
                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-./PhyPrac.tex:857: Double subscript.
+./PhyPrac.tex:864: Double subscript.
 <argument>  m_Aa_A &= G_A_
                           {\parallel } + \left ( m_B a_B - G_B \right ) \\ &...
-l.857 \end{align*}
+l.864 \end{align*}
                   
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-[18] [19] [20] [21] [22] [23] [24] [25] [26]
-Underfull \hbox (badness 10000) in paragraph at lines 1120--1126
+[17] [18] [19] [20] [21] [22] [23] [24] [25]
+Underfull \hbox (badness 10000) in paragraph at lines 1127--1133
 
  []
 
-[27] [28] [29]
-./PhyPrac.tex:1296: Extra }, or forgotten \endgroup.
-l.1296 }
+[26] [27] [28]
+./PhyPrac.tex:1303: Extra }, or forgotten \endgroup.
+l.1303 }
         
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1636,15 +1801,15 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-[30] [31] [32]
+[29] [30] [31]
 
-./PhyPrac.tex:1472: Package pgfkeys Error: I do not know the key '/tikz/text midway' and I am going to ignore it. Perhaps you misspelled it.
+./PhyPrac.tex:1479: Package pgfkeys Error: I do not know the key '/tikz/text midway' and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1472 ... -- node[text midway, above]{$\ell$} (A)
+l.1479 ... -- node[text midway, above]{$\ell$} (A)
                                                   ;
 This error message was generated by an \errmessage
 command, so I can't give any explicit help.
@@ -1652,30 +1817,30 @@ Pretend that you're Hercule Poirot: Examine all clues,
 and deduce the truth by order and method.
 
 
-./PhyPrac.tex:1473: Package pgfkeys Error: I do not know the key '/tikz/text midway' and I am going to ignore it. Perhaps you misspelled it.
+./PhyPrac.tex:1480: Package pgfkeys Error: I do not know the key '/tikz/text midway' and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1473 ... midway, left]{$\ell \cos \theta_A$} (X)
+l.1480 ... midway, left]{$\ell \cos \theta_A$} (X)
                                                   ;
 (That was another \errmessage.)
 
 
-./PhyPrac.tex:1474: Package pgfkeys Error: I do not know the key '/tikz/text midway' and I am going to ignore it. Perhaps you misspelled it.
+./PhyPrac.tex:1481: Package pgfkeys Error: I do not know the key '/tikz/text midway' and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1474 ...midway, below]{$\ell \sin \theta_A$} (A)
+l.1481 ...midway, below]{$\ell \sin \theta_A$} (A)
                                                   ;
 (That was another \errmessage.)
 
-[33]
-./PhyPrac.tex:1518: Misplaced alignment tab character &.
-l.1518     &
+[32]
+./PhyPrac.tex:1525: Misplaced alignment tab character &.
+l.1525     &
             \frac{1}{2}mv_B^2 = mg \Delta y
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1684,161 +1849,161 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[34]
+[33]
 
-./PhyPrac.tex:1541: Package pgfkeys Error: I do not know the key '/tikz/text midway' and I am going to ignore it. Perhaps you misspelled it.
-
-See the pgfkeys package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1541 ...text midway, right=5pt]{$\ell - d$}(Bpt)
-                                                  ;
-(That was another \errmessage.)
-
-
-./PhyPrac.tex:1542: Package pgfkeys Error: I do not know the key '/tikz/text midway' and I am going to ignore it. Perhaps you misspelled it.
+./PhyPrac.tex:1548: Package pgfkeys Error: I do not know the key '/tikz/text midway' and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1542 ...e[text midway, left=5pt]{$\ell - d$} (C)
+l.1548 ...text midway, right=5pt]{$\ell - d$}(Bpt)
                                                   ;
 (That was another \errmessage.)
 
 
-./PhyPrac.tex:1543: Package pgfkeys Error: I do not know the key '/tikz/text midway' and I am going to ignore it. Perhaps you misspelled it.
+./PhyPrac.tex:1549: Package pgfkeys Error: I do not know the key '/tikz/text midway' and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1543 ...text midway, left=5pt]{$\Delta y$} (Cpt)
+l.1549 ...e[text midway, left=5pt]{$\ell - d$} (C)
                                                   ;
 (That was another \errmessage.)
 
 
-./PhyPrac.tex:1544: Package pgfkeys Error: I do not know the key '/tikz/text midway' and I am going to ignore it. Perhaps you misspelled it.
+./PhyPrac.tex:1550: Package pgfkeys Error: I do not know the key '/tikz/text midway' and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1544 ...ext midway, below=5pt]{$\Delta x$} (Bpt)
+l.1550 ...text midway, left=5pt]{$\Delta y$} (Cpt)
                                                   ;
 (That was another \errmessage.)
 
 
-./PhyPrac.tex:1548: Package PGF Math Error: Unknown function `pt' (in 'pt').
+./PhyPrac.tex:1551: Package pgfkeys Error: I do not know the key '/tikz/text midway' and I am going to ignore it. Perhaps you misspelled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1551 ...ext midway, below=5pt]{$\Delta x$} (Bpt)
+                                                  ;
+(That was another \errmessage.)
+
+
+./PhyPrac.tex:1555: Package PGF Math Error: Unknown function `pt' (in 'pt').
 
 See the PGF Math package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1548 \fill (B) circle (2pt) node[above=pt]
+l.1555 \fill (B) circle (2pt) node[above=pt]
                                             {$T$};
 (That was another \errmessage.)
 
 
-./PhyPrac.tex:1548: Package PGF Math Error: Unknown function `pt' (in 'pt').
+./PhyPrac.tex:1555: Package PGF Math Error: Unknown function `pt' (in 'pt').
 
 See the PGF Math package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1548 \fill (B) circle (2pt) node[above=pt]
+l.1555 \fill (B) circle (2pt) node[above=pt]
                                             {$T$};
 (That was another \errmessage.)
 
 
-./PhyPrac.tex:1549: Package PGF Math Error: Unknown function `pt' (in 'pt').
+./PhyPrac.tex:1556: Package PGF Math Error: Unknown function `pt' (in 'pt').
 
 See the PGF Math package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1549 \fill (C) circle (2pt) node[below left=pt]
+l.1556 \fill (C) circle (2pt) node[below left=pt]
                                                  {$C$};
 (That was another \errmessage.)
 
 
-./PhyPrac.tex:1549: Package PGF Math Error: Unknown function `pt' (in 'pt').
+./PhyPrac.tex:1556: Package PGF Math Error: Unknown function `pt' (in 'pt').
 
 See the PGF Math package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1549 \fill (C) circle (2pt) node[below left=pt]
+l.1556 \fill (C) circle (2pt) node[below left=pt]
                                                  {$C$};
 (That was another \errmessage.)
 
 
-./PhyPrac.tex:1572: Package pgfkeys Error: I do not know the key '/tikz/text midway' and I am going to ignore it. Perhaps you misspelled it.
+./PhyPrac.tex:1579: Package pgfkeys Error: I do not know the key '/tikz/text midway' and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1572 ...e[text midway, left=5pt]{$\ell - d$} (C)
+l.1579 ...e[text midway, left=5pt]{$\ell - d$} (C)
                                                   ;
 (That was another \errmessage.)
 
 
-./PhyPrac.tex:1573: Package pgfkeys Error: I do not know the key '/tikz/text midway' and I am going to ignore it. Perhaps you misspelled it.
+./PhyPrac.tex:1580: Package pgfkeys Error: I do not know the key '/tikz/text midway' and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1573 ...Delta x = (\ell - d) \sin \theta_C$} (C)
+l.1580 ...Delta x = (\ell - d) \sin \theta_C$} (C)
                                                   ;
 (That was another \errmessage.)
 
 
-./PhyPrac.tex:1575: Package pgfkeys Error: I do not know the key '/tikz/text midway' and I am going to ignore it. Perhaps you misspelled it.
+./PhyPrac.tex:1582: Package pgfkeys Error: I do not know the key '/tikz/text midway' and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1575     \theta_C$} (X)
+l.1582     \theta_C$} (X)
                          ;
 (That was another \errmessage.)
 
 
-./PhyPrac.tex:1580: Package PGF Math Error: Unknown operator `l' or `le' (in '5pt left').
+./PhyPrac.tex:1587: Package PGF Math Error: Unknown operator `l' or `le' (in '5pt left').
 
 See the PGF Math package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1580 \fill (C) circle (2pt) node[below=5pt left]
+l.1587 \fill (C) circle (2pt) node[below=5pt left]
                                                   {$C$};
 (That was another \errmessage.)
 
 
-./PhyPrac.tex:1580: Package PGF Math Error: Unknown operator `l' or `le' (in '5pt left').
+./PhyPrac.tex:1587: Package PGF Math Error: Unknown operator `l' or `le' (in '5pt left').
 
 See the PGF Math package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1580 \fill (C) circle (2pt) node[below=5pt left]
+l.1587 \fill (C) circle (2pt) node[below=5pt left]
                                                   {$C$};
 (That was another \errmessage.)
 
-[35] [36]
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 1674.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.1pt on input line 1674.
- [37] [38]
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/it' will be
-(Font)              scaled to size 12.0pt on input line 1730.
+[34] [35]
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 8.0pt on input line 1681.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 6.1pt on input line 1681.
+ [36] [37]
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
+(Font)              scaled to size 12.0pt on input line 1737.
 
-./PhyPrac.tex:1743: Misplaced alignment tab character &.
-l.1743     &
+./PhyPrac.tex:1750: Misplaced alignment tab character &.
+l.1750     &
             = \kappa  \frac{-4 \times 10^{-9} C}{0.0144 \text{m}^2} ~ \hat{r}
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1847,7 +2012,7 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[39] [40] [41] [42] [43] 
+[38] [39] [40] [41] [42] [43] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./PhyPrac.aux)
  ***********
@@ -1856,20 +2021,24 @@ L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `PhyPrac.out' has not changed.
 (rerunfilecheck)             Checksum: CE72EAC0DD42B552CEBEB781BFF5FC42;290.
- ) 
+ )
+(\end occurred inside a group at level 1)
+
+### semi simple group (level 1) entered at line 58 (\begingroup)
+### bottom level 
 Here is how much of TeX's memory you used:
- 48638 strings out of 474222
- 1132478 string characters out of 5748733
- 1940975 words of memory out of 5000000
- 70014 multiletter control sequences out of 15000+600000
- 610583 words of font info for 163 fonts, out of 8000000 for 9000
+ 52995 strings out of 474222
+ 1244008 string characters out of 5748733
+ 1942975 words of memory out of 5000000
+ 74207 multiletter control sequences out of 15000+600000
+ 633570 words of font info for 155 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,15n,107p,775b,2147s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on PhyPrac.pdf (43 pages, 304106 bytes).
+ 99i,15n,107p,1169b,2218s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
+Output written on PhyPrac.pdf (43 pages, 323990 bytes).
 PDF statistics:
- 368 PDF objects out of 1000 (max. 8388607)
- 260 compressed objects within 3 object streams
- 63 named destinations out of 1000 (max. 500000)
+ 381 PDF objects out of 1000 (max. 8388607)
+ 269 compressed objects within 3 object streams
+ 66 named destinations out of 1000 (max. 500000)
  189 words of extra memory for PDF output out of 10000 (max. 10000000)
 

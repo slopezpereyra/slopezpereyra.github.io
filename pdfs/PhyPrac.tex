@@ -47,6 +47,13 @@
 \counterwithin*{equation}{subsection}
 \usetikzlibrary{angles,quotes,calc,positioning}
 \usetikzlibrary{decorations.pathmorphing, patterns, calc}
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{wesa}
+\begin{document}
+\usetikzlibrary{calc, quotes, angles}
 
 \begin{document}
 
@@ -1828,67 +1835,178 @@ $(c)$
 
 \pagebreak 
 
-\textbf{(3)} Consideremos solo la bola derecha. Tenemos que 
+\textbf{(3)} Consideremos la bola derecha, notando que existe una simetría en
+las fuerzas operando sobre cada bola. 
+
+
+\small
+\begin{quote}
+
+\textbf{Datos del problema:}
+
+\begin{enumerate}
+    \item $\vec{G} + \vec{T} + \vec{E} = \vec{0}$
+    \item $m = 30\text{g}, \qquad \ell = 15\text{cm}, \qquad \theta = \ang{5}$
+    \item $G = -mg \hat{j}$ 
+    \item $T_x = -T \sin \theta, \quad T_y = T \cos \theta$
+    \item $\vec{E} = E_x \hat{i} = E \hat{i}$ (por ser la bola derecha, y las
+        cargas iguales, la fuerza eléctcrica va hacia la derecha.
+\end{enumerate}
+
+\textbf{Valores desconocidos}: $a$, la mitad de la distancia entre las dos
+bolas; $\vec{E}$, la fuerza eléctrica.
+
+\textbf{Valor a determinar:} $q$, la carga de las bolas. 
+
+\textbf{Relación entre los datos conocidos y el valor a determinar}: Por ley de
+Couloumb,
 
 \begin{equation*}
-    \vec{T} + \vec{E} + \vec{P} = 0
+    E = \frac{1}{4\pi \epsilon_0}\frac{q^2}{4a^2}
 \end{equation*}
 
-Si notamos que $\vec{E}$ no tiene componente vertical y $\vec{P}$ no tiene
-componente horizontal, esto implica que
+\textbf{Estrategia:} $(i)$ Usar $(1)$ para encontrar una expresión para $E$.
+$(ii)$ Determinar $a$. $(i i i )$ Usar la ley de Couloumb con $q$ como única
+incógnita.
+
+\end{quote}
+\normalsize
+
+$(i)$ De los datos se sigue fácilmente que 
 
 \begin{align*}
-    (T_x + E)\hat{i} + (T_y + P) \hat{j} = 0
+    (G_y + T_y) \hat{j} + (E_x + T_x)\hat{i} = 0
+    \iff ~
+    & \begin{cases}
+        G_y + T_y = 0 \\ 
+        E_x + T_x = 0
+    \end{cases}\\ 
+    \iff  
+    &\begin{cases}
+        -mg + T \cos \theta = 0 \\ 
+        E - T \sin \theta = 0
+    \end{cases} \\ 
+    \iff 
+    &\begin{cases}
+        T \cos \theta = mg \\ 
+        E = T \sin \theta
+    \end{cases}
 \end{align*}
 
-o bien 
+Despejando $T$ en la ecuación de arriba y sustituyendo en la de abajo, 
 
 \begin{equation}
-    \begin{cases}
-        T_x = -E \\ 
-        T_y = -P
-    \end{cases}
+    E =  mg \tan \theta
 \end{equation}
 
-Ahora bien, es fácil observar geométricamente que 
+$(i i)$ Es fácil ver geométricamente que $a = L \sin \theta $.
 
-\begin{equation}
-    \vec{T} = T_x \hat{i} + T_y \hat{j} = T \sin \theta \hat{i} + T \cos \theta
-    \hat{j}
-\end{equation}
-
-Expresado de una forma más bonita:
-
-\begin{equation}
-    \begin{cases}
-        T_x = T \sin \theta \\ 
-        T_y = T \cos \theta
-    \end{cases}
-\end{equation}
-
-Como $T_y = -P$ por (4), y $P = -mg$,
-
-$$T_y = mg = 30\text{g} \cdot 9.8 \frac{m}{s^2} = 0.1943 \text{N}$$
-
-La segunda ecuación del sistema $(6)$ nos da $T = T_y /\cos \theta$ y por lo
-tanto obtenemos 
+$( i i i)$ Por la ley de Coulomb, sustuyendo los valores concoidos de $E$ y $a$,
 
 \begin{align*}
-    T &= \frac{0.1943 \text{N}}{\cos \ang{5}} = \frac{0.1943
-    \text{N}}{0.99619469809}  = 0.19504219443\text{N}
+    &mg \tan \theta  =  \frac{ \kappa q^2}{4\left( \ell \sin
+    \theta \right)^2 } \\
+    \iff ~ ~ ~ 
+    & q = \pm \sqrt{ \frac{mg \tan \theta \times 4 \ell^2 \sin^2 \theta }{\kappa} } 
 \end{align*}
 
-Podemos usar esto para despejar $T_x$ en $(6)$: 
+donde estoy obviando la escritura de las unidades. Notar que el ejercicio pide
+la \textit{magnitud} de la carga, y por ende podemos quedarnos con el valor
+positivo de esta raiz. Usando la aproximación $\kappa \approx 8.99 \times
+10^{-9}$ se puede estimar el valor de la raíz.
 
-\begin{equation*}
-    T_x = 0.19504219443\text{N} ~ \sin \theta = 0.01699904732
-\end{equation*}
+\pagebreak 
 
-Por (4), sabemos que $T_x = -E$. Por lo tanto, 
+\textbf{(4)} Sean $\vec{u}, \vec{d}$ los vectores unitarios que apuntan hacia
+$(1, 1)$ y $(1, -1)$ respectivamente. La distancia entre el punto central
+$\textbf{p}$ y cualquiera de los vérticas es 
 
 \begin{equation}
-    E = -0.01699904732\text{N}
+    d = \frac{ \sqrt{\frac{1}{4}^2 + \frac{1}{4}^2} }{2} \approx 0.178
 \end{equation}
+
+Notemos que una partícula de carga unitaria y positiva ubicada en \textbf{p}
+sería atraída por las cargas negativas de la derecha y repelida por las cargas
+positivas de la izquierda. Más aún, la carga inferior izquierda empujaría la
+partícula equidireccionalmente a la atracción de la carga superior derecha, y lo
+mismo sucede entre las cargas superior izquierda e inferior derecha (ver
+diagrama).
+
+\begin{center}
+\begin{tikzpicture}[
+    scale=1.0,
+    every node/.style={transform shape},
+    positive_charge/.style={circle, fill=blue!70, inner sep=3pt, label={#1}},
+    negative_charge/.style={circle, fill=red!70, inner sep=3pt, label={#1}},
+    field_vector/.style={-{Stealth[length=3mm]}, thick},
+    resultant_vector/.style={-{Stealth[length=4mm]}, ultra thick, green!50!black}
+]
+    % --- Definir coordenadas ---
+    \def\halfside{2}
+    \coordinate (C) at (0, 0); % Centro
+    \coordinate (q1) at (-\halfside, \halfside);  % Arriba-izquierda (+)
+    \coordinate (q2) at (-\halfside, -\halfside); % Abajo-izquierda (+)
+    \coordinate (q3) at (\halfside, \halfside);   % Arriba-derecha (-)
+    \coordinate (q4) at (\halfside, -\halfside);  % Abajo-derecha (-)
+
+    % --- Dibujar Ejes ---
+    \draw[->, gray, thin] (-3, 0) -- (3, 0) node[right] {$x$};
+    \draw[->, gray, thin] (0, -3) -- (0, 3) node[above] {$y$};
+
+    % --- Dibujar el Cuadrado ---
+    \draw[thick, black] (q1) -- (q3) -- (q4) -- (q2) -- cycle;
+    
+    % --- Dibujar Diagonales (referencia) ---
+    \draw[dashed, gray, thin] (q1) -- (q4);
+    \draw[dashed, gray, thin] (q2) -- (q3);
+
+    % --- Colocar las Cargas ---
+    \node[positive_charge={above left:$+q_1$}] at (q1) {};
+    \node[positive_charge={below left:$+q_2$}] at (q2) {};
+    \node[negative_charge={above right:$-q_3$}] at (q3) {};
+    \node[negative_charge={below right:$-q_4$}] at (q4) {};
+
+    % --- Etiquetar Centro ---
+    \node[cross, draw=black, scale=0.5, label=below left:{$P(\text{centro})$}] at (C) {};
+
+    % --- Etiquetar Dimensiones ---
+    \draw[<->] ($(q2)+(0, -0.3)$) -- ($(q4)+(0, -0.3)$) node[midway, below] {Lado = 0.25 m};
+
+    % --- Vectores de Campo Eléctrico (Parte a) ---
+    % E1 (de q1, +) apunta lejos de q1 (abajo-derecha)
+    \draw[field_vector, blue!70] (C) -- (1, -1) node[below, xshift=2mm, scale=0.8] {$\vec{E}_1$};
+    % E2 (de q2, +) apunta lejos de q2 (arriba-derecha)
+    \draw[field_vector, blue!70] (C) -- (1, 1) node[above, xshift=2mm, scale=0.8] {$\vec{E}_2$};
+    % E3 (de q3, -) apunta hacia q3 (arriba-derecha)
+    \draw[field_vector, red!70] (C) -- (1.2, 1.2) node[above right, scale=0.8] {$\vec{E}_3$};
+    % E4 (de q4, -) apunta hacia q4 (abajo-derecha)
+    \draw[field_vector, red!70] (C) -- (1.2, -1.2) node[below right, scale=0.8] {$\vec{E}_4$};
+
+    % --- Vector Resultante E_total ---
+    % Todos los componentes 'y' se cancelan, todos los 'x' se suman.
+    \draw[resultant_vector] (C) -- (2.2, 0) node[right] {$\vec{E}_{\text{total}}$};
+
+\end{tikzpicture}
+\end{center}
+
+Note that $q_1, \ldots, q_4$ are equal in absolute value. Let $\left| q_i
+\right| = q $. Then:
+
+
+\begin{align*}
+    \frac{1}{2\pi \epsilon_0} \sum_{i=1}^4 \frac{q_i}{d^2} \vec{r_i}
+    &= \frac{1}{2\pi \epsilon_0 d^2 } 
+    \left[ q_1 \vec{d} + q_2 \vec{u} + q_3 \vec{u} + q_4 \vec{d} \right]  \\ 
+    &= \frac{1}{2\pi \epsilon_0 d^2} \left[ (q_1 + q_4)\vec{d} + (q_2 +
+    q_3)\vec{u} \right] \\ 
+    &=\frac{1}{2\pi \epsilon_0 d^2}\left[ 2q \vec{d} + 2q \vec{u} \right] \\ 
+    &=\frac{q}{\pi \epsilon_0 d^2}\left[ \vec{d} + \vec{u} \right] 
+\end{align*}
+
+Now, 
+
+
+
 
 
 
