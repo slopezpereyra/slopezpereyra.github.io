@@ -752,6 +752,14 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-t1.tf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntx-Italic-tlf-t1.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntx-Bold-tlf-t1.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntx-Bold-tlf-t1.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/newtx/ntxmi7.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/NewTXMI7.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/stxscr.tfm
+INPUT /usr/share/texlive/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
+INPUT /usr/share/texmf/fonts/tfm/public/tex-gyre/ts1-qtmr.tfm
+INPUT /usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc
 INPUT PhyPrac.aux
 INPUT ./PhyPrac.out
 INPUT ./PhyPrac.out
@@ -768,6 +776,7 @@ INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha7.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha8.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha9.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb
+INPUT /usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsym.pfb
