@@ -2213,32 +2213,76 @@ realizado por unidad de carga:
     \Delta V = \frac{W}{q} = \frac{2mx^2}{t^2q} = E x
 \end{equation*}
 
+\pagebreak 
 
+\begin{shaded}
+    \textbf{(7)} Un electrón entra en una región de campo eléctrico uniforme (vea la figura) con una velocidad $v = 3 \times 10^6 \text{ m/s}$ y $E = 200 \text{ N/C}$. La longitud horizontal de los platos es $L = 0.1 \text{ m}$ y su separación es $h = 1.5 \text{ cm}$.
+\begin{enumerate}
+    \item[(a)] Encuentre la aceleración del electrón mientras esta en el campo eléctrico.
+    \item[(b)] Asuma que la posición vertical del electrón al entrar al campo es $y = 0$, ¿logra abandonar la región de campo eléctrico? En caso de abandonarlo calcule el tiempo en el cual lo hace, caso contrario calcule la posición en la cual impacta.
+\end{enumerate}
+\end{shaded}
 
+$(a)$ Observaciones iniciales: 
 
+\begin{itemize}
+    \item $\vec{F} = \vec{a}m$, con $m = 9.109 \times 10^{-31}$kg la masa de un
+        electrón.
+    \item $\vec{F} = \vec{E} e$, con $e = -1.602\times 10^{-19}$ la carga de un electrón.
+    \item $\vec{a} = a \hat{j}$ 
+    \item $\vec{E} = E \hat{j}$
+\end{itemize}
 
+Con esto es suficiente: 
 
+\begin{align*}
+    &\vec{a}m = \vec{E}e \\
+    \iff~ ~ ~ 
+    &am \hat{j} = Ee \hat{j} \\ 
+    \iff~ ~ ~ 
+    &a = \frac{Ee}{m} \\
+    \iff ~ ~ ~ 
+    &a = - \frac{200 (1.602)}{9.109} \frac{10^{-19}}{10^{-31}} \left[ \frac{
+            \text{N C}}{\text{C kg}} \right]  \\ 
+    \iff ~ ~ ~ 
+    & a = -35.1740037326 \cdot 10^{12} ~ \frac{\text{m}}{\text{s}^2}
+\end{align*}
 
+$(b)$ Para una aceleración constante vertical $a$, nos queda una velocidad
+vertical $v_y(t) = at$ (asumiendo que la velocidad vertical en el tiempo cero es
+cero) y una función de posición vertical $y(t) = y_0 + \frac{a}{2}t^2$, con $y_0
+= 0$ de acuerdo al enunciado.
 
+Si asumimos que la aceleración horizontal es constante (no hay otras fuerzas en
+juego), la distancia recorrida se relaciona con la velocidad inicial y el tiempo
+en que se la recorre:
 
+\begin{equation*}
+    L = v_{0x}t
+\end{equation*}
 
+$v_{0x}$ es conocida, y el tiempo en que la partícula recorre la distancia $L$
+es 
 
+\begin{equation*}
+    t_{\text{horizontal}} = \frac{ 0.1 \text{m}}{3\times 10^{6} \text{m/s}} =
+    \frac{1}{3} \cdot 10^{-7} \text{ s}
+\end{equation*}
 
+Ahora bien, 
 
+\begin{align*}
+    y(t_{\text{horizontal}}) 
+    &= \frac{a}{2} t_{\text{horizontal}}^2 \\ 
+    &=\frac{ -17.5870018663  }{3^2} \cdot (10^{-7})^2 \cdot 10^{12} \cdot \left[
+    \frac{m}{s^2} s^2\right] \\ 
+    &= -1.95411131848 \cdot 10^{-2} ~ \text{m}\\ 
+    &=-0.01954111318 ~ \text{m}\\ 
+    &=-1.954111318 \text{ cm}
+\end{align*}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+Esto excede la longitud vertical $h$ entre las dos barras y por lo tanto el
+electrón no llega a salir.
 
 
 
