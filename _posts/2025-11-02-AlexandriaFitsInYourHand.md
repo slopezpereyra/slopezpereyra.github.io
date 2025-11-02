@@ -7,7 +7,7 @@ Un lugar común en mi vida diaria es el asombro que siento al descubrir el
 funcionamiento interno de alguna tecnología y pensar, simultáneamente, cuán
 ingenuamente la usamos a diario. Más allá del *hype* alrededor de la
 inteligencia artificial, del que no participo, la computadora moderna sigue
-siendo una de las invenciones más sofisticadas y asombrosas del ingenio humano.
+siendo una de las invenciones más sofisticadas y asombrosas de la historia.
 
 Hoy descrubrí cómo funciona un disco duro y no tengo palabras para expresar mi
 asombro. Siento que es la clase de maravillas que justifica el experimento
