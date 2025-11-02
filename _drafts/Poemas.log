@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  4 OCT 2025 23:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  2 NOV 2025 01:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -110,7 +110,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 163.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 163.
- [6] [7] [8] [9] (./Poemas.aux)
+ [6] [7] [8] [9] [10] (./Poemas.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -125,10 +125,10 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  35i,5n,75p,159b,132s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on Poemas.pdf (9 pages, 34925 bytes).
+Output written on Poemas.pdf (10 pages, 36712 bytes).
 PDF statistics:
- 45 PDF objects out of 1000 (max. 8388607)
- 29 compressed objects within 1 object stream
+ 48 PDF objects out of 1000 (max. 8388607)
+ 31 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
