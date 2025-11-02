@@ -3334,6 +3334,210 @@ thread, y el puntero quedaría apuntando a memoria inválida.
 
 \subsection{Locks}
 
+Un \textit{lock} es una primitiva de sincronización que permite implementar 
+exclusión mutua. Tienen dos rutines básicas:
+
+\begin{itemize}
+    \item \texttt{int pthread\_mutex\_lock(pthread\_mutex\_t *mutex)}: Intenta tomar el
+        lock \texttt{mutex}. Si el lock ya está tomado por otra thread, la
+        thread que llama a esta rutina queda bloqueada hasta que el lock se
+        libere.
+    \item \texttt{int pthread\_mutex\_unlock(pthread\_mutex\_t *mutex)}: Libera
+        el lock. Si hay threads esperando por el lock, una de ellas (cualquiera)
+        lo toma y continúa su ejecución.
+\end{itemize}
+
+Los locks sirven para regular acceso a secciones críticas. Las funciones
+anteriores asumen que existe una variable de tipo \texttt{pthread\_mutex\_t} que
+representa el lock. Dicha variable debe inicializarse antes de usarla. Las
+threads de POSIX pueden inicializarse como 
+
+\begin{verbatim}
+    pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+\end{verbatim}
+
+lo cual setea los valores del thread a sus valores por defecto.
+Alternativamente, se puede inicializar dinámicamente con 
+
+\begin{verbatim}
+    int rc = pthread_mutex_init(&lock, NULL);
+    assert(rc == 0); // Check success
+\end{verbatim}
+
+donde \texttt{&lock} es la dirección del lock y el segundo argumento son los
+atributos (\texttt{NULL} da los atributos default).
+
+\subsection{Viariables de condición}
+
+Una variable de condición es una primitiva de sincronización que permite a 
+threads esperar hasta que ocurra una condición particular. Las variables de
+condición se usan junto con locks para implementar sincronización entre threads.
+Tienen tres rutinas básicas:
+
+\begin{itemize}
+    \item \texttt{int pthread\_cond\_wait(pthread\_cond\_t *cond,
+        pthread\_mutex\_t *mutex)}: Libera el lock \texttt{mutex} y bloquea la
+        thread hasta que otra thread llame a
+        \texttt{pthread\_cond\_signal} en la
+        variable de condición \texttt{cond}. Cuando la thread se despierta, vuelve
+        a tomar el lock \texttt{mutex} antes de continuar su ejecución.
+    \item \texttt{int pthread\_cond\_signal(pthread\_cond\_t *cond)}: Despierta
+        una thread que esté esperando en la variable de condición \texttt{cond}.
+        Si no hay threads esperando, no hace nada.
+\end{itemize}
+
+\begin{shaded}
+    $(\dagger)$ Por ejemplo, imaginemos este código corriendo en una thread: 
+
+    \begin{verbatim}
+        pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
+        pthread_cond_t cond = PTHREAD_COND_INITIALIZER;
+
+        Pthread_mutex_lock(&lock);
+        while (ready == 0) {
+            pthread_cond_wait(&cond, &lock);
+        }
+        Pthread_mutex_unlock(&lock);
+    \end{verbatim}
+
+    En otra thread podríamos tener: 
+
+    \begin{verbatim}
+        Pthread_mutex_lock(&lock);
+        ready = 1;
+        Pthread_cond_signal(&cond);
+        Pthread_mutex_unlock(&lock);
+    \end{verbatim}
+
+    La primera thread toma el lock y chequea la variable \texttt{ready}. Si
+    \texttt{ready} es cero, la thread llama a \texttt{pthread\_cond\_wait}, que
+    libera el lock y bloquea la thread hasta que otra thread llame a
+    \texttt{pthread\_cond\_signal} en la variable de condición \texttt{cond}. Cuando
+    la thread se despierta, vuelve a tomar el lock antes de continuar su
+    ejecución. 
+
+    La segunda thread toma el lock, setea \texttt{ready} en 1, llama a
+    \texttt{pthread\_cond\_signal} en la variable de condición \texttt{cond}, y
+    libera el lock. Esto despierta a la primera thread, que vuelve a tomar el lock y
+    continúa su ejecución.
+
+    Observaciones:
+
+    \begin{itemize}
+        \item Cuando una thread señaliza o modifica la variable de condición,
+            debemos asegurarnos de que dicha thread tiene el lock. De otro modo
+            podríamos introducir una race condition. 
+        \item La llamada a wait toma el lock como su segundo parámetro. Esto es
+            así porque la llamada no solo pone la thread a dormir, sino que
+            libera el lock.
+        \item La waiting thread verifica la condición en un ciclo \texttt{while}. Esto es
+            importante porque cuando la thread se despierta, no hay garantía de
+            que la condición que estaba esperando se haya cumplido. Podría
+            haberse despertado por una señalización de otra thread, o por un
+            \textit{spurious wakeup}. Por ende, siempre debe verificar la
+            condición en un ciclo.  
+    \end{itemize}
+\end{shaded}
+
+\subsection{Implementando locks}
+
+Una lock es una variable y por ende debe tener un tipo. Más generalmente, un
+lock es una data structure que contiene la información necesaria para
+implementar exclusión mutua. Pero esto puede implementarse de muchas maneras. 
+
+Para comparar distintas implementaciones, usamos tres criterios. El más obvio
+es: ¿permite garantizar exclusión mutua? El segundo es \textbf{fairness}: ¿todas
+las threads que intentan tomar el lock tienen una chance justa de conseguirlo? 
+La tercera es \textbf{performance}: ¿cuál es el overhead introducido por la
+implementación del lock?
+
+\textbf{Interrupt-based locks.} Una forma primitiva de implementar locks es controlando los interrupts. Si justo
+antes de entrar a una sección crítica apagamos los interrupts, por ejemplo con
+una instrucción especial del hardware, garantizamos que ninguna otra thread
+pueda interrumpirnos mientras estamos en la sección crítica. Lo bueno de esto es
+que es simple, pero tiene muchos contras. Requiere una operación privilegiada
+(apagar los interrupts) e implica confiar en que dicha operación no sea abusada.
+Además, no funciona si hay más de un procesador: si dos threads, en distintos
+procesadores, intentan entrar a la sección crítica al mismo tiempo, ambas lo
+lograrán.  
+
+\textbf{Busy-waiting locks.} Otro intento es usar \textit{busy waiting}. La idea es tener una variable
+compartida \texttt{flag} que indique si el lock está tomado o no.
+La primera thread en entrar a la sección crítica llama \texttt{lock()}, que 
+
+\begin{itemize}
+    \item Se fija si \texttt{flag == 0}. Si es así, setea \texttt{flag = 1} y entra a la
+        sección crítica.
+    \item Si \texttt{flag == 1}, queda en un ciclo infinito hasta que
+        \texttt{flag == 0}, y luego setea \texttt{flag = 1} y entra a la sección
+        crítica.
+\end{itemize}
+
+Este sistema tiene problemas de corrección de y de performance. La incorrección
+sucede cuando consideramos programas concurrentes. Asuma que \texttt{flag = 0}
+cuando empieza a correrse lo siguiente:
+
+\begin{verbatim}
+THREAD 1                                          THREAD 2
+--------------------------------------------------------------------------------
+call lock();
+while (flag == 1)
+INTERRUPT: SWITCH TO THREAD 2
+                                                call lock();
+                                                while (flag == 1)
+                                                flag = 1
+                                                INTERRUPT: SWITCH TO THREAD 1 
+flag = 1 \end{verbatim}
+
+Claramente, ambas threads entraron a la sección crítica, violando la exclusión mutua. El problema de performance se sigue del spin-waiting.
+
+\textbf{Test-and-set locks}. Una mejora sobre el esquema anterior es usar una
+hardware instruction atómica denominada \texttt{test-and-set}. Si expresáramos
+la instrucción en C, sería algo así: 
+
+\begin{verbatim}
+int TestAndSet(int *old_ptr, int new){
+    int old = *old_ptr;
+    *old_ptr = new;
+    return old;
+}
+\end{verbatim}
+
+La instrucción toma un puntero a una variable y un nuevo valor. La instrucción
+guarda el valor actual de la variable en una variable temporal \texttt{old},
+setea la variable apuntada por \texttt{old\_ptr} en \texttt{new}, y devuelve el
+valor original de la variable. La clave es que todo sucede atómicamente: ninguna
+otra thread puede interrumpir la ejecución de la instrucción. 
+
+Resulta que esta instrucción simple nos permite construir un spin lock que
+funciona. La idea es tener una variable compartida \texttt{lock} que
+inicialmente es cero (indica que el lock está libre). La rutina \texttt{lock()}
+hace lo siguiente:
+
+\begin{verbatim}
+typedef struct __lock_t {
+    int flag;
+} lock_t;
+
+void init(lock_t *lock) {
+    // 0: lock is available, 1: lock is held
+    lock->flag = 0;
+}
+
+void lock(lock_t *lock) {
+    while (TestAndSet(&lock->flag, 1) == 1)
+        ; // spin-wait (do nothing)
+}
+
+void unlock(lock_t *lock) {
+    lock->flag = 0;
+}
+\end{verbatim}
+
+Si razonamos, vemos que esto sí garantiza exclusión mutua. Sin embargo, no
+garantiza fairness: una thread podría quedar spinning para siempre. El costo de
+performance sigue siendo el mismo que antes para una sola CPU, pero en múltiples
+CPUS funciona decentemente.
 
 
 
