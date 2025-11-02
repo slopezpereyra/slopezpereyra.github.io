@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  3 OCT 2025 19:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  1 NOV 2025 23:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1055,54 +1055,54 @@ File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \arrowsize=\dimen381
 ))
-LaTeX Font Info:    Trying to load font information for OT1+ntxtlf on input line 79.
+LaTeX Font Info:    Trying to load font information for OT1+ntxtlf on input line 106.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1ntxtlf.fd
 File: ot1ntxtlf.fd 2021/05/24 v1.0 font definition file for OT1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 79.
+(Font)              scaled to size 12.0pt on input line 106.
  (./SO.aux)
 \openout1 = `SO.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 79.
-LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 79.
+LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 106.
+LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 106.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/omlntxmi.fd
 File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
 )
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 79.
-LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 79.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 106.
+LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 106.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxexa.fd
 File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 )
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 79.
-LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 79.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 106.
+LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 106.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/lmsntxsy.fd
 File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
 )
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 79.
-LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line 79.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 106.
+LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line 106.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/lmxntxexx.fd
 File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
 )
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count385
@@ -1124,8 +1124,8 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
-LaTeX Info: Command `\dddot' is already robust on input line 79.
-LaTeX Info: Command `\ddddot' is already robust on input line 79.
+LaTeX Info: Command `\dddot' is already robust on input line 106.
+LaTeX Info: Command `\ddddot' is already robust on input line 106.
 \c@mv@tabular=\count391
 \c@mv@boldtabular=\count392
 *geometry* driver: auto-detecting
@@ -1163,60 +1163,60 @@ LaTeX Info: Command `\ddddot' is already robust on input line 79.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c@lstlisting=\count393
-Package hyperref Info: Link coloring OFF on input line 79.
+Package hyperref Info: Link coloring OFF on input line 106.
 (./SO.out) (./SO.out)
 \@outlinefile=\write5
 \openout5 = `SO.out'.
 
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 17.28pt on input line 81.
+(Font)              scaled to size 17.28pt on input line 108.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 17.28pt on input line 81.
+(Font)              scaled to size 17.28pt on input line 108.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 12.0pt on input line 87.
-LaTeX Font Info:    Trying to load font information for OT1+minntx on input line 97.
+(Font)              scaled to size 12.0pt on input line 114.
+LaTeX Font Info:    Trying to load font information for OT1+minntx on input line 124.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1minntx.fd
 File: ot1minntx.fd 2023/09/09 v1.1 font definition file for OT1/minntx
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 97.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 124.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 97.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 124.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 97.
+LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 124.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxmia.fd
 File: untxmia.fd 2018/04/14 Fontinst v1.933 font definitions for U/ntxmia.
 )
-LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 97.
+LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 124.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsym.fd
 File: untxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/ntxsym.
 )
-LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 97.
+LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 124.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 97.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 124.
  (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 14.4pt on input line 111.
+(Font)              scaled to size 14.4pt on input line 138.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 14.4pt on input line 111.
-LaTeX Font Info:    Trying to load font information for OT1+ntxtt on input line 121.
+(Font)              scaled to size 14.4pt on input line 138.
+LaTeX Font Info:    Trying to load font information for OT1+ntxtt on input line 148.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1ntxtt.fd
 File: ot1ntxtt.fd 2012/04/20 v3.1
 )
 LaTeX Font Info:    Font shape `OT1/ntxtt/m/n' will be
-(Font)              scaled to size 12.0pt on input line 121.
+(Font)              scaled to size 12.0pt on input line 148.
 
-./SO.tex:144: Misplaced alignment tab character &.
+./SO.tex:171: Misplaced alignment tab character &.
 <argument> ./cpu\_virt a &
                            ./cpu\_virt b & ./cpu\_virt c 
-l.144 ...virt a & ./cpu\_virt b & ./cpu\_virt c  }
+l.171 ...virt a & ./cpu\_virt b & ./cpu\_virt c  }
                                                   ,
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1225,10 +1225,10 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./SO.tex:144: Misplaced alignment tab character &.
+./SO.tex:171: Misplaced alignment tab character &.
 <argument> ./cpu\_virt a & ./cpu\_virt b &
                                            ./cpu\_virt c 
-l.144 ...virt a & ./cpu\_virt b & ./cpu\_virt c  }
+l.171 ...virt a & ./cpu\_virt b & ./cpu\_virt c  }
                                                   ,
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1241,31 +1241,31 @@ might try typing `S' now just to see what is salvageable.
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}]
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/it' will be
-(Font)              scaled to size 12.0pt on input line 156.
+(Font)              scaled to size 12.0pt on input line 183.
  [2] [3]
-LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input line 230.
+LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input line 257.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
 File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
 )
 LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 230.
+(Font)              scaled to size 12.0pt on input line 257.
  [4{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc}] [5] [6]
 LaTeX Font Info:    Font shape `OT1/ntxtt/b/n' will be
-(Font)              scaled to size 14.4pt on input line 327.
+(Font)              scaled to size 14.4pt on input line 354.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 355.
+(Font)              scaled to size 10.0pt on input line 382.
 LaTeX Font Info:    Font shape `OT1/ntxtt/m/n' will be
-(Font)              scaled to size 10.0pt on input line 356.
+(Font)              scaled to size 10.0pt on input line 383.
  [7]
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.8pt on input line 414.
+(Font)              scaled to size 8.8pt on input line 441.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.6pt on input line 414.
+(Font)              scaled to size 6.6pt on input line 441.
  [8]
-./SO.tex:465: Misplaced alignment tab character &.
+./SO.tex:492: Misplaced alignment tab character &.
 <argument> \ttfamily wait(&
                            wstatus)
-l.465     \texttt{wait(&wstatus)}
+l.492     \texttt{wait(&wstatus)}
                                   \equiv \texttt{waitpid(-1, &wstatus, 0)}
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1274,10 +1274,10 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./SO.tex:465: Misplaced alignment tab character &.
+./SO.tex:492: Misplaced alignment tab character &.
 <argument> \firstchoice@false \ttfamily wait(&
                                               wstatus)
-l.465     \texttt{wait(&wstatus)}
+l.492     \texttt{wait(&wstatus)}
                                   \equiv \texttt{waitpid(-1, &wstatus, 0)}
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1286,10 +1286,10 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./SO.tex:465: Misplaced alignment tab character &.
+./SO.tex:492: Misplaced alignment tab character &.
 <argument> \firstchoice@false \ttfamily wait(&
                                               wstatus)
-l.465     \texttt{wait(&wstatus)}
+l.492     \texttt{wait(&wstatus)}
                                   \equiv \texttt{waitpid(-1, &wstatus, 0)}
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1298,10 +1298,10 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./SO.tex:465: Misplaced alignment tab character &.
+./SO.tex:492: Misplaced alignment tab character &.
 <argument> \firstchoice@false \ttfamily wait(&
                                               wstatus)
-l.465     \texttt{wait(&wstatus)}
+l.492     \texttt{wait(&wstatus)}
                                   \equiv \texttt{waitpid(-1, &wstatus, 0)}
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1310,10 +1310,10 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./SO.tex:465: Misplaced alignment tab character &.
+./SO.tex:492: Misplaced alignment tab character &.
 <argument> \ttfamily waitpid(-1, &
                                   wstatus, 0)
-l.465 ... \equiv \texttt{waitpid(-1, &wstatus, 0)}
+l.492 ... \equiv \texttt{waitpid(-1, &wstatus, 0)}
                                                   
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1322,10 +1322,10 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./SO.tex:465: Misplaced alignment tab character &.
+./SO.tex:492: Misplaced alignment tab character &.
 <argument> ...choice@false \ttfamily waitpid(-1, &
                                                   wstatus, 0)
-l.465 ... \equiv \texttt{waitpid(-1, &wstatus, 0)}
+l.492 ... \equiv \texttt{waitpid(-1, &wstatus, 0)}
                                                   
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1334,10 +1334,10 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./SO.tex:465: Misplaced alignment tab character &.
+./SO.tex:492: Misplaced alignment tab character &.
 <argument> ...choice@false \ttfamily waitpid(-1, &
                                                   wstatus, 0)
-l.465 ... \equiv \texttt{waitpid(-1, &wstatus, 0)}
+l.492 ... \equiv \texttt{waitpid(-1, &wstatus, 0)}
                                                   
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1346,10 +1346,10 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./SO.tex:465: Misplaced alignment tab character &.
+./SO.tex:492: Misplaced alignment tab character &.
 <argument> ...choice@false \ttfamily waitpid(-1, &
                                                   wstatus, 0)
-l.465 ... \equiv \texttt{waitpid(-1, &wstatus, 0)}
+l.492 ... \equiv \texttt{waitpid(-1, &wstatus, 0)}
                                                   
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1358,10 +1358,10 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./SO.tex:468: Misplaced alignment tab character &.
+./SO.tex:495: Misplaced alignment tab character &.
 <argument> wait(&
                  status)
-l.468 Es decir, \texttt{wait(&status)}
+l.495 Es decir, \texttt{wait(&status)}
                                        expresa: Esperá por cualquier proces...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1371,10 +1371,10 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24] [25]
-./SO.tex:1175: Undefined control sequence.
+./SO.tex:1202: Undefined control sequence.
 <argument> printf("a\n 
                        ")
-l.1175 ..., la instrucción \texttt{printf("a\n")}
+l.1202 ..., la instrucción \texttt{printf("a\n")}
                                                    nunca es
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1383,37 +1383,37 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 [26]
-LaTeX Font Info:    Trying to load font information for OMS+ntxtt on input line 1189.
-LaTeX Font Info:    No file OMSntxtt.fd. on input line 1189.
+LaTeX Font Info:    Trying to load font information for OMS+ntxtt on input line 1216.
+LaTeX Font Info:    No file OMSntxtt.fd. on input line 1216.
 
 
 LaTeX Font Warning: Font shape `OMS/ntxtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 1189.
+(Font)              for symbol `textbraceleft' on input line 1216.
 
 [27]
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 1292.
+(Font)              scaled to size 10.95pt on input line 1319.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 10.95pt on input line 1295.
+(Font)              scaled to size 10.95pt on input line 1322.
 LaTeX Font Info:    Font shape `OT1/ntxtt/m/n' will be
-(Font)              scaled to size 10.95pt on input line 1295.
+(Font)              scaled to size 10.95pt on input line 1322.
  [28] [29]
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/it' will be
-(Font)              scaled to size 10.95pt on input line 1357.
+(Font)              scaled to size 10.95pt on input line 1384.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 1367.
+(Font)              scaled to size 8.0pt on input line 1394.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.1pt on input line 1367.
+(Font)              scaled to size 6.1pt on input line 1394.
  [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40]
 Package textcomp Info: Symbol \textdownarrow not provided by
 (textcomp)             font family ntxtt in TS1 encoding.
-(textcomp)             Default family used instead on input line 2003.
-LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 2003.
+(textcomp)             Default family used instead on input line 2030.
+LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 2030.
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmtt.fd
 File: ts1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 ) [41{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [42]
-Underfull \hbox (badness 10000) in paragraph at lines 2037--2039
+Underfull \hbox (badness 10000) in paragraph at lines 2064--2066
 
  []
 
@@ -1422,22 +1422,22 @@ File: lstlang1.sty 2023/02/27 1.9 listings language file
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
 )
-LaTeX Font Info:    Trying to load font information for OML+ntxtlf on input line 2048.
-LaTeX Font Info:    No file OMLntxtlf.fd. on input line 2048.
+LaTeX Font Info:    Trying to load font information for OML+ntxtlf on input line 2075.
+LaTeX Font Info:    No file OMLntxtlf.fd. on input line 2075.
 
 
 LaTeX Font Warning: Font shape `OML/ntxtlf/m/n' undefined
 (Font)              using `OML/ntxmi/m/it' instead
-(Font)              for symbol `textless' on input line 2048.
+(Font)              for symbol `textless' on input line 2075.
 
 LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 2053.
-LaTeX Font Info:    Trying to load font information for OMS+ntxtlf on input line 2054.
-LaTeX Font Info:    No file OMSntxtlf.fd. on input line 2054.
+(Font)              scaled to size 10.95pt on input line 2080.
+LaTeX Font Info:    Trying to load font information for OMS+ntxtlf on input line 2081.
+LaTeX Font Info:    No file OMSntxtlf.fd. on input line 2081.
 
 LaTeX Font Warning: Font shape `OMS/ntxtlf/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 2054.
+(Font)              for symbol `textbraceleft' on input line 2081.
 
 [43] [44] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
@@ -1447,162 +1447,162 @@ File: lstlang2.sty 2023/02/27 1.9 listings language file
 File: lstlang3.sty 2023/02/27 1.9 listings language file
 )
 
-./SO.tex:2180: Package Listings Error: Couldn't load requested language.
+./SO.tex:2207: Package Listings Error: Couldn't load requested language.
 
 See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2180 \begin{lstlisting}[language=assembler]
+l.2207 \begin{lstlisting}[language=assembler]
                                              
 The following languages weren't loadable:
     ,assembler$
 This may cause errors in the sequel.
 
 
-./SO.tex:2180: Package Listings Error: language assembler undefined.
+./SO.tex:2207: Package Listings Error: language assembler undefined.
 
 See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2180 \begin{lstlisting}[language=assembler]
+l.2207 \begin{lstlisting}[language=assembler]
                                              
 The language is not loadable. Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 [45] [46] [47] [48] [49]
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.0pt on input line 2348.
+(Font)              scaled to size 6.0pt on input line 2375.
  [50] [51] [52] [53]
 
-./SO.tex:2532: Package enumitem Error: (a) undefined.
+./SO.tex:2559: Package enumitem Error: (a) undefined.
 
 See the enumitem package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2532 \begin{enumerate}[(a)]
+l.2559 \begin{enumerate}[(a)]
                              
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 [54] [55] [56] [57] [58] [59]
 
-./SO.tex:2814: Package Listings Error: Couldn't load requested style.
+./SO.tex:2841: Package Listings Error: Couldn't load requested style.
 
 See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2814 \begin{lstlisting}[style=riscv]
+l.2841 \begin{lstlisting}[style=riscv]
                                       
 The following styles weren't loadable:
     ,riscv$
 This may cause errors in the sequel.
 
 
-./SO.tex:2814: Package Listings Error: style riscv undefined.
+./SO.tex:2841: Package Listings Error: style riscv undefined.
 
 See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2814 \begin{lstlisting}[style=riscv]
+l.2841 \begin{lstlisting}[style=riscv]
                                       
 The style is not loadable. Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 Package textcomp Info: Symbol \textminus not provided by
 (textcomp)             font family ntxtlf in TS1 encoding.
-(textcomp)             Default family used instead on input line 2816.
+(textcomp)             Default family used instead on input line 2843.
 Package textcomp Info: Symbol \textminus not provided by
 (textcomp)             font family ntxtlf in TS1 encoding.
-(textcomp)             Default family used instead on input line 2819.
+(textcomp)             Default family used instead on input line 2846.
 Package textcomp Info: Symbol \textminus not provided by
 (textcomp)             font family ntxtlf in TS1 encoding.
-(textcomp)             Default family used instead on input line 2819.
+(textcomp)             Default family used instead on input line 2846.
 [60] [61]
 
-./SO.tex:2876: Package Listings Error: Couldn't load requested style.
+./SO.tex:2903: Package Listings Error: Couldn't load requested style.
 
 See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2876 \begin{lstlisting}[style=riscv]
+l.2903 \begin{lstlisting}[style=riscv]
                                       
 The following styles weren't loadable:
     ,riscv$
 This may cause errors in the sequel.
 
 
-./SO.tex:2876: Package Listings Error: style riscv undefined.
+./SO.tex:2903: Package Listings Error: style riscv undefined.
 
 See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2876 \begin{lstlisting}[style=riscv]
+l.2903 \begin{lstlisting}[style=riscv]
                                       
 The style is not loadable. Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-./SO.tex:2888: Package Listings Error: Couldn't load requested style.
+./SO.tex:2915: Package Listings Error: Couldn't load requested style.
 
 See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2888 \begin{lstlisting}[style=riscv]
+l.2915 \begin{lstlisting}[style=riscv]
                                       
 The following styles weren't loadable:
     ,riscv$
 This may cause errors in the sequel.
 
 
-./SO.tex:2888: Package Listings Error: style riscv undefined.
+./SO.tex:2915: Package Listings Error: style riscv undefined.
 
 See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2888 \begin{lstlisting}[style=riscv]
+l.2915 \begin{lstlisting}[style=riscv]
                                       
 The style is not loadable. Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 [62]
 
-./SO.tex:2952: Package Listings Error: Couldn't load requested style.
+./SO.tex:2979: Package Listings Error: Couldn't load requested style.
 
 See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2952 \begin{lstlisting}[style=riscv]
+l.2979 \begin{lstlisting}[style=riscv]
                                       
 The following styles weren't loadable:
     ,riscv$
 This may cause errors in the sequel.
 
 
-./SO.tex:2952: Package Listings Error: style riscv undefined.
+./SO.tex:2979: Package Listings Error: style riscv undefined.
 
 See the Listings package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2952 \begin{lstlisting}[style=riscv]
+l.2979 \begin{lstlisting}[style=riscv]
                                       
 The style is not loadable. Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 Package textcomp Info: Symbol \textminus not provided by
 (textcomp)             font family ntxtlf in TS1 encoding.
-(textcomp)             Default family used instead on input line 2959.
-[63] [64] [65] [66] [67] 
+(textcomp)             Default family used instead on input line 2986.
+[63] [64] [65] [66] [67] [68] [69] [70] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./SO.aux)
  ***********
@@ -1613,22 +1613,34 @@ L3 programming layer <2020/03/25>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package rerunfilecheck Info: File `SO.out' has not changed.
-(rerunfilecheck)             Checksum: 0245703484C7213279599B1094775504;8358.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `SO.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `SO.out':
+(rerunfilecheck)             Before: E229CBEFD50E889DFA68787ED0B2F50E;8764
+(rerunfilecheck)             After:  9A29F4D9769D255AFAC7B76A4B327BB7;8779.
  ) 
 Here is how much of TeX's memory you used:
- 45602 strings out of 474222
- 1026699 string characters out of 5748733
+ 45619 strings out of 474222
+ 1026923 string characters out of 5748733
  1958975 words of memory out of 5000000
- 66818 multiletter control sequences out of 15000+600000
+ 66827 multiletter control sequences out of 15000+600000
  615177 words of font info for 166 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,19n,107p,770b,1569s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{section.17} has been referenced but does not exist, replaced by a fixed one
+
 </usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txbtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexas.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on SO.pdf (67 pages, 344790 bytes).
+Output written on SO.pdf (70 pages, 352426 bytes).
 PDF statistics:
- 759 PDF objects out of 1000 (max. 8388607)
- 629 compressed objects within 7 object streams
- 221 named destinations out of 1000 (max. 500000)
- 541 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 790 PDF objects out of 1000 (max. 8388607)
+ 657 compressed objects within 7 object streams
+ 229 named destinations out of 1000 (max. 500000)
+ 573 words of extra memory for PDF output out of 10000 (max. 10000000)
 

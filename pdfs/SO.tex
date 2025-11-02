@@ -47,8 +47,35 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta, positioning}
 \usetikzlibrary{positioning,arrows}
+\usepackage{listings}  % Paquete principal para el código
+\usepackage{xcolor}    % Para definir colores
 
+% --- Definición de colores para el estilo ---
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.98,0.98,0.98} % Un fondo gris muy claro
 
+% --- Definición del estilo para C ---
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},       % Color de los comentarios
+    keywordstyle=\color{blue},            % Color de palabras clave (if, for, int...)
+    numberstyle=\tiny\color{codegray},    % Estilo de los números de línea
+    stringstyle=\color{codepurple},       % Color de las cadenas de texto ("...")
+    basicstyle=\ttfamily\footnotesize,    % Fuente y tamaño
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    % Números de línea a la izquierda
+    numbersep=5pt,                   % Separación de números
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    morekeywords={pthread_t, Pthread_create, Pthread_join, volatile} % Añadir keywords específicas
+}
 
 
 \definecolor{mGreen}{rgb}{0,0.6,0}
@@ -3169,12 +3196,143 @@ Por ende, las direcciones virtuales que mapean a dicha dirección física son:
 
 
 
+\section{Concurrencia}
 
+\subsection{Threads}
 
+Un \textit{thread} (hilo) es una abstracción que describe uno de posiblemente
+varios puntos de ejecución de un programa. Un \textit{multi-threaded program}
+tiene varios puntos de ejecución. El estado de una thread es caracterizado por:
 
+\begin{itemize}
+    \item Un PC propio.
+    \item El valor de sus registros 
+    \item Su stack privado
+\end{itemize}
 
+Como distintas threads no comparten registros, cuando se pasa de ejecutar una
+thread a otra debe ocurrir un context switch, y un \textit{thread control block}
+(TCB) debe guardar el valor de los registros de cada thread para poder efectuar
+el switch. Aunque distintas threads comparten el address space, tienen un stack
+propio cada una. Esto significa que el address space se segmenta en
+\textit{code}, \textit{heap}, y \textit{stack 1, ..., stack $n$} para un
+programa con $n$ threads.
 
+Una vez que una thread se crea, puede iniciarse inmediatamente o pasar a un
+estado de \textit{ready} (no \textit{running}). Esto depende de lo que decida el
+scheduler.
 
+Naturalmente, existe información compartida entre threads. Distintas threads
+pueden modificar simultáneamente una variable, por ejemplo. Esto lleva a la
+posibilidad de que se produzcan race conditions.
+
+\begin{shaded}
+    $(\dagger)$ Veamos un ejemplo. Imaginemos un código que inicia dos threads,
+    $t_1$ y $t_2$. Cada thread simplemente itera $n = 10,000,000$ veces, y en
+    cada iteración suma $1$ a una variable $S$ que inicialmente es cero.
+    Esperaríamos que al terminar la ejecución de las dos threads, el valor final
+    de $S$ fuera $2n$. Pero esto no es necesariamente es así. Y para entender 
+    por qué, hay que considerar el código máquina.
+
+    Si asumimos que la variable $S$ está en la ubicación de memoria
+    \texttt{0x8049a1c}, el código que le suma 1 se ve algo así:
+
+    \begin{verbatim}
+        mov 0x8049a1c, %eax 
+        add $0x1, %eax
+        mov %eax, 0x8049a1c
+    \end{verbatim}
+
+    Imaginemos que $t_1$ entra en esta región de código en un momento en que la
+    variable $S$ tiene el valor 50, y que hace el primer \texttt{mov}. Es decir,
+    en \texttt{\%eax} ahora está el valor 50. Luego efectúa el \texttt{add},
+    dejando en \texttt{\%eax} el valor 51. Entonces un timer interrupt ocurre, y
+    el OS guarda el estado de los registros en el TCB. 
+
+    Imaginemos que entonces el scheduler le da el control a $t_2$, y que $t_2$
+    logra efectuar las tres instrucciones sin ser interrumpido. Al iniciar, el
+    registro \texttt{eax} para $t_2$ tiene el valor 50, y después del
+    \texttt{add} tiene el valor 51, que finalmente se guarda en la variable $S$.
+    Es decir, ahora la variable compartida $S$ tiene el valor 51.
+
+    Ahora hay un timer interrupt, se devuelve control a $t_1$, y $t_1$ termina
+    de operar. Sólo le faltaba la última instrucción, el \texttt{mov \%eax,
+    0x8049a1c}. Pero esto setea la variable $S$ en 51, porque ese es el valor
+    del registro \texttt{\%eax} para $t_1$.
+
+    El problema es claro. Ambas threads terminaron de ejecutar, pero la variable
+    $S$ sólo aumentó su valor en uno. La raíz de este problema es que no se está
+    regulando de manera adecuada el acceso al recurso compartido $S$, y se está
+    dando una \textit{race condition}.
+\end{shaded}
+
+\begin{shaded}
+    ($\star$) \textbf{Glosario}:
+
+    \begin{itemize}
+        \item \textbf{Sección crítica}: Una región de código que accede a un
+            recurso compartido, generalmente una variable o estructura de datos. 
+        \item \textbf{Race condition}: Situación que ocurre cuando múltiples 
+            threads entran a una sección crítica más o menos al mismo tiempo,
+            intentando modificar el recurso compartido y produciendo resultados
+            inesperados. 
+        \item \textbf{Programa indeterminado}: Un programa con una o más race
+            conditions. El output del programa varía dependiendo de qué threads
+            se corran en cada momento. Por ende, no es determinístico. 
+        \item \textbf{Exclusión mutua}: Restricción que se impone a las
+            secciones críticas, garantizando que sólo una thread pueda ingresar
+            a las mismas, evitando así condiciones de carreras.
+    \end{itemize}
+\end{shaded}
+
+\subsection{API de threads}
+
+\textbf{Creación.} La creación de una thread se hace con 
+
+\begin{verbatim}
+    #include <pthread.h>
+
+    int pthread_create(
+        pthread_t *thread,
+        const pthread_attr_t *attr,
+        void *(*start_routine)(void*),
+        void *arg)
+    )
+\end{verbatim}
+
+Revisemos uno por uno los argumentos de la función. \texttt{thread} es un
+puntero a una estructura de tipo \texttt{pthread\_t} que se usará para
+interactuar con la thread. \texttt{attr} es constante y son los atributos de la
+thread (el tamaño de su stack, por ejemplo). Si se deja en \texttt{NULL}, se
+usan los atributos por defecto. El tercer argumento es más compliqueti y merece
+atención. 
+
+En cierto modo, el argumento pregunta: ¿en qué función debería iniciar la
+ejecución de esta thread? El nombre del argumento, \texttt{start\_routine},
+denota justamente la función a ejecutar al iniciar. Dicha función debe tomar un
+argumento de tipo \texttt{void*} (paréntesis derecho) y devolver un tipo
+\texttt{void *}.
+
+El último argumento \texttt{arg} es el argumento que debe pasarse a la
+\texttt{start\_routine}. 
+
+\textbf{Terminación}. Para terminar una thread se usa 
+
+\begin{verbatim}
+    int pthread_join(pthread_t thread, void **value_ptr);
+\end{verbatim}
+
+El primer argument es la thread por la que se debe esperar; es la variable
+inicializada en \texttt{pthread\_create}. El segundo argumento es un puntero 
+al valor que se espera recibir de la thread. Como la rutina de la thread puede
+devolver cualquier cosa, se devuelve un puntero a \texttt{void}, que luego puede
+ser casteado al tipo que se desee. 
+
+Es importante que la rutina de una thread no devuelva punteros que apunten a
+algo guardado en el stack de la thread. El stack se destruye al terminar la
+thread, y el puntero quedaría apuntando a memoria inválida. 
+
+\subsection{Locks}
 
 
 

@@ -2284,14 +2284,89 @@ Ahora bien,
 Esto excede la longitud vertical $h$ entre las dos barras y por lo tanto el
 electrón no llega a salir.
 
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(10)} Considere dos cargas puntuales $q$ y $3q$ ubicadas a una
+    distancia $d = 1$m. Encuentre la posición de los puntos sobre el eje que une
+    las cargas en donde $V = 0$ y donde $\left| \vec{E} \right| = 0$.
+\end{shaded}
+
+Como nos interesa los puntos sobre el eje que une las dos cargas, definimos un
+sistema de coordenadas unidimensional con $x = 0$ siendo la posición de la carga
+$q$ y $x = 1$ la posición de la carga $3q$. (Claramente $[x] = $ m). En un punto
+arbitrario $x_0$, el voltaje es la suma de los voltajes respecto a cada carga:
+
+\begin{align*}
+    V_{x_0} 
+    &= V_{1} + V_2 \\ 
+    &= \frac{\kappa q}{\left| x_0 - 0 \right| } + \frac{\kappa 3q}{\left| x_0 -
+    1\right| } \\ 
+    &= \kappa q \left( \frac{1}{|x_0|} + \frac{3}{\left| x_0 - 1 \right| } \right) 
+\end{align*}
+
+Se nos pide determinar los valores de $x$ tales que el voltaje es cero. Por
+ende, planteamos la ecuación 
+
+\begin{align*}
+    \frac{1}{\left| x_0 \right| } + \frac{3}{\left| x_0 - 1 \right| } = 0
+\end{align*}
+
+Como nos interesan los puntos entre las dos cargas, $x_0 \in (0, 1)$, y por ende
+$\left| x_0 \right| = x_0, \left| x_0 - 1 \right| = 1 - x_0$, y la ecuación
+resulta 
+
+\begin{align*}
+    \frac{1}{x_0} + \frac{3}{1 - x_0} = 0 
+    \iff 
+    &x_0 + \frac{1-x_0}{3} = 0 \\ 
+    \iff ~ ~ ~ 
+    & 3x_0 + 1 - x_0 = 0 \\ 
+    \iff ~ ~ ~ 
+    &2x_0 = -1 \\ 
+    \iff ~ ~ ~ 
+    &x_0 = -\frac{1}{2}
+\end{align*}
+
+Esta solución no es válida porque $-1 / 2 \not\in (0, 1)$. Luego, no existe
+ningún punto entre las dos cargas donde el voltaje sea nulo.
+
+$(b)$ El campo eléctrico en un punto $x \in (0, 1)$ es 
+
+\begin{align*}
+    \vec{E}(x) 
+    &= \frac{\kappa q}{r_1^2(x)} \vec{r_1(x)} - \frac{\kappa
+    3q}{r_2^2(x)}\vec{r_2(x)}\\ 
+    &= \frac{\kappa q}{x^2} r_2\vec{(x)} - \frac{\kappa 3q}{( 1-x )^2} r_2\vec{(x)}
+\end{align*}
+
+donde el primer término es positivo porque la carga de prueba es repelida por la
+carga $q$ y el segundo término negativo porque la carga de prueba es repelida
+por la carga $3q$. Tomando sólo la magnitud del campo,
 
 
+\begin{align*}
+    \left| \vec{E}(x) \right| = \kappa q \left( \frac{1}{x^2} - \frac{3}{( 1-x
+    )^2} \right) 
+\end{align*}
 
+Esto es cero si y solo si
 
-
-
-
-
+\begin{align*}
+    &\frac{1}{x^2} - \frac{3}{(1-x)^2} = 0 \\ 
+    \iff    ~ ~ ~ 
+    & \frac{1}{x} - \frac{\sqrt{3} }{1- x} = 0 \\ 
+    \iff ~ ~ ~ 
+    &\sqrt{3} x - (1-x) = 0 \\ 
+    \iff ~ ~ ~ 
+    &\sqrt{3}  x -1 + x = 0 \\ 
+    \iff ~ ~ ~ 
+    &x(\sqrt{3} + 1 ) = 1 \\ 
+    \iff ~ ~ ~ 
+    &x = \frac{1}{\sqrt{3} + 1 } \\ 
+    \iff ~ ~ ~ 
+    &x = 0.36602540378
+\end{align*}
 
 
 
