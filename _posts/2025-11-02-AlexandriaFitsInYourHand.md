@@ -1,6 +1,6 @@
 ---
 title: La Biblioteca de Alejandría cabe en la palma de tu mano
-categories: [Personal]
+categories: [Random]
 ---
 
 Un lugar común en mi vida diaria es el asombro que siento al descubrir el
