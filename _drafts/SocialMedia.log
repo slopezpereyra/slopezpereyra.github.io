@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  2 NOV 2025 19:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  3 NOV 2025 14:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -458,32 +458,32 @@ File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 LaTeX Warning: No \author given.
 
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 12.0pt on input line 28.
+(Font)              scaled to size 12.0pt on input line 27.
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}]
-./SocialMedia.tex:95: Missing $ inserted.
+./SocialMedia.tex:101: Missing $ inserted.
 <inserted text> 
                 $
-l.95 ...n](https://en.wikipedia.org/wiki/Mastodon_
+l.101 ...](https://en.wikipedia.org/wiki/Mastodon_
                                                   (social_network))
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./SocialMedia.tex:96: Missing $ inserted.
+./SocialMedia.tex:102: Missing $ inserted.
 <inserted text> 
                 $
-l.96 
-     
+l.102 
+      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (142.73402pt too wide) in paragraph at lines 88--96
-\T1/ntxtlf/m/n/12 soft-ware free (as in \T1/ntxtlf/m/it/12 li-bre\T1/ntxtlf/m/n/12 , not as in \T1/ntxtlf/m/it/12 gratis\T1/ntxtlf/m/n/12 ). [Mastodon](https://en.wikipedia.org/wiki/Mastodon$[]\OML/ntxmi/m/it/12 social[]etwork\LMS/ntxsy/m/n/12 บบ$ 
+Overfull \hbox (8.05843pt too wide) in paragraph at lines 94--102
+\T1/ntxtlf/m/n/12 as in \T1/ntxtlf/m/it/12 gratis\T1/ntxtlf/m/n/12 ). [Mastodon](https://en.wikipedia.org/wiki/Mastodon$[]\OML/ntxmi/m/it/12 social[]etwork\LMS/ntxsy/m/n/12 บบ$ 
  []
 
-[2] [3] (./SocialMedia.aux)
+[2] [3] [4] (./SocialMedia.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
@@ -492,16 +492,16 @@ L3 programming layer <2020/03/25>
 Here is how much of TeX's memory you used:
  6726 strings out of 474222
  91709 string characters out of 5748733
- 1931975 words of memory out of 5000000
+ 1932975 words of memory out of 5000000
  28883 multiletter control sequences out of 15000+600000
  599630 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  80i,6n,93p,332b,233s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on SocialMedia.pdf (3 pages, 87861 bytes).
+Output written on SocialMedia.pdf (4 pages, 93437 bytes).
 PDF statistics:
- 35 PDF objects out of 1000 (max. 8388607)
- 21 compressed objects within 1 object stream
+ 38 PDF objects out of 1000 (max. 8388607)
+ 23 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

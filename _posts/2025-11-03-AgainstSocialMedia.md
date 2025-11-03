@@ -1,30 +1,12 @@
-\documentclass[a4paper, 12pt]{article}
-
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{textcomp}
-\usepackage{amssymb}
-\usepackage{newtxtext} \usepackage{newtxmath}
-\usepackage{amsmath, amssymb}
-\newtheorem{problem}{Problem}
-\newtheorem{example}{Example}
-\newtheorem{lemma}{Lemma}
-\newtheorem{theorem}{Theorem}
-\newtheorem{problem}{Problem}
-\newtheorem{example}{Example} \newtheorem{definition}{Definition}
-\newtheorem{lemma}{Lemma}
-\newtheorem{theorem}{Theorem}
-\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
-
-\begin{document}
-
-\title{Against social media}
-\maketitle
+---
+title: Against social media 
+categories: [Personal]
+---
 
 Among modern conventional practices, the use of social media presents two
 characteristics which are somewhat peculiar. The first is that people are
 typically not uninclined to question it. The second is that, though certainly
-embraced by most, it is also typically recognized \textit{at least} as
+embraced by most, it is also typically recognized *at least* as
 problematic.
 
 It would be rushed to deduce from this that convincing people to abandon social
@@ -33,18 +15,18 @@ monogamy. Contrarily, the fact that people usually recognize the evils of social
 media usage and yet fail to abstain from it indicates how deeply pervaded and
 needful of it they have become. In this, and in many other ways, the use of
 social media resembles more the epidemic emergence of an addictive substance
-than merely a conventional practice. 
+than merely a conventional practice.
 
 Here, I do not understand social media as an abstraction or as something that is
-\textit{in principle} pernicious. I am rather speaking of social media
+*in principle* pernicious. I am rather speaking of social media
 networks as designed and implemented by mega-corporations such as Meta and X
-Corp. The social media networks owned by these companies compress \textit{by
-far} the great majority of social media usage, so it is a useful simplification
-to speak of their use with the more general phrase \textit{social media usage}.
+Corp. The social media networks owned by these companies compress *by
+far* the great majority of social media usage, so it is a useful simplification
+to speak of their use with the more general phrase *social media usage*.
 
 Social media networks possess all the typical evils of technology as delivered
 by Silicon Valley's mega-corporations. Most of these are public knowledge and
-[many descriptions](https://www.jstor.org/stable/26609097) of them exist. 
+[many descriptions](https://www.jstor.org/stable/26609097) of them exist.
 These technologies not only foster tyranny but are tyrannical themselves. A
 person scrolling through social media is constantly subjected to stimuli they
 never chose, needed, and perhaps even wanted. What is more, people are not only
@@ -56,19 +38,19 @@ euphemistically called «personalizing user experience».
 
 Furthermore, these network's are designed to provide the illusion of control. A
 certain degree of customization is allowed, and some privacy settings exist.
-However, $(a)$ the properietary nature of these networks makes it impossible to
-verify how privacy is in fact protected, and $(b)$ these settings are typically
+However, (a) the properietary nature of these networks makes it impossible to
+verify how privacy is in fact protected, and (b) these settings are typically
 limited—as famously shown be Facebook's policy of keeping data even from deleted
 accounts. Here, the user is put in a position analogous to that of a slave which
 is free to choose the color of his clothes or a prisoner free to change his
-cell's wallpaper patterns. 
+cell's wallpaper patterns.
 
-It should be clear that any form of user control \textit{must} be illusory,
-because these networks consist \textit{by design} in platforms of surrendering
+It should be clear that any form of user control *must* be illusory,
+because these networks consist *by design* in platforms of surrendering
 one's identity to public and private scrutiny. This means that any use of them
 which discloses no personal data defeats its very purpose and is thus not likely
 to occur. The strategy of these networks is henceforth to avoid unnecessary
-violence: instead of stealing data, they aim at \textit{seducing} people into
+violence: instead of stealing data, they aim at *seducing* people into
 giving away their information, an art which they have mastered to perfection.
 
 The means of this seduction are the eternal flaws and tragedies of us all.
@@ -87,30 +69,28 @@ them».
 
 Any structure of power which bases itself in tyranny, and whose subsistence
 depends on fostering the lesser side of human condition, is repugnant and vile.
-Instead of widening the horizons of human expression, social media networks 
+Instead of widening the horizons of human expression, social media networks
 narrow our points of view, radicalize us into smaller and smaller communities of
-like-minded individuals, and make us forget the human touch. 
+like-minded individuals, and make us forget the human touch.
 
 Could better social networks exist? As is usually case with technology, social
 networks when considered generally are morally neutral. It is their capitalist
-design what perverts them. There are social media networks that are $(a)$ not
-centrally owned by any private or state entity and $(b)$ which do not subject
+design what perverts them. There are social media networks that are (a) not
+centrally owned by any private or state entity and (b) which do not subject
 their users to any form of control or surveillance. It goes without saying that the satisfaction
-of $(b)$ requires the satisfaction of all the conditions that make a software
-free (as in \textit{libre}, not as in \textit{gratis}).
-[Mastodon](https://en.wikipedia.org/wiki/Mastodon_(social_network)) 
-
-is a famous
+of (b) requires the satisfaction of all the conditions that make a software
+free (as in *libre*, not as in *gratis*).
+[Mastodon](https://en.wikipedia.org/wiki/Mastodon_(social_network)) is a famous
 such type of network. Are these solutions to the issues raised above?
 
 The answer is yes and no. On one hand, decentralized and free social networks
 are not tyrannical by design, and thus do not possess the inherent evils of
 networks such as X or Instagram. However, they do not elude the
-problems of lack of substance, induction of compulsive behavior, and 
-superficiality. In comparison with tyranny and surveillance, these issues are 
-trivial and thus less worthy of attention. But it must still be asked: 
+problems of lack of substance, induction of compulsive behavior, and
+superficiality. In comparison with tyranny and surveillance, these issues are
+trivial and thus less worthy of attention. But it must still be asked:
 What purpose does a social network account serve, even assuming it doesn't
-violate your freedom? 
+violate your freedom?
 
 Most people, I think dishonestly, answer that social networks serve the purpose
 of keeping them informed. We pay little attention to how profoundly sad this
@@ -130,7 +110,7 @@ In any case, I do not think people seriously believe that social media is a
 source of information. I rather suppose that this is a more or less socially
 acceptable justification for using them. The real reasons, I believe, are more
 superficial. They draw our minds away from real life. We all seem to have a
-profound desire, perhaps even a need, to be \textit{distracted}. Regardless of
+profound desire, perhaps even a need, to be *distracted*. Regardless of
 the degree to which this urge is felt, it should be clear that this urge must be
 resisted. Furthermore, I would dare to venture that resisting it becomes easier
 and easier the less one indulges in it, and vice versa.
@@ -141,11 +121,10 @@ are allowed to. As Jung put it, we are a question addressed to the world, and we
 are to produce an answer lest the world produce one for us. Our spare time is
 the opportunity we have to connect with the creative, enriching facets of our
 own personal life, as well as the time we have to connect with each other. Thus,
-it is clear that the problem is not that we wish to be distracted, but where do
-we direct our distraction. Since social media networks are by designed addictive
+it is clear that the problem is not that we wish to be distracted, but where do we direct our distraction. Since social media networks are by designed addictive
 and inducing of compulsive behavior, it is no surprise that most people find
 waste ther lesiure scrolling. They should feel every such minute as a
-\textit{theft}, for no instant of our life ever returns.
+*theft*, for no instant of our life ever returns.
 
 We underestimate how profoundly promising boredom is. The opportunity to be
 bored is indeed a privilege. It is when we are bored that we feel inclined to
@@ -166,7 +145,7 @@ stagnation. I do not claim it makes us more stupid—though an argument can be
 made—but at least it leaves us equally ignorant as before and hinders our
 potential. The use of social media is perhaps not a root cause of superficiality
 —be it intellectual or moral—but it certainly is a factor that not only makes it
-more permanent, but also tinges it with a rather distinctive tone.  
+more permanent, but also tinges it with a rather distinctive tone.
 
 What is there to be done? The answer is so simple that I am amazed it's not
 generally followed. We should abstain from using social media in any significant
@@ -175,18 +154,4 @@ an abstention to partake in a practice that is tyrannical at worst, superficial
 and stupefying at best. We must only come to a simple, straightforward
 realization: we do not need social media. At least assuming you don't depend on
 them professionally, there is no need they satisfy which cannot be satisfied in
-a more healthy, meaningful and enriching way. 
-
-
-
-
-
-
-
-
-
-
-\end{document}
-
-
-
+a more healthy, meaningful and enriching way.
