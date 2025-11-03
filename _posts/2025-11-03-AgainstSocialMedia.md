@@ -132,7 +132,7 @@ seek more rewarding experiences from life. The compulsion induced by social
 networks of course exploits this natural inclination by providing us a rapid,
 albeit shallow satisfaction. It is when I am bored that I decide to read, that I
 decide to learn a music sheet, that I decide to write, that I decide to spend
-time with a lover or a friend, even that I decide to work. Assuming a decent
+time with a lover or a friend. Assuming a decent
 standard of living, life is never short of opportunities to explore creative,
 intellectual or affective satisfaction. Boredom is the catalyst that triggers
 our pursuit of them.
