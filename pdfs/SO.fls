@@ -643,6 +643,7 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/stxscr.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/newtx/ntxexa.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/txexas.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/txtt.tfm
 INPUT SO.aux
 INPUT ./SO.out
 INPUT ./SO.out

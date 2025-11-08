@@ -3539,6 +3539,622 @@ garantiza fairness: una thread podría quedar spinning para siempre. El costo de
 performance sigue siendo el mismo que antes para una sola CPU, pero en múltiples
 CPUS funciona decentemente.
 
+\pagebreak 
+
+\section{File system}
+
+\subsection{Files, directories y API básica}
+
+Un \textit{file} es la abstracción básica del sistema de archivos. Es una array
+de bytes que pueden leerse o escribirse. Es identificada con un \textbf{inode
+number} único (low level) y un nombre (high level).
+
+Un directorio es un archivo que contiene una lista de 2-uplas $(\text{name},
+\text{inode number})$, cada una de las cuales identifica a otro archivo (o
+directorio). La ubicación de directorios dentro de otros directorios conforma el
+\textbf{directory tree}. 
+
+La interfaz del sistema de archivo consiste de llamadas a sistema, algunas de
+las cuales ya hemos visto antes (\texttt{open()}, \texttt{write()},
+\texttt{read()}). 
+
+Dentro de cada proceso, los archivos son representados vía \textbf{file
+descriptors} (\texttt{fd}). En este sentido un \texttt{fd} es una handle opaca
+que "apunta" a un archivo y permite al proceso acceder a él. 
+
+Como los \texttt{fd} son de cada proceso, la estructura \texttt{proc} debe tener
+un registro de los archivos disponibles al proceso. En particular, 
+
+\begin{verbatim}
+    struct proc {
+        ...
+        struct file *ofile[NOFILE]; // array of open files
+        ...
+    }
+\end{verbatim}
+
+Acá \texttt{NOFILE} es el número máximo de archivos que pueden tenerse abiertas.
+La array \texttt{ofile} es indexada con los file descriptors. Cada entrada en la
+array es un puntor a un \texttt{struct file}, que veremos más adelante.
+
+\begin{shaded}
+    $(\dagger)$ Recordar que la estructura \texttt{proc} es una estructura de
+    datos dentro del kernel que contiene toda la información necesaria para
+    gestionar un proceso, como su estado, identificador, descriptores de
+    archivos, memoria y relaciones con otros procesos.
+\end{shaded}
+
+Una llamada a sistema que no hemos mencionado aún es \texttt{lseek}. Por cada
+archivo que un proceso abre, el SO registra el \textbf{file offset}
+(inicializado en cero). El file offset determine en qué byte iniciará la próxima
+lectura/escritura del archivo (recordar que archivo = array de bytes). Cuando
+llamamos \texttt{read} o \texttt{write} con \texttt{N} bytes, al offset se
+le suma \texttt{N} implícitamente para que la próxima lectura/escritura empiece
+donde la anterior terminó.
+
+La llamada \texttt{lseek} modfica explícitamente el offset de un archivo. Toma
+un \texttt{fd}, un \texttt{offset}, y un entero \texttt{whence} que dictamina si
+el \texttt{offset} debe fijarse directamente, si debe sumarse al offset actual,
+o si debe sumarse al tamaño del archivo.
+
+El offset, junto con otras cosas, se guarda en el \texttt{struct file}.
+
+\begin{verbatim}
+    struct file {
+        int ref; // ref count, will be discussed later
+        char readable; // read permission
+        char writable; // write permission
+        struct inode *ip; // to which underlying file it refers
+        uint off; //the offset
+    }
+\end{verbatim}
+
+Estos \texttt{struct file} representan todos los archivos abiertos en el
+sistema, y tomados en su conjunto conforman la \texttt{open file table}.
+El kernel los guarda en una array con un lock:
+
+\begin{verbatim}
+    struct {
+        struct spinlock lock;
+        struct file file[NFILE];
+    } ftable;
+\end{verbatim}
+
+
+
+Como ya sabemos, el mapeo \texttt{file descriptor ---> file table entry} no
+siempre es uno a uno. Por ejemplo, la file table es compartida por padres e
+hijos tras un \texttt{fork()}. Si un padre tiene el \texttt{fd} $n$, el hijo
+también lo tendrá. Y si el hijo actualiza el offset del archivo apuntado por el
+\texttt{fd}
+$n$ usando (por ejemplo) \texttt{lseek}, el padre compartirá ese. Es decir que
+no sólo el \texttt{fd} es el mismo en padre e hijo, sino que dicho \texttt{fd}
+apunta a la misma entrada en la file table.
+
+Precisamente porque varios procesos pueden referenciar al mismo archivo, el
+\texttt{struct file} lleva un \texttt{ref} count, que cuenta cuántos procesos
+tienen al archivo abierto. Notar que cuando hacemos \texttt{close} sobre un
+\texttt{fd}, el \texttt{ref} count del archivo señalado por él se decrementará
+en uno, y sólo se eliminará de la file table si el ref count ahora es cero.
+
+Otro caso interesante lo generan las llamadas \texttt{dup, dup2, dup3}. Si
+recordamos, \texttt{dup} crea un nuevo \texttt{fd} que se refiere al mismo
+archivo abierto que un \texttt{fd} pre-existente. Es decir, \texttt{int new\_fd =
+dup(old\_fd)} produce un estado en que \texttt{new\_fd} y \texttt{old\_fd}
+apuntan al mismo archivo.
+
+Otra llamada a sistema interesante es \texttt{fsync}. Para entenderla, repasemos
+un poco un detalle de la syscall \texttt{write}. En particular, recordemos que
+cuando un proceso llama \texttt{write(fd, data, data\_size)}, el SO puede
+demorar la escritura por cierta cantidad de tiempo (digamos 5 o 30 segundos),
+guardando \texttt{data} en memoria (RAM). Más específicamente, el SO copiará los
+bytes de \texttt{data} en una página que está en RAM. Dicha página será marcada
+con un \textbf{dirty bit}, y diremos que \texttt{data} está \texttt{dirty}, i.e.
+esperando a ser escrita en el disco persistentemente. La llamada a
+\texttt{write} termina rápidamente, pero hablando rigurosamente el servicio que
+solicitó no termina hasta que \texttt{data} sea pasada de la página en RAM al
+disco.
+
+Esta característica de \texttt{write} es razonable, pero a veces necesitamos
+forzar la escritura en disco de nuestra \texttt{data}. La llamada
+\texttt{fsync)} toma un \texttt{fd} y el sistema de archivos responde forzando
+que toda \textbf{dirty} data asociada al \texttt{fd} sea escrita en disco.
+Interesamentemente, para forzar la escritura de un archivo en disco, no sólo hay
+que llamar \texttt{fsync} sobre su \texttt{fd}, sino sobre el \texttt{fd} del
+directorio que lo contiene. Así garantizamos que el archivo modificado también
+haya quedado persistentemente escrito "desde la perspectiva" del directorio.
+
+
+\subsection{Links}
+
+\subsubsection{Hard links}
+
+La función \texttt{rm} que borra archivos usa una llamada a sistema llamada
+\texttt{unlink}. Para saber qué es \texttt{unlink} hay que saber qué es un
+\texttt{link} (brilliancy prize observation).
+
+La llamada a sistema \texttt{link()} toma un \texttt{old\_path} y un
+\texttt{new\_path}, y es lógicamente análoga a \texttt{dup}. Después de la
+llamada, el filename \texttt{new\_path} hará referencia al mismo \texttt{file}
+que el filename \texttt{old\_path}. 
+
+En el bajo nivel, \texttt{link()} funciona creando otro nombre en el directorio
+donde estamos creando el \texttt{link} y haciendo que refiera al mismo
+\textbf{inode number} que el del archivo original. El archivo \textit{no es
+copiado}, solamente son dos nombres (alto nivel) apuntando al mismo archivo
+(bajo nivel).
+
+Cuando creamos un archivo (e.g. usando \texttt{open()} con la flag
+\texttt{O\_CREATE}), se hacen dos cosas: 
+
+\begin{itemize}
+    \item Se crea una nueva estructura en disco, el \textbf{inode}, que llevará
+        registro de la información pertinente a dicho archivo (tamaño, dónde
+        reside en disco, etc).
+    \item Se crea un \textit{link} que vincula un file name (humanamente legible)
+        con dicho archivo.
+\end{itemize}
+
+¿Y por qué hacer \texttt{unlink} para eliminar un archivo? Cuando hacemos
+\texttt{unlink()} sobre un archivo, se chequea el \textbf{reference count}
+dentro del inode. El ref count del inode (a veces llamado \textbf{link count})
+nos dice cuántos file names están linkeados a dicho inode. Cuando se llama
+\texttt{unlink()}, dicho ref count se decrementa en uno, y si es cero el file
+system elimina el archivo.
+
+
+\begin{shaded}
+    ($\dagger$) No confundir estas dos cosas: 
+
+    \begin{itemize}
+        \item El file struct, que se guarda \textit{en memoria}, y contiene
+            entre otras cosas el \textbf{ref count} de cuántos procesos tienen
+            el archivo abierto. Si dicho ref count se vuelve cero, el proceso es
+            eliminado de la file table, que también es una estructurar que está
+            en memoria.
+        \item El inode, que se guarda \textit{en disco}, y contiene otras cosas
+            el ref count de cuántos links vinculan filenames con dicho inode
+            (i.e. el link count). Si el link count se vuelve cero, el inode y
+            sus data blocks en disco son liberados.
+    \end{itemize}
+\end{shaded}
+
+\subsubsection{Symbolic links}
+
+Los links descritos arriba son llamados \textit{hard links}. Existe otro tipo de
+link llamado \textit{symbolic link}. Se diferencian en varios aspectos. 
+
+$(1)$ Un symbolic link \textit{es un archivo} de un tipo especial
+(\textit{symbolic link}).
+
+(2) Un symbolic link lleva consigo el \textit{pathname} del archivo original.
+Esto significa que si hacemos un symbolic link a un archivo llamado
+\texttt{abcd}, el tamaño del symbolic link será de 4 bytes (porque \texttt{abcd}
+son cuatro chars).
+
+(3) Abren la posibilidad de que quede una \textbf{referencia colgante} (dangling
+reference). Para entenderlo, considere los comandos:
+
+\begin{verbatim}
+    prompt> echo hello > file 
+    prompt> ln -s file file2 // ln -s crea el symbolic link
+    prompt> cat file2 
+    hello 
+    prompt> rm file 
+    prompt> cat file2
+    cat: file2: No such file or directory
+\end{verbatim}
+
+¿Cuál es el problema? Como el symbolic link \texttt{file2} estaba vinculado a
+\texttt{file} a través de su pathname, y no por referencia al file de bajo nivel
+subyacente, al hacer \texttt{rm file} el archivo subyacente desaparece y
+también lo hace el pathname \texttt{file}. Al hacer \texttt{cat file2}, el
+vía el symbolic link se busca el archivo \texttt{file}, pero ya no existe.
+
+\subsection{Permission bits}
+
+Los archivos y directorios, en contraste con otras abstracciones que permitían a
+los procesos vivir como si tuvieran su propia memoria o su propia CPU, son
+\textit{comunes}. Por ende, se necesitan mecanismos que regulen la forma en que
+se comparten.
+
+El primero son los \textbf{permission bits}. Los permission bits establecen qué
+puede hacer el dueño de un archivo, lo que alguien en un \textbf{grupo} puede
+hacer, y lo que otros (ni dueño ni miembros del grupo) pueden hacer. Con "pueden
+hacer" siempre hablamos de \texttt{read, write, read/write}.
+
+El dueño del archivo puede cambiar estos permisos usando \texttt{chmod}.
+
+\subsection{Creando y montando un file system}
+
+Para crear un file system se usa típicamente la herramienta \texttt{mkfs} (make
+fs), provista por el file system que será creado. La herramienta toma como input
+un dispositivo (e.g. una partición del disco), el tipo del file system (e.g.
+ext3), y simplemente escribe un file system vacío, con solo un root directory,
+en dicha partición. 
+
+Ahora bien, una vez que es creado, el file system (FS) debe estructurarse en
+forma de árbol. Esto es lo que se llama \textbf{montar} el FS. La syscall
+\texttt{mount()} toma un directorio y lo convierte en un "portal" que conecta
+con el nuevo file system. 
+
+\begin{shaded}
+    $(\dagger)$ \textbf{Ejemplo.} Digamos que tenemos un FS en \texttt{dev/sda1}
+    con carpetas \texttt{dirA, dirB}, con archivos \texttt{fileA} y
+    \texttt{fileB} respectivamente. Digamos que dicho FS no ha sido montado,
+    pero ha sido creado en el directorio \texttt{home/newfsroot}.
+
+    Nuestro FS principal, con root en \texttt{/}, y el FS en \texttt{dev/sda1},
+    están \textit{totalmente separados}. Si hacemos \texttt{ls /home/newfsroot}, no
+    veremos nada. El FS principal no tiene forma de acceder al sistema que fue
+    creado dentro de él. 
+
+    Digamos que ahora hacemos \texttt{mount -t ext3 /dev/sda1 /home/newfsroot}.
+    Esto le dice al SO: agarrá el FFS que está en \texttt{/dev/sda1} y hace que
+    su root directory \textit{sea visible en} \texttt{/home/newfsroot}.
+    Es decir que ahora \texttt{/home/newfsroot} actúa como una especie de portal
+    entre el FS principal y el FS que está en \texttt{/dev/sda1}. Ahora, hacer
+    \texttt{ls home/fsroot} veremos las carpetas \texttt{dirA, dirB}.
+
+    En resumen, \texttt{mount} hace que un FS sea \textit{accesible} "pegándolo"
+    en un directorio existente, haciendo que todo parezca un sólo árbol
+    unificado en vez de dos árboles separados que no se conectan entre sí.
+\end{shaded}
+
+\pagebreak
+
+\section{File system implementation}
+
+Acá se presenta el \textbf{Very Simple File System} o \textbf{vsfs}, un FS
+concreto. Es puramente software, i.e. no necesita hardware adicional que lo
+asisita.
+
+\begin{shaded}
+    $(\star)$ Cuando pensás en un FS, pensá en dos aspectos separados pero
+    interrelacionados: 
+
+    \begin{itemize}
+        \item ¿Qué data structures usa el FS? En particular, ¿qué estructuras
+            están siendo guardades en el disco para organizar data y metadata?
+
+        \item ¿Qué métodos de acceso provee? ¿Cómo mapea las llamadas de un
+            proceso, como \texttt{write, read, open}, a dichas estructuras? ¿Qué
+            estructuras son leídas en una syscall particular? ¿Cuáles son
+            escritas?
+    \end{itemize}
+\end{shaded}
+
+Vamos a empezar con la organización de las data structures en disco. Primero,
+dividimos el disco en \textbf{bloques}, y usaremos un \texttt{BLOCK\_SIZE} de
+\texttt{4KB}. Asumamos que nuestro disco es muy pequeño y tiene solo
+\texttt{64} bloques, para un tamaño total de \texttt{64 x 4 KB = 256KB}.
+
+\footnotesize
+
+\begin{verbatim}
+[ ][ ][ ][ ][ ][ ][ ][ ]  [ ][ ][ ][ ][ ][ ][ ][ ]  [ ][ ][ ][ ][ ][ ][ ][ ]  [ ][ ][ ][ ][ ][ ][ ][ ]
+0                      7  8                     15 16                     23 24                     31
+
+[ ][ ][ ][ ][ ][ ][ ][ ]  [ ][ ][ ][ ][ ][ ][ ][ ]  [ ][ ][ ][ ][ ][ ][ ][ ]  [ ][ ][ ][ ][ ][ ][ ][ ]
+32                     39 40                    47 48                     55 56                     63
+\end{verbatim}
+\normalsize
+
+Vamos a partir esto en una \textbf{data region}, donde estarán los datos del
+usuario. Para llevar adelante qué bloques de la data region están siendo usados,
+usaremos un \textbf{bitmap}.
+
+\begin{shaded}
+    $(\star)$ En su forma más simple, un bitmap es una array de bits, como
+    \texttt{bitmap = [0, 0, 1, 0, 0, 1, 1, ...]}, tales que \texttt{bitmap[i]}
+    representa alguna información relevante respecto al i-ésimo elemento de
+    alguna otra secuencia de datos. 
+
+    Por ejemplo, en un \textit{labeled graph} de $n$ vertices podemos tener un
+    \texttt{bitmap} de $n$ bits tal que \texttt{bitmap[i] = 1} si y solo si 
+    el $i$-écimo vértice es de grado mayor a 3.
+    
+    En nuestro caso, \texttt{bitmap[i] = 1} si y solo si el i-ésimo bloque está
+    siendo utilizado.
+\end{shaded}
+
+Además de la \textbf{data region}, necesitamos guardar los \textbf{inodes}.
+Recordemos que un \textbf{inode} es una estructura en disco que lleva
+información respectco a un archivo, como su tamaño, sus permisos, etc. Por ende,
+definimos una \textbf{inode region}, i.e. un conjunto de bloques donde
+guardaremos los inodes. Los llamaremos \textbf{inode blocks}, en contraste con
+los \textbf{data blocks}.
+
+Para saber qué \textbf{inode blocks} están en uso, también deberemos guardar en
+disco un \textbf{inode bitmap}. Asumamos que usamos 5 de los 64 bloques para la
+inode region y un solo bloque para el inode bitmap. Asumamos además que cada
+inode es de 256 bytes, lo cual significa que un bloque de 4KB puede contener 16
+inodes. Como existe un inode por archivo, y tenemos 5 inode blocks, esto
+significa que nuestro sistema podrá guardar $16 \times 5 = 80$ archivos.
+
+En resumen, la estructura básica de nuestro FS es así.
+
+\footnotesize
+\begin{verbatim}
+[S][i][d][I][I][I][I][I]  [D][D][D][D][D][D][D][D]  [D][D][D][D][D][D][D][D]  [D][D][D][D][D][D][D][D] 
+0                      7  8                     15 16                     23 24                     31
+
+[D][D][D][D][D][D][D][D]  [D][D][D][D][D][D][D][D]  [D][D][D][D][D][D][D][D]  [D][D][D][D][D][D][D][D]
+32                     39 40                    47 48                     55 56                     63
+\end{verbatim}
+\normalsize
+
+donde \texttt{[i]} es el inode bitmap, \texttt{[d]} es el data bitmap,
+\texttt{[I]} es un inode block, y \texttt{[D]} es un data block. Se ve
+claramente que los bloques \texttt{3, 4, ..., 8} son la inode region, \texttt{8,
+9, ..., 63} la data region. El bloque inicial \texttt{[S]} es un bloque
+especial llamado \textbf{superblock}, que contiene información sobre el file
+system en particular (e.g. cuántos inode blocks y data blocks hay, dónde empieza
+cada región, etc.).
+
+\subsection{¿Cómo leer un inode?}
+
+Cada \textbf{inode} está implícitamente referenciado por un número
+identificador, llamado \textbf{i-number}. Es lo que antes llamamos el nombre de
+bajo nivel de un archivo. En \textbf{vsfs}, dado un i-number, podemos calcular
+dónde en disco está el inode correspondiente.
+
+Digamos que queremos leer el inode 32. El FS debe hacer lo siguiente:
+
+\begin{enumerate}
+    \item Calcular la dirección absoluta en bytes, i.e. en qué byte address está
+        el inode.
+    \item Como el disco se lee no con byte addresses, sino con sectores, hay que
+        determinar a qué sector del disco corresponde la byte address calculada
+        en $(1)$.
+        convertir la byte address calculada.
+    \item Determinar, dentro del sector del disco, en qué offset reside el
+        inode.
+\end{enumerate}
+
+El paso $(1)$ es relativamente simple. La dirección absoluta del inode será
+
+\footnotesize
+\begin{verbatim}
+    // Calculamos el offset del inode *dentro de la inode region*.
+    INODE_OFFSET_RELATIVE = INUMBER * INODE_SIZE // 32 * 256bytes = 8192
+    // Vemos dónde empieza la inode region, esto está en el bloque S.
+    INODE_REGION_OFFSET = 12KB
+    // La byte address del inode será la suma de las dos anteriores.
+    INODE_OFFSET_ABSOLUTE = INODE_REGION_OFFSET + INODE_OFFSET_RELATIVE 
+    // Nos queda el offset absoluto = 12288 + 8192 = 20480 bytes = 20KB
+\end{verbatim}
+
+\normalsize
+Ahora viene el paso $(2)$. Típicamente, el tamaño de cada sector en disco es de
+512 bytes.
+
+\footnotesize
+\begin{verbatim}
+    SECTOR_NUMBER = INODE_OFFSET_ABSOLUTE / SECTOR_SIZE 
+    // Nos queda SECTOR_NUMBER = 20480 bytes / 512 bytes = 40
+\end{verbatim}
+\normalsize
+
+Ahora que sabemos el sector en disco, tenemos que determinar dónde en dicho
+sector reside el inode. 
+
+\footnotesize
+\begin{verbatim}
+    OFFSET_IN_SECTOR = ABSOLUTE_BYTE_ADDRESS % SECTOR_SIZE  
+    // Es el resto de la división entre la dirección absoluta en bytes y el 
+    // tamaño de sector. Nos queda 20480 % 512 = 0   
+\end{verbatim}
+\normalsize
+
+\begin{shaded}
+    $(\star)$ ¿Qué demonios es un \textbf{inode} exactamente? Ya dijimos que es
+    una estructura de datos en disco que contiene la metadata de un archivo.
+    ¿Pero qué metadata? La respuesta es: \textit{una banda de metadata}. Entre
+    otras cosas, 
+
+    \begin{itemize}
+        \item Permisos de escritura/lectura/ejecución.
+        \item Owner. 
+        \item Tamaño.
+        \item Información temporal (cuándo fue creada, cuándo fue modificada por
+            última vez, cuándo fue leída por última vez, etc)  
+        \item A qué grupo pertenece. 
+        \item Cuántos hard links hay al archivo. 
+        \item Cuántos bloques fueron asignados para el archivo. 
+        \item $(\star)$ Un conjunto de 15 punteros que apuntan a los bloques
+            donde está el archivo.
+    \end{itemize}
+
+    y muchas cosas más. La última es muy importante, porque es lo que nos
+    permite usar el inode para determinar dónde en memoria está el archivo
+    propiamente dicho (i.e. la array de bytes).
+\end{shaded}
+
+En el cuadro anterior notamos que los inodes tienen $K$ \textbf{direct
+pointers}, punteros a bloques donde está el archivo, con $K=15$ típicamente. En
+particular, si el archivo es tan grande que necesita más de 15 bloques para ser
+escrito, los 15 punteros no van a alcanzar. ¿Cómo resolverlo?
+
+\subsection{Multi-level indexing}
+
+Una solución al problema anterior es otorgar al inode no sólo \textbf{direct
+pointers}, i.e. punters a direcciones en el disco, sino también \textbf{indirect
+pointers}. Un \textbf{indirect pointer} no apunta a un bloque de datos, sino a
+un bloque que contiene más punteros. Los punteros en el bloque apuntado por un
+\textbf{indirect pointer} pueden a su vez ser directos (apuntar a datos) o
+indirectos (apuntar a otros bloques con más punteros), con lo cual formamos una
+estructura multi-nivel que corresponde a un árbol desbalanceado. Este árbol
+desbalanceado está representado en el diagrama abajo:
+
+
+
+\tiny
+\begin{verbatim}
+    [               Inode               ]
+ |
+ +---[Direct Ptr 1]-------------------> [Data Block 1]
+ |
+ +---[Direct Ptr 2]-------------------> [Data Block 2]
+ |
+ ... (Varios punteros directos más, e.g., hasta 12)
+ |
+ |
+ +---[Single Indirect (Nivel 1)]
+ |    |
+ |    +------------------------------> [Bloque de Punteros L1]
+ |                                      |
+ |                                      +--[Ptr] -> [Data Block 13]
+ |                                      |
+ |                                      +--[Ptr] -> [Data Block 14]
+ |                                      |
+ |                                      ...
+ |
+ |
+ +---[Double Indirect (Nivel 2)]
+ |    |
+ |    +------------------------------> [Bloque de Punteros L1]
+ |                                      |
+ |                                      +--[Ptr (Indirect)]
+ |                                      |    |
+ |                                      |    +------> [Bloque de Punteros L2]
+ |                                      |              |
+ |                                      |              +--[Ptr] -> [Data Block N]
+ |                                      |              |
+ |                                      |              +--[Ptr] -> [Data Block N+1]
+ |                                      |              |
+ |                                      |              ...
+ |                                      |
+ |                                      +--[Ptr (Indirect)]
+ |                                      |    |
+ |                                      |    +------> [Bloque de Punteros L2]
+ |                                      |              |
+ |                                      |              +--[Ptr] -> [Data Block M]
+ |                                      |              |
+ |                                      |              ...
+ |                                      |
+ |                                      ...
+ |
+ |
+ +---[Triple Indirect (Nivel 3)]
+      |
+      ... etc
+\end{verbatim}
+\normalsize
+
+Si un archivo es demasiado grande para guardarse en tantos bloques como punteros
+directos hay, se alloca en memoria un \textbf{indirect block} (tomado de la
+región de datos) con punteros (directos o indirectos) y se hace que un
+\textbf{indirect pointer} del inode apunte a él. Cuántos indirect pointers se le
+da a un inode es una cuestión de diseño. 
+
+\begin{shaded}
+    $(\dagger)$ \textbf{Ejemplo.} Asumamos que un inode tiene 12 punteros
+    directos. Asumamos bloques de 4KB con direcciones en disco de 4 bytes.  Un
+    solo \textbf{indirect block} puede entonces contener 1024 direcciones, i.e.
+    1024 punteros. Esto significa que el archivo ahora puede ser de tamaño 
+    $( 12 + 1024 ) \cdot 4K = 4144\text{KB}$, lo cual supera ampliamente el
+    tamaño $15 \times 4KB = 60\text{KB}$ permitido por los 15 punteros directos.
+    Notar cuánto crece el tamaño posible agregando \textit{un solo} puntero
+    indirecto de \textit{un solo nivel}.
+
+    Imaginemos que ahora nuestro inode tiene 12 punteros directos, un puntero
+    indirecto de un nivel, y un puntero indirecto de dos niveles. Entonces el
+    tamaño máximo de archivo es $\left(12 + 1024 + 1024^2  \right) \cdot 4KB =
+    4GB $. Si agregáramos además un puntero indirecto más pero de tres niveles,
+    podríamos tener archivos de tamaño 
+    $(12 + 1024 + 1024^2 + 1024^3) \cdot 4\text{KB} = 4TB + 4GB + 4MB + 48KB$.
+    Una locura.
+\end{shaded}
+
+\subsection{Reading y writing}
+
+Cada directorio es un tipo especial de archivo y por lo tanto tiene su propio
+inode. Cada archivo tiene un \textbf{access path} que indica dónde en el árbol
+se encuentra, iniciando desde el root directory (raíz del árbol). Acá mostramos
+la ridícula cantidad de reads y de writes que se hacen en operaciones sencillas.
+
+Tomemos \texttt{open(foo/bar)} y asumamos que \texttt{bar} es de 12KB (3
+bloques). Para leer el archivo, el FS debe recorrer el \textbf{pathname} para
+ubicar el inode, empezando por el root directory. El root directory suele tener
+el inumber 2, así que lo primero que se hace es leer este inode.
+
+Una vez que el inode 2 es leído, el FS puede ver lo que hay dentro para
+encontrar los punteros a los bloques de datos donde residen los contenidos de
+root. El FS va a usar estos punteros para buscar una entrada que corresponda a
+\texttt{foo}, leyendo bloque por bloque. Una vez que lo encuentre, tendrá el
+inode number de \texttt{foo} (digamos 44).
+
+Ahora hace lo mismo: lee el inode 44 y busca \texttt{bar} usando los punteros.
+Finalmente, lee \texttt{bar} para pasarla del disco a la memoria, alocando un FD
+en la open-file table del proceso, y lo devuelve.
+
+\textbf{Completar.}
+
+\subsection{Caching and buffering}
+
+\textbf{Completar.}
+
+\section{Fast file system}
+
+Los FS primitivos tenían un problema serio de performance, debido principalmente
+a la fragmentación. Usaban una \textbf{free list} (en vez de bitmaps) para
+maneajar el espacio libre, y la free list apuntaba a bloques muy distantes entre
+sí. La consecuencia es que datos lógicamente contiguos terminaban guardados en
+bloques muy distantes, y acceder a ellos requería recorrer el disco
+constantemente. La pregunta central entonces es: ¿cómo organizar la información
+en el disco para mejorar la performance? ¿Cómo mejorar las estructuras del FS
+para el mismo fin? El objetivo central es que el FS sea \textbf{disk aware},
+i.e. que opere con "conocimiento" de cómo funciona el disco.
+
+\subsection{El grupo de cilindros}
+
+Primero, cambiamos las \textbf{on-disk structures}. El \textbf{fast file system}
+(FFS) divide el disco en \textbf{cylinder groups}. Cada \textbf{cilindro} es un
+conjunto de vías en distintas superficies del disco, a determinada distancia del
+centro.  Se agrupan los cilindros en conjuntos de $N$ cilindros contiguos,
+ll\alphmados \textbf{cylinder groups}.
+
+\begin{shaded}
+    $(\dagger)$ El orden, de abajo hacia arriba, entonces es: 
+
+    \begin{enumerate}
+        \item Sectores, la unidad más pequeña del disco.
+        \item Vías (tracks), círculos concéntricos sobre la superficie del
+            disco, compuestos de muchos sectores.
+        \item Cilindros, que no son parte de una organización física sino
+            estrictamente lógica. Un cilindro es un conjunto de vías, cada una
+            en un nivel (superficie) distinto del disco, con la misma distancia
+            al centro.
+        \item Grupos de cilindros, también organización lógica. Es un conjunto
+            de cilindros que el FS considera como agrupados.
+    \end{enumerate}
+
+    Dato importante: cuando la read/write head del disco está en una posición
+    dada, puede leer/escribir el sector correspondiente de cualquiera de las
+    superficies del disco. Es decir que, si ubicamos la read/write head en un
+    lugar, podemos leer el sector correspondiente a cualquiera de las vías, es
+    decir cualquier valor del cilindro sobre el cual está la read/write head. 
+
+    Esto ya nos da una clave. Si un archivo está guardado en muchos bloques,
+    pero cada bloque está "uno arriba del otro" en el disco, i.e. podemos leer
+    cualquiera de los bloques sin mover la read/write head.
+\end{shaded}
+
+Un detalle importante es que los discos no exportan ninguna información de su
+geometría o estructura física. Sólo exportan un address space lógico conformado
+por bloques. Por ende, los FS modernos se organizan en función de \textbf{block
+groups}, cada uno de los cuales es una porción contigua de dicho address space.
+
+Da igual si los llamamos cylinder groups o block groups, son la pieza central
+que permite mejorar la performance. Si dos archivos están en el mismo grupo,
+garantizamos que acceder a uno después del otro no requerirá mover demasiado el
+cabezal.
+
+
+
+
+
 
 
 
