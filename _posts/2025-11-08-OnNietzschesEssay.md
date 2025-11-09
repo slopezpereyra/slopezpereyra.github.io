@@ -338,7 +338,7 @@ to discuss this.
 [^4] I do not think it is controversial to claim that our representational
 faculties are shared and that facts appear more or less the same to everyone.
 Cultural and psychological predispositions may influence the way we
-interpret the facts, may not their appearance. When I see a painting of Christ I
+interpret the facts, but not their appearance. When I see a painting of Christ I
 see a Jew from Nazareth who lived a virtuous life two thousand years ago; a
 fellow Christian sees the son of God. But no one can deny our sensory experience
 is, *mutatis mutandis*, the same.
