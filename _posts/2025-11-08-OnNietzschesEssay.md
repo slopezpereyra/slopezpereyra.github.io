@@ -156,28 +156,53 @@ the rats never acquired an abstract understanding of *length*, separate
 from all sensory context, but rather formed a concrete and integrated
 representation of the problem such as «platform-at-long-*black*-wall».
 
-However, the fact that the rat, the worm and the mosquito all live, so
-to speak, in different worlds, is neither a scientific problem nor a
-problem for science. Science is objective, but not in the sense of
-describing the world *as-is* (la *cosa-en-sí*, como leeríamos en
-Schopenhauer): as I have tried to suggest, the Schopenhauerian thesis
-that the world is representation is correct. Recall that Nietzsche
-claims science is subjective not in terms of the individual, but of the
-human condition, i.e. it is subjective in contrast to whatever science
-another cognitively capable species could hypothetically produce.
-Science is objective when understood within the human domain, and in the
-traditional sense of basing itself upon impartial analysis of the facts[^3].
-That these facts are not purely given but rather elaborated by our
-representational faculties poses no problem, since these faculties are shared
-and these facts appear more or less the same to everyone.
+However, the fact that the rat, the worm and the mosquito all live, so to speak,
+in different worlds, is neither a scientific problem nor a problem for science.
+Science is objective, but not in the sense of describing the world *as-is* (la
+*cosa-en-sí*, como leeríamos en Schopenhauer): as I have tried to suggest, the
+Schopenhauerian thesis that the world is representation is correct. Recall that
+Nietzsche claims science is subjective not in terms of the individual, but of
+the human condition, i.e. it is subjective in contrast to whatever science
+another cognitively capable species could hypothetically produce. Science is
+objective when understood within the human domain, and in the traditional sense
+of basing itself upon impartial analysis of the facts[^3]. That these facts are
+not purely given but rather elaborated by our representational faculties poses
+no problem, since these faculties are shared and these facts appear more or less
+the same to everyone.[^4]
 
-As a note, I don't think it is controversial to claim that our representational
-faculties are shared and that facts appear more or less the same to everyone.
-Cultural and psychological predispositions may influence the way we
-interpret the facts, may not their appearance. When I see a painting of Christ I
-see a Jew from Nazareth who lived a virtuous life two thousand years ago; a
-fellow Christian sees the son of God. But no one can deny our sensory experience
-is, *mutatis mutandis*, the same.
+There is another sense in which Nietzsche's view is incomplete. His critique is
+based solely on the reception of a stimuli and its consequent elaboration.
+However, the problem becomes even harder when we consider that we also carry
+within us «aprioristic» faculties and, I dare to say, representations. In 
+[On archetypes](https://slopezpereyra.github.io/2023-11-07-OnArchetypes/) I
+discussed an example given by Campbell in *The Masks of God: Primitive Mythology*:
+
+> Chicks with their eggshells still adhering to their tails dart for cover when
+> a hawk flies overhead, but not when the bird is a gull or duck, heron or
+> pigeon. Furthermore, if the wooden model of a hawk is drawn over their coop on
+> a wire, they react as though it were alive—unless it be drawn backward, when
+> there is no response.
+>
+> Here we have an extremely precise image—never seen before, yet recognized with
+> reference not merely to its form but to its from in motion, and linked,
+> furthermore, to an immediate, unplanned, unlearned, and even unintended system
+> of appropriate action: flight, to cover. (...) Furthermore, even if all the
+> hawks in the world were to vanish, their image would still sleep in the soul
+> of the chick—never to be roused, however, unless by some accidente of art
+> ($\ldots$). With that the obsolete reaction of the flight to cover would
+> recur; and, unless we knew about the earlier danger of hawks to chicks, we
+> should find the sudden eruption difficult to explain. 'Whence', we may ask,
+> 'this abrupt seizure by an image to which there is no counterpart in the
+> chicken's world? ($\ldots$)'.
+
+What I mean is that not only do we not perceive the world *as is*—not only are
+expressions such as *the world as is* fundamentally meaningless—but we bring to
+the world archetypal, instinctual representations which are somehow embedded in
+our neurobiology. No living creature comes into the world in the form of a
+*tabula rasa*. To abuse the brain-computer analogy, like most computer hardware,
+the brain comes with an embedded set of instructions and programs which
+predetermine the manner in which external stimuli will be processed.
+
 
 With regard to Nietzsche's claim that reason is tautological and
 self-referencing, I believe it is only partially correct. It is certainly true
@@ -227,14 +252,18 @@ philosophers in treating language like an abstract faculty, when in fact it
 should be viewed as a faculty not different in kind from the visual or the
 auditory systems. Nietzsche's claim that language is a lie is not different from
 the claim that, when seeing a moving object, we don't perceive a pure object but
-some impure elaboration of it. I don't mean to say that language does not have
-distinct and particular properties, but rather that the *kind* of relationship
-upon which Nietzsche bases his critique of language is not different from that
-of other human faculties. It follows from this that we should care about the
-fact that every word is a lie, in Nietzsche's sense, just as much as we should
-care about the fact that every visual perception is an illusion. Of course it
-is, but insofar as this «illusion» is what we denote by *real*, we must reckon
-that treating it as merely illusory is contradictory.
+some impure elaboration of it. 
+
+I don't mean to say that language does not have distinct and particular
+properties, but rather that the *kind* of relationship upon which Nietzsche
+bases his critique of language is not different from that of other human
+faculties. We should care about the fact that every word is a lie, in
+Nietzsche's sense, just as much as we should care about the fact that every
+visual perception is an illusion. Of course it is, but insofar as this
+«illusion» is the only reality we know, we must reckon that treating it as
+merely illusory is contradictory. Borges' short story *Funes el memorioso* is an
+interesting mental experiment on the practical impossibility of a mind that does
+not base itself on «Nietzschean lies».
 
 Of course, one must understand that Nietzsche was arguing against a less
 flexible conception of science than the one we have today. Primitive science—say
@@ -306,5 +335,12 @@ take such objections too seriously, since they typically rest on a complete
 misunderstanding of what scientific objectivity means. But this is not the place
 to discuss this.
 
+[^4] I do not think it is controversial to claim that our representational
+faculties are shared and that facts appear more or less the same to everyone.
+Cultural and psychological predispositions may influence the way we
+interpret the facts, may not their appearance. When I see a painting of Christ I
+see a Jew from Nazareth who lived a virtuous life two thousand years ago; a
+fellow Christian sees the son of God. But no one can deny our sensory experience
+is, *mutatis mutandis*, the same.
 
 
