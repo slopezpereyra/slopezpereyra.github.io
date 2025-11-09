@@ -3,7 +3,9 @@ title: There is no physical world and that's okay
 categories: [Science, Philosophy, Personal]
 ---
 
-> Todos sueñan lo que son, aunque ninguno lo entiende. ---Calderón de la
+
+
+> Todos sueñan lo que son, aunque ninguno lo entiende. —Calderón de la
 > Barca
 
 A profoundly thought-provoking work of Nietzsche, often overlooked, is the small
@@ -48,11 +50,11 @@ tautological instrument:
 > camel, declare "look, a mammal," I have indeed brought a truth to
 > light in this way, but it is a truth of limited value.
 
-Furthermore, inquiry through science and reason to him was fundamentally
-anthropocentric. Oblivious to the fact that in trying to describe
-reality «he again proceeds from the error of believing that he has these
-things immediately before him as mere objects», the scientists acts as
-the astrologers who treated stars as agents in man's service:
+Furthermore, inquiry through science and reason is viewd as fundamentally
+anthropocentric. Oblivious to the fact that in trying to describe reality «he
+again proceeds from the error of believing that he has these things immediately
+before him as mere objects», the scientist acts as the astrologers who treated
+stars as agents in man's service:
 
 > It is even a difficult thing for him \[the inquirer\] to admit to
 > himself that the insect or the bird perceives an entirely different
@@ -60,36 +62,33 @@ the astrologers who treated stars as agents in man's service:
 > these perceptions of the world is the more correct one is quite
 > meaningless \[\...\]
 
-If we could perceive matters «as a bird, now as a worm now as a plant,
-or if one of us saw a stimulus as red, another as blue, while a third
-even heard the same stimulus as a sound - then no one would speak of
-such a regularity of nature». Quite pertinently, Nietzsche cites
-Pascal's famous passage on a labor man who dreams each night that he's a
-king.
+If we could perceive matters «as a bird, now as a worm now as a plant, or if one
+of us saw a stimulus as red, another as blue, while a third even heard the same
+stimulus as a sound - then no one would speak of such a regularity of nature».
+Quite pertinently, Nietzsche cites Pascal's famous passage on a labor man who
+dreams each night that he's a king.
 
-In my opinion, Nietzsche's premises are fundamentally correct. This
-early work of his draws strongly from Schopenhauer's conception of the
-world as will and representation, which I also deem fundamentally right.
-Such a thing as an objective reality is not only unknowable but
-impossible to imagine. Every species is endowed with more or less wide,
-but necessarily bounded faculties of representation which are specific
-to it. Yet, contrarily to believing that this undermines science, I
-would venture this itself constitutes a scientific fact. I should hope
-to escape any form of circularity by suggesting this, and hopefully the
-reader will allow me to digress a bit in order to bring forth my point.
+In my opinion, Nietzsche's insights are fundamentally correct. This early work
+of his draws strongly from Schopenhauer's conception of the world as will and
+representation, which I also deem fundamentally right. Such a thing as a purely
+objective reality, a *ding an sich*, is not only unknowable but unimaginable.
+Every species is endowed with more or less wide, but necessarily bounded
+faculties of representation which are specific to it. Yet, contrarily to
+believing that this undermines science, I would venture this itself constitutes
+a scientific fact. Hopefully the reader will allow me to digress a bit in order
+to bring forth my point.
 
-For some reason, it is common to teach that the Newtonian revolution
-«overcame» mind-body dualism by exorcising the ghost from the machine
-and providing a more or less complete description of the physical world.
-This could not be further away from the truth. Newtonian physics is
-based on the concept of *force*, which serves to correctly explain
-nature, but which has no material ground. The postulates of, say,
-gravitational force or electrostatic force proceed simply from
-*observing* that distant (i.e. non-contacting) objects attract, repel
-and generally influence each other. What distinguishes the gravitational
-and the electrostatic force is simply the observed properties of this
-otherwise arcane interaction. There is no understanding of what the word
-*force* means beyond this.[^1]
+For some reason, it is common to teach that the Newtonian revolution «overcame»
+mind-body dualism by exorcising the ghost from the machine and providing a more
+or less complete description of the physical world. This could not be further
+away from the truth. Newtonian physics is based on the concept of *force*, which
+serves to correctly explain nature, but which has no material ground. The
+postulates of, say, gravitational force or electrostatic force proceed simply
+from *observing* that distant (i.e. non-contacting) objects attract, repel and
+generally influence each other. What distinguishes the gravitational and the
+electrostatic force is simply the observed properties of this otherwise arcane
+interaction. There is no understanding of what the word *force* means beyond
+this.[^1]
 
 In this sense, the epithet *physical* is meaningless and serves a merely
 honorific function, just like the epithet *real*. To say *the real
@@ -114,7 +113,7 @@ description of the visual system itself, by the specific encoding which
 our nervous system imposes upon the external world. A trivial corollary
 of this is that human understanding has limits. It is conceivable that
 our brains are simply ill-prepared to grasp certain properties of the
-world---and I suspect philosophers are correct when suggesting that
+world—and I suspect philosophers are correct when suggesting that
 mental phenomena may depend on some of such properties.
 
 Take, for instance, the cognitive faculties of rats, a matter of
@@ -148,7 +147,7 @@ abstract learning in rats is in fact more concrete than it may seem. The
 researchers successfully trained rats to find a submerged platform in a
 pool using the length of the walls (e.g., \"the platform is in the
 middle of the long wall\"). Then the researchers changed the color of
-the walls---an obviously non-geometric property---only to find that the
+the walls—an obviously non-geometric property—only to find that the
 rats' ability to find the platform was gone. This finding suggests that
 the rats never acquired an abstract understanding of *length*, separate
 from all sensible context, but rather formed a concrete and integrated
@@ -202,7 +201,7 @@ necessity in tautological fashion, some of its foundational concepts
 correspond to categories of thought which are embedded in our cognitive
 faculties, however much we struggle to define them. It is certainly the
 case that our biological endowment includes categories such as «number»,
-«set», etc. This «innatist» view---for lack of a better term---may be
+«set», etc. This «innatist» view—for lack of a better term—may be
 supported by certain interpretations of Gödel's incompleteness theorems,
 which prove the existence of true but unprovable statements in any
 sufficiently complex formal system. Even within formal systems,
@@ -215,7 +214,7 @@ declares every new mammal he finds to be a discovery, with precision. To
 contradict it, it is not sufficient to claim that scientist do not post
 aprioristic definitions and then search for instances of them.
 Nietzsche's point is more subtle, since he suggests that the nature of
-language renders any definition a lie---in a nonmoral sense, as the
+language renders any definition a lie—in a nonmoral sense, as the
 title of the work suggests. In other words, to Nietzsche it is
 fundamentally impossible not to act as the fraught taxonomist: whenever
 we speak, let alone postulate a definition, we are necessarily weaving a
@@ -252,9 +251,12 @@ problem to scientific objectivity.
 I should wish to end this entry recalling the verses that Calderón de la
 Barca, whom Schopenhauer read in Spanish, wrote on this matter:
 
-> ¿Qué es la vida? Un frenesí. ¿Qué es la vida? Una ilusión, una sombra,
-> una ficción, y el mayor bien es pequeño: que toda la vida es sueño, y
-> los sueños, sueños son.
+> ¿Qué es la vida? Un frenesí.<br>
+> ¿Qué es la vida? Una ilusión,<br>
+> una sombra, una ficción,<br> 
+> y el mayor bien es pequeño:<br> 
+> que toda la vida es sueño,<br>
+> y los sueños, sueños son.
 
 
 ---
