@@ -127,20 +127,23 @@ representational faculties.
 
  
 
-Firstly, rats [seem to posses some sense of numerosity](https://www.mdpi.com/2076-2615/6/8/46) directed by what
-is technically termed the approximate number system (ANS), which adheres
-to Weber's law. This is a fancy way of saying that rats
-discriminate different quantities based on their ratio, not their
-absolute difference. Even so, the experiment suggests that rats have no
-innate notion of prime number. Secondly, this is another (of at this
-point infinitely many) results contradicting behaviorism. Not only do
-rats lack the capacity to figure out a prime number maze on their own,
-but they can't be taught to solve it. Though [rats are capable of
-rule-based learning](https://pubmed.ncbi.nlm.nih.gov/18369151/), prime numbers seem to be «beyond» the limits
-of their cognitive abilities. Lastly, a prime-maze is a computational
-problem and thus its solution can be interpreted as a program. This
-allows us to express, at least heuristically, that the rat's
-brain-hardware is incapable of implementing it.
+Firstly, rats [seem to posses some sense of
+numerosity](https://www.mdpi.com/2076-2615/6/8/46) directed by what is
+technically termed the approximate number system (ANS), which adheres to Weber's
+law. This is a fancy way of saying that rats discriminate different quantities
+based on their ratio, not their absolute difference. But despite these
+interesting faculties, this experiment suggests that rats have no innate notion
+of prime number. 
+
+Secondly, this is another of many results contradicting behaviorist theory. Not
+only do rats lack the capacity to figure out a prime number maze on their own,
+but they can't be taught to solve it. Though [rats are capable of rule-based
+learning](https://pubmed.ncbi.nlm.nih.gov/18369151/), prime numbers seem to
+simply lay «beyond» the limits of their cognitive abilities. 
+
+Lastly, a prime-maze is a computational problem and thus its solution can be
+interpreted as a program. This allows us to express, at least heuristically,
+that the rat's brain-hardware is incapable of implementing it.
 
 [Another interesting study](https://pmc.ncbi.nlm.nih.gov/articles/PMC4296930/pdf/xan_41_1_91.pdf) suggests that apparently geometric,
 abstract learning in rats is in fact more concrete than it may seem. The
