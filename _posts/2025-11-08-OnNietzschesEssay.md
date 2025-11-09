@@ -196,7 +196,7 @@ discussed an example given by Campbell in *The Masks of God: Primitive Mythology
 > chicken's world? ($\ldots$)'.
 
 What I mean is that not only do we not perceive the world *as is*—not only are
-expressions such as *the world as is* fundamentally meaningless—but we bring to
+expressions such as «the world as is» fundamentally meaningless—but we bring to
 the world archetypal, instinctual representations which are somehow embedded in
 our neurobiology. No living creature comes into the world in the form of a
 *tabula rasa*. To abuse the brain-computer analogy, like most computer hardware,
