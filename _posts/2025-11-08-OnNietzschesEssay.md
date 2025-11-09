@@ -92,7 +92,7 @@ this.[^1]
 
 In this sense, the epithet *physical* is meaningless and serves a merely
 honorific function, just like the epithet *real*. To say *the real
-truth* is simply to say to truth, but with a certain emphasis; to say
+truth* is simply to say *the truth*, but with a certain emphasis; to say
 *the physical world* is simply to say *the world*, with a certain
 condecoration. We have no notion of what *physical* means and, instead
 of ridding ourselves of the ghost in the machine, Newton destroyed the
@@ -214,42 +214,73 @@ their semantics.
 With regards to non-formal disciplines, we must understand Nietzsche's
 description of the fraught taxonomist, who defines a mammal and then
 declares every new mammal he finds to be a discovery, with precision. To
-contradict it, it is not sufficient to claim that scientist do not post
-aprioristic definitions and then search for instances of them.
-Nietzsche's point is more subtle, since he suggests that the nature of
-language renders any definition a lie—in a nonmoral sense, as the
-title of the work suggests. In other words, to Nietzsche it is
-fundamentally impossible not to act as the fraught taxonomist: whenever
-we speak, let alone postulate a definition, we are necessarily weaving a
-metaphor or a myth. And it is unjustified to then claim such metaphor
-corresponds to this or that objective instance.
+contradict it, it is not sufficient to claim that scientists do not post
+aprioristic definitions and then search for instances of them. Nietzsche's point
+is more subtle, since he suggests that the nature of language renders any
+definition a lie—in a nonmoral sense, as the title of the work suggests. In
+other words, to Nietzsche it is fundamentally impossible not to act as the
+fraught taxonomist: whenever we speak, let alone postulate a definition, we are
+necessarily weaving a metaphor or a myth. And it is unjustified to then claim
+such metaphor corresponds to this or that objective instance.
 
-I must admit that I don't find this point to be so convincing. To
-describe language as a lie, to claim that speaking the truth is nothing
-but uttering the correct metaphor, is somewhat simplistic. Nietzsche
-commits a common error among philosophers in treating language like an
-abstract faculty, when in fact it should be viewed as faculty not
-different in kind from the visual or the auditory systems. Nietzsche's
-claim that language is a lie is not different from the claim that, when
-seeing a moving object, we don't perceive a pure object but some impure
-elaboration of it. I don't mean to say that language does not have
-distinct and particular properties, but rather that the *kind* of
-relationship upon which Nietzsche bases his critique of language is not
-different from that of other human faculties. It henceforth follows that
-we should care about the fact that every word is a lie, in Nietzsche's
-sense, just as much as we should care about the fact that every visual
-perception is an illusion. Of course it is, but insofar as this
-«illusion» is what we denote by *world* we must reckon that treating it
-as such leads to a contradiction.
+I must admit that I don't find this point to be so convincing. To describe
+language as a lie, to claim that speaking the truth is nothing but uttering the
+correct metaphor, is somewhat simplistic. Nietzsche commits a common error among
+philosophers in treating language like an abstract faculty, when in fact it
+should be viewed as faculty not different in kind from the visual or the
+auditory systems. Nietzsche's claim that language is a lie is not different from
+the claim that, when seeing a moving object, we don't perceive a pure object but
+some impure elaboration of it. I don't mean to say that language does not have
+distinct and particular properties, but rather that the *kind* of relationship
+upon which Nietzsche bases his critique of language is not different from that
+of other human faculties. It henceforth follows that we should care about the
+fact that every word is a lie, in Nietzsche's sense, just as much as we should
+care about the fact that every visual perception is an illusion. Of course it
+is, but insofar as this «illusion» is what we denote by *real*, we must reckon
+that treating it as merely illusory is contradictory.
 
-I have little else to say on the matter. I should reiterate how profound
-I believe Nietzsche's insights to be on this matter, regardless of
-finding myself at odds with a few of them. With some fortune, I hope to
-have shown why I believe we have no clear notion of *physical*, that we
-have rid ourselves not from the ghost in the machine but rather from the
-machine itself, that science supports the claim that, in Schopenhauer's
-terms, the world is our representation, and that this does not pose a
-problem to scientific objectivity.
+Of course, one must understand that Nietzsche was arguing against a less
+flexible conception of science than the one we have today. Primitive science—say
+in the form of a Francis Bacon or a Darwin—understood the senses as more or less
+trustworthy recipients of an objective reality. The intellect's task was merely
+to explain it. Now, the very faculties upon which our representation of reality
+is based are understood as constitutive parts of that reality, just as much as
+the tree or the rock. In other words, our representational faculties are now
+part of what requires an explanation. The circularity here is not only
+unavoidable but unsolvable. The common place that neuroscience is «the brain
+looking at itself» is true, and whatever we can learn about ourselves is limited
+by that which we are trying to learn about. 
+
+Here, the brain-computer analogy comes in handy. As far as I can see, this
+heuristic makes sense only if we set conscious processes and cognitive faculties
+to play the role of the interface provided by the kernel, unconscious processes
+to play the role of the kernel, and the hardware playing the role of the brain.
+Whoever is familiar with operating systems appreciates how profoundly different
+these three spheres are, and how little information a level provides to its more
+abstract successor. Since brains are tremendously more complex than any computer
+system, this should readily suggest how unfathomable the gulf between our
+cognitive faculties and the underlying brain processes must be.
+
+In fact, we have concrete examples of how remote interface, kernel and hardware
+are in our own species. Visual experience, for instance, though complex, doesn't
+begin to approximate the complexity of its underlying neurobiology. Both the
+unconscious computations involved as well as its biological substrate are
+incomprehensibly more complex than the experience itself. What is more, the
+visual system itself is incapable of introspection: one cannot «see» how the
+visual system works, and we can only expect that the same applies to all
+cognitive faculties. Interfaces are the product of Darwinian evolution, and I
+cannot imagine an environment in which natural selection pushes not only for the
+emergence of a particular faculty but *also* for its self-referential
+transparency. It is therefore conceivable that many aspects of our own nature
+are ultimately unfathomable to us. 
+
+I have little else to say on the matter. I should reiterate how profound I
+believe Nietzsche's insights to be on this matter, regardless of finding myself
+at odds with a few of them. With some fortune, I hope to have shown why I
+believe we have no clear notion of *physical*, that we have rid ourselves not
+from the ghost in the machine but rather from the machine itself, that science
+supports the claim that, in Schopenhauer's terms, the world is our
+representation, and that this does not pose a problem to scientific objectivity.
 
 I should wish to end this entry recalling the verses that Calderón de la
 Barca, whom Schopenhauer read in Spanish, wrote on this matter:
