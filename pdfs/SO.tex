@@ -3899,272 +3899,365 @@ identificador, llamado \textbf{i-number}. Es lo que antes llamamos el nombre de
 bajo nivel de un archivo. En \textbf{vsfs}, dado un i-number, podemos calcular
 dónde en disco está el inode correspondiente.
 
-Digamos que queremos leer el inode 32. El FS debe hacer lo siguiente:
+digamos que queremos leer el inode 32. el fs debe hacer lo siguiente:
 
 \begin{enumerate}
-    \item Calcular la dirección absoluta en bytes, i.e. en qué byte address está
+    \item calcular la dirección absoluta en bytes, i.e. en qué byte address está
         el inode.
-    \item Como el disco se lee no con byte addresses, sino con sectores, hay que
+    \item como el disco se lee no con byte addresses, sino con sectores, hay que
         determinar a qué sector del disco corresponde la byte address calculada
         en $(1)$.
         convertir la byte address calculada.
-    \item Determinar, dentro del sector del disco, en qué offset reside el
+    \item determinar, dentro del sector del disco, en qué offset reside el
         inode.
 \end{enumerate}
 
-El paso $(1)$ es relativamente simple. La dirección absoluta del inode será
+el paso $(1)$ es relativamente simple. la dirección absoluta del inode será
 
 \footnotesize
 \begin{verbatim}
-    // Calculamos el offset del inode *dentro de la inode region*.
-    INODE_OFFSET_RELATIVE = INUMBER * INODE_SIZE // 32 * 256bytes = 8192
-    // Vemos dónde empieza la inode region, esto está en el bloque S.
-    INODE_REGION_OFFSET = 12KB
-    // La byte address del inode será la suma de las dos anteriores.
-    INODE_OFFSET_ABSOLUTE = INODE_REGION_OFFSET + INODE_OFFSET_RELATIVE 
-    // Nos queda el offset absoluto = 12288 + 8192 = 20480 bytes = 20KB
+    // calculamos el offset del inode *dentro de la inode region*.
+    inode_offset_relative = inumber * inode_size // 32 * 256bytes = 8192
+    // vemos dónde empieza la inode region, esto está en el bloque s.
+    inode_region_offset = 12kb
+    // la byte address del inode será la suma de las dos anteriores.
+    inode_offset_absolute = inode_region_offset + inode_offset_relative 
+    // nos queda el offset absoluto = 12288 + 8192 = 20480 bytes = 20kb
 \end{verbatim}
 
 \normalsize
-Ahora viene el paso $(2)$. Típicamente, el tamaño de cada sector en disco es de
+ahora viene el paso $(2)$. típicamente, el tamaño de cada sector en disco es de
 512 bytes.
 
 \footnotesize
 \begin{verbatim}
-    SECTOR_NUMBER = INODE_OFFSET_ABSOLUTE / SECTOR_SIZE 
-    // Nos queda SECTOR_NUMBER = 20480 bytes / 512 bytes = 40
+    sector_number = inode_offset_absolute / sector_size 
+    // nos queda sector_number = 20480 bytes / 512 bytes = 40
 \end{verbatim}
 \normalsize
 
-Ahora que sabemos el sector en disco, tenemos que determinar dónde en dicho
+ahora que sabemos el sector en disco, tenemos que determinar dónde en dicho
 sector reside el inode. 
 
 \footnotesize
 \begin{verbatim}
-    OFFSET_IN_SECTOR = ABSOLUTE_BYTE_ADDRESS % SECTOR_SIZE  
-    // Es el resto de la división entre la dirección absoluta en bytes y el 
-    // tamaño de sector. Nos queda 20480 % 512 = 0   
+    offset_in_sector = absolute_byte_address % sector_size  
+    // es el resto de la división entre la dirección absoluta en bytes y el 
+    // tamaño de sector. nos queda 20480 % 512 = 0   
 \end{verbatim}
 \normalsize
 
 \begin{shaded}
-    $(\star)$ ¿Qué demonios es un \textbf{inode} exactamente? Ya dijimos que es
+    $(\star)$ ¿qué demonios es un \textbf{inode} exactamente? ya dijimos que es
     una estructura de datos en disco que contiene la metadata de un archivo.
-    ¿Pero qué metadata? La respuesta es: \textit{una banda de metadata}. Entre
+    ¿pero qué metadata? la respuesta es: \textit{una banda de metadata}. entre
     otras cosas, 
 
     \begin{itemize}
-        \item Permisos de escritura/lectura/ejecución.
-        \item Owner. 
-        \item Tamaño.
-        \item Información temporal (cuándo fue creada, cuándo fue modificada por
+        \item permisos de escritura/lectura/ejecución.
+        \item owner. 
+        \item tamaño.
+        \item información temporal (cuándo fue creada, cuándo fue modificada por
             última vez, cuándo fue leída por última vez, etc)  
-        \item A qué grupo pertenece. 
-        \item Cuántos hard links hay al archivo. 
-        \item Cuántos bloques fueron asignados para el archivo. 
-        \item $(\star)$ Un conjunto de 15 punteros que apuntan a los bloques
+        \item a qué grupo pertenece. 
+        \item cuántos hard links hay al archivo. 
+        \item cuántos bloques fueron asignados para el archivo. 
+        \item $(\star)$ un conjunto de 15 punteros que apuntan a los bloques
             donde está el archivo.
     \end{itemize}
 
-    y muchas cosas más. La última es muy importante, porque es lo que nos
+    y muchas cosas más. la última es muy importante, porque es lo que nos
     permite usar el inode para determinar dónde en memoria está el archivo
     propiamente dicho (i.e. la array de bytes).
 \end{shaded}
 
-En el cuadro anterior notamos que los inodes tienen $K$ \textbf{direct
-pointers}, punteros a bloques donde está el archivo, con $K=15$ típicamente. En
+en el cuadro anterior notamos que los inodes tienen $k$ \textbf{direct
+pointers}, punteros a bloques donde está el archivo, con $k=15$ típicamente. en
 particular, si el archivo es tan grande que necesita más de 15 bloques para ser
-escrito, los 15 punteros no van a alcanzar. ¿Cómo resolverlo?
+escrito, los 15 punteros no van a alcanzar. ¿cómo resolverlo?
 
-\subsection{Multi-level indexing}
+\subsection{multi-level indexing}
 
-Una solución al problema anterior es otorgar al inode no sólo \textbf{direct
+una solución al problema anterior es otorgar al inode no sólo \textbf{direct
 pointers}, i.e. punters a direcciones en el disco, sino también \textbf{indirect
-pointers}. Un \textbf{indirect pointer} no apunta a un bloque de datos, sino a
-un bloque que contiene más punteros. Los punteros en el bloque apuntado por un
+pointers}. un \textbf{indirect pointer} no apunta a un bloque de datos, sino a
+un bloque que contiene más punteros. los punteros en el bloque apuntado por un
 \textbf{indirect pointer} pueden a su vez ser directos (apuntar a datos) o
 indirectos (apuntar a otros bloques con más punteros), con lo cual formamos una
-estructura multi-nivel que corresponde a un árbol desbalanceado. Este árbol
+estructura multi-nivel que corresponde a un árbol desbalanceado. este árbol
 desbalanceado está representado en el diagrama abajo:
 
 
 
 \tiny
 \begin{verbatim}
-    [               Inode               ]
+    [               inode               ]
  |
- +---[Direct Ptr 1]-------------------> [Data Block 1]
+ +---[direct ptr 1]-------------------> [data block 1]
  |
- +---[Direct Ptr 2]-------------------> [Data Block 2]
+ +---[direct ptr 2]-------------------> [data block 2]
  |
- ... (Varios punteros directos más, e.g., hasta 12)
+ ... (varios punteros directos más, e.g., hasta 12)
  |
  |
- +---[Single Indirect (Nivel 1)]
+ +---[single indirect (nivel 1)]
  |    |
- |    +------------------------------> [Bloque de Punteros L1]
+ |    +------------------------------> [bloque de punteros l1]
  |                                      |
- |                                      +--[Ptr] -> [Data Block 13]
+ |                                      +--[ptr] -> [data block 13]
  |                                      |
- |                                      +--[Ptr] -> [Data Block 14]
+ |                                      +--[ptr] -> [data block 14]
  |                                      |
  |                                      ...
  |
  |
- +---[Double Indirect (Nivel 2)]
+ +---[double indirect (nivel 2)]
  |    |
- |    +------------------------------> [Bloque de Punteros L1]
+ |    +------------------------------> [bloque de punteros l1]
  |                                      |
- |                                      +--[Ptr (Indirect)]
+ |                                      +--[ptr (indirect)]
  |                                      |    |
- |                                      |    +------> [Bloque de Punteros L2]
+ |                                      |    +------> [bloque de punteros l2]
  |                                      |              |
- |                                      |              +--[Ptr] -> [Data Block N]
+ |                                      |              +--[ptr] -> [data block n]
  |                                      |              |
- |                                      |              +--[Ptr] -> [Data Block N+1]
+ |                                      |              +--[ptr] -> [data block n+1]
  |                                      |              |
  |                                      |              ...
  |                                      |
- |                                      +--[Ptr (Indirect)]
+ |                                      +--[ptr (indirect)]
  |                                      |    |
- |                                      |    +------> [Bloque de Punteros L2]
+ |                                      |    +------> [bloque de punteros l2]
  |                                      |              |
- |                                      |              +--[Ptr] -> [Data Block M]
+ |                                      |              +--[ptr] -> [data block m]
  |                                      |              |
  |                                      |              ...
  |                                      |
  |                                      ...
  |
  |
- +---[Triple Indirect (Nivel 3)]
+ +---[triple indirect (nivel 3)]
       |
       ... etc
 \end{verbatim}
 \normalsize
 
-Si un archivo es demasiado grande para guardarse en tantos bloques como punteros
+si un archivo es demasiado grande para guardarse en tantos bloques como punteros
 directos hay, se alloca en memoria un \textbf{indirect block} (tomado de la
 región de datos) con punteros (directos o indirectos) y se hace que un
-\textbf{indirect pointer} del inode apunte a él. Cuántos indirect pointers se le
+\textbf{indirect pointer} del inode apunte a él. cuántos indirect pointers se le
 da a un inode es una cuestión de diseño. 
 
 \begin{shaded}
-    $(\dagger)$ \textbf{Ejemplo.} Asumamos que un inode tiene 12 punteros
-    directos. Asumamos bloques de 4KB con direcciones en disco de 4 bytes.  Un
+    $(\dagger)$ \textbf{ejemplo.} asumamos que un inode tiene 12 punteros
+    directos. asumamos bloques de 4kb con direcciones en disco de 4 bytes.  un
     solo \textbf{indirect block} puede entonces contener 1024 direcciones, i.e.
-    1024 punteros. Esto significa que el archivo ahora puede ser de tamaño 
-    $( 12 + 1024 ) \cdot 4K = 4144\text{KB}$, lo cual supera ampliamente el
-    tamaño $15 \times 4KB = 60\text{KB}$ permitido por los 15 punteros directos.
-    Notar cuánto crece el tamaño posible agregando \textit{un solo} puntero
+    1024 punteros. esto significa que el archivo ahora puede ser de tamaño 
+    $( 12 + 1024 ) \cdot 4k = 4144\text{kb}$, lo cual supera ampliamente el
+    tamaño $15 \times 4kb = 60\text{kb}$ permitido por los 15 punteros directos.
+    notar cuánto crece el tamaño posible agregando \textit{un solo} puntero
     indirecto de \textit{un solo nivel}.
 
-    Imaginemos que ahora nuestro inode tiene 12 punteros directos, un puntero
-    indirecto de un nivel, y un puntero indirecto de dos niveles. Entonces el
-    tamaño máximo de archivo es $\left(12 + 1024 + 1024^2  \right) \cdot 4KB =
-    4GB $. Si agregáramos además un puntero indirecto más pero de tres niveles,
+    imaginemos que ahora nuestro inode tiene 12 punteros directos, un puntero
+    indirecto de un nivel, y un puntero indirecto de dos niveles. entonces el
+    tamaño máximo de archivo es $\left(12 + 1024 + 1024^2  \right) \cdot 4kb =
+    4gb $. si agregáramos además un puntero indirecto más pero de tres niveles,
     podríamos tener archivos de tamaño 
-    $(12 + 1024 + 1024^2 + 1024^3) \cdot 4\text{KB} = 4TB + 4GB + 4MB + 48KB$.
-    Una locura.
+    $(12 + 1024 + 1024^2 + 1024^3) \cdot 4\text{kb} = 4tb + 4gb + 4mb + 48kb$.
+    una locura.
 \end{shaded}
 
-\subsection{Reading y writing}
+\subsection{reading y writing}
 
-Cada directorio es un tipo especial de archivo y por lo tanto tiene su propio
-inode. Cada archivo tiene un \textbf{access path} que indica dónde en el árbol
-se encuentra, iniciando desde el root directory (raíz del árbol). Acá mostramos
+cada directorio es un tipo especial de archivo y por lo tanto tiene su propio
+inode. cada archivo tiene un \textbf{access path} que indica dónde en el árbol
+se encuentra, iniciando desde el root directory (raíz del árbol). acá mostramos
 la ridícula cantidad de reads y de writes que se hacen en operaciones sencillas.
 
-Tomemos \texttt{open(foo/bar)} y asumamos que \texttt{bar} es de 12KB (3
-bloques). Para leer el archivo, el FS debe recorrer el \textbf{pathname} para
-ubicar el inode, empezando por el root directory. El root directory suele tener
+tomemos \texttt{open(foo/bar)} y asumamos que \texttt{bar} es de 12kb (3
+bloques). para leer el archivo, el fs debe recorrer el \textbf{pathname} para
+ubicar el inode, empezando por el root directory. el root directory suele tener
 el inumber 2, así que lo primero que se hace es leer este inode.
 
-Una vez que el inode 2 es leído, el FS puede ver lo que hay dentro para
+una vez que el inode 2 es leído, el fs puede ver lo que hay dentro para
 encontrar los punteros a los bloques de datos donde residen los contenidos de
-root. El FS va a usar estos punteros para buscar una entrada que corresponda a
-\texttt{foo}, leyendo bloque por bloque. Una vez que lo encuentre, tendrá el
+root. el fs va a usar estos punteros para buscar una entrada que corresponda a
+\texttt{foo}, leyendo bloque por bloque. una vez que lo encuentre, tendrá el
 inode number de \texttt{foo} (digamos 44).
 
-Ahora hace lo mismo: lee el inode 44 y busca \texttt{bar} usando los punteros.
-Finalmente, lee \texttt{bar} para pasarla del disco a la memoria, alocando un FD
+ahora hace lo mismo: lee el inode 44 y busca \texttt{bar} usando los punteros.
+finalmente, lee \texttt{bar} para pasarla del disco a la memoria, alocando un fd
 en la open-file table del proceso, y lo devuelve.
 
-\textbf{Completar.}
+\textbf{completar.}
 
-\subsection{Caching and buffering}
+\subsection{caching and buffering}
 
-\textbf{Completar.}
+\textbf{completar.}
 
-\section{Fast file system}
+\section{fast file system}
 
-Los FS primitivos tenían un problema serio de performance, debido principalmente
-a la fragmentación. Usaban una \textbf{free list} (en vez de bitmaps) para
+los fs primitivos tenían un problema serio de performance, debido principalmente
+a la fragmentación. usaban una \textbf{free list} (en vez de bitmaps) para
 maneajar el espacio libre, y la free list apuntaba a bloques muy distantes entre
-sí. La consecuencia es que datos lógicamente contiguos terminaban guardados en
+sí. la consecuencia es que datos lógicamente contiguos terminaban guardados en
 bloques muy distantes, y acceder a ellos requería recorrer el disco
-constantemente. La pregunta central entonces es: ¿cómo organizar la información
-en el disco para mejorar la performance? ¿Cómo mejorar las estructuras del FS
-para el mismo fin? El objetivo central es que el FS sea \textbf{disk aware},
+constantemente. la pregunta central entonces es: ¿cómo organizar la información
+en el disco para mejorar la performance? ¿cómo mejorar las estructuras del fs
+para el mismo fin? el objetivo central es que el fs sea \textbf{disk aware},
 i.e. que opere con "conocimiento" de cómo funciona el disco.
 
-\subsection{El grupo de cilindros}
+\subsection{el grupo de cilindros}
 
-Primero, cambiamos las \textbf{on-disk structures}. El \textbf{fast file system}
-(FFS) divide el disco en \textbf{cylinder groups}. Cada \textbf{cilindro} es un
+primero, cambiamos las \textbf{on-disk structures}. el \textbf{fast file system}
+(ffs) divide el disco en \textbf{cylinder groups}. cada \textbf{cilindro} es un
 conjunto de vías en distintas superficies del disco, a determinada distancia del
-centro.  Se agrupan los cilindros en conjuntos de $N$ cilindros contiguos,
+centro.  se agrupan los cilindros en conjuntos de $n$ cilindros contiguos,
 ll\alphmados \textbf{cylinder groups}.
 
 \begin{shaded}
-    $(\dagger)$ El orden, de abajo hacia arriba, entonces es: 
+    $(\dagger)$ el orden, de abajo hacia arriba, entonces es: 
 
     \begin{enumerate}
-        \item Sectores, la unidad más pequeña del disco.
-        \item Vías (tracks), círculos concéntricos sobre la superficie del
+        \item sectores, la unidad más pequeña del disco.
+        \item vías (tracks), círculos concéntricos sobre la superficie del
             disco, compuestos de muchos sectores.
-        \item Cilindros, que no son parte de una organización física sino
-            estrictamente lógica. Un cilindro es un conjunto de vías, cada una
+        \item cilindros, que no son parte de una organización física sino
+            estrictamente lógica. un cilindro es un conjunto de vías, cada una
             en un nivel (superficie) distinto del disco, con la misma distancia
             al centro.
-        \item Grupos de cilindros, también organización lógica. Es un conjunto
-            de cilindros que el FS considera como agrupados.
+        \item grupos de cilindros, también organización lógica. es un conjunto
+            de cilindros que el fs considera como agrupados.
     \end{enumerate}
 
-    Dato importante: cuando la read/write head del disco está en una posición
+    dato importante: cuando la read/write head del disco está en una posición
     dada, puede leer/escribir el sector correspondiente de cualquiera de las
-    superficies del disco. Es decir que, si ubicamos la read/write head en un
+    superficies del disco. es decir que, si ubicamos la read/write head en un
     lugar, podemos leer el sector correspondiente a cualquiera de las vías, es
     decir cualquier valor del cilindro sobre el cual está la read/write head. 
 
-    Esto ya nos da una clave. Si un archivo está guardado en muchos bloques,
+    esto ya nos da una clave. si un archivo está guardado en muchos bloques,
     pero cada bloque está "uno arriba del otro" en el disco, i.e. podemos leer
     cualquiera de los bloques sin mover la read/write head.
 \end{shaded}
 
-Un detalle importante es que los discos no exportan ninguna información de su
-geometría o estructura física. Sólo exportan un address space lógico conformado
-por bloques. Por ende, los FS modernos se organizan en función de \textbf{block
+un detalle importante es que los discos no exportan ninguna información de su
+geometría o estructura física. sólo exportan un address space lógico conformado
+por bloques. por ende, los fs modernos se organizan en función de \textbf{block
 groups}, cada uno de los cuales es una porción contigua de dicho address space.
 
-Da igual si los llamamos cylinder groups o block groups, son la pieza central
-que permite mejorar la performance. Si dos archivos están en el mismo grupo,
+da igual si los llamamos cylinder groups o block groups, son la pieza central
+que permite mejorar la performance. si dos archivos están en el mismo grupo,
 garantizamos que acceder a uno después del otro no requerirá mover demasiado el
 cabezal.
 
+para vincular los grupos (concepto del disco) con los archivos y los directorios
+(concepto del fs), necesitamos incluir estructuras como inodes, data blocks,
+etc. dentro de cada cilindro, el fs mantiene:
+ 
+\begin{itemize}
+    \item el super block 
+    \item un inode bitmap 
+    \item un data bitmap 
+    \item una inode region con inodes 
+    \item una data region con user data
+\end{itemize}
+
+el super block es el mismo en todos los cilindros y lleva info del fs. se lo
+tiene repetido en cada cilindro por seguridad. los inode y data bitmaps ya
+sabemos lo que hacen. lo mismo las inode y data regions. 
+
+\subsection{políticas para guardar archivos y dirs}
+
+ya mostramos cómo está estructurado el ffs. la política general será guardar
+cosas relacionadas en lugares cercanos (y viceversa). para esto el fs debe poder
+determinar qué cosas están relacionadas y qué cosas no. esto lo logra con
+algunas heurísticas.
+
+$(a)$ para directorios, ffs encuentra un cylinder group con $(i)$ pocos
+directorios y $(ii)$ muchos inodos libres. $(i)$ garantiza que los directorios
+se distribuyen en todos los grupos, mientras que $(i i)$ garanttiza que habrán
+inodes para los archivos que se guardarán en el directorio. una vez lo
+encuentra, pone el directory data y el inode en ese grupo.
+
+$(b)$ para archivos, $(i)$  trata de poner los data blocks de un archivo
+en el mismo grupo en que está su inode, y $(i i)$ pone todos los archivos
+pertenecientes a un mismo directorio en el grupo de dicho directorio.
 
 
+\begin{shaded}
+$(\dagger)$ \textbf{ejemplo.} asumamos 10 inodes y 10 data blocks por grupo.
+digamos que hay tres directorios: root, \texttt{/dira} y \texttt{/dirb}. digamos
+que \texttt{a1, a2, 3} y \texttt{b1} son guardados en \texttt{dira},
+\texttt{dirb} respectivamente. asumamos que cada archivo ocupa dos bloques, y
+cada directorio un solo bloque. ¿cómo se vería esto en nuestro fs? 
 
+    \small
+    \begin{verbatim}
+group  |     inodes         |      data           | 
+  0    |                    |                     |   
+  1    |  dira, a1, a2, a3  | a a1 a1 a2 a2 a3 a3 |# cada file ocupa 2 data blocks
+  2    |  dirb, b1          | b  b1 b1            |# same as above
+  3    |                    |                     |   
+  4    |                    |                     |   
+  ...
+  7    |                    |                     |   
+    \end{verbatim}
+    \normalsize
 
+notar que los data blocks de cada archivo están cerca de sus inodes (en el mismo
+grupo) y los archivos de cada directorio son cercanos entre sí.
+\end{shaded}
 
+\subsection{the large-file exception}
 
+los archivos grandes necesitan manejarse de una manera distinta a lo que vimos
+antes. esto se debe a que un archivo grande podría llenar todos los bloques de
+datos del grupo, lo cual impediría que otros archivos relacionados vivan en el
+mismo grupo que él. por ende, una tercer heurísitca aparece. 
 
+$(c)$ si el archivo es grande, cierto número $k$ de bloques son asignados en el
+grupo elegido de acuerdo a la heurística $(b)$. $k$ puede ser la cantidad de
+direct pointers en un inode, u otro valor similar. luego, se asignan los $k$ bloques
+siguientes (e.g. los que son apuntados por el primer indirect pointer)
+en otro grupo, elegido tal vez por tener mucho espacio libre. luego se asignan
+$k$ bloques en otro grupo, y así hasta asignar todos los bloques necesarios.
 
+\begin{shaded}
+$(\dagger)$ \textbf{ejemplo.} digamos que un archivo \texttt{/a} ocupa 30
+bloques en un ffs con 10 inodes y 40 data blocks por grupo. digamos que en
+heurística $(c)$ se tiene que el tamaño de cada cacho de data es $k = 5$.
+entonces el fs se verá algo así:
 
+\begin{verbatim}
+group inodes        data
+0    | /a-------- | /aaaaa---- ---------- ---------- ----------
+1    |  ----------| aaaaa----- ---------- ---------- ----------
+2    | ---------- | aaaaa----- ---------- ---------- ----------
+3    | ---------- | aaaaa----- ---------- ---------- ----------
+4    | ---------- | aaaaa----- ---------- ---------- ----------
+5    | ---------- | aaaaa----- ---------- ---------- ----------
+6    | ---------- | ---------- ---------- ---------- ----------
+\end{verbatim}
+\end{shaded}
 
+obviamente, distribuir un mismo archivo en varios grupos perjudica la
+performance, porque si se quiere hacer una lectura secuencial del archivo habrá
+que recorrer distancias más grandes en el disco. este problema puede mitigarse
+si se elige un tamaño adecuado para $k$. 
 
+\subsection{otros detallines}
 
+un problema central del ffs era la fragmentación interna (en cada data block).
+la mayor parte de los archivos era de $\approx2$kb, y los bloques de 4kb, lo
+cual generaba within-block fragmentation. la solución fue introducir sub-blocks, 
+que son bloquecitos de 512 bytes. así, un archivo de 2kb podría guardarse en 4
+sub-blocks en vez de en medio block, evitando la pérdida de espacio. sólo cuando
+el fs se da cuenta que un archivo ya tiene 4kb o más, moverá los contenidos de
+los sub-blocks a un block. esta estrategia es opco eficiente porque requiere
+mucho trabajo extra, pero resuelve la fragmentación. 
 
-
+hay más detalles en el último capítulo pero enough.
 
 
 

@@ -43,8 +43,7 @@ and multiplicity of that to which the word refers:
 > force, coins which have lost their embossing and are now considered as
 > metal and no longer as coins.
 
-Reason is understood at least partly as a self-referential and
-tautological instrument:
+Reason is understood as an inherently tautological instrument:
 
 > If I make up the definition of a mammal, and then, after inspecting a
 > camel, declare "look, a mammal," I have indeed brought a truth to
