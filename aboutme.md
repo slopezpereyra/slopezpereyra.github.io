@@ -4,7 +4,7 @@ title: About me
 ---
 
 <p align="center">
-  <img src="https://i.ibb.co/hgSQhJ3/image-5ycn-Q91-D-1682375230573-raw.jpg" alt="Alt text" width="40%">
+    <img src="../Images/Me.png" width="85%" style="border: 6px solid #231709;">
 </p>
 
 I am a computer science student. My current goal is to pursue a PhD in

@@ -1,5 +1,5 @@
 \documentclass[12pt]{article}
-
+\usepackage{array} % Para las tablas
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18} % Or adjust depending on your TeX distribution
 \usepackage[utf8]{inputenc}	% Para caracteres en español
@@ -4259,7 +4259,193 @@ mucho trabajo extra, pero resuelve la fragmentación.
 
 hay más detalles en el último capítulo pero enough.
 
+\pagebreak 
 
+\section{Ejercicios de concurrencia}
+
+
+\begin{shaded}
+
+    \textbf{(1)} Tres procesos corren en paralelo:
+% Centramos la tabla
+\begin{center}
+% La tabla principal de 3 columnas con líneas verticales
+\begin{tabular}{|l|l|l|}
+\hline
+% El encabezado que ocupa las 3 columnas
+\multicolumn{3}{|c|}{Pre: $x = 0$} \\
+\hline
+% Celda 1 (Proceso 0)
+% Usamos un \begin{tabular} anidado para las múltiples líneas
+\begin{tabular}{@{}l@{}} % @{} elimina el padding extra
+    $P_0 : a_0 = x$ \\
+    $; a_0 = a_0 + 1$ \\
+    $; x = a_0$
+\end{tabular}
+&
+% Celda 2 (Proceso 1)
+\begin{tabular}{@{}l@{}}
+    $P_1 : x = x + 1$ \\
+    $; x = x + 1$
+\end{tabular}
+&
+% Celda 3 (Proceso 2)
+\begin{tabular}{@{}l@{}}
+    $P_2 : a_2 = x$ \\
+    $; a_2 = a_2 + 1$ \\
+    $; x = a_2$
+\end{tabular}
+\\
+\hline
+\end{tabular}
+\end{center}
+
+% Las preguntas como una lista enumerada
+\begin{enumerate}
+    \item[(a)] ¿Qué valores finales puede tomar $x$?
+    \item[(b)] Muestre para cada uno de los valores un escenario de ejecución que los produzca. Es decir, numere las sentencias y construya la secuencia en base a la numeración.
+    \item[(c)] ¿Cuántos escenarios de ejecución hay? $\star$¿Cuántos para cada valor final de $x$?
+\end{enumerate}
+\end{shaded}
+
+$(a)$ La variable \texttt{x} puede terminar valiendo \texttt{x + 4} en la
+siguiente traza de ejecución:
+
+\begin{verbatim}
+    1. x = x + 1 // de P1 
+    2. x = x + 1 // de P2 
+    3. a0 = x       // \ 
+    4. a0 = a0 + 1  // |--->  P0 completo
+    5. x = a0       // / 
+    6. a2 = x       // \ 
+    7. a2 = a2 + 1  // |--->  P2 completo
+    8. x = a2       // / 
+\end{verbatim}
+
+A su vez, es imposible dar una traza tal que \texttt{x} valga \texttt{x + 5},
+porque la semántica de $P_1$ es sumar 2 y la semántica de $P_0, P_2$ es sumar 1.
+La condición de carrera sobre \texttt{x} puede hacer que un programa termine
+\textit{no} sumando nada a \texttt{x}, pero no que sume de más.
+
+La variable \texttt{x} también puede tomar el valor \texttt{x + 3}, como lo
+muestra la siguiente traza: 
+
+\begin{verbatim}
+    1. x = x + 1  // De P1
+    2. a2 = x     // De P2
+    3. a0 = x       // \  
+    4. a0 = a0 + 1  // | ---> P0 completo.
+    5. x = a0       // / 
+    6. a2 = a2 + 1  // de P2
+    7. x = a2       // de P2, que termina
+    8. x = x + 1    // de P1, que termina
+\end{verbatim}
+
+Es fácil ver que no hay escenarios tales que \texttt{x} termine valiendo
+\texttt{x + 2, x + 1} o \texttt{x}, puesto que la ejecución de $P_1$ (en
+cualquier traza) garantiza que \texttt{x} incrementa en 2, y las ejecuciones de
+$P_0, P_2$ garantizan que \texttt{x} incrementa al menos por uno.
+
+$(b)$ Ya lo hicimos en $(a)$.
+
+$(c)$ Habrá 8 instrucciones ejecutadas, y en cada ejecución tenemos tres
+opciones posibles. La cantidad total de posibilidades es $3^8 = 6561$. 
+
+\pagebreak 
+
+\begin{shaded}
+
+    \textbf{(3)} Considere los procesos:
+    
+\begin{center}
+% La tabla principal de 2 columnas con líneas verticales
+\begin{tabular}{|l|l|}
+\hline
+% El encabezado (Pre-condición) que ocupa las 2 columnas
+\multicolumn{2}{|c|}{Pre: $\texttt{cont} \wedge x=1 \wedge y=2$} \\
+\hline
+% Celda 1 (Proceso 0)
+% Usamos un \begin{tabular} anidado para las múltiples líneas
+\begin{tabular}{@{}l@{}} % @{} elimina el padding extra
+    P0 : while (\texttt{cont} \&\& $x<20$) \{ \\
+    \quad $x = x * y;$ \\
+    \}
+\end{tabular}
+&
+% Celda 2 (Proceso 1)
+\begin{tabular}{@{}l@{}}
+    P1 : $y = y + 2;$ \\
+    \quad \texttt{cont} = \texttt{false};
+\end{tabular}
+\\
+\hline
+% El pie de tabla (Post-condición) que ocupa las 2 columnas
+\multicolumn{2}{|c|}{Post: $\neg\texttt{cont} \wedge x=? \wedge y=?$} \\
+\hline
+\end{tabular}
+\end{center}
+
+(a) Calcule los posibles valores finales de \texttt{x, y}.
+
+(b) Si en P1 se cambia la instrucciónn \texttt{y = y + 2} por \texttt{y = y + 1;
+y = y + 1} en dos líneas distintas, ¿cambia esto los posibles valores finales?
+Justifique
+\end{shaded}
+
+$(a)$ Una posibilidad es que primero se ejecute $P_1$ completo,
+con lo cual el \texttt{while} dentro de $P_0$ tendría una guarda falsa y todo
+terminaría. En dicho caso, \texttt{x = 1} (valor original) y \texttt{y = 4}
+(por \texttt{y := y+2}).
+
+Otra posibilidad es que se ejecute la primera instrucción de $P_1$, y luego se
+ejecute el cuerpo del \texttt{while} en un estado inicial en que \texttt{y = 4,
+x = 1}. Consideremos dos escenarios: $(i)$ no se ejecuta \texttt{cont = false}
+hasta que el \texttt{while} termina; $(i i)$ se ejecuta \texttt{cont = false}
+antes de que el \texttt{while} termine "por sí solo".
+
+En el caso $(i)$ la variable $x$ sigue la siguiente traza: 
+
+\begin{verbatim}
+// Estado al entrar al while: y = 4, x = 1 
+x = x * y  
+// Ahora x = 4 
+x = x * y 
+// Ahora x = 16 
+x = x * y  
+// Ahora x = 64
+// la guarda x < 20 es falsa y se sale del while
+\end{verbatim}
+
+Es decir que en el escenario $(i)$, el estado final es $y = 4, x = 64$.
+
+En el escenario $(i i)$, puede pasar que \texttt{const = false} se ejecute
+después de una de las operaciones \texttt{x = x * y} intermedias, y por ende
+podríamos los estados finales son descritos por $(x, y) \in \left\{ (4, 4), (16,
+4) \right\} $.
+
+La última posibilidad es que se ejecute el while cierta cantidad $k$ de veces
+antes de que se haga una instrucción de $P_1$. Si luego de $k$ iteraciones del
+while, $P_1$ se ejecuta completamente, el estado final será 
+$x = 2^k, y = 4$, donde $k$ es a lo sumo $4$ por la condición \texttt{x < 20}.
+
+Si luego de $k$ iteraciones del while, se ejecuta solo $y = y + 2$ pero no
+\texttt{const = false}, podemos tener una serie de resultados finales; a saber, 
+$(x,  y) \in \left\{ (32, 4), (16, 4), (64, 4) \right\} $, como es fácil de
+observar analizando caso por caso.
+
+En conclusión, los valores posibles finales son 
+
+\begin{equation*}
+    (x, y) \in \left\{ (1, 4), (64, 4), (4, 4), (16, 4),  (32, 4) \right\} 
+\end{equation*}
+
+$(b)$ Sí, cambia. La instrucción \texttt{y = y + 2} es atómica y esto significa
+el cuerpo del while en $P_0$ puede ejecutarse bajo dos estados posibles de $y$:
+o bien $y = 2$ (valor original), o bien $y = 4$. Si dicha instrucción se "parte"
+en 2, es posible que el cuerpo del while sea ejecutado bajo tres estados
+posibles de la variable $y$: $y = 2, y = 3, y = 4$. Esto por supuesto afectará
+los valores posibles de $x$ (e.g. considere que hay una traza donde el while se
+ejecuta \textit{sólo} con $y = 3$, dando como resultado final $x =27$).
 
 
 
