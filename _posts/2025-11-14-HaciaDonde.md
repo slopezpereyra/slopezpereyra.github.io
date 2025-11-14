@@ -26,8 +26,9 @@ modal, porque se lo «toma prestado» del modo dórico de la escala. Mientras el
 cuarto grado diatónico es oscuro, este cuarto grado «dórico» es de una preciosa
 luminosidad.
 
-
-<div style="text-align: center;"><iframe width="560" height="315" src="https://www.youtube.com/watch?v=dDswNI_TrcE&list=RDdDswNI_TrcE&start_radio=1" frameborder="0" allowfullscreen></iframe></div>
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/watch?v=dDswNI_TrcE&list=RDdDswNI_TrcE&start_radio=1" allowfullscreen></iframe>
+</div>
 
 
 
