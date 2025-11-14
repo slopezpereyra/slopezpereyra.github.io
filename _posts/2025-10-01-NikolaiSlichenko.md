@@ -15,10 +15,8 @@ mamá*, Письмо матери). El poema es exquisito y, leído en la distan
 océano de mi madre, me produjo una fuerte impresión. La rendición
 de Troshin es de una hermosa rusticidad:
 
+<div style="text-align: center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/bqxnYj9c-Zo?si=YpHZsB5Vt4IbGYZa" frameborder="0" allowfullscreen></iframe></div>
 
-<div style="text-align: center;">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/bqxnYj9c-Zo?si=YpHZsB5Vt4IbGYZa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
 
 > *Nota*. Descubrí entonces también que Troshin
 > [versionó](https://www.youtube.com/watch?v=1uDgfOmRsRg&list=RD1uDgfOmRsRg&start_radio=1)
@@ -54,25 +52,20 @@ impresionante. Sobre un perfecto arreglo de cuerdas, vientos y una guitarra
 eléctrica humilde y sutil, la voz de Slichenko resuena increíblemente. Notar la
 intervención coral a modo de interludio (minuto $\approx$1:50).
 
-<div style="text-align: center;">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/nO-12Lvr4VI?si=i-kX171l7T_yA0cr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
+
+<div style="text-align: center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/nO-12Lvr4VI?si=i-kX171l7T_yA0cr" frameborder="0" allowfullscreen></iframe></div>
 
 Slichenko, además de un músico extraordinario, era étnicamente romaní, y se crio
 sumergido en la hermosa cultura gitana. Como se aprecia en su versión de
 *Dos guitarras* (Две гитары), llevó el sello gitano a su carrera músical:
 
-<div style="text-align: center;">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/kTcbC0tcHs4?si=l262_-3cLxogDgRQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
+
+<div style="text-align: center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/kTcbC0tcHs4?si=l262_-3cLxogDgRQ" frameborder="0" allowfullscreen></iframe></div>
 
 Otra notable interpretación es su rendición de una canción gitana titulada
 *Retorno* (o *Regreso*) (Вернись).
 
-
-<div style="text-align: center;">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/5lOks-BhpZU?si=X8k3njxvA-NngfeI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
+<div style="text-align: center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/5lOks-BhpZU?si=X8k3njxvA-NngfeI" frameborder="0" allowfullscreen></iframe></div>
 
 Dejo a mi imaginario lector explorar más, si así lo desea. Me contento con haber
 sembrado acá esta pequeña semilla para que otros accedan a esta hermosa música
