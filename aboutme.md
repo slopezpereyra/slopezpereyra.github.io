@@ -3,9 +3,6 @@ layout: page
 title: About me
 ---
 
-<p align="center">
-    <img src="../Images/Myself.jpg" width="45%" style="border: 6px solid #231709;">
-</p>
 
 I am a computer science student. My current goal is to pursue a PhD in
 computational neuroscience. I work as a research assistant at a neuroscience
