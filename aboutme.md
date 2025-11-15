@@ -4,7 +4,7 @@ title: About me
 ---
 
 <p align="center">
-    <img src="../Images/Me.png" width="45%" style="border: 6px solid #231709;">
+    <img src="../Images/Myself.jpg" width="45%" style="border: 6px solid #231709;">
 </p>
 
 I am a computer science student. My current goal is to pursue a PhD in
