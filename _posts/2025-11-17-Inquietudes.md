@@ -3,7 +3,7 @@ title: Los sueños
 categories: [Poesía]
 ---
 
-Son simples inquietudes de la mente: <br>
+Son vagas inquietudes de la mente: <br>
 el sueño de una amante que ya ha muerto<br>
 y que aparece en forma de serpiente<br>
 diciendo que morir no ha sido cierto;<br>
