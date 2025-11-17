@@ -46,7 +46,7 @@ and multiplicity of that to which the word refers:
 ---
 
 <figure style="text-align:center;">
-  <img src="../Images/FallRiley.jpg" width="55%" style="border: 6px solid #231709;" />
+  <img src="../Images/FallRiley.jpg" width="85%" style="border: 6px solid #231709;" />
   <figcaption>Riley's work Fall (1963) appears to vibrate and suggests
         Nietzsche's idea that «the stone is hard» does not express an objective
         hardness but the result of a subjective elaboration.</figcaption>
@@ -307,16 +307,6 @@ part of what requires an explanation. The circularity here is not only
 unavoidable but unsolvable. The commonplace that neuroscience is «the brain
 looking at itself» is true, and whatever we can learn about ourselves is limited
 by that which we are trying to learn about. 
-
----
-
-<figure style="text-align:center;">
-  <img src="../Images/DrawingHands.jpg" width="75%" style="border: 6px solid #231709;" />
-  <figcaption>Drawing Hands by Escher, depicting a strange loop and suggesting the
-        notion of a system which represents itself.</figcaption>
-</figure>
-
----
 
 Here, the brain-computer analogy comes in handy. As far as I can see, this
 heuristic makes sense only if we set conscious processes and cognitive faculties
