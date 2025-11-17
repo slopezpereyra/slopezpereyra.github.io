@@ -4447,6 +4447,447 @@ posibles de la variable $y$: $y = 2, y = 3, y = 4$. Esto por supuesto afectará
 los valores posibles de $x$ (e.g. considere que hay una traza donde el while se
 ejecuta \textit{sólo} con $y = 3$, dando como resultado final $x =27$).
 
+\pagebreak 
+
+\begin{shaded}
+    \textbf{(5)} Utilice locks para asegurarse de que la modificación del inciso
+    $(b)$ del ejercicio anterior no cambie los resultados posibles.
+\end{shaded}
+
+
+Los procesos originales eran
+
+
+\begin{center}
+% La tabla principal de 2 columnas con líneas verticales
+\begin{tabular}{|l|l|}
+\hline
+% El encabezado (Pre-condición) que ocupa las 2 columnas
+\multicolumn{2}{|c|}{Pre: $\texttt{cont} \wedge x=1 \wedge y=2$} \\
+\hline
+% Celda 1 (Proceso 0)
+% Usamos un \begin{tabular} anidado para las múltiples líneas
+\begin{tabular}{@{}l@{}} % @{} elimina el padding extra
+    P0 : while (\texttt{cont} \&\& $x<20$) \{ \\
+    \quad $x = x * y;$ \\
+    \}
+\end{tabular}
+&
+% Celda 2 (Proceso 1)
+\begin{tabular}{@{}l@{}}
+    P1 : $y = y + 2;$ \\
+    \quad \texttt{cont} = \texttt{false};
+\end{tabular}
+\\
+\hline
+% El pie de tabla (Post-condición) que ocupa las 2 columnas
+\multicolumn{2}{|c|}{Post: $\neg\texttt{cont} \wedge x=? \wedge y=?$} \\
+\hline
+\end{tabular}
+\end{center}
+
+y la modificación era 
+
+
+\begin{center}
+% La tabla principal de 2 columnas con líneas verticales
+\begin{tabular}{|l|l|}
+\hline
+% El encabezado (Pre-condición) que ocupa las 2 columnas
+\multicolumn{2}{|c|}{Pre: $\texttt{cont} \wedge x=1 \wedge y=2$} \\
+\hline
+% Celda 1 (Proceso 0)
+% Usamos un \begin{tabular} anidado para las múltiples líneas
+\begin{tabular}{@{}l@{}} % @{} elimina el padding extra
+    P0 : while (\texttt{cont} \&\& $x<20$) \{ \\
+    \quad $x = x * y;$ \\
+    \}
+\end{tabular}
+&
+% Celda 2 (Proceso 1)
+\begin{tabular}{@{}l@{}}
+    P1 : $y = y + 1;$ \\
+    $y = y + 1;$\\
+    \texttt{cont} = \texttt{false};
+\end{tabular}
+\\
+\hline
+% El pie de tabla (Post-condición) que ocupa las 2 columnas
+\multicolumn{2}{|c|}{Post: $\neg\texttt{cont} \wedge x=? \wedge y=?$} \\
+\hline
+\end{tabular}
+\end{center}
+
+Debemos asegurarnos de que $P_0$ no modifique $x$ hasta que las dos sumas de
+$P_1$ se completen. Por lo tanto, asumiendo que se ha inicializado una lock 
+\texttt{mutex},
+
+\begin{center}
+% La tabla principal de 2 columnas con líneas verticales
+\begin{tabular}{|l|l|}
+\hline
+% El encabezado (Pre-condición) que ocupa las 2 columnas
+\multicolumn{2}{|c|}{Pre: $\texttt{cont} \wedge x=1 \wedge y=2$} \\
+\hline
+% Celda 1 (Proceso 0)
+% Usamos un \begin{tabular} anidado para las múltiples líneas
+\begin{tabular}{@{}l@{}} % @{} elimina el padding extra
+    P0 : while (\texttt{cont} \&\& $x<20$) \{ \\
+    \quad \texttt{acquire(mutex)}\\
+    \quad $x = x * y;$ \\
+    \quad \texttt{release(mutex)}\\
+    \}
+\end{tabular}
+&
+% Celda 2 (Proceso 1)
+\begin{tabular}{@{}l@{}}
+    P1 : \texttt{acquire}(mutex)\\ 
+    $y = y + 1;$ \\
+    $y = y + 1;$\\
+    \texttt{release(mutex)}\\
+    \texttt{cont} = \texttt{false};
+\end{tabular}
+\\
+\hline
+% El pie de tabla (Post-condición) que ocupa las 2 columnas
+\multicolumn{2}{|c|}{Post: $\neg\texttt{cont} \wedge x=? \wedge y=?$} \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\pagebreak 
+
+\begin{shaded}
+    \noindent \textbf{Ejercicio 6.} \quad Dar una secuencia de ejecución (\textbf{escenario de ejecución}) de las sentencias de dos procesos $P_0$ y $P_1$ que corren el código de \textit{Simple Flag} donde ambos entran a la región crítica.
+
+\vspace{0.5cm}
+
+% Configuration to mimic the syntax highlighting in the image
+\lstset{
+    language=C,
+    basicstyle=\ttfamily\small,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    numbersep=5pt,
+    tabsize=4,
+    showstringspaces=false,
+    % Default keywords (green in image: typedef, struct, while)
+    keywordstyle=\color{green!50!black}, 
+    % Secondary keywords (magenta/red in image: int, void)
+    classoffset=1,
+    morekeywords={int, void},
+    keywordstyle=\color{magenta},
+    % Tertiary keywords (blue in image: function names)
+    classoffset=2,
+    morekeywords={init, lock, unlock},
+    keywordstyle=\color{blue},
+    classoffset=0 % Restore default
+}
+
+\begin{lstlisting}
+typedef struct __lock_t { int flag; } lock_t;
+void init(lock_t *mutex) {
+    mutex->flag = 0;
+}
+
+void lock(lock_t *mutex) {
+    while (mutex->flag == 1)
+        ;
+    mutex->flag = 1;
+}
+
+void unlock(lock_t *mutex) {
+    mutex->flag = 0;
+}
+\end{lstlisting}
+\end{shaded}
+
+
+Recordemos que el algoritmo \textit{Simple flag} utiliza un campo \texttt{flag}
+en el lock para determinar si está o no disponible. Cuando un proceso acquires
+el lock, setea la flag en 1; cuando lo suelta, en cero. Y si el lock está usado
+y un proceso hace acquire, dicho proceso hace \textit{busy waiting} sobre la
+flag.
+
+Imaginemos una variable compartida \texttt{int comp = 0} que constituye una región
+crítitca, un proceso $P_0$ que intenta sumar uno y un proceso $P_1$ que intenta
+restar uno. Requerimos que el resultado final de \texttt{comp} sea cero. 
+
+$P_0$ se ve algo así: 
+
+\begin{verbatim}
+... 
+... 
+7. lock(mutex)
+8. comp++;
+9. unlock(mutex); 
+...
+\end{verbatim}
+
+y $P_1$ así: 
+
+\begin{verbatim}
+... 
+... 
+9. lock(mutex)
+10. comp--;
+11. unlock(mutex); 
+...
+\end{verbatim}
+
+El escenario de ejecución se verá algo así: 
+
+
+\begin{table}[h!]
+\centering
+\renewcommand{\arraystretch}{1.3} % Increases row height for readability
+\begin{tabular}{|c|c|c|p{5cm}|p{5cm}|}
+\hline
+\textbf{Step} & \textbf{Proc.} & \textbf{Line} & \textbf{Action / State} & \textbf{Note} \\
+\hline
+1 & $P_0$ & 7 & \texttt{while (mutex->flag == 1)} & Checks flag. It is \textbf{0}. Loop condition is false. \\
+\hline
+2 & \textbf{Sched} & - & \textit{Context Switch} & $P_0$ is preempted \textbf{before} writing. CPU switches to $P_1$. \\
+\hline
+3 & $P_1$ & 7 & \texttt{while (mutex->flag == 1)} & Checks flag. It is \textbf{still 0}. \\
+\hline
+4 & $P_1$ & 9 & \texttt{mutex->flag = 1;} & $P_1$ sets flag to 1. \\
+\hline
+5 & $P_1$ & - & \textbf{Enters Critical Section} & $P_1$ believes it has the lock. \\
+\hline
+6 & \textbf{Sched} & - & \textit{Context Switch} & CPU switches back to $P_0$. \\
+\hline
+7 & $P_0$ & 9 & \texttt{mutex->flag = 1;} & $P_0$ resumes. Overwrites flag to 1. \\
+\hline
+8 & $P_0$ & - & \textbf{Enters Critical Section} & \textbf{Mutual Exclusion Violated.} Both are in CS. \\
+\hline
+\end{tabular}
+\caption{Escenario de fallo en Simple Flag (Race Condition)}
+\label{tab:race_condition}
+\end{table}
+
+\pagebreak 
+
+\section*{Resumen de Algoritmos de Exclusión Mutua}
+
+A continuación se detallan los mecanismos solicitados para gestionar secciones críticas (CS), desde soluciones por hardware simple hasta integraciones con el Sistema Operativo.
+
+\subsection*{1. Deshabilitar Interrupciones (CLI/STI)}
+\textbf{Concepto:} El proceso impide que el planificador (scheduler) lo desalojen deshabilitando las interrupciones del procesador antes de entrar a la CS.
+\textbf{Pros/Contras:} Simple, pero peligroso (un bucle infinito cuelga el sistema). Solo funciona en monoprocesadores.
+
+\begin{lstlisting}[language=C, title={CLI / STI}]
+void lock() {
+    DisableInterrupts(); // CLI
+}
+
+void unlock() {
+    EnableInterrupts();  // STI
+}
+\end{lstlisting}
+
+\subsection*{2. Simple Flag (Variable de Bloqueo)}
+\textbf{Concepto:} Usa una variable compartida como semáforo binario.
+\textbf{Pros/Contras:} \textbf{Incorrecto}. Sufre de condición de carrera (Race Condition) entre la lectura y la escritura del flag.
+
+\begin{lstlisting}[language=C, title={Simple Flag (Fallido)}]
+void lock(lock_t *mutex) {
+    while (mutex->flag == 1) ; // Espera ocupada (Spin)
+    mutex->flag = 1;           // NO es atomico respecto al while
+}
+\end{lstlisting}
+
+\subsection*{3. Test-And-Set (TAS)}
+\textbf{Concepto:} Instrucción de hardware \textbf{atómica}. Lee el valor viejo y escribe uno nuevo simultáneamente.
+\textbf{Pros/Contras:} Correcto y simple. Genera \textit{Espera Ocupada} (gasta CPU inútilmente). Puede causar inanición (starvation).
+
+\begin{lstlisting}[language=C, title={Test-And-Set Spinlock}]
+// Retorna valor anterior. Si era 0, lo pone a 1 y retorna 0 (Exito).
+// Si era 1, lo deja en 1 y retorna 1 (Fallo).
+void lock(lock_t *lock) {
+    while (TestAndSet(&lock->flag, 1) == 1)
+        ; // spin
+}
+\end{lstlisting}
+
+\subsection*{4. Algoritmo de Dekker}
+\textbf{Concepto:} Solución puramente software para 2 procesos. Usa banderas de
+intención (`wants\_to\_enter`) y una variable de turno (`turn`) para desempatar.
+\textbf{Pros/Contras:} Correcto sin soporte HW especial. Código complejo y difícil de escalar a $N$ procesos.
+
+\begin{lstlisting}[language=C, title={Dekker (Lógica para P0)}]
+flag[0] = true; // P0 quiere entrar
+while (flag[1]) { // Si P1 tambien quiere
+    if (turn != 0) { // Si no es mi turno
+        flag[0] = false; // Renuncio a la intencion
+        while (turn != 0); // Espero turno
+        flag[0] = true; // Reintento
+    }
+}
+// CS...
+turn = 1; flag[0] = false; // Unlock
+\end{lstlisting}
+
+\subsection*{5. Algoritmo de Peterson}
+\textbf{Concepto:} Refinamiento de Dekker. También para 2 procesos (generalizable). Es más breve: un proceso cede cortésmente el turno al otro antes de intentar entrar.
+\textbf{Pros/Contras:} Correcto y simple (software). Espera ocupada.
+
+\begin{lstlisting}[language=C, title={Peterson (Código para proceso 'i')}]
+int other = 1 - i;
+flag[i] = true;    // Quiero entrar
+turn = other;      // Cedo el paso
+// Espero si el otro quiere Y es su turno
+while (flag[other] == true && turn == other)
+    ; 
+\end{lstlisting}
+
+\subsection*{6. Compare-And-Swap (CAS)}
+\textbf{Concepto:} Instrucción atómica más poderosa que TAS. Compara el valor en memoria con uno esperado; si coinciden, lo actualiza.
+\textbf{Pros/Contras:} Base de algoritmos \textit{wait-free}.
+
+\begin{lstlisting}[language=C, title={CAS Lock}]
+void lock(lock_t *l) {
+    // Mientras valor sea 1 (ocupado), reintenta poner 1.
+    // Solo sale si valor era 0 y logrò cambiarlo a 1.
+    while (CompareAndSwap(&l->flag, 0, 1) == 1) 
+        ;
+}
+\end{lstlisting}
+
+\subsection*{7. Load-Linked / Store-Conditional (LL/SC)}
+\textbf{Concepto:} Par de instrucciones (típico en RISC como ARM/MIPS). `LoadLinked` lee. `StoreConditional` escribe solo si nadie más escribió en esa dirección desde la lectura.
+\textbf{Pros/Contras:} Evita el problema ABA (a veces). Permite construir otras primitivas atómicas.
+
+\begin{lstlisting}[language=C, title={LL/SC Lock}]
+void lock(lock_t *l) {
+    while (1) {
+        int ptr = LoadLinked(&l->flag);
+        if (ptr == 1) continue; // Esta ocupado, reintentar
+        if (StoreConditional(&l->flag, 1) == 1) break; // Exito
+    }
+}
+\end{lstlisting}
+
+\subsection*{8. Fetch-And-Add (Ticket Lock)}
+\textbf{Concepto:} Atómicamente incrementa un valor y retorna el viejo. Se usa para dar "números de turno" (tickets).
+\textbf{Pros/Contras:} Garantiza \textbf{Justicia} (Fairness/FIFO). Nadie espera para siempre si los hilos avanzan.
+
+\begin{lstlisting}[language=C, title={Ticket Lock}]
+void lock(lock_t *l) {
+    int myturn = FetchAndAdd(&l->ticket);
+    while (l->turn != myturn)
+        ; // Spin esperando que 'turn' llegue a mi numero
+}
+void unlock(lock_t *l) {
+    l->turn++;
+}
+\end{lstlisting}
+
+\subsection*{9. TAS con Yield (Ceder)}
+\textbf{Concepto:} Variante de Spinlock. Si el lock está ocupado, en lugar de quemar todo el cuanto de tiempo del CPU (spin), el hilo llama al OS (`yield`) para desprogramarse.
+\textbf{Pros/Contras:} Mejor desempeño que spin puro, pero aún ineficiente si hay muchos hilos esperando (context switch overhead).
+
+\begin{lstlisting}[language=C, title={Test-And-Set con Yield}]
+void lock(lock_t *l) {
+    while (TestAndSet(&l->flag, 1) == 1)
+        yield(); // Cede la CPU al siguiente proceso listo
+}
+\end{lstlisting}
+
+\subsection*{10. TAS con Park (Colas de espera)}
+\textbf{Concepto:} Solución robusta (estilo Mutex de Solaris/Linux). Si el lock está ocupado, el hilo se pone a "dormir" (`park`) en una cola explícita. `unlock` despierta (`unpark`) al siguiente.
+\textbf{Pros/Contras:} Elimina espera ocupada. Requiere soporte de OS. Costo de cambio de contexto solo al bloquearse.
+
+\begin{lstlisting}[language=C, title={Lock con Cola (Park)}]
+void lock(lock_t *l) {
+    while (TestAndSet(&l->flag, 1) == 1) {
+        guardar_en_cola(yo);
+        park(); // Duerme hasta ser despertado
+    }
+}
+void unlock(lock_t *l) {
+    l->flag = 0;
+    unpark(sacar_de_cola()); // Despierta al siguiente
+}
+\end{lstlisting}
+
+\begin{table}[h!]
+\centering
+\normalsize % Reduce el tamaño de la fuente
+\setlength{\tabcolsep}{2pt} % Reduce el espacio entre columnas drásticamente
+
+% Comandos de color definidos previamente
+\newcommand{\si}{\textcolor{green!50!black}{\checkmark}}
+\newcommand{\no}{\textcolor{red!80!black}{\textbf{\texttimes}}}
+
+\caption{Comparativa de Algoritmos (Resumen)}
+\label{tab:mutex_comparison_small}
+
+\begin{tabular}{@{} l c c c c c c c @{}} 
+\toprule
+\textbf{Algoritmo} & 
+\textbf{Corr.} & 
+\textbf{Justo} & 
+\textbf{Perf.} & 
+\textbf{Busy} & 
+\textbf{HW?} & 
+\textbf{Multi} & 
+\textbf{$>$2} \\ 
+ & & & & \textbf{Wait} & & \textbf{Core} & \textbf{Proc} \\
+\midrule
+
+% Grupo 1: Software
+\textbf{1. CLI/STI}       & \si(Uni) & \no & Malo & \no & \si & \no & \no \\ 
+\textbf{2. Simple Flag}   & \no      & --  & --   & \si & \no & \no & \si \\ 
+\textbf{3. Dekker}        & \si      & \si & Med  & \si & \no & \si & \no \\ 
+\textbf{4. Peterson}      & \si      & \si & Med  & \si & \no & \si & \no \\ 
+
+\addlinespace 
+% Grupo 2: Hardware Spinlocks
+\textbf{5. Test-And-Set}  & \si & \no & Bajo & \si & \si & \si & \si \\ 
+\textbf{6. CAS}           & \si & \no & Med  & \si & \si & \si & \si \\ 
+\textbf{7. LL / SC}       & \si & \no & Med  & \si & \si & \si & \si \\ 
+\textbf{8. Fetch\&Add}    & \si & \si & Bueno& \si & \si & \si & \si \\ 
+
+\addlinespace 
+% Grupo 3: OS Integration
+\textbf{9. TS + Yield}    & \si & \no & Med  & Parcial & \si & \si & \si \\ 
+\textbf{10. TS + Park}    & \si & \si & Alto & \no     & \si & \si & \si \\ 
+
+\bottomrule
+\end{tabular}
+
+\vspace{0.1cm}
+\raggedright{\tiny \textbf{Ref:} Corr=¿Correcto?, Perf=Desempeño, Busy Wait=¿Espera Ocupada?}
+\end{table}
+
+
+\pagebreak 
+
+\pagebreak
+\section{Practico Persistencia}
+
+\noindent % Evita la sangría de la primera línea
+\textbf{Ejercicio 1.} El disco Seagate Exos 7E8 de 8 TiB e intefaz SAS tiene una velocidad de rotación de 7200 RPM, 4.16 ms de latencia de búsqueda y 215 MiB/s de tasa de transferencia.
+
+\begin{enumerate}
+    \item[(a)] Indicar cuantos $ms$ tarda en dar una vuelta completa.
+    \item[(b)] Indicar la tasa de transferencia de lectura al azar de bloques de 4096 bytes.
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

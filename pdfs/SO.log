@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  11 NOV 2025 16:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  16 NOV 2025 16:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1682,7 +1682,113 @@ Overfull \hbox (1.64113pt too wide) in paragraph at lines 4199--4199
 []  \OT1/ntxtt/m/n/10.95 1    |  dira, a1, a2, a3  | a a1 a1 a2 a2 a3 a3 |# cada file ocupa 2 data blocks[] 
  []
 
-[86] [87] [88] [89] [90] [91] [92] 
+[86] [87] [88] [89] [90] [91] [92] [93]
+Underfull \hbox (badness 10000) in paragraph at lines 4649--4649
+[]|\OT1/ntxtt/m/n/12 while (mutex->flag ==
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4653--4653
+[]|\OT1/ntxtt/m/n/12 while (mutex->flag ==
+ []
+
+[94] [95]
+Package textcomp Info: Symbol \textminus not provided by
+(textcomp)             font family ntxtlf in TS1 encoding.
+(textcomp)             Default family used instead on input line 4696.
+Package textcomp Info: Symbol \textminus not provided by
+(textcomp)             font family ntxtlf in TS1 encoding.
+(textcomp)             Default family used instead on input line 4697.
+
+Overfull \hbox (11.4352pt too wide) in paragraph at lines 4702--4704
+\OT1/minntx/m/n/12 mult[]aneamente. \OT1/ntxtlf/b/n/12 Pros/-Con-tras: \OT1/minntx/m/n/12 Cor-recto y sim-ple. Gen-era \OT1/ntxtlf/m/it/12 Es-pera Ocu-pada \OT1/minntx/m/n/12 (gasta CPU in^^Sutilmente).
+ []
+
+
+Overfull \hbox (27.05003pt too wide) in paragraph at lines 4706--4707
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[96]
+Package textcomp Info: Symbol \textminus not provided by
+(textcomp)             font family ntxtlf in TS1 encoding.
+(textcomp)             Default family used instead on input line 4709.
+
+Overfull \hbox (15.56833pt too wide) in paragraph at lines 4715--4718
+\OT1/ntxtlf/b/n/12 Concepto: \OT1/minntx/m/n/12 Soluci[]on pu-ra-mente soft-ware para 2 pro-ce-sos. Usa ban-deras de in-tenci[]on (`wants[]to[]enter`)
+ []
+
+Package textcomp Info: Symbol \textminus not provided by
+(textcomp)             font family ntxtlf in TS1 encoding.
+(textcomp)             Default family used instead on input line 4737.
+[97]
+
+./SO.tex:4752: LaTeX Error: Invalid UTF-8 byte sequence (�\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4752     // Solo sale si valor era 0 y logrò 
+                                                cambiarlo a 1.
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./SO.tex:4752: LaTeX Error: Invalid UTF-8 byte "B2.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4752     // Solo sale si valor era 0 y logrò 
+                                                cambiarlo a 1.
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+Package textcomp Info: Symbol \textminus not provided by
+(textcomp)             font family ntxtlf in TS1 encoding.
+(textcomp)             Default family used instead on input line 4753.
+Package textcomp Info: Symbol \textminus not provided by
+(textcomp)             font family ntxtlf in TS1 encoding.
+(textcomp)             Default family used instead on input line 4765.
+Package textcomp Info: Symbol \textminus not provided by
+(textcomp)             font family ntxtlf in TS1 encoding.
+(textcomp)             Default family used instead on input line 4767.
+Package textcomp Info: Symbol \textminus not provided by
+(textcomp)             font family ntxtlf in TS1 encoding.
+(textcomp)             Default family used instead on input line 4778.
+Package textcomp Info: Symbol \textminus not provided by
+(textcomp)             font family ntxtlf in TS1 encoding.
+(textcomp)             Default family used instead on input line 4779.
+Package textcomp Info: Symbol \textminus not provided by
+(textcomp)             font family ntxtlf in TS1 encoding.
+(textcomp)             Default family used instead on input line 4783.
+[98]
+Package textcomp Info: Symbol \textminus not provided by
+(textcomp)             font family ntxtlf in TS1 encoding.
+(textcomp)             Default family used instead on input line 4793.
+Package textcomp Info: Symbol \textminus not provided by
+(textcomp)             font family ntxtlf in TS1 encoding.
+(textcomp)             Default family used instead on input line 4804.
+Package textcomp Info: Symbol \textminus not provided by
+(textcomp)             font family ntxtlf in TS1 encoding.
+(textcomp)             Default family used instead on input line 4810.
+LaTeX Font Info:    Font shape `TS1/ntxtlf/b/n' will be
+(Font)              scaled to size 12.0pt on input line 4841.
+LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
+(Font)              scaled to size 6.0pt on input line 4862.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[99] [100] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./SO.aux)
  ***********
@@ -1693,22 +1799,31 @@ L3 programming layer <2020/03/25>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package rerunfilecheck Info: File `SO.out' has not changed.
-(rerunfilecheck)             Checksum: EA7608C8B3C2B8621A0B55B6931516DD;12107.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `SO.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `SO.out':
+(rerunfilecheck)             Before: EA7608C8B3C2B8621A0B55B6931516DD;12107
+(rerunfilecheck)             After:  555E117E266C8D7BFCF4A688AF3CF34A;12260.
  ) 
 Here is how much of TeX's memory you used:
- 45689 strings out of 474222
- 1027773 string characters out of 5748733
+ 45899 strings out of 474222
+ 1030629 string characters out of 5748733
  1958975 words of memory out of 5000000
- 66849 multiletter control sequences out of 15000+600000
- 615453 words of font info for 167 fonts, out of 8000000 for 9000
+ 66941 multiletter control sequences out of 15000+600000
+ 617676 words of font info for 171 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,19n,107p,770b,1569s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txbtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexas.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on SO.pdf (92 pages, 406559 bytes).
+ 99i,19n,107p,770b,2015s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txbtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexas.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
+Output written on SO.pdf (100 pages, 447901 bytes).
 PDF statistics:
- 980 PDF objects out of 1000 (max. 8388607)
- 823 compressed objects within 9 object streams
- 277 named destinations out of 1000 (max. 500000)
+ 1148 PDF objects out of 1200 (max. 8388607)
+ 980 compressed objects within 10 object streams
+ 392 named destinations out of 1000 (max. 500000)
  733 words of extra memory for PDF output out of 10000 (max. 10000000)
 

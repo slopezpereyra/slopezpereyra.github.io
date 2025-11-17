@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1762890954.90229 "SO.tex" "SO.pdf" "SO" 1762890956.19085 2
+["pdflatex"] 1763321411.47383 "SO.tex" "SO.pdf" "SO" 1763321414.33151 2
   "/etc/texmf/web2c/texmf.cnf" 1740662799.63242 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc" 1422827479 2083 60e36f8eac802fcaf19eabe2633b406e ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -319,16 +319,18 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1636152094 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc" 1529098226 3124 3813fd4c981d99822890a2861b0d274c ""
+  "/usr/share/texmf/fonts/tfm/public/tex-gyre/ts1-qtmb.tfm" 1480098718 1608 bde4475c6eb5aa292519d95aa26b6413 ""
   "/usr/share/texmf/fonts/tfm/public/tex-gyre/ts1-qtmr.tfm" 1480098718 1600 20cdf11dab97d5d39e847571f9314407 ""
   "/usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb" 1740670961.83023 136101 f533469f523533d38317ab5729d00c8a ""
   "/usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb" 1740670961.90823 167085 68de377d2744a68a88fa40a1f610615a ""
+  "/usr/share/texmf/fonts/type1/public/tex-gyre/qtmb.pfb" 1480098745 131776 4be3e220f990dc716f91bb7965c09237 ""
   "/usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb" 1480098745 133302 8dca243a80ecf4cfe00077d4bd995bd7 ""
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1740670969.59643 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1740670991 8214096 2cc5ed7d441cd7dd7f6cf9e30d4bb5a5 ""
-  "SO.aux" 1762890956.09285 9709 d574e44a78ddb2e9a91d59756068d2cf "pdflatex"
-  "SO.out" 1762890956.09385 12107 ea7608c8b3c2b8621a0b55b6931516dd "pdflatex"
-  "SO.tex" 1762890953.16884 175463 57e24f0a27a6b9d0347480b6bfd923c2 ""
+  "SO.aux" 1763321414.12534 10335 25a83416938563f65bbf61a1c3d040e9 "pdflatex"
+  "SO.out" 1763321414.12634 12260 555e117e266c8d7bfcf4a688af3cf34a "pdflatex"
+  "SO.tex" 1763321410.02979 189840 652446d647a54b2f13295185cea48844 ""
   (generated)
   "SO.aux"
   "SO.log"
