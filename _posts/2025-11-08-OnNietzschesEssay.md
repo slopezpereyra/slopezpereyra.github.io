@@ -335,7 +335,7 @@ our own nature are ultimately unfathomable to us.
   <figcaption>Remedios Varo's "Embroidering the Mantle" shows imprisoned girls
         forced to weave the fabric of reality, which flows out the tower wall 
         and forms the world. Our neurons may be understood to play the role of 
-        the girls.</figcaption>
+        the girls, our sense being the slits through which the fabric slips.</figcaption>
 </figure>
 
 I have little else to say on the matter. I should reiterate how profound I
