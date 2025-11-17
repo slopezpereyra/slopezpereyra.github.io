@@ -1,0 +1,45 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Preamble: The Inner Product as a "Similarity" Engine}{2}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Intuition from Vectors}{2}{subsection.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Extending to Functions}{2}{subsection.1.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces When $f(t)$ and $g(t)$ are "in sync," their product $f(t)g(t)$ is always positive, leading to a large positive integral.}}{3}{figure.caption.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces For orthogonal functions like $\sin (t)$ and $\cos (t)$ (over $[-\pi , \pi ]$), the positive and negative areas of their product cancel out, integrating to zero.}}{3}{figure.caption.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces When $f(t)$ and $g(t)$ are "out of sync," their product $f(t)g(t)$ is always negative, leading to a large negative integral.}}{3}{figure.caption.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3}From Inner Product to Convolution}{4}{subsection.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}The Problem with Fourier: The "Why"}{5}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}The Fourier Transform: A "What," Not a "When"}{5}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The Problem:}{5}{section*.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces The Fourier Transform identifies \textit  {what} frequencies are present, but not \textit  {when} or \textit  {where} they occur in the signal.}}{5}{figure.caption.6}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:fourier_limit}{{4}{5}{The Fourier Transform identifies \textit {what} frequencies are present, but not \textit {when} or \textit {where} they occur in the signal}{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}The Gabor Transform: A First Attempt}{5}{subsection.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The New Problem:}{6}{section*.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}The Wavelet Solution: A "What" \textit  {and} a "When"}{6}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}The Mother Wavelet and her "Children"}{6}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{This is the key insight:}{6}{section*.8}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces How STFT (left) and Wavelets (right) "see" the time-frequency plane. Wavelets provide high time resolution for high frequencies and high frequency resolution for low frequencies.}}{7}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:tiling}{{5}{7}{How STFT (left) and Wavelets (right) "see" the time-frequency plane. Wavelets provide high time resolution for high frequencies and high frequency resolution for low frequencies}{figure.caption.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}The Continuous Wavelet Transform (CWT)}{7}{subsection.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}CWT Code Example: The Chirp Signal}{7}{subsection.3.3}\protected@file@percent }
+\newlabel{lst:cwt}{{1}{7}{Python code for CWT of a chirp signal}{lstlisting.1}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1}{\ignorespaces Python code for CWT of a chirp signal}}{7}{lstlisting.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces A scaleogram of a "chirp" signal (where frequency increases). Unlike Fourier, the CWT clearly shows the frequency changing as a function of time.}}{8}{figure.caption.10}\protected@file@percent }
+\newlabel{fig:scaleogram}{{6}{8}{A scaleogram of a "chirp" signal (where frequency increases). Unlike Fourier, the CWT clearly shows the frequency changing as a function of time}{figure.caption.10}{}}
+\@writefile{toc}{\contentsline {paragraph}{Interpreting the Output:}{8}{section*.11}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces The Fourier transform of the signal from Listing \ref {lst:cwt}. All time information is lost.}}{9}{figure.caption.12}\protected@file@percent }
+\newlabel{fig:chirp_fourier}{{7}{9}{The Fourier transform of the signal from Listing \ref {lst:cwt}. All time information is lost}{figure.caption.12}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}The Discrete Wavelet Transform (DWT)}{9}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}The Filter Bank Intuition}{9}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Multi-Level Decomposition}{9}{subsection.4.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces A 2-level DWT decomposition. The process is iterated on the "Approximation" (cA) coefficients.}}{10}{figure.caption.13}\protected@file@percent }
+\newlabel{fig:dwt_diagram}{{8}{10}{A 2-level DWT decomposition. The process is iterated on the "Approximation" (cA) coefficients}{figure.caption.13}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}DWT Code Example: Denoising}{10}{subsection.4.3}\protected@file@percent }
+\newlabel{lst:dwt}{{2}{10}{Python code for DWT denoising}{lstlisting.2}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2}{\ignorespaces Python code for DWT denoising}}{10}{lstlisting.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces The output of Listing \ref {lst:dwt}, showing the power of DWT thresholding to recover a clean signal from noise.}}{11}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:denoising}{{9}{11}{The output of Listing \ref {lst:dwt}, showing the power of DWT thresholding to recover a clean signal from noise}{figure.caption.14}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion: Which to Use?}{11}{section.5}\protected@file@percent }
+\gdef \@abspage@last{12}

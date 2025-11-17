@@ -1,0 +1,20 @@
+\contentsline {section}{\numberline {1}Preamble: The Inner Product as a "Similarity" Engine}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Intuition from Vectors}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Extending to Functions}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}From Inner Product to Convolution}{4}{subsection.1.3}%
+\contentsline {section}{\numberline {2}The Problem with Fourier: The "Why"}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}The Fourier Transform: A "What," Not a "When"}{5}{subsection.2.1}%
+\contentsline {paragraph}{The Problem:}{5}{section*.5}%
+\contentsline {subsection}{\numberline {2.2}The Gabor Transform: A First Attempt}{5}{subsection.2.2}%
+\contentsline {paragraph}{The New Problem:}{6}{section*.7}%
+\contentsline {section}{\numberline {3}The Wavelet Solution: A "What" \textit {and} a "When"}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}The Mother Wavelet and her "Children"}{6}{subsection.3.1}%
+\contentsline {paragraph}{This is the key insight:}{6}{section*.8}%
+\contentsline {subsection}{\numberline {3.2}The Continuous Wavelet Transform (CWT)}{7}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}CWT Code Example: The Chirp Signal}{7}{subsection.3.3}%
+\contentsline {paragraph}{Interpreting the Output:}{8}{section*.11}%
+\contentsline {section}{\numberline {4}The Discrete Wavelet Transform (DWT)}{9}{section.4}%
+\contentsline {subsection}{\numberline {4.1}The Filter Bank Intuition}{9}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Multi-Level Decomposition}{9}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}DWT Code Example: Denoising}{10}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Conclusion: Which to Use?}{11}{section.5}%

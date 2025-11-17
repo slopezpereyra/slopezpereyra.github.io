@@ -1,0 +1,204 @@
+---
+title: 
+categories: [Science]
+---
+
+# Preamble: The Inner Product as a measure of \"Similarity\" 
+
+Before we dive into *why* we need wavelets, we must first understand the central
+mathematical tool that all ofthese transforms (including Fourier) are built on:
+the **inner product**.
+
+In 2D, the inner product (or dot product) of $\vec{v}$ and $\vec{w}$ is:
+
+$$\vec{v} \cdot \vec{w} = |\vec{v}| |\vec{w}| \cos(\theta)$$ 
+
+The reader probably recalls from high-school trigonometry that: 
+
+-   If $\vec{v}$ and $\vec{w}$ point in the same
+    direction, $\theta=0$ and $\cos(\theta)=1$. The inner product is at
+    its positive maximum.
+
+-   If they are perpendicular (orthogonal),
+    $\theta=90^\circ$ and $\cos(\theta)=0$. The inner product is zero.
+
+-   If they point in opposite directions,
+    $\theta=180^\circ$ and $\cos(\theta)=-1$. The inner product is at
+    its negative maximum.
+
+## Extending to Functions
+
+Now, a function $f(t)$ can be understood as a vector of infinite dimensionality.
+It should be clear then that the inner product converges to a convolution as the
+number of dimensions increase, and most textbooks include a proof of this fact.
+
+
+$$\langle f, g \rangle = \int_{-\infty}^{\infty} f(t) g(t) dt$$ 
+
+This effectively measures how \"similar\" the two functions are, in the
+following sense:
+
+-   If $f(t)$ and $g(t)$ are \"in sync\" (where $f$ is
+    positive, $g$ is positive; where $f$ is negative, $g$ is negative),
+    their product $f(t)g(t)$ will be positive everywhere. The integral
+    of all this positive area will be a **large positive number**.
+
+-   If $f(t)$ and $g(t)$ are \"out of sync\" (they
+    are orthogonal), the product $f(t)g(t)$ will have exactly as much
+    positive area as it has negative area. The integral of these
+    cancelling areas will be **zero**.
+
+-   If $f(t)$ and $g(t)$ are \"perfectly opposite\"
+    (where $f$ is positive, $g$ is negative), their product $f(t)g(t)$
+    will be negative everywhere. The integral of all this negative area
+    will be a **large negative number**.
+
+Now, consider the definition of the continuous wavelet transform and the Fourier
+transform:
+
+$$\text{CWT: } W_f(u, s) =
+\int_{-\infty}^{\infty} f(t) \psi^* \left( \frac{t-u}{s} \right) dt$$
+
+
+$$\text{Fourier: } \hat{f}(\omega) = \int_{-\infty}^{\infty} f(t) e^{-i\omega t}
+dt$$ 
+
+It is not important for now if you understand what the functions involved
+represent: it suffices for the moment to appreciate that these transforms define
+**families of inner products**. They do not ask
+\"How similar is our signal $f(t)$ to the function $\psi(t)$?\",
+but rather:
+
+\"How similar is our signal $f(t)$ to the wavelet $\psi(t)$\...
+
+-   \...when the wavelet is at position $u_1$ and scale $s_1$?\"
+
+-   \...when the wavelet is at position $u_2$ and scale $s_1$?\"
+
+-   \...when the wavelet is at position $u_3$ and scale $s_2$?\"
+
+-   \...for all possible $u$ and $s$?\"
+
+The resulting \"scaleogram\" (or \"spectrogram\" for Fourier) is a giant map
+where every single pixel's brightness is the result of one inner product,
+telling you the \"similarity score\" at that specific time ($u$) and scale
+($s$). In summary, an inner product is a similarity score; a transform is a map
+of similarity scores.
+
+# The Problem with Fourier: The \"Why\"
+
+## The Fourier Transform: A \"What,\" Not a \"When\"
+
+The Fourier Transform is built upon the fact that any complex signal $f(t)$ can
+be perfectly reconstructed as a sum of simple sine and cosine waves (or complex
+exponentials).
+
+The transform $\hat{f}(\omega)$ answers the question: \"How much of
+frequency $\
+omega$ is in my signal?\"
+$$\hat{f}(\omega) = \int_{-\infty}^{\infty} f(t) e^{-i\omega t} dt$$
+
+This is, as we just discussed, an inner product. We are asking: \"How similar is
+our signal $f(t)$ to a 'pure' infinite wave $e^{-i\omega t}$?\"
+
+A fundamental problem is that the basis functions (sines and cosines) are
+infinite in time. They have perfect \"frequency localization\" (we know exactly
+what frequency they are) but zero \"time localization\" (they exist everywhere,
+so we don't know *when* they are). 
+
+## The Gabor Transform: A First Attempt
+
+The first logical step to fix this is the **Short-Time Fourier Transform
+(STFT)**, or Gabor Transform. The idea is simple:
+
+1.  Choose a \"window\" function $g(t)$ (like a Gaussian) that is
+    localized in time.
+
+2.  Slide this window along your signal $f(t)$.
+
+3.  Perform a Fourier Transform only on the \"windowed\" part of the
+    signal.
+
+$$\text{STFT}_f(u, \omega) = \int_{-\infty}^{\infty} f(t) g(t-u) e^{-i\omega t} dt$$ 
+
+This works and produces a valid spectrogram, i.e. a representation of
+frequency components over time. However, it introduces the *Gabor Uncertainty
+Principle*. The size of our window $g(t)$ is fixed, and:
+
+-   A **narrow window** gives good time localization (we know *when* it
+    happened) but poor frequency localization (the smearing from the
+    window blurs all the nearby frequencies).
+
+-   A **wide window** gives good frequency localization (we can resolve
+    close frequencies) but poor time localization (we only know it
+    happened \"sometime in this wide window\").
+
+This fixed window size is the critical flaw. We can't analyze
+high-frequency (short-lived) and low-frequency (long-lived) events with
+the same \"ruler.\" We need a more flexible tool.
+
+# The Wavelet Solution
+
+Wavelet analysis solves the fixed-window problem by using a \"window\" (the
+wavelet) that can *stretch* and *shrink*.
+
+We start with a single \"Mother Wavelet\" function, $\psi(t)$. This
+function must be localized in both time and frequency and must have a
+zero mean (it must be a \"wave\").
+
+$$\int_{-\infty}^{\infty} \psi(t) dt = 0$$ 
+
+A classic example is the Morlet wavelet, which is just a sine wave inside a
+Gaussian window. From this one \"mother,\" we generate all our basis functions
+(the \"children\") by two operations:
+
+1.  **Translation ($u$):** Sliding the wavelet in time, just like in
+    STFT.
+
+2.  **Scaling ($s$):** Stretching or shrinking the wavelet.
+
+This gives us the wavelet family $\psi_{u,s}(t)$:
+$$\psi_{u,s}(t) = \frac{1}{\sqrt{s}} \psi \left( \frac{t-u}{s} \right)$$
+
+-   $u$: The position (time).
+
+-   $s$: The scale (inverse of frequency).
+
+-   $\frac{1}{\sqrt{s}}$: A normalization factor to ensure all wavelets have the
+same \"magnitude.\"
+
+Going back to our analogy with a \"ruler\" which we slide across our signal:
+
+-   For a small $s$, the wavelet is *compressed* (shrunk). This gives a very
+narrow, high-frequency \"ruler\" for pinpointing the exact time of a
+high-frequency spike.
+-   For a large $s$, the wavelet is *stretched*. This gives a very wide,
+low-frequency \"ruler\" for analyzing the *frequency* of a long, slow
+oscillation.
+
+## The Continuous Wavelet Transform (CWT)
+
+The CWT is the full, mathematically-rich version of the wavelet
+transform. It is defined as the inner product of our signal $f(t)$ with
+the wavelet family $\psi_{u,s}(t)$ for *all possible* scales $s$ and
+translations $u$.
+
+$$W_f(u, s) = \langle f, \psi_{u,s} \rangle = \int_{-\infty}^{\infty} f(t) \frac{1}{\sqrt{s}} \psi^* \left( \frac{t-u}{s} \right) dt$$
+
+The result, $W_f(u,s)$, is a 2D map of \"similarity scores,\" termed a
+scleogram. It shows the energy (the squared coefficient) of the signal at every
+time $u$ and scale $s$.
+
+# The Discrete Wavelet Transform (DWT)
+
+The reader should have noticed immediately from its definition that the CWT
+involves a huge computation. For every time step, we calculate an inner product
+with hundreds of scales!
+
+The *Discrete Wavelet Transform (DWT)* provides a fast, efficient, and
+non-redundant way to compute wavelet coefficients. It is the workhorse
+behind JPEG2000 image compression, denoising, and other data analysis tools 
+based on wavelets. The DWT is a very complex algorithm which is worth studying
+on its own, but falls beyond the scope of this entry. I encourage
+to read about it on their own.
+

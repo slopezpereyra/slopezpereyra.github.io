@@ -1,0 +1,378 @@
+% ===================================================================
+% A Primer on Wavelet Analysis: From Intuition to Application
+% This document is a self-contained LaTeX file.
+% ===================================================================
+
+% --- 1. PREAMBLE ---
+
+% --- Principle 1: Document Class ---
+% We use the 'article' class as this is a standard academic-style document.
+\documentclass[11pt, a4paper]{article}
+
+% --- Principle 2: Universal Preamble Block ---
+% This block sets up page geometry, fontspec (for Noto fonts), and babel (for language).
+
+% Geometry: Standard margins for an A4 page.
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
+
+% Fontspec: The modern engine for font selection.
+\usepackage{fontspec}
+
+% Babel: Manages language-specific typesetting.
+% We set 'english' as the main language.
+\usepackage[english, bidi=basic, provide=*]{babel}
+
+% Babelprovide: Import language settings.
+\babelprovide[import, onchar=ids fonts]{english}
+
+% Babelfont: Set the document fonts to the Noto family.
+% We use Noto Sans as the main (rm) font for a clean, accessible look.
+\babelfont{rm}{Noto Sans}
+% We also set the sans-serif (sf) and mono (tt) fonts.
+\babelfont{sf}{Noto Sans}
+\babelfont{tt}{Noto Sans Mono}
+
+% --- Principle 3: Smart Package Loading ---
+% We load only the packages necessary for the document's content.
+
+% amsmath: For all mathematical equations and environments.
+\usepackage{amsmath}
+
+% booktabs: For professional-quality tables.
+\usepackage{booktabs}
+
+% listings: To format and display code blocks.
+\usepackage{listings}
+
+% xcolor: Provides colors, needed for 'listings' syntax highlighting.
+\usepackage[dvipsnames]{xcolor}
+
+% caption: For customizing captions for figures and tables.
+\usepackage{caption}
+\captionsetup{font=small, labelfont=bf}
+
+% --- Configuration for 'listings' (Python Code) ---
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codeblue}{rgb}{0.0,0.0,0.6}
+\definecolor{codebg}{rgb}{0.98,0.98,0.98}
+
+\lstdefinestyle{pythonstyle}{
+    backgroundcolor=\color{codebg},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{blue},
+    stringstyle=\color{codeblue},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    language=Python
+}
+\lstset{style=pythonstyle}
+% --- End of listings configuration ---
+
+% hyperref: For links and document references.
+% This MUST be the last package loaded.
+\usepackage[colorlinks, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+
+% --- 2. DOCUMENT METADATA ---
+\title{A Primer on Wavelet Analysis: \\ From Intuition to Application}
+\author{A Guided Introduction}
+\date{\today}
+
+% --- 3. DOCUMENT BODY ---
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This document provides a detailed, mathematically-grounded, and accessible introduction to Wavelet Analysis. We explore the limitations of the traditional Fourier Transform and motivate the development of wavelets for time-frequency analysis. We cover the theory and intuition behind the Continuous Wavelet Transform (CWT) and the Discrete Wavelet Transform (DWT), supplemented by figures and practical Python code examples.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+% --- SECTION 1: THE PROBLEM WITH FOURIER ---
+\section{The Problem with Fourier: The "Why"}
+
+\subsection{The Fourier Transform: A "What," Not a "When"}
+For decades, the cornerstone of signal analysis has been the Fourier Transform. Its core idea is to decompose a signal $f(t)$ from the time domain into its constituent frequencies in the frequency domain $F(\omega)$. For a signal $f(t)$, its Fourier Transform $\hat{f}(\omega)$ is given by:
+
+$$
+\hat{f}(\omega) = \int_{-\infty}^{\infty} f(t) e^{-i\omega t} dt
+$$
+
+This integral essentially computes the "inner product" or "similarity" of the signal $f(t)$ with a complex exponential $e^{-i\omega t}$ (a sine/cosine wave) at \textit{every} frequency $\omega$. The result, $\hat{f}(\omega)$, is the spectrum of the signal, showing which frequencies are present and their relative amplitudes.
+
+\subsection{The Localization Limitation}
+The Fourier Transform is exceptionally powerful, but it has a fundamental flaw: it loses all time-based information. The basis functions, $e^{-i\omega t}$, are sine and cosine waves that extend infinitely in time. When we calculate $\hat{f}(\omega)$, we are asking, "How much of this frequency $\omega$ exists in the signal \textit{over its entire duration}?"
+
+\textbf{Intuition:} Imagine a song that plays a C note, followed by a G note.
+\begin{itemize}
+    \item \textbf{What you hear:} C, then G.
+    \item \textbf{What Fourier sees:} A spectrum showing both C and G, but with no indication of which note was played first.
+\end{itemize}
+
+This is the \textbf{time-frequency localization problem}. The Fourier Transform gives perfect frequency resolution but zero time resolution. At the other extreme, the original signal $f(t)$ gives perfect time resolution but zero frequency resolution.
+
+% --- Directive A: Placeholder Figure ---
+\begin{figure}[htbp]
+  \centering
+  \framebox{\parbox{0.9\textwidth}{\centering
+    \vspace{4cm}
+    \textbf{Figure 5: Scaleogram of the Chirp Signal} \\
+    A 2D plot with Time on the x-axis and Frequency on the y-axis.
+    A bright, diagonal ridge is visible, starting at a low frequency
+    and moving to a high frequency as time increases.
+    \vspace{4cm}
+  }}
+  \caption{The CWT result for the chirp signal. The diagonal ridge perfectly localizes the signal's frequency content in time.}
+  \label{fig:scaleogram}
+\end{figure}
+
+The scaleogram (Fig. \ref{fig:scaleogram}) clearly shows the frequency sweeping upwards, demonstrating the CWT's power in analyzing non-stationary signals.
+
+% --- SECTION 4: CWT IN PRACTICE (CODE) ---
+\section{CWT in Practice: Python Example}
+
+We can perform CWT in Python using the \texttt{PyWavelets} library. This code generates the chirp signal (Fig. \ref{fig:chirp}) and its scaleogram (Fig. \ref{fig:scaleogram}).
+
+\begin{lstlisting}[language=Python, caption=Python code for CWT of a chirp signal., label=list:cwt]
+import numpy as np
+import matplotlib.pyplot as plt
+import pywt
+
+# 1. Generate the Chirp Signal
+sampling_period = 0.01
+t = np.arange(0, 10, sampling_period)
+# f(t) = sin(2 * pi * f(t) * t), where f(t) = t
+f_start = 1
+f_end = 10
+f_t = np.linspace(f_start, f_end, len(t))
+signal = np.sin(2 * np.pi * f_t * t)
+
+# 2. Perform Continuous Wavelet Transform (CWT)
+# We use the 'cmor' (Complex Morlet) wavelet
+# We need to define the scales to check.
+# Scales correspond to pseudo-frequencies
+total_scales = 128
+# f = pywt.scale2freq('cmor1.5-1.0', scale) / sampling_period
+# We can find scales corresponding to our frequencies
+scales = np.logspace(np.log10(f_end/f_end), np.log10(f_end/f_start), total_scales)
+scales = scales * pywt.scale2freq('cmor1.5-1.0', 1) / f_end
+
+coefficients, frequencies = pywt.cwt(signal, scales, 
+                                     'cmor1.5-1.0', 
+                                     sampling_period=sampling_period)
+power = (np.abs(coefficients)) ** 2
+
+# 3. Visualization
+# (This code would generate Fig 4 and 5)
+
+# Plot the signal (Fig 4)
+plt.figure(figsize=(10, 6))
+plt.subplot(2, 1, 1)
+plt.plot(t, signal)
+plt.title("Chirp Signal (Frequency 1Hz to 10Hz)")
+plt.xlabel("Time (s)")
+plt.grid(True)
+
+# Plot the Scaleogram (Fig 5)
+plt.subplot(2, 1, 2)
+# Frequencies are returned by cwt
+plt.imshow(power, extent=[t.min(), t.max(), frequencies.min(), frequencies.max()],
+           cmap='jet', aspect='auto', interpolation='bilinear')
+plt.title("Wavelet Scaleogram (CWT)")
+plt.ylabel("Frequency (Hz)")
+plt.xlabel("Time (s)")
+plt.tight_layout()
+plt.show()
+\end{lstlisting}
+
+% --- SECTION 5: THE DISCRETE WAVELET TRANSFORM (DWT) ---
+\section{The Discrete Wavelet Transform (DWT)}
+
+\subsection{Theory: Multi-Resolution Analysis}
+The CWT is computationally expensive and highly redundant (the coefficients are correlated). For many applications like data compression (JPEG 2000) and denoising, we don't need such high resolution.
+
+The \textbf{Discrete Wavelet Transform (DWT)} provides an efficient and compact representation. It is based on \textbf{Multi-Resolution Analysis (MRA)}, which analyzes the signal at different scales by using a \textbf{filter bank}.
+
+The DWT works by passing the signal through two complementary filters and then downsampling:
+\begin{enumerate}
+    \item \textbf{Low-Pass Filter (g):} This filter averages the signal, removing high-frequency details. The output is called the \textbf{Approximation Coefficients (cA)}. This is the "trend" or "essence" of the signal.
+    \item \textbf{High-Pass Filter (h):} This filter highlights differences, capturing the high-frequency components. The output is called the \textbf{Detail Coefficients (cD)}. This is the "noise" or "nuance."
+\end{enumerate}
+After filtering, the outputs are \textbf{downsampled by 2} (we keep only every other sample). This is possible without loss of information (due to the Nyquist theorem) and makes the transform efficient.
+
+% --- Directive A: Placeholder Figure ---
+\begin{figure}[htbp]
+  \centering
+  \framebox{\parbox{0.9\textwidth}{\centering
+    \vspace{4cm}
+    \textbf{Figure 6: DWT Filter Bank (1 Level)} \\
+    A diagram showing the input signal $f(t)$ splitting into two branches. \\
+    - Top branch: Low-Pass Filter $[g]$ -> Downsample [$\downarrow 2$] -> Output [cA] \\
+    - Bottom branch: High-Pass Filter $[h]$ -> Downsample [$\downarrow 2$] -> Output [cD]
+    \vspace{4cm}
+  }}
+  \caption{A single-level Discrete Wavelet Transform decomposition.}
+  \label{fig:dwt_filter_bank}
+\end{figure}
+
+This process is hierarchical. To get the next "level" of decomposition, we take the Approximation coefficients (cA) and pass \textit{them} through the same filter bank.
+
+% --- Directive A: Placeholder Figure ---
+\begin{figure}[htbp]
+  \centering
+  \framebox{\parbox{0.9\textwidth}{\centering
+    \vspace{6cm}
+    \textbf{Figure 7: Multi-Level DWT (Wavelet Tree)} \\
+    A tree diagram: \\
+    Level 0: Signal \\
+    Level 1: -> [cA1] and [cD1] \\
+    Level 2: [cA1] splits -> [cA2] and [cD2] \\
+    Level 3: [cA2] splits -> [cA3] and [cD3] \\
+    The final coefficients are [cA3, cD3, cD2, cD1]
+    \vspace{6cm}
+  }}
+  \caption{A 3-level DWT decomposition. The signal is broken down into a low-resolution approximation (cA3) and details at various scales (cD1, cD2, cD3).}
+  \label{fig:dwt_tree}
+\end{figure}
+
+The \textbf{Inverse DWT (IDWT)} perfectly reconstructs the original signal by reversing the process: upsampling and passing through synthesis filters.
+
+% --- SECTION 6: DWT IN PRACTICE (DENOISING) ---
+\section{DWT in Practice: Signal Denoising}
+
+A powerful application of the DWT is denoising. The intuition is that:
+\begin{itemize}
+    \item \textbf{Real signal:} Most of its energy is concentrated in a few large Approximation coefficients.
+    \item \textbf{Noise:} Its energy is spread out across all Detail coefficients at all scales.
+\end{itemize}
+Therefore, we can "denoise" a signal by:
+\begin{enumerate}
+    \item \textbf{Decompose:} Perform a DWT on the noisy signal.
+    \item \textbf{Threshold:} Set all the small Detail coefficients (cD) to zero. This removes the noise while keeping the main signal energy intact. This is called "thresholding."
+    \item \textbf{Reconstruct:} Perform an IDWT on the modified coefficients.
+\end{enumerate}
+
+% --- Directive A: Placeholder Figure ---
+\begin{figure}[htbp]
+  \centering
+  \framebox{\parbox{0.9\textwidth}{\centering
+    \vspace{4cm}
+    \textbf{Figure 8: Noisy Signal} \\
+    A plot of a "step" signal (e.g., 0 for a while, then 1)
+    with significant random noise added.
+    \vspace{4cm}
+  }}
+  \caption{The input signal: a clean step function corrupted by noise.}
+  \label{fig:noisy_signal}
+\end{figure}
+
+% --- Directive A: Placeholder Figure ---
+\begin{figure}[htbp]
+  \centering
+  \framebox{\parbox{0.9\textwidth}{\centering
+    \vspace{4cm}
+    \textbf{Figure 9: Denoised Signal} \\
+    A plot showing the original noisy signal (faded) and the
+    reconstructed signal (bold). The step is preserved, but
+    the noise is dramatically reduced.
+    \vspace{4cm}
+  }}
+  \caption{The output of the DWT denoising process.}
+  \label{fig:denoised_signal}
+\end{figure}
+
+This process is shown in the Python code below.
+
+\begin{lstlisting}[language=Python, caption=Python code for DWT denoising., label=list:dwt]
+import numpy as np
+import matplotlib.pyplot as plt
+import pywt
+
+# 1. Create a noisy signal (Fig 8)
+true_signal = np.concatenate((np.zeros(500), np.ones(500)))
+noise = np.random.normal(0, 0.2, 1000)
+noisy_signal = true_signal + noise
+
+# 2. Decompose using DWT
+# We use 'db4' (Daubechies 4 wavelet) at level 5
+wavelet = 'db4'
+level = 5
+coeffs = pywt.wavedec(noisy_signal, wavelet, level=level)
+# coeffs = [cA5, cD5, cD4, cD3, cD2, cD1]
+
+# 3. Threshold the Detail coefficients
+# We find a universal threshold
+sigma = np.median(np.abs(coeffs[-1])) / 0.6745
+threshold = sigma * np.sqrt(2 * np.log(len(noisy_signal)))
+
+# Apply "soft" thresholding
+# (set to 0 if below thresh, shrink if above)
+thresholded_coeffs = []
+for c in coeffs:
+    thresholded_coeffs.append(pywt.threshold(c, threshold, mode='soft'))
+
+# 4. Reconstruct the signal
+reconstructed_signal = pywt.waverec(thresholded_coeffs, wavelet)
+
+# 5. Visualization (Fig 9)
+plt.figure(figsize=(10, 5))
+plt.plot(noisy_signal, color='gray', alpha=0.5, label='Noisy Signal')
+plt.plot(reconstructed_signal, color='red', linewidth=2, label='Denoised Signal')
+plt.plot(true_signal, color='black', linestyle='--', label='True Signal')
+plt.legend()
+plt.title("Wavelet Denoising using DWT")
+plt.show()
+\end{stlisting}
+
+% --- SECTION 7: CHOOSING A MOTHER WAVELET ---
+\section{Choosing a Mother Wavelet}
+
+The choice of mother wavelet $\psi(t)$ is crucial and depends on the application.
+\begin{itemize}
+    \item \textbf{Haar wavelet:} The simplest wavelet, a square wave. Good for detecting sharp edges or steps.
+    \item \textbf{Daubechies (db) wavelets:} A family (db2, db4, ...). They are compact and good for general-purpose signal processing and compression.
+    \item \textbf{Morlet wavelet:} A complex-valued wavelet (a sine wave in a Gaussian envelope). Very good for CWT and feature extraction in time-frequency, as it has a clear frequency interpretation.
+    \item \textbf{Symlets (sym):} Modifications of Daubechies to be more symmetric, which can be useful in image processing.
+\end{itemize}
+The choice depends on properties like orthogonality (DWT), symmetry, and a "vanishing moments" (how well it represents polynomials).
+
+% --- Directive A: Placeholder Figure ---
+\begin{figure}[htbp]
+  \centering
+  \framebox{\parbox{0.9\textwidth}{\centering
+    \vspace{6cm}
+    \textbf{Figure 10: A Zoo of Wavelets} \\
+    Four small plots showing the shapes of: \\
+    1. Haar (a square step) \\
+    2. Daubechies 4 (db4) (an asymmetric, fractal-like shape) \\
+    3. Morlet (a wave in a Gaussian envelope) \\
+    4. Symlet 8 (sym8) (a more symmetric version of db)
+    \vspace{6cm}
+  }}
+  \caption{A selection of common mother wavelets, each with different properties suited for different tasks.}
+  \label{fig:wavelet_zoo}
+\end{figure}
+
+% --- SECTION 8: CONCLUSION ---
+\section{Conclusion}
+Wavelet analysis fundamentally extends the power of signal processing beyond the static, non-temporal world of the Fourier Transform. By using a "small wave" as a basis, it allows us to create a multi-resolution "microscope" to examine a signal in both time and frequency simultaneously.
+
+\begin{itemize}
+    \item The \textbf{CWT} is a powerful tool for \textit{analysis} and \textit{visualization}, producing intuitive scaleograms that reveal the time-frequency DNA of a signal.
+    \item The \textbf{DWT} is a powerful tool for \textit{processing} and \textit{representation}, enabling efficient compression and denoising by separating a signal into its core components (approximations) and its details.
+\end{itemize}
+
+From analyzing non-stationary financial data and denoising astronomical images to compressing JPEGs and detecting transients in gravitational waves, wavelets provide a flexible and powerful framework for understanding a world that is, by its very nature, localized in time.
+
+\end{document}
