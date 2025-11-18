@@ -240,7 +240,7 @@ self-referencing, I believe it is only partially correct. It is certainly true
 that formal disciplines are completely tautological, which is, by the way, an
 uncontroversial statement (see for instance Russell's work *Human knowledge*).
 Furthermore, formal structures are typically used as extremely simple and
-abstract models of real systems. However tautological the deductions derived
+abstract models of real systems. But however tautological the deductions derived
 from a model may be, the truths they uncover about the represented system are
 less trivial than Nietzsche lets on. Take, for instance, the famous example of
 the seven bridges of Königsberg, which inspired Euler to found graph theory.
