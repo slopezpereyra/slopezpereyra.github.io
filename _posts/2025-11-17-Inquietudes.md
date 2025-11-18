@@ -13,7 +13,7 @@ o el sueño inagotable y permanente<br>
 de no soñar, de estar así, despierto.<br>
 Son simples inquietudes, vibraciones<br>
 que dan relieve al aburrido charco<br>
-donde abrevamos nuestra sed idiota.<br>
+donde saciamos nuestra sed idiota.<br>
 Son olas sanguinarias y aluviones<br>
 que lentamente van formando el arco<br>
 que un día ha de cruzar nuestra alma rota.
