@@ -92,11 +92,11 @@ a bit. Applying Euler's formula
 ($e^{-i\theta} = \cos\theta - i\sin\theta$), we obtain:
 
 $$
-\begin{aligned}
-    S_{XY}(\nu) &= \int_{-\infty}^{\infty} C(t) (\cos(2\pi \nu t) - i \sin(2\pi \nu t) ) ~ dt \\\\
-    &= \underbrace{\int_{-\infty}^{\infty} C(t) \cos(2\pi \nu t) ~ dt}_{\text{Real Part: Co-spectrum}} 
-    - i \underbrace{\int_{-\infty}^{\infty} C(t) \sin(2\pi \nu t) ~ dt}_{\text{Imaginary Part: Quad-spectrum}}
-\end{aligned}
+\begin{align*}
+    S_{XY}(\nu) &= \int_{-\infty}^{\infty} C(t) (\cos(2\pi \nu t) - i \sin(2\pi \nu t) ) ~ dt \newline
+    &= \underbrace{\int_{-\infty}^{\infty} C(t) \cos(2\pi \nu t) ~ dt}\_{\text{Real Part: Co-spectrum}} 
+    - i \underbrace{\int_{-\infty}^{\infty} C(t) \sin(2\pi \nu t) ~ dt}\_{\text{Imaginary Part: Quad-spectrum}}
+\end{align*}
 $$
 
 It is time to tie our previous insights with this expression. We can
