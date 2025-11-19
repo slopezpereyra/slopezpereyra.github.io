@@ -3,7 +3,7 @@ title: Cross spectrums, a lens into brain synchronicity
 categories: [Science]
 ---
 
-Let $X(t), Y(t)$ denote two EEG signals viewed as random variables.
+Let $X(t), Y(t)$ denote two signals viewed as random variables.
 Their cross-correlation is defined as
 
 $$(X \star Y)(\tau) = \int_{-\infty}^\infty X(t)Y(t + \tau) ~ dt$$
@@ -93,7 +93,7 @@ a bit. Applying Euler's formula
 
 $$
 \begin{aligned}
-    S_{XY}(\nu) &= \int_{-\infty}^{\infty} C(t) \left[ \cos(2\pi \nu t) - i \sin(2\pi \nu t) \right] ~ dt \\\\
+    S_{XY}(\nu) &= \int_{-\infty}^{\infty} C(t) (\cos(2\pi \nu t) - i \sin(2\pi \nu t) ) ~ dt \\\\
     &= \underbrace{\int_{-\infty}^{\infty} C(t) \cos(2\pi \nu t) ~ dt}_{\text{Real Part: Co-spectrum}} 
     - i \underbrace{\int_{-\infty}^{\infty} C(t) \sin(2\pi \nu t) ~ dt}_{\text{Imaginary Part: Quad-spectrum}}
 \end{aligned}
