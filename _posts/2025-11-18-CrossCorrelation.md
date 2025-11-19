@@ -19,10 +19,11 @@ $$(X \star Y)(\tau) = \int_{-\infty}^\infty X(t)Y(t + \tau) ~ dt$$
 For discrete signals, like digital EEGs, the definition is analogous,
 though this time we normalize:
 
-$$\begin{aligned}
-    C(t) = \frac{1}{(N-m)\sigma_X \sigma_Y} \sum_{j=0}^{N-(m+1)} \hat{X}_j
-    \hat{Y}_{j+m}, \qquad t = m\tau
-\end{aligned}$$
+$$
+\begin{aligned}
+    C(t) = \frac{1}{(N-m)\sigma_X \sigma_Y} \sum_{j=0}^{N-(m+1)} \hat{X}_j \hat{Y}_{j+m}, \qquad t = m\tau
+\end{aligned}
+$$
 
 where
 
@@ -90,11 +91,13 @@ To further disect the meaning of the power spectrum let us decompose it
 a bit. Applying Euler's formula
 ($e^{-i\theta} = \cos\theta - i\sin\theta$), we obtain:
 
-$$\begin{aligned}
-    S_{XY}(\nu) &= \int_{-\infty}^{\infty} C(t) \left[ \cos(2\pi \nu t) - i \sin(2\pi \nu t) \right] ~ dt \\
+$$
+\begin{aligned}
+    S_{XY}(\nu) &= \int_{-\infty}^{\infty} C(t) \left[ \cos(2\pi \nu t) - i \sin(2\pi \nu t) \right] ~ dt \\\\
     &= \underbrace{\int_{-\infty}^{\infty} C(t) \cos(2\pi \nu t) ~ dt}_{\text{Real Part: Co-spectrum}} 
     - i \underbrace{\int_{-\infty}^{\infty} C(t) \sin(2\pi \nu t) ~ dt}_{\text{Imaginary Part: Quad-spectrum}}
-\end{aligned}$$
+\end{aligned}
+$$
 
 It is time to tie our previous insights with this expression. We can
 view the formula above as asking, at each frequency component, how the
@@ -105,19 +108,19 @@ clearer, note that for each frequency component we essentially have
 three cases:
 
 -   **In-Phase ($\phi = 0$):** The signals are perfectly synchronous.
-    The cross-correlation peaks at zero and resembles a **positive
-    cosine**. Its Fourier transform is purely real (only co-spectrum)
+    The cross-correlation peaks at zero and resembles a positive
+    cosine. Its Fourier transform is purely real (only co-spectrum)
     and positive.
 
 -   **Anti-Phase ($\phi = \pi$):** The signals are perfectly
     oppositional (one peaks when the other troughs). The
-    cross-correlation is a **negative cosine**. Here, again, the
+    cross-correlation is a negative cosine. Here, again, the
     activity appears only in the co-spectrum (real part), but this time
     with a negative sign.
 
 -   **Quadrature ($\phi = \pi/2$):** The signals are shifted by a
     quarter cycle and thus are perfectly asynchronous. The
-    cross-correlation resembles a **sine wave** (it is zero at lag 0).
+    cross-correlation resembles a sine wave (it is zero at lag 0).
     Its Fourier transform is purely imaginary.
 
 What am I trying to say? That the co-spectrum measures the linear
@@ -128,26 +131,20 @@ relationship.
 In EEG analysis, we are often interested specifically in *zero-lag*
 synchrony. This is captured entirely by the real part. Therefore, the
 «cross-spectrum» formula in these contexts often simplifies to the
-co-spectrum:
+co-spectrum. 
 
-$$\text{Co}_{XY}(\nu) \approx \text{Re}\left[ \sum_{j} C(t_j) e^{-i 2\pi \nu t_j} \right] = \sum_{j} C(t_j) \cos(2\pi \nu t_j)$$
-
-We discard the imaginary part not because it is error, but because it
-represents time-delayed (orthogonal) interactions rather than zero-lag
-synchronization.
-
-Some methodologies define a specific synchronization metric,
-$\mu_0^{XY}(\nu)$, which not only isolates the co-spectrum but squares
-it. Squaring transforms the amplitude into power and ensures that both
-in-phase (positive) and anti-phase (negative) synchrony contribute
-positively to the strength of the connection:
+Furthermore, some methodologies (e.g. [this paper](https://www.researchgate.net/publication/271658253_Use_of_Cross-Correlation_Analysis_of_EEG_Signals_for_Detecting_Risk_Level_for_Development_of_Schizophrenia)) define a specific synchronization metric,
+$\mu_0^{XY}(\nu)$, which not only isolates the co-spectrum but squares it.
+Squaring transforms the amplitude into power and ensures that both in-phase
+(positive) and anti-phase (negative) synchrony contribute positively to the
+strength of the connection:
 
 $$\mu_0^{XY}(\nu) = \left| \tau \sum_{j} c(t_j) \cos(2\pi \nu t_j) \right|^2$$
 
 The reader might be curious to see an example. I wrote a Python script to
 compute the formula above:
 
-``` 
+```python
 def compute_mu0(x, y, fs):
     """
     Computes the synchronization metric mu_0:
@@ -227,7 +224,7 @@ were from different moments in the night and did not look similar.
 The results from the simultaneous epochs were:
 
 <p align="center">
-    <img src="../Images/eeg_synchronous_analysis.png" width="85%" style="border: 6px solid #231709;">
+    <img src="../Images/eeg_synchronous_analysis.png" width="85%" style="border: 1px solid #231709;">
 </p>
 
 We can see that the signals aligned pretty well, that their cross-correlation
@@ -237,7 +234,7 @@ the non-simultaneous signals, these were the results:
 
 
 <p align="center">
-    <img src="../Images/eeg_asynchronous_control.png" width="85%" style="border: 6px solid #231709;">
+    <img src="../Images/eeg_asynchronous_control.png" width="85%" style="border: 1px solid #231709;">
 </p>
 
 We see a close-to-flat cross-correlation, as expected, and very little power
