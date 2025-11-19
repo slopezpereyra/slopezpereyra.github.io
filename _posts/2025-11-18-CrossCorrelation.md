@@ -20,9 +20,9 @@ For discrete signals, like digital EEGs, the definition is analogous,
 though this time we normalize:
 
 $$
-\begin{aligned}
-    C(t) = \frac{1}{(N-m)\sigma_X \sigma_Y} \sum_{j=0}^{N-(m+1)} \hat{X}_j \hat{Y}_{j+m}, \qquad t = m\tau
-\end{aligned}
+\begin{align*}
+    C(t) = \frac{1}{(N-m)\sigma_X \sigma_Y} \sum\_{j=0}^{N-(m+1)} \hat{X}_j \hat{Y}_{j+m}, \qquad t = m\tau
+\end{align*}
 $$
 
 where
