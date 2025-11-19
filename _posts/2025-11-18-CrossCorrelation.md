@@ -206,8 +206,6 @@ I then used the MNE Python library to load the full-night sleep EEG of a healthy
 subject (perks of working at sleep science). I repeated the following process
 twice: 
 
-- Extract an epoch from two channels I repeated the following process twice: 
-
 - Extract an epoch of equal duration from both channels. 
 - Compute $\mu_0^{XY}(\nu)$ (and hence cross-spectrum, cross-correlation, etc.).
 - Plot everything. 
