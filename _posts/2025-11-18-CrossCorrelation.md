@@ -243,14 +243,50 @@ shared across frequencies.
 > (b) the example still shows the point of the cross-spectrum neatly. 
 
 
+--- 
 
+The matter does not end here and there is still some ground to cover. There is
+an argument to be made in favor of using not the co-spectrum but the
+quad-spectrum. In particular, perfect synchronicity between two brain regions
+might indicate *not* coordinated activity but rather the simultaneous reception
+of a signal from a third source. This is termed *volume conduction* and is
+considered an artifact, because it creates spurious correlation between two
+records. A single electrical source within the brain is detected simultaneously
+by multiple source with zero phase lag, and any co-spectrum based analysis would
+be fooled into finding an interaction between them.
 
+For this reason, an alternative strategy is to ignore not the quad-spectrum but
+the co-spectrum all-together. This is the purpose of what is termed *weighted Phase Lag
+Index* (wPLI).
 
+The wPLI ignores the magnitude of the delay and looks only at the asymmetry of
+the phase distribution across many observations. To compute it, we split our
+signals into $N$ smaller time segments (epochs). Let $k$ denote the $k$-th
+segment. The wPLI is defined is defined as
 
+$$
+\text{wPLI} = \frac{ | \sum_{k=1}^N \text{Quad-spectrum}_k | }{ \sum_{k=1}^N | \text{Quad-spectrum}_k | }
+$$
 
+is more generally written as
 
+$$
+\text{wPLI} = \frac{ | \langle \Im(S_{XY}) \rangle | }{ \langle | \Im(S_{XY}) | \rangle } = \frac{ | \sum_{k=1}^N \Im(S_{XY})_k | }{ \sum_{k=1}^N | \Im(S_{XY})_k | }
+$$
 
+The denominator ensures that $\text{wPLI} \in[0, 1]$ and is thus a normalization
+factor. 
 
+Using wPLI ensures that if quad-spectrum is very small (meaning the phase
+difference is very close to zero), we don't let it vote as strongly as a clear,
+large-magnitude phase lag. This effectively avoids the issue of volume conduction.
+Most serious papers use the wPLI and one could say that co-spectrum-based
+measures of connectivity are more or less deprecated.
+
+> Interestingly, the wPLI of the two signals I showed above is practically zero.
+This means that the two signals look almost identical not because they are
+interacting with each other in some meaningful way, but rather because they are
+each recording the same input.
 
 
 
