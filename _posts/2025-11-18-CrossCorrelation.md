@@ -265,13 +265,13 @@ signals into $N$ smaller time segments (epochs). Let $k$ denote the $k$-th
 segment. The wPLI is defined is defined as
 
 $$
-\text{wPLI} = \frac{ | \sum_{k=1}^N \text{Quad-spectrum}_k | }{ \sum_{k=1}^N | \text{Quad-spectrum}_k | }
+\text{wPLI} = \frac{ | \sum\_{k=1}^N \text{Quad-spectrum}_k | }{ \sum\_{k=1}^N | \text{Quad-spectrum}_k | }
 $$
 
 is more generally written as
 
 $$
-\text{wPLI} = \frac{ | \langle \Im(S_{XY}) \rangle | }{ \langle | \Im(S_{XY}) | \rangle } = \frac{ | \sum_{k=1}^N \Im(S_{XY})_k | }{ \sum_{k=1}^N | \Im(S_{XY})_k | }
+\text{wPLI} = \frac{ | \langle \Im(S\_{XY}) \rangle | }{ \langle | \Im(S\_{XY}) | \rangle } = \frac{ | \sum\_{k=1}^N \Im(S\_{XY})_k | }{ \sum\_{k=1}^N | \Im(S\_{XY})_k | }
 $$
 
 The denominator ensures that $\text{wPLI} \in[0, 1]$ and is thus a normalization
