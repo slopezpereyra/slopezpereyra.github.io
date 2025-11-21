@@ -52,7 +52,7 @@ making the significance threshold too strict.
 
 
 <p align="center">
-    <img src="../Images/Bonferroni.png" width="100%" style="border: 1px solid #231709;">
+    <img src="../Images/Bonferroni.png" width="80%" style="border: px solid #231709;">
 </p>
 
 
@@ -117,7 +117,7 @@ masked neighbours, then it will not form a cluster.
 cluster. Typically, the sum of the statistics of each node within it.
 
 <p align="center">
-    <img src="../Images/TopoView.png" width="80%" style="border: 0px solid #231709;">
+    <img src="../Images/TopoView.png" width="50%" style="border: 0px solid #231709;">
 </p>
 
 We now have clusters with an adequate notion of strength, but how do we produce
