@@ -52,7 +52,7 @@ making the significance threshold too strict.
 
 
 <p align="center">
-    <img src="../Images/CBP_steps.png" width="100%" style="border: 1px solid #231709;">
+    <img src="../Images/Bonferroni.png" width="100%" style="border: 1px solid #231709;">
 </p>
 
 
