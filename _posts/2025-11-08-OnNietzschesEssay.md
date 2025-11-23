@@ -43,16 +43,6 @@ and multiplicity of that to which the word refers:
 > force, coins which have lost their embossing and are now considered as
 > metal and no longer as coins.
 
----
-
-<figure style="text-align:center;">
-  <img src="../Images/FallRiley.jpg" width="85%" style="border: 6px solid #231709;" />
-  <figcaption>Riley's work Fall (1963) appears to vibrate and suggests
-        Nietzsche's idea that «the stone is hard» does not express an objective
-        hardness but the result of a subjective elaboration.</figcaption>
-</figure>
-
----
 
 Reason is understood as an inherently tautological instrument:
 
@@ -78,15 +68,6 @@ stimulus as a sound - then no one would speak of such a regularity of nature».
 Quite pertinently, Nietzsche cites Pascal's famous passage on a laborer who
 dreams each night that he's a king.
 
----
-
-<figure style="text-align:center;">
-  <img src="../Images/NewtonWilliamBlake.jpg" width="75%" style="border: 6px solid #231709;" />
-  <figcaption>Newton according to Blake, absorbed in his diagrams, oblivious
-        to himself and to the richness of the world around him.</figcaption>
-</figure>
-
----
 
 In my opinion, Nietzsche's insights are fundamentally correct. This early work
 of his draws strongly from Schopenhauer's conception of the world as will and
@@ -136,16 +117,7 @@ our brains are simply ill-prepared to grasp certain properties of the
 world—and I suspect philosophers are correct when suggesting that
 mental phenomena may depend on some of these properties.
 
----
 
-<figure style="text-align:center;">
-  <img src="../Images/SongOfLove.jpg" width="55%" style="border: 6px solid #231709;" />
-  <figcaption>Giorgio Chirico's famous Song of Love. Chirico, deeply influenced by
-        Nietzsche and Schopenhauer, depicts a non-linear world of strange
-        yuxtapositions. </figcaption>
-</figure>
-
----
 
 Take, for instance, the cognitive faculties of rats, a matter of
 thought-provoking research. Though able to learn highly intricate mazes,
@@ -331,17 +303,6 @@ not only for the emergence of a particular faculty but *also* for its
 self-referential transparency. It is therefore conceivable that many aspects of
 our own nature are ultimately unfathomable to us. 
 
---- 
-
-<figure style="text-align:center;">
-  <img src="../Images/RemediosVaro.jpg" width="95%" style="border: 6px solid #231709;" />
-  <figcaption>Remedios Varo's "Embroidering the Mantle" shows imprisoned girls
-        forced to weave the fabric of reality, which flows out the tower wall 
-        and forms the world. Our neurons may be understood to play the role of 
-        the girls, our sense being the slits through which the fabric slips.</figcaption>
-</figure>
-
---- 
 
 I have little else to say on the matter. I should reiterate how profound I
 believe Nietzsche's insights to be on this matter, regardless of finding myself
