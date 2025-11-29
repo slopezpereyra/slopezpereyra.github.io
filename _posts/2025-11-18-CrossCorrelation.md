@@ -251,13 +251,11 @@ quad-spectrum. In particular, perfect synchronicity between two brain regions
 might indicate *not* coordinated activity but rather the simultaneous reception
 of a signal from a third source. This is termed *volume conduction* and is
 considered an artifact, because it creates spurious correlation between two
-records. A single electrical source within the brain is detected simultaneously
-by multiple source with zero phase lag, and any co-spectrum based analysis would
-be fooled into finding an interaction between them.
+records. 
 
 For this reason, an alternative strategy is to ignore not the quad-spectrum but
-the co-spectrum all-together. This is the purpose of what is termed *weighted Phase Lag
-Index* (wPLI).
+the co-spectrum all-together. For instance, this is the purpose of what is
+termed *weighted Phase Lag Index* (wPLI).
 
 The wPLI ignores the magnitude of the delay and looks only at the asymmetry of
 the phase distribution across many observations. To compute it, we split our
@@ -279,28 +277,70 @@ factor.
 
 Using wPLI ensures that if quad-spectrum is very small (meaning the phase
 difference is very close to zero), we don't let it vote as strongly as a clear,
-large-magnitude phase lag. This effectively avoids the issue of volume conduction.
-Most serious papers use the wPLI and one could say that co-spectrum-based
-measures of connectivity are more or less deprecated.
+large-magnitude phase lag. This effectively avoids the issue of volume
+conduction. Most serious papers use the wPLI and one could say that
+co-spectrum-based measures of connectivity are more or less deprecated.
 
-> Interestingly, the wPLI of the two signals I showed above is practically zero.
-This means that the two signals look almost identical not because they are
-interacting with each other in some meaningful way, but rather because they are
-each recording the same input.
+To demonstrate the utility of the Weighted Phase Lag Index (wPLI) in I simulated
+two scenarios in Julia. I generated paired signals $X, Y$ representing 50
+distinct epochs of 2 seconds each, sampled at 250 Hz. Both signals were
+constructed based on a shared 10 Hz oscillation  modeled as:
+
+$$X(t) = \sin(2\pi f t + \theta\_{jitter}) + \mathcal{N}(0, 0.5)$$
+
+$$Y(t) = \sin(2\pi f t + \theta\_{jitter} + \phi\_{lag}) + \mathcal{N}(0, 0.5)$$
+
+where  $f=10$Hz is the target frequency, $\theta\_{jitter}$ is a random phase
+offset applied to both signals equally in each epoch, $\mathcal{N}(0, 0.5)$ is
+Gaussian white, and $\phi_{lag}$ is the critical variable manipulated between
+scenarios. One scenario had «true synchrony», i.e. non-zero phase lag
+synchronyzation with $\phi\_{lag} = \pi / 2$ (90 degrees). The other scenario
+had $\phi\_{lag} = 0$, simulating a spurious synchronyzation caused by volume
+conduction. For each scenario, I used the `compute_wpli` function from my
+[EEGToolkit](https://slopezpereyra.github.io/EEGToolkit.jl/dev/) scientific
+packakge to estimate wPLI between the simulated signals. These were the results:
 
 
 
 
+<p align="center">
+    <img src="../Images/wpli_scenario_A_lag.png" width="85%" style="border: 0px solid #231709;">
+</p>
 
 
+<p align="center">
+    <img src="../Images/wpli_scenario_B_nolag.png" width="85%" style="border: 0px solid #231709;">
+</p>
+
+As we can see, in scenario $A$ (phase-lagged synchronyzation), the wPLI value is
+accurately capturing synchronyzation in the 10Hz rythm. In scenario $B$, though
+the signals are very similar, the fact that there is no phase lag makes the wPLI
+very low across all frequencies. Pretty interesting, huh?
+
+--- 
+
+Just for fun, let us run the same simulations, but this time compute the
+*magnitude-squared coherence* (also implemented in my EEGToolkit package)
+instead of the wPLI. 
+
+$$C_{xy}(f) = \frac{|\langle S_{xy}(f) \rangle|^2}{\langle S_{xx}(f) \rangle \langle S_{yy}(f) \rangle}$$
 
 
+This will serve us to illustrate the false positive problem which arises with
+volume conduction. The coherence will in fact detect the 10Hz synchronyzation in
+the phase-lagged scenario, which is correct. However, it will *also* detected
+for the zero-lag synchronyzation, which most likely is due to volume conduction.
+Importantly, there is no way to determine when coherence measures come from
+volume conduction as opposed to true synchronyzation.
+
+<p align="center">
+    <img src="../Images/coherence_scenario_A_lag.png" width="85%" style="border: 0px solid #231709;">
+</p>
 
 
-
-
-
-
+<p align="center">
+    <img src="../Images/coherence_scenario_B_nolag.png" width="85%" style="border: 0px solid #231709;">
+</p>
 
 
 
