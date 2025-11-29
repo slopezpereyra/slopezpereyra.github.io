@@ -281,10 +281,10 @@ large-magnitude phase lag. This effectively avoids the issue of volume
 conduction. Most serious papers use the wPLI and one could say that
 co-spectrum-based measures of connectivity are more or less deprecated.
 
-To demonstrate the utility of the Weighted Phase Lag Index (wPLI) in I simulated
-two scenarios in Julia. I generated paired signals $X, Y$ representing 50
-distinct epochs of 2 seconds each, sampled at 250 Hz. Both signals were
-constructed based on a shared 10 Hz oscillation  modeled as:
+To demonstrate the utility of the wPLI, I simulated two scenarios in Julia. I
+generated paired signals $X, Y$ representing 50 distinct epochs of 2 seconds
+each, sampled at 250 Hz. Both signals were constructed based on a shared 10 Hz
+oscillation  modeled as:
 
 $$X(t) = \sin(2\pi f t + \theta\_{jitter}) + \mathcal{N}(0, 0.5)$$
 
