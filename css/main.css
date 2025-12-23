@@ -41,7 +41,7 @@ layout: null
 
 body {
   font-family: "Lora", serif; /* Changed from Artful Dodger */
-  font-weight: 600;           /* Adjusted from 1 to 400 */
+  font-weight: 500;           /* Adjusted from 1 to 400 */
   font-size: 20px;
   text-align: justify;
   letter-spacing: normal; 
