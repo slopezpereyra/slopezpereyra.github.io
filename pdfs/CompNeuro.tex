@@ -1,0 +1,882 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{newtxtext} \usepackage{newtxmath}
+\usepackage{amsmath, amssymb}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example} \newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{parskip}
+
+\begin{document}
+
+
+\section{Teoría de la información}
+
+La entropía es una medida de cuán «sorprendente» o impredecible es una  variable
+aleatoria. Un patrón regular y predecible es poco interesante, mientras un
+patrón complejo y de alta impredicibilidad contiene más información. Daremos una
+medida de entropía para las respuestas neuronales.
+
+Por el momento, vamos a caracterizar las respuestas neuronales temporalmente y
+en función de su \textit{spike count rate} (SPR), o sea el número de disparos por
+unidad de tiempo. Definimos $P(r)$ como la probabilidad de observar un SPR de
+$r$. La entropía de Shannon, que es la medida más común de entropía, expresa
+cuán «sorprendente» es un valor de $r$ en términos de su probabilidad, y
+necesita por lo tanto una función compuesta $h\left( P(r) \right) $. En
+particular, la entropía de Shannon cuantifica la entropía en términos de la
+esperanza de $h\left( P(r) \right) $, donde $h$ se elige de manera tal que
+satisfaga dos propiedades deseables.
+
+En primer lugar, $h$ debería ser una función decreciente de $P(r)$, de modo que
+los eventos más probables contribuyan menos a la entropía total que los eventos
+menos probables. Esto es razonable: si tiramos un dado de seis caras 60 veces y,
+en general, obtenemos más o menos 10 veces cada cara, no podemos decir demasiado
+acerca del dado. Pero si obtenemos 30 veces el número 6 y sólo 6 veces cada uno
+de los otros números, podemos concluir que el dado está sesgado. A esto nos
+referimos cuando decimos que los eventos menos probables son más informativos.
+
+Otra propiedad deseable es que la entropía de dos variables aleatorias
+independientes debería ser la suma de las entropías individuales. En el caso de
+respuestas neuronales, si deseamos establecer la entropía de las respuestas de
+dos neuronas independientes, la entropía total debería ser la suma de las
+entropías individuales. 
+
+El logaritmo es la única función que satisface estas dos propiedades para toda
+probabilidad $P(r)$. Por lo tanto, definimos la entropía de Shannon $H$ como la
+esperanza del logaritmo de la probabilidad de las respuestas neuronales:
+
+\begin{equation}
+    h\left( P(r) \right) = -\log_2 \left( P(r) \right)
+\end{equation}
+
+Usamos el logaritmo base dos por convención, y el signo negativo se añade para
+satisfacer la primera propiedad, ya que el logaritmo es una función creciente.
+Habiendo determinado la función que mide la «sorpresa» de una respuesta
+neuronal, podemos definir la entropía de Shannon $H$ como la esperanza de esta
+función:
+
+\begin{equation}
+    H := \mathbb{E}\left[ h(r) \right]  = - \sum_r P(r) \log_2 \left( P(r) \right)
+\end{equation}
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[
+        width=10cm, height=7cm,
+        xlabel={Probability $P(r)$},
+        ylabel={Value},
+        xmin=0, xmax=1,
+        ymin=0, ymax=4.5,
+        grid=major,
+        legend pos=north east,
+        title={Surprisal $h(P)$ vs. Entropy Term $P \cdot h(P)$},
+        axis lines=left,
+        samples=200
+    ]
+
+    % 1. Surprisal in Bits (Base 2)
+    % h(p) = -log2(p) = -ln(p)/ln(2)
+    \addplot[
+        color=blue,
+        thick,
+        domain=0.05:1
+    ]
+    {-ln(x)/ln(2)};
+    \addlegendentry{$h(P) = -\log_2(P)$ (Surprisal)}
+
+    % 2. Surprisal in Nats (Natural Log)
+    % Comparison of "forms" (bases)
+    \addplot[
+        color=teal,
+        dashed,
+        thick,
+        domain=0.05:1
+    ]
+    {-ln(x)};
+    \addlegendentry{$h(P) = -\ln(P)$ (Nats)}
+
+    % 3. Entropy Density (The term being summed)
+    % f(p) = -p * log2(p)
+    \addplot[
+        color=red,
+        thick,
+        dashdotted,
+        domain=0.001:1
+    ]
+    {-x * (ln(x)/ln(2))};
+    \addlegendentry{$f(P) = -P \log_2(P)$}
+
+    % Optional: Mark P=0.5 for max entropy contribution
+    \draw[dotted, gray] (axis cs:0.368,0) -- (axis cs:0.368,0.53); % 1/e for nats max
+    
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+La entropía de Shannon en última instancia es una medida que depende de la
+variabilidad, pero no nos dice nada acerca de la fuente de esta variabilidad.
+Para cuantificar la fuente de la variabilidad usamos la información mutua (MI,
+por sus siglas en inglés). La idea que la inspira es simple: digamos que un
+mismo estímulo repetido induce cierta variabilidad $V_1$ en el SPR, y que una
+diversidad de estímulos distintos induce otra variabilidad $V_2$. Si el SPR es
+informativo respecto a la naturaleza del estímulo, esperaríamos que $V_2$ sea
+mucho mayor que $V_1$.
+
+Más formalmente, la MI es la diferencia entre la entropía total, por un lado, y
+la entropía promedio de respuestas a un mismo estímulo, por otro. Claramente, si
+MI es cero es porque las respuestas varían tanto con los mismos estímulos como
+ante el total de estímulos, i.e. no tienen un comportamiento específico e
+informativo respecto a la naturaleza del estímulo. Definimos entonces:
+
+\begin{equation}
+    H_s = - \sum_{r} P \left( r \mid s \right) \log_2 P\left( r \mid s \right) 
+\end{equation}
+
+la entropía ante un estímulo particular $s$. El promedio de esta entropía sobre
+el espacio de estímulos nos da la así llamada \textit{noise entropy}:
+
+\begin{equation}
+    H_{\text{noise}} = \sum_{s} P \left[ s \right] H_s = - \sum_{s, r} P\left( s
+    \right) P \left( r \mid s \right)  \log_2 P \left( r \mid s \right) 
+\end{equation}
+
+Esta es la entropía asociada a la variabilidad en la respuesta que \textit{no}
+depende de cambios en el estímulo, sino que proviene de otras fuentes. Esto
+debería ser claro: cada término $H_s$ es la entropía «dentro» de un estímulo
+fijo, i.e. la que no depende del estímulo, y $H_{\text{noise}}$ es la esperanza
+de este valor. Si la información mutua es la diferencia entre la entropía total
+y la noise entropy, tenemos: 
+
+\begin{align*}
+    I_m &:= H - H_{\text{noise}}\\ 
+        &= - \sum_r P(r) \log_2 P(r) + \sum_{s, r} P(s) P\left( r \mid s \right)
+        \log_2 P\left( r \mid s \right) 
+\end{align*}
+
+Usando la ley de probabilidad total, según la cual
+
+\begin{equation*}
+    P\left( r \right)  = \sum_s P\left( s \right) P\left( r \mid s \right) 
+\end{equation*}
+
+obtenemos 
+
+\begin{equation}
+    I_m = \sum_{s, r} P \left( s \right) P\left( r \mid s \right) \log_2 \left(
+    \frac{P \left( r \mid s \right) }{P\left( r \right) }\right) 
+\end{equation}
+
+La probabilidad conjunta $P\left( r, s \right) $ satisface 
+
+\begin{equation*}
+    P\left( r, s \right) = P(s) P\left( r \mid s \right)  = P(r) P \left( s \mid
+    r\right) 
+\end{equation*}
+
+Por lo tanto, 
+
+\begin{equation}
+    I_m = \sum_{s, r} P\left( r, s \right) \log_2 \left( \frac{P(r, s)}{P(r)P(s)} \right) 
+\end{equation}
+
+Esta forma de escribir la información mutua revela que es simétrica respecto a
+$s$ y $r$: la información mutua que un conjunto de respuestas da respecto de un
+conjunto de estímulos es la misma que da el conjunto de estímulos respecto a las
+respuestas.
+
+Veamos algunos casos básicos. Digamos que las respuestas de una neurona no son
+afectadas por la naturaleza del estímulo, i.e. $P(r \mid s) = P(r)$. Entonces se
+tiene inmediatamente que $I_m = 0$. En el otro extremo, si cada estímulo $s$
+produce una única respuesta $r_s$ distinta a todas las demás, $P(r_s) = P(s)$ 
+y $P(r \mid s) = 1 \iff r = r_s$, y $P(r \mid s) = 0$ en el caso contrario. Por
+lo tanto, 
+
+\begin{equation*}
+    I_m = \sum_{s} P(s) \log_2 \left( \frac{1}{P(r_s)} \right) = -\sum_{s} P(s)
+    \log_2 P(s) = H_s
+\end{equation*}
+
+Es decir, la información mutua es exactamente la entropía del estímulo. 
+
+\pagebreak 
+
+\section{Redes con tasas de disparo}
+
+\subsection{Recordando}
+
+Recordemos que 
+
+\begin{equation*}
+    \rho(t) = \sum_{i=1}^n \delta(t - t_i)
+\end{equation*}
+
+es la \textit{neural response function} (NRF). Si $t_1, \ldots, t_n$ son tiempos
+de disparo de una neurona, $\rho(t)$ es 1 si $t = t_i$ para algún $i =1,\ldots,
+n$, cero de otro modo. El punto es que $t_1, \ldots, t_n$ son valores discretos
+pero $\rho(t)$ es una función continua. Usando que 
+
+\begin{equation*}
+    \sum_{i=1}^n h(t - t_i) = \int_0^T h(\tau)\rho(t - \tau) ~ d\tau
+\end{equation*}
+
+ahora podemos operar continuamente sobre los tiempos de disparo. También se
+tenía un firing rate $r(t)$ definido como la probabilidad de obtener un disparo
+en el tiempo $t$. 
+
+
+\subsection{Presynaptic Current}
+
+Sea $\textbf{u}$ el vector con los \textit{firing rates} de $N_u$ inputs
+sinápticos sobre una neurona. Si fijamos el tiempo $t = 0$ como el momento en
+que un potencial de acción se dispara en uno de los inputs $u_k$, con $1 \leq k
+\leq N_u$, entonces la corriente generada por dicho potencial en el soma de la
+neurona recipiente puede describirse como 
+
+\begin{equation*}
+    I_{\text{generada}} = w_k K_s(t)
+\end{equation*}
+
+donde $K_s(t)$ describe la evolución temporal de la corriente y $w_b$ su
+amplitud y sentido. Es decir, se impone que 
+
+\begin{equation*}
+    \int_{0}^\infty K_s(t) ~ dt = 1
+\end{equation*}
+
+Si $w_k > 0$ ha habido excitación, si $w_k < 0$ inhibición. Por ejemplo, un
+posible modelo para $K_s$ es la siguiente función: el rápido ascenso muestra la
+apertura de canales iónicos y demás procesos bien conocidos, con una caída más
+lenta de la corriente.
+
+\begin{tikzpicture}
+    \begin{axis}[
+        width=10cm, height=7cm,
+        axis lines = left,
+        xlabel = {Time $t$ (ms)},
+        ylabel = {Synaptic Current $K_s(t)$},
+        ymin=0, ymax=0.2, % Adjusted for visibility
+        xmin=0, xmax=20,
+        domain=0:20,
+        samples=100,
+        grid=major,
+        title={Synaptic Kernel (Alpha Function)},
+        legend pos=north east
+    ]
+
+    % Define the time constant tau
+    \def\tau{2} 
+
+    % The Alpha Function: (t / tau^2) * exp(-t / tau)
+    % This function integrates to 1.
+    \addplot [
+        thick,
+        blue,
+        mark=none
+    ]
+    { (x / (\tau^2)) * exp(-x / \tau) };
+    
+    
+
+    \end{axis}
+\end{tikzpicture}
+
+Si asumimos que los disparos en una sinapsis específica son independientes los
+unos de los otros, la corriente total en un tiempo $t$ resultante de una
+secuencia de disparos en tiempos $t_i$ es: 
+
+\begin{equation}
+    w_b \sum_{t_i < t} K_s(t - t_i) = w_b \int_{-\infty}^t K_s(t -
+    \tau)\rho_b(\tau) ~ d\tau
+\end{equation}
+
+La expresión se entiende mejor con un ejemplo. Notemos que el argumento $t -
+t_i$ de $K_s$ es el tiempo transcurrido desde el $i$-ésimo disparo y el momento
+actual. Digamos tenemos una sinapsis lenta que tarda 10ms en alcanzar su pico
+justo después de un disparo. Esto significa que $K_s(10)$ es el valor máximo de
+$K_s$ y $K(0)$ es muy pequeño o nulo. Imaginemos ahora que un disparo acontece
+justo en el tiempo 100ms. En el tiempo posterior 110ms medimos la corriente en
+el valor $110 - 100$, i.e. $K_s(110 - 100) = K_s(10) = K_\text{max}$. Esto tiene
+sentido, porque al medir justo diez milisegundos después del disparo, la
+corriente inducida por el disparo es máxima. Lo mismo sucedería si medimos un
+tiempo mucho más tardío, obteniendo una corriente menor. Se ve entonces que la
+ecuación anterior suma las corrientes inducidas por cada disparo anterior al
+momento actual en el momento actual.
+
+\begin{tikzpicture}
+    % Define parameters for easy tweaking
+    \def\tau{2}      % Time constant
+    \def\tstar{8}    % The time of the second spike (shift amount)
+    \def\ymax{0.2}   % Y-axis limit
+
+    \begin{axis}[
+        width=12cm, height=8cm,
+        axis lines = left,
+        xlabel = {Time $t$ (current moment) [ms]},
+        ylabel = {Synaptic Current},
+        ymin=-0.01, ymax=\ymax, % Slight negative ymin to show the start clearly
+        xmin=0, xmax=25,
+        domain=0:25,
+        samples=300, % High sample count for smooth curves
+        grid=major,
+        title={Visualizing the Shift: $K_s(t)$ vs. $K_s(t - t_*)$},
+        legend pos=north east,
+        legend cell align={left}
+    ]
+
+    % --- Curve 1: Standard Kernel at t=0 ---
+    % Function: (t / tau^2) * exp(-t / tau)
+    \addplot [
+        very thick,
+        blue,
+        mark=none
+    ]
+    { (x / (\tau^2)) * exp(-x / \tau) };
+    \addlegendentry{Standard Kernel $K_s(t)$ (Spike at $t=0$)}
+
+    % --- Curve 2: Shifted Kernel at t=t_star ---
+    % Function: K_s(t - t_star). 
+    % We use a boolean multiplier (x >= \tstar) to ensure it's zero before the spike arrives.
+    \addplot [
+        very thick,
+        red,
+        mark=none,
+    ]
+    { (x >= \tstar) * ( (x - \tstar) / (\tau^2) ) * exp(-(x - \tstar) / \tau) };
+    \addlegendentry{Shifted Kernel $K_s(t - \tstar)$ (Spike at $t=\tstar$)}
+    
+    % --- Annotations ---
+    
+    % Mark Spike Time 1 ($t=0$)
+    \draw[dashed, blue, thick] (axis cs:0, 0) -- (axis cs:0, \ymax);
+    \node[anchor=south west, blue] at (axis cs:0, \ymax/2) {Spike 1 arrives};
+
+    % Mark Spike Time 2 ($t=t_*$)
+    \draw[dashed, red, thick] (axis cs:\tstar, 0) -- (axis cs:\tstar, \ymax);
+    \node[anchor=south west, red] at (axis cs:\tstar, \ymax/2) {Spike 2 arrives ($t_*=\tstar$)};
+
+    % Illustrate the "Age" concept at an arbitrary time, e.g., t=12
+    \def\tmeasure{12}
+    % Draw a line at measurement time
+    \draw[thin, gray] (axis cs:\tmeasure, 0) -- (axis cs:\tmeasure, \ymax);
+    \node[anchor=south, gray, font=\footnotesize] at (axis cs:\tmeasure, \ymax) {Measurement Time $t=\tmeasure$};
+
+    % Show the "age" of the red spike
+    \draw[<->, thick, orange] (axis cs:\tstar, 0.02) -- (axis cs:\tmeasure, 0.02);
+    \node[anchor=north, orange, font=\footnotesize] at (axis cs: {(\tstar+\tmeasure)/2}, 0.02) {Age $= t - t_* = 4$ms};
+    
+    % Point to the value being used on the red curve
+    \node[circle, fill=red, inner sep=1.5pt] at (axis cs:\tmeasure, { ((\tmeasure - \tstar) / (\tau^2)) * exp(-(\tmeasure - \tstar) / \tau) }) {};
+
+
+    \end{axis}
+\end{tikzpicture}
+
+Si la interacción entre las distintas sinapsis es lineal, entonces la corriente
+total generada por todas las sinapsis en la neurona es simplemente la sumatoria
+de la ecuación anterior sobre $b = 1, \ldots, N_u$:
+
+\begin{equation}
+    I_s = \sum_{b=1}^{N_u} w_b \int_{-\infty}^t K_s(t - \tau)\rho_b(\tau) ~ d\tau
+\end{equation}
+
+Sin embargo, no nos interesa expresar la respuesta inducida en función de los
+disparos en las neuronas presinápticas, sino en sus tasas de disparo. Por lo
+tanto, reemplazamos $\rho_b(\tau)$ por $u_b$:
+
+\begin{equation}
+    I_s = \sum_{b=1}^{N_u} w_b \int_{-\infty}^t K_s(t - \tau) \mu_b(\tau) ~ d
+    \tau
+\end{equation}
+
+Si usamos 
+
+\begin{equation*}
+    K_s(t) = \frac{e^{-t / \tau_r}}{\tau_r}
+\end{equation*}
+
+entonces 
+
+\begin{equation}
+    \tau_s \frac{dI_s}{dt} = -I_s + \sum_{b=1}^{N_u} w_b u_b = -I_s + \textbf{w}
+    \cdot \textbf{u}
+\end{equation}
+
+Es decir, $I_s$ se describe con una ecuación diferencial.
+
+\subsection{Post-synaptic current}
+
+Si la corriente sináptica $I_s$ es constante, el firing rate de la neurona
+post-sinápitca se puede expresar como $v = F\left( I_s \right) $. La función $F$
+se llama activation function y suele tomarse como una función de saturación
+(e.g. sigmoidea). Más comúnmente, se usa una rectificación de media onda:
+
+\begin{equation}
+    F(I_s) = \left[ I_s - \gamma \right]_+
+\end{equation}
+
+donde $\gamma \in \mathbb{R}^+$ es el umbral de rectificación. En este contexto,
+$\gamma$ modela la propiedad física de las neuronas que hace que disparen si y
+solo si la corriente supera un umbral específico. Si $I_s < \gamma$ se cumple
+$F(I_s) = 0$, y si $I_s > \gamma$ se cumple $F(I_s) = I_s - \gamma$, donde el
+«sobrante» de esta diferencia determina la magnitud de la respuesta. Por
+convención, la variable $I_s$ en $F$ no se toma en unidades de nanoampers sino
+de Hertz, donde $\gamma$ también está en Hertz. Quiero decir que $\gamma$ no es
+la fuerza que tiene que tener la corriente para que se induzca un potencial
+post-sinápitco, sino la rapidez de la tasa de disparo en la neurona necesaria
+para inducir un potencial post-sinápitco.
+
+Si nos olvidamos del tiempo, $v = F(I_s)$ ya completa el modelo. La ecuación 
+
+
+\begin{equation*}
+    \tau_s \frac{dI_s}{dt} = -I_s + \sum_{b=1}^{N_u} w_b u_b = -I_s + \textbf{w}
+    \cdot \textbf{u}
+\end{equation*}
+
+si no hay variación en el tiempo da simplemente 
+
+\begin{equation*}
+    I_s = \textbf{w} \cdot \textbf{u}
+\end{equation*}
+
+Esto genera un output firing rate de 
+
+\begin{equation}
+    v_{\infty} = F\left( \textbf{w} \cdot \textbf{u}\right) 
+\end{equation}
+
+que nos dice cuánto una neurona responde a una corriente constante.
+
+Otra forma de pensar la tasa de disparo de la neurona post-sináptica es asumir
+que la misma no responde instantáneamente a cambios en la corriente sináptica.
+La corriente sináptica puede aumentar o decrecer, pero dicho cambio afecta a la
+tasa de disparo con cierta fase temporal debida a los cambios estructurales
+inducidos (apertura de canales iónicos, por ejemplo). Se toma entonces un modelo
+que es un low-pass filtered version de la tasa de disparo anterior:
+
+\begin{equation}
+    \tau_r \frac{dv}{dt} = F \left( I_s(t) \right) - v(t)
+\end{equation}
+
+En este modelo, el cambio en la tasa de disparo depende de cuánto le falta a la
+tasa actual $v(t)$ para alcanzar el estado de equilibrio determinado por
+$I_s(t)$. Si el estado de equilibrio es alcanzado, el cambio es cero. Esta
+expresión suele escribirse así, pero es lo mismo:
+
+\begin{equation*}
+    \tau_r \frac{dv}{dt} = -v + F\left( I_s(t) \right) 
+\end{equation*}
+
+donde $\tau_r$ determina la rapidez con que el firing rate se aproxima a su
+valor estable para la constante $I_s$, y qué tan precisamente $v$ sigue las
+fluctuciones temporales de $I_s(t)$.
+
+Vamos a asumir que $t_s \ll t_r$, es decir que la corriente $I_s$ inducida por
+los disparos presinápticas alcanza su equilibrio muy rápido en comparación con
+la tasa de disparo de la neurona post-sinápitca. Entonces podemos aproximar $I_s
+= \textbf{w} \cdot \textbf{u}$ en la ecuación anterior. Obtenemos: 
+
+\begin{equation}
+    \tau_r \frac{dv}{dt} = -v + F \left( \textbf{w} \cdot \textbf{u} \right) 
+\end{equation}
+
+Este es el modelo final.
+
+
+\pagebreak 
+
+\section{The two-process model}
+
+The two-process model posits a homeostatic sleep pressure $H(t)$ which increases
+during wake and dissipates during sleep. During wakefulness, $H(t)$ takes the
+following general form:
+
+\begin{equation}
+    H(t) = \mu_w + \left( H(t_{\text{off}})- \mu_w \right) 
+    \exp \left( - \frac{t - t_{\text{off}}}{\chi_w} \right) 
+\end{equation}
+
+where $H(t_{\text{off}}) < \mu_w$. $\mu_w$ acts as the upper asymptote
+(saturation level). The term $(H(t_{\text{off}}) - \mu_w)$ is a negative scaling
+constant. Consequently, while the exponential component decays over time, the
+overall function $H(t)$ increases, asymptotically approaching $\mu_w$ as the
+'distance' to the saturation point shrinks.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[
+        width=10cm, height=7cm,
+        xlabel={Time $t$ (hours)},
+        ylabel={Sleep Pressure $H(t)$},
+        xmin=0, xmax=16,
+        ymin=0, ymax=1.6,
+        grid=major,
+        legend pos=south east,
+        title={Two-Process Model: Wake Phase Dynamics},
+        /pgf/number format/.cd,
+        use comma,
+        1000 sep={}
+    ]
+
+    % Define the function parameters for reuse or clarity
+    % Equation: H(t) = mu + (H_off - mu) * exp(-(t - t_off) / chi)
+
+    % --- Curve 1: Standard Baseline ---
+    % mu_w=1.0, chi_w=5, t_off=0, H_start=0.2
+    \addplot[
+        blue, 
+        thick, 
+        domain=0:16, 
+        samples=100
+    ]
+    {1.0 + (0.2 - 1.0) * exp(-(x - 0) / 5.0)};
+    \addlegendentry{$\mu_w=1.0, \chi_w=5, t_{\text{off}}=0$}
+
+    % --- Curve 2: Late Start, Fast Rise ---
+    % mu_w=0.8, chi_w=3, t_off=2, H_start=0.2
+    % Note: Domain starts at 2 because equation is undefined/different before wake
+    \addplot[
+        red, 
+        thick, 
+        domain=2:16, 
+        samples=100
+    ]
+    {0.8 + (0.2 - 0.8) * exp(-(x - 2) / 3.0)};
+    \addlegendentry{$\mu_w=0.8, \chi_w=3, t_{\text{off}}=2$}
+
+    % --- Curve 3: High Saturation, Slow Rise ---
+    % mu_w=1.2, chi_w=8, t_off=0, H_start=0.4
+    \addplot[
+        green!60!black, 
+        thick, 
+        domain=0:16, 
+        samples=100
+    ]
+    {1.2 + (0.4 - 1.2) * exp(-(x - 0) / 8.0)};
+    \addlegendentry{$\mu_w=1.2, \chi_w=8, t_{\text{off}}=0$}
+
+    % Optional: Add dashed lines for the asymptotes (mu_w)
+    \addplot[blue, dotted, domain=0:16] {1.0};
+    \addplot[red, dotted, domain=2:16] {0.8};
+    \addplot[green!60!black, dotted, domain=0:16] {1.2};
+
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+The model for sleep is the same but with different parameters:
+
+\begin{equation}
+    H(t) = \mu_s + \left( H(t_{\text{on}})- \mu_s \right) 
+    \exp \left( - \frac{t - t_{\text{on}}}{\chi_s} \right) 
+\end{equation}
+
+and with $H(t_{\text{on}}) > \mu_s$. This makes $H(t)$ decreasing during sleep.
+It is easily seen that
+
+\begin{equation}
+    \frac{dH}{dt} = \frac{\mu}{\chi} - \frac{H}{\chi}
+\end{equation}
+
+It becomes apparent that the change in homeostatic pressure depends on the
+balance between a constant gain in homeostatic pressure $\mu / \chi$ and a loss
+which becomes greater as $H \to \infty$. In short, dissipation is proportional
+to the instantaneous sleep pressure ($1 / \chi \cdot H$), while gain is
+fixed.
+
+Daan, Beersma and Borbély improved the model by introducing a circadian rhythm
+$C(t) = \cos \omega t$ and positive and negative threshold curves: 
+
+\begin{align*}
+    H^+(t) = H_0^+ + \alpha C(t) \\ 
+    H^-(t) = H_0^- + \alpha C(t) 
+\end{align*}
+
+It is now understood that whenever the homeostatic pressure $H(t)$ coincides
+with $H^+(t)$ the upper threshold, there's a transition from wake to sleep. When
+$H(t)$ coincides in its decay with $H^-(t)$, there's a transition from sleep to
+wake. Biologically speaking, $H^+$ represents the resistance to falling asleep,
+or the maximum pressure the organism can handle before succumbing to sleep.
+$H^-$ is interpreted in analogous fashion. No physiological correlates of these
+thresholds have yet been found, which is a weak point of the model
+counterbalanced only by the fact that it replicates human sleep patterns quite
+well. Daan, Beersma and Borbély suggest that these thresholds represent
+circadian variations in the sensitivity of brain regions involved in the
+generation of sleep and wakefulness to homeostatic sleep pressure. The upper
+threshold in particular may be labile to short term environmental,
+physiological and psychological changes such as light, stimulants (coffee) and
+motivational aspects [Skeldon and Dijk, 2025].
+
+To analyze the system's behavior purely, researchers often simplify the
+equations by removing units. This is done by shifting and scaling appropriately.
+For instance, in the original model, sleep pressure decays down to a lower limit
+$\mu_s$. It is much easier mathematically if things decay to zero. So, we define
+a new variable $\tilde{H}$ that represents the \textit{difference} from the
+baseline:
+\[
+H = \tilde{H} + \mu_s
+\]
+What we do here is equivalent to what is done when speaking of altitude
+\textit{above sea level}: it's useful to take $\mu_s$ as reference value and
+speak only of \textit{sleep pressure above $\mu_s$}. 
+
+By substituting this into our differential equations, the loss term during sleep
+simplifies. Since the asymptote is now 0, the equation becomes:
+
+\begin{equation}
+    \frac{d\tilde{H}}{dt} = -\frac{1}{\chi_s}\tilde{H} \quad (\text{during sleep})
+\end{equation}
+
+The parameter $\mu_s$ has effectively disappeared. This doesn't mean there is no
+homeostatic gain during sleep, but rather that now \textit{gain} or
+\textit{loss} is expressed in the sign of $\tilde{ H }$. 
+
+In analogous fashion, the wake phase is normalized so that the full pressure
+equals exactly 1. We do this by scaling our variable by the total possible range
+of the system ($\mu_w - \mu_s$). We update our definition of $\tilde{H}$ to be a
+\textbf{percentage} of the total range:
+\[
+H = (\mu_w - \mu_s)\tilde{H} + \mu_s
+\]
+Or, rearranged to solve for our new variable $\tilde{H}$:
+\[
+\tilde{H} = \frac{H - \mu_s}{\mu_w - \mu_s}
+\]
+
+Now, $\tilde{H}$ is a dimensionless number between 0 and 1. 
+
+When we plug this scaled variable back into the original differential equations,
+the constants $\mu_w$ and $\mu_s$ cancel out entirely. During wake, the system
+raises to 1:
+
+\begin{equation}
+    \frac{d\tilde{H}}{dt} = \frac{1}{\chi_w} - \frac{1}{\chi_w}\tilde{H}
+\end{equation}
+
+During sleep, it falls to zero:
+
+\begin{equation}
+    \frac{d\tilde{H}}{dt} = -\frac{1}{\chi_s}\tilde{H}
+\end{equation}
+
+The general form during wake becomes:
+
+\begin{align*}
+    \tilde{ H }(t) = 1 + ( \tilde{ H }(t_{\text{off}}) - 1 )
+    \exp 
+    \left( -\frac{t - t_{\text{off}}}{\chi_w} \right) 
+\end{align*}
+
+The general form during sleep: 
+
+\begin{equation}
+    \tilde{ H }(t) = \tilde{ H }(t_{\text{on}}) 
+    \exp 
+    \left( -\frac{t - t_{\text{on}}}{\chi_w} \right) 
+\end{equation}
+
+\pagebreak 
+
+\section{A physiological model of sleep}
+
+Here I present a physiological model developed by Phillips and Robinson in a
+paper publihsed in 2006. The work is of great interest because previous (and
+most) sleep models, such as the two-process model, were strictly
+phenomenological and dealt not with the underlying neurophysiology.
+
+The model is based on the dynamics of the ascending arousal system (AAS), a
+complex of acetylcholinic and monoaminergic nuclei in the brainstem. The AAS,
+which projects difussely to the cerebrum, controls the arousal state of the
+brain. Two distinct drives affect the activity of the AAS: the circadian drive
+and the homeostatic drive, which are previously integrated in the the
+ventrolateral preoptic area (VLPO) of the hypothalamus. Within-system
+interactions of the AAS---i.e. interactions between the nuclei conforming the
+AAS---produce the ultradian rhythms characteristic of sleep, like NREM and REM
+cycles, but are disregarded in the modelling of sleep-wake cycles. 
+
+The flow of information across these systems is relatively simple. The
+homeostatic and circadian drives are both transmitted to the AAS from inhibitory
+GABAergic projections of the VLPO. The homeostatic signal is caused by the
+progressive accumulation of adenosin in the extracellular medium of the basal
+fobrain, which causes the neurons in this region to become inhibited. Since
+these play an inhibitory role on the VLPO, their own inhibition induces a
+desinhibition of the VLPO, which itself then signals the AAS more strongly. The
+circadian signal originates in the suprachiasmatic nucleus and projects to the
+VLPO via the dorsomedial nucleus of the hypothalamus. It is a fundamentally
+endogenous oscillator entrained to the day mainly by the influence of light. 
+
+In general, it is understood that the monoaminergic nuclei of the AAS promotes
+wakefulness by forming a mutually inhibitory circuit with the VLPO, which is
+active during sleep. These two systems are therefore self-reinforcing and
+conform a flip-flop switch. Contrarily, there is no firm evidence of direct
+connections from the acetylcholinic nuclei to the VLPO: it rather seems that the
+VLPO connects to the acetylcholinic nuclei via inhibitory interneurorns.
+
+Phillips and Robinson's model, hereby termed the PRM, describes three neural
+populations: the monoaminergic and acetylcholinic nuclei in the AAS and the
+VLPO. As described before, the VLPO integrates the homeostatic and circadian
+drives and inhibits the AAS, an aspect which the model must capture. Since
+sleep-wake transitions are modulated by the mutual inhibition between the VLPO
+and the monoaminergic nuclei, the activity of the acetylcholinic nuclei is
+modeled at a constant intermediate level. For further justification of this
+decision, see the original paper.
+
+As most papers, Phillips and Robinson do not provide an intuition behind the
+mathematical expressions they use. I should wish to provide an explanation not
+too detailed that it becomes tedious, but sufficient to make the model
+accessible to, say, an undergraduate student.
+
+First of all, the PRM model does not deal with individual neurons but rather
+with neural populations. Topologically, the neural populations may be understood
+as a dynamically evolving weighted graph: each node is a cluster of neurons with
+some average firing rate and average voltage, with edges representing the sense
+and magnitude of the interactions between populations. The dynamism of course
+comes from fluctuations in the voltage, which in turn must affect the firing
+rate. In general, the relation between the firing rate of a cluster and its
+voltage is modeled with a sigmoid function, thus capturing the saturation of the
+firing rate as voltage increases:
+
+\begin{equation}
+    Q_a(t) = \frac{ Q_{\text{max}} }{1 + \exp\left( \frac{ V_a(t) - \mu
+    }{\sigma'} \right)  }
+\end{equation}
+
+The function $V_a(t)$ is understood to express voltage relative to the average
+resting potential of the neurons in the cluster. This means that if $V_a(t) =
+10\text{mV}$ and the mean resting potential is $-70\text{mV}$, the actual mean
+voltage of the neurons in the cluster is $-60\text{mV}$. The $\mu$ parameter
+defines the mean threshold voltage (also relative to resting). This means that
+when $V_a(t)$ crosses $\mu$, the firing rate $Q_a(t)$ is at half its maximum
+value. Thus, $\mu$ defines a critical voltage level: below it, most neurons in
+the cluster are quiescent; above it, most neurons are firing. $\sigma'$ defines
+the steepness of the sigmoid around $\mu$, and is related to the standard
+deviation because $\sigma = \sigma' \pi / \sqrt{3} $. 
+
+The voltage itself is modeled as a leaky integrator of incoming post-synaptic
+currents into the neurons of the cluster. For the VLPO, which receives and
+integrates the circadian and homeostatic drives, we have: 
+
+\begin{equation}
+    \tau_v \frac{dV_v}{dt} = -V_v + w_{vm} Q_m + D
+\end{equation}
+
+where $w_{vm}$ is  the weight of the connection from the monoaminergic nuclei to
+the VLPO, $Q_m$ the firing rate of the monoaminergic cluster, and $D$ is the
+linear combination of the circadian and homeostatic drives: 
+
+\begin{equation*}
+    D = w_{vC} C + w_{vH} H
+\end{equation*}
+
+As in the two-process model, the homeostatic drive $H$ is modelled
+phenomenologically, aiming to capture the metabolic activity that is high during
+wake and low during sleep. Because arousal correlates highly with monoaminergic
+activity, the PRM assumes that the homeostatic drive increases proportionally to
+the firing rate of the monoaminergic nuclei $Q_m$. Also as in the two-process
+model, $C$ is a simple sinusoidal function with a 24 hour period:
+
+\begin{equation}
+    C(t) = \cos(\omega t) + \mu_C, \qquad \chi \frac{dH}{dt} = - H + \mu_H Q_m
+\end{equation}
+
+Note that this model of $H$ assumes that when $Q_m = 0$, i.e. during sleep, $H$ 
+is negligible.
+
+The voltage of the monoaminergic nuclei depends on the excitatory input from the
+acetylcholinic nuclei and the inhibitory input from the VLPO, from which readily
+follows the following linear leaky integrator model:
+
+\begin{equation}
+    \tau_m \frac{dV_m}{dt} = - V_m + w_{mv}Q_v + w_{ma} Q_a
+\end{equation}
+
+The firing rates of the VLPO and the monoaminergic nuclei use the same sigmoid
+parameters because empirically both populations have similar firing rate
+dynamics. 
+
+As detailed in the original paper, mammalian locus coeruleus neurons have a mean
+threshold of $-55\text{mV}$ and a resting potential of $-65\text{mV}$, giving a
+relative threshold of $\mu = 10\text{mV}$. Maximal firing rates under prolonged
+depolarization of single neurons were around $150$sec$^{-1}$, so we set
+$Q_{\text{max}} = 150$sec$^{-1}$. $\sigma'$ values within $2-6\text{mV}$ for
+cortical neurons are typical, and Phillips and Robinson argue that because
+voltage ranges between cortical and brainstem nuclei neurons are similar, a
+value of $\sigma' = 3\text{mV}$ is appropriate.
+
+The weights $w_{jk}$, representing the strength and sense of the connections
+from population $k$ into population $j$, have known signs. The VLPO and the
+monoaminergic populations, as stated earlier, are mutually inhibitory, from
+which follows $v_{mv} < 0, v_{vm} < 0$. The acetylcholinic population excites
+the monoaminergic population, so $w_{ma} > 0$. The homeostatic drive disinhibits
+the VLPO, so $w_{vH} > 0$, while the circadian drive inhibits it, so $w_{vC} <
+0$.
+
+In the PRM, the flip-flop switch behavior of the sleep-wake cycle entails 
+an equilibrium with two stable fixed points (wake and sleep) and an unstable
+fixed point (the threshold between sleep and wake). To find steady states, they
+solve the system of equations given by setting the voltage derivatives to zero:
+
+\begin{align*}
+    0 &= -V_v + w_{vm} Q_m + D \\
+    0 &= - V_m + w_{mv}Q_v + w_{ma} Q_a \\
+\end{align*}
+
+From the second equation, we obtain that the equilibrium voltage satisfies
+
+\begin{equation*}
+    V_m = w_{mv}Q_v + w_{ma} Q_a
+\end{equation*}
+
+The firing rate $Q_m$ at equilibrium is a function of the equilibrium voltage,
+so that we may write $Q_m = S(V_m)$. Thus, from the first equation, it follows 
+
+$$0 = -V_v + D + \nu_{vm} S(\nu_{mv} Q_v + \nu_{ma} Q_{ao})$$
+
+So the equilibrium occurs at the roots of the function
+
+\begin{align*}
+    f_v(V_v) 
+    &= -V_v + D + w_{vm} S(w_{mv} S(V_v) + w_{ma} Q_a) \\
+    &= \tau_v
+    d\frac{V_v}{dt}
+\end{align*}
+
+Phillips and Robinson analyze this function and approximate its roots through
+the roots of two other, related but simpler functions. These roots are 
+
+\begin{equation*}
+    K_{v1} = D + w_{vm} S(w_{ma} Q_{ao}), \qquad K_{v2} = D + w_{vm}S \left(
+    w_{mv}Q_{\text{max}} + w_{ma} Q_{ao} \right) 
+\end{equation*}
+
+Similarly, they found the equilibrium points for the monoaminergic population.
+Furthermore, since the firing rate of the monoaminergic and the VLPO populations
+have the same parameters, they reason that the equilibrium points of both
+populations should be roughly equal, reducing the dimensionality of the problem.
+Their mathematical analysis is extensive, so I will simply state that they found
+the wake equilibrium voltage to fall within $-15\text{mV}$ and $-5\text{mV}$,
+and the sleep equilibrium voltage to fall within $0$ and $1.5\text{mV}$.
+
+
+
+
+
+
+
+\end{document}
+
+
+
