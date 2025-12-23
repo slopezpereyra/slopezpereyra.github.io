@@ -8,6 +8,7 @@ layout: null
 @import url('https://fonts.cdnfonts.com/css/new-caledonia-lt-std');
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fanwood+Text:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
 /*@font-face {
 /*    font-family: "Computer Modern Serif", serif; 
@@ -29,9 +30,18 @@ layout: null
 /* font-weight: 450;*/
 /* font-size: 20px;*/
 
+
+/*body {
+/*  font-family: "Artful Dodger W00 Regular", serif;
+/*  font-weight: 1;
+/*  font-size: 20px;
+/*  text-align: justify;
+/*  letter-spacing: normal; 
+/*  /* --- name --- */
+
 body {
-  font-family: "Artful Dodger W00 Regular", serif;
-  font-weight: 1;
+  font-family: "Lora", serif; /* Changed from Artful Dodger */
+  font-weight: 400;           /* Adjusted from 1 to 400 */
   font-size: 20px;
   text-align: justify;
   letter-spacing: normal; 
