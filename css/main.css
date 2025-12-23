@@ -41,7 +41,7 @@ layout: null
 
 body {
   font-family: "Lora", serif; /* Changed from Artful Dodger */
-  font-weight: 400;           /* Adjusted from 1 to 400 */
+  font-weight: 600;           /* Adjusted from 1 to 400 */
   font-size: 20px;
   text-align: justify;
   letter-spacing: normal; 
@@ -58,7 +58,7 @@ body {
   {% endif %}
 }
 p {
-  line-height: 1.0; 
+  line-height: 1.5; 
   margin: 30px 0;
 }
 p a {
