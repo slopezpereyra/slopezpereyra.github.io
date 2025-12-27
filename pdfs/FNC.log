@@ -1,0 +1,2798 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  27 DEC 2025 14:31
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**FNC.tex
+(./FNC.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count187
+\c@section=\count188
+\c@subsection=\count189
+\c@subsubsection=\count190
+\c@paragraph=\count191
+\c@subparagraph=\count192
+\c@figure=\count193
+\c@table=\count194
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+) (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2024/01/07 v24.1 The Babel package
+\babel@savecnt=\count195
+\U@D=\dimen141
+\l@unhyphenated=\language89
+ (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count196
+ (/usr/share/texlive/texmf-dist/tex/generic/babel-spanish/spanish.ldf
+Language: spanish.ldf 2021/05/27 v5.0q Spanish support from the babel system
+\es@quottoks=\toks17
+\es@quotdepth=\count197
+Package babel Info: Making " an active character on input line 570.
+Package babel Info: Making . an active character on input line 675.
+Package babel Info: Making < an active character on input line 722.
+Package babel Info: Making > an active character on input line 722.
+)) (/usr/share/texlive/texmf-dist/tex/generic/babel/locale/es/babel-spanish.tex
+Package babel Info: Importing font and identification data for spanish
+(babel)             from babel-es.ini. Reported on input line 11.
+) (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks18
+\inpenc@posthook=\toks19
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2023/05/13 v2.17o AMS math features
+\@mathmargin=\skip50
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+ (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks20
+\ex@=\dimen142
+)) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen143
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count198
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count199
+\leftroot@=\count266
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count267
+\DOTSCASE@=\count268
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen144
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count269
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count270
+\dotsspace@=\muskip16
+\c@parentequation=\count271
+\dspbrk@lvl=\count272
+\tag@help=\toks21
+\row@=\count273
+\column@=\count274
+\maxfields@=\count275
+\andhelp@=\toks22
+\eqnshift@=\dimen145
+\alignsep@=\dimen146
+\tagshift@=\dimen147
+\tagwidth@=\dimen148
+\totwidth@=\dimen149
+\lineht@=\dimen150
+\@envbody=\toks23
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks24
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks25
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen151
+\Gin@req@width=\dimen152
+) (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+ (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen153
+\captionmargin=\dimen154
+\caption@leftmargin=\dimen155
+\caption@rightmargin=\dimen156
+\caption@width=\dimen157
+\caption@indent=\dimen158
+\caption@parindent=\dimen159
+\caption@hangindent=\dimen160
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count276
+\c@continuedfloat=\count277
+) (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count278
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count279
+) (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count280
+\float@exts=\toks26
+\float@box=\box53
+\@float@everytoks=\toks27
+\@floatcapt=\box54
+) (/usr/share/texlive/texmf-dist/tex/latex/sttools/stfloats.sty
+Package: stfloats 2017/03/27 v3.3 Improve float mechanism and baselineskip settings
+\@dblbotnum=\count281
+\c@dblbotnumber=\count282
+) (/usr/share/texlive/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
+) (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count283
+\Gm@cntv=\count284
+\c@Gm@tempcnt=\count285
+\Gm@bindingoffset=\dimen161
+\Gm@wd@mp=\dimen162
+\Gm@odd@mp=\dimen163
+\Gm@even@mp=\dimen164
+\Gm@layoutwidth=\dimen165
+\Gm@layoutheight=\dimen166
+\Gm@layouthoffset=\dimen167
+\Gm@layoutvoffset=\dimen168
+\Gm@dimlist=\toks28
+) (/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty
+Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
+ (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)) (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count286
+)) (/usr/share/texlive/texmf-dist/tex/latex/marginnote/marginnote.sty
+Package: marginnote 2018/08/09 1.4b non floating margin notes for LaTeX
+\c@mn@abspage=\count287
+) (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+) (/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+) (/usr/share/texlive/texmf-dist/tex/latex/newtx/newtxtext.sty
+Package: newtxtext 2024/01/11 v1.737(Michael Sharpe) latex and unicode latex support for TeXGyreTermesX
+ `newtxtext' v1.737, 2024/01/11 Text macros taking advantage of TeXGyre Termes and its extensions (msharpe)
+(/usr/share/texlive/texmf-dist/tex/latex/xpatch/xpatch.sty (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2024-01-22 L3 programming layer (loader) 
+ (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count288
+\l__pdf_internal_box=\box55
+))
+Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
+ (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2023-10-10 L3 Experimental document command parser
+)) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+) (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+ (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks29
+\XKV@tempa@toks=\toks30
+)
+\XKV@depth=\count289
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
+\xs_counta=\count290
+\xs_countb=\count291
+)
+Package: xstring 2023/08/22 v1.86 String manipulations (CT)
+) (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+) (/usr/share/texlive/texmf-dist/tex/latex/carlisle/scalefnt.sty)
+LaTeX Font Info:    Setting ntxLF sub-encoding to TS1/0 on input line 24.
+LaTeX Font Info:    Setting ntxTLF sub-encoding to TS1/0 on input line 24.
+LaTeX Font Info:    Setting ntxOsF sub-encoding to TS1/0 on input line 24.
+LaTeX Font Info:    Setting ntxTOsF sub-encoding to TS1/0 on input line 24.
+ (/usr/share/texlive/texmf-dist/tex/generic/kastrup/binhex.tex)
+\ntx@tmpcnta=\count292
+\ntx@cnt=\count293
+ (/usr/share/texlive/texmf-dist/tex/latex/fontaxes/fontaxes.sty
+Package: fontaxes 2020/07/21 v1.0e Font selection axes
+LaTeX Info: Redefining \upshape on input line 29.
+LaTeX Info: Redefining \itshape on input line 31.
+LaTeX Info: Redefining \slshape on input line 33.
+LaTeX Info: Redefining \swshape on input line 35.
+LaTeX Info: Redefining \scshape on input line 37.
+LaTeX Info: Redefining \sscshape on input line 39.
+LaTeX Info: Redefining \ulcshape on input line 41.
+LaTeX Info: Redefining \textsw on input line 47.
+LaTeX Info: Redefining \textssc on input line 48.
+LaTeX Info: Redefining \textulc on input line 49.
+)
+\tx@sixem=\dimen169
+\tx@y=\dimen170
+\tx@x=\dimen171
+\tx@tmpdima=\dimen172
+\tx@tmpdimb=\dimen173
+\tx@tmpdimc=\dimen174
+\tx@tmpdimd=\dimen175
+\tx@tmpdime=\dimen176
+\tx@tmpdimf=\dimen177
+\tx@dimA=\dimen178
+\tx@dimAA=\dimen179
+\tx@dimB=\dimen180
+\tx@dimBB=\dimen181
+\tx@dimC=\dimen182
+LaTeX Info: Redefining \oldstylenums on input line 893.
+) (/usr/share/texlive/texmf-dist/tex/latex/newtx/newtxmath.sty
+Package: newtxmath 2023/11/05 v1.732
+ `newtxmath' v1.732, 2023/11/05 Math macros based originally on txfonts (msharpe) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/centernot.sty
+Package: centernot 2016/05/16 v1.4 Centers the not symbol horizontally (HO)
+)
+\tx@cntz=\count294
+ (/usr/share/texlive/texmf-dist/tex/generic/kastrup/binhex.tex)
+\tx@Isdigit=\count295
+\tx@IsAlNum=\count296
+\tx@tA=\toks31
+\tx@tB=\toks32
+\tx@su=\read3
+
+amsthm NOT loaded
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 390.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/minntx/m/n on input line 390.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/minntx/m/n on input line 390.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/minntx/m/n --> OT1/minntx/b/n on input line 391.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 397.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> T1/qhv/m/n on input line 397.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> T1/qhv/m/n on input line 397.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 398.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/minntx/m/it on input line 398.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/minntx/m/it on input line 398.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 399.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> T1/ntxtt/m/n on input line 399.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> T1/ntxtt/m/n on input line 399.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 401.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/minntx/b/n on input line 401.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/minntx/b/n on input line 401.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/minntx/m/it --> OT1/minntx/b/it on input line 402.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  T1/qhv/m/n --> T1/qhv/b/n on input line 403.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  T1/ntxtt/m/n --> T1/ntxtt/b/n on input line 404.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 506.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/ntxmi/m/it on input line 506.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/ntxmi/m/it on input line 506.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/ntxmi/m/it --> OML/ntxmi/b/it on input line 507.
+\symlettersA=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `lettersA' in version `bold'
+(Font)                  U/ntxmia/m/it --> U/ntxmia/b/it on input line 562.
+LaTeX Font Info:    Redeclaring math alphabet \mathfrak on input line 564.
+Now handling font encoding LMS ...
+... no UTF-8 mapping file for font encoding LMS
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 583.
+LaTeX Font Info:    Encoding `OMS' has changed to `LMS' for symbol font
+(Font)              `symbols' in the math version `normal' on input line 583.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> LMS/ntxsy/m/n on input line 583.
+LaTeX Font Info:    Encoding `OMS' has changed to `LMS' for symbol font
+(Font)              `symbols' in the math version `bold' on input line 583.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> LMS/ntxsy/m/n on input line 583.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  LMS/ntxsy/m/n --> LMS/ntxsy/b/n on input line 584.
+\symAMSm=\mathgroup7
+LaTeX Font Info:    Overwriting symbol font `AMSm' in version `bold'
+(Font)                  U/ntxsym/m/n --> U/ntxsym/b/n on input line 609.
+\symsymbolsC=\mathgroup8
+LaTeX Font Info:    Overwriting symbol font `symbolsC' in version `bold'
+(Font)                  U/ntxsyc/m/n --> U/ntxsyc/b/n on input line 630.
+Now handling font encoding LMX ...
+... no UTF-8 mapping file for font encoding LMX
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 643.
+LaTeX Font Info:    Encoding `OMX' has changed to `LMX' for symbol font
+(Font)              `largesymbols' in the math version `normal' on input line 643.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> LMX/ntxexx/m/n on input line 643.
+LaTeX Font Info:    Encoding `OMX' has changed to `LMX' for symbol font
+(Font)              `largesymbols' in the math version `bold' on input line 643.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> LMX/ntxexx/m/n on input line 643.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  LMX/ntxexx/m/n --> LMX/ntxexx/b/n on input line 644.
+\symlargesymbolsTXA=\mathgroup9
+LaTeX Font Info:    Overwriting symbol font `largesymbolsTXA' in version `bold'
+(Font)                  U/ntxexa/m/n --> U/ntxexa/b/n on input line 658.
+\tx@sbptoks=\toks33
+LaTeX Font Info:    Redeclaring math delimiter \lfloor on input line 881.
+LaTeX Font Info:    Redeclaring math delimiter \rfloor on input line 882.
+LaTeX Font Info:    Redeclaring math delimiter \lceil on input line 883.
+LaTeX Font Info:    Redeclaring math delimiter \rceil on input line 884.
+LaTeX Font Info:    Redeclaring math delimiter \lbrace on input line 889.
+LaTeX Font Info:    Redeclaring math delimiter \rbrace on input line 890.
+LaTeX Font Info:    Redeclaring math delimiter \langle on input line 892.
+LaTeX Font Info:    Redeclaring math delimiter \rangle on input line 894.
+LaTeX Font Info:    Redeclaring math delimiter \arrowvert on input line 898.
+LaTeX Font Info:    Redeclaring math delimiter \vert on input line 899.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 970.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 971.
+LaTeX Font Info:    Redeclaring math accent \vec on input line 2044.
+LaTeX Info: Redefining \Bbbk on input line 2834.
+LaTeX Info: Redefining \not on input line 2982.
+) (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+minntx on input line 112.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/t1minntx.fd
+File: t1minntx.fd 2023/09/09 v1.1 font definition file for T1/minntx
+)) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count297
+\lst@gtempboxa=\box56
+\lst@token=\toks34
+\lst@length=\count298
+\lst@currlwidth=\dimen183
+\lst@column=\count299
+\lst@pos=\count300
+\lst@lostspace=\dimen184
+\lst@width=\dimen185
+\lst@newlines=\count301
+\lst@lineno=\count302
+\lst@maxwidth=\dimen186
+ (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
+\c@lstnumber=\count303
+\lst@skipnumbers=\count304
+\lst@framebox=\box57
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2023/02/27 1.9 listings configuration
+))
+Package: listings 2023/02/27 1.9 (Carsten Heinz)
+ (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+) (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks35
+\pgfutil@tempdima=\dimen187
+\pgfutil@tempdimb=\dimen188
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box58
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks36
+\pgfkeys@temptoks=\toks37
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks38
+))
+\pgf@x=\dimen189
+\pgf@y=\dimen190
+\pgf@xa=\dimen191
+\pgf@ya=\dimen192
+\pgf@xb=\dimen193
+\pgf@yb=\dimen194
+\pgf@xc=\dimen195
+\pgf@yc=\dimen196
+\pgf@xd=\dimen197
+\pgf@yd=\dimen198
+\w@pgf@writea=\write3
+\r@pgf@reada=\read4
+\c@pgf@counta=\count305
+\c@pgf@countb=\count306
+\c@pgf@countc=\count307
+\c@pgf@countd=\count308
+\t@pgf@toka=\toks39
+\t@pgf@tokb=\toks40
+\t@pgf@tokc=\toks41
+\pgf@sys@id@count=\count309
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-pdftex.def
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count310
+\pgfsyssoftpath@bigbuffer@items=\count311
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen199
+\pgfmath@count=\count312
+\pgfmath@box=\box59
+\pgfmath@toks=\toks42
+\pgfmath@stack@operand=\toks43
+\pgfmath@stack@operation=\toks44
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count313
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen256
+\pgf@picmaxx=\dimen257
+\pgf@picminy=\dimen258
+\pgf@picmaxy=\dimen259
+\pgf@pathminx=\dimen260
+\pgf@pathmaxx=\dimen261
+\pgf@pathminy=\dimen262
+\pgf@pathmaxy=\dimen263
+\pgf@xx=\dimen264
+\pgf@xy=\dimen265
+\pgf@yx=\dimen266
+\pgf@yy=\dimen267
+\pgf@zx=\dimen268
+\pgf@zy=\dimen269
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen270
+\pgf@path@lasty=\dimen271
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen272
+\pgf@shorten@start@additional=\dimen273
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box60
+\pgf@hbox=\box61
+\pgf@layerbox@main=\box62
+\pgf@picture@serial@count=\count314
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen274
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen275
+\pgf@pt@y=\dimen276
+\pgf@pt@temp=\dimen277
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen278
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen279
+\pgf@sys@shading@range@num=\count315
+\pgf@shadingcount=\count316
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box63
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box64
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen280
+\pgf@nodesepend=\dimen281
+) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen282
+\pgffor@skip=\dimen283
+\pgffor@stack=\toks45
+\pgffor@toks=\toks46
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count317
+\pgfplotmarksize=\dimen284
+)
+\tikz@lastx=\dimen285
+\tikz@lasty=\dimen286
+\tikz@lastxsaved=\dimen287
+\tikz@lastysaved=\dimen288
+\tikz@lastmovetox=\dimen289
+\tikz@lastmovetoy=\dimen290
+\tikzleveldistance=\dimen291
+\tikzsiblingdistance=\dimen292
+\tikz@figbox=\box65
+\tikz@figbox@bg=\box66
+\tikz@tempbox=\box67
+\tikz@tempbox@bg=\box68
+\tikztreelevel=\count318
+\tikznumberofchildren=\count319
+\tikznumberofcurrentchild=\count320
+\tikz@fig@count=\count321
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count322
+\pgfmatrixcurrentcolumn=\count323
+\pgf@matrix@numberofcolumns=\count324
+)
+\tikz@expandcount=\count325
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowinset=\dimen293
+\pgfarrowlength=\dimen294
+\pgfarrowwidth=\dimen295
+\pgfarrowlinewidth=\dimen296
+)
+LaTeX Font Info:    Trying to load font information for T1+ntxtlf on input line 88.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/t1ntxtlf.fd
+File: t1ntxtlf.fd 2021/05/24 v1.1 font definition file for T1/ntx/tlf
+)
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 10.0pt on input line 88.
+ (./FNC.aux
+LaTeX Info: Redefining \. on input line 8.
+LaTeX Info: Redefining \% on input line 8.
+
+
+LaTeX Warning: Label `fig:lapicque_coupled' multiply defined.
+
+
+LaTeX Warning: Label `fig:lapicque_coupled' multiply defined.
+
+)
+\openout1 = `FNC.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 88.
+LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 88.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/omlntxmi.fd
+File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
+)
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 88.
+LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 88.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxexa.fd
+File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
+)
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 88.
+LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 88.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/lmsntxsy.fd
+File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
+)
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 88.
+LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line 88.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/lmxntxexx.fd
+File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
+)
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Info: Redefining \. on input line 88.
+LaTeX Info: Redefining \% on input line 88.
+LaTeX Info: Command `\dddot' is already robust on input line 88.
+LaTeX Info: Command `\ddddot' is already robust on input line 88.
+ (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count326
+\scratchdimen=\dimen297
+\scratchbox=\box69
+\nofMPsegments=\count327
+\nofMParguments=\count328
+\everyMPshowfont=\toks47
+\MPscratchCnt=\count329
+\MPscratchDim=\dimen298
+\MPnumerator=\count330
+\makeMPintoPDFobject=\count331
+\everyMPtoPDFconversion=\toks48
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(42.67912pt, 528.93675pt, 42.67912pt)
+* v-part:(T,H,B)=(56.9055pt, 681.15898pt, 56.9055pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=528.93675pt
+* \textheight=681.15898pt
+* \oddsidemargin=-29.59087pt
+* \evensidemargin=-29.59087pt
+* \topmargin=-52.36449pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=4.0pt
+* \marginparsep=10.0pt
+* \columnsep=19.91684pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumntrue
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+\c@mv@tabular=\count332
+\c@mv@boldtabular=\count333
+\c@lstlisting=\count334
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 14.4pt on input line 91.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 14.4pt on input line 91.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 12.0pt on input line 93.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 12.0pt on input line 93.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
+(Font)              scaled to size 10.0pt on input line 95.
+LaTeX Font Info:    Trying to load font information for OT1+minntx on input line 141.
+(/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1minntx.fd
+File: ot1minntx.fd 2023/09/09 v1.1 font definition file for OT1/minntx
+)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 141.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 141.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 141.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxmia.fd
+File: untxmia.fd 2018/04/14 Fontinst v1.933 font definitions for U/ntxmia.
+)
+LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 141.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsym.fd
+File: untxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/ntxsym.
+)
+LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 141.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsyc.fd
+File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
+)
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 10.0pt on input line 144.
+
+./FNC.tex:214: Argument of \language@active@arg> has an extra }.
+<inserted text> 
+                \par 
+l.214 \draw[axis]
+                  (0,0) -- (6,0) node[right] {$t$};
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+./FNC.tex:214: Paragraph ended before \language@active@arg> was complete.
+<to be read again> 
+                   \par 
+l.214 \draw[axis]
+                  (0,0) -- (6,0) node[right] {$t$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+-
+./FNC.tex:214: Paragraph ended before \pgfkeys@addpath was complete.
+<to be read again> 
+                   \par 
+l.214 \draw[axis]
+                  (0,0) -- (6,0) node[right] {$t$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./FNC.tex:214: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.214 \draw[axis]
+                  (0,0) -- (6,0) node[right] {$t$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:214: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.214 \draw[axis]
+                  (0,0) -- (6,0) node[right] {$t$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:214: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.214 \draw[axis]
+                  (0,0) -- (6,0) node[right] {$t$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+Runaway argument?
+-
+./FNC.tex:214: Paragraph ended before \pgfkeys@splitter was complete.
+<to be read again> 
+                   \par 
+l.214 \draw[axis]
+                  (0,0) -- (6,0) node[right] {$t$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Missing character: There is no / in font nullfont!
+Missing character: There is no / in font nullfont!
+./FNC.tex:215: Argument of \language@active@arg> has an extra }.
+<inserted text> 
+                \par 
+l.215 \draw[axis]
+                  (0,0) -- (0,2) node[above] {$\rho(t)$};
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+./FNC.tex:215: Paragraph ended before \language@active@arg> was complete.
+<to be read again> 
+                   \par 
+l.215 \draw[axis]
+                  (0,0) -- (0,2) node[above] {$\rho(t)$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+-
+./FNC.tex:215: Paragraph ended before \pgfkeys@addpath was complete.
+<to be read again> 
+                   \par 
+l.215 \draw[axis]
+                  (0,0) -- (0,2) node[above] {$\rho(t)$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./FNC.tex:215: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.215 \draw[axis]
+                  (0,0) -- (0,2) node[above] {$\rho(t)$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:215: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.215 \draw[axis]
+                  (0,0) -- (0,2) node[above] {$\rho(t)$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:215: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.215 \draw[axis]
+                  (0,0) -- (0,2) node[above] {$\rho(t)$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+Runaway argument?
+-
+./FNC.tex:215: Paragraph ended before \pgfkeys@splitter was complete.
+<to be read again> 
+                   \par 
+l.215 \draw[axis]
+                  (0,0) -- (0,2) node[above] {$\rho(t)$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Missing character: There is no / in font nullfont!
+Missing character: There is no / in font nullfont!
+./FNC.tex:233: Argument of \language@active@arg> has an extra }.
+<inserted text> 
+                \par 
+l.233 \draw[axis]
+                  (0,0) -- (6,0) node[right] {$\tau$};
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+./FNC.tex:233: Paragraph ended before \language@active@arg> was complete.
+<to be read again> 
+                   \par 
+l.233 \draw[axis]
+                  (0,0) -- (6,0) node[right] {$\tau$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+-
+./FNC.tex:233: Paragraph ended before \pgfkeys@addpath was complete.
+<to be read again> 
+                   \par 
+l.233 \draw[axis]
+                  (0,0) -- (6,0) node[right] {$\tau$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./FNC.tex:233: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.233 \draw[axis]
+                  (0,0) -- (6,0) node[right] {$\tau$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:233: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.233 \draw[axis]
+                  (0,0) -- (6,0) node[right] {$\tau$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:233: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.233 \draw[axis]
+                  (0,0) -- (6,0) node[right] {$\tau$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+Runaway argument?
+-
+./FNC.tex:233: Paragraph ended before \pgfkeys@splitter was complete.
+<to be read again> 
+                   \par 
+l.233 \draw[axis]
+                  (0,0) -- (6,0) node[right] {$\tau$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Missing character: There is no / in font nullfont!
+Missing character: There is no / in font nullfont!
+./FNC.tex:234: Argument of \language@active@arg> has an extra }.
+<inserted text> 
+                \par 
+l.234 \draw[axis]
+                  (0,0) -- (0,2) node[above] {$h(\tau)$};
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+./FNC.tex:234: Paragraph ended before \language@active@arg> was complete.
+<to be read again> 
+                   \par 
+l.234 \draw[axis]
+                  (0,0) -- (0,2) node[above] {$h(\tau)$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+-
+./FNC.tex:234: Paragraph ended before \pgfkeys@addpath was complete.
+<to be read again> 
+                   \par 
+l.234 \draw[axis]
+                  (0,0) -- (0,2) node[above] {$h(\tau)$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./FNC.tex:234: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.234 \draw[axis]
+                  (0,0) -- (0,2) node[above] {$h(\tau)$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:234: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.234 \draw[axis]
+                  (0,0) -- (0,2) node[above] {$h(\tau)$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:234: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.234 \draw[axis]
+                  (0,0) -- (0,2) node[above] {$h(\tau)$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+Runaway argument?
+-
+./FNC.tex:234: Paragraph ended before \pgfkeys@splitter was complete.
+<to be read again> 
+                   \par 
+l.234 \draw[axis]
+                  (0,0) -- (0,2) node[above] {$h(\tau)$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Missing character: There is no / in font nullfont!
+Missing character: There is no / in font nullfont!
+./FNC.tex:247: Argument of \language@active@arg> has an extra }.
+<inserted text> 
+                \par 
+l.247 \draw[axis]
+                  (0,0) -- (6,0) node[right] {$t$};
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+./FNC.tex:247: Paragraph ended before \language@active@arg> was complete.
+<to be read again> 
+                   \par 
+l.247 \draw[axis]
+                  (0,0) -- (6,0) node[right] {$t$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+-
+./FNC.tex:247: Paragraph ended before \pgfkeys@addpath was complete.
+<to be read again> 
+                   \par 
+l.247 \draw[axis]
+                  (0,0) -- (6,0) node[right] {$t$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./FNC.tex:247: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.247 \draw[axis]
+                  (0,0) -- (6,0) node[right] {$t$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:247: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.247 \draw[axis]
+                  (0,0) -- (6,0) node[right] {$t$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:247: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.247 \draw[axis]
+                  (0,0) -- (6,0) node[right] {$t$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+Runaway argument?
+-
+./FNC.tex:247: Paragraph ended before \pgfkeys@splitter was complete.
+<to be read again> 
+                   \par 
+l.247 \draw[axis]
+                  (0,0) -- (6,0) node[right] {$t$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Missing character: There is no / in font nullfont!
+Missing character: There is no / in font nullfont!
+./FNC.tex:248: Argument of \language@active@arg> has an extra }.
+<inserted text> 
+                \par 
+l.248 \draw[axis]
+                  (0,0) -- (0,2.5) node[above] {};
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+./FNC.tex:248: Paragraph ended before \language@active@arg> was complete.
+<to be read again> 
+                   \par 
+l.248 \draw[axis]
+                  (0,0) -- (0,2.5) node[above] {};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+-
+./FNC.tex:248: Paragraph ended before \pgfkeys@addpath was complete.
+<to be read again> 
+                   \par 
+l.248 \draw[axis]
+                  (0,0) -- (0,2.5) node[above] {};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./FNC.tex:248: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.248 \draw[axis]
+                  (0,0) -- (0,2.5) node[above] {};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:248: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.248 \draw[axis]
+                  (0,0) -- (0,2.5) node[above] {};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:248: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.248 \draw[axis]
+                  (0,0) -- (0,2.5) node[above] {};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+Runaway argument?
+-
+./FNC.tex:248: Paragraph ended before \pgfkeys@splitter was complete.
+<to be read again> 
+                   \par 
+l.248 \draw[axis]
+                  (0,0) -- (0,2.5) node[above] {};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Missing character: There is no / in font nullfont!
+Missing character: There is no / in font nullfont!
+
+Underfull \vbox (badness 1173) has occurred while \output is active []
+
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}]
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 7.3pt on input line 336.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 5.5pt on input line 336.
+
+./FNC.tex:354: Argument of \language@active@arg> has an extra }.
+<inserted text> 
+                \par 
+l.354     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+./FNC.tex:354: Paragraph ended before \language@active@arg> was complete.
+<to be read again> 
+                   \par 
+l.354     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+-
+./FNC.tex:354: Paragraph ended before \pgfkeys@addpath was complete.
+<to be read again> 
+                   \par 
+l.354     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./FNC.tex:354: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.354     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:354: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.354     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:354: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.354     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+Runaway argument?
+-
+./FNC.tex:354: Paragraph ended before \pgfkeys@splitter was complete.
+<to be read again> 
+                   \par 
+l.354     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Missing character: There is no / in font nullfont!
+Missing character: There is no / in font nullfont!
+./FNC.tex:354: Argument of \language@active@arg> has an extra }.
+<inserted text> 
+                \par 
+l.354     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+./FNC.tex:354: Paragraph ended before \language@active@arg> was complete.
+<to be read again> 
+                   \par 
+l.354     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+./FNC.tex:354: Paragraph ended before \pgfkeys@addpath was complete.
+<to be read again> 
+                   \par 
+l.354     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./FNC.tex:354: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.354     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:354: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.354     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+Runaway argument?
+./FNC.tex:354: Paragraph ended before \pgfkeys@splitter was complete.
+<to be read again> 
+                   \par 
+l.354     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Missing character: There is no / in font nullfont!
+Missing character: There is no / in font nullfont!
+
+./FNC.tex:354: Package pgfkeys Error: I do not know the key '\par ', to which you passed 'stealth', and I am going to ignore it. Perhaps you misspelled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.354     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+This error message was generated by an \errmessage
+command, so I can't give any explicit help.
+Pretend that you're Hercule Poirot: Examine all clues,
+and deduce the truth by order and method.
+
+./FNC.tex:355: Argument of \language@active@arg> has an extra }.
+<inserted text> 
+                \par 
+l.355     \draw[axis]
+                      (0,0) -- (0,1.2) node[above] {$\rho(t)$};
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+./FNC.tex:355: Paragraph ended before \language@active@arg> was complete.
+<to be read again> 
+                   \par 
+l.355     \draw[axis]
+                      (0,0) -- (0,1.2) node[above] {$\rho(t)$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+-
+./FNC.tex:355: Paragraph ended before \pgfkeys@addpath was complete.
+<to be read again> 
+                   \par 
+l.355     \draw[axis]
+                      (0,0) -- (0,1.2) node[above] {$\rho(t)$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./FNC.tex:355: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.355     \draw[axis]
+                      (0,0) -- (0,1.2) node[above] {$\rho(t)$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:355: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.355     \draw[axis]
+                      (0,0) -- (0,1.2) node[above] {$\rho(t)$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:355: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.355     \draw[axis]
+                      (0,0) -- (0,1.2) node[above] {$\rho(t)$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+Runaway argument?
+-
+./FNC.tex:355: Paragraph ended before \pgfkeys@splitter was complete.
+<to be read again> 
+                   \par 
+l.355     \draw[axis]
+                      (0,0) -- (0,1.2) node[above] {$\rho(t)$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Missing character: There is no / in font nullfont!
+Missing character: There is no / in font nullfont!
+./FNC.tex:355: Argument of \language@active@arg> has an extra }.
+<inserted text> 
+                \par 
+l.355     \draw[axis]
+                      (0,0) -- (0,1.2) node[above] {$\rho(t)$};
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+./FNC.tex:355: Paragraph ended before \language@active@arg> was complete.
+<to be read again> 
+                   \par 
+l.355     \draw[axis]
+                      (0,0) -- (0,1.2) node[above] {$\rho(t)$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+./FNC.tex:355: Paragraph ended before \pgfkeys@addpath was complete.
+<to be read again> 
+                   \par 
+l.355     \draw[axis]
+                      (0,0) -- (0,1.2) node[above] {$\rho(t)$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./FNC.tex:355: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.355     \draw[axis]
+                      (0,0) -- (0,1.2) node[above] {$\rho(t)$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:355: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.355     \draw[axis]
+                      (0,0) -- (0,1.2) node[above] {$\rho(t)$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+Runaway argument?
+./FNC.tex:355: Paragraph ended before \pgfkeys@splitter was complete.
+<to be read again> 
+                   \par 
+l.355     \draw[axis]
+                      (0,0) -- (0,1.2) node[above] {$\rho(t)$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Missing character: There is no / in font nullfont!
+Missing character: There is no / in font nullfont!
+
+./FNC.tex:355: Package pgfkeys Error: I do not know the key '\par ', to which you passed 'stealth', and I am going to ignore it. Perhaps you misspelled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.355     \draw[axis]
+                      (0,0) -- (0,1.2) node[above] {$\rho(t)$};
+(That was another \errmessage.)
+
+./FNC.tex:365: Argument of \language@active@arg> has an extra }.
+<inserted text> 
+                \par 
+l.365     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+./FNC.tex:365: Paragraph ended before \language@active@arg> was complete.
+<to be read again> 
+                   \par 
+l.365     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+-
+./FNC.tex:365: Paragraph ended before \pgfkeys@addpath was complete.
+<to be read again> 
+                   \par 
+l.365     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./FNC.tex:365: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.365     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:365: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.365     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:365: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.365     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+Runaway argument?
+-
+./FNC.tex:365: Paragraph ended before \pgfkeys@splitter was complete.
+<to be read again> 
+                   \par 
+l.365     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Missing character: There is no / in font nullfont!
+Missing character: There is no / in font nullfont!
+./FNC.tex:365: Argument of \language@active@arg> has an extra }.
+<inserted text> 
+                \par 
+l.365     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+./FNC.tex:365: Paragraph ended before \language@active@arg> was complete.
+<to be read again> 
+                   \par 
+l.365     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+./FNC.tex:365: Paragraph ended before \pgfkeys@addpath was complete.
+<to be read again> 
+                   \par 
+l.365     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./FNC.tex:365: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.365     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:365: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.365     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+Runaway argument?
+./FNC.tex:365: Paragraph ended before \pgfkeys@splitter was complete.
+<to be read again> 
+                   \par 
+l.365     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Missing character: There is no / in font nullfont!
+Missing character: There is no / in font nullfont!
+
+./FNC.tex:365: Package pgfkeys Error: I do not know the key '\par ', to which you passed 'stealth', and I am going to ignore it. Perhaps you misspelled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.365     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+(That was another \errmessage.)
+
+./FNC.tex:366: Argument of \language@active@arg> has an extra }.
+<inserted text> 
+                \par 
+l.366     \draw[axis]
+                      (0,0) -- (0,1.5) node[above] {$R(t)$};
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+./FNC.tex:366: Paragraph ended before \language@active@arg> was complete.
+<to be read again> 
+                   \par 
+l.366     \draw[axis]
+                      (0,0) -- (0,1.5) node[above] {$R(t)$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+-
+./FNC.tex:366: Paragraph ended before \pgfkeys@addpath was complete.
+<to be read again> 
+                   \par 
+l.366     \draw[axis]
+                      (0,0) -- (0,1.5) node[above] {$R(t)$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./FNC.tex:366: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.366     \draw[axis]
+                      (0,0) -- (0,1.5) node[above] {$R(t)$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:366: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.366     \draw[axis]
+                      (0,0) -- (0,1.5) node[above] {$R(t)$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:366: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.366     \draw[axis]
+                      (0,0) -- (0,1.5) node[above] {$R(t)$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+Runaway argument?
+-
+./FNC.tex:366: Paragraph ended before \pgfkeys@splitter was complete.
+<to be read again> 
+                   \par 
+l.366     \draw[axis]
+                      (0,0) -- (0,1.5) node[above] {$R(t)$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Missing character: There is no / in font nullfont!
+Missing character: There is no / in font nullfont!
+./FNC.tex:366: Argument of \language@active@arg> has an extra }.
+<inserted text> 
+                \par 
+l.366     \draw[axis]
+                      (0,0) -- (0,1.5) node[above] {$R(t)$};
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+./FNC.tex:366: Paragraph ended before \language@active@arg> was complete.
+<to be read again> 
+                   \par 
+l.366     \draw[axis]
+                      (0,0) -- (0,1.5) node[above] {$R(t)$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+./FNC.tex:366: Paragraph ended before \pgfkeys@addpath was complete.
+<to be read again> 
+                   \par 
+l.366     \draw[axis]
+                      (0,0) -- (0,1.5) node[above] {$R(t)$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./FNC.tex:366: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.366     \draw[axis]
+                      (0,0) -- (0,1.5) node[above] {$R(t)$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:366: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.366     \draw[axis]
+                      (0,0) -- (0,1.5) node[above] {$R(t)$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+Runaway argument?
+./FNC.tex:366: Paragraph ended before \pgfkeys@splitter was complete.
+<to be read again> 
+                   \par 
+l.366     \draw[axis]
+                      (0,0) -- (0,1.5) node[above] {$R(t)$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Missing character: There is no / in font nullfont!
+Missing character: There is no / in font nullfont!
+
+./FNC.tex:366: Package pgfkeys Error: I do not know the key '\par ', to which you passed 'stealth', and I am going to ignore it. Perhaps you misspelled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.366     \draw[axis]
+                      (0,0) -- (0,1.5) node[above] {$R(t)$};
+(That was another \errmessage.)
+
+./FNC.tex:381: Argument of \language@active@arg> has an extra }.
+<inserted text> 
+                \par 
+l.381     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+./FNC.tex:381: Paragraph ended before \language@active@arg> was complete.
+<to be read again> 
+                   \par 
+l.381     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+-
+./FNC.tex:381: Paragraph ended before \pgfkeys@addpath was complete.
+<to be read again> 
+                   \par 
+l.381     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./FNC.tex:381: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.381     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:381: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.381     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:381: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.381     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+Runaway argument?
+-
+./FNC.tex:381: Paragraph ended before \pgfkeys@splitter was complete.
+<to be read again> 
+                   \par 
+l.381     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Missing character: There is no / in font nullfont!
+Missing character: There is no / in font nullfont!
+./FNC.tex:381: Argument of \language@active@arg> has an extra }.
+<inserted text> 
+                \par 
+l.381     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+./FNC.tex:381: Paragraph ended before \language@active@arg> was complete.
+<to be read again> 
+                   \par 
+l.381     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+./FNC.tex:381: Paragraph ended before \pgfkeys@addpath was complete.
+<to be read again> 
+                   \par 
+l.381     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./FNC.tex:381: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.381     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:381: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.381     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+Runaway argument?
+./FNC.tex:381: Paragraph ended before \pgfkeys@splitter was complete.
+<to be read again> 
+                   \par 
+l.381     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Missing character: There is no / in font nullfont!
+Missing character: There is no / in font nullfont!
+
+./FNC.tex:381: Package pgfkeys Error: I do not know the key '\par ', to which you passed 'stealth', and I am going to ignore it. Perhaps you misspelled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.381     \draw[axis]
+                      (0,0) -- (10.5,0) node[right] {$t$};
+(That was another \errmessage.)
+
+./FNC.tex:382: Argument of \language@active@arg> has an extra }.
+<inserted text> 
+                \par 
+l.382     \draw[axis]
+                      (0,0) -- (0,1.5) node[above] {$R(t)$};
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+./FNC.tex:382: Paragraph ended before \language@active@arg> was complete.
+<to be read again> 
+                   \par 
+l.382     \draw[axis]
+                      (0,0) -- (0,1.5) node[above] {$R(t)$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+-
+./FNC.tex:382: Paragraph ended before \pgfkeys@addpath was complete.
+<to be read again> 
+                   \par 
+l.382     \draw[axis]
+                      (0,0) -- (0,1.5) node[above] {$R(t)$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./FNC.tex:382: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.382     \draw[axis]
+                      (0,0) -- (0,1.5) node[above] {$R(t)$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:382: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.382     \draw[axis]
+                      (0,0) -- (0,1.5) node[above] {$R(t)$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:382: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.382     \draw[axis]
+                      (0,0) -- (0,1.5) node[above] {$R(t)$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+Runaway argument?
+-
+./FNC.tex:382: Paragraph ended before \pgfkeys@splitter was complete.
+<to be read again> 
+                   \par 
+l.382     \draw[axis]
+                      (0,0) -- (0,1.5) node[above] {$R(t)$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Missing character: There is no / in font nullfont!
+Missing character: There is no / in font nullfont!
+./FNC.tex:382: Argument of \language@active@arg> has an extra }.
+<inserted text> 
+                \par 
+l.382     \draw[axis]
+                      (0,0) -- (0,1.5) node[above] {$R(t)$};
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+./FNC.tex:382: Paragraph ended before \language@active@arg> was complete.
+<to be read again> 
+                   \par 
+l.382     \draw[axis]
+                      (0,0) -- (0,1.5) node[above] {$R(t)$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+./FNC.tex:382: Paragraph ended before \pgfkeys@addpath was complete.
+<to be read again> 
+                   \par 
+l.382     \draw[axis]
+                      (0,0) -- (0,1.5) node[above] {$R(t)$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./FNC.tex:382: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.382     \draw[axis]
+                      (0,0) -- (0,1.5) node[above] {$R(t)$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:382: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.382     \draw[axis]
+                      (0,0) -- (0,1.5) node[above] {$R(t)$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+Runaway argument?
+./FNC.tex:382: Paragraph ended before \pgfkeys@splitter was complete.
+<to be read again> 
+                   \par 
+l.382     \draw[axis]
+                      (0,0) -- (0,1.5) node[above] {$R(t)$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Missing character: There is no / in font nullfont!
+Missing character: There is no / in font nullfont!
+
+./FNC.tex:382: Package pgfkeys Error: I do not know the key '\par ', to which you passed 'stealth', and I am going to ignore it. Perhaps you misspelled it.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.382     \draw[axis]
+                      (0,0) -- (0,1.5) node[above] {$R(t)$};
+(That was another \errmessage.)
+
+[2]
+./FNC.tex:482: Argument of \language@active@arg> has an extra }.
+<inserted text> 
+                \par 
+l.482     \draw[axis]
+                      (0,0) -- (\Tmax+0.5,0) node[right] {$t$};
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+./FNC.tex:482: Paragraph ended before \language@active@arg> was complete.
+<to be read again> 
+                   \par 
+l.482     \draw[axis]
+                      (0,0) -- (\Tmax+0.5,0) node[right] {$t$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+-
+./FNC.tex:482: Paragraph ended before \pgfkeys@addpath was complete.
+<to be read again> 
+                   \par 
+l.482     \draw[axis]
+                      (0,0) -- (\Tmax+0.5,0) node[right] {$t$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./FNC.tex:482: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.482     \draw[axis]
+                      (0,0) -- (\Tmax+0.5,0) node[right] {$t$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:482: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.482     \draw[axis]
+                      (0,0) -- (\Tmax+0.5,0) node[right] {$t$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:482: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.482     \draw[axis]
+                      (0,0) -- (\Tmax+0.5,0) node[right] {$t$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+Runaway argument?
+-
+./FNC.tex:482: Paragraph ended before \pgfkeys@splitter was complete.
+<to be read again> 
+                   \par 
+l.482     \draw[axis]
+                      (0,0) -- (\Tmax+0.5,0) node[right] {$t$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Missing character: There is no / in font nullfont!
+Missing character: There is no / in font nullfont!
+./FNC.tex:483: Argument of \language@active@arg> has an extra }.
+<inserted text> 
+                \par 
+l.483     \draw[axis]
+                      (0,0) -- (0,1.4) node[above] {$\rho(t)$};
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+./FNC.tex:483: Paragraph ended before \language@active@arg> was complete.
+<to be read again> 
+                   \par 
+l.483     \draw[axis]
+                      (0,0) -- (0,1.4) node[above] {$\rho(t)$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+-
+./FNC.tex:483: Paragraph ended before \pgfkeys@addpath was complete.
+<to be read again> 
+                   \par 
+l.483     \draw[axis]
+                      (0,0) -- (0,1.4) node[above] {$\rho(t)$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./FNC.tex:483: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.483     \draw[axis]
+                      (0,0) -- (0,1.4) node[above] {$\rho(t)$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:483: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.483     \draw[axis]
+                      (0,0) -- (0,1.4) node[above] {$\rho(t)$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:483: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.483     \draw[axis]
+                      (0,0) -- (0,1.4) node[above] {$\rho(t)$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+Runaway argument?
+-
+./FNC.tex:483: Paragraph ended before \pgfkeys@splitter was complete.
+<to be read again> 
+                   \par 
+l.483     \draw[axis]
+                      (0,0) -- (0,1.4) node[above] {$\rho(t)$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Missing character: There is no / in font nullfont!
+Missing character: There is no / in font nullfont!
+./FNC.tex:496: Argument of \language@active@arg> has an extra }.
+<inserted text> 
+                \par 
+l.496     \draw[axis]
+                      (0,0) -- (\Tmax+0.5,0) node[right] {$t$};
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+./FNC.tex:496: Paragraph ended before \language@active@arg> was complete.
+<to be read again> 
+                   \par 
+l.496     \draw[axis]
+                      (0,0) -- (\Tmax+0.5,0) node[right] {$t$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+-
+./FNC.tex:496: Paragraph ended before \pgfkeys@addpath was complete.
+<to be read again> 
+                   \par 
+l.496     \draw[axis]
+                      (0,0) -- (\Tmax+0.5,0) node[right] {$t$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./FNC.tex:496: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.496     \draw[axis]
+                      (0,0) -- (\Tmax+0.5,0) node[right] {$t$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:496: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.496     \draw[axis]
+                      (0,0) -- (\Tmax+0.5,0) node[right] {$t$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:496: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.496     \draw[axis]
+                      (0,0) -- (\Tmax+0.5,0) node[right] {$t$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+Runaway argument?
+-
+./FNC.tex:496: Paragraph ended before \pgfkeys@splitter was complete.
+<to be read again> 
+                   \par 
+l.496     \draw[axis]
+                      (0,0) -- (\Tmax+0.5,0) node[right] {$t$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Missing character: There is no / in font nullfont!
+Missing character: There is no / in font nullfont!
+./FNC.tex:497: Argument of \language@active@arg> has an extra }.
+<inserted text> 
+                \par 
+l.497     \draw[axis]
+                      (0,-1.5) -- (0,1.5) node[above] {$s(t)$};
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+./FNC.tex:497: Paragraph ended before \language@active@arg> was complete.
+<to be read again> 
+                   \par 
+l.497     \draw[axis]
+                      (0,-1.5) -- (0,1.5) node[above] {$s(t)$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+-
+./FNC.tex:497: Paragraph ended before \pgfkeys@addpath was complete.
+<to be read again> 
+                   \par 
+l.497     \draw[axis]
+                      (0,-1.5) -- (0,1.5) node[above] {$s(t)$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./FNC.tex:497: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.497     \draw[axis]
+                      (0,-1.5) -- (0,1.5) node[above] {$s(t)$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:497: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.497     \draw[axis]
+                      (0,-1.5) -- (0,1.5) node[above] {$s(t)$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:497: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.497     \draw[axis]
+                      (0,-1.5) -- (0,1.5) node[above] {$s(t)$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+Runaway argument?
+-
+./FNC.tex:497: Paragraph ended before \pgfkeys@splitter was complete.
+<to be read again> 
+                   \par 
+l.497     \draw[axis]
+                      (0,-1.5) -- (0,1.5) node[above] {$s(t)$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Missing character: There is no / in font nullfont!
+Missing character: There is no / in font nullfont!
+./FNC.tex:510: Argument of \language@active@arg> has an extra }.
+<inserted text> 
+                \par 
+l.510     \draw[axis]
+                      (0,0) -- (4.5,0) node[right] {$\tau$};
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+./FNC.tex:510: Paragraph ended before \language@active@arg> was complete.
+<to be read again> 
+                   \par 
+l.510     \draw[axis]
+                      (0,0) -- (4.5,0) node[right] {$\tau$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+-
+./FNC.tex:510: Paragraph ended before \pgfkeys@addpath was complete.
+<to be read again> 
+                   \par 
+l.510     \draw[axis]
+                      (0,0) -- (4.5,0) node[right] {$\tau$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./FNC.tex:510: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.510     \draw[axis]
+                      (0,0) -- (4.5,0) node[right] {$\tau$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:510: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.510     \draw[axis]
+                      (0,0) -- (4.5,0) node[right] {$\tau$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:510: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.510     \draw[axis]
+                      (0,0) -- (4.5,0) node[right] {$\tau$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+Runaway argument?
+-
+./FNC.tex:510: Paragraph ended before \pgfkeys@splitter was complete.
+<to be read again> 
+                   \par 
+l.510     \draw[axis]
+                      (0,0) -- (4.5,0) node[right] {$\tau$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Missing character: There is no / in font nullfont!
+Missing character: There is no / in font nullfont!
+./FNC.tex:511: Argument of \language@active@arg> has an extra }.
+<inserted text> 
+                \par 
+l.511     \draw[axis]
+                      (0,-1.2) -- (0,1.5) node[above] {$C(\tau)$};
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+./FNC.tex:511: Paragraph ended before \language@active@arg> was complete.
+<to be read again> 
+                   \par 
+l.511     \draw[axis]
+                      (0,-1.2) -- (0,1.5) node[above] {$C(\tau)$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Runaway argument?
+-
+./FNC.tex:511: Paragraph ended before \pgfkeys@addpath was complete.
+<to be read again> 
+                   \par 
+l.511     \draw[axis]
+                      (0,-1.2) -- (0,1.5) node[above] {$C(\tau)$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./FNC.tex:511: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.511     \draw[axis]
+                      (0,-1.2) -- (0,1.5) node[above] {$C(\tau)$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:511: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.511     \draw[axis]
+                      (0,-1.2) -- (0,1.5) node[above] {$C(\tau)$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+./FNC.tex:511: Missing \endcsname inserted.
+<to be read again> 
+                   \scan_stop: 
+l.511     \draw[axis]
+                      (0,-1.2) -- (0,1.5) node[above] {$C(\tau)$};
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+Runaway argument?
+-
+./FNC.tex:511: Paragraph ended before \pgfkeys@splitter was complete.
+<to be read again> 
+                   \par 
+l.511     \draw[axis]
+                      (0,-1.2) -- (0,1.5) node[above] {$C(\tau)$};
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+Missing character: There is no / in font nullfont!
+Missing character: There is no / in font nullfont!
+
+Overfull \hbox (8.41786pt too wide) in paragraph at lines 520--521
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3]
+<../Images/purk.jpg, id=24, 602.25pt x 877.2775pt>
+File: ../Images/purk.jpg Graphic file (type jpg)
+<use ../Images/purk.jpg>
+Package pdftex.def Info: ../Images/purk.jpg  used on input line 570.
+(pdftex.def)             Requested size: 185.13109pt x 269.67757pt.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 9.0pt on input line 578.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 9.0pt on input line 578.
+<../Images/SRyC.png, id=25, 378.6948pt x 511.6716pt>
+File: ../Images/SRyC.png Graphic file (type png)
+<use ../Images/SRyC.png>
+Package pdftex.def Info: ../Images/SRyC.png  used on input line 585.
+(pdftex.def)             Requested size: 185.13109pt x 250.13571pt.
+
+Underfull \vbox (badness 1314) has occurred while \output is active []
+
+ [4 <../Images/purk.jpg> <../Images/SRyC.png>] [5] [6]
+<../Images/Lapicque.jpg, id=37, 1243.64626pt x 1771.61874pt>
+File: ../Images/Lapicque.jpg Graphic file (type jpg)
+<use ../Images/Lapicque.jpg>
+Package pdftex.def Info: ../Images/Lapicque.jpg  used on input line 848.
+(pdftex.def)             Requested size: 158.68263pt x 226.04735pt.
+<../Images/Leaky.png, id=38, 920.43875pt x 652.4375pt>
+File: ../Images/Leaky.png Graphic file (type png)
+<use ../Images/Leaky.png>
+Package pdftex.def Info: ../Images/Leaky.png  used on input line 936.
+(pdftex.def)             Requested size: 264.46837pt x 187.46979pt.
+
+Overfull \hbox (9.95842pt too wide) in paragraph at lines 936--939
+ [][] 
+ []
+
+[7 <../Images/Lapicque.jpg>]
+<../Images/LapicqueWife.jpg, id=44, 154.8987pt x 240.9pt>
+File: ../Images/LapicqueWife.jpg Graphic file (type jpg)
+<use ../Images/LapicqueWife.jpg>
+Package pdftex.def Info: ../Images/LapicqueWife.jpg  used on input line 958.
+(pdftex.def)             Requested size: 132.23418pt x 205.65918pt.
+<../Images/Leaky2.png, id=45, 929.4725pt x 720.6925pt>
+File: ../Images/Leaky2.png Graphic file (type png)
+<use ../Images/Leaky2.png>
+Package pdftex.def Info: ../Images/Leaky2.png  used on input line 995.
+(pdftex.def)             Requested size: 264.46837pt x 205.0586pt.
+
+Overfull \hbox (9.95842pt too wide) in paragraph at lines 995--999
+ [][] 
+ []
+
+
+Underfull \vbox (badness 3612) has occurred while \output is active []
+
+ [8 <../Images/Leaky.png> <../Images/LapicqueWife.jpg> <../Images/Leaky2.png>]
+<../Images/pyramidal.jpg, id=51, 324.05869pt x 267.68808pt>
+File: ../Images/pyramidal.jpg Graphic file (type jpg)
+<use ../Images/pyramidal.jpg>
+Package pdftex.def Info: ../Images/pyramidal.jpg  used on input line 1020.
+(pdftex.def)             Requested size: 264.46837pt x 218.48041pt.
+
+Overfull \hbox (9.95842pt too wide) in paragraph at lines 1020--1022
+ [][] 
+ []
+
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
+(Font)              scaled to size 9.0pt on input line 1022.
+<../Images/LapicqueSRA.png, id=52, 1124.2pt x 870.25125pt>
+File: ../Images/LapicqueSRA.png Graphic file (type png)
+<use ../Images/LapicqueSRA.png>
+Package pdftex.def Info: ../Images/LapicqueSRA.png  used on input line 1108.
+(pdftex.def)             Requested size: 264.46837pt x 204.72153pt.
+
+Overfull \hbox (9.95842pt too wide) in paragraph at lines 1108--1119
+ [][] 
+ []
+
+[9 <../Images/pyramidal.jpg> <../Images/LapicqueSRA.png>]
+<../Images/hhpeople.png, id=57, 501.875pt x 501.875pt>
+File: ../Images/hhpeople.png Graphic file (type png)
+<use ../Images/hhpeople.png>
+Package pdftex.def Info: ../Images/hhpeople.png  used on input line 1150.
+(pdftex.def)             Requested size: 185.13109pt x 185.1318pt.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 8.8pt on input line 1192.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 6.6pt on input line 1192.
+ [10 <../Images/hhpeople.png>]
+Overfull \hbox (4.93214pt too wide) detected at line 1258
+[]\OML/ntxmi/m/it/10 [] \U/ntxmia/m/it/10 = [] \OML/ntxmi/m/it/10 ^^L[] \U/ntxmia/m/it/10 = \OT1/minntx/m/n/10 0[]125 []\LMS/ntxsy/m/n/10 »^^@\OT1/minntx/m/n/10 0[]0125\LMS/ntxsy/m/n/10 ¹\OML/ntxmi/m/it/10 V \LMS/ntxsy/m/n/10 Ï \OT1/minntx/m/n/10 65\LMS/ntxsy/m/n/10 º¼
+ []
+
+
+Overfull \hbox (12.53725pt too wide) detected at line 1298
+[]
+ []
+
+
+Overfull \hbox (9.41266pt too wide) detected at line 1320
+\OML/ntxmi/m/it/10 c[][] \U/ntxmia/m/it/10 = [] \LMS/ntxsy/m/n/10 ^^@ []
+ []
+
+[11]
+<../Images/hhlinear.png, id=65, 869.2475pt x 1008.76875pt>
+File: ../Images/hhlinear.png Graphic file (type png)
+<use ../Images/hhlinear.png>
+Package pdftex.def Info: ../Images/hhlinear.png  used on input line 1350.
+(pdftex.def)             Requested size: 264.46837pt x 306.9121pt.
+
+Overfull \hbox (9.95842pt too wide) in paragraph at lines 1350--1352
+ [][] 
+ []
+
+<../Images/hhrandom.png, id=66, 883.3pt x 1009.7725pt>
+File: ../Images/hhrandom.png Graphic file (type png)
+<use ../Images/hhrandom.png>
+Package pdftex.def Info: ../Images/hhrandom.png  used on input line 1359.
+(pdftex.def)             Requested size: 264.46837pt x 302.33318pt.
+
+Overfull \hbox (9.95842pt too wide) in paragraph at lines 1359--1361
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+./FNC.tex:1374: Double subscript.
+l.1374 ...E_\ell - V - r_m \overline{g}_sP_s(V_ E_
+                                                  s) + R_mI_e
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+<../Images/iafexc.png, id=67, 1655.18375pt x 962.59625pt>
+File: ../Images/iafexc.png Graphic file (type png)
+<use ../Images/iafexc.png>
+Package pdftex.def Info: ../Images/iafexc.png  used on input line 1392.
+(pdftex.def)             Requested size: 264.46837pt x 153.79822pt.
+
+Overfull \hbox (9.95842pt too wide) in paragraph at lines 1392--1407
+ [][] 
+ []
+
+
+Underfull \vbox (badness 1033) has occurred while \output is active []
+
+ [12 <../Images/hhlinear.png> <../Images/hhrandom.png>]
+<../Images/iafmany.png, id=73, 764.8575pt x 533.995pt>
+File: ../Images/iafmany.png Graphic file (type png)
+<use ../Images/iafmany.png>
+Package pdftex.def Info: ../Images/iafmany.png  used on input line 1464.
+(pdftex.def)             Requested size: 264.46837pt x 184.64403pt.
+
+Overfull \hbox (9.95842pt too wide) in paragraph at lines 1464--1468
+ [][] 
+ []
+
+./FNC.tex:1471: Too many }'s.
+\@endfloatbox ...pagefalse \outer@nobreak \egroup 
+                                                  \color@endbox 
+l.1471 \end{figure}
+                   
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+./FNC.tex:1471: Extra \endgroup.
+\color@endgroup ->\endgraf \endgroup 
+                                     
+l.1471 \end{figure}
+                   
+Things are pretty mixed up, but I think the worst is over.
+
+./FNC.tex:1471: Too many }'s.
+\color@endbox ->\color@endgroup \egroup 
+                                        
+l.1471 \end{figure}
+                   
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+
+./FNC.tex:1471: LaTeX Error: \begin{document} ended by \end{figure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1471 \end{figure}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./FNC.tex:1471: Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.1471 \end{figure}
+                   
+Things are pretty mixed up, but I think the worst is over.
+
+
+Overfull \hbox (10.26007pt too wide) in paragraph at lines 1477--1489
+ [][] 
+ []
+
+[13 <../Images/iafexc.png> <../Images/iafmany.png>]
+<../Images/iafmanyuni.png, id=81, 942.52126pt x 657.45625pt>
+File: ../Images/iafmanyuni.png Graphic file (type png)
+<use ../Images/iafmanyuni.png>
+Package pdftex.def Info: ../Images/iafmanyuni.png  used on input line 1504.
+(pdftex.def)             Requested size: 264.46837pt x 184.47774pt.
+
+Overfull \hbox (9.95842pt too wide) in paragraph at lines 1504--1508
+ [][] 
+ []
+
+./FNC.tex:1511: Too many }'s.
+\@endfloatbox ...pagefalse \outer@nobreak \egroup 
+                                                  \color@endbox 
+l.1511 \end{figure}
+                   
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+./FNC.tex:1511: Extra \endgroup.
+\color@endgroup ->\endgraf \endgroup 
+                                     
+l.1511 \end{figure}
+                   
+Things are pretty mixed up, but I think the worst is over.
+
+./FNC.tex:1511: Too many }'s.
+\color@endbox ->\color@endgroup \egroup 
+                                        
+l.1511 \end{figure}
+                   
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+
+./FNC.tex:1511: LaTeX Error: \begin{document} ended by \end{figure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1511 \end{figure}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./FNC.tex:1511: Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.1511 \end{figure}
+                   
+Things are pretty mixed up, but I think the worst is over.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14 <../Images/iafmanyuni.png>]
+<../Images/alfa.png, id=87, 906.38625pt x 794.97pt>
+File: ../Images/alfa.png Graphic file (type png)
+<use ../Images/alfa.png>
+Package pdftex.def Info: ../Images/alfa.png  used on input line 1599.
+(pdftex.def)             Requested size: 264.46837pt x 231.95464pt.
+
+Overfull \hbox (9.95842pt too wide) in paragraph at lines 1599--1609
+ [][] 
+ []
+
+[15 <../Images/alfa.png>]
+<../Images/network.png, id=92, 806.01125pt x 762.85pt>
+File: ../Images/network.png Graphic file (type png)
+<use ../Images/network.png>
+Package pdftex.def Info: ../Images/network.png  used on input line 1725.
+(pdftex.def)             Requested size: 264.46837pt x 250.2979pt.
+
+Overfull \hbox (9.95842pt too wide) in paragraph at lines 1725--1733
+ [][] 
+ []
+
+
+Package caption Warning: Unused \captionsetup[sub] on input line 36.
+See the caption package documentation for explanation.
+
+[16
+
+ <../Images/network.png>] (./FNC.aux
+LaTeX Info: Redefining \. on input line 8.
+LaTeX Info: Redefining \% on input line 8.
+)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2020/03/25>
+ ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 24660 strings out of 474222
+ 456707 string characters out of 5748733
+ 1950975 words of memory out of 5000000
+ 46483 multiletter control sequences out of 15000+600000
+ 650780 words of font info for 158 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 84i,11n,95p,1185b,678s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
+Output written on FNC.pdf (16 pages, 4215953 bytes).
+PDF statistics:
+ 146 PDF objects out of 1000 (max. 8388607)
+ 77 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 93 words of extra memory for PDF output out of 10000 (max. 10000000)
+

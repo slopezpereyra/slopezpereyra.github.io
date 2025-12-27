@@ -1,0 +1,1750 @@
+% Version corregida de FNC.tex para formato a dos columnas % Cambios
+% principales: % - Uso consistente de \columnwidth y \linewidth % - Figuras
+% anchas como figure* % - Paquete stfloats para placement correcto % - Evitar
+% subfigure rotas en dos columnas
+
+\documentclass[twocolumn,10pt]{article}
+
+\usepackage[spanish]{babel} \usepackage[T1]{fontenc} \usepackage[utf8]{inputenc} \usepackage{amsmath,amssymb} \usepackage{graphicx} \usepackage{caption} \usepackage{subcaption} \usepackage{float} \usepackage{stfloats} % permite figure* abajo 
+\usepackage{placeins} % \FloatBarrier
+
+\captionsetup{font=small,labelfont=bf}
+
+\setlength{\columnsep}{0.7cm}
+
+% --- Ajuste de márgenes para 2 columnas ---
+\usepackage[top=2cm, bottom=2cm, left=1.5cm, right=1.5cm]{geometry}
+\usepackage{parskip}
+\usepackage{marginnote}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{newtxtext} 
+\usepackage{newtxmath}
+% --- Matemáticas ---
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\numberwithin{equation}{section}
+% --- Idioma y entrada ---
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% --- Gráficos y Figuras ---
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{float}
+
+\usepackage{xcolor}
+\usepackage{listings}
+
+% Definición de colores para el estilo
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Configuración del estilo para Julia
+\lstdefinestyle{juliastyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\small,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    language=Octave % Octave es un buen fallback para Julia en listings, o se puede definir manual
+}
+
+\lstset{style=juliastyle}
+
+% --- TikZ y Diagramas ---
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+% Estilos adicionales si deseas globalizarlos (opcional)
+\tikzset{
+    axis/.style={->, thick, >=stealth},
+    delta/.style={very thick, blue},
+    hfunc/.style={thick, red},
+    conv/.style={thick, purple},
+    spike/.style={thick, blue},
+    gauss/.style={thick, red},
+    box/.style={thick, orange},
+    stim/.style={thick, red},
+    sta/.style={thick, purple}
+}
+
+\begin{document}
+
+    
+\section{Fundamentos de neurociencia computacional} 
+
+\subsection{Introducción}
+
+Estas notas están basadas en el libro \textit{Theoretical Neuroscience} de Dayan
+y Abbott. Esta obra, que se ha convertido en algo así como la biblia de la
+neurociencia computacional, no está traducida al castellano. Este es un humilde
+intento de democratizar al menos algunos elementos fundamentales de la
+neurociencia computacional.
+
+La neurociencia computacional, más que una disciplina, es una perspectiva.
+Realizar experimentos es, en el mejor de los casos, costoso, y en el peor
+imposible. Es difícil controlar los parámetros involcurados en, digamos, un
+potencial de acción, a menos que el experimento tenga una dimensión minúscula.
+La perspectiva computacional pretende resolver este problema ofreciendo la
+posibilidad de simular las dinámicas neurales. Esto ofrece un control absoluto
+de los parámetros, lo cual resulta en una posibilidad de explorar dinámicas que,
+en la práctica, son imposibles de estudiar. El costo que se paga es el de la
+simplificación: todo modelo es, en última instancia, una más o menos
+piadosa mentira.
+
+La neurociencia computacional no es simple: ecuaciones diferenciales, teoría de
+la probabilidad, electroestática y circuitos, biología celular y anatomía, todas
+forman parte de esta hermosa creación humana. Es difícil pedir a un estudiante
+que posea un dominio sobre todas estas áreas. Para nuestra fortuna, vivimos en
+un tiempo en que la información abunda, y cualquier laguna puede ser
+completada con un poco de dedicación y estudio. En este sentido, la neurociencia computacional es la vocación ideal para el raro, pero a mi criterio
+lindo tipo de personalidad que gusta de ser exigida y que aspira, como los
+renacentistas, a una vida intelectual amplia y completa.
+
+\subsection{Modelos fenomenológicos}
+
+La animación de abajo muestra una neurona de macaco (o, mejor dicho, una
+simulación precisa de una) disparando repetidas veces. A simple vista, parecen
+picos aleatorios que saltan aquí y allá en el tiempo. Sin embargo, es
+sorprendente la cantidad de información que se puede extraer de un fenómeno tan
+simple, así como la riqueza de los modelos matemáticos que lo simulan.
+
+
+La simulación de arriba es una simulación fenomenológica, en el sentido de que
+no intenta reproducir las dinámicas que subyacen a un fenómeno —el cambio en los
+voltajes de la membrana celular, el flujo de iones, la morfología de la neurona,
+etc.— sino simplemente alguna de sus manifestaciones inmediatamente observables.
+Más adelante vamos a adentrarnos en qué hace que una neurona dispare: por el
+momento, nos basta con vivir en un mundo simple donde las neuronas disparan ante
+ciertos estímulos, y la probabilidad de disparo depende de propiedades simples
+del estímulo como su duración o su intensidad.
+
+Al observar los tiempos en los que una neurona dispara, que es lo que muestra la
+animación de arriba, nos enfrentamos primero al problema de proporcionar un buen
+modelo matemático para una serie de pulsos en el tiempo. La función $\delta$ de
+Dirac es la candidata más obvia. En particular, sea $\{t_{1}, \ldots, t_{n}\}$
+la secuencia de tiempos en los que ocurrió un pulso. Definimos la
+\textbf{función de respuesta neuronal (FRN)} como:
+
+\begin{equation}
+\rho (t) := \sum\limits_{i=1}^{n}\delta(t -t_{i})
+\end{equation}
+
+La $\delta$ de Dirac es una unidad de probabilidad (o conteo) concentrada en un
+punto. $\rho(t)$ no es más que una sumatoria que «verifica» si en el tiempo $t$ ha
+habido un disparo, satisfaciendo que la cantidad de disparos en el intervalo de
+tiempo $[ t_1, t_2 ]$ es 
+
+\begin{equation}
+    \int_{t_1}^{t_2} \rho(\tau) ~ d\tau
+\end{equation}
+
+Una propiedad que se sigue directamente de la definición de la $\delta$ de Dirac
+es que, para cualquier función $h(t)$ con un comportamiento adecuado, tenemos:
+
+\begin{equation}
+\sum\limits_{i=1}^{n} h(t - t_{i}) = \int_{-\infty}^{\infty} \rho(t-\tau)h(\tau) \, d\tau
+\end{equation}
+
+La expresión de arriba es una convolución, y es provechoso desarrollar cierta
+intuición respecto a lo que significa. Recordemos que, dada una función $f(x)$, 
+la función $f(-x)$ es un reflejo de $f(x)$ respecto al eje de $y$ (es $f(x)$
+«dada vuelta»). La función $f(c - x)$ es la función $f(-x)$ desplazada
+horizontalmente a la derecha $c$ unidades. 
+
+En la convolución, dentro de la expresión $\rho(t - \tau)$, $t$ efectivamente
+juega el papel de una constante. Es la función de activación invertida y
+desplazada horizontalmente. Si $\rho(t)$ es no-nulo solo si $t$ es un tiempo de
+disparo, $\rho(t - \tau)$ es no-nulo solo si $\tau$ instantes antes de $t$ hubo un
+disparo. 
+
+Se entiende que $h$ es una expresión que representa la dinámica temporal de un
+disparo, de manera tal que $h(0)$ es justo el momento de disparo y $h(t)$ con
+$t>0$ representa alguna evolución o dinámica del sistema. Por ejemplo, $h(t)$
+podría ser el potencial de membrana.
+
+Si consideramos los dos párrafos anteriores, entonces vemos que $\rho(t - \tau)$
+es no-nula solo si hace $\tau$ segundos hubo un disparo. Si ese fue el caso,
+incorporamos a la sumatoria el valor $h(\tau)$, que nos dice cuál es el estado
+de la dinámica generada por dicho disparo. Como han pasado $\tau$ segundos desde
+el disparo, $h(\tau))$ es la forma correcta de incorporar la contribución de
+dicho disparo.
+
+
+\begin{tikzpicture}[scale=1.1]
+
+% -------------------------
+% PARAMETERS
+% -------------------------
+\def\tone{1.5}
+\def\ttwo{2.0}
+\def\tthree{5.0}
+
+% -------------------------
+% AXES STYLE
+% -------------------------
+\tikzset{
+    axis/.style={->, thick},
+    delta/.style={very thick, blue},
+    hfunc/.style={thick, red},
+    conv/.style={thick, purple}
+}
+
+% =========================
+% PANEL 1: rho(t)
+% =========================
+\begin{scope}
+\draw[axis] (0,0) -- (6,0) node[right] {$t$};
+\draw[axis] (0,0) -- (0,2) node[above] {$\rho(t)$};
+
+% Dirac spikes
+\draw[delta] (\tone,0) -- (\tone,1.5);
+\draw[delta] (\ttwo,0) -- (\ttwo,1.5);
+\draw[delta] (\tthree,0) -- (\tthree,1.5);
+
+\node[below] at (\tone,0) {$t_1$};
+\node[below] at (\ttwo,0) {$t_2$};
+\node[below] at (\tthree,0) {$t_3$};
+
+\node at (3,2.2) {\textbf{(a) FRN $\rho(t)$}};
+\end{scope}
+
+% =========================
+% PANEL 2: h(t - tau)
+% =========================
+\begin{scope}[yshift=-4cm]
+\draw[axis] (0,0) -- (6,0) node[right] {$\tau$};
+\draw[axis] (0,0) -- (0,2) node[above] {$h(\tau)$};
+
+% h(t) : exponential pulse
+\draw[hfunc, domain=0:6, samples=100]
+    plot (\x, {1.8*exp(-1.5*(\x-1))*(\x>1)});
+
+\node at (3,2.2) {\textbf{(b) Función $h(\tau)$}};
+\end{scope}
+
+% =========================
+% PANEL 3: Convolution result
+% =========================
+\begin{scope}[yshift=-8cm]
+\draw[axis] (0,0) -- (6,0) node[right] {$t$};
+\draw[axis] (0,0) -- (0,2.5) node[above] {};
+
+
+% sum
+\draw[conv, domain=0:6, samples=200]
+    plot (\x,
+    {
+      1.2*(exp(-1.5*(\x-\tone))*(\x>\tone)
+      +exp(-1.5*(\x-\ttwo))*(\x>\ttwo)
+      +exp(-1.5*(\x-\tthree))*(\x>\tthree))
+    });
+
+\node at (3,2.8) {\textbf{(c) $\displaystyle \int \rho(t-\tau)h(\tau)\,d\tau
+= \sum_i h(t-t_i)$}};
+\end{scope}
+
+\end{tikzpicture}
+
+Como nota, la convolución es conmutativa, y podríamos haber escrito la expresión
+integrada como $h(t - \tau) \rho(t)$ manteniendo el mismo resultado y la misma
+interpretación. 
+
+Los potenciales de acción son fenómenos estereotípicos. Entre dos potenciales de
+acción no existe una diferencia esencial más allá del tiempo en que ocurren. Por
+ende, cualquier mecanismo que subyazca a la codificación neuronal debe tener que
+ver con la disposición de tales disparos en el tiempo. En este sentido, lo
+sincrónico y lo asincrónico son el lenguaje binario del cerebro.
+
+Por esta razón, la caracterización temporal de los trenes de pulsos es de gran
+interés. Un concepto básico es la tasa de disparo de una neurona, que puede
+conceptualizarse de varias maneras. La más general es
+
+\begin{equation}
+r(t) = \frac{1}{\Delta t} \int_{t}^{t+\Delta t} \langle \rho(\tau)\rangle \, d\tau
+\end{equation}
+
+donde $\langle \cdot \rangle$ denota el promedio entre ensayos
+(\textit{trial-average}). Debería ser claro que $r(t)\Delta t$ proporciona la
+probabilidad de que ocurra un pulso en el tiempo $t$, dado que $\Delta t$ es
+suficientemente pequeño. Una propiedad importante es que 
+
+\begin{equation}
+    \int \langle \rho(t - \tau)\rangle h(\tau) ~ d\tau = \int r(t - \tau)
+    h(\tau) ~ d\tau
+\end{equation}
+
+Es decir que, en el contexto de integraciones, la tasa de disparo y la FRN son
+equivalentes. 
+
+La tasa de disparo también puede definirse como un promedio de muchos
+experimentos: 
+
+\begin{equation}
+    r = \frac{n}{T} = \frac{1}{T} \int_{0}^T
+    \rho(\tau) ~ d\tau
+\end{equation}
+
+con $n$ la cantidad de disparos. Por supuesto que puede utilizarse $\langle
+n\rangle $ el trial-average de $n$, obteniendo:
+
+\begin{equation}
+\langle r \rangle = \frac{\langle n\rangle }{T} = \frac{1}{T} \int_{0}^{T} r(\tau) \, d\tau
+\end{equation}
+
+Esta definición es menos general porque es independiente del tiempo. En general,
+nos enfocaremos en $r(t)$. Desde luego que una aproximación adecuada de $r(t)$
+requeriría una cantidad inmensa (o infinita, si se quiere ser exacato) de
+experimentos. Por lo tanto, es provechoso hallar maneras de aproximar $r(t)$ con
+uno o pocos experimentos, i.e. con una cantidad limitada de datos. Para este fin
+se utilizan filtros lineales.
+
+Un filtro lineal es una convolución de $\rho$ con una función de peso $w$.
+
+\begin{equation}
+R(t) = \int_{-\infty}^{\infty} w(\tau)\rho(t - \tau) \, d\tau
+\end{equation}
+
+donde $R$ es una aproximación de $r$. Dos funciones $w$ comúnmente utilizadas
+son el kernel Gaussiano, que es una sliding window,
+
+\begin{equation}
+w(\tau) = \frac{1}{\sqrt{2\pi}\sigma_{w}}\exp \left( \frac{-\tau^{2}}{2\sigma_{w}^{2}} \right)
+\end{equation}
+
+y una función de ventana (window function) en ventanas o segmentos de tamaño
+$\Delta t$:
+
+\begin{equation}
+w(t) = \begin{cases} \frac{1}{\Delta{t}} & t \in \left[\frac{-\Delta{t}}{2}, \frac{\Delta{t}}{2}\right] \\ 0 & \text{en otro caso} \end{cases}
+\end{equation}
+
+
+
+\begin{tikzpicture}[
+    scale=0.6,
+    spike/.style={thick, blue},
+    gauss/.style={thick, red},
+    box/.style={thick, orange},
+    axis/.style={->, >=stealth}
+]
+
+% Definición de los 20 tiempos de disparo (no uniformes)
+\def\spikes{0.5, 0.7, 1.2, 2.5, 2.7, 2.9, 3.2, 4.5, 4.7, 5.8, 6.0, 6.1, 6.3, 7.5, 8.2, 8.4, 8.6, 8.8, 9.2, 9.5}
+
+% --- PANEL A: TREN DE PULSOS rho(t) ---
+\begin{scope}[yshift=0cm]
+    \draw[axis] (0,0) -- (10.5,0) node[right] {$t$};
+    \draw[axis] (0,0) -- (0,1.2) node[above] {$\rho(t)$};
+    \foreach \t in \spikes {
+        \draw[spike] (\t,0) -- (\t,0.8);
+    }
+    \node[anchor=west] at (3,1.5) {\textbf{A. Tren de pulsos (Dirac Deltas)}};
+\end{scope}
+
+% --- PANEL B: KERNEL GAUSSIANO ---
+% Aproximación de suma de Gaussianas: R(t) = sum exp(-(t-ti)^2 / 2sigma^2)
+\begin{scope}[yshift=-3.5cm]
+    \draw[axis] (0,0) -- (10.5,0) node[right] {$t$};
+    \draw[axis] (0,0) -- (0,1.5) node[above] {$R(t)$};
+    
+    \draw[gauss, samples=200, domain=0:10] plot (\x, {
+        0.4*(exp(-(\x-0.5)^2/0.2) + exp(-(\x-0.7)^2/0.2) + exp(-(\x-1.2)^2/0.2) + 
+        exp(-(\x-2.5)^2/0.2) + exp(-(\x-2.7)^2/0.2) + exp(-(\x-2.9)^2/0.2) + exp(-(\x-3.2)^2/0.2) +
+        exp(-(\x-4.5)^2/0.2) + exp(-(\x-4.7)^2/0.2) + exp(-(\x-5.8)^2/0.2) + exp(-(\x-6.0)^2/0.2) +
+        exp(-(\x-6.1)^2/0.2) + exp(-(\x-6.3)^2/0.2) + exp(-(\x-7.5)^2/0.2) + exp(-(\x-8.2)^2/0.2) +
+        exp(-(\x-8.4)^2/0.2) + exp(-(\x-8.6)^2/0.2) + exp(-(\x-8.8)^2/0.2) + exp(-(\x-9.2)^2/0.2) +
+        exp(-(\x-9.5)^2/0.2))
+    });
+    \node[anchor=west] at (3,1.8) {\textbf{B. Filtro Gaussiano} (Kernel suave)};
+\end{scope}
+
+% --- PANEL C: VENTANA RECTANGULAR (Moving Average) ---
+\begin{scope}[yshift=-7cm]
+    \draw[axis] (0,0) -- (10.5,0) node[right] {$t$};
+    \draw[axis] (0,0) -- (0,1.5) node[above] {$R(t)$};
+
+    % Dibujado manual de una respuesta por bins para ilustrar el concepto
+    \draw[box] (0,0) -- (0.3,0) -- (0.3,0.6) -- (1.5,0.6) -- (1.5,0.2) -- (2.2,0.2) -- 
+               (2.2,1.2) -- (3.5,1.2) -- (3.5,0.2) -- (4.2,0.2) -- (4.2,0.7) -- (5.0,0.7) -- 
+               (5.0,0.2) -- (5.5,0.2) -- (5.5,1.4) -- (6.8,1.4) -- (6.8,0.3) -- (7.2,0.3) -- 
+               (7.2,0.5) -- (7.8,0.5) -- (7.8,1.3) -- (9.2,1.3) -- (9.2,0.6) -- (10,0.6);
+               
+    \node[anchor=west] at (3,1.8) {\textbf{C. Ventana Rectangular} (Bin-average)};
+\end{scope}
+
+\end{tikzpicture}
+\FloatBarrier
+
+Como muestra el gráfico, los filtros lineales nos dan una idea de la
+distribución temporal de los disparos y por ende aproximan adecuadamente a 
+$r(t)$.
+
+\subsection{Estímulos externos determinando la tasa de disparo}
+
+En nuestro mundo simplificado, una neurona dispara ante ciertos estímulos. Más
+formalmente, existe un estímulo (o una propiedad de un estímulo) $g(t)$ variable
+en el tiempo, y existe una función de dicho estímulo $f \circ g$ que determina
+la tasa de disparo:
+\begin{equation}
+    \langle r \rangle = f \left( g(t) \right) 
+\end{equation}
+
+La función $f$ se denomina función de sintonización. En general, $g$ y $\left< r
+\right>$ son conocidos y $f$ debe determinarse ajustándola a los datos. Por
+ejemplo, en un experimento descrito en \textit{Theoretical Neuroscience}, de
+Dayan y Abbott, se mostraba a un macaco una barra de luz que rotaba desde una
+situación horizontal hasta una situación vertical. Mientras esto sucedía, se
+registraba la activación de una neurona en la corteza visual del animal. Se
+observó una variación notable en la tasa de disparo de la neurona en función del
+ángulo de la barra de luz. En este caso, $g(t)$ describiría el ángulo de la
+barra en el tiempo, y $f(s)$---con $s$ el estímulo, en este caso un
+ángulo---debería ajustarse a los datos experimentales usando alguna técnica de
+ajuste.
+
+Las funciones de sintonización nos permite describir la tasa promedio de disparo
+de una neurona ante un estímulo---o más bien, una propiedad de un
+estímulo---$s$. Alternativamente, es provechoso preguntar si los disparos de una
+neurona nos permiten describir el estímulo que los provocó. Podemos preguntar
+entonces: ¿qué hizo el estímulo en promedio justo antes de que se desatara un
+potencial de acción? A este promedio lo denominamos $C(t)$.
+
+Para simplificar ciertas propiedades, asumimos que el estímulo $s(t)$ tiene un
+promedio de cero en el tiempo que dura el experimento:
+
+\begin{equation}
+    \frac{1}{T} \int_0^T s(t) ~ dt = 0
+\end{equation}
+
+También asumimos que el estímulo es periódico con un periodo de $T$, es decir
+que $s(T + \tau) = s(\tau)$ para todo $\tau$ y que por ende 
+
+\begin{equation}
+    \int_0^T h \left( s(t + \tau) \right) ~ dt = \int_\tau^{T + \tau} h(s(t)) ~
+    dt = \int_0^T h(s(t)) ~ dt
+\end{equation}
+
+Si existen $n$ disparos $t_1, \ldots, t_n$, $C(\tau)$ es el valor
+promedio de un estímulo justo $\tau$ unidades de tiempo antes de que ocurriera
+un disparo. Más aún, usamos el promemdio de este valor a lo largo de múltiples
+experimentos, indicado otra vez por la notación $\left< \cdot \right>$:
+
+\begin{equation}
+    C(\tau) = \left< \frac{1}{n} \sum_{i=1}^n s(t_i - \tau) \right>
+\end{equation}
+
+Podemos expresar esto como una convolución con $\rho$:
+
+\begin{equation}
+    C(\tau) = \frac{1}{\langle n \rangle } \int_{0}^T \left< \rho(t) \right>s(t -
+    \tau) ~ dt = \frac{1}{\langle n\rangle }\int_0^T s(t - \tau) r(t) ~ dt
+\end{equation}
+
+La segunda igualdad se debe a la equivalenca de $\left< \rho(t) \right>$ y
+$r(t)$ en el contexto de integración.
+
+
+\begin{tikzpicture}[
+    scale=0.8,
+    axis/.style={->, thick},
+    spike/.style={very thick, blue},
+    stim/.style={thick, red},
+    sta/.style={thick, purple}
+]
+
+% -------------------------
+% PARAMETROS
+% -------------------------
+\def\Tmax{10}
+\def\spikes{1.2, 2.1, 2.8, 4.0, 4.3, 5.7, 6.1, 7.4, 8.0, 9.1}
+
+% =========================
+% PANEL A: TREN DE DISPAROS
+% =========================
+\begin{scope}
+    \draw[axis] (0,0) -- (\Tmax+0.5,0) node[right] {$t$};
+    \draw[axis] (0,0) -- (0,1.4) node[above] {$\rho(t)$};
+
+    \foreach \t in \spikes {
+        \draw[spike] (\t,0) -- (\t,1);
+    }
+
+    \node at (5,1.7) {\textbf{(A) Tren de disparos}};
+\end{scope}
+
+% =========================
+% PANEL B: ESTIMULO s(t)
+% =========================
+\begin{scope}[yshift=-3.5cm]
+    \draw[axis] (0,0) -- (\Tmax+0.5,0) node[right] {$t$};
+    \draw[axis] (0,-1.5) -- (0,1.5) node[above] {$s(t)$};
+
+    % Estímulo cosenoidal de media cero
+    \draw[stim, samples=200, domain=0:\Tmax]
+        plot (\x, {1.2*cos(2*pi*0.25*\x r)});
+
+    \node at (5,1.8) {\textbf{(B) Estímulo $s(t)$}};
+\end{scope}
+
+% =========================
+% PANEL C: C(tau)
+% =========================
+\begin{scope}[yshift=-7cm]
+    \draw[axis] (0,0) -- (4.5,0) node[right] {$\tau$};
+    \draw[axis] (0,-1.2) -- (0,1.5) node[above] {$C(\tau)$};
+
+    % Forma típica de STA: oscilación amortiguada
+    \draw[sta, samples=200, domain=0:4]
+        plot (\x, {1.2*cos(2*pi*0.25*\x r)*exp(-0.8*\x)});
+
+    \node at (2.2,1.8) {\textbf{(C) $C(\tau)$ (STA)}};
+\end{scope}
+
+\end{tikzpicture}
+\FloatBarrier
+
+Una serie de disparos $t_1,\ldots, t_n$ puede modelarse como un proceso
+estocástico, donde en cada tiempo $t$ hay cierta posibilidad de que ocurra un
+potencial de acción. No es difícil observar que si $r(t)$, es constantemente
+$r$, y si asumimos independenecia entre un potencial de acción y otro, entonces
+los potenciales de acción constituyen un proceso de Poisson homogéneo con
+parámetro $\lambda = rT$: 
+
+\begin{equation}
+    P_T(n) = \frac{(rT)^n}{n!} e^{-rT}
+\end{equation}
+
+con $T$ la duración del experimento y $n$ el número de potenciales de acción.
+Esto significa que, cuando $r(t)$ constante, la varianza y la media de $n$ son
+idénticas. 
+
+Esta simplificación, aunque útil, no es fisiológicamente correcta porque las
+neuronas poseen memoria. La ocurrencia de un potencial de acción modifica la
+probabilidad de que otros sucedan, y la repetida transmisión de información en
+una sinapsis fortalece dicha sinapsis, facilitando futuras transmisiones. Este
+fenómeno se conoce como plasticidad sináptica.  
+
+\pagebreak
+\pagebreak
+
+\subsection{Neuroelectrónica}
+
+Las neuronas no son células uniformes, sino que poseen una variedad de diseños
+especializadoos para recibir, procesar y transmitir información. La palabra
+\textit{información} en el contexto de las neuronas tiene un sentido específico
+que se hará claro más adelante; por lo pronto, usamos el término sin demasiada
+especificidad.
+
+Las neuronas tienen un cuerpo celular (o soma) que contiene el núcleo y la
+maquinaria metabólica necesaria para mantener la vida y el funcionamiento de la
+célula. Las neuronas poseen además dendritas, que son pequeñas ramificaciones o
+extensiones de la célula, y funcionan como los puntos a través de los cuales la
+neurona recibe información de otras. Cada neurona envía información a través del
+axón, una extensión larga que actúa esencialmente como un cable, transmitiendo
+electricidad desde el cuerpo de la célula a otras neuronas. El axón puede
+funcionar como una transmisión de uno a uno, formando una conexión (sinapsis)
+con una única dendrita de otra neurona. También puede funcionar como una
+transmisión uno-a-muchos, cuando el axón se ramifica para alcanzar las dendirtas
+de distintas neuronas. Finalmente, la conexión puede ser de muchos-a-uno: una
+única dendrita puede recibir señales de miles de axones al mismo tiempo
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.35\textwidth]{../Images/purk.jpg}
+    \caption{Célula de Purkinje del cerebelo dibujada por Santiago Ramón y
+    Cajal. El soma es la región densa justo encima de $a$. El árbol dendrítico de
+    las células de Purkinje es inmenso y está diseñado para la convergencia
+    masiva de información. El axón es la prolongación delgada que desciende desde
+    el soma $(a)$, responsable de enviar la señal de salida. El axón posee
+    ramificaciones $(b)$. La célula de Purkinje es el mejor ejemplo de una
+    relación de muchos a uno: una sola célula de Purkinje puede recibir
+    información de hasta 200{,}000 axones diferentes.}
+    \label{fig:purkinje}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.35\textwidth]{../Images/SRyC.png}
+    \caption{Santiago Ramón y Cajal, el padre de la neurociencia, en su
+    laboratorio. Utilizando la tinción de Golgi, demostró que el sistema
+    nervioso no era una red continua, como el sistema circulatorio, sino que
+    las células son neuronas individuales que no se tocan.}
+    \label{fig:ryc}
+\end{figure}
+\FloatBarrier
+
+
+Las neuronas viven sumergidas en un fluido extracelular y rodeadas de células
+gliales. Tanto las neuronas como el fluido extracelular están llenos de
+moléculas cargadas, o iones, que se atraen y repelen entre sí de acuerdo a las
+leyes de la electricidad. En general, existe un exceso de iones negativos en el
+interior de las neuronas, lo cual genera un potencial a lo largo de toda su
+membrana. Los iones negativos del interior «desearían» salir, y los iones
+positivos del exterior «desearían» entrar. El exceso de carga negativa en el
+interior hace que los iones negativos sean atraídos hacia la cara interior de la
+membrana; y como dichos iones se repelen entre sí, su distribución en la
+membrana tiende a ser uniforme. 
+
+Lo que distingue a las neuronas de otras células es que poseen canales iónicos:
+proteínas distribuidas en su membrana que pueden abrirse o cerrarse, permitiendo
+el flujo de iones dentro y fuera de la célula. Los mecanismos que abren o
+cierran estos canales son variados y serán examinados más adelante. Por el
+momento, es suficiente notar que la apertura de dichos canales habilita un flujo
+iónico que, a su vez, modifica el potencial de la membrana.
+
+Un potencial de acción es una inversión rápida y drástica del potencial de
+membrana que permite la transmisión de señales a lo largo de la neurona. Este
+proceso depende de la conductancia iónica, regulada por ciertos canales de
+proteínas que se abren o cierran dependiendo del voltaje de la membrana. En
+estado de reposo, la membrana es principalmente permeable al potasio ($K^+$),
+pero ante un estímulo que despolariza la célula hasta un umbral crítico, los
+canales de sodio ($Na^+$) dependientes de voltaje se abren masivamente. Esto
+permite que el sodio fluya hacia el interior a favor de su gradiente
+electroquímico, invirtiendo la polaridad de la membrana. Posteriormente, el
+cierre de estos canales y la apertura de canales de potasio adicionales
+restauran el equilibrio negativo original. Este ciclo de intercambio iónico
+transforma la energía química almacenada en los gradientes de concentración en
+impulsos eléctricos que se propagan de forma autosostenida.
+
+Es importante destacar que las neuronas se comunican entre sí mediante la
+transformación alternada de información eléctrica en información química, y
+viceversa. Los axones de una neurona no están físicamente unidos a las dendritas
+de otra: se aproximan dejando un pequeño espacio entre ambas estructuras. Este
+tipo de conexión, que no implica contacto directo, se denomina sinapsis, y
+significa que la información eléctrica no puede fluir directamente de una
+neurona a otra. Por el contrario, información química debe recorrer el espacio
+que separa la terminal del axón (terminal presináptica) de la dendrita de la
+neurona receptora (terminal postsináptica) y de alguna manera desencadenar una
+señal eléctrica en la neurona receptora. El mecanismo encargado de esta
+transformación de información, 
+
+\begin{equation*}
+    \text{eléctrica} \to \text{química} \to \text{eléctrica}
+\end{equation*}
+
+es complejo, pero puede resumirse de la siguiente manera.
+
+Cuando se genera un potencial de acción, la señal eléctrica se propaga a lo
+largo del axón hasta alcanzar la terminal presináptica, produciendo una
+despolarización local. Este aumento del potencial de membrana provoca la
+apertura de canales iónicos dependientes de voltaje, específicos para el calcio
+($\text{Ca}^{2+}$). El gradiente electroquímico del calcio es enorme: la
+concentración extracelular es unas 10,000 veces mayor que la intracelular, por
+lo que la apertura de estos canales genera una entrada rápida y masiva de carga
+positiva. La entrada de iones de calcio desata una cadena de mensajes celulares,
+que eventualmente ocasionan la fusión de las vesículas sinápticas —pequeños
+compartimentos membranosos que contienen neurotransmisores— con la membrana
+plasmática, convirtiendo así la señal eléctrica en una señal química.
+
+Una vez liberados en la hendidura sináptica ---el espacio entre las terminales
+pre- y post-sinápticas--- los neurotransmisores se difunden y tienen cierta
+probabilidad de unirse a receptores específicos localizados en la membrana de la
+neurona postsináptica. Esta interacción, análoga al mecanismo de llave y
+cerradura, induce la apertura o el cierre de canales iónicos en la neurona
+receptora. Según el tipo de neurotransmisor y el receptor involucrado, la
+respuesta postsináptica puede ser despolarizante (excitatoria) o
+hiperpolarizante (inhibitoria), modulando así la probabilidad de que la señal
+continúe propagándose. Finalmente, los neurotransmisores remanentes son
+eliminados de la hendidura sináptica mediante degradación enzimática o
+recaptación por la neurona presináptica, asegurando la terminación de la señal y
+preparando el sistema para una nueva transmisión.
+
+Por convención, el potencial del líquido extracelular en el exterior de una
+neurona se define como cero. Dado que las neuronas inactivas poseen un exceso de iones
+negativos en el interior de sus membranas, el potencial de reposo de una neurona
+es negativo. Por lo tanto, cada neurona tiene un potencial de equilibrio
+determinado por las concentraciones iónicas en su interior. El potencial de las
+neuronas puede variar aproximadamente entre $-90\text{ mV}$ y $+60\text{ mV}$,
+dependiendo del tipo de neurona y de su estado.
+
+El exceso de carga negativa en el interior hace que los iones negativos sean
+atraídos hacia la cara interior de la membrana; y como dichos iones se repelen
+entre sí, su distribución tiende a ser uniforme. Es decir que la neurona
+funciona como un capacitor con una carga uniformemente distribuida a lo largo de
+su cara interna. Todo capacitor obedece que $V = \frac{Q}{C}$, o bien $VC = Q$. Si
+modelamos $V = V(t)$, y tomando $C$ como constante, se tiene 
+
+\begin{equation}
+    C \frac{dV}{dt} = \frac{dQ}{dt} =: -I
+\end{equation}
+
+El signo negativo en $-I$ obedece a una convención típica: la corriente de
+membrana se define como positiva cuando iones positivos salen de la neurona, y
+negativa cuando iones positivos entran a la neurona. El ingreso de una unidad de
+carga positiva es equivalente a la salida de una unidad de carga negativa, y por
+ende definir el sentido de la corriente en términos de los iones positivos
+alcanza para definirlo para todo tipo de iones, positivos y negativos.
+
+Generalmente, nos interesa expresar la capacitancia por unidad de área, es decir
+la capacitancia específica $c_m = C / A$, con $A$ el área de superficie de la
+neurona. Lo mismo aplica para la resistencia,
+definiendo la resistencia específica $r_m = R \cdot A$ y la conductancia
+específica $g_m = 1 / r_m$, tanto como para la corriente $i_m = \frac{I}{A}$.
+Visto de este modo, la ecuación resulta 
+
+\begin{equation}
+    c_m \frac{dV}{dt} = -i_m
+\end{equation}
+
+Las áreas (de superficie) de una neurona suelen variar entre $0.01$ y
+$0.1\text{mm}^2$, y la capacitancia entre $0.01$ y $0.1\text{nF}$. Una neurona
+con una capacitancia de 1 nanofaradaio necesita aproximadamente $7\times
+10^{-11}$ coulombs para generar un potencial de reposo de $-70\text{ mV}$. Esto
+equivale aproximadamente a $10^9$ iones con una carga unitaria.
+
+El producto entre la capacitancia y la resistencia es una cantidad con unidad de
+tiempo llamada constante de tiempo de membrana: $\tau_m = R_m C_m$. Es fácil
+observar que $\tau_m = r_m c_m$, es decir es independiente del área. Esta
+constante especifica la escala temporal de los cambios en el potencial de
+membrana y generalmente varía entre $10$ y $100\text{ ms}$. 
+
+Es importante notar que el potencial de equilibrio no es consecuencia de un
+estado de cosas estático, sino consecuencia de que la corriente generada por las
+fuerzas eléctricas cancela el flujo por difusión. Si un ion positivo «flota» en
+el medio intracelular, y la membrana tiene un potencial negativo, el potencial
+de membrana se opondrá el flujo del ion fuera de la célula. En este caso, sólo
+habría flujo a través de la membrana si la energía térmica fuera suficiente para
+superar el campo eléctrico. Si el ion tiene una carga de $zq$, con $q$ la carga
+de un protón y $z$ un número real positivo, la energía térmica debe ser de al
+menos $-zqV$ para que el ion atraviese la membrana. La probabilidad de que un
+ion en un medio con temperatura absoluta $T$ tenga una energía térmica $\geq
+zqV$ es 
+
+\begin{equation}
+    p := P(E_T \geq zqV) = \exp\left( zqV / k_B T \right) = \exp\left( zV / V_T \right) 
+\end{equation}
+
+donde $V_T = k_B T / q$ es el voltaje térmico. 
+
+Fuera de la célula, el potencial eléctrico puede ser contrarrestado por un
+gradiente. Si la concentración de iones dentro de la célula es menor a la
+concentración fuera de la misma, el gradiente electroquímico generado puede
+compensar una baja probabilidad $p$.  El flujo hacia dentro de la célula es
+proporcional a la concentración en el medio externo. El flujo hacia fuera es
+proporcional a la concentración en el medio interno multiplicada por $p$, dado
+que sólo los iones con suficiente energía térmica podrán abandonar el medio
+celular. El flujo neto será cero cuando ambos flujos sean iguales. Si $E$ denota
+la diferencia de potencial que satisface precisamente esta condición, y $C_i,
+C_e$ es la concentración interna y externa de iones, se tiene:
+
+\begin{equation}
+    C_e = C_i \exp\left( \frac{zE}{V_T} \right) \iff E = \frac{V_T}{z}\ln \left(
+    \frac{C_e}{C_i}\right) 
+\end{equation}
+
+Esta es la famosa ecuación de Nernst. Los potenciales de equilibrio para el
+potasio ($K^+$) típicamente caen entre $-70\text{mV}$ y $-90\text{mV}$; para el
+sodio $(\text{Na}^+)$ son $\approx 50\text{mV}$ o más, y para el calcio todavía
+mayores, alcanzando $\approx 150\text{mV}$. 
+
+La ecuación de Nernst asume que la conductancia generada por un canal es
+específica, i.e. cada canal permite el paso de un único tipo de ion. Algunos
+canales no satisfacen esta condición, en cuyo caso el potencial de equilibrio no
+es determinado por la ecuación de Nernst sino que toma un valor intermedio entre
+los potenciales de equilibrio de cada tipo de ion que atraviesa el canal.
+
+Cada conductancia tiende a llevar el potencial de membrana $V$ a su propio
+potencial de equilibrio $E$. Si $V>E$, existe flujo hacia fuera; si $V < E$,
+flujo hacia adentro. Esto significa que un canal va a polarizar o despolarizar
+la membrana dependiendo de su potencial de equilibrio. Los canales de sodio y el
+calcio tienen potenciales de equilibrio positivos y por lo tanto tienden a
+despolarizar la membrana. Los canales de potasio tienen valores negativos y
+tienden a hiperpolarizarla. Algunas conductancias, como la del cloro
+($\text{Cl}^-$), tienen un potencial de equilibrio tan cercano al potencial de
+reposo de la membrana que apenas dejan pasar corriente. Como nota, las sinapsis
+también tienen potenciales de equilibrio: si dicho potencial es mayor al umbral
+de disparo, se dice que la sinapsis es excitatoria; si es menor, que es
+inhibitoria.
+
+La corriente total a través de la membrana es la suma de las corrientes a través
+de todos sus canales. La dirección de la corriente que fluye a través de la
+membrana se define por convención como positiva si los iones abandonan el medio
+intracelular. Como distintas neuronas tienen distintos tamaños, es útil hablar
+de la corriente por unidad de área, $i_m$. La corriente total sería $i_m A$, con
+$A$ la superficie total de la neurona.
+
+Ya establecimos que la corriente neta es nula cuando $V = E_i$, con $E_i$ el
+potencial de equilibrio del ion $i$. La diferencia $V - E_i$ determina entonces
+la distancia entre el voltaje y el punto de equilibrio, y la corriente por
+unidad de área se determina como 
+
+\begin{equation}
+    g_i(V - E_i)
+\end{equation}
+
+con $g_i$ la conductancia por unidad de área para los canales de tipo $i$. Esta
+determinación está justificada porque la corriente aumenta o decrece de manera
+aproximadamente lineal con el factor $V - E_i$. Se sigue que 
+
+\begin{equation}
+    i_m = \sum_i g_i (V - E_i)
+\end{equation}
+
+Es importante notar que este es solo un modelo o aproximación posible de la
+corriente, fundamentada en la relación aproximadamente lineal entre la corriente
+y el factor $V - E_i$. Otras expresiones, como la fórmula de
+Goldman-Hodgkin-Katz, a veces son utilizadas.
+
+Si combinamos esta nueva expresión para $i_m$ con la ecuación que determina la
+tasa de cambio del voltaje, obtenemos 
+
+\begin{equation}
+    c_m \frac{dV}{dt} = -\sum_i g_i(V - E_i)
+\end{equation}
+
+Esta es la expresión detrás de los modelos más elementales de la neurociencia
+computacional, como los \textit{single-compartment models}. Estos modelos
+describen el potencial de membrana usando una única variable $V$. Insisto en que
+el signo negativo es necesario dadas las convenciones que establecimos. Notar
+que si el voltaje es menor a un potencial de equilibrio determinado, habrá un
+flujo de corriente hacia adentro, y el término de la suma será positivo. Esto es
+consistente, porque el ingreso de iones positivos a la célula aumenta el
+voltaje.
+
+En otros escritos detallé algunos \textit{single-compartment models}. El más
+simple es el que expresa el voltaje ante una corriente externa $I_e$:
+
+
+\begin{equation}
+    c_m \frac{dV}{dt} = - i_m + \frac{I_e}{A}
+\end{equation}
+
+El signo positivo de $I_e$ también es mera convención: se define la corriente
+externa como positiva cuando ingresa a la neurona, contrario a la corriente de
+membrana.
+
+\subsection{Modelos de filtrado (leaky)}
+
+A principios del siglo XX, Louis Lapicque, un profesor distinguido de \textit{la
+Sorbonne} e, incidentalmente, militanate del socialismo, presentó el primer
+modelo de integración y disparo (\textit{integrate-and-fire model}). Los modelos
+de integración y disparo modelan una neurona como un capacitor que recibe
+corrientes, las integra (suma), y dispara solo cuando el voltaje cruza un umbral
+predeterminado. En el modelo de Lapicque, los potenciales de acción son
+inducidos por una única corriente externa, por ejemplo proviniendo de un
+electrodo. El flujo iónico ajeno a dicha corriente externa se modela simplemente
+como un goteo o filtrado (leak) pasivo.
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=0.3\textwidth]{../Images/Lapicque.jpg}
+        \caption{Louis Lapicque, socialista y neurocientífico francés que
+        desarrolló el modelo de integración y disparo.}
+        \label{fig:lapicque}
+\end{figure}
+
+\FloatBarrier
+
+
+Al modelar las dinámicas ajenas a la corriente externa como una simple corriente
+pasiva de filtradoo, el modelo de Lapicque ignora las sutilizes fisiológicas
+detrás de la generación de un potencial de acción. Pongamaos esto en lenguaje
+matemático. Recordemos que
+
+$$
+C_m \frac{dV}{dt} = \frac{dQ}{dt} = -\sum_{i} I_{i} + I_{e}
+$$
+
+donde $\sum_i I_i$ es la suma de las corrientes de los distintos canales
+iónicos, denotados por los sub-índeces $i$. En este modelo, todos los canales
+iónicos se modelan como generando una sola corriente por unidad de área
+
+\begin{equation}
+    G_\ell(V - E_\ell)
+\end{equation}
+
+donde $G_\ell$ y $E_\ell$ son la conductancia y el potencial de equilibrio para
+el flujo de filtrado (ver ecuación $21$). Se obtiene entonces que el voltaje es
+descrito por la siguiente ecuación diferencial:
+
+\begin{equation}
+c_m \frac{dV}{dt} =-g_\ell(V - E_\ell) + \frac{I_e}{A}
+\end{equation}
+
+donde hemos dividido todo por $A$, el área de superficie de la neurona, para
+expresar el voltaje en términos de la condutancia y capacitancia específicas.
+Multiplicando ambos lados por la resistencia $r_m = \frac{1}{g_\ell}$, obtenemos 
+
+\begin{equation}
+    \tau_m \frac{dV}{dt} = -V + E_\ell + R_m I_e
+\end{equation}
+
+Esta es la ecuación fundamental de los modelos de integración y disparo basados
+en un filtrado pasivo (leaky). Veamos dos maneras de generar una simulación de
+este simple modelo, a fin de inspirar un poco de reflexión acerca de la
+diferencia entre métodos analíticos y numéricos.
+
+Una forma de simular el cambio en el voltaje a lo largo del tiempo, dentro de
+este modelo, es encontrar la función $V(t)$ que satisface la igualdad 1.27.
+Observemos que la ecuación 1.27 implica que
+
+\begin{align*}
+    dt = \frac{\tau_m ~ dV}{-V + E_\ell + R_m I_e}
+\end{align*}
+
+Tomando $u = E_\ell + R_mI_e$ e integrando a ambos lados:
+
+\begin{equation*}
+    \int ~ dt = \tau_m \int \frac{1}{-V + u} ~ dV \iff \ln \left| u - V \right|
+    = -\frac{t}{\tau_m} + C
+\end{equation*}
+
+De lo cual se sigue que 
+
+\begin{align*}
+    V 
+    &= u + \exp\left( -\frac{t}{\tau_m} + C\right)  \\
+    &= u + e^C e^{-t / \tau_m} \\ 
+    &= u + C' e^{-t / \tau_m}
+\end{align*}
+
+pues tratamos $e^C$ como una constante $C'$. Si imponemos como condición inicial
+$V(0) = E_\ell$ es decir que en el tiempo $t = 0$ la neurona se halla en su
+potencial de equilibrio, resulta entonces que $C' = R_mI_e$. Sin embargo, es más
+flexible escribir que el valor de $C'$ debe ser $V(0) - u$ (que coincide con
+$R_mI_e$ en nuestro caso), puesto que esto valdrá para cualquier voltaje inicial
+$V(0)$.
+
+\begin{equation}
+    V(t) = E_\ell + R_m I_e + \left[ V(0) - E_\ell - R_mI_e \right]  e^{-t / \tau_m}
+\end{equation}
+
+Usando esta función, y seteando los parámetros iniciales $V(0), R_m, I_e,
+E_\ell$, podemos simular adecuadamente el modelo, tal como se ve en la figura
+abajo.
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.50\textwidth]{../Images/Leaky.png}
+        \caption{Simulación con método analítico de un leaky integrate-and-fire
+            model. La precisión es infinita pero necesita asumir una corriente
+            externa constante.}
+\end{figure}
+\FloatBarrier
+
+Con algo de suerte, el lector se dio cuenta de que algo sospechoso sucedió al
+resolver 
+
+\begin{equation*}
+    \tau_m \int \frac{1}{u - V} ~ dV
+\end{equation*}
+
+En particular, $u = E_\ell + R_m I_e$. Pero si $I_e$ no fuese constante, sino
+que variara en el tiempo, $u$ sería $u(t)$ y no podría «salir de la integral».
+Una solución analítica se vuelve mucho más difícil. El problema del método
+analítico es precisamente que nos requiere realizar supuestos poco convenientes,
+como la constancia de la corriente externa.
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=0.25\textwidth]{../Images/LapicqueWife.jpg}
+        \caption{Louis y Marcelle Lapicque en su laboratorio de fisiología en La
+        Sorbona. Louis Lapicque insistía en «la importancia de su esposa como
+        colaboradora igualitaria en todas sus investigaciones». }
+        \label{fig:lapicque_wife}
+\end{figure}
+\FloatBarrier
+
+Una forma alternativa de simular el voltaje a lo largo del tiempo es usando un
+método numérico. Existen muchos métodos numéricos adecuados. Uno de los más
+simples es el método de Euler. Este método no considera cambios infinitesimales
+$dV / dt$  sino cambios discretos $\Delta V / \Delta t$, y genera una fórmula
+recursiva. Si $\Delta t$ es suficientemente pequeño, la aproximación será
+adecuada. En otras palabras, aproximamos la ecuación 1.27 como 
+
+\begin{equation}
+    \tau_m \frac{ \Delta V }{\Delta t} = -V + E_\ell + R_m I_e
+\end{equation}
+
+donde $\Delta V = V_\text{new} - V$, $V_{\text{new}} = V(t + \Delta t)$, y $V =
+V(t)$. Despejando para $V_{\text{new}}$, obtenemos 
+
+\begin{align*}
+    V_{\text{new}} = \frac{-V + E_\ell + R_m I_e}{\tau_m} + V
+\end{align*}
+
+o bien 
+
+\begin{equation}
+    V(t + \Delta t) = V(t) + \frac{u - V(t)}{\tau_m}
+\end{equation}
+
+Esta es una fórmula recursiva que nos permite simular la dinámica del modelo,
+como se ve en la figura abajo.
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.5\textwidth]{../Images/Leaky2.png}
+        \caption{Simulación con método de Euler de un leaky integrate-and-fire
+            model. El modelo aproxima la dinámica del sistema con una precisión
+            inversamente proporcional a $\Delta t$, pero puede simular una corriente
+            externa variable.}
+\end{figure}
+\FloatBarrier
+
+\pagebreak 
+
+\subsection{Modelos adaptativos}
+
+El modelo de Lapicque es tan general, elegante y sencillo que sigue siendo
+ampliamente utilizado hoy en día. Pero, como suele ser el caso con todas las
+cosas, sus virtudes coinciden con sus defectos. La simplicidad del modelo ignora
+muchos fenómenos fisiológicos de interés. 
+
+Algunas neuronas, como las neuronas piramidales de la corteza cerebral humana,
+muestran una ligera reducción en su tasa de disparo después de cada potencial de
+acción. Este fenómeno se conoce como \textit{spike-rate adaptation} (SRA), y cae
+bajo el concepto general de plasticidad neuronal.
+
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.5\textwidth]{../Images/pyramidal.jpg}
+        \caption{Neuronas piramidales. Fuente: \textit{Current
+        Biology}.}
+\end{figure}
+\FloatBarrier
+
+Fisiológicamente, el fenómeno de SRA está mediado por corrientes de potasio
+$\text{K}^+$ que son abiertas por el calcio $\text{Ca}^2$ que ingresa a la
+célula cuando ocurre un potencial de acción. Más precisamente, el potencial de
+acción abre los canales de calcio, que son voltaje-dependientes, lo cual causa
+una despolarización de la membrana. Si la neurona dispara repetidas veces, la
+tasa de acumulación del calcio supera su tasa de salida, y el exceso de calcio
+en el medio intracelular activa canales específicos de potasio. Esto ocasiona
+una salida del potasio, que tiene carga positiva, causando una hiperpolarización
+de la membrana. La consecuencia de esta hiperpolarización es que, aunque la
+corriente externa sea la misma, a la neurona le cuesta cada vez más alcanzar el
+umbral de disparo.
+
+Para capturar esta dinámica, añadimos al modelo de Lapicque una corriente
+hiperpolarizante $g_{\text{sra}}$, de manera tal que la ecuación que describe la
+dinámica del voltaje es: 
+
+\begin{equation} 
+\tau_{m} \frac{dV}{dt} = E_{L}-V + R_{m}I_{e} - r_mg_{\text{sra}}(V-E_{K}) 
+\end{equation}
+
+Asumimos que la conductancia $g_{\text{sra}}$ se relaja hasta volverse cero de
+manera exponencial y bajo una constante de tiempo $\tau_{\text{sra}}$:
+
+
+\begin{equation}
+\tau_{sra} \frac{dg_{sra}}{dt} = -g_{sra}
+\end{equation}
+
+
+\small
+\begin{quote}
+
+\textbf{Nota.} El factor $r_m$ aparece porque, para llegar al modelo de
+Lapicque, habíamos dividido la ecuación 1.26 por la conductancia específica
+$g_\ell$, que por definición equivale a multiplicar por la resisencia específica
+$r_m$.
+
+\end{quote}
+\normalsize
+
+La corriente hiperpolarizante que añadimos contrarresta la corriente externa,
+pero para modelar SRA debemos aumentar la conductancia $g_\text{sra}$ después de
+cada potencial de acción por una cantidad $\Delta g_{\text{sra}}$. El hecho de
+que esta condutancia decae exponencialmente a cero es lo que hace impermanente
+el fenómeno de SRA.
+
+Usando el método de Euler, obtenemos
+
+\begin{equation}
+V^{n+1}
+=
+V^{n}
++
+\frac{\Delta t}{\tau_m}
+\left(
+E_L - V^{n}
++ R_m I_e^{n}
+- r_m g_{\text{sra}}^{n} (V^{n} - E_K)
+\right),
+\end{equation}
+
+\begin{equation}
+g_{\text{sra}}^{n+1}
+=
+g_{\text{sra}}^{n}
+\left(
+1 - \frac{\Delta t}{\tau_{\text{sra}}}
+\right),
+\end{equation}
+
+con la condición adicional de incremento
+
+\begin{equation*}
+g_{\text{sra}} \;\rightarrow\; g_{\text{sra}} + \Delta g_{\text{sra}}
+\end{equation*}
+
+después de cada potencial de acción.
+
+
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.5\textwidth]{../Images/LapicqueSRA.png}
+\caption{
+Simulación del modelo de Lapicque con SRA.
+\emph{Arriba}: potencial de membrana $V(t)$ (azul), con el umbral de disparo
+$V_{\mathrm{th}}$ indicado por la línea roja punteada; cada cruce del umbral da
+lugar a un potencial de acción seguido de un reinicio del voltaje.
+\emph{Centro}: evolución temporal de la conductancia de SRA
+$g_{\text{sra}}(t)$, que se incrementa en una cantidad fija $\Delta
+g_{\text{sra}}$ tras cada disparo y decae exponencialmente con constante de
+tiempo $\tau_{\text{sra}}$. \emph{Abajo}: corriente externa $I_e(t)$, compuesta
+por una componente periódica lenta y ruido blanco gaussiano.
+}
+\end{figure}
+\FloatBarrier
+
+\pagebreak
+
+\section{El modelo de Hodgkin y Huxley}
+
+En general, no todos los canales ionicos están abiertos al mismo tiempo, y la
+conductancia de un ion $g_i$ depende por la cantidad de canales abiertos en un
+momento dado. El producto entre la conductancia de un canal por la densidad de
+canales en la membrana se denota $\overline{g_i}$. De este modo, podemos
+expresar como la conductancia total como $\overline{g_i} \frac{n_i}{N_i}$, con
+$n_i$ la cantidad de canales de tipo $i$ abiertos y $N_i$ la cantidad de canales
+en total. 
+
+Notemos que, si asumimos que la probabilidad de que un canal esté abierto es
+uniforme,  $n_i / N_i$ es equivalente a la probabilidad de que un canal
+aleatorio esté abierto, denotada por $P_i$. Por lo tanto, 
+
+\begin{equation}
+g_i = \overline{g_i} P_i
+\end{equation}
+
+En 1952, Hodgkin y Huxley se propusieron describir la forma en que los
+potenciales de acción eran iniciados. Para este fin, estudiaron el axón gigante
+del calamar, un axón tan inmenso que puede verse a simple vista, sin necesidad
+de un microscopio.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.35\textwidth]{../Images/hhpeople.png}
+    \caption{Hodgkin y Huxley viéndose muy inteligentes (lo eran).}
+\end{figure}
+\FloatBarrier
+
+
+El modelo de Hodgkin-Huxley les ganó un Nobel en medicina. La razón por la cual
+el modelo es tan superador es que modela los potenciales de acción como una
+propiedad emergente de las dinámicas no-lineales del sistema. Contrario al
+modelo de Lapicque, en que «forzábamos» un potencial de acción cada vez que el
+voltaje alcanzaba un umbral, el modelo de Hodgkin-Huxley deja al sistema
+evolucionar libremente y al potencial de acción emerger naturalmente de sus
+dinámicas propias. Este tipo de modelos se llaman \textit{modelos de
+conductancia}, en oposición a los modelos de integración y disparo. 
+
+Vale la pena ahondar un poco más en la fisiología detrás de un potencial de
+acción antes de describir el modelo. En general, se requieren al menos dos tipos
+de canales iónicos voltaje-dependientes para evocar un potencial de acción. Los
+canales de sodio se abren en respuesta a un aumento del potencial de membrana
+---por ejemplo, debido a la apertura de canales iónicos activados por
+neurotransmisores y la subsiguiente despolarización---. El influjo de
+$\text{Na}^+$, debido a la menor concentración de este ion en el interior de la
+célula, acerca la membrana al potencial de equilibrio del sodio de $\approx
++65\text{ mV}$. Este es el mecanismo detrás de la fase ascendente del potencial
+de acción. Esta despolarización provoca dos fenómenos distintos pero
+simultáneos, ambos ocurriendo aproximadamente $1\text{ms}$ después de la
+apertura de los canales de sodio:
+
+\begin{itemize}
+    \item[\textit{i.}] Una proteína bloquea los canales de sodio, deteniendo el influjo de este ion;
+    \item[\textit{ii.}] Los canales de potasio, que son voltaje-dependientes, se
+        abren. Esto provoca un eflujo de $\text{K}^+$, que conduce el potencial
+        de membrana hacia el potencial de equilibrio del potasio
+        ($\approx -80\text{ mV}$).
+\end{itemize}
+
+\noindent La hiperpolarización causada por \textit{ii} obliga a ambos canales
+dependientes de voltaje a cerrarse, lo que restaura la neurona a su estado de
+reposo. Por esta razón, la conductancia de $\text{K}^+$ suele describirse como
+un rectificador tardío, encargado de restablecer el estado natural de la
+neurona. 
+
+\subsection{Conductancias de $\text{K}^+$}
+
+El modelo de Hodgkin-Huxley usa dos tipos de canales: los transitorios
+(\textit{transient}) y los persistentes. Las conductancias persistentes dependen
+de complejos mecanismos moleculares, que el modelo simplifica definiendo cada
+canal como compuesto de $k$ sub-unidades o \textit{gates}, cada una de las
+cuales debe estar abierta para que pueda haber corriente. El estado de las
+\textit{gates} (abierta/cerrada) se modela con variables aleatorias
+independientes e igualmente distribuidas, de manera tal que si $n$ es la
+probabilidad de que una gate esté abierta, $n^k$ era la probabilidad de que un
+canal con $k$ sub-unidades esté abierto. La variable $n$ se denomina
+\textit{variable de activación}. 
+
+Los canales de potasio son conductancias persistentes con $k = 4$. Este valor se
+utiliza porque coincide con la estructura molecular de estas proteínas. Sin
+embargo, más generalmente, la cantidad de sub-unidades de un canal arbitrario es
+una variable determinada para ajustarse a los datos empíricos.
+
+En la medida en que lidiemos con canales voltaje-dependientes, las variables de
+activación son una función creciente de $V$. En particular, la probabilidad de
+que una sub-unidad esté abierta debe ser proporcional a la probabilidad de que
+la sub-unidad esté cerrada multiplicada por una tasa de apertura $\alpha_n(V)$.
+Del mismo modo, la probabilidad de que una sub-unidad se cierre debe ser
+proporcional a la probabilidad de que esté abierta por una tasa de cierra
+$\beta_n(V)$. Esto es modelado en la siguiente ecuación diferencial.
+
+\begin{equation}
+    \frac{dn}{dt} = \alpha_n(V) (1 - n) - \beta_n(V) n
+\end{equation}
+
+Si dividimos ambos térmirnos por $\alpha_n(V) + \beta_n(V)$, obtenemos
+
+\begin{equation}
+    \tau_n(V) \frac{dn}{dt} = n_{\infty}(V) - n
+\end{equation}
+
+donde 
+
+\begin{equation}
+    t_n(V) = \frac{1}{\alpha_n(V) + \beta_n(V)}, \qquad n_\infty(V) =
+    \frac{\alpha_n(V)}{\alpha_n(V) + \beta_n(V)}
+\end{equation}
+
+El sufijo $n_\infty$ es útil y estándar: $n_\infty(V)$ es el valor al que $n$
+tiende exponencialmente, con constante de tiempo $\tau_n(V)$, para un $V$ fijo.
+Las expresiones $\alpha_n(V), \beta_n(V)$, las tasas de apertura y cierre
+dependientes del voltaje. 
+
+Las transiciones $\alpha_n, \beta_n$ obedecen a consideraciones termodinámicas
+que escapan al alcance de estas notas. Basta decir que 
+
+\begin{equation}
+    \alpha_n(V) = A_\alpha \exp \left( -\frac{ B_\alpha }{V_T} \right) 
+\end{equation}
+
+para alguna constante $A_\alpha, B_\alpha$. La misma expresión se usa para
+$\beta_n(V)$, pero con constantes $A_\beta, B_\beta$.
+
+
+
+
+Hodgkin y Huxley derivaron los valores de estas funciones que mejor aproximaban
+los datos experimentales, obteniendo
+
+\begin{equation}
+\alpha_n = \frac{0.01(V + 55)}{1 - \exp[-0.1(V + 55)]} \quad \beta_n = 0.125 \exp[-0.0125(V + 65)]
+\end{equation}
+
+\subsection{Conductancias de $\text{Na}$}
+
+Los canales de sodio conforman conductancias transitorias. Se modelan como
+controlados por dos tipos de compuertas que se abren de forma transitoria con la
+despolarización. Un tipo de compuerta es idéntico al modelado para los canales
+de potasio; su variable de activación se denomina $m$, y $m^k$ es la
+probabilidad de que dicha compuerta esté abierta si posee $k$ subunidades. El
+segundo tipo es una compuerta bloqueadora que puede suprimir el flujo iónico
+cuando la otra compuerta está abierta; por tanto, la probabilidad $h$ de que
+esté abierta (es decir, no bloqueando) se denomina \textit{variable de
+inactivación}. Este segundo mecanismo de compuerta modela la proteína
+bloqueadora descrita en nuestro resumen de los mecanismos mínimos tras la
+generación del potencial de acción. 
+
+Las variables $m$ y $h$ tienen dependencias de voltaje opuestas: $m$ aumenta con
+la despolarización y $h$ aumenta con la hiperpolarización. Naturalmente, la
+probabilidad de que un canal de conducción transitoria esté abierto viene dada
+por:
+
+\begin{equation}
+    P_{\text{Na}} = m^k h
+\end{equation}
+
+Como en el caso del potasio, $m$ y $h$ se describen mediante las tasas
+$\alpha_m, \alpha_h, \beta_m, \beta_h$ con propiedades similares a las
+mencionadas anteriormente. Como antes,
+
+\begin{equation}
+    z_{\infty}(V) = \frac{\alpha_z(V)}{\alpha_z(V) + \beta_z(V)}
+\end{equation}
+
+\noindent donde $z$ puede ser tanto $m$ como $h$. Los valores utilizados por
+Hodgkin y Huxley para ajustar la activación e inactivación de los canales de
+sodio son:
+
+\begin{align*}
+\alpha_m &= \frac{0.1(V + 40)}{1 - \exp[-0.1(V + 40)]} & \beta_m &= 4 \exp[-0.0556(V + 65)] \\
+\alpha_h &= 0.07 \exp[-0.05(V + 65)] & \beta_h &= 1 / (1 + \exp[-0.1(V + 35)])
+\end{align*}
+
+\subsection{El modelo}
+
+Habiendo descrito las conductancias en función del voltaje, se obtiene que 
+
+\begin{equation}
+    i_m = \overline{g}_L \left( V - E_L \right) + \overline{g}_\text{K} n^4
+    \left( V - E_\text{K} \right) + \overline{g}_{\text{Na}}m^3 h\left( V - E_\text{Na} \right) 
+\end{equation}
+
+Usando que 
+
+\begin{equation}
+    c_m \frac{dV}{dt} = -i_m + \frac{I_e}{A}
+\end{equation}
+
+y por ende
+
+\begin{equation*}
+c_m\frac{dV}{dt} = \frac{I_e}{A} - \left( \bar{g}_L (V - E_L) + \bar{g}_\text{K}
+    n^4 (V - E_\text{K}) + \bar{g}_{\text{Na}} m^3 h (V - E_\text{Na})\right)
+\end{equation*}
+
+Usando un método  analítico o numérico, podemos encontrar la forma de actualizar
+$\alpha_i, \beta_i$ para $i = n, m, h$. Para $i = n$ y $V$ fijo,
+
+\begin{align*}
+    &\tau_n \int \frac{1}{n_{\infty} - n} dn = t + C \\
+    \iff ~ ~ ~ 
+    &-\tau_n \ln |n_{\infty} - n| + C' = t + C \\
+    \iff ~ ~ ~ 
+    &n_{\infty} - n = \exp \left( \frac{-t}{\tau_n} \right) C'' \\ 
+    \iff ~ ~ ~ 
+    &n(t) = n_{\infty} + \exp \left( -\frac{t}{\tau_n} \right) C''
+\end{align*}
+
+\noindent Resolviendo para $C''$ de acuerdo a las condiciones iniciales,
+
+\begin{equation*}
+    n(t) = n_{\infty} + \exp \left( -\frac{t}{\tau_n} \right) (n(0) - n_{\infty})
+\end{equation*}
+
+Las derivaciones analíticas de las otras son similares. Como estas expresiones
+determinan la conductancia, usando la ley de Ohm se obtiene la corriente. Una
+vez que se tiene la corriente, usamos la ecuación (2.10) para determinar el
+cambio correspondiente en el voltaje.
+
+\pagebreak
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{../Images/hhlinear.png}
+    \caption{Simulación del modelo de Hodgkin-Huxley con una corriente externa
+    que aumenta linealmente.}
+\end{figure}
+\FloatBarrier
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{../Images/hhrandom.png}
+    \caption{Simulación del modelo de Hodgkin-Huxley con una corriente externa
+    ruidosa que fluctúa aleatoriamente en torno a una media.}
+\end{figure}
+\FloatBarrier
+
+\section{Conductancias sinápticas en modelos de Lapicque}
+
+En los modelos de Lapicque, o modelos de integración y disparo, solo incluíamos 
+una corriente externa, una conductancia pasiva, y en el caso de los modelos
+adaptativos, una conductancia de potasio que generaba \textit{spike-rate
+adaptation}. Estos modelos pueden extenderse para incorporar conductancias
+sinápticas:
+
+\begin{equation}
+    \tau_m \frac{dV}{dt} = E_\ell - V - r_m \overline{g}_sP_s(V_ E_s) + R_mI_e
+\end{equation}
+
+Notar que al usar $\overline{g_s}$ en vez de $g_s$, estamos usando la
+conductancia de un único canal en la sinapsis multiplicada por la cantidad de
+canales abiertos. Es decir, en la conductancia sináptica, vamos a considerar
+probabilísticamente la cantidad de canales abiertos respecto a la cantidad de
+canales totales, que es la probabilidad $P_s$. Esto coincide con las
+consideracoines dadas al principio de la sección anterior.
+
+Las sinapsis tienen distintos efectos sobre la neurona post-sináptica. En la
+ecuación 3.1, el término $r_m \overline{g_s}_s E_s$ es una fuente de corriente,
+mientras el término $r_m \overline{g_s}_s V$ modifica la conductancia de la
+membrana.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{../Images/iafexc.png}
+    \caption{Interacción entre dos neuronas de integración y disparo mutuamente
+        acopladas sinápticamente. \textbf{B)} Bajo un acoplamiento excitatorio
+        ($E_s = 0\text{mV}$), las neuronas desarrollan un patrón de disparo
+        alternado y fuera de fase. Este fenómeno ocurre porque la excitación
+        mutua, combinada con la dinámica de recuperación del modelo de Lapicque,
+        genera una competencia temporal que impide la sincronía. \textbf{A)} En
+        presencia de sinapsis inhibitorias ($E_s = -80$ mV), el sistema converge
+        rápidamente hacia un disparo sincrónico. La inhibición mutua actúa como
+        un mecanismo de ajuste de fase que alinea los potenciales de membrana
+        tras cada evento de disparo. Los parámetros utilizados, basados en
+        \textit{Theoretical Neuroscience} de Dayan y Abbot, fueron: potencial de
+        reposo $E_L = -70$ mV, umbral de disparo $V_{th} = -54$ mV, potencial de
+        reset $V_{reset} = -80$ mV, fuerza sináptica $r_m \bar{g}_s = 0.05$ (con
+    $P_{max} = 1$), corriente externa $R_m I_e = 25$ mV y constante de tiempo
+sináptica $\tau_s = 10$ ms.}
+    \label{fig:lapicque_coupled}
+\end{figure}
+\FloatBarrier
+
+Los modelos de integración y disparo son útiles para estudiar como las neuronas
+integran una gran cantidad de inputs sinápticos. Un problema que ha recibido
+atención es cuánta variabilidad existe en la tasa de disparo de neuronas que
+reciben inputs sinápticos. Esto llevó al descubrimmiento de que las neuronas
+tienen dos modos fundamentales de opración respecto a la información sináptica.
+
+Si definimos un vector $\mathbf{V}$ que contiene los potenciales de membrana de
+$N$ neuronas, la ecuación diferencial de Lapicque se puede vectorizar
+como:
+
+\begin{equation}\tau_m
+    \frac{d\mathbf{V}}{dt} = (E_\ell - \mathbf{V}) - \mathbf{g}_e \odot
+    (\mathbf{V} - E_e) - \mathbf{g}_i \odot (\mathbf{V} - E_i) + \mathbf{R}_m
+\mathbf{I}_e\end{equation}
+
+donde $\odot$ denota el producto de Hadamard (elemento a elemento). En este
+marco, la activación de las neuronas pre-sinápticas se
+representa como un vector de disparos instantáneos $\mathbf{s}(t) \in \{0,
+1\}^M$, 
+donde cada entrada es $1$ si la neurona presináptica $j$ disparó en
+el tiempo $t$, y $0$ en caso contrario. La actualización de las
+conductancias totales se convierte en una operación
+matricial:
+
+\begin{equation}
+    \mathbf{g}_{e,i}(t+dt) = \mathbf{g}_{e,i}(t) \left(1-
+    \frac{dt}{\tau_s}\right) + \mathbf{W}_{e,i}
+\mathbf{s}_{e,i}(t)\end{equation}
+
+Aquí, $\mathbf{W}$ es la matriz de pesos sinápticos. Esta formulación elimina la
+necesidad de rastrear explícitamente el índice de disparo $k$ de cada neurona,
+ya que toda la información temporal queda encapsulada en la evolución del vector
+de conductancias $\mathbf{g}(t)$. Notar que esta es la forma vectorial de la
+ecuación 1.34, más un peso $w$. El peso solo se incluye si la sinapsis ha
+disparado, representando un aumento en la conductancia, que de otro modo decae
+exponencialmente a cero.
+
+En simulaciones, si una neurona recibe múltiples inputs sinápticos en un modelo
+de integración y disparo, es usual tomar una distribución (e.g. Poisson) para
+modelar la probabilidad de que un input sináptico aleatorio dispare en un
+momento dado.
+
+En la simulación de abajo, modelamos una neurona con 1000 inputs sinápticos
+excitatorios y 200 inhibitorios. La probabilidad de disparo de una sinapsis
+arbitraria seguía una distribución de Poisson $P = \lambda \cdot
+\frac{dt}{1000}$, donde $\lambda$ es la tasa de disparo en Hz. Los parámetros
+utilizados están recogidos en el \textbf{Cuadro 1}.
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{../Images/iafmany.png}
+\caption{Trayectoria del potencial de membrana bajo bombardeo sináptico
+estocástico. Se observa la transición al régimen dominado por fluctuaciones,
+donde el disparo solo ocurre cuando la suma temporal de inputs excitatorios
+vence a la inhibición predominante.}
+\end{figure}
+    \label{fig:lapicque_coupled}
+\end{figure}
+\FloatBarrier
+
+\begin{table}[H]
+\centering
+\caption{Parámetros de la simulación (Modelo de Lapicque Vectorizado)}
+\begin{tabular}{lll}
+\hline
+\textbf{Parámetro} & \textbf{Símbolo} & \textbf{Valor} \\ \hline
+Potencial de reposo & $E_L$ & $-70$ mV \\
+Umbral de disparo & $V_{th}$ & $-50$ mV \\
+Potencial de reset & $V_{reset}$ & $-80$ mV \\
+Constante de tiempo (membrana) & $\tau_m$ & $20$ ms \\
+Constante de tiempo (Exc / Inh) & $\tau_e, \tau_i$ & $5$ ms, $10$ ms \\
+Potencial de inversión (Exc / Inh) & $E_e, E_i$ & $0$ mV, $-80$ mV \\
+Pesos sinápticos (Exc / Inh) & $w_e, w_i$ & $0.035, 0.12$ \\
+Tasas de entrada (Exc / Inh) & $\lambda_e, \lambda_i$ & $6$ Hz, $5$ Hz \\ \hline
+\end{tabular}
+\end{table}
+
+Es importante notar que la tasa de disparo no es constante, es decir que existe
+cierta variabilidad en la cantidad de disparos observados en distintos momentos
+del tiempo. La razón es que, si apagáramos el mecanismo que genera un spike cada
+vez que el voltaje alcanza el umbral de disparo, veríamos que en promedio dicho
+voltaje no supera el umbral. Si aumentáramos el peso o la cantidad de los inputs
+excitatorios de manera tal que el voltaje medio permanezca por encima del umbral
+de disparo, veríamos una tasa constante de disparo y por ende disparos
+uniformemente espaciados en el tiempo. Esto se muestra en la figura de abajo,
+resultado de hacer la misma simulación anterior pero aumentando el peso de las
+sinapsis excitatorias de $0.035$ a $0.05$.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{../Images/iafmanyuni.png}
+\caption{Trayectoria del potencial de membrana bajo bombardeo sináptico
+estocástico. Se observa la transición al régimen dominado por fluctuaciones,
+donde el disparo solo ocurre cuando la suma temporal de inputs excitatorios
+vence a la inhibición predominante.}
+\end{figure}
+    \label{fig:lapicque_coupled}
+\end{figure}
+\FloatBarrier
+
+La regularidad o irregularidad de una serie de disparos puede cuantificarse
+usando, por ejemplo, el coeficiente de variación. Lo interesante del caso en que
+la neurona que integra los inputs disparando de modo regular es que dichos
+inputs no son necesariamente regulares. Como siguen un modelo de Poisson, los
+inputs de los disparos pre-sinápticos tienen un coeficiente de variación de 1,
+mucho mayor que el observado en la neuron post-sináptica que los integra.  En la
+primera simulación que realizamos, la serie de disparos era irregular, y su
+variabilidad se aproxima más a la de las neuronas pre-sinápticas que la
+producen.
+
+Usar patrones irregulares de disparo es beneficioso desde distintos puntos de
+vista. Para empezar, los estudios de neuronas corticales \textit{in vivo}
+sugieren que los patrones de disparo irregulares son más realistas.
+Segundamente, los patrones irregulares son más informativos, dado que reflejan
+las propiedades temporales de las fluctuaciones en el input sináptico. Por
+último, una neurona que actúa irregularmente puede responder más rápidamente a
+cambios en los patrones de disparo de las neuronas presinápticas que una neurona
+que posee un patrón regular.
+
+\pagebreak
+\section{Redes neuronales}
+
+El término \textit{redes neuronales} tiene dos sentidos, uno propio de la
+inteligencia artifical y otro de la neurociencia computacional. Las redes
+neuronales usadas en inteligencia artificial tienen solo una semejanza distante
+con las neuronas biológicas. Las redes neuronales de la neurociencia
+computacional intentan modelar las propiedades de las redes biológicas de manera
+fidedigna. En consecuencia, aunque hacen uso de algunos recursos matemáticos
+similares, la coincidencia entre ambos términos es prácticamente nula.
+
+EL modelado de redes basadas en la tasa de disparo requiere dos cosas. Primero,
+debe determinarse de qué modo el input sináptico depende de las tasas de disparo
+de las neuronas pre-sinápticas. Luego, debe modelarse cómo la tasa de disparo de
+la neurona post-sináptica depende del input sináptico. 
+
+\subsection{El input sináptico}
+
+El input sináptico por lo general se define como la corriente total entregada al
+soma como resultado de los cambios en la conductancia sináptica por los
+potenciales pre-sinápticos. Esta corriente se denota $I_s$. Por ende, debe
+modelarse la tasa de disparo de la neurona post-sináptica como una función de
+$I_s$. 
+
+Usamos la notación vectorial \textbf{u} para denotar las tasas de disparo de las
+$u$ neuronas pre-sinápticas, y $\textbf{v}$ para denotar las tasas de disparo de
+las neuronas post-sinápticas. Usamos $N_u, N_v$ para denotar la dimensión
+de estos vectores, y $b = 1,\ldots, N_u$ como subíndice de las neuronas
+presinápticas. Usamos también \textbf{w} como vector de pesos, de manera tal que
+si $w_b < 0$ la conexión de $u_b$ es inhibitoria, si $w_b > 0$ la conexión es
+excitatoria.
+
+Si un potencial de acción llega en el tiempo cero, la corriente sináptica en el
+soma en el tiempo $t$ se escribe como $w_bK_s(t)$ donde $K_s(t)$ es una función
+denominada kernel sináptico. El kernel sináptico es una función en
+$\mathbb{R}^+$ con media cero que describe la dinámica temporal de la corriente
+sináptica en respuesta a un disparo pre-sináptico.
+
+\begin{equation*}
+    I_{\text{generada}} = w_k K_s(t)
+\end{equation*}
+
+Si asumimos que los disparos en una sinapsis específica son independientes los
+unos de los otros, la corriente total en un tiempo $t$ resultante de una
+secuencia de disparos en tiempos $t_i$ es: 
+
+\begin{equation}
+    w_b \sum_{t_i < t} K_s(t - t_i) = w_b \int_{-\infty}^t K_s(t -
+    \tau)\rho_b(\tau) ~ d\tau
+\end{equation}
+
+La expresión se entiende mejor con un ejemplo. Notemos que el argumento $t -
+t_i$ de $K_s$ es el tiempo transcurrido desde el $i$-ésimo disparo y el momento
+actual. Digamos tenemos una sinapsis lenta que tarda 10ms en alcanzar su pico
+justo después de un disparo. Esto significa que $K_s(10)$ es el valor máximo de
+$K_s$ y $K(0)$ es muy pequeño o nulo. Imaginemos ahora que un disparo acontece
+justo en el tiempo 100ms. En el tiempo posterior 110ms medimos la corriente en
+el valor $110 - 100$, i.e. $K_s(110 - 100) = K_s(10) = K_\text{max}$. Esto tiene
+sentido, porque al medir justo diez milisegundos después del disparo, la
+corriente inducida por el disparo es máxima. Lo mismo sucedería si medimos un
+tiempo mucho más tardío, obteniendo una corriente menor. Se ve entonces que la
+ecuación anterior suma las corrientes inducidas por cada disparo anterior al
+momento actual en el momento actual.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{../Images/alfa.png}
+\caption{Simulación de la suma temporal de corrientes provenientes de distintos
+    disparos de una única sinapsis. 
+    \textbf{Panel superior:} Dinámica del kernel sináptico definido como 
+    $K_s(t) = \frac{t}{\tau_s} e^{-t/\tau_s}$, donde $\tau_s = 10$ ms representa
+    el tiempo en el cual la respuesta alcanza su amplitud máxima. 
+    \textbf{Panel inferior:} Evolución temporal de la corriente total 
+    $I_s(t) = w_b \sum_{t_i < t} K_s(t - t_i)$ generada a partir de una secuencia de 
+    potenciales de acción pre-sinápticos (indicados por las líneas rojas verticales) 
+    genrados mediante un proceso de Poisson. Se observa cómo la integración de
+    múltiples disparos, cada uno induciendo una corriente con la forma de $K_s$.}
+    \label{fig:corriente_sinaptica}
+\end{figure}
+\FloatBarrier
+
+Si la interacción entre las distintas sinapsis es lineal, entonces la corriente
+total generada por todas las sinapsis en la neurona es simplemente la sumatoria
+de la ecuación anterior sobre $b = 1, \ldots, N_u$:
+
+\begin{equation}
+    I_s = \sum_{b=1}^{N_u} w_b \int_{-\infty}^t K_s(t - \tau)\rho_b(\tau) ~ d\tau
+\end{equation}
+
+De acuerdo con la ecuación $1.5$, la tasa de disparo y la FRN son equivalentes
+en convolcuiones. Por lo tanto, podemos reemplazar $\rho_b$ por $\mu_b$,
+obteniendo:
+
+
+\begin{equation}
+    I_s = \sum_{b=1}^{N_u} w_b \int_{-\infty}^t K_s(t - \tau) \mu_b(\tau) ~ d
+    \tau
+\end{equation}
+
+Esto nos permite representar la corriente, o el input sináptico, en función de
+las tasas de disparo de las neuronoas pre-sinápticas. Usaremos un kernel
+sináptico típico; a saber,
+
+\begin{equation*}
+    K_s(t) = \frac{e^{-t / \tau_r}}{\tau_r}
+\end{equation*}
+
+Esto nos permite escribir, si derivamos la ecuación 4.3,
+
+\begin{equation}
+    \tau_s \frac{dI_s}{dt} = -I_s + \sum_{b=1}^{N_u} w_b u_b = -I_s + \textbf{w}
+    \cdot \textbf{u}
+\end{equation}
+
+donde $\textbf{a} \cdot \textbf{b}$ es el producto punto entre dos vectores.
+
+\subsection{La tasa de disparo}
+
+Si la corriente sináptica $I_s$ es constante, el firing rate de la neurona
+post-sinápitca se puede expresar como $v = F\left( I_s \right) $. La función $F$
+se llama función de activación; suele tomarse como una función de saturación
+(e.g. sigmoidea) o una función de rectificación lineal (ReLU). Nosotros usaremos
+una rectificación de media onda:
+
+\begin{equation}
+    F(I_s) = \left[ I_s - \gamma \right]_+
+\end{equation}
+
+donde $\gamma \in \mathbb{R}^+$ es el umbral de rectificación. En este contexto,
+$\gamma$ modela la propiedad física de las neuronas que hace que disparen si y
+solo si la corriente supera un umbral específico. Si $I_s < \gamma$ se cumple
+$F(I_s) = 0$, y si $I_s > \gamma$ se cumple $F(I_s) = I_s - \gamma$, donde el
+«sobrante» de esta diferencia determina la magnitud de la respuesta. Por
+convención, la variable $I_s$ en $F$ no se toma en unidades de nanoampers sino
+de Hertz; es decir, se la multiplica por una constante que sólo sirve para
+transformar su unidad de nanoampers a Hertz. Entonces $\gamma$ no es la fuerza
+que tiene que tener la corriente para que se induzca un potencial
+post-sinápitco, sino la rapidez de la tasa de disparo en la neurona necesaria
+para inducir un potencial post-sinápitco.
+
+Si nos olvidamos del tiempo, $v = F(I_s)$ ya completa el modelo. La ecuación 
+
+
+\begin{equation*}
+    \tau_s \frac{dI_s}{dt} = -I_s + \sum_{b=1}^{N_u} w_b u_b = -I_s + \textbf{w}
+    \cdot \textbf{u}
+\end{equation*}
+
+si no hay variación en el tiempo da simplemente 
+
+\begin{equation*}
+    I_s = \textbf{w} \cdot \textbf{u}
+\end{equation*}
+
+Esto genera un output firing rate de 
+
+\begin{equation}
+    v_{\infty} = F\left( \textbf{w} \cdot \textbf{u}\right) 
+\end{equation}
+
+que nos dice cuánto una neurona responde a una corriente constante.
+
+Otra forma de pensar la tasa de disparo de la neurona post-sináptica es asumir
+que la misma no responde instantáneamente a cambios en la corriente sináptica.
+La corriente sináptica puede aumentar o decrecer, pero dicho cambio afecta a la
+tasa de disparo con cierta fase temporal debida a los cambios estructurales
+inducidos (apertura de canales iónicos, por ejemplo). Se toma entonces un modelo
+que es un low-pass filtered version de la tasa de disparo anterior:
+
+
+
+\begin{equation*}
+    \tau_r \frac{dv}{dt} = -v + F\left( I_s(t) \right) 
+\end{equation*}
+
+donde $\tau_r$ determina la rapidez con que el firing rate se aproxima a su
+valor estable para la constante $I_s$, y qué tan precisamente $v$ sigue las
+fluctuciones temporales de $I_s(t)$.
+
+Vamos a asumir que $t_s \ll t_r$, es decir que la corriente $I_s$ inducida por
+los disparos presinápticos alcanza su equilibrio muy rápido en comparación con
+la tasa de disparo de la neurona post-sinápitca. Entonces podemos aproximar $I_s
+= \textbf{w} \cdot \textbf{u}$ en la ecuación anterior. Obtenemos: 
+
+\begin{equation}
+    \tau_r \frac{dv}{dt} = -v + F \left( \textbf{w} \cdot \textbf{u} \right) 
+\end{equation}
+
+Este es el modelo final, cuyos componentes se ilustran en la figura abajo.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{../Images/network.png}
+\caption{Descomposición de la respuesta neuronal en un modelo de tasa de disparo. 
+    \textbf{Superior:} Corriente sináptica cruda $I_s(t)$ que muestra la
+    integración lineal de aferencias excitatorias e inhibitorias que ocasionan
+    una fluctuación. \textbf{Medio:} Aplicación de la función de activación
+    $F(I_s)$, donde solo el exceso de corriente sobre el umbral $\gamma$ se
+traduce en señal efectiva. \textbf{Inferior:} Evolución de la tasa de disparo
+$v(t)$ de acuerdo a la ecuación 4.7. Notar cómo la respuesta en la neurona toma
+la forma suavizada y lenta de los cambios no-suaves y rápidos en la entrada.}
+    \label{fig:componentes_tasa_disparo}
+\end{figure}
+\FloatBarrier
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
