@@ -69,7 +69,7 @@ simply believed in me. It would be cooler, I suppose, to feign indifference and
 say that what others think doesn't matter to me—the truth is I clearly needed
 someone to believe in me.
 
-The years went by, I straightened-up, and went to accomplish things which,
+The years went by, I straightened up, and went to accomplish things which,
 however small I deem them, are socially considered difficult, prestigious or
 important. I am too aware of my own flaws to let this bloat my ego. After defeat
 or triumph, nothing of ourselves is transformed, and Kipling was right in
