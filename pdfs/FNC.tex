@@ -120,40 +120,58 @@ renacentistas, a una vida intelectual amplia y completa.
 
 \subsection{Modelos fenomenológicos}
 
-La animación de abajo muestra una neurona de macaco (o, mejor dicho, una
-simulación precisa de una) disparando repetidas veces. A simple vista, parecen
-picos aleatorios que saltan aquí y allá en el tiempo. Sin embargo, es
-sorprendente la cantidad de información que se puede extraer de un fenómeno tan
-simple, así como la riqueza de los modelos matemáticos que lo simulan.
+Un modelo fenomenológico, o descriptivo, se enfoca en reproducir no dinámicas
+fisiológicas sino datos experimentales. Los mecanismos que subyacen a la
+generación de dichos datos se desprecian y se modela únicamente alguna parte
+observable del fenómeno de interés.  El nivel de abstracción de estos modelos
+permite describir la dinámica funcional de un sistema o un proceso sin ahondar
+en su mecánica subyacente.
 
+El modelo fenomenológico más universal en la neurociencia computacional es el de
+una serie de disparos, o \textit{spike train} en inglés. La forma más elemental
+de estudiar una neurona es ignorar sus propiedades biofísicas y simplemente
+registrar en qué momentos la neurona se activa. En particular, es interesante
+determinar con qué frecuencia la neurona se activa ante uno u otro estímulo. Las
+activaciones, en este contexto, son una propiedad booleana: en un tiempo dado,
+la neurona está o no está activada, y no se considera ninguna otra propiedad de
+dicha activación (como su amplitud).
 
-La simulación de arriba es una simulación fenomenológica, en el sentido de que
-no intenta reproducir las dinámicas que subyacen a un fenómeno —el cambio en los
-voltajes de la membrana celular, el flujo de iones, la morfología de la neurona,
-etc.— sino simplemente alguna de sus manifestaciones inmediatamente observables.
-Más adelante vamos a adentrarnos en qué hace que una neurona dispare: por el
-momento, nos basta con vivir en un mundo simple donde las neuronas disparan ante
-ciertos estímulos, y la probabilidad de disparo depende de propiedades simples
-del estímulo como su duración o su intensidad.
+Existe una razón sencilla por la cual este tipo de modelos fenomenológicos es
+importante. Las activaciones neuronales, técnicamente denominadas potenciales de
+acción, son fenómenos estereotípicos. Entre dos potenciales de acción no existe
+una diferencia esencial más allá del tiempo en que ocurren. Por ende, cualquier
+mecanismo que subyazca a la codificación neuronal debe tener que ver con la
+disposición de tales disparos en el tiempo. En este sentido, lo sincrónico y lo
+asincrónico son el lenguaje binario del cerebro.
 
-Al observar los tiempos en los que una neurona dispara, que es lo que muestra la
-animación de arriba, nos enfrentamos primero al problema de proporcionar un buen
-modelo matemático para una serie de pulsos en el tiempo. La función $\delta$ de
-Dirac es la candidata más obvia. En particular, sea $\{t_{1}, \ldots, t_{n}\}$
-la secuencia de tiempos en los que ocurrió un pulso. Definimos la
-\textbf{función de respuesta neuronal (FRN)} como:
+Al modelar los tiempos en que una neurona se activa, el primer desafío es dar
+una descripción matemática adecuada del concepto de activación en el tiempo.
+Típicamente, esto se consigue con una \textit{función de respuesta neuronal}
+(FRN) basada en la $\delta$ de Dirac. La $\delta$ de Dirac es la función que
+satisface 
+
+\begin{equation}
+    \delta(x) = \begin{cases}
+        0 & x \neq 0 \\ 
+        \infty & x = 0
+    \end{cases}, \qquad \int_{-\infty}^{\infty}\delta(x) ~ dx = 1
+\end{equation}
+
+Si $\{t_{1}, \ldots, t_{n}\}$ son los tiempos en los que ocurrió un pulso,
+definimos la FRN como:
 
 \begin{equation}
 \rho (t) := \sum\limits_{i=1}^{n}\delta(t -t_{i})
 \end{equation}
 
-La $\delta$ de Dirac es una unidad de probabilidad (o conteo) concentrada en un
-punto. $\rho(t)$ no es más que una sumatoria que «verifica» si en el tiempo $t$ ha
-habido un disparo, satisfaciendo que la cantidad de disparos en el intervalo de
-tiempo $[ t_1, t_2 ]$ es 
+donde asumimos que las variables temporales $t, t_1, \ldots, t_n$ están siempre
+en milisegundos. Notemos que $\delta(t - t_i)$ es simplemente el desplazamiento
+horizontal a derecha de $\delta(t)$. $\rho(t)$ es una sumatoria que «verifica»
+si en el tiempo $t$ ha habido un disparo, satisfaciendo que si en el intervalo
+de tiempo $[ t_1, t_2 ]$ han habido $N$ disparos,
 
 \begin{equation}
-    \int_{t_1}^{t_2} \rho(\tau) ~ d\tau
+    N = \int_{t_1}^{t_2} \rho(\tau) ~ d\tau
 \end{equation}
 
 Una propiedad que se sigue directamente de la definición de la $\delta$ de Dirac
@@ -172,13 +190,12 @@ horizontalmente a la derecha $c$ unidades.
 En la convolución, dentro de la expresión $\rho(t - \tau)$, $t$ efectivamente
 juega el papel de una constante. Es la función de activación invertida y
 desplazada horizontalmente. Si $\rho(t)$ es no-nulo solo si $t$ es un tiempo de
-disparo, $\rho(t - \tau)$ es no-nulo solo si $\tau$ instantes antes de $t$ hubo un
-disparo. 
+disparo, $\rho(t - \tau)$ es no-nulo solo si $\tau$ milisegundos antes de $t$
+hubo un disparo. 
 
 Se entiende que $h$ es una expresión que representa la dinámica temporal de un
 disparo, de manera tal que $h(0)$ es justo el momento de disparo y $h(t)$ con
-$t>0$ representa alguna evolución o dinámica del sistema. Por ejemplo, $h(t)$
-podría ser el potencial de membrana.
+$t>0$ representa alguna evolución o dinámica del sistema. 
 
 Si consideramos los dos párrafos anteriores, entonces vemos que $\rho(t - \tau)$
 es no-nula solo si hace $\tau$ segundos hubo un disparo. Si ese fue el caso,
@@ -267,24 +284,23 @@ Como nota, la convolución es conmutativa, y podríamos haber escrito la expresi
 integrada como $h(t - \tau) \rho(t)$ manteniendo el mismo resultado y la misma
 interpretación. 
 
-Los potenciales de acción son fenómenos estereotípicos. Entre dos potenciales de
-acción no existe una diferencia esencial más allá del tiempo en que ocurren. Por
-ende, cualquier mecanismo que subyazca a la codificación neuronal debe tener que
-ver con la disposición de tales disparos en el tiempo. En este sentido, lo
-sincrónico y lo asincrónico son el lenguaje binario del cerebro.
+Una propiedad de interés es la tasa de disparo de la neurona en un intervalo de
+tiempo $[t, t + \Delta t]$. La probabilidad de que ocurra un disparo en dicho
+intervalo, cuando $\Delta t$ tiende a cero, es $p(t) \Delta t $, donde $p(t)$ es
+la función de densidad. Nosotros usaremos $r(t) := p(t)$ para denotar la función
+de densidad de disparo, y nos centraremos en cómo aproximar $r(t)$.
 
-Por esta razón, la caracterización temporal de los trenes de pulsos es de gran
-interés. Un concepto básico es la tasa de disparo de una neurona, que puede
-conceptualizarse de varias maneras. La más general es
+De acuerdo con la ley de los grandes números, $r(t)$ puede aproximarse con la
+proporción de ensayos experimentales en que hubo un disparo en el intervalo $[t,
+t + \Delta t]$, con $\Delta t$ suficientemente pequeño. Usamos $\left< \cdot
+\right>$ para denotar un promedio entre varios ensayos del mismo experimento.
+Por lo tanto, 
 
 \begin{equation}
-r(t) = \frac{1}{\Delta t} \int_{t}^{t+\Delta t} \langle \rho(\tau)\rangle \, d\tau
+    r(t) \Delta t = \int_t^{t + \Delta t} \left< \rho(\tau) \right> ~ d\tau
 \end{equation}
 
-donde $\langle \cdot \rangle$ denota el promedio entre ensayos
-(\textit{trial-average}). Debería ser claro que $r(t)\Delta t$ proporciona la
-probabilidad de que ocurra un pulso en el tiempo $t$, dado que $\Delta t$ es
-suficientemente pequeño. Una propiedad importante es que 
+Una propiedad útil que no demostraremos es que
 
 \begin{equation}
     \int \langle \rho(t - \tau)\rangle h(\tau) ~ d\tau = \int r(t - \tau)
@@ -294,23 +310,26 @@ suficientemente pequeño. Una propiedad importante es que
 Es decir que, en el contexto de integraciones, la tasa de disparo y la FRN son
 equivalentes. 
 
-La tasa de disparo también puede definirse como un promedio de muchos
-experimentos: 
+Si bien la aproximación anterior es correcta de acuerdo con la ley de los
+grandes números, existen otras formas de aproximar la tasa de disparo. Por
+ejemplo, podemos tomar la cantidad de disparos que ocurren en un único
+experimento y dividirla por la duración $T$ del experimento:
+
 
 \begin{equation}
     r = \frac{n}{T} = \frac{1}{T} \int_{0}^T
     \rho(\tau) ~ d\tau
 \end{equation}
 
-con $n$ la cantidad de disparos. Por supuesto que puede utilizarse $\langle
-n\rangle $ el trial-average de $n$, obteniendo:
+Por supuesto, podríamos también utilizar 
+$\left<n \right>$ y $\left<\rho \right>$ para esta aproximación:
 
 \begin{equation}
 \langle r \rangle = \frac{\langle n\rangle }{T} = \frac{1}{T} \int_{0}^{T} r(\tau) \, d\tau
 \end{equation}
 
-Esta definición es menos general porque es independiente del tiempo. En general,
-nos enfocaremos en $r(t)$. Desde luego que una aproximación adecuada de $r(t)$
+Esta definición es menos general porque es independiente del tiempo, y
+usualmente usaremos $r(t)$. Desde luego que una aproximación adecuada de $r(t)$
 requeriría una cantidad inmensa (o infinita, si se quiere ser exacato) de
 experimentos. Por lo tanto, es provechoso hallar maneras de aproximar $r(t)$ con
 uno o pocos experimentos, i.e. con una cantidad limitada de datos. Para este fin
@@ -322,11 +341,11 @@ Un filtro lineal es una convolución de $\rho$ con una función de peso $w$.
 R(t) = \int_{-\infty}^{\infty} w(\tau)\rho(t - \tau) \, d\tau
 \end{equation}
 
-donde $R$ es una aproximación de $r$. Dos funciones $w$ comúnmente utilizadas
-son el kernel Gaussiano, que es una sliding window,
+donde $R(t) \approx r(t)$. Dos funciones $w$ comúnmente utilizadas son el kernel
+Gaussiano, que es una sliding window,
 
 \begin{equation}
-w(\tau) = \frac{1}{\sqrt{2\pi}\sigma_{w}}\exp \left( \frac{-\tau^{2}}{2\sigma_{w}^{2}} \right)
+w(\tau) = \frac{1}{\sqrt{2\pi}\sigma_{w}}\exp \left( -\frac{\tau^{2}}{2\sigma_{w}^{2}} \right)
 \end{equation}
 
 y una función de ventana (window function) en ventanas o segmentos de tamaño
@@ -1620,12 +1639,12 @@ de la ecuación anterior sobre $b = 1, \ldots, N_u$:
 \end{equation}
 
 De acuerdo con la ecuación $1.5$, la tasa de disparo y la FRN son equivalentes
-en convolcuiones. Por lo tanto, podemos reemplazar $\rho_b$ por $\mu_b$,
+en convolcuiones. Por lo tanto, podemos reemplazar $\rho_b$ por $u_b$,
 obteniendo:
 
 
 \begin{equation}
-    I_s = \sum_{b=1}^{N_u} w_b \int_{-\infty}^t K_s(t - \tau) \mu_b(\tau) ~ d
+    I_s = \sum_{b=1}^{N_u} w_b \int_{-\infty}^t K_s(t - \tau) u_b(\tau) ~ d
     \tau
 \end{equation}
 
@@ -1734,6 +1753,236 @@ la forma suavizada y lenta de los cambios no-suaves y rápidos en la entrada.}
     \label{fig:componentes_tasa_disparo}
 \end{figure}
 \FloatBarrier
+
+\subsection{Redes feedforward y recurrentes}
+
+Hasta ahora hemos modelado una red extremadamente simple, con una única neurona
+siendo excitada o inhibida en $N_u$ terminales sinápticas. Ahora procedemos a
+hacer un modelo en que $N_v$ neuronas son excitadas o inhibidas por $N_u$
+inputs. 
+
+Asumimos que cada neurona en la capa pre-sináptica \textbf{u} se conecta con
+cada neurona de la capa post-sináptica \textbf{v}, obteniendo por lo tanto una
+matriz de pesos \textbf{W} tal que $\textbf{W}_{ab}$ es el peso de la conexión
+entre $u_b$ y $v_a$. La corriente $I_s$, que antes era un escalar por
+representar simplemente el resultado de la conductancia sináptica en una única
+neurona, es ahora un vector $\textbf{I}_s$ que representa la corriente inducida
+por las sinapsis en cada neurona $v_1, \ldots, v_{N_v}$. Y así como la corriente
+inducida en $v$ en el modelo anterior era aproximada por $\textbf{w} \cdot
+\textbf{u}$ (ecuación 4.7), las corrientes en cada neurona de la capa
+post-sináptica se aproxima como $\textbf{W} \cdot \textbf{u}$. La función de
+activación ahora se extiende vectorialmente para aplicarse a cada elemento de
+este último vector. En resumen,
+
+\begin{equation}
+    \tau_r \frac{d\textbf{v}}{dt} = -\textbf{v} + \textbf{F} \left( \textbf{W} \cdot \textbf{u} \right) 
+\end{equation}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{../Images/feedforward.png}
+\caption{Dinámica de una capa post-sináptica con pesos heterogéneos. 
+    \textbf{Izquierda:} Matriz de conectividad $\mathbf{W}$ con tasas gaussianos 
+    de amplitudes variables, representando una sintonización diversa para cada neurona $v_a$. 
+    \textbf{Derecha:} Evolución de las tasas de disparo $\mathbf{v}(t)$. La variedad en las 
+    respuestas es consecuencia de la asignación estocástica de constantes de tiempo 
+    $\tau_r \in [10, 60]$ ms y umbrales $\gamma \in [0, 10]$ Hz. }
+    \label{fig:heterogeneidad_neuronal}
+\end{figure}
+\FloatBarrier
+
+Este tipo de modelo se denomina \textit{feedforward network}, porque toda la
+información se mueve de una capa a la siguiente. Otro tipo de modelo es una
+\textit{recurring network}, o red recurrente, en que las neuronas de la capa
+post-sináptica están a su vez conectadas entre sí. Los pesos de estas conexiones
+deben representarse en una segunda matriz $\textbf{M}$, de manera tal que
+$M_{aa'}$ representa la fuerza de la sinapsis que va desde $a'$ y hacia $a$.
+
+\begin{equation}
+    \tau_r \frac{ d\textbf{v} }{dt} = - \textbf{v} + \textbf{F}\left(
+    \textbf{W}\cdot \textbf{u} + \textbf{M} \cdot \textbf{v} \right) 
+\end{equation}
+
+Es conveniente notacionalmente usar $\textbf{h} = \textbf{W} \cdot \textbf{u}$,
+en cuyo caso el modelo resulta simplemente 
+
+\begin{equation}
+    \tau_r \frac{ d\textbf{v} }{dt} = - \textbf{v} + \textbf{F}\left(
+    \textbf{h} + \textbf{M} \cdot \textbf{v} \right) 
+\end{equation}
+
+En la neurociencia, el principio de Dale establece que una neurona no puede
+cumplir una función excitatorioa en algunas conexiones e inhibitoria en otras.
+Es decir que no las conexiones, sino las neuronas mismas pueden categorizarse
+como excitatorias o inhibitorias. Matemáticamente hablando, el principio de Dale
+implica que, en cada neurona de la capa post-sináptica $a'$, $M_{aa'}$ debe
+tener el mismo signo. Para evitar problemas, es mejor describir las conexiones
+inhibitorias y excitatorias de manera separada:
+
+
+\begin{equation}
+    \tau_e \frac{ d\textbf{v}_e }{dt} = - \textbf{v}_e + \textbf{F}\left(
+    \textbf{h}_e + \textbf{M}_{ee} \cdot \textbf{v}_e + \textbf{M}_{ei} \cdot
+\textbf{v}_i \right) 
+\end{equation}
+
+y 
+
+\begin{equation}
+    \tau_i \frac{ d\textbf{v}_i }{dt} = - \textbf{v}_i + \textbf{F}\left(
+    \textbf{h}_i + \textbf{M}_{ie} \cdot \textbf{v} + \textbf{M}_{ii} \cdot
+\textbf{v}_i \right) 
+\end{equation}
+
+donde $\textbf{M}_{yx}$ representa los pesos de las conexiones que van de una
+neurona pre-sináptica de tipo $x$ a una neurona post-sináptica de tipo $y$.
+
+\subsection{Redes etiquetadas (o con selectividad paramétrica)}
+
+Las neuronas transforman estímulos en señales eléctricas. En algunos casos, el
+estímulo es químico, como el producido por la liberación de neurotransmisores en
+el espacio sináptico. En el caso de los nervios sensoriales, un estímulo ajeno
+al sistema nervioso debe transformarse en una señal eléctrica. Esto es lo que
+sucede cuando tocamos un objeto, nos quemamos, o percibimos algo con la mirada:
+neuronas especializadas modifican su potencial eléctrico como consecuencia de la
+presión, el calor o la luz, desencadenando una serie de potenciales que son
+transmitidos al cerebro y procesados adecuadamente.
+
+En general, la recepción de un estímulo puede parametrizarse para mesurar los
+factores que influyen en la intensidad de la respuesta evocada. En general, dado
+estímulo arbitrario con parámetro $\Theta$, una neurona puede tener un valor
+preferido de $\Theta$, en el sentido de que dicho valor elicita una tasa de
+disparo máxima. En el sistema visual, en el que nos enfocaremos, el parámetro
+$\Theta$ representará el ángulo del estímulo respecto al sistema visual. 
+
+Incorporar parámetros de preferencia al modelado de tasas de disparo nos permite
+además capturar dinámicas biológicas de interés. El principio fundamental de la
+neuroplasticidad, desarrollado por Hebb, suele resumirse en la frase:
+\textit{neurons that fire together, wire together}. En otras palabras, las
+neuronas que prefieren estímulos similares tienden a estar fuertemente
+conectadas. Por lo tanto, el peso de una conexión sináptica debería ser una
+función de la semejanza entre los parámetros de preferencia de ambas neuronas:
+si tienden a disparar juntas, la conexión debería ser más fuerte que si tienden
+a no hacerlo. Por lo tanto, los pesos se modelan
+
+\begin{equation}
+    W_{ab} = W(\theta_a, \theta_b), \qquad M_{a a'} = M(\theta_a, \theta_{a'})
+\end{equation}
+
+donde $\theta_j$ es el ángulo de preferencia de la neurona $j$ y $W$ es una
+función adecuada. Una convención usual es hacer que los pesos dependen de la
+diferencia entre los ángulos de preferencia pre- y post-sinápticos, lo cual está
+en concordancia con el principio de Hebb. Definiendo $\Delta \theta_{ab} :=
+\theta_a - \theta_b$, se obtendría:
+
+\begin{equation}
+    W_{ab} = W(\Delta \theta_{ab}), \qquad M_{a a'} = M(\Delta \theta_{a a'})
+\end{equation}
+
+A las redes con pesos determinados por parámetros de preferencia se las suele
+llamar redes etiquetadas (\textit{labeled}). La razón es que, en una red
+neuronal genérica, solemos etiquetar a las neuronas con índices discretos ($a=1,
+2, 3...$) y arbitrarios. Al identificarlas por un parámetro de preferencia, las
+estamos «etiquetando» con un identificador semánticamente relevante. En el caso
+de la corteza visual primaria (V1), en lugar de identificar a una célula por un
+número arbitrario, la llamamos por su preferencia. No es la neurona $i$, es la
+neurona de $45^\circ$. Esto nos permitirá más adelante usar $v(\theta),
+u(\theta)$ para hablar de las tasas de disparo de las neuronas (post- o
+pre-sinápticas) con ángulo de preferencia $\theta$.
+
+Notemos que usar $\Delta \theta_{ab}$ para determrinar determinar los pesos, satisfaciendo
+el principio de Hebb, formula un principio de simetría en el sistema visual. Si
+los pesos dependen no de los valores absolutos $\theta_a, \theta_b$, sino de su
+diferencia, la fuerza entre dos neuronas que prefieren ($0^\circ, 10^\circ$)
+será la misma que la fuerza entre dos que prefieren
+prefieren ($90^\circ, 100^\circ$). En ambos casos, la distancia
+funcional es la misma. 
+
+En una red neuronal grande, los estímulos preferidos varían ampliamente, tomando
+todos los valores en $[0, 2\pi]$ de manera densa. Por simplicidad, asumimos que
+esta cobertura es uniforme, y usamos $\rho_\theta$ para denotar el número de
+neuronas que caen en un rango unitario (e.g. la cantidad de neuronas con valores
+de preferencia en $[0, 1]$ radianes). Como anticipamos antes, usaremos
+$u(\theta), v(\theta)$ para denotar la tasa de disparo de neuronas con ángulos
+de preferencia $\theta$. 
+
+Si la cantidad de neuronas es lo suficientemente grande, y la densidad de los
+estímulos preferidos es alta, podemos aproximar las sumas en la ecuación 4.9 con
+una integral sobre el ángulo de preferencia de la neurona pre-sináptica. La
+cantidad de neuronas con ángulos preferidos en un rango $\Delta \theta$ es
+$\rho_\theta \Delta \theta$. Haciendo que $\Delta\theta \to 0$, la cantidad de
+neuronas es $\rho_\theta ~ d\theta$. Es decir que una sumatoria sobre las
+neuronas pre-sinápticas $\sum_b g(b)$ puede expresarse de manera continua como
+
+\begin{equation*}
+    \int_{-\pi}^\pi g(b) ~ \rho_{ \theta } d\theta'
+\end{equation*}
+
+donde $\theta'$ se usa para hablar de neuronas pre-sinápticas. Si retornamos a
+la ecuación 4.9 y la despojamos de su notación matricial/vectorial, la misma se
+convierte en 
+
+\begin{equation*}
+ \tau_r \frac{dv_a}{dt} = -v_a + F \left( \sum_{b=1}^{N_{in}} W_{ab} u_b + \sum_{a'=1}^{N_{out}} M_{aa'} v_{a'} \right) 
+\end{equation*}
+
+por definición de $\textbf{W} \cdot \textbf{u}, \textbf{M} \cdot \textbf{v}$.
+Usando el hecho de que las sumatorias sobre tasas pre-sinápticas pueden
+expresarse como integrales sobre los ángulos de preferencia de las neuronas
+pre-sinápticas, obtenemos
+
+\begin{equation}
+    \tau_r \frac{dv(\theta)}{dt} = - v(\theta) + F 
+    \left( \rho_\theta \int_{-\pi}^{\pi} W(\theta, \theta')u(\theta') +
+    M(\theta, \theta') v(\theta') ~ d\theta' \right) 
+\end{equation}
+
+Esto expresa una red-neuronal recurrente donde las tasas de disparo son
+funciones de un estímulo de preferencia, que nosotros ejemplificamos como
+ángulos de un objeto percibido por una neurona del sistema visual. Esto permite
+modelar cómo cambios en el ángulo de preferencia modifican la tasa de disparo de
+las distintas «poblaciones», donde una población se define específicamente por
+el estímulo de preferencia. 
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{../Images/etiquetada.png}
+\caption{Simulación de la dinámica de una red neuronal recurrente con
+    selectividad paramétrica (red etiquetada) basada en el modelo de anillo. 
+    En este modelo, las neuronas están dispuestas en un círculo según su ángulo de
+    preferencia $\theta \in [-\pi, \pi]$. 
+    \textbf{Panel superior:} Evolución temporal de las tasas de disparo
+    $v(\theta, t)$ para una población de $N$ neuronas con ángulos de preferencia
+    $\theta \in [-\pi, \pi]$. El heatmap ilustra cómo la red realiza el
+    seguimiento de un estímulo visual (una barra rotatoria) que oscila
+    sinusoidalmente. La franja de alta intensidad representa el «bump» de
+    actividad que se desplaza en el espacio paramétrico. 
+    \textbf{Panel inferior:} Perfil de disparo poblacional (curva de sintonía)
+en el instante final $t=500$ ms.}
+\label{fig:dinamica_red_etiquetada}
+\end{figure}
+\FloatBarrier
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

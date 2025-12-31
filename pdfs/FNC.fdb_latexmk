@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1766856680.81319 "FNC.tex" "FNC.pdf" "FNC" 1766856684.59468 2
+["pdflatex"] 1766943765.1174 "FNC.tex" "FNC.pdf" "FNC" 1766943769.06883 2
   "../Images/Lapicque.jpg" 1744842183.67463 381872 7e9cab33f02d58f55915e819df461df8 ""
   "../Images/LapicqueSRA.png" 1766717248.32938 153058 686c571609ee745f3462e6adeee0575d ""
   "../Images/LapicqueWife.jpg" 1766708397.25358 458313 dcd4399c6eb8db96c79bb4eca629a74c ""
@@ -7,6 +7,8 @@
   "../Images/Leaky2.png" 1766712405.33678 78387 327dac7a113dd4078e1deaf32062e6d0 ""
   "../Images/SRyC.png" 1766766902.02089 1277762 f7004bc3141b61107971de2532c465cf ""
   "../Images/alfa.png" 1766854894.3206 91314 2765264c2b86db975cf9513f9fe84b02 ""
+  "../Images/etiquetada.png" 1766886409.94177 100626 f3e7e2aa40e7850134fafb117d6de72a ""
+  "../Images/feedforward.png" 1766865152.0956 117528 7b530987c2162b0ad7db108d2e645ea6 ""
   "../Images/hhlinear.png" 1766785181.35116 100281 92a8b422745c248ead36d4536e3e415f ""
   "../Images/hhpeople.png" 1766785586.17339 325656 ef0a9ef0c371d43934503417a1f79843 ""
   "../Images/hhrandom.png" 1766785263.78222 142265 f2c89adc54b3f981b05349f9a4ffa4cd ""
@@ -73,6 +75,7 @@
   "/usr/share/texlive/texmf-dist/fonts/vf/public/newtx/ntxmi7.vf" 1622753257 2576 4000b56c7179792370b883556f71007a ""
   "/usr/share/texlive/texmf-dist/fonts/vf/public/newtx/ntxmia.vf" 1635022465 2056 17a96727a1080b515c483edfb4650902 ""
   "/usr/share/texlive/texmf-dist/fonts/vf/public/newtx/ntxsy.vf" 1699567298 1804 0d5405efa3655e9ce85ebf4efa9b7f0b ""
+  "/usr/share/texlive/texmf-dist/fonts/vf/public/newtx/ntxsy5.vf" 1699567298 1852 729c2bf5aecca1c077a058610b5c0949 ""
   "/usr/share/texlive/texmf-dist/fonts/vf/public/newtx/ntxsy7.vf" 1699567298 1932 eb3a33127536e5b93d4fbe6076112b0d ""
   "/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texlive/texmf-dist/tex/generic/babel-spanish/spanish.ldf" 1622145181 26965 3b6d1655ad716f98e788b1fb9f2e87b8 ""
@@ -218,8 +221,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1740670969.59643 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1740670991 8214096 2cc5ed7d441cd7dd7f6cf9e30d4bb5a5 ""
-  "FNC.aux" 1766856684.46262 9630 8de9c4efe5091bc25d2de5c86a99dbfd "pdflatex"
-  "FNC.tex" 1766856678.10854 75764 713fc35b7b482acaf19be280b6b4cbc5 ""
+  "FNC.aux" 1766943768.94099 11479 c9a48eb3017b4db0eaca7b3ce71bee03 "pdflatex"
+  "FNC.tex" 1766943763.92046 87601 5211278180b8315da09e4f77f72ae892 ""
   (generated)
   "FNC.aux"
   "FNC.log"
