@@ -1,17 +1,16 @@
 --- 
-title: A reflection inspired by a small achievement
+title: On the occasion of a small achievement
 categories: [Personal]
 ---
 
-A few days ago, I got the acceptance letter for my first first-author
-paper, which will be published in a *Nature* journal. Though
-insignificant in the grand scheme of life, this is the culmination of three
-years of work, done in simultaneous with my pursuit of a college degree—which I
-don't yet have. I know the paper too thoroughly and well to consider it that
-good: its flaws are too apparent to me. But regardless of what I think about the
-paper, seeing what other people think about this «achievement» has made me
-notice a few ironies in the way other people perceive our own failures and
-successes.
+A few days ago, I got the acceptance letter for my first first-author paper,
+which will be published in a *Nature* journal. Though insignificant in the grand
+scheme of life, this is the culmination of three years of work, done in
+simultaneous with my pursuit of a college degree—which I don't yet have. I know
+the paper too thoroughly and well to consider it that good: its flaws are too
+apparent to me. But regardless of what I think about the paper, seeing what
+other people think about this «achievement» has made me notice a few ironies in
+the way other people perceive our own failures and successes.
 
 Since my early adolescence, I had been constantly questioned and doubted by all
 around me, except perhaps my father. I was deemed at best a lazy and
