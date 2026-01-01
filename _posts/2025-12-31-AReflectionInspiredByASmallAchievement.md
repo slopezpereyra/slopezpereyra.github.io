@@ -96,7 +96,7 @@ as well.
 Now I look at those old judges with eyes more mature. Most are blinded by the
 pursuit of money, which is their only value; others have lost themselves, like
 most people do, to self-betrayal; they grind and toil and crawl in a desperate
-pursuit of accumulation. You will never hear them say a word of self-reflection,
+pursuit of comfort. You will never hear them say a word of self-reflection,
 all about them screams self-satisfaction. They have not turned their lives
 around, because the world they've built is so crooked that they think they are
 standing straight,
@@ -110,4 +110,17 @@ souls to nourish even the ones who prey upon them,
 > tal como el hierro frío en las entrañas<br>
 > de la virgen que mata se calienta.
 
- 
+Some others, I should say, have shown a face more humane. Time has shown that
+their harshness towards me was rooted in pain, not evilness. And since I failed
+myself to handle my chaotic upbringing virtuously or maturely, I can understand
+what elements of it created the tension that sustained their violence towards
+me.
+
+
+
+
+
+
+
+
+
