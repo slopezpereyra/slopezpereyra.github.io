@@ -123,16 +123,16 @@ I show now self-indulgence: at every turn I see my flaws, my insufferable
 tendency to melancholic loneliness, the difficulty I find to show any
 vulnerability, to let anybody know me. The very fact that a beautiful
 achievement, which took three years of arduous labor, inspires this despondent
-review of now lost times, shows *at best* a terrible taste, at worse a total
-lack of self-validation. *Nobody cares*, I write. It seems that *you* do, is the
-obvious reply.
+review of bygone times, shows *at best* a terrible taste, at worse a total
+infirmity of character. *Nobody cares*, I write. It seems that *you* do, I reply
+to myself.
 
 Forget it all! One day I will rest below the ground from this thoughts, from
 this head of mine, which gives me no repose. I was opposed—I lost—I payed—and
 then through love I found myself. That is the story and it has happy ending. If
 anything, I should wish to make this the primary conclusion of these disordered
-rant: love can show a soul, even the most disoriented soul, the way which leads
-to shore.
+rant: love can show a soul, even the most disoriented soul, the way to
+resurrection.
 
 
 
