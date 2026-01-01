@@ -93,16 +93,13 @@ genuine love. A girl appears before a young man—a very lonely one—and tells 
 she believes in him: then everything around them blooms. There is a lesson there
 as well.
 
-Now I look at those old judges with eyes more mature. Most are blinded by the
+Now I look at those old judges with eyes more mature. Some are blinded by the
 pursuit of money, which is their only value; others have lost themselves, like
 most people do, to self-betrayal; they grind and toil and crawl in a desperate
-pursuit of comfort. You will never hear them say a word of self-reflection,
-all about them screams self-satisfaction. They have not turned their lives
-around, because the world they've built is so crooked that they think they are
-standing straight,
-
-> sólo a su goce ruin y medro atentos,<br>
-> y no al concierto universal.
+pursuit of comfort. You will never hear them say a word of self-reflection, all
+about them screams self-satisfaction. They have not turned their lives around,
+because the world they've built is so crooked that they think they are standing
+straight.
 
 And so, like Martí said, some prey upon the souls of others, some give their
 souls to nourish even the ones who prey upon them,
@@ -111,11 +108,32 @@ souls to nourish even the ones who prey upon them,
 > de la virgen que mata se calienta.
 
 Some others, I should say, have shown a face more humane. Time has shown that
-their harshness towards me was rooted in pain, not evilness. And since I failed
-myself to handle my chaotic upbringing virtuously or maturely, I can understand
-what elements of it created the tension that sustained their violence towards
-me.
+their harshness towards me was rooted in pain, not evilness. My upbringing was
+too difficult, I failed to handle it virtuously or maturely myself, so I can
+understand that many people simply did their best. I comprehend in which of its
+twisted elements some of the violence directed towards me was rooted, and I was
+no saint myself. I wish I could say the wind has blown it all, but so many of us
+stand entirely broken, as irreparably broken as I could have become with other
+luck. 
 
+
+But what do I say? I do not wish to judge anyone too fiercely. I am not blind to
+the irony of having become myself a person which relates to everyone, to
+everything, through judgement. People often become that which they oppose... And
+I show now self-indulgence: at every turn I see my flaws, my insufferable
+tendency to melancholic loneliness, the difficulty I find to show any
+vulnerability, to let anybody know me. The very fact that a beautiful
+achievement, which took three years of arduous labor, inspires this despondent
+review of now lost times, shows *at best* a terrible taste, at worse a total
+lack of self-validation. *Nobody cares*, I write. It seems that *you* do, is the
+obvious reply.
+
+Forget it all! One day I will rest below the ground from this thoughts, from
+this head of mine, which gives me no repose. I was opposed—I lost—I payed—and
+then through love I found myself. That is the story and it has happy ending. If
+anything, I should wish to make this the primary conclusion of these disordered
+rant: love can show a soul, even the most disoriented soul, the way which leads
+to shore.
 
 
 
