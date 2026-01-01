@@ -119,7 +119,7 @@ luck.
 But what do I say? I do not wish to judge anyone too fiercely. I am not blind to
 the irony of having become myself a person which relates to everyone, to
 everything, through judgement. People often become that which they oppose... And
-I show now self-indulgence: at every turn I see my flaws, my insufferable
+I show no self-indulgence: at every turn I see my flaws, my insufferable
 tendency to melancholic loneliness, the difficulty I find to show any
 vulnerability, to let anybody know me. The very fact that a beautiful
 achievement, which took three years of arduous labor, inspires this despondent
