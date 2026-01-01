@@ -111,8 +111,8 @@ their harshness towards me was rooted in pain, not evilness. My upbringing was
 too difficult, I failed to handle it virtuously or maturely myself, so I can
 understand that many people simply did their best. I comprehend in which of its
 twisted elements some of the violence directed towards me was rooted, and I was
-no saint myself. I wish I could say the wind has blown it all, but so many of us
-stand entirely broken, as irreparably broken as I could have become with other
+no saint myself. I wish I could say the wind has blown it all, but many stand
+entirely broken—as irreparably broken as I could have become with less favorable
 luck. 
 
 
