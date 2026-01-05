@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  20 JUL 2025 15:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  2 JAN 2026 16:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1503,33 +1503,29 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[112] [113] 
+[112] [113] [114] [115] [116] [117] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./Numerico.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `Numerico.out' has not changed.
-(rerunfilecheck)             Checksum: E6E330B0ECE43A82B5EBB1BD98415D22;6450.
+(rerunfilecheck)             Checksum: 318CA7FA1BA9E11039C4EBB43632C7D7;6648.
  ) 
 Here is how much of TeX's memory you used:
- 44453 strings out of 474222
- 1007008 string characters out of 5748733
+ 44478 strings out of 474222
+ 1007275 string characters out of 5748733
  1950975 words of memory out of 5000000
- 65684 multiletter control sequences out of 15000+600000
+ 65688 multiletter control sequences out of 15000+600000
  614715 words of font info for 165 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,22n,107p,776b,2228s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI7.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on Numerico.pdf (113 pages, 469037 bytes).
+Output written on Numerico.pdf (117 pages, 479965 bytes).
 PDF statistics:
- 888 PDF objects out of 1000 (max. 8388607)
- 719 compressed objects within 8 object streams
- 233 named destinations out of 1000 (max. 500000)
- 509 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 933 PDF objects out of 1000 (max. 8388607)
+ 760 compressed objects within 8 object streams
+ 254 named destinations out of 1000 (max. 500000)
+ 525 words of extra memory for PDF output out of 10000 (max. 10000000)
 
