@@ -14,7 +14,7 @@ Venezuela [[2], [3]]. In October, Trump explicitly authorized the CIA to carry
 out secret operations in Venezuela [[4]], and it seems Maduro was under constant
 surveillance by stealth drones prior to his abduction [[5]]. In November, the
 United States announced the «Southern Spear» mission, with numerous, unlawful
-attacks on Caribbean vessels which the US claims---with no evidence---were
+attacks on Caribbean vessels which the US claims—with no evidence—were
 trafficking drugs [[6], [7], [8]]. During the same month, the US deployed the
 largest aircraft carrier to the Caribbean and near the coast of Venezuela [[9]]
 and effectively closed Venezuelan airspace [[10]]. So Maduro's abduction is
@@ -25,26 +25,25 @@ Discussions of these events, in my opinion, revolve too much around the personal
 figure of Maduro. Though not extensively, I have written about the blatant human
 rights violations under Maduro's regime elsewhere [[11]] and have been following
 Amnesty International's coverage of political violence and repression in the
-country. I do not wish to repeat myself nor dwell on all-too-known facts and
-sources, accepting not only that Maduro's regime was brutal and corrupt, but
-also that the 2024 elections were likely fraudulent and sustained only by
-unacceptable violence and use of force [[12]]. The question is whether these
-facts are relevant to explaining or justifying the US intervention.
+country. I do not wish to repeat myself nor dwell on all-too-known facts,
+accepting not only that Maduro's regime was brutal and corrupt, but also that
+the 2024 elections were likely fraudulent and sustained only by unacceptable
+violence and use of force [[12]]. 
 
-I believe internal corruption or government violence do not justify exterior
+But internal corruption or government violence do not justify exterior
 intervention, neither morally nor legally. The US actions are a direct violation
 of the UN Charter, which prohibits «threat or use of force against the
 territorial integrity or political independence of any state» [[13]]. The act
 unequivocally constitutes the Crime of Aggression as specified in the Rome
-Statute of the International Criminal Court [[14]]---though both the US and
+Statute of the International Criminal Court [[14]]—though both the US and
 Venezuela withdrew from the statute [[15], [16]], obviously because neither
-could seriously claim to respect its clauses---.
+could seriously claim to respect its clauses—.
 
 If one accepts that domestic corruption or authoritarianism justifies regime
 change, invasion, or any other form of foreign aggression, one must then
 elaborate an impossible argument detailing how and who determines which
 governments are corrupt or not. Furthermore, one must readily accept and in fact
-endorse that similar actions are taken, effective immediately, against equally
+endorse that similar actions be taken, effective immediately, against equally
 corrupt states, such as those of Saudi Arabia, Israel, or Serbia. In fact, as
 should be evident, accepting this principle would lead to such general chaos
 that human civilization would become an impossible project.
@@ -60,7 +59,7 @@ Venezuela, as everyone knows, is rich in oil, and Donald Trump has declared US
 will run the country and tap into its oil reserves [[17]]. In fact, the shares
 of US oil companies are already on a rise [[18]]. Trump declared that Venezuela
 had «stolen» US oil through force. In fact, Venezuelan oil was nationalized in
-1976---decades before Chávez came to power---with $1 billion dollars being
+1976—decades before Chávez came to power—with $1 billion dollars being
 agreed as compensation for oil companies [[19], [20]]. Venezuela is also rich in
 coltan [[21]], coal, gold, and gas [[22], [23]], all of which are important
 resources.
@@ -69,7 +68,7 @@ Venezuela is not only an economic interest, but a geopolitical one. Securing
 Venezuelan oil means not only revenue for the United States but cutting Russian
 and Chinese access to it. Russia and Venezuela had long-standing and
 multi-millionaire oil deals [[24]]. Venezuela is the fourth-biggest recipient of
-loans from China---the US is the first---and prior to Maduro's abduction, most
+loans from China—the US is the first—and prior to Maduro's abduction, most
 of Venezuelan oil was being sold to China and the US [[25]]. The Cuban
 government, which still has a powerful symbolic charge attached to it, strongly
 depended on Venezuelan oil [[26]], and Trump has stated that «Cuba is ready to
@@ -84,15 +83,6 @@ preoccupying. The Trump administration is hardening its grip on the Western
 hemisphere, making dangerous military threats to Colombia [[28]] and Denmark
 [[29]].
 
-It is worrisome to see how political discourse is being configured in social
-media. Polarization abounds in the political atmosphere: so-called
-«libertarians» in Argentina see any word of caution against US intervention as a
-defense of Maduro or his political system, while the ever-lasting right-wing
-deviations of socialist thought incomprehensibly argue in favor of Maduro's
-regime. Hopefully these are only loud but small segments of the population, and
-people can appreciate this preoccupying scenario with all its nuances and
-different hues.
-
 Ultimately, to my view, the removal of Nicolás Maduro is nothing more than a
 calculated assertion of hemispheric dominance. Trump's administration keeps
 signaling that the principles of non-intervention and self-determination are
@@ -103,9 +93,6 @@ prevent global conflict. It is now commonplace to claim that international law
 is meaningless, with hegemons acting as they please in both hemispheres. But we
 must insist on international law, if only because it is all we have.
 
----
-
-### References
 
 [1]: https://www.theguardian.com/world/2026/jan/04/maduro-indictment-trump-tren-de-aragua
 [2]: https://www.whitehouse.gov/presidential-actions/2025/03/imposing-tariffs-on-countries-importing-venezuelan-oil/
