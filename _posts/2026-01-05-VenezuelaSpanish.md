@@ -91,6 +91,27 @@ precedente que se está sentando es preocupante. La administración Trump está
 endureciendo su control sobre el hemisferio occidental, haciendo peligrosas
 amenazas militares a Colombia [[28]] y Dinamarca [[29]].
 
+El restablecimiento de la Doctrina Monroe se declara explícitamente en la última
+*Estrategia de Seguridad Nacional* [30], publicada en diciembre de 2025, donde se
+enmarca la política exterior de los EE. UU. Como es habitual, este documento
+oficial es franco sobre las ambiciones imperiales de los Estados Unidos.
+Comienza declarando que «el único propósito» de la política exterior
+estadounidense es «la protección de sus intereses nacionales».
+Estos intereses, afirma el documento, han sido abandonados en favor del
+globalismo y el libre comercio, atando la política estadounidense a un orden
+internacional que es antiamericano. Un objetivo clave es «mantener el
+inigualable “soft power” de los Estados Unidos a través del cual ejercemos una
+influencia positiva en todo el mundo que favorece nuestros intereses», añadiendo
+acertadamente que este poder blando solo es efectivo si se persuade a la
+población de la «grandeza y decencia inherentes» de su país. Para este y otros
+fines, el documento declara que «haremos valer y aplicaremos un “Corolario
+Trump” a la Doctrina Monroe». Y al declarar la «predisposición al no
+intervencionismo» como un principio de los asuntos internacionales, el documento
+añade rápidamente que «para un país cuyos intereses son tan numerosos y diversos
+como los nuestros, una adhesión rígida al no intervencionismo no es posible».
+Estos son solo algunos de sus pasajes relevantes para entender la intervención
+de EE. UU. en Venezuela. Se invita al lector a consultar el texto completo [30].
+
 En última instancia, a mi juicio, la eliminación de Nicolás Maduro no es más que
 una afirmación calculada de dominio hemisférico. La administración de Trump
 sigue expresando que los principios de no intervención y autodeterminación están
@@ -132,3 +153,4 @@ internacional, aunque solo sea porque es todo lo que tenemos.
 [27]: https://www.nytimes.com/2026/01/05/world/americas/trump-venezuela-cuba.html
 [28]: https://www.nytimes.com/2026/01/05/espanol/america-latina/petro-trump-colombia.html
 [29]: https://www.bbc.com/news/articles/c4g0zg974v1o
+[30]: https://www.whitehouse.gov/wp-content/uploads/2025/12/2025-National-Security-Strategy.pdf
