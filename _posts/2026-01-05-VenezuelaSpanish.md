@@ -92,7 +92,7 @@ endureciendo su control sobre el hemisferio occidental, haciendo peligrosas
 amenazas militares a Colombia [[28]] y Dinamarca [[29]].
 
 El restablecimiento de la Doctrina Monroe se declara explícitamente en la última
-*Estrategia de Seguridad Nacional* [30], publicada en diciembre de 2025, donde se
+*Estrategia de Seguridad Nacional* [[30]], publicada en diciembre de 2025, donde se
 enmarca la política exterior de los EE. UU. Como es habitual, este documento
 oficial es franco sobre las ambiciones imperiales de los Estados Unidos.
 Comienza declarando que «el único propósito» de la política exterior
@@ -110,7 +110,7 @@ intervencionismo» como un principio de los asuntos internacionales, el document
 añade rápidamente que «para un país cuyos intereses son tan numerosos y diversos
 como los nuestros, una adhesión rígida al no intervencionismo no es posible».
 Estos son solo algunos de sus pasajes relevantes para entender la intervención
-de EE. UU. en Venezuela. Se invita al lector a consultar el texto completo [30].
+de EE. UU. en Venezuela. Se invita al lector a consultar el texto completo [[30]].
 
 En última instancia, a mi juicio, la eliminación de Nicolás Maduro no es más que
 una afirmación calculada de dominio hemisférico. La administración de Trump
