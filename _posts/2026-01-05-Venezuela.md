@@ -84,26 +84,24 @@ hemisphere, making dangerous military threats to Colombia [[28]] and Denmark
 [[29]].
 
 The reestablishment of the Monroe doctrine is explicitly declared in the last
-*National Security Strategy*[[30]], released in December 2025, where US foreign
+*National Security Strategy* [[30]], released in December 2025, where US foreign
 policy is framed. As usual, this official document is frank about the US's
-imperial ambitions. It begins begins declaring that «the sole purpose» of US
+imperial ambitions. It begins declaring that «the sole purpose» of US
 foreign policy is «the protection of core national interests». These interests,
 the document claims, have been cast aside in favor of globalism and free trade,
-lashing US policy to an international order which is anti-American. The desires
-of the US are declared to be safety, security, economic prosperity, and the
-development of the «world’s most powerful, lethal, and technologically advanced
-military». Furthermore, the US wants to «maintain the United States’ unrivaled
-“soft power” through which we exercise positive influence throughout the world
-that furthers our interests», accurately adding that this soft power is only
-effective if the population is persuaded of the «inherent greatness and decency»
-of their country. For this an other purposes, the document declares that «we
-will assert and enforce a “Trump Corollary” to the Monroe Doctrine». When
-declaring «predisposition to non-interventionism» as a principle of
-international affairs, they rapidly add that «for a country whose interests are
-as numerous and diverse as ours, rigid adherence to non-interventionism is not
-possible». These are only a few of the passages from from the document which are
-relevant to understanding the US intervention in Venezuela. The reader is
-encouraged to consult the full text [[30]].
+lashing US policy to an international order which is anti-American. 
+A key objective is to «maintain the United States’ unrivaled “soft power” through
+which we exercise positive influence throughout the world that furthers our
+interests», accurately adding that this soft power is only effective if the
+population is persuaded of the «inherent greatness and decency» of their
+country. For this an other purposes, the document declares that «we will assert
+and enforce a “Trump Corollary” to the Monroe Doctrine». An when declaring
+«predisposition to non-interventionism» as a principle of international affairs,
+the document rapidly adds that «for a country whose interests are as numerous
+and diverse as ours, rigid adherence to non-interventionism is not possible».
+These are only a few of its passages relevant to understanding the US
+intervention in Venezuela. The reader is encouraged to consult the full text
+[[30]].
 
 
 It should be clear, then, that the removal of Nicolás Maduro is nothing more
