@@ -114,23 +114,22 @@ de EE. UU. en Venezuela. Se invita al lector a consultar el texto completo [[30]
 
 Cada vez más, Estados Unidos afirma que el derecho internacional carece de
 sentido. Stephen Miller, jefe de gabinete de Trump, sostiene una visión de los
-asuntos internacionales donde «la fuerza hace el derecho» y ha declarado que EE.
-UU. utilizará la fuerza militar «sin complejos» [[31]]. Trump ha afirmado que
-«no necesita el derecho internacional», pues su única limitación es «su propia
+asuntos internacionales donde «*might makes right*», y ha declarado que EE.
+UU. utilizará la fuerza militar «*unapologetically*» [[31]]. Trump afirmó que
+«no necesita el derecho internacional» porque su única limitación es «su propia
 moralidad» [[32]]. En una reciente entrevista en vivo para Al Jazeera, el
 estratega republicano Adolfo Franco afirmó que, en la «política real del mundo»,
 el derecho internacional es «en el mejor de los casos, un código de honor»
-[[33]], carente de sentido en última instancia debido a su falta de mecanismos
+[[33]], en última instancia carente de sentido debido a su falta de mecanismos
 de aplicación. No encuentro problema en reconocer que el derecho internacional
 ha sido violado repetidamente con impunidad por varios actores poderosos
 —Estados Unidos e Israel por encima de todos—, pero en lugar de considerar esto
 como una razón para renunciar al derecho internacional como un esfuerzo inútil,
 debería tomarse como una razón para reafirmar su importancia y desarrollar
-mejores mecanismos para su aplicación a fin de regular los asuntos
-internacionales. La alternativa es regresar a un estado premoderno de anarquía,
-donde los estados poderosos son libres de llevar a cabo sus ambiciones
-imperiales sin tener en cuenta la soberanía, la autodeterminación o los derechos
-humanos.
+mejores mecanismos para regular los asuntos internacionales. La alternativa es
+regresar a un estado premoderno de anarquía, donde los estados poderosos son
+libres de llevar a cabo sus ambiciones imperiales sin tener en cuenta la
+soberanía, la autodeterminación o los derechos humanos.
 
 La destitución de Nicolás Maduro, entonces, cae perfectamente dentro de la
 renovada doctrina de dominio hemisférico de los Estados Unidos. La
