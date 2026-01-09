@@ -112,16 +112,37 @@ como los nuestros, una adhesión rígida al no intervencionismo no es posible».
 Estos son solo algunos de sus pasajes relevantes para entender la intervención
 de EE. UU. en Venezuela. Se invita al lector a consultar el texto completo [[30]].
 
-En última instancia, a mi juicio, la eliminación de Nicolás Maduro no es más que
-una afirmación calculada de dominio hemisférico. La administración de Trump
-sigue expresando que los principios de no intervención y autodeterminación están
-subordinados a los intereses estratégicos de EE. UU. No podemos aceptar este
-renacimiento de la Doctrina Monroe como un «mal necesario» en el derrocamiento
-de un dictador, ya que hacerlo consiente implícitamente la erosión de los mismos
-marcos legales diseñados para prevenir el conflicto global. Ahora es un lugar
-común afirmar que el derecho internacional carece de sentido, con los hegemones
-actuando a su antojo en ambos hemisferios. Pero debemos insistir en el derecho
-internacional, aunque solo sea porque es todo lo que tenemos.
+Cada vez más, Estados Unidos afirma que el derecho internacional carece de
+sentido. Stephen Miller, jefe de gabinete de Trump, sostiene una visión de los
+asuntos internacionales donde «la fuerza hace el derecho» y ha declarado que EE.
+UU. utilizará la fuerza militar «sin complejos» [[31]]. Trump ha afirmado que
+«no necesita el derecho internacional», pues su única limitación es «su propia
+moralidad» [[32]]. En una reciente entrevista en vivo para Al Jazeera, el
+estratega republicano Adolfo Franco afirmó que, en la «política real del mundo»,
+el derecho internacional es «en el mejor de los casos, un código de honor»
+[[33]], carente de sentido en última instancia debido a su falta de mecanismos
+de aplicación. No encuentro problema en reconocer que el derecho internacional
+ha sido violado repetidamente con impunidad por varios actores poderosos
+—Estados Unidos e Israel por encima de todos—, pero en lugar de considerar esto
+como una razón para renunciar al derecho internacional como un esfuerzo inútil,
+debería tomarse como una razón para reafirmar su importancia y desarrollar
+mejores mecanismos para su aplicación a fin de regular los asuntos
+internacionales. La alternativa es regresar a un estado premoderno de anarquía,
+donde los estados poderosos son libres de llevar a cabo sus ambiciones
+imperiales sin tener en cuenta la soberanía, la autodeterminación o los derechos
+humanos.
+
+La destitución de Nicolás Maduro, entonces, cae perfectamente dentro de la
+renovada doctrina de dominio hemisférico de los Estados Unidos. La
+administración de Trump continuamente actúa subordinando los principios de no
+intervención y autodeterminación a los intereses estratégicos de los Estados
+Unidos. No podemos aceptar este resurgimiento de la Doctrina Monroe como un «mal
+necesario» en el derrocamiento de un dictador, ya que hacerlo consiente
+implícitamente la erosión de los mismísimos marcos legales diseñados para
+prevenir conflictos globales. Ahora es moneda corriente afirmar que el derecho
+internacional carece de sentido, con las potencias hegemónicas actuando a su
+antojo en ambos hemisferios. Pero debemos insistir en el derecho internacional,
+aunque solo sea porque es todo lo que tenemos.
 
 
 [1]: https://www.theguardian.com/world/2026/jan/04/maduro-indictment-trump-tren-de-aragua
@@ -154,3 +175,6 @@ internacional, aunque solo sea porque es todo lo que tenemos.
 [28]: https://www.nytimes.com/2026/01/05/espanol/america-latina/petro-trump-colombia.html
 [29]: https://www.bbc.com/news/articles/c4g0zg974v1o
 [30]: https://www.whitehouse.gov/wp-content/uploads/2025/12/2025-National-Security-Strategy.pdf
+[31]: https://www.aljazeera.com/news/2026/1/9/trump-says-he-doesnt-need-international-law-amid-aggressive-us-policies
+[32]: https://www.theguardian.com/us-news/2026/jan/08/trump-power-international-law
+[33]: https://www.youtube.com/watch?v=cUOr9MtGCLQ&t=243s

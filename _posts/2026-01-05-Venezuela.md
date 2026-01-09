@@ -103,16 +103,33 @@ These are only a few of its passages relevant to understanding the US
 intervention in Venezuela. The reader is encouraged to consult the full text
 [[30]].
 
+More and more, the US claims that international law is meaningless. Stephen
+Miller, Trump's chief of staff, upholds a view of international affairs where
+«might makes right» and has stated that the US will «unapologetically» use
+military force [[31]]. Trump has claimed he «doesn't need international law»,
+for his only constraint is «his own morality» [[32]]. In a recent live interview
+for Al Jazeera, the Republican strategist Adolfo Franco claimed that, in the
+«real politics of the world», international law is «at best an honor code»
+[[33]], ultimately meaningless due to its lack of enforcement mechanisms. I find
+no problem in recognizing that international law has been repeatedly violated
+with impunity by several powerful actors—the US and Israel above them all— but
+rather than considering this a reason to surrender international law as a futile
+endeavor, it should be taken as a reason to reaffirm its importance and to
+develop better mechanisms for its enforcement to regulate international affairs.
+The alternative is to return to a pre-modern state of lawlessness, where
+powerful states are free to carry out their imperial ambitions with no regard
+for sovereignty, self-determination, or human rights.
 
-It should be clear, then, that the removal of Nicolás Maduro is nothing more
-than a calculated assertion of hemispheric dominance. Trump's administration
-keeps signaling that the principles of non-intervention and self-determination
-are subordinate to US strategic interests. We cannot accept this revival of the
-Monroe Doctrine as a «necessary evil» in the overthrow of a dictator, as doing
-so implicitly consents to the erosion of the very legal frameworks designed to
-prevent global conflict. It is now commonplace to claim that international law
-is meaningless, with hegemons acting as they please in both hemispheres. But we
-must insist on international law, if only because it is all we have.
+The removal of Nicolás Maduro, as should be clear by now, falls well within the
+US's renewed doctrine of hemispheric dominance. Trump's administration
+continuously signals that the principles of non-intervention and
+self-determination are subordinate to US strategic interests. We cannot accept
+this revival of the Monroe Doctrine as a «necessary evil» in the overthrow of a
+dictator, as doing so implicitly consents to the erosion of the very legal
+frameworks designed to prevent global conflict. It is now commonplace to claim
+that international law is meaningless, with hegemons acting as they please in
+both hemispheres. But we must insist on international law, if only because it is
+all we have.
 
 
 [1]: https://www.theguardian.com/world/2026/jan/04/maduro-indictment-trump-tren-de-aragua
@@ -145,3 +162,6 @@ must insist on international law, if only because it is all we have.
 [28]: https://www.nytimes.com/2026/01/05/espanol/america-latina/petro-trump-colombia.html
 [29]: https://www.bbc.com/news/articles/c4g0zg974v1o
 [30]: https://www.whitehouse.gov/wp-content/uploads/2025/12/2025-National-Security-Strategy.pdf
+[31]: https://www.aljazeera.com/news/2026/1/9/trump-says-he-doesnt-need-international-law-amid-aggressive-us-policies
+[32]: https://www.theguardian.com/us-news/2026/jan/08/trump-power-international-law
+[33]: https://www.youtube.com/watch?v=cUOr9MtGCLQ&t=243s
