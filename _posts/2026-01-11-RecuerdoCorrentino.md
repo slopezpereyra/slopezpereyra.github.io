@@ -1,0 +1,22 @@
+---
+title: Un recuerdo de Corrientes 
+categories: [Personal]
+---
+
+Bajo las tenues y pequeñas luces que colgaban sobre el aire nocturno del patio,
+el rostro de aquella joven dejaba traslucir vestigios guaraníticos, africanos y
+europeos, que conjugaban en él una hermosura sin nombre. El piso de ladrillo era
+cercado por estrechas franjas de tierra fresca y piedra blanca, desde las cuales
+decenas de plantas tropicales conjuraban una especie secreta de encanto similar
+al de sus ojos negros. En efecto, había en ellos todo lo que en América creemos
+—o fingimos creer— haber enterrado, otorgándole lo que un amigo describió
+correctamente como una «mirada de cinco siglos». Sentada en silencio, descalza y
+con un cigarrillo en la mano, la salvaje hojarasca de un jazmín brasilero
+abierta a poca distancia de su oscuro cabello, como infinitos dedos que sueñan
+dar sonido a un instrumento delicioso y primitivo, ella también se preguntaba
+cuáles fueron los hombres, los infinitos hombres, que la habían llevado allí.
+Ella no lo sospechaba, pero ella era —como todas las cosas— poco más que un
+eco. Y yo la contemplaba con el silencio respetuoso de los que invaden un
+cementerio, disimulando mi distante asombro, aunque todo en mí sintiera que una
+reverberancia de voces milenarias iba aflorar, en cualquier momento, desde sus
+labios.
