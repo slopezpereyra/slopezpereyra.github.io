@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  11 JAN 2026 01:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  11 JAN 2026 16:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -426,7 +426,30 @@ LaTeX Font Info:    ... okay on input line 19.
 \c@mv@boldtabular=\count295
 LaTeX Info: Command `\dddot' is already robust on input line 19.
 LaTeX Info: Command `\ddddot' is already robust on input line 19.
- [1
+LaTeX Font Info:    Trying to load font information for OT1+minntx on input line 21.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1minntx.fd
+File: ot1minntx.fd 2023/09/09 v1.1 font definition file for OT1/minntx
+)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 21.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 21.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 21.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxmia.fd
+File: untxmia.fd 2018/04/14 Fontinst v1.933 font definitions for U/ntxmia.
+)
+LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 21.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsym.fd
+File: untxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/ntxsym.
+)
+LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 21.
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsyc.fd
+File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
+) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}] (./portrait2.aux)
  ***********
@@ -435,18 +458,18 @@ L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 6539 strings out of 474222
- 88367 string characters out of 5748733
- 1926975 words of memory out of 5000000
- 28737 multiletter control sequences out of 15000+600000
- 562005 words of font info for 39 fonts, out of 8000000 for 9000
+ 6682 strings out of 474222
+ 90955 string characters out of 5748733
+ 1927975 words of memory out of 5000000
+ 28846 multiletter control sequences out of 15000+600000
+ 575746 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  80i,5n,93p,330b,114s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
-Output written on portrait2.pdf (1 page, 40448 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
+Output written on portrait2.pdf (1 page, 50184 bytes).
 PDF statistics:
- 14 PDF objects out of 1000 (max. 8388607)
- 8 compressed objects within 1 object stream
+ 19 PDF objects out of 1000 (max. 8388607)
+ 11 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
