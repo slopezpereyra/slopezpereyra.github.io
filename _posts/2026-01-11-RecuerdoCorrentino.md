@@ -9,7 +9,7 @@ europeos, que conjugaban en él una hermosura sin nombre. El piso de ladrillo er
 cercado por estrechas franjas de tierra fresca y piedra blanca, desde las cuales
 decenas de plantas tropicales conjuraban una especie secreta de encanto similar
 al de sus ojos negros. En efecto, había en ellos todo lo que en América creemos
-—o fingimos creer— haber enterrado, otorgándole lo que un amigo describió
+—o fingimos creer— haber enterrado, otorgándole lo que alguien describió
 correctamente como una «mirada de cinco siglos». Sentada en silencio, descalza y
 con un cigarrillo en la mano, la salvaje hojarasca de un jazmín brasilero
 abierta a poca distancia de su oscuro cabello, como infinitos dedos que sueñan
