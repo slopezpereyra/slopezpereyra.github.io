@@ -3,7 +3,7 @@ title: Un recuerdo de Corrientes
 categories: [Personal]
 ---
 
-Bajo las tenues y pequeñas luces que colgaban sobre el aire nocturno del
+$\S$ Bajo las tenues y pequeñas luces que colgaban sobre el aire nocturno del
 patio, su rostro dejaba traslucir los vestigios guaraníticos, africanos y
 europeos que conjugaban en él una hermosura sin nombre. El piso de ladrillo era
 cercado por estrechas franjas de tierra fértil, alfombrada de perladas
@@ -29,3 +29,62 @@ milenaria, inundando mis sentidos cruel o tiernamente. Nada quedó a mi
 alrededor. Solo y confundido, miré la hermosa flor que había nacido ante mí, que
 ya no me increpaba con cinco siglos de mirada. Y repetí en silencio: «está
 esperando».
+
+---
+
+$\S$ Sobre la hierba prolija del cementerio, no sé si sus sandalias negras con
+encajes brillantes ofendían o alegraban la solemnidad de los muertos. Su remera
+negra tenía un precioso y seductor escote lágrima, dentro del cual un suave
+lunar perlaba una piel bronceada durante aburridas siestas de tomar sol. Conversaba
+con cierta impertinencia sobre el consumo de drogas, la vida después de la
+muerte y la naturaleza del alma, sentada junto a la tumba de nuestra vieja amiga,
+que se suicidó tras años de adicción y deterioro psicológico y moral. Acomodó
+las flores y limpió la tierra y el agua de lluvia que se acumulaban sobre la
+lápida con una delicadeza y un cariño que me parecieron maternales. El amor que
+sintió alguna vez por la amiga muerta permanecía intacto, y aunque otros
+visitantes pudieran juzgar sus ropas hermosas, su conversación desafortunada y
+un tanto ruidosa, su actitud despreocupada—en fin, su aparente impertinencia
+en aquel silencioso cementerio—la bondad de su corazón, la sinceridad de sus
+dolores íntimos, y su espontánea calidez eran igual de aparentes.
+
+Pocos meses antes, ella fue mi acompañante durante mi primera visita al
+cementerio, una tarde lluviosa y melancólica en la que mi dolor todavía era
+fresco y lacerante. Esta vez, para mi sorpresa, no sentí nada. Mi atención
+estaba centrada en los vivos, en el hermoso rostro de mi acompañante, en su
+extraña conversación, que yo escuchaba con cierta pasividad resignada. Ella
+vivía una vida distinta a la mía, en un universo distinto al mío. La hermosura de
+sus ropas, la delicadeza de su maquillaje, el bronceado de su piel, el brillo de
+sus sandalias, su escote lágrima—en resumen, todos los detalles superficiales que
+podrían sugerir un alma superficial—no revelaban ni vanidad vulgar ni, al fin
+y al cabo, siquiera sana coquetería. En su consciencia, cada instante era
+signado por la duda de sí misma, por la abrasante convicción de que una mujer
+sólo es tomada en serio si satisface cierto criterio perverso de perfección, que
+nadie—tampoco yo—podría amarla si lo más mínimo de su fuero externo sufriera
+la más pequeña alteración. 
+
+Desde su tierna infancia, padres y hermanos le enseñaron—sin mediar palabra
+alguna—que la delgadez y la belleza garantizaban a las mujeres un trato
+respetuoso y diferencial, humillándola por su intermitente gordura e inculcando
+en ella la creencia, no del todo errada en muchos círculos, de que el amor
+otorgado a una persona es proporcional a la gratificación estética que es capaz
+de producir. Yo la comprendía y soñaba mostrarle que el amor puede ser perfecto,
+pero nos presentía a la vez separados por un río inabarcable, y al verla abrazar 
+tan firmemente las mismas convicciones que destruían su posibilidad de
+ser feliz, la consideraba—en cierta medida—una partícipe del crimen. 
+
+Yo no debía «despertarla»: sus ojos estaban bien abiertos en un mundo, en una
+vida, donde todas aquellas cadenas que a mí me parecían tan lejanas eran
+verdaderas, tenían un peso espiritual que dificultaba real, incluso físicamente
+sus pasos. Por eso la compadecía sin saber del todo cómo hablarle.
+
+Unas horas después nos despedimos, solos en la oscuridad de la noche, mirándonos
+frente a frente en la calle de tierra que conduce a la quinta de mi padre,
+rodeados de luciérnagas cuya aparición intermitente reflejaba la inconstante
+llama de la felicidad a lo largo de su vida. «Amo las luciérnagas», me dijo, sin
+sospechar la triste ironía que inundó mi corazón. Besé sus labios y nos
+abrazamos en silencio. Éramos irremediablemente diferentes—ella lo supo y yo
+también—y sin embargo sabíamos comprender los duelos secretos del otro. Y eso
+también es una forma del amor.
+
+
+
