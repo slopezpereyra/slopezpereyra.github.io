@@ -6,7 +6,7 @@ categories: [Personal]
 
 
 <figure style="text-align:center;">
-  <img src="../Images/QuirosWomen.jpg" width="75%" style="border: 0px solid #231709;" />
+  <img src="../Images/QuirosWomen.jpg" width="50%" style="border: 1px solid #231709;" />
   <figcaption>Mujer con sombrero - Cesáreo Bernaldo de Quirós</figcaption>
 </figure>
 
@@ -97,6 +97,6 @@ también es una forma del amor.
 
 
 <figure style="text-align:center;">
-  <img src="../Images/Parreiras.jpg" width="75%" style="border: 0px solid #231709;" />
+  <img src="../Images/Parreiras.jpg" width="50%" style="border: 1px solid #231709;" />
   <figcaption>Día nebuloso - Antônio Parreiras</figcaption>
 </figure>
