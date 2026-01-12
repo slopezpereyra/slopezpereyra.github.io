@@ -1,5 +1,5 @@
 ---
-title: Un recuerdo de Corrientes 
+title: Recuerdos de verano
 categories: [Personal]
 ---
 
