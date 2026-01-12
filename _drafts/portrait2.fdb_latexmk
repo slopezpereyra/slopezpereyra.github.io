@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1768158008.51128 "portrait2.tex" "portrait2.pdf" "portrait2" 1768158009.1852 2
+["pdflatex"] 1768239856.19469 "portrait2.tex" "portrait2.pdf" "portrait2" 1768239856.90408 2
   "/etc/texmf/web2c/texmf.cnf" 1740662799.63242 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1698694482 2914 fdbc4a54b9bc76f4551b5303f2737d33 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -77,8 +77,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1740670969.59643 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1740670991 8214096 2cc5ed7d441cd7dd7f6cf9e30d4bb5a5 ""
-  "portrait2.aux" 1768158009.12474 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "portrait2.tex" 1768158008.03675 2524 0c1c327352dfc893b9e2aa28b21971a9 ""
+  "portrait2.aux" 1768239856.84482 32 ab05033ccbb38b00a31b200ccedf8001 "pdflatex"
+  "portrait2.tex" 1768239856.00513 6306 ef5b48c221b753ca0997e01268004d46 ""
   (generated)
   "portrait2.aux"
   "portrait2.log"
