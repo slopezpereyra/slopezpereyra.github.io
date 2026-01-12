@@ -80,8 +80,7 @@ de producir. Yo la comprendía y soñaba mostrarle que el amor puede ser perfect
 pero nos presentía a la vez separados por un río inabarcable, y al verla abrazar 
 tan firmemente las mismas convicciones que destruían su posibilidad de
 ser feliz, la consideraba—en cierta medida—una partícipe del crimen. 
-
-Yo no debía «despertarla»: sus ojos estaban bien abiertos en un mundo, en una
+Comprendí que yo no debía «despertarla»: sus ojos estaban bien abiertos en un mundo, en una
 vida, donde todas aquellas cadenas que a mí me parecían tan lejanas eran
 verdaderas, tenían un peso espiritual que dificultaba real, incluso físicamente
 sus pasos. Por eso la compadecía sin saber del todo cómo hablarle.
