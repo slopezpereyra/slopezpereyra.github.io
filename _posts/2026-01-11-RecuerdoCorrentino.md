@@ -23,9 +23,9 @@ iba aflorar, en cualquier momento, desde sus labios.
 
 —¿Qué hace?—me pregunté, temiendo que lograra desnudar mi corazón, y una voz
 interior me dijo «está esperando». Sus pies descalzos se unieron el uno al otro
-como dos trenzas juveniles o dos lianas tropicales; sus dedos se entrelazaron y
-recorrieron su cuerpo como enredaderas silvestres; el patio se deshizo y dio
-lugar a una hierba milenaria, inundando mis sentidos cruel o tiernamente. Nada
-quedó a mi alrededor. Solo y confundido, miré la hermosa flor que había nacido
-ante mí, que ya no me increpaba con cinco siglos de mirada. Y repetí en
-silencio: «está esperando».
+como dos trenzas juveniles; sus dedos se entrelazaron y recorrieron su cuerpo
+como enredaderas silvestres; el patio se deshizo y dio lugar a una hierba
+milenaria, inundando mis sentidos cruel o tiernamente. Nada quedó a mi
+alrededor. Solo y confundido, miré la hermosa flor que había nacido ante mí, que
+ya no me increpaba con cinco siglos de mirada. Y repetí en silencio: «está
+esperando».
