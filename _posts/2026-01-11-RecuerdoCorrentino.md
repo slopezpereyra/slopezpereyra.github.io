@@ -3,8 +3,6 @@ title: Recuerdos de verano
 categories: [Personal]
 ---
 
-
-
 $\S$ Bajo las tenues y pequeñas luces que colgaban sobre el aire nocturno del
 patio, su rostro dejaba traslucir los vestigios guaraníticos, africanos y
 europeos que conjugaban en él una hermosura sin nombre. El piso de ladrillo era
@@ -31,6 +29,62 @@ milenaria, inundando mis sentidos cruel o tiernamente. Nada quedó a mi
 alrededor. Solo y confundido, miré la hermosa flor que había nacido ante mí, que
 ya no me increpaba con cinco siglos de mirada. Y repetí en silencio: «está
 esperando».
+
+--- 
+
+$\S$ Cuando todavía era un niño enamoradizo, me entregué —como a tantas otras
+cosas que la gente gustaba de llamar «pérdidas de tiempo»— a la lectura de
+Matsuo Bashō y Kobayashi Issa. Parece mentira, pero aquella tarde había
+recordado el dulce haiku que promete la incipiencia del amor:
+
+>Under the cherry blossoms<br>
+>strangers are not<br>
+>really strangers.<br>
+
+Aunque el calor era insoportable y el día era tan claro como agua manantial,
+todo el que conocía el inclemente clima de esta región del mundo sabía que se
+avecinaba una tormenta tropical. Estábamos reunidos en un antiguo patio donde la
+gente de la ciudad se amontona a escuchar música bajo la amorosa sombra de los
+mangos y los urunday, meciendo nuestros sentimientos al son de unas canciones
+con un dejo folklórico y feliz, como se mece a un niño febril que quiere
+llevarse a las serenas regiones del sueño. 
+
+Lentamente los tintes carmesíes del arrebol fueron invadidos por una oscuridad
+de plata. Los cuerpos, los cuerpos de las gentes y las cosas, aparecían ante mí
+como fantasmas nativos de un mundo mágico y perfecto. Una profunda soledad
+invadió mi corazón, tal vez porque la música se había vuelto melancólica, tal
+vez porque en mis puños cerrados todavía me aferraba a un puñado de ceniza y la
+sentía escaparse de mis manos lentamente, como el polvo fino de un reloj de
+arena pasa de una parte a otra. «Así me escondo en este mundo»—pensé—«con esta
+arena, con este recuerdo apretado entre mis manos». No confesé mi soledad, pero
+sospecho que mis ojos hablaban la palabra «ausencia».
+
+Salí a sentarme solo en un banco de madera, bajo un árbol de naranjos, con el
+alma oprimida por la añoranza de una mujer que ha muerto, del deseo de verla
+bailar en la hojarasca con aquellas personas que nunca la conocieron, del ansia
+de volver a sentir sus manos y su voz llamándome, pero esta vez sin lágrimas ni
+pena. ¿Qué puede doler más que el pensamiento desesperado de querer hundir los
+labios en la tierra para llamar un nombre que, día a día, es recordado por menos
+y menos personas? Lentamente, como una bestia agazapada, la tormenta iba
+anunciándose en la voz del viento...
+
+Todo esto sentía cuando una muchacha vino a sentarse junto a mí. Si dijo algo no
+fue mucho, pero supo recordarme que había otro mundo dentro, un mundo de
+personas vivas que bailaban vivamente, besándose los labios o tocándose las
+manos, amándose en secreto aunque fuera por sólo unos instantes, bajo el influjo
+de una música que era imposible no sentir. Los ojos de esa mujer estaban vivos
+y, en cierto modo, me llamaron al mundo de los vivos. Y entonces abandoné mi
+pensamiento, abandoné a mi amada muerta, y mirando a la muchacha que ya se
+levantaba de mi lado pensé:
+
+\begin{quote}
+    Bajo el árbol de naranjos<br>
+    los extraños no son<br>
+    verdaderamente extraños
+\end{quote}
+
+Y la tormenta desató su furia, como una bendición, sobre nosotros.
+
 
 ---
 
