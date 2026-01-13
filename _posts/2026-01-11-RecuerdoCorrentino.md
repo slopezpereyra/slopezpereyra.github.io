@@ -68,22 +68,21 @@ labios en la tierra para llamar un nombre que, día a día, es recordado por men
 y menos personas? Lentamente, como una bestia agazapada, la tormenta iba
 anunciándose en la voz del viento...
 
-Todo esto sentía cuando una muchacha vino a sentarse junto a mí. Si dijo algo no
-fue mucho, pero supo recordarme que había otro mundo dentro, un mundo de
-personas vivas que bailaban vivamente, besándose los labios o tocándose las
-manos, amándose en secreto aunque fuera por sólo unos instantes, bajo el influjo
-de una música que era imposible no sentir. Los ojos de esa mujer estaban vivos
-y, en cierto modo, me llamaron al mundo de los vivos. Y entonces abandoné mi
-pensamiento, abandoné a mi amada muerta, y mirando a la muchacha que ya se
-levantaba de mi lado pensé:
+Sentí aproximarse, más que un cuerpo, una mirada—una que algunos días después,
+en otro patio nocturno, llamaría una «mirada de cinco siglos»—. No sé cómo pero
+supo recordarme que había otro mundo dentro, un mundo de personas vivas que
+bailaban vivamente, besándose los labios o tocándose las manos, amándose en
+secreto aunque fuera por sólo unos instantes, bajo el influjo de una música que
+era imposible no sentir. Aquellos ojos negros eran ojos vivos y, en cierto modo,
+me llamaron al mundo de los vivos. Y entonces abandoné mi pensamiento, abandoné
+a mi amada muerta, y mirando a la muchacha que ya se levantaba de mi lado pensé:
 
-\begin{quote}
-    Bajo el árbol de naranjos<br>
-    los extraños no son<br>
-    verdaderamente extraños
-\end{quote}
+>Bajo el árbol de naranjos<br>
+>los extraños no son<br>
+>verdaderamente extraños
 
-Y la tormenta desató su furia, como una bendición, sobre nosotros.
+Poco después la tormenta desató su furia, como una bendición, sobre nosotros.
+
 
 
 ---
