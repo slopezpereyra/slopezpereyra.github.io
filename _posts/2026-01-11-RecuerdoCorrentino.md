@@ -42,7 +42,7 @@ recordado el dulce haiku que promete la incipiencia del amor:
 >really strangers.<br>
 
 Aunque el calor era insoportable y el día era tan claro como agua manantial,
-todo el que conocía el inclemente clima de esta región del mundo sabía que se
+quien conocía el inclemente clima de esta región del mundo sabía que se
 avecinaba una tormenta tropical. Estábamos reunidos en un antiguo patio donde la
 gente de la ciudad se amontona a escuchar música bajo la amorosa sombra de los
 mangos y los urunday, meciendo nuestros sentimientos al son de unas canciones
@@ -55,25 +55,25 @@ como fantasmas nativos de un mundo mágico y perfecto. Una profunda soledad
 invadió mi corazón, tal vez porque la música se había vuelto melancólica, tal
 vez porque en mis puños cerrados todavía me aferraba a un puñado de ceniza y la
 sentía escaparse de mis manos lentamente, como el polvo fino de un reloj de
-arena pasa de una parte a otra. «Así me escondo en este mundo»—pensé—«con esta
-arena, con este recuerdo apretado entre mis manos». No confesé mi soledad, pero
-sospecho que mis ojos hablaban la palabra «ausencia».
+arena pasa de una parte a otra. «Así me escondo en este mundo»—pensé, sin
+confesar mi soledad—«con esta arena, con este recuerdo apretado entre mis
+manos». 
 
-Salí a sentarme solo en un banco de madera, bajo un árbol de naranjos, con el
-alma oprimida por la añoranza de una mujer que ha muerto, del deseo de verla
-bailar en la hojarasca con aquellas personas que nunca la conocieron, del ansia
+Salí a sentarme solo en un banco de madera, cerca de un árbol de naranjos, con
+el alma oprimida por la añoranza de una mujer que ha muerto, del deseo de verla
+bailar en la hojarasca con aquellas personas que no la conocieron, del ansia
 de volver a sentir sus manos y su voz llamándome, pero esta vez sin lágrimas ni
 pena. ¿Qué puede doler más que el pensamiento desesperado de querer hundir los
 labios en la tierra para llamar un nombre que, día a día, es recordado por menos
 y menos personas? Lentamente, como una bestia agazapada, la tormenta iba
-anunciándose en la voz del viento...
+anunciándose en la voz del viento.
 
 Sentí aproximarse, más que un cuerpo, una mirada—una que algunos días después,
 en otro patio nocturno, llamaría una «mirada de cinco siglos»—. No sé cómo pero
 supo recordarme que había otro mundo dentro, un mundo de personas vivas que
 bailaban vivamente, besándose los labios o tocándose las manos, amándose en
-secreto aunque fuera por sólo unos instantes, bajo el influjo de una música que
-era imposible no sentir. Aquellos ojos negros eran ojos vivos y, en cierto modo,
+secreto aunque fuera por sólo unos instantes, bajo el influjo de una a la vez
+citadina y de interior. Aquellos ojos negros eran ojos vivos y, en cierto modo,
 me llamaron al mundo de los vivos. Y entonces abandoné mi pensamiento, abandoné
 a mi amada muerta, y mirando a la muchacha que ya se levantaba de mi lado pensé:
 
@@ -140,3 +140,22 @@ abrazamos en silencio. Éramos irremediablemente diferentes—ella lo supo y yo
 también—y sin embargo sabíamos comprender los duelos secretos del otro. Y eso
 también es una forma del amor.
 
+---
+
+$\S$ ¿Por qué, al recordar un lugar, no damos preponderancia a los sueños
+soñados en él? Decimos «allí vi este monumento», «allá vi este río», pero nunca
+«allá soñé una luna carmesí» o «aquí mis sueños fueron plácidos». En los sueños,
+rara vez sentimos que nos equivocamos, y posiblemente se deba a que no lo
+hacemos. Sin embargo, priorizamos esta vida de desaciertos y errores.
+
+Este verano soñé con dos hermosos ojos negros que, intermitentemente, iban de su
+propia forma a otras formas más extrañas: primero eran dos ojos, luego dos gotas
+de agua clara; eran ojos otra vez, y luego dos personas no del todo idénticas;
+dos ojos, dos espadas oxidadas, y otras formas que he olvidado. Soñé que nos
+invadía el Paraguay y yo, traidor a mi patria, luchaba en el bando paraguayo.
+Soñé que estaba solo, «sin padre ni madre», en una playa fría. Soñé a mi antiguo
+profesor de música sonriendo. Soñé que me enamoraba de una joven y, en efecto,
+amanecí enamorado de ella. Soñé que moría y pensaba: «esto fue todo, la quise
+tanto, que Dios que la proteja». Soñé piezas de ajedrez que intentaban en vano
+repetir una partida de Morphy. No soñé, lamentablemente, con Paulina, cuyo
+rostro sólo puedo ver en sueños y extraño mucho últimamente.
