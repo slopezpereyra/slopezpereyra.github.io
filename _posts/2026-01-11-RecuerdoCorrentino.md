@@ -5,13 +5,6 @@ categories: [Personal]
 
 
 
-<figure style="text-align:center;">
-  <img src="../Images/QuirosWomen.jpg" width="50%" style="border: 6px solid #231709;" />
-  <figcaption>Mujer con sombrero - Cesáreo Bernaldo de Quirós</figcaption>
-</figure>
-
----
-
 $\S$ Bajo las tenues y pequeñas luces que colgaban sobre el aire nocturno del
 patio, su rostro dejaba traslucir los vestigios guaraníticos, africanos y
 europeos que conjugaban en él una hermosura sin nombre. El piso de ladrillo era
@@ -94,8 +87,3 @@ abrazamos en silencio. Éramos irremediablemente diferentes—ella lo supo y yo
 también—y sin embargo sabíamos comprender los duelos secretos del otro. Y eso
 también es una forma del amor.
 
-
-<figure style="text-align:center;">
-  <img src="../Images/Parreiras.jpg" width="75%" style="border: 6px solid #231709;" />
-  <figcaption>Día nebuloso - Antônio Parreiras</figcaption>
-</figure>
