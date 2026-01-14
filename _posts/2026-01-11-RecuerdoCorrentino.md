@@ -41,13 +41,13 @@ recordado el dulce haiku que promete la incipiencia del amor:
 >strangers are not<br>
 >really strangers.<br>
 
-Aunque el calor era insoportable y el día era tan claro como agua manantial,
-quien conocía el inclemente clima de esta región del mundo sabía que se
-avecinaba una tormenta tropical. Estábamos reunidos en un antiguo patio donde la
-gente de la ciudad se amontona a escuchar música bajo la amorosa sombra de los
-mangos y los urunday, meciendo nuestros sentimientos al son de unas canciones
-con un dejo folklórico y feliz, como se mece a un niño febril que quiere
-llevarse a las serenas regiones del sueño. 
+Aunque el calor era insoportable y el día era clarísimo, quienes conocíamos el
+inclemente clima de esta región del mundo sabíamos que se avecinaba una tormenta
+tropical. Estábamos reunidos en un antiguo patio donde la gente de la ciudad se
+amontona a escuchar música bajo la amorosa sombra de los mangos y los urunday,
+meciendo nuestros sentimientos al son de unas canciones con un dejo folklórico y
+feliz, como se mece a un niño febril que quiere llevarse a las serenas regiones
+del sueño. 
 
 Lentamente los tintes carmesíes del arrebol fueron invadidos por una oscuridad
 de plata. Los cuerpos, los cuerpos de las gentes y las cosas, aparecían ante mí
