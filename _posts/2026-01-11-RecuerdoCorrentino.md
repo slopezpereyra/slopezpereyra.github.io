@@ -55,27 +55,27 @@ como fantasmas nativos de un mundo mágico y perfecto. Una profunda soledad
 invadió mi corazón, tal vez porque la música se había vuelto melancólica, tal
 vez porque en mis puños cerrados todavía me aferraba a un puñado de ceniza y la
 sentía escaparse de mis manos lentamente, como el polvo fino de un reloj de
-arena pasa de una parte a otra. «Así me escondo en este mundo»—pensé, sin
-confesar mi soledad—«con esta arena, con este recuerdo apretado entre mis
+arena pasa de una parte a otra. «Así me escondo en este mundo»—pensé—«con esta arena, con este recuerdo apretado entre mis
 manos». 
 
 Salí a sentarme solo en un banco de madera, cerca de un árbol de naranjos, con
 el alma oprimida por la añoranza de una mujer que ha muerto, del deseo de verla
-bailar en la hojarasca con aquellas personas que no la conocieron, del ansia
-de volver a sentir sus manos y su voz llamándome, pero esta vez sin lágrimas ni
+bailar en la hojarasca con aquellas personas que no la conocieron, del ansia de
+volver a sentir sus manos y su voz llamándome, pero esta vez sin lágrimas ni
 pena. ¿Qué puede doler más que el pensamiento desesperado de querer hundir los
 labios en la tierra para llamar un nombre que, día a día, es recordado por menos
-y menos personas? Lentamente, como una bestia agazapada, la tormenta iba
-anunciándose en la voz del viento.
+y menos personas? Lentamente, como un yaguareté que acecha en los juncales, la
+tormenta iba anunciándose en la voz del viento.
 
 Sentí aproximarse, más que un cuerpo, una mirada—una que algunos días después,
 en otro patio nocturno, llamaría una «mirada de cinco siglos»—. No sé cómo pero
 supo recordarme que había otro mundo dentro, un mundo de personas vivas que
 bailaban vivamente, besándose los labios o tocándose las manos, amándose en
-secreto aunque fuera por sólo unos instantes, bajo el influjo de una a la vez
-citadina y de interior. Aquellos ojos negros eran ojos vivos y, en cierto modo,
-me llamaron al mundo de los vivos. Y entonces abandoné mi pensamiento, abandoné
-a mi amada muerta, y mirando a la muchacha que ya se levantaba de mi lado pensé:
+secreto aunque fuera por sólo unos instantes, bajo el influjo de una música a la
+vez citadina y de interior. Aquellos ojos negros eran ojos vivos y, en cierto
+modo, me llamaron al mundo de los vivos. Y entonces abandoné mi pensamiento,
+abandoné a mi amada muerta, y mirando a la muchacha que ya se levantaba de mi
+lado pensé:
 
 >Bajo el árbol de naranjos<br>
 >los extraños no son<br>
