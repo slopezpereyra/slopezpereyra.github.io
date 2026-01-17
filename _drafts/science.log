@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  17 JAN 2026 14:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  16 JAN 2026 01:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**portrait2.tex
-(./portrait2.tex
+**science.tex
+(./science.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -308,7 +308,7 @@ LaTeX Info: Redefining \not on input line 2982.
 \c@theorem=\count286
 
 
-./portrait2.tex:14: LaTeX Error: Command \problem already defined.
+./science.tex:14: LaTeX Error: Command \problem already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -322,7 +322,7 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./portrait2.tex:14: LaTeX Error: Command \example already defined.
+./science.tex:14: LaTeX Error: Command \example already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -337,7 +337,7 @@ or  <return>  to continue without it.
 
 \c@definition=\count287
 
-./portrait2.tex:16: LaTeX Error: Command \lemma already defined.
+./science.tex:16: LaTeX Error: Command \lemma already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -351,7 +351,7 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./portrait2.tex:17: LaTeX Error: Command \theorem already defined.
+./science.tex:17: LaTeX Error: Command \theorem already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -371,8 +371,8 @@ File: t1ntxtlf.fd 2021/05/24 v1.1 font definition file for T1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 12.0pt on input line 19.
- (./portrait2.aux)
-\openout1 = `portrait2.aux'.
+ (./science.aux)
+\openout1 = `science.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 19.
 LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 19.
@@ -426,53 +426,27 @@ LaTeX Font Info:    ... okay on input line 19.
 \c@mv@boldtabular=\count295
 LaTeX Info: Command `\dddot' is already robust on input line 19.
 LaTeX Info: Command `\ddddot' is already robust on input line 19.
-LaTeX Font Info:    Trying to load font information for OT1+minntx on input line 21.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1minntx.fd
-File: ot1minntx.fd 2023/09/09 v1.1 font definition file for OT1/minntx
-)
-LaTeX Font Info:    Trying to load font information for U+msa on input line 21.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 21.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 21.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxmia.fd
-File: untxmia.fd 2018/04/14 Fontinst v1.933 font definitions for U/ntxmia.
-)
-LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 21.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsym.fd
-File: untxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/ntxsym.
-)
-LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 21.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsyc.fd
-File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
-) [1
+ [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}] [2] [3] [4] [5] [6]
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 12.0pt on input line 203.
- [7] [8] (./portrait2.aux)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}] (./science.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 6686 strings out of 474222
- 91043 string characters out of 5748733
- 1931975 words of memory out of 5000000
- 28849 multiletter control sequences out of 15000+600000
- 578607 words of font info for 72 fonts, out of 8000000 for 9000
+ 6539 strings out of 474222
+ 88343 string characters out of 5748733
+ 1923975 words of memory out of 5000000
+ 28737 multiletter control sequences out of 15000+600000
+ 562005 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,5n,93p,330b,185s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on portrait2.pdf (8 pages, 89880 bytes).
+ 80i,5n,93p,328b,114s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
+Output written on science.pdf (1 page, 32795 bytes).
 PDF statistics:
- 47 PDF objects out of 1000 (max. 8388607)
- 30 compressed objects within 1 object stream
+ 14 PDF objects out of 1000 (max. 8388607)
+ 8 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
