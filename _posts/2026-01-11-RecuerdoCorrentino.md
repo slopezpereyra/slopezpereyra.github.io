@@ -100,7 +100,7 @@ pálida que rompía las densas nubes de la tormenta menguante.
 
 Hablamos de los dos milenios de Roma, de cierta anécdota divertida que recuerdo
 de mi estadía en Cuba, de mis viajes a la India y sus viajes a Europa, de
-\textit{Twin Peaks}, de la trama de una novela de Conrad, y del minimalismo de
+*Twin Peaks*, de la trama de una novela de Conrad, y del minimalismo de
 las letras en las canciones que había escrito en su álbum. Una pinta de cerveza
 acompañó estas digresiones, y un observador incauto tal vez se apresuraría a
 decir que mi incipiente estado de ebriedad era la explicación de mi adquirido
@@ -108,7 +108,7 @@ desenvolvimiento, de mi relajación, de que mis palabras no zozobraran más sino
 expresaran, con el distendido auxilio de mis manos, la alegría que se gestaba en
 mi interior. Pero esto sería equivocado. Toda mi paulatina calma era abrigada
 por una sola causa: la creciente sospecha de que no estaba solo, de que ella
-sentía, sino lo mismo que yo, algo parecido; sospecha que era apenas algo más
+sentía, si no lo mismo que yo, algo parecido; sospecha que era apenas algo más
 que una esperanza, pero que se encendía más y más gracias a al nosequé que ardía
 en su mirada.
 
