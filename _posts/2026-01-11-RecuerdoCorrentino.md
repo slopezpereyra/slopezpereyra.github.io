@@ -120,7 +120,7 @@ penetraban la superficie del río como dagas celestiales. Yo estaba de espaldas 
 la puesta del sol, de manera que contemplaba el arrebol del horizonte
 derramándose no en el agua, sino en la piel oscura de su exótico rostro.
 Comprendí, al ver sus ojos teñidos de un púrpura exquisito, que el horizonte
-gris a mis espaldas se había convertido ya en mundo de celajes ardientes. El
+gris a mis espaldas se había convertido ya en un mundo de celajes ardientes. El
 arrebol intenso de mi tierra se diluía sobre aquellos ojos antiguos, como tinta
 escarlata echada sobre el agua transparente de un estanque, causando en mí una
 suerte de asombro primitivo. 
