@@ -3,6 +3,10 @@ title: To a girl of Russian name
 categories: [Personal, Poesía]
 ---
 
+> Styx nebulas exhalat iners, umbraeque recentes<br> 
+> descendunt illac simulacraque functa sepulcris. <br>
+> —Ovid
+
 Three riverine cats were witness, nothing more,<br>
 of our obscure affair. The river still<br>
 repeats the words we whispered on the shore,<br>
