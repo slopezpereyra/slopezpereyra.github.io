@@ -122,7 +122,7 @@ derramándose no en el agua, sino en la piel oscura de su exótico rostro.
 Comprendí, al ver sus ojos teñidos de un púrpura exquisito, que el horizonte
 gris a mis espaldas se había convertido ya en un mundo de celajes ardientes. El
 arrebol intenso de mi tierra se diluía sobre aquellos ojos antiguos, como tinta
-escarlata echada sobre el agua transparente de un estanque, causando en mí una
+escarlata echada en el agua de un estanque japonés, causando en mí una
 suerte de asombro primitivo. 
 
 Muy pronto el agua se oscureció y la crueldad de la noche se alzó sobre nosotros
