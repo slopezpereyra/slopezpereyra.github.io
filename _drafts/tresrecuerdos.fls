@@ -170,7 +170,9 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-t1.tf
 OUTPUT tresrecuerdos.pdf
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntx-Italic-tlf-t1.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntx-Bold-tlf-t1.tfm
 INPUT tresrecuerdos.aux
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb
