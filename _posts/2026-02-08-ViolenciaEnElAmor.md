@@ -1,0 +1,76 @@
+---
+title: Sobre la violencia en el amor
+categories: [Personal]
+---
+
+El temor es madre de la crueldad, y en pocas cosas sentimos tantas ansiedades
+como en el amor. Nuestra educación sentimental enseña, más o menos
+explícitamente, que la respuesta más violenta es usualmente la correcta. Si
+tememos que la persona amada se enamore de otra, debemos limitarla; si nos da
+miedo su abandono, debemos retenerla; si nos inquieta mostrarnos vulnerables
+ante ella, debemos endurecernos. Pienso que todos sentimos, en un nivel
+fundamental, un deseo por amar y ser amados, y que en particular el miedo a
+perder el amor es la causa principal de muchos de nuestros vicios.
+
+Séneca, en sus *Cartas a Lucilio*, enseña que «ningún bien puede darnos
+placer salvo aquél para cuya pérdida estamos preparados», puesto que son iguales
+el dolor por la cosa perdida y el temor de perderla. En general, una postura
+defensiva atrae el ataque, así como una impenetrable cerradura es más atractiva
+para un ladrón que una puerta llanamente abierta. López de Gómara, en su
+*Historia general de las Indias*, dice que cierta nación cerca sus
+huertos con hilos de algodón, resultando mucho más seguros que los fosos y los
+alambres espinosos. Del mismo modo, por regla general, cuanto más libre,
+compasiva y tolerante la ética que gobierna nuestro amor, menos admite la
+proliferación del sufrimiento. 
+
+Si añadimos a esto que, por regla general, acciones semejantes producen efectos
+diferentes, estando nuestras vidas constantemente atadas a los caprichos del
+azar y de la suerte,
+
+> *Nescia mens hominum fati sortisque futurae*<br>
+> [La mente de los hombres desconoce el destino y la suerte futura]  
+> —Virgilio, *Eneida*, Libro X
+
+se vuelve evidente que no debemos pretender jamás control alguno en el amor, y
+que todo control que creamos poder tener es ilusorio.
+
+Las personas celosas o controladoras generalmente reconocen que es el miedo lo
+que induce sus comportamientos destructivos. Sin embargo, rara vez admiten que
+ninguna de las acciones que toman evitan realmente aquello que temen. Las
+personas monogámicas suelen engañarse al pensar que el anillo protector de su
+contrato evitará que sus parejas se enamoren de otros, cuando, si nos atenemos a
+los hechos, ni siquiera parece desalentar que esto suceda. Quienes, en vez de
+procurarlo sanamente, demandan afecto o atención, rara vez se percatan de que
+solo hacen menos probable su llegada, y no siempre apreciamos que la lealtad
+ganada es más firme y duradera que la exigida. 
+
+Cuando no es el miedo lo que nos hace obrar con violencia, suele ser el afán de
+conquistar. Del mismo modo que, para conquistar, primero debemos dividir, las personas
+usualmente buscan limitar y fragmentar la personalidad y libertad del ser amado
+con el fin de tomar posesión de él. Se ama, pero *en la medida que*; se
+quiere, pero *siempre y cuando*... 
+
+Toda filosofía, pero en particular una filosofía concerniente a las experiencias
+afectivas de los hombres, debe fundarse en la libertad, la compansión y la
+tolerancia. Utilizo estos tres términos, que sin duda han sido gastados, en su
+sentido *radical*. Una ética superadora debe aceptar completa y
+absolutamente la individualidad de las personas amadas, sin imponerles ninguna
+restricción. Debe fundarse en el amor a los *individuos*—en el sentido
+etimológico, es decir, *no-divididos* o *no-fragmentados*—. No
+debe imponer tales o cuales condiciones para el amor, porque esto admite que no
+se ama a la persona sino a cierta expresión limitada de su personalidad. Debe
+fundar los vínculos en el deseo de promover y estimular el desarrollo íntegro y
+completo de la personalidad de la persona amada así como de la propia. En última
+instancia, requiere un cariño y compromiso sinceros con la personalidad total,
+no fragmentada, de aquellos a quien deseamos entregar nuestro corazón.
+
+Cuando se presenta esta filosofía, las personas suelen reaccionar con
+escepticismo o incluso rechazo. La principal razón es que nunca han
+experimentado relaciones fundadas en los tres principios nombrados arriba,
+imaginándolas como algo caótico, desordenado, o carente de compromiso. Lo mejor
+que puede hacerse es no predicar, sino mostrar con el ejemplo que un amor
+fundado en esta ética no sólo puede ser comprometido, responsable y duradero,
+sino que el respeto por la individualidad y libertad ajenas lo dota de una
+dulzura y una ternura superiores. La gente sana y de buen corazón, por regla
+general, reconoce el amor y sus virtudes cuando lo tienen enfrente, y por lo
+tanto basta con dar el ejemplo para que puedan convencerse.

@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  8 FEB 2026 12:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  31 JAN 2026 15:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**SocialMedia.tex
-(./SocialMedia.tex
+**portrait3.tex
+(./portrait3.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -308,28 +308,28 @@ LaTeX Info: Redefining \not on input line 2982.
 \c@theorem=\count286
 
 
-./SocialMedia.tex:14: LaTeX Error: Command \problem already defined.
+./portrait3.tex:15: LaTeX Error: Command \problem already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.14 \newtheorem
+l.15 \newtheorem
                 {example}{Example} \newtheorem{definition}{Definition}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./SocialMedia.tex:14: LaTeX Error: Command \example already defined.
+./portrait3.tex:15: LaTeX Error: Command \example already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.14 \newtheorem{example}{Example} \newtheorem
+l.15 \newtheorem{example}{Example} \newtheorem
                                               {definition}{Definition}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -337,51 +337,42 @@ or  <return>  to continue without it.
 
 \c@definition=\count287
 
-./SocialMedia.tex:16: LaTeX Error: Command \lemma already defined.
+./portrait3.tex:17: LaTeX Error: Command \lemma already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.16 \newtheorem
+l.17 \newtheorem
                 {theorem}{Theorem}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./SocialMedia.tex:17: LaTeX Error: Command \theorem already defined.
+./portrait3.tex:18: LaTeX Error: Command \theorem already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.17 \DeclareMathAlphabet
+l.18 \DeclareMathAlphabet
                          {\mathcal}{OMS}{cmsy}{m}{n}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-LaTeX Font Info:    Redeclaring math alphabet \mathcal on input line 17.
-(/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty
-Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
- (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
-Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
- (/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
-) (/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
-Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-)))
+LaTeX Font Info:    Redeclaring math alphabet \mathcal on input line 18.
 LaTeX Font Info:    Trying to load font information for T1+ntxtlf on input line 20.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/t1ntxtlf.fd
+(/usr/share/texlive/texmf-dist/tex/latex/newtx/t1ntxtlf.fd
 File: t1ntxtlf.fd 2021/05/24 v1.1 font definition file for T1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 12.0pt on input line 20.
- (./SocialMedia.aux)
-\openout1 = `SocialMedia.aux'.
+ (./portrait3.aux)
+\openout1 = `portrait3.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 20.
 LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 20.
@@ -435,102 +426,50 @@ LaTeX Font Info:    ... okay on input line 20.
 \c@mv@boldtabular=\count295
 LaTeX Info: Command `\dddot' is already robust on input line 20.
 LaTeX Info: Command `\ddddot' is already robust on input line 20.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 20.74pt on input line 23.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 14.4pt on input line 23.
-LaTeX Font Info:    Trying to load font information for OT1+minntx on input line 23.
+LaTeX Font Info:    Trying to load font information for OT1+minntx on input line 22.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1minntx.fd
 File: ot1minntx.fd 2023/09/09 v1.1 font definition file for OT1/minntx
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 23.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 22.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 23.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 22.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 23.
+LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 22.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxmia.fd
 File: untxmia.fd 2018/04/14 Fontinst v1.933 font definitions for U/ntxmia.
 )
-LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 23.
+LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 22.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsym.fd
 File: untxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/ntxsym.
 )
-LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 23.
+LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 22.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
-)
+) [1
 
-LaTeX Warning: No \author given.
-
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}] [2]
-./SocialMedia.tex:113: Missing $ inserted.
-<inserted text> 
-                $
-l.113 ...](https://en.wikipedia.org/wiki/Mastodon_
-                                                  (social_network)) is a famous
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./SocialMedia.tex:115: Missing $ inserted.
-<inserted text> 
-                $
-l.115 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (426.19174pt too wide) in paragraph at lines 106--115
-\T1/ntxtlf/m/n/12 not as in *gratis*). [Mastodon](https://en.wikipedia.org/wiki/Mastodon$[]\OML/ntxmi/m/it/12 social[]etwork\LMS/ntxsy/m/n/12 ∫∫\OML/ntxmi/m/it/12 isafamoussuchtypeofnetwork:Arethesesolutionstotheissuesraisedabove\OT1/minntx/m/n/12 ?$ 
- []
-
-[3{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}]
-./SocialMedia.tex:191: Missing $ inserted.
-<inserted text> 
-                $
-l.191 ...a.eu/commission/presscorner/detail/en/ip_
-                                                  26_312
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./SocialMedia.tex:193: Missing $ inserted.
-<inserted text> 
-                $
-l.193 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (260.48003pt too wide) in paragraph at lines 191--193
-[]\T1/ntxtlf/m/n/12 [1] https://ec.europa.eu/commission/presscorner/detail/en/ip$[]\OT1/minntx/m/n/12 6[]12\LMS/ntxsy/m/n/12 ª\OT1/minntx/m/n/12 2\LMS/ntxsy/m/n/12 º\OML/ntxmi/m/it/12 https \OT1/minntx/m/n/12 : \LMS/ntxsy/m/n/12 ùù\OML/ntxmi/m/it/12 www:amnesty:org\LMS/ntxsy/m/n/12 ù\OML/ntxmi/m/it/12 en\LMS/ntxsy/m/n/12 ù\OML/ntxmi/m/it/12 latest\LMS/ntxsy/m/n/12 ù\OML/ntxmi/m/it/12 news\LMS/ntxsy/m/n/12 ù\OT1/minntx/m/n/12 2023\LMS/ntxsy/m/n/12 ù\OT1/minntx/m/n/12 11\LMS/ntxsy/m/n/12 ù\OML/ntxmi/m/it/12 tiktok \LMS/ntxsy/m/n/12 ^^@
- []
-
-[4] (./SocialMedia.aux)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}] (./portrait3.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 7102 strings out of 474222
- 98405 string characters out of 5748733
- 1932975 words of memory out of 5000000
- 29240 multiletter control sequences out of 15000+600000
- 599063 words of font info for 113 fonts, out of 8000000 for 9000
+ 6682 strings out of 474222
+ 90955 string characters out of 5748733
+ 1923975 words of memory out of 5000000
+ 28846 multiletter control sequences out of 15000+600000
+ 575746 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,6n,93p,504b,227s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
-Output written on SocialMedia.pdf (4 pages, 75858 bytes).
+ 80i,5n,93p,330b,114s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb>
+Output written on portrait3.pdf (1 page, 42939 bytes).
 PDF statistics:
- 37 PDF objects out of 1000 (max. 8388607)
- 23 compressed objects within 1 object stream
+ 19 PDF objects out of 1000 (max. 8388607)
+ 11 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
