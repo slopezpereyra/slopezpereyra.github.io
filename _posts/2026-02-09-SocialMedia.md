@@ -1,35 +1,14 @@
-\documentclass[a4paper, 12pt]{article}
+---
+title: We should abandon social media
+categories: [Personal]
+---
 
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{textcomp}
-\usepackage{amssymb}
-\usepackage{newtxtext} \usepackage{newtxmath}
-\usepackage{amsmath, amssymb}
-\newtheorem{problem}{Problem}
-\newtheorem{example}{Example}
-\newtheorem{lemma}{Lemma}
-\newtheorem{theorem}{Theorem}
-\newtheorem{problem}{Problem}
-\newtheorem{example}{Example} \newtheorem{definition}{Definition}
-\newtheorem{lemma}{Lemma}
-\newtheorem{theorem}{Theorem}
-\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
-\usepackage{parskip}
-
-\begin{document}
-
-\title{Against social media}
-\maketitle
-
-\begin{quote}
-Here, I do not understand social media as an abstraction or as something that is
-*in principle* pernicious. I am rather speaking of social media networks as
-designed and implemented by mega-corporations such as Meta and X Corp. The
-social media networks owned by these companies compress *by far* the great
-majority of social media usage, so it is a useful simplification to speak of
-their use with the more general phrase *social media usage*.
-\end{quote}
+>Here, I do not understand social media as an abstraction or as something that is
+>*in principle* pernicious. I am rather speaking of social media networks as
+>designed and implemented by mega-corporations such as Meta and X Corp. The
+>social media networks owned by these companies compress *by far* the great
+>majority of social media usage, so it is a useful simplification to speak of
+>their use with the more general phrase *social media usage*.
 
 Among modern conventional practices, the use of social media presents two
 characteristics which, both taken together as well as separately, are somewhat
@@ -43,9 +22,9 @@ One would not expect the abstention from social media platforms to be
 so rare, since these are so frequently challenged. To take a single example, TikTok
 is under constant scrutiny by government and human rights organizations. The
 European Comission found it to have an addictive design and promote compulsive
-behavior [1], and the Algorithmic Transparency Institute, in collaboration with
+behavior [[1]], and the Algorithmic Transparency Institute, in collaboration with
 Amnesty International's digital forensics team, showed how TikTok amplifies
-harmful and even suicidal content to adolescent users [2]. Beyond official
+harmful and even suicidal content to adolescent users [[2]]. Beyond official
 inquiries, public opinion is open to accepting that the network raises
 significant concerns. And this dual scrutiny, running from public opinion and
 from official institutions, applies to all major social media platforms.
@@ -106,7 +85,7 @@ content so that you may forget yourself for a while, and the miserable joy of
 being seen. This is the Promethean interchange upon which social networks are
 founded: you get «gifts of enlightenment and ease in exchange for some measure
 of awe, gratitude, and deference to the technocratic elite that manufactures
-them» [3].
+them» [[3]].
 
 Any structure of power which bases itself in tyranny, and whose subsistence
 depends on fostering the lesser side of human condition, is repugnant and vile.
@@ -182,8 +161,9 @@ provide, in depriving us from the opportunity to learn, to explore and to
 grow—in robbing us of our spare time, I mean—produces intellectual and moral
 stagnation. I do not claim it makes us more stupid—though an argument can be
 made—but at least it leaves us equally ignorant as before and hinders our
-potential. The use of social media is perhaps not a root cause of superficiality—be it intellectual or moral—but it certainly is a factor that not only makes it
-more permanent, but also tinges it with a rather distinctive tone.
+potential. The use of social media is perhaps not a root cause of
+superficiality—be it intellectual or moral—but it certainly is a factor that not
+only makes it more permanent, but also tinges it with a rather distinctive tone.
 
 What is there to be done? The answer is so simple that I am amazed it's not
 generally followed. We should abstain from using social media in any significant
@@ -197,16 +177,8 @@ precisely as what it is: a precious and delightful opportunity—and we should
 vindicate a form of human relations more sincere and honest than that which is
 practised in social media.
 
-
+---
 
 [1] https://ec.europa.eu/commission/presscorner/detail/en/ip_26_312
 [2] https://www.amnesty.org/en/latest/news/2023/11/tiktok-risks-pushing-children-towards-harmful-content/
 [3] https://www.jstor.org/stable/26609097
-
-
-
-
-\end{document}
-
-
-
