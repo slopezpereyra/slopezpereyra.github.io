@@ -33,7 +33,7 @@ However, in my experience, persuading people of abandoning social media, or
 getting them to consider this as a viable alternative, is extraordinarily
 difficult. From non-monogamy and anarchism to ufology and anti-vaccine rhetoric,
 almost any fringe belief system—be it rational or irrational, fact-based or
-superstitious—encounters less social friction than the simple act of abstaining
+superstitious—encounters less social friction than abstention 
 from social media. The fact that people usually recognize the evils of social
 media usage and yet are so reluctant to even considering abstaining from it
 indicates how deeply pervaded and needful of it they have become. In this, and
