@@ -45,7 +45,7 @@ Social media networks possess all the typical evils of technology as delivered
 by Silicon Valley's mega-corporations, which are public knowledge [3]. On one
 hand, though people tend to believe advertisement to be a filling that
 interrupts or is in-between the content, the exact opposite is the case:
-advertisement \textit{is} the content, whatever else is simply there to capture
+advertisement *is* the content, whatever else is simply there to capture
 our attention. Furthermore, aside from fostering tyranny, these platforms are
 tyrannical themselves. A person scrolling through social media is constantly
 subjected to stimuli they never chose, needed, and perhaps even wanted. Lastly,
@@ -100,7 +100,7 @@ centrally owned by any private or state entity and which do not subject
 their users to any form of control or surveillance. It goes without saying that
 the latter condition requires the satisfaction of all others that
 make a software free (as in *libre*, not as in *gratis*). Mastodon is a famous
-such type of network, but even this one is a \textit{niche}. Are these solutions
+such type of network, but even this one is a *niche*. Are these solutions
 to the issues raised above?
 
 The answer is yes and no. On one hand, decentralized and free social networks
