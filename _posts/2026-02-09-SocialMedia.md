@@ -42,7 +42,7 @@ emergence of an addictive substance than merely a conventional practice.
 
 
 Social media networks possess all the typical evils of technology as delivered
-by Silicon Valley's mega-corporations, which are public knowledge [3]. On one
+by Silicon Valley's mega-corporations, which are public knowledge [[3]]. On one
 hand, though people tend to believe advertisement to be a filling that
 interrupts or is in-between the content, the exact opposite is the case:
 advertisement *is* the content, whatever else is simply there to capture
