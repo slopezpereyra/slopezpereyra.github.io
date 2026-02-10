@@ -179,6 +179,6 @@ practised in social media.
 
 ---
 
-[1] https://ec.europa.eu/commission/presscorner/detail/en/ip_26_312
-[2] https://www.amnesty.org/en/latest/news/2023/11/tiktok-risks-pushing-children-towards-harmful-content/
-[3] https://www.jstor.org/stable/26609097
+[1]: https://ec.europa.eu/commission/presscorner/detail/en/ip_26_312
+[2]: https://www.amnesty.org/en/latest/news/2023/11/tiktok-risks-pushing-children-towards-harmful-content/
+[3]: https://www.jstor.org/stable/26609097
