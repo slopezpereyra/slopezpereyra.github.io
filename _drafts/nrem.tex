@@ -1,0 +1,215 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{newtxtext} \usepackage{newtxmath}
+\usepackage{amsmath, amssymb}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example} \newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
+
+\begin{document}
+
+
+\section{Formal Language Theoretic Definition of NREM Periods}
+
+We give a rigorous formulation of the notion of an NREM period using
+formal language theory. The goal is to encode sequences of sleep stages
+as words over a finite alphabet and define, precisely and unambiguously,
+which substrings correspond to valid NREM periods.
+
+\subsection{Alphabet and Basic Definitions}
+
+Let the finite alphabet
+\[
+\Sigma = \{1,2,3,4,5,6\}
+\]
+represent sleep stages, where:
+
+\begin{itemize}
+\item $\mathcal{N} = \{2,3,4\}$ denotes NREM stages,
+\item $R = \{5\}$ denotes REM sleep,
+\item $W = \{6\}$ denotes wakefulness,
+\item $O = \Sigma \setminus \mathcal{N}$ denotes non--NREM stages.
+\end{itemize}
+
+A full night of sleep is represented by a word
+\[
+x = x_1 x_2 \dots x_n \in \Sigma^*.
+\]
+
+We assume each symbol represents one epoch of fixed duration
+(e.g. 30 seconds). Let
+
+\[
+m \in \mathbb{N}
+\quad\text{and}\quad
+n \in \mathbb{N}
+\]
+
+denote thresholds corresponding to:
+
+\begin{itemize}
+\item $m$: the minimum number of consecutive epochs defining
+a terminating sequence (e.g. $m=10$ epochs for $5$ minutes),
+\item $n$: the minimum total number of NREM epochs required
+for a valid NREM period (e.g. $n=30$ epochs for $15$ minutes).
+\end{itemize}
+
+\subsection{Runs and Substrings}
+
+Given a word $x \in \Sigma^*$, a substring
+\[
+y = x_i x_{i+1} \dots x_j
+\]
+is called a \emph{run} of a set $A \subseteq \Sigma$
+if $y \in A^+$ and either:
+
+\begin{itemize}
+\item $i=1$ or $x_{i-1} \notin A$, and
+\item $j=|x|$ or $x_{j+1} \notin A$.
+\end{itemize}
+
+Thus a run is a maximal contiguous block of symbols from $A$.
+
+\subsection{Terminating Sequences}
+
+A substring $t$ is called a \emph{terminating sequence} if either
+
+\[
+t \in R^{m}R^*
+\qquad \text{or} \qquad
+t \in W^{m}W^*.
+\]
+
+In other words, $t$ is a maximal run of REM or wakefulness
+containing at least $m$ consecutive symbols.
+
+\subsection{Admissible Interruptions}
+
+Let
+\[
+S = O^{<m}
+\]
+denote the set of non--NREM substrings whose length is strictly
+less than $m$. These represent interruptions that do not terminate
+an NREM period.
+
+Intuitively, interruptions shorter than $m$ epochs are ignored
+for the purposes of continuity.
+
+\subsection{Definition of an NREM Period}
+
+Let $y \in \Sigma^*$ be a substring. We say that $y$ is a valid
+\emph{NREM period} if and only if all of the following conditions hold:
+
+\begin{enumerate}
+
+\item \textbf{Structure with admissible interruptions.}
+
+The substring $y$ can be written as
+
+\[
+y = z\,t,
+\]
+
+where
+
+\[
+z \in (S^*\mathcal{N})^+
+\]
+
+and $t$ is a terminating sequence.
+
+Equivalently, $z$ consists of NREM stages possibly interspersed
+with interruptions shorter than $m$ epochs.
+
+\item \textbf{No internal terminating sequences.}
+
+Within $z$ there is no substring belonging to
+$R^{m}R^*$ or $W^{m}W^*$.
+That is, no internal run of REM or wakefulness reaches
+the terminating threshold.
+
+\item \textbf{Minimum total NREM duration.}
+
+Let
+\[
+|z|_{\mathcal{N}}
+\]
+denote the number of symbols of $z$ belonging to $\mathcal{N}$.
+Then
+\[
+|z|_{\mathcal{N}} \ge n.
+\]
+
+\item \textbf{Termination.}
+
+The suffix $t$ is a terminating sequence, meaning that
+the NREM period ends upon the first occurrence of
+at least $m$ consecutive REM epochs or at least
+$m$ consecutive wake epochs.
+
+\end{enumerate}
+
+\subsection{Intuition}
+
+This definition formalizes the following clinical criteria:
+
+\begin{itemize}
+\item NREM sleep need not be continuous; short interruptions
+are allowed.
+\item Interruptions shorter than $m$ epochs are ignored.
+\item Long runs of REM or wakefulness terminate the period.
+\item A valid period must contain at least $n$ epochs of
+NREM sleep in total.
+\end{itemize}
+
+\subsection{Language-Theoretic Characterization}
+
+Let $\mathcal{T}$ denote the set of terminating sequences.
+Define the language
+
+\[
+\mathcal{L}_{\mathrm{NREM}}
+=
+\Bigl\{
+y \in \Sigma^* \;\Big|\;
+y = zt,\;
+z \in (S^*\mathcal{N})^+,\;
+|z|_{\mathcal{N}} \ge n,\;
+t \in \mathcal{T}
+\Bigr\}.
+\]
+
+Then $\mathcal{L}_{\mathrm{NREM}}$ is a regular language.
+Indeed, recognition requires only:
+
+\begin{itemize}
+\item counting consecutive runs up to length $m$,
+\item counting total NREM symbols up to threshold $n$,
+\item finite memory of the current run type.
+\end{itemize}
+
+Hence there exists a deterministic finite automaton (DFA)
+recognizing $\mathcal{L}_{\mathrm{NREM}}$.
+
+
+
+
+
+
+
+
+\end{document}
+
+
+

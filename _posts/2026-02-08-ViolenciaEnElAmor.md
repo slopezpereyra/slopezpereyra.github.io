@@ -17,7 +17,7 @@ placer salvo aquél para cuya pérdida estamos preparados», puesto que son igua
 el dolor por la cosa perdida y el temor de perderla. En general, una postura
 defensiva atrae el ataque, así como una impenetrable cerradura es más atractiva
 para un ladrón que una puerta llanamente abierta. López de Gómara, en su
-*Historia general de las Indias*, dice que cierta nación cerca sus
+*Historia general de las Indias*, dice que cierta nación cercaba sus
 huertos con hilos de algodón, resultando mucho más seguros que los fosos y los
 alambres espinosos. Del mismo modo, por regla general, cuanto más libre,
 compasiva y tolerante la ética que gobierna nuestro amor, menos admite la
@@ -56,7 +56,7 @@ tolerancia. Utilizo estos tres términos, que sin duda han sido gastados, en su
 sentido *radical*. Una ética superadora debe aceptar completa y
 absolutamente la individualidad de las personas amadas, sin imponerles ninguna
 restricción. Debe fundarse en el amor a los *individuos*—en el sentido
-etimológico, es decir, *no-divididos* o *no-fragmentados*—. No
+etimológico, es decir, *individos*, *no-fragmentados*—. No
 debe imponer tales o cuales condiciones para el amor, porque esto admite que no
 se ama a la persona sino a cierta expresión limitada de su personalidad. Debe
 fundar los vínculos en el deseo de promover y estimular el desarrollo íntegro y
