@@ -1,0 +1,60 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{newtxtext} \usepackage{newtxmath}
+\usepackage{amsmath, amssymb}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example} \newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
+
+\begin{document}
+
+
+Given an EEG signal, we define SWA activity (following Guo et al.) as the
+amplitude of the combined signal resulting from the IMFs with frequencies in the
+range of 0.2-4 Hz. 
+
+Guo et al. model transition from SWS to not-SWS as a stochastic process of
+forming a synchronized neural cluster of size $S(t)$, with a trivial model: 
+
+\begin{equation}
+    S(t+1) = S(t) + \Delta S
+\end{equation}
+
+where $\Delta S$ is a random variable. They then make the model more complex,
+observing that the random variable $\Delta S$ should be proportional to the
+cluster size, i.e. $\Delta S \prop S(t)$, producing 
+
+\begin{equation}
+    S(t+1) = S(t) + \delta S(t) = (1+\alpha) S(t)
+\end{equation}
+
+Taking the logarithm, 
+
+\begin{equation}
+    \log S(t+1) = \log S(t) + \log(1+\delta) 
+\end{equation}
+
+Here, $\log(1 + \delta)$ is a new random variable. This is a random walk model. 
+This implies that the distribution of $S(t)$ is log-normal, and that the
+distribution of $\log S(t)$ is normal.
+
+SWA is taken as a proxy measure of the cluster size $S(t)$. The authors then
+show that the distribution 
+
+
+
+
+\end{document}
+
+
+
