@@ -1,5 +1,5 @@
 ---
-title: Sobre la tranquilidad 
+title: Mi naturaleza tranquila 
 categories: [Personal]
 ---
 
@@ -21,12 +21,12 @@ elegiría ser, dije «cualquiera que sea espinosa y florida», pensando que no
 quería que nadie me molestase mientras abría mis corolas al aire.
 
 Solía avergonzarme porque, en oposición a mi naturaleza, pensaba que una vida
-digna de ser vivida era una vida agitada. Leía la biografía de Severino di
+digna de ser vivida era una vida agitada. Leyendo la biografía de Severino di
 Giovanni, la del orientalista Richard Burton, la de Miguel Hernández y la de
-Ernesto Guevara, y sentía «esto es una vida digna de vivirse». Por otro lado,
-leyendo a Montaigne, a Antonio Machado, a Bertrand Russell, me identificaba con
-la sobriedad y la serenidad de sus pensamientos, y hablaba solo «esperando
-hablar a Dios un día».
+Ernesto Guevara, siento «esto es una vida bien vivida». Por otro lado, leyendo a
+Montaigne, a Antonio Machado, a Bertrand Russell, me identifico con la
+sobriedad y la serenidad de sus pensamientos, y hablo solo «esperando hablar a
+Dios un día».
 
 Supongo, además, que el ejemplo de mi padre dejó cierta impresión en mí. Aunque
 ciertamente movido por emociones más complejas que simplemente el deseo de
@@ -45,8 +45,8 @@ al procesamiento —debo decir que rico y penetrante— del exótico universo qu
 rodeaba, yo escribía ardientemente en mi diario, ponderaba conflictuado los
 extraños sueños que me invadieron en aquella tierra, y trataba de capturar las
 experiencias sensibles en el simbolismo de la poesía. Cierta noche, en Udaipur,
-tuve un impresionante sueño con una terrible sombra, y —según atestigué en mi
-diario—: 
+tuve un impresionante sueño con una terrible sombra. Según atestigué en mi
+diario un tiempo después: 
 
 > (...) I woke from this dream under so great distress, and with such
 > melancholic anguish, as words could not express. The image had bewitched me. I
@@ -92,14 +92,15 @@ orillas y las piedras le van otorgando, sin perder jamás su propia naturaleza.
 
 El rostro desagradable de esta naturaleza mía es una odiosa predisposición a la
 melancolía. Esta inclinación es tan grande que roza el mal gusto, y, como alguna
-vez me fue señalado, es abolida solo por acción del afecto femenino. Por robar
-términos de Jung, hay en mí una tendencia a reposar mi naturaleza nostalgiosa
-sobre la tela del *anima*, como un niño somnoliento desea apoyar su cabeza sobre
-una almohada de plumas. Sin duda alguna, mis enamoramientos han estado al menos
-en cierta medida mediados por el grado en que la persona correspondía a esta
-tendencia psíquica, que fue por muchos años inconsciente. Si mi alma puede
-reposar en otra de este modo, rara vez siento tristeza y, en verdad, reluce lo
-mejor de mi naturaleza. Esto me ha llevado a escapar de la soledad y anhelar una
-vida de sereno compañerismo con una o dos almas afines, no mucho más. La fortuna
-me ha concedido este bien, y paso mis días casi siempre bien acompañado —con
-excepción de cuando me toca ser mi propia compañía—.
+vez me fue señalado, es abolida solo por acción del afecto femenino. 
+Hay en mí una tendencia a reposar mi naturaleza nostalgiosa
+sobre la tela del *anima* —para usar un término de Jung— , como un niño
+somnoliento sueña con apoyar su cabeza sobre una almohada de plumas. Sin duda
+alguna, mis enamoramientos han estado al menos en cierta medida mediados por el
+grado en que la persona correspondía a esta tendencia psíquica, que fue por
+muchos años inconsciente. Si mi alma puede reposar en otra de este modo, rara
+vez siento tristeza y, en verdad, reluce lo mejor de mi naturaleza. Esto me ha
+llevado a escapar de la soledad y anhelar una vida de sereno compañerismo con
+una o dos almas afines, no mucho más. La fortuna me ha concedido este bien, y
+paso mis días casi siempre bien acompañado —con excepción de cuando me toca ser
+mi propia compañía—.
