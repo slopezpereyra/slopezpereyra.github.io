@@ -1,6 +1,6 @@
 --- 
 title: To a girl of Russian name 
-categories: [Personal, Poesía]
+categories: [Poesía]
 ---
 
 > Styx nebulas exhalat iners, umbraeque recentes<br> 
