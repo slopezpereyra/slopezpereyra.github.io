@@ -83,12 +83,18 @@ pero bien conocido, con mi cuota de luces y de sombras. Si, por apuntar muy
 alto, parezco ambicioso, no me entrego con ardor ni a mis fracasos ni a mis
 éxitos, porque no me hago del todo cargo de ninguna de mis obras. En todas
 nuestras acciones, nos gobiernan sobre todo la fortuna y, en segundo lugar,
-nuestro carácter, que nos es desconocido. Por sobre todas las cosas, disfruto
-del amor, que es la pasión más exquisita e intensa de la vida, pero —siguiendo
-el consejo de Séneca— rara vez temo perder al ser amado y admito que las cosas
-sigan su curso natural, evitando la violencia del que quiere forzar su destino.
-Aspiro —muchas veces sin éxito— a ser como el agua, que toma la forma que las
-orillas y las piedras le van otorgando, sin perder jamás su propia naturaleza.
+nuestro carácter, que nos es desconocido. 
+
+> Neither shalt thou swear by thy head, because thou canst not make one hair
+> white or black.
+> —Matthew 5:36, KJB
+
+Por sobre todas las cosas, disfruto del amor, que es la pasión más exquisita e
+intensa de la vida, pero —siguiendo el consejo de Séneca—rara vez temo perder al
+ser amado y admito que las cosas sigan su curso natural, evitando la violencia
+del que quiere forzar su destino. Aspiro —muchas veces sin éxito— a ser como el
+agua, que toma la forma que las orillas y las piedras le van otorgando, sin
+perder jamás su propia naturaleza.
 
 El rostro desagradable de esta naturaleza mía es una odiosa predisposición a la
 melancolía. Esta inclinación es tan grande que roza el mal gusto, y, como alguna

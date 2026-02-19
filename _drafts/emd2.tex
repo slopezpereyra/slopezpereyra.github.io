@@ -1,0 +1,105 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{newtxtext} \usepackage{newtxmath}
+\usepackage{amsmath, amssymb}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{problem}{Problem}
+\newtheorem{example}{Example} \newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
+
+\begin{document}
+
+\section*{Mathematical background}
+
+The Hilbert transform of a function $f$ is defined as 
+
+$$\mathcal{H}\left\{ f(x) \right\}  = \frac{1}{\pi} \text{P.V.} \int_{-\infty}^{\infty} \frac{f(t)}{x - t} dt,$$
+
+where P.V. denotes the Cauchy principal value of the integral and serves the
+purpose of ensuring that the integral converges. Clearly, the transform is
+nothing but a convolution of $f$ with $1 / \pi t$. The transform effectively 
+shifts the phase of each frequency component of the function by $\pi / 2$
+radians, i.e. it satisfies that  
+
+\begin{equation*}
+    \mathcal{F} \{ \mathcal{H}\{ f(x) \} \} = -i \cdot \text{sgn}(\omega) \cdot
+    \mathcal{F}\{ f(x) \}
+\end{equation*}
+
+This means that the function
+
+\begin{equation*}
+    z(t) = f(t) + i \cdot \mathcal{H}\{ f(t) \}
+\end{equation*}
+
+has no negative frequency components (they cancel out). The function $z(t)$ is
+called the analytic signal of $f(t)$, and the magnitude of $z(t)$ is called the
+envelope of $f(t)$. The analytic signal allows us to extract the instantaneous
+amplitude and phase of a signal: 
+
+\begin{equation*}
+    A(t) = |z(t)| = \sqrt{f(t)^2 + \mathcal{H}\{ f(t) \}^2}
+\end{equation*}
+
+\begin{equation*}
+    \phi(t) = \arg(z(t)) = \arctan\left( \frac{\mathcal{H}\{ f(t) \}}{f(t)}
+    \right)
+\end{equation*}
+
+From the instantaneous phase we derive the instantaneous frequency as the time
+derivative of the phase:
+
+\begin{equation*}
+    \omega(t) = \frac{d\phi(t)}{dt}
+\end{equation*}
+
+The capacity to provide the \textit{instantaneous} frequency and amplitude is
+what distinguishes the Hilbert transform from the Fourier transform, which only
+provides the average frequency content of a signal.
+
+\subsection*{Empirical mode decomposition}
+
+Empirical mode decomposition (EMD) is a method for decomposing a signal into a
+set of intrinsic mode functions (IMFs) that represent the different oscillatory
+modes present in the signal. The EMD process involves the following steps:
+
+1. Identify the local maxima and minima of the signal.
+2. Interpolate the local maxima to create an upper envelope and the local minima
+to create a lower envelope.
+3. Compute the mean of the upper and lower envelopes to obtain a mean envelope. 
+4. Subtract the mean envelope from the original signal to obtain a candidate
+IMF.
+5. Check if the candidate IMF satisfies the following conditions:
+   a. The number of extrema and the number of zero crossings must either be equal
+   or differ at most by one.
+   b. The mean value of the envelope defined by the local maxima and the
+   envelope defined by the local minima must be zero at any point.
+6. If the candidate IMF does not satisfy the conditions, repeat steps 1-5 on
+the candidate IMF until an IMF is obtained.
+7. Subtract the obtained IMF from the original signal to get a residual signal.
+8. Repeat the entire process on the residual signal until it becomes a monotonic
+function or contains only one extremum.
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
