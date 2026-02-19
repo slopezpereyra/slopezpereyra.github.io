@@ -94,7 +94,7 @@ El rostro desagradable de esta naturaleza mía es una odiosa predisposición a l
 melancolía. Esta inclinación es tan grande que roza el mal gusto, y, como alguna
 vez me fue señalado, es abolida solo por acción del afecto femenino. 
 Hay en mí una tendencia a reposar mi naturaleza nostalgiosa
-sobre la tela del *anima* —para usar un término de Jung— , como un niño
+sobre la tela del *anima* —para usar un término de Jung—, como un niño
 somnoliento sueña con apoyar su cabeza sobre una almohada de plumas. Sin duda
 alguna, mis enamoramientos han estado al menos en cierta medida mediados por el
 grado en que la persona correspondía a esta tendencia psíquica, que fue por
