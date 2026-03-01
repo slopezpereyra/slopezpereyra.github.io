@@ -30,7 +30,7 @@ who have so often been guilty of pride and arrogance, and who always
 found myself so secured in the vanity of intelligence or knowledge, felt
 that I was the most ignorant and arrogant of men. For I was finding now
 a radical and overcoming ethics—one in perfect accordance with my own
-libertarian principles, but far more overreaching—from the teachings
+libertarian principles, but far more overreaching—in the teachings
 of a poor carpenter, a man whose ethics vastly surpassed mine in depth
 and breadth, and which more perfectly exposed the virtues of tolerance
 and kindness.
@@ -205,7 +205,7 @@ well exposed in a long passage of Adin Ballou's work, which I quote
 > the Law of Christ: Resist not evil.
 
 I do not wish here to convince others of this doctrine of which I am
-myself convinced. But I should wish briefly to continue considering the
+myself so convinced. But I should wish briefly to continue considering the
 teachings of Jesus, insofar as his ethical doctrine derives principles
 for social action. For example, why not recall the eschatological
 passage from *Matthew* 25:35-40, where Jesus speaks of his return:
@@ -255,9 +255,9 @@ expose, not to prove: for whosoever should wish a proof of this needs
 only consult the words of Jesus with unprejudiced eyes. «He that hath
 ears to hear, let him hear».
 
-So what are the principles of the ethical doctrine which I uphold, the
-one I have upheld so far and which has now been enriched and extended by
-the teachings of Jesus?
+With regards to the principles of the ethical doctrine which I uphold, the one I
+have upheld so far and which has now been enriched and extended by the teachings
+of Jesus, I may summarize them as follows:
 
 1.  Non-resistance to evil.
 
@@ -276,15 +276,16 @@ the teachings of Jesus?
     subdued, and weak, and to go unto them.
 
 7.  To never, under any condition, allow oneself to limit the liberty of
-    a fellow man or woman; be it economic, political, religious, sexual,
+    a fellow man or woman, be it economic, political, religious, sexual,
     etc.
 
 8.  To never worry: not about one's own life nor what tomorrow might
     bring, as taught in Matthew 6:25-34.
 
-Except for (1), I had already considered and favored all these
-principles before, though I should say with less profoundness than now.
-It is (4) the one that I fail the most to uphold, being so shamefully
-ill-disposed to judgment.
+Except for (1), I had already considered and favored all these principles
+before, though I should say with less profoundness than now. It is (4) the one
+that I fail the most to uphold, being so shamefully ill-disposed to judgment.
+Every philosophical stance of mine which pertains to ethics is either a
+corrollary of these eight principles or a mistake.
 
 
