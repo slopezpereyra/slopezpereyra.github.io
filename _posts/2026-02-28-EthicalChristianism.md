@@ -1,5 +1,5 @@
 ---
-title: Christianity as an ethical doctrine 
+title: Christianity, ethics, and non-resistance to evil
 categories: [Personal, Philosophy]
 ---
 
