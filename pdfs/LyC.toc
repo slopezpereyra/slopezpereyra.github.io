@@ -1,34 +1,35 @@
-\contentsline {section}{\numberline {1}Teoría}{5}{}%
-\contentsline {subsection}{\numberline {1.1}Órdenes parciales y dominios}{5}{}%
-\contentsline {subsubsection}{\numberline {1.1.1}Órdenes discretos y llanos}{5}{}%
-\contentsline {subsubsection}{\numberline {1.1.2}Cadenas}{6}{}%
-\contentsline {subsection}{\numberline {1.2}Morfismos y funciones continuas}{8}{}%
-\contentsline {subsection}{\numberline {1.3}Extensión de funciones para lenguajes con fallas}{9}{}%
-\contentsline {subsection}{\numberline {1.4}Output}{11}{}%
-\contentsline {subsection}{\numberline {1.5}Extensión de outputs}{13}{}%
-\contentsline {subsubsection}{\numberline {1.5.1}Transformación de estados finales}{13}{}%
-\contentsline {subsection}{\numberline {1.6}Abstrayendo $\Omega $}{14}{}%
-\contentsline {subsubsection}{\numberline {1.6.1}Isomorfismos sobre $\Omega $}{16}{}%
-\contentsline {subsection}{\numberline {1.7}Input y nueva extensión de $\Omega $}{19}{}%
-\contentsline {section}{\numberline {2}Semántica operacional}{20}{}%
-\contentsline {section}{\numberline {3}Cálculo lambda}{20}{}%
-\contentsline {subsection}{\numberline {3.1}$\beta $-reduction}{21}{}%
-\contentsline {subsection}{\numberline {3.2}Evaluación}{23}{}%
-\contentsline {subsection}{\numberline {3.3}Evaluación en orden normal}{23}{}%
-\contentsline {subsection}{\numberline {3.4}Semántica denotacional}{24}{}%
-\contentsline {subsection}{\numberline {3.5}Normal-evaluation semantics}{26}{}%
-\contentsline {subsection}{\numberline {3.6}Denotational semantics of eager evaluation}{27}{}%
-\contentsline {section}{\numberline {4}Lenguajes aplicativos}{28}{}%
-\contentsline {subsection}{\numberline {4.1}Evaluación normal}{28}{}%
-\contentsline {subsection}{\numberline {4.2}Semántica denotacoinal eager}{29}{}%
-\contentsline {subsection}{\numberline {4.3}Semántica denotacional normal}{31}{}%
-\contentsline {section}{\numberline {5}Práctico 1}{33}{}%
-\contentsline {section}{\numberline {6}Práctico 3: Recursión, predominios y dominios, etc.}{36}{}%
-\contentsline {section}{\numberline {7}Práctico 4: Lenguaje imperativo simple}{52}{}%
-\contentsline {section}{\numberline {8}Práctico 5: Fallas}{74}{}%
-\contentsline {section}{\numberline {9}Práctico 6}{82}{}%
-\contentsline {subsection}{\numberline {9.1}Problemas}{82}{}%
-\contentsline {section}{\numberline {10}P7}{92}{}%
-\contentsline {section}{\numberline {11}P8}{105}{}%
-\contentsline {section}{\numberline {12}P9}{115}{}%
-\contentsline {section}{\numberline {13}P10}{120}{}%
+\contentsline {section}{\numberline {1}Readme}{5}{}%
+\contentsline {section}{\numberline {2}Teoría}{6}{}%
+\contentsline {subsection}{\numberline {2.1}Órdenes parciales y dominios}{6}{}%
+\contentsline {subsubsection}{\numberline {2.1.1}Órdenes discretos y llanos}{6}{}%
+\contentsline {subsubsection}{\numberline {2.1.2}Cadenas}{7}{}%
+\contentsline {subsection}{\numberline {2.2}Morfismos y funciones continuas}{9}{}%
+\contentsline {subsection}{\numberline {2.3}Extensión de funciones para lenguajes con fallas}{10}{}%
+\contentsline {subsection}{\numberline {2.4}Output}{12}{}%
+\contentsline {subsection}{\numberline {2.5}Extensión de outputs}{14}{}%
+\contentsline {subsubsection}{\numberline {2.5.1}Transformación de estados finales}{14}{}%
+\contentsline {subsection}{\numberline {2.6}Abstrayendo $\Omega $}{15}{}%
+\contentsline {subsubsection}{\numberline {2.6.1}Isomorfismos sobre $\Omega $}{17}{}%
+\contentsline {subsection}{\numberline {2.7}Input y nueva extensión de $\Omega $}{20}{}%
+\contentsline {section}{\numberline {3}Semántica operacional}{21}{}%
+\contentsline {section}{\numberline {4}Cálculo lambda}{21}{}%
+\contentsline {subsection}{\numberline {4.1}$\beta $-reduction}{22}{}%
+\contentsline {subsection}{\numberline {4.2}Evaluación}{24}{}%
+\contentsline {subsection}{\numberline {4.3}Evaluación en orden normal}{24}{}%
+\contentsline {subsection}{\numberline {4.4}Semántica denotacional}{25}{}%
+\contentsline {subsection}{\numberline {4.5}Normal-evaluation semantics}{27}{}%
+\contentsline {subsection}{\numberline {4.6}Denotational semantics of eager evaluation}{28}{}%
+\contentsline {section}{\numberline {5}Lenguajes aplicativos}{29}{}%
+\contentsline {subsection}{\numberline {5.1}Evaluación normal}{29}{}%
+\contentsline {subsection}{\numberline {5.2}Semántica denotacoinal eager}{30}{}%
+\contentsline {subsection}{\numberline {5.3}Semántica denotacional normal}{32}{}%
+\contentsline {section}{\numberline {6}Práctico 1}{34}{}%
+\contentsline {section}{\numberline {7}Práctico 3: Recursión, predominios y dominios, etc.}{37}{}%
+\contentsline {section}{\numberline {8}Práctico 4: Lenguaje imperativo simple}{53}{}%
+\contentsline {section}{\numberline {9}Práctico 5: Fallas}{75}{}%
+\contentsline {section}{\numberline {10}Práctico 6}{83}{}%
+\contentsline {subsection}{\numberline {10.1}Problemas}{83}{}%
+\contentsline {section}{\numberline {11}P7}{93}{}%
+\contentsline {section}{\numberline {12}P8}{106}{}%
+\contentsline {section}{\numberline {13}P9}{116}{}%
+\contentsline {section}{\numberline {14}P10}{121}{}%

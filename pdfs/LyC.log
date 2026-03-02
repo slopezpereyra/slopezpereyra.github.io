@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  5 JUN 2025 17:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  2 MAR 2026 16:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -801,7 +801,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 <../Images/UPA.jpg, id=4, 602.25pt x 770.88pt>
 File: ../Images/UPA.jpg Graphic file (type jpg)
 <use ../Images/UPA.jpg>
-Package pdftex.def Info: ../Images/UPA.jpg  used on input line 72.
+Package pdftex.def Info: ../Images/UPA.jpg  used on input line 73.
 (pdftex.def)             Requested size: 195.0pt x 249.60378pt.
 
 
@@ -809,105 +809,112 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}] [1]
-<../Images/SeverinoDiGiovanni.jpg, id=15, 174.02809pt x 249.44026pt>
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}]
+
+./LyC.tex:85: LaTeX Error: Unknown float option `H'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.85  \begin{figure}[H!]
+                        
+Option `H' ignored and `p' used.
+
+<../Images/SeverinoDiGiovanni.jpg, id=12, 174.02809pt x 249.44026pt>
 File: ../Images/SeverinoDiGiovanni.jpg Graphic file (type jpg)
 <use ../Images/SeverinoDiGiovanni.jpg>
 Package pdftex.def Info: ../Images/SeverinoDiGiovanni.jpg  used on input line 87.
 (pdftex.def)             Requested size: 195.0pt x 279.51582pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-(./LyC.toc
-LaTeX Font Info:    Trying to load font information for OT1+mlmr on input line 2.
+[1] (./LyC.toc
+LaTeX Font Info:    Trying to load font information for OT1+mlmr on input line 3.
  (/usr/share/texlive/texmf-dist/tex/latex/mlmodern/ot1mlmr.fd
 File: ot1mlmr.fd 2021/01/11 v1.0 Font defs for mlmodern
 )
-LaTeX Font Info:    Trying to load font information for OML+mlmm on input line 2.
+LaTeX Font Info:    Trying to load font information for OML+mlmm on input line 3.
  (/usr/share/texlive/texmf-dist/tex/latex/mlmodern/omlmlmm.fd
 File: omlmlmm.fd 2021/01/11 v1.0 Font defs for mlmodern
 )
-LaTeX Font Info:    Trying to load font information for OMS+mlmsy on input line 2.
+LaTeX Font Info:    Trying to load font information for OMS+mlmsy on input line 3.
  (/usr/share/texlive/texmf-dist/tex/latex/mlmodern/omsmlmsy.fd
 File: omsmlmsy.fd 2021/01/11 v1.0 Font defs for mlmodern
 )
-LaTeX Font Info:    Trying to load font information for OMX+mlmex on input line 2.
+LaTeX Font Info:    Trying to load font information for OMX+mlmex on input line 3.
  (/usr/share/texlive/texmf-dist/tex/latex/mlmodern/omxmlmex.fd
 File: omxmlmex.fd 2021/01/11 v1.0 Font defs for mlmodern
 )
 LaTeX Font Info:    External font `mlmex10' loaded for size
-(Font)              <12> on input line 2.
+(Font)              <12> on input line 3.
 LaTeX Font Info:    External font `mlmex10' loaded for size
-(Font)              <8> on input line 2.
+(Font)              <8> on input line 3.
 LaTeX Font Info:    External font `mlmex10' loaded for size
-(Font)              <6> on input line 2.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
+(Font)              <6> on input line 3.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 12.0pt on input line 2.
+(Font)              scaled to size 12.0pt on input line 3.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 8.0pt on input line 2.
+(Font)              scaled to size 8.0pt on input line 3.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.0pt on input line 2.
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 2.
- (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd) [1 <../Images/UPA.jpg>] [2{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc} <../Images/SeverinoDiGiovanni.jpg>] [3{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}])
+(Font)              scaled to size 6.0pt on input line 3.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 3.
+ (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd) [1 <../Images/UPA.jpg>] [2 <../Images/SeverinoDiGiovanni.jpg>] [3{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}])
 \tf@toc=\write5
 \openout5 = `LyC.toc'.
 
- [4]
+ [4] [5]
 LaTeX Font Info:    Font shape `U/BOONDOX-calo/m/n' will be
-(Font)              scaled to size 12.0pt on input line 112.
+(Font)              scaled to size 12.0pt on input line 128.
 LaTeX Font Info:    Font shape `U/BOONDOX-calo/m/n' will be
-(Font)              scaled to size 8.0pt on input line 112.
+(Font)              scaled to size 8.0pt on input line 128.
 LaTeX Font Info:    Font shape `U/BOONDOX-calo/m/n' will be
-(Font)              scaled to size 6.0pt on input line 112.
- [5{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}]
-Overfull \hbox (49.04294pt too wide) in paragraph at lines 192--200
+(Font)              scaled to size 6.0pt on input line 128.
+ [6{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}]
+Overfull \hbox (49.04294pt too wide) in paragraph at lines 208--216
 \OML/mlmm/m/it/12 p[] \OMS/mlmsy/m/n/12 ^^T []$\T1/mlmr/m/n/12 , donde $\OMS/mlmsy/m/n/12 ^^T$ \T1/mlmr/m/n/12 es el or-den aso-ci-ado a $\U/BOONDOX-calo/m/n/12 P$\T1/mlmr/m/n/12 . Si el con-junto $[]$
  []
 
-[6]
+[7]
 LaTeX Font Info:    External font `mlmex10' loaded for size
-(Font)              <10.95> on input line 212.
+(Font)              <10.95> on input line 228.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.95pt on input line 212.
+(Font)              scaled to size 10.95pt on input line 228.
 LaTeX Font Info:    Font shape `U/BOONDOX-calo/m/n' will be
-(Font)              scaled to size 10.95pt on input line 212.
- [7] [8] [9] [10]
-LaTeX Font Info:    Trying to load font information for TS1+mlmr on input line 411.
+(Font)              scaled to size 10.95pt on input line 228.
+ [8] [9] [10] [11]
+LaTeX Font Info:    Trying to load font information for TS1+mlmr on input line 427.
  (/usr/share/texlive/texmf-dist/tex/latex/mlmodern/ts1mlmr.fd
 File: ts1mlmr.fd 2021/01/11 v1.0 Font defs for mlmodern
-) [11{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}] [12] [13]
+) [12{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}] [13] [14]
 LaTeX Font Info:    External font `mlmex10' loaded for size
-(Font)              <14.4> on input line 527.
+(Font)              <14.4> on input line 543.
 LaTeX Font Info:    External font `mlmex10' loaded for size
-(Font)              <10> on input line 527.
+(Font)              <10> on input line 543.
 LaTeX Font Info:    External font `mlmex10' loaded for size
-(Font)              <7> on input line 527.
+(Font)              <7> on input line 543.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 14.4pt on input line 527.
+(Font)              scaled to size 14.4pt on input line 543.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.0pt on input line 527.
+(Font)              scaled to size 10.0pt on input line 543.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.0pt on input line 527.
+(Font)              scaled to size 7.0pt on input line 543.
 LaTeX Font Info:    Font shape `U/BOONDOX-calo/m/n' will be
-(Font)              scaled to size 14.4pt on input line 527.
+(Font)              scaled to size 14.4pt on input line 543.
 LaTeX Font Info:    Font shape `U/BOONDOX-calo/m/n' will be
-(Font)              scaled to size 10.0pt on input line 527.
+(Font)              scaled to size 10.0pt on input line 543.
 LaTeX Font Info:    Font shape `U/BOONDOX-calo/m/n' will be
-(Font)              scaled to size 7.0pt on input line 527.
- [14] [15] [16]
+(Font)              scaled to size 7.0pt on input line 543.
+ [15] [16] [17]
 
-./LyC.tex:648: Package pgfkeys Error: I do not know the key '/tikz/box' and I am going to ignore it. Perhaps you misspelled it.
+./LyC.tex:664: Package pgfkeys Error: I do not know the key '/tikz/box' and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.648 ...box, draw, above=1cm of bot, xshift=-2cm]
+l.664 ...box, draw, above=1cm of bot, xshift=-2cm]
                                                    (Sigma) {$\hat{\Sigma}$};
 This error message was generated by an \errmessage
 command, so I can't give any explicit help.
@@ -915,66 +922,66 @@ Pretend that you're Hercule Poirot: Examine all clues,
 and deduce the truth by order and method.
 
 
-./LyC.tex:649: Package pgfkeys Error: I do not know the key '/tikz/box' and I am going to ignore it. Perhaps you misspelled it.
+./LyC.tex:665: Package pgfkeys Error: I do not know the key '/tikz/box' and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.649 ...[box, draw, above=1cm of bot, xshift=2cm]
+l.665 ...[box, draw, above=1cm of bot, xshift=2cm]
                                                    (ZOm) {$\mathbb{Z} \times...
 (That was another \errmessage.)
 
-[17]
-Overfull \hbox (37.19302pt too wide) detected at line 703
+[18]
+Overfull \hbox (37.19302pt too wide) detected at line 719
 []
  []
 
-[18] [19] [20]
-./LyC.tex:840: Limit controls must follow a math operator.
-l.840 ...m (c) $FV(e / \delta) = \bigcup_{ \limits
+[19] [20] [21]
+./LyC.tex:856: Limit controls must follow a math operator.
+l.856 ...m (c) $FV(e / \delta) = \bigcup_{ \limits
                                                   {w \in FV(e)} } FV(\delta ...
 I'm ignoring this misplaced \limits or \nolimits command.
 
-[21] [22] [23]
-Overfull \hbox (2.71013pt too wide) in paragraph at lines 956--959
+[22] [23] [24]
+Overfull \hbox (2.71013pt too wide) in paragraph at lines 972--975
 \T1/mlmr/m/n/12 nor-mal es canónica, la se-cuen-cia de re-duc-ción debe con-tener una primera
  []
 
-[24] [25]
-./LyC.tex:1079: Display math should end with $$.
+[25] [26]
+./LyC.tex:1095: Display math should end with $$.
 <to be read again> 
                    V
-l.1079   D = V_\bot \text{ con } $V
+l.1095   D = V_\bot \text{ con } $V
                                     \simeq D \to D$
 The `$' that I just saw supposedly matches a previous `$$'.
 So I shall assume that you typed `$$' both times.
 
-./LyC.tex:1079: Missing $ inserted.
+./LyC.tex:1095: Missing $ inserted.
 <inserted text> 
                 $
-l.1079   D = V_\bot \text{ con } $V \simeq
+l.1095   D = V_\bot \text{ con } $V \simeq
                                            D \to D$
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./LyC.tex:1080: LaTeX Error: Bad math environment delimiter.
+./LyC.tex:1096: LaTeX Error: Bad math environment delimiter.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1080 \end{equation*}
+l.1096 \end{equation*}
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./LyC.tex:1080: Missing $ inserted.
+./LyC.tex:1096: Missing $ inserted.
 <inserted text> 
                 $
-l.1080 \end{equation*}
+l.1096 \end{equation*}
                       
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -982,35 +989,35 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./LyC.tex:1080: Display math should end with $$.
+./LyC.tex:1096: Display math should end with $$.
 <to be read again> 
                    \endgroup 
-l.1080 \end{equation*}
+l.1096 \end{equation*}
                       
 The `$' that I just saw supposedly matches a previous `$$'.
 So I shall assume that you typed `$$' both times.
 
-[26] [27] [28] [29] [30]
-Overfull \hbox (20.56952pt too wide) detected at line 1280
+[27] [28] [29] [30] [31]
+Overfull \hbox (20.56952pt too wide) detected at line 1296
 \U/stmry/m/n/12 J\OML/mlmm/m/it/12 e[]=e[]\U/stmry/m/n/12 K\OML/mlmm/m/it/12 ^^Q \OT1/mlmr/m/n/12 = [][] [][] []
  []
 
-[31] [32] [33]
-LaTeX Font Info:    Trying to load font information for T1+mlmtt on input line 1446.
+[32] [33] [34]
+LaTeX Font Info:    Trying to load font information for T1+mlmtt on input line 1462.
  (/usr/share/texlive/texmf-dist/tex/latex/mlmodern/t1mlmtt.fd
 File: t1mlmtt.fd 2021/01/11 v1.0 Font defs for mlmodern
 )
-Overfull \hbox (64.91052pt too wide) in paragraph at lines 1446--1447
+Overfull \hbox (64.91052pt too wide) in paragraph at lines 1462--1463
 [][] 
  []
 
-[34] [35] [36]
-Package mdframed Info: Not enough space on this page on input line 1507.
- [37] [38] [39] [40]
-./LyC.tex:1707: Missing delimiter (. inserted).
+[35] [36] [37]
+Package mdframed Info: Not enough space on this page on input line 1523.
+ [38] [39] [40] [41]
+./LyC.tex:1723: Missing delimiter (. inserted).
 <to be read again> 
                    {
-l.1707 Obviamente hay dos funciones en $\left{
+l.1723 Obviamente hay dos funciones en $\left{
                                                C_k : k \neq \bot \right} $. ...
 I was expecting to see something like `(' or `\{' or
 `\}' here. If you typed, e.g., `{' instead of `\{', you
@@ -1019,10 +1026,10 @@ braces don't get unbalanced. Otherwise just proceed.
 Acceptable delimiters are characters whose \delcode is
 nonnegative, or you can use `\delimiter <delimiter code>'.
 
-./LyC.tex:1707: Missing } inserted.
+./LyC.tex:1723: Missing } inserted.
 <inserted text> 
                 }
-l.1707 ...ones en $\left{ C_k : k \neq \bot \right
+l.1723 ...ones en $\left{ C_k : k \neq \bot \right
                                                   } $. En $\left{ f : f(\bot...
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1030,10 +1037,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./LyC.tex:1707: Missing delimiter (. inserted).
+./LyC.tex:1723: Missing delimiter (. inserted).
 <to be read again> 
                    }
-l.1707 ...nes en $\left{ C_k : k \neq \bot \right}
+l.1723 ...nes en $\left{ C_k : k \neq \bot \right}
                                                    $. En $\left{ f : f(\bot ...
 I was expecting to see something like `(' or `\{' or
 `\}' here. If you typed, e.g., `{' instead of `\{', you
@@ -1042,10 +1049,10 @@ braces don't get unbalanced. Otherwise just proceed.
 Acceptable delimiters are characters whose \delcode is
 nonnegative, or you can use `\delimiter <delimiter code>'.
 
-./LyC.tex:1707: Extra }, or forgotten $.
+./LyC.tex:1723: Extra }, or forgotten $.
 <recently read> }
                  
-l.1707 ...nes en $\left{ C_k : k \neq \bot \right}
+l.1723 ...nes en $\left{ C_k : k \neq \bot \right}
                                                    $. En $\left{ f : f(\bot ...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1053,10 +1060,10 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-./LyC.tex:1707: Missing delimiter (. inserted).
+./LyC.tex:1723: Missing delimiter (. inserted).
 <to be read again> 
                    {
-l.1707 ... C_k : k \neq \bot \right} $. En $\left{
+l.1723 ... C_k : k \neq \bot \right} $. En $\left{
                                                    f : f(\bot ) = \bot \righ...
 I was expecting to see something like `(' or `\{' or
 `\}' here. If you typed, e.g., `{' instead of `\{', you
@@ -1065,10 +1072,10 @@ braces don't get unbalanced. Otherwise just proceed.
 Acceptable delimiters are characters whose \delcode is
 nonnegative, or you can use `\delimiter <delimiter code>'.
 
-./LyC.tex:1707: Missing } inserted.
+./LyC.tex:1723: Missing } inserted.
 <inserted text> 
                 }
-l.1707 ...$. En $\left{ f : f(\bot ) = \bot \right
+l.1723 ...$. En $\left{ f : f(\bot ) = \bot \right
                                                   } $ tenemos $3^2 = 9$ func...
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1076,10 +1083,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./LyC.tex:1707: Missing delimiter (. inserted).
+./LyC.tex:1723: Missing delimiter (. inserted).
 <to be read again> 
                    }
-l.1707 .... En $\left{ f : f(\bot ) = \bot \right}
+l.1723 .... En $\left{ f : f(\bot ) = \bot \right}
                                                    $ tenemos $3^2 = 9$ funci...
 I was expecting to see something like `(' or `\{' or
 `\}' here. If you typed, e.g., `{' instead of `\{', you
@@ -1088,10 +1095,10 @@ braces don't get unbalanced. Otherwise just proceed.
 Acceptable delimiters are characters whose \delcode is
 nonnegative, or you can use `\delimiter <delimiter code>'.
 
-./LyC.tex:1707: Extra }, or forgotten $.
+./LyC.tex:1723: Extra }, or forgotten $.
 <recently read> }
                  
-l.1707 .... En $\left{ f : f(\bot ) = \bot \right}
+l.1723 .... En $\left{ f : f(\bot ) = \bot \right}
                                                    $ tenemos $3^2 = 9$ funci...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1099,11 +1106,11 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-[41] [42] [43] [44] [45]
-Package mdframed Info: Not enough space on this page on input line 1933.
+[42] [43] [44] [45] [46]
+Package mdframed Info: Not enough space on this page on input line 1949.
 
-./LyC.tex:1940: Undefined control sequence.
-l.1940     f & \f
+./LyC.tex:1956: Undefined control sequence.
+l.1956     f & \f
                   \text{ es total} \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1111,34 +1118,34 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[46]
-Overfull \hbox (2.86736pt too wide) in paragraph at lines 2006--2010
+[47]
+Overfull \hbox (2.86736pt too wide) in paragraph at lines 2022--2026
 \T1/mlmr/m/n/10.95 ca-dena $\OML/mlmm/m/it/10.95 F\OT1/mlmr/m/n/10.95 (\OML/mlmm/m/it/10.95 '[]\OT1/mlmr/m/n/10.95 )\OML/mlmm/m/it/10.95 ; F\OT1/mlmr/m/n/10.95 (\OML/mlmm/m/it/10.95 '[]\OT1/mlmr/m/n/10.95 )\OML/mlmm/m/it/10.95 ; []$ \T1/mlmr/m/n/10.95 es sim-ple-mente la ca-dena $\OMS/mlmsy/m/n/10.95 ?[] ^^T$ $?[] ^^T
  []
 
-[47] [48] [49]
-./LyC.tex:2170: Extra \right.
+[48] [49] [50]
+./LyC.tex:2186: Extra \right.
 <argument> ... )-1)\ldots \cdot 2 \cdot 1 \right )
                                                    & 2 \leq n -1 \leq k \\ n...
-l.2170 \end{align*}
+l.2186 \end{align*}
                    
 I'm ignoring a \right that had no matching \left.
 
-./LyC.tex:2170: Extra \right.
+./LyC.tex:2186: Extra \right.
 <argument> ... )-1)\ldots \cdot 2 \cdot 1 \right )
                                                    & 2 \leq n -1 \leq k \\ n...
-l.2170 \end{align*}
+l.2186 \end{align*}
                    
 I'm ignoring a \right that had no matching \left.
 
 
-Overfull \hbox (3.5466pt too wide) detected at line 2170
+Overfull \hbox (3.5466pt too wide) detected at line 2186
 []
  []
 
-[50]
-./LyC.tex:2177: Misplaced alignment tab character &.
-l.2177   &
+[51]
+./LyC.tex:2193: Misplaced alignment tab character &.
+l.2193   &
           = n \mapsto  \begin{cases}
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1147,8 +1154,8 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./LyC.tex:2187: Misplaced alignment tab character &.
-l.2187 ...bb{Z} \mapsto \mathbb{Z}_\bot  \right))&
+./LyC.tex:2203: Misplaced alignment tab character &.
+l.2203 ...bb{Z} \mapsto \mathbb{Z}_\bot  \right))&
                                                   = n \mapsto  \begin{cases}
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1157,11 +1164,11 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[51]
-./LyC.tex:2233: Undefined control sequence.
+[52]
+./LyC.tex:2249: Undefined control sequence.
 <argument> ...&= \llbracket c_2 \rrbracket _{\Bot 
                                                   }\left ( \llbracket p \rrb...
-l.2233 \end{align*}
+l.2249 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1169,10 +1176,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2233: Undefined control sequence.
+./LyC.tex:2249: Undefined control sequence.
 <argument> ...s} \llbracket c_2 \rrbracket _{\Bot 
                                                   } \left (\llbracket c_0 \r...
-l.2233 \end{align*}
+l.2249 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1180,10 +1187,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2233: Undefined control sequence.
+./LyC.tex:2249: Undefined control sequence.
 <argument> ...\\ \llbracket c_2 \rrbracket _{\Bot 
                                                   } \left (\llbracket c_1 \r...
-l.2233 \end{align*}
+l.2249 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1191,10 +1198,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2233: Undefined control sequence.
+./LyC.tex:2249: Undefined control sequence.
 <argument> ...&= \llbracket c_2 \rrbracket _{\Bot 
                                                   }\left ( \llbracket p \rrb...
-l.2233 \end{align*}
+l.2249 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1202,10 +1209,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2233: Undefined control sequence.
+./LyC.tex:2249: Undefined control sequence.
 <argument> ...s} \llbracket c_2 \rrbracket _{\Bot 
                                                   } \left (\llbracket c_0 \r...
-l.2233 \end{align*}
+l.2249 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1213,10 +1220,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2233: Undefined control sequence.
+./LyC.tex:2249: Undefined control sequence.
 <argument> ...\\ \llbracket c_2 \rrbracket _{\Bot 
                                                   } \left (\llbracket c_1 \r...
-l.2233 \end{align*}
+l.2249 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1224,10 +1231,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2273: Undefined control sequence.
+./LyC.tex:2289: Undefined control sequence.
 <argument> ...xtbf { else } c_1 \rrbracket _{\Bot 
                                                   } \left ( \llbracket c_2 \...
-l.2273 \end{align*}
+l.2289 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1235,10 +1242,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2273: Undefined control sequence.
+./LyC.tex:2289: Undefined control sequence.
 <argument> ...xtbf { else } c_1 \rrbracket _{\Bot 
                                                   } \left ( \llbracket c_2 \...
-l.2273 \end{align*}
+l.2289 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1246,14 +1253,14 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[52] [53]
-Overfull \hbox (16.77545pt too wide) in paragraph at lines 2278--2280
+[53] [54]
+Overfull \hbox (16.77545pt too wide) in paragraph at lines 2294--2296
 []\T1/mlmr/bx/n/12 (5) $\OT1/mlmr/m/n/12 (\OML/mlmm/m/it/12 a\OT1/mlmr/m/n/12 )$ \T1/mlmr/m/n/12 Dar la semán-tica de $[]\OML/mlmm/m/it/12 x < \OT1/mlmr/m/n/12 2[][]\OML/mlmm/m/it/12 x < \OT1/mlmr/m/n/12 0[]\OML/mlmm/m/it/12 x \OT1/mlmr/m/n/12 := 0[]\OML/mlmm/m/it/12 x \OT1/mlmr/m/n/12 :=
  []
 
-Package mdframed Info: Not enough space on this page on input line 2280.
-./LyC.tex:2317: Undefined control sequence.
-l.2317     f_{\Bot
+Package mdframed Info: Not enough space on this page on input line 2296.
+./LyC.tex:2333: Undefined control sequence.
+l.2333     f_{\Bot
                   } ~ \llbracket p \rrbracket ~ \sigma & \sigma ~ x < 2
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1261,9 +1268,9 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[54]
-./LyC.tex:2337: Misplaced alignment tab character &.
-l.2337   &
+[55]
+./LyC.tex:2353: Misplaced alignment tab character &.
+l.2353   &
           =\begin{cases}
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1272,16 +1279,16 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[55]
-Overfull \hbox (13.80974pt too wide) detected at line 2416
+[56]
+Overfull \hbox (13.80974pt too wide) detected at line 2432
 \U/msa/m/n/12 )  [] \OML/mlmm/m/it/12 F[] \OMS/mlmsy/m/n/12 ? \OT1/mlmr/m/n/12 = \OML/mlmm/m/it/12 ^^U^^[: [] \OT1/mlmr/m/n/12 = \U/stmry/m/n/12 J[]\OML/mlmm/m/it/12 ^^[ x \OMS/mlmsy/m/n/12 ^^U \OT1/mlmr/m/n/12 2[][][]\OML/mlmm/m/it/12 ^^[ x \OT1/mlmr/m/n/12 := 2\U/stmry/m/n/12 K
  []
 
-[56]
-Package mdframed Info: Not enough space on this page on input line 2426.
+[57]
+Package mdframed Info: Not enough space on this page on input line 2442.
 
-./LyC.tex:2437: Undefined control sequence.
-l.2437     f_{\Bot
+./LyC.tex:2453: Undefined control sequence.
+l.2453     f_{\Bot
                   } \left( ~ \llbracket p \rrbracket \sigma\right) & \sigma ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1289,8 +1296,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2446: Undefined control sequence.
-l.2446     f_{\Bot
+./LyC.tex:2462: Undefined control sequence.
+l.2462     f_{\Bot
                   } \left( [\sigma \mid x : \sigma ~ x + 1] \right)  & \sigm...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1298,8 +1305,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2448: Undefined control sequence.
-l.2448     f_{\Bot
+./LyC.tex:2464: Undefined control sequence.
+l.2464     f_{\Bot
                   } \sigma  & \sigma ~ x < 2 \land \sigma ~ y \neq 0
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1307,10 +1314,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2484: Undefined control sequence.
+./LyC.tex:2500: Undefined control sequence.
 <argument> ...gma ~ x \geq 2 \\ (F ~ \bot )_{\Bot 
                                                   } \left ( [\sigma \mid x :...
-l.2484 \end{align*}
+l.2500 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1318,10 +1325,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2484: Undefined control sequence.
+./LyC.tex:2500: Undefined control sequence.
 <argument> ...\sigma ~ y = 0 \\ (F ~ \bot )_{\Bot 
                                                   } \sigma & \sigma ~ x < 2 ...
-l.2484 \end{align*}
+l.2500 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1329,10 +1336,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2484: Undefined control sequence.
+./LyC.tex:2500: Undefined control sequence.
 <argument> ...gma ~ x \geq 2 \\ (F ~ \bot )_{\Bot 
                                                   } \left ( [\sigma \mid x :...
-l.2484 \end{align*}
+l.2500 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1340,99 +1347,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2484: Undefined control sequence.
+./LyC.tex:2500: Undefined control sequence.
 <argument> ...\sigma ~ y = 0 \\ (F ~ \bot )_{\Bot 
                                                   } \sigma & \sigma ~ x < 2 ...
-l.2484 \end{align*}
-                   
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[57]
-./LyC.tex:2502: Undefined control sequence.
-<argument> ...a ~ x \geq 2 \\ (F ~ \bot )^2_{\Bot 
-                                                  } \left ( [\sigma \mid x :...
-l.2502 \end{align*}
-                   
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./LyC.tex:2502: Undefined control sequence.
-<argument> ...igma ~ y = 0 \\ (F ~ \bot )^2_{\Bot 
-                                                  } \sigma & \sigma ~ x < 2 ...
-l.2502 \end{align*}
-                   
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./LyC.tex:2502: Undefined control sequence.
-<argument> ...a ~ x \geq 2 \\ (F ~ \bot )^2_{\Bot 
-                                                  } \left ( [\sigma \mid x :...
-l.2502 \end{align*}
-                   
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./LyC.tex:2502: Undefined control sequence.
-<argument> ...igma ~ y = 0 \\ (F ~ \bot )^2_{\Bot 
-                                                  } \sigma & \sigma ~ x < 2 ...
-l.2502 \end{align*}
-                   
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./LyC.tex:2553: Undefined control sequence.
-<argument> ...a ~ x \geq 2 \\ (F ~ \bot )^k_{\Bot 
-                                                  } \left ( [\sigma \mid x :...
-l.2553 \end{align*}
-                   
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./LyC.tex:2553: Undefined control sequence.
-<argument> ...igma ~ y = 0 \\ (F ~ \bot )^k_{\Bot 
-                                                  } \sigma & \sigma ~ x < 2 ...
-l.2553 \end{align*}
-                   
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./LyC.tex:2553: Undefined control sequence.
-<argument> ...a ~ x \geq 2 \\ (F ~ \bot )^k_{\Bot 
-                                                  } \left ( [\sigma \mid x :...
-l.2553 \end{align*}
-                   
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./LyC.tex:2553: Undefined control sequence.
-<argument> ...igma ~ y = 0 \\ (F ~ \bot )^k_{\Bot 
-                                                  } \sigma & \sigma ~ x < 2 ...
-l.2553 \end{align*}
+l.2500 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1441,17 +1359,106 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 [58]
-LaTeX Font Info:    External font `mlmex10' loaded for size
-(Font)              <5> on input line 2567.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.0pt on input line 2567.
-LaTeX Font Info:    Font shape `U/BOONDOX-calo/m/n' will be
-(Font)              scaled to size 5.0pt on input line 2567.
- [59] [60]
-Package mdframed Info: Not enough space on this page on input line 2585.
+./LyC.tex:2518: Undefined control sequence.
+<argument> ...a ~ x \geq 2 \\ (F ~ \bot )^2_{\Bot 
+                                                  } \left ( [\sigma \mid x :...
+l.2518 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-./LyC.tex:2599: Undefined control sequence.
-l.2599     f_{\Bot
+./LyC.tex:2518: Undefined control sequence.
+<argument> ...igma ~ y = 0 \\ (F ~ \bot )^2_{\Bot 
+                                                  } \sigma & \sigma ~ x < 2 ...
+l.2518 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./LyC.tex:2518: Undefined control sequence.
+<argument> ...a ~ x \geq 2 \\ (F ~ \bot )^2_{\Bot 
+                                                  } \left ( [\sigma \mid x :...
+l.2518 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./LyC.tex:2518: Undefined control sequence.
+<argument> ...igma ~ y = 0 \\ (F ~ \bot )^2_{\Bot 
+                                                  } \sigma & \sigma ~ x < 2 ...
+l.2518 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./LyC.tex:2569: Undefined control sequence.
+<argument> ...a ~ x \geq 2 \\ (F ~ \bot )^k_{\Bot 
+                                                  } \left ( [\sigma \mid x :...
+l.2569 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./LyC.tex:2569: Undefined control sequence.
+<argument> ...igma ~ y = 0 \\ (F ~ \bot )^k_{\Bot 
+                                                  } \sigma & \sigma ~ x < 2 ...
+l.2569 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./LyC.tex:2569: Undefined control sequence.
+<argument> ...a ~ x \geq 2 \\ (F ~ \bot )^k_{\Bot 
+                                                  } \left ( [\sigma \mid x :...
+l.2569 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./LyC.tex:2569: Undefined control sequence.
+<argument> ...igma ~ y = 0 \\ (F ~ \bot )^k_{\Bot 
+                                                  } \sigma & \sigma ~ x < 2 ...
+l.2569 \end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[59]
+LaTeX Font Info:    External font `mlmex10' loaded for size
+(Font)              <5> on input line 2583.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 5.0pt on input line 2583.
+LaTeX Font Info:    Font shape `U/BOONDOX-calo/m/n' will be
+(Font)              scaled to size 5.0pt on input line 2583.
+ [60] [61]
+Package mdframed Info: Not enough space on this page on input line 2601.
+
+./LyC.tex:2615: Undefined control sequence.
+l.2615     f_{\Bot
                   }\llbracket c \rrbracket\sigma & c.c.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1459,8 +1466,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2634: Undefined control sequence.
-l.2634   \varphi ~ \sigma = \varphi_{\Bot
+./LyC.tex:2650: Undefined control sequence.
+l.2650   \varphi ~ \sigma = \varphi_{\Bot
                                          }\left( \varphi_{\Bot} \ldots \left(
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1468,8 +1475,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2634: Undefined control sequence.
-l.2634 ...gma = \varphi_{\Bot}\left( \varphi_{\Bot
+./LyC.tex:2650: Undefined control sequence.
+l.2650 ...gma = \varphi_{\Bot}\left( \varphi_{\Bot
                                                   } \ldots \left(
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1477,8 +1484,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2635: Undefined control sequence.
-l.2635   \varphi_{\Bot
+./LyC.tex:2651: Undefined control sequence.
+l.2651   \varphi_{\Bot
                       }\llbracket c \rrbracket \sigma \right)  \right) =
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1486,8 +1493,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:2636: Undefined control sequence.
-l.2636   \varphi_{\Bot
+./LyC.tex:2652: Undefined control sequence.
+l.2652   \varphi_{\Bot
                       }^k \llbracket c \rrbracket\sigma
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1495,9 +1502,9 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[61]
-./LyC.tex:2644: Undefined control sequence.
-l.2644 ...\llbracket b \rrbracket( \varphi^k_{\Bot
+[62]
+./LyC.tex:2660: Undefined control sequence.
+l.2660 ...\llbracket b \rrbracket( \varphi^k_{\Bot
                                                   }\llbracket c \rrbracket\s...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1505,32 +1512,32 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[62]
-Package mdframed Info: Not enough space on this page on input line 2665.
+[63]
+Package mdframed Info: Not enough space on this page on input line 2681.
 
-Overfull \hbox (43.47908pt too wide) detected at line 2677
+Overfull \hbox (43.47908pt too wide) detected at line 2693
 \OML/mlmm/m/it/12 w[] \OT1/mlmr/m/n/12 := []\OML/mlmm/m/it/12 x \OMS/mlmsy/m/n/12 ^^T \OT1/mlmr/m/n/12 0[]\OML/mlmm/m/it/12 x \OT1/mlmr/m/n/12 := \OML/mlmm/m/it/12 x \OT1/mlmr/m/n/12 + 1\OML/mlmm/m/it/12 ;  w[] \OT1/mlmr/m/n/12 := []\OML/mlmm/m/it/12 x \OMS/mlmsy/m/n/12 ^^T \OT1/mlmr/m/n/12 0[](\OML/mlmm/m/it/12 x \OT1/mlmr/m/n/12 := \OML/mlmm/m/it/12 x \OT1/mlmr/m/n/12 + 1); (\OML/mlmm/m/it/12 x \OT1/mlmr/m/n/12 := \OML/mlmm/m/it/12 x \OT1/mlmr/m/n/12 + 1)
  []
 
-[63] [64]
-Package mdframed Info: Not enough space on this page on input line 2731.
- [65] [66]
-Package mdframed Info: Not enough space on this page on input line 2780.
- [67] [68] [69]
-Package mdframed Info: Not enough space on this page on input line 2920.
- [70] [71] [72]
-Package mdframed Info: Not enough space on this page on input line 3052.
- [73] [74]
-Overfull \hbox (1.6644pt too wide) in paragraph at lines 3118--3121
+[64] [65]
+Package mdframed Info: Not enough space on this page on input line 2747.
+ [66] [67]
+Package mdframed Info: Not enough space on this page on input line 2796.
+ [68] [69] [70]
+Package mdframed Info: Not enough space on this page on input line 2936.
+ [71] [72] [73]
+Package mdframed Info: Not enough space on this page on input line 3068.
+ [74] [75]
+Overfull \hbox (1.6644pt too wide) in paragraph at lines 3134--3137
 []$\OT1/mlmr/m/n/12 (\OML/mlmm/m/it/12 e\OT1/mlmr/m/n/12 )$ $\OML/mlmm/m/it/12 x \OT1/mlmr/m/n/12 := 0; []\OML/mlmm/m/it/12 x \OT1/mlmr/m/n/12 := 1[][]\OML/mlmm/m/it/12 x < \OT1/mlmr/m/n/12 1[][] \OMS/mlmsy/m/n/12 ^^Q \OML/mlmm/m/it/12 x \OT1/mlmr/m/n/12 := 0; []\OML/mlmm/m/it/12 x <
  []
 
-Package mdframed Info: Not enough space on this page on input line 3121.
-[75] [76] [77]
-./LyC.tex:3323: Undefined control sequence.
+Package mdframed Info: Not enough space on this page on input line 3137.
+[76] [77] [78]
+./LyC.tex:3339: Undefined control sequence.
 <argument> ...igma & \sigma ~ x \geq 1 \\ f_{\Bot 
                                                   }(\llbracket \textbf {catc...
-l.3323 \end{align*}
+l.3339 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1538,10 +1545,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:3323: Undefined control sequence.
+./LyC.tex:3339: Undefined control sequence.
 <argument> ...igma & \sigma ~ x \geq 1 \\ f_{\Bot 
                                                   }( \llbracket x := 1 \rrbr...
-l.3323 \end{align*}
+l.3339 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1549,10 +1556,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:3323: Undefined control sequence.
+./LyC.tex:3339: Undefined control sequence.
 <argument> ...igma & \sigma ~ x \geq 1 \\ f_{\Bot 
                                                   }( \llbracket x := 1 \rrbr...
-l.3323 \end{align*}
+l.3339 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1560,10 +1567,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:3323: Undefined control sequence.
+./LyC.tex:3339: Undefined control sequence.
 <argument> ...igma & \sigma ~ x \geq 1 \\ f_{\Bot 
                                                   } \left ( \llbracket x:= 1...
-l.3323 \end{align*}
+l.3339 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1571,10 +1578,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:3323: Undefined control sequence.
+./LyC.tex:3339: Undefined control sequence.
 <argument> ...igma & \sigma ~ x \geq 1 \\ f_{\Bot 
                                                   }(\llbracket \textbf {catc...
-l.3323 \end{align*}
+l.3339 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1582,10 +1589,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:3323: Undefined control sequence.
+./LyC.tex:3339: Undefined control sequence.
 <argument> ...igma & \sigma ~ x \geq 1 \\ f_{\Bot 
                                                   }( \llbracket x := 1 \rrbr...
-l.3323 \end{align*}
+l.3339 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1593,10 +1600,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:3323: Undefined control sequence.
+./LyC.tex:3339: Undefined control sequence.
 <argument> ...igma & \sigma ~ x \geq 1 \\ f_{\Bot 
                                                   }( \llbracket x := 1 \rrbr...
-l.3323 \end{align*}
+l.3339 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1604,10 +1611,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:3323: Undefined control sequence.
+./LyC.tex:3339: Undefined control sequence.
 <argument> ...igma & \sigma ~ x \geq 1 \\ f_{\Bot 
                                                   } \left ( \llbracket x:= 1...
-l.3323 \end{align*}
+l.3339 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1615,16 +1622,16 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[78] [79]
-Overfull \hbox (10.8858pt too wide) detected at line 3371
+[79] [80]
+Overfull \hbox (10.8858pt too wide) detected at line 3387
 \U/stmry/m/n/12 J[]\OML/mlmm/m/it/12 x < \OT1/mlmr/m/n/12 1[][]\OML/mlmm/m/it/12 x \OT1/mlmr/m/n/12 := 1[]\U/stmry/m/n/12 K \OT1/mlmr/m/n/12 = [] \OML/mlmm/m/it/12 F[] \OMS/mlmsy/m/n/12 ? \OT1/mlmr/m/n/12 = \OML/mlmm/m/it/12 ^^U^^[: []
  []
 
-[80] [81] [82]
-./LyC.tex:3484: Undefined control sequence.
+[81] [82] [83]
+./LyC.tex:3500: Undefined control sequence.
 <argument> ...right > \right ) \\ &=\iota _{\texn 
                                                   {in}} \left ( \lambda ~ k ...
-l.3484 \end{align*}
+l.3500 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1632,10 +1639,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:3484: Undefined control sequence.
+./LyC.tex:3500: Undefined control sequence.
 <argument> ...right > \right ) \\ &=\iota _{\texn 
                                                   {in}} \left ( \lambda ~ k ...
-l.3484 \end{align*}
+l.3500 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1643,58 +1650,58 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[83]
-Overfull \hbox (80.89796pt too wide) detected at line 3525
+[84]
+Overfull \hbox (80.89796pt too wide) detected at line 3541
 []
  []
 
-[84]
-Package mdframed Info: Not enough space on this page on input line 3547.
- [85] [86]
-Package mdframed Info: Not enough space on this page on input line 3619.
- [87] [88]
-Package mdframed Info: Not enough space on this page on input line 3701.
- [89]
-Package mdframed Info: Not enough space on this page on input line 3733.
- [90] [91] [92]
-Overfull \hbox (12.04794pt too wide) in paragraph at lines 3855--3859
+[85]
+Package mdframed Info: Not enough space on this page on input line 3563.
+ [86] [87]
+Package mdframed Info: Not enough space on this page on input line 3635.
+ [88] [89]
+Package mdframed Info: Not enough space on this page on input line 3717.
+ [90]
+Package mdframed Info: Not enough space on this page on input line 3749.
+ [91] [92] [93]
+Overfull \hbox (12.04794pt too wide) in paragraph at lines 3871--3875
 []\T1/mlmr/m/n/12 Tiene sen-tido que el re-sul-tado nor-mal sea (en tér-mi-nos in-tu-itivos) $\OML/mlmm/m/it/12 ^^Ufx:f[]\OT1/mlmr/m/n/12 (\OML/mlmm/m/it/12 x\OT1/mlmr/m/n/12 )$\T1/mlmr/m/n/12 ,
  []
 
-[93]
-Package mdframed Info: Not enough space on this page on input line 3879.
- [94] [95]
-Package mdframed Info: Not enough space on this page on input line 3929.
- [96]
-Package mdframed Info: Not enough space on this page on input line 3949.
+[94]
+Package mdframed Info: Not enough space on this page on input line 3895.
+ [95] [96]
+Package mdframed Info: Not enough space on this page on input line 3945.
  [97]
-Package mdframed Info: Not enough space on this page on input line 3968.
+Package mdframed Info: Not enough space on this page on input line 3965.
  [98]
-Overfull \hbox (7.78844pt too wide) detected at line 4034
-[]
- []
-
-[99]
-Overfull \hbox (36.43561pt too wide) detected at line 4051
+Package mdframed Info: Not enough space on this page on input line 3984.
+ [99]
+Overfull \hbox (7.78844pt too wide) detected at line 4050
 []
  []
 
 [100]
-Package mdframed Info: Not enough space on this page on input line 4061.
- [101] [102]
-Package mdframed Info: Not enough space on this page on input line 4112.
- [103]
-Package mdframed Info: Not enough space on this page on input line 4141.
+Overfull \hbox (36.43561pt too wide) detected at line 4067
+[]
+ []
+
+[101]
+Package mdframed Info: Not enough space on this page on input line 4077.
+ [102] [103]
+Package mdframed Info: Not enough space on this page on input line 4128.
  [104]
-Overfull \hbox (225.0348pt too wide) detected at line 4195
+Package mdframed Info: Not enough space on this page on input line 4157.
+ [105]
+Overfull \hbox (225.0348pt too wide) detected at line 4211
 []
  []
 
-[105]
-./LyC.tex:4229: Undefined control sequence.
+[106]
+./LyC.tex:4245: Undefined control sequence.
 <argument>  \llbracket MN \rrbracketet 
                                        &=\phi _{\ind } ( \llbracket M \rrbra...
-l.4229 \end{align*}
+l.4245 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1702,10 +1709,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./LyC.tex:4229: Undefined control sequence.
+./LyC.tex:4245: Undefined control sequence.
 <argument>  \llbracket MN \rrbracketet 
                                        &=\phi _{\ind } ( \llbracket M \rrbra...
-l.4229 \end{align*}
+l.4245 \end{align*}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1714,17 +1721,17 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (44.45566pt too wide) detected at line 4229
+Overfull \hbox (44.45566pt too wide) detected at line 4245
 []
  []
 
-[106] [107]
-Package mdframed Info: Not enough space on this page on input line 4286.
- [108]
-./LyC.tex:4355: Extra }, or forgotten \right.
+[107] [108]
+Package mdframed Info: Not enough space on this page on input line 4302.
+ [109]
+./LyC.tex:4371: Extra }, or forgotten \right.
 <template> }
             $}\ifmeasuring@ \savefieldlength@ \fi \set@field \hfil \endtempl...
-l.4355 \end{align*}
+l.4371 \end{align*}
                    
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1732,10 +1739,10 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-./LyC.tex:4355: Missing \right. inserted.
+./LyC.tex:4371: Missing \right. inserted.
 <inserted text> 
                 \right .
-l.4355 \end{align*}
+l.4371 \end{align*}
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1743,10 +1750,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./LyC.tex:4355: Missing } inserted.
+./LyC.tex:4371: Missing } inserted.
 <inserted text> 
                 }
-l.4355 \end{align*}
+l.4371 \end{align*}
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1754,10 +1761,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./LyC.tex:4355: Extra }, or forgotten \right.
+./LyC.tex:4371: Extra }, or forgotten \right.
 <template> }
             $}\ifmeasuring@ \savefieldlength@ \fi \set@field \hfil \endtempl...
-l.4355 \end{align*}
+l.4371 \end{align*}
                    
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1765,10 +1772,10 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-./LyC.tex:4355: Missing \right. inserted.
+./LyC.tex:4371: Missing \right. inserted.
 <inserted text> 
                 \right .
-l.4355 \end{align*}
+l.4371 \end{align*}
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1776,10 +1783,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./LyC.tex:4355: Missing } inserted.
+./LyC.tex:4371: Missing } inserted.
 <inserted text> 
                 }
-l.4355 \end{align*}
+l.4371 \end{align*}
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1787,9 +1794,9 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-[109]
-./LyC.tex:4403: Misplaced alignment tab character &.
-l.4403   &
+[110]
+./LyC.tex:4419: Misplaced alignment tab character &.
+l.4419   &
           = \llbracket \lambda v_{\text{new}}. (e / [ \delta \mid v : v_{\te...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1798,13 +1805,13 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[110] [111]
-Package mdframed Info: Not enough space on this page on input line 4455.
- [112] [113]
-Package mdframed Info: Not enough space on this page on input line 4533.
+[111] [112]
+Package mdframed Info: Not enough space on this page on input line 4471.
+ [113] [114]
+Package mdframed Info: Not enough space on this page on input line 4549.
 
-./LyC.tex:4545: Misplaced alignment tab character &.
-l.4545   &
+./LyC.tex:4561: Misplaced alignment tab character &.
+l.4561   &
           =(\iota_{\uparrow} \circ \psi) (\lambda d \in D_\infty.\llbracket ...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1813,49 +1820,49 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[114] [115]
-Overfull \hbox (27.75795pt too wide) in paragraph at lines 4590--4592
+[115] [116]
+Overfull \hbox (27.75795pt too wide) in paragraph at lines 4606--4608
 []\T1/mlmr/bx/n/12 (5) \T1/mlmr/m/n/12 Evalúe modo ea-ger y nor-mal: $\OT1/mlmr/m/n/12 (\OML/mlmm/m/it/12 a\OT1/mlmr/m/n/12 ) : []$ \T1/mlmr/m/n/12 y $\OT1/mlmr/m/n/12 (\OML/mlmm/m/it/12 b\OT1/mlmr/m/n/12 ) : []$\T1/mlmr/m/n/12 . 
  []
 
-Package mdframed Info: Not enough space on this page on input line 4592.
-[116]
-Package mdframed Info: Not enough space on this page on input line 4625.
- [117]
-Overfull \hbox (111.4667pt too wide) detected at line 4664
+Package mdframed Info: Not enough space on this page on input line 4608.
+[117]
+Package mdframed Info: Not enough space on this page on input line 4641.
+ [118]
+Overfull \hbox (111.4667pt too wide) detected at line 4680
 []
  []
 
-[118]
-Overfull \hbox (50.52115pt too wide) detected at line 4716
+[119]
+Overfull \hbox (50.52115pt too wide) detected at line 4732
 []
  []
 
 
-Overfull \hbox (64.84756pt too wide) detected at line 4744
+Overfull \hbox (64.84756pt too wide) detected at line 4760
 []
  []
 
-[119] [120] [121]
-Overfull \hbox (2.75046pt too wide) in paragraph at lines 4826--4828
+[120] [121] [122]
+Overfull \hbox (2.75046pt too wide) in paragraph at lines 4842--4844
 []\T1/mlmr/m/n/10 Encuentre ecua-ciones semán-ti-cas sen-cil-las para las sigu-ientes ex-pre-siones, con-siderando
  []
 
-Package mdframed Info: Not enough space on this page on input line 4832.
-[122]
-Package mdframed Info: Not enough space on this page on input line 4886.
- [123]
-Overfull \hbox (293.51852pt too wide) detected at line 4975
+Package mdframed Info: Not enough space on this page on input line 4848.
+[123]
+Package mdframed Info: Not enough space on this page on input line 4902.
+ [124]
+Overfull \hbox (293.51852pt too wide) detected at line 4991
 []
  []
 
-[124]
-Package mdframed Info: Not enough space on this page on input line 4985.
- [125] [126]
-./LyC.tex:5070: Missing } inserted.
+[125]
+Package mdframed Info: Not enough space on this page on input line 5001.
+ [126] [127]
+./LyC.tex:5086: Missing } inserted.
 <inserted text> 
                 }
-l.5070 \end{align*}
+l.5086 \end{align*}
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1863,26 +1870,26 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./LyC.tex:5070: Extra \right.
+./LyC.tex:5086: Extra \right.
 <argument> ...int}}0) & c.c. \end {cases} \right )
                                                   \\ &= \iota _{\text {norm}...
-l.5070 \end{align*}
+l.5086 \end{align*}
                    
 I'm ignoring a \right that had no matching \left.
 
-./LyC.tex:5070: Missing { inserted.
+./LyC.tex:5086: Missing { inserted.
 <inserted text> 
                 {
-l.5070 \end{align*}
+l.5086 \end{align*}
                    
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
 
-./LyC.tex:5070: Missing } inserted.
+./LyC.tex:5086: Missing } inserted.
 <inserted text> 
                 }
-l.5070 \end{align*}
+l.5086 \end{align*}
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1890,17 +1897,17 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./LyC.tex:5070: Extra \right.
+./LyC.tex:5086: Extra \right.
 <argument> ...int}}0) & c.c. \end {cases} \right )
                                                   \\ &= \iota _{\text {norm}...
-l.5070 \end{align*}
+l.5086 \end{align*}
                    
 I'm ignoring a \right that had no matching \left.
 
-./LyC.tex:5070: Missing \endgroup inserted.
+./LyC.tex:5086: Missing \endgroup inserted.
 <inserted text> 
                 \endgroup 
-l.5070 \end{align*}
+l.5086 \end{align*}
                    
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1908,24 +1915,24 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./LyC.tex:5070: Misplaced \omit.
+./LyC.tex:5086: Misplaced \omit.
 \math@cr@@@ ...@ \@ne \add@amps \maxfields@ \omit 
                                                   \kern -\alignsep@ \iftag@ ...
-l.5070 \end{align*}
+l.5086 \end{align*}
                    
 I expect to see \omit only after tab marks or the \cr of
 an alignment. Proceed, and I'll ignore this case.
 
-./LyC.tex:5070: Missing { inserted.
+./LyC.tex:5086: Missing { inserted.
 <inserted text> 
                 {
-l.5070 \end{align*}
+l.5086 \end{align*}
                    
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
 
-[127] [128] [129] (./LyC.aux)
+[128] [129] [130] (./LyC.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -1941,10 +1948,10 @@ Here is how much of TeX's memory you used:
  130i,18n,124p,1598b,2071s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmbxi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmri10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmri12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/stmary8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/boondox/zxxrw8a.pfb>
-Output written on LyC.pdf (131 pages, 1468385 bytes).
+Output written on LyC.pdf (132 pages, 1469565 bytes).
 PDF statistics:
- 610 PDF objects out of 1000 (max. 8388607)
- 403 compressed objects within 5 object streams
+ 613 PDF objects out of 1000 (max. 8388607)
+ 405 compressed objects within 5 object streams
  0 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 

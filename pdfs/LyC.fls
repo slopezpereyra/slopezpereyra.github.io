@@ -345,10 +345,10 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/stmaryrd/stmary6.tfm
 INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc
 INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc
 OUTPUT LyC.toc
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/boondox/BOONDOX-r-calo.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/boondox/BOONDOX-r-calo.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/boondox/BOONDOX-r-calo.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mlmodern/ec-mlmri12.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/boondox/BOONDOX-r-calo.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/boondox/BOONDOX-r-calo.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/boondox/BOONDOX-r-calo.tfm
 INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/boondox/BOONDOX-r-calo.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/boondox/zxxrow7z.tfm
