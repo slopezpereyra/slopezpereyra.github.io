@@ -256,7 +256,7 @@ Jesus with unprejudiced eyes. «He that hath ears to hear, let him hear».
 
 To conclude this exposition, I should wish to summarize my own ethical doctrine
 in a few principles. Though all of these principles may be derived from the
-teachings of Jesus Christ, I had came to embrace all of them except the first
+teachings of Jesus Christ, I had come to embrace all of them except the first
 well before I seriously considered his doctrine. In this sense, I admit, the
 reading of the Bible has only been reaffirming—what was transformative in it, I
 am not prepared to express.
