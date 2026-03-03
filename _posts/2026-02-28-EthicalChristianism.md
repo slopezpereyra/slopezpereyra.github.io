@@ -200,7 +200,7 @@ kingdom of God is within you*:
 > the Law of Christ: Resist not evil.
 
 I do not wish here to convince others of this doctrine, however convinced of it
-I have become myself. As most teachings of Jesus, it is as *radical* as it is
+I have become myself. As most teachings of Jesus, it is as radical as it is
 forgotten.
 
 I believe the ethical doctrine of Jesus Christ, as exposed in the New Testament
