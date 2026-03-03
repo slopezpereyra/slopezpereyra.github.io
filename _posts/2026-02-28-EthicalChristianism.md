@@ -1,6 +1,6 @@
 ---
 title: Christianity, ethics, and non-resistance to evil
-categories: [Personal, Philosophy]
+categories: [Personal]
 ---
 
 Curiously, I have read more exegetical books about the Bible than books
@@ -12,52 +12,47 @@ friends, all at least a decade before I even considered reading the
 Scriptures. And even when I finally decided to read the Bible, I read
 only the Old Testament.
 
-Now I am finally reading the New Testament, inspired by Tolstoi's work
-*The Kingdom of God is Within You*. As my readers know—*scilicet
-nulli*—I embrace the principles of libertarian socialism, and I came
-across this book perchance when reading about Christian anarchism.
-Reading it, it quickly became apparent that it made no sense to do so
-without examining the Gospels myself. And so I looked for my King James
-Bible and opened the *Book of Matthew*.
+Now I am finally reading the New Testament, inspired by Tolstoi's work *The
+Kingdom of God is Within You*. As my readers know—*scilicet nulli*—I embrace the
+principles of libertarian socialism, and I came across this book perchance when
+reading about Christian anarchism. Reading it, it quickly became apparent that
+it made no sense to do so without examining the Gospels myself. And so I looked
+for my King James Bible and opened the Book of Matthew.
 
-Never would I have expected the reading to be so exquisitely beautiful,
-nor so transformative, humbling, and illuminating. So much was the
-impact of this perfect piece of literature, and of the perfect ethical
-doctrine which is thereby exposed by Jesus Christ, that—however
-embarrassing it may be to acknowledge it—I often found myself shedding
-tears as my eyes struggled to move from one word onto another. And I,
-who have so often been guilty of pride and arrogance, and who always
-found myself so secured in the vanity of intelligence or knowledge, felt
-that I was the most ignorant and arrogant of men. For I was finding now
-a radical and overcoming ethics—one in perfect accordance with my own
-libertarian principles, but far more overreaching—in the teachings
-of a poor carpenter, a man whose ethics vastly surpassed mine in depth
-and breadth, and which more perfectly exposed the virtues of tolerance
-and kindness.
+Never would I have expected the reading to be so exquisitely beautiful, nor so
+transformative, humbling, and illuminating. So much was the impact of this
+perfect work, and of the ethical doctrine which is thereby exposed by Jesus
+Christ, that I often found myself shedding tears as my eyes struggled to move
+from one word onto another. For how many years have I whispered to myself, as I
+walked alone the corridors of Western and Oriental cities alike, those verses
+which Blake devoted to *Tirzah*:
 
-It is a shame that the teachings of this extraordinary man have come to
-us cloaked in rigid dogmatism and warped by the inherent evil which
-pervades every human institution and all authority. And it is impossible
-for me not to observe, having received the teachings of Christ at face
-value, and not through the dogmatic interpretation of any institution,
-how shamelessly unchristian most self-professed Christian people and
-institutions are. Surely their only claim for Christianity can proceed
-from their belief in the supernatural elements of the Bible—e.g. their
-belief in reincarnation or creationism—rather than their practice of
-an ethical doctrine.
+> The death of Jesus set me free:
+> Then what have I to do with thee?
 
-But what is this doctrine? What are teachings of Jesus, as taught by
-Jesus himself and not this or that church? In what do they differ from
-the values which I already upheld, if in anything at all, and in what
-regards are they more complete?
+with not a shred of understanding and not a glimpse of faith. To how many of my
+Christians friends have I said: «I should wish to believe, but faith eludes me».
+But one needs not to believe, but to know. And it is precisely now, when I gave
+up on looking, that I find.
 
-Perhaps the most important principle which is derived from Jesus'
-teachings, and one that is certainly not a necessary corollary of the
-values that sustain libertarian socialism, is non-resistance to evil. I
-have embraced this principle because I firmly believe it is an
-all-comprehensive and perfect doctrine. Its concept and philosophy are
-well exposed in a long passage of Adin Ballou's work, which I quote
-(with omissions) from *The kingdom of God is within you*:
+I thank not having had a Christian upbringing, as much as I thank having had a
+philosophical education that familiarized me much earlier with Feuerbach than
+with the Bible. This has allowed me to receive the words of Jesus both free from
+any institutional dogma as well as with a critical spirit. And having received
+his teachings in this way, I am amazed at how profoundly misrepresented the
+words of Jesus seem to me. In the case of many Christians I know, surely their
+only claim for Christianity can proceed from their belief in the supernatural
+elements of the Bible—e.g. their belief in reincarnation or creationism—rather
+than their practice of an ethical doctrine. With regards to many atheists,
+including myself, exactly the same impression is left, though in the opposite
+direction.
+
+To name an example, the most important and fundamental principle derived from
+the teachings of Jesus is precisely that which is least practiced and
+understood, as well as the rarest to find in dogmatic elaborations of the
+Bible: non-resistance to evil. Its concept and philosophy are well exposed in a
+long passage of Adin Ballou's work, which I quote (with omissions) from *The
+kingdom of God is within you*:
 
 > Q. Whence originated the term "non-resistance?"
 >
@@ -204,11 +199,20 @@ well exposed in a long passage of Adin Ballou's work, which I quote
 > imperishable inheritance of every soul, which voluntarily submits to
 > the Law of Christ: Resist not evil.
 
-I do not wish here to convince others of this doctrine of which I am
-myself so convinced. But I should wish briefly to continue considering the
-teachings of Jesus, insofar as his ethical doctrine derives principles
-for social action. For example, why not recall the eschatological
-passage from *Matthew* 25:35-40, where Jesus speaks of his return:
+I do not wish here to convince others of this doctrine, however convinced of it
+I have become myself. As most teachings of Jesus, it is as *radical* as it is
+forgotten.
+
+I believe the ethical doctrine of Jesus Christ, as exposed in the New Testament
+and not through institutional dogma, is not only in perfect accordance with a
+pacifist form of anarchism, but leads to it as a necessary consequence. It calls
+for the cultivation of individual virtue just as much as for non-violent social
+action. It implies the rejection of all forms of authority and power, the
+voluntary pursuit of austerity, the forgiveness of all offenses, and the siding
+with those who are oppressed. There is no shortage of passages in the New
+Testament which support this thesis. Why not, for instance, recall the
+eschatological teaching from *Matthew* 25:35-40, where Jesus speaks of his
+return:
 
 > Then shall the King say unto them on his right hand, Come, ye blessed
 > of my Father, inherit the kingdom prepared for you from the foundation
@@ -245,19 +249,18 @@ or in *Matthew* 4:1-11:
 > for it is written, Thou shalt worship the Lord thy God, and him only
 > shalt thou serve.
 
-But let me pause now: I do not wish to dwell too much in the Scriptures,
-however many the passages which support my thesis—which is, I should
-say, not original. I have become convinced that an honest reading of the
-New Testament, one not pervaded by institutional dogma, leads to an
-absolute accordance with the libertarian and altruistic principles which
-are the basis of socialist thought—in a broad sense—. Here I wish to
-expose, not to prove: for whosoever should wish a proof of this needs
-only consult the words of Jesus with unprejudiced eyes. «He that hath
-ears to hear, let him hear».
+But let me pause now: I do not wish to throw a barrage of quotations at the page
+in hopes of proving a point. Here, I would rather expose, not prove: for
+whosoever should wish a proof of what I say needs only consult the words of
+Jesus with unprejudiced eyes. «He that hath ears to hear, let him hear». 
 
-With regards to the principles of the ethical doctrine which I uphold, the one I
-have upheld so far and which has now been enriched and extended by the teachings
-of Jesus, I may summarize them as follows:
+To conclude this exposition, I should wish to summarize my own ethical doctrine
+in a few principles. Though all of these principles may be derived from the
+teachings of Jesus Christ, I had came to embrace all of them except the first
+well before I seriously considered his doctrine. In this sense, I admit, the
+reading of the Bible has only been reaffirming—what was transformative in it, I
+am not prepared to express.
+
 
 1.  Non-resistance to evil.
 
@@ -282,10 +285,45 @@ of Jesus, I may summarize them as follows:
 8.  To never worry: not about one's own life nor what tomorrow might
     bring, as taught in Matthew 6:25-34.
 
-Except for (1), I had already considered and favored all these principles
-before, though I should say with less profoundness than now. It is (4) the one
-that I fail the most to uphold, being so shamefully ill-disposed to judgment.
-Every philosophical stance of mine which pertains to ethics is either a
-corrollary of these eight principles or a mistake.
+At this point, a reader might be tempted to ask: «Is he a Christian at all?».
+Well, I am not sure I know what that means. Should it mean that I believe in
+literal resurrection or transubstantiation, then I am not a Christian nor
+perhaps ever will be. Should it mean that I follow the ethical doctrine of
+Christ and regard him a great, perhaps the greatest moral teacher of all times,
+then I am perhaps more radically a Christian than most. 
+
+There is a lot in-between those two possible meanings of «Christian» that still
+involves faith, spirituality, and a personal relationship with the divine. But I
+am not prepared to express any of it. The time has not yet come for me to
+verbally frame my relationship with Jesus, who was the Christ, nor with his
+Father, who is not a noun. I am only recalled of Jacob, from whom I took my
+name, and who «awoke from his sleep» and realized that «the Lord was in that
+place», even though «he knew it not». 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
