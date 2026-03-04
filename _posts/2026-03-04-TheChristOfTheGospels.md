@@ -82,6 +82,10 @@ repeat, considering it the most crucial, is that the teachings of Jesus entail
 the principle of non-resistance to evil, which provides a cornerstone for social
 action.
 
+--- 
+
+---
+
 [^2]: Here, I understand *theology* as a branch of philosophy, so that not every
     claim pertaining to the nature of God or the supernatural is theological.
     When Jesus claims «I am the way, the truth and the life», for instance, this
