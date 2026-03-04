@@ -19,7 +19,7 @@ Christianity as an organized religion are to be therefore abandoned: the
 Trinity, Incarnation, the Original Sin\...
 
 The political and historical events which lead to the formulation and
-embracement of these dogmas are generally well-understood. They were
+embracement of these dogmas are generally well understood. They were
 always, without exception, motivated by political and institutional
 interests. Constantine and Justine, and the councils they convened, are
 a topic of political history, neither of spiritual or ethical interest.
