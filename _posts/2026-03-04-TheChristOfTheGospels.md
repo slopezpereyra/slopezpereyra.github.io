@@ -20,7 +20,7 @@ not to be granted any authority. This includes all the central dogmas of
 Christianity as an organized religion: the Trinity, Incarnation, the Original
 Sin\...
 
-The political and historical events which lead to the formulation and
+The political and historical events which led to the formulation and
 embracement of these dogmas are generally well understood. More often than not,
 they were motivated by political and institutional interests. Constantine and
 Justine, and the councils they convened, are a topic of political history,
