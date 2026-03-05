@@ -1,5 +1,5 @@
 ---
-title: A day on Earth 
+title: Another day on Earth 
 categories: [Personal]
 ---
 
