@@ -14,10 +14,10 @@ categories: [Personal]
 
 ---
 
-> A proposition may seem absurd, and the absurdity of its surface be swallowed up
-> by the depth that, so to speak, lies behind it. This can be applied to the idea
-> of the resurrection of the dead and to others related to it. But what gives it
-> depth is its use: the life led by the one who believes it.
+> Una cuestión religiosa es sólo o una cuestión de la vida o palabrería vacía.
+> Este juego de lenguaje —se podría decir—sólo se juega con cuestiones de la
+> vida. Del mismo modo que la palabra «ay» no tiene significado—sino como grito
+> de dolor.
 > —Wittgenstein
 
 ---
