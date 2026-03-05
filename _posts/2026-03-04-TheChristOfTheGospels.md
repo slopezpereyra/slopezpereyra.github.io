@@ -3,6 +3,25 @@ title: The Jesus of the Gospels
 categories: [Personal]
 ---
 
+---
+
+> Una proposición puede parecer absurda y el absurdo de su superficie 
+> ser engullido por la profundidad que, por así decirlo, hay detrás de ella.
+> Esto puede aplicarse a la idea de la resurrección de los muertos y a otras
+> relacionadas con ella. Pero lo que le da profundidad es el uso: la *vida* que
+> lleva el que la cree.
+> —Wittgenstein
+
+---
+
+> A proposition may seem absurd, and the absurdity of its surface be swallowed up
+> by the depth that, so to speak, lies behind it. This can be applied to the idea
+> of the resurrection of the dead and to others related to it. But what gives it
+> depth is its use: the life led by the one who believes it.
+> —Wittgenstein
+
+---
+
 The teachings of Jesus are in the Gospels. They contain accounts of supernatural
 events, but only a subset of Jesus' teachings pertain to the supernatural—and
 this only if taken literally and not allegorically. None of them, however, are
