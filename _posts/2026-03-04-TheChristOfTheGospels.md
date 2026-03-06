@@ -9,7 +9,7 @@ categories: [Personal]
 > ser engullido por la profundidad que, por así decirlo, hay detrás de ella.
 > Esto puede aplicarse a la idea de la resurrección de los muertos y a otras
 > relacionadas con ella. Pero lo que le da profundidad es el uso: la *vida* que
-> lleva el que la cree.
+> lleva el que la cree.<br>
 > —Wittgenstein
 
 ---
@@ -17,7 +17,7 @@ categories: [Personal]
 > Una cuestión religiosa es sólo o una cuestión de la vida o palabrería vacía.
 > Este juego de lenguaje —se podría decir—sólo se juega con cuestiones de la
 > vida. Del mismo modo que la palabra «ay» no tiene significado—sino como grito
-> de dolor.
+> de dolor.<br>
 > —Wittgenstein
 
 ---

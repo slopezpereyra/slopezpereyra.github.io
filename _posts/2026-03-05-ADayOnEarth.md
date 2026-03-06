@@ -11,6 +11,7 @@ world is to simply say *the world*. This here is «brain activity», such is its
 spectral decomposition, thus its empirical one. But did you not think, a few
 years ago only, that whatever this «activity» «produces» is of Spinozian nature?
 (You read it in Panksepp's work and did not believe it, but you believe it now!)
+
 Another day on Earth trying to forget what you know too well. For once, instead
 of looking, be blind: shut your eyes to see! You have whispered to yourself this
 very morning the *Auguries of Innocence* but you are too much of a fool to act
