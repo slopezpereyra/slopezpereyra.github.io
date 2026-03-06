@@ -15,7 +15,7 @@ years ago only, that whatever this «activity» «produces» is of Spinozian nat
 Another day on Earth trying to forget what you know too well. For once, instead
 of looking, be blind: shut your eyes to see! You have whispered to yourself this
 very morning the *Auguries of Innocence* but you are too much of a fool to act
-upon its words. You have recalled John Scotus Eriugena's four-fold division and
+upon its words. You have recalled Eriugena's four-fold division and
 said to yourself: *so it is*, but you have failed to see the world as a
 teophany. For once, instead of looking, be blind and shut your eyes to see!
 
