@@ -7,8 +7,6 @@ $\S$ (From the *Tractatus*) Assume every possible *scientific* question
 is answered. Imagine your life under this assumption. Do you feel the
 central problems of your life are solved? Are there remaining questions?
 
-$\S$ What the previous mental experiment bears out: there is an
-insurmountable gap between rational discourse and the meaning of life.
 
 $\S$ The central problem in life is what is its meaning. The central
 problem of philosophy, to make rationally intelligible the statement
