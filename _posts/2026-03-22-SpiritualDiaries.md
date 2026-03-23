@@ -24,7 +24,7 @@ whatever exists is by definition part of nature». I had thus concluded that if
 God existed it had to be a *natural* God. Years later I found in Wittgenstein
 what I call the paradox of the absolute. The paradox can be expressed as
 follows: the experience of anything absolute, by being an experience, is a fact,
-and by being a fact is of relative. His solution to this paradox is as follows:
+and by being a fact is relative. His solution to this paradox is as follows:
 *yes*, the paradox makes ethical and religious statements meaningless, but this
 very meaninglessness is their essence. In other words, the purpose of ethical or
 spiritual statements is *precisely* to go *beyond* the world.
