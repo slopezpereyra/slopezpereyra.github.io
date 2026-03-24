@@ -16,3 +16,24 @@ aunque se llena, se llena de tinieblas. Y en todo era movido por la sed idiota
 del que busca dar caza a una entidad desconocida, una que, cuando finalmente es
 alcanzada, aunque *en cierto modo* muere, crea una copia de sí misma en un lugar
 desconocido. Y todo debe comenzar de nuevo.
+
+$\S$ Hace poco soñé que me encontraba en una mesa rodeado de gente que aprecio y
+que me aprecia. Una colega científica decía «en verdad es un joven inteligente»,
+la directora de mi laboratorio celebraba mis logros, y mi pareja me contemplaba
+con amor diciéndome lo noble que era. Entonces presentí mi absoluta pequeñez y,
+poniendo las manos sobre la cruz que pende de mi cuello, lloré con amargura.
+Nadie comprendió mi llanto, pero les dije: «¡Si tan sólo hubiera hecho todo lo
+bueno que hice en mi vida, pero sin que nadie supiera que fui yo el que lo
+hizo!» Porque siempre cultivé la arrogancia y la vanidad, y me sentí mejor que
+otros por tener hinchada la cabeza, sin darme cuenta que la única virtud está en
+el corazón del hombre. Por eso a mis quince años ---lo recuerdo vivamente, y es
+la memoria que más vergüenza me da--- me reí con sorna de una humilde persona
+que escuché consultar por libros de filosofía, como pensando: «¡como que ésta va
+a leer algo!» La vida me enseñó luego la perfección de esa mujer, como para
+enseñarme una lección, pero yo era aún demasiado estúpido para aprender nada.
+Vivía hinchado de mí mismo, y cuanto más se inflaba mi cabeza más se torcía mi
+corazón. Adoraba que me elogien, y para colmo de males cultivaba precisamente
+actividades que la gente gusta de elogiar ---la lectura, la ciencia, la música y
+la poesía---. Verdaderamente digo, quisiera nunca más ser elogiado, y cada obra
+de amor quisiera hacerla en secreto. Y si amo lo que hago, ¿qué puede darme un
+elogio? El amor es su propio fin.
