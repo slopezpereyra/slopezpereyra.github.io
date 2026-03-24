@@ -3,6 +3,10 @@ title: Confesiones
 categories: [Personal]
 ---
 
+> Cuando una nueva ética se descubre, y se reconoce como verdadera, es natural
+> que revisemos la conducta pasada a fin de interpretarla bajo la nueva luz.
+> Eso es lo que pretendo ahora.
+
 
 $\S$ El sentimiento de vacío no consiste en no sentir nada. Tiene un *qualia*
 determinado, pero cuya determinación es precisamente la no determinación, la
