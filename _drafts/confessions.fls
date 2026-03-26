@@ -12,6 +12,10 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
 INPUT /usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
+INPUT /usr/share/texlive/texmf-dist/tex/latex/verse/verse.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/verse/verse.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/gmverse/gmverse.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/gmverse/gmverse.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
@@ -83,14 +87,6 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/oberdiek/centernot.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/oberdiek/centernot.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/kastrup/binhex.tex
-INPUT /usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
-INPUT /usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-INPUT /usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/newtx/t1ntxtlf.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/newtx/t1ntxtlf.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/newtx/t1ntxtlf.fd
