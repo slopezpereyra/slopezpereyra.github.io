@@ -145,3 +145,25 @@ si tan solo sea por volver a escuchar tu voz. El reino de los cielos está dentr
 de nosotros, eso lo sé, y por eso sé que te llevo conmigo, y que cada obra de
 amor que haga es tu homenaje; porque no podría vivir si vivir fuera olvidarte.
 
+
+$\S$ Recuerdo ahora cierto tiempo feliz, tal vez el más feliz, aunque por mucho
+el más colmado de angustias y problemas. Tenía quince años y cursaba el
+penúltimo año del secundario, del que egresé con diecisiete, y pasaba mis horas
+leyendo en el vasto jardín de mi casa quinta, rodeado de libros y el sonido de
+los pájaros. Había encontrado cierta alegría en el abandono del mundo digital
+—que, aunque ya denso, no era nada de lo que ahora es—; había guardado mi
+computadora en un placard y escribía con una vieja máquina de escribir que mi
+padre me consiguió. Él todavía se ríe cariñosamente al recordarme tan jovencito,
+sentado a la sombra de lapachos y ceibos, con una pequeña mesa plegable donde
+ponía todos mis chiches, interrumpiendo la exuberante orquesta de los trópicos
+con la percusión de mi escritura. Estaba trabajando en un libro de poemas que
+llamaba las \textit{Flores del odio}, donde sublimaba, con esquivo y dudoso
+talento, los retorcidos odios del conflicto familiar. En efecto, aunque un
+pintor hubiera visto en ese chico un escenario bucólico y pacífico, yo, por otro
+lado, colmaba las páginas de una angustia sin nombre y un amargo resentimiento.
+No conoía el perdón, ni me lo habían enseñado; no conocía la piedad, ni la había
+sentido nombrar. ¿No es cierto que ese mismo joven, aparentemente tranquilo,
+dio muerte sin razón a una hermosa lechuza? Maté para entender que nada es peor
+que la muerte; porque, cuando la vi caer, en su elegante majestuosidad, me dije:
+«esa criatura es igual a vos, y vos le has dado muerte». Y me odié a mí mismo.
+
