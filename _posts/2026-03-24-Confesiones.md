@@ -157,11 +157,11 @@ padre me consiguió. Él todavía se ríe cariñosamente al recordarme tan joven
 sentado a la sombra de lapachos y ceibos, con una pequeña mesa plegable donde
 ponía todos mis chiches, interrumpiendo la exuberante orquesta de los trópicos
 con la percusión de mi escritura. Estaba trabajando en un libro de poemas que
-llamaba las \textit{Flores del odio}, donde sublimaba, con esquivo y dudoso
+llamaba las *Flores del odio*, donde sublimaba, con esquivo y dudoso
 talento, los retorcidos odios del conflicto familiar. En efecto, aunque un
 pintor hubiera visto en ese chico un escenario bucólico y pacífico, yo, por otro
 lado, colmaba las páginas de una angustia sin nombre y un amargo resentimiento.
-No conoía el perdón, ni me lo habían enseñado; no conocía la piedad, ni la había
+No conocía el perdón, ni me lo habían enseñado; no conocía la piedad, ni la había
 sentido nombrar. ¿No es cierto que ese mismo joven, aparentemente tranquilo,
 dio muerte sin razón a una hermosa lechuza? Maté para entender que nada es peor
 que la muerte; porque, cuando la vi caer, en su elegante majestuosidad, me dije:
