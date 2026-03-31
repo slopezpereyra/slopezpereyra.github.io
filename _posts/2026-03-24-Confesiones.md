@@ -28,21 +28,24 @@ bueno que hice en mi vida, pero sin que nadie supiera que fui yo el que lo
 hizo!» Porque siempre cultivé la arrogancia y la vanidad, y me sentí mejor que
 otros por tener hinchada la cabeza, sin darme cuenta que la única virtud está en
 el corazón del hombre. Por eso a mis quince años —lo recuerdo vivamente, y es la
-memoria que más vergüenza me da— me reí con sorna de una humilde persona que
-escuché consultar por libros de filosofía, como pensando: «¡como que ésta va a
-leer algo!» La vida me enseñó luego la perfección de esa mujer, como para
-enseñarme una lección, pero yo era aún demasiado estúpido para aprender nada.
-Vivía hinchado de mí mismo, y cuanto más se inflaba mi cabeza más se torcía mi
-corazón. Adoraba que me elogien, y para colmo de males cultivaba precisamente
-actividades que la gente gusta de elogiar —la lectura, la ciencia, la música y
-la poesía—. Lo que es peor, cuando una persona hacía lo correcto; es decir,
-cuando una persona no me consideraba ni más ni menos por ejercer estas
-actividades, sentía como una especie de ofensa, como un vano dignatario ofendido
-de que, al saludarlo, no besen su delicada mano. Tal era, en mi adolescencia y
-mi juventud temprana, el grado de mi ignorancia. Y hoy verdaderamente digo,
-quisiera nunca más ser elogiado, y cada obra de amor quisiera hacerla en
-secreto. Si amo lo que hago, ¿qué puede darme un elogio? El amor es su propio
-fin.
+memoria que más vergüenza me da— me reí con sorna, para mis adentros, de una
+humilde persona que escuché consultar por libros de filosofía, como pensando:
+«¡ésta no sabe nada!». No pensé en su humildad ni en que fuera loable que
+buscara educarse; todo eso vino después de aquella crueldad inmediata.
+Inmediatamente comprendí mi estupidez, y sentí vergüenza de mí mismo, pero esta
+vergüenza no me hizo mejor. La vida me enseñó luego la perfección de esa mujer,
+como para enseñarme una lección, pero yo era aún demasiado estúpido para
+aprender nada. Vivía hinchado de mí mismo, y cuanto más se inflaba mi cabeza más
+se torcía mi corazón. Adoraba que me elogien, y para colmo de males cultivaba
+precisamente actividades que cierta gente gusta de elogiar —la lectura, la
+ciencia, la música y la poesía—. Lo que es peor, cuando una persona hacía lo
+correcto; es decir, cuando una persona no me consideraba ni más ni menos por
+ejercer estas actividades, sentía como una especie de ofensa, como un vano
+dignatario ofendido de que, al saludarlo, no besen su delicada mano. Tal era, en
+mi adolescencia y mi juventud temprana, el grado de mi ignorancia. Y hoy
+verdaderamente digo, quisiera nunca más ser elogiado, y cada obra de amor
+quisiera hacerla en secreto. Si amo lo que hago, ¿qué puede darme un elogio? El
+amor es su propio fin.
 
 
 $\S$ Me gustaba repetir, en mi ignorancia, aquella sentencia del
@@ -177,15 +180,58 @@ tenía amigos, porque los había alejado a todos, y vivía bajo el absoluto
 convencimiento de que la totalidad de mi vida había sido una farsa; que cuanto
 tuvo de hermoso fue una ilusión y había provisto la diminuta luz de una
 estrella; y cuanto tenía de sórdido era terriblemente verdadero y gravitaba con
-el peso de una gigantesca luna. Estaba en mi ciudad natal; mi
-madre y mi hermana estaban en algún lugar de la casa, y subí a la terraza con la
-resolución de arrojarme al vacío. Pero resulta que esta terraza daba al baldío
-de un amplio regimiento adyacente al hogar, y recordé cierta ocasión de mi niñez
-en que mi padre me condujo a esta terraza y me hizo ver cómo un grupo de
-soldados excavaba fatigadamente la tierra. Me explicó que, muchos años atrás, un
-grupo de hombres había exterminado y desaparecido a otros hombres, y que ahora
-estos hombres buscaban a los desaparecidos. Y me dije a mí mismo: «soy, y he de
-ser». Porque sentí que una muerte voluntaria ofendería a aquellos que tuvieron
-que dar su vida involuntariamente. Lloraba y me decía: «nunca serás feliz».
-Porque ignoraba que una luz brillaba en las tinieblas, y que las tinieblas no la
-podían comprender.
+el peso de una gigantesca luna. Estaba en mi ciudad natal; mi madre y mi hermana
+estaban en algún lugar de la casa, y subí a la terraza con la resolución de
+arrojarme al vacío. Pero resulta que esta terraza daba al baldío de un amplio
+regimiento adyacente al hogar, y recordé cierta ocasión de mi niñez en que mi
+padre me condujo a esta terraza y me hizo ver cómo un grupo de soldados excavaba
+fatigadamente la tierra. Me explicó que, muchos años atrás, un grupo de hombres
+había exterminado y desaparecido a otros hombres, y que ahora estos hombres
+buscaban a los desaparecidos. Y me dije a mí mismo: «soy, y he de ser». Porque
+sentí que una muerte voluntaria ofendería a aquellos que tuvieron que dar su
+vida involuntariamente. Y me dio vergüenza haber matado cualquier criatura,
+porque ahora pensaba que la muerte era lo único permanente que había obrado en
+esta tierra. Lloraba y me decía: «nunca serás feliz». Porque ignoraba que una
+luz brillaba en las tinieblas, y que las tinieblas no la podían comprender.
+
+
+$\S$ Hace poco tiempo creí comprender: El reino de los cielos es el estado de
+existencia del que vive bajo los ocho principios. Estos principios son: 
+
+1. No resistir el mal.
+
+2. Rechazar de toda forma de autoridad terrenal y de poder concentrado.
+
+3. Practicar la austeridad y abstenerse de actuar motivados por el deseo de
+adquirir riquezas, poder, o cosas superficiales.
+
+4. No juzgar a otros, como se enseña en *Mateo 7:1-5*, y abandonar toda
+arrogancia y vanidad.
+
+5. Perdonarlo todo, como se enseña en *Mateo 18:21-22*. 
+
+6. Tomar el lado de los hambrientos, los que pasan frío, los prisioneros, los
+sometidos, y los débiles, y acercarse a ellos.
+
+7. Nunca limitar la libertad de otro, sea hombre o mujer, en ninguna materia:
+económica, política, religiosa, sexual, etc.
+
+8. Nunca preocuparse por la propia vida ni por el mañana, como se expresa en
+*Mateo 6:25-34*.
+
+
+(No es difícil encontrar excepciones a estos principios; pero el sentido de un
+principio es ser general, no universal.)
+
+Pienso que todas mis angustias se derivan de mi alejamiento de estos principios,
+sobre todo del (4) y el (8). De los demás, con mayor o menor éxito, no creo
+desviarme tanto que pueda considerarme corrompido o vil. ¿Por qué entonces pesa
+sobre mi corazón tanta tristeza? ¿Quién puso sobre mí este yugo, esta
+desagradable predisposición a la melancolía, este deseo de muerte? Sueño siempre
+y solo sueño turbios universos. Lo que es peor, no sé mostrarme de este modo, y
+quien sea que me cruce seguro me encuentre risueño y feliz, porque me da pudor y
+vergüenza mi tristeza. Por eso vengo a este papel a hacerle un altar a mi
+tristeza, sencillo y de mal gusto, como esas ermitas llenas de cursi encanto que
+uno encuentra en las rutas argentinas. Y, como ellas, tras la fachada colorida y
+pobre, puedo esconder a San La Muerte.
+
