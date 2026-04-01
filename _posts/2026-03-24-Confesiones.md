@@ -247,7 +247,7 @@ gestara en nosotros. Pero no es así: se gestan, aparecen, y es nuestro deber
 dejarlos ser: verlos pasar como estrellas fugaces en un cielo baldío. La
 felicidad es vivir en el reino de los cielos; vivimos en el reino de los cielos
 cuando obramos con amor y compasión. Nada importa si un pensamiento oscuro nos
-asalta: los pensamientos son como luciérnagas que se prenden y se apagan en la
+asalta: los pensamientos son luciérnagas que se prenden y se apagan en la
 oscuridad total de la consciencia.
 
 $\S$ Ahora me asalta este recuerdo infeliz: Estoy recorriendo las sinuosas
