@@ -235,3 +235,57 @@ tristeza, sencillo y de mal gusto, como esas ermitas llenas de cursi encanto que
 uno encuentra en las rutas argentinas. Y, como ellas, tras la fachada colorida y
 pobre, puedo esconder a San La Muerte.
 
+$\S$ Y, ahora me digo, ¿no son una mentira estas angustias? Se obran en mí como
+una ilusión es obrada por un mago habilidoso ante los ojos crédulos de un necio.
+He besado una boca y fui feliz—luego, el pensamiento: «this was
+meaningless»—luego una extraña paz—luego un vacío—luego ternura. Me engaño
+porque imagino que la felicidad es un estado ideal y perfecto; pero, en todas
+las cosas, me asombran pensamientos oscuros, infelices o, por lo menos, faltos
+de hermosura. Me asombran y me digo: «¿Lo ves? No eres feliz». Como si la
+felicidad tuviera como condición necesaria que ningún pensamiento imperfecto se
+gestara en nosotros. Pero no es así: se gestan, aparecen, y es nuestro deber
+dejarlos ser: verlos pasar como estrellas fugaces en un cielo baldío. La
+felicidad es vivir en el reino de los cielos; vivimos en el reino de los cielos
+cuando obramos con amor y compasión. Nada importa si un pensamiento oscuro nos
+asalta: los pensamientos son como luciérnagas que se prenden y se apagan en la
+oscuridad total de la consciencia.
+
+$\S$ Ahora me asalta este recuerdo infeliz: Estoy recorriendo las sinuosas
+montañas de Goa en motocicleta; tengo diecinueve años; paso junto a una choza
+campesina; veo un hombre descalzo y sin remera, robusto y ventrudo, golpeando
+cruelmente a un perro con un palo. Su crueldad me asombra; bajo la velocidad y
+digo: tengo que hacer algo. Pero a medida que desacelero pienso: «¿cuántas veces
+te dijeron que, sobre todas las cosas en la India, te cuides de no tener
+problemas que involucren a la policía?». (La corrupción y el abuso de poder son
+absolutos, y uno como turista es particularmente vulnerable.) Y cuando este
+pensamiento vino a mí dos fuerzas en mi interior lucharon momentáneamente, pero
+triunfó la peor, aceleré otra vez y no me detuve. La vergüenza que me genera no
+haberme detenido es tal que, casi diez años después, todavía recuerdo vivamente
+aquella situación: el aroma en el aire de esa tarde, el tono de los colores y la
+luz solar, al hombre y al perro que debí ayudar. ¿Y cómo iba ayudarlo? ¿Gritando
+a un campesino en un idioma que no comprendía? Si me ignoraba, ¿iba a retenerlo,
+a golpearlo, a llamar a la policía—aunque no tenía cómo—? No lo sé, pero lo
+que sé es simple: vi un acto de crueldad repulsivo, todo en mi corazón me dijo,
+con una voz visceral, «haz algo», y no lo hice. Y no puedo olvidar esa derrota.
+
+$\S$ En otra ocasión, a los dieciséis, con mucho esfuerzo y contra toda
+probabilidad, salvé a un cachorro de la muerte. Lo encontré empapado al pie de
+un lago en el interior de Corrientes, cuyas orillas pernoctaba con algunos
+amigos. Al hallarlo lo cubrí con mi abrigo y lo llevé a la casilla del sereno
+que cuidaba la laguna, sólo para que revelara que él lo había arrojado al agua
+porque su madre había muerto. No entendí ni su lógica ni su crueldad, y cuando
+le hice saber —con malas palabras— lo que pensaba me dijo: «si querés
+hacerte el héroe, hacete el héroe, pero a mí no me jodas». El cachorro moría en
+mis brazos, con la lengua colgando fuera de la boca, y me retiré al hospital más
+cercano. (En aquel pueblo del interior no había un hospital de animales, sólo un
+pequeñísimo hospital con tres o cuatro personas.) Me abrieron la puerta del
+hospital extrañados de que llevara un perro y se negaron a ayudar de ningún
+modo. Lo llevé entonces a la casa de uno de mis amigos, donde por largas horas
+nos esforzamos en secarlo y darle calor: toallas, una fogata en la chimenea, un
+secador de pelo, fueron los instrumentos de nuestro pequeño centro médico. Hoy
+el cachorro es un perro adulto que todavía vive con la familia de este amigo. Lo
+que me pregunto yo es: ¿por qué yo, este «yo» cuyo sentido ignoro, en el
+transcurso de unos cuatro años, mata una lechuza, salva con mucho esfuerzo a un
+animal, no salva aunque quiere a otro? ¿Por qué coexistieron en mí, en este «mí»
+indescifrable, la crueldad, la valentía, y la cobardía; la ignorancia, la
+compasión, la duda? Si hay una sola persona en todo esto, ¿quién es?
