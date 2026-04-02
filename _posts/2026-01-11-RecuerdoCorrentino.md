@@ -218,6 +218,6 @@ invadía el Paraguay y yo, traidor a mi patria, luchaba en el bando paraguayo.
 Soñé que estaba solo, «sin padre ni madre», en una playa fría. Soñé a mi antiguo
 profesor de música sonriendo. Soñé que me enamoraba de una joven y, en efecto,
 amanecí enamorado de ella. Soñé que moría y pensaba: «esto fue todo, la quise
-tanto, que Dios que la proteja». Soñé piezas de ajedrez que intentaban en vano
+tanto, que Dios la proteja». Soñé piezas de ajedrez que intentaban en vano
 repetir una partida de Morphy. No soñé, lamentablemente, con Paulina, cuyo
 rostro sólo puedo ver en sueños y extraño mucho últimamente.
