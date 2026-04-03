@@ -11,5 +11,6 @@ distanacia del reino de los cielos... Los niños que pasaban ante mí, jugando,
 eran más sabios, y por ende más felices. Ojalá hubiera muerto, o existiera
 en una oscuridad tan absoluta que no pudiera discernir si es una tumba o es la
 bóveda materna. Ojalá, dado que no he muerto, viviera una vida *sencilla*. ¿Se
-comprende lo que eso significa? *Sencilla*. Sí... Pero no soy un hombre simple,
-en todo siento un eco, y ante mis ojos todas las cosas son vestigios.
+comprende lo que eso significa? *Sencilla*. Sí... Pero no soy un hombre simple:
+en todo siento un eco anocheciente, y el mundo aparece ante mis sentidos como un 
+universo de vestigios.
