@@ -3,7 +3,7 @@ title: En un pueblo del interior
 categories: [Personal]
 ---
 
-$\S$ Acabo de volver de Santa Ana, un humilde pueblo cercano a Corrientes, en
+Acabo de volver de Santa Ana, un humilde pueblo cercano a Corrientes, en
 cuya plaza me senté a mirar pasar a las personas. Había una forma perfecta de
 sencillez en cada mínimo detalle. Me sentí indigno de existir, o al menos de
 existir allí, en ese lugar, en ese momento. Mi vanidad, mi sensualidad, mi
