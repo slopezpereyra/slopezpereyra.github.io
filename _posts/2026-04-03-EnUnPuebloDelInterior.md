@@ -4,7 +4,7 @@ categories: [Personal]
 ---
 
 $\S$ Acabo de volver de Santa Ana, un humilde pueblo cercano a Corrientes, en
-cuya plaza me senté a mirar a las personas. Había una forma perfecta de
+cuya plaza me senté a mirar pasar a las personas. Había una forma perfecta de
 sencillez en cada mínimo detalle. Me sentí indigno de existir, o al menos de
 existir allí, en ese lugar, en ese momento. Mi vanidad, mi sensualidad, mi
 distanacia del reino de los cielos... Los niños que pasaban ante mí, jugando,
