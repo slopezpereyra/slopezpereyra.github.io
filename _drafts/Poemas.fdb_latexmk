@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1774995924.66202 "Poemas.tex" "Poemas.pdf" "Poemas" 1774995925.02179 0
+["pdflatex"] 1775197873.31378 "Poemas.tex" "Poemas.pdf" "Poemas" 1775197874.00224 0
   "/etc/texmf/web2c/texmf.cnf" 1740662799.63242 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1698694482 2914 fdbc4a54b9bc76f4551b5303f2737d33 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -53,8 +53,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1740670969.59643 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1740670991 8214096 2cc5ed7d441cd7dd7f6cf9e30d4bb5a5 ""
-  "Poemas.aux" 1774995924.99442 188 7c64f0081f9229c4a5d013b688d8bec6 "pdflatex"
-  "Poemas.tex" 1774995923.77611 11158 c81af14cc0b39e9508150afe0e17e97d ""
+  "Poemas.aux" 1775197873.95373 188 04db9a89e74bcb9f6b601a4b62d98df0 "pdflatex"
+  "Poemas.tex" 1775197871.93672 11796 4d3ffc4fa6fcfa6e674e4bad73543235 ""
   (generated)
   "Poemas.aux"
   "Poemas.log"
