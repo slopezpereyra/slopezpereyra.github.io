@@ -9,7 +9,7 @@ sencillez en cada mínimo detalle. Me sentí indigno de existir, o al menos de
 existir allí, en ese lugar, en ese momento. Mi vanidad, mi sensualidad, mi
 distanacia del reino de los cielos... Los niños que pasaban ante mí, jugando,
 eran más sabios, y por ende más felices. Ojalá hubiera muerto, o existiera
-en una oscuridad tal que no pudiera discernir si es una tumba o es la bóveda
-materna. Ojalá, dado que no he muerto, viviera una vida *sencilla*. ¿Se
-comprende lo que eso significa? *Sencilla*. Sí... Pero no soy un hombre
-simple. En todo siento el eco de un milenio anocheciente.
+en una oscuridad tan absoluta que no pudiera discernir si es una tumba o es la
+bóveda materna. Ojalá, dado que no he muerto, viviera una vida *sencilla*. ¿Se
+comprende lo que eso significa? *Sencilla*. Sí... Pero no soy un hombre simple.
+En todo siento el eco de un milenio anocheciente.
