@@ -53,6 +53,119 @@ ingresan. Se desea una variable global (compartida) para el contador.
 
 \newpage
 
+\section*{Lenguajes $\omega$-regulares}
+
+Sea $\Sigma^*$ un lenguaje y $A \subseteq \Sigma^*$. Definimos 
+
+\begin{equation}
+    A^\omega := \left\{ \sigma_1\sigma_2\sigma_3 \ldots \mid \forall i \geq 1:
+    \sigma_i \in A \land \sigma \neq \epsilon\right\} 
+\end{equation}
+
+Es decir, $A^\omega$ contiene todas las concatenaciones infinitas de palabras no
+vacías de
+$A$. 
+
+Un lenguaje $L$ se dice $\omega$-regular si existen lenguajes regulares $A_i,
+B_i$, con $0 \leq i \leq k$, tal que $\epsilon \not\in B_i \neq \emptyset$ y 
+
+\begin{equation*}
+    L = \bigcup_{i=0}^k A_i B_i^\omega
+\end{equation*}
+
+donde $A_i B_i^\omega$ es la concatenación de lenguajes.
+
+\textbf{Teorema.} Los lenguajes $\omega$-regulares son cerrados por unión,
+unión, intersección y complemento.
+
+Una palabra $\alpha \in A^\omega$, con $A \subseteq \Sigma^*$, se denomina un
+fragmento de traza.
+
+
+\small
+\begin{quote}
+
+\textbf{Ejemplo.} Considere el lenguaje $A = \left[ (m + \epsilon)(r+u)
+\right]^* \subseteq \left\{ m, r, u \right\}^* $. Ahora considere
+$A^\omega$ el conjunto de concatenaciones no vacías de $A$.
+
+Una palabra de $A$ es $mru$. Una palabra de $A^\omega$ es 
+
+$$mru ~ rrr ~ mu ~ mru ~ rrr ~ mu \ldots$$
+
+Notar que si definimos $X = \left\{ \epsilon \right\} $, $L = XA^\omega =
+A^\omega$ es un lenguaje omega regular. 
+
+También podríamos definir $\Sigma := \left\{ \text{poweron}, \text{setup},
+\text{yield} \right\} $ y $S = \left\{ \text{poweron} \cdot \text{setup} \cdot
+\text{yield} \right\} $ un alfabeto con una sola palabra. Entonces 
+
+\begin{equation*}
+    L = SA^\omega 
+\end{equation*}
+
+es un lenguaje $\omega$-regular con «cadena de iniciación» dada por la única
+palabra de $S$ y luego trazas tomadas de $A^\omega$.
+
+En general, $L = \bigcup_{i=0}^k A_iB_i^\omega$ define una unión de lenguajes
+que tienen ciertas cadenas de inicialización seguidas de trazas infinitas (no
+vacías).
+
+
+\end{quote}
+\normalsize
+
+Los lenguajes $\omega$-regulares sirven para escribir propiedades de sistemas
+concurrentes. En general, una propiedad $P$ de un lenguaje se define como un
+subconjunto de trazas $P \subseteq \Sigma^\omega$.
+
+\subsection*{Safety}
+
+La propiedad de safety especifica que «nunca ocurre» algo, donde el
+\textit{algo} en cuestión se entiende como un evento indeseable. Una posible
+especificación de safety es el conjunto de trazas $P \subseteq \Sigma^\omega$ tales que
+
+\begin{equation}
+    \sigma \not\in P \Rightarrow \exists  i \geq 0 : \forall \beta :
+    \sigma[..i]\beta \not\in P
+\end{equation}
+
+donde $\sigma[..i]$ es el prefijo de $\sigma$ de longitud $i$.
+
+Desglosemos. Si $\sigma$ es una traza que ha violado la propiedad de safety,
+entonces la ha violado en un instante de tiempo $i$ determinado, y a partir de
+dicho momento no importa qué $\beta$ siga después, la traza sigue violando la 
+propiedad de safety. En otras palabras, la traza ha violado la propiedad en un
+instante dado, y dicho instante marca un «punto de no retorno».
+
+Una definición equivalente es 
+
+\begin{equation}
+    \sigma \in P \Rightarrow\forall  i \geq 0: \exists  \beta : \sigma[..i]\beta
+    \in P
+\end{equation}
+
+Es decir, una traza respeta la propiedad de safety si en cada instante de tiempo
+existe una continuación posible que respeta la propiedad.
+
+\subsection*{Liveness}
+
+La propiedad de liveness especifica que «siempre puede ocurrir» algo, donde el
+\textit{algo} en cuestión se entiende como un evento deseable. Un conjunto de
+trazas $P \subseteq \Sigma^\omega$ es de liveness si cumple 
+
+\begin{equation}
+    \forall  \sigma \in P: \exists \beta \in \Sigma^\omega : \sigma\beta \in P
+\end{equation}
+
+\section*{Mas resultados}
+
+Toda propiedad $P \subseteq \Sigma^\omega$ puede escribirse como una
+intersección de una propiedad de safety y una propiedad de liveness. 
+
+
+
+
 
 
 
