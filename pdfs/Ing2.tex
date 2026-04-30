@@ -1,10 +1,17 @@
 \documentclass[a4paper, 12pt]{article}
-
+\usepackage{logix}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\definecolor{shadecolor}{rgb}{0.1,0.1,0.1}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
 \usepackage{amssymb}
-\usepackage{newtxtext} \usepackage{newtxmath}
 \usepackage{amsmath, amssymb}
 \newtheorem{problem}{Problem}
 \newtheorem{example}{Example}
@@ -14,8 +21,28 @@
 \newtheorem{example}{Example} \newtheorem{definition}{Definition}
 \newtheorem{lemma}{Lemma}
 \newtheorem{theorem}{Theorem}
+\usepackage{tikz}
+\usetikzlibrary{automata, positioning}
+
+\usepackage{chngcntr}
+
+\counterwithin*{equation}{section}
 \DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
-\usepackage{parskip}
+\usepackage[pdftex]{graphicx}
+\usepackage{mlmodern}
+\DeclareGraphicsExtensions{.pdf,.jpeg,.png,.jpg}
+\newmdenv[backgroundcolor=orange!25,
+            leftline=false,
+            rightline=false,
+            bottomline=true,
+            linewidth=2pt,
+            linecolor=black]{myframe}
+\newmdenv[backgroundcolor=blue!35,
+            leftline=false,
+            rightline=false,
+            bottomline=true,
+            linewidth=2pt,
+            linecolor=black]{helpframe}
 
 
 \begin{document}
@@ -158,12 +185,156 @@ trazas $P \subseteq \Sigma^\omega$ es de liveness si cumple
     \forall  \sigma \in P: \exists \beta \in \Sigma^\omega : \sigma\beta \in P
 \end{equation}
 
-\section*{Mas resultados}
 
-Toda propiedad $P \subseteq \Sigma^\omega$ puede escribirse como una
+\textbf{Teorema.} Toda propiedad $P \subseteq \Sigma^\omega$ puede escribirse como una
 intersección de una propiedad de safety y una propiedad de liveness. 
 
 
+\section*{Lógica Temporal Lineal (LTL)}
+
+Los operadores de LTL son: 
+
+\begin{align*}
+    \Box \psi &:= \text{ siempre, en el futuro, sucede $\psi$}\\ 
+    \Diamond  \psi &:= \text{ siempre, en el futuro, sucede $\psi$}\\ 
+    \bigcirc  \psi &:= \text{en el siguiente instante suecde } \psi \\
+    \psi \text{ U } \varphi &:= \psi\text{ sucede hasta que ocurra
+    }\varphi\\\
+    \psi \text{ WU } \varphi &:= \psi\text{ sucede siempre, o hasta que ocurra }\varphi
+\end{align*}
+
+Todo operador en realidad es una combinacón de los operadores básicos U y
+$\bigcirc $.
+
+Sea $\mathcal{P}$ el conjunto de todas las proposiciones atómicas de LTA y sea
+$\mathcal{F}$ el conjunto de fórmulas. Toda $p \in \mathcal{P}$ pertenece a
+$\mathcal{F}$ por axioma. Si $\psi, \varphi \in \mathcal{F}$, entonces $\varphi
+\bowtie \psi \in \mathcal{F}$ para cualquier conector lógico (proposicional o de
+LTL) $\bowtie$, y $\neg
+\varphi, \bigcirc \varphi, \Diamond \varphi, \Box \varphi \in \mathcal{F}$. 
+
+Una teoría proposicional es un conjunto de fórmulas que incluye los axiomas de
+la lógica proposicional. Dada una teoría proposicional, todo modelo
+$\mathcal{A}$ de la teoría puede verse como un subconjunto $\mathcal{A} \subseteq
+\mathcal{P}$.
+
+Más generalmente, diremos que $\varphi$ se satiface en $\mathcal{A} \subseteq
+\mathcal{P}$ si $\mathcal{A} \vDash \varphi$, definiendo inductivamente 
+
+\begin{align*}
+    \mathcal{A} \vDash p &\iff p \in \mathcal{A}\\ 
+    \mathcal{A} \vDash \neg \varphi &\iff \mathcal{A} \not\vDash \varphi\\ 
+    \mathcal{A} \vDash \varphi \land  \psi &\iff \mathcal{A} \vDash \varphi \text{ y } \mathcal{A}
+    \vDash \psi
+\end{align*}
+
+Siguiendo esta idea, decimos que un modelo de una fórmula de LTL es un
+subconjunto de 
+
+\begin{equation*}
+    \left( 2^{\mathcal{P}} \right)^\omega
+\end{equation*}
+
+Es decir, un modelo es un conjunto de secuencias infinitas de modelos de teorías
+proposicionales. Para decir que una fórmula de LTL $\varphi$ se satisface en una
+traza $\sigma \in (2^{\mathcal{P}})^\omega$, decimos $\sigma \vDash \varphi$.
+
+\section{Model checking}
+
+El \textit{modelo} de un sistema define un sistema de transiciones 
+
+\begin{equation*}
+    M = (S, s_0, \to , v)
+\end{equation*}
+
+donde $S$ son los estados posibles del sistema, $s_0$ el estado inicial, $\to $
+es la relación de transición tal que si $s \in S$ existe un $s' \in S$ que
+cumple $s \to s'$, y $v : S \to 2^{\text{PA}}$ es una función de valuación.
+
+La función de valuación mapea estados a conjuntos de proposiciones atómicas.
+Si las proposiciones de $PA$ expresan propiedades del sistema, la idea es que 
+$v(S) \subseteq PA$ sean aquellas proposiciones que son verdaderas en el estado
+$S$.
+
+Una ejecución de un modelo $M$ es una función $\rho : \mathbb{N} \to S$ tal que 
+
+\begin{equation*}
+    \rho(0) = s_0, \qquad \rho(i) \to \rho(i+1) \qquad \forall  i \geq 0
+\end{equation*}
+
+El comportamiento de un modelo se define como 
+
+\begin{equation*}
+    \mathcal{L}(M) = \left\{ \sigma \in (2^{PA})^\omega \mid \exists \rho
+    :\forall  i \geq 0 : \sigma(i) = v \left( \rho \left( i \right)  \right)  \right\} 
+\end{equation*}
+
+Es decir, es el conjunto de trazas que «se corresponden» con una ejecución de
+$M$, o que pueden producirse con una ejecución de $M$.
+
+Hacer \textit{model checking} es verificar si un sistema $M$ cumple una
+propiedad lógica $\phi$, algo que denotamos con $M \vDash \phi$. Decimos que 
+
+\begin{equation*}
+    M \vDash \phi \iff \mathcal{L}(M) \subseteq \mathcal{L}(\phi)
+\end{equation*}
+
+donde recordamos que $\mathcal{L}(\phi)$ es el conjunto de todas las trazas
+donde $\phi$ es verdadera.
+
+\subsection*{Autómatas de Büchi}
+
+Un autómata de Büchi es una estructura 
+
+\begin{equation*}
+    \mathcal{A} = \left( \Sigma, S, \delta, s_0, A \right) 
+\end{equation*}
+
+tal que $\Sigma$ es un alfabeto finito, $S$ un conjunto de estados con estado
+inicial $s_0$, $\delta : \Sigma \times S\to 2^S$ es una función de
+transición, y $A$ es el conjunto de estados de aceptación.
+
+Dado un automáta de Büchi $\mathcal{A}$ y una traza $\sigma =
+\sigma_0\sigma_1\sigma_2\ldots$, decimos que $\Sigma$ es aceptada por
+$\mathcal{A}$ si existe $\rho \in \mathbb{N} \to S$ tal que 
+
+\begin{enumerate}
+    \item $\rho(0) = s_0$
+    \item $\rho(i+1) \in \delta \left( \sigma(i), \rho(i) \right) $
+    \item Existen estados de aceptación en $A$ que se repiten infinitas veces en 
+        $\rho$; es decir, el conjunto $\left\{ i \in \mathbb{N} \mid \rho(i) \in
+        A\right\} $ es infinito.
+\end{enumerate}
+
+Definimos $\mathcal{L}(A)$ como el conjunto de todas las trazas aceptadas por
+$\mathcal{A}$. 
+
+Los autómatas de Büchi aceptan exactamente todos lenguajes $\omega$-regulares.
+
+Notemos que si $M = (S, s_0, \to, v)$ es modelo de un programa, entonces $M$
+puede verse como el autómata de Büchi $\mathcal{A} = (\Sigma, S, \delta, s_0,
+S)$ tal que $\Sigma = 2^{\text{PA}}$ y 
+
+\begin{equation*}
+    s_j \in \delta(B, s_i) \iff s_i \to s_j \land B = v(s_i)
+\end{equation*}
+
+y todos los estados son de aceptación. Esto último se debe a que nos interesan
+todas las ejecuciones posibles del sistema.
+
+\textbf{Teorema.} $\mathcal{L}(M) = \mathcal{L}(\mathcal{A})$.
+
+\textbf{Teorema.} Para toda fórmula LTL $\phi$, se puede construir un autómata 
+de Büchi $\mathcal{A}$ tal que $\mathcal{L}(\mathcal{A}) = \mathcal{L}(\phi)$.
+
+\textbf{Teorema.} Dados dos autómatas de Büchi $\mathcal{A}_1, \mathcal{A}_2$<
+se puede construir un autómata $\mathcal{B} = \mathcal{A}_1 \cap \mathcal{A}_2$ tal que 
+$\mathcal{L}(B) = \mathcal{L}(\mathcal{A}_1) = \mathcal{L}(\mathcal{A}_2)$.
+
+\textbf{Teorema.} Lo mismo que el teorema anterior pero con el complemento. 
+
+\textbf{Teorema.} Existe un algoritmo que permite decidir si el lenguaje
+$\omega$-regular aceptado por un autómata de Büchi es vacío o no.
 
 
 
@@ -176,6 +347,1247 @@ intersección de una propiedad de safety y una propiedad de liveness.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\pagebreak 
+\section{P1}
+
+\begin{myframe}
+    \textbf{(3)} Dar la descripción en FSP de los grafos en el práctico.
+\end{myframe}
+
+\begin{verbatim}
+MOVIE = (ahead -> (right -> MOVIE | left -> STOP) ).
+JOB = (arrive -> work -> leave -> JOB ).
+
+GAME = ( tree-> lose -> GAME 
+     | {a, b} -> S
+     ),
+S = (win -> GAME).
+
+FOURTICK = (tick -> tick -> tick -> tick -> STOP).
+
+
+DOUBLE = 
+(
+in[i:1..3] -> out[i] -> DOUBLE
+).
+
+
+PERSON = 
+(
+  weekend -> SLEEP
+| weekend -> SLEEPWORK
+),
+
+SLEEP = (sleep -> {play, shop} -> PERSON),
+SLEEPWORK = (sleep -> work -> PERSON).
+\end{verbatim}
+
+\pagebreak 
+
+\begin{myframe}
+    \textbf{(4)} Una variable almacena valores en el rango 0..N y soporta las
+    acciones read y write. Modele la variable como un proceso, denominado
+    VARIABLE, usando FSP. Para N = 2, compruebe que se pueden realizar las
+    acciones dadas por la siguiente traza:
+
+    write.2 → read.2 → read.2 → write.1 → write.0 → read.0
+\end{myframe}
+
+
+\begin{verbatim}
+const N = 2
+range T = 0..N
+
+VARIABLE = VARIABLE[0],
+VARIABLE[u:T] = ( read[u]    -> VARIABLE[u]
+                | write[v:T] -> VARIABLE[v]
+                ).
+\end{verbatim}
+
+\pagebreak 
+
+\begin{myframe}
+    \textbf{(6)} Considere un sensor que mide el nivel de agua de un tanque. El
+    nivel, que inicialmente es 5, se mide en unidades de 0 a 9. El sensor emite
+    una señal de bajo si el nivel es menor que 2 y una señal de alto si el nivel
+    es mayor a 8. En cualquier otro caso, el sensor emite la señal normal.
+    Modele el sensor como un proceso FSP.
+\end{myframe}
+
+El sensor estático se modela adecuadamente con:
+
+\begin{verbatim}
+const K = 9 
+range H = 0..K
+
+SENSOR = SENSOR[5], // Nivel inicial en 5
+SENSOR[j:H] =  
+(
+	  when (j < 2) bajo -> SENSOR[j]  // señal de bajo pero mantener el estado del sensor
+	| when (j > 8) alto -> SENSOR[j] // Same con señal de alto
+	| when (j >= 2 && j <= 8) normal -> SENSOR[j] // Same con señal de normalidad
+).
+\end{verbatim}
+
+Sin embargo, ninguna de las acciones modifica el estado del sensor, y por lo
+tanto el grafo tiene un único nodo. Debemos agregar un mecanismo para modificar
+el estado del sensor.
+
+\begin{verbatim}
+const K = 9 
+range H = 0..K
+
+SENSOR = SENSOR[5], // Nivel inicial en 5
+SENSOR[j:H] =  
+(
+	  when (j < 2) bajo -> SENSOR[j]  
+	| when (j > 8) alto -> SENSOR[j] 
+	| when (j >= 2 && j <= 8) normal -> SENSOR[j] 
+    | setlevel[n:H] -> SENSOR[n]
+).
+\end{verbatim}
+
+\pagebreak 
+
+\begin{myframe}
+\textbf{(7)} Una máquina expendedora de bebidas cobra 15c por una lata de
+gaseosas. La máquina acepta monedas de 5c, 10c, y 20c, y da vuelto. Modele la
+máquina como un proceso FSP.
+\end{myframe}
+
+\begin{verbatim}
+const N = 35
+range K = 0..N
+
+EXP = EXP[0],
+EXP[x:K] = 
+  ( when (x < 15)  in[5]  -> EXP[x+5]
+  | when (x < 15)  in[10] -> EXP[x+10]
+  | when (x < 15)  in[20] -> EXP[x+20]
+  | when (x == 15) yield  -> EXP[0]
+  | when (x > 15)  change[x-15] -> yield -> EXP[0]
+  ).
+\end{verbatim}
+
+\pagebreak 
+
+\begin{myframe}
+    \textbf{(8)} Considere una radio FM con tres controles. Uno es un
+    interruptor on/off, que enciende el aparato o lo apaga. Los otros controles
+    controlan la sintonización; éstos son dos botones scan y reset. Cuando la
+    radio se enciende o el botón reset se apreta, la radio se sintoniza en la
+    frecuencia más alta de la banda (es decir, 108Mhz). Cuando se presiona
+    scan, la radio empieza a buscar una estación, bajando hacia la frecuencia
+    más baja de la banda (88Mhz); se frena cuando encuentra una estación o
+    cuando llega la banda más baja, y si se vuelve a apretar scan, continúa la
+    búsqueda en forma descendente. Modele la radio como un proceso FSP.
+\end{myframe}
+
+\begin{verbatim}
+const A = 88
+const B = 108
+range T = A..B
+
+RADIO = (on -> ON[B]),
+ON[i:T] = (
+	  off -> RADIO
+	| station -> STATION[i]
+	| reset -> ON[B]
+	| when(i > A) scan -> ON[i-1]
+),
+STATION[i:T] = (
+	   when (i > A) scan -> ON[i-1]
+	|  off -> RADIO
+	|  reset -> ON[B]
+).
+
+\end{verbatim}
+
+
+\pagebreak 
+
+\begin{myframe}
+    \textbf{(9)} Muestre que S1 y S2, definidos de la siguiente manera:
+
+\begin{verbatim}
+P = (a -> b -> P).
+Q = (c -> b -> Q).
+||S1 = (P || Q).
+S2 = (a -> c -> b -> S2 | c -> a -> b -> S2).
+\end{verbatim}
+
+tienen el mismo comportamiento.
+\end{myframe}
+
+\textbf{Comportamiento de \texttt{S1}}: Como \texttt{a, c} no son compartidas,
+cualquiera puede ejecutarse primero. Si \texttt{a} se ejecuta primero,
+\texttt{b} no podrá ejecutarse y deberá ejecutarse \texttt{c}. El caso análogo
+ocurre si \texttt{c} se ejecuta primero. Por ende, las sub-trazas posibles son 
+
+\begin{verbatim}
+    a -> c -> b 
+    c -> a -> b
+\end{verbatim}
+
+que se repiten (tal vez intercalándose) indefinidamente. Es obvio por
+definición que este comportamiento es idéntico al de \texttt{S2}.
+
+
+\pagebreak 
+
+\begin{myframe}
+\textbf{(10)} Un museo permite que sus visitantes entren a través de la entrada
+este, y que abandonen el museo a través de la salida oeste. Los arribos y las
+partidas de personas son controladas por puertas giratorias en la entrada y en
+la salida. Además, el director del museo indica la habilitación de la entrada y
+salida de personas en el horario de apertura del museo, y cuando indica el
+horario de cierre sólo se permiten salidas del museo, pero no entradas. La
+habilitación e inhabilitación de las puertas giratorias las realiza un
+controlador. Modele, utilizando los procesos \texttt{EAST}, \texttt{WEST},
+\texttt{CONTROL} y \texttt{DIRECTOR}, el comportamiento del museo.
+\end{myframe}
+
+\textbf{Razonamiento.} Las puertas este y oeste solo tienen una acción: entrar y
+salir, respectivamente. Ninguna de estas acciones modificia el estado del
+sistema.
+
+El director tiene dos acciones: abrir y cerrar el museo. Ninguna modifica
+directamente el estado del sistema, sino que desencadenan (se sincronizan) con
+la acción correspondiente del controlador.
+
+El controlador es la interfaz entre el director y el funcionamiento del sistema.
+La posibilidad de \texttt{entrar} así como el \texttt{abrir} y \texttt{cerrar}
+del museo dependen del controlador y por ende estas acciones serán compartidas.
+El controlador debe ofrecer \texttt{entrar}, \texttt{salir} y \texttt{cerrar} si
+el museo está abierto; \texttt{salir, abrir} si el museo está cerrado. Es claro
+entonces que el \texttt{CONTROLADOR} está formado por dos sub-procesos.
+
+\begin{verbatim}
+EAST = (entrar -> EAST).
+WEST = (salir -> WEST).
+DIRECTOR = (abrir -> cerrar -> DIRECTOR).
+
+CONTROL = CERRADO,
+CERRADO = (abrir -> ABIERTO 
+          | salir -> CERRADO),
+ABIERTO = (entrar -> ABIERTO 
+          | salir -> ABIERTO 
+          | cerrar -> CERRADO).
+
+||MUSEO = (EAST || WEST || DIRECTOR || CONTROL).
+\end{verbatim}
+
+Notar que como \texttt{DIRECTOR} y \texttt{CONTROL} comparten abrir y cerrar, el
+\texttt{CONTROL} no podrá abrir sin que el director abra ni el \texttt{DIRECTOR}
+abrir sin que el control abra. Lo mismo vale para cerrar. Es decir, ambos
+procesos están coordinados. Es la forma en que modelamos que el director
+«ordena» la apertura y el cierre de las puertas. 
+
+Como \texttt{CONTROL} solo ofrece la acción \texttt{entrar} en el proceso
+\texttt{ABIERTO}, la puerta \texttt{EAST} sólo tendrá esta acción habilitada en
+dicho proceso. Esto modela la inhabilitación de la puerta de entrada. La acción
+\texttt{salir}, por otra parte, siempre está disponible.
+
+\begin{figure}[h]
+    \centering
+    % LaTeX handles relative paths. Note the forward slashes.
+    \includegraphics[width=0.8\textwidth]{../MUSEO.pct}
+    \caption{Image from the Museo folder}
+    \label{fig:museo_image}
+\end{figure}
+
+\pagebreak 
+
+\begin{myframe}
+    \textbf{(11)} Considere una célula de producción industrial, en la cual se
+    procesan objetos, realizando un prensado de los mismos. Los objetos que se
+    reciben son de cierto tipo $A$, y llegan a través de una cinta
+    transportadora. Al llegar el primer elemento de la cinta a la posición de
+    extracción, la cinta se para. Luego, un brazo mecánico levanta el elemento
+    de la cinta y lo lleva a la prensa (la cual debe estar desocupada), para su
+    prensado. Luego del prensado, otro brazo mecánico extrae el elemento de la
+    prensa y lo deposita en la salida de la célula. Modele la célula de
+    producción como un proceso FSP.
+\end{myframe}
+
+\begin{verbatim}
+
+CINTA = (fill_cinta -> cinta_to_press -> CINTA).
+PRENSA = (cinta_to_press -> prensar -> out -> PRENSA).
+
+||CELL = (CINTA || PRENSA).
+\end{verbatim}
+
+
+\pagebreak
+\section*{P2}
+
+~ 
+
+\begin{myframe}
+    \textbf{Ejercicio 2.} Considere el problema de lectores y escritores que desean acceder a un recurso común (por ej.\ una variable) donde los lectores sólo pueden leer de ese recurso mientras los escritores pueden leer y escribir. Además de las consideraciones usuales del problema de lectores-escritores, por una restricción de la administración del recurso, sólo se permite que $K$ procesos lo estén accediendo simultáneamente. Suponga que en el sistema hay $N$ lectores y $M$ escritores (con $N$ y $M$ mayores a $K$). Modele el problema descripto en FSP, proveyendo además de las definiciones de los procesos correspondientes, el diagrama de estructura de su modelo.
+\end{myframe}
+
+Las acciones disponibles a los $N + M$ agentes son simplemente leer y escribir. 
+Existen $N + M$ procesos activos (agentes). 
+
+No se regula el acceso de los lectores, pero un escritor solo puede acceder si
+no hay nadie más en el recurso. De otro modo, escribiría sobre lo que otro lee o
+sobre lo que otro escribe. En resumen, en el caso de los escritores, debemos
+garantizar exclusión mutua. 
+
+Para lograr todo, basta definir un semáforo que regule la cantidad de agentes en
+el recurso, y hacer que los lectores y los escritores se relacionen de forma
+diferente con el semáforo. Para 
+
+Para lograr todo, definimos un proceso pasivos que es como un semáforo alterado.
+Este semáforo modificado funciona tal y como un semáforo, con dos excepciones:
+$(a)$ tiene un límite superior $K$, $(b)$ cuando está en cero se habilitan las
+acciones \texttt{acquire -> release} (es decir,
+cuando está en cero, se puede comportar como un \texttt{lock}).
+
+Los lectores solo harán \textit{up} y \textit{down} sobre el semáforo, no se
+preocupan por nada del lock. Los escritores harán \texttt{acquire}, una acción
+que se bloqueará hasta que el semáforo esté en cero (i.e. hasta que no haya
+ningún escritor y ningún lector).
+
+Notar que los escenarios posibles son: hay $k$ lectores, con $0 \leq k \leq
+\text{max}$ (regulado por el semáforo); o hay $1$ escritor (regulado por «el
+lock del semáforo»). La solución está en la siguiente página.
+
+\pagebreak
+\begin{verbatim}
+const N = 3
+const M = 3
+const K = 2
+
+SEMLOCK(V=0) = SEM[V],
+SEM[x:0..(N+M)] = (
+	  when (x < K) up -> SEM[x+1]
+	| when (x > 0) down -> SEM[x-1]
+	| when (x == 0) acquire -> release -> SEM[0]).
+
+READER = (semlock.up -> read -> semlock.down -> READER).
+WRITER = (semlock.acquire -> write -> semlock.release -> WRITER).
+
+
+||MODEL = (
+	r[1..N]:READER || 
+	w[1..M]:WRITER || 
+	{r[1..N], w[1..M]}::semlock:SEMLOCK
+).
+\end{verbatim}
+
+
+Notamos que el alfabeto definido \texttt{SEMLOCK} tiene un par de redundancias;
+en particular, las acciones \texttt{rj.acquire, rj.release} con $j = 1\ldots N$
+no van a tener relevancia en la composición final (los escritores no hacen
+release ni acquire).
+
+\pagebreak 
+
+\begin{myframe}
+    \textbf{Ejercicio 3.} Una computadora central conectada a terminales remotas a través de enlaces de comunicación se utiliza para realizar reservas de asientos en un teatro. Los empleados del teatro que realizan las reservas pueden mostrar el estado actual de reservas en las pantallas de las terminales. Para poder reservar un asiento, el cliente elije el número, y un empleado accede a través de la terminal para saber si el mismo está reservado o no. Si no lo está, realiza la reserva correspondiente. Construya un modelo FSP para este problema, asegurando que no puede reservarse más de una vez el mismo asiento en el teatro.
+\end{myframe}
+
+Tenemos empleados como agentes externos al sistema que pueden interactuar con
+cualquiera de las $k$ terminales. El sistema no sabe nada del cliente: solo
+recibe a través de $T_j$ un número $x$ y responde si está habilitado o no. El
+problema central es: ¿cómo «llevar la cuenta» de qué asiento está libre o no?
+
+Para esto, modelamos los $N$ asientos como parte del sistema y modelamos que la
+computadora central está en relación con ellos.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\pagebreak 
+
+\begin{myframe}
+    \textbf{(11)} Muestre que los siguientes procesos son (fuertemente) bisimilares:
+
+\begin{verbatim}
+P = a -> (b -> c -> P)    
+\end{verbatim}
+
+\[
+P = \left( a \to \left( b \to c \to P \;\; \mid \;\; b \to c \to P \right) \right).
+\]
+
+\[
+Q = \left( a \to b \to R \;\; \mid \;\; a \to b \to R \right),
+\qquad
+R = \left( c \to Q \right).
+\]
+\end{myframe}
+
+
+
+
+\pagebreak
+\section{P3}
+
+~ 
+
+\begin{myframe}
+    \textbf{(3)} Demuestre que la intersección de propiedades de safety es una propiedad de safety.
+\end{myframe}
+
+Sean $P_1, P_2 \subseteq \Sigma^\omega$ propiedades de safety. Por def. tenemos que 
+
+\begin{equation*}
+    \alpha \in P_i \Rightarrow  \forall i \geq 0 : \exists \beta \in
+    \Sigma^\omega : \alpha[..i] \beta
+    \in P_i
+\end{equation*}
+
+para $i = 1, 2$. Sea $P = P_1 \cap P_2$ y $\alpha \in P$. Entonces $\alpha \in
+P_1$ y $\alpha \in P_2$. Por lo tanto, 
+
+\begin{equation*}
+    \forall i \geq 0 : \exists  \beta \in \Sigma^\omega : \alpha[..i]\beta \in
+    P_i
+\end{equation*}
+
+para $i = 1$ y para $i = 2$. Sea $\beta_0 \in \Sigma^\omega$ un elemento
+arbitrario tal que $\alpha[..i]\beta_0 \in P_i$ para $i = 1, 2$ para todo $i \geq
+0$. Por def. 
+
+$$\alpha[..i]\beta_0 \in P_1 \land  \alpha[..i]\beta_1 \in P_2 \Rightarrow
+\alpha[..i]\beta_0 \in P $$
+
+\begin{equation*}
+    \therefore  ~ \forall  i \geq 0 : \exists  \beta \in \Sigma^\omega :
+    \alpha[..i]\beta \in P
+\end{equation*}
+
+$\therefore $ $P$ es una propiedad de safety.
+
+\pagebreak
+
+\begin{myframe}
+    \textbf{(4)} ¿Es cierto que la intersección también preserva las propiedades liveness?
+\end{myframe}
+
+~
+
+Sean $P_1, P_2$ propiedades de liveness y sea $P := P_1 \cap P_2$. Entonces 
+
+\begin{equation*}
+    \forall \alpha \in P_i : \exists  \beta \in \Sigma^\omega : \sigma\beta \in
+    P_i, \qquad i = 1, 2
+\end{equation*}
+
+Sea $\alpha \in P$, i.e. $\alpha \in P_1$ y $\alpha \in P_2$. Consideremos como
+contraejemplo el caso en que el
+$\beta_0 \in \Sigma^\omega$ tal que $\alpha\beta_0 \in
+P_1$ es único, y el $\beta_1$ tal que $\alpha\beta_1 \in
+P_2$ es único, y $\beta_0 \neq \beta_1$. Se sigue que $\alpha\beta_0 \not\in
+P_2$ y $\alpha\beta_1 \not\in P_1$. Si este fuera el caso, se tendría
+$\alpha\beta_0, \alpha\beta_1 \not\in P$. Si hubiera otra traza $\hat{\beta}$
+tal que $\alpha\hat{\beta} \in P$, se violaría la unicidad de $\beta_1$ y
+$\beta_2$. Por lo tanto, en este caso, no existe ningún $\beta \in
+\Sigma^\omega$ tal que $\alpha\beta \in P$. 
+
+$\therefore $ $P$ no es una propiedad de liveness.
+
+\pagebreak 
+
+\begin{myframe}
+    \textbf{(5)} Encuentre alguna propiedad que sea simultáneamente de safety y de liveness.
+\end{myframe}
+
+Es muy sencillo observar que dado un alfabeto $\Sigma$, el lenguaje
+$\omega$-regular $\Sigma^\omega$ es una propiedad de safety y es una propiedad
+de liveness. La pregunta es si existe una propiedad que sea simultáneamente
+safety y liveness más allá de esta, que es trivial. Demostraremos que esto es
+imposible.
+
+Sea $P \subset \Sigma^\omega$ una propiedad de safety y de liveness. Como $P
+\neq \Sigma^\omega$, se sigue que $\overline{P} \neq \emptyset$, donde el
+complemento se toma respecto al universo $\Sigma^\omega$. En otras palabras,
+existen trazas que llegan a un «punto de no retorno». 
+
+Por hipótesis, $P$ satisface dos propiedades simultáneamente:
+
+
+\begin{enumerate}
+    \item Si $\alpha \not\in  P$, existe un prefijo $\alpha[..i]$
+        , con $i \geq 0$, tal que $\beta \not\in P$ para todo $\beta \in
+        \Sigma^\omega$.
+    \item Dada cualquier palabra $\psi \in \Sigma^*$, existe un $\varphi \in
+        \Sigma^\omega$ tal que $\psi\varphi \in P$. En otras palabras, cualquier
+        tramo inicial puede llegar a formar una traza en $P$.
+\end{enumerate}
+
+Sea $\alpha \in \overline{P}$. Como $P$ satisface safety, se cumple que $\alpha$
+tiene un prefijo malo $\alpha[..i]$, $i \geq 0$, tal que $\alpha[..i]\beta
+\not\in P$ para toda traza $\beta$ posible. Pero $\alpha[..i] \in \Sigma^*$. Por
+liveness, existe una traza $\varphi \in \Sigma^\omega$ tal que
+$\alpha[..]\varphi \in P$. Pero esto contradice que $\alpha[..i]$ es un prefijo
+malo. La contradicción viene de asumir que $\overline{P} \neq \emptyset$.
+
+$\therefore $ Sólo $\Sigma^\omega$ cumple simultáneamente liveness y safety.
+
+
+\small
+\begin{quote}
+
+
+$(\dagger)$ Notar que ya hemos realizado acá el ejercicio \textbf{(6)}.
+
+\end{quote}
+\normalsize
+
+
+\pagebreak 
+
+\begin{myframe}
+    \textbf{(7)} Demustre o refute que el complemento de una propiedad de safety
+    es una propiedad de liveness.
+\end{myframe}
+
+Ya vimos que $\Sigma^\omega$ es de safety y de liveness. Si el enunciado fuera
+cierto,
+$\overline{\Sigma^\omega} = \emptyset$ sería de liveness. Esto querría decir que
+para toda $\alpha \in \Sigma^\omega$, existe una traza no vacía e infinita
+$\beta$ tal que $\alpha\beta \in \emptyset$, lo cual es absurdo.
+
+$\therefore $ El enunciado es falso.
+
+\pagebreak 
+
+\begin{myframe}
+    \textbf{(8)} Considere el alfabeto $\Sigma = \{a, b\}$. Determine si las
+    siguientes propiedades son de \textit{safety}, \textit{liveness}, ambas, o
+    ninguna. Justifique la respuesta:
+
+\begin{itemize}
+    \item[\textit{i.}] $a^* b^\omega$ \hfill \textit{iii.} $a^* b^+ a^\omega$ \hfill \textit{v.} $(ab)^\omega$
+    \item[\textit{ii.}] $(b + a)^+ b^\omega$ \hfill \textit{iv.} $(a + b)^* (a^\omega + b^\omega)$ \hfill \textit{vi.} $(ab)^* a^\omega$
+\end{itemize}
+\end{myframe}
+
+$(i)$ Este lenguaje $\omega$-regular consiste de las palabras que empiezan con
+una cantidad arbitraria, posiblemente nula, de $a$s, seguida de una traza
+infinita de $b$s. 
+
+(Safety.) Sea $\alpha$ una palabra \textit{fuera} del lenguaje. Una
+forma posible de $\alpha$ es ser una cadena infinita de $a$s. Pero si
+$\alpha$ tiene esta forma, todo prefijo de $\alpha$ es una cadena finita de
+$a$s, a la cual puede agregarse una cadena infinita de $b$s para «corregir» la
+traza y dar con una traza buena. Es decir, no se cumple que toda traza fuera del
+lenguaje tiene un prefijo malo. $\therefore $ No es de safety.
+
+(Liveness.) Sea $\varphi = aba \in \Sigma^*$. Claramente, no existe ninguna
+traza $\psi \in \Sigma^\omega$ tal que $\varphi\psi$ pertenezca al lenguaje. 
+$\therefore $ No es de liveness.
+
+$(ii)$ El lenguaje tiene una combinación arbitraria de $a$s y $b$s al empezar,
+posiblemente nula, pero eventualmente «se queda» en $b$ y la repite
+indefinidamente.
+
+(Safety) Si $\alpha$ no pertenece al lenguaje, debe cumplirse que una de las siguientes:
+o bien $\alpha$ tiene una repetición infinita de $a$s, o es una combinación
+infinita de $a$s y $b$s, sin nunca «quedarse» en $b$. De esto se sigue que para
+todo $i \geq 0$, $\alpha[i]$ es o bien $a$ o bien $b$. Pero de esto se sigue que 
+$\alpha[..i]b^\omega$ es una traza en lenguaje. Es decir, ningún $i$ satisface
+que $\alpha[..i]$ sea un prefijo malo. $\therefore $ No es de safety.
+
+(Liveness) Sea $\varphi \in \Sigma^*$. Si $\varphi$ es una combinación de
+$a$s y $b$s en orden y cardinalidad arbitrarios. Pero entonces es claro que
+$\varphi b^\omega$ pertenece al lenguaje. (Notar que esto vale incluso si
+$\varphi = \epsilon$.) $\therefore $ Es de liveness.
+
+$(i i i )$ 
+
+(Safety) Sea $\alpha$ una palabra fuera del lenguaje. Es concebible que $\alpha$
+sea de la forma $b^\omega$. Pero entonces todo prefijo de $\alpha$ es de la
+forma $b^n$ para $n$ natural. Pero entonces $\alpha a^\omega$ pertenece al
+lenguaje. Es decir que $b^n$ no es un prefijo malo. Como no todas las palabras
+fuera del lenguaje tienen un prefijo malo, la propiedad no es de safety.
+
+(Liveness) Sea $\alpha = bab \in \Sigma^*$. No importa qué traza infinita
+añadamos, no pertenece al lenguaje. No es de liveness.
+
+$(i v)$ (Safety.) Suponga que $\alpha$ no pertenece al lenguaje. Entonces
+$\alpha$ es una traza que combina $a$s y $b$s indefinidamente, sin nunca
+«quedarse» en una o la otra. Obviamente no tiene prefijo malo, porque
+$\alpha[..i]z^\omega$, con $z \in \Sigma$, pertenece al lenguaje para toda $i
+\geq 0$.
+
+(Liveness.) Por def. toda palabra del lenguaje empieza con una $\varphi \in
+\Sigma^*$; o bien, toda $\varphi \in \Sigma^*$ es tramo inicial de una traza del
+lenguaje. De esto se sigue liveness trivialmente.
+
+$(v)$ 
+
+
+(Safety.) Toda palabra fuera del lenguaje es o bien una palabra que empieza con
+$b$ o bien una palabra que empieza con $a$ pero no es exactamente alternante, i.e. 
+tiene una $a$ tras la cual no hay una $b$, o una $b$ tras la cual no hay una
+$a$. 
+
+Si no es exactamente alternante, existe un índice $i$ tal que $\alpha[i] =
+\alpha[i+1]$. Tomando $\alpha[..(i+1)]$, es claro que $\alpha[..(i+1)]\beta$,
+con $\beta \in \Sigma^\omega$, no pertenece al lenguaje. Es decir, existe un
+prefijo malo. 
+
+Si $\alpha$ empieza con $b$, entonces $\alpha[..0]$ es el prefijo malo.
+
+$\therefore $ Es de safety. 
+
+Sea $\psi = aa$. No existe $\beta \in \Sigma^\omega$ tal que $\psi\beta$
+pertenezca al lenguaje. No es de liveness.
+
+$(vi)$ $(ab)^\omega$ no pertenece al lenguaje pero no tiene prefijo malo, dado que
+$(ab^\omega)[..(2i+1)]a^\omega$ pertenece al lenguaje para toda $i$. No es de safety.
+
+Si $\psi = abb$, no existe traza infinita que añadida a $\psi$ pertenezca al
+lenguaje. No es de liveness.
+
+\pagebreak 
+
+\begin{myframe}
+    \textbf{(9)} Para cada propiedad P del Ejercicio 8 que no sea de safety extiéndala
+    agregando el menor conjunto de trazas de manera que lo sea. Use expresiones
+    $\omega$-regulares. Justifique su respuesta
+\end{myframe}
+
+
+
+$(i) P = a^* b^\omega$.
+
+Hay dos tipos de palabra fuera de $P$: las que, tras una aparición de $b$,
+tienen alguna aparición de $a$, y las que son una secuencia infinita de $a$s.
+
+Las primeras tienen prefijo malo (trivial), pero las segundas no, porque
+si $\alpha$ es una secuencia infinita de $a$s, $\alpha[..i]b^\omega \in P$ para
+todo $i \geq 0$. 
+
+Por lo tanto, extendemos el lenguaje y definimos $P' = a^*b^\omega + a^\omega$.
+La idea es que ahora $P'$ contiene los elementos fuera del lenguaje $P$ que no
+tenían prefijo malo. Ahora las únicas palabras fuera de $P$ son las que tienen
+alguna $a$ después de la primera aparición de $b$, y la propiedad es de safety.
+Notamos que $P \subset P'$, que es lo deseado.
+
+
+$(i i) P = (b+a)^+ b^\omega$
+
+En el ejercicio anterior probamos que esta propiedad era de liveness. La
+clausura de safety de una propiedad de liveness es $\Sigma^\omega$. $\therefore
+$ Debemos extender el lenguaje a toda $\Sigma^\omega$.
+
+
+\small
+\begin{quote}
+
+\textbf{Demostración del enunciado anterior.} Sea $P$ una propiedad de liveness.
+Todo prefijo $\alpha[..i]$, con $i \in \mathbb{N}$ y $\alpha \in \Sigma^\omega$,
+es una palabra de $\Sigma^*$. Por lo tanto, existe un $\beta \in \Sigma^\omega$
+tal que $\alpha[..i]\beta \in P$. Como esto vale para $\alpha \in
+\Sigma^\omega$, debe valer en particular para $\alpha \in \overline{P}$. 
+
+$\therefore $ Toda palabra fuera de $P$ carece de prefijo malo.
+
+La clausura de safety de $P$ debe incorporar a $P$ todas las palabras
+fuera de $P$ que no tienen prefijo malo. Pero hemos visto que esto es todas las
+palabras en $\overline{P}$. 
+
+$\therefore $ La clausura de safety de $P$ es $P \cup \overline{P} =
+\Sigma^\omega$.
+
+
+\end{quote}
+\normalsize
+
+
+$(i i i) P = a^*b^+ a^\omega$
+
+Sea $\alpha \not\in P$. Entonces $\alpha$ es de alguno de los siguientes
+lenguajes:
+
+\begin{itemize}
+    \item Trazas infinitas de $a$:  $\alpha \in  a^\omega$
+    \item Repeticiones infinitas de $b$s, tal vez con una secuencia inicial de
+        $a$s: $\alpha \in  a^* b^\omega$
+    \item Palabras que respetan la estructura inicial de $P$, pero no se
+        «quedan» en una repetición infinita de $a$s : $\alpha \in  a^* b^+ a^+ b^+\beta$ con $\beta \in \Sigma^\omega$
+        cualquiera.
+\end{itemize}
+
+La primera y la segunda forma no tienen prefijo malo (trivial). Pero la tercera
+sí: el prefijo malo es $a^nb^ma^kb$. 
+
+Proponemos $P' = a^* b^+ a^\omega + a^\omega + a^*b^\omega$
+
+
+$(iv) (a+b)^*(a^\omega + b^\omega)$
+
+Me aburrí.
+
+$(vi) (ab)^* a^\omega$
+
+Me aburrí.
+
+\pagebreak 
+
+\begin{myframe}
+    \textbf{(10)} Para cada $P$ del ejercicio \textbf{(8)} que no sea ni de
+    safety ni de liveness, dé una propiedad de safety $S$ y una de liveness $L$
+    tal que $P = S \cap L$.
+\end{myframe}
+
+$(i) a^* b^\omega$
+
+\begin{equation*}
+L = (a+b)^* b^\omega, \qquad S = a^*b^\omega + a^\omega
+\end{equation*}
+
+Que $L$ es de liveness se sigue de que pra toda $\alpha \in \Sigma^*$, $\alpha
+b^\omega \in L$.
+
+Que $S$ es de safety se sigue que si $\alpha \not\in S$ entonces $S$ contiene 
+alguna transición de $b$ a $a$; i.e. un índice tal que $\alpha[i] = b$
+y $\alpha[i+1] = a$. (Alternativamente, $S$ es la clausura de safety dada en el
+ejercicio anterior.)
+
+Como las palabras de $L$ terminan con trazas infinitas de $b$s y las de $S$ con
+trazas infinitas de o bien $a$s o bien $b$s, la intersección $L \cap S$ tiene
+palabras que terminan con trazas infinitas de $b$. Y como las de $L$ empiezan con
+una combinación arbitraria de $a$s o $b$s (tal vez vacía), y las de $S$ con una
+secuencia de $a$s )(tal vez vacía), las de $L \cap S$ empiezan con una secuencia
+de $a$s (tal vez vacía). Es decir, 
+
+\begin{equation*}
+    L \cap S = a^* b^\omega
+\end{equation*}
+
+
+
+$(i i i)$ $a^* b^+ a^\omega$
+
+Sea $S = a^*b^+ a^\omega + a^\omega + a^*b^\omega$.
+
+
+$(v i) (ab)^\omega$
+
+\pagebreak 
+
+\section*{P4}
+
+\begin{myframe}
+    \textbf{(2)} Analizar y justificar: 
+
+    \begin{enumerate}
+        \item $\Box \Box \varphi \to \Box \varphi$
+        \item $\Box (\varphi \land \psi) \to \Box \varphi \land  \Box \psi$
+        \item $\Diamond (\varphi \lor \psi) \to \Diamond \varphi \lor  \Diamond
+            \psi$
+    \end{enumerate}
+\end{myframe}
+
+$(1)$ Asuma que $\sigma \vDash \Box \Box \varphi$. Entonces $\forall i \geq 0$
+se cumple $\sigma[i..] \vDash \Box \varphi$. En particular, para $i = 0$, se
+cumple $\sigma[0..] = \sigma \vDash \Box \varphi$. 
+
+
+$(2)$ Asuma que $\sigma \vDash \Box (\varphi \land \psi)$. Entonces $\forall  i \geq 0$ se
+cumple $\sigma[i..] \vDash (\varphi \land \psi)$. Es decir que 
+
+
+\begin{equation}
+    \sigma[i..] \vDash \varphi \text{ y } \sigma[i..] \vDash \psi, \qquad
+    \forall  i \geq 0
+\end{equation}
+
+Por def. si para todo $i \geq 0$ se tiene $\sigma[i..] \vDash \phi$ entonces
+$\sigma \vDash \Box \phi$. Es decir que de la eq. $(1)$  se sigue 
+
+\begin{equation*}
+    \sigma \vDash \Box \varphi \text{ y } \sigma \vDash \Box \psi
+\end{equation*}
+
+Por ende $\sigma \vDash \Box  \varphi \land  \Box  \psi$. $\blacksquare$
+
+$(3)$ Asuma que $\sigma \vDash \Diamond (\varphi \lor \psi)$. Es decir que
+$\exists  i \geq 0$ tal que $\sigma[i..] \vDash (\varphi \lor  \psi)$. Tomemos $i$
+como fijo y asumamos que $\sigma[i..] \vDash \varphi$ (la prueba si $\sigma[i..]
+\vDash \psi$ es análoga.) Como entonces se garantiza la existencia de $i \geq 0$
+tal que $\sigma[i..] \vDash \varphi$, se tiene $\sigma \vDash \Diamond \varphi$.
+Pero entonces 
+
+\begin{equation*}
+\sigma \vDash \Diamond \varphi ~ \lor ~ \sigma \vDash \Diamond  \psi
+\end{equation*}
+
+Pero entonces $\sigma \vDash \Diamond \varphi \lor \Diamond \psi $.
+
+\pagebreak 
+
+
+\begin{myframe}
+    \textbf{(3)} Demuestre o refute la validez de 
+    \begin{equation*}
+        \Box (p \land  \Diamond  q) \iff \Box (p \text{U} q)
+    \end{equation*}
+\end{myframe}
+
+Veamos que 
+
+\begin{equation*}
+    \Box (p \land \Diamond q) \equiv \Box p \land  \Box \Diamond q
+\end{equation*}
+
+Considere la siguiente traza $\sigma$, donde damos los valores de $p$ y $q$ en
+los sucesivos instantes:
+
+\begin{align*} \\ 
+    &p \mid \textbf{T} \mid \textbf{F} \mid \textbf{T} \mid \textbf{F} \mid \ldots\\ 
+    &q \mid \textbf{F}\mid \textbf{T} \mid \textbf{F} \mid \textbf{T} \mid \ldots
+\end{align*}
+
+Es obvio que $\sigma \not\vDash \Box p$. Probaremos que $\sigma \vDash \Box (p
+\text{U} q)$.
+
+Consideremos primero la traza $\sigma$ completa. Tomando $j = 1$, vemos que se
+cumple $\sigma[j..] \vDash q$. Es fácil ver que para todo $0 \leq k < j$ se
+cumple $\sigma[k..] \vDash p$, porque el único valor en dicho rango es $k = 0$ y
+claramente $\sigma \vDash p$. 
+
+$\therefore $ $\sigma \vDash p \text{U} q$.
+
+Ahora consideramos la traza $\sigma[1..]$, i.e. empezando justo en el segundo
+instante. Con $j = 0$ vemos que se cumple $(\sigma[1..])[0..] \vDash q$. Ahora
+deseamos probar que para todo $0 \leq k < j$  se cumple $(\sigma[1..])[k..]
+\vDash p$. Pero como $j = 0$, el intervalo $0 \leq k < j$ es vacío. Y toda
+cuantificación universal sobre un conjunto vacío es trivialmente verdadera. 
+
+$\therefore \sigma[1..] \vDash p \text{U} q$
+
+Como $\sigma = \sigma[2..] = \sigma[4..] = \ldots$ y $\sigma[1..] =
+\sigma[3..] = \sigma[5..]$, nuestra demostración se extiende a los naturales y
+hemos probado que $\forall  i \geq 0: \sigma[i..] \vDash p \text{U} q$. 
+
+$\therefore $ $\sigma \vDash \Box (p \text{U} q)$
+
+Pero la traza $\sigma$ \textit{no} cumple $\Box p$ y por ende no cumple $\Box (p
+\land \Diamond q)$. 
+
+    \begin{equation*}
+        \therefore \text{No es cierto que } ~ ~  \Box (p \land  \Diamond  q) \iff \Box (p \text{U} q)
+    \end{equation*}
+
+
+\pagebreak 
+
+\begin{myframe}
+    \textbf{(4)} Demustre que strong fairness implica weak fairness.
+\end{myframe}
+
+Weak fairness sobre un proceso $x$ significa que siempre que si el proceso está
+siempre $H$abilitado, entonces eventualmente se $E$jecutará:
+
+\begin{equation*}
+    \Diamond \Box H \to \Box \Diamond E
+\end{equation*}
+
+Strong fairness indica que si un evento está frecuentemente habilidado, entonces
+finalmente se ejecutará:
+
+\begin{equation*}
+    \Box  \Diamond H \to \Box  \Diamond  E
+\end{equation*}
+
+(Por contradicción.) Asuma que tenemos strong fairness pero no weak fairness.
+Entonces las siguientes tres fórmulas deben ser verdaderas:
+
+\begin{equation*}
+    \Box \Diamond H \to \Box \Diamond E, \qquad \Diamond  \Box  H, \qquad \neg
+    \Box \Diamond  E
+\end{equation*}
+
+Como la tercera fórmula es la negación del consecuente de la primera, debe
+cumplirse además 
+
+\begin{equation*}
+    \neg \Box  \Diamond  H
+\end{equation*}
+
+Luego la siguiente fórmula es verdadera:
+
+\begin{equation}
+    \neg \Box  \Diamond  H \land  \Diamond \Box H
+\end{equation}
+
+Pero $\neg \Box \Diamond H \equiv \Diamond (\neg \Diamond H)$ por el axioma que
+establece que $\neg \Box x \equiv \Diamond \neg x$. Es decir que la fórmula
+$(2)$ puede escribirse como 
+
+\begin{equation}
+    \Diamond (\neg \Diamond  H) \land \Diamond (\Box H)
+\end{equation}
+
+La fórmula izquierda dice: a partir de cierto momento, $H$ ya nunca más volverá
+a pasar. La fórmula derecha dice: a partir de cierto momento, $H$ siempre
+pasará. Obviamente son contradictorias, pero debemos demostrarlo formalmente. 
+
+La fórmula izquierda garantiza la existencia de un $j$ tal que $\sigma[j..]
+\vDash \neg \Diamond H$. Pero entonces $\sigma[j..] \not\vDash \Diamond H$. Pero
+entonces no existe ningún $k \geq j$ tal que $\sigma[k..] \vDash H$.
+
+La fórmula derecha garantiza la existencia de un $j'$ tal que $\sigma[j'..]
+\vDash \Box H$. Es decir que $\forall i \geq j'$ se cumple $\sigma[i..] \vDash
+H$.
+
+Sea $i = \max(j, j')$ de manera que $i \geq j, i \geq j'$. Por el análisis de la
+fórmula izquierda, debemos tener que \textit{no} se cumple $\sigma[i..] \vDash
+H$. Por el análisis de la fórmula derecha, debemos tener que $\sigma[i..] \vDash
+H$ \textit{sí} se cumple.
+
+La contradicción se sigue de asumir que strong fairness no implica weak
+fairness.
+
+\pagebreak 
+
+\begin{myframe}
+    \textbf{(5)} Intente expresar en lógica temporal lineal las siguientes propiedades:
+
+\begin{enumerate}
+    \item “Si $\phi$ es cierto durante la ejecución del programa, eventualmente ocurrirá $\psi$”
+    \item “No es posible que $\phi$ y $\psi$ ocurran simultáneamente durante la ejecución del programa”
+    \item “Cada vez que $\phi$ sea cierto, $\psi$ también es”
+    \item “$\phi$ no deja de ocurrir, al menos hasta que $\psi$ ocurra”
+\end{enumerate}
+\end{myframe}
+
+$(1)$ $\Box (\phi \Rightarrow \Diamond  \psi)$
+
+
+$(2)$ $\Box \left( \neg \left( \phi \land \psi \right)  \right) $
+
+$(3)$ $\Box (\phi\to  \psi)$
+
+$(4)$ $\phi \text{WU} \psi$
+
+\pagebreak
+
+\begin{myframe}
+    
+\textbf{(7)} Dadas dos fórmulas LTL $\phi$ y $\psi$, sea $\phi \ \mathcal{Z} \ \psi$ el lenguaje conteniendo todas las secuencias $\rho \in (2^{PA})^\omega$ tales que, para dos posiciones distintas en las cuales $\phi$ es válida, $\psi$ es válida en una tercera posición entre medio de las otras dos. Dé una definición de $\phi \ \mathcal{Z} \ \psi$ usando los operadores de lógica LTL.
+
+\end{myframe}
+
+Hay dos interpreaciones del problema. Una nos dice que, entre dos ocurrencias de
+$\phi$, $\psi$ tiene que valer en una (pero tal vez más) posiciones intermedias.
+La otra es que $\psi$ tiene que valer en \textit{exactamente} una posición
+intermedia.
+
+$(a)$ Con la primera interpretación, proponemos 
+
+\begin{equation*}
+    \Box \Big[ 
+    (\phi \land \bigcirc \Diamond \phi) \Rightarrow \bigcirc  \left( \neg \phi \text{ U }
+    ( \psi \land \neg \phi ) \right) 
+    \Big]
+\end{equation*}
+
+$(b)$ En la segunda interpretación, pedimos que la ocurrencia intermedia de
+$\psi$ sea única. La propiedad se vuelve
+
+
+\begin{equation*}
+\Box \Big[ (\phi \land \bigcirc \Diamond \phi) \Rightarrow \bigcirc \big[ (\neg \phi \land \neg \psi) \text{ U } \big( \psi \land \neg \phi \land \bigcirc (\neg \psi \text{ U } \phi) \big) \big] \Big]
+\end{equation*}
+
+Ahora, una vez que se cumple $\phi$, pedimos que $\phi$ no se cumpla al menos
+hasta que suceda lo siguiente: $\psi$ ha valido, y a partir del instante
+siguiente en que $\psi$ ha avalido, no vuelve a valer hasta que vuelve a ocurrir
+$\phi$, donde la ocurrencia de $\phi$ debe cumplirse necesariamente.
+
+Independientemente de si seguimos la interpretación $a$ o $b$, sea $\xi$ la
+fórmula dada. Entonces el conjunto $\mathcal{Z}$ se define como
+
+\begin{equation*}
+    \mathcal{Z} := \left\{ \sigma \in ( 2^{\text{PA}} )^\omega \mid \sigma
+    \vDash \xi \right\} 
+\end{equation*}
+
+
+\pagebreak 
+
+\begin{myframe}
+    \textbf{(8)} Defina autómatas de Büchi para los siguientes lenguajes sobre el alfabeto $\{a, b, c\}$:
+
+\begin{enumerate}
+    \item conjunto de cadenas infinitas con una cantidad finita de $a$,
+    \item conjunto de cadenas infinitas en que cada ocurrencia de $c$ viene inmediatamente seguida de una ocurrencia de $b$,
+    \item conjunto de cadenas infinitas que no terminen en una secuencia infinita de $a$ ni en una de $b$ ni en una de $c$,
+    \item conjunto de cadenas infinitas con cantidades finitas de $a$, $b$ y $c$.
+\end{enumerate}
+\end{myframe}
+
+$(1)$ La idea es permitir que $b$ y $c$ mapeen \textit{opcionalmente} al estado
+final y produzcan una permanencia en el estado final. Del estado final no debe
+haber ninguna transicón que involucre a $a$: de este modo, si en alguna traza la
+aparición de $b$ o $c$ llevó al estado final, una ocurrencia de $a$ en dicha
+traza la detiene por completo, y nos asegura que el estado final no ocurre
+infinitas veces (no es aceptado).
+
+\begin{center}
+\begin{tikzpicture}[shorten >=1pt, node distance=4cm, on grid, auto, thick]
+
+    % Definición de los estados
+    \node[state, initial, initial text=inicio] (q_0) {$q_0$};
+    \node[state, accepting] (q_1) [right=of q_0] {$q_1$};
+
+    % Definición de las transiciones
+    \path[->]
+    % Bucle en q0 (Fase 1: caos permitido)
+    (q_0) edge [loop above] node {$a, b, c$} ()
+    
+    % Transición de q0 a q1 (Adivinanza del fin de las 'a')
+          edge [bend left]  node {$b, c$} (q_1)
+          
+    % Bucle en q1 (Fase 2: purga de 'a', estado de aceptación)
+    (q_1) edge [loop above] node {$b, c$} ();
+
+\end{tikzpicture}
+
+\end{center}
+
+$(2)$ Dos estados: $q_0$ es cualquier cosa excepto la ocurrencia de una $c$,
+$q_1$ es «ha ocurrido una $c$». De $q_1$ solo se sale si ocurre una $b$. Toda
+cadena en que no ocurre una $b$ justo después de una $c$ se queda sin
+transiciones disponibles y se detiene. Al hacerse finita, no producirá infinitos
+estados de aceptación.
+
+\begin{center}
+    \begin{tikzpicture}[shorten >=1pt, node distance=4cm, on grid, auto, thick]
+
+    % Definición de los estados (ambos de aceptación)
+    \node[state, initial, accepting, initial text=inicio] (q_0) {$q_0$};
+    \node[state, accepting] (q_1) [right=of q_0] {$q_1$};
+
+    % Definición de las transiciones
+    \path[->]
+    % q0 lee 'a' o 'b' y se queda esperando
+    (q_0) edge [loop above] node {$a, b$} ()
+    
+    % q0 lee 'c' y entra en estado de alerta
+          edge [bend left]  node {$c$} (q_1)
+          
+    % q1 exige obligatoriamente una 'b' para volver a la normalidad
+    (q_1) edge [bend left]  node {$b$} (q_0);
+
+\end{tikzpicture}
+\end{center}
+\pagebreak
+\begin{tikzpicture}[>=stealth, auto, thick, node distance=3cm, on grid,
+                    every loop/.style={looseness=6}]
+
+    % El hub central: Estado de Aceptación
+    \node[state, accepting] (q_acc) at (0,0) {$q_{acc}$};
+
+    % Estados de repetición alrededor del centro (radio 3)
+    % r_a también es el estado inicial
+    \node[state, initial, initial text=inicio] (r_a) at (90:3.5) {$r_a$};
+    \node[state] (r_b) at (210:3.5) {$r_b$};
+    \node[state] (r_c) at (330:3.5) {$r_c$};
+
+    % Bucles de estancamiento (Castigo infinito)
+    \draw[->] (r_a) edge [loop above] node {$a$} (r_a);
+    \draw[->] (r_b) edge [loop below] node {$b$} (r_b);
+    \draw[->] (r_c) edge [loop below] node {$c$} (r_c);
+
+    % Transiciones hacia el hub central (Premio por variar)
+    \draw[->] (r_a) edge [bend left=15] node {$b, c$} (q_acc);
+    \draw[->] (r_b) edge [bend left=15] node {$a, c$} (q_acc);
+    \draw[->] (r_c) edge [bend left=15] node {$a, b$} (q_acc);
+
+    % Transiciones desde el hub central hacia las repeticiones (Ruteo)
+    \draw[->] (q_acc) edge [bend left=15] node {$a$} (r_a);
+    \draw[->] (q_acc) edge [bend left=15] node {$b$} (r_b);
+    \draw[->] (q_acc) edge [bend left=15] node {$c$} (r_c);
+
+\end{tikzpicture}
+
+
+\pagebreak 
+
+\begin{myframe}
+\textbf{(9)} Probar que los autómatas dados aceptan el mismo lenguaje
+$\omega$-regular.
+\end{myframe}
+
+A nivel intuitivo, es claro que el autómata izquierdo acepta el conjunto de
+palabras que contienen alguna $a$. El segundo también, pero agrega algunas
+transiciones molestas. Probemos formalmente que 
+
+\begin{equation*}
+    \mathcal{L}(\mathcal{A}_1) = \left\{ \sigma \in \Sigma^\omega : \exists i
+    \geq 0 : \sigma(i) = a \right\} =: \mathcal{Z}
+\end{equation*}
+
+Sea $\sigma \in \mathcal{Z}$ arbitraria. Por def. existe un mínimo $i$ tal que 
+$\sigma(i) = a$. Definimos entonces 
+
+\begin{equation*}
+    \rho(n) = s_0, \forall  n \leq i, \qquad \rho(n) = s_1, \forall  n > i
+\end{equation*}
+
+Probemos que esta $\rho$ satisface las condiciones deseadas. En primer lugar,
+$\rho(0) = s_0$. Ahora hacemos un análisis por por casos. 
+
+
+\small
+\begin{quote}
+
+\textbf{(Caso $n < $)} En este caso tenemos
+
+\begin{equation*}
+    \rho(n + 1) = s_0
+\end{equation*}
+
+y por ser $n < i$ sabemos que $\sigma(n) = b, \rho(n) = s_0$. Pero $\delta(b,
+s_0) = \left\{ s_0 \right\} $. Es decir, $\forall n < i - 1$, se cumple
+$\rho(n+1) \in \delta(\sigma(n), \rho(n))$. 
+
+(\textbf{Caso $n > i$}) En este caso tenemos 
+
+\begin{equation*}
+    \rho(n+1) = s_1
+\end{equation*}
+
+y por ser $n \geq i$ no podemos afirmar nada de $\sigma(n)$; i.e. $\sigma(n) \in
+\left\{ a, b \right\} $. Pero $\delta(x, s_1) = \left\{ s_1 \right\} $ para $x =
+a$ y para $x = b$. Es decir que en cualquier caso se cumple $\rho(n+1) \in
+\delta(\sigma(n), \rho(n)$.
+
+(\textbf{Caso $n = i$}). Este caso representa la transición de estado.
+Sabemos que 
+
+\begin{equation*}
+    \rho(n) = s_0, \qquad \rho(n+1) = s_1
+\end{equation*}
+
+y que $\sigma(n) = a$. Pero $\delta(a, s_0) = \left\{ s_1 \right\} $. Es decir
+que $\rho(n+1) \in \delta(\sigma(n), \rho(n))$.
+
+\end{quote}
+\normalsize
+
+Vimos que en los tres casos se cumple la propiedad deseada. Del hecho de
+$\rho(n) = s_1$ para todo $n > i$ se sigue que $\left| \left\{ i \in \mathbb{N}
+: \rho(i) \text{ es de aceptacion }\right\}  \right| = \infty$.
+
+$\therefore $ Todas las palabras en $\mathcal{Z}$ son aceptadas por
+$\mathcal{A}1$.
+
+Probar que toda palabra fuera de $\mathcal{Z}$ no es aceptada es una pavada y lo
+salteamos. 
+
+$\therefore $ $\mathcal{L}(\mathcal{A}_1) = \mathcal{Z}$. $\blacksquare$
+
+Haciendo una prueba similar sobre el segundo autómata $\mathcal{A}_2$ no es
+difícil ni tan distinto a la prueba dada para $\mathcal{A}_1$.
+
+
+\pagebreak 
+
+Within each TMS session, 
+
+\begin{equation*}
+    \rho = \frac{\text{Paired-pulse
+    MEP}}{\text{Mean Single-pulse MEP}}
+\end{equation*}
+
+You are correct in claiming that we compute separately $\rho$ for ISI = 4ms and
+ISI = 20ms.
+
+\textbf{Rationale for logarithmic transformation.} For ISI 20ms,
+a single value $\rho_{\text{ICF}}$ tells you the amount of facilitation that
+occurred. For ISI = 4 ms, $\rho_{\text{ICI}}$ the amount of inhibition. So it
+would seem that we can proxy E/I balance simply as 
+
+\begin{equation*}
+    Z = \frac{\rho_{\text{ICF}}}{\rho_{\text{ICI}}}
+\end{equation*}
+
+But there is a problem; $\rho_{\text{ICF}}$ is in a different scale than
+$\rho(\text{ICF})$. Ideally, if a facilitatory pulse was $x$ times larger than
+the test pulses, and an inhibitory pulse was $x$  times smaller, these two
+values of $\rho$ would be at the same distance from $1$, since $1$ means «the
+value was no different from a test pulse». But this is not true. For instance,
+for a response twice as large as a test pulse $\rho_{\text{ICF}}$ will be two,
+but for a response half as large as a test pulse $\rho_{\text{ICI}}$ will be
+0.5. Their distance from one is not the same.
+
+In other words, facilitation effects «move $\rho$ above 1» at a different rate
+than inhibition effects «move $\rho$ below 1». This is a silly way to put it but
+it might help.
+
+What does this mean for E/I balance? Assume $\rho_{\text{ICF}} = 2$, i.e.
+facilitatory effect made pulses with twice the amplitude of test pulses. Assume
+$\rho_{\text{ICI}} = 0.5$, i.e. inhibitory effect made pulses with half the
+amplitude of test pulses. This is a pretty balanced state (same degree of
+inhibition and facilitation), but 
+
+\begin{equation*}
+    \frac{ \rho_{\text{ICF}} }{\rho_{\text{ICI}}} = \frac{2}{0.5} = 4
+\end{equation*} 
+
+which makes no sense, since this indicates strong excitatory dominance!
+
+It is in order to fix this that we take the logarithm. The logartihm corrects
+this problem. It's not worth going into why, but simply note that, in the same
+example as before, 
+
+$\log(2) \approx 0.30, \log(0.5) \approx -0.30$. So now it \textit{is} the case
+that facilitatory and inhibitory effects of the same degree (twice as much, half
+as much) are at the same distance from the point of reference (now zero).
+
+Then we simply define 
+
+\begin{equation*}
+    Z := \log(\rho_{\text{ICF}}) - \log(\rho_\text{ICI})
+\end{equation*}
 
 
 
