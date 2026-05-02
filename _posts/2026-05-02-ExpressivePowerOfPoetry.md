@@ -12,3 +12,11 @@ verses of Mallarmé's *Salut*:
 
 >    Rien, cette écume, vierge verse <br>
 >    A né désigner que la coupe
+
+One could unroll the meaning of these verses for so long... but that would of
+course defeat their purpose.
+
+
+
+
+
