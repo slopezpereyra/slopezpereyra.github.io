@@ -23,7 +23,7 @@
 \newtheorem{theorem}{Theorem}
 \usepackage{tikz}
 \usetikzlibrary{automata, positioning}
-
+\usetikzlibrary{automata, positioning, arrows.meta}
 \usepackage{chngcntr}
 
 \counterwithin*{equation}{section}
@@ -46,39 +46,6 @@
 
 
 \begin{document}
-
-
-\section*{Clase 2}
-
-\subsection*{Recursos compartidos}
-
-Debe garantizarse exclusión mutua entre procesos para que dos procesos no
-accedan al mismo tiempo a una sección crítica (recurso compartido).
-
-El problema del jardín ornamental consiste en un jardón con dos entradas (este,
-oeste) con puertas giratorias. Se desea contar el número de personas que
-ingresan. Se desea una variable global (compartida) para el contador.
-
-\newpage
-\section*{Clase 3}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\newpage
 
 \section*{Lenguajes $\omega$-regulares}
 
@@ -712,18 +679,146 @@ recibe a través de $T_j$ un número $x$ y responde si está habilitado o no. El
 problema central es: ¿cómo «llevar la cuenta» de qué asiento está libre o no?
 
 Para esto, modelamos los $N$ asientos como parte del sistema y modelamos que la
-computadora central está en relación con ellos.
+computadora central está en relación con ellos. Los asientos sólo pueden pasar
+de estar libres a ocupados, y esta noción de estado la modelamos con acciones.
+Es decir, un asiento se modela como el proceso pasivo:
+
+\begin{verbatim}
+    ASIENTO = (libre -> OCUPADO),
+    OCUPADO = (ocupado -> OCUPADO).
+\end{verbatim}
+
+El problema de concurrencia en este ejercicio es que dos terminales no deberían
+reservar el mismo asiento al mismo tiempo, así que necesitaremos un
+\texttt{LOCK} por cada asiento. 
+
+Las terminales son relativamente fáciles de modelar: cada \texttt{TERMINAL}
+tiene la acción \texttt{CHECK[x]}, que «verifica» si el asiento \texttt{x} está
+disponible o no. Esta verificación vendría a representar la computadora central,
+que se modela de este modo de manera implícita. La acción \texttt{CHECK[x]} es
+simple: si el $x$-écimo asiento tiene la acción \texttt{libre} disponible es que
+aún no se ocupó, y lo ocupamos; si el \texttt{x}-écimo asiento tiene la acción t
+\texttt{ocupado} disponible, es que ya se ocupó, y negamos la request.
+Básicamente, el trick de sincronización acá está en sincronizar la reserva con
+la acción \texttt{libre} del asiento, y la negación con la acción
+\texttt{ocupado}. El modelo completo está en la página siguiente.
 
 
+\pagebreak
 
 
+\begin{verbatim}
+const T = 2 // cantidad de terminales
+const A = 2 // cantidad de asientos
+
+// Entidad pasiva: necesitamos sincronizar ciertas acciones
+// (hacer o no una reserva) dependiendo de si un asiento está
+// libre o no.
+ASIENTO = (libre -> OCUPADO),
+OCUPADO = (ocupado -> OCUPADO).
+
+// Necesitamos garantizar exclusión mutua: dos terminales 
+// no deberían acceder al mismo asiento a la vez.
+// Como crearemos un lock por asiento, tendremos el alfabeto
+// de acciones 1.lock, 2.lock, ..., A.lock.
+LOCK = (acquire -> release-> LOCK).
+
+// Cada terminal responde a un número de asiento, intenta
+// acceder al asiento (acquire), y ejecuta el proceso CHECK,
+// que se corresponde a la computadora central que verifica
+// si el asiento está disponible o no y efectúa la acción
+// correspondiente.
+
+TERMINAL = (respond[x:1..A] -> [x].acquire -> CHECK[x]),
+CHECK[x:1..A] = (
+	  [x].libre -> [x].ocupado -> reserve[x] -> [x].release -> TERMINAL
+	| [x].ocupado -> deny[x] -> [x].release -> TERMINAL
+).
+
+||MODEL = (
+    t[1..T]:TERMINAL 
+    || {t[1..T]}::[1..A]:ASIENTO 
+    || {t[1..T]}::[1..A]:LOCK
+).
+\end{verbatim}
+\pagebreak 
+
+\begin{myframe}
+    \textbf{Ejercicio 10.} En la peluquería de Fígaro y don Mateo hay dos peluqueros
+(Fígaro y don Mateo) y $N$ sillas para que los clientes esperen sentados. Si un
+peluquero no tiene cliente que atender, entonces se echa a dormir una siesta.
+Cuando un cliente llega a la peluquería si algún peluquero está durmiendo lo
+despierta y se hace atender. Si ambos peluqueros están atendiendo entonces
+espera si hay asientos libres donde sentarse, o se va si todos los asientos están
+ocupados. Cabe destacar que en esta peluquería los pelados tienen prioridad
+(pero no pueden interrumpir un corte de pelo).
+
+Modele el sistema utilizando FSP, proveyendo el diagrama de estructura del
+modelo. (Sugerencia: Trate a los clientes como \textit{jobs}, no como procesos
+independientes).
+\end{myframe}
+
+Tratamos la llegada de clientes como eventos externos a los que el sistema debe
+reaccionar. Para sincronizar las acciones, usamos una especia de mezcla entre un
+buffer doble y un monitor. En rigor, es un buffer doble: dos «cintas» o colas
+(una para pelados, una para peludos) registran la llegada de clientes,
+manteniendo a lo sumo 20 clientes a la vez. Pero como es un proceso que sirve
+para garantizar condition synchronization, puede pensarse que el buffer doble
+cumple la función de un monitor.
+
+La llegada de un pelado se corresponde con el \texttt{put\_x} del buffer doble,
+la de un peludo con el \texttt{put\_y}; la atención con el \texttt{get\_x} y
+\texttt{get\_y} respectivamente. Cuando el buffer está vacío (no hay clientes),
+tiene una acción disponible que funciona como \texttt{signal} que «avisa» que
+los peluqueros pueden dormir. Si hay gente, otra señal (acción) avisa que se los
+puede despertar. Por último, el \texttt{get\_y} (atender a un peludo) solo se
+habilita si no hay pelados (si \texttt{x == 0}). El código de todo esto está en
+la página siguiente.
+
+\pagebreak
+\begin{verbatim}
+const N = 20
+MONITOR = MONITOR[0][0],
+MONITOR[x:0..N][y:0..N] = 
+	(
+		  when (x + y < N) put_x -> MONITOR[x+1][y]
+		| when (x + y < N) put_y -> MONITOR[x][y+1]
+		| when (x > 0) get_x -> MONITOR[x-1][y]
+		| when (x == 0 && y > 0) get_y -> MONITOR[x][y-1] 
+		| when (x + y == 0) signal_all_free -> MONITOR
+		| when( x + y != 0) signal_not_all_free -> MONITOR[x][y]
+		| when (x + y == N) signal_should_leave -> MONITOR[x][y]
+	).
 
 
+// cliente se va refleja el evento externo de un cliente llegando,
+// viendo que no hay sillas disponibles y retirandose
+ENTORNO = (llega_pelado -> ENTORNO | llega_peludo -> ENTORNO 
+		 | cliente_se_va -> ENTORNO).
+
+// agregamos la acción intermedia ¨cortar_pelo" entre atender y dejar de atender
+// porque si ambos peluqueros estan atendiendo el sistema debe esperar,
+// y si atender ya equivale a cortar, el corte es "instantaneo".
+PELUQUERO = (
+	  		  dormir  -> despertar -> PELUQUERO
+			| atender_pelado  -> cortar_pelo -> PELUQUERO  
+			| atender_peludo  -> cortar_pelo -> PELUQUERO
+	).
+||PELUQUERIA = (
+	a:PELUQUERO || b:PELUQUERO || MONITOR || ENTORNO
+) / 
+{
+{a, b}.atender_pelado / get_x,
+{a, b}.atender_peludo / get_y,
+llega_pelado / put_x,
+llega_peludo / put_y,
+{a, b}.dormir / signal_all_free,
+{a,b}.despertar / signal_not_all_free,
+cliente_se_va / signal_should_leave
+}.
 
 
-
-
-
+\end{verbatim}
 
 
 
@@ -756,6 +851,327 @@ Q = \left( a \to b \to R \;\; \mid \;\; a \to b \to R \right),
 R = \left( c \to Q \right).
 \]
 \end{myframe}
+
+\begin{figure}[htpb]
+    \centering
+    % scale ajusta el tamaño global, >=Stealth cambia la punta de las flechas
+    \begin{tikzpicture}[>=Stealth, node distance=2cm, on grid, auto, thick, initial text=]
+
+        % ==========================================
+        % LADO IZQUIERDO: PROCESO P
+        % ==========================================
+        \begin{scope}
+            % Nodos
+            \node[state, initial] (s0) {$s_0$};
+            \node[state] (s1) [right=2.5cm of s0] {$s_1$};
+            \node[state] (s2) [above right=1.5cm and 2cm of s1] {$s_2$};
+            \node[state] (s3) [below right=1.5cm and 2cm of s1] {$s_3$};
+
+            % Transiciones (Flechas)
+            \path[->]
+                (s0) edge node {$a$} (s1)
+                (s1) edge node[above left] {$b$} (s2)
+                (s1) edge node[below left] {$b$} (s3)
+                % Las flechas de retorno 'c' se curvan para no cruzar el gráfico
+                (s2) edge[bend right=45] node[above] {$c$} (s0)
+                (s3) edge[bend left=45] node[below] {$c$} (s0);
+
+            % Etiqueta del grafo
+            \node[font=\Large\bfseries] at (2.5, -3.5) {Proceso P};
+        \end{scope}
+
+        % ==========================================
+        % LADO DERECHO: PROCESO Q
+        % ==========================================
+        % xshift desplaza todo este bloque hacia la derecha para que no se superpongan
+        \begin{scope}[xshift=8.5cm]
+            % Nodos
+            \node[state, initial] (t0) {$t_0$};
+            \node[state] (t1) [above right=1.5cm and 2cm of t0] {$t_1$};
+            \node[state] (t2) [below right=1.5cm and 2cm of t0] {$t_2$};
+            % t3 representa el estado "R" donde ambas ramas convergen
+            \node[state] (t3) [below right=1.5cm and 2cm of t1] {$t_3$};
+
+            % Transiciones (Flechas)
+            \path[->]
+                (t0) edge node[above left] {$a$} (t1)
+                (t0) edge node[below left] {$a$} (t2)
+                (t1) edge node[above right] {$b$} (t3)
+                (t2) edge node[below right] {$b$} (t3)
+                % La flecha de retorno 'c' viaja por debajo de todo el grafo
+                (t3) edge[bend left=05] node[below] {$c$} (t0);
+
+            % Etiqueta del grafo
+            \node[font=\Large\bfseries] at (2, -3.5) {Proceso Q};
+        \end{scope}
+
+    \end{tikzpicture}
+\end{figure}
+
+Veamos que $Q$ simula a $P$ partiendo de $(s_0, t_0) \in R$. Tomando en $P$ la acción
+$a$ llegamos a $s_1$; cuando $Q$ imita esta acción llega o bien a $t_1$ o $t_2$.
+$\therefore (s_1, t_1), (s_1, t_2) \in R$. En $s_1$ tomando la acción $b$
+llegamos a $s_2$ o a $s_3$, y tomando dicha acción en $t_1$ o $t_2$ (los estados
+correspondientes a $s_1$) llegamos a $t_3$. $\therefore (s_2, t_3), (s_3, t_3)
+\in R$. Luego solo queda la acción $c$ en ambos que lleva a estados que están
+relacionados por $R$. 
+
+\begin{equation*}
+    R = \left\{ (s_0, t_0), (s_1, t_1), (s_1, t_2), (s_2, t_3), (s_3, t_3) \right\} 
+\end{equation*}
+
+es simulación donde $Q$ simula a $P$. Veamos si $R^{-1}$ es una simulación,
+donde 
+
+\begin{equation*}
+    R^{-1} = \left\{ (t_0, s_0), (t_1, s_1), (t_2, s_1), (t_3, s_2), (t_3, s_3) \right\} 
+\end{equation*}
+
+Para probar que es simulación, debemos probar que para todo $(x, y) \in R^{-1}$,
+si $x \to x'$ con acción $u$, entonces hay un $y'$ tal que $y \to y'$ con $u$ y
+$(x', y') \in R^{-1}$. En términos intuitivos, en todo par $(x, y)$, si en $x$
+puedo realizar una acción $u$, en $y$ debo poder imitarla, y estas acciones
+deben llevar a estados relacionados.
+
+En $t_0$ puedo tomar solo la acción $a$ llegando o bien a $t_1$ o bien a $t_2$.
+O sea que estos estados deben estar relacionados a los estados a los que vamos
+si ejecutamos $a$  en $s_0$, es decir a $s_1$. Efectivamente, $(t_1, s_1)$ y
+$(t_2, s_1)$ están en $R^{-1}$.
+
+En $t_1$ solo puedo tomar la acción $b$ llegando a $t_3$, y $t_1$ está
+relacionado con $s_1$. En $s_1$ puedo tomar la acción $b$ y llego a $s_2$. Por
+ende, $(t_3, s_2)$ debe estar en $R^{-1}$, y efectivamente lo está. Mismo
+razonamiento nos da que $(t_3, s_3)$ debe estar en $R^{-1}$ y lo está. 
+
+En $t_3$ solo puedo tomar $c$ y llegar a $t_0$, y $t_3$ est'á relacionado a
+$s_2$ y $s_3$, ambos estados que con $c$ llegan a $s_0$. Y $(t_0, s_0)$ está en
+$R^{-1}$.
+
+Hemos probado que $R$ es simulación y que $R^{-1}$ es simulación. 
+
+$\therefore R$ es bisimulación.
+
+\pagebreak 
+
+\begin{myframe}
+    \textbf{(13)} Muestre que los siguientes procesos son débilmente
+    bisimilares.
+\end{myframe}
+
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}[shorten >=1pt, node distance=2.5cm, on grid, auto, thick, >=Stealth]
+        
+        % === PROCESO P ===
+        \begin{scope}
+            \node[state, initial, initial text=] (s0) {$s_0$};
+            \node[state] (s1) [right=of s0] {$s_1$};
+            \node[state] (s2) [above right=1.2cm and 2cm of s1] {$s_{stop}$};
+            \node[state] (s3) [below right=1.2cm and 2cm of s1] {$s_2$};
+            \node[state] (s4) [right=2cm of s3] {$s_{stop}$};
+
+            \path[->] 
+                (s0) edge node {$a$} (s1)
+                (s1) edge node {$b$} (s2)
+                (s1) edge node[below left] {$\tau$} (s3)
+                (s3) edge node {$c$} (s4);
+                
+            \node[font=\bfseries] at (2,-2.5) {Proceso P};
+        \end{scope}
+
+        % === PROCESO Q ===
+        \begin{scope}[xshift=8cm]
+            \node[state, initial, initial text=] (t0) {$t_0$};
+            
+            % Rama superior (idéntica a P)
+            \node[state] (t1) [above right=1.5cm and 2.5cm of t0] {$t_1$};
+            \node[state] (t2) [above right=0.8cm and 2cm of t1] {$t_{stop}$};
+            \node[state] (t3) [below right=0.8cm and 2cm of t1] {$t_2$};
+            \node[state] (t4) [right=1.8cm of t3] {$t_{stop}$};
+            
+            % Rama inferior (la "nueva" rama)
+            \node[state] (t5) [below right=2cm and 2.5cm of t0] {$t_3$};
+            \node[state] (t6) [right=2cm of t5] {$t_{stop}$};
+
+            \path[->] 
+                (t0) edge [bend left=15] node {$a$} (t1)
+                (t1) edge node {$b$} (t2)
+                (t1) edge node[below left] {$\tau$} (t3)
+                (t3) edge node {$c$} (t4)
+                
+                (t0) edge [bend right=15] node[below left] {$a$} (t5)
+                (t5) edge node {$c$} (t6);
+
+            \node[font=\bfseries] at (2.5,-4.5) {Proceso Q};
+        \end{scope}
+
+    \end{tikzpicture}
+\end{figure}
+
+Debemos imaginar que existe una flecha $\Rightarrow$ (de transición débil) entre
+$s_0$ y $s_2$, porque $s_0 \Rightarrow^a s_2$. Esto será importante.
+
+Veamos que $P$ simula (débilmente) a $Q$. Es fácil ver que si empezamos con
+$(t_0, s_0)$, entonces $(t_1, s_1), (t_{\text{stop}}, s_{\text{stop}})$. También
+es fácil ver que $(t_2, s_2)$. Ahora consideremos el caso en que $Q$ hace $a$ y
+luego $c$. Estas acciones se corresponden con 
+
+\begin{equation*}
+    t_0 \to^a t_3 \to^c  t_{\text{stop}}
+\end{equation*}
+
+Y como $s_0 \Rightarrow^a s_2 $ podemos decir que $(t_3, s_2)$. Y en $t_3$ solo
+puedo tomar la acción $c$, que a su vez puede tomarse en $s_2$, llevando a
+estados relacionados.
+
+\begin{equation*}
+    R = \left\{ (t_0, s_0), (t_1, s_1), (t_2, s_2), (t_3, s_2),
+    (t_{\text{stop}}, s_{\text{stop}}) \right\} 
+\end{equation*}
+
+es simulación débil donde $P$ simula a $Q$. Veamos si $R^{-1}$ es simulación
+débil.
+
+Consideremos $(s_0, t_0)$. De $s_0$ solo podemos hacer $s_0 \to^a s_1$, y por lo
+tanto requerimos que exista un valor relacionado a $s_1$ tal que $t_0$ vaya (tal
+vez con acciones $\tau$) a ese valor. Y en efecto, $s_1$ equivale a $t_1$ y $t_0
+\to t_1$.
+
+Consideremos $(s_1, t_1)$. Si $s_1 \to^b s_{\text{stop}}$ existe $t_1 \to^b
+t_{\text{stop}}$ y los dos stops están relacionados. Si $s_1 \to^\tau s_2$
+existe $t_1 \to^\tau t_2$ y $s_1, s_2$ están relacionados. 
+
+Consideremos $(s_2, t_3)$. Si $s_2 \to^c s_{\text{stop}}$, $t_3 \to^c
+t_{\text{stop}}$ y todo bien. El caso $(s_2, t_2)$ es similar a este.
+
+$\therefore R^{-1}$ es simulación débil. 
+
+$\therefore $ $R$ es bisimulación.
+
+\pagebreak 
+
+\begin{myframe}
+    \textbf{(15)} Determinar si hay simulación entre los grafos con label $s$ y
+    label $t$, y si hay bisimulación.
+\end{myframe}
+
+
+\begin{figure}[h!]
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tikzpicture}[>=stealth, shorten >=1pt, auto]
+
+% =====================================================
+% First automaton
+% =====================================================
+
+\node[state] (s0) at (0,1.5) {$s_0$};
+\node[state] (s1) at (-1.5,0) {$s_1$};
+\node[state] (s2) at (1.5,0) {$s_2$};
+
+\path[->]
+(s0) edge[loop above] node {$a$} ()
+     edge node[left] {$a$} (s1)
+     edge node[right] {$b$} (s2)
+
+(s1) edge[bend left] node {$c$} (s2)
+
+(s2) edge[bend left] node {$c$} (s1);
+
+% =====================================================
+% Second automaton
+% =====================================================
+
+\node[state] (t0) at (5,1.5) {$t_0$};
+\node[state] (t1) at (7,1.5) {$t_1$};
+\node[state] (t2) at (6,0) {$t_2$};
+
+\path[->]
+(t0) edge[bend left] node {$\tau$} (t1)
+(t1) edge[bend left] node {$a$} (t0)
+
+(t0) edge node[left] {$a$} (t2)
+(t1) edge node[right] {$b$} (t2)
+
+(t2) edge[loop below] node {$c$} ();
+
+% =====================================================
+% Third automaton
+% =====================================================
+
+\node[state] (r0) at (10,1.5) {$r_0$};
+\node[state] (r1) at (12,1.5) {$r_1$};
+\node[state] (r2) at (11,0) {$r_2$};
+
+\path[->]
+(r0) edge[loop above] node {$a$} ()
+     edge[bend left] node {$\tau$} (r1)
+     edge node[left] {$a$} (r2)
+
+(r1) edge[loop right] node {$a$} ()
+     edge[bend left] node {$\tau$} (r0)
+     edge node[right] {$b$} (r2)
+
+(r2) edge[loop below] node {$c$} ();
+
+\end{tikzpicture}
+}
+\end{figure}
+
+Sea $R$ la relación de bisimulación débil que deseamos construir y digamos que
+$s_0 \sim t_0$ donde $\sim $ denote justamente la relación $R$. 
+
+Observemos antes de empezar que 
+
+\begin{enumerate}
+    \item $t_0 \Rightarrow^a t_0$
+    \item $t_0 \Rightarrow^a t_1$
+\end{enumerate}
+
+Esto se debe a que $t_0 \to^\tau t_1 \to^a \to t_0$ y
+$t_0 \to^\tau t_1 \to^a t_0 \to^\tau t_1$. 
+
+Ahora sí construimos la relación $R$.
+
+\begin{itemize}
+    \item Como $s_0 \to^a s_0$ y $t_0 \Rightarrow^a t_0$, está bien haber
+        empezado con $s_0 \sim t_0$.
+    \item Como $s_0 \to^a s_1$ y $t_0 \to^a t_2$, establecemos $s_1 \sim t_2$.
+    \item Como $s_0 \to^b s_2$ y $t_0 \Rightarrow^b t_2$, establecemos $s_2 \sim
+        t_2$.
+    \item Como $s_1 \to^c 2$ y $t_2 \to^c t_2$, la simulación se mantiene cuando
+        $s_1$ efectúa dicha transición.
+    \item Same para $s_2 \to^c s_1$.
+\end{itemize}
+
+Hasta acá, $R$ ya es una simulación donde el grafo del medio simula al de la
+izquierda. Pero no va a ser una bisimulación, porque el estado $t_1$ jamás
+aparece. Sin embargo, podemos usar que $s_0 \to^a s_0$ y $t_0 \Rightarrow^a
+t_1$ para añadir $s_0 \sim t_1$. Es fácil ver que ahora $R$ es una bisimulación.
+Para probarlo vayamos por cada par de $R^{-1}$ y veamos que son una simulación
+débil.
+
+\begin{itemize}
+    \item $(t_0, s_0)$: $t_0 \to^a t_2$, $s_0 \to^a s_1$, y $(t_2, s_1) \in
+        R^{-1}$. $\checkmark$
+    \item $(t_2, s_1)$: $t_2^c \to t_2$, $s_1 \to^c s_2$ y $(t_2, s_2) \in R^{-1}$.
+        $\checksymbol$
+    \item $(t_2, s_2)$: Similar al caso anterior.
+    \item  $(t_1, s_0)$: $t_1 \to^a t_0$, $s_0 \to^a s_0$ y $(t_0, s_0) \in
+        R^{-1}$. $\checkmark$
+\end{itemize}
+
+Como para todo para $(x, y) \in R^{-1}$ se cumple que se $x \to^\alpha x'$ entonces
+existe $y'$ tal que $y \to^\alpha y'$ y $(y, y') \in R^{-1}$, es simulación
+fuerte. Y por ende es simulación débil. 
+
+$\therefore $ $R$ es bisimulación débil.
+
+
+
+
+
+
 
 
 
@@ -1531,66 +1947,345 @@ difícil ni tan distinto a la prueba dada para $\mathcal{A}_1$.
 
 \pagebreak 
 
-Within each TMS session, 
+\section*{Parcial I}
+
+\begin{myframe}
+    Dados los sistemas de transiciones etiquetadas de la figura, determine si existe:
+    \item[(a)] una simulación que contiene al par $(s_0,t_0)$;
+    \item[(b)] una bisimulación fuerte entre $s_0$ y $t_0$;
+    \item[(c)] una bisimulación débil entre $s_0$ y $t_0$.
+
+En todos los casos justifique su respuesta.
+\end{myframe}
+
+
+\begin{figure}[h!]
+\centering
+
+\begin{tikzpicture}[
+    ->,
+    >=stealth,
+    node distance=2.2cm,
+    every state/.style={draw,circle,minimum size=8mm},
+    scale=1
+]
+
+%========================
+% Primer autómata
+%========================
+
+\node[state] (s0) at (0,2) {$s_0$};
+\node[state] (s1) at (2.5,2) {$s_1$};
+\node[state] (s2) at (2.5,0) {$s_2$};
+\node[state] (s3) at (0,0) {$s_3$};
+
+\path
+(s0) edge[bend left=15] node[above] {$a$} (s1)
+(s1) edge[bend left=15] node[below] {$b$} (s0)
+
+(s0) edge node[left] {$a$} (s3)
+
+(s1) edge node[right] {$\tau$} (s2)
+
+(s3) edge node[below] {$\tau$} (s2)
+
+(s2) edge node[right] {$c$} (s0)
+
+(s2) edge[loop right] node {$a$} ();
+
+%========================
+% Segundo autómata
+%========================
+
+\node[state] (t0) at (6,2) {$t_0$};
+\node[state] (t1) at (8.5,2) {$t_1$};
+\node[state] (t2) at (8.5,0) {$t_2$};
+\node[state] (t3) at (6,0) {$t_3$};
+
+\path
+(t0) edge[bend left=15] node[above] {$a$} (t1)
+(t1) edge[bend left=15] node[below] {$b$} (t0)
+
+(t1) edge node[right] {$\tau$} (t2)
+
+(t3) edge[bend left=15] node[above] {$a$} (t2)
+(t2) edge[bend left=15] node[below] {$a$} (t3)
+
+(t3) edge node[left] {$c$} (t0)
+
+(t0) edge node[right] {$c$} (t2);
+
+\end{tikzpicture}
+
+\caption{Sistemas de transiciones etiquetadas}
+\end{figure}
+
+Bisimulación fuerte no habrá, porque el autómata derecho puede ejecutar desde
+$t_0$ la acción c, en cuyo caso el autómata izquierdo no podría emularlo. Más
+formalmente, toda bisimulación $R$ incluirá $(t_0, s_0)$ en $R^{-1}$, y 
+$t_0 \to^c t_2$ implicaría que debe existir un $s'$ tal que 
+$s_0 \to^c s'$ y $(t_2, s') \in R^{-1}$. Pero no hay ningún $s$ tal que $s_0
+\to^c s'$.
+
+Simulación hay: 
 
 \begin{equation*}
-    \rho = \frac{\text{Paired-pulse
-    MEP}}{\text{Mean Single-pulse MEP}}
+    R := \left\{ (s_0, t_0), (s_1, t_1), (s_2, t_2), (s_3, t_1), (s_2, t_3) \right\} 
 \end{equation*}
 
-You are correct in claiming that we compute separately $\rho$ for ISI = 4ms and
-ISI = 20ms.
+Prueba:
+ 
+\begin{itemize}
+    \item $(s_0, t_0)$:  $s_0 \to^a s_1$ y $t_0 \to^a t_1$ con $(s_1, t_1) \in
+        R$ $\checkmark$.
+    \item $(s_{1}, t_1)$: $s_1 \to^b s_0$ y $t_1 \to^b t_0$ con $(s_0, t_0) \in R$
+        $\checkmark$.
+    \item $(s_2, t_2)$: $s_2 \to^a s_2$ y $t_2 \to^a t_3$ con $(s_2, t_3) \in R$
+        $\checkmark$.
+\end{itemize}
 
-\textbf{Rationale for logarithmic transformation.} For ISI 20ms,
-a single value $\rho_{\text{ICF}}$ tells you the amount of facilitation that
-occurred. For ISI = 4 ms, $\rho_{\text{ICI}}$ the amount of inhibition. So it
-would seem that we can proxy E/I balance simply as 
+etc.
+
+Analicemos bisimulación débil. Antes el autómata izquierdo no podía emular al
+derecho si éste hacía $c$ desde $s_0$. Pero en dicho caso, ahora el izquierdo
+podría aporvechar que $s_0 \Rightarrow^c$
+
+\pagebreak 
+
+\begin{myframe}
+    \textbf{(2)} Sea $\Sigma = \{a,b\}$. En todos los casos siguientes determine si son
+propiedades de \emph{safety}, \emph{liveness}, ambas, o ninguna:
+
+\begin{enumerate}
+    \item[(a)] El $\omega$--lenguaje dado por la expresión $\omega$--regular
+    $(b + ab)^\omega$.
+
+    \item[(b)] El $\omega$--lenguaje aceptado por el autómata de Büchi de la
+    Fig.~2.
+
+    \item[(c)] 
+    \[
+        P = \left\{
+        \sigma \in \Sigma^\omega
+        \;\middle|\;
+        \forall i \geq 0:\;
+        \sigma_i = a \Rightarrow \exists j \geq i:\; \sigma_j = b
+        \right\}.
+    \]
+\end{enumerate}
+
+Recuerde que sólo la propiedad $\Sigma^\omega$ puede ser simultáneamente de
+\emph{safety} y de \emph{liveness}.
+\end{myframe}
+
+\begin{figure}[h!]
+\centering
+
+\begin{tikzpicture}[
+    ->,
+    >=stealth,
+    node distance=2.2cm,
+    every state/.style={draw,circle,minimum size=8mm},
+    accepting/.style={double},
+    scale=1
+]
+
+% Estados
+\node[state, initial] (q0) at (0,1.5) {};
+\node[state] (q1) at (3,1.5) {};
+\node[state, accepting] (q2) at (1.5,0) {};
+
+% Transiciones
+\path
+(q0) edge[bend left=15] node[above] {$a$} (q1)
+(q1) edge[bend left=15] node[below] {$b$} (q0)
+
+(q0) edge node[left] {$a$} (q2)
+(q1) edge node[right] {$a$} (q2)
+
+(q2) edge[loop below] node {$a$} ();
+
+\end{tikzpicture}
+
+\caption{Autómata de Büchi}
+\end{figure}
+
+$(a)$ Es de safety. Prueba: 
 
 \begin{equation*}
-    Z = \frac{\rho_{\text{ICF}}}{\rho_{\text{ICI}}}
+    P = \left\{ \alpha \in \Sigma^\omega : \alpha = b^\omega \lor \chi(\alpha) \right\} 
 \end{equation*}
 
-But there is a problem; $\rho_{\text{ICF}}$ is in a different scale than
-$\rho(\text{ICF})$. Ideally, if a facilitatory pulse was $x$ times larger than
-the test pulses, and an inhibitory pulse was $x$  times smaller, these two
-values of $\rho$ would be at the same distance from $1$, since $1$ means «the
-value was no different from a test pulse». But this is not true. For instance,
-for a response twice as large as a test pulse $\rho_{\text{ICF}}$ will be two,
-but for a response half as large as a test pulse $\rho_{\text{ICI}}$ will be
-0.5. Their distance from one is not the same.
-
-In other words, facilitation effects «move $\rho$ above 1» at a different rate
-than inhibition effects «move $\rho$ below 1». This is a silly way to put it but
-it might help.
-
-What does this mean for E/I balance? Assume $\rho_{\text{ICF}} = 2$, i.e.
-facilitatory effect made pulses with twice the amplitude of test pulses. Assume
-$\rho_{\text{ICI}} = 0.5$, i.e. inhibitory effect made pulses with half the
-amplitude of test pulses. This is a pretty balanced state (same degree of
-inhibition and facilitation), but 
+donde $\chi(\alpha)$ es el predicado: $\alpha$ empieza con $a$ y $\alpha[i] \neq
+\alpha[i+1]$ para todo $i \geq 0$. Por ende, toda palabra $\varphi$ fuera de $P$
+satisface 
 
 \begin{equation*}
-    \frac{ \rho_{\text{ICF}} }{\rho_{\text{ICI}}} = \frac{2}{0.5} = 4
-\end{equation*} 
-
-which makes no sense, since this indicates strong excitatory dominance!
-
-It is in order to fix this that we take the logarithm. The logartihm corrects
-this problem. It's not worth going into why, but simply note that, in the same
-example as before, 
-
-$\log(2) \approx 0.30, \log(0.5) \approx -0.30$. So now it \textit{is} the case
-that facilitatory and inhibitory effects of the same degree (twice as much, half
-as much) are at the same distance from the point of reference (now zero).
-
-Then we simply define 
-
-\begin{equation*}
-    Z := \log(\rho_{\text{ICF}}) - \log(\rho_\text{ICI})
+    \varphi \neq b^\omega \land \neg \chi(\alpha) 
 \end{equation*}
 
+Sea $\varphi$ una palabra cumpliendo justamente lo anterior. Entonces $\varphi$
+no es $b^\omega$ y se cumple al menos uno de los siguientes dos casos: o
+$\varphi$ no empieza con $a$, o $\varphi$ tiene al menos un índice $i$ tal que
+$\varphi[i] = \varphi[i+1]$. Si $\varphi$ no empieza con $a$ entonces la primera
+$b$ es el prefijo malo. Si $\varphi$ tiene al menos un índice como el que
+dijimos, en particular tiene un primer tal índice $j = \min_i \left\{ \alpha[i]
+= \alpha[i+1]\right\} $, en cuyo caso $\alpha[..(j+1)]$ es el prefijo malo. 
+
+(Notar que la garantía $\varphi \neq b^\omega$ nos permite saber que cuando
+$\alpha$ tiene un índice tal $\varphi[i] = \varphi[i+1]$, no se trata que
+$\varphi$ sea una repetición infinita de $b$s.)
+
+$\therefore $ Toda palabra $\varphi \not\in P$ tiene prefijo malo. 
+
+$\therefore $ Es de safety.
+
+$(b)$ Una palabra es aceptada por el autómata si y solo si es $(ab)^* a^\omega$.
+Viendo el comportamiento del autómata sabemos que no puede ser safety porque
+$(ab)^\omega$ no está en el lenguaje pero no tiene prefijo malo. Tampoco puede
+ser de livenes, porque $b$ es una palabra en $\Sigma^*$ a la que no puede
+agregársele nada para que esté en la propiedad.
+
+$(c)$ La propiedad $P$ es la propiedad en la que, si en algún momento aparece
+una $a$, podemos garantizar que eventualmente aparece una $b$. Una palabra no
+pertenece al lenguaje solo si aparece una $a$ en algún momento, tras la cual no
+aparece ninguna $b$. 
+
+Claramente es de liveness, porque dada cualquier $\alpha \in \Sigma^*$, $\alpha
+b^\omega \in P$. Efectivamente, si $\alpha$ no contiene ninguna $a$, el
+antecedente de la implicancia es en la definición de $P$ es falso y por ende
+toda la implicancia es verdadera; si aparece alguna $a$, por haber añadido una
+cadena infinita de $b$s, después de dicha $a$ ocurre alguna $b$. Y por ser de
+liveness no es de safety.
+
+\pagebreak 
+
+\begin{myframe}
+    \textbf{(3)} Considere un canal de una red LAN con broadcasting (tipo Ethernet u 802.11)
+con dos hosts conectados. Cada host $H_i$ ($i \in \{1,2\}$) puede enviar
+mensajes al canal y esos mensajes pueden colisionar.
+
+Considere las proposiciones $\texttt{env\_msj}_i$ y $\texttt{col\_det}_i$,
+$i \in \{1,2\}$, que denotan, respectivamente, el envío del mensaje y la
+detección de la colisión por parte del host $H_i$.
+
+Una colisión se produce si ambos hosts envían un mensaje simultáneamente al
+canal.
+
+Dé las fórmulas LTL que especifican que:
+
+\begin{enumerate}
+    \item[(a)] siempre que se produzca una colisión, finalmente el host
+    $H_1$ detecta esa colisión;
+
+    \item[(b)] siempre que se produzca una colisión, $H_1$ no envía un nuevo
+    mensaje sin antes detectar la colisión.
+\end{enumerate}
+\end{myframe}
+
+Sea $E_i$ que $H_i$ envia mensaje, $C_i$ que $H_i$ detecta colisión, por
+brevedad.
+
+$(a)$
+
+\begin{equation*}
+    \Box \left[ (E_1 \land E_2) \Rightarrow \Diamond C_1 \right] 
+\end{equation*}
+
+$(b)$
+
+\begin{equation*}
+    \Box \left[ (E_1 \land E_2) \Rightarrow \bigcirc (\neg  E_1 \text{ U } C_1 )\right] 
+\end{equation*}
+
+\pagebreak 
+
+\begin{myframe}
+    \textbf{(5)}
+Determine si la veracidad de la siguiente afirmación, y dé una explicación
+que justifique su respuesta:
+
+\begin{quote}
+``Un modelo $M$ satisface weak fairness
+\[
+    \Diamond \Box p \;\rightarrow\; \Box \Diamond q
+\]
+si y solo si se verifica que desde el estado inicial del grafo subyacente a
+$M$ no se alcanza ningún ciclo tal que $p \land \neg q$ sea válida en todos
+los estados de dicho ciclo.''
+\end{quote}
+\end{myframe}
+
+Recordemos que un modelo $M$ satisface una sentencia $\phi$ de LTL si y solo si 
+todas las trazas infinitas de $M$ satisfacen la propiedad, i.e. 
+$\mathcal{L}(M) \subseteq \mathcal{L}(\phi)$.
+
+$(\Rightarrow)$ Asumamos que se cumple weak fairness. Entonces toda traza de $M$
+satisface $\phi$, con $\phi$ la implicancia de weak fairness. Asumamos que sí
+se alcanza un ciclo tal que $p \land  \neg q$ es válida en todos los estados de
+dicho ciclo. Es decir, hay una traza $\sigma$ en el lenguaje de $M$ tal que 
+$\sigma \vDash \Diamond \Box (p \land  \neg q)$, con lo cual es fácil ver que
+
+\begin{equation*}
+    \sigma \vDash \Diamond \Box p \text{  y  } \sigma \vDash \Diamond \Box \neg q
+\end{equation*}
+
+Pero entonces $\sigma$ satisface el antecedente de weak fairness. Pero entonces
+debe cumplirse $\sigma \vDash \Box \Diamond q$. Esto contradice que
+$\sigma \vDash \Diamond \Box \neg q$.
+
+La contradicción viene de asumir que vale weak fairness pero no el enunciado
+acerca del ciclo del grafo subyacente.
+
+$(\Leftarrow)$ Asumamos que en el grafo subyacente a $M$ no se alcanza ningún
+ciclo tal que $p \land \neg q$ vale en todos los estados de dicho ciclo. Es
+decir, no existe $\sigma \in \mathcal{L}(M)$ tal que se cumpla $\sigma \vDash
+\Diamond \Box (p \land \neg q)$, o equivalentemente 
+
+\begin{equation*}
+    \forall  \sigma \in \mathcal{L}(M) : \sigma \vDash \Box \Diamond \neg (p
+    \land  \neg q)
+\end{equation*}
+
+o equivalentemente 
+
+\begin{equation*}
+    \forall  \sigma \in \mathcal{L}(M) : \sigma \vDash \Box \Diamond (p
+    \Rightarrow q)
+\end{equation*}
+
+Asumamos que $\sigma \vDash \Diamond \Box p$. Cuando $p$ se haga siempre
+verdadera, como siempre se cumple que eventualmente $p \Rightarrow q$, siempre
+se cumplirá que eventualmente $p \land  q$. Y en particular siempre se cumplirá
+que eventualmente $q$. Es decir, se cumple 
+
+\begin{align*}
+    \sigma \vDash \Diamond \Box p \Rightarrow \sigma \vDash \Box \Diamond q \\ 
+    \Rightarrow \sigma \vDash \Diamond \Box p \Rightarrow \Box \Diamond q
+\end{align*}
+
+Como $\sigma \in \mathcal{L}(M)$ es arbitraria, se tiene entonces que el modelo
+de $M$ satisface weak fariness.
 
 
+Asuma que desde el estado inicial no puede alcanzarse ningún tal
+ciclo. Entonces en cualquier instante de tiempo se cumple $\Diamond \neg(p \land
+\neg q) \equiv \Diamond ( \neg p \lor  q )$, es decir se cumple 
+
+\begin{equation*}
+    \Box \Diamond (p \to q)
+\end{equation*}
+
+Asuma que no se cumple weak fairness. Entonces se cumple $\Diamond \Box p$ pero
+no se ecumple $\Box \Diamond q$. Pero a partir del instante en que $p$ se hace
+siempre verdadero, como $\Box \Diamon(p \to q)$, debe cumplirse que
+eventualmente $p$ y $q$ son ambos verdaderos, y en particular que eventualmente
+$q$ es verdadera. 
+
+decir que $\Diamond \Box q$. Y como, a partir de cierto punto, $q$ es siempre
+verdadero, siempre se cumple que $q$ es eventualmente verdadero. Es decir, se
+cumple $\Box \Diamond q$. Pero esto viola la hipótesis de que el consecuente es
+falso.
 
 
 

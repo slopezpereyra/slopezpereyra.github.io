@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  29 APR 2026 17:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  1 MAY 2026 21:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -7017,6 +7017,12 @@ File: pgflibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfnodepartfivebox=\box92
 ))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowinset=\dimen290
+\pgfarrowlength=\dimen291
+\pgfarrowwidth=\dimen292
+\pgfarrowlinewidth=\dimen293
 ) (/usr/share/texlive/texmf-dist/tex/latex/chngcntr/chngcntr.sty
 Package: chngcntr 2018/04/09 v1.1a change counter resetting
 Package chngcntr Info: \counterwithout already defined.
@@ -7100,13 +7106,13 @@ LaTeX Font Info:    ... okay on input line 48.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count329
-\scratchdimen=\dimen290
+\scratchdimen=\dimen294
 \scratchbox=\box93
 \nofMPsegments=\count330
 \nofMParguments=\count331
 \everyMPshowfont=\toks45
 \MPscratchCnt=\count332
-\MPscratchDim=\dimen291
+\MPscratchDim=\dimen295
 \MPnumerator=\count333
 \makeMPintoPDFobject=\count334
 \everyMPtoPDFconversion=\toks46
@@ -7118,183 +7124,261 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
-
-Overfull \vbox (112.93338pt too high) has occurred while \output is active []
-
- [1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}] [2]
-LaTeX Font Info:    Trying to load font information for OT1+mlmr on input line 83.
- (/usr/share/texlive/texmf-dist/tex/latex/mlmodern/ot1mlmr.fd
+LaTeX Font Info:    Trying to load font information for OT1+mlmr on input line 50.
+(/usr/share/texlive/texmf-dist/tex/latex/mlmodern/ot1mlmr.fd
 File: ot1mlmr.fd 2021/01/11 v1.0 Font defs for mlmodern
 )
-LaTeX Font Info:    Trying to load font information for OML+mlmm on input line 83.
+LaTeX Font Info:    Trying to load font information for OML+mlmm on input line 50.
  (/usr/share/texlive/texmf-dist/tex/latex/mlmodern/omlmlmm.fd
 File: omlmlmm.fd 2021/01/11 v1.0 Font defs for mlmodern
 )
-LaTeX Font Info:    Trying to load font information for OMS+mlmsy on input line 83.
+LaTeX Font Info:    Trying to load font information for OMS+mlmsy on input line 50.
  (/usr/share/texlive/texmf-dist/tex/latex/mlmodern/omsmlmsy.fd
 File: omsmlmsy.fd 2021/01/11 v1.0 Font defs for mlmodern
 )
-LaTeX Font Info:    Trying to load font information for OMX+mlmex on input line 83.
+LaTeX Font Info:    Trying to load font information for OMX+mlmex on input line 50.
  (/usr/share/texlive/texmf-dist/tex/latex/mlmodern/omxmlmex.fd
 File: omxmlmex.fd 2021/01/11 v1.0 Font defs for mlmodern
 )
 LaTeX Font Info:    External font `mlmex10' loaded for size
-(Font)              <17.28> on input line 83.
+(Font)              <17.28> on input line 50.
 LaTeX Font Info:    External font `mlmex10' loaded for size
-(Font)              <12> on input line 83.
+(Font)              <12> on input line 50.
 LaTeX Font Info:    External font `mlmex10' loaded for size
-(Font)              <10> on input line 83.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 83.
+(Font)              <10> on input line 50.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 50.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 83.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 50.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    External font `mlmex10' loaded for size
-(Font)              <8> on input line 85.
+(Font)              <8> on input line 52.
 LaTeX Font Info:    External font `mlmex10' loaded for size
-(Font)              <6> on input line 85.
+(Font)              <6> on input line 52.
 LaTeX Font Info:    External font `mlmex10' loaded for size
-(Font)              <10.95> on input line 115.
+(Font)              <10.95> on input line 82.
 
-Overfull \hbox (80.02641pt too wide) in paragraph at lines 126--129
+Overfull \hbox (80.02641pt too wide) in paragraph at lines 93--96
 []\T1/mlmr/m/n/10.95 También po-dríamos definir $\OT1/mlmr/m/n/10.95 ^^F := []$ \T1/mlmr/m/n/10.95 y $\OML/mlmm/m/it/10.95 S \OT1/mlmr/m/n/10.95 = []$
  []
 
 
-Overfull \hbox (0.47406pt too wide) in paragraph at lines 137--140
+Overfull \vbox (387.91092pt too high) has occurred while \output is active []
+
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}]
+Overfull \hbox (0.47406pt too wide) in paragraph at lines 104--107
 \T1/mlmr/m/n/10.95 cier-tas ca-de-nas de ini-cial-ización seguidas de trazas in-fini-tas (no vacías). 
  []
 
-[3{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}] [4] [5] [6] [7]
-LaTeX Font Info:    Trying to load font information for T1+mlmtt on input line 373.
+[2] [3] [4] [5]
+LaTeX Font Info:    Trying to load font information for T1+mlmtt on input line 340.
  (/usr/share/texlive/texmf-dist/tex/latex/mlmodern/t1mlmtt.fd
 File: t1mlmtt.fd 2021/01/11 v1.0 Font defs for mlmodern
-) [8]
+) [6]
 Package textcomp Info: Symbol \textrightarrow not provided by
 (textcomp)             font family mlmr in TS1 encoding.
-(textcomp)             Default family used instead on input line 409.
+(textcomp)             Default family used instead on input line 376.
 Package textcomp Info: Symbol \textrightarrow not provided by
 (textcomp)             font family mlmr in TS1 encoding.
-(textcomp)             Default family used instead on input line 409.
+(textcomp)             Default family used instead on input line 376.
 Package textcomp Info: Symbol \textrightarrow not provided by
 (textcomp)             font family mlmr in TS1 encoding.
-(textcomp)             Default family used instead on input line 409.
+(textcomp)             Default family used instead on input line 376.
 Package textcomp Info: Symbol \textrightarrow not provided by
 (textcomp)             font family mlmr in TS1 encoding.
-(textcomp)             Default family used instead on input line 409.
+(textcomp)             Default family used instead on input line 376.
 Package textcomp Info: Symbol \textrightarrow not provided by
 (textcomp)             font family mlmr in TS1 encoding.
-(textcomp)             Default family used instead on input line 409.
-Package mdframed Info: Not enough space on this page on input line 410.
- [9{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Package mdframed Info: Not enough space on this page on input line 431.
+(textcomp)             Default family used instead on input line 376.
+Package mdframed Info: Not enough space on this page on input line 377.
+ [7{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+Package mdframed Info: Not enough space on this page on input line 398.
 
-Overfull \hbox (141.05026pt too wide) in paragraph at lines 446--446
+Overfull \hbox (141.05026pt too wide) in paragraph at lines 413--413
 []   \T1/mlmtt/m/n/12 when (j < 2) bajo -> SENSOR[j]  // señal de bajo pero mantener el estado del sensor[] 
  []
 
 
-Overfull \hbox (91.65024pt too wide) in paragraph at lines 446--446
+Overfull \hbox (91.65024pt too wide) in paragraph at lines 413--413
 [] \T1/mlmtt/m/n/12 | when (j >= 2 && j <= 8) normal -> SENSOR[j] // Same con señal de normalidad[] 
  []
 
-[10]
-Package mdframed Info: Not enough space on this page on input line 472.
- [11]
-Package mdframed Info: Not enough space on this page on input line 500.
- [12]
-Package mdframed Info: Not enough space on this page on input line 536.
+[8]
+Package mdframed Info: Not enough space on this page on input line 439.
+ [9]
+Package mdframed Info: Not enough space on this page on input line 467.
+ [10]
+Package mdframed Info: Not enough space on this page on input line 503.
 LaTeX Font Info:    Font shape `T1/mlmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/mlmtt/b/n' tried instead on input line 538.
- [13]
-Package mdframed Info: Not enough space on this page on input line 564.
- [14]
+(Font)              Font shape `T1/mlmtt/b/n' tried instead on input line 505.
+ [11]
+Package mdframed Info: Not enough space on this page on input line 531.
+ [12]
 
-LaTeX Warning: File `../MUSEO.pct' not found on input line 610.
+LaTeX Warning: File `../MUSEO.pct' not found on input line 577.
 
 
-./Ing2.tex:610: LaTeX Error: Unknown graphics extension: .pct.
+./Ing2.tex:577: LaTeX Error: Unknown graphics extension: .pct.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.610 ...aphics[width=0.8\textwidth]{../MUSEO.pct}
+l.577 ...aphics[width=0.8\textwidth]{../MUSEO.pct}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-[15]
-Package mdframed Info: Not enough space on this page on input line 627.
- [16] [17]
-Overfull \hbox (11.3752pt too wide) in paragraph at lines 695--695
+[13]
+Package mdframed Info: Not enough space on this page on input line 594.
+ [14] [15]
+Overfull \hbox (11.3752pt too wide) in paragraph at lines 662--662
 []\T1/mlmtt/m/n/12 WRITER = (semlock.acquire -> write -> semlock.release -> WRITER).[] 
  []
 
+[16]
+Package mdframed Info: Not enough space on this page on input line 674.
+ [17]
+Overfull \hbox (29.9002pt too wide) in paragraph at lines 743--743
+[]   \T1/mlmtt/m/n/12 [x].libre -> [x].ocupado -> reserve[x] -> [x].release -> TERMINAL[] 
+ []
+
 [18]
-Package mdframed Info: Not enough space on this page on input line 707.
+Package mdframed Info: Not enough space on this page on input line 759.
  [19]
-Package mdframed Info: Not enough space on this page on input line 758.
- [20]
-Overfull \hbox (11.0079pt too wide) in paragraph at lines 769--770
+Overfull \hbox (17.5502pt too wide) in paragraph at lines 821--821
+[]\T1/mlmtt/m/n/12 // cliente se va refleja el evento externo de un cliente llegando,[] 
+ []
+
+Package textcomp Info: Symbol \textasciidieresis not provided by
+(textcomp)             font family mlmtt in TS1 encoding.
+(textcomp)             Default family used instead on input line 821.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 821.
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 821.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmtt.fd
+File: ts1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+Overfull \hbox (103.99873pt too wide) in paragraph at lines 821--821
+[]\T1/mlmtt/m/n/12 // agregamos la acción intermedia \TS1/cmtt/m/n/12 ¨\T1/mlmtt/m/n/12 cortar_pelo" entre atender y dejar de atender[] 
+ []
+
+
+Overfull \hbox (48.42522pt too wide) in paragraph at lines 821--821
+[]\T1/mlmtt/m/n/12 // porque si ambos peluqueros estan atendiendo el sistema debe esperar,[] 
+ []
+
+
+Overfull \hbox (5.2002pt too wide) in paragraph at lines 821--821
+[]\T1/mlmtt/m/n/12 // y si atender ya equivale a cortar, el corte es "instantaneo".[] 
+ []
+
+[20]
+Package mdframed Info: Not enough space on this page on input line 853.
+
+Overfull \hbox (19.56636pt too wide) in paragraph at lines 908--909
+ [][] 
+ []
+
+[21] [22]
+Package mdframed Info: Not enough space on this page on input line 959.
+
+Overfull \hbox (72.81921pt too wide) in paragraph at lines 1008--1009
+ [][] 
+ []
+
+[23] [24]
+Package mdframed Info: Not enough space on this page on input line 1056.
+LaTeX Font Info:    Trying to load font information for TS1+mlmr on input line 1137.
+ (/usr/share/texlive/texmf-dist/tex/latex/mlmodern/ts1mlmr.fd
+File: ts1mlmr.fd 2021/01/11 v1.0 Font defs for mlmodern
+)
+./Ing2.tex:1158: Undefined control sequence.
+<recently read> \checksymbol 
+                             
+l.1158         $\checksymbol
+                            $
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[25{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}] [26]
+Overfull \hbox (11.0079pt too wide) in paragraph at lines 1185--1186
 []\T1/mlmr/bx/n/12 (3) \T1/mlmr/m/n/12 De-muestre que la in-ter-sec-ción de propiedades de safety es una propiedad
  []
 
-[21]
-Package mdframed Info: Not enough space on this page on input line 806.
- [22]
-Package mdframed Info: Not enough space on this page on input line 834.
- [23]
-Package mdframed Info: Not enough space on this page on input line 884.
- [24]
-Overfull \hbox (14.07242pt too wide) in paragraph at lines 897--900
+[27]
+Package mdframed Info: Not enough space on this page on input line 1222.
+ [28]
+Package mdframed Info: Not enough space on this page on input line 1250.
+ [29]
+Package mdframed Info: Not enough space on this page on input line 1300.
+ [30]
+Overfull \hbox (14.07242pt too wide) in paragraph at lines 1313--1316
 []\T1/mlmr/bx/n/12 (8) \T1/mlmr/m/n/12 Con-sidere el al-fa-beto $\OT1/mlmr/m/n/12 ^^F = \OMS/mlmsy/m/n/12 f\OML/mlmm/m/it/12 a; b\OMS/mlmsy/m/n/12 g$\T1/mlmr/m/n/12 . De-ter-mine si las sigu-ientes propiedades
  []
 
-Package mdframed Info: Not enough space on this page on input line 905.
-[25] [26]
-Package mdframed Info: Not enough space on this page on input line 991.
-LaTeX Font Info:    Trying to load font information for TS1+mlmr on input line 1047.
- (/usr/share/texlive/texmf-dist/tex/latex/mlmodern/ts1mlmr.fd
-File: ts1mlmr.fd 2021/01/11 v1.0 Font defs for mlmodern
-) [27{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}] [28]
-Package mdframed Info: Not enough space on this page on input line 1075.
- [29] [30]
-Package mdframed Info: Not enough space on this page on input line 1170.
- [31]
-Package mdframed Info: Not enough space on this page on input line 1222.
- [32] [33]
-Package mdframed Info: Not enough space on this page on input line 1298.
- [34]
-Package mdframed Info: Not enough space on this page on input line 1315.
- [35]
-Package mdframed Info: Not enough space on this page on input line 1364.
- [36] [37]
-Package mdframed Info: Not enough space on this page on input line 1457.
- [38] [39] [40] [41] (./Ing2.aux)
+Package mdframed Info: Not enough space on this page on input line 1321.
+[31] [32]
+Package mdframed Info: Not enough space on this page on input line 1407.
+ [33] [34]
+Package mdframed Info: Not enough space on this page on input line 1491.
+ [35] [36]
+Package mdframed Info: Not enough space on this page on input line 1586.
+ [37]
+Package mdframed Info: Not enough space on this page on input line 1638.
+ [38] [39]
+Package mdframed Info: Not enough space on this page on input line 1714.
+ [40]
+Package mdframed Info: Not enough space on this page on input line 1731.
+ [41]
+Package mdframed Info: Not enough space on this page on input line 1780.
+ [42] [43]
+Package mdframed Info: Not enough space on this page on input line 1873.
+ [44] [45] [46]
+Package mdframed Info: Not enough space on this page on input line 2079.
+ [47] [48]
+Package mdframed Info: Not enough space on this page on input line 2184.
+ [49]
+Package mdframed Info: Not enough space on this page on input line 2217.
+ [50]
+./Ing2.tex:2281: Undefined control sequence.
+l.2281 siempre verdadero, como $\Box \Diamon
+                                            (p \to q)$, debe cumplirse que
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[51] (./Ing2.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 32163 strings out of 474222
- 728935 string characters out of 5748733
- 1935975 words of memory out of 5000000
- 53892 multiletter control sequences out of 15000+600000
- 632385 words of font info for 103 fonts, out of 8000000 for 9000
+ 32698 strings out of 474222
+ 741474 string characters out of 5748733
+ 1942975 words of memory out of 5000000
+ 54414 multiletter control sequences out of 15000+600000
+ 633637 words of font info for 107 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,13n,107p,725b,892s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmri12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmtk10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on Ing2.pdf (41 pages, 353977 bytes).
+ 102i,13n,107p,725b,1039s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmri12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmtk10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on Ing2.pdf (51 pages, 403734 bytes).
 PDF statistics:
- 265 PDF objects out of 1000 (max. 8388607)
- 174 compressed objects within 2 object streams
+ 302 PDF objects out of 1000 (max. 8388607)
+ 199 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
