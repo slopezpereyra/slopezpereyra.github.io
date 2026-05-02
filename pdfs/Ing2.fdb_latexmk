@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1777680509.583 "Ing2.tex" "Ing2.pdf" "Ing2" 1777680510.94287 2
+["pdflatex"] 1777755672.94765 "Ing2.tex" "Ing2.pdf" "Ing2" 1777755674.274 2
   "../MUSEO.pct" 0 -1 0 ""
   "/etc/texmf/web2c/texmf.cnf" 1740662799.63242 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -54,6 +54,9 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/mlmodern/rm-mlmr5.tfm" 1610486596 11804 86a913f88e8fb5b4c2f89453890f7802 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/mlmodern/rm-mlmr6.tfm" 1610486596 11836 67348837030904ab89786b41b9876227 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/mlmodern/rm-mlmr8.tfm" 1610486596 11864 81fe471f03412c64baaecc69e4dacf84 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/mlmodern/rm-mlmss10.tfm" 1610486596 10976 76a18c6c9b9fc2d6361251156c27afd4 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/mlmodern/rm-mlmss12.tfm" 1610486596 11024 8643fe883fa49f84984d20e3e98c2719 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/mlmodern/rm-mlmss8.tfm" 1610486596 10976 906bf28a291260f8fada3829897285af ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/mlmodern/ts1-mlmr12.tfm" 1610486596 1596 e6891bc8f7dbcabb0387b5e8edfa1657 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1248133631 36741 fa121aac0049305630cf160b86157ee4 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
@@ -71,6 +74,8 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr12.pfb" 1611007856 108179 2562383a658002bc242888dcb078f99b ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmr8.pfb" 1611007856 106758 9574f3796dbe48eb661966173cfeb728 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmri12.pfb" 1611007856 106997 a0bb54e3a23850a654ba9ae28c64a35b ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmss10.pfb" 1611007856 84973 53083fd89a782884cf7b7b4bf0233d1b ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmss12.pfb" 1611007856 84960 93e3b056ae61a12f443f0abd6606a10a ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmsy10.pfb" 1611007856 33568 1229f51de832265c06b3cbc7c344e81f ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmsy8.pfb" 1611007856 33461 d002e2fb4fa522af5dd785c29b95f36d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/mlmodern/mlmtk10.pfb" 1611007856 87746 fb1364e514b74de60be4ee6a459bcfa6 ""
@@ -227,6 +232,7 @@
   "/usr/share/texlive/texmf-dist/tex/latex/mlmodern/omsmlmsy.fd" 1610486596 956 6073b0bc6522c0bdf6a401eabdc6e912 ""
   "/usr/share/texlive/texmf-dist/tex/latex/mlmodern/omxmlmex.fd" 1610486596 708 9bec27760d92d0c7466a08713185e6e0 ""
   "/usr/share/texlive/texmf-dist/tex/latex/mlmodern/ot1mlmr.fd" 1610486596 2065 4e86d0c353cd298ef5ec40c60f25efa8 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/mlmodern/ot1mlmss.fd" 1610486596 1829 09c2e2173d44f7421ce6b2cc9b4c3153 ""
   "/usr/share/texlive/texmf-dist/tex/latex/mlmodern/t1mlmr.fd" 1610486596 2050 0b7927aeeb220c5906de2bd6facc3a0e ""
   "/usr/share/texlive/texmf-dist/tex/latex/mlmodern/t1mlmtt.fd" 1610486596 2884 c11c2667a7022668548dc11045772adf ""
   "/usr/share/texlive/texmf-dist/tex/latex/mlmodern/ts1mlmr.fd" 1610486596 2097 cb7cb029e3f8a14013ced5a9b488ccd0 ""
@@ -261,8 +267,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1740670969.59643 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1740670991 8214096 2cc5ed7d441cd7dd7f6cf9e30d4bb5a5 ""
-  "Ing2.aux" 1777680510.66893 787 ea0d8f9d005704284baf4f7654b6957c "pdflatex"
-  "Ing2.tex" 1777680507.96967 80545 13bf45bc06534fd27e09e8b6510ff7c3 ""
+  "Ing2.aux" 1777755673.99995 885 b677433d36e8909be9ff620fb9f1cdbd "pdflatex"
+  "Ing2.tex" 1777755672.58051 85713 6823d405d6cf7bb75eca522cb62f5a0f ""
   (generated)
   "Ing2.aux"
   "Ing2.log"

@@ -2288,12 +2288,169 @@ cumple $\Box \Diamond q$. Pero esto viola la hipótesis de que el consecuente es
 falso.
 
 
+\pagebreak 
+
+\section{Parcial 1}
+
+\begin{myframe}
+\textbf{(2)}V o F: 
+
+$(a)$ $((ba)^* ab)^\omega$ es una propiedad de safety. 
+
+$(b)$ $a(a+b)^* a^\omega + b(a+b)^* b^\omega$ es de liveness. 
+
+$(c)$ $Q = \left\{ \sigma \in \Sigma^\omega : \forall i \text{ primo} :
+\sigma(i) = a \right\} $ es de safety pero no de liveness.
+\end{myframe}
+
+$(a)$ Falso. $(ba)^\omega$ no pertenece a la propiedad pero no tiene prefijo
+malo, pues en cualquier índice podemos agregar $(ab)^\omega$ y pertenece a la
+propiedad.
+
+$(b)$ Verdadero. Sea $\varphi \in \Sigma^*$ una palabra arbitraria. Entonces o bien
+$\varphi$ empieza con $a$ y pertenece a $a(a+b)^*$, o bien empieza con $b$
+y pertenece a $b(a+b)^*$. En cualquier caso, tanto $\varphi a^\omega$ como
+$\varphi b^\omega$ hacen que pertenezca a la propiedad. Es de liveness.
+
+$(c)$ Verdadero. Si $\varphi \in \Sigma^\omega$ no pertenece a $Q$, entonces 
+
+\begin{equation*}
+    \exists j : j \text{ primo} \land \varphi(j) \neq a
+\end{equation*}
+
+En particular, existe 
+
+\begin{equation*}
+    j_{\text{min}} = \min_j \left\{j \text{ primo} \land  \varphi(j) \neq a \right\} 
+\end{equation*}
+
+Entonces $\varphi[..j_{\text{min}}]$ es prefijo malo, pues no existe $\psi \in
+\Sigma^\omega$ t al
+que $\varphi[..j_{\text{min}}] \psi \in Q$. 
+
+$\therefore $ Es de safety.
+
+Pero ninguna propiedad excepto $\Sigma^\omega$ es a la vez de safety y de
+liveness. 
+
+$\therefore $ No es de liveness. 
+
+
+\pagebreak
+
+\pagebreak 
+
+Sea $\sigma \in \mathcal{L}(A)$. Asuma que $\sigma$ no satisface weak fairness,
+es decir 
+
+\begin{equation*}
+    \sigma \not\vDash \Diamond \Box p \to \Box \Diamond q
+\end{equation*}
+
+Esto solo se cumple si $\sigma$ hace valer el antecedente y no el consecuente de
+la implicancia. Por ende, bajo esta hipótesis se cumple 
+
+\begin{align}
+    &\sigma \vDash \Diamond \Box p \\ 
+    &\sigma \vDash \neg (\Box \Diamond q) \equiv \sigma \vDash \Diamond \Box
+    \neg q
+\end{align}
+
+Como $\sigma \in \mathcal{L}(A)$, recorre infinitas veces el estado final $F$. Una
+vez en $F$, solo puede volverse a $F$ de dos maneras:
+
+\begin{itemize}
+    \item Sucede $\emptyset$ y luego $\left\{ p \right\} $.
+    \item Sucede $\emptyset$, sucede $\emptyset$, luego sucede $\left\{ p
+        \right\} $ una cantidad arbitraria de veces, y eventualmente sucede
+        $\left\{ q \right\} $.
+\end{itemize}
+
+Por $(1)$ y $(2)$, sabemos que hay un $j$ tal que $\forall i \geq j : \sigma(i)
+\vDash p$ y $\sigma(i) \vDash  \neg q$. Situémonos en cualquer $i \geq j$.
+Entonces, para todo $i \geq j$, $p$ sucede siempre y por ende $\emptyset$ no
+sucede nunca. Es decir que la primera forma de volver a $F$ es imposible. Pero
+además $\neg q$ sucede siempre y por ende $q$  no sucede nunca, y la segunda
+forma de volver a $F$ es imposible. 
+
+Esto contradice que $\sigma \in \mathcal{L}(A)$, pues implica que $F$ no se
+recorre infinitas veces.
+
+La contradicción viene de asumir que $\sigma$ no satisface weak fairness.
+\pagebreak
+
+\textbf{Ejercicio 4.} Considere el algoritmo de la Fig.~3. En particular,
+observe que $M'$ es igual a $M$ excepto que todos los estados en los que no vale
+ni $p$ ni $q$, o solo vale $q$, son absorbentes. El objetivo del algoritmo es
+verificar si $M \models p \,\mathsf{U}\, q$. Justificar que es correcto.
+\hfill
+
+\small
+\begin{quote}
+
+\textbf{Input:} $M = (S, s_0, \to, v),\ p \,\mathsf{U}\, q$ \\[4pt]
+\textbf{Output:} $M \models p \,\mathsf{U}\, q$ \\[6pt]
+
+\textbf{1.} Definir $M' = (S, s_0, \to', v)$ tal que 
+$s_1 \to' s_2$ si $s_1 \to s_2$, $p \in v(s_1)$ y $q \notin v(s_1)$. \\[6pt]
+
+\textbf{2.}
+\begin{equation*}
+    \textbf{return}
+\begin{cases}
+\bot & \text{si existe } s \in S \text{ alcanzable en } M' \text{ tal que } v(s)\cap\{p,q\} = \emptyset,\\
+\top & \text{caso contrario.}
+\end{cases}
+\end{equation*}
+
+\end{quote}
+\normalsize
+
+$(\Rightarrow)$ Asumamos $M \vDash p \text{ U } q$. Entonces existe una cadena de transiciones 
+
+\begin{equation*}
+    s_0 \to s_1 \to \ldots s_j \to s_*
+\end{equation*}
+
+tal que $v(s_i) = \left\{ p \right\} $ para todo $i \leq j$ y $q \in v(s_*)$.
+Por ende se cumple 
+
+\begin{equation*}
+    s_0 \to' s_1 \to' \ldots s_j \to' s_*
+\end{equation*}
+
+Como $q \in v(s_*)$, ya no existe  transición $\to'$ desde este estado. Entonces
+el modelo termina habiendo alcanzado solo estados distintos al estado vacío, y
+por ende no hay estado alcanzable tal que $v(s) \cap \left\{ p, q \right\} =
+\emptyset$. El algoritmo devuelve $\top$.
+
+$(\Leftarrow)$ Asumamos que el algoritmo devuelve $\top$. Entonces no existe $s
+\in S$ alcanzable en $M'$ tal que $v(s) = \emptyset$. Veamos dos casos.
+
+Si $p \not\in v(s_0)$, entonces $q \in v(s_0)$, porque de otro modo violaríamos
+el supuesto. Pero entonces valdría $p \text{ U } q$.
+
+Si $p \in v(s_0)$ entonces existe una cadena de transiciones 
+
+\begin{equation*}
+    s_0 \to' s_1 \to' \ldots 
+\end{equation*}
+
+con $v(s_i) \neq \emptyset $ para todo $i$. Pero podría suceder que $v(s_i) =
+\left\{ p \right\} $ para toda $i$, en cuyo caso no valdría $M \vDash p \text{ u
+} Q$.
 
 
 
 
 
 
+\pagebreak 
+
+\begin{equation*}
+    \Box \Big( \left[ \phi \Rightarrow \Diamond \neg \phi \right]  \land  
+        \left[  \right]  \Big)
+\end{equation*}
 
 
 
