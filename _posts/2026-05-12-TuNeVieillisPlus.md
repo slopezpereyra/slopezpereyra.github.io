@@ -12,3 +12,9 @@ sont écoulées? J'ai flotté, j'ai été entraîné toutes ces années. Tu sais
 J'imagine encore, quand je marche dans une rue quelconque, que tu marches avec
 moi. Je crois entendre ta voix encore. Chaque nuit, je m'endors en te ramenant à
 la vie.
+
+
+<figure style="text-align: center;">
+  <img src="../Images/pauliandi.jpg" width="100%" style="border: 3px solid #231709;">
+  <figcaption>Toi et moi à quinze ans</figcaption>
+</figure>
