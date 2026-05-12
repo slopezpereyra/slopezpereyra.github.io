@@ -15,6 +15,6 @@ la vie.
 
 
 <figure style="text-align: center;">
-  <img src="../Images/pauliandi.jpg" width="100%" style="border: 3px solid #231709;">
+  <img src="../Images/pauliandi.jpg" width="50%" style="border: 3px solid #231709;">
   <figcaption>Toi et moi à quinze ans</figcaption>
 </figure>
