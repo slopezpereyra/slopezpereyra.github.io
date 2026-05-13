@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  12 MAY 2026 14:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  13 MAY 2026 20:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -308,28 +308,28 @@ LaTeX Info: Redefining \not on input line 2982.
 \c@theorem=\count286
 
 
-./french.tex:14: LaTeX Error: Command \problem already defined.
+./french.tex:13: LaTeX Error: Command \problem already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.14 \newtheorem
+l.13 \newtheorem
                 {example}{Example} \newtheorem{definition}{Definition}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./french.tex:14: LaTeX Error: Command \example already defined.
+./french.tex:13: LaTeX Error: Command \example already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.14 \newtheorem{example}{Example} \newtheorem
+l.13 \newtheorem{example}{Example} \newtheorem
                                               {definition}{Definition}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -337,36 +337,45 @@ or  <return>  to continue without it.
 
 \c@definition=\count287
 
-./french.tex:16: LaTeX Error: Command \lemma already defined.
+./french.tex:15: LaTeX Error: Command \lemma already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.16 \newtheorem
+l.15 \newtheorem
                 {theorem}{Theorem}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./french.tex:17: LaTeX Error: Command \theorem already defined.
+./french.tex:16: LaTeX Error: Command \theorem already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.17 \DeclareMathAlphabet
+l.16 \DeclareMathAlphabet
                          {\mathcal}{OMS}{cmsy}{m}{n}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-LaTeX Font Info:    Redeclaring math alphabet \mathcal on input line 17.
+LaTeX Font Info:    Redeclaring math alphabet \mathcal on input line 16.
+(/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty
+Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
+ (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)))
 LaTeX Font Info:    Trying to load font information for T1+ntxtlf on input line 19.
-(/usr/share/texlive/texmf-dist/tex/latex/newtx/t1ntxtlf.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/newtx/t1ntxtlf.fd
 File: t1ntxtlf.fd 2021/05/24 v1.1 font definition file for T1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
@@ -457,28 +466,33 @@ LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 2
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 12.0pt on input line 30.
+(Font)              scaled to size 12.0pt on input line 33.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}] [2] (./french.aux)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}]
+Overfull \hbox (2.7393pt too wide) in paragraph at lines 78--89
+[]$\LMS/ntxsy/m/n/12 x$ \T1/ntxtlf/m/it/12 Cauchemar. \T1/ntxtlf/m/n/12 J'ai fait un cauchemar très in-quié-tant. Mon père de-vait m'administrer
+ []
+
+[2] [3] [4] (./french.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 6725 strings out of 474222
- 91709 string characters out of 5748733
- 1931975 words of memory out of 5000000
- 28881 multiletter control sequences out of 15000+600000
+ 7098 strings out of 474222
+ 98372 string characters out of 5748733
+ 1930975 words of memory out of 5000000
+ 29239 multiletter control sequences out of 15000+600000
  579750 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 80i,5n,93p,327b,179s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 80i,6n,93p,499b,169s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on french.pdf (2 pages, 88540 bytes).
+Output written on french.pdf (4 pages, 94529 bytes).
 PDF statistics:
- 38 PDF objects out of 1000 (max. 8388607)
- 23 compressed objects within 1 object stream
+ 44 PDF objects out of 1000 (max. 8388607)
+ 27 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

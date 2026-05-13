@@ -34,7 +34,7 @@ became incarnate so as to suffer earthly death. Origen of Alexandria endured
 two years of torture under Decius: he deemed death a lesser evil than
 abandoning his faith. The Bible agreed with him: in *Mark 14:31* Peter tells
 Jesus: *If I should die with thee, I will not deny thee in any wise*. In
-*Chronicles 1:10* we are told that, defeated by the Philistines, 
+*Samuel 31:4* we are told that, defeated by the Philistines, 
 
 > Saul said to his armourbearer: Draw thy sword, and thrust me through
 > therewith; lest these uncircumcised come and abuse me. But his armourbearer
