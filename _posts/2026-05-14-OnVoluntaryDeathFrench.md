@@ -29,7 +29,7 @@ d'être sauvé par ses amis. Le moment venu, il but la ciguë calmement, et sa
 dernière pensée fut à propos d'une dette qu'il ne voulait pas laisser impayée.
 
 <figure style="text-align: center;">
-  <img src="../Images/KlimtDeathAndLife.jpg" width="60%" style="border: 2px solid #231709;">
+  <img src="../Images/KlimtDeathAndLife.jpg" width="100%" style="border: 2px solid #231709;">
   <figcaption>La vie et la mort de Gustav Klimt</figcaption>
 </figure>
 
