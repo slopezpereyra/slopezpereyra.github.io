@@ -21,5 +21,5 @@ seulement à une.
 
 
 <figure style="text-align: center;">
-  <img src="../Images/TwoPaulis.jpg" width="100%" style="border: 1px solid #231709;">
+  <img src="../Images/TwoPaulis.jpg" width="60%" style="border: 1px solid #231709;">
 </figure>
