@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  16 MAY 2026 02:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.27)  18 MAY 2026 21:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -513,25 +513,39 @@ Overfull \hbox (2.7393pt too wide) in paragraph at lines 142--153
 []$\LMS/ntxsy/m/n/12 x$ \T1/ntxtlf/m/it/12 Cauchemar. \T1/ntxtlf/m/n/12 J'ai fait un cauchemar très in-quié-tant. Mon père de-vait m'administrer
  []
 
-[3] [4] [5] [6] [7] [8] (./french.aux)
+[3] [4] [5] [6] [7] [8]
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 8.8pt on input line 328.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 10.0pt on input line 330.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 7.3pt on input line 330.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
+(Font)              scaled to size 10.0pt on input line 330.
+
+Overfull \hbox (6.29797pt too wide) in paragraph at lines 362--365
+[]\T1/ntxtlf/m/n/12 En ^^Snous sommes tous al-longés^^T, ^^Stous^^T sig-nifica ^^Sto-dos^^T o ^^Sto-dos nosotros^^T.
+ []
+
+[9] (./french.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 7107 strings out of 474222
- 98539 string characters out of 5748733
+ 7145 strings out of 474222
+ 99104 string characters out of 5748733
  1940975 words of memory out of 5000000
- 29247 multiletter control sequences out of 15000+600000
- 582620 words of font info for 76 fonts, out of 8000000 for 9000
+ 29281 multiletter control sequences out of 15000+600000
+ 607041 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  80i,8n,93p,499b,266s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on french.pdf (8 pages, 138324 bytes).
+Output written on french.pdf (9 pages, 141268 bytes).
 PDF statistics:
- 63 PDF objects out of 1000 (max. 8388607)
- 40 compressed objects within 1 object stream
+ 66 PDF objects out of 1000 (max. 8388607)
+ 42 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
