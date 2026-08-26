@@ -3,8 +3,8 @@ entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**letters.tex
-(./letters.tex
+**cele.tex
+(./cele.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -156,7 +156,7 @@ Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 \c@theorem=\count279
 
 
-./letters.tex:17: LaTeX Error: Command \problem already defined.
+./cele.tex:17: LaTeX Error: Command \problem already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -170,7 +170,7 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./letters.tex:18: LaTeX Error: Command \example already defined.
+./cele.tex:18: LaTeX Error: Command \example already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -185,7 +185,7 @@ or  <return>  to continue without it.
 
 \c@definition=\count280
 
-./letters.tex:20: LaTeX Error: Command \lemma already defined.
+./cele.tex:20: LaTeX Error: Command \lemma already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -199,7 +199,7 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./letters.tex:21: LaTeX Error: Command \theorem already defined.
+./cele.tex:21: LaTeX Error: Command \theorem already defined.
                Or name \end... illegal, see p.192 of the manual.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -216,8 +216,8 @@ or  <return>  to continue without it.
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count281
 \l__pdf_internal_box=\box53
-) (./letters.aux)
-\openout1 = `letters.aux'.
+) (./cele.aux)
+\openout1 = `cele.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
@@ -233,26 +233,21 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
+ [1
 
-Overfull \hbox (0.35973pt too wide) in paragraph at lines 28--33
-[]\T1/ybv/m/n/10 Si no me equiv-oco han pasado ya casi tres años desde la úl-tima vez que hablamos.
- []
-
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/baskervald/supp-ybv.enc}] [2] [3]
-LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 193.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/baskervald/supp-ybv.enc}]
+LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 103.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 193.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 103.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 193.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 103.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [4] [5] [6] (./letters.aux)
+) [2] (./cele.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -260,17 +255,17 @@ L3 programming layer <2024-01-22>
  ) 
 Here is how much of TeX's memory you used:
  3427 strings out of 474222
- 47764 string characters out of 5748733
- 1934975 words of memory out of 5000000
+ 47728 string characters out of 5748733
+ 1932975 words of memory out of 5000000
  25649 multiletter control sequences out of 15000+600000
  575387 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,5n,65p,517b,113s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,5n,65p,514b,144s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/arkandis/baskervald/ybvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/arkandis/baskervald/ybvri8a.pfb>
-Output written on letters.pdf (6 pages, 71397 bytes).
+Output written on cele.pdf (2 pages, 55682 bytes).
 PDF statistics:
- 46 PDF objects out of 1000 (max. 8388607)
- 29 compressed objects within 1 object stream
+ 31 PDF objects out of 1000 (max. 8388607)
+ 19 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
