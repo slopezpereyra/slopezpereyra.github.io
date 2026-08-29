@@ -27,16 +27,37 @@ leurs visages, je découvre que mon propre visage est une toile décatie sur
 laquelle la vie a gravé un dessein jamais désiré par moi. Notez que je ne dis
 pas, et ne prétends jamais dire, que je ne suis pas heureux : plutôt, je veux
 dire simplement que le bonheur est pour moi comme l'eau coulante et éphémère
-d'un ruisseau, plutôt que l'impassible surface d'un lac. 
-
-C'est alors ce que je veux dire : les personnes qui sont à la fois simples et
-heureuses me font peur. Devant leur hédonisme —elles ne peuvent être
-qu'hédonistes— leur courage, leur insouciance, je vois le pire en moi et je
-sens comment mon rêve idiot d'être compris s'écroule.
+d'un ruisseau, plutôt que l'impassible surface d'un lac. C'est alors ce que je
+veux dire : les personnes qui sont à la fois simples et heureuses me font peur.
+Devant leur hédonisme —elles ne peuvent être qu'hédonistes— leur courage, leur
+insouciance, je vois le pire en moi et je sens comment mon rêve idiot d'être
+compris s'écroule.
 
 Comme je peux être heureux avec une âme déchirée ; non pas misérable, mais
 déchirée ! Mais face à un de ces cerfs immaculés et vierges, quel gouffre, quel
 reflet infernel, quelles ténèbres !
+
+Ce que je dis n'est pas le point central de mon discourse, mais il sert à suggérer
+dans quelle mesure le bonheur est pour moi une bataille sanglante.
+Naturellement, ce n'est pas une chose spéciale : c'est ainsi pour la plupart des
+hommes. Comment se fait-il que les hommes puissent vivre, que je puisse vivre, dans
+cette bataille ? 
+
+> La beauté est aussi mystérieuse que terrible. Dieu et le diable s'y
+> affrontent, et le champ de bataille est le cœur de l'homme
+
+Dans *L'idiot*, Dostoïevski explore l'idée selon laquelle la beauté peut sauver
+le monde. La beauté signifie ici la forme la plus parfaite du christianisme.
+Mais il est clair que la conclusion du roman n'est pas optimiste — c'est le
+moins qu'on puisse dire. Mais le salut du monde est une ambition très grande :
+le salut d'un jour, la transformation d'un jour affaibli en un jour heureux, est
+possible seulement à travers la beauté. La beauté est une chose difficile à
+comprendre pour moi, car je ne suis pas un Alyosha, mais un Ivan — pour ainsi
+dire. Je déteste mon cerveau. Il est clair que si je suis abattu et que j'écris,
+je me retrouve pareil ou pire ; mais si j'embrasse quelqu'un que j'aime, si
+j'aide quelqu'un qui en a besoin, si je suis comme l'homme gentil qu'Antonio
+Machado a imaginé, et que je bois du vin s'il y en a, et sinon de l'eau fraîche,
+mon cœur devient sain et la lumière du monde brûle en lui.
 
 
 
