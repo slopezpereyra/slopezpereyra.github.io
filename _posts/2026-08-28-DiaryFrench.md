@@ -61,4 +61,18 @@ mon cœur devient sain et la lumière du monde brûle en lui.
 
 
 
+Ma tristesse n'est pas liée à circonstances de ma vie : au contraire, ma vie est
+un privilège et rien de plus. Oui, certaines blessures du passé sont latentes
+encore : un suicide, un mensonge, une famillie. Mais je ne suis pas victime de
+cela. Ma souffrance est presque intellectuel. J'allais en bus hier : en
+regardant les rues sordides et sales, je pensais que peut-être mon souffrir est
+la voix de Dieu m'appelant, je me rappelais l'origine de mon nom et l'homme qui
+a lutté avec Dieu, car je flairais une chose étrange et spirituelle crepiter en
+moi. Soudainement, un vieille homme humble, qu'était assis près de moi, me
+regarde et dit : «Dis-moi : quel est le secret pour ne pas vieillir !». Alors,
+il me raconte l'histoire triste de sa pauvreté, très habituelle dans ses traits
+généraux, et, en descendant du bus, termine en disant : «Toi, étudie pour faire
+la révolution !». Silencieux, je pensai : «Bon monsieur, j'abandonne
+l'Argentine, je vais en Suisse, et ce qui est pire, moi qu'ai tout, je ne suis
+pas heureux !».  
 
