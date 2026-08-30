@@ -1,5 +1,5 @@
 ---
-title: Les personnes qui sont à la fois simples et heureuses me font peur
+title: Entrée de journal
 categories: [Personal]
 ---
 
@@ -60,7 +60,6 @@ Machado a imaginé, et que je bois du vin s'il y en a, et sinon de l'eau fraîch
 mon cœur devient sain et la lumière du monde brûle en lui.
 
 
-
 Ma tristesse n'est pas liée à circonstances de ma vie : au contraire, ma vie est
 un privilège et rien de plus. Oui, certaines blessures du passé sont latentes
 encore : un suicide, un mensonge, une famillie. Mais je ne suis pas victime de
@@ -75,4 +74,44 @@ généraux, et, en descendant du bus, termine en disant : «Toi, étudie pour fa
 la révolution !». Silencieux, je pensai : «Bon monsieur, j'abandonne
 l'Argentine, je vais en Suisse, et ce qui est pire, moi qu'ai tout, je ne suis
 pas heureux !».  
+
+Quelques heures plus tard je suis arrivé à ma destination : la maison abandonnée
+d'un oncle éloigné, un homme schizophrène qui est décédé, et que je garde
+quelques jours par semaine. La maison est pleine de grilles, de fils barbelés,
+de morceaux de verre, et de cadenas, car cet oncle avait une obsession paranoïde
+pour la sécurité. À cette occasion, j'étais là-bas pour accueillir un homme qui
+avait la tâche de réparer certains problèmes dans la canalisation de la maison.
+Cet homme, qui avait soixante-dix ans, plus ou moins, qui était douce, gentil,
+et enclin à faire des blagues inappropriées, montait péniblement l'échelle
+jusqu'au toit et se plaignait du bruit d'une tondeuse à gazon en criant : « j'ai
+des acouphènes !» Ses yeux étaient pleins de lumière. La plupart de sa retraite
+était consacrée au traitement de son chien, qui était tombé malade du jour au
+lendemain, et, en outre, son gendre lui demandait de l'argent pour
+je-ne-sais-quoi. Toutefois, son sourire était affectueux et il jurait toutes les
+cinq minutes qu'il ne perdait pas la foi en Dieu.
+
+Alors, ma journée touchait à sa fin. Cet écrit est chaotique, car mes pensées le
+sont. J'ai commencé en parlant de ma solitude, d'une bataille de laquelle une
+fleur fleurissait, et lentement je suis arrivé à la considération de certains
+personnages, à des choses très concrètes, très réelles. C'est précisément mon
+problème : mais voilà alors que, quand mes obligations se sont terminées, et que
+j'étais seul dans la nuit comme un chien, en rentrant chez moi, j'ai vu un
+cartonnier — un «ciruja» — cherchant dans les ordures. Je l'ai nourri et je
+lui ai demandé son histoire. Cet homme était jeune, et ses grands yeux étaient
+lumineux ; c'était un homme du Christ et il me parlait de la lutte du bien et du
+mal — il a utilisé ces termes —, du fait que peu importe à quel point on
+essaie, le bien est une étoile très difficile à atteindre, et de la manière dont
+la police ne lui permet pas de travailler en paix. La police, m'a-t-il dit,
+après lui avoir demandé son nom, l'appelle de toute façon « negro » : «ils ne
+m'appellent pas Rodrigo, ou monsieur Hernández, mais simplement noir». Il m'a
+dit qu'il était allé en prison, qu'il n'allait pas à l'église, car «avec toutes
+les choses qu'il a vues» sa spiritualité est intérieure. Enfin, nous avons parlé
+comme ce que nous étions : deux hommes inconnus qui ne se retrouveront plus. Et
+il est clair qu'aucune des pensées tordues que j'ai eues durant la journée ne
+vaut une seule seconde passée avec cet homme, ni sa sasiété, ni le sentiment non
+médiatisé par la pensée qui surgit quand on est en communion avec les autres
+hommes.
+
+
+
 
